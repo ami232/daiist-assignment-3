@@ -1,0 +1,16 @@
+{
+  "total_questions": 25,
+  "methods": {
+    "vector": {
+      "hit@1": 0.76,
+      "hit@3": 0.92,
+      "hit@5": 0.92
+    },
+    "hybrid": {
+      "hit@1": 0.68,
+      "hit@3": 0.92,
+      "hit@5": 0.92
+    }
+  },
+  "average_seconds_per_question": 0.351
+}
