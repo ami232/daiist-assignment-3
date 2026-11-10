@@ -2,7 +2,8 @@ import json
 import re
 import time
 from pathlib import Path
-
+import hashlib
+import pymupdf
 import chromadb
 from google import genai
 from google.genai import types
@@ -281,6 +282,99 @@ def build_index():
 
     return collection
 
+
+# --------------------------------------------------
+# ADD NEW DOCUMENTS
+# --------------------------------------------------
+
+def chunk_file(path):
+    """
+    Extract and chunk an additional PDF document.
+
+    Each chunk retains its source filename and page.
+    Uses the same chunk size and overlap as our
+    original corpus.
+    """
+    from chunking import CHUNK_SIZE, OVERLAP
+
+    pdf_path = Path(path).resolve()
+
+    if not pdf_path.is_file():
+        raise FileNotFoundError(f"File not found: {pdf_path}")
+
+    if pdf_path.suffix.lower() != ".pdf":
+        raise ValueError("Only PDF documents are supported.")
+
+    file_hash = hashlib.sha256(
+        pdf_path.read_bytes()
+    ).hexdigest()
+
+    chunks = []
+
+    with pymupdf.open(pdf_path) as pdf:
+        for page_number, page in enumerate(pdf, start=1):
+            text = page.get_text("text", sort=True)
+            text = re.sub(r"\s+", " ", text).strip()
+
+            if not text:
+                continue
+
+            words = text.split()
+            step = CHUNK_SIZE - OVERLAP
+
+            for start in range(0, len(words), step):
+                end = min(start + CHUNK_SIZE, len(words))
+
+                chunk_text = " ".join(words[start:end])
+
+                # Stable ID makes re-indexing safe.
+                chunk_id = hashlib.sha256(
+                    f"{file_hash}:{page_number}:{start}".encode()
+                ).hexdigest()[:16]
+
+                chunks.append({
+                    "id": chunk_id,
+                    "source": pdf_path.name,
+                    "article": 0,
+                    "page_start": page_number,
+                    "page_end": page_number,
+                    "location": f"Page {page_number}",
+                    "text": chunk_text,
+                })
+
+                if end == len(words):
+                    break
+
+    if not chunks:
+        raise ValueError(
+            "The PDF contains no extractable text."
+        )
+
+    return chunks
+
+
+def add_document_to_index(path):
+    """
+    Add a PDF to the existing ChromaDB index.
+
+    Reuses embed_and_store() and skips any chunks
+    that have already been indexed.
+    """
+    chunks = chunk_file(path)
+    collection = get_collection()
+
+    before = collection.count()
+
+    embed_and_store(chunks, collection)
+
+    after = collection.count()
+
+    return {
+        "document": Path(path).name,
+        "chunks_found": len(chunks),
+        "chunks_added": after - before,
+        "total_vectors": after,
+    }
 
 if __name__ == "__main__":
     build_index()
