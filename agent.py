@@ -201,7 +201,7 @@ Additional harness rules:
         # substantive answers.
         has_citation = bool(
             re.search(
-                r"\[(?:GDPR|DSA|AI_ACT|AI Act)[^\]]*\]",
+                r"\[(?:GDPR|DSA|AI_ACT|AI Act|aepd_2025\.pdf)[^\]]*\]",
                 answer,
                 flags=re.IGNORECASE,
             )
