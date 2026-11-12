@@ -19,9 +19,9 @@ So in this case, accuracy is particularly important, since an incorrect answer c
 
 I selected 3 official European Union regulations that are relevant to businesses operating in digital markets, since together they cover personal data protection, digital platform responsibilities and artificial intelligence. The documents where obtained from EUR-Lex (European Union's official legal database). Although the GDPR concerns personal data protection, the documents themselves contain general legislative provisions rather than private personal records.
 
-* GDPR — Regulation (EU) 2016/679. EUR-Lex. Published 4 May 2016. EU legal-document reuse policy. Extracted words: 56,376
-* DSA — Regulation (EU) 2022/2065. EUR-Lex. Published 27 October 2022. EU legal-document reuse policy. Extracted words: 65,676
-* AI Act — Regulation (EU) 2024/1689. EUR-Lex. Published 12 July 2024. EU legal-document reuse policy. Extracted words: 94,219
+* GDPR — Regulation (EU) 2016/679. EUR-Lex. Published 4 May 2016. EU legal-document reuse policy. Extracted words: 56,376. https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32016R0679
+* DSA — Regulation (EU) 2022/2065. EUR-Lex. Published 27 October 2022. EU legal-document reuse policy. Extracted words: 65,676. https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32022R2065
+* AI Act — Regulation (EU) 2024/1689. EUR-Lex. Published 12 July 2024. EU legal-document reuse policy. Extracted words: 94,219. https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=OJ:L_202401689
 
 The three documents are official EU legal texts available for reuse under the EUR-Lex policy based on Commission Decision 2011/833/EU, subject to applicable conditions and source acknowledgement.
 
