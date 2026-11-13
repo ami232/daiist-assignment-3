@@ -1,0 +1,80 @@
+=== Tengo una obra con un solo autónomo trabajando, ¿tengo que nombrar coordinador de seguridad?
+No, **no es obligatorio** nombrar un coordinador de seguridad y salud durante la ejecución de la obra si en ella interviene **un solo trabajador autónomo** (y ninguna otra empresa ni más autónomos). 
+
+La normativa establece que la designación del coordinador de seguridad y salud durante la ejecución de la obra solo es obligatoria cuando en ella intervenga **más de una empresa, o una empresa y trabajadores autónomos, o diversos trabajadores autónomos** (RD 1627/1997, Artículo 3).
+
+*(Nota: Esta información es de carácter divulgativo y se basa exclusivamente en la normativa citada).*
+
+**Fuentes utilizadas:**
+* RD 1627/1997, Artículo 3 (Designación de los coordinadores en materia de seguridad y salud).
+
+[gemini-3.5-flash-lite; 1 tool call(s); searches: ['coordinador seguridad obra un autonomo']; 3715+189 tokens; 3.5 s]
+
+=== Somos una empresa de 45 trabajadores, ¿necesitamos delegado de prevención o comité de seguridad?
+Sí, en una empresa de 45 trabajadores es necesario contar con un Delegado de Prevención, pero no con un Comité de Seguridad y Salud.
+
+Conforme a la normativa:
+
+* **Delegado de Prevención:** En las empresas de treinta y uno a cuarenta y nueve trabajadores habrá **un Delegado de Prevención** que será elegido por y entre los Delegados de Personal (Ley 31/1995, Artículo 35.2).
+* **Comité de Seguridad y Salud:** Se constituirá un Comité de Seguridad y Salud en todas las empresas o centros de trabajo que cuenten con **50 o más trabajadores** (Ley 31/1995, Artículo 38.2). Al tener 45 trabajadores, no se alcanza este umbral mínimo y las competencias del comité son asumidas por el Delegado de Prevención (Ley 31/1995, Artículo 36.1).
+
+Fuentes utilizadas:
+- Ley 31/1995 (Prevención de Riesgos Laborales), Artículos 35, 36 y 38.
+
+*Nota: Esta información es divulgativa y no constituye asesoramiento legal.*
+
+[gemini-3.5-flash-lite; 1 tool call(s); searches: ['delegados de prevención número de trabajadores 45']; 3834+279 tokens; 3.5 s]
+
+=== Soy contratista; mi subcontratista subcontrató a otra empresa y esta quiere subcontratar a un autónomo. ¿Puede?
+Con carácter general, **no es posible** que la segunda empresa subcontratista contrate a un autónomo en ese supuesto. 
+
+La Ley reguladora de la subcontratación en el sector de la construcción establece la siguiente cadena de subcontratación general (Ley 32/2006, Artículo 5.2):
+* **Contratista** (usted) puede contratar con empresas subcontratistas o trabajadores autónomos.
+* **Primer subcontratista** puede subcontratar.
+* **Segundo subcontratista** puede subcontratar (este sería el límite general, ya que constituiría el tercer nivel).
+* **Tercer subcontratista** *no podrá* subcontratar los trabajos que hubiera contratado con otro subcontratista o trabajador autónomo.
+
+Por tanto, si su subcontratista es el primero, su subcontratista es el segundo, y la empresa que quiere contratar es un tercer subcontratista, esta última **no puede** volver a subcontratar (ni a otra empresa ni a un trabajador autónomo), salvo que se trate de un supuesto excepcional debidamente justificado y autorizado expresamente por la dirección facultativa en el Libro de Subcontratación (Ley 32/2006, Artículo 5.3). Además, los trabajadores autónomos que no empleen a trabajadores por cuenta ajena tampoco pueden en ningún caso subcontratar los trabajos encomendados (Ley 32/2006, Artículo 5.2.e).
+
+*(Nota: Esta información es puramente divulgativa y se basa estrictamente en la normativa indicada).*
+
+**Fuentes utilizadas:**
+* Ley 32/2006 (reguladora de la subcontratación en el sector de la construcción), Artículos 3 y 5.
+
+[gemini-3.5-flash-lite; 1 tool call(s); searches: ['limites subcontratacion autonomia nivel construccion ley 32 2006']; 3450+421 tokens; 3.4 s]
+
+=== ¿Cuánto me pueden multar si no tengo el libro de subcontratación en la obra?
+No disponer del Libro de Subcontratación en la obra exigido al contratista constituye una infracción en el ámbito de la subcontratación en el sector de la construcción (Ley 32/2006, Disposición adicional primera; Ley de Infracciones y Sanciones en el Orden Social, artículo 11.6). 
+
+La Ley 32/2006 establece en su artículo 11 que las infracciones a lo dispuesto en la misma serán sancionadas con arreglo a la Ley de Infracciones y Sanciones en el Orden Social (Texto Refundido aprobado por Real Decreto Legislativo 5/2000). Sin embargo, **los importes o cuantías concretas de las multas no figuran en el texto de las normas del corpus**, ya que este aspecto se remite a dicho texto sancionador general.
+
+Fuentes utilizadas:
+- Ley 32/2006, artículos 8 y 11, y Disposición adicional primera.
+
+*Nota: Esta información es meramente informativa y no constituye asesoramiento jurídico.*
+
+[gemini-3.5-flash-lite; 1 tool call(s); searches: ['libro de subcontratación sanción multa cuantía']; 4059+256 tokens; 2.8 s]
+
+=== ¿Qué EPI tengo que dar a un soldador?
+No consta en los documentos del corpus una lista específica de equipos de protección individual (EPI) para soldadores. 
+
+Se realizaron búsquedas sobre soldadura, equipos de protección individual y EPI en la normativa del corpus (Ley 31/1995, RD 39/1997, RD 1627/1997, RD 1215/1997 y Ley 32/2006). Las normas generales indican que el empresario debe proporcionar equipos de protección individual adecuados cuando los riesgos no se puedan evitar o limitar suficientemente por medios técnicos o organizativos (Ley 31/1995, Artículo 17; RD 1627/1997, Artículo 12), definiendo el EPI como cualquier equipo destinado a ser llevado o sujetado por el trabajador para protegerle de uno o varios riesgos (Ley 31/1995, Artículo 4), pero los textos no detallan qué elementos específicos corresponden a una tarea de soldadura.
+
+Fuentes utilizadas:
+- Ley 31/1995 (Artículos 4 y 17)
+- RD 1627/1997 (Artículo 12)
+
+*Nota: Esta información es meramente divulgativa y se basa estrictamente en el corpus normativo disponible.*
+
+[gemini-3.5-flash-lite; 2 tool call(s); searches: ['soldadura equipos de protección individual EPI soldador', 'soldadura equipos de protección individual RD 1215/1997 RD 1627/1997']; 7902+350 tokens; 4.7 s]
+
+=== ¿Puedo despedir a un trabajador que se niega a usar el casco?
+Sí, el incumplimiento por parte de los trabajadores de sus obligaciones en materia de prevención de riesgos laborales —como la de utilizar correctamente los medios y equipos de protección facilitados por el empresario (el casco)— tiene la consideración de **incumplimiento laboral** a los efectos previstos en el artículo 58.1 del Estatuto de los Trabajadores o de falta, según corresponda en su normativa sobre régimen disciplinario (Ley 31/1995, Artículo 29).
+
+*Esta información es de carácter divulgativo y no constituye asesoramiento legal.*
+
+**Fuentes utilizadas:**
+* Ley 31/1995 (Prevención de Riesgos Laborales), Artículos 17 y 29.
+
+[gemini-3.5-flash-lite; 1 tool call(s); searches: ['trabajador se niega a usar casco obligaciones incumplimiento despido sancion']; 3009+184 tokens; 2.8 s]
+

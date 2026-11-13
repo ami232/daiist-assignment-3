@@ -1,0 +1,118 @@
+=== Tengo una obra con un solo autónomo trabajando, ¿tengo que nombrar coordinador de seguridad?
+Para determinar si es necesario nombrar un coordinador de seguridad y salud durante la ejecución de la obra, el criterio aplicable es el número de empresas y trabajadores autónomos que intervienen, según se establece en la normativa:
+
+1. El artículo 3, apartado 2, del Real Decreto 1627/1997 dispone que se designará un coordinador en materia de seguridad y salud durante la ejecución de la obra **cuando en ella intervenga más de una empresa, o una empresa y trabajadores autónomos, o diversos trabajadores autónomos** (RD 1627/1997, Artículo 3).
+2. Por tanto, si en la obra trabaja **un único autónomo** (y no interviene ninguna otra empresa ni ningún otro trabajador autónomo), **no** es obligatorio designar un coordinador de seguridad y salud durante la ejecución de la obra, ya que no se cumple el supuesto de concurrencia de varios sujetos previsto en el citado artículo.
+
+*Fuentes utilizadas:*
+* RD 1627/1997, Artículo 3.
+
+*Nota: Esta información es de carácter divulgativo y se basa exclusivamente en los textos de las normas del corpus.*
+
+[gemini-3.5-flash-lite; 1 tool call(s); searches: ['coordinador seguridad obra autonomo']; 4109+270 tokens; 3.4 s]
+
+=== Somos una empresa de 45 trabajadores, ¿necesitamos delegado de prevención o comité de seguridad?
+Para una empresa de 45 trabajadores, las obligaciones según la Ley 31/1995 son las siguientes:
+
+* **Delegado de prevención:** **Sí**. En las empresas de treinta y uno a cuarenta y nueve trabajadores habrá un Delegado de Prevención, que será elegido por y entre los Delegados de Personal (Ley 31/1995, Artículo 35.2). Para el cómputo del número de trabajadores se aplican criterios específicos sobre contratos temporales y de duración determinada (Ley 31/1995, Artículo 35.3).
+* **Comité de seguridad y salud:** **No**. El Comité de Seguridad y Salud se constituirá obligatoriamente en todas las empresas o centros de trabajo que cuenten con 50 o más trabajadores (Ley 31/1995, Artículo 38.2). Al tener 45 trabajadores, no se alcanza dicho umbral.
+
+*(Nota: Esta información es un resumen de la normativa aplicable y no constituye asesoramiento jurídico).*
+
+Fuentes utilizadas:
+- Ley 31/1995, Artículo 35.
+- Ley 31/1995, Artículo 38.
+
+[gemini-3.5-flash-lite; 1 tool call(s); searches: ['delegados de prevención número trabajadores comité de seguridad y salud']; 4276+286 tokens; 3.3 s]
+
+=== Soy contratista; mi subcontratista subcontrató a otra empresa y esta quiere subcontratar a un autónomo. ¿Puede?
+Para responder a su pregunta, debemos analizar paso a paso los niveles de la cadena de subcontratación permitidos por la normativa:
+
+1. **Usted (Contratista):** Contrata directamente con la promotora y puede subcontratar la ejecución de los trabajos con empresas subcontratistas o trabajadores autónomos (Ley 32/2006, Artículo 5.2.b). Este es el **primer nivel** de subcontratación.
+2. **Su subcontratista:** Corresponde al **primer subcontratista**, el cual puede a su vez subcontratar la ejecución de los trabajos con otro subcontratista (Ley 32/2006, Artículo 5.2.c). Este pasa a ser el **segundo subcontratista**.
+3. **La empresa del segundo nivel:** Corresponde al **segundo subcontratista**, el cual puede a su vez subcontratar con un tercero (Ley 32/2006, Artículo 5.2.c), convirtiéndose este último en el **tercer subcontratista**.
+4. **El tercer subcontratista:** La ley establece claramente que *“el tercer subcontratista no podrá subcontratar los trabajos que hubiera contratado con otro subcontratista o trabajador autónomo”* (Ley 32/2006, Artículo 5.2.d). Por lo tanto, si la empresa que pretende contratar al autónomo se sitúa ya en este tercer nivel (o si el autónomo pretende subcontratar a su vez), **no está permitido** con carácter general.
+5. **Excepción por motivos justificados:** Excepcionalmente, se podrá extender la subcontratación en un nivel adicional (es decir, rebasar el límite general) únicamente cuando concurran causas justificadas de especialización, complicaciones técnicas o fuerza mayor, y **siempre que medie la aprobación previa de la dirección facultativa y conste motivado en el Libro de Subcontratación** (Ley 32/2006, Artículo 5.3).
+
+Fuentes utilizadas: Ley 32/2006, Artículo 5.
+
+*(Nota: Esta información es meramente divulgativa y no constituye asesoramiento jurídico).*
+
+[gemini-3.5-flash-lite; 1 tool call(s); searches: ['requisitos subcontratacion autonomia sectores construccion limites']; 4334+509 tokens; 4.1 s]
+
+=== ¿Cuánto me pueden multar si no tengo el libro de subcontratación en la obra?
+En los documentos del corpus no se especifica la cuantía económica de la multa, ya que la Ley 32/2006 remite en su artículo 11 para la sanción de las infracciones a la Ley de Infracciones y Sanciones en el Orden Social (Real Decreto Legislativo 5/2000), cuyos importes exactos no figuran en las normas recopiladas.
+
+No obstante, la normativa sí tipifica las siguientes obligaciones e infracciones en relación con el Libro de Subcontratación:
+* Toda obra de construcción debe contar con un Libro de Subcontratación que debe permanecer en todo momento en la obra (Ley 32/2006, Artículo 8).
+* No disponer el contratista en la obra de dicho Libro de Subcontratación constituye una infracción tipificada conforme a lo dispuesto en la Ley de Infracciones y Sanciones en el Orden Social (Ley 32/2006, Disposición adicional primera, apartado 2, que añade el apartado 6 al artículo 11 de dicha ley).
+* Asimismo, se considera una infracción grave del contratista "no llevar en orden y al día el Libro de Subcontratación exigido, o no hacerlo en los términos establecidos reglamentariamente" (Ley 32/2006, Disposición adicional primera, apartado 3, que añade el apartado 28 a la Ley de Infracciones y Sanciones en el Orden Social).
+
+Fuentes utilizadas:
+- Ley 32/2006, Artículos 8 y 11, y Disposición adicional primera.
+
+*Este texto es de carácter meramente informativo y no constituye asesoramiento legal.*
+
+[gemini-3.5-flash-lite; 2 tool call(s); searches: ['libro de subcontratación sanción multa cuantía', 'cuantía sanciones infracciones graves ley 32/2006 lisos']; 9762+421 tokens; 4.0 s]
+
+=== ¿Qué EPI tengo que dar a un soldador?
+No consta en los documentos del corpus un listado específico de los equipos de protección individual (EPI) que se deban proporcionar a un soldador. 
+
+No obstante, las normas generales sobre EPIs en los textos consultados establecen que:
+* Se entiende por equipo de protección individual cualquier equipo destinado a ser llevado o sujetado por el trabajador para que le proteja de uno o varios riesgos que puedan amenazar su seguridad o su salud en el trabajo, así como cualquier complemento o accesorio destinado a tal fin (Ley 31/1995, Artículo 4).
+* El empresario deberá proporcionar a sus trabajadores equipos de protección individual adecuados para el desempeño de sus funciones y velar por el uso efectivo de los mismos cuando, por la naturaleza de los trabajos realizados, sean necesarios (Ley 31/1995, Artículo 17).
+* Los EPIs deben utilizarse cuando los riesgos no se puedan evitar o no puedan limitarse suficientemente por medios técnicos de protección colectiva o mediante medidas, métodos o procedimientos de organización del trabajo (Ley 31/1995, Artículo 17).
+
+Fuentes utilizadas:
+- Ley 31/1995 (Prevención de Riesgos Laborales), Artículos 4, 14, 17 y 29.
+
+[gemini-3.5-flash-lite; 1 tool call(s); searches: ['soldador EPI equipos de proteccion individual']; 4173+297 tokens; 2.9 s]
+
+=== ¿Puedo despedir a un trabajador que se niega a usar el casco?
+En los documentos del corpus consultados no se especifica si se puede "despedir" directamente a un trabajador, pero sí se establece lo siguiente sobre las consecuencias del incumplimiento de las obligaciones de prevención:
+
+1. **Obligación de usar equipos de protección:** Los trabajadores deben utilizar correctamente los medios y equipos de protección facilitados por el empresario, de acuerdo con las instrucciones recibidas (Ley 31/1995, Artículo 29.2).
+2. **Consideración del incumplimiento:** El incumplimiento por parte de los trabajadores de sus obligaciones en materia de prevención de riesgos tendrá la consideración de **incumplimiento laboral** a los efectos previstos en el artículo 58.1 del Estatuto de los Trabajadores o de falta conforme a la normativa sobre régimen disciplinario correspondiente (Ley 31/1995, Artículo 29.3).
+
+*Nota: Esta información es divulgativa y no constituye asesoramiento legal. El régimen aplicable de sanciones o despidos se remite al Estatuto de los Trabajadores citado en la Ley.*
+
+**Fuentes utilizadas:**
+- Ley 31/1995 (Prevención de Riesgos Laborales): Artículos 29.2 y 29.3.
+
+[gemini-3.5-flash-lite; 1 tool call(s); searches: ['incumplimiento medidas seguridad trabajador despido']; 3731+288 tokens; 2.9 s]
+
+=== ¿Está permitido hacer controles de alcoholemia a los trabajadores de la obra?
+Sí. La vigilancia de la salud —lo que incluye las pruebas de control aplicables— debe garantizarse por el empresario en función de los riesgos inherentes al trabajo (Ley 31/1995, Artículo 22.1). 
+
+Esta vigilancia solo puede llevarse a cabo con el consentimiento del trabajador, salvo en los siguientes casos exceptuados (previo informe de los representantes de los trabajadores):
+1. Cuando la realización de los reconocimientos sea imprescindible para evaluar los efectos de las condiciones de trabajo sobre la salud.
+2. Para verificar si el estado de salud del trabajador puede constituir un peligro para el mismo, para los demás trabajadores o para otras personas relacionadas con la empresa.
+3. Cuando así esté establecido en una disposición legal en relación con la protección de riesgos específicos y actividades de especial peligrosidad.
+
+En todo caso, se debe optar por las pruebas que causen las menores molestias y que sean proporcionales al riesgo, respetando el derecho a la intimidad, a la dignidad de la persona y a la confidencialidad (Ley 31/1995, Artículo 22.1 y 22.2). El acceso a la información médica de carácter personal se limita al personal médico y a las autoridades sanitarias, sin que pueda facilitarse al empresario sin el consentimiento expreso del trabajador (Ley 31/1995, Artículo 22.4).
+
+Fuentes:
+- Ley 31/1995 (Prevención de Riesgos Laborales), Artículo 22.
+
+*Nota: Esta respuesta es meramente informativa y no constituye asesoramiento legal.*
+
+[gemini-3.5-flash-lite; 1 tool call(s); searches: ['alcohol controles trabajadores alcoholemia']; 4553+362 tokens; 3.2 s]
+
+=== ¿Qué medidas deben tomarse en las obras durante una ola de calor?
+En relación con las condiciones climáticas adversas y las temperaturas elevadas en las obras, los textos del corpus normativo establecen las siguientes disposiciones generales:
+
+* **Temperatura adecuada:** La temperatura en los lugares de trabajo debe ser la adecuada para el organismo humano durante el tiempo de trabajo, cuando las circunstancias lo permitan, teniendo en cuenta los métodos de trabajo y las cargas físicas impuestas a los trabajadores (RD 1627/1997, Anexo IV, parte A, punto 8).
+* **Protección frente a factores atmosféricos:** Debe protegerse a los trabajadores contra las inclemencias atmosféricas que puedan comprometer su seguridad y su salud (RD 1627/1997, Anexo IV, parte A, punto 4).
+* **Disponibilidad de agua:** Los trabajadores deberán disponer de agua potable y, en su caso, de otra bebida apropiada no alcohólica en cantidad suficiente, tanto en los locales que ocupen como cerca de los puestos de trabajo (RD 1627/1997, Anexo IV, parte A, punto 3.b).
+* **Condiciones en locales:** Los locales de descanso, servicios higiénicos, comedores, etc., deben tener una temperatura acorde a su uso específico (RD 1627/1997, Anexo IV, parte B, punto 4.a), y las ventanas, vanos cenitales y tabiques acristalados deben permitir evitar una insolación excesiva (RD 1627/1997, Anexo IV, parte B, punto 4.b).
+* **Equipos de trabajo a la intemperie:** El empleo al aire libre de equipos de trabajo para la elevación de cargas no guiadas deberá cesar cuando las condiciones meteorológicas se degraden hasta el punto de causar perjuicio a la seguridad de funcionamiento y provocar riesgos a los trabajadores, adoptándose medidas para impedir el vuelco (RD 1215/1997, Anexo II, punto 1.g).
+
+---
+**Fuentes utilizadas:**
+* RD 1627/1997 (Disposiciones mínimas de seguridad y salud en las obras de construcción), Anexo IV, parte A (puntos 3.b, 4 y 8) y parte B (punto 4).
+* RD 1215/1997 (Utilización de equipos de trabajo), Anexo II, punto 1.g.
+
+*Nota: Esta información es estrictamente orientativa y se basa en los textos del corpus normativo.*
+
+[gemini-3.5-flash-lite; 1 tool call(s); searches: ['ola de calor temperaturas extremas condiciones climaticas intemperie obra']; 4560+581 tokens; 3.6 s]
+
