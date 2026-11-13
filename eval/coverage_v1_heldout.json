@@ -1,0 +1,347 @@
+{
+ "version": "v1",
+ "set": "heldout",
+ "model": "gemini-3.5-flash-lite",
+ "reps": 2,
+ "calls": {
+  "gemini-3.5-flash-lite": 18
+ },
+ "embedding_calls": 0,
+ "stopped": null,
+ "rows": [
+  {
+   "id": "h01",
+   "question": "Oye, tengo a un tío de una subcontrata que lleva dos días currando en la obra y no sé si le han dado formación ni nada de eso. ¿Eso me lo tengo que mirar yo o es cosa de su empresa?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2195,
+      "output": 19
+     },
+     "seconds": 0.9,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "",
+     "passage": 1,
+     "sentence": null,
+     "quote": "Las empresas que contraten o subcontraten con otras la realización de obras o servicios correspondientes a la propia actividad de aquéllas y que se desarrollen en sus propios centros de trabajo deberán vigilar el cumplimiento por dichos contratistas y subcontratistas de la normativa de prevención de riesgos laborales.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2195,
+      "output": 90
+     },
+     "seconds": 1.0,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "h02",
+   "question": "Hemos cogido a dos chavales de una ETT para una obra que llevamos nosotros. ¿Quién les tiene que dar la formación y quién les da los equipos de protección: la ETT o nosotros?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "",
+     "passage": 2,
+     "sentence": null,
+     "quote": "La empresa de trabajo temporal será responsable del cumplimiento de las obligaciones en materia de formación y vigilancia de la salud que se establecen en los apartados 2 y 3 de este artículo.",
+     "quote_found": true,
+     "tokens": {
+      "input": 1993,
+      "output": 67
+     },
+     "seconds": 1.1,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "",
+     "passage": 2,
+     "sentence": null,
+     "quote": "La empresa de trabajo temporal será responsable del cumplimiento de las obligaciones en materia de formación y vigilancia de la salud que se establecen en los apartados 2 y 3 de este artículo.",
+     "quote_found": true,
+     "tokens": {
+      "input": 1993,
+      "output": 67
+     },
+     "seconds": 0.8,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "h03",
+   "question": "Somos 47 en plantilla repartidos entre la oficina y dos obras. ¿Estamos obligados a montar un comité de seguridad y salud o todavía no?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "",
+     "passage": 1,
+     "sentence": null,
+     "quote": "Se constituirá un Comité de Seguridad y Salud en todas las empresas o centros de trabajo que cuenten con 50 o más trabajadores.",
+     "quote_found": true,
+     "tokens": {
+      "input": 1932,
+      "output": 57
+     },
+     "seconds": 0.9,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "",
+     "passage": 1,
+     "sentence": null,
+     "quote": "Se constituirá un Comité de Seguridad y Salud en todas las empresas o centros de trabajo que cuenten con 50 o más trabajadores.",
+     "quote_found": true,
+     "tokens": {
+      "input": 1932,
+      "output": 57
+     },
+     "seconds": 1.0,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "h04",
+   "question": "Como el plan de seguridad y salud lo tiene que aprobar la Inspección de Trabajo antes de abrir el centro, ¿cuántos días suelen tardar en darte el visto bueno?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2120,
+      "output": 19
+     },
+     "seconds": 0.9,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2120,
+      "output": 28
+     },
+     "seconds": 1.3,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "h05",
+   "question": "oie y lo del recurso preventivo en obra xq mi encargado dice q hace falta siempre uno x cada tajo?? es asi o depende d algo?",
+   "expected": "no",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1698,
+      "output": 19
+     },
+     "seconds": 1.2,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1698,
+      "output": 19
+     },
+     "seconds": 1.1,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "h06",
+   "question": "¿Cuántas horas de formación del TPC tiene que hacer un peón nuevo según el convenio de la construcción?",
+   "expected": "no",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1314,
+      "output": 19
+     },
+     "seconds": 0.7,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1314,
+      "output": 19
+     },
+     "seconds": 2.0,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "h07",
+   "question": "¿Puedo dar la formación de prevención a mis operarios por videollamada en directo, o tiene que ser presencial sí o sí?",
+   "expected": "no",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1612,
+      "output": 19
+     },
+     "seconds": 1.0,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1612,
+      "output": 19
+     },
+     "seconds": 0.8,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "h08",
+   "question": "¿Cuál es hoy la multa máxima que le pueden poner a una empresa por una infracción muy grave en materia de prevención?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1949,
+      "output": 19
+     },
+     "seconds": 0.8,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "",
+     "passage": 1,
+     "sentence": null,
+     "quote": "Grado máximo: de 50.000.001 a 100.000.000 de pesetas.",
+     "quote_found": true,
+     "tokens": {
+      "input": 1949,
+      "output": 62
+     },
+     "seconds": 0.8,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "h09",
+   "question": "¿Cuántos días de vacaciones me corresponden al año si trabajo en una oficina en Alemania?",
+   "expected": "no",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2026,
+      "output": 19
+     },
+     "seconds": 1.4,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2026,
+      "output": 19
+     },
+     "seconds": 1.0,
+     "error": null
+    }
+   ]
+  }
+ ],
+ "seconds": 91.3
+}
