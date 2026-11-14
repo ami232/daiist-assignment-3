@@ -281,7 +281,85 @@ I use **structure** and give the assistant the **first 5 results**. With 5 resul
 
 ## Tools and subagent
 
-*Your tools' descriptions, one search result, the subagent's instructions, one transcript from your editor.*
+### The two tools
+
+My MCP server ([server.py](server.py)) is called `corpus` and has two tools. The description of each tool is what the AI reads to decide when and how to use it, so I wrote them carefully.
+
+**`search(query, k=5)`**
+
+> Search the official European Commission rules on Erasmus+ grants for university students: the Erasmus+ Programme Guide 2026 (who can take part, student mobility for studies and traineeships, durations, grant amounts and top-ups, glossary), the Erasmus Charter for Higher Education guidelines, the Learning Agreement for Studies guidelines and the Erasmus+ Student Charter.
+>
+> Use it for any question about Erasmus+ eligibility, duration, money, learning agreements, credit recognition or students' rights. Questions may be in English or Spanish; the documents are in English. It does NOT contain national amounts (e.g. SEPIE in Spain) or any university's own deadlines, places or selection criteria.
+>
+> Returns the k most relevant passages (default 5, max 10), numbered [1]..[k], each with document title, page or section, date, URL and the passage text. Cite them by number and by document + page/section.
+
+I made the description say clearly **what is not in the documents**, so the AI knows when it should say "I don't know" instead of searching forever or guessing.
+
+**`add_document(path)`**
+
+> Add a document to the Erasmus+ search index so search can find it. `path` is a file inside this project folder: .pdf, .html, .txt or .md. The file is extracted, cleaned and chunked with the same pipeline as the original corpus (index.py), embedded and stored. Its id is the file name.
+>
+> If the document is already indexed and unchanged, nothing is embedded and nothing is duplicated. If a file with the same name was indexed before but its content changed, its old chunks are replaced by the new ones.
+>
+> Returns how many chunks were embedded, reused, already present and removed.
+
+For safety, `add_document` only accepts files **inside the project folder**, so the AI can't read random files on my computer. When I tested it with `/etc/hosts`, it answered *"Refused: /etc/hosts is outside the project folder."*
+
+### One search result
+
+I asked in Spanish: *"¿Cuántos meses de Erasmus puedo hacer en total durante el grado?"*. This is the first result:
+
+```
+[1] Erasmus+ Programme Guide 2026 — p. 54, ELIGIBILITY CRITERIA FOR STUDENT MOBILITY, 2025-11-12 (version 1)
+source: programme_guide_2026 | url: https://erasmus-plus.ec.europa.eu/sites/default/files/2025-11/programme-guide-2026_en.pdf | relevance: 0.75
+- during the third cycle as doctoral candidate (doctoral level or EQF level 8). The duration of a traineeship by
+recent graduates counts towards the 12 months maximum of the cycle during which they apply for the traineeship. [...]
+Note 66: Prior experience under the Erasmus+ Programme and/or as Erasmus Mundus scholarship holders counts
+towards the 12 months per study cycle.
+Note 67: In one-cycle study programmes, such as medicine, students can be mobile for up to 24 months.
+```
+
+Each result starts with a **citation line** (document, page, section, date) that the AI can copy into its answer, plus the link to the original document. This result also shows that keeping footnotes was worth it: Notes 66 and 67 contain important rules about the 12-month limit.
+
+### The subagent
+
+The subagent is in `.claude/agents/corpus-researcher.md`. It can **only** use the `search` tool, so it can't add documents or do anything else. Its instructions say:
+
+1. **Always search before answering**, never answer from memory, because Erasmus+ rules change every year.
+2. If the question has **several parts**, search once for each part. I added this rule because in my retrieval test, questions that needed two passages often found only one.
+3. **Every rule, number or amount needs a citation** (document + page or section).
+4. If the documents don't answer the question, **say so and don't guess**, and tell the student where to ask: SEPIE or their university for exact amounts, their international office for deadlines, places and selection.
+5. If the documents give a **range** and not an exact amount, give the range and explain who sets the exact amount.
+6. **Answer in the language of the question**, English or Spanish.
+7. **Be short**: direct answer first, then details.
+
+### Transcript from my editor (Claude Code)
+
+I asked my multi question in Spanish. Claude Code passed it to the `corpus-researcher` subagent, which searched the documents and returned this answer (shortened):
+
+> **Me:** Answer this question: *Estudio en España y me voy a Alemania. ¿Qué tramo de beca me corresponde y de cuánto es?*
+>
+> *Claude Code delegated the question to the `corpus-researcher` subagent.*
+>
+> **Subagent:**
+> **Respuesta breve:** Si estudias en España y te vas a Alemania, te corresponde el **tramo superior ("Higher range EU grant")**. La Comisión fija para este tramo una horquilla de **348 a 674 EUR al mes**. El importe exacto dentro de esa horquilla lo decide SEPIE, en algunos casos junto con tu universidad. Los documentos no dan esa cifra.
+>
+> 1. **Grupos de países según el coste de vida** (Programme Guide 2026, pp. 67-68): Alemania está en el Grupo 1 (coste de vida más alto) (p. 67) y España en el Grupo 2 (coste de vida medio) (p. 68).
+> 2. **Qué tramo se aplica** (p. 68): de España (Grupo 2) a Alemania (Grupo 1) es el caso "from Group 2 to Group 1 countries", así que se aplica el tramo superior, 348-674 EUR/mes: el tramo medio que aplique la Agencia Nacional "plus at least 50 EUR".
+> 3. **Quién fija la cantidad exacta:** las cantidades mensuales "will be defined by the National Agencies in agreement with National Authorities, and/or the HEIs" y se publican en sus webs (p. 67). Todos los estudiantes que van al mismo grupo de países reciben lo mismo, salvo los complementos (p. 72).
+> 4. **Complementos** (p. 68): +250 EUR/mes para estudiantes con menos oportunidades; +150 EUR/mes solo para prácticas; y si tu universidad está en una región ultraperiférica, como Canarias, la cuantía es de 786 EUR/mes (p. 69).
+>
+> **Lo que los documentos no dicen:** la cuantía exacta que SEPIE fija para el tramo Grupo 2 → Grupo 1, los criterios en España para ser "estudiante con menos oportunidades", y los plazos, plazas y pagos de tu universidad. Consúltalo con SEPIE o con la oficina internacional de tu universidad.
+>
+> Fuente: Erasmus+ Programme Guide 2026 (versión 1, 12-11-2025), pp. 67-69 y 72.
+
+**What I checked:** I compared every fact with the documents, and all of them are correct and on the cited pages, including the Canary Islands, which the Programme Guide lists as an outermost region. The answer **follows the rules I gave the subagent**:
+- It answered in Spanish.
+- It cited pages.
+- It gave the EU **range** instead of inventing an exact amount.
+- It clearly said what the documents don't cover, and where to ask instead.
+
+This matches the expected answer in my test set (m01).
 
 ## Adding a document
 
