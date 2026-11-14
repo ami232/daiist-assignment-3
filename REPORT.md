@@ -212,7 +212,72 @@ So I need to test whether a question in Spanish still finds the right English pa
 
 ## Retrieval
 
-*Hit rate at 1/3/5 per design, words added to the prompt, the design you chose.*
+### What I tested
+
+Before the assistant writes an answer, it **searches** the documents and picks the chunks that seem most related to the question. If the chunk with the answer isn't among them, the answer will be wrong, however good the AI model is. So before building the assistant, I checked how good the search is.
+
+For each of my 29 questions that have an answer, I checked whether **the chunk with the answer is among the results the search gives back**. I measured it in three ways:
+
+- **hit@1:** the right chunk is the **first** result.
+- **hit@3:** the right chunk is in the **first 3** results.
+- **hit@5:** the right chunk is in the **first 5** results.
+
+I compared the two ways of cutting the text from the Ingestion section: **fixed** (every 150 words) and **structure** (following the sections of the document).
+
+### First results
+
+| | Fixed | Structure |
+|---|---|---|
+| Right chunk is 1st | 16 of 29 | 21 of 29 |
+| Right chunk in first 3 | 22 of 29 | 27 of 29 |
+| Right chunk in first 5 | 26 of 29 | 28 of 29 |
+| Spanish questions: right chunk in first 3 | 3 of 5 | 5 of 5 |
+
+### A correction I made: "misses" that were not really misses
+
+When I looked at the questions that failed, I saw that some of them were **not real failures**. Sometimes the search found a **different page that also has the correct answer**.
+
+For example, for *"Do I have to pay tuition at the host university?"*, my test set said the answer is in the ECHE Guidelines, p. 8. But the Programme Guide, p. 43, **also** says that students don't pay tuition fees. The search found p. 43 first, and because I had only written down p. 8, it was counted as a miss even though the information was correct.
+
+I had two options:
+- **Option A:** add the other correct pages to the test set.
+- **Option B:** leave the test set as it was.
+
+I chose **Option A**, because the results become fairer: finding a correct page should always count as a success. What I want to measure is whether the search finds **correct information**, not whether it finds the exact page I happened to write down.
+
+I didn't add pages blindly. I **checked each one against the text**, and only added it if it really contained the full answer:
+
+| Question | Page added | Why |
+|---|---|---|
+| q05 Short stay abroad | Learning Agreement guidelines, "Learning agreement types and mobility duration" | It also says 5–30 days with an online part |
+| q16 Tuition fees | Programme Guide p. 43 and Student Charter | Both say no tuition fees |
+| q17 Who signs the learning agreement | ECHE Guidelines p. 15 | It says the three parties sign before the mobility |
+| q21 ECTS per year | ECHE Guidelines p. 8 and Learning Agreement guidelines | Both say 60 ECTS |
+
+I **rejected** four other pages, because they only had part of the answer or talked about something different. For example, Programme Guide p. 58 also mentions "3 ECTS", but for a different kind of programme (Blended Intensive Programmes), so it doesn't answer q06.
+
+### Final results
+
+| | Fixed | Structure |
+|---|---|---|
+| Right chunk is 1st | 18 of 29 (62%) | **25 of 29 (86%)** |
+| Right chunk in first 3 | 24 of 29 (83%) | **27 of 29 (93%)** |
+| Right chunk in first 5 | 27 of 29 (93%) | **28 of 29 (97%)** |
+| **Spanish** questions: right chunk is 1st | 3 of 5 | **5 of 5** |
+| Words added to the prompt (first 5 chunks) | 749 | 884 |
+
+**Structure wins at every level.** The biggest difference is with **Spanish questions**: with structure, all 5 find the right English chunk as the very first result. I think the reason is that every structure chunk starts with its document name and section title (for example, "Eligibility criteria for student mobility"), which gives the search a clear hint about what the chunk is about.
+
+The only cost is that structure chunks are a bit longer: the assistant reads about **884 words** per question instead of 749, roughly 18% more. For a much better search, I think that's worth it.
+
+### What still fails
+
+1. **"What counts as green travel?"** This is the only question where nothing correct appears in the first 5. The answer is in the **glossary** at the end of the Programme Guide, where one chunk mixes many short definitions, so the search doesn't see that it's about green travel.
+2. **Three multi questions** (m04, m05, m07) only find **one of the two pieces** of information they need. For example, for the 3-week programme question, the search finds the daily amounts (p. 69) but not the rule about 5–30 days (p. 54). The agent may fix this later by searching more than once.
+
+### My choice
+
+I use **structure** and give the assistant the **first 5 results**. With 5 results, the right chunk is there for 28 of 29 questions, compared with 27 with 3. It also gives the multi questions a better chance of getting both pieces of information they need.
 
 ## Tools and subagent
 

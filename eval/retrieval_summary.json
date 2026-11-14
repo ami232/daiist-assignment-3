@@ -1,0 +1,34 @@
+{
+  "fixed": {
+    "questions": 29,
+    "hit@1": 0.621,
+    "hit@3": 0.828,
+    "hit@5": 0.931,
+    "mrr": 0.731,
+    "multi_all@1": 0.429,
+    "multi_all@3": 0.429,
+    "multi_all@5": 0.571,
+    "spanish_hit@1": 0.6,
+    "spanish_hit@3": 0.8,
+    "spanish_hit@5": 0.8,
+    "words@1": 150,
+    "words@3": 450,
+    "words@5": 749
+  },
+  "structure": {
+    "questions": 29,
+    "hit@1": 0.862,
+    "hit@3": 0.931,
+    "hit@5": 0.966,
+    "mrr": 0.899,
+    "multi_all@1": 0.286,
+    "multi_all@3": 0.571,
+    "multi_all@5": 0.571,
+    "spanish_hit@1": 1.0,
+    "spanish_hit@3": 1.0,
+    "spanish_hit@5": 1.0,
+    "words@1": 187,
+    "words@3": 533,
+    "words@5": 884
+  }
+}
