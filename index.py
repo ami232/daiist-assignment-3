@@ -1,9 +1,12 @@
 """
 Assignment 3: build the index (`main.py index`).
 
-Corpus: 5 BOE norms on occupational risk prevention in construction. They are
-downloaded as XML into corpus/ (git-ignored), split into sections (articles),
-chunked with TWO designs, embedded with Gemini and stored in index/ (ChromaDB):
+Corpus: 5 BOE norms on occupational risk prevention in construction, in their
+CONSOLIDATED text (the version in force, from the BOE open-data API). They are
+downloaded as XML into corpus_consolidado/ (git-ignored; the download date and
+BOE update date of each norm go to index/corpus_manifest.json), split into
+sections (articles), chunked with TWO designs, embedded with Gemini and stored
+in index/ (ChromaDB):
 
   design "article": one chunk per article (long articles split at paragraph
                     boundaries, same location for every part);
@@ -18,7 +21,9 @@ Functions used by server.py: chunk_file(path, design), embed_and_store(chunks,
 design), embed_query(text), open_collection(design).
 """
 
+import datetime
 import hashlib
+import json
 import re
 import sys
 import time
@@ -26,7 +31,7 @@ import xml.etree.ElementTree as ET
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-CORPUS_DIR = ROOT / "corpus"
+CORPUS_DIR = ROOT / "corpus_consolidado"
 INDEX_DIR = ROOT / "index"
 CHROMA_DIR = INDEX_DIR / "chroma"
 
@@ -46,7 +51,9 @@ BOE_DOCS = {
     "BOE-A-1997-17824": "RD 1215/1997",
     "BOE-A-2006-18205": "Ley 32/2006",
 }
-BOE_URL = "https://www.boe.es/diario_boe/xml.php?id={id}"
+# Consolidated text (version in force). The API answers 400 without the Accept header.
+BOE_URL = "https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/{id}"
+MANIFEST = INDEX_DIR / "corpus_manifest.json"  # download date + BOE update date per norm
 
 
 def log(*a):
@@ -55,20 +62,38 @@ def log(*a):
 
 # --------------------------------------------------------------------- download
 def download_corpus() -> list[Path]:
-    """Download the BOE XML files into corpus/ (skips files already there)."""
+    """Download the consolidated BOE XML files into corpus_consolidado/ (skips files
+    already there) and record in index/corpus_manifest.json when each one was
+    downloaded and which BOE update it holds."""
     import httpx
 
     CORPUS_DIR.mkdir(exist_ok=True)
+    manifest = json.loads(MANIFEST.read_text(encoding="utf-8")) if MANIFEST.exists() else {}
     paths = []
     for boe_id in BOE_DOCS:
         dest = CORPUS_DIR / f"{boe_id}.xml"
         if not dest.exists():
             log(f"downloading {boe_id}")
             r = httpx.get(BOE_URL.format(id=boe_id), timeout=60, follow_redirects=True,
-                          headers={"User-Agent": "daiist-assignment-3 (student project)"})
+                          headers={"User-Agent": "daiist-assignment-3 (student project)",
+                                   "Accept": "application/xml"})
             r.raise_for_status()
             dest.write_bytes(r.content)
+            downloaded = datetime.date.today().isoformat()
+        else:  # downloaded earlier: keep the recorded date, else use the file's date
+            downloaded = manifest.get(boe_id, {}).get("downloaded") or \
+                datetime.date.fromtimestamp(dest.stat().st_mtime).isoformat()
+        meta = ET.parse(dest).getroot().find("data/metadatos")
+        manifest[boe_id] = {
+            "norm": BOE_DOCS[boe_id],
+            "url": BOE_URL.format(id=boe_id),
+            "downloaded": downloaded,
+            "boe_updated": (meta.findtext("fecha_actualizacion") or "").strip() if meta is not None else "",
+            "sha256": hashlib.sha256(dest.read_bytes()).hexdigest(),
+        }
         paths.append(dest)
+    INDEX_DIR.mkdir(exist_ok=True)
+    MANIFEST.write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     return paths
 
 
@@ -91,9 +116,67 @@ def _location_from_heading(heading: str) -> str:
     return _clean(m.group(1)) if m else _clean(heading[:60])
 
 
+NOTE_CLASSES = {"nota_pie", "nota_pie_2"}  # "Se modifica por...": editorial notes, not law
+_DEROGATED = re.compile(r"^\((Derogad[oa]|Suprimid[oa]|Sin contenido)", re.I)
+
+
 def parse_boe(path: Path) -> tuple[str, list[tuple[str, list[str]]]]:
-    """Return (source, [(location, [paragraph, ...]), ...]) for a BOE XML file."""
+    """Return (source, [(location, [paragraph, ...]), ...]) for a BOE XML file,
+    consolidated (API, root <response>) or original (diario_boe, root <documento>)."""
     root = ET.parse(path).getroot()
+    if root.tag == "response":
+        return parse_boe_consolidated(root, path)
+    return parse_boe_original(root, path)
+
+
+def parse_boe_consolidated(root, path: Path) -> tuple[str, list[tuple[str, list[str]]]]:
+    """Consolidated text: <data><texto><bloque tipo titulo><version>...<p>.
+
+    Only the LAST <version> of each block (the one in force) is read, so old
+    wording (e.g. the 1995 fines in pesetas) never enters the index. The location
+    is the block's `titulo` ("Artículo 32 bis", "Disposición adicional
+    decimocuarta", "Anexo IV"); annex blocks are kept whatever their `tipo`.
+    Footnotes are left out. A derogated block becomes a short section: its
+    heading, "(Derogado)" and the note naming the derogating norm.
+    """
+    data = root.find("data")
+    boe_id = (data.findtext("metadatos/identificador") or path.stem).strip()
+    source = BOE_DOCS.get(boe_id) or _clean(data.findtext("metadatos/numero_oficial") or path.stem)
+    body = data.find("texto")
+    if body is None:
+        return source, []
+    skip = {"firma_rey", "firma_ministro", "capitulo_num", "capitulo_tit", "subseccion",
+            "seccion", "titulo_num", "titulo_tit", "centro_redonda"}
+    sections: list[tuple[str, list[str]]] = []
+    for block in body.findall("bloque"):
+        kind, title = block.get("tipo", ""), _clean(block.get("titulo") or "")
+        is_annex = title.upper().startswith("ANEXO")
+        if kind not in ("preambulo", "precepto") and not is_annex:
+            continue  # chapter headings, signature
+        versions = block.findall("version")
+        if not versions:
+            continue
+        ps = list(versions[-1].iter("p"))
+        text = [_clean("".join(p.itertext())) for p in ps
+                if p.get("class") not in NOTE_CLASSES and p.get("class") not in skip]
+        text = [t for t in text if t]
+        if kind == "preambulo":
+            loc = "Preámbulo"
+        elif is_annex:
+            loc = "Anexo" + title[5:]  # "ANEXO IV" -> "Anexo IV", "ANEXO" -> "Anexo"
+        else:
+            loc = title or (_location_from_heading(text[0]) if text else "")
+        if not text or not loc:
+            continue
+        if any(_DEROGATED.match(t) for t in text[1:2]):
+            notes = [_clean("".join(p.itertext())) for p in ps if p.get("class") in NOTE_CLASSES]
+            text = text[:2] + [n for n in notes if n.lower().startswith("se deroga")]
+        sections.append((loc, text))
+    return source, sections
+
+
+def parse_boe_original(root, path: Path) -> tuple[str, list[tuple[str, list[str]]]]:
+    """Original text as published (diario_boe/xml.php): a flat list of <p>."""
     boe_id = (root.findtext("metadatos/identificador") or path.stem).strip()
     source = BOE_DOCS.get(boe_id)
     if source is None:
@@ -115,7 +198,7 @@ def parse_boe(path: Path) -> tuple[str, list[tuple[str, list[str]]]]:
             group = {"ADICIONALES": "adicional", "TRANSITORIAS": "transitoria",
                      "FINALES": "final", "DEROGATORIAS": "derogatoria"}[m.group(1)] if m else ""
             continue
-        if cls == "anexo_num":
+        if cls in ("anexo_num", "anexo"):  # Ley 32/2006 uses class "anexo"
             sections.append(("Anexo " + re.sub(r"(?i)^anexo\s*", "", text).upper(), []))
         elif cls == "articulo":
             loc = _location_from_heading(text)
@@ -288,14 +371,27 @@ def embed_and_store(chunks: list[dict], design: str | None = None) -> dict:
     return {"new": len(todo), "already_indexed": len(have)}
 
 
+def prune_collection(design: str, keep_ids: set[str]) -> int:
+    """Delete every chunk whose id is not in keep_ids (e.g. chunks of an older
+    version of the corpus). Returns how many were deleted."""
+    col = open_collection(design)
+    stale = [i for i in col.get(include=[])["ids"] if i not in keep_ids]
+    for start in range(0, len(stale), 500):
+        col.delete(ids=stale[start:start + 500])
+    return len(stale)
+
+
 # ------------------------------------------------------------------------- main
-def main() -> None:
+def main(designs: tuple[str, ...] = DESIGNS) -> None:
+    """Index the corpus. Afterwards each collection holds exactly the corpus's
+    chunks: vectors of unchanged chunks are reused (same id), stale ones deleted."""
     paths = download_corpus()
-    for design in DESIGNS:
+    for design in designs:
         all_chunks = [c for p in paths for c in chunk_file(p, design)]
         words = sum(len(c["text"].split()) for c in all_chunks)
         log(f"design {design}: {len(all_chunks)} chunks, ~{words} words")
         res = embed_and_store(all_chunks, design)
+        res["deleted_stale"] = prune_collection(design, {c["id"] for c in all_chunks})
         log(f"design {design}: {res}")
     print("Index ready in", INDEX_DIR)
 
