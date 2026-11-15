@@ -145,7 +145,7 @@ async def run_one(agent, question: str) -> dict:
         guardrail = "no final answer (call limit reached)"
     elif not_retrieved:
         guardrail = f"cited passages that search did not return: {', '.join(not_retrieved)}"
-    elif not refused and not cited:
+    elif not refused and not cited and not any(t["tool"] == "add_document" for t in trace.values()):
         guardrail = "answer without any citation"
     answer = draft
     if guardrail:
@@ -173,6 +173,9 @@ def main() -> None:
     if len(sys.argv) < 2:
         raise SystemExit('Usage: python agent.py "your question"')
     result = asyncio.run(ask_many([" ".join(sys.argv[1:])]))[0]
+    for step in result["trace"]:
+        if step["tool"] == "add_document":
+            print(f"[add_document] {step['result']}\n")
     print(result["answer"])
     if result["cited"] and not result["guardrail"]:
         print("\nSources: " + "; ".join(result["cited"]))

@@ -11,14 +11,14 @@
       "hit@3": 96.6,
       "hit@5": 96.6,
       "all_expected@5": 82.8,
-      "avg_words_added@5": 1376
+      "avg_words_added@5": 1399
     },
     "hybrid": {
       "hit@1": 37.9,
       "hit@3": 55.2,
-      "hit@5": 75.9,
-      "all_expected@5": 62.1,
-      "avg_words_added@5": 1491
+      "hit@5": 79.3,
+      "all_expected@5": 65.5,
+      "avg_words_added@5": 1508
     }
   },
   "end_to_end": {

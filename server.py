@@ -20,25 +20,28 @@ ROOT = Path(__file__).resolve().parent
 
 mcp = MCPServer("corpus", log_level="WARNING")
 index.load_chunks()   # load the committed index once at startup; nothing is re-embedded
+SOURCES = sorted({c["source"] for c in index.load_chunks().values()})
+
+SEARCH_DESCRIPTION = f"""Search EU digital-regulation law: the AI Act (Regulation 2024/1689), the GDPR
+(Regulation 2016/679) and the Digital Services Act (Regulation 2022/2065), plus any
+documents added later with add_document. Sources currently in the index: {", ".join(SOURCES)}.
+
+Use it for any question about what these laws require, allow or prohibit, e.g.
+consent, data subject rights, high-risk or prohibited AI, transparency, platform
+duties, fines and deadlines. Ask in plain words, without naming a law unless the user
+did; search again with different wording or a narrower question if the passages do
+not answer it.
+
+Returns the k (default 5, max 10) most relevant passages. Each starts with
+"Cite as: <law>, <Article N | Recital N | Annex N>" and its type: articles and
+annexes are binding law, recitals only explain how to read them. The texts are
+the versions published in 2016-2024; later amendments, guidance and enforcement
+decisions are not included unless added."""
 
 
-@mcp.tool()
+@mcp.tool(description=SEARCH_DESCRIPTION)
 def search(query: str, k: int = 5) -> str:
-    """Search EU digital-regulation law: the AI Act (Regulation 2024/1689), the GDPR
-    (Regulation 2016/679) and the Digital Services Act (Regulation 2022/2065), plus any
-    documents added later with add_document.
-
-    Use it for any question about what these laws require, allow or prohibit, e.g.
-    consent, data subject rights, high-risk or prohibited AI, transparency, platform
-    duties, fines and deadlines. Ask in plain words; search again with different
-    wording or a narrower question if the passages do not answer it.
-
-    Returns the k (default 5, max 10) most relevant passages. Each starts with
-    "Cite as: <law>, <Article N | Recital N | Annex N>" and its type: articles and
-    annexes are binding law, recitals only explain how to read them. The texts are
-    the versions published in 2016-2024; later amendments, guidance and enforcement
-    decisions are not included unless added.
-    """
+    """See SEARCH_DESCRIPTION: built at startup so it lists the sources actually indexed."""
     k = max(1, min(int(k), 10))
     try:
         return index.format_results(index.search(query, k=k))
