@@ -524,6 +524,8 @@ The search **never returned page 72**. The last page it saw was pp. 70–71, whi
 
 I ran my assistant on all **36 questions** of my test set and checked the answers in three ways: with **code**, with an **AI judge**, and **by hand** (20 answers).
 
+An interactive dashboard of these results is in [dashboard.html](dashboard.html) (download it and open it in a browser). It shows the key numbers, the charts, and every question with its full answer and the passages the assistant saw. I build it from my `eval/` files with `uv run python dashboard.py`.
+
 ### 1. Code checks
 
 Some things can be checked automatically, without an AI:
