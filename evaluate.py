@@ -30,6 +30,33 @@ QUESTIONS = EVAL / "questions.csv"
 HUMAN = EVAL / "human_labels.csv"
 ANSWERS = EVAL / "answers.json"
 JUDGE = EVAL / "judge.json"
+TAG = ""  # --tag v2 -> answers_v2.json, judge_v2.json, results_v2.csv, summary_v2.json, retrieval_v2.json
+
+
+def out_path(name: str, ext: str) -> Path:
+    return EVAL / f"{name}{'_' + TAG if TAG else ''}.{ext}"
+
+
+# Held-out and fresh questions have a free-text `expected` column, no source/location
+# columns. For retrieval, the expected passages are the articles that `expected` cites.
+# A question whose `expected` says "Expected refusal" / "Debe rechazar" is unanswerable.
+EXTRA_SETS = {"heldout": EVAL / "heldout_labels.csv", "fresh": EVAL / "fresh_labels.csv"}
+EXTRA_EXPECTED = {
+    "h01": [("Ley 31/1995", "Artículo 19"), ("Ley 32/2006", "Artículo 10"),
+            ("Ley 32/2006", "Artículo 7"), ("Ley 32/2006", "Artículo 4")],
+    "h02": [("Ley 31/1995", "Artículo 28")],
+    "h03": [("Ley 31/1995", "Artículo 38"), ("Ley 31/1995", "Artículo 35")],
+    "h04": [("RD 1627/1997", "Artículo 7"), ("RD 1627/1997", "Artículo 19")],
+    "h05": [("Ley 31/1995", "Artículo 32 bis"), ("Ley 31/1995", "Disposición adicional decimocuarta"),
+            ("RD 39/1997", "Artículo 22 bis")],
+    "h08": [("Ley 31/1995", "Artículo 49")],
+    "f01": [("Ley 31/1995", "Artículo 21")],
+    "f02": [("Ley 31/1995", "Artículo 19")],
+    "f03": [("Ley 31/1995", "Artículo 26")],
+    "f04": [("Ley 31/1995", "Artículo 35")],
+}
+AGENT_STOPPED = False  # the agent's model ran out of daily quota in this run
+CALLS: dict[str, dict[str, int]] = {}  # role -> model -> calls, saved in summary
 
 KS = (1, 3, 5)
 # Tried in order; a model out of daily quota is skipped for the rest of the run.
@@ -55,13 +82,27 @@ def norm(s: str) -> str:
 
 
 # ----------------------------------------------------------------------- data
-def load_questions() -> list[dict]:
-    with QUESTIONS.open(encoding="utf-8", newline="") as f:
-        rows = [r for r in csv.DictReader(f) if (r.get("id") or "").strip()]
-    for r in rows:
-        r["expected"] = [(norm(s), norm(l)) for s, l in zip(
-            [x for x in r["expected_source"].split(";") if x.strip()],
-            [x for x in r["expected_location"].split(";") if x.strip()])]
+def load_questions(sets: tuple[str, ...] = ("dev",)) -> list[dict]:
+    rows = []
+    if "dev" in sets:
+        with QUESTIONS.open(encoding="utf-8", newline="") as f:
+            rows = [r for r in csv.DictReader(f) if (r.get("id") or "").strip()]
+        for r in rows:
+            r["set"] = "dev"
+            r["expected"] = [(norm(s), norm(l)) for s, l in zip(
+                [x for x in r["expected_source"].split(";") if x.strip()],
+                [x for x in r["expected_location"].split(";") if x.strip()])]
+    for name, path in EXTRA_SETS.items():
+        if name not in sets:
+            continue
+        with path.open(encoding="utf-8", newline="") as f:
+            for r in csv.DictReader(f):
+                refusal = re.search(r"expected refusal|debe rechazar", r["expected"], re.I)
+                exp = [] if refusal else EXTRA_EXPECTED.get(r["id"], [])
+                rows.append({"id": r["id"], "set": name, "question": r["question"],
+                             "kind": "unanswerable" if refusal else ("multi" if len(exp) > 1 else "single"),
+                             "reference_answer": r["expected"],
+                             "expected": [(norm(s), norm(l)) for s, l in exp]})
     return rows
 
 
@@ -90,7 +131,8 @@ def retrieval_eval(questions: list[dict]) -> dict:
         for q in answerable:
             res = server.retrieve(q["question"], max(KS), design)
             found = [(norm(h["source"]), norm(h["location"])) for h in res]
-            row = {"id": q["id"], "kind": q["kind"]}
+            row = {"id": q["id"], "set": q.get("set", "dev"), "kind": q["kind"],
+                   "top5": [f"{h['source']}, {h['location']}" for h in res]}
             for k in KS:
                 ok = all(e in found[:k] for e in q["expected"])
                 hits[k].append(ok)
@@ -113,6 +155,7 @@ def run_agent(questions: list[dict], fresh: bool) -> dict:
     import agent
 
     answers = {} if fresh else load_json(ANSWERS)
+    stopped = False
     todo = [q for q in questions if q["id"] not in answers or answers[q["id"]].get("error")]
     print(f"agent: {len(questions) - len(todo)} cached, {len(todo)} to run", flush=True)
     for i, q in enumerate(todo, start=1):
@@ -121,11 +164,37 @@ def run_agent(questions: list[dict], fresh: bool) -> dict:
                   f"{len(todo) - i + 1} question(s) left for the next run.", flush=True)
             break
         r = asyncio.run(agent.ask_many([q["question"]], approve=lambda *_: False))[0]
+        # An answer whose coverage check could not run for lack of quota is not the
+        # evaluated pipeline: keep it as an error so the next run redoes it.
+        cov = [e.get("coverage") or {} for e in r["trace"] if e["tool"] == "search"]
+        if not r["error"] and any(c.get("quota_exhausted") for c in cov):
+            r["error"] = "coverage check out of daily quota"
         answers[q["id"]] = r
         save_json(ANSWERS, answers)  # save after every question
         print(f"  [{i}/{len(todo)}] {q['id']} {r.get('model')} {r['seconds']}s "
               f"{'ERROR ' + r['error'][:60] if r['error'] else ''}", flush=True)
+        if r["error"] and (agent.next_model(agent.AGENT_MODELS, agent._unusable) is None
+                           or "out of daily quota" in r["error"]):
+            stopped = True
+            print(f"  daily quota exhausted at {q['id']}; stopping. {len(todo) - i + 1} question(s) "
+                  f"left for the next run (this one included).", flush=True)
+            break
+    global AGENT_STOPPED
+    AGENT_STOPPED = stopped
+    if stopped or any(a.get("error") for a in answers.values()):
+        print("  answers with errors are redone on the next run.", flush=True)
     return answers
+
+
+def count_calls(answers: dict) -> dict:
+    """Model calls recorded in the answers file (all runs so far), per role and model.
+    Agent: one per model turn (a failed attempt counts 1). Coverage: one per attempt."""
+    agent_calls, cov_calls = collections.Counter(), collections.Counter()
+    for a in answers.values():
+        agent_calls.update(a.get("llm_calls") or {})
+        for e in a.get("trace", []):
+            cov_calls.update((e.get("coverage") or {}).get("calls") or [])
+    return {"agent": dict(agent_calls), "coverage": dict(cov_calls)}
 
 
 def retrieved_pairs(trace: list[dict]) -> set:
@@ -200,11 +269,13 @@ def judge_all(questions: list[dict], answers: dict, fresh: bool) -> dict:
             model = ChatGoogleGenerativeAI(model=name, api_key=key, temperature=0, timeout=90, max_retries=1)
             for attempt in range(5):
                 try:
+                    CALLS.setdefault("judge", collections.Counter())[name] += 1
                     text = _text(model.invoke(prompt).content)
                     m = re.search(r"\{.*\}", text, re.S)
                     verdict = json.loads(m.group(0))
                     verdict["correct"], verdict["supported"] = int(verdict["correct"]), int(verdict["supported"])
                     verdict["model"] = name
+                    verdict["calls"] = attempt + 1
                     break
                 except Exception as e:
                     if model_unusable(str(e)):
@@ -212,7 +283,7 @@ def judge_all(questions: list[dict], answers: dict, fresh: bool) -> dict:
                         print(f"  {name}: daily quota exhausted or unavailable, switching model", flush=True)
                         break
                     if attempt == 4:
-                        verdict = {"correct": None, "supported": None, "model": name,
+                        verdict = {"correct": None, "supported": None, "model": name, "calls": attempt + 1,
                                    "reason": f"judge failed: {e}"[:200]}
                     else:
                         time.sleep(10 * (attempt + 1))
@@ -225,9 +296,9 @@ def judge_all(questions: list[dict], answers: dict, fresh: bool) -> dict:
 
 
 # ------------------------------------------------------------------ agreement
-def agreement(verdicts: dict) -> dict:
+def agreement(verdicts: dict, path: Path = HUMAN) -> dict:
     try:
-        with HUMAN.open(encoding="utf-8", newline="") as f:
+        with path.open(encoding="utf-8", newline="") as f:
             human = [r for r in csv.DictReader(f) if (r.get("id") or "").strip()]
     except Exception:
         human = []
@@ -265,6 +336,21 @@ def write_grading_sheet(questions: list[dict], answers: dict) -> None:
     print(f"\nWrote {out}. Grade 20+ answers in eval/human_labels.csv, then run the full evaluation.")
 
 
+def set_summary(rows: list[dict]) -> dict:
+    unans = [r for r in rows if r["kind"] == "unanswerable"]
+    answerable = [r for r in rows if r["kind"] != "unanswerable"]
+    judged = [r for r in rows if r["correct_judge"] is not None]
+    return {
+        "n": len(rows), "n_unanswerable": len(unans), "n_judged": len(judged),
+        "correct": sum(r["correct_judge"] or 0 for r in judged),
+        "supported": sum(r["supported_judge"] or 0 for r in judged),
+        "correct_refusals": sum(r["refused"] for r in unans),
+        "false_refusals": sum(r["refused"] for r in answerable),
+        "citations_valid": sum(r["citations_valid"] for r in rows),
+        "answers_without_citation_not_refusal": sum((not r["has_citation"]) and (not r["refused"]) for r in rows),
+    }
+
+
 # ----------------------------------------------------------------------- main
 def main() -> None:
     ap = argparse.ArgumentParser()
@@ -273,9 +359,26 @@ def main() -> None:
     ap.add_argument("--answers-only", action="store_true",
                     help="run the agent only (no judge) and write eval/answers_for_grading.md, "
                          "so you can grade by hand before seeing any judge verdict")
+    ap.add_argument("--tag", default="", help="suffix for output files, e.g. v2 -> answers_v2.json")
+    ap.add_argument("--sets", default="dev", help="comma list of dev,heldout,fresh")
+    ap.add_argument("--model", help="ONLY model for the agent and the coverage check (no fallback)")
+    ap.add_argument("--judge-model", help="ONLY model for the judge (no fallback)")
     args = ap.parse_args()
 
-    questions = load_questions()
+    global TAG, ANSWERS, JUDGE, JUDGE_MODELS
+    TAG = args.tag
+    ANSWERS, JUDGE = out_path("answers", "json"), out_path("judge", "json")
+    if args.model:
+        import agent
+        agent.AGENT_MODELS[:] = [args.model]
+        agent.COVERAGE_MODELS[:] = [args.model]
+        print(f"agent and coverage ({agent.COVERAGE_VERSION}) model: {args.model}, no fallback")
+    if args.judge_model:
+        JUDGE_MODELS = [args.judge_model]
+        print(f"judge model: {args.judge_model}, no fallback")
+    sets = tuple(s.strip() for s in args.sets.split(",") if s.strip())
+
+    questions = load_questions(sets)
     kinds = {k: sum(q["kind"] == k for q in questions) for k in ("single", "multi", "unanswerable")}
     print(f"{len(questions)} questions: {kinds}")
     if len(questions) < 30 or kinds["unanswerable"] < 5 or kinds["multi"] < 5:
@@ -287,7 +390,7 @@ def main() -> None:
         print(f"  {d:8s} n={v['n']}  hit@1={v['hit@1']}  hit@3={v['hit@3']}  hit@5={v['hit@5']}")
     winner = pick_design(ret)
     print(f"  winner by hit@5: {winner}  (server.py DESIGN must be \"{winner}\")")
-    save_json(EVAL / "retrieval.json", ret)
+    save_json(out_path("retrieval", "json"), ret)
     if args.skip_agent:
         return
 
@@ -295,6 +398,12 @@ def main() -> None:
     answers = run_agent(questions, args.fresh)
     if args.answers_only:
         write_grading_sheet(questions, answers)
+        return
+    if AGENT_STOPPED:
+        calls = count_calls(answers)
+        done = [q["id"] for q in questions if q["id"] in answers and not answers[q["id"]].get("error")]
+        print(f"\nSTOPPED (daily quota). Done {len(done)}/{len(questions)}: last done "
+              f"{done[-1] if done else '-'}. Calls so far: {calls}. Run the same command after the reset.")
         return
     print("\n== Judge ==", flush=True)
     verdicts = judge_all(questions, answers, args.fresh)
@@ -307,7 +416,7 @@ def main() -> None:
         c = code_checks(q, r)
         v = verdicts.get(q["id"]) or {}
         checks[q["id"]] = c
-        rows.append({"id": q["id"], "kind": q["kind"], "agent_model": r.get("model") or "",
+        rows.append({"id": q["id"], "set": q.get("set", "dev"), "kind": q["kind"], "agent_model": r.get("model") or "",
                      "judge_model": v.get("model") or "", "correct_judge": v.get("correct"),
                      "supported_judge": v.get("supported"), "judge_reason": v.get("reason"),
                      "refused": c["refused"], "refusal_ok": c["refusal_ok"],
@@ -316,7 +425,7 @@ def main() -> None:
                      "searches": c["searches"], "tokens_in": r["tokens"]["input"],
                      "tokens_out": r["tokens"]["output"], "seconds": r["seconds"], "error": r.get("error") or "",
                      "answer": r["answer"].replace("\n", " ")})
-    with (EVAL / "results.csv").open("w", encoding="utf-8", newline="") as f:
+    with out_path("results", "csv").open("w", encoding="utf-8", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
         w.writeheader()
         w.writerows(rows)
@@ -340,16 +449,25 @@ def main() -> None:
         "all_citations_valid": rate("citations_valid"),
         "answers_without_citation_not_refusal": sum((not r["has_citation"]) and (not r["refused"]) for r in ok),
         "agreement_with_human": agreement(verdicts),
+        "by_set": {s: set_summary([r for r in ok if r["set"] == s]) for s in sets},
+        "calls_per_model": {**count_calls(answers),
+                            "judge": dict(collections.Counter(
+                                v["model"] for v in verdicts.values() if v.get("model")
+                                for _ in range(v.get("calls", 1))))},
         "cost_per_question": {
             "tokens_in_mean": round(statistics.mean(r["tokens_in"] for r in ok)) if ok else None,
             "tokens_out_mean": round(statistics.mean(r["tokens_out"] for r in ok)) if ok else None,
             "seconds_mean": round(statistics.mean(r["seconds"] for r in ok), 1) if ok else None,
             "seconds_max": max((r["seconds"] for r in ok), default=None)},
     }
-    save_json(EVAL / "summary.json", summary)
+    for s in sets:
+        if s in EXTRA_SETS:
+            summary["by_set"][s]["agreement_with_labels"] = agreement(verdicts, EXTRA_SETS[s])
+    save_json(out_path("summary", "json"), summary)
+    print(f"\njudge calls in this run: { {k: dict(v) for k, v in CALLS.items()} }")
     print("\n== Summary ==")
     print(json.dumps(summary, ensure_ascii=False, indent=1))
-    print("\nFiles: eval/results.csv, eval/summary.json, eval/retrieval.json, eval/answers.json, eval/judge.json")
+    print(f"\nFiles: {', '.join(str(out_path(n, e).relative_to(ROOT)) for n, e in (('results', 'csv'), ('summary', 'json'), ('retrieval', 'json'), ('answers', 'json'), ('judge', 'json')))}")
     print("Failures to classify by hand: rows in results.csv with correct_judge=0, supported_judge=0,")
     print("refusal_ok=False, citations_valid=False or error.")
 

@@ -395,6 +395,7 @@ async def ask_many(questions: list[str], approve=ask_user_approval) -> list[dict
                 start = time.time()
                 answer, error, tokens, trace = "", None, {"input": 0, "output": 0}, []
                 used, tried = None, []
+                llm_calls: dict[str, int] = {}  # model calls made by the agent, per model
                 while (name := next_model(AGENT_MODELS, _unusable)) is not None:
                     used = name
                     tried.append(name)
@@ -410,6 +411,7 @@ async def ask_many(questions: list[str], approve=ask_user_approval) -> list[dict
                             out = await agent.ainvoke({"messages": [("user", question)]},
                                                       config={"recursion_limit": 25})
                             msgs = out["messages"]
+                            llm_calls[name] = llm_calls.get(name, 0) + sum(1 for m in msgs if getattr(m, "type", "") == "ai")
                             answer = _text(msgs[-1].content).strip()
                             usage = [getattr(m, "usage_metadata", None) or {} for m in msgs]
                             tokens = {"input": sum(u.get("input_tokens", 0) for u in usage),
@@ -418,6 +420,7 @@ async def ask_many(questions: list[str], approve=ask_user_approval) -> list[dict
                             break
                         except Exception as e:  # keep going: one failure must not stop an evaluation
                             error = f"{type(e).__name__}: {e}"
+                            llm_calls[name] = llm_calls.get(name, 0) + 1  # at least the failed call
                             if model_unusable(error):
                                 _unusable.add(name)
                                 print(f"{name}: daily quota exhausted or unavailable, switching model",
@@ -451,7 +454,7 @@ async def ask_many(questions: list[str], approve=ask_user_approval) -> list[dict
                 }
                 results.append({"question": question, "answer": answer, "trace": trace,
                                 "tokens": tokens, "seconds": round(time.time() - start, 1),
-                                "model": used, "models_tried": tried, "error": error,
+                                "model": used, "models_tried": tried, "error": error, "llm_calls": llm_calls,
                                 "coverage": coverage})
     return results
 

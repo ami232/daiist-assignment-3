@@ -1,0 +1,1038 @@
+{
+ "article": {
+  "n": 34,
+  "hit@1": 0.676,
+  "hit@3": 0.853,
+  "hit@5": 0.912,
+  "rows": [
+   {
+    "id": "q01",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 1627/1997, Artículo 3",
+     "RD 1627/1997, Artículo 9",
+     "RD 1627/1997, Artículo 2",
+     "RD 1627/1997, Artículo 5",
+     "RD 1627/1997, Artículo 6"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q03",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 38",
+     "Ley 31/1995, Artículo 34",
+     "Ley 31/1995, Artículo 39",
+     "Ley 31/1995, Artículo 35",
+     "RD 39/1997, Artículo 14"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q04",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 1627/1997, Artículo 13",
+     "RD 1627/1997, Artículo 14",
+     "Ley 32/2006, Anexo",
+     "Ley 32/2006, Artículo 8",
+     "RD 1627/1997, Artículo 19"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q05",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 1627/1997, Artículo 19",
+     "RD 1627/1997, Anexo III",
+     "RD 1627/1997, Artículo 3",
+     "RD 1627/1997, Artículo 4",
+     "Ley 32/2006, Artículo 3"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q06",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 1627/1997, Artículo 4",
+     "RD 1627/1997, Artículo 5",
+     "RD 1627/1997, Artículo 5",
+     "RD 1627/1997, Artículo 6",
+     "RD 1627/1997, Artículo 17"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q07",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 39/1997, Artículo 14",
+     "RD 39/1997, Disposición transitoria primera",
+     "Ley 31/1995, Artículo 31",
+     "Ley 31/1995, Artículo 35",
+     "Ley 31/1995, Artículo 30"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q08",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 22",
+     "Ley 31/1995, Artículo 22",
+     "RD 39/1997, Artículo 37",
+     "RD 39/1997, Artículo 37",
+     "RD 39/1997, Artículo 39"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q09",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "Ley 32/2006, Artículo 8",
+     "Ley 32/2006, Anexo",
+     "Ley 32/2006, Artículo 5",
+     "RD 1627/1997, Artículo 11",
+     "Ley 32/2006, Disposición transitoria segunda"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q10",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 35",
+     "Ley 31/1995, Artículo 34",
+     "Ley 31/1995, Disposición adicional décima",
+     "Ley 31/1995, Artículo 36",
+     "Ley 31/1995, Artículo 38"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q11",
+    "set": "dev",
+    "kind": "multi",
+    "top5": [
+     "RD 1627/1997, Artículo 12",
+     "RD 1627/1997, Artículo 2",
+     "RD 1627/1997, Artículo 10",
+     "Ley 31/1995, Artículo 15",
+     "RD 1627/1997, Artículo 8"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 1
+   },
+   {
+    "id": "q12",
+    "set": "dev",
+    "kind": "multi",
+    "top5": [
+     "Ley 32/2006, Artículo 10",
+     "Ley 31/1995, Artículo 19",
+     "RD 1627/1997, Artículo 15",
+     "Ley 32/2006, Artículo 9",
+     "Ley 31/1995, Artículo 28"
+    ],
+    "hit@1": 0,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q15",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 1215/1997, Artículo 4",
+     "RD 1215/1997, Artículo 3",
+     "RD 1215/1997, Anexo II",
+     "RD 1215/1997, Anexo II",
+     "RD 1215/1997, Artículo 3"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q16",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 20",
+     "RD 39/1997, Artículo 8",
+     "Ley 31/1995, Artículo 21",
+     "Ley 31/1995, Artículo 21",
+     "Ley 31/1995, Artículo 15"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q17",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 17",
+     "Ley 31/1995, Artículo 4",
+     "Ley 31/1995, Artículo 29",
+     "RD 1215/1997, Anexo I",
+     "RD 1215/1997, Anexo II"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q18",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 1627/1997, Artículo 7",
+     "RD 1627/1997, Artículo 7",
+     "RD 1627/1997, Artículo 9",
+     "RD 1627/1997, Artículo 19",
+     "RD 1627/1997, Artículo 17"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q19",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 1627/1997, Artículo 14",
+     "Ley 31/1995, Artículo 44",
+     "Ley 31/1995, Artículo 53",
+     "Ley 31/1995, Artículo 9",
+     "Ley 31/1995, Artículo 21"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q20",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "Ley 32/2006, Artículo 5",
+     "Ley 32/2006, Artículo 3",
+     "Ley 32/2006, Artículo 3",
+     "Ley 32/2006, Artículo 2",
+     "Ley 32/2006, Artículo 5"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q21",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "Ley 32/2006, Artículo 6",
+     "RD 39/1997, Artículo 28",
+     "RD 39/1997, Artículo 24",
+     "Ley 32/2006, Artículo 4",
+     "RD 39/1997, Artículo 23"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q22",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 39/1997, Artículo 6",
+     "RD 39/1997, Artículo 4",
+     "RD 39/1997, Artículo 4",
+     "RD 39/1997, Artículo 3",
+     "RD 39/1997, Artículo 8"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q23",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 39/1997, Artículo 7",
+     "RD 39/1997, Artículo 4",
+     "RD 39/1997, Artículo 3",
+     "Ley 31/1995, Artículo 23",
+     "RD 39/1997, Artículo 6"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q24",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 1627/1997, Artículo 16",
+     "RD 1627/1997, Artículo 7",
+     "RD 1627/1997, Artículo 19",
+     "RD 1627/1997, Artículo 7",
+     "Ley 32/2006, Artículo 9"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q25",
+    "set": "dev",
+    "kind": "multi",
+    "top5": [
+     "Ley 31/1995, Artículo 24",
+     "RD 1627/1997, Artículo 11",
+     "RD 1627/1997, Artículo 3",
+     "Ley 31/1995, Preámbulo",
+     "RD 1627/1997, Artículo 9"
+    ],
+    "hit@1": 0,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q26",
+    "set": "dev",
+    "kind": "multi",
+    "top5": [
+     "RD 1627/1997, Artículo 15",
+     "Ley 31/1995, Artículo 18",
+     "RD 1627/1997, Artículo 19",
+     "RD 1627/1997, Artículo 16",
+     "Ley 31/1995, Artículo 28"
+    ],
+    "hit@1": 0,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q27",
+    "set": "dev",
+    "kind": "multi",
+    "top5": [
+     "Ley 32/2006, Artículo 4",
+     "Ley 32/2006, Artículo 6",
+     "Ley 32/2006, Artículo 8",
+     "Ley 32/2006, Artículo 5",
+     "Ley 32/2006, Anexo"
+    ],
+    "hit@1": 0,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "h01",
+    "set": "heldout",
+    "kind": "multi",
+    "top5": [
+     "Ley 31/1995, Artículo 24",
+     "Ley 32/2006, Artículo 7",
+     "RD 1627/1997, Artículo 11",
+     "Ley 32/2006, Artículo 2",
+     "Ley 32/2006, Artículo 3"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 0
+   },
+   {
+    "id": "h02",
+    "set": "heldout",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 19",
+     "Ley 31/1995, Artículo 28",
+     "Ley 31/1995, Artículo 17",
+     "Ley 31/1995, Artículo 28",
+     "Ley 31/1995, Artículo 29"
+    ],
+    "hit@1": 0,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "h03",
+    "set": "heldout",
+    "kind": "multi",
+    "top5": [
+     "Ley 31/1995, Artículo 38",
+     "RD 1627/1997, Artículo 16",
+     "RD 1627/1997, Artículo 4",
+     "Ley 31/1995, Artículo 39",
+     "Ley 32/2006, Artículo 4"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 0
+   },
+   {
+    "id": "h04",
+    "set": "heldout",
+    "kind": "multi",
+    "top5": [
+     "RD 1627/1997, Artículo 19",
+     "RD 1627/1997, Artículo 7",
+     "RD 39/1997, Artículo 25",
+     "Ley 31/1995, Artículo 40",
+     "Ley 31/1995, Artículo 53"
+    ],
+    "hit@1": 0,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "h05",
+    "set": "heldout",
+    "kind": "multi",
+    "top5": [
+     "Ley 31/1995, Disposición adicional decimocuarta",
+     "Ley 31/1995, Artículo 32 bis",
+     "RD 39/1997, Disposición adicional décima",
+     "RD 39/1997, Artículo 22 bis",
+     "RD 1627/1997, Disposición adicional única"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 1
+   },
+   {
+    "id": "h08",
+    "set": "heldout",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 42",
+     "Ley 31/1995, Artículo 53",
+     "Ley 31/1995, Disposición final primera",
+     "RD 39/1997, Disposición adicional duodécima",
+     "Ley 31/1995, Artículo 48"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 0
+   },
+   {
+    "id": "f01",
+    "set": "fresh",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 21",
+     "RD 1627/1997, Artículo 14",
+     "Ley 31/1995, Artículo 44",
+     "Ley 31/1995, Artículo 29",
+     "Ley 31/1995, Artículo 21"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "f02",
+    "set": "fresh",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 19",
+     "Ley 31/1995, Artículo 14",
+     "Ley 32/2006, Artículo 10",
+     "Ley 31/1995, Artículo 29",
+     "Ley 31/1995, Artículo 37"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "f03",
+    "set": "fresh",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 26",
+     "Ley 31/1995, Artículo 26",
+     "RD 39/1997, Artículo 4",
+     "RD 39/1997, Anexo VII",
+     "RD 39/1997, Anexo VIII"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "f04",
+    "set": "fresh",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 35",
+     "Ley 31/1995, Disposición adicional décima",
+     "Ley 31/1995, Artículo 36",
+     "Ley 31/1995, Disposición adicional cuarta",
+     "Ley 31/1995, Artículo 34"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   }
+  ]
+ },
+ "fixed": {
+  "n": 34,
+  "hit@1": 0.529,
+  "hit@3": 0.647,
+  "hit@5": 0.824,
+  "rows": [
+   {
+    "id": "q01",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 1627/1997, Artículo 3",
+     "RD 1627/1997, Artículo 8",
+     "RD 1627/1997, Artículo 2",
+     "RD 1627/1997, Artículo 2",
+     "RD 1627/1997, Artículo 4"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q03",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 37",
+     "Ley 31/1995, Artículo 34",
+     "Ley 31/1995, Artículo 34",
+     "Ley 31/1995, Artículo 38",
+     "Ley 31/1995, Artículo 38"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 1
+   },
+   {
+    "id": "q04",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 1627/1997, Artículo 13",
+     "RD 1627/1997, Artículo 13",
+     "RD 1627/1997, Artículo 12",
+     "Ley 32/2006, Artículo 8",
+     "RD 1627/1997, Artículo 14"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q05",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 1627/1997, Artículo 17",
+     "RD 1627/1997, Artículo 3",
+     "RD 1627/1997, Preámbulo",
+     "RD 1627/1997, Artículo 4",
+     "Ley 32/2006, Artículo 3"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 0
+   },
+   {
+    "id": "q06",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 1627/1997, Artículo 4",
+     "RD 1627/1997, Artículo 5",
+     "RD 1627/1997, Artículo 5",
+     "RD 1627/1997, Artículo 4",
+     "RD 1627/1997, Artículo 3"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q07",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 39/1997, Artículo 13",
+     "Ley 31/1995, Artículo 30",
+     "RD 39/1997, Artículo 12",
+     "Ley 31/1995, Artículo 35",
+     "Ley 31/1995, Artículo 30"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 0
+   },
+   {
+    "id": "q08",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 21",
+     "Ley 31/1995, Artículo 22",
+     "RD 39/1997, Artículo 37",
+     "Ley 31/1995, Artículo 22",
+     "RD 39/1997, Artículo 37"
+    ],
+    "hit@1": 0,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q09",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "Ley 32/2006, Artículo 8",
+     "Ley 32/2006, Artículo 8",
+     "Ley 32/2006, Anexo",
+     "Ley 32/2006, Artículo 8",
+     "Ley 32/2006, Artículo 3"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q10",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 35",
+     "Ley 31/1995, Artículo 34",
+     "Ley 31/1995, Artículo 35",
+     "Ley 31/1995, Artículo 34",
+     "Ley 31/1995, Artículo 36"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q11",
+    "set": "dev",
+    "kind": "multi",
+    "top5": [
+     "RD 1627/1997, Artículo 11",
+     "RD 1627/1997, Artículo 11",
+     "RD 1627/1997, Artículo 2",
+     "RD 1627/1997, Artículo 12",
+     "RD 1627/1997, Artículo 12"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 0
+   },
+   {
+    "id": "q12",
+    "set": "dev",
+    "kind": "multi",
+    "top5": [
+     "Ley 32/2006, Artículo 9",
+     "Ley 32/2006, Disposición adicional tercera",
+     "Ley 32/2006, Artículo 10",
+     "Ley 31/1995, Artículo 19",
+     "Ley 31/1995, Artículo 18"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 1
+   },
+   {
+    "id": "q15",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 1215/1997, Artículo 3",
+     "RD 1215/1997, Artículo 4",
+     "RD 1215/1997, Anexo II",
+     "RD 1215/1997, Anexo II",
+     "RD 1215/1997, Artículo 4"
+    ],
+    "hit@1": 0,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q16",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 20",
+     "Ley 31/1995, Artículo 21",
+     "Ley 31/1995, Artículo 19",
+     "Ley 31/1995, Artículo 21",
+     "Ley 31/1995, Artículo 21"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q17",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 17",
+     "RD 1215/1997, Anexo II",
+     "Ley 31/1995, Artículo 41",
+     "Ley 31/1995, Artículo 4",
+     "RD 1215/1997, Anexo II"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q18",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 1627/1997, Artículo 7",
+     "RD 1627/1997, Artículo 7",
+     "RD 1627/1997, Artículo 7",
+     "RD 1627/1997, Artículo 7",
+     "RD 1627/1997, Artículo 16"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q19",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 1627/1997, Artículo 14",
+     "Ley 31/1995, Artículo 44",
+     "RD 1627/1997, Artículo 13",
+     "RD 1627/1997, Artículo 14",
+     "Ley 31/1995, Artículo 44"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q20",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "Ley 32/2006, Artículo 5",
+     "Ley 32/2006, Artículo 3",
+     "Ley 32/2006, Artículo 3",
+     "Ley 32/2006, Artículo 5",
+     "Ley 32/2006, Artículo 3"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q21",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "Ley 32/2006, Artículo 6",
+     "Ley 32/2006, Artículo 4",
+     "RD 39/1997, Artículo 24",
+     "RD 39/1997, Artículo 27",
+     "Ley 32/2006, Artículo 5"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q22",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 39/1997, Artículo 6",
+     "Ley 31/1995, Artículo 16",
+     "RD 39/1997, Artículo 4",
+     "RD 39/1997, Artículo 4",
+     "RD 39/1997, Artículo 6"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q23",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 39/1997, Artículo 6",
+     "RD 39/1997, Artículo 7",
+     "Ley 31/1995, Artículo 16",
+     "RD 39/1997, Artículo 2",
+     "RD 39/1997, Artículo 2"
+    ],
+    "hit@1": 0,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q24",
+    "set": "dev",
+    "kind": "single",
+    "top5": [
+     "RD 1627/1997, Artículo 16",
+     "RD 1627/1997, Artículo 7",
+     "RD 1627/1997, Artículo 15",
+     "RD 1627/1997, Artículo 7",
+     "RD 1627/1997, Artículo 19"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q25",
+    "set": "dev",
+    "kind": "multi",
+    "top5": [
+     "Ley 31/1995, Artículo 24",
+     "Ley 31/1995, Artículo 24",
+     "RD 1627/1997, Artículo 11",
+     "RD 1627/1997, Artículo 8",
+     "Ley 31/1995, Artículo 23"
+    ],
+    "hit@1": 0,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "q26",
+    "set": "dev",
+    "kind": "multi",
+    "top5": [
+     "RD 1627/1997, Artículo 14",
+     "Ley 31/1995, Artículo 18",
+     "Ley 31/1995, Artículo 18",
+     "Ley 32/2006, Artículo 9",
+     "RD 1627/1997, Artículo 15"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 1
+   },
+   {
+    "id": "q27",
+    "set": "dev",
+    "kind": "multi",
+    "top5": [
+     "Ley 32/2006, Artículo 3",
+     "Ley 32/2006, Artículo 4",
+     "Ley 32/2006, Artículo 4",
+     "Ley 32/2006, Artículo 8",
+     "Ley 32/2006, Artículo 6"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 1
+   },
+   {
+    "id": "h01",
+    "set": "heldout",
+    "kind": "multi",
+    "top5": [
+     "Ley 32/2006, Artículo 8",
+     "Ley 32/2006, Artículo 7",
+     "Ley 31/1995, Artículo 24",
+     "Ley 31/1995, Artículo 24",
+     "Ley 32/2006, Artículo 3"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 0
+   },
+   {
+    "id": "h02",
+    "set": "heldout",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 28",
+     "Ley 31/1995, Artículo 28",
+     "Ley 31/1995, Artículo 17",
+     "Ley 31/1995, Artículo 28",
+     "Ley 31/1995, Artículo 28"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "h03",
+    "set": "heldout",
+    "kind": "multi",
+    "top5": [
+     "Ley 31/1995, Artículo 37",
+     "Ley 31/1995, Artículo 34",
+     "Ley 31/1995, Artículo 38",
+     "Ley 31/1995, Artículo 34",
+     "Ley 31/1995, Artículo 35"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 1
+   },
+   {
+    "id": "h04",
+    "set": "heldout",
+    "kind": "multi",
+    "top5": [
+     "RD 1627/1997, Artículo 7",
+     "RD 1627/1997, Artículo 7",
+     "RD 39/1997, Artículo 25",
+     "RD 1627/1997, Artículo 7",
+     "RD 1627/1997, Artículo 17"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 0
+   },
+   {
+    "id": "h05",
+    "set": "heldout",
+    "kind": "multi",
+    "top5": [
+     "Ley 31/1995, Artículo 32 bis",
+     "RD 1627/1997, Artículo 19",
+     "Ley 31/1995, Artículo 32",
+     "Ley 31/1995, Disposición adicional decimocuarta",
+     "RD 39/1997, Artículo 22 bis"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 1
+   },
+   {
+    "id": "h08",
+    "set": "heldout",
+    "kind": "single",
+    "top5": [
+     "Ley 32/2006, Disposición adicional primera",
+     "Ley 31/1995, Artículo 44",
+     "Ley 32/2006, Disposición adicional primera",
+     "Ley 32/2006, Disposición adicional primera",
+     "Ley 31/1995, Artículo 51"
+    ],
+    "hit@1": 0,
+    "hit@3": 0,
+    "hit@5": 0
+   },
+   {
+    "id": "f01",
+    "set": "fresh",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 21",
+     "Ley 31/1995, Artículo 21",
+     "Ley 31/1995, Artículo 21",
+     "RD 1627/1997, Artículo 14",
+     "Ley 31/1995, Artículo 44"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "f02",
+    "set": "fresh",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 19",
+     "Ley 31/1995, Artículo 37",
+     "Ley 31/1995, Artículo 30",
+     "Ley 31/1995, Artículo 18",
+     "Ley 31/1995, Artículo 18"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "f03",
+    "set": "fresh",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 26",
+     "RD 39/1997, Artículo 4",
+     "Ley 31/1995, Artículo 26",
+     "Ley 31/1995, Artículo 26",
+     "Ley 31/1995, Artículo 26"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   },
+   {
+    "id": "f04",
+    "set": "fresh",
+    "kind": "single",
+    "top5": [
+     "Ley 31/1995, Artículo 35",
+     "Ley 31/1995, Artículo 34",
+     "Ley 31/1995, Artículo 35",
+     "Ley 31/1995, Artículo 36",
+     "Ley 31/1995, Artículo 37"
+    ],
+    "hit@1": 1,
+    "hit@3": 1,
+    "hit@5": 1
+   }
+  ]
+ }
+}
