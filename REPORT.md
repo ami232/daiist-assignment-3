@@ -566,7 +566,37 @@ I graded 20 answers myself (all 6 unanswerable, all 7 multi, and 7 single) **bef
 
 ## Failures
 
-*Failed questions by cause, with counts, and what to fix first.*
+I grouped the problems I found by their cause. My counts come from my own grading of 20 answers, my citation check, and my retrieval test.
+
+### Failures in the answers
+
+| Cause | How many | Questions | Example |
+|---|---|---|---|
+| **1. My assistant adds advice or background facts that are not in the passages** | **8** | u01, u03, u04, u06, u07, m01, m02, m04 | *"SEPIE is Spain's National Agency"*, *"contact the Agencia Tributaria"*, *"each university sets its own criteria"* |
+| **2. It concludes more than the passage says** | **2** | q03, q16 | q16 says students *"must keep paying tuition at their home university"*, which is not in the passages |
+| **3. Its first sentence is misleading** | **1** | m03 | it starts with *"Yes, you can do a 9-month traineeship"*, then says only 7 months are left |
+| **4. It doesn't finish the calculation** | **1** | m04 | it gives the daily rates, but not the total for 21 days (1,498 €) |
+| **5. It cites a page it never saw** | **1** | q12 | travel support "(pp. 71-72)": my citation check caught it |
+
+**The surprise in cause 1: my own rules caused most of it.** Rule 5 of my `AGENTS.md` tells the assistant: *"if the documents don't answer, tell the student where to ask: SEPIE or their university's international office"*. But my rule 3 says *"only say what the search results say"*. The documents don't say that SEPIE is Spain's National Agency, or that the international office handles selection. So **my two rules contradict each other**, and the assistant followed rule 5. The advice is true and helpful for a student, but by my own rubric it is "unsupported".
+
+### Failures in the search
+
+| Cause | How many | Questions |
+|---|---|---|
+| **6. The right passage is not in the first 5** (glossary: many definitions in one chunk) | **1** | q13 green travel |
+| **7. Only one of the two passages is found** for a two-part question | **3** | m04, m05, m07 |
+| **8. My assistant almost never searches twice** (1.06 searches per question on average), even though my rule 2 tells it to | all questions | — |
+| **9. English questions don't reach Spanish documents** (see "Adding a document") | — | u01 with SEPIE |
+
+Causes 7 and 8 are linked: if my assistant searched once per part of the question, it would probably find the second passage.
+
+### What I would fix first
+
+1. **Solve the conflict between my rules (cause 1, 8 answers).** For example, I would add a short official document about *where to ask* (SEPIE's role, the international office) to the corpus, so the advice becomes "supported"; or allow one fixed sentence of referral advice that doesn't count as a claim. This fixes the biggest group of failures with a small change.
+2. **Make the first sentence match the conclusion, and finish calculations (causes 3 and 4).** I would add a rule: *"Start with the final answer to the question; if the question asks how much, give the total."* These are the most dangerous failures, because a student may only read the first line or skip the maths.
+3. **Force a second search for two-part questions (causes 7 and 8).** My soft rule is ignored; my SEPIE test showed that a firm rule with an example works.
+4. **Split the glossary into one chunk per definition (cause 6).**
 
 ## Decision
 
