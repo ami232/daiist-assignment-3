@@ -1,1 +1,21 @@
 id,correct,supported,notes
+u01,1,0,"mentions SEPIE specifically, but the retrieved passages only say National Agencies/HEIs"
+u02,1,1,
+u03,1,0,"claims GPA/selection criteria are set by the home university, which is not stated in the retrieved passages"
+u04,1,0,"the advice to contact Agencia Tributaria or the university is not supported by the retrieved passages"
+u06,1,0,"claims the details are managed internally by each HEI and recommends contacting the university, but those claims are not fully stated in the retrieved passages"
+u07,1,0,"the retrieved passages do not support the claim about which bank account is used or the recommendation about a foreign account"
+m01,1,0,"identifies SEPIE as Spain's National Agency, but that is not stated in the retrieved passages"
+m02,1,0,"identifies SEPIE as Spain's National Agency, which is not stated in the retrieved passages"
+m03,0,0,"says a 9-month traineeship is possible, but after 5 prior months only 7 months remain under the 12-month cycle limit"
+m04,0,0,"does not give the required 1,498 EUR total and claims the exact amount is set by the university/National Agency without support in the retrieved passages"
+m05,1,1,
+m06,1,1,
+m07,1,1,
+q01,1,1,
+q03,1,0,"says prior Erasmus experience counts toward the 24-month maximum, but the retrieved passages only state the prior-experience rule as a 12-month-per-cycle rule"
+q08,1,1,
+q12,1,1,
+q13,1,1,
+q16,1,0,"the claim that students must keep paying tuition at their home university is not in the retrieved passages"
+q18,1,1,,
