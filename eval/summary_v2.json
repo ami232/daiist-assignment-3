@@ -32,20 +32,16 @@
  "agreement_with_human": {
   "n_human_labels": 30,
   "correct": {
-   "compared": 29,
-   "agree": 28,
-   "rate": 0.966,
-   "disagreements": [
-    "q30"
-   ]
+   "compared": 30,
+   "agree": 30,
+   "rate": 1.0,
+   "disagreements": []
   },
   "supported": {
-   "compared": 29,
-   "agree": 28,
-   "rate": 0.966,
-   "disagreements": [
-    "q27"
-   ]
+   "compared": 30,
+   "agree": 30,
+   "rate": 1.0,
+   "disagreements": []
   }
  },
  "by_set": {
@@ -73,16 +69,16 @@
    "agreement_with_labels": {
     "n_human_labels": 9,
     "correct": {
-     "compared": 7,
-     "agree": 6,
-     "rate": 0.857,
+     "compared": 9,
+     "agree": 8,
+     "rate": 0.889,
      "disagreements": [
-      "h01"
+      "h04"
      ]
     },
     "supported": {
-     "compared": 7,
-     "agree": 7,
+     "compared": 9,
+     "agree": 9,
      "rate": 1.0,
      "disagreements": []
     }
@@ -101,15 +97,15 @@
    "agreement_with_labels": {
     "n_human_labels": 6,
     "correct": {
-     "compared": 0,
-     "agree": 0,
-     "rate": null,
+     "compared": 6,
+     "agree": 6,
+     "rate": 1.0,
      "disagreements": []
     },
     "supported": {
-     "compared": 0,
-     "agree": 0,
-     "rate": null,
+     "compared": 6,
+     "agree": 6,
+     "rate": 1.0,
      "disagreements": []
     }
    }
@@ -131,5 +127,21 @@
   "tokens_out_mean": 239,
   "seconds_mean": 12.1,
   "seconds_max": 77.5
+ },
+ "agreement_total": {
+  "correct": {
+   "compared": 45,
+   "agree": 44,
+   "rate": 0.978,
+   "disagreements": [
+    "h04"
+   ]
+  },
+  "supported": {
+   "compared": 45,
+   "agree": 45,
+   "rate": 1.0,
+   "disagreements": []
+  }
  }
 }

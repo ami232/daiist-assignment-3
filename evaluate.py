@@ -463,6 +463,15 @@ def main() -> None:
     for s in sets:
         if s in EXTRA_SETS:
             summary["by_set"][s]["agreement_with_labels"] = agreement(verdicts, EXTRA_SETS[s])
+    # Total over every labelled set: dev (human_labels.csv) plus heldout / fresh labels.
+    parts = [summary["agreement_with_human"]] + [summary["by_set"][s]["agreement_with_labels"]
+                                                  for s in sets if s in EXTRA_SETS]
+    summary["agreement_total"] = {
+        col: {"compared": (n := sum(p[col]["compared"] for p in parts)),
+              "agree": (a := sum(p[col]["agree"] for p in parts)),
+              "rate": round(a / n, 3) if n else None,
+              "disagreements": [d for p in parts for d in p[col]["disagreements"]]}
+        for col in ("correct", "supported")}
     save_json(out_path("summary", "json"), summary)
     print(f"\njudge calls in this run: { {k: dict(v) for k, v in CALLS.items()} }")
     print("\n== Summary ==")
