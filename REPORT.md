@@ -176,21 +176,32 @@ The brief asks for questions written from the documents. I did it together with 
 2. **These three topics were the starting point for the questions.** Based on them, Claude read the relevant parts of the documents and gave me a **pool of 35 candidate questions**, each with the page or section where the answer is and a short correct answer.
 3. **I reviewed every question** against the documents and approved them before they were saved in `eval/questions.csv`.
 
-I also decided the size (35 questions, a bit more than the minimum of 30, in case I need to drop a weak one later) and the mix of kinds.
+I also decided the size (35 questions, a bit more than the minimum of 30, in case I need to drop a weak one later) and the mix of kinds. After the evaluation I changed one question and added another, so my final test set has **36 questions** (see "A mistake in my test set" below).
 
 ### Kinds of questions
 
 | Kind | How many | What it tests |
 |---|---|---|
-| **Single** | 22 | The answer is in one place in the documents. |
+| **Single** | 23 | The answer is in one place in the documents. |
 | **Multi** | 7 | The answer needs two passages together. For example, one page says which group Germany is in, and another says how much you get when moving between groups. |
 | **Unanswerable** | 6 | The question is about Erasmus, but the answer is **not** in the documents. The assistant must say it doesn't know and send the student to the right place, instead of guessing. |
 
 The unanswerable questions are on purpose very close to the topic, because those are the dangerous ones. For example, the Programme Guide mentions a deadline of **19 February**, but that deadline is for universities asking for money, not for students. A bad assistant could give that date to a student who asks "When is my university's deadline?".
 
+### A mistake in my test set (found by the evaluation)
+
+One of my "unanswerable" questions was **u05**: *"When will the first Erasmus grant payment reach my bank account?"*. I thought the documents didn't say anything about payments. But when I ran the evaluation, the assistant answered it, and when I checked, it was **right**: the Student Charter says *"You are entitled to receive a pre-financing payment within 30 calendar days following the signature of the agreement by both parties [...] and no later than the start date of the mobility period."*
+
+So the mistake was in my test set, not in the assistant. I fixed it in two steps:
+
+1. I changed u05 into a normal "single" question, **q23**, with the Student Charter as its source.
+2. To keep 6 unanswerable questions, I added a new one, **u07**: *"Can my Erasmus grant be paid into a bank account outside Spain, for example a German one?"*. Before adding it, I checked that no document mentions bank accounts at all, so I don't repeat the same mistake.
+
+This taught me that an "unanswerable" question has to be checked against **all** the documents, not just the one I expect.
+
 ### Why some questions are in Spanish
 
-**5 of the 35 questions are in Spanish** (q02, q08, q16, q18 and m01). The assistant should be able to answer in **both English and Spanish**, because:
+**5 of the 36 questions are in Spanish** (q02, q08, q16, q18 and m01). The assistant should be able to answer in **both English and Spanish**, because:
 
 - The users I have in mind are Spanish university students applying for a "beca Erasmus", and many of them will naturally ask in Spanish.
 - The documents are only in English.
@@ -216,7 +227,7 @@ So I need to test whether a question in Spanish still finds the right English pa
 
 Before the assistant writes an answer, it **searches** the documents and picks the chunks that seem most related to the question. If the chunk with the answer isn't among them, the answer will be wrong, however good the AI model is. So before building the assistant, I checked how good the search is.
 
-For each of my 29 questions that have an answer, I checked whether **the chunk with the answer is among the results the search gives back**. I measured it in three ways:
+For each of my questions that have an answer (29 at first, 30 after the change to my test set described above), I checked whether **the chunk with the answer is among the results the search gives back**. I measured it in three ways:
 
 - **hit@1:** the right chunk is the **first** result.
 - **hit@3:** the right chunk is in the **first 3** results.
@@ -258,17 +269,19 @@ I **rejected** four other pages, because they only had part of the answer or tal
 
 ### Final results
 
+These results include the correction above and the new question q23 (the old u05, see the Test set section), so they use **30 questions**.
+
 | | Fixed | Structure |
 |---|---|---|
-| Right chunk is 1st | 18 of 29 (62%) | **25 of 29 (86%)** |
-| Right chunk in first 3 | 24 of 29 (83%) | **27 of 29 (93%)** |
-| Right chunk in first 5 | 27 of 29 (93%) | **28 of 29 (97%)** |
+| Right chunk is 1st | 18 of 30 (60%) | **26 of 30 (87%)** |
+| Right chunk in first 3 | 25 of 30 (83%) | **28 of 30 (93%)** |
+| Right chunk in first 5 | 28 of 30 (93%) | **29 of 30 (97%)** |
 | **Spanish** questions: right chunk is 1st | 3 of 5 | **5 of 5** |
-| Words added to the prompt (first 5 chunks) | 749 | 884 |
+| Words added to the prompt (first 5 chunks) | 749 | 891 |
 
 **Structure wins at every level.** The biggest difference is with **Spanish questions**: with structure, all 5 find the right English chunk as the very first result. I think the reason is that every structure chunk starts with its document name and section title (for example, "Eligibility criteria for student mobility"), which gives the search a clear hint about what the chunk is about.
 
-The only cost is that structure chunks are a bit longer: the assistant reads about **884 words** per question instead of 749, roughly 18% more. For a much better search, I think that's worth it.
+The only cost is that structure chunks are a bit longer: the assistant reads about **891 words** per question instead of 749, roughly 19% more. For a much better search, I think that's worth it.
 
 ### What still fails
 
@@ -277,7 +290,7 @@ The only cost is that structure chunks are a bit longer: the assistant reads abo
 
 ### My choice
 
-I use **structure** and give the assistant the **first 5 results**. With 5 results, the right chunk is there for 28 of 29 questions, compared with 27 with 3. It also gives the multi questions a better chance of getting both pieces of information they need.
+I use **structure** and give the assistant the **first 5 results**. With 5 results, the right chunk is there for 29 of 30 questions, compared with 28 with 3. It also gives the multi questions a better chance of getting both pieces of information they need.
 
 ## Tools and subagent
 
