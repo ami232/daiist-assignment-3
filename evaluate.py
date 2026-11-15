@@ -264,7 +264,10 @@ def write_grading_sheet(answers: dict[str, dict]) -> None:
                   f"**Reference answer:** {q['reference_answer']}", "",
                   f"**Expected location:** {q['expected_source'] or '—'} {q['expected_location']}", "",
                   "**Assistant's answer:**", "", *[f"> {line}" if line else ">" for line in a["answer"].splitlines()], "",
-                  "**Retrieved passages:** " + "; ".join(sorted({f"{p['title']} — {p['location'][:60]}" for p in a["passages"]})), ""]
+                  "**Retrieved passages** (click to open the text the assistant saw):", ""]
+        for n, p in enumerate(a["passages"], 1):
+            lines += [f"<details><summary>[{n}] {p['title']} — {p['location']}</summary>", "",
+                      p["text"], "", "</details>", ""]
     GRADING_SHEET.write_text("\n".join(lines), encoding="utf-8")
 
 

@@ -84,7 +84,10 @@ def parse_search_result(text: str) -> list[Passage]:
     """
     passages = []
     for block in text.split("\n\n---\n\n"):
-        m = re.match(r"^\[\d+\] (.+)\nsource: (.+)\n?(.*)$", block.strip(), re.S)
+        # Header and metadata are one line each ([^\n]+); everything after is the
+        # passage text. (A greedy ".+" here once swallowed the text into the
+        # metadata line, so every passage was saved with an empty text.)
+        m = re.match(r"^\[\d+\] ([^\n]+)\nsource: ([^\n]+)\n?(.*)$", block.strip(), re.S)
         if not m:
             continue
         header, meta, body = m.groups()

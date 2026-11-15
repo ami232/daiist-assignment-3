@@ -509,7 +509,60 @@ The search **never returned page 72**. The last page it saw was pp. 70–71, whi
 
 ## Evaluation
 
-*Code checks, the judge's rubric, your agreement with the judge, and results: correct, unsupported, correct refusals, wrong refusals.*
+I ran my assistant on all **36 questions** of my test set and checked the answers in three ways: with **code**, with an **AI judge**, and **by hand** (20 answers).
+
+### 1. Code checks
+
+Some things can be checked automatically, without an AI:
+
+| Check | Result |
+|---|---|
+| Unanswerable questions where the assistant said "I don't know" | **6 of 6** |
+| Answerable questions where it wrongly said "I don't know" | **0 of 30** |
+| Answerable answers with at least one citation | **30 of 30** |
+| Answers where my citation check found a citation that was never retrieved | **1** (q12, see Harness section) |
+
+### 2. The AI judge
+
+A second Gemini model reads each answer next to my reference answer and the passages the assistant found, and gives two grades:
+
+- **correct (1/0):** does the answer give the key facts of my reference answer without contradicting them? For unanswerable questions: does it say it doesn't know, without inventing anything?
+- **supported (1/0):** is **every** claim in the answer in the retrieved passages? If any claim is not there, it's 0, **even if it is true**.
+
+**The judge's result: full marks for all 36 answers** (30 of 30 correct, 0 unsupported, 6 of 6 correct refusals).
+
+### 3. My own grading, and how much I agree with the judge
+
+I graded 20 answers myself (all 6 unanswerable, all 7 multi, and 7 single) **before** looking at the judge's grades.
+
+| | My grades | Judge (same 20) | We agree |
+|---|---|---|---|
+| **correct** | 18 of 20 | 20 of 20 | **18 of 20 (90%)** |
+| **supported** | 9 of 20 | 20 of 20 | **9 of 20 (45%)** |
+
+**Why we disagree.** In **every** disagreement, I said 0 and the judge said 1. **The judge is too generous**:
+
+- **m03:** *"I did 5 months, can I do a 9-month traineeship?"* The answer starts with *"Yes, you can potentially do a 9-month traineeship"* and only later says that just 7 months are left. I graded it wrong, because a student who reads only the first line gets the wrong answer. The judge only saw the correct part.
+- **m04:** the 3-week programme question. The answer gives the daily rates but never says the total (1,498 €), which was the point of the question.
+- **"supported":** many answers add things that are true but **not in the passages**, e.g. that SEPIE is Spain's National Agency, or *"contact the Agencia Tributaria"*. My rubric says that is 0. The judge ignored this rule every time.
+- **q12:** my citation check caught a claim about travel support citing a page the assistant never saw, and the judge still graded it as supported.
+
+**Two things that made the judge weaker:**
+1. The main judge model was overloaded every time, so **all 36 grades came from the smaller backup model** (`gemini-3.1-flash-lite`), which is weaker than the assistant it grades.
+2. It is from the **same family** (Gemini) as the assistant, so it may tend to accept its style of answer.
+
+**A problem in my process (my own mistake).** The first time I graded, my grading sheet only showed the page names of the passages, not their text, because of a bug in my code that saved the passage text empty. The judge didn't see the text either. After fixing the bug, I re-ran the judge and **re-checked my "supported" grades with the real text**. That's why my agreement on "supported" went from 85% (without text) to 45% (with text): with the text in front of me, I saw many small claims that are not in the passages.
+
+### Results
+
+| | Result | Checked by |
+|---|---|---|
+| **Correct answers** | 30 of 30 according to the judge; **18 of 20** in my own grading | judge / me |
+| **Unsupported answers** | 0 according to the judge; **11 of 20** in my own grading | judge / me |
+| **Correct refusals** (unanswerable → "I don't know") | **6 of 6** | code |
+| **Wrong refusals** (answerable → "I don't know") | **0 of 30** | code |
+
+**What I conclude:** the assistant is good at **refusing** when it should (6 of 6) and **never refuses** when it shouldn't (0 of 30), and its main facts are usually right. But it often **adds extra claims** that are not in the passages, and sometimes puts a misleading sentence first. **An AI judge alone would have told me everything was perfect**: my own grading and my citation check are what showed the real problems.
 
 ## Failures
 

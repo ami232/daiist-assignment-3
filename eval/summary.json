@@ -14,5 +14,50 @@
     "mean_model_calls": 2.0,
     "mean_input_tokens": 4519,
     "mean_output_tokens": 415
+  },
+  "results": {
+    "correct_answers": 30,
+    "answerable_judged": 30,
+    "unsupported_answers": 0,
+    "correct_refusals": 6,
+    "unanswerable": 6,
+    "wrong_refusals": 0,
+    "by_kind": {
+      "single": {
+        "n": 23,
+        "correct": 23
+      },
+      "multi": {
+        "n": 7,
+        "correct": 7
+      },
+      "unanswerable": {
+        "n": 6,
+        "correct": 6
+      }
+    }
+  },
+  "agreement_with_human": {
+    "graded_by_you": 20,
+    "compared": 20,
+    "correct_agreement": 0.9,
+    "correct_disagreements": [
+      "m03",
+      "m04"
+    ],
+    "supported_agreement": 0.45,
+    "supported_disagreements": [
+      "u01",
+      "u03",
+      "u04",
+      "u06",
+      "u07",
+      "m01",
+      "m02",
+      "m03",
+      "m04",
+      "q03",
+      "q16"
+    ]
   }
 }
