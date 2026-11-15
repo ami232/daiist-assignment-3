@@ -613,8 +613,75 @@ Causes 7 and 8 are linked: if my assistant searched once per part of the questio
 
 ## Decision
 
-*Would you let users rely on it, for what, with which safeguard? Cost and latency per question.*
+### Would I let students rely on it?
+
+**Yes, but only as a first guide, not to make final decisions.**
+
+**What it is good for:** understanding the **European rules** of Erasmus+:
+- who can go, and for how long;
+- the grant ranges and top-ups;
+- what the learning agreement is, and how credits are recognised;
+- what rights and duties a student has.
+
+In my evaluation, my assistant:
+- said "I don't know" for **all 6** questions it couldn't answer, and never refused a question it could answer (**0 of 30**);
+- got the main facts right in **18 of the 20** answers I graded myself;
+- always gave citations (**30 of 30** answers), so a student can check every rule in the original document.
+
+**What students should not rely on it for:**
+- **The exact amount of money they will get:** the EU documents only give ranges, and the real amount is set by SEPIE and each university.
+- **Deadlines, places, selection criteria and payments:** these depend on each university and are not in my documents.
+- **Final decisions** like how many months to go, or which courses to change: my grading showed that the assistant sometimes **adds claims that are not in the documents** (11 of 20 answers) and once started with a **misleading first sentence** (m03: *"Yes, you can do 9 months"*, when only 7 were left).
+
+### The safeguards I would add before real students use it
+
+1. **A clear message under every answer:** *"This is a guide based on the official EU documents. Check with your university's international office before making any decision."*
+2. **Keep the citation check:** if the assistant cites a page it never read, the student sees a warning (it caught a real case in q12).
+3. **Always show the links** to the original documents, so students can check the rule themselves.
+4. **Fix the problems from my Failures section first:** the conflict between my rules 3 and 5, a rule that the first sentence must be the final answer, and a firm rule to search twice for two-part questions.
+5. **Update the documents every year:** the Programme Guide changes every year, and an old version would give old rules.
+6. **Use a paid plan:** with the free plan, Google sometimes slowed down or stopped answering (one request waited more than 35 minutes before I added time limits). That's not acceptable for real users.
+
+### Cost and time per question
+
+| | Per question (average of 36 questions) |
+|---|---|
+| **Time to answer** | **25 seconds** on average (median 17.5 s; slowest 110 s) |
+| **AI calls** | 2 (one to decide what to search, one to write the answer) |
+| **Searches** | 1.06 |
+| **Tokens** | about 4,500 in and 415 out |
+| **Cost on the free plan** | **0 €** (everything in this project ran on Google's free plan) |
+| **Cost on a paid plan (estimate)** | about **$0.0035 per question** (about a third of a cent), i.e. about **$3.50 per 1,000 questions** |
+
+The paid estimate uses the price of `gemini-3-flash-preview` **according to published price lists of third-party companies (November 2026)**: $0.50 per million input tokens and $3.00 per million output tokens, plus one very small embedding per search. I could not read Google's own pricing page, so this is an estimate. The **time** is mostly waiting for Google: on the free plan, requests are slowed down when you send many per minute, so a paid plan should also make it faster.
+
+**My conclusion:** it is **cheap enough** to offer to every student at a university, and **good enough as a first guide** with citations. But because it sometimes adds unsupported claims, it should **always send the student to their international office** before they make a decision that costs money or a semester.
 
 ## AI use
 
-*What you used and how, or "none".*
+### What I used
+
+I worked with **Claude Code** (Anthropic's AI assistant, inside VS Code) to build this project. **Google Gemini** is part of the system itself: it makes the embeddings, answers the questions, and acts as the judge.
+
+### How I worked with Claude
+
+Claude helped me with the technical work: finding documents and checking their licences, writing and running the code, fixing errors, and proposing test questions from the three topics I chose.
+
+I made all the decisions: the topic (I changed from IE University to Erasmus+ because IE's documents have no open licence), the test set, keeping the footnotes, my citation-check guardrail, how to handle the SEPIE document, and the language rule. From the start, Claude had to **ask me before changing, downloading or committing anything**, so I approved every step.
+
+### What Claude did wrong
+
+Claude made several mistakes. The most important ones were:
+
+- **It didn't check its own work well enough.** It marked a test question as "unanswerable" (u05) without reading all the documents, and the evaluation showed the answer was there.
+- **It wrote code with silent bugs.** The worst one saved the passage texts **empty** for all 36 answers, so the judge graded without evidence. Everything looked fine until one judge comment said the passages were empty. The citation check also gave false alarms at first.
+- **It didn't plan for things going wrong.** There were no time limits, so one request hung for more than 35 minutes, and the judge crashed when Google was overloaded.
+- **Some of its first decisions were wrong**: deleting footnotes that contained real rules, choosing an AI model that was no longer available, and underestimating the cost of rebuilding the index.
+
+All of these were fixed, and I describe their effect on my results in the Evaluation and Failures sections.
+
+### What I learned
+
+I learned to **use AI as a tool, not as something to trust blindly.** Even though Claude helped me, I reviewed every answer and every step myself. Several mistakes looked fine at first, like perfect scores from the judge, and I only found them because I checked the results.
+
+Claude also helped me put my decisions and results into words for this report; I reviewed and approved every section.
