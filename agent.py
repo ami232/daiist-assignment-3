@@ -22,6 +22,7 @@ import asyncio
 import os
 import re
 import sys
+import time
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Callable
@@ -36,6 +37,8 @@ SYSTEM_PROMPT = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
 # stronger one; the stable lite model takes over if it fails or is overloaded.
 MODEL = os.environ.get("AGENT_MODEL", "gemini-3-flash-preview")
 FALLBACK_MODEL = "gemini-3.1-flash-lite"
+REQUEST_TIMEOUT = 60  # seconds per Gemini request; without it a stuck request waits forever
+QUESTION_TIMEOUT = 180  # seconds for a whole question in answer_question()
 MAX_TOOL_CALLS = 6
 MAX_MODEL_CALLS = 10
 
@@ -59,6 +62,7 @@ class Passage:
     page: int = 0
     page_end: int = 0
     section: str = ""
+    text: str = ""
 
 
 @dataclass
@@ -79,11 +83,16 @@ def parse_search_result(text: str) -> list[Passage]:
     where <location> is "p. 54, SECTION", "pp. 69-70, SECTION" or a section path.
     """
     passages = []
-    for header, meta in re.findall(r"^\[\d+\] (.+)\nsource: (.+)$", text, re.M):
+    for block in text.split("\n\n---\n\n"):
+        m = re.match(r"^\[\d+\] (.+)\nsource: (.+)\n?(.*)$", block.strip(), re.S)
+        if not m:
+            continue
+        header, meta, body = m.groups()
         title, _, location = header.partition(" — ")
         location = DATE_SUFFIX.sub("", location)
         fields = dict(part.split(": ", 1) for part in ("source: " + meta).split(" | ") if ": " in part)
-        p = Passage(source=fields.get("source", ""), title=title, location=location, url=fields.get("url", ""))
+        p = Passage(source=fields.get("source", ""), title=title, location=location,
+                    url=fields.get("url", ""), text=body.strip())
         m = re.match(r"pp?\. (\d+)(?:-(\d+))?(?:, (.*))?$", location)
         if m:
             p.page = int(m.group(1)); p.page_end = int(m.group(2) or m.group(1)); p.section = m.group(3) or ""
@@ -99,7 +108,9 @@ CITATION = re.compile(r"\(([^()]*?(?:Programme Guide|ECHE|Learning Agreement|Stu
 
 
 def cited_pages(text: str) -> list[int]:
-    """Pages in "p. 54", "pp. 67-68", "pp. 67-69 y 72", "p. 8 and 43"."""
+    """Pages in "p. 54", "pp. 67-68", "pp. 67-69 y 72", "p. 8 and 43".
+    Footnote numbers ("p. 54, Note 67") are not pages and are ignored."""
+    text = re.sub(r"\b(?:Notes?|Nota|footnote)\s*\d+(?:\s*(?:,|and|y|&)\s*\d+)*", "", text, flags=re.I)
     m = re.search(r"\bpp?\.\s*(.+)$", text)
     if not m:
         return []
@@ -112,10 +123,20 @@ def cited_pages(text: str) -> list[int]:
 
 def check_citations(answer: str, passages: list[Passage]) -> dict:
     """Compare every citation in the answer with the passages search returned."""
+    # One bracket can hold several citations separated by ";":
+    # (Programme Guide 2026, p. 54; Learning Agreement guidelines, "Duration").
+    # Each part is checked against its own document; a part without a document
+    # name ("p. 54; p. 55") belongs to the previous one.
+    parts, previous = [], None
+    for bracket in CITATION.findall(answer):
+        for part in (p.strip() for p in bracket.split(";") if p.strip()):
+            lowered = part.lower()
+            source = next((sid for name, sid in CITATION_NAMES.items() if name in lowered), previous)
+            parts.append((part, source))
+            previous = source
+
     checked, unsupported = [], []
-    for raw in CITATION.findall(answer):
-        lowered = raw.lower()
-        source = next((sid for name, sid in CITATION_NAMES.items() if name in lowered), None)
+    for raw, source in parts:
         retrieved = [p for p in passages if p.source == source]
         pages = cited_pages(raw)
         quoted = re.findall(r"[\"“”']([^\"“”']{3,})[\"“”']", raw)
@@ -209,6 +230,7 @@ async def run(question: str, approve: Callable[[str], bool] = ask_in_terminal) -
 
     load_api_key()
     trace = Trace()
+    started = time.time()
     params = StdioServerParameters(command=sys.executable, args=["server.py"], cwd=str(ROOT))
     errlog = sys.stderr if os.environ.get("AGENT_DEBUG") else open(os.devnull, "w")
     async with stdio_client(params, errlog=errlog) as (read, write):
@@ -216,32 +238,39 @@ async def run(question: str, approve: Callable[[str], bool] = ask_in_terminal) -
             await session.initialize()
             tools = mcp_tools(session, (await session.list_tools()).tools, trace, approve)
             agent = create_agent(
-                ChatGoogleGenerativeAI(model=MODEL, temperature=0, max_retries=6),
+                ChatGoogleGenerativeAI(model=MODEL, temperature=0, max_retries=3, timeout=REQUEST_TIMEOUT),
                 tools,
                 system_prompt=SYSTEM_PROMPT,
                 middleware=[
                     ToolCallLimitMiddleware(run_limit=MAX_TOOL_CALLS, exit_behavior="continue"),
                     ModelCallLimitMiddleware(run_limit=MAX_MODEL_CALLS, exit_behavior="end"),
-                    ModelFallbackMiddleware(ChatGoogleGenerativeAI(model=FALLBACK_MODEL, temperature=0, max_retries=3)),
+                    ModelFallbackMiddleware(ChatGoogleGenerativeAI(model=FALLBACK_MODEL, temperature=0, max_retries=3,
+                                                                   timeout=REQUEST_TIMEOUT)),
                 ],
             )
             result = await agent.ainvoke({"messages": [{"role": "user", "content": question}]})
 
     answer = content_text(result["messages"][-1].content).strip()
     check = check_citations(answer, trace.passages)
+    ai_messages = [m for m in result["messages"] if m.type == "ai"]
+    usage = [getattr(m, "usage_metadata", None) or {} for m in ai_messages]
     return {
         "question": question,
         "answer": answer,
         "citation_check": check,
         "tool_calls": trace.tool_calls,
         "passages": [p.__dict__ for p in trace.passages],
-        "model_calls": sum(1 for m in result["messages"] if m.type == "ai"),
+        "model_calls": len(ai_messages),
+        "input_tokens": sum(u.get("input_tokens", 0) for u in usage),
+        "output_tokens": sum(u.get("output_tokens", 0) for u in usage),
+        "seconds": round(time.time() - started, 1),
     }
 
 
 def answer_question(question: str, approve: Callable[[str], bool] = lambda path: False) -> dict:
-    """For evaluate.py: answer one question; add_document is refused by default."""
-    return asyncio.run(run(question, approve))
+    """For evaluate.py: answer one question; add_document is refused by default.
+    Raises TimeoutError if the whole question takes longer than QUESTION_TIMEOUT."""
+    return asyncio.run(asyncio.wait_for(run(question, approve), QUESTION_TIMEOUT))
 
 
 def print_result(result: dict) -> None:

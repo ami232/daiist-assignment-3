@@ -1,1 +1,21 @@
 id,correct,supported,notes
+u01,1,1,
+u02,1,1,
+u03,1,1,
+u04,1,0,"recommended contacting Agencia Tributaria, which is not in the retrieved passages"
+u06,1,1,
+u07,1,1,
+m01,1,0,"adds that the final amount is based on demand for scholarships, which is not in the retrieved passages"
+m02,1,1,
+m03,0,1,"said 9 months is fine but the 12-month cap leaves only 7"
+m04,0,1,"does not calculate the 21-day amount of 1,498 EUR"
+m05,1,1,
+m06,1,1,
+m07,1,0,"adds a grant agreement and online language assessment, which are not in the reference answer's retrieved passages for this question"
+q01,1,1,
+q03,1,1,
+q08,1,1,
+q12,1,1,
+q13,1,1,
+q16,1,1,
+q18,1,1,

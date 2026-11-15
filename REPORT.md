@@ -367,7 +367,82 @@ This matches the expected answer in my test set (m01).
 
 ## Harness and guardrails
 
-*Your AGENTS.md rules, the approval step, and your extra guardrail with one case where it fired.*
+The "harness" is the program around the AI that controls what it can do. Mine is in [agent.py](agent.py). When someone asks a question (`uv run python main.py ask "..."`), it:
+
+1. gives the AI my rules from `AGENTS.md`;
+2. connects it to my search tool, so it can look things up in the documents;
+3. lets it search and write an answer;
+4. checks the answer before showing it.
+
+The AI model is Google's **Gemini** (`gemini-3-flash-preview`). If it is overloaded or doesn't answer, a smaller model (`gemini-3.1-flash-lite`) takes over automatically.
+
+### My rules (AGENTS.md)
+
+`AGENTS.md` is like the instructions you give a new employee before they start answering questions. It has 10 rules, and each one says **why** it exists. The most important ones:
+
+| Rule | Why |
+|---|---|
+| **Always search before answering**, never answer from memory. | Erasmus+ rules change every year, and students act on the answer. |
+| **If the question has two parts, search twice.** | In my retrieval test, one search often found only half of the answer. |
+| **Only say what the documents say.** | If something is not in the documents, the student can't check it. |
+| **Cite every fact**, always in the same format, e.g. *(Programme Guide 2026, p. 54)*. | The student must be able to check it, and my code needs a fixed format to check the citations automatically. |
+| **If the documents don't have the answer, say "I don't know"** and tell the student where to ask (SEPIE or their university). | A wrong answer can cost a student money or a semester. "Ask your international office" costs one email. |
+| **Be careful with information that looks right but is for someone else.** For example, the 19 February deadline in the Guide is for universities, not students. | These are the most dangerous mistakes, because they sound correct. |
+| **If the documents only give a range, give the range** and say who sets the exact amount. | The EU only sets minimum and maximum amounts, not each student's real grant. |
+| **Answer in the student's language** (English or Spanish). | My users are Spanish students, but the documents are in English. |
+
+### Approval before adding a document
+
+The assistant has a second tool, `add_document`, which adds a new file to the documents it searches. This changes every future answer, so **a person must say yes first**. Before the tool runs, the program asks:
+
+```
+The assistant wants to add this document to the index:
+  corpus/erasmus/student_charter_en.html
+Allow? [y/N]
+```
+
+Only "y" (or "yes", "sí") lets it run. Anything else, or no answer, means no.
+
+I tested it by asking the assistant to add a document while nobody was at the keyboard to answer. It was blocked, and the assistant replied: *"The document was not added to the index because the action was not approved."*
+
+### Limits
+
+So the assistant can't get stuck or spend too much:
+
+- at most **6 searches** and **10 AI calls** per question;
+- at most **60 seconds** per request to Gemini, and **3 minutes** per question.
+
+I added the time limits after a real problem. During the evaluation, one request to Gemini never got an answer, and the program waited for more than 35 minutes. Now it gives up, moves on, and tries that question again later.
+
+### My extra guardrail: the citation check
+
+**The idea.** The most dangerous mistake for my users is a **fake citation**: the assistant says *"page 72 says you get travel money"*, and the student trusts it because it looks official. So after every answer, my code checks each citation: **did the search really return this page or section?**
+
+- If yes, the answer is shown normally.
+- If not, the answer is still shown, but with a warning:
+
+```
+⚠️ Citation check: this answer may not be reliable.
+  - (Programme Guide 2026, pp. 71-72): p. 72 was not retrieved
+Check these points in the original documents before relying on them.
+```
+
+It also warns when an answer gives facts and numbers but cites **nothing at all**.
+
+**False alarms I had to fix.** The first version of the check made mistakes in 3 of the first 10 answers, even though those answers were correct:
+
+1. The assistant wrote *(Programme Guide 2026, p. 54, **Note 67**)*. My code thought "67" was a **page** number, but it's a footnote number.
+2. The assistant put two sources in one bracket: *(Programme Guide 2026, p. 54**;** Learning Agreement guidelines, "...")*. My code thought both were from the Programme Guide.
+
+I fixed both: numbers after "Note" are now ignored, and a bracket with ";" is split into separate citations. After the fix, those 3 answers no longer get a warning, and a test with an invented page (p. 99) is still caught.
+
+This mattered to me, because a guardrail that gives too many false alarms is also bad: students would learn to ignore the warning.
+
+**One case where it fired for real (q12).** I asked: *"How much individual support do I get per day on a short-term physical mobility?"*. The main answer was correct and well cited: 79 € per day up to day 14, then 56 € per day (p. 69–70). But at the end, the assistant added an extra point:
+
+> *Travel support: You may also be eligible for a travel grant depending on the distance to your destination and whether you use sustainable means of transport (Programme Guide 2026, pp. 71-72).*
+
+The search **never returned page 72**. The last page it saw was pp. 70–71, which is about **staff** mobility, not students. So the assistant cited a page it had never read, for a claim that wasn't in the passages it was given. The check caught it and added the warning, so a student would know to double-check that point before relying on it.
 
 ## Evaluation
 

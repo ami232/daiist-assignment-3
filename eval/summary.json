@@ -1,0 +1,18 @@
+{
+  "code_checks": {
+    "answered": 36,
+    "correct_refusals": 6,
+    "unanswerable": 6,
+    "wrong_refusals": 0,
+    "answerable": 30,
+    "answers_with_citations": 30,
+    "citation_check_fired": [
+      "q12"
+    ],
+    "mean_searches": 1.06,
+    "mean_seconds": 25.4,
+    "mean_model_calls": 2.0,
+    "mean_input_tokens": 4519,
+    "mean_output_tokens": 415
+  }
+}
