@@ -1,0 +1,182 @@
+{
+ "q01": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta es precisa, responde a la pregunta utilizando la información de las fuentes y cita correctamente la normativa aplicable.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q02": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta indica correctamente que la información no consta en el corpus proporcionado y no inventa datos.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q03": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta responde correctamente a la pregunta basándose en la información proporcionada en el artículo 38.2 de la Ley 31/1995.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q04": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta es correcta y está totalmente respaldada por el artículo 13.2.a del RD 1627/1997 incluido en la evidencia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q05": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta es correcta, completa y está totalmente respaldada por las evidencias proporcionadas.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q06": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta es correcta, está respaldada por la evidencia y añade información relevante sobre el estudio básico que no contradice la referencia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q07": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta es precisa, completa y está totalmente respaldada por el artículo 14 del RD 39/1997 proporcionado en la evidencia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q08": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta es precisa, completa y está totalmente respaldada por el artículo 22.1 de la Ley 31/1995 contenido en la evidencia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q09": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta identifica correctamente el Libro de Subcontratación y detalla su contenido basándose estrictamente en el artículo 8.1 de la Ley 32/2006 proporcionado en la evidencia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q10": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta es correcta y está totalmente respaldada por el artículo 35.2 de la Ley 31/1995 proporcionado en la evidencia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q11": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta identifica correctamente la obligatoriedad, la normativa aplicable y enumera los principios basándose en las evidencias proporcionadas.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q12": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta responde correctamente a la pregunta utilizando la información proporcionada en las fuentes, citando adecuadamente los momentos y el tipo de formación requerida.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q13": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "El asistente identifica correctamente que el corpus no contiene la información específica solicitada y cita adecuadamente las normas generales de formación presentes en los documentos.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q14": {
+  "correct": 0,
+  "supported": 1,
+  "reason": "La pregunta es inabarcable según el corpus, pero el asistente ignoró esta instrucción y proporcionó una respuesta detallada sobre vigilancia de la salud que no responde a la cuestión específica de los controles de alcoholemia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q15": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta responde correctamente a la pregunta basándose exclusivamente en el artículo 4 del RD 1215/1997 proporcionado en la evidencia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q16": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta incluye todos los puntos clave solicitados en la referencia y cada afirmación está respaldada por el artículo 20 de la Ley 31/1995 proporcionado en la evidencia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q17": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta responde correctamente a la pregunta utilizando la información proporcionada en la evidencia y citando los artículos correspondientes.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q18": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta es correcta y está totalmente respaldada por el artículo 7.2 del RD 1627/1997 incluido en la evidencia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q19": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta es correcta y está totalmente respaldada por las evidencias proporcionadas, cubriendo exhaustivamente quién puede paralizar los trabajos y bajo qué circunstancias.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q20": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta es correcta y está totalmente respaldada por el artículo 5 de la Ley 32/2006 proporcionado en la evidencia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q21": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta responde correctamente a ambas partes de la pregunta utilizando únicamente la información proporcionada en la evidencia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q22": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta incluye correctamente los supuestos de revisión y está totalmente respaldada por las evidencias proporcionadas.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q23": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta es precisa, completa y está totalmente respaldada por el artículo 7 del RD 39/1997 proporcionado en la evidencia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q24": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta identifica correctamente al contratista como el responsable y la información está respaldada explícitamente por el artículo 16 del RD 1627/1997 en la evidencia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q25": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta identifica correctamente las obligaciones y el concepto de coordinación basándose estrictamente en la normativa proporcionada en la evidencia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q26": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta es precisa, completa según la referencia y está totalmente respaldada por las evidencias proporcionadas.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q27": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta es precisa, completa y está totalmente respaldada por los artículos de la Ley 32/2006 proporcionados en la evidencia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q28": {
+  "correct": 1,
+  "supported": 0,
+  "reason": "Aunque la respuesta es correcta al indicar que la información no consta, el asistente incluye afirmaciones sobre haber realizado una búsqueda en normas específicas que no forman parte de la evidencia proporcionada.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q29": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "La respuesta indica correctamente que el corpus no contiene una cifra específica y cita la normativa general disponible en la evidencia.",
+  "model": "gemini-3.1-flash-lite"
+ },
+ "q30": {
+  "correct": 0,
+  "supported": 1,
+  "reason": "La pregunta es inabarcable según el corpus y el asistente debió indicar que no consta en los documentos en lugar de extraer normas generales de temperatura.",
+  "model": "gemini-3.1-flash-lite"
+ }
+}

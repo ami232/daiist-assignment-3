@@ -1,1 +1,31 @@
 id,correct,supported,notes
+q01,1,1,"Promoter, before work starts or when several firms or self-employed workers intervene (RD 1627/1997 Art. 3.2); Ley 32/2006 Art. 3 only defines the coordinator"
+q02,1,1,Forced refusal: collective agreements and holidays are not in the corpus
+q03,1,1,"50 or more workers, Art. 38.2"
+q04,1,1,"Professional association (Art. 13); leaves out the public-works case, which was not asked"
+q05,0,1,"Forced refusal, but the corpus does answer: Art. 18 prior notice is repealed and Art. 19 says the opening communication is made by contractors before work starts. The coverage check did not accept a passage that corrects the premise of the question"
+q06,1,1,"75 million pesetas, Art. 4.1.a; adds that the corpus shows no update to euros"
+q07,1,1,More than 500; 250-500 with Annex I activities; labour authority decision (Art. 14)
+q08,1,1,"Voluntary, with the three exceptions of Art. 22.1"
+q09,1,1,Libro de Subcontratacion kept on site; contents match Art. 8.1
+q10,1,1,"3 delegates for 101-500 workers, Art. 35.2"
+q11,1,1,Art. 12.1.a RD 1627/1997 and the nine principles of Art. 15 Ley 31/1995
+q12,1,1,Art. 19 Ley 31/1995 and Art. 10 Ley 32/2006: content and the four moments
+q13,1,1,Correct refusal: tower-crane licence is not in the corpus
+q14,0,1,Says the word alcoholemia is not mentioned but then answers with health surveillance (Art. 22) as if it applied; it should have refused. The coverage check said YES using the Art. 22 exceptions
+q15,1,1,After installation and after each reassembly; competent personnel (Art. 4 RD 1215/1997)
+q16,1,1,"Art. 20: analyse emergencies, first aid, fire, evacuation, designated staff, periodic checks, external services"
+q17,1,1,Art. 17: when risks cannot be avoided or limited by collective means or organisation
+q18,1,1,Coordinator before the start; awarding administration for public works; project management if no coordinator (Art. 7)
+q19,1,1,"Coordinator or project management, serious and imminent risk, after warning the contractor and noting it in the book (Art. 14); adds the Labour Inspector (Art. 44)"
+q20,1,1,"No, with the exceptional extra level of Art. 5 added"
+q21,1,1,Labour authority of the region of the registered office; valid nationwide (Art. 6)
+q22,1,1,Three cases of Art. 6 RD 39/1997; adds the re-evaluation cases of Art. 4
+q23,1,1,"Art. 7 RD 39/1997, items a) to d)"
+q24,1,1,The contractor (Art. 16 RD 1627/1997)
+q25,1,1,Art. 11 RD 1627/1997 and Art. 24 Ley 31/1995; Art. 9.d (the coordinator organises the coordination) was retrieved in the second search and supports the claim
+q26,1,1,"Contractors and subcontractors; adequate and understandable information (Art. 15 RD 1627/1997, Art. 18 Ley 31/1995)"
+q27,1,1,Requirements of Art. 4 and registration (Art. 6); the inscription de oficio claim is in Art. 4.2.b. Incomplete: does not say the registry depends on the regional labour authority or that registration is valid nationwide
+q28,1,1,Forced refusal: civil liability insurance of the promoter is not covered
+q29,1,1,Forced refusal: number of extinguishers is not covered
+q30,1,1,Forced refusal: no specific heat-wave measures in the corpus

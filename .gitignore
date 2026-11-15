@@ -12,3 +12,6 @@ corpus/
 
 # Never commit your API key
 .env
+
+# Consolidated BOE texts (legislacion-consolidada API), same licence note as corpus/.
+corpus_consolidado/

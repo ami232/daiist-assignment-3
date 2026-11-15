@@ -1,0 +1,1124 @@
+{
+ "version": "v4",
+ "set": "dev",
+ "model": "gemini-3.5-flash-lite",
+ "reps": 2,
+ "calls": {
+  "gemini-3.5-flash-lite": 60
+ },
+ "embedding_calls": 6,
+ "stopped": null,
+ "rows": [
+  {
+   "id": "q01",
+   "question": "¿Quién designa al coordinador de seguridad y salud durante la ejecución de la obra?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "Quién designa al coordinador de seguridad y salud durante la ejecución de la obra",
+     "passage": 1,
+     "sentence": 4,
+     "quote": "2. Cuando en la ejecución de la obra intervenga más de una empresa, o una empresa y trabajadores autónomos o diversos trabajadores autónomos, el promotor, antes del inicio de los trabajos o tan pronto como se constate dicha circunstancia, designará un coordinador en materia de seguridad y salud durante la ejecución de la obra.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2577,
+      "output": 54
+     },
+     "seconds": 0.9,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "Quién designa al coordinador de seguridad y salud durante la ejecución de la obra",
+     "passage": 1,
+     "sentence": 4,
+     "quote": "2. Cuando en la ejecución de la obra intervenga más de una empresa, o una empresa y trabajadores autónomos o diversos trabajadores autónomos, el promotor, antes del inicio de los trabajos o tan pronto como se constate dicha circunstancia, designará un coordinador en materia de seguridad y salud durante la ejecución de la obra.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2577,
+      "output": 54
+     },
+     "seconds": 0.9,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q02",
+   "question": "¿Cuántos días de vacaciones tiene un albañil según el convenio colectivo?",
+   "expected": "no",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "el número de días de vacaciones que tiene un albañil según el convenio colectivo",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1497,
+      "output": 43
+     },
+     "seconds": 0.8,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "el número de días de vacaciones que tiene un albañil según el convenio colectivo",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1497,
+      "output": 43
+     },
+     "seconds": 0.7,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q03",
+   "question": "¿A partir de cuántos trabajadores es obligatorio constituir un Comité de Seguridad y Salud?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "a partir de cuántos trabajadores es obligatorio constituir un Comité de Seguridad y Salud",
+     "passage": 1,
+     "sentence": 4,
+     "quote": "2. Se constituirá un Comité de Seguridad y Salud en todas las empresas o centros de trabajo que cuenten con 50 o más trabajadores.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2908,
+      "output": 55
+     },
+     "seconds": 1.0,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "A partir de qué número de trabajadores es obligatorio constituir un Comité de Seguridad y Salud",
+     "passage": 1,
+     "sentence": 4,
+     "quote": "2. Se constituirá un Comité de Seguridad y Salud en todas las empresas o centros de trabajo que cuenten con 50 o más trabajadores.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2908,
+      "output": 46
+     },
+     "seconds": 1.4,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q04",
+   "question": "¿Quién facilita el libro de incidencias en una obra de construcción privada?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "Quién facilita el libro de incidencias en una obra de construcción privada",
+     "passage": 1,
+     "sentence": 5,
+     "quote": "a) El Colegio profesional al que pertenezca el técnico que haya aprobado el plan de seguridad y salud.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2528,
+      "output": 52
+     },
+     "seconds": 1.5,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "Quién facilita el libro de incidencias en una obra de construcción privada.",
+     "passage": 1,
+     "sentence": 5,
+     "quote": "a) El Colegio profesional al que pertenezca el técnico que haya aprobado el plan de seguridad y salud.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2528,
+      "output": 52
+     },
+     "seconds": 1.0,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q05",
+   "question": "¿Qué debe hacer el promotor ante la autoridad laboral antes de empezar los trabajos de una obra?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "qué debe hacer el promotor ante la autoridad laboral antes de empezar los trabajos de una obra",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "1. En las obras incluidas en el ámbito de aplicación del presente Real Decreto, el promotor deberá efectuar un aviso a la autoridad laboral competente antes del comienzo de los trabajos.",
+     "quote_found": true,
+     "tokens": {
+      "input": 1659,
+      "output": 47
+     },
+     "seconds": 0.9,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "qué debe hacer el promotor ante la autoridad laboral antes de empezar los trabajos de una obra",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "1. En las obras incluidas en el ámbito de aplicación del presente Real Decreto, el promotor deberá efectuar un aviso a la autoridad laboral competente antes del comienzo de los trabajos.",
+     "quote_found": true,
+     "tokens": {
+      "input": 1659,
+      "output": 57
+     },
+     "seconds": 0.7,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q06",
+   "question": "¿A partir de qué presupuesto de ejecución por contrata es obligatorio elaborar un estudio de seguridad y salud?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "parcial",
+     "claimed": "parcial",
+     "need": "a partir de qué presupuesto de ejecución por contrata incluido en el proyecto es obligatorio elaborar un estudio de seguridad y salud",
+     "passage": 1,
+     "sentence": 4,
+     "quote": "a) Que el presupuesto de ejecución por contrata incluido en el proyecto sea igual o superior a 75 millones de pesetas.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2327,
+      "output": 63
+     },
+     "seconds": 0.8,
+     "error": null
+    },
+    {
+     "level": "parcial",
+     "claimed": "parcial",
+     "need": "presupuesto de ejecución por contrata a partir del cual es obligatorio elaborar un estudio de seguridad y salud",
+     "passage": 1,
+     "sentence": 4,
+     "quote": "a) Que el presupuesto de ejecución por contrata incluido en el proyecto sea igual o superior a 75 millones de pesetas.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2327,
+      "output": 51
+     },
+     "seconds": 1.5,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q07",
+   "question": "¿Cuándo está obligada una empresa a constituir un servicio de prevención propio por su número de trabajadores?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "a partir de qué número de trabajadores está obligada una empresa a constituir un servicio de prevención propio",
+     "passage": 1,
+     "sentence": 4,
+     "quote": "a) Que se trate de empresas que cuenten con más de 500 trabajadores.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2510,
+      "output": 49
+     },
+     "seconds": 1.2,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "a partir de qué número de trabajadores (y/o con qué otras condiciones) está obligada una empresa a constituir un servicio de prevención propio",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "El empresario deberá constituir un servicio de prevención propio cuando concurra alguno de los siguientes supuestos:",
+     "quote_found": true,
+     "tokens": {
+      "input": 2510,
+      "output": 68
+     },
+     "seconds": 1.1,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q08",
+   "question": "¿Es obligatoria para el trabajador la vigilancia periódica de su salud?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "si la vigilancia periódica de la salud es obligatoria para el trabajador",
+     "passage": 1,
+     "sentence": 5,
+     "quote": "De este carácter voluntario sólo se exceptuarán, previo informe de los representantes de los trabajadores, los supuestos en los que la realización de los reconocimientos sea imprescindible para evaluar los efectos de las condiciones de trabajo sobre la salud de los trabajadores o para verificar si el estado de salud del trabajador puede constituir un peligro para el mismo, para los demás trabajadores o para otras personas relacionadas con la empresa o cuando así esté establecido en una disposición legal en relación con la protección de riesgos específicos y actividades de especial peligrosidad.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2083,
+      "output": 53
+     },
+     "seconds": 1.1,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "si la vigilancia periódica de la salud es obligatoria para el trabajador",
+     "passage": 1,
+     "sentence": 4,
+     "quote": "Esta vigilancia sólo podrá llevarse a cabo cuando el trabajador preste su consentimiento.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2083,
+      "output": 53
+     },
+     "seconds": 1.2,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q09",
+   "question": "¿Qué documento debe tener cada contratista en la obra para reflejar las subcontrataciones realizadas?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "el documento que debe tener cada contratista en la obra para reflejar las subcontrataciones realizadas",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "1. En toda obra de construcción, incluida en el ámbito de aplicación de esta Ley, cada contratista deberá disponer de un Libro de Subcontratación.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2808,
+      "output": 59
+     },
+     "seconds": 0.9,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "el documento que debe tener cada contratista en la obra para reflejar las subcontrataciones realizadas",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "1. En toda obra de construcción, incluida en el ámbito de aplicación de esta Ley, cada contratista deberá disponer de un Libro de Subcontratación.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2808,
+      "output": 59
+     },
+     "seconds": 1.1,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q10",
+   "question": "¿Cuántos delegados de prevención corresponden a una empresa de 300 trabajadores?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "el número de delegados de prevención que corresponden a una empresa de 300 trabajadores",
+     "passage": 1,
+     "sentence": 8,
+     "quote": "3 Delegados de Prevención.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2703,
+      "output": 47
+     },
+     "seconds": 0.8,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "el número de delegados de prevención que corresponden a una empresa de 300 trabajadores",
+     "passage": 1,
+     "sentence": 8,
+     "quote": "3 Delegados de Prevención.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2703,
+      "output": 57
+     },
+     "seconds": 0.8,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q11",
+   "question": "¿Qué principios de la acción preventiva deben aplicar los trabajadores autónomos en una obra y dónde se enumeran?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "qué principios de la acción preventiva deben aplicar los trabajadores autónomos en una obra y dónde se enumeran",
+     "passage": 1,
+     "sentence": 4,
+     "quote": "a) Aplicar los principios de la acción preventiva que se recogen en el artículo 15 de la Ley de Prevención de Riesgos Laborales, en particular al desarrollar las tareas o actividades indicadas en el artículo 10 del presente Real Decreto.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2548,
+      "output": 49
+     },
+     "seconds": 1.0,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "qué principios de la acción preventiva deben aplicar los trabajadores autónomos en una obra y dónde se enumeran",
+     "passage": 1,
+     "sentence": 4,
+     "quote": "a) Aplicar los principios de la acción preventiva que se recogen en el artículo 15 de la Ley de Prevención de Riesgos Laborales, en particular al desarrollar las tareas o actividades indicadas en el artículo 10 del presente Real Decreto.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2548,
+      "output": 59
+     },
+     "seconds": 0.8,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q12",
+   "question": "¿Qué formación en prevención deben garantizar las empresas a los trabajadores de una obra y en qué momentos debe darse?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "qué formación en prevención deben garantizar las empresas a los trabajadores de una obra y en qué momentos debe darse",
+     "passage": 2,
+     "sentence": 3,
+     "quote": "1. En cumplimiento del deber de protección, el empresario deberá garantizar que cada trabajador reciba una formación teórica y práctica, suficiente y adecuada, en materia preventiva, tanto en el momento de su contratación, cualquiera que sea la modalidad o duración de ésta, como cuando se produzcan cambios en las funciones que desempeñe o se introduzcan nuevas tecnologías o cambios en los equipos de trabajo.",
+     "quote_found": true,
+     "tokens": {
+      "input": 1565,
+      "output": 49
+     },
+     "seconds": 1.2,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "qué formación en prevención deben garantizar las empresas a los trabajadores y en qué momentos debe darse",
+     "passage": 2,
+     "sentence": 3,
+     "quote": "1. En cumplimiento del deber de protección, el empresario deberá garantizar que cada trabajador reciba una formación teórica y práctica, suficiente y adecuada, en materia preventiva, tanto en el momento de su contratación, cualquiera que sea la modalidad o duración de ésta, como cuando se produzcan cambios en las funciones que desempeñe o se introduzcan nuevas tecnologías o cambios en los equipos de trabajo.",
+     "quote_found": true,
+     "tokens": {
+      "input": 1565,
+      "output": 46
+     },
+     "seconds": 1.2,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q13",
+   "question": "¿Qué carnet o formación específica necesita un operador de grúa torre?",
+   "expected": "no",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "qué carnet o formación específica necesita un operador de grúa torre",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1972,
+      "output": 40
+     },
+     "seconds": 0.8,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "el carnet o la formación específica que necesita un operador de grúa torre",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1972,
+      "output": 42
+     },
+     "seconds": 1.4,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q14",
+   "question": "¿Está permitido hacer controles de alcoholemia a los trabajadores de la obra?",
+   "expected": "no",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "si está permitido hacer controles de alcoholemia a los trabajadores de la obra",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1555,
+      "output": 50
+     },
+     "seconds": 1.1,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "si está permitido hacer controles de alcoholemia a los trabajadores de la obra",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1555,
+      "output": 50
+     },
+     "seconds": 0.7,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q15",
+   "question": "¿Cuándo hay que hacer una comprobación inicial de un equipo de trabajo cuya seguridad depende de sus condiciones de instalación?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "Cuándo hay que hacer una comprobación inicial de un equipo de trabajo cuya seguridad depende de sus condiciones de instalación",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "1. El empresario adoptará las medidas necesarias para que aquellos equipos de trabajo cuya seguridad dependa de sus condiciones de instalación se sometan a una comprobación inicial, tras su instalación y antes de la puesta en marcha por primera vez, y a una nueva comprobación después de cada montaje en un nuevo lugar o emplazamiento, con objeto de asegurar la correcta instalación y el buen funcionamiento de los equipos.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2770,
+      "output": 51
+     },
+     "seconds": 0.9,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "cuándo hay que hacer una comprobación inicial de un equipo de trabajo cuya seguridad depende de sus condiciones de instalación",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "1. El empresario adoptará las medidas necesarias para que aquellos equipos de trabajo cuya seguridad dependa de sus condiciones de instalación se sometan a una comprobación inicial, tras su instalación y antes de la puesta en marcha por primera vez, y a una nueva comprobación después de cada montaje en un nuevo lugar o emplazamiento, con objeto de asegurar la correcta instalación y el buen funcionamiento de los equipos.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2770,
+      "output": 61
+     },
+     "seconds": 1.2,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q16",
+   "question": "¿Qué medidas de emergencia debe adoptar el empresario?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "qué medidas en materia de primeros auxilios, lucha contra incendios, evacuación y servicios externos debe adoptar el empresario ante situaciones de emergencia",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "El empresario, teniendo en cuenta el tamaño y la actividad de la empresa, así como la posible presencia de personas ajenas a la misma, deberá analizar las posibles situaciones de emergencia y adoptar las medidas necesarias en materia de primeros auxilios, lucha contra incendios y evacuación de los trabajadores, designando para ello al personal encargado de poner en práctica estas medidas y comprobando periódicamente, en su caso, su correcto funcionamiento.",
+     "quote_found": true,
+     "tokens": {
+      "input": 1767,
+      "output": 66
+     },
+     "seconds": 0.7,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "qué medidas en materia de primeros auxilios, lucha contra incendios y evacuación debe adoptar el empresario ante situaciones de emergencia",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "El empresario, teniendo en cuenta el tamaño y la actividad de la empresa, así como la posible presencia de personas ajenas a la misma, deberá analizar las posibles situaciones de emergencia y adoptar las medidas necesarias en materia de primeros auxilios, lucha contra incendios y evacuación de los trabajadores, designando para ello al personal encargado de poner en práctica estas medidas y comprobando periódicamente, en su caso, su correcto funcionamiento.",
+     "quote_found": true,
+     "tokens": {
+      "input": 1767,
+      "output": 53
+     },
+     "seconds": 0.8,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q17",
+   "question": "¿Cuándo deben utilizarse los equipos de protección individual?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "Cuándo deben utilizarse los equipos de protección individual",
+     "passage": 1,
+     "sentence": 8,
+     "quote": "Los equipos de protección individual deberán utilizarse cuando los riesgos no se puedan evitar o no puedan limitarse suficientemente por medios técnicos de protección colectiva o mediante medidas, métodos o procedimientos de organización del trabajo.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2354,
+      "output": 39
+     },
+     "seconds": 0.9,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "cuándo deben utilizarse los equipos de protección individual",
+     "passage": 1,
+     "sentence": 8,
+     "quote": "Los equipos de protección individual deberán utilizarse cuando los riesgos no se puedan evitar o no puedan limitarse suficientemente por medios técnicos de protección colectiva o mediante medidas, métodos o procedimientos de organización del trabajo.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2354,
+      "output": 39
+     },
+     "seconds": 0.9,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q18",
+   "question": "¿Quién aprueba el plan de seguridad y salud de una obra y cuándo?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "Quién aprueba el plan de seguridad y salud de una obra y cuándo",
+     "passage": 1,
+     "sentence": 6,
+     "quote": "2. El plan de seguridad y salud deberá ser aprobado, antes del inicio de la obra, por el coordinador en materia de seguridad y de salud durante la ejecución de la obra.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2001,
+      "output": 43
+     },
+     "seconds": 0.8,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "Quién aprueba el plan de seguridad y salud de una obra y cuándo",
+     "passage": 1,
+     "sentence": 6,
+     "quote": "2. El plan de seguridad y salud deberá ser aprobado, antes del inicio de la obra, por el coordinador en materia de seguridad y de salud durante la ejecución de la obra.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2001,
+      "output": 43
+     },
+     "seconds": 1.0,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q19",
+   "question": "¿Quién puede paralizar los trabajos en una obra y en qué circunstancias?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "quién puede paralizar los trabajos en una obra y en qué circunstancias",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "1. Sin perjuicio de lo previsto en los apartados 2 y 3 del artículo 21 y en el artículo 44 de la Ley de Prevención de Riesgos Laborales, cuando el coordinador en materia de seguridad y salud durante la ejecución de la obra o cualquier otra persona integrada en la dirección facultativa observase incumplimiento de las medidas de seguridad y salud, advertirá al contratista de ello, dejando constancia de tal incumplimiento en el libro de incidencias, cuando éste exista de acuerdo con lo dispuesto en el apartado 1 del artículo 13, y quedando facultado para, en circunstancias de riesgo grave e inminente para la seguridad y la salud de los trabajadores, disponer la paralización de los tajos o, en su caso, de la totalidad de la obra.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2089,
+      "output": 43
+     },
+     "seconds": 1.5,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "quién puede paralizar los trabajos en una obra y en qué circunstancias",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "1. Sin perjuicio de lo previsto en los apartados 2 y 3 del artículo 21 y en el artículo 44 de la Ley de Prevención de Riesgos Laborales, cuando el coordinador en materia de seguridad y salud durante la ejecución de la obra o cualquier otra persona integrada en la dirección facultativa observase incumplimiento de las medidas de seguridad y salud, advertirá al contratista de ello, dejando constancia de tal incumplimiento en el libro de incidencias, cuando éste exista de acuerdo con lo dispuesto en el apartado 1 del artículo 13, y quedando facultado para, en circunstancias de riesgo grave e inminente para la seguridad y la salud de los trabajadores, disponer la paralización de los tajos o, en su caso, de la totalidad de la obra.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2089,
+      "output": 53
+     },
+     "seconds": 0.9,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q20",
+   "question": "¿Puede un tercer subcontratista subcontratar a su vez los trabajos que tiene contratados?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "si un tercer subcontratista puede subcontratar a su vez los trabajos que tiene contratados",
+     "passage": 1,
+     "sentence": 8,
+     "quote": "d) El tercer subcontratista no podrá subcontratar los trabajos que hubiera contratado con otro subcontratista o trabajador autónomo.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2211,
+      "output": 49
+     },
+     "seconds": 0.9,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "si un tercer subcontratista puede subcontratar a su vez los trabajos que tiene contratados",
+     "passage": 1,
+     "sentence": 8,
+     "quote": "d) El tercer subcontratista no podrá subcontratar los trabajos que hubiera contratado con otro subcontratista o trabajador autónomo.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2211,
+      "output": 49
+     },
+     "seconds": 1.3,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q21",
+   "question": "¿De qué autoridad depende el Registro de Empresas Acreditadas y qué validez tiene la inscripción?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "la autoridad de la que depende el Registro de Empresas Acreditadas y la validez que tiene su inscripción",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "1. A efectos de lo dispuesto en el artículo anterior, se creará el Registro de Empresas Acreditadas, que dependerá de la autoridad laboral competente, entendiéndose por tal la correspondiente al territorio de la Comunidad Autónoma donde radique el domicilio social de la empresa contratista o subcontratista.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2286,
+      "output": 60
+     },
+     "seconds": 1.0,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "la autoridad de la que depende el Registro de Empresas Acreditadas y la validez de su inscripción",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "1. A efectos de lo dispuesto en el artículo anterior, se creará el Registro de Empresas Acreditadas, que dependerá de la autoridad laboral competente, entendiéndose por tal la correspondiente al territorio de la Comunidad Autónoma donde radique el domicilio social de la empresa contratista o subcontratista.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2286,
+      "output": 49
+     },
+     "seconds": 0.9,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q22",
+   "question": "¿Cuándo debe revisarse la evaluación inicial de riesgos?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "cuándo debe revisarse la evaluación inicial de riesgos",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "1. La evaluación inicial a que se refiere el artículo 4 deberá revisarse cuando así lo establezca una disposición específica.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2080,
+      "output": 39
+     },
+     "seconds": 1.3,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "cuándo debe revisarse la evaluación inicial de riesgos",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "1. La evaluación inicial a que se refiere el artículo 4 deberá revisarse cuando así lo establezca una disposición específica.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2080,
+      "output": 39
+     },
+     "seconds": 1.1,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q23",
+   "question": "¿Qué datos deben reflejarse en la documentación de la evaluación de riesgos para cada puesto de trabajo?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "los datos específicos que deben reflejarse en la documentación de la evaluación de riesgos para cada puesto de trabajo",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "En la documentación a que hace referencia el párrafo a) del apartado 1 del artículo 23 de la Ley de Prevención de Riesgos Laborales deberán reflejarse, para cada puesto de trabajo cuya evaluación ponga de manifiesto la necesidad de tomar alguna medida preventiva, los siguientes datos:",
+     "quote_found": true,
+     "tokens": {
+      "input": 2283,
+      "output": 50
+     },
+     "seconds": 0.9,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "qué datos específicos deben reflejarse en la documentación de la evaluación de riesgos para cada puesto de trabajo",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "En la documentación a que hace referencia el párrafo a) del apartado 1 del artículo 23 de la Ley de Prevención de Riesgos Laborales deberán reflejarse, para cada puesto de trabajo cuya evaluación ponga de manifiesto la necesidad de tomar alguna medida preventiva, los siguientes datos:",
+     "quote_found": true,
+     "tokens": {
+      "input": 2283,
+      "output": 49
+     },
+     "seconds": 1.2,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q24",
+   "question": "¿Quién debe facilitar una copia del plan de seguridad y salud a los representantes de los trabajadores?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "qué figura o persona debe facilitar una copia del plan de seguridad y salud a los representantes de los trabajadores",
+     "passage": 1,
+     "sentence": 5,
+     "quote": "3. Una copia del plan de seguridad y salud y de sus posibles modificaciones, en los términos previstos en el apartado 4 del artículo 7, a efectos de su conocimiento y seguimiento, será facilitada por el contratista a los representantes de los trabajadores en el centro de trabajo.",
+     "quote_found": true,
+     "tokens": {
+      "input": 1783,
+      "output": 49
+     },
+     "seconds": 1.3,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "qué sujeto o figura debe facilitar una copia del plan de seguridad y salud a los representantes de los trabajadores",
+     "passage": 1,
+     "sentence": 5,
+     "quote": "3. Una copia del plan de seguridad y salud y de sus posibles modificaciones, en los términos previstos en el apartado 4 del artículo 7, a efectos de su conocimiento y seguimiento, será facilitada por el contratista a los representantes de los trabajadores en el centro de trabajo.",
+     "quote_found": true,
+     "tokens": {
+      "input": 1783,
+      "output": 49
+     },
+     "seconds": 0.9,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q25",
+   "question": "¿Qué obligación tienen los contratistas de una obra sobre coordinación de actividades empresariales y en qué consiste esa coordinación?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "Qué obligación tienen los contratistas de una obra sobre coordinación de actividades empresariales y en qué consiste esa coordinación.",
+     "passage": 2,
+     "sentence": 6,
+     "quote": "c) Cumplir la normativa en materia de prevención de riesgos laborales, teniendo en cuenta, en su caso, las obligaciones sobre coordinación de actividades empresariales previstas en el artículo 24 de la Ley de Prevención de Riesgos Laborales, así como cumplir las disposiciones mínimas establecidas en el anexo IV del presente Real Decreto, durante la ejecución de la obra.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2549,
+      "output": 60
+     },
+     "seconds": 1.4,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "qué obligación tienen los contratistas de una obra sobre coordinación de actividades empresariales y en qué consiste esa coordinación",
+     "passage": 2,
+     "sentence": 6,
+     "quote": "c) Cumplir la normativa en materia de prevención de riesgos laborales, teniendo en cuenta, en su caso, las obligaciones sobre coordinación de actividades empresariales previstas en el artículo 24 de la Ley de Prevención de Riesgos Laborales, así como cumplir las disposiciones mínimas establecidas en el anexo IV del presente Real Decreto, durante la ejecución de la obra.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2549,
+      "output": 60
+     },
+     "seconds": 2.0,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q26",
+   "question": "¿Qué información sobre seguridad y salud deben recibir los trabajadores de una obra y quién debe garantizarla?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "qué información sobre seguridad y salud deben recibir los trabajadores de una obra y quién debe garantizarla",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "1. De conformidad con el artículo 18 de la Ley de Prevención de Riesgos Laborales, los contratistas y subcontratistas deberán garantizar que los trabajadores reciban una información adecuada de todas las medidas que hayan de adoptarse en lo que se refiere a su seguridad y su salud en la obra.",
+     "quote_found": true,
+     "tokens": {
+      "input": 1837,
+      "output": 47
+     },
+     "seconds": 1.3,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "qué información sobre seguridad y salud deben recibir los trabajadores de una obra y quién debe garantizarla",
+     "passage": 1,
+     "sentence": 3,
+     "quote": "1. De conformidad con el artículo 18 de la Ley de Prevención de Riesgos Laborales, los contratistas y subcontratistas deberán garantizar que los trabajadores reciban una información adecuada de todas las medidas que hayan de adoptarse en lo que se refiere a su seguridad y su salud en la obra.",
+     "quote_found": true,
+     "tokens": {
+      "input": 1837,
+      "output": 57
+     },
+     "seconds": 1.1,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q27",
+   "question": "¿Qué debe acreditar una empresa para ser subcontratada en una obra y qué registro está relacionado con ello?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "qué debe acreditar una empresa para ser subcontratada en una obra y qué registro está relacionado con ello",
+     "passage": 1,
+     "sentence": 9,
+     "quote": "b) Estar inscritas en el Registro de Empresas Acreditadas al que se refiere el artículo 6 de esta Ley.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2505,
+      "output": 50
+     },
+     "seconds": 1.5,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "Qué debe acreditar una empresa para ser subcontratada en una obra y qué registro está relacionado con ello",
+     "passage": 1,
+     "sentence": 7,
+     "quote": "2. Además de los anteriores requisitos, las empresas que pretendan ser contratadas o subcontratadas para trabajos de una obra de construcción deberán también:",
+     "quote_found": true,
+     "tokens": {
+      "input": 2505,
+      "output": 60
+     },
+     "seconds": 1.0,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q28",
+   "question": "¿Qué seguro de responsabilidad civil debe contratar el promotor de una obra?",
+   "expected": "no",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "el tipo de seguro de responsabilidad civil que debe contratar el promotor de una obra",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2189,
+      "output": 43
+     },
+     "seconds": 0.8,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "qué seguro de responsabilidad civil debe contratar el promotor de una obra",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2189,
+      "output": 40
+     },
+     "seconds": 1.1,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q29",
+   "question": "¿Cuántos extintores debe haber por planta en una obra?",
+   "expected": "no",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "el número específico de extintores que debe haber por planta en una obra",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2028,
+      "output": 42
+     },
+     "seconds": 0.9,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "la cantidad exacta de extintores que debe haber por planta en una obra",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2028,
+      "output": 42
+     },
+     "seconds": 1.4,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "q30",
+   "question": "¿Qué medidas deben tomarse en las obras durante una ola de calor?",
+   "expected": "no",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "qué medidas específicas deben tomarse en las obras durante una ola de calor",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2675,
+      "output": 41
+     },
+     "seconds": 0.9,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "qué medidas específicas deben tomarse en las obras durante una ola de calor",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2675,
+      "output": 41
+     },
+     "seconds": 0.8,
+     "error": null
+    }
+   ]
+  }
+ ],
+ "seconds": 306.8
+}

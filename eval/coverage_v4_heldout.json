@@ -1,0 +1,347 @@
+{
+ "version": "v4",
+ "set": "heldout",
+ "model": "gemini-3.5-flash-lite",
+ "reps": 2,
+ "calls": {
+  "gemini-3.5-flash-lite": 18
+ },
+ "embedding_calls": 9,
+ "stopped": null,
+ "rows": [
+  {
+   "id": "h01",
+   "question": "Oye, tengo a un tío de una subcontrata que lleva dos días currando en la obra y no sé si le han dado formación ni nada de eso. ¿Eso me lo tengo que mirar yo o es cosa de su empresa?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "si la formación en prevención de riesgos laborales de un trabajador de una subcontrata en una obra es responsabilidad propia o de su empresa",
+     "passage": 1,
+     "sentence": 5,
+     "quote": "2. El empresario titular del centro de trabajo adoptará las medidas necesarias para que aquellos otros empresarios que desarrollen actividades en su centro de trabajo reciban la información y las instrucciones adecuadas, en relación con los riesgos existentes en el centro de trabajo y con las medidas de protección y prevención correspondientes, así como sobre las medidas de emergencia a aplicar, para su traslado a sus respectivos trabajadores.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2578,
+      "output": 65
+     },
+     "seconds": 1.3,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "si la formación en prevención de riesgos laborales de un trabajador de una subcontrata en una obra es responsabilidad propia o de su empresa",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2578,
+      "output": 63
+     },
+     "seconds": 1.2,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "h02",
+   "question": "Hemos cogido a dos chavales de una ETT para una obra que llevamos nosotros. ¿Quién les tiene que dar la formación y quién les da los equipos de protección: la ETT o nosotros?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "parcial",
+     "claimed": "parcial",
+     "need": "quién tiene que dar la formación y quién los equipos de protección a los trabajadores de una ETT",
+     "passage": 2,
+     "sentence": 5,
+     "quote": "La empresa de trabajo temporal será responsable del cumplimiento de las obligaciones en materia de formación y vigilancia de la salud que se establecen en los apartados 2 y 3 de este artículo.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2378,
+      "output": 60
+     },
+     "seconds": 1.3,
+     "error": null
+    },
+    {
+     "level": "parcial",
+     "claimed": "parcial",
+     "need": "quién debe dar la formación y quién debe dar los equipos de protección a los trabajadores de una ETT en una obra",
+     "passage": 2,
+     "sentence": 5,
+     "quote": "La empresa de trabajo temporal será responsable del cumplimiento de las obligaciones en materia de formación y vigilancia de la salud que se establecen en los apartados 2 y 3 de este artículo.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2378,
+      "output": 64
+     },
+     "seconds": 0.9,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "h03",
+   "question": "Somos 47 en plantilla repartidos entre la oficina y dos obras. ¿Estamos obligados a montar un comité de seguridad y salud o todavía no?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "a partir de qué número de trabajadores en plantilla (repartidos entre oficina y obras) se está obligado a montar un comité de seguridad y salud",
+     "passage": 1,
+     "sentence": 4,
+     "quote": "2. Se constituirá un Comité de Seguridad y Salud en todas las empresas o centros de trabajo que cuenten con 50 o más trabajadores.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2320,
+      "output": 58
+     },
+     "seconds": 1.6,
+     "error": null
+    },
+    {
+     "level": "sí",
+     "claimed": "sí",
+     "need": "a partir de qué número de trabajadores en plantilla (repartidos entre oficina y obras) se está obligado a montar un comité de seguridad y salud",
+     "passage": 1,
+     "sentence": 4,
+     "quote": "2. Se constituirá un Comité de Seguridad y Salud en todas las empresas o centros de trabajo que cuenten con 50 o más trabajadores.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2320,
+      "output": 58
+     },
+     "seconds": 1.0,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "h04",
+   "question": "Como el plan de seguridad y salud lo tiene que aprobar la Inspección de Trabajo antes de abrir el centro, ¿cuántos días suelen tardar en darte el visto bueno?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "cuántos días suele tardar la Inspección de Trabajo en dar el visto bueno al plan de seguridad y salud antes de abrir el centro",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2528,
+      "output": 55
+     },
+     "seconds": 1.0,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "el plazo o número de días que suele tardar la Inspección de Trabajo en aprobar el plan de seguridad y salud antes de abrir el centro",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2528,
+      "output": 55
+     },
+     "seconds": 1.8,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "h05",
+   "question": "oie y lo del recurso preventivo en obra xq mi encargado dice q hace falta siempre uno x cada tajo?? es asi o depende d algo?",
+   "expected": "no",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "si hace falta siempre un recurso preventivo por cada tajo en una obra o si depende de algo",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2081,
+      "output": 47
+     },
+     "seconds": 0.8,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "si hace falta un recurso preventivo por cada tajo obligatoriamente o si depende de algo",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2081,
+      "output": 46
+     },
+     "seconds": 0.8,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "h06",
+   "question": "¿Cuántas horas de formación del TPC tiene que hacer un peón nuevo según el convenio de la construcción?",
+   "expected": "no",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "el número de horas de formación de la Tarjeta Profesional de la Construcción (TPC) que debe realizar un peón nuevo según el convenio",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1623,
+      "output": 66
+     },
+     "seconds": 1.1,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "el número de horas de formación de la Tarjeta Profesional de la Construcción (TPC) que debe realizar un peón nuevo según el convenio de la construcción",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1623,
+      "output": 59
+     },
+     "seconds": 0.8,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "h07",
+   "question": "¿Puedo dar la formación de prevención a mis operarios por videollamada en directo, o tiene que ser presencial sí o sí?",
+   "expected": "no",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "si está permitido impartir la formación de prevención por videollamada en directo o si debe ser obligatoriamente presencial",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1955,
+      "output": 52
+     },
+     "seconds": 0.8,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "si está permitido impartir la formación de prevención por videollamada en directo o si debe ser obligatoriamente presencial",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 1955,
+      "output": 52
+     },
+     "seconds": 1.7,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "h08",
+   "question": "¿Cuál es hoy la multa máxima que le pueden poner a una empresa por una infracción muy grave en materia de prevención?",
+   "expected": "answer",
+   "verdicts": [
+    {
+     "level": "parcial",
+     "claimed": "parcial",
+     "need": "la multa máxima actual para una infracción muy grave en prevención de riesgos laborales",
+     "passage": 1,
+     "sentence": 5,
+     "quote": "Grado máximo: de 50.000.001 a 100.000.000 de pesetas.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2351,
+      "output": 45
+     },
+     "seconds": 1.1,
+     "error": null
+    },
+    {
+     "level": "parcial",
+     "claimed": "parcial",
+     "need": "la multa máxima actual para una infracción muy grave en prevención de riesgos laborales",
+     "passage": 1,
+     "sentence": 5,
+     "quote": "Grado máximo: de 50.000.001 a 100.000.000 de pesetas.",
+     "quote_found": true,
+     "tokens": {
+      "input": 2351,
+      "output": 45
+     },
+     "seconds": 2.2,
+     "error": null
+    }
+   ]
+  },
+  {
+   "id": "h09",
+   "question": "¿Cuántos días de vacaciones me corresponden al año si trabajo en una oficina en Alemania?",
+   "expected": "no",
+   "verdicts": [
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "cuántos días de vacaciones corresponden al año trabajando en una oficina en Alemania",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2508,
+      "output": 42
+     },
+     "seconds": 0.9,
+     "error": null
+    },
+    {
+     "level": "no",
+     "claimed": "no",
+     "need": "cuántos días de vacaciones corresponden al año trabajando en una oficina en Alemania",
+     "passage": null,
+     "sentence": null,
+     "quote": "",
+     "quote_found": null,
+     "tokens": {
+      "input": 2508,
+      "output": 42
+     },
+     "seconds": 0.9,
+     "error": null
+    }
+   ]
+  }
+ ],
+ "seconds": 97.7
+}

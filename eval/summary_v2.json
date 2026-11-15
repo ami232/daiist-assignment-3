@@ -1,0 +1,147 @@
+{
+ "agent_models_used": {
+  "gemini-3.5-flash-lite": 45
+ },
+ "judge_models_used": {
+  "gemini-3.1-flash-lite": 45
+ },
+ "design": "article",
+ "n_questions": 45,
+ "n_errors": 0,
+ "retrieval": {
+  "article": {
+   "n": 34,
+   "hit@1": 0.676,
+   "hit@3": 0.853,
+   "hit@5": 0.912
+  },
+  "fixed": {
+   "n": 34,
+   "hit@1": 0.529,
+   "hit@3": 0.647,
+   "hit@5": 0.824
+  }
+ },
+ "judge_correct": 0.911,
+ "judge_supported": 1.0,
+ "correct_answerable": 0.912,
+ "proper_refusals_on_unanswerable": 0.909,
+ "wrong_refusals_on_answerable": 0.088,
+ "all_citations_valid": 1.0,
+ "answers_without_citation_not_refusal": 0,
+ "agreement_with_human": {
+  "n_human_labels": 30,
+  "correct": {
+   "compared": 30,
+   "agree": 30,
+   "rate": 1.0,
+   "disagreements": []
+  },
+  "supported": {
+   "compared": 30,
+   "agree": 30,
+   "rate": 1.0,
+   "disagreements": []
+  }
+ },
+ "by_set": {
+  "dev": {
+   "n": 30,
+   "n_unanswerable": 6,
+   "n_judged": 30,
+   "correct": 28,
+   "supported": 30,
+   "correct_refusals": 5,
+   "false_refusals": 1,
+   "citations_valid": 30,
+   "answers_without_citation_not_refusal": 0
+  },
+  "heldout": {
+   "n": 9,
+   "n_unanswerable": 3,
+   "n_judged": 9,
+   "correct": 7,
+   "supported": 9,
+   "correct_refusals": 3,
+   "false_refusals": 2,
+   "citations_valid": 9,
+   "answers_without_citation_not_refusal": 0,
+   "agreement_with_labels": {
+    "n_human_labels": 9,
+    "correct": {
+     "compared": 9,
+     "agree": 8,
+     "rate": 0.889,
+     "disagreements": [
+      "h04"
+     ]
+    },
+    "supported": {
+     "compared": 9,
+     "agree": 9,
+     "rate": 1.0,
+     "disagreements": []
+    }
+   }
+  },
+  "fresh": {
+   "n": 6,
+   "n_unanswerable": 2,
+   "n_judged": 6,
+   "correct": 6,
+   "supported": 6,
+   "correct_refusals": 2,
+   "false_refusals": 0,
+   "citations_valid": 6,
+   "answers_without_citation_not_refusal": 0,
+   "agreement_with_labels": {
+    "n_human_labels": 6,
+    "correct": {
+     "compared": 6,
+     "agree": 6,
+     "rate": 1.0,
+     "disagreements": []
+    },
+    "supported": {
+     "compared": 6,
+     "agree": 6,
+     "rate": 1.0,
+     "disagreements": []
+    }
+   }
+  }
+ },
+ "calls_per_model": {
+  "agent": {
+   "gemini-3.5-flash-lite": 110
+  },
+  "coverage": {
+   "gemini-3.5-flash-lite": 50
+  },
+  "judge": {
+   "gemini-3.1-flash-lite": 49
+  }
+ },
+ "cost_per_question": {
+  "tokens_in_mean": 4895,
+  "tokens_out_mean": 239,
+  "seconds_mean": 12.1,
+  "seconds_max": 77.5
+ },
+ "agreement_total": {
+  "correct": {
+   "compared": 45,
+   "agree": 44,
+   "rate": 0.978,
+   "disagreements": [
+    "h04"
+   ]
+  },
+  "supported": {
+   "compared": 45,
+   "agree": 45,
+   "rate": 1.0,
+   "disagreements": []
+  }
+ }
+}

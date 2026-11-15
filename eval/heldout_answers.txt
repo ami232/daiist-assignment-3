@@ -1,0 +1,140 @@
+=== Oye, tengo a un tío de una subcontrata que lleva dos días currando en la obra y no sé si le han dado formación ni nada de eso. ¿Eso me lo tengo que mirar yo o es cosa de su empresa?
+La responsabilidad de impartir la formación corresponde a la empresa empleadora del trabajador, pero la empresa contratista que lo subcontrata tiene un **deber de vigilancia** para comprobar que esa formación se cumple y acredita.
+
+1. **Obligación de dar la formación (empresa subcontratista):**
+   * Corresponde al empresario garantizar que cada trabajador reciba una formación teórica y práctica, suficiente y adecuada en materia preventiva, tanto al momento de su contratación como cuando se produzcan cambios en sus funciones o equipos (Ley 31/1995, Artículo 19.1).
+   * Las empresas velarán por que todos los trabajadores que presten servicios en las obras tengan la formación necesaria y adecuada a su puesto o función (Ley 32/2006, Artículo 10.1).
+
+2. **Obligación de vigilar y verificar (empresa que subcontrata / contratista):**
+   * Las empresas que contraten o subcontraten la realización de obras correspondientes a su propia actividad en sus centros de trabajo deben **vigilar el cumplimiento** por contratistas y subcontratistas de la normativa de prevención de riesgos laborales (Ley 31/1995, Artículo 24.3).
+   * Las empresas contratistas y subcontratistas tienen la obligación de vigilar que las empresas con las que contraten acrediten que disponen de recursos humanos con la formación necesaria en prevención de riesgos laborales (Ley 32/2006, Artículo 7.1 y Artículo 4.2.a).
+   * Para ello, las empresas subcontratistas deben trasladar al contratista la documentación o información correspondiente a dicha acreditación (Ley 32/2006, Artículo 7.1).
+
+---
+**Fuentes consultadas:**
+* **Ley 31/1995** (Prevención de Riesgos Laborales), Artículos 19 y 24.
+* **Ley 32/2006** (Reguladora de la subcontratación en el Sector de la Construcción), Artículos 4, 7 y 10.
+
+[gemini-3.5-flash; 2 tool call(s); searches: ['formacion trabajadores subcontratistas obligaciones contratista coordinacion actividades', 'Ley 32/2006 acreditacion deberes contratista comprobacion formacion']; 10313+1768 tokens; 28.8 s]
+
+=== Hemos cogido a dos chavales de una ETT para una obra que llevamos nosotros. ¿Quién les tiene que dar la formación y quién les da los equipos de protección: la ETT o nosotros?
+De acuerdo con la normativa del corpus:
+
+1. **Formación:** 
+   Corresponde a la **Empresa de Trabajo Temporal (ETT)** el cumplimiento de las obligaciones en materia de formación (Ley 31/1995, Artículo 28.5). Para que la ETT pueda cumplir con ello, la empresa usuaria debe informarla previamente acerca de las características del puesto de trabajo a desempeñar y de las cualificaciones requeridas (Ley 31/1995, Artículo 28.5).
+
+2. **Equipos de protección:** 
+   La **empresa usuaria** es la responsable de las condiciones de ejecución del trabajo en todo lo relacionado con la protección de la seguridad y la salud de los trabajadores (Ley 31/1995, Artículo 28.5). Con carácter general, el empresario debe proporcionar a los trabajadores los equipos de protección individual adecuados para el desempeño de sus funciones y velar por su uso efectivo (Ley 31/1995, Artículo 17.2).
+
+---
+
+### Fuentes consultadas:
+* **Ley 31/1995, de Prevención de Riesgos Laborales:** Artículo 17 (apartado 2) y Artículo 28 (apartado 5).
+
+*(Nota: Esta respuesta tiene carácter meramente informativo sobre la normativa aplicable).*
+
+[gemini-3.5-flash; 2 tool call(s); searches: ['empresa trabajo temporal ETT formacion equipos de proteccion empresa usuaria', 'equipos de proteccion individual ETT empresa usuaria obras de construccion']; 9510+1562 tokens; 96.1 s]
+
+=== Somos 47 en plantilla repartidos entre la oficina y dos obras. ¿Estamos obligados a montar un comité de seguridad y salud o todavía no?
+**Análisis paso a paso de su situación:**
+
+1. **Requisito legal para la constitución del Comité de Seguridad y Salud:**
+   La Ley 31/1995 establece que *«Se constituirá un Comité de Seguridad y Salud en todas las empresas o centros de trabajo que cuenten con 50 o más trabajadores»* (Ley 31/1995, Artículo 38.2).
+
+2. **Aplicación al caso concreto:**
+   - La empresa cuenta actualmente con una plantilla de 47 trabajadores (repartidos entre oficina y dos obras).
+   - Al no alcanzar la cifra de 50 trabajadores exigida por la norma, no existe la obligación legal de constituir un Comité de Seguridad y Salud.
+
+3. **Representación correspondiente a su volumen de plantilla:**
+   Para empresas de ese rango de plantilla, la norma prevé la figura del Delegado de Prevención: *«En las empresas de treinta y uno a cuarenta y nueve trabajadores habrá un Delegado de Prevención que será elegido por y entre los Delegados de Personal»* (Ley 31/1995, Artículo 35.2).
+
+---
+
+### Fuentes consultadas:
+* **Ley 31/1995**, de Prevención de Riesgos Laborales:
+  * Artículo 35.2 (Escala de Delegados de Prevención).
+  * Artículo 38.2 (Constitución y umbral de trabajadores del Comité de Seguridad y Salud).
+
+[gemini-3.5-flash; 1 tool call(s); searches: ['Comité de Seguridad y Salud número de trabajadores constitución obligación']; 4798+1546 tokens; 12.8 s]
+
+=== Como el plan de seguridad y salud lo tiene que aprobar la Inspección de Trabajo antes de abrir el centro, ¿cuántos días suelen tardar en darte el visto bueno?
+En los documentos del corpus no consta que la Inspección de Trabajo deba aprobar el plan de seguridad y salud antes de abrir el centro, ni se indica ningún plazo de días para dicho visto bueno.
+
+Según la normativa:
+- El plan de seguridad y salud debe ser aprobado, antes del inicio de la obra, por el coordinador en materia de seguridad y salud durante la ejecución de la obra (o por la Administración pública adjudicataria en obras públicas, o por la dirección facultativa cuando no haya coordinador) (RD 1627/1997, Artículo 7).
+- La comunicación de apertura del centro de trabajo a la autoridad laboral competente debe incluir el plan de seguridad y salud (RD 1627/1997, Artículo 19).
+- El plan de seguridad y salud estará a disposición permanente de la Inspección de Trabajo y Seguridad Social (RD 1627/1997, Artículo 19).
+
+Fuentes utilizadas:
+- RD 1627/1997, Artículos 7 y 19.
+
+*Nota: Esta información es meramente divulgativa y no constituye asesoramiento legal.*
+
+[gemini-3.5-flash-lite; 1 tool call(s); searches: ['aprobacion plan de seguridad y salud inspeccion de trabajo']; 4437+271 tokens; 102.9 s]
+
+=== oie y lo del recurso preventivo en obra xq mi encargado dice q hace falta siempre uno x cada tajo?? es asi o depende d algo?
+No consta en los documentos del corpus normativo consultado ninguna regulación sobre el **recurso preventivo** ni sobre su obligatoriedad por tajo en las obras de construcción. 
+
+*(Nota: Los textos del corpus —Ley 31/1995, RD 39/1997, RD 1627/1997, RD 1215/1997 y Ley 32/2006— no contienen las previsiones específicas sobre la figura del recurso preventivo introducidas en la normativa general de prevención de riesgos laborales).*
+
+Fuentes consultadas:
+- Ley 31/1995 (Prevención de Riesgos Laborales)
+- RD 39/1997 (Reglamentación de los Servicios de Prevención)
+- RD 1627/1997 (Disposiciones mínimas de seguridad y salud en las obras de construcción)
+- RD 1215/1997 (Utilización de equipos de trabajo)
+- Ley 32/2006 (Subcontratación en el sector de la construcción)
+
+[gemini-3.5-flash-lite; 3 tool call(s); searches: ['recurso preventivo obra tajo obligacion', 'recurso preventivo ley 31 1995 o RD 39 1997 construccion obra', 'recurso preventivo ley 31 1995 o RD 39 1997']; 13973+344 tokens; 6.4 s]
+
+=== ¿Cuántas horas de formación del TPC tiene que hacer un peón nuevo según el convenio de la construcción?
+No consta en los documentos del corpus cuántas horas específicas de formación del TPC (Tarjeta Profesional de la Construcción) debe realizar un peón nuevo, ya que los textos legales del corpus (como la Ley 32/2006, Artículo 10) señalan que los programas formativos, contenidos específicos y los sistemas de acreditación correspondientes se establecerán a través de la negociación colectiva sectorial de ámbito estatal o reglamentariamente. 
+
+No obstante, las normas del corpus aplicables a la formación en general establecen lo siguiente:
+* El empresario debe garantizar que cada trabajador reciba una formación teórica y práctica, suficiente y adecuada en materia preventiva, tanto en el momento de su contratación como ante cambios de funciones o de equipos de trabajo, centrada específicamente en su puesto o función (Ley 31/1995, Artículo 19).
+* Las empresas velarán por que todos los trabajadores que presten servicios en las obras tengan la formación necesaria y adecuada a su puesto de trabajo o función, pudiendo la negociación colectiva estatal establecer programas formativos y contenidos específicos para cada especialidad, así como regular la forma de acreditar dicha formación (Ley 32/2006, Artículo 10).
+
+*(Esta información es meramente divulgativa y no constituye asesoramiento legal).*
+
+**Fuentes utilizadas:**
+- Ley 31/1995 (Prevención de Riesgos Laborales), Artículo 19.
+- Ley 32/2006 (Reguladora de la subcontratación en el sector de la construcción), Artículo 10.
+
+[gemini-3.5-flash-lite; 2 tool call(s); searches: [None, 'formacion TPC peon horas construccion']; 5127+406 tokens; 4.6 s]
+
+=== ¿Puedo dar la formación de prevención a mis operarios por videollamada en directo, o tiene que ser presencial sí o sí?
+En los documentos del corpus consultado no se hace mención específica a si la formación preventiva de los trabajadores puede realizarse por videollamada en directo o si debe ser exclusivamente presencial.
+
+Los textos disponibles se limitan a indicar que el empresario debe garantizar que cada trabajador reciba una formación teórica y práctica, suficiente y adecuada, centrada específicamente en su puesto de trabajo o función, la cual podrá impartirse por la empresa mediante medios propios o concertándola con servicios ajenos (Ley 31/1995, Artículo 19).
+
+*Fuentes utilizadas:*
+- Ley 31/1995, Artículo 19
+
+*(Nota: Este texto informativa no constituye asesoramiento legal).*
+
+[gemini-3.5-flash-lite; 1 tool call(s); searches: ['formacion prevencion presencial videollamada trabajadores']; 4646+173 tokens; 28.2 s]
+
+=== ¿Cuál es hoy la multa máxima que le pueden poner a una empresa por una infracción muy grave en materia de prevención?
+Según la Ley 31/1995 de Prevención de Riesgos Laborales, las sanciones por infracciones muy graves se gradúan en los siguientes tramos expresados en pesetas:
+- **Grado mínimo:** de 5.000.001 a 20.000.000 de pesetas.
+- **Grado medio:** de 20.000.001 a 50.000.000 de pesetas.
+- **Grado máximo:** de 50.000.001 a 100.000.000 de pesetas (Ley 31/1995, Artículo 49).
+
+El tope máximo previsto para las infracciones muy graves es, por tanto, de **100.000.000 de pesetas** (Ley 31/1995, Artículo 50). 
+
+*(Nota: Los documentos del corpus de esta normativa reflejan las cuantías originales en pesetas de la Ley 31/1995, sin incluir su posterior conversión o actualización legal a euros).*
+
+Fuentes utilizadas:
+- Ley 31/1995, Artículo 49
+- Ley 31/1995, Artículo 50
+
+[gemini-3.5-flash-lite; 2 tool call(s); searches: ['multa infraccion muy grave prevencion', 'Ley 31 1995 articulo 40 sanciones pesetas euros']; 9433+342 tokens; 5.3 s]
+
+=== ¿Cuántos días de vacaciones me corresponden al año si trabajo en una oficina en Alemania?
+No consta en los documentos del corpus. El corpus normativo consultado se limita a la legislación española sobre prevención de riesgos laborales y seguridad y salud en obras de construcción (Ley 31/1995, RD 39/1997, RD 1627/1997, RD 1215/1997 y Ley 32/2006), por lo que no contiene información sobre días de vacaciones ni sobre la normativa laboral aplicable en oficinas situadas en Alemania.
+
+*Búsqueda realizada:* "vacaciones oficina Alemania"
+
+*(Esta información es meramente divulgativa y no constituye asesoramiento legal).*
+
+[gemini-3.5-flash-lite; 1 tool call(s); searches: ['vacaciones oficina Alemania']; 3347+158 tokens; 13.9 s]
+

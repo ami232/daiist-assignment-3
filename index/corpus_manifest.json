@@ -1,0 +1,37 @@
+{
+ "BOE-A-1995-24292": {
+  "norm": "Ley 31/1995",
+  "url": "https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/BOE-A-1995-24292",
+  "downloaded": "2026-11-15",
+  "boe_updated": "20261106T075149Z",
+  "sha256": "d323e91deaaa0d2f5513ff4957ef3be9e963a8a1218c40ed90a303db7d170272"
+ },
+ "BOE-A-1997-1853": {
+  "norm": "RD 39/1997",
+  "url": "https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/BOE-A-1997-1853",
+  "downloaded": "2026-11-15",
+  "boe_updated": "20261015T114214Z",
+  "sha256": "0ea572974bb1c5e6aa225707750aabf035c35af24116492ad65ff26c496cf703"
+ },
+ "BOE-A-1997-22614": {
+  "norm": "RD 1627/1997",
+  "url": "https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/BOE-A-1997-22614",
+  "downloaded": "2026-11-15",
+  "boe_updated": "20251218T151023Z",
+  "sha256": "f08f8ad44d3a84e4cf62c4589f9e00f002f840030ee93908dfec908be2f21a6e"
+ },
+ "BOE-A-1997-17824": {
+  "norm": "RD 1215/1997",
+  "url": "https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/BOE-A-1997-17824",
+  "downloaded": "2026-11-15",
+  "boe_updated": "20251218T150953Z",
+  "sha256": "f2fc5ad30628c88b40eba7d199b76c9675d5181b3ecb4f33c82a2a1292b98d1f"
+ },
+ "BOE-A-2006-18205": {
+  "norm": "Ley 32/2006",
+  "url": "https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/BOE-A-2006-18205",
+  "downloaded": "2026-11-15",
+  "boe_updated": "20251218T213559Z",
+  "sha256": "7ed5123d9613eab8f707bb6e90735f81a640b913880856f2b30a5ea8d7217c1c"
+ }
+}

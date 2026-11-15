@@ -1,0 +1,58 @@
+{
+ "agent_models_used": {
+  "gemini-3.5-flash": 10,
+  "gemini-3.7-flash": 1,
+  "gemini-3.5-flash-lite": 19
+ },
+ "judge_models_used": {
+  "gemini-3.1-flash-lite": 30
+ },
+ "design": "article",
+ "n_questions": 30,
+ "n_errors": 0,
+ "retrieval": {
+  "article": {
+   "n": 24,
+   "hit@1": 0.792,
+   "hit@3": 0.958,
+   "hit@5": 1.0
+  },
+  "fixed": {
+   "n": 24,
+   "hit@1": 0.5,
+   "hit@3": 0.75,
+   "hit@5": 0.792
+  }
+ },
+ "judge_correct": 0.933,
+ "judge_supported": 0.967,
+ "correct_answerable": 1.0,
+ "proper_refusals_on_unanswerable": 0.667,
+ "wrong_refusals_on_answerable": 0.0,
+ "all_citations_valid": 1.0,
+ "answers_without_citation_not_refusal": 0,
+ "agreement_with_human": {
+  "n_human_labels": 30,
+  "correct": {
+   "compared": 30,
+   "agree": 30,
+   "rate": 1.0,
+   "disagreements": []
+  },
+  "supported": {
+   "compared": 30,
+   "agree": 28,
+   "rate": 0.933,
+   "disagreements": [
+    "q27",
+    "q28"
+   ]
+  }
+ },
+ "cost_per_question": {
+  "tokens_in_mean": 4598,
+  "tokens_out_mean": 477,
+  "seconds_mean": 62.5,
+  "seconds_max": 1383.9
+ }
+}

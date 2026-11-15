@@ -1,0 +1,13 @@
+El manejo de una grúa torre requiere estar en posesión del **carné de operador de grúa torre (gruista)**, expedido por el órgano competente de la comunidad autónoma, que tiene validez en todo el territorio nacional y una validez de cinco años renovable ((836/2003, Artículo 7 y Anexo VI)).
+
+Para la obtención de dicho carné se deben cumplir los siguientes requisitos ((836/2003, Anexo VI)):
+1. Ser mayor de edad.
+2. Estar en posesión de un certificado de estudios primarios.
+3. Superar un examen médico sobre agudeza visual, sentido de la orientación, equilibrio, agudeza auditiva y aptitudes psicológicas.
+4. Superar un **curso teórico-práctico** impartido por una entidad acreditada por el órgano competente de la comunidad autónoma. Este curso tiene una duración mínima total de **200 horas** (repartidas en un módulo teórico de 50 horas y un módulo práctico de 150 horas). *(Nota: Quienes acrediten experiencia profesional en el manejo de grúa torre pueden quedar exceptuados del módulo práctico ordinario, debiendo realizar en su lugar un módulo práctico de 15 horas).*
+5. Superar un **examen** realizado por el órgano competente de la comunidad autónoma.
+
+Fuentes:
+- Real Decreto 836/2003, Artículo 7 y Anexo VI.
+
+[gemini-3.5-flash-lite; 1 tool call(s); searches: ['operador grua torre carnet formacion']; 4174+338 tokens; 3.4 s]
