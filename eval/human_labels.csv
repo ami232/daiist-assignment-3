@@ -1,1 +1,36 @@
 id,correct,supported,notes
+s01,1,1,
+s02,1,1,
+s03,1,1,
+s04,1,1,
+s05,1,1,"Minor: example special categories (health, biometric, ethnic origin) come from GDPR Art 9, which wasn't retrieved; illustrative only"
+s06,1,1,"Minor: 'US surveillance laws / supplementary technical measures' (Schrems II) not in retrieved text; appears only in the lawyer caveat"
+s07,1,1,
+s08,1,0,"Lists fatigue monitoring of pilots/drivers as a permitted medical/safety exception. Recital 18 says fatigue is a physical state outside the emotion-recognition definition, not an exception to the Art 5(1)(f) ban"
+s09,1,1,"Borderline correct: omits the Art 6(3) derogation from the reference (Art 6 not retrieved). Harmless here because filtering/ranking applicants involves profiling, which is always high-risk"
+s10,1,1,
+s11,1,1,"Omits the Feb 2025 / Aug 2025 dates in the reference, but the question asks only about high-risk rules"
+s12,1,1,"Closing hedge implies the training duty depends on risk classification; Art 4 applies to all providers and deployers"
+s13,1,1,
+s14,1,1,
+s15,1,1,
+s16,0,0,"Overstates Art 25(3): making termination harder than subscribing is only a practice the Commission MAY address in guidelines, not a stated rule. Omits the Art 25(2) carve-out for practices covered by the GDPR or consumer law (Directive 2005/29/EC)"
+s17,1,1,"Wrongly says the corpus doesn't cover GDPR consent rules for minors; GDPR Art 8 is in the corpus"
+s18,1,1,
+s19,1,1,
+s20,1,1,
+s21,1,1,
+s22,1,1,
+s23,1,1,
+m01,0,0,"Logging part wrong: applies the Art 12(3) minimum fields (reference database, matches) that apply only to Annex III point 1(a) remote biometric identification, and misdescribes 1(a) as recruitment (recruitment is point 4(a)). Misses the Art 12(2) purposes (risk situations, post-market monitoring, operation monitoring). GDPR Art 22 part is correct"
+m02,1,1,
+m03,0,0,"Fails to conclude a FRIA is needed: Art 27(1) applies to all deployers of Annex III 5(b) credit-scoring systems, but the answer says it depends on public/private status and tells a private fintech to 'check carefully'. Misreads Recital 96 over the article text. DPIA part is correct"
+m04,1,0,"Mapping religion/health to GDPR Art 9(1) special categories is load-bearing, but GDPR Art 9 was not retrieved (retrieval miss on expected source). Opening also wrongly suggests GDPR consent handling could change the answer"
+m05,1,1,"Citation typo: 'GDPR Article 14(b)' should be Article 14(5)(b)"
+m06,1,0,"Claim that separate regulators enforce the AI Act and GDPR is not in the passages, and it ignores AI Act Art 99(7)(c) (authorities consider other fines for the same activity), which matters for a combined worst case. Also applies the SME rule without the user saying they are an SME"
+u01,1,1,
+u02,1,1,
+u03_adddoc,1,1,
+u04,1,1,"Guardrail fired correctly: the draft cited GDPR Art 46, which wasn't retrieved. Recital 108 covered the same content, so the draft itself was substantively fine"
+u05,1,1,"Minor: regulation number 2024/1689 not in retrieved text"
+u06,0,0,"Should have said the corpus doesn't cover cookie consent (ePrivacy Art 5(3)). Instead concludes consent is 'generally' required under the GDPR if cookies collect personal data; the GDPR imposes no such rule (other legal bases exist). ePrivacy caveat is there, but the headline answer rests on the wrong law"
