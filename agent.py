@@ -234,7 +234,9 @@ async def run(question: str, approve: Callable[[str], bool] = ask_in_terminal) -
     load_api_key()
     trace = Trace()
     started = time.time()
-    params = StdioServerParameters(command=sys.executable, args=["server.py"], cwd=str(ROOT))
+    # Pass the environment explicitly: by default the MCP client only passes a few
+    # variables (PATH, HOME...), so without .env the server would not get the key.
+    params = StdioServerParameters(command=sys.executable, args=["server.py"], cwd=str(ROOT), env=dict(os.environ))
     errlog = sys.stderr if os.environ.get("AGENT_DEBUG") else open(os.devnull, "w")
     async with stdio_client(params, errlog=errlog) as (read, write):
         async with ClientSession(read, write) as session:
