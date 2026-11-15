@@ -17,6 +17,12 @@ documents. Each rule below says why it exists.
    country groups and the grant ranges.
    Why: in testing, one search often found only one of the two passages a
    question needed.
+   If the question is about Spain (SEPIE, Spanish grant amounts, Spanish
+   criteria), you MUST make at least two searches: one in English and one in
+   Spanish, keeping words like "SEPIE" in both. Example: "SEPIE grant amount
+   Italy" and "importe ayuda SEPIE Italia estudiantes".
+   Why: the search finds documents best in the language of the query; in
+   testing, an English query never reached a Spanish SEPIE document.
 
 3. **Use only what the search results say.** Do not add rules, numbers,
    examples or advice that are not in the passages.

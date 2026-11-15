@@ -363,7 +363,70 @@ This matches the expected answer in my test set (m01).
 
 ## Adding a document
 
-*What happens when a document is already indexed. The unanswerable question, the document you added, the answer before and after.*
+### What happens if a document is already indexed
+
+The `add_document` tool uses the same steps as the rest of my index (`index.py`). Each chunk gets an id that includes a fingerprint (a hash) of its text, so the tool can tell if a document is new, the same, or changed:
+
+- **Already indexed and unchanged:** nothing is added and no embeddings are used. When I tried to add the Student Charter again, the tool answered *"Already indexed and unchanged: nothing was added"*.
+- **Same file name but the content changed:** the old chunks are deleted and replaced by the new ones, so there are no duplicates or old versions.
+- **New document:** its chunks are embedded and stored.
+
+### The question and the document
+
+I chose my unanswerable question **u01**: *"What exact monthly amount does SEPIE pay Spanish students going to Italy in 2026/27?"*. It is one of the most important questions for my users, and the European documents can't answer it, because they only give minimum and maximum amounts for the whole EU.
+
+The document that answers it is SEPIE's **"Información sobre financiación de los proyectos Erasmus+ gestionados por el SEPIE – Convocatoria 2026"** (version of 22/07/2026), from [sepie.es](https://www.sepie.es/educacion-superior/convocatoria.html). On page 10 it gives the amounts that SEPIE sets for Spain:
+
+| Destination | Examples | SEPIE amount |
+|---|---|---|
+| Group 1 (higher living costs) | Germany, France, **Italy** | 350–674 € per month |
+| Group 2 (medium) | Portugal, Greece | 300–606 € per month |
+| Group 3 (lower) | Poland, Romania | 250–550 € per month |
+
+**A licence problem.** At the start of the project I decided to use only public documents with a licence that allows reuse. SEPIE's [legal notice](https://www.sepie.es/aviso_legal.html) says its content cannot be reproduced or distributed without permission. My `index/` folder is uploaded to GitHub with the text of the chunks, so I could not keep this document in it. My solution was to add it **only on my computer** for this test, and to **remove it again afterwards**, so none of SEPIE's text is committed. In this report I only quote the amounts, as a short citation.
+
+### Adding it
+
+I asked the assistant: *"Please add the file corpus/sepie/infofinanciacioneplus2026_julio.pdf to the index."* Before the tool ran, the approval step asked for permission, and I said yes. The tool added **49 chunks** from SEPIE's document.
+
+### Before and after
+
+**Before** (from my evaluation run):
+
+> *I do not know the exact monthly amount. The European Commission does not set the specific grant amounts for students; instead, it defines minimum and maximum ranges, and the exact amounts are determined by the National Agencies (such as SEPIE in Spain) [...] Higher range EU grant: Between 348 and 674 EUR per month (Programme Guide 2026, p. 68).*
+
+**After adding the document: no change!** The assistant gave the **same answer**, word for word. It searched only once, in English (*"Erasmus+ grant amounts for students 2026/27"*), and all the results came from the English Programme Guide.
+
+### What I found: the search prefers the language of the question
+
+From the start I wanted my assistant to answer in **both English and Spanish**. With only English documents, Spanish questions worked well: in my retrieval test, all 5 Spanish questions found the right English passage as the very first result.
+
+But when I added a **Spanish** document, I found the opposite problem. I tested the same search in both languages:
+
+- **English question:** the 15 best results were **all** from the English Programme Guide. SEPIE's chunks didn't appear at all.
+- **Spanish question** (*"¿Cuánto paga el SEPIE al mes a un estudiante que se va a Italia en 2026/27?"*): the 14 best results were **all** from SEPIE, and the first one was exactly the right table.
+
+So the search prefers documents **in the same language as the question**. An English question never reached the Spanish document.
+
+### How I fixed it
+
+1. **First try: a soft rule.** I added to `AGENTS.md`: *"If the question is about Spain, also search in Spanish."* I also updated the description of the `search` tool, which said that all documents were in English. **It didn't work:** the assistant still searched only once, in English. This matches what I saw in my evaluation, where the assistant almost never searches twice.
+2. **Second try: a firm rule with an example.** I changed it to: *"you MUST make at least two searches: one in English and one in Spanish, keeping words like 'SEPIE' in both. Example: 'SEPIE grant amount Italy' and 'importe ayuda SEPIE Italia estudiantes'."* **This worked.**
+
+**After the fix**, the assistant searched twice (*"importe ayuda SEPIE estudiantes Erasmus 2026/27 Italia"* and then in English) and answered:
+
+> *For Spanish students going to Italy (which is classified as a Group 1 country with higher living costs) in the 2026/27 academic year, the monthly grant amount for long-term mobility is set within the range of **350 € to 674 € per month** (infofinanciacioneplus2026 julio, p. 10). [...] the specific amount you will receive within that range is determined by SEPIE and your home university based on their own criteria (Programme Guide 2026, p. 67).*
+
+| | Before | After adding SEPIE and the fix |
+|---|---|---|
+| Answer | "I do not know"; EU range 348–674 € | **350–674 € per month for Italy, set by SEPIE**; the exact amount is chosen by each university |
+| Documents used | Programme Guide only | SEPIE's document + Programme Guide |
+
+This is the real, complete answer: SEPIE does not pay one single amount, but sets a range for each group of countries, and each Spanish university chooses its exact amount inside it.
+
+**Afterwards** I removed SEPIE's 49 chunks from the index (it went back to 296 chunks). I kept the "search in both languages" rule, because it is true for any Spanish document that is added in the future, and it doesn't cause any problem with the current English documents.
+
+**What I learned:** adding a document is not enough. The assistant also has to **search in the right way** to find it, and a soft instruction was not enough to change its behaviour; it needed a clear, firm rule.
 
 ## Harness and guardrails
 

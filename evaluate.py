@@ -302,10 +302,14 @@ def judge_one(q: dict, a: dict) -> dict:
     prompt = (f"{RUBRIC}\n\nQUESTION ({q['kind']}): {q['question']}\n\n"
               f"REFERENCE ANSWER: {q['reference_answer']}\n\nRETRIEVED PASSAGES:\n{passages}\n\n"
               f"ASSISTANT'S ANSWER:\n{a['answer']}")
-    client = genai.Client(api_key=load_api_key())
+    import time as _time
+
+    client = genai.Client(api_key=load_api_key(), http_options=types.HttpOptions(timeout=60_000))
     config = types.GenerateContentConfig(temperature=0, response_mime_type="application/json")
     last_error = None
-    for model in (JUDGE_MODEL, JUDGE_MODEL, JUDGE_FALLBACK):
+    # Wait before retrying: an instant retry hits the same overloaded moment.
+    for wait, model in ((0, JUDGE_MODEL), (15, JUDGE_MODEL), (45, JUDGE_FALLBACK)):
+        _time.sleep(wait)
         try:
             verdict = json.loads(client.models.generate_content(model=model, contents=prompt, config=config).text)
             return {"correct": int(verdict["correct"]), "supported": int(verdict["supported"]),
@@ -321,7 +325,11 @@ def run_judge(answers: dict[str, dict]) -> dict[str, dict]:
     for qid, a in answers.items():
         if qid in done:
             continue
-        verdict = {"id": qid, **judge_one(questions[qid], a)}
+        try:
+            verdict = {"id": qid, **judge_one(questions[qid], a)}
+        except RuntimeError as error:
+            log(f"  skipped {qid} ({str(error)[:80]}); run again to judge it")
+            continue
         append_jsonl(JUDGE, verdict)
         done[qid] = verdict
         log(f"  judged {qid}: correct={verdict['correct']} supported={verdict['supported']}")

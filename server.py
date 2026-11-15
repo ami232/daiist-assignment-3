@@ -53,9 +53,12 @@ def search(query: str, k: int = 5) -> str:
 
     Use it for any question about Erasmus+ eligibility, duration, money,
     learning agreements, credit recognition or students' rights. Questions may
-    be in English or Spanish; the documents are in English. It does NOT contain
-    national amounts (e.g. SEPIE in Spain) or any university's own deadlines,
-    places or selection criteria.
+    be in English or Spanish. The core documents are in English; documents
+    added later may be in Spanish (e.g. from SEPIE), and the search finds a
+    document best when the query is in the same language, so for questions
+    about Spain also search in Spanish. Unless such a document was added, it
+    does NOT contain national amounts (e.g. SEPIE in Spain) or any university's
+    own deadlines, places or selection criteria.
 
     Returns the k most relevant passages (default 5, max 10), numbered [1]..[k],
     each with document title, page or section, date, URL and the passage text.
