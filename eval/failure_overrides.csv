@@ -1,0 +1,4 @@
+id,cause,note
+q01,not a failure (judge rubric),the judge counted the physiotherapist referral that AGENTS.md rule 6 requires as an unsupported claim
+q32,not a failure (refusal worded differently),the answer declines correctly but says 'does not state' so the code check did not detect a refusal; judge correct=1 supported=1
+q12,unsupported claim,'104 rackets' is a figure-caption fragment misattributed to the whole study (found in human grading; the judge missed it)
