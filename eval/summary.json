@@ -17,10 +17,12 @@
   "avg_seconds": 3.5,
   "max_seconds": 12.65,
   "failure_causes": {
-    "unsupported claim": 2,
+    "not a failure (judge rubric)": 1,
     "retrieval miss": 1,
+    "unsupported claim": 1,
     "wrong answer from right passage": 2,
-    "wrong refusal": 1
+    "wrong refusal": 1,
+    "not a failure (refusal worded differently)": 1
   },
   "human_vs_judge": {
     "n": 28,

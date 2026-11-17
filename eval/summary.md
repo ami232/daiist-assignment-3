@@ -21,10 +21,12 @@
 
 ## Failures by cause
 
-- unsupported claim: 2
 - wrong answer from right passage: 2
+- not a failure (judge rubric): 1
 - retrieval miss: 1
+- unsupported claim: 1
 - wrong refusal: 1
+- not a failure (refusal worded differently): 1
 
 ## Judge vs human
 
