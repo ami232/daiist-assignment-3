@@ -38,6 +38,7 @@ def format_results(results: dict) -> str:
         citation = f"{meta['source']}, {meta['location']}"
         blocks.append(
             f"[{n}] {citation}\n"
+            f"cite as: [{citation}]\n"
             f"relevance: {1 - dist:.2f}\n"
             f"url: {meta.get('url') or meta.get('file', '')}\n"
             f"{text}"
@@ -61,10 +62,10 @@ def search(query: str, k: int = DEFAULT_K) -> str:
     sustainability at IE. Ask in plain language; search again with other words, or
     once per sub-question, if the first results do not cover the question.
 
-    Returns the k most relevant passages (default 5, max 10), each with a citation
-    "[n] Document, p. X, Article/section", a relevance score from 0 to 1 and the
-    passage text. Cite only what the passages say; if none answers the question,
-    say the documents do not cover it.
+    Returns the k most relevant passages (default 5, max 10), each with a
+    "cite as: [Document, p. X, Article/section]" line to copy into the answer, a
+    relevance score from 0 to 1 and the passage text. Cite only what the passages
+    say; if none answers the question, say the documents do not cover it.
     """
     query = query.strip()
     if not query:
