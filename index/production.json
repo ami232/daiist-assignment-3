@@ -1,0 +1,6 @@
+{
+  "design": "section",
+  "hybrid": false,
+  "k": 5,
+  "chosen_by": "evaluate.py: max hit@5, then hit@1, then fewest words"
+}
