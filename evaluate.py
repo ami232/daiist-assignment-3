@@ -35,7 +35,7 @@ PRICE_IN_PER_M = 0.0
 PRICE_OUT_PER_M = 0.0
 
 REFUSAL = re.compile(
-    r"do(?:es)? not cover|not covered|cannot (?:find|answer)|can't (?:find|answer)|no information"
+    r"do(?:es)? not (?:cover|provide|contain|include)|not covered|cannot (?:find|answer)|can't (?:find|answer)|no information"
     r"|not (?:in|found in) the (?:indexed )?reports|unable to (?:find|answer)|not (?:available|mentioned) in the",
     re.I,
 )
@@ -201,7 +201,7 @@ def stage_agent(rows: list[dict]) -> dict:
 def code_checks(row: dict, record: dict) -> dict:
     answer = record["answer"]
     retrieved = retrieved_pairs(record)
-    cited = [(s, item_id(i)) for s, i in CITATION.findall(answer)]
+    cited = [(s.lower(), item_id(i)) for s, i in CITATION.findall(answer)]
     valid = [pair for pair in cited if pair in retrieved]
     refused = bool(REFUSAL.search(answer))
     added = any(t["tool"] == "add_document" and "added" in t["result"].lower() for t in record["tool_trace"])
@@ -247,7 +247,7 @@ def stage_judge(rows: list[dict], answers: dict) -> dict:
         model = model or agent.make_model()
         prompt = JUDGE_PROMPT.format(
             rubric=rubric, question=row["question"], kind=row["kind"], reference=row["reference_answer"] or "(none)",
-            evidence=retrieved_text(record)[:12000] or "(nothing retrieved)", answer=record["answer"],
+            evidence=retrieved_text(record)[:60000] or "(nothing retrieved)", answer=record["answer"],
         )
         verdict = {}
         for attempt in range(3):

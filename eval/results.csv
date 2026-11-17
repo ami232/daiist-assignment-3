@@ -1,0 +1,295 @@
+id,kind,question,answer,citations,valid_citations,refused,searched,document_added,code_check_passed,expected_in_retrieved,judge_correct,judge_supported,judge_reason,human_correct,human_supported,seconds
+q01,single,What product categories does Apple list in its Business section?,"In its Business section, Apple categorizes its offerings into the following products and services:
+
+**Products**
+*   **iPhone:** Smartphones based on the iOS operating system (apple-10k-2026, Item 1. Business).
+*   **Mac:** Personal computers based on the macOS operating system (apple-10k-2026, Item 1. Business).
+*   **iPad:** Multipurpose tablets based on the iPadOS operating system (apple-10k-2026, Item 1. Business).
+*   **Wearables, Home and Accessories:** Includes smartwatches (watchOS), wireless headphones (AirPods and Beats), spatial computers (Apple Vision Pro), home devices (Apple TV 4K, HomePod, and Apple HomeView), and Apple-branded and third-party accessories (apple-10k-2026, Item 1. Business).
+
+**Services**
+*   **Advertising:** Third-party licensing arrangements and the company's own advertising platforms (apple-10k-2026, Item 1. Business).
+*   **AppleCare:** Fee-based service and support products (apple-10k-2026, Item 1. Business).
+*   **Cloud Services:** Storage and content synchronization across devices, including access to Apple Intelligence and Siri AI features (apple-10k-2026, Item 1. Business).
+*   **Digital Content:** Platforms like the App Store and subscription services such as Apple Arcade, Apple Fitness+, Apple Music, Apple News+, and Apple TV (apple-10k-2026, Item 1. Business).
+*   **Payment Services:** Includes Apple Card and Apple Pay (apple-10k-2026, Item 1. Business).",9,9,0,1,0,1,1,1,1,The assistant accurately lists the product categories and services as described in the provided passages.,1,1,5.29
+q02,single,What risks does Apple describe from relying on outsourcing partners for manufacturing?,"Apple identifies several risks associated with relying on outsourcing partners for manufacturing:
+
+*   **Reduced Control:** Outsourcing reduces Apple's direct control over production and distribution, which has impacted and may continue to impact the cost, quality, or quantity of products and services, as well as the company's flexibility to respond to changing conditions (apple-10k-2026, Item 1A).
+*   **Product Defects and Liability:** While outsourcing agreements may include provisions for defect expense reimbursement, Apple generally remains responsible to consumers for warranty and service. The company experiences unanticipated product defect liabilities from time to time (apple-10k-2026, Item 1A).
+*   **Supply Chain Disruptions:** Apple relies on single or limited sources for many critical components. Business interruptions at these facilities—due to events such as industrial accidents, public health issues, natural disasters, or cybersecurity attacks—can make it difficult or impossible to manufacture and deliver products, increase costs, and cause delays (apple-10k-2026, Item 1A).
+*   **Operational and Regulatory Risks:** Changes or additions to the supply chain require significant time and resources and expose the company to additional regulatory and operational risks. Additionally, while partners are expected to adhere to a supplier code of conduct, violations occur from time to time (apple-10k-2026, Item 1A).
+*   **Forecasting and Inventory Risks:** Because Apple orders components and builds inventory in advance, there is a risk of forecasting incorrectly, leading to excess or insufficient amounts of components or products, or the failure to fully utilize manufacturing purchase commitments (apple-10k-2026, Item 1A).",5,5,0,1,0,1,1,1,1,The assistant accurately summarizes the risks described in the provided passages and all claims are supported by the text.,1,1,3.38
+q03,single,What does Apple say about the risks of tariffs and trade restrictions?,"Apple states that restrictions on international trade, such as tariffs and import/export controls, can materially adversely affect its business and supply chain, particularly in regions where it generates significant revenue or has major operations (apple-10k-2026, Item 1A).
+
+Key risks identified by Apple include:
+
+*   **Operational and Financial Impact:** These measures can increase costs, limit the availability of products and components, require the company to restructure business relationships or change suppliers, and force the company to increase product prices (apple-10k-2026, Item 1A).
+*   **Uncertainty and Mitigation:** Restrictions are often announced with little or no notice, creating uncertainty, and Apple may be unable to effectively mitigate the resulting adverse impacts (apple-10k-2026, Item 1A).
+*   **Macroeconomic Effects:** Trade disputes can negatively impact the overall macroeconomic environment, leading to reduced consumer spending and negative sentiment toward Apple's products and services (apple-10k-2026, Item 1A).
+*   **Specific Tariff Developments:** Apple noted that beginning in the second quarter of 2025, new tariffs were announced on U.S. imports from various countries, including China, India, Japan, South Korea, Taiwan, Vietnam, and the EU. It highlighted that retaliatory measures from other countries and the potential for future modifications to U.S. tariffs create ongoing uncertainty regarding the ultimate impact on its business (apple-10k-2026, Item 1A).
+*   **Complexity of Changes:** Restructuring business and supply chain operations in response to new trade restrictions can be expensive, time-consuming, and disruptive (apple-10k-2026, Item 1A).",6,6,0,1,0,1,1,1,1,The assistant accurately summarized the risks and tariff details provided in the retrieved passages.,1,1,3.81
+q04,single,What does Apple's MD&A say about the factors that affected net sales?,"Apple's Management's Discussion and Analysis (MD&A) identifies several factors that affect net sales:
+
+*   **Product and Service Performance:** Net sales are driven by the performance of specific categories. For example, in 2026, growth was driven by higher sales of iPhone (specifically Pro models), Mac (specifically laptops), and Services (specifically advertising and cloud services) (apple-10k-2026, Item 7. Management's Discussion and Analysis).
+*   **Foreign Currency Fluctuations:** Changes in the value of the U.S. dollar relative to local currencies impact net sales. In 2026, the strength of foreign currencies relative to the U.S. dollar had a favorable impact on net sales in Europe and Greater China, while the weakness of the yen had an unfavorable impact on net sales in Japan (apple-10k-2026, Item 7. Management's Discussion and Analysis).
+*   **Macroeconomic Environment and Trade:** Trade disputes, tariffs, and other international measures can negatively impact the macroeconomic environment, leading to shifts or reductions in consumer spending and negative consumer sentiment (apple-10k-2026, Item 7. Management's Discussion and Analysis).
+*   **Product Introductions and Seasonality:** Net sales are influenced by seasonal holiday demand and the timing of new product and service introductions. The timing of these launches affects channel inventory, as channels are filled with new products while inventory of older products declines. Additionally, net sales can be affected when consumers and distributors anticipate a new product introduction (apple-10k-2026, Item 1. Business).",4,4,0,1,0,1,1,0,1,The assistant failed to include the total net sales figure and the percentage growth rate as required by the reference answer.,0,1,3.59
+q05,single,What does Apple say about its liquidity and capital resources?,"Apple believes its cash, cash equivalents, and marketable securities—which totaled $136.9 billion as of September 26, 2026—combined with cash from operations and access to debt markets, will be sufficient to meet its cash requirements and capital return program for the next 12 months and beyond (apple-10k-2026, Item 7. Management's Discussion and Analysis).
+
+### Material Cash Requirements
+As of September 26, 2026, Apple’s primary contractual obligations included:
+*   **Manufacturing Purchase Obligations:** $89.7 billion total, with $82.7 billion payable within 12 months (apple-10k-2026, Item 7. Management's Discussion and Analysis).
+*   **Debt:** $78.7 billion in outstanding fixed-rate notes, with $10.0 billion payable within 12 months. Additionally, there are $34.4 billion in future interest payments ($2.4 billion due within 12 months) and $2.0 billion in outstanding commercial paper (apple-10k-2026, Item 7. Management's Discussion and Analysis).
+*   **Other Purchase Obligations:** $27.3 billion total, with $9.9 billion payable within 12 months (apple-10k-2026, Item 7. Management's Discussion and Analysis).
+*   **Leases:** $17.8 billion in fixed lease payments, with $2.8 billion payable within 12 months (apple-10k-2026, Item 7. Management's Discussion and Analysis).
+
+### Capital Return Program
+Apple maintains a capital return program that includes share repurchases and dividends:
+*   **Share Repurchases:** In April 2026, the company announced a new $100 billion share repurchase program. During 2026, it repurchased $85.8 billion of its common stock (apple-10k-2026, Item 7. Management's Discussion and Analysis).
+*   **Dividends:** As of September 26, 2026, the quarterly dividend was $0.27 per share. During 2026, the company paid $15.7 billion in dividends and dividend equivalents (apple-10k-2026, Item 7. Management's Discussion and Analysis).",7,7,0,1,0,1,1,1,1,The assistant accurately reflects the facts and figures from the provided passages.,1,1,3.14
+q06,single,How does Apple describe its competition?,"Apple describes its competitive landscape as highly volatile and intense, characterized by the following factors:
+
+*   **Aggressive Pricing and Cost Structures:** Many competitors compete through aggressive price cutting, low-cost structures, and by offering products at little or no profit or even at a loss (apple-10k-2026, Item 1; apple-10k-2026, Item 1A).
+*   **Imitation:** Competitors frequently seek to imitate Apple’s product features and applications, and in some cases, infringe on its intellectual property (apple-10k-2026, Item 1; apple-10k-2026, Item 1A).
+*   **Market Dynamics:** The markets are defined by short product life cycles, evolving industry standards, rapid technological adoption, and the frequent introduction of new products and services, including artificial intelligence (apple-10k-2026, Item 1).
+*   **Competitor Resources:** Apple faces substantial competition from companies with significant technical, marketing, and distribution resources, as well as large installed bases of active devices and broad product lines (apple-10k-2026, Item 1; apple-10k-2026, Item 1A).
+*   **Supply Competition:** Apple competes with other market participants for various components, which can lead to industry-wide shortages and commodity pricing fluctuations (apple-10k-2026, Item 1).
+
+Apple notes that it holds a minority market share in the global smartphone, personal computer, tablet, and wearables markets (apple-10k-2026, Item 1; apple-10k-2026, Item 1A). To remain competitive, the company emphasizes the need for continuous innovation, the development of its own hardware and software ecosystem, and the effective protection of its intellectual property (apple-10k-2026, Item 1; apple-10k-2026, Item 1A).",12,12,0,1,0,1,1,1,1,The answer accurately reflects the provided passages and includes all key points from the reference answer.,1,1,3.44
+q07,single,What market platforms does NVIDIA say it serves?,"NVIDIA states that it addresses four large markets with its computing and AI infrastructure platforms (nvidia-10k-2026, Item 1. Business):
+
+*   **Data Center:** Focused on accelerating compute-intensive workloads such as AI, data processing, graphics, robotics, and scientific computing. It is deployed in cloud, hyperscale, on-premises, and edge data centers.
+*   **Gaming:** Includes GeForce GPUs for gaming and PCs, as well as the GeForce NOW cloud gaming service.
+*   **Professional Visualization:** Serves professionals in fields such as design, engineering, and digital content creation by working with independent software vendors to optimize offerings for NVIDIA GPUs and RTX PRO GPUs.
+*   **Automotive:** Provides a full-stack, end-to-end solution for automated driving and electric vehicles under the DRIVE brand, including hardware, software, and development infrastructure.",1,1,0,1,0,1,1,1,1,The answer accurately identifies the four markets and segments as described in the provided passages.,1,1,3.72
+q08,single,What risks does NVIDIA describe from depending on third-party chip manufacturers?,"NVIDIA states that relying on third-party manufacturers reduces its control over product quantity, quality, manufacturing yields, and delivery schedules (nvidia-10k-2026, Item 1A).
+
+Key risks associated with this dependency include:
+
+*   **Supply and Capacity:** Lack of guaranteed supply, supplier decommitments, and the risk that foundries or subcontractors may prioritize competitors' orders over NVIDIA's (nvidia-10k-2026, Item 1A).
+*   **Operational Disruptions:** Potential for manufacturing delays or shortages due to natural disasters, pandemics, cybersecurity incidents, or the geographic concentration of suppliers (nvidia-10k-2026, Item 1A).
+*   **Quality and Defects:** Potential for low manufacturing yields, product defects, or security vulnerabilities. NVIDIA notes that it remains responsible to customers for warranty defects even if arrangements with providers include reimbursement provisions (nvidia-10k-2026, Item 1A).
+*   **Financial and Strategic Risks:** Increased costs during shortages, the need to prepay for supply, and the expense and time required to qualify new suppliers if a current one is lost (nvidia-10k-2026, Item 1A).
+*   **Complexity:** Challenges in managing multiple suppliers with varying production planning, execution, and logistics requirements (nvidia-10k-2026, Item 1A).",6,6,0,1,0,1,1,1,1,The assistant accurately summarizes the risks described in the provided passages and all claims are supported by the text.,1,1,4.29
+q09,single,What does NVIDIA say about export controls on its products?,"NVIDIA reports that its business is subject to shifting and expanding U.S. export control restrictions that impact its ability to serve customers outside the United States (nvidia-10k-2026, Item 1. Business).
+
+Key points regarding these controls include:
+
+*   **Scope and Impact:** Since August 2022, the U.S. government has implemented various licensing requirements and restrictions targeting semiconductor and supercomputing industries in China (including Hong Kong and Macau), Russia, and other regions, including parts of the Middle East (nvidia-10k-2026, Item 1. Business). These restrictions have affected a wide range of products, including the A100, A800, H100, H800, L4, L40, L40S, RTX 4090, GB200 NVL72, and B200 (nvidia-10k-2026, Item 1. Business).
+*   **Competitive Disadvantage:** NVIDIA states that export controls have harmed its competitive position and may continue to do so if they are expanded or remain in place. These controls can encourage customers to ""design-out"" U.S. semiconductors, pursue alternative suppliers, or develop their own internal solutions (nvidia-10k-2026, Item 1A. Risks Related to Regulatory, Legal, Our Stock and Other Matters).
+*   **Operational Risks:** The licensing process can be burdensome, uncertain, and time-consuming. Even when licenses are granted, they may be temporary or include restrictive conditions, such as requirements for chip tracking or throttling mechanisms (nvidia-10k-2026, Item 1A. Risks Related to Regulatory, Legal, Our Stock and Other Matters).
+*   **Supply Chain Disruption:** Export controls have the potential to disrupt NVIDIA's supply and distribution chains, particularly because a substantial portion of its products are warehoused in and distributed from Hong Kong (nvidia-10k-2026, Item 1A. Risks Related to Regulatory, Legal, Our Stock and Other Matters).
+*   **Future Uncertainty:** NVIDIA notes that the U.S. government may change export control rules at any time due to the strategic importance of AI and geopolitical tensions. The company faces the risk that new products may become subject to restrictions by the time they are ready for market, potentially leading to excess inventory and purchase obligations (nvidia-10k-2026, Item 1A. Risks Related to Regulatory, Legal, Our Stock and Other Matters).",7,7,0,1,0,1,1,1,1,The answer accurately reflects the facts in the provided passages and all claims are supported by the source text.,1,1,3.61
+q10,single,What risks does NVIDIA describe from customer concentration?,"NVIDIA reports that its revenue is concentrated among a limited number of direct and indirect customers, a trend it expects may continue (nvidia-10k-2026, Item 7). For fiscal year 2026, sales to two direct customers represented 22% and 14% of total revenue, respectively (nvidia-10k-2026, Item 1A).
+
+NVIDIA identifies the following risks associated with this concentration:
+
+*   **Revenue Impact:** The loss of any large customer, a significant reduction in their purchases, or an inability to sell to them due to trade restrictions would likely harm the company's financial condition and results of operations (nvidia-10k-2026, Item 1A).
+*   **Purchasing Patterns:** Because most sales are made on a purchase order basis, customers can generally cancel, change, or delay commitments with little notice and without penalty. Customers may also develop their own solutions, purchase from competitors, or alter their purchasing patterns (nvidia-10k-2026, Item 1A).
+*   **Counterparty Risk:** Commercial arrangements, such as financing or long-term capacity obligations, expose NVIDIA to risks including customer insolvency, project delays, or an inability to fulfill financial commitments (nvidia-10k-2026, Item 1A).
+*   **Credit and Timing:** If end demand increases or supply availability is concentrated near a quarter-end, channel partners may have limited ability to increase their credit, which could impact the timing and amount of revenue (nvidia-10k-2026, Item 1A).
+*   **Partner Dependency:** NVIDIA relies on a small number of partners for system integration. If these partners discontinue sales, lose market share, or are unable to meet the specifications of key customers, it could harm NVIDIA's ability to sell its products (nvidia-10k-2026, Item 1A).",7,7,0,1,0,1,1,1,1,The answer accurately reflects the facts and figures from the provided passages and all claims are supported by the text.,1,1,4.49
+q11,single,What does NVIDIA's MD&A say about the main drivers of revenue growth?,"NVIDIA's revenue growth in fiscal year 2026 was primarily driven by the following factors:
+
+*   **Compute & Networking:** Growth was driven by major platform shifts toward accelerated computing and AI (nvidia-10k-2026, Item 7. Management's Discussion and Analysis). Specifically, Data Center computing revenue grew 59% due to demand for the Blackwell computing platform, and Data Center networking revenue grew 142% driven by the introduction and ramp of NVLink compute fabric for GB200 and GB300 systems, as well as the growth of Ethernet and InfiniBand platforms (nvidia-10k-2026, Item 7. Management's Discussion and Analysis).
+*   **Graphics:** Revenue growth was driven by sales of the Blackwell architecture (nvidia-10k-2026, Item 7. Management's Discussion and Analysis).
+*   **Overall Context:** Revenue growth was fueled by data center compute and networking platforms for accelerated computing and AI solutions, with Blackwell architectures representing the majority of Data Center revenue (nvidia-10k-2026, Item 7. Management's Discussion and Analysis).",4,4,0,1,0,1,1,1,1,The assistant accurately reflects the facts provided in the retrieved passages regarding the drivers of revenue growth.,1,1,3.13
+q12,single,What does NVIDIA say about its liquidity and capital resources?,"NVIDIA states that its primary sources of liquidity are cash, cash equivalents, marketable securities, and cash generated from operations (nvidia-10k-2026, Item 7. Management's Discussion and Analysis).
+
+Key details regarding its liquidity and capital resources as of January 25, 2026, include:
+
+*   **Cash Position:** NVIDIA held $62.6 billion in cash, cash equivalents, and marketable securities (nvidia-10k-2026, Item 7. Management's Discussion and Analysis).
+*   **Sufficiency:** The company believes it has sufficient liquidity to meet its operating requirements for at least the next twelve months and for the foreseeable future, including future obligations (nvidia-10k-2026, Item 7. Management's Discussion and Analysis).
+*   **Capital Allocation:**
+    *   **Share Repurchases:** In fiscal year 2026, the company repurchased 282 million shares for $40.4 billion. As of January 25, 2026, it had $58.5 billion remaining under its share repurchase authorization (nvidia-10k-2026, Item 7. Management's Discussion and Analysis).
+    *   **Dividends:** The company paid $974 million in cash dividends to shareholders in fiscal year 2026 (nvidia-10k-2026, Item 7. Management's Discussion and Analysis).
+*   **Debt and Financing:**
+    *   **Indebtedness:** The company reported a net carrying amount of $8.47 billion in debt as of January 25, 2026 (nvidia-10k-2026, Item 7. Management's Discussion and Analysis).
+    *   **Commercial Paper:** In January 2026, NVIDIA increased its commercial paper program to $25.0 billion. As of January 25, 2026, no commercial paper was outstanding (nvidia-10k-2026, Item 7. Management's Discussion and Analysis).
+
+NVIDIA continuously evaluates its liquidity and capital resources, including access to external capital, to ensure it can finance future requirements (nvidia-10k-2026, Item 7. Management's Discussion and Analysis).",8,8,0,1,0,1,1,1,1,The answer accurately reflects the provided passages and includes all key facts mentioned in the reference answer.,1,1,4.8
+q13,single,How does NVIDIA describe its competition?,"NVIDIA describes its market as ""intensely competitive,"" characterized by rapid technological change and evolving industry standards (nvidia-10k-2026, Item 1).
+
+### Competitive Factors
+NVIDIA identifies the following as the principal competitive factors in its market:
+*   Performance and breadth of product offerings (nvidia-10k-2026, Item 1).
+*   Access to customers, partners, and distribution channels (nvidia-10k-2026, Item 1).
+*   Software support and conformity to industry-standard APIs (nvidia-10k-2026, Item 1).
+*   Manufacturing capabilities, processor pricing, and total system costs (nvidia-10k-2026, Item 1).
+
+### Types of Competitors
+NVIDIA faces competition from a diverse range of entities, including:
+*   **Traditional Hardware/Software Suppliers:** Companies such as AMD, Intel, Huawei, Broadcom, Qualcomm, and others that provide GPUs, CPUs, DPUs, SoCs, and networking products (nvidia-10k-2026, Item 1).
+*   **Cloud Service Providers:** Large companies like Alibaba, Alphabet, Amazon, Baidu, and Microsoft that are increasingly designing their own internal hardware and software for accelerated or AI computing (nvidia-10k-2026, Item 1).
+*   **Internal Development:** Some customers have in-house expertise and can develop their own solutions to replace those provided by NVIDIA (nvidia-10k-2026, Item 1A).
+
+### Competitive Risks
+NVIDIA notes that some competitors may have greater financial, marketing, distribution, and manufacturing resources, or more comprehensive IP portfolios (nvidia-10k-2026, Item 1; Item 1A). The company expects competition to increase from both existing players and new entrants, particularly those offering lower-priced products or better performance/features (nvidia-10k-2026, Item 1). If NVIDIA is unable to compete effectively, it could lead to lower-than-expected selling prices, reduced demand, and a loss of market share (nvidia-10k-2026, Item 1A).",11,11,0,1,0,1,1,1,1,The assistant accurately and comprehensively summarizes the competitive landscape as described in the provided passages.,1,1,3.41
+q14,single,What products and services does Tesla describe in its Business section?,"Tesla describes its products and services within two primary reportable segments: **Automotive** and **Energy Generation and Storage** (tesla-10k-2026, Item 1).
+
+### Automotive Segment
+*   **Vehicles:** Tesla manufactures the Model 3, Model Y, Model S, Model X, the Cybertruck, and the Tesla Semi (tesla-10k-2026, Item 1).
+*   **Software and AI:** Products include Full Self-Driving (FSD) (Supervised) features and subscriptions, and the Robotaxi autonomous ride-hailing platform (which will eventually include the purpose-built Cybercab) (tesla-10k-2026, Item 1).
+*   **Services:** These include sales of used vehicles, non-warranty maintenance, collision services, paid Supercharging sessions, automotive insurance, part sales, and retail merchandise (tesla-10k-2026, Item 1).
+*   **Financial Services:** Tesla offers leasing and loan financing arrangements for its vehicles (tesla-10k-2026, Item 1).
+*   **Warranties:** The company provides manufacturer’s limited warranties and optional extended service plans (tesla-10k-2026, Item 1).
+
+### Energy Generation and Storage Segment
+*   **Energy Storage Products:** Includes Powerwall (for homes/small commercial facilities) and Megapack (for commercial, industrial, and utility customers) (tesla-10k-2026, Item 1).
+*   **Energy Generation Offerings:** Includes solar panels and Solar Roof (tesla-10k-2026, Item 1).
+*   **Software:** Includes real-time energy control and optimization platforms such as Autobidder (for Megapack) and Powerhub (for distributed energy resources like Powerwall) (tesla-10k-2026, Item 1).
+*   **Services:** Includes sales, leasing, and financing of energy products, as well as service, repairs, and performance guarantees (tesla-10k-2026, Item 1).
+
+Additionally, Tesla is developing AI robots, including Optimus (tesla-10k-2026, Item 1).",11,11,0,1,0,1,1,1,1,The answer accurately reflects the products and services described in the provided passages.,1,1,6.04
+q15,single,What risks does Tesla describe about scaling its production?,"Tesla identifies several risks associated with scaling its production, including:
+
+*   **Manufacturing and Ramp Uncertainties:** Scaling production is subject to inherent uncertainties, such as regulatory compliance, obtaining necessary licenses and permits, hiring and training skilled employees, and the challenge of bringing production equipment online to manufacture high-quality units at scale (tesla-10k-2026, Item 1A).
+*   **Supply Chain and Component Management:** Tesla relies on thousands of parts from hundreds of global suppliers. It faces risks related to component shortages, supplier failures, and the need to accurately forecast, purchase, and manage high volumes of parts. Inability to manage this complexity or match component supply to production needs can lead to disruptions and increased costs (tesla-10k-2026, Item 1A).
+*   **New Technology and Process Development:** The company is developing unique manufacturing processes and new technologies. There is no guarantee it will successfully scale these, and it has previously experienced, and may continue to experience, delays in launching and ramping production of new products, variants, and features (tesla-10k-2026, Item 1A).
+*   **Cost and Profitability Targets:** Tesla must implement efficient, cost-effective manufacturing processes to meet its profitability targets. It faces risks in controlling manufacturing costs, and any failure to address bottlenecks or unexpected challenges during production ramps could harm its financial condition (tesla-10k-2026, Item 1A).
+*   **Facility-Specific Risks:** The construction and ramp of new factories are subject to risks regarding timelines, capital efficiency, and the ability to integrate proprietary battery cell production. Additionally, the handling and storage of high volumes of lithium-ion cells pose safety risks, such as fires, which could disrupt operations (tesla-10k-2026, Item 1A).
+*   **International Operations:** Expanding and maintaining international manufacturing operations exposes Tesla to unpredictable regulatory, political, economic, and labor conditions in various jurisdictions (tesla-10k-2026, Item 1A).",6,6,0,1,0,1,1,1,1,The assistant accurately summarizes the risks described in the provided passages and all claims are supported by the text.,1,1,6.3
+q16,single,What does Tesla say about depending on key personnel?,"Tesla states that it is highly dependent on the services of Elon Musk, its Technoking and Chief Executive Officer (tesla-10k-2026, Item 1A). While Mr. Musk is highly active in management, he does not devote his full time and attention to Tesla, as he holds management positions at and is involved with other ventures, including Space Exploration Technologies Corp., X.AI Holdings Corp. (“xAI”), Neuralink Corp., and The Boring Company (tesla-10k-2026, Item 1A).
+
+Additionally, Tesla notes the following regarding its personnel:
+*   **General Dependence:** The loss of key employees or a significant portion of its workforce could disrupt operations or delay the development, introduction, and ramp of products and services (tesla-10k-2026, Item 1A).
+*   **Retention and Hiring:** None of its key employees are bound by employment agreements for any specific term. The company faces strong competition for skilled talent in a competitive labor market and must successfully attract and retain a large number of engineering, manufacturing, and other specialized personnel to support its growth (tesla-10k-2026, Item 1A).
+*   **Compensation:** Tesla’s compensation philosophy emphasizes equity-based awards to align employee incentives with shareholder interests. If the company cannot obtain shareholder approval for future increases to these awards, it may have to expend additional cash, which could harm its ability to retain and hire qualified personnel (tesla-10k-2026, Item 1A).",5,5,0,1,0,1,1,1,1,The assistant accurately reflects the facts from the provided passages and all claims are supported by the text.,1,1,4.0
+q17,single,What does Tesla say about government incentives and regulations affecting demand?,"Tesla states that demand for its products is significantly impacted by the status of government and economic incentives, such as tax exemptions, credits, and rebates (tesla-10k-2026, Item 1A).
+
+Key points regarding these incentives and regulations include:
+
+*   **Impact of Changes:** Incentives can be reduced, eliminated, or exhausted, which may negatively impact sales (tesla-10k-2026, Item 1A). For example, the One Big Beautiful Bill Act (OBBBA) has restricted certain regulatory credit programs and consumer tax credits, which Tesla notes may harm its growth, prospects, and operating results (tesla-10k-2026, Item 1A, Item 1).
+*   **Eligibility and Traceability:** New regulations, such as the OBBBA, require rigorous traceability of raw materials. If Tesla or its suppliers cannot verify the origin of critical minerals, products may lose eligibility for tax credits, effectively increasing prices for customers and potentially reducing demand (tesla-10k-2026, Item 1A).
+*   **Competitive Disadvantage:** Some incentives are structured to favor manufacturers with specific characteristics, such as domestic assembly or local suppliers. If these do not apply to Tesla, it could negatively impact demand, potentially forcing the company to adjust pricing (tesla-10k-2026, Item 1A).
+*   **Energy Products:** For solar and energy storage, incentives like net metering and federal tax credits help lower costs and encourage customer adoption. The reduction or elimination of these incentives—or the exhaustion of allocated funding—can make Tesla's products less competitive and harm its ability to attract investment (tesla-10k-2026, Item 1A).",6,6,0,1,0,1,1,1,1,The assistant accurately summarizes the impact of government incentives and regulations on demand as described in the provided passages.,1,1,4.45
+q18,single,What does Tesla's MD&A say about changes in automotive sales revenue?,"In 2025, Tesla's automotive sales revenue decreased by $6.66 billion, or 9%, compared to 2024 (tesla-10k-2026, Item 7).
+
+This decline was driven by two primary factors:
+*   A decrease of approximately 8% in cash deliveries (tesla-10k-2026, Item 7).
+*   A lower average selling price per unit, which resulted from the sales mix and increased customer incentives, such as attractive financing options (tesla-10k-2026, Item 7).",3,3,0,1,0,1,1,0,1,The assistant failed to include the additional facts regarding total revenues and energy generation revenue mentioned in the reference answer.,1,1,6.32
+q19,single,What does Tesla say about its liquidity and cash position?,"As of December 31, 2025, Tesla reported the following cash and liquidity positions:
+
+*   **Cash and Investments:** $16.51 billion in cash and cash equivalents and $27.55 billion in short-term investments (tesla-10k-2026, Item 7).
+*   **Credit Availability:** $6.43 billion in unused committed credit amounts (tesla-10k-2026, Item 7).
+*   **Indebtedness:** $8.18 billion in aggregate principal amount of outstanding indebtedness, of which $1.58 billion is current (tesla-10k-2026, Item 7).
+*   **Lease Obligations:** $7.96 billion in total minimum lease payments, with $1.32 billion due in the succeeding 12 months (tesla-10k-2026, Item 7).
+
+Tesla states that it believes its current sources of funds will provide adequate liquidity for the 12-month period following December 31, 2025, as well as in the long term (tesla-10k-2026, Item 7). The company's primary sources of liquidity include cash generated from vehicle deliveries and servicing, energy product deployments, interest income, and proceeds from debt facilities and equity offerings (tesla-10k-2026, Item 7).
+
+The company notes that it may adjust capital and operating expenditures if necessary and continues to evaluate its cash needs, which may include raising additional capital or seeking alternative financing to support business growth (tesla-10k-2026, Item 7).",7,7,0,1,0,1,1,1,1,The assistant accurately reports the figures and facts found in the provided passages.,1,1,3.25
+q20,single,What risks does Tesla describe related to ownership of its common stock?,"Tesla describes the following risks related to the ownership of its common stock:
+
+*   **Stock Price Volatility:** The trading price of Tesla's common stock has been and is likely to continue to be highly volatile due to factors both within and outside the company's control, including market fluctuations, short selling, and public perception (tesla-10k-2026, Item 1A).
+*   **Financial Performance and Guidance:** Quarterly financial results may fluctuate and fail to meet the expectations of analysts or investors, which could cause the stock price to decline. Additionally, if the company's publicly announced guidance—which is based on uncertain assumptions—varies from actual results, the market value of the stock could decline (tesla-10k-2026, Item 1A).
+*   **Sales by Elon Musk:** If Elon Musk is forced to sell shares—whether to satisfy personal loan obligations secured by pledges of Tesla stock, to fund other business ventures, or to satisfy tax obligations—such sales could cause the stock price to decline (tesla-10k-2026, Item 1A).
+*   **Anti-Takeover Provisions:** Provisions in Tesla's governing documents, Texas law, and certain debt facilities may delay or prevent a change in control. These provisions could limit the opportunity for shareholders to receive a premium for their shares and affect the price investors are willing to pay (tesla-10k-2026, Item 1A).
+*   **Litigation:** Past volatility has led to securities class action litigation. Future shareholder litigation could result in substantial costs and divert management's attention and resources (tesla-10k-2026, Item 1A).
+*   **Strategic Misalignment:** There is a risk that initiatives associated with CEO performance awards (such as the 2025 CEO Performance Award) may be misaligned with consumer demand or fail to generate expected financial returns, which could negatively impact the company's financial performance and stock price (tesla-10k-2026, Item 1A).",6,6,0,1,0,1,1,1,1,The assistant accurately summarizes the risks described in the provided passages and cites them correctly.,1,1,3.16
+q21,multi,Compare how Apple and NVIDIA describe the risk of depending on third-party manufacturers.,"Both Apple and NVIDIA acknowledge that relying on third-party manufacturers reduces their direct control over production, which can negatively impact product quality, quantity, and delivery schedules (apple-10k-2026, Item 1A; nvidia-10k-2026, Item 1A).
+
+**Apple**
+*   **Scope:** Apple emphasizes its reliance on single-source partners for many components and on partners in Asia for the final assembly of substantially all its hardware (apple-10k-2026, Item 1A).
+*   **Operational Impact:** It notes that while outsourcing lowers costs, it reduces flexibility to respond to changing conditions. The company highlights that changing supply chain arrangements requires significant time and resources (apple-10k-2026, Item 1A).
+*   **Responsibility:** Apple explicitly states that despite contractual provisions for defect reimbursement, it remains responsible to consumers for warranty and out-of-warranty service (apple-10k-2026, Item 1A).
+
+**NVIDIA**
+*   **Scope:** NVIDIA highlights its dependency on foundries for semiconductor wafers and independent subcontractors for assembly, testing, and packaging (nvidia-10k-2026, Item 1A).
+*   **Operational Impact:** NVIDIA details specific risks such as the lack of guaranteed supply, the potential for foundries to prioritize competitors' orders, and the complexity of integrating multiple suppliers. It also notes risks related to the geographic concentration of its suppliers (nvidia-10k-2026, Item 1A).
+*   **Technical Challenges:** NVIDIA specifically mentions the risk of foundries failing to develop or implement advanced process technologies (e.g., smaller geometry nodes) required for its products (nvidia-10k-2026, Item 1A).",8,8,0,1,0,1,1,1,1,The assistant accurately compares the risks described by both companies using only the provided passages.,1,1,77.6
+q22,multi,How do NVIDIA and Tesla each describe risks from government regulation?,"NVIDIA and Tesla describe risks from government regulation as follows:
+
+### **NVIDIA**
+NVIDIA highlights risks primarily centered on geopolitical tensions, export controls, and AI-specific regulation:
+*   **Export Controls and Trade Policy:** The U.S. government (USG) has imposed and may expand export controls on GPUs, which can disrupt supply chains, limit sales to certain markets (e.g., China, Middle East), and force the company to seek licenses that may be denied or carry burdensome conditions (nvidia-10k-2026, Item 1A).
+*   **AI Regulation:** New regulations, such as the EU AI Act and various U.S. state laws, may impact NVIDIA's ability to train, deploy, or release AI models and increase compliance costs (nvidia-10k-2026, Item 1A).
+*   **Regulatory Scrutiny:** NVIDIA faces broad information requests from competition regulators globally regarding its business practices, partnerships, and supply allocation, which are described as expensive and burdensome (nvidia-10k-2026, Item 1A).
+*   **Mandated Design Changes:** Government mandates requiring specific chip features (e.g., tracking or throttling mechanisms) could introduce system vulnerabilities, expose the company to liability, and negatively impact product demand (nvidia-10k-2026, Item 1A).
+
+### **Tesla**
+Tesla emphasizes risks related to vehicle safety, autonomous technology, and the reliance on government incentives:
+*   **Autonomous and Driver Assistance Features:** Regulations governing driver assistance and autonomous technologies are rapidly changing and vary by jurisdiction. A ""patchwork of complex or conflicting regulations"" could delay, restrict, or prohibit the operation of these features or the expansion of Tesla's Robotaxi business (tesla-10k-2026, Item 1A).
+*   **Government Incentives:** Tesla’s business is sensitive to the availability of tax credits, rebates, and other incentives for electric vehicles and energy products. The reduction, expiration, or elimination of these programs—or changes in eligibility requirements—can negatively impact demand and financial results (tesla-10k-2026, Item 1A).
+*   **Direct-to-Consumer Sales:** Tesla faces regulatory challenges in certain U.S. states that may limit its ability to sell vehicles directly to consumers or obtain dealer licenses (tesla-10k-2026, Item 1A).
+*   **Environmental and Operational Compliance:** Tesla is subject to complex environmental, safety, and labor laws across multiple countries. Changes in these laws, or the need to meet differing international standards for vehicle safety and emissions, can lead to increased compliance costs, investigations, and potential fines (tesla-10k-2026, Item 1A).",8,8,0,1,0,1,1,1,1,The answer accurately summarizes the regulatory risks for both companies using the provided passages.,1,1,8.09
+q23,multi,Compare how Apple and Tesla describe tariff and trade risks.,"Both Apple and Tesla identify tariff and trade policy changes as significant risks that create uncertainty, increase costs, and potentially disrupt their global supply chains.
+
+### **Apple**
+*   **Supply Chain and Costs:** Apple emphasizes that trade restrictions, including tariffs and import/export controls, can increase the cost or limit the availability of products and critical components (such as semiconductors and raw materials). These measures may force the company to restructure business relationships or change suppliers, which it describes as expensive and time-consuming (apple-10k-2026, Item 1A).
+*   **Market Impact:** Apple notes that trade disputes can negatively impact the overall macroeconomic environment, leading to reduced consumer spending and negative sentiment toward its products (apple-10k-2026, Item 1A; apple-10k-2026, Item 7).
+*   **Uncertainty:** The company highlights that trade measures are often announced with little notice, making it difficult to mitigate adverse impacts. It specifically notes that if tariffs are rescinded, it may not be able to successfully collect refunds (apple-10k-2026, Item 1A).
+
+### **Tesla**
+*   **Manufacturing and Export Costs:** Tesla highlights that U.S. special tariff actions have historically increased costs for vehicles manufactured in the U.S., both for domestic sale and for export. It notes that retaliatory tariffs from other countries further exacerbate these cost pressures (tesla-10k-2026, Item 1A).
+*   **Supply Chain and Localization:** Tesla links trade policy to its supply chain costs and the availability of technologies. It emphasizes that it is working to mitigate these risks through ""supply chain localization"" and vertical integration (tesla-10k-2026, Item 1A; tesla-10k-2026, Item 7).
+*   **Competitive Landscape:** Tesla notes that changes in trade policy and tariffs can impact its production, cost structure, and the broader competitive landscape, potentially affecting consumer demand for durable goods (tesla-10k-2026, Item 7).
+
+### **Comparison Summary**
+Both companies acknowledge that the exact scope and duration of trade measures remain uncertain. While Apple focuses heavily on the potential for supply chain disruption and the difficulty of restructuring its global operations, Tesla places additional emphasis on how tariffs specifically affect its U.S.-based manufacturing and export model, as well as its strategic efforts to localize procurement to counter these risks.",8,8,0,1,0,1,1,0,1,"The answer fails to include the specific details mentioned in the reference answer, such as the list of countries Apple identifies or the fact that Tesla treats tariffs as part of its broader international operations risks.",1,1,7.74
+q24,multi,What product categories does Apple sell and what does its MD&A say drove net sales?,"Apple sells products in the following categories: **iPhone**, **Mac**, **iPad**, **Wearables, Home and Accessories**, and **Services** (apple-10k-2026, Item 7).
+
+According to the Management’s Discussion and Analysis (MD&A), the increase in net sales during 2026 compared to 2025 was driven by the following factors:
+
+*   **iPhone:** Net sales increased due to higher sales of Pro models (apple-10k-2026, Item 7).
+*   **Mac:** Net sales increased due to higher sales of laptops (apple-10k-2026, Item 7).
+*   **Services:** Net sales increased primarily due to higher sales from advertising and cloud services (apple-10k-2026, Item 7).
+*   **iPad and Wearables, Home and Accessories:** Net sales for these categories were relatively flat during 2026 compared to 2025 (apple-10k-2026, Item 7).
+
+Additionally, on a geographic basis, the MD&A notes that net sales increased across all reportable segments (Americas, Europe, Greater China, Japan, and Rest of Asia Pacific) during 2026 compared to 2025, largely attributed to higher net sales of iPhone, Services, and Mac (apple-10k-2026, Item 7).",6,6,0,1,0,1,0,1,1,The assistant accurately identified the product categories and the drivers of net sales as described in the provided passages.,1,1,3.49
+q25,multi,How does NVIDIA describe its platforms and what drove its revenue growth?,"NVIDIA describes its business as a data center-scale AI infrastructure company that utilizes a platform strategy (nvidia-10k-2026, Item 1). This strategy integrates hardware, systems, software, algorithms, libraries, AI models, training data sets, and services to create value across diverse end markets using a unified, programmable architecture (nvidia-10k-2026, Item 1).
+
+### Platform Description
+*   **Accelerated Computing Platform:** At its foundation are GPUs that excel at parallel workloads like neural network training and inferencing (nvidia-10k-2026, Item 1).
+*   **Full-Stack Approach:** NVIDIA combines its chips with a large body of software—including the CUDA development platform, CUDA-X acceleration libraries, APIs, SDKs, and domain-specific frameworks—to create a full-stack computing platform (nvidia-10k-2026, Item 1).
+*   **Data Center Infrastructure:** NVIDIA provides rack-scale systems, subsystems, or modules that include GPUs, CPUs, DPUs, interconnects, and networking (such as NVLink and InfiniBand/Ethernet) to support data center-scale computing (nvidia-10k-2026, Item 1).
+*   **Specialized Platforms:** NVIDIA offers specific platforms for various use cases, including:
+    *   **Blackwell:** A full set of data center-scale infrastructure for generative AI and accelerated computing (nvidia-10k-2026, Item 1).
+    *   **Rubin:** Unveiled for agentic AI and reasoning, designed for multi-step problem-solving (nvidia-10k-2026, Item 1).
+    *   **DRIVE:** An AI-based hardware and software solution for autonomous and electric vehicles (nvidia-10k-2026, Item 1).
+    *   **Omniverse:** Software for real-time 3D design collaboration and virtual world simulation (nvidia-10k-2026, Item 1).
+
+### Revenue Growth Drivers (Fiscal Year 2026)
+NVIDIA's revenue for fiscal year 2026 was $215.9 billion, a 65% increase from the previous year (nvidia-10k-2026, Item 7). Key drivers included:
+
+*   **Major Platform Shifts:** The strong year-on-year growth was primarily driven by the major platform shifts toward accelerated computing and AI (nvidia-10k-2026, Item 7).
+*   **Compute & Networking:** Revenue in this segment grew 67%, with Data Center computing revenue up 59% due to demand for the Blackwell platform, and Data Center networking revenue up 142% driven by the ramp of NVLink compute fabric and growth in Ethernet and InfiniBand platforms (nvidia-10k-2026, Item 7).
+*   **Gaming:** Revenue grew 41%, driven by strong demand for the Blackwell architecture (nvidia-10k-2026, Item 7).
+*   **Professional Visualization:** Revenue grew 70%, driven by exceptional demand for Blackwell and the launch of the new DGX Spark (nvidia-10k-2026, Item 7).
+*   **Automotive:** Revenue grew 39%, driven by the continued adoption of NVIDIA's self-driving platforms (nvidia-10k-2026, Item 7).",15,15,0,1,0,1,1,1,1,The answer accurately reflects the provided passages and correctly identifies the revenue drivers and platform descriptions.,,,5.49
+q26,multi,How do the three companies describe their cash and liquidity position?,"The companies describe their cash and liquidity positions as follows:
+
+*   **Apple:** As of September 26, 2026, Apple held **$136.9 billion** in cash, cash equivalents, and marketable securities. The company believes these balances, combined with cash from operations and access to debt markets, will be sufficient to meet its cash requirements and capital return program for the next 12 months and beyond (apple-10k-2026, Item 7. Management's Discussion and Analysis).
+*   **NVIDIA:** As of January 25, 2026, NVIDIA held **$62.6 billion** in cash, cash equivalents, and marketable securities. The company states that its primary sources of liquidity are these holdings and cash generated from operations. NVIDIA believes it has sufficient liquidity to meet its operating requirements and future obligations for at least the next 12 months and the foreseeable future (nvidia-10k-2026, Item 7. Management's Discussion and Analysis).
+*   **Tesla:** As of December 31, 2025, Tesla held **$16.51 billion** in cash and cash equivalents and **$27.55 billion** in short-term investments. Additionally, it had **$6.43 billion** in unused committed credit. Tesla believes its current sources of funds will provide adequate liquidity for the 12-month period following December 31, 2025, as well as in the long term (tesla-10k-2026, Item 7. Management's Discussion and Analysis).",3,3,0,1,0,1,1,1,1,The answer accurately reflects the facts and figures provided in the retrieved passages.,,,9.06
+q27,multi,What does Tesla produce and what risks does it face in scaling that production?,"Tesla produces vehicles, energy storage products, Solar Roof, and is developing Bots and artificial intelligence-based products and services, including driver assistance and autonomous driving solutions like the Cybercab (tesla-10k-2026, Item 1A). Additionally, the company manufactures various vehicle components, such as battery modules, packs, and drive units (tesla-10k-2026, Item 1A).
+
+Tesla faces several risks in scaling production:
+
+*   **Manufacturing and Operational Challenges:** The company may encounter bottlenecks, delays, or unexpected challenges when ramping up production for new or existing products (tesla-10k-2026, Item 1A). This includes difficulties in implementing efficient, cost-effective manufacturing processes, achieving design tolerances, and maintaining high quality and output rates (tesla-10k-2026, Item 1A).
+*   **Supply Chain and Components:** Tesla relies on hundreds of global suppliers for thousands of parts, including single-source suppliers, exposing it to potential component shortages (tesla-10k-2026, Item 1A). Factors such as inflation, trade policies (including tariffs), labor issues, and global disruptions can impact supplier reliability and costs (tesla-10k-2026, Item 1A).
+*   **Facility Expansion:** Constructing and bringing new factories online involves significant uncertainties, including regulatory compliance, permitting, and the ability to hire and train qualified personnel (tesla-10k-2026, Item 1A).
+*   **Demand and Delivery:** Tesla must accurately forecast demand for its products across global markets. Inaccuracies in these forecasts, or challenges in scaling delivery and servicing networks to match growing production volumes, could harm the business (tesla-10k-2026, Item 1A).
+*   **Technology and AI:** Scaling depends on advancing AI capabilities and managing the substantial power and processing requirements for data centers (tesla-10k-2026, Item 1A).
+*   **Safety and Regulatory Risks:** Mishandling of lithium-ion cells or battery components could cause disruptions, and the company must navigate complex, unpredictable international regulatory and political environments (tesla-10k-2026, Item 1A).",10,10,0,1,0,1,0,1,1,The answer accurately reflects the facts and risks provided in the retrieved passages and all claims are supported by the text.,,,3.44
+q28,multi,Compare how Apple and NVIDIA describe their competition.,"Both Apple and NVIDIA describe their markets as intensely competitive, characterized by rapid technological change, evolving standards, and the need for constant innovation. However, they highlight different competitive dynamics based on their respective business models.
+
+### Apple
+Apple emphasizes competition in consumer-facing markets (smartphones, PCs, tablets, and wearables) where it holds a minority market share (apple-10k-2026, Item 1A).
+*   **Competitive Strategy:** Apple notes that competitors often compete through aggressive pricing, low-cost structures, and by imitating its products and intellectual property (apple-10k-2026, Item 1).
+*   **Key Factors:** Apple identifies price, product features (including security), design, technology innovation, and its third-party software/accessories ecosystem as primary competitive factors (apple-10k-2026, Item 1).
+*   **Market Dynamics:** It faces pressure from competitors with broad product lines and large installed bases who may offer products at little or no profit to gain market share (apple-10k-2026, Item 1).
+
+### NVIDIA
+NVIDIA focuses on competition in the accelerated and AI computing processor markets, where it faces both traditional semiconductor rivals and large cloud service providers (nvidia-10k-2026, Item 1).
+*   **Competitive Strategy:** NVIDIA expects competition to increase from both existing players and new entrants, including those who may offer lower-priced products or better performance (nvidia-10k-2026, Item 1).
+*   **Key Factors:** NVIDIA identifies performance, breadth of product offerings, software support, conformity to industry-standard APIs, and total system costs as its principal competitive factors (nvidia-10k-2026, Item 1).
+*   **Market Dynamics:** A unique aspect of NVIDIA's competition is that some of its customers (such as large cloud service companies) have internal teams designing their own hardware and software, effectively becoming competitors (nvidia-10k-2026, Item 1). Additionally, NVIDIA faces increased regulatory scrutiny regarding its market position in AI (nvidia-10k-2026, Item 1A).",9,9,0,1,0,1,1,1,1,The answer accurately reflects the provided passages and matches the facts in the reference answer.,,,7.35
+q29,unanswerable,What was Microsoft's cloud revenue last year?,"The indexed reports do not cover Microsoft. Currently, the available reports are for Apple, NVIDIA, and Tesla.",0,0,1,1,0,1,,1,1,The assistant correctly identified that the information is unavailable and provided accurate context based on the retrieved passages.,1,1,6.51
+q30,unanswerable,What is the analyst price target for Apple stock next year?,The indexed reports do not cover analyst price targets for Apple stock.,0,0,1,1,0,1,,1,1,The assistant correctly identified that the provided reports do not contain the requested information.,1,1,3.52
+q31,unanswerable,What was NVIDIA's revenue in fiscal year 2019?,The indexed reports do not cover NVIDIA's revenue for fiscal year 2019.,0,0,1,1,0,1,,1,1,The assistant correctly identified that the provided passages do not contain information regarding fiscal year 2019.,1,1,2.12
+q32,unanswerable,How many vehicles will Tesla deliver next year?,"The indexed reports do not provide specific guidance or a numerical forecast for the number of vehicles Tesla expects to deliver in the upcoming year (tesla-10k-2026, Item 7).",1,1,1,1,0,1,,1,1,The assistant correctly identified that the reports do not provide a forecast for future vehicle deliveries.,1,1,2.97
+q33,unanswerable,What is the salary of Apple's CEO?,"The indexed reports do not cover this. Information regarding the specific compensation or salary of Apple's CEO is typically found in the company's annual Proxy Statement (Form DEF 14A), rather than the Form 10-K.",0,0,1,1,0,1,,1,1,The assistant correctly identified that the provided reports do not contain the information and provided accurate context regarding where such information is typically located.,1,0,2.5
+q34,unanswerable,What does Apple say about its plans for a foldable iPhone?,"The indexed reports do not cover this. Apple's 2026 Form 10-K lists its current iPhone models—including the iPhone Duo, iPhone 18 Pro, iPhone Air, iPhone 17, iPhone 17e, and iPhone 16—but does not mention plans for a foldable iPhone (Apple, Item 1. Business).",0,0,1,1,0,1,,1,1,The assistant correctly identified that the reports do not cover the topic and provided accurate supporting context from the documents.,1,1,3.45
+q35,unanswerable,How does Amazon describe the competition for AWS?,The indexed reports do not cover this.,0,0,1,1,0,1,,1,1,The assistant correctly identified that the information is not available in the provided passages.,1,1,1.66
+q36,unanswerable,What was Tesla's net income in 2015?,The indexed reports do not cover Tesla's net income for 2015.,0,0,1,1,0,1,,1,1,"The provided passages only contain financial data for 2023, 2024, and 2025, so the assistant correctly identified that 2015 is not covered.",1,1,3.01

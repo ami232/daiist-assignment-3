@@ -1,0 +1,36 @@
+{"id": "q01", "digest": "c3f2b4507ae2", "correct": 1, "supported": 1, "reason": "The assistant accurately lists the product categories and services as described in the provided passages."}
+{"id": "q02", "digest": "f000bc11d0fa", "correct": 1, "supported": 1, "reason": "The assistant accurately summarizes the risks described in the provided passages and all claims are supported by the text."}
+{"id": "q03", "digest": "68bded1fab39", "correct": 1, "supported": 1, "reason": "The assistant accurately summarized the risks and tariff details provided in the retrieved passages."}
+{"id": "q04", "digest": "0798857e3f64", "correct": 0, "supported": 1, "reason": "The assistant failed to include the total net sales figure and the percentage growth rate as required by the reference answer."}
+{"id": "q05", "digest": "feea68b2d1a6", "correct": 1, "supported": 1, "reason": "The assistant accurately reflects the facts and figures from the provided passages."}
+{"id": "q06", "digest": "e4d8416754eb", "correct": 1, "supported": 1, "reason": "The answer accurately reflects the provided passages and includes all key points from the reference answer."}
+{"id": "q07", "digest": "1f6f4c89305d", "correct": 1, "supported": 1, "reason": "The answer accurately identifies the four markets and segments as described in the provided passages."}
+{"id": "q08", "digest": "7bfc2ee86952", "correct": 1, "supported": 1, "reason": "The assistant accurately summarizes the risks described in the provided passages and all claims are supported by the text."}
+{"id": "q09", "digest": "ca2cb3104884", "correct": 1, "supported": 1, "reason": "The answer accurately reflects the facts in the provided passages and all claims are supported by the source text."}
+{"id": "q10", "digest": "7fcea29b604d", "correct": 1, "supported": 1, "reason": "The answer accurately reflects the facts and figures from the provided passages and all claims are supported by the text."}
+{"id": "q11", "digest": "8a449e851ab7", "correct": 1, "supported": 1, "reason": "The assistant accurately reflects the facts provided in the retrieved passages regarding the drivers of revenue growth."}
+{"id": "q12", "digest": "027464dc7850", "correct": 1, "supported": 1, "reason": "The answer accurately reflects the provided passages and includes all key facts mentioned in the reference answer."}
+{"id": "q13", "digest": "c9d1cb57270f", "correct": 1, "supported": 1, "reason": "The assistant accurately and comprehensively summarizes the competitive landscape as described in the provided passages."}
+{"id": "q14", "digest": "69fb0a645040", "correct": 1, "supported": 1, "reason": "The answer accurately reflects the products and services described in the provided passages."}
+{"id": "q15", "digest": "70738baf6303", "correct": 1, "supported": 1, "reason": "The assistant accurately summarizes the risks described in the provided passages and all claims are supported by the text."}
+{"id": "q16", "digest": "f67ddd039904", "correct": 1, "supported": 1, "reason": "The assistant accurately reflects the facts from the provided passages and all claims are supported by the text."}
+{"id": "q17", "digest": "2a4c7e97f456", "correct": 1, "supported": 1, "reason": "The assistant accurately summarizes the impact of government incentives and regulations on demand as described in the provided passages."}
+{"id": "q18", "digest": "e9c9b6604ffa", "correct": 0, "supported": 1, "reason": "The assistant failed to include the additional facts regarding total revenues and energy generation revenue mentioned in the reference answer."}
+{"id": "q19", "digest": "11aa94ed819b", "correct": 1, "supported": 1, "reason": "The assistant accurately reports the figures and facts found in the provided passages."}
+{"id": "q20", "digest": "61134617d26c", "correct": 1, "supported": 1, "reason": "The assistant accurately summarizes the risks described in the provided passages and cites them correctly."}
+{"id": "q21", "digest": "8fad5a9e948b", "correct": 1, "supported": 1, "reason": "The assistant accurately compares the risks described by both companies using only the provided passages."}
+{"id": "q22", "digest": "c42c27f4d332", "correct": 1, "supported": 1, "reason": "The answer accurately summarizes the regulatory risks for both companies using the provided passages."}
+{"id": "q23", "digest": "a310e5a01409", "correct": 0, "supported": 1, "reason": "The answer fails to include the specific details mentioned in the reference answer, such as the list of countries Apple identifies or the fact that Tesla treats tariffs as part of its broader international operations risks."}
+{"id": "q24", "digest": "5fecd7724b86", "correct": 1, "supported": 1, "reason": "The assistant accurately identified the product categories and the drivers of net sales as described in the provided passages."}
+{"id": "q25", "digest": "e2ac7b39cc60", "correct": 1, "supported": 1, "reason": "The answer accurately reflects the provided passages and correctly identifies the revenue drivers and platform descriptions."}
+{"id": "q26", "digest": "3edacc5eac9c", "correct": 1, "supported": 1, "reason": "The answer accurately reflects the facts and figures provided in the retrieved passages."}
+{"id": "q27", "digest": "2476ab9890ec", "correct": 1, "supported": 1, "reason": "The answer accurately reflects the facts and risks provided in the retrieved passages and all claims are supported by the text."}
+{"id": "q28", "digest": "dc2cf7dd379a", "correct": 1, "supported": 1, "reason": "The answer accurately reflects the provided passages and matches the facts in the reference answer."}
+{"id": "q29", "digest": "fc8d038a60c5", "correct": 1, "supported": 1, "reason": "The assistant correctly identified that the information is unavailable and provided accurate context based on the retrieved passages."}
+{"id": "q30", "digest": "36f8c0ac737c", "correct": 1, "supported": 1, "reason": "The assistant correctly identified that the provided reports do not contain the requested information."}
+{"id": "q31", "digest": "207bdf973ec9", "correct": 1, "supported": 1, "reason": "The assistant correctly identified that the provided passages do not contain information regarding fiscal year 2019."}
+{"id": "q32", "digest": "ad91b36b6794", "correct": 1, "supported": 1, "reason": "The assistant correctly identified that the reports do not provide a forecast for future vehicle deliveries."}
+{"id": "q33", "digest": "cc6219eb3910", "correct": 1, "supported": 1, "reason": "The assistant correctly identified that the provided reports do not contain the information and provided accurate context regarding where such information is typically located."}
+{"id": "q34", "digest": "281b4993932d", "correct": 1, "supported": 1, "reason": "The assistant correctly identified that the reports do not cover the topic and provided accurate supporting context from the documents."}
+{"id": "q35", "digest": "b18c99cff434", "correct": 1, "supported": 1, "reason": "The assistant correctly identified that the information is not available in the provided passages."}
+{"id": "q36", "digest": "6ddebb64de0e", "correct": 1, "supported": 1, "reason": "The provided passages only contain financial data for 2023, 2024, and 2025, so the assistant correctly identified that 2015 is not covered."}

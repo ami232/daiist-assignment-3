@@ -32,7 +32,7 @@ from mcp.client.stdio import stdio_client
 from api_key import load_api_key
 
 ROOT = Path(__file__).resolve().parent
-MODEL = "gemini-2.5-flash"
+MODEL = "gemini-3.1-flash-lite"
 MAX_MODEL_CALLS = 8
 MAX_TOOL_CALLS = 6
 ALLOWED_SUFFIXES = (".htm", ".html", ".txt", ".md")
