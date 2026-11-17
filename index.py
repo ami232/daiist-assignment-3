@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import os
 import re
 import sys
 import time
@@ -34,7 +35,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 CORPUS_DIR = ROOT / "corpus"
 INDEX_DIR = ROOT / "index"
-CHROMA_DIR = INDEX_DIR / "chroma"
+# CORPUS_INDEX_DIR lets the before/after test in evaluate.py work on a copy of the index
+CHROMA_DIR = Path(os.environ.get("CORPUS_INDEX_DIR") or INDEX_DIR / "chroma")
 
 EMBED_MODEL = "gemini-embedding-2"
 EMBED_DIM = 768

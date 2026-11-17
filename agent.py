@@ -188,7 +188,8 @@ class CorpusAgent:
         from mcp.client.stdio import stdio_client
 
         load_api_key()
-        params = StdioServerParameters(command=sys.executable, args=["server.py"], cwd=str(ROOT))
+        # pass the environment on, so CORPUS_INDEX_DIR (before/after test) reaches the server
+        params = StdioServerParameters(command=sys.executable, args=["server.py"], cwd=str(ROOT), env=dict(os.environ))
         read, write = await self._stack.enter_async_context(stdio_client(params))
         session = await self._stack.enter_async_context(ClientSession(read, write))
         await session.initialize()

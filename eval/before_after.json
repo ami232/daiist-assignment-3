@@ -1,0 +1,58 @@
+{
+  "document": "Attendance_Policy_Master_Programs.pdf",
+  "add_document_trace": [
+    {
+      "tool": "add_document",
+      "args": {
+        "path": "extra/Attendance_Policy_Master_Programs.pdf"
+      },
+      "output": "New document added.\ntitle (used in citations): Attendance Policy Master Programs\nchunks in document: 9, newly embedded: 9, already present: 0, old chunks removed: 0\nindex now holds 357 chunks."
+    }
+  ],
+  "approvals": [
+    {
+      "tool": "add_document",
+      "args": {
+        "path": "extra/Attendance_Policy_Master_Programs.pdf"
+      },
+      "approved": true
+    }
+  ],
+  "questions": [
+    {
+      "id": "q36",
+      "question": "If a master's student's attendance falls below 80% in a subject, what grade do they get in the ordinary call, and can they still take the extraordinary call?",
+      "before": "If a master's student does not comply with the attendance requirements, the grade in the ordinary call will be between zero and four-point-nine (0–4.9) \"Fail\" [Academic Regulations for Master Degree Programmes, pp. 29-30, Article 42. Ordinary and extraordinary calls]. The academic director of the degree may waive this rule in the event of serious illness or other duly accredited causes that prevented the student from participating in educational activities and assessment exercises [Academic Regulations for Master Degree Programmes, pp. 29-30, Article 42. Ordinary and extraordinary calls]. \n\nRegarding the extraordinary call, the regulations state that if a student does not pass a subject in the ordinary call, an extraordinary call will take place, except for cases expressly mentioned [Academic Regulations for Master Degree Programmes, p. 29, Article 42. Ordinary and extraordinary calls]. Please note that the document provided for Bachelor programs regarding automatic failure in both calls does not apply to Master's students [Attendance Policy, Bachelor Programs, p. 2, Failing a course due to attendance].",
+      "after": "If a master's student's attendance falls below 80% in a subject, they will receive a Fail (0.0) in the ordinary call for that course [Attendance Policy Master Programs, p. 3, Failing a course due to attendance]. Despite this, they remain eligible to take the extraordinary call [Attendance Policy Master Programs, p. 3, Failing a course due to attendance].\n\nPlease note that if a student passes the subject during the extraordinary call, the grade is limited to a LOW PASS (one, 1.0) [Attendance Policy Master Programs, p. 3, Failing a course due to attendance]. Only the grade obtained in the extraordinary call will be taken into account when calculating the master’s final grade, and students who obtain a “fail” in the extraordinary call may not continue on the program [Attendance Policy Master Programs, p. 3, Failing a course due to attendance].",
+      "after_guardrail": "ok"
+    },
+    {
+      "id": "q37",
+      "question": "Is a documented job or internship interview a justified absence for a master's student?",
+      "before": "I can't find this in the IE documents. The *Academic Regulations for Master Degree Programmes* state that master's directors may partially exempt students from attendance for \"duly justified reasons\" and will assess each case individually [Academic Regulations for Master Degree Programmes, p. 12, Article 15.4]. While the *Attendance Policy* for Bachelor programs explicitly lists job or internship interviews as justified absences, this policy does not apply to master's students [Attendance Policy, Bachelor Programs, pp. 1-2, Justified Absences]. Please contact your Program Management through the Virtual Help Desk to confirm how to handle your specific situation.",
+      "after": "Yes, a documented job or internship interview is considered a justified absence for a master's student [Attendance Policy Master Programs, pp. 1-2, Justified Absences]. To have the absence validated, you must submit the required supporting documentation through the Virtual Help Desk within seven (7) days [Attendance Policy Master Programs, pp. 1-2, Justified Absences]. Once validated, the absence will not count toward the 20% maximum absence limit [Attendance Policy Master Programs, pp. 1-2, Justified Absences].",
+      "after_guardrail": "ok"
+    },
+    {
+      "id": "q38",
+      "question": "In a live online session of my master's programme, do I have to keep my camera on?",
+      "before": "I can't find this in the IE documents. The *Academic Regulations for Master Degree Programmes* state that for online subjects, attendance and participation criteria are generally applied as per the face-to-face format, and specific conditions must be detailed in the subject's syllabus [Academic Regulations for Master Degree Programmes, p. 14, Article 17.5]. Please consult your specific course syllabus or contact your Program Management through the Virtual Help Desk for clarification on camera requirements.",
+      "after": "Yes, in a live online session of your master's programme, you are required to keep your camera on for the entire session [Attendance Policy Master Programs, p. 4, LIVE ONLINE SESSIONS]. If you unjustifiably switch off your camera for an extended period of time during the session, you will be marked absent [Attendance Policy Master Programs, p. 4, LIVE ONLINE SESSIONS].",
+      "after_guardrail": "ok"
+    },
+    {
+      "id": "q39",
+      "question": "After I submit documents for an absence in my master's, how long until I get the decision on whether it is justified?",
+      "before": "I can't find this in the IE documents. The *Academic Regulations for Master Degree Programmes* state that master’s directors assess whether a student has reached the required attendance level for duly justified reasons and determine the academic measures to be adopted in each case, but they do not specify a timeline for receiving a decision [Academic Regulations for Master Degree Programmes, p. 12, Article 15.4]. Please contact your Program Management through the Virtual Help Desk for information regarding the timeline for absence justification decisions.",
+      "after": "Once you have submitted the required supporting documentation through the Virtual Help Desk, the system will generate automatic notifications to you and the corresponding faculty members confirming whether the absence has been justified within 72 hours of the request being reviewed and resolved [Attendance Policy Master Programs, pp. 1-2, Justified Absences].",
+      "after_guardrail": "ok"
+    },
+    {
+      "id": "q40",
+      "question": "I am absent from a master's in-person class but join it online. Am I still marked absent, and can I take that day's exam?",
+      "before": "Whether you are marked absent when joining an in-person class online depends on the specific conditions detailed in the subject's syllabus [Academic Regulations for Master Degree Programmes, p. 14, Article 17.5]. In general, attendance and participation for subjects taught partially online are recorded by technical means adapted to the teaching model, and the syllabus must specify how these criteria are applied [Academic Regulations for Master Degree Programmes, p. 14, Article 17.5].\n\nRegarding exams, if you do not complete an evaluation exercise without a justified reason, you will be considered as not passing and will obtain the lowest grade [Academic Regulations for Master Degree Programmes, p. 23, Article 29.4]. Students who are unable to perform a scheduled evaluation exercise for a sufficiently justified reason have the right to complete it at a different time [Academic Regulations for Master Degree Programmes, p. 23, Article 29.4]. Justifications for missing an evaluation are governed by the same rules established for attendance and participation [Academic Regulations for Master Degree Programmes, p. 23, Article 29.5].\n\nYou should consult your subject's syllabus for specific attendance rules and contact your program management through the Virtual Help Desk if you have concerns about your specific situation.",
+      "after": "If you are absent from a live, in-person session but join online, you will still be marked absent [Attendance Policy Master Programs, p. 2, Additional Provisions]. Furthermore, you will not be allowed to participate in any exams conducted during that session [Attendance Policy Master Programs, p. 2, Additional Provisions].",
+      "after_guardrail": "ok"
+    }
+  ]
+}

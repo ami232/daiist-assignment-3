@@ -1,0 +1,26 @@
+{
+  "questions": 50,
+  "agent_model": "gemini-3.1-flash-lite",
+  "judge_model": "gemini-3.5-flash-lite",
+  "answerable": 43,
+  "correct": 38,
+  "incorrect": 4,
+  "unsupported": 1,
+  "wrong_refusals": 0,
+  "unanswerable": 7,
+  "correct_refusals": 5,
+  "answered_unanswerable": 2,
+  "citations_valid_rate": 1.0,
+  "guardrail_fired": 0,
+  "cites_expected_source_rate": 1.0,
+  "avg_tokens_per_question": 4254,
+  "avg_seconds_per_question": 5.1,
+  "avg_searches_per_question": 1.14,
+  "human_agreement": {
+    "graded": 24,
+    "correct_agreement": 1.0,
+    "correct_disagreements": [],
+    "supported_agreement": 1.0,
+    "supported_disagreements": []
+  }
+}
