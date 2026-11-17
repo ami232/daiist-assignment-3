@@ -9,8 +9,8 @@ q07,1,1,
 q08,1,1,
 q09,1,1,gives 3 of the 4 reasons (misses stringless racket and double-handed backhand) but nothing wrong
 q10,1,1,
-q11,0,0,says 104 rackets instead of 225 and omits the 118-147 mm range; 104 is not in the retrieved text
-q12,1,0,conclusion matches the reference but the claim of 104 rackets is not in the retrieved text
+q11,0,0,"says the average of 134 mm comes from 104 rackets (it is 225) and omits the 118-147 mm range; 104 comes from a figure-caption fragment in the retrieved text, so the number is misattributed"
+q12,1,0,conclusion matches the reference but it says the study had 104 rackets; that number is a figure-caption fragment in the retrieved text and is misattributed to the whole study
 q14,1,1,core method right (robot along central line + accelerometer at handle + minimum V) but omits 90 hits and 40-220 mm
 q15,1,1,correct no but omits the 124 mm vs 132-150 mm figures
 q19,1,1,gist right but gives none of the percentages
