@@ -1,0 +1,7 @@
+design,questions,n,hit@1,hit@3,hit@5,avg_words@3,avg_words@5,full@1,full@3,full@5
+structured,all,43,0.837,0.953,0.977,430,713,,,
+structured,single,33,0.848,0.939,0.97,427,708,,,
+structured,multi,10,0.8,1.0,1.0,439,727,0.1,0.3,0.5
+fixed,all,43,0.837,0.953,0.953,447,747,,,
+fixed,single,33,0.848,0.97,0.97,447,747,,,
+fixed,multi,10,0.8,0.9,0.9,447,747,0.1,0.4,0.5
