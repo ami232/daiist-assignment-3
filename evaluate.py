@@ -31,8 +31,8 @@ EVAL = ROOT / "eval"
 KS = (1, 3, 5)
 PAUSE_SECONDS = 4  # between agent calls, to stay under free-tier rate limits
 # Price of the agent model in USD per 1 million tokens (look it up and fill it in; 0 = cost not computed).
-PRICE_IN_PER_M = 0.0
-PRICE_OUT_PER_M = 0.0
+PRICE_IN_PER_M = 0.25
+PRICE_OUT_PER_M = 1.50
 
 REFUSAL = re.compile(
     r"do(?:es)? not (?:cover|provide|contain|include)|not covered|cannot (?:find|answer)|can't (?:find|answer)|no information"
