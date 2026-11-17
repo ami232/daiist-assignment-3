@@ -215,32 +215,47 @@ Be strict about numbers and about turning an association into a cause.
 Return JSON: {{"correct": 0 or 1, "supported": 0 or 1, "reason": "<one sentence>"}}"""
 
 
+JUDGE_FALLBACKS = [JUDGE_MODEL, "gemini-2.5-flash-lite", "gemini-flash-latest", "gemini-2.5-flash"]
+
+
+def _parse_verdict(text: str) -> dict:
+    """Read the judge's JSON, tolerating ```json fences or text around it."""
+    m = re.search(r"\{.*\}", text or "", re.S)
+    if not m:
+        raise ValueError(f"no JSON in judge reply: {text[:200]!r}")
+    v = json.loads(m.group(0))
+    return {"correct": int(v["correct"]), "supported": int(v["supported"]), "reason": str(v.get("reason", ""))}
+
+
 def judge_one(q: dict, a: dict) -> dict:
     from google.genai import types
 
     evidence = "\n\n".join(a["retrieved"])[:30_000] or "(nothing retrieved)"
-    prompt = (f"QUESTION: {q['question']}\nKIND: {q['kind']}\nREFERENCE ANSWER: {q['reference_answer']}\n\n"
-              f"RETRIEVED PASSAGES:\n{evidence}\n\nASSISTANT ANSWER:\n{a['answer']}")
-    schema = types.Schema(type="OBJECT", required=["correct", "supported", "reason"], properties={
-        "correct": types.Schema(type="INTEGER"), "supported": types.Schema(type="INTEGER"),
-        "reason": types.Schema(type="STRING")})
-    for attempt in range(6):
-        try:
-            resp = rag.client().models.generate_content(
-                model=JUDGE_MODEL, contents=prompt,
-                config=types.GenerateContentConfig(system_instruction=RUBRIC, temperature=0,
-                                                   response_mime_type="application/json", response_schema=schema))
-            v = json.loads(resp.text)
-            u = resp.usage_metadata
-            return {"correct": int(v["correct"]), "supported": int(v["supported"]), "reason": v["reason"],
-                    "judge_tokens": (u.prompt_token_count or 0) + (u.candidates_token_count or 0) if u else 0}
-        except Exception as error:  # noqa: BLE001
-            if "429" not in str(error) and "RESOURCE_EXHAUSTED" not in str(error) and attempt >= 2:
-                raise
-            delay = rag._retry_delay(error) or 60
-            print(f"  judge waiting {delay:.0f}s ({type(error).__name__})")
-            time.sleep(delay)
-    raise RuntimeError("judge kept failing")
+    prompt = (f"{RUBRIC}\n\n---\nQUESTION: {q['question']}\nKIND: {q['kind']}\n"
+              f"REFERENCE ANSWER: {q['reference_answer']}\n\nRETRIEVED PASSAGES:\n{evidence}\n\n"
+              f"ASSISTANT ANSWER:\n{a['answer']}\n\nReply with the JSON object only.")
+    last_error = None
+    for model in dict.fromkeys(JUDGE_FALLBACKS):          # unique, in order
+        for attempt in range(4):
+            try:
+                resp = rag.client().models.generate_content(
+                    model=model, contents=prompt,
+                    config=types.GenerateContentConfig(temperature=0, response_mime_type="application/json"))
+                v = _parse_verdict(resp.text)
+                u = resp.usage_metadata
+                v["judge_tokens"] = ((u.prompt_token_count or 0) + (u.candidates_token_count or 0)) if u else 0
+                v["judge_model"] = model
+                return v
+            except Exception as error:  # noqa: BLE001
+                last_error = error
+                msg = str(error)
+                if "404" in msg or "NOT_FOUND" in msg:
+                    break                                   # model not available: try the next one
+                delay = rag._retry_delay(error) or 20 * (attempt + 1)
+                print(f"  judge {model}: {type(error).__name__}, waiting {delay:.0f}s")
+                time.sleep(delay)
+        print(f"  judge: giving up on {model}, trying the next model")
+    raise RuntimeError(f"judge kept failing: {last_error}")
 
 
 def run_judge(questions: list[dict], answers: dict) -> dict[str, dict]:
