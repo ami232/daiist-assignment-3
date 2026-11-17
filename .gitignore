@@ -9,3 +9,4 @@ __pycache__/
 
 # Never commit your API key
 .env
+.vscode/settings.json
