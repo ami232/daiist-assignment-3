@@ -1,1 +1,38 @@
 id,question,kind,expected_source,expected_location,reference_answer
+q01,Cuántos días de vacaciones me corresponden al año según el convenio?,single,convenio,Artículo 29,30 días naturales consecutivos por año completo de servicio efectivo en la empresa.
+q02,Cuánto cobro al día de salario base si estoy en el grupo profesional 3?,single,convenio,Artículo 8,"33,94 euros de salario base diario (tabla de 2026; sin indicar año se aplica 2026)."
+q03,Cuál es el salario anual de un trabajador del grupo profesional 5?,single,convenio,Artículo 8,"20.160,00 euros al año (tabla de 2026)."
+q04,Cuántas horas al año puedo trabajar como máximo?,single,convenio,Artículo 26,1.747 horas anuales en 2026 (jornada de 40 horas semanales de trabajo efectivo).
+q05,Cuánto me pagan de plus de asistencia por cada día que trabajo?,single,convenio,Artículo 14,"8,82 euros por día efectivamente trabajado (2026)."
+q06,Cuánto es el plus por trabajar un domingo o un festivo?,single,convenio,Artículo 19,"12,53 euros por cada día de prestación de servicios en domingo o festivo (2026)."
+q07,Cuánto era el plus de asistencia diario en 2025?,single,convenio,Artículo 14,"8,42 euros por día efectivo de trabajo en 2025."
+q08,Cuánto dura el periodo de prueba si soy del grupo profesional 4?,single,convenio,Artículo 66,Dos meses como máximo (grupos III y IV).
+q09,Soy del grupo 2 y quiero dejar la empresa: con cuánta antelación tengo que avisar?,single,convenio,Artículo 74,"Quince días de preaviso (grupos profesionales 1, 2 y 3)."
+q10,Cuál es el salario mínimo interprofesional en 2026?,single,smi,Artículo 1,"40,70 euros/día o 1.221 euros/mes."
+q11,Cuántos días de permiso retribuido tengo si me caso?,single,convenio,Artículo 33,Quince días naturales en caso de matrimonio o registro de pareja de hecho.
+q12,Cuántas horas al año puedo usar para ir al médico?,single,convenio,Artículo 33,"16 horas cada año para consulta médica, de las que 8 pueden usarse para acompañar a hijos menores de 14 años o familiares dependientes."
+q13,Cuánto más cobro por trabajar de noche?,single,convenio,Artículo 17,Las horas nocturnas se retribuyen con un incremento del 25 % sobre el salario base.
+q14,Cuántos equipos de ropa de trabajo me tiene que dar la empresa al año?,single,convenio,Artículo 128,"Dos equipos anuales (preferentemente uno cada seis meses): mono, pantalón, camisa o jersey y bata."
+q15,"Estoy de baja por un accidente de trabajo, cuánto cobro?",single,convenio,Artículo 25,El 100 % de la base reguladora: 75 % la mutua más un complemento del 25 % que paga la empresa.
+q16,"Si me despiden y el despido se declara improcedente, cuánta indemnización me corresponde?",single,estatuto,Artículo 56,"33 días de salario por año de servicio, con un máximo de 24 mensualidades (si la empresa opta por indemnizar)."
+q17,Con cuántos días de preaviso me tiene que avisar la empresa de un despido objetivo?,single,estatuto,Artículo 53,Quince días de preaviso desde la entrega de la comunicación hasta la extinción del contrato.
+q18,Me deben atrasos de 2025 y cuándo me los tienen que pagar?,single,convenio,Artículo 7,Los atrasos se abonan en un solo pago dentro del mes siguiente a la publicación en el BOE de los nuevos valores; las empresas de hasta 50 trabajadores que no sean de un grupo disponen de hasta tres meses desde la publicación del convenio.
+q19,cuantos dias de vacasiones tengo,single,convenio,Artículo 29,30 días naturales consecutivos por año completo de servicio.
+q20,cuanto cobro por hora extra?,single,convenio,Artículo 16,Se compensan con descanso incrementado un 75 %; por acuerdo con los representantes puede pagarse el valor de la hora ordinaria incrementada un 40 %.
+q21,me pueden obligar a contestar el whatsapp del jefe fuera de mi horario??,single,convenio,Artículo 61,"No: los trabajadores tienen derecho a la desconexión digital para respetar su descanso, permisos y vacaciones; la empresa debe tener una política interna."
+q22,k pasa si dimito sin avisar antes,single,convenio,Artículo 74,La empresa puede reclamar una indemnización por daños y perjuicios equivalente a los salarios de los días de retraso en el preaviso.
+q23,cuantos dias libres me dan si se muere mi abuelo,single,convenio,Artículo 33,Tres días por fallecimiento de parientes hasta el segundo grado; cuatro si hay que desplazarse.
+q24,Cuántos días de vacaciones exige la ley como mínimo y cuántos me da mi convenio?,multi,estatuto;convenio,Artículo 38;Artículo 29,"La ley fija un mínimo de 30 días naturales (Estatuto, art. 38) y el convenio concede 30 días naturales consecutivos (art. 29): coinciden."
+q25,Cuántas horas semanales y cuántas al año puedo trabajar como máximo?,multi,estatuto;convenio,Artículo 34;Artículo 26,"40 horas semanales de promedio en cómputo anual (Estatuto, art. 34 y Convenio, art. 26); el convenio las concreta en 1.747 horas al año en 2026."
+q26,Soy del grupo 3 y quiero dimitir: cuánto preaviso tengo que dar y qué dice la ley?,multi,convenio;estatuto,Artículo 74;Artículo 49,15 días de preaviso según el convenio (art. 74); el Estatuto (art. 49) remite al preaviso que fijen los convenios colectivos o la costumbre.
+q27,Cuántas pagas extra me corresponden por ley y cuántas me da el convenio?,multi,estatuto;convenio,Artículo 31;Artículo 15,"La ley garantiza dos gratificaciones extraordinarias al año (Estatuto, art. 31); el convenio establece tres: verano, Navidad y marzo (art. 15)."
+q28,Trabajo de noche: cuántas horas puede durar mi jornada y cuánto más cobro?,multi,estatuto;convenio,Artículo 36;Artículo 17,"No puede exceder de ocho horas diarias de promedio en un periodo de quince días (Estatuto, art. 36) y las horas nocturnas se pagan con un 25 % más sobre el salario base (Convenio, art. 17)."
+q29,"Si trabajo un domingo de noche, qué pluses me corresponden?",multi,convenio,Artículo 17;Artículo 19,"25 % sobre el salario base por las horas nocturnas (art. 17) más el plus de domingos y festivos de 12,53 euros por día en 2026 (art. 19)."
+q30,"Estaba en el grupo profesional 1, cuánto cobro ahora al día?",multi,convenio,Disposición transitoria;Artículo 8,"El grupo 1 desaparece: esas personas pasan al grupo 2 (disposición transitoria), cuyo salario base diario en 2026 es 33,25 euros (art. 8)."
+q31,Cuál era el salario mínimo interprofesional en 2025?,unanswerable,,,"El corpus no indica la cuantía de 2025; solo dice que la de 2026 es un 3,1 % superior a la prevista para 2025."
+q32,Cuánto cobrará un trabajador del grupo 3 en 2027?,unanswerable,,,El corpus no incluye la tabla salarial de 2027; el convenio indica que se elaborará tras conocerse el IPC de 2026.
+q33,Cuánto me pagan por hora ordinaria si soy del grupo 4?,unanswerable,,,El corpus no fija un salario por hora ordinaria; solo da cifras diarias y anuales.
+q34,Cuántos días de asuntos propios tengo al año?,unanswerable,,,El corpus no regula días de asuntos propios.
+q35,Cuánto cobro si estoy de baja por una enfermedad común?,unanswerable,,,"El corpus solo recoge el complemento por accidente de trabajo y enfermedad profesional, no el de enfermedad común."
+q36,A qué edad me puedo jubilar?,unanswerable,,,El corpus no establece la edad de jubilación.
+q37,Cuántos días de vacaciones da el convenio de hostelería?,unanswerable,,,"El corpus solo contiene el convenio de vidrio, cerámicas y extractivas; no cubre el de hostelería."
