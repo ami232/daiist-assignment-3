@@ -11,6 +11,9 @@ Parts so far:
   3d  embed every chunk with Gemini and store each vector as soon as it arrives
       (index/vectors.jsonl). A chunk that already has a current vector is never
       embedded again.
+  6  add_document_to_index(): the pipeline server.py's add_document tool runs for
+      one new file (design B only, the design we chose). A file already indexed is
+      skipped; a changed version of a file replaces the old one.
 
 The functions work on ONE file at a time, because server.py's add-document tool
 imports them to index new documents.
@@ -19,11 +22,13 @@ imports them to index new documents.
 import argparse
 import base64
 import collections
+import contextlib
 import hashlib
 import json
 import os
 import re
 import statistics
+import sys
 import time
 from pathlib import Path
 
@@ -36,6 +41,8 @@ CORPUS_DIR = ROOT / "corpus"  # git-ignored: the code downloads it
 INDEX_DIR = ROOT / "index"    # committed: chunks and vectors
 CHUNKS_FILE = INDEX_DIR / "chunks.jsonl"
 VECTORS_FILE = INDEX_DIR / "vectors.jsonl"
+DOCUMENTS_FILE = INDEX_DIR / "documents.json"  # documents added later: id, file, hash, title
+MAX_INDEX_MB = 90                             # the limit check.py enforces
 
 # ---- Chunking settings. Changing one means embedding everything again. ----
 CHUNK_WORDS = 150        # design A: words per chunk
@@ -110,7 +117,9 @@ def download_corpus() -> dict[str, Path]:
 
 
 def extract_pages(path: Path) -> list[str]:
-    """Raw text of each page of a PDF (page 1 is the first item)."""
+    """Raw text of each page of a PDF (page 1 is the first item); a .txt/.md file is one page."""
+    if Path(path).suffix.lower() in (".txt", ".md"):
+        return [Path(path).read_text(encoding="utf-8", errors="replace")]
     return [page.extract_text() or "" for page in PdfReader(path).pages]
 
 
@@ -367,13 +376,32 @@ def chunk_file(path: Path, design: str, source: dict | None = None) -> list[dict
     raise ValueError("design must be 'A' or 'B'")
 
 
-def save_chunks(chunks: list[dict]) -> Path:
+def read_chunks() -> list[dict]:
+    if not CHUNKS_FILE.exists():
+        return []
+    with CHUNKS_FILE.open(encoding="utf-8") as f:
+        return [json.loads(line) for line in f if line.strip()]
+
+
+def _write_atomically(path: Path, text: str) -> None:
+    """Write to a temporary file and swap it in, so a crash never leaves half a file."""
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    temporary.write_text(text, encoding="utf-8")
+    os.replace(temporary, path)
+
+
+def _write_chunks(chunks: list[dict]) -> None:
     INDEX_DIR.mkdir(exist_ok=True)
-    out = CHUNKS_FILE
-    with out.open("w", encoding="utf-8") as f:
-        for chunk in chunks:
-            f.write(json.dumps(chunk, ensure_ascii=False) + "\n")
-    return out
+    _write_atomically(CHUNKS_FILE, "".join(json.dumps(c, ensure_ascii=False) + "\n" for c in chunks))
+
+
+def save_chunks(chunks: list[dict]) -> Path:
+    """Write the corpus chunks. Chunks of documents added later (not in SOURCES) are kept."""
+    corpus_ids = {src["id"] for src in SOURCES}
+    new_ids = {c["source"] for c in chunks}
+    added_later = [c for c in read_chunks() if c["source"] not in corpus_ids and c["source"] not in new_ids]
+    _write_chunks(chunks + added_later)
+    return CHUNKS_FILE
 
 
 def describe(chunks: list[dict]) -> str:
@@ -442,7 +470,8 @@ def _call(client, texts: list[str]) -> list[list[float]]:
                     f"command again in a few minutes; nothing already embedded is lost."
                 ) from error
             wait = RETRY_WAITS[attempt]
-            print(f"    temporary error ({code or type(error).__name__}), waiting {wait}s ...", flush=True)
+            print(f"    temporary error ({code or type(error).__name__}), waiting {wait}s ...",
+                  file=sys.stderr, flush=True)
             time.sleep(wait)
 
 
@@ -522,7 +551,7 @@ def embed_and_store(chunks: list[dict], limit: int | None = None, client=None) -
         return stats
 
     print(f"  {len(todo)} texts to embed now ({stats['already_done']} already have a vector; "
-          f"the free tier allows about 1,000 a day)")
+          f"the free tier allows about 1,000 a day)", file=sys.stderr)
     client = client or make_client()
     INDEX_DIR.mkdir(exist_ok=True)
     with VECTORS_FILE.open("a", encoding="utf-8") as f:
@@ -538,7 +567,7 @@ def embed_and_store(chunks: list[dict], limit: int | None = None, client=None) -
                 break
             if stats["embedded"] == 0:
                 print(f"  first vector: {len(vectors[0])} numbers, length before normalising "
-                      f"{float(np.linalg.norm(vectors[0])):.3f}")
+                      f"{float(np.linalg.norm(vectors[0])):.3f}", file=sys.stderr)
             for chunk, text, vector in zip(batch, texts, vectors):
                 if len(vector) != EMBED_DIM:
                     raise ValueError(f"expected {EMBED_DIM} numbers per vector, got {len(vector)}")
@@ -548,7 +577,7 @@ def embed_and_store(chunks: list[dict], limit: int | None = None, client=None) -
             os.fsync(f.fileno())
             stats["embedded"] += len(batch)
             if (i // EMBED_BATCH) % 10 == 9 or stats["embedded"] == len(todo):
-                print(f"    embedded {stats['embedded']}/{len(todo)}", flush=True)
+                print(f"    embedded {stats['embedded']}/{len(todo)}", file=sys.stderr, flush=True)
     stats["remaining"] = len(missing) - stats["embedded"]
     return stats
 
@@ -567,6 +596,114 @@ def load_index(design: str | None = None) -> tuple[list[dict], np.ndarray]:
             rows.append(_decode(item[1]))
     matrix = np.vstack(rows) if rows else np.zeros((0, EMBED_DIM), np.float32)
     return kept, matrix
+
+
+# =============================== 6: adding a document later ===============================
+
+ADDABLE = (".pdf", ".txt", ".md")
+MAX_FILE_MB = 30
+MAX_NEW_CHUNKS = 300      # one document may not use more than ~300 of the day's ~1,000 embeddings
+BYTES_PER_CHUNK = 18_000  # a stored chunk and its vector, measured on this index
+
+
+def index_size_mb() -> float:
+    return sum(p.stat().st_size for p in INDEX_DIR.rglob("*") if p.is_file()) / 1e6
+
+
+def file_sha256(path: Path) -> str:
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as f:
+        for block in iter(lambda: f.read(1 << 20), b""):
+            digest.update(block)
+    return digest.hexdigest()
+
+
+def load_documents() -> dict[str, dict]:
+    """Documents added after the corpus: source id -> {file, sha256, title, chunks, words}."""
+    if not DOCUMENTS_FILE.exists():
+        return {}
+    return json.loads(DOCUMENTS_FILE.read_text(encoding="utf-8"))
+
+
+def _prune_vectors() -> None:
+    """Keep one stored vector per existing chunk: the latest. Drops vectors of removed or changed chunks."""
+    alive = {c["chunk_id"] for c in read_chunks()}
+    latest = {}
+    if VECTORS_FILE.exists():
+        for line in VECTORS_FILE.read_text(encoding="utf-8").splitlines():
+            try:
+                chunk_id = json.loads(line)["chunk_id"]
+            except (json.JSONDecodeError, KeyError):
+                continue
+            if chunk_id in alive:
+                latest[chunk_id] = line
+    _write_atomically(VECTORS_FILE, "".join(line + "\n" for line in latest.values()))
+
+
+def add_document_to_index(path, client=None) -> dict:
+    """Index ONE new file (design B), embed it and store it. Returns {'status': ..., ...}.
+
+    Status: 'added'; 'already_indexed' (same content as the corpus or as a document
+    added before, whatever the file is called: nothing is done); 'replaced' (same
+    file name, different content: the old chunks are removed first); 'incomplete'
+    (Gemini stopped part-way: run again, finished vectors are kept); 'refused'.
+    """
+    path = Path(path).expanduser()
+
+    def refuse(reason: str) -> dict:
+        return {"status": "refused", "reason": reason}
+
+    if not path.is_file():
+        return refuse(f"no such file: {path}")
+    if path.suffix.lower() not in ADDABLE:
+        return refuse(f"only {', '.join(ADDABLE)} files can be added, not {path.suffix or 'a file without extension'}")
+    if path.stat().st_size > MAX_FILE_MB * 1_000_000:
+        return refuse(f"the file is larger than {MAX_FILE_MB} MB")
+
+    digest = file_sha256(path)
+    for src in SOURCES:  # the corpus itself: by name, or by content if its file is on disk
+        corpus_file = CORPUS_DIR / src["file"]
+        if path.name == src["file"] or (corpus_file.exists() and file_sha256(corpus_file) == digest):
+            return {"status": "already_indexed", "source": src["id"], "title": src["title"],
+                    "note": "part of the base corpus"}
+    documents = load_documents()
+    for source_id, info in documents.items():
+        if info["sha256"] == digest:
+            return {"status": "already_indexed", "source": source_id, "title": info["title"],
+                    "chunks": info["chunks"], "note": f"added before as {info['file']}"}
+
+    source = source_for(path)
+    if not source["id"] or source["id"] in {s["id"] for s in SOURCES}:
+        source = dict(source, id=(source["id"] or "document") + "-extra")
+    try:
+        chunks = chunk_file(path, "B", source)
+    except Exception as error:  # noqa: BLE001 - a corrupt or encrypted PDF is a refusal, not a crash
+        return refuse(f"could not read the file: {type(error).__name__}: {error}")
+    if not chunks:
+        return refuse("no text found in the file (a scanned PDF would need OCR)")
+    if len(chunks) > MAX_NEW_CHUNKS:
+        return refuse(f"{len(chunks)} chunks is more than the {MAX_NEW_CHUNKS} allowed for one document")
+    if index_size_mb() + len(chunks) * BYTES_PER_CHUNK / 1e6 > MAX_INDEX_MB - 5:
+        return refuse(f"index/ would pass the {MAX_INDEX_MB} MB limit")
+
+    existing = read_chunks()
+    replaced = source["id"] in documents  # an earlier, finished version (not just a half-done upload)
+    had_chunks = any(c["source"] == source["id"] for c in existing)
+    _write_chunks([c for c in existing if c["source"] != source["id"]] + chunks)
+
+    with contextlib.redirect_stdout(sys.stderr):  # stdout belongs to the MCP protocol
+        stats = embed_and_store(chunks, client=client)
+    if stats["stopped"] or stats["remaining"]:
+        return {"status": "incomplete", "source": source["id"], "chunks": len(chunks),
+                "embedded": stats["embedded"], "reason": stats["stopped"] or "not every chunk was embedded"}
+    if had_chunks:
+        _prune_vectors()
+    documents[source["id"]] = {"file": path.name, "sha256": digest, "title": source["title"],
+                               "chunks": len(chunks), "words": sum(c["words"] for c in chunks)}
+    INDEX_DIR.mkdir(exist_ok=True)
+    _write_atomically(DOCUMENTS_FILE, json.dumps(documents, ensure_ascii=False, indent=1))
+    return {"status": "replaced" if replaced else "added", "source": source["id"], "title": source["title"],
+            "chunks": len(chunks), "words": sum(c["words"] for c in chunks), "embedded": stats["embedded"]}
 
 
 # =============================== main ===============================
