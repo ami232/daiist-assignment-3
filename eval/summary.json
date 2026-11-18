@@ -60,11 +60,11 @@
       "design": "articles",
       "method": "vector",
       "questions": 27,
-      "hit@1": 0.741,
+      "hit@1": 0.704,
       "hit@3": 0.963,
       "hit@5": 1.0,
       "all_passages@5": 0.963,
-      "avg_words_in_prompt@5": 989
+      "avg_words_in_prompt@5": 996
     },
     {
       "design": "articles",
@@ -74,17 +74,17 @@
       "hit@3": 0.037,
       "hit@5": 0.037,
       "all_passages@5": 0.037,
-      "avg_words_in_prompt@5": 219
+      "avg_words_in_prompt@5": 210
     },
     {
       "design": "articles",
       "method": "hybrid",
       "questions": 27,
-      "hit@1": 0.63,
+      "hit@1": 0.593,
       "hit@3": 0.926,
       "hit@5": 1.0,
       "all_passages@5": 0.963,
-      "avg_words_in_prompt@5": 1032
+      "avg_words_in_prompt@5": 1038
     },
     {
       "design": "fixed200",

@@ -138,6 +138,29 @@ def evaluate_retrieval(questions: list[dict]) -> list[dict]:
     return rows
 
 
+def evaluate_retrieval_agent_queries(questions: list[dict], answers: dict[str, dict]) -> list[dict]:
+    """Same hit rates, but searching with the query the agent actually sent (its first search).
+
+    The agent rewrites the English question as a Spanish search, so this measures retrieval
+    as it happens in use. Uses cached query embeddings, so it costs no quota after a run.
+    """
+    items = [(q, t["args"]["query"]) for q in questions if q["kind"] != "unanswerable" and q["id"] in answers
+             for t in answers[q["id"]]["trace"][:1] if t["tool"] == "search"]
+    rows = []
+    for design, method in CONFIGS:
+        hits = {k: 0 for k in KS}
+        for q, query in items:
+            res = rt.search(query, design=design, method=method, k=max(KS))
+            for k in KS:
+                if any(matches(e, h["metadata"]) for e in q["expected"] for h in res[:k]):
+                    hits[k] += 1
+        n = max(len(items), 1)
+        rows.append({"design": design, "method": method, "questions": len(items),
+                     **{f"hit@{k}": round(hits[k] / n, 3) for k in KS}})
+    write_csv(EVAL / "retrieval_agent_queries.csv", rows)
+    return rows
+
+
 # ---------------------------------------------------------------- 2. agent answers
 
 def load_answers() -> dict[str, dict]:
@@ -307,7 +330,7 @@ def failure_hint(q: dict, a: dict, checks: dict, v: dict | None) -> str:
     return "wrong answer from the right passage"
 
 
-def summarise(questions, answers, verdicts, retrieval_rows, agree) -> None:
+def summarise(questions, answers, verdicts, retrieval_rows, agree, agent_query_rows=()) -> None:
     rows, counts = [], {"correct": 0, "incorrect": 0, "unsupported": 0, "correct_refusals": 0,
                         "wrong_refusals": 0, "answered_unanswerable": 0, "invalid_citations": 0,
                         "guardrail_fired": 0}
@@ -354,6 +377,9 @@ def summarise(questions, answers, verdicts, retrieval_rows, agree) -> None:
           "| design | method | hit@1 | hit@3 | hit@5 | all passages@5 | words in prompt |", "|---|---|---|---|---|---|---|"]
     md += [f"| {r['design']} | {r['method']} | {r['hit@1']} | {r['hit@3']} | {r['hit@5']} | {r['all_passages@5']} "
            f"| {r['avg_words_in_prompt@5']} |" for r in retrieval_rows]
+    md += ["", "## Retrieval with the agent's own (Spanish) search queries", "",
+           "| design | method | hit@1 | hit@3 | hit@5 |", "|---|---|---|---|---|"]
+    md += [f"| {r['design']} | {r['method']} | {r['hit@1']} | {r['hit@3']} | {r['hit@5']} |" for r in agent_query_rows]
     md += ["", f"Agent uses: {rt.SEARCH_DESIGN} / {rt.SEARCH_METHOD} / k={rt.SEARCH_K}", "",
            "## End to end", "", "| result | count |", "|---|---|"]
     md += [f"| {k.replace('_', ' ')} | {v} |" for k, v in counts.items()]
@@ -399,9 +425,10 @@ def main() -> None:
     log("\n2. Agent answers")
     answers = asyncio.run(run_agent(questions, fresh))
     log("\n3-4. Code checks and judge")
+    agent_query_rows = evaluate_retrieval_agent_queries(questions, answers)
     verdicts = judge(questions, answers)
     log("\n5-6. Agreement and summary")
-    summarise(questions, answers, verdicts, retrieval_rows, agreement(verdicts))
+    summarise(questions, answers, verdicts, retrieval_rows, agreement(verdicts), agent_query_rows)
 
 
 if __name__ == "__main__":

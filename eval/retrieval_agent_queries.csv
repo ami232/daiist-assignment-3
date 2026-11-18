@@ -1,0 +1,7 @@
+design,method,questions,hit@1,hit@3,hit@5
+articles,vector,27,0.667,0.889,0.889
+articles,bm25,27,0.333,0.778,0.852
+articles,hybrid,27,0.741,0.889,0.889
+fixed200,vector,27,0.704,0.926,0.926
+fixed200,bm25,27,0.407,0.667,0.815
+fixed200,hybrid,27,0.704,0.852,0.926
