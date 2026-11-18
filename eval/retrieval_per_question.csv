@@ -1,0 +1,87 @@
+design,id,kind,gold_chunks,first_hit_rank,all_parts_rank,top1,hit@1,full@1,hit@3,full@3,hit@5,full@5,words@3,words@5
+structured,q01,single,2,1,1,"Attendance Policy, Bachelor Programs | p. 2, Failing a course due to attendance",1,1,1,1,1,1,410,677
+structured,q02,single,1,1,1,"Attendance Policy, Bachelor Programs | p. 2, Other Absences",1,1,1,1,1,1,468,572
+structured,q03,single,2,1,1,"Attendance Policy, Bachelor Programs | pp. 1-2, Justified Absences",1,1,1,1,1,1,331,568
+structured,q04,single,3,1,1,"Attendance Policy, Bachelor Programs | pp. 1-2, Justified Absences",1,1,1,1,1,1,331,572
+structured,q05,single,1,1,1,"Attendance Policy, Bachelor Programs | p. 4, RECORDINGS",1,1,1,1,1,1,264,568
+structured,q06,single,2,1,1,"Attendance Policy, Bachelor Programs | p. 3, LIVE IN-PERSON SESSIONS",1,1,1,1,1,1,355,472
+structured,q07,single,1,1,1,"Academic Regulations for Bachelor Degree Programmes | p. 31, Article 33. “Official grading system”",1,1,1,1,1,1,468,724
+structured,q08,single,1,1,1,"Academic Regulations for Bachelor Degree Programmes | pp. 31-32, Article 35. “Reporting grades”",1,1,1,1,1,1,477,814
+structured,q09,single,3,2,2,"Academic Regulations for Bachelor Degree Programmes | p. 43, Article 58. “Progression to the following year”",0,0,1,1,1,1,482,833
+structured,q10,single,2,1,1,"Academic Regulations for Bachelor Degree Programmes | pp. 33-34, Article 39. “Honors Distinction”",1,1,1,1,1,1,408,705
+structured,q11,single,1,1,1,"Academic Regulations for Bachelor Degree Programmes | pp. 30-31, Article 32. “Assessment boards”",1,1,1,1,1,1,554,869
+structured,q12,single,2,1,1,"Academic Regulations for Bachelor Degree Programmes | p. 46, Article 62. “Access conditions and requirements”",1,1,1,1,1,1,386,764
+structured,q13,single,2,1,1,"Academic Regulations for Bachelor Degree Programmes | p. 39, Article 47. “Additional examination session”",1,1,1,1,1,1,492,867
+structured,q14,single,3,1,1,"Academic Regulations for Bachelor Degree Programmes | pp. 13-14, Article 12. “Teaching schedule”",1,1,1,1,1,1,508,834
+structured,q15,single,10,1,1,"The IE Student Code of Conduct | pp. 15-16, III.3. PROCEDURES FOR POTENTIAL VIOLATIONS OF ACADEMIC",1,1,1,1,1,1,380,760
+structured,q16,single,7,4,4,"The IE Student Code of Conduct | p. 40, ANNEX III",0,0,0,0,1,1,520,768
+structured,q17,single,10,1,1,"The IE Student Code of Conduct | pp. 18-19, III.3. PROCEDURES FOR POTENTIAL VIOLATIONS OF ACADEMIC",1,1,1,1,1,1,577,971
+structured,q18,single,10,1,1,"The IE Student Code of Conduct | pp. 20-21, III.3. PROCEDURES FOR POTENTIAL VIOLATIONS OF ACADEMIC",1,1,1,1,1,1,327,678
+structured,q19,single,3,1,1,"The IE Student Code of Conduct | pp. 5-6, II.2. SCOPE OF APPLICATION",1,1,1,1,1,1,291,669
+structured,q20,single,4,1,1,"Academic Regulations for Master Degree Programmes | p. 29, Article 42. Ordinary and extraordinary calls",1,1,1,1,1,1,473,858
+structured,q21,single,1,1,1,"Academic Regulations for Master Degree Programmes | p. 24, Article 32. Communication of grades",1,1,1,1,1,1,422,750
+structured,q22,single,1,1,1,"Academic Regulations for Master Degree Programmes | pp. 25-26, Article 36. Graduation awards",1,1,1,1,1,1,316,564
+structured,q23,single,3,1,1,"Academic Regulations for Master Degree Programmes | pp. 20-21, Article 25. Assessment",1,1,1,1,1,1,441,630
+structured,q24,single,3,1,1,"Academic Regulations for Master Degree Programmes | pp. 9-10, Article 11. Delivery languages",1,1,1,1,1,1,513,769
+structured,q25,single,2,1,1,"Student Guidelines on AI (v4) | p. 3, Transparency",1,1,1,1,1,1,211,440
+structured,q26,single,3,3,3,Student Guidelines on AI (v4) | p. 1,0,0,1,1,1,1,386,536
+structured,q27,single,2,1,1,"Student Guidelines on AI (v4) | pp. 2-3, Submit AI-generated content as if it were your",1,1,1,1,1,1,222,434
+structured,q28,multi,6,2,,"Attendance Policy, Bachelor Programs | p. 1, Attendance Policy Bachelor Degrees",0,0,1,0,1,0,381,589
+structured,q29,multi,25,1,2,"Student Guidelines on AI (v4) | p. 4, Submitting work created by someone or",1,0,1,1,1,1,344,648
+structured,q30,multi,2,1,2,"Academic Regulations for Bachelor Degree Programmes | pp. 32-33, Article 37. “Final grade appeals”",1,0,1,1,1,1,488,872
+structured,q31,multi,2,2,,"Academic Regulations for Bachelor Degree Programmes | p. 16, Article 15. “Attending academic activities in the programme”",0,0,1,0,1,0,428,685
+structured,q32,multi,10,1,,"Academic Regulations for Bachelor Degree Programmes | pp. 37-38, Article 46. “Ordinary and extraordinary examination sessions”",1,0,1,0,1,0,432,797
+structured,q33,multi,6,1,5,"Attendance Policy, Bachelor Programs | pp. 1-2, Justified Absences",1,0,1,0,1,1,468,815
+structured,q34,multi,17,1,,"Student Guidelines on AI (v4) | pp. 1-2, You are expected to respect the established",1,0,1,0,1,0,275,357
+structured,q35,multi,15,1,1,"The IE Student Code of Conduct | p. 19, III.3. PROCEDURES FOR POTENTIAL VIOLATIONS OF ACADEMIC",1,1,1,1,1,1,575,939
+structured,q41,single,3,1,1,"Code for the Prevention of Harassment | p. 3, Procedure",1,1,1,1,1,1,520,855
+structured,q42,single,1,1,1,"Code for the Prevention of Harassment | p. 3, Interviewing the parties involved",1,1,1,1,1,1,456,697
+structured,q43,single,2,3,3,"Code for the Prevention of Harassment | p. 2, Definition of unacceptable behavior",0,0,1,1,1,1,554,738
+structured,q44,single,2,1,1,Environmental Policy | p. 4,1,1,1,1,1,1,475,815
+structured,q45,single,3,1,1,"Climate and Sustainability Plan (CASP v3) | p. 8, OBJECTIVE WHY IT MATTERS KPI'S",1,1,1,1,1,1,532,781
+structured,q46,single,3,,,Environmental Policy | p. 2,0,0,0,0,0,0,547,814
+structured,q47,multi,3,1,5,"Code for the Prevention of Harassment | p. 3, Procedure",1,0,1,0,1,1,520,768
+structured,q48,multi,5,1,,Environmental Policy | pp. 2-4,1,0,1,0,1,0,475,802
+fixed,q01,single,4,1,1,"Attendance Policy, Bachelor Programs | p. 1, Attendance Policy Bachelor Degrees",1,1,1,1,1,1,450,750
+fixed,q02,single,1,2,2,"Attendance Policy, Bachelor Programs | p. 2, Justified Absences",0,0,1,1,1,1,450,750
+fixed,q03,single,3,1,1,"Attendance Policy, Bachelor Programs | p. 2, Justified Absences",1,1,1,1,1,1,450,750
+fixed,q04,single,4,1,1,"Attendance Policy, Bachelor Programs | p. 2, Justified Absences",1,1,1,1,1,1,450,750
+fixed,q05,single,1,1,1,"Attendance Policy, Bachelor Programs | pp. 3-4, LIVE ONLINE SESSIONS",1,1,1,1,1,1,424,724
+fixed,q06,single,3,1,1,"Attendance Policy, Bachelor Programs | p. 3, LIVE IN-PERSON SESSIONS",1,1,1,1,1,1,424,724
+fixed,q07,single,2,1,1,"Academic Regulations for Bachelor Degree Programmes | p. 31, Article 33. “Official grading system”",1,1,1,1,1,1,420,720
+fixed,q08,single,3,1,1,"Academic Regulations for Bachelor Degree Programmes | pp. 31-32, Article 35. “Reporting grades”",1,1,1,1,1,1,450,750
+fixed,q09,single,4,2,2,"Academic Regulations for Bachelor Degree Programmes | p. 43, Article 56. “Continuation of studies at the University and quality assurance of",0,0,1,1,1,1,450,750
+fixed,q10,single,3,1,1,"Academic Regulations for Bachelor Degree Programmes | pp. 33-34, Article 39. “Honors Distinction”",1,1,1,1,1,1,450,750
+fixed,q11,single,2,1,1,"Academic Regulations for Bachelor Degree Programmes | pp. 30-31, Article 32. “Assessment boards”",1,1,1,1,1,1,450,750
+fixed,q12,single,4,1,1,"Academic Regulations for Bachelor Degree Programmes | p. 46, Article 62. “Access conditions and requirements”",1,1,1,1,1,1,450,750
+fixed,q13,single,3,1,1,"Academic Regulations for Bachelor Degree Programmes | pp. 39-40, Article 47. “Additional examination session”",1,1,1,1,1,1,450,750
+fixed,q14,single,4,1,1,"Academic Regulations for Bachelor Degree Programmes | pp. 13-14, Article 12. “Teaching schedule”",1,1,1,1,1,1,450,750
+fixed,q15,single,14,2,2,"The IE Student Code of Conduct | pp. 10-11, III.1. ACADEMIC INTEGRITY AND BEHAVIOUR",0,0,1,1,1,1,450,749
+fixed,q16,single,8,,,"Equal Opportunities and Diversity Plan | p. 3, SEXUAL HARASSMENT AND DISCRIMINATION",0,0,0,0,0,0,450,750
+fixed,q17,single,14,1,1,"The IE Student Code of Conduct | pp. 18-19, III.3. PROCEDURES FOR POTENTIAL VIOLATIONS OF ACADEMIC",1,1,1,1,1,1,450,750
+fixed,q18,single,14,1,1,"The IE Student Code of Conduct | pp. 20-21, III.3. PROCEDURES FOR POTENTIAL VIOLATIONS OF ACADEMIC",1,1,1,1,1,1,450,750
+fixed,q19,single,6,1,1,"The IE Student Code of Conduct | pp. 5-6, II.2. SCOPE OF APPLICATION",1,1,1,1,1,1,450,745
+fixed,q20,single,6,1,1,"Academic Regulations for Master Degree Programmes | p. 29, Article 42. Ordinary and extraordinary calls",1,1,1,1,1,1,450,750
+fixed,q21,single,2,1,1,"Academic Regulations for Master Degree Programmes | p. 24, Article 32. Communication of grades",1,1,1,1,1,1,450,750
+fixed,q22,single,2,1,1,"Academic Regulations for Master Degree Programmes | pp. 25-26, Article 34. Final grade appeals",1,1,1,1,1,1,450,750
+fixed,q23,single,4,1,1,"Academic Regulations for Master Degree Programmes | p. 20, Article 25. Assessment",1,1,1,1,1,1,450,750
+fixed,q24,single,3,1,1,"Academic Regulations for Master Degree Programmes | pp. 9-10, Article 11. Delivery languages",1,1,1,1,1,1,450,750
+fixed,q25,single,3,1,1,"Student Guidelines on AI (v4) | pp. 3-4, Transparency",1,1,1,1,1,1,449,749
+fixed,q26,single,2,1,1,"Student Guidelines on AI (v4) | pp. 3-4, Transparency",1,1,1,1,1,1,449,749
+fixed,q27,single,3,1,1,"Student Guidelines on AI (v4) | p. 3, DON’Ts",1,1,1,1,1,1,450,749
+fixed,q28,multi,7,,,"Attendance Policy, Bachelor Programs | p. 1, Attendance Policy Bachelor Degrees",0,0,0,0,0,0,424,724
+fixed,q29,multi,31,1,2,"Student Guidelines on AI (v4) | p. 4, Violations of IE University and/or IE faculty",1,0,1,1,1,1,449,749
+fixed,q30,multi,4,1,3,"Academic Regulations for Bachelor Degree Programmes | pp. 32-33, Article 37. “Final grade appeals”",1,0,1,1,1,1,450,750
+fixed,q31,multi,5,2,,"Attendance Policy, Bachelor Programs | p. 1, Attendance Policy Bachelor Degrees",0,0,1,0,1,0,450,750
+fixed,q32,multi,14,1,,"Academic Regulations for Bachelor Degree Programmes | p. 38, Article 46. “Ordinary and extraordinary examination sessions”",1,0,1,0,1,0,450,750
+fixed,q33,multi,8,1,4,"Attendance Policy, Bachelor Programs | p. 2, Justified Absences",1,0,1,0,1,1,450,750
+fixed,q34,multi,18,1,,"Student Guidelines on AI (v4) | pp. 1-2, We are working continuously with our faculty to",1,0,1,0,1,0,450,749
+fixed,q35,multi,22,1,1,"The IE Student Code of Conduct | p. 18, III.3. PROCEDURES FOR POTENTIAL VIOLATIONS OF ACADEMIC",1,1,1,1,1,1,450,750
+fixed,q41,single,3,1,1,"Code for the Prevention of Harassment | p. 3, Procedure",1,1,1,1,1,1,450,750
+fixed,q42,single,3,1,1,"Code for the Prevention of Harassment | p. 3, Interviewing the parties involved",1,1,1,1,1,1,450,750
+fixed,q43,single,2,1,1,"Code for the Prevention of Harassment | p. 3, Description",1,1,1,1,1,1,450,750
+fixed,q44,single,2,2,2,Environmental Policy | p. 4,0,0,1,1,1,1,450,750
+fixed,q45,single,4,1,1,"Climate and Sustainability Plan (CASP v3) | p. 8, OBJECTIVE WHY IT MATTERS KPI'S",1,1,1,1,1,1,450,750
+fixed,q46,single,4,1,1,"Climate and Sustainability Plan (CASP v3) | pp. 7-8, OBJECTIVE WHY IT MATTERS KPI'S ACHIEVEMENTS",1,1,1,1,1,1,450,750
+fixed,q47,multi,3,1,2,"Code for the Prevention of Harassment | p. 3, Procedure",1,0,1,1,1,1,450,750
+fixed,q48,multi,5,1,,Environmental Policy | p. 2,1,0,1,0,1,0,450,750

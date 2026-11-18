@@ -12,3 +12,6 @@ corpus/
 
 # Never commit your API key
 .env
+
+# Held-back document for step 8 (added via add_document). Same licence as corpus/.
+extra/
