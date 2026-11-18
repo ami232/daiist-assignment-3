@@ -148,17 +148,16 @@ In the end, 100% of answers had only real citations.
 
 The evaluation runs the agent on all 42 questions and checks the answers in three ways.
 
-**1. Checks done by code:** did it refuse when it should, does it have citations, are the citations real, does it cite the right paper, did the search find the right passage, and did the guardrail fire.
+1. Checks done by code: did it refuse when it should, does it have citations, are the citations real, does it cite the right paper, did the search find the right passage, and did the guardrail fire.
 
-**2. An AI judge** (Gemini) grades each answer with two scores:
-- **correct:** the main facts and numbers match my correct answer (for two-part questions, both parts). For unanswerable questions: correct if it says it doesn't know without inventing anything.
-- **supported:** everything in the answer can be found in the passages it retrieved.
+2. An AI judge (Gemini) grades each answer with two scores:
+For the correct questions, the main facts and numbers match my correct answer (for two-part questions, both parts). Regarding unanswerable questions, they are considered correct if it says it doesn't know without inventing anything. As a support, the second score is whether everything in the answer can be found in the passages it retrieved.
 
-**3. Me versus the judge.** 28 answers were graded by hand in `eval/human_labels.csv`, without looking at the judge's grades first (see AI use).
-- **correct:** we agree **96%** of the time (27 of 28), kappa = 0.84 (strong agreement). The only difference is q42: the answer got both numbers right but left out one detail, and the judge was stricter than me.
-- **supported:** we agree **89%** of the time (25 of 28), but kappa is about 0. Kappa is low because almost every answer is "supported", so agreeing is easy, and kappa ignores easy agreement. The three differences matter more. In q11 and q12 the judge **missed** a wrong number ("104 rackets") that I caught. In q01 the judge marked "see a physiotherapist" as unsupported, even though my rules require that sentence.
+3. Me versus the judge. 28 answers were graded by hand in `eval/human_labels.csv`, without looking at the judge's grades first.
+- correct: we agree 96% of the time (27 of 28), kappa = 0.84 (strong agreement). The only difference is q42: the answer got both numbers right but left out one detail, and the judge was stricter than me.
+- supported: we agree 89% of the time (25 of 28), but kappa is about 0. Kappa is low because almost every answer is "supported", so agreeing is easy, and kappa ignores easy agreement. The three differences matter more. In q11 and q12, the judge **missed** a wrong number ("104 rackets") that I caught. In q01, the judge marked "see a physiotherapist" as unsupported, even though my rules require that sentence.
 
-**Takeaway:** the judge is good at checking if answers are right, but not good enough at spotting wrong numbers, so I wouldn't rely on it alone.
+My takeaway was that the judge is good at checking if answers are right, but not good enough at spotting wrong numbers, so I wouldn't rely on it alone.
 
 **Results:**
 
@@ -179,17 +178,17 @@ The program labels each failure automatically. I checked them and corrected two 
 |---|---|---|---|
 | Retrieval miss | 1 | q11 | The search didn't find the page with the main answer (sweet spot between 118 and 147 mm, 225 rackets). The answer gave the right average (134 mm) but said "104 rackets", taken from a leftover caption. |
 | Unsupported claim | 1 | q12 | The conclusion was right, but it said the study had "104 rackets": the same caption problem. The judge missed it; I caught it. |
-| Wrong answer from the right passage | 2 | q25, q42 | q25: it quoted the paper's introduction (about other studies) instead of its own results. q42: both numbers right, but the second part was incomplete. |
+| Wrong answer from the right passage | 2 | q25, q42 | q25: it quoted the paper's introduction (about other studies) instead of its own results. q42: both numbers are right, but the second part was incomplete. |
 | Wrong refusal | 1 | q29 | Both passages were found, but it said "the corpus does not cover this" for half of the question. |
 | Bad test question | 0 | | |
-| Not really a failure | 2 | q01, q32 | q01: the judge penalised the physiotherapist advice my rules require. q32: a correct refusal in different words, which the code didn't recognise. |
+| Not really a failure | 2 | q01, q32 | q01: the judge penalised the physiotherapist advice my rules require. q32: a correct refusal in different words, which the code didn't recognize. |
 
-**Pattern:** 3 of the 5 real failures are two-part questions (3 out of 7 failed, against only 2 out of 29 simple questions). Two failures come from the same cleaning bug.
+A pattern I have noticed is that 3 of the 5 real failures are two-part questions (3 out of 7 failed, against only 2 out of 29 simple questions). Two failures come from the same cleaning bug.
 
-**What to fix first:**
-1. **Remove the second line of figure captions** during cleaning. This fixes q11 and q12, and only one paper needs re-embedding.
-2. **Handle two-part questions better:** tell the agent to search once for each part, or return more results. This targets q25, q29 and q42.
-3. **Recognise refusals worded differently,** and tell the judge that the physiotherapist sentence is allowed. This fixes the false alarms on q32 and q01.
+These are the things I would fix first:
+1. Remove the second line of figure captions during cleaning. This fixes q11 and q12, and only one paper needs re-embedding.
+2. Next, I would handle two-part questions better by telling the agent to search once for each part, or return more results. This targets q25, q29 and q42.
+3. Finally, I would recognize refusal words differently and tell the judge that the physiotherapist sentence is allowed. This fixes the false alarms on q32 and q01.
 
 ## Decision
 
