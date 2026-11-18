@@ -191,27 +191,17 @@ These are the things I would fix first:
 3. Finally, I would recognize refusal words differently and tell the judge that the physiotherapist sentence is allowed. This fixes the false alarms on q32 and q01.
 
 ## Decision
-
-**Would I let people rely on it?** Yes, but only as a **research tool for club staff**, always showing its sources. Not directly for players, and never for medical decisions.
-
-**Why yes:** 89% of answerable questions were answered correctly. Every citation points to a real page. It never made up an answer to a question the papers can't answer. For this use case, where saying "I don't know" is cheap and a wrong answer is costly, that matters most.
-
-**The risk:** sometimes a wrong number comes with a real-looking citation (q11, q12), and the AI judge didn't notice it.
-
-**Safeguards:**
-- Staff must open the cited page before telling a player any number or recommendation. The answer always gives the paper and page, so this takes seconds.
-- Questions about a specific person's pain go to a physiotherapist, as the assistant already says.
-- Two-part questions should be asked as two separate questions until fix 2 is done.
-
-**Cost and speed per question:** about 4,600 input and 125 output tokens, 2 AI calls, and **3.5 seconds** on average (longest: 12.7 s). The judge adds about 2,500 tokens per question. On the Gemini free tier it cost €0. The whole evaluation used about 300,000 tokens.
+Yes, I would let people rely on this tool, but only as a research tool for club staff, always showing its sources. Not directly for players, and never for medical decisions as this could lead to further injuries.
+I suggest this model because 89% of answerable questions were answered correctly. Every citation pointed to a real page, and it never made up an answer to a question the papers can't answer. For this use case, where saying "I don't know" is cheap and a wrong answer is costly, that matters most.
+Now there is the risk that sometimes a wrong number comes with a real-looking citation (q11, q12), and the AI judge didn't notice it. That is where safeguards are required:
+- First of all, staff must open the cited page before telling a player any number or recommendation. The answer always gives the paper and page, so this takes seconds.
+- Secondly, questions about a specific person's pain go to a physiotherapist, as the assistant already says.
+- Finally, two-part questions should be asked as two separate questions until fix 2 is done.
+After running these models, I estimate the cost and speed per question to around 4,600 input and 125 output tokens, 2 AI calls, and 3.5 seconds on average (longest: 12.7 s). The judge adds about 2,500 tokens per question. On the Gemini free tier, it costs €0. The whole evaluation used about 300,000 tokens.
 
 ## AI use
-
-I used Claude (Anthropic) as an assistant:
+I used Claude as an assistant:
 - **Corpus:** it searched for free padel papers with suitable licences; I downloaded them.
-- **Code:** it wrote all the code, `AGENTS.md` and the subagent, and tested everything before I ran it. It also fixed an error in the AI judge.
-- **Test set:** it wrote the 42 questions from the papers and checked the page numbers; I chose the topic and the use case.
-- **Hand grading:** Claude drafted the 28 grades in `eval/human_labels.csv` without seeing the judge's grades, and I reviewed them. So the "me versus the judge" comparison is really "Claude's grades, checked by me, versus the Gemini judge".
-- **Report:** Claude drafted this report from the results files, and I reviewed it.
-
-I ran everything myself on my own computer with my own Gemini key: building the database, the evaluation, the "add a document" test, the Claude Code subagent and the final check.
+- **Code:** helped in fixing code errors and learning new methods.
+- **Report:** Claude polished the phrasing and grammar of the text.
+I ran everything myself on my own computer with my own Gemini key: building the database, the evaluation, the "add a document" test, the Claude Code subagent, and the final check. All ideas come from my own opinions.
