@@ -81,7 +81,7 @@ The MCP server (`server.py`) gives us two tools: The search query searches the p
 appearance of injuries in amateur padel players. ...
 ```
 
-**Subagent** (`.claude/agents/corpus-researcher.md`): it can only use `search`. Its instructions: search using the papers' words (max 3 searches), answer in under 120 words using only what it found, cite every fact, say "The corpus does not cover this" if nothing fits, and send injury questions about a specific person to a physiotherapist.
+**Subagent** (`.claude/agents/corpus-researcher.md`): it can only use `search`. Its instructions are to search using the papers' words (max 3 searches), answer in under 120 words using only what it found, cite every fact, say whether the corpus does not cover the requirement information. Moreover, if nothing fits, it sends injury questions about a specific person to a physiotherapist.
 
 **Transcript from Claude Code** (full version in `eval/subagent_transcript.txt`):
 
@@ -106,7 +106,7 @@ appearance of injuries in amateur padel players. ...
 ● Agent "Racket weight: injuries & sweet spot" finished · 17s
 ```
 
-The subagent did what it should: it cited every fact, said "linked" rather than "causes", and refused to give a number the passages didn't state. It also ignored a strange instruction that came from another tool connected to Claude Code, not from our papers. That's the safe behaviour.
+The subagent did what it was tasked to do: cited every fact, stated "linked" rather than "causes", and refused to give a number the passages didn't state. It also ignored a strange instruction that came from another tool connected to Claude Code, not from our papers. That's the safe behavior it must respect.
 
 ## Adding a document
 
