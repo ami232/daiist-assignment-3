@@ -5,13 +5,11 @@
 - **Group**: BBADBA 5A
 
 ## Use case
-The idea behind this is to support staff members at a padel club, such as the person selling rackets in the pro shop or coaches. In such environments, it is common for amateur players to ask, "Should I buy a light racket because my elbow hurts?" or "Do round rackets have a bigger sweet spot?"
-The objective of the answer is to pass that knowledge to the player so they can decide whether to buy a new racket, change how often they play, or whether visiting a physiotherapist is the right call.
-A wrong answer costs money, as a player may injure themselves. Let's say we told a player with elbow pain that a heavy racket is fine, but it ends up making the injury worse. Tennis elbow is the most common injury in our papers. Saying "I don't know" only costs us a few minutes; the same goes for referring to a coach or physiotherapist. The assistant should refuse rather than guess, which means all answers must quote the source or state that the corpus does not cover this information.
+The idea behind this is to support staff members at a padel club, such as the person selling rackets in the pro shop or coaches. In such environments, it is common for amateur players to ask, "Should I buy a light racket because my elbow hurts?" or "Do round rackets have a bigger sweet spot?" The objective of the answer is to pass that knowledge to the player so they can decide whether to buy a new racket, change how often they play, or whether visiting a physiotherapist is the right call. A wrong answer can cost the player money and can cause an injury. Let's say we told a player with elbow pain that a heavy racket is fine, but it ends up making the injury worse. Tennis elbow is the most common injury in our papers. Saying "I don't know" only costs us a few minutes; the same goes for referring to a coach or physiotherapist. The assistant should refuse rather than guess, which means all answers must quote the source or state that the corpus does not cover this information.
 
 ## Corpus
 
-The corpus consists of 9 scientific papers about padel rackets and injuries, none of which contain personal data. All licenses allow this use; therefore, I saved the PDFs in 'corpus/'. Note that the word counts reflect the PDFs after cleaning.
+The corpus consists of 9 scientific papers about padel rackets and injuries, none of which contain personal data. All licences allow this use; therefore, I saved the PDFs in 'corpus/'. Note that the word counts reflect the PDFs after cleaning.
 
 | ID | Paper | Link | Date | Licence | Words |
 |---|---|---|---|---|---|
@@ -26,21 +24,16 @@ The corpus consists of 9 scientific papers about padel rackets and injuries, non
 | madinah2025 | Injuries of padel players in Madinah, Saudi Arabia (Healthcare) | https://www.mdpi.com/2227-9032/13/4/367 | 2025 | CC BY 4.0 | 4,436 |
 | **Total** | | | | | **54,876** |
 
-Later, for the "add a document" test, I also added the Wikipedia article *Padel* (CC BY-SA 4.0).
+Later, for the "add a document" test, I also added the Wikipedia article Padel (CC BY-SA 4.0).
 
 ## Ingestion
-Extraction happens page by page, so every piece of text remembers its page number. 
-For cleaning, it removes things that aren't considered real content, like page headers and footers, page numbers, license boxes, figure captions, broken symbols from equations, and everything after "References" (references, funding, author details).
-I did have to fix an issue where two PDFs secretly contained each paragraph two or three times. This made the program read all the copies, so one paper looked twice as long as it really was (9,283 words instead of 4,850), and the search result was then full of duplicate sentences. The fix worked by comparing each line with the text already kept, ignoring spaces and line breaks, and skipping any repeats. After the fix, each section appeared only once. Later on, I ran into another issue that I haven't fixed yet. It involves figure captions running over two lines, where only the first line is removed. We end up with leftovers such as "104 padel rackets analyzed", which caused wrong numbers in two answers (see Failures section).
-Regarding chunking, I approached this in two ways:
-- **Fixed:** pieces of 150 words, overlapping by 25 words, cut anywhere.
-- **Section:** follow the paper's own sections ("3. Results", "4. Discussion") and keep whole paragraphs together, about 260 words per piece. A piece never mixes two sections.
-Additionally, for each piece saved, include the paper ID, title, year, page(s), section, file, link, and license. And finally, the citation assistant must output the following format: `[munoz2022 p.5]`.
-Now, on the embedding side, each piece was turned into a vector with Gemini (`gemini-embedding-2`) and saved in a Chroma database in `index/`. Vectors are saved on arrival, and pieces that already have a vector are skipped, so that a crash or daily limit loses nothing. 
-After calling the ingestion process, I ended with 440 fixed and 284 section pieces, with a total storage size of 13.9 MB.
+Extraction happens page by page, so every piece of text remembers its page number. For cleaning, it removes things that aren't considered real content, like page headers and footers, page numbers, licence boxes, figure captions, broken symbols from equations, and everything after "References" (references, funding, author details). I did have to fix an issue where two PDFs secretly contained each paragraph two or three times. This made the program read all the copies, so one paper looked twice as long as it really was (9,283 words instead of 4,850), and the search result was then full of duplicate sentences. The fix worked by comparing each line with the text already kept, ignoring spaces and line breaks, and skipping any repeats. After the fix, each section appeared only once. Later on, I ran into another issue that I haven't fixed yet. It involves figure captions running over two lines, where only the first line is removed. We end up with leftovers such as "104 padel rackets analyzed", which caused wrong numbers in two answers (see Failures section). Regarding chunking, I approached this in two ways:
+- Fixed: pieces of 150 words, overlapping by 25 words, cut anywhere.
+- Section: follow the paper's own sections ("3. Results", "4. Discussion") and keep whole paragraphs together, about 260 words per piece. A piece never mixes two sections.
+Additionally, for each piece saved, include the paper ID, title, year, page(s), section, file, link, and licence. The citation the assistant must use looks like [munoz2022 p.5]. Now, on the embedding side, each piece was turned into a vector with Gemini (gemini-embedding-2) and saved in a Chroma database in index/. Vectors are saved on arrival, and pieces that already have a vector are skipped, so that a crash or daily limit loses nothing. After calling the ingestion process, I ended with 440 fixed and 284 section pieces, with a total storage size of 13.9 MB.
 
 ## Test set
-My test set consisted of 42 handwritten questions after reading the papers and choosing the facts a padel shop or coach would be asked about. Each question included the expected answer and the page where it appears, along with a small script that checked whether the answer was actually on that page.
+My test set has 42 questions, written from the papers by choosing the facts a padel shop or coach would be asked about. Each question included the expected answer and the page where it appears, along with a small script that checked whether the answer was actually on that page.
 
 | Type | Number |
 |---|---|
@@ -56,8 +49,7 @@ Two examples:
 - **unanswerable (q32):** "What exact racket weight in grams should a player with tennis elbow use?" Expected: the assistant says the papers don't give this.
 
 ## Retrieval
-When looking at the retrieval, what matters is the hit rate: how often the right passage appears among the top 1, 3, or 5 search results for the answerable questions. I compared the two chunking methods, each with normal search (dense) and with a mix of normal and keyword search (hybrid)
-**Hit rate** = how often the right passage is among the top 1, 3, or 5 search results (36 answerable questions). I compared the two chunking methods, each with normal search ("dense") and with a mix of normal and keyword search ("hybrid").
+When looking at the retrieval, what matters is the hit rate: how often the right passage appears among the top 1, 3, or 5 search results for the answerable questions. I compared the two chunking methods, each with normal search (dense) and with a mix of normal and keyword search (hybrid).
 
 | Method | Pieces | Hit@1 | Hit@3 | Hit@5 | Multi: both passages in top 5 | Words sent to the AI |
 |---|---|---|---|---|---|---|
@@ -66,12 +58,11 @@ When looking at the retrieval, what matters is the hit rate: how often the right
 | **section + dense** ✅ | 284 | **0.750** | **0.917** | **0.972** | 0.429 | 1,062 |
 | section + hybrid | 284 | 0.611 | 0.833 | 0.889 | 0.571 | 1,080 |
 
-This table shows that cutting by sections works best, as the right passage comes first 75% of the time (against 67%) and is usually in the top 5 for 97% of questions. The whole paragraphs do keep their meaning; however, the cost is more text sent to AI (1,062 words instead of 740). The second takeaway was that adding keyword search made results worse for normal questions, as it pushed down the good results that simply repeat common words such as "racket" or "injury". It did, however, help find the "second" passage of two-part questions.
-The model now automatically picks the best method based on the table above: **section + dense, top 5 results**. The weak point is two-part questions: only 43% get both passages in the top 5. 
+This table shows that cutting by sections works best, as the right passage comes first 75% of the time (against 67%) and is usually in the top 5 for 97% of questions. The whole paragraphs do keep their meaning; however, the cost is more text sent to AI (1,062 words instead of 740). The second takeaway was that adding keyword search made results worse for normal questions, as it pushed down the good results that simply repeat common words such as "racket" or "injury". It did, however, help find the "second" passage of two-part questions. The evaluation script automatically picks the best method based on the table above: section + dense, top 5 results. The weak point is two-part questions: only 43% get both passages in the top 5.
 
 ## Tools and subagent
 
-The MCP server (`server.py`) gives us two tools: The search query searches the padel papers and returns the 5 best passages. Each passage comes with its citation, the paper title, and the section. The second tool is add_document, which adds a new file (PDF, text, or web page) to the database using the same cleaning and cutting steps as the rest.
+The MCP server (server.py) gives two tools. search(query) searches the padel papers and returns the 5 best passages, each with its citation, the paper title and the section. add_document(path) adds a new file (PDF, text or web page) to the database using the same cleaning and cutting steps as the rest.
 
 **Example search result** (question: "Is a heavier padel racket associated with more upper-body injuries in amateur players?"):
 
@@ -81,7 +72,7 @@ The MCP server (`server.py`) gives us two tools: The search query searches the p
 appearance of injuries in amateur padel players. ...
 ```
 
-**Subagent** (`.claude/agents/corpus-researcher.md`): it can only use `search`. Its instructions are to search using the papers' words (max 3 searches), answer in under 120 words using only what it found, cite every fact, say whether the corpus does not cover the requirement information. Moreover, if nothing fits, it sends injury questions about a specific person to a physiotherapist.
+Subagent (.claude/agents/corpus-researcher.md): it can only use search. Its instructions are to search using the papers' words (max 3 searches), answer in under 120 words using only what it found, cite every fact, and say "The corpus does not cover this." when nothing fits. Questions about a specific person's injury are sent to a physiotherapist.
 
 **Transcript from Claude Code** (full version in `eval/subagent_transcript.txt`):
 
@@ -105,22 +96,19 @@ appearance of injuries in amateur padel players. ...
 
 ● Agent "Racket weight: injuries & sweet spot" finished · 17s
 ```
-
 The subagent did what it was tasked to do: cited every fact, stated "linked" rather than "causes", and refused to give a number the passages didn't state. It also ignored a strange instruction that came from another tool connected to Claude Code, not from our papers. That's the safe behavior it must respect.
 
 ## Adding a document
-The way I approach this method is that if the tool notices the file is the exact same (due to file fingerprint) the model will do nothing. However, if a new version of a file with the same name is added, the old version is replaced so that there are never two copies.
-
-**Before and after** (full output in `eval/add_demo.md`):
-- **Question (q31, unanswerable):** "What is the maximum length of the wrist safety cord attached to a padel racket?"
-- **Before:** "The corpus does not cover this; it only mentions that the handle end must have a non-elastic cord put around the wrist…, without specifying a maximum length [blanes2022 p.2]."
-- **Document added:** the Wikipedia article *Padel*. The program stopped and asked me "Approve? [y/N]", I typed y, and it was added (13 pieces).
-- **After:** "The handle of a padel racket must feature a non-elastic safety cord with a maximum length of 35 centimetres (14 in) [padel_wikipedia p.1]."
-- **Adding the same file again:** "already indexed", nothing was added.
+The way I approach this method is that if the tool notices the file is the exact same (due to file fingerprint) the tool does nothing. However, if a new version of a file with the same name is added, the old version is replaced so that there are never two copies.
+*Before and after (full output in eval/add_demo.md):*
+- Question (q31, unanswerable): "What is the maximum length of the wrist safety cord attached to a padel racket?"
+- Before: "The corpus does not cover this; it only mentions that the handle end must have a non-elastic cord put around the wrist…, without specifying a maximum length [blanes2022 p.2]."
+- Document added: the Wikipedia article Padel. The program stopped and asked me "Approve? [y/N]", I typed y, and it was added (13 pieces).
+- After: "The handle of a padel racket must feature a non-elastic safety cord with a maximum length of 35 centimetres (14 in) [padel_wikipedia p.1]."
+- Adding the same file again: "already indexed", nothing was added.
 
 ## Harness and guardrails
-
-My agent (`agent.py`) uses LangChain with Gemini (`gemini-flash-lite-latest`). It gets the tools from the MCP server and uses `AGENTS.md` as its instructions.
+My agent (agent.py) uses LangChain with Gemini (gemini-flash-lite-latest). It gets the tools from the MCP server and uses AGENTS.md as its instructions.
 
 **Rules in AGENTS.md** (each one explains why in the file):
 1. Always search first and use only what the search finds.
@@ -151,7 +139,8 @@ The evaluation runs the agent on all 42 questions and checks the answers in thre
 1. Checks done by code: did it refuse when it should, does it have citations, are the citations real, does it cite the right paper, did the search find the right passage, and did the guardrail fire.
 
 2. An AI judge (Gemini) grades each answer with two scores:
-For the correct questions, the main facts and numbers match my correct answer (for two-part questions, both parts). Regarding unanswerable questions, they are considered correct if it says it doesn't know without inventing anything. As a support, the second score is whether everything in the answer can be found in the passages it retrieved.
+- correct: the main facts and numbers match my expected answer (for two-part questions, both parts). For unanswerable questions, it's correct if the assistant says it doesn't know without inventing anything.
+- supported: everything in the answer can be found in the passages it retrieved.
 
 3. Me versus the judge. 28 answers were graded by hand in `eval/human_labels.csv`, without looking at the judge's grades first.
 - correct: we agree 96% of the time (27 of 28), kappa = 0.84 (strong agreement). The only difference is q42: the answer got both numbers right but left out one detail, and the judge was stricter than me.
@@ -191,9 +180,7 @@ These are the things I would fix first:
 3. Finally, I would recognize refusal words differently and tell the judge that the physiotherapist sentence is allowed. This fixes the false alarms on q32 and q01.
 
 ## Decision
-Yes, I would let people rely on this tool, but only as a research tool for club staff, always showing its sources. Not directly for players, and never for medical decisions as this could lead to further injuries.
-I suggest this model because 89% of answerable questions were answered correctly. Every citation pointed to a real page, and it never made up an answer to a question the papers can't answer. For this use case, where saying "I don't know" is cheap and a wrong answer is costly, that matters most.
-Now there is the risk that sometimes a wrong number comes with a real-looking citation (q11, q12), and the AI judge didn't notice it. That is where safeguards are required:
+Yes, I would let people rely on this tool, but only as a research tool for club staff, always showing its sources. Not directly for players, and never for medical decisions as this could lead to further injuries. I recommend this setup because 89% of answerable questions were answered correctly. Every citation pointed to a real page, and it never made up an answer to a question the papers can't answer. For this use case, where saying "I don't know" is cheap and a wrong answer is costly, that matters most. Now there is the risk that sometimes a wrong number comes with a real-looking citation (q11, q12), and the AI judge didn't notice it. That is where safeguards are required:
 - First of all, staff must open the cited page before telling a player any number or recommendation. The answer always gives the paper and page, so this takes seconds.
 - Secondly, questions about a specific person's pain go to a physiotherapist, as the assistant already says.
 - Finally, two-part questions should be asked as two separate questions until fix 2 is done.
