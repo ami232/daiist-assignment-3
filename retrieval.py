@@ -23,7 +23,7 @@ import index as ix
 
 # The configuration server.py uses. Set it from the numbers in eval/retrieval_results.csv.
 SEARCH_DESIGN = "articles"
-SEARCH_METHOD = "hybrid"
+SEARCH_METHOD = "vector"
 SEARCH_K = 5
 
 QUERY_CACHE = ix.INDEX_DIR / "query_cache.json"

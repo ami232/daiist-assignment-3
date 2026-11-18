@@ -39,7 +39,8 @@ CONFIGS = [(d, m) for d in ("articles", "fixed200") for m in ("vector", "bm25", 
 KS = (1, 3, 5)
 JUDGE_MODEL = "gemini-3.5-flash-lite"
 JUDGE_FALLBACK = "gemini-flash-lite-latest"
-PAUSE = 2.0  # seconds between agent questions, to stay under per-minute limits
+PAUSE = 8.0  # seconds between agent questions: the free tier allows 15 requests/minute per model
+RATE_LIMIT_WAIT = 45  # seconds to wait after a 429 before retrying
 
 # ---- the judge's rubric (yours to decide: edit it, and describe it in REPORT.md) ----
 JUDGE_RUBRIC = """You grade answers from an assistant about Spanish housing law (LAU, LDV, LPH).
@@ -162,10 +163,19 @@ async def run_agent(questions: list[dict], fresh: bool) -> dict[str, dict]:
     async with AsyncExitStack() as stack:
         agent = await ag.build_agent(stack)
         for i, q in enumerate(todo, 1):
-            try:
-                r = await ag.answer_async(q["question"], agent=agent, interactive=False)
-            except Exception as error:  # noqa: BLE001 - record and continue
-                log(f"  {q['id']} ERROR {type(error).__name__}: {str(error)[:200]}")
+            r = None
+            for attempt in range(4):
+                try:
+                    r = await ag.answer_async(q["question"], agent=agent, interactive=False)
+                    break
+                except Exception as error:  # noqa: BLE001 - retry rate limits, record anything else
+                    if is_rate_limit(error) and attempt < 3:
+                        log(f"  {q['id']} rate limited, waiting {RATE_LIMIT_WAIT}s ...")
+                        await asyncio.sleep(RATE_LIMIT_WAIT)
+                        continue
+                    log(f"  {q['id']} ERROR {type(error).__name__}: {str(error)[:200]}")
+                    break
+            if r is None:
                 continue
             r["id"] = q["id"]
             done[q["id"]] = r
@@ -221,16 +231,31 @@ def judge(questions: list[dict], answers: dict[str, dict]) -> dict[str, dict]:
         prompt = (f"{JUDGE_RUBRIC}\n\nQUESTION ({q['kind']}): {q['question']}\n\nREFERENCE ANSWER: "
                   f"{q['reference_answer']}\n\nASSISTANT ANSWER:\n{a['answer']}\n\nEVIDENCE:\n{evidence[:30000]}")
         try:
-            raw = model.invoke(prompt).content
+            raw = invoke_with_retry(model, prompt).content
             raw = raw if isinstance(raw, str) else "".join(p.get("text", "") for p in raw if isinstance(p, dict))
             v = json.loads(re.search(r"\{.*\}", raw, re.S).group(0))
             verdicts[q["id"]] = {"id": q["id"], "correct": int(v["correct"]), "supported": int(v["supported"]),
                                  "reason": v.get("reason", ""), "answer_hash": hash_answer(a["answer"])}
         except Exception as error:  # noqa: BLE001
             log(f"  judge failed on {q['id']}: {str(error)[:150]}")
-        time.sleep(1)
+        time.sleep(4)
     write_csv(path, list(verdicts.values()))
     return verdicts
+
+
+def is_rate_limit(error: Exception) -> bool:
+    return "429" in str(error) or "RESOURCE_EXHAUSTED" in str(error)
+
+
+def invoke_with_retry(model, prompt, tries: int = 4):
+    for attempt in range(tries):
+        try:
+            return model.invoke(prompt)
+        except Exception as error:  # noqa: BLE001
+            if not is_rate_limit(error) or attempt == tries - 1:
+                raise
+            log(f"  judge rate limited, waiting {RATE_LIMIT_WAIT}s ...")
+            time.sleep(RATE_LIMIT_WAIT)
 
 
 def hash_answer(text: str) -> str:

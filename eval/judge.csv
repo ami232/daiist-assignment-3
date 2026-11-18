@@ -1,0 +1,34 @@
+id,correct,supported,reason,answer_hash
+q01,1,1,"The assistant correctly states that the tenant cannot leave yet because six months have not elapsed, giving the correct rules and being supported by the evidence.",7df6b8ce9f55
+q02,1,1,"The assistant correctly answers that the lease automatically extends yearly up to five years unless the tenant declines, matching all key facts and evidence.",5e98534640e1
+q03,1,1,"The assistant correctly states that the landlord must give at least four months' notice upon reaching the 5-year mark, supported by LAU Artículo 10.",c6058d9082d8
+q04,1,1,"The assistant correctly states all key conditions (contract clause, first year passed, notice period) and every claim is supported by the provided evidence.",792e638308a3
+q05,1,1,"The assistant correctly states that a partial sub-lease requires written consent from the landlord, cannot exceed the current rent, and ends when the lease ends, all of which are fully supported by Result 1 (LAU, Artículo 8).",babf7f40dff8
+q06,1,1,"The assistant correctly answers both parts of the question using the provided evidence, noting the payment deadline and explaining the rules on the advance payment and additional guarantees.",ece0f403f485
+q07,1,1,"The assistant correctly states that without an express agreement, no rent updates will be applied, which is fully supported by the evidence.",23153f02e67f
+q08,1,1,"The assistant correctly addresses both building fees and the IBI according to the provided evidence, matching all key legal conditions.",94031e1a966d
+q09,1,1,"The assistant correctly identifies that the landlord pays for the boiler repair unless caused by the tenant, which matches both the reference answer and the provided evidence.",74363d80dd46
+q10,1,1,"The assistant correctly states that for long-term leases the tenant pays for small repairs from normal wear and tear, and accurately cites the relevant articles from the evidence.",810917668aca
+q11,0,1,"The assistant answers based on the Horizontal Property Law (LPH) regarding community notification, but completely misses the tenant-landlord relationship aspect (LAU/landlord permission) addressed in the reference answer.",f5874da9685a
+q12,1,1,"The assistant correctly identifies that descendants who lived with the tenant for two years can subrogate the contract, details the three-month notification deadline, and mentions the waiver agreement rules, all supported by the provided LAU Article 16 text.",82a4c2252606
+q13,1,1,"The assistant correctly states that the non-tenant spouse can continue living in the home upon judicial attribution, specifies the two-month notification deadline, requirement to include a copy of the resolution, and becoming the contract holder under LAU Article 15, all fully supported by the evidence.",2a405fec4146
+q14,1,1,"The assistant correctly identifies the one-month deadline and the legal interest penalty after that period, fully supported by the provided evidence.",5ebe175c6e38
+q15,1,1,"The assistant correctly states that a 6-month guarantee exceeds the legal limit of 2 months for residential leases (or 1 month for temporary leases), matching the reference and fully supported by the evidence.",a499bfe0eee2
+q16,1,1,"The assistant correctly states that either party can demand a written lease based on the provided evidence, and all claims are directly supported by Article 37 of the LAU.",40b4ebd84e8e
+q17,1,1,"The assistant correctly answers that the landlord cannot charge much more, mirroring the reference answer and supported by the provided evidence from LAU Article 17.",bd68ac522cfd
+q18,1,1,The assistant correctly and comprehensively lists the required pre-contractual information based strictly on the provided LDV article 31 text.,ce97bef78f93
+q19,1,1,The assistant's answer correctly identifies all key conditions and facts from the reference and provides details fully supported by the provided evidence.,509f7def01e5
+q20,1,1,The assistant's answer correctly details the steps the community can take under LPH Article 7 and every claim is supported by the evidence.,f720376781a1
+q21,1,1,"The assistant's answer correctly details that the association can limit or prohibit tourist rentals by a three-fifths majority and explains the requirement for prior approval and the president's power to demand cessation, all fully supported by the provided text.",31867fcf70f3
+q22,1,1,The assistant correctly answered both parts of the question based on the evidence provided.,fbb6f4ac94c2
+q23,1,1,"The assistant correctly answers both parts of the question based on the evidence, providing the seven-year minimum duration and stating that the landlord must pay the agency and formalization fees.",cb22df51ba12
+q24,1,1,"The assistant correctly answers both parts of the question based on the provided text, including the right of first refusal deadlines and the new owner's subrogation rules.",e35666b268b0
+q25,1,1,"The assistant correctly answers both parts of the question, citing relevant articles from the provided evidence regarding rent payment, repairs, contract resolution, and withdrawal.",b25e01f99882
+q26,1,1,"The assistant correctly identifies that the landlord is a large holder and the property is in a stressed area, meaning the new lease rent cannot exceed the reference price index cap, fully supported by the provided text.",3a7b592d9758
+q27,1,1,"The assistant fully answers both parts of the question regarding tolerating works and rent increases, and every fact is directly supported by the provided LAU articles.",e0aeb72adf82
+q28,1,1,The assistant correctly identified that the question is unanswerable based on the provided corpus laws and did not provide a substantive legal answer.,837308554b98
+q29,1,1,The assistant correctly identified that the answer is not in the corpus laws and refrained from giving substantive housing law claims not present in the evidence.,00591e4a5945
+q30,1,1,The assistant correctly identified that the answer is not in the corpus and explained that the laws only establish the general framework for reference prices.,c9b40a42950e
+q31,1,1,The assistant correctly identified that the provided laws do not establish a general rule requiring home insurance while pointing out relevant provisions like LAU Artículo 36.,1f4b140329e9
+q32,1,1,The assistant correctly identified that the question is unanswerable based on the provided corpus and did not provide any false claims or guesses.,1ae838091ff9
+q33,1,1,The assistant correctly identified that the question is unanswerable based on the provided corpus and did not provide a guessed substantive answer.,1b1c338a6b19

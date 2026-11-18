@@ -50,7 +50,8 @@ warnings.filterwarnings("ignore", message=".*fixed sampling defaults.*")
 CHAT_MODEL = os.environ.get("CHAT_MODEL", "gemini-3.5-flash-lite")
 FALLBACK_MODEL = "gemini-flash-lite-latest"  # used only if CHAT_MODEL is overloaded (503) or times out
 SYSTEM_PROMPT = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
-REFUSAL = "No encuentro la respuesta en las leyes del corpus (LAU, LDV, LPH)."
+REFUSAL = "I can't find the answer in the corpus laws (LAU, LDV, LPH)."
+REFUSAL_ES = "No encuentro la respuesta en las leyes del corpus (LAU, LDV, LPH)."
 CITE_RE = re.compile(r"\[((?:LAU|LDV|LPH|BOE-[A-Z]-\d{4}-\d+|[\w.-]+)),\s*([^\]]+?)\]")
 LABEL_RE = re.compile(r"Cite as: \[([^\]]+)\]")
 
@@ -60,11 +61,34 @@ def log(*args) -> None:
 
 
 def is_refusal(text: str) -> bool:
-    return text.strip().startswith(REFUSAL[:40])
+    start = text.strip().lstrip("*_ ").lower()
+    return start.startswith(REFUSAL[:30].lower()) or start.startswith(REFUSAL_ES[:30].lower())
+
+
+SOURCE_RE = re.compile(r"\b(LAU|LDV|LPH|BOE-[A-Z]-\d{4}-\d+)\s*,\s*")
+UNIT_RE = re.compile(r",\s*(?=(?:Artículo|Disposición|Preámbulo)\b)")
+
+
+def _base_location(loc: str) -> str:
+    """'Artículo 21.4' / 'Artículo 21, apartado 3' / 'Artículo 21 (parte 1/2)' -> 'Artículo 21'.
+    Keeps 'Artículo 9 bis' and 'Disposición final segunda' intact."""
+    loc = re.sub(r"\s*\(parte \d+/\d+\)", "", loc).strip()
+    loc = re.sub(r"(\d+(?:\s+(?:bis|ter|quater))?)(?:\.\d+[\w.]*|\s*,?\s*(?:apartado|letra|párrafo)\b.*)$", r"\1", loc)
+    return loc.strip(" .,;")
 
 
 def citations_in(text: str) -> list[str]:
-    return [f"{s}, {re.sub(r'\s*\(parte \d+/\d+\)', '', loc).strip()}" for s, loc in CITE_RE.findall(text)]
+    """All 'SOURCE, location' citations, also when one bracket holds several:
+    [LPH, Artículo séptimo, LPH, Artículo diecisiete] or [LAU, Artículo 21.3, Artículo 21 bis]."""
+    out = []
+    for bracket in re.findall(r"\[([^\]]+)\]", text):
+        parts = SOURCE_RE.split(bracket)  # ['', 'LAU', 'Artículo 21.3, Artículo 21 bis', 'LDV', ...]
+        for source, locs in zip(parts[1::2], parts[2::2]):
+            for loc in UNIT_RE.split(locs.strip(" ;,")):
+                loc = _base_location(re.split(r";", loc)[0])
+                if loc:
+                    out.append(f"{source}, {loc}")
+    return list(dict.fromkeys(out))
 
 
 def check_citations(answer: str, retrieved: set[str]) -> tuple[bool, str]:
@@ -186,7 +210,7 @@ async def answer_async(question: str, agent=None, interactive: bool | None = Non
         valid = ", ".join(f"[{r}]" for r in sorted(retrieved)) or "(none)"
         repair = (f"Your answer failed the citation check: {reason}. Rewrite it citing only these labels, "
                   f"exactly as written: {valid}. Remove any claim they don't support. If they don't "
-                  f"answer the question, reply starting with: {REFUSAL}")
+                  f"answer the question, reply starting with: {REFUSAL} (or, in Spanish: {REFUSAL_ES})")
         result = await _run(agent, [HumanMessage(repair)], config, interactive)
         messages = result["messages"]
         final = _text(messages[-1])
@@ -194,8 +218,8 @@ async def answer_async(question: str, agent=None, interactive: bool | None = Non
         guardrail["repaired"] = ok
         if not ok:
             log(f"[guardrail] still failing ({reason}); replacing the answer with a refusal.")
-            final = (f"{REFUSAL} No he podido respaldar una respuesta con citas verificables; "
-                     f"consulta el texto en el BOE o a un abogado.")
+            final = (f"{REFUSAL} I could not back an answer with verifiable citations; "
+                     f"check the law on the BOE or ask a lawyer.")
 
     tokens = {"input": 0, "output": 0}
     for m in messages:
