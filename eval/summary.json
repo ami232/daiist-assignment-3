@@ -1,0 +1,23 @@
+{
+  "model": "gemini-3.8-flash",
+  "judge_model": "gemini-3.8-flash",
+  "design": "structure",
+  "method": "vector",
+  "questions": 35,
+  "correct": 33,
+  "correct_answerable": "26/28",
+  "unsupported": 0,
+  "correct_refusals": "7/7",
+  "wrong_refusals": "0/28",
+  "citations_valid": "35/35",
+  "cites_expected_article": "27/28",
+  "guardrail_fired": 3,
+  "failures_by_cause": {
+    "wrong answer from right passage": 2
+  },
+  "mean_tokens_per_question": 6218,
+  "mean_seconds_per_question": 42.6,
+  "agreement_with_human": {
+    "graded_by_human": 0
+  }
+}
