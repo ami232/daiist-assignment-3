@@ -1,1 +1,31 @@
 id,question,kind,expected_source,expected_location,reference_answer
+q01,How does density altitude affect aircraft takeoff performance?,single,phak-ch11,11-16,Higher density altitude requires a greater takeoff speed and reduces thrust and net accelerating force resulting in longer takeoff distances
+q02,What are the three main factors that affect density altitude?,single,phak-ch11,11-4,Pressure altitude temperature and humidity
+q03,How does an increase in aircraft weight affect takeoff distance?,single,phak-ch11,11-15,Greater aircraft weight increases the takeoff distance required
+q04,What is the effect of a headwind on takeoff performance?,single,phak-ch11,11-15,A headwind decreases takeoff distance because the aircraft reaches lift-off speed at a lower groundspeed
+q05,Why is aircraft performance data important before flight?,single,phak-ch11,11-1,It helps pilots determine whether an aircraft can safely operate within performance limitations
+q06,What causes atmospheric pressure to decrease with increasing altitude?,single,phak-ch12,12-3,Atmospheric pressure decreases because fewer air molecules remain above a given altitude
+q07,What is the difference between stable and unstable atmospheric conditions?,single,phak-ch12,12-12,Stable air resists vertical movement while unstable air promotes vertical movement and convection
+q08,How does relative humidity relate to temperature and dew point?,single,phak-ch12,12-13,Relative humidity increases as the temperature approaches the dew point assuming moisture content remains constant
+q09,What weather conditions are commonly associated with a cold front?,single,phak-ch12,12-20,Cold fronts can produce cumuliform clouds showers thunderstorms turbulence and sudden wind shifts
+q10,What are the three stages of thunderstorm development?,single,phak-ch12,12-22,Cumulus stage mature stage and dissipating stage
+q11,What information does a METAR report provide?,single,phak-ch13,13-6,A METAR provides routine surface weather observations including wind visibility present weather clouds temperature dew point and altimeter setting
+q12,What is the main purpose of a TAF?,single,phak-ch13,13-9,A Terminal Aerodrome Forecast provides expected weather conditions for a specific airport during a defined forecast period
+q13,What is the purpose of a SIGMET?,single,phak-ch13,13-12,A SIGMET advises pilots of significant weather phenomena that may affect the safety of aircraft operations
+q14,What is the difference between a weather watch and a weather warning?,unanswerable,,,The handbook chapters do not define or compare weather watches and weather warnings
+q15,What is the main characteristic of Class B airspace?,single,phak-ch15,15-2,Class B airspace surrounds the busiest airports and generally requires an ATC clearance before entry
+q16,What is the standard upper limit of Class D airspace?,single,phak-ch15,15-2,Generally 2500 feet above the airport elevation unless otherwise specified
+q17,What is the main purpose of a VOR navigation system?,single,phak-ch16,16-22,A VOR provides aircraft with bearing information relative to a ground-based navigation station
+q18,What does GPS use to determine an aircraft's position?,single,phak-ch16,16-31,Signals transmitted by satellites are used to calculate the aircraft's position
+q19,What is spatial disorientation in aviation?,single,phak-ch17,17-6,Spatial disorientation occurs when a pilot incorrectly perceives their position motion or attitude relative to the Earth's surface
+q20,How does hypoxia affect a pilot?,single,phak-ch17,17-4,Hypoxia reduces the amount of oxygen available to body tissues and can impair judgment coordination and consciousness
+q21,How do temperature and altitude affect aircraft performance?,multi,phak-ch11;phak-ch12,11-3;12-5,Higher temperatures and altitudes reduce air density increasing density altitude and generally decreasing aircraft performance
+q22,How can thunderstorms affect aircraft performance and what weather information can pilots use to identify them?,multi,phak-ch12;phak-ch13,12-24;13-12,Thunderstorms can create severe turbulence wind shear and hazardous operating conditions while weather reports and advisories help pilots identify and avoid them
+q23,How does atmospheric pressure influence weather conditions and what information does a METAR provide about those conditions?,multi,phak-ch12;phak-ch13,12-5;13-7,Atmospheric pressure influences wind and weather patterns while METAR reports provide observed surface pressure through the altimeter setting alongside other weather information
+q24,What are the differences between Class B and Class C airspace regarding entry requirements and communication procedures?,multi,phak-ch15;phak-ch15,15-2;15-9,Class B generally requires an explicit ATC clearance before entry while Class C requires two-way radio communication established with ATC before entry
+q25,How do GPS and VOR navigation systems differ in their methods of determining aircraft position and direction?,multi,phak-ch16;phak-ch16,16-22;16-31,VOR uses ground-based radio signals to provide bearing information while GPS uses satellite signals to calculate position and navigation information
+q26,What are the exact weather minimums for a Category II ILS approach?,unanswerable,,,The handbook chapters mention Category II operations but do not give Category II ILS weather minimums
+q27,What do runway holding position markings look like and where must an aircraft stop?,unanswerable,,,The indexed chapters do not cover runway holding position markings. After adding Chapter 14 the answer is four yellow lines with two solid and two dashed and the aircraft must stop before the first solid line until cleared (phak-ch14 page 14-8)
+q28,What runway condition code does an airport report when braking action is poor?,unanswerable,,,The handbook chapters discuss braking effectiveness on contaminated runways but do not give runway condition codes for braking action reports
+q29,What is the recommended time between overhauls for a typical piston aircraft engine?,unanswerable,,,The handbook chapters do not give engine time between overhaul figures
+q30,What are the radius and altitude limits of a TFR over a stadium during a major sporting event?,unanswerable,,,The handbook chapters explain that a NOTAM defines each TFR but do not give the dimensions of stadium TFRs
