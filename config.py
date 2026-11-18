@@ -32,6 +32,8 @@ CORPUS = [
     {"doc_id": "phak-ch13", "title": f"{PHAK}, Ch. 13 Aviation Weather Services", "url": f"{FAA}/15_phak_ch13.pdf"},
     {"doc_id": "phak-ch15", "title": f"{PHAK}, Ch. 15 Airspace", "url": f"{FAA}/17_phak_ch15.pdf"},
     {"doc_id": "phak-ch17", "title": f"{PHAK}, Ch. 17 Aeromedical Factors", "url": f"{FAA}/19_phak_ch17.pdf"},
+    {"doc_id": "phak-ch16", "title": f"{PHAK}, Ch. 16 Navigation", "url": f"{FAA}/18_phak_ch16.pdf"},
+    {"doc_id": "phak-ch11", "title": f"{PHAK}, Ch. 11 Aircraft Performance", "url": f"{FAA}/13_phak_ch11.pdf"},
 ]
 LICENCE = "Public domain (U.S. Government work, 17 U.S.C. 105)"
 
@@ -64,7 +66,7 @@ SEARCH_K = 5                            # chunks returned by the search tool
 EMBED_MODEL = os.environ.get("GEMINI_EMBED_MODEL", "gemini-embedding-2")
 CHAT_MODEL = os.environ.get("GEMINI_CHAT_MODEL", "gemini-flash-latest")
 JUDGE_MODEL = os.environ.get("GEMINI_JUDGE_MODEL", CHAT_MODEL)
-EMBED_BATCH = 20
+EMBED_BATCH = 1
 
 # ---------------------------------------------------------------------------
 # Agent contract. AGENTS.md must tell the model to use exactly these, because

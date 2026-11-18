@@ -79,7 +79,11 @@ def extract_pages(path: Path) -> list[tuple[str, list[str]]]:
 
         pages = []
         for n, page in enumerate(PdfReader(str(path)).pages, start=1):
-            lines = [l.strip() for l in normalise(page.extract_text() or "").splitlines()]
+            try:
+                raw = page.extract_text() or ""
+            except Exception:
+                raw = ""
+            lines = [l.strip() for l in normalise(raw).splitlines()]
             lines = [l for l in lines if l]
             # The printed page number ("15-3") sits on its own line in the footer.
             # Use it as the location and drop it from the text.
@@ -251,7 +255,7 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
                 log(f"  rate limited, waiting {wait}s")
                 time.sleep(wait)
                 continue
-            if attempt < 2 and ("500" in msg or "503" in msg or "timed out" in msg.lower()):
+            if attempt < 5 and ("500" in msg or "503" in msg or "timed out" in msg.lower() or "disconnected" in msg.lower()):
                 time.sleep(5)
                 continue
             raise

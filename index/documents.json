@@ -1,0 +1,98 @@
+{
+  "phak-ch12": {
+    "title": "Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25C, 2023), Ch. 12 Weather Theory",
+    "url": "https://www.faa.gov/sites/faa.gov/files/14_phak_ch12.pdf",
+    "licence": "Public domain (U.S. Government work, 17 U.S.C. 105)",
+    "sha256": "1df7412106699c46f9ea9aab52f9d06ee50787202971c3d907a77d74638d32dc",
+    "words": 12346,
+    "chunks": 72,
+    "designs": [
+      "section",
+      "fixed"
+    ],
+    "chunks_per_design": {
+      "section": 72,
+      "fixed": 77
+    }
+  },
+  "phak-ch13": {
+    "title": "Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25C, 2023), Ch. 13 Aviation Weather Services",
+    "url": "https://www.faa.gov/sites/faa.gov/files/15_phak_ch13.pdf",
+    "licence": "Public domain (U.S. Government work, 17 U.S.C. 105)",
+    "sha256": "e71f7d50f83f88243b995b4b68dd56bcde681dafec2d64d27a2f67662c43e756",
+    "words": 11437,
+    "chunks": 67,
+    "designs": [
+      "section",
+      "fixed"
+    ],
+    "chunks_per_design": {
+      "section": 67,
+      "fixed": 72
+    }
+  },
+  "phak-ch15": {
+    "title": "Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25C, 2023), Ch. 15 Airspace",
+    "url": "https://www.faa.gov/sites/faa.gov/files/17_phak_ch15.pdf",
+    "licence": "Public domain (U.S. Government work, 17 U.S.C. 105)",
+    "sha256": "153a7a515aac9f34bb657bc6bc81941311ff9ba06c4199ab58b13ff482996a86",
+    "words": 5427,
+    "chunks": 37,
+    "designs": [
+      "section",
+      "fixed"
+    ],
+    "chunks_per_design": {
+      "section": 37,
+      "fixed": 34
+    }
+  },
+  "phak-ch17": {
+    "title": "Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25C, 2023), Ch. 17 Aeromedical Factors",
+    "url": "https://www.faa.gov/sites/faa.gov/files/19_phak_ch17.pdf",
+    "licence": "Public domain (U.S. Government work, 17 U.S.C. 105)",
+    "sha256": "f58e38a614095ac39d025d648c3749768b3517de1e7ffc77ddffad5389dbc5f5",
+    "words": 15850,
+    "chunks": 104,
+    "designs": [
+      "section",
+      "fixed"
+    ],
+    "chunks_per_design": {
+      "section": 104,
+      "fixed": 99
+    }
+  },
+  "phak-ch16": {
+    "title": "Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25C, 2023), Ch. 16 Navigation",
+    "url": "https://www.faa.gov/sites/faa.gov/files/18_phak_ch16.pdf",
+    "licence": "Public domain (U.S. Government work, 17 U.S.C. 105)",
+    "sha256": "b05f3e52e64ce91d3a1e8bf6152d530b808f0f2ccb664a4ac4494ecbf7c530c1",
+    "words": 18679,
+    "chunks": 104,
+    "designs": [
+      "section",
+      "fixed"
+    ],
+    "chunks_per_design": {
+      "section": 104,
+      "fixed": 117
+    }
+  },
+  "phak-ch11": {
+    "title": "Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25C, 2023), Ch. 11 Aircraft Performance",
+    "url": "https://www.faa.gov/sites/faa.gov/files/13_phak_ch11.pdf",
+    "licence": "Public domain (U.S. Government work, 17 U.S.C. 105)",
+    "sha256": "4b3c3ba37db7c27a95aaaeeabf5b44c65edf39472ab2c317d495df93c0c2f452",
+    "words": 16830,
+    "chunks": 92,
+    "designs": [
+      "section",
+      "fixed"
+    ],
+    "chunks_per_design": {
+      "section": 92,
+      "fixed": 105
+    }
+  }
+}
