@@ -32,5 +32,5 @@ q30,¿Cuál es el valor del IRAV publicado para octubre de 2026?,unanswerable,,,
 q31,¿Qué barrios de Barcelona están declarados zona de mercado residencial tensionado?,unanswerable,,,El corpus regula cómo se declaran las zonas tensionadas pero no incluye ninguna declaración concreta.
 q32,¿Cuánto dinero da el Bono Alquiler Joven y quién puede pedirlo?,unanswerable,,,El corpus no regula el Bono Alquiler Joven.
 q33,¿Cuánto tarda de media un juicio de desahucio por impago en Madrid?,unanswerable,,,El corpus no contiene datos sobre la duración de los procedimientos judiciales.
-q34,¿Puede la comunidad de propietarios prohibir los pisos turísticos en mi edificio?,unanswerable,,,"Las leyes indexadas no lo regulan (está en la Ley de Propiedad Horizontal, que no está en el corpus)."
+q34,¿Puede votar en la junta de propietarios un propietario que debe cuotas de comunidad?,unanswerable,,,"Las leyes indexadas no lo regulan (está en la Ley de Propiedad Horizontal, art. 15.2: puede asistir y deliberar pero no votar, salvo que haya impugnado judicialmente la deuda o consignado la suma)."
 q35,¿Cuál es el tipo de interés legal del dinero en 2026?,unanswerable,,,El corpus remite al interés legal (p. ej. para la fianza) pero no fija su valor.

@@ -15,15 +15,15 @@ Agent model: `gemini-3.5-flash-lite` · judge: `gemini-3-flash-preview, gemini-3
 |---|---|
 | judged correct | 4/4 |
 | judged supported | 4/4 |
-| correct refusals (code) | 5/6 |
-| answered an unanswerable question (code) | 1/6 |
+| correct refusals (code) | 6/6 |
+| answered an unanswerable question (code) | 0/6 |
 | wrong refusals (code) | 1/29 |
 | citations valid (code) | 35/35 |
 | expected passage retrieved by the agent (code) | 29/29 |
 | expected passage cited (code) | 28/29 |
 | citation guard retried / blocked | 0 / 0 |
-| mean tokens per question | 6272 |
-| mean seconds per question | 46.9 |
+| mean tokens per question | 6429 |
+| mean seconds per question | 46.5 |
 
 ## Suggested failure causes (check each by hand)
 

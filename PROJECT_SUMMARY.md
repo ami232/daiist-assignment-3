@@ -166,7 +166,7 @@ Each stage saves its results and resumes where it stopped:
 
    → `eval/judge.jsonl`
 5. **Agreement with your grades:** % agreement and Cohen's κ, using `eval/human_labels.csv`.
-6. **Before/after:** add the LPH and re-ask q34 (tourist flats) → `eval/add_document_demo.md`. Run once with `uv run python evaluate.py --demo`.
+6. **Before/after:** add the LPH and re-ask q34 (owner in debt voting at the junta) → `eval/add_document_demo.md`. Run once with `uv run python evaluate.py --demo`.
 7. **Summary** with suggested failure causes, tokens and seconds per question → `eval/summary.md`, `eval/results.csv`
 
 Failure categories: retrieval miss, wrong answer from the right passage, unsupported claim, wrong refusal, bad test question. The code *suggests* one per failure; the final classification must be done by hand.
@@ -186,7 +186,7 @@ Full numbers: `eval/summary.md`. Run of 12 Nov 2026, agent `gemini-3.5-flash-lit
 | citations valid (every citation matches a retrieved passage) | 35/35 |
 | expected passage retrieved by the agent | 29/29 |
 | expected passage cited | 28/29 |
-| correct refusals on unanswerable questions | 5/6 |
+| correct refusals on unanswerable questions | 6/6 |
 | wrong refusals on answerable questions | 1/29 (q20) |
 | citation guard retried / blocked | 0 / 0 |
 | searches per question (mean) | 1.3 |
@@ -199,9 +199,9 @@ Full numbers: `eval/summary.md`. Run of 12 Nov 2026, agent `gemini-3.5-flash-lit
 
 **The two flagged failures (check them yourself):**
 - **q20 (future prórroga rules from 15 Nov 2026): wrong refusal.** The agent searched once, retrieved the future-text chunk of LAU art. 10 and still said the corpus "does not cover it in detail". It broke AGENTS.md rule 4 (search twice before refusing) and rule 5 (use future text, with its date). Likely category: *wrong answer from the right passage* (the model, not retrieval).
-- **q34 (can the building ban tourist flats?): bad test question.** It was labelled unanswerable, but RDL 7/2019 *Artículo segundo* amends LPH art. 17.12 (3/5 majority, not retroactive), and the agent answered correctly with a valid citation. The test set label was wrong (my draft). Either relabel q34 as single (RDL 7/2019, Artículo segundo) or replace it with a truly unanswerable question.
+- **q34, old version (can the building ban tourist flats?): bad test question, now replaced.** It was labelled unanswerable, but RDL 7/2019 *Artículo segundo* carries the new text of LPH art. 17.12, so the agent answered it correctly. RDL 7/2019 also rewrites LPH arts. 9.1.f (reserve fund) and 10.1.b (accessibility works), so questions on those topics are answerable too. It was replaced (18 Nov) by *¿Puede votar en la junta de propietarios un propietario que debe cuotas de comunidad?* (LPH art. 15.2). This was checked against the 3 original laws with 2 queries each and nothing relevant came back. The agent now refuses it correctly: correct refusals 6/6.
 
-**Add-document demo (`eval/add_document_demo.md`):** the LPH (54 chunks) was added through the same pipeline as `add_document`, and adding it a second time embedded 0 chunks (idempotent). *Before*, q34 was answered from the amending decree. *After*, it cites the law itself (LPH art. 17), adds the newer requirement for express community approval (LPH art. 7) and the transitional rule. So the answer got more complete and better sourced, rather than going from refusal to answer, because of the q34 label error above. If you replace q34 with a truly unanswerable question, choose one the LPH answers (e.g. who pays building works, or the majority needed to install a lift) and re-run the demo.
+**Add-document demo (`eval/add_document_demo.md`):** question q34, *¿Puede votar en la junta un propietario que debe cuotas de comunidad?*. **Before** (3 laws): the agent searched twice and said *"El corpus no cubre esta pregunta"*, explaining that the topic is in the LPH, which is not indexed. **Added** the LPH (54 chunks). Adding it again embedded 0 chunks (idempotent). **After:** *"No, si las deudas están vencidas al iniciarse la junta"*, with the exception (debt challenged in court or the amount deposited) and the right to attend and speak, all cited to [LPH (Ley 49/1960), Artículo quince]. The demo removes the LPH first, so it can be re-run with `uv run python evaluate.py --demo --no-judge`.
 
 **Subagent:** `eval/subagent_transcript.md`. It answered the rent-update question correctly with LAU art. 18, DA undécima and RDL 7/2019.
 

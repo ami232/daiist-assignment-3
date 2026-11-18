@@ -35,7 +35,7 @@ HUMAN = EVAL / "human_labels.csv"
 DEMO = EVAL / "add_document_demo.md"
 KS = (1, 3, 5)
 JUDGE_MODELS = [m for m in os.environ.get("JUDGE_MODELS", "gemini-3-flash-preview,gemini-3.8-flash").split(",") if m]
-DEMO_QUESTION_ID = "q34"           # "¿Puede la comunidad de propietarios prohibir los pisos turísticos…?"
+DEMO_QUESTION_ID = "q34"           # "¿Puede votar en la junta un propietario que debe cuotas de comunidad?"
 DEMO_DOC = "BOE-A-1960-10906"      # Ley de Propiedad Horizontal, not in the initial corpus
 
 
@@ -259,13 +259,29 @@ def agreement(verdicts: dict) -> dict:
 
 # --------------------------------------------------------------------------- 6. add-document demo
 
+def remove_demo_doc() -> int:
+    """Delete the demo document's chunks from every design (makes the demo repeatable)."""
+    n = 0
+    for design in index.DESIGNS:
+        coll = index.collection(design)
+        ids = coll.get(where={"doc_id": DEMO_DOC}, include=[])["ids"]
+        if ids:
+            coll.delete(ids=ids)
+            n += len(ids)
+    return n
+
+
 def add_document_demo(questions: list[dict], answers: dict) -> None:
     if DEMO.exists():
         log("  already done (eval/add_document_demo.md); delete it to redo")
         return
     import agent
     q = next(q for q in questions if q["id"] == DEMO_QUESTION_ID)
-    before = answers.get(q["id"]) or agent.answer(q["question"])
+    removed = remove_demo_doc()  # start from the initial corpus, so "before" cannot see the document
+    if removed:
+        log(f"  removed {removed} chunks of {DEMO_DOC} left from an earlier demo")
+    before = answers.get(q["id"]) if not removed else None
+    before = before or agent.answer(q["question"])
     path = index.download(DEMO_DOC)
     t0 = time.time()
     first = index.index_file(path, designs=(index.DEFAULT_DESIGN,))[index.DEFAULT_DESIGN]
@@ -390,8 +406,12 @@ def main() -> None:
     retrieval_rows = retrieval(questions)
     log("2. Agent answers")
     answers = run_agent(questions)
-    log("3-4. Code checks and LLM judge")
-    verdicts = run_judge(questions, answers)
+    if "--no-judge" in sys.argv:  # grade by hand first, without the judge's verdicts
+        log("3-4. Code checks (LLM judge skipped: --no-judge)")
+        verdicts = read_jsonl(JUDGE)
+    else:
+        log("3-4. Code checks and LLM judge")
+        verdicts = run_judge(questions, answers)
     log("5. Agreement with human labels")
     agree = agreement(verdicts)
     if "--demo" in sys.argv or os.environ.get("RUN_ADD_DEMO") == "1":

@@ -732,23 +732,19 @@ Same rubric as the LLM judge (see `RUBRIC` in `evaluate.py`).
 
 ## q34 (unanswerable)
 
-**Question:** ¿Puede la comunidad de propietarios prohibir los pisos turísticos en mi edificio?
+**Question:** ¿Puede votar en la junta de propietarios un propietario que debe cuotas de comunidad?
 
 **Expected:** — · —
 
-**Reference answer:** Las leyes indexadas no lo regulan (está en la Ley de Propiedad Horizontal, que no está en el corpus).
+**Reference answer:** Las leyes indexadas no lo regulan (está en la Ley de Propiedad Horizontal, art. 15.2: puede asistir y deliberar pero no votar, salvo que haya impugnado judicialmente la deuda o consignado la suma).
 
 **Agent answer:**
 
-> **Sí**, la comunidad de propietarios puede limitar o condicionar el ejercicio de pisos turísticos en el edificio, siempre que se apruebe con el voto favorable de las **tres quintas partes del total de los propietarios** que a su vez representen las **tres quintas partes de las cuotas de participación** [RDL 7/2019, Artículo segundo. Modificación de la Ley 49/1960].
+> El corpus no cubre esta pregunta (la regulación sobre la junta de propietarios y la suspensión del derecho de voto por deudas se encuentra en la Ley sobre Propiedad Horizontal, que no está indexada en el corpus; este solo incluye la LAU, la Ley de Vivienda y las reformas del RDL 7/2019 relativas al alquiler y determinados aspectos accesorios). 
 > 
-> **Condiciones clave:**
-> * Estos acuerdos **no tendrán efectos retroactivos** sobre viviendas que ya estuvieran ejerciendo la actividad legalmente antes de la adopción del acuerdo [RDL 7/2019, Artículo segundo. Modificación de la Ley 49/1960].
-> * Con esta misma mayoría de tres quintas partes, la comunidad también puede establecer cuotas especiales de gastos o incrementar hasta un 20% la participación en los gastos comunes para las viviendas que realicen dicha actividad [RDL 7/2019, Artículo segundo. Modificación de la Ley 49/1960].
-> 
-> *Para un caso concreto, conviene confirmar la normativa aplicable con un abogado o con el organismo de vivienda de su comunidad autónoma.*
+> *Confirme este extremo con un abogado o con la normativa aplicable en materia de propiedad horizontal.*
 
-*Searches: ['comunidad propietarios prohibir pisos turisticos acuerdo junta ley propiedad horizontal vivienda']*
+*Searches: ['propietario deudas voto junta de propietarios', 'derecho a voto propietarios morosos ley propiedad horizontal asistencia voto cuotas']*
 
 ---
 
