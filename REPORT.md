@@ -109,8 +109,7 @@ appearance of injuries in amateur padel players. ...
 The subagent did what it was tasked to do: cited every fact, stated "linked" rather than "causes", and refused to give a number the passages didn't state. It also ignored a strange instruction that came from another tool connected to Claude Code, not from our papers. That's the safe behavior it must respect.
 
 ## Adding a document
-
-**If the document is already in the database:** the tool notices that it's the exact same file (using a file fingerprint) and does nothing. If a *new version* of a file with the same name is added, the old version is replaced, so there are never two copies.
+The way I approach this method is that if the tool notices the file is the exact same (due to file fingerprint) the model will do nothing. However, if a new version of a file with the same name is added, the old version is replaced so that there are never two copies.
 
 **Before and after** (full output in `eval/add_demo.md`):
 - **Question (q31, unanswerable):** "What is the maximum length of the wrist safety cord attached to a padel racket?"
