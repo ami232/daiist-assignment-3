@@ -1,0 +1,69 @@
+{
+  "agent_model": "gemini-3.5-flash-lite",
+  "judge_model": "gemini-3-flash-preview",
+  "questions": 34,
+  "answerable": 26,
+  "unanswerable": 8,
+  "judge_correct": 32,
+  "judge_unsupported": 0,
+  "correct_refusals": 6,
+  "wrong_refusals": 0,
+  "code_check_failures": {
+    "guard_repaired": 3,
+    "refused_as_expected": 2
+  },
+  "failure_causes_auto": {
+    "wrong answer from right passage": 2,
+    "unsupported claim": 1,
+    "unsupported claim (should have refused)": 4
+  },
+  "avg_model_calls": 2.47,
+  "avg_tool_calls": 1.44,
+  "avg_input_tokens": 6074,
+  "avg_output_tokens": 220,
+  "avg_seconds": 4.3,
+  "cost_per_question_usd": "set PRICE_IN_PER_M / PRICE_OUT_PER_M",
+  "agreement_with_human_labels": {
+    "n": 34,
+    "disagreements": [
+      {
+        "id": "q19",
+        "field": "correct",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "The answer accurately states that tourist rentals are excluded from the LAU according to Article 5 and identifies the required 3/5 majority for both owners and quotas as specified in LPH Article 17.12."
+      },
+      {
+        "id": "q21",
+        "field": "correct",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "The assistant correctly identifies the 31-day limit in the LAU and the 10-day limit in the Valencian law, with all facts supported by the retrieved passages."
+      },
+      {
+        "id": "q26",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "The answer correctly identifies the one-month deposit and one-month advance rent limits, and provides supported details on additional guarantees."
+      },
+      {
+        "id": "q28",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "The assistant correctly identified that the retrieved documents do not contain information about VAT and properly refused to answer as instructed."
+      },
+      {
+        "id": "q31",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "The assistant correctly states it cannot answer based on the provided documents and accurately identifies the absence of information regarding pets."
+      }
+    ],
+    "correct_agreement": 0.941,
+    "supported_agreement": 0.912,
+    "both_agreement": 0.853
+  }
+}

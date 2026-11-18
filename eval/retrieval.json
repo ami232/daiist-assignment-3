@@ -1,0 +1,53 @@
+{
+  "questions": 26,
+  "designs": {
+    "article": {
+      "words@5": 828,
+      "all_hit@1": 0.654,
+      "all_hit@3": 0.846,
+      "all_hit@5": 0.923,
+      "single_hit@1": 0.944,
+      "single_hit@3": 1.0,
+      "single_hit@5": 1.0,
+      "multi_hit@1": 0.0,
+      "multi_hit@3": 0.5,
+      "multi_hit@5": 0.75
+    },
+    "article+bm25": {
+      "words@5": 832,
+      "all_hit@1": 0.654,
+      "all_hit@3": 0.692,
+      "all_hit@5": 0.731,
+      "single_hit@1": 0.944,
+      "single_hit@3": 0.944,
+      "single_hit@5": 0.944,
+      "multi_hit@1": 0.0,
+      "multi_hit@3": 0.125,
+      "multi_hit@5": 0.25
+    },
+    "fixed": {
+      "words@5": 750,
+      "all_hit@1": 0.538,
+      "all_hit@3": 0.769,
+      "all_hit@5": 0.808,
+      "single_hit@1": 0.778,
+      "single_hit@3": 0.944,
+      "single_hit@5": 0.944,
+      "multi_hit@1": 0.0,
+      "multi_hit@3": 0.375,
+      "multi_hit@5": 0.5
+    },
+    "fixed+bm25": {
+      "words@5": 750,
+      "all_hit@1": 0.538,
+      "all_hit@3": 0.692,
+      "all_hit@5": 0.692,
+      "single_hit@1": 0.778,
+      "single_hit@3": 0.944,
+      "single_hit@5": 0.944,
+      "multi_hit@1": 0.0,
+      "multi_hit@3": 0.125,
+      "multi_hit@5": 0.125
+    }
+  }
+}

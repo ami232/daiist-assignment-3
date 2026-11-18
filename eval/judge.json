@@ -1,0 +1,206 @@
+{
+  "q01": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately states the duration and extension rules for both natural and legal persons based on Article 9 of the LAU, which is present in the retrieved passages and matches the reference.",
+    "digest": "a730f699d4ae"
+  },
+  "q02": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately states that these rentals are excluded from the LAU and correctly identifies the 31-day maximum duration limit as found in Article 5 of the provided text.",
+    "digest": "461782058b07"
+  },
+  "q03": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately reflects the notice periods and extension duration found in both the reference and the provided passages (Article 10 LAU).",
+    "digest": "100bea9e03fd"
+  },
+  "q04": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer correctly states the withdrawal conditions for both standard and temporary housing as provided in the retrieved Article 11.",
+    "digest": "e1eb576fbecb"
+  },
+  "q05": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately states the timeframe and notice period as found in the retrieved passages and the reference answer.",
+    "digest": "b900d2db35a5"
+  },
+  "q06": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately reflects the time limits mentioned in the reference and provides additional details fully supported by Article 9 bis of the retrieved passages.",
+    "digest": "a962e5a2a827"
+  },
+  "q07": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately reflects the reference and is fully supported by Article 17 in the retrieved passages.",
+    "digest": "afb61eee0369"
+  },
+  "q08": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately states the required security deposits for both housing and other uses as specified in the provided passages and matches the reference.",
+    "digest": "5b2ee0d4b4c7"
+  },
+  "q09": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately reflects the limits on guarantees and the prohibition of insurance requirements as stated in the reference and retrieved passages.",
+    "digest": "38eb7702a060"
+  },
+  "q10": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer matches all requirements and deadlines in the reference and is fully supported by the provided legal passages.",
+    "digest": "3e920b53225b"
+  },
+  "q11": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer correctly identifies the three-fifths majority requirement and the lack of retroactive effects, citing the appropriate article from the retrieved passages.",
+    "digest": "e315552a1713"
+  },
+  "q12": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately reflects the majority requirements and the 20% limit for expense increases as stated in the retrieved passages.",
+    "digest": "268aa19eb3ce"
+  },
+  "q13": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately reflects the definition of 'gran tenedor' and the potential reduction to five properties in stressed zones, all of which is supported by passage [1].",
+    "digest": "c7117ed0a98d"
+  },
+  "q14": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately states the three-year duration and annual extension conditions as specified in both the reference and the retrieved passage [1].",
+    "digest": "ce2bf5dc7f48"
+  },
+  "q15": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately reflects the definition and conditions for tourist housing in the reference and is fully supported by the provided legal text.",
+    "digest": "e07fbb72f387"
+  },
+  "q16": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately reflects the fine amounts and additional sanctions found in Article 94 of the retrieved passages and the reference.",
+    "digest": "ca739755b929"
+  },
+  "q17": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately lists all tourist accommodation modalities specified in Article 64 of the retrieved law, matching the reference answer.",
+    "digest": "98eca5cf7054"
+  },
+  "q18": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately reflects the content of the reference and is fully supported by the provided text of Article 62.",
+    "digest": "41f47dc250b1"
+  },
+  "q19": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately states that tourist rentals are excluded from the LAU according to Article 5 and identifies the required 3/5 majority for both owners and quotas as specified in LPH Article 17.12.",
+    "digest": "cb16385644af"
+  },
+  "q20": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer correctly identifies the 7-year minimum duration for legal entities and the classification as a 'gran tenedor' based on the 10-property threshold, with all facts supported by the retrieved passages.",
+    "digest": "962d2106355f"
+  },
+  "q21": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly identifies the 31-day limit in the LAU and the 10-day limit in the Valencian law, with all facts supported by the retrieved passages.",
+    "digest": "e6a950492212"
+  },
+  "q25": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately reflects the duration limits and withdrawal terms specified in both the reference and the retrieved legal passages.",
+    "digest": "4db3edeb7331"
+  },
+  "q22": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately states when the landlord is obligated to accept the extension and provides the correct definition of 'gran tenedor' as per the provided texts.",
+    "digest": "5d19c260bdbe"
+  },
+  "q23": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately states the three-year duration with annual extensions and provides the correct rent limits for new contracts and large holders based on the retrieved passages.",
+    "digest": "c9c6bb1206af"
+  },
+  "q24": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately reflects the majority requirements and the legal citations provided in both the reference and the retrieved passages, including the specific requirement for the Comunitat Valenciana.",
+    "digest": "88b31d332184"
+  },
+  "q26": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer correctly identifies the one-month deposit and one-month advance rent limits, and provides supported details on additional guarantees.",
+    "digest": "8e619ee233b7"
+  },
+  "q27": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly refused to answer because the documents do not define the term, and its observation about the term appearing in the titles is supported by the citations provided.",
+    "digest": "7823fe1ee45e"
+  },
+  "q28": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly identified that the retrieved documents do not contain information about VAT and properly refused to answer as instructed.",
+    "digest": "53cfc65e8e54"
+  },
+  "q29": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly identified that the information is not present in the provided snippets of Law 15/2018 and refused the answer as instructed.",
+    "digest": "03ce69cbbffc"
+  },
+  "q30": {
+    "correct": 0,
+    "supported": 1,
+    "reason": "The assistant failed to state it could not answer the question about annual limits as required by the reference instructions, despite correctly identifying that the text does not establish such a limit.",
+    "digest": "d7a8ce6dd563"
+  },
+  "q31": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly states it cannot answer based on the provided documents and accurately identifies the absence of information regarding pets.",
+    "digest": "d73b9f9d23b2"
+  },
+  "q32": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly refused to answer because the documents do not specify a minimum number of nights, while accurately summarizing the maximum duration mentioned in the text.",
+    "digest": "fb306e39adbb"
+  },
+  "q33": {
+    "correct": 0,
+    "supported": 1,
+    "reason": "The assistant provides information found in the retrieved passages, but the reference answer incorrectly states the information is missing and requires a refusal.",
+    "digest": "6272be74c881"
+  },
+  "q34": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly refused to answer because the information was missing and accurately cited the retrieved passage stating that equipment requirements would be established by regulation.",
+    "digest": "4f2d0c51b7e5"
+  }
+}

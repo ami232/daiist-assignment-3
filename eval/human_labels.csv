@@ -1,1 +1,35 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,1,1,
+q04,1,1,
+q05,1,1,
+q06,1,1,
+q07,1,1,
+q08,1,1,
+q09,1,1,
+q10,1,1,
+q11,1,1,
+q12,1,1,
+q13,1,1,
+q14,1,1,
+q15,1,1,
+q16,1,1,
+q17,1,1,
+q18,1,1,
+q19,0,1,"No responde de forma directa a '¿me aplica la LAU?': dice que 'quedan excluidas del ámbito de aplicación de la LAU las cesiones temporales...' en general, sin concluir que a la vivienda turística del usuario no le aplica. La mayoría de tres quintas partes sí es correcta."
+q20,1,1,
+q21,0,1,Omite que la duración máxima de la cesión turística 'será fijada por las administraciones competentes' (LAU art. 5) y solo da el tope de 'treinta y un días'. El dato de 10 días de la ley valenciana es correcto.
+q22,1,1,
+q23,1,1,
+q24,1,1,
+q25,1,1,
+q26,1,0,"Añade '(como un depósito o aval)' como ejemplos de garantía adicional, pero el art. 36.5 recuperado solo habla de 'una garantía del cumplimiento... adicional a la fianza en metálico'. 'Aval' no aparece en ningún pasaje y 'depósito' solo aparece en el título de la disposición adicional tercera ('Depósito de fianzas'), que trata de otra cosa. Las cifras (una mensualidad de fianza, una de renta anticipada, dos de garantía adicional) sí están."
+q27,1,1,
+q28,1,0,"Dice haber buscado en 'LAU, Ley 12/2023, RDL 7/2019, LPH y Ley 15/2018 CV', pero ningún pasaje recuperado es de la Ley 12/2023 ni de la LPH. Declina correctamente."
+q29,1,1,
+q30,0,1,"No declina: responde con 31 días por cesión (LAU art. 5) y 10 días (art. 65), que no son un límite anual, y afirma 'La legislación disponible no establece un límite máximo de días al año' en vez de decir que no puede responder con los documentos disponibles."
+q31,1,0,"Afirma que 'ninguna' de la LAU, la Ley de Vivienda, la LPH y la normativa turística CV menciona mascotas, pero los pasajes recuperados no incluyen la Ley 12/2023 y solo cubren parte del resto. Declina correctamente."
+q32,1,1,
+q33,0,1,"Responde '5 años' (art. 65 y art. 78 h) en vez de declinar, y ese plazo es la validez de la inscripción en el Registro de Turismo, no de una 'licencia'. Ojo: los pasajes sí contienen el plazo de cinco años, así que la referencia 'el corpus no lo contiene' puede estar mal."
+q34,1,1,

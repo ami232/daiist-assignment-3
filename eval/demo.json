@@ -1,0 +1,182 @@
+{
+  "question": "¿Qué es la Ventanilla Única Digital de Arrendamientos y para qué sirve?",
+  "document": "corpus/BOE-A-2024-26931.xml",
+  "chunks_before": 573,
+  "chunks_after": 602,
+  "before": {
+    "question": "¿Qué es la Ventanilla Única Digital de Arrendamientos y para qué sirve?",
+    "answer": "No puedo responder con los documentos disponibles. He buscado menciones sobre la Ventanilla Única Digital de Arrendamientos en los textos legales y los resultados solo recogen su mención en los epígrafes o títulos del régimen sancionador, pero no contienen la definición ni la explicación de su funcionamiento o finalidad [LAU, Disposición adicional undécima], [LAU, Disposición adicional segunda], [LAU, Disposición transitoria quinta], [LAU, Disposición adicional sexta].",
+    "refused": true,
+    "citations": [
+      [
+        "LAU",
+        "Disposición adicional undécima"
+      ],
+      [
+        "LAU",
+        "Disposición adicional segunda"
+      ],
+      [
+        "LAU",
+        "Disposición transitoria quinta"
+      ],
+      [
+        "LAU",
+        "Disposición adicional sexta"
+      ]
+    ],
+    "invalid_citations": [],
+    "retrieved": [
+      [
+        "LAU",
+        "Disposición adicional undécima"
+      ],
+      [
+        "Ley 12/2023",
+        "Disposición adicional primera"
+      ],
+      [
+        "LAU",
+        "Disposición adicional segunda"
+      ],
+      [
+        "LAU",
+        "Disposición transitoria quinta"
+      ],
+      [
+        "LAU",
+        "Disposición adicional sexta"
+      ]
+    ],
+    "tool_trace": [
+      {
+        "tool": "search",
+        "args": {
+          "query": "Ventanilla Única Digital de Arrendamientos"
+        },
+        "output": "[1] CITATION: [LAU, Disposición adicional undécima]  (similarity 0.73 | Título V Régimen sancionador aplicable a los efectos de la Ventanilla Única Digital de Arrendamientos y el Reglamento (UE) 2024/1028 del Parlamento Europeo y del Consejo, de 11 de abril de 2024, sobre la recogida y el intercambio de datos relativos a los servicios de alquiler de alojamientos de corta duración y por el que se modifica el Reglamento (UE) 2018/1724)\nDisposición adicional undécima. Índice de referencia para la actualización anual de los contratos de arrendamiento de vivienda. El Instituto Nacional de Estadística definirá, antes del 31 de diciembre de 2024, un índice de referencia para la actualización anual de los contratos de arrendamiento de vivienda que se fijará como límite de referencia a los efectos del artículo 18 de esta ley, con el objeto de evitar incrementos desproporcionados en la renta de los contratos de arrendamiento.\n\n[2] CITATION: [Ley 12/2023, Disposición adicional primera]  (similarity 0.73 | Título IV Medidas de protección y transparencia en las operaciones de compra y arrendamiento de vivienda > Capítulo II Información y transparencia en materia de vivienda y suelo)\nDisposición adicional primera. Base de datos de contratos de arrendamiento de vivienda y refuerzo de la coordinación en la información sobre contratos de arrendamiento. 1. Para el desarrollo de lo previsto en esta ley, se conformará una base de datos de contratos de arrendamiento de vivienda, a partir de la información contenida en los actuales registros autonómicos de fianzas de las comunidades autónomas, en el Registro de la Propiedad y otras fuentes de información de ámbito estatal, autonómico o local, con el objeto de incrementar la información disponible para el desarrollo del Sistema de índices de referencia del precio del alquiler de vivienda establecido en la disposición adicional segunda del Real Decreto-ley 7/2019, de 1 de marzo, de medidas urgentes en materia de vivienda y alquiler. 2. Se promoverán los mecanismos de colaboración con las comunidades autónomas y otros organismos e instituciones, para disponer de la información veraz sobre los contratos de arrendamiento de vivienda vigentes, a través de los datos recogidos en los distintos registros autonómicos y estatales, con el objeto de realizar un adecuado seguimiento del conjunto de medidas incluidas en esta ley y determinar el progreso en el cumplimiento de los objetivos de incrementar la oferta de vivienda en alquiler a precios asequibles.\n\n[3] CITATION: [LAU, Disposición adicional segunda]  (similarity 0.73 | Título V Régimen sancionador aplicable a los efectos de la Ventanilla Única Digital de Arrendamientos y el Reglamento (UE) 2024/1028 del Parlamento Europeo y del Consejo, de 11 de abril de 2024, sobre la recogida y el intercambio de datos relativos a los servicios de alquiler de alojamientos de corta duración y por el que se modifica el Reglamento (UE) 2018/1724)\nDisposición adicional segunda. Modificación de la Ley Hipotecaria. 1. El artículo 2, número 5.º, de la Ley Hipotecaria, aprobada por Decreto de 8 de febrero de 1946, tendrá la siguiente redacción: «5.º Los contratos de arrendamiento de bienes inmuebles, y los subarriendos, cesiones y subrogaciones de los mismos.» 2. En el plazo de nueve meses desde la entrada en vigor de esta ley se establecerán reglamentariamente los requisitos de acceso de los contratos de arrendamientos urbanos al Registro de la Propiedad.\n\n[4] CITATION: [LAU, Disposición transitoria quinta]  (similarity 0.72 | Título V Régimen sancionador aplicable a los efectos de la Ventanilla Única Digital de Arrendamientos y el Reglamento (UE) 2024/1028 del Parlamento Europeo y del Consejo, de 11 de abril de 2024, sobre la recogida y el intercambio de datos relativos a los servicios de alquiler de alojamientos de corta duración y por el que se modifica el Reglamento (UE) 2018/1724)\nDisposición transitoria quinta. Arrendamientos de viviendas de protección oficial. Los arrendamientos de viviendas de protección oficial que subsistan a la entrada en vigor de la presente ley continuarán rigiéndose por la normativa que les viniera siendo de aplicación.\n\n[5] CITATION: [LAU, Disposición adicional sexta]  (similarity 0.72 | Título V Régimen sancionador aplicable a los efectos de la Ventanilla Única Digital de Arrendamientos y el Reglamento (UE) 2024/1028 del Parlamento Europeo y del Consejo, de 11 de abril de 2024, sobre la recogida y el intercambio de datos relativos a los servicios de alquiler de alojamientos de corta duración y por el que se modifica el Reglamento (UE) 2018/1724)\nDisposición adicional sexta. Censo de arrendamientos urbanos. 1. El Gobierno procederá, a través del Ministerio de Obras Públicas, Transportes y Medio Ambiente, en el plazo de un año a partir de la entrada en vigor de la presente ley, a elaborar un censo de los contratos de arrendamiento de viviendas sujetos a la presente ley subsistentes a su entrada en vigor. 2. Este censo comprenderá datos identificativos del arrendador y del arrendatario, de la renta del contrato, de la existencia o no de cláusulas de revisión, de su duración y de la fecha del contrato. 3. A estos efectos, los arrendadores deberán remitir, al Ministerio de Obras Públicas, Transportes y Medio Ambiente, en el plazo máximo de tres meses a partir de la entrada en vigor de la ley, los datos del contrato a que se refiere el párrafo anterior. 4. Los arrendatarios tendrán derecho a solicitar la inclusión en el censo a que se refiere esta disposición de sus respectivos contratos, dando cuenta por escrito al arrendador de los datos remitidos. 5. El incumplimiento de la obligación prevista en el anterior apartado 3 privará al arrendador que la hubiera incumplido del derecho a los beneficios fiscales a que se refiere la disposición final cuarta de la presente ley."
+      }
+    ],
+    "guard": "",
+    "first_answer": "",
+    "first_invalid": [],
+    "model_calls": 2,
+    "input_tokens": 3917,
+    "output_tokens": 127,
+    "seconds": 3.1,
+    "error": ""
+  },
+  "add": {
+    "question": "Añade al índice este documento: corpus/BOE-A-2024-26931.xml",
+    "answer": "Documento `corpus/BOE-A-2024-26931.xml` añadido correctamente al índice (29 fragmentos procesados).",
+    "refused": false,
+    "citations": [],
+    "invalid_citations": [],
+    "retrieved": [],
+    "tool_trace": [
+      {
+        "tool": "add_document",
+        "args": {
+          "path": "corpus/BOE-A-2024-26931.xml"
+        },
+        "output": "Indexed 'RD 1312/2024' from BOE-A-2024-26931.xml: 29 new chunks embedded, 0 already stored, 0 outdated chunks removed. search can now cite it as [RD 1312/2024, <location>]."
+      }
+    ],
+    "guard": "",
+    "first_answer": "",
+    "first_invalid": [],
+    "model_calls": 2,
+    "input_tokens": 2623,
+    "output_tokens": 69,
+    "seconds": 10.37,
+    "error": ""
+  },
+  "after": {
+    "question": "¿Qué es la Ventanilla Única Digital de Arrendamientos y para qué sirve?",
+    "answer": "La Ventanilla Única Digital de Arrendamientos es la pasarela digital única nacional para la transmisión electrónica de datos entre las plataformas en línea de alquiler de corta duración y las autoridades competentes, dependiente del Ministerio de Vivienda y Agenda Urbana.\n\nSirve para:\n- Dar cumplimiento a las obligaciones de comunicación de datos establecidas en el Reglamento (UE) 2024/1028 sobre los servicios de alquiler de alojamientos de corta duración.\n- Recibir y transmitir los datos de actividad por unidad entre las plataformas y las administraciones.\n- Permitir la transmisión máquina a máquina y manual de los datos de actividad, junto con el número de registro, la dirección específica y las URL de los anuncios publicados en las plataformas en línea.\n- Facilitar a las plataformas la realización de comprobaciones aleatorias de los números de registro.\n- Disponer de una funcionalidad para consultar el número de registro asignado a las unidades y su ubicación específica.\n- Emitir resoluciones para ordenar la eliminación o inhabilitación del acceso a anuncios de unidades ofrecidas sin número de registro, con número no válido o en casos de uso indebido.\n- Transmitir mensualmente datos relativos a cada unidad (actividad, números de registro, municipio y número máximo de personas arrendatarias) al Instituto Nacional de Estadística (INE), a los institutos de estadística autonómicos y a Eurostat.\n- Informar sobre los diferentes usos, regulación y destinos de las unidades dedicadas a alquiler de corta duración en todo el territorio nacional.\n\n[RD 1312/2024, Artículo 1] [RD 1312/2024, Artículo 2] [RD 1312/2024, Artículo 7] [RD 1312/2024, Artículo 11]",
+    "refused": false,
+    "citations": [
+      [
+        "RD 1312/2024",
+        "Artículo 1"
+      ],
+      [
+        "RD 1312/2024",
+        "Artículo 2"
+      ],
+      [
+        "RD 1312/2024",
+        "Artículo 7"
+      ],
+      [
+        "RD 1312/2024",
+        "Artículo 11"
+      ]
+    ],
+    "invalid_citations": [],
+    "retrieved": [
+      [
+        "RD 1312/2024",
+        "Artículo 7"
+      ],
+      [
+        "RD 1312/2024",
+        "Artículo 7"
+      ],
+      [
+        "RD 1312/2024",
+        "Artículo 11"
+      ],
+      [
+        "RD 1312/2024",
+        "Artículo 1"
+      ],
+      [
+        "RD 1312/2024",
+        "Artículo 2"
+      ]
+    ],
+    "tool_trace": [
+      {
+        "tool": "search",
+        "args": {
+          "query": "Ventanilla Única Digital de Arrendamientos"
+        },
+        "output": "[1] CITATION: [RD 1312/2024, Artículo 7]  (similarity 0.76)\nArtículo 7. Ventanilla Única Digital de Arrendamientos. 1. Para el cumplimiento de las obligaciones prescritas en el Reglamento (UE) 2024/1028 del Parlamento Europeo y del Consejo, de 11 de abril de 2024, se crea la Ventanilla Única Digital de Arrendamientos de España, como pasarela digital única nacional para la transmisión electrónica de datos entre las plataformas en línea de alquiler de corta duración y para el resto de funciones que la normativa establece. A efectos del Reglamento (UE) 2024/1028 del Parlamento Europeo y del Consejo, de 11 de abril de 2024, la Ventanilla Única Digital de Arrendamientos será dependiente del Ministerio de Vivienda y Agenda Urbana a través de la Dirección General de Planificación y Evaluación, que será el órgano competente para dictar las resoluciones administrativas por las que se ordene la eliminación o inhabilitación del acceso a anuncios vinculados a unidades ofrecidas sin número de registro o con un número de registro no válido, o en casos de uso indebido de un número de registro, así como todos aquellos vinculados al ejercicio de potestades administrativas atribuidas al Ministerio de Vivienda y Agenda Urbana en relación con esta norma.\n\n[2] CITATION: [RD 1312/2024, Artículo 7]  (similarity 0.76)\nA través de la Ventanilla Única Digital de Arrendamientos se llevará a cabo la recepción y transmisión de los datos por parte de las plataformas, de acuerdo con el artículo 6. A estos efectos, las plataformas sujetas al Reglamento (UE) 2024/1028 del Parlamento Europeo y del Consejo, de 11 de abril de 2024, comunicarán a la Ventanilla Única Digital de Arrendamientos los datos necesarios para permitir la notificación de las comunicaciones y resoluciones que emitan órdenes reguladas en esta norma y en el resto de normativa aplicable. 2. La Ventanilla Única Digital de Arrendamientos: a) Permitirá la transmisión máquina a máquina y manual de los datos de actividad por unidad, junto con el número de registro facilitado por las personas arrendadoras, la dirección específica de la unidad y las URL de los anuncios publicados en las plataformas en línea de alquiler de corta duración. b) Facilitará a las plataformas en línea de alquiler de corta duración llevar a cabo las comprobaciones aleatorias del artículo 6.c). c) Recogerá una funcionalidad que permita consultar el número de registro asignado a las unidades de las personas arrendadoras y la dirección o ubicación específica de la unidad.\n\n[3] CITATION: [RD 1312/2024, Artículo 11]  (similarity 0.75)\nArtículo 11. Estadística oficial. Mensualmente, la Ventanilla Única Digital de Arrendamientos, con las debidas garantías en materia de protección de datos, transmitirá al Instituto Nacional de Estadística, a los institutos de estadística autonómicos en su caso, y a Eurostat, datos relativos a cada unidad y, en particular, los referidos a actividad y números de registro obtenidos, el municipio donde está situada la unidad, y el número máximo de personas arrendatarias que se pueden alojar en esta. Asimismo, el Instituto Nacional de Estadística y, en su caso, los institutos de estadística autonómicos podrán suscribir o ampliar sus convenios o instrumentos de colaboración con el Registro de la Propiedad y el de Bienes Muebles, para facilitar la realización de estadísticas sujetas a una norma de Derecho de la Unión Europea o que se encuentren incluidas en los instrumentos de programación estadística legalmente previstos.\n\n[4] CITATION: [RD 1312/2024, Artículo 1]  (similarity 0.73)\nArtículo 1. Objeto. El presente real decreto tiene por objeto la creación de la Ventanilla Única Digital de Arrendamientos y el desarrollo del procedimiento de registro único de arrendamientos, en aplicación del Reglamento (UE) 2024/1028 del Parlamento Europeo y del Consejo, de 11 de abril de 2024, sobre la recogida y el intercambio de datos relativos a los servicios de alquiler de alojamientos de corta duración y por el que se modifica el Reglamento (UE) 2018/1724, y resto de normativa nacional de aplicación. Téngase en cuenta que se anula este artículo en cuanto hace referencia al desarrollo del procedimiento de registro único de arrendamientos, por las Sentencias del TS de 19 de mayo de 2026, Ref. BOE-A-2026-12300 , y de 1 de junio de 2026, Ref. BOE-A-2026-15677 , y en lo relativo a las menciones que se hacen al procedimiento de Registro Único de Arrendamientos y al número de registro, por la Sentencia del TS de 21 de mayo de 2026. Ref. BOE-A-2026-13893\n\n[5] CITATION: [RD 1312/2024, Artículo 2]  (similarity 0.73)\ne) Ventanilla Única Digital de Arrendamientos: pasarela digital única nacional para la transmisión electrónica de datos entre las plataformas en línea de alquiler de corta duración y las autoridades competentes, así como para informar sobre los diferentes usos, regulación y destinos de las unidades dedicadas a alquiler de corta duración en todo el territorio nacional, a través de la cual se articula en España el cumplimiento de las obligaciones de comunicación de datos recogidas en el Reglamento (UE) 2024/1028 del Parlamento Europeo y del Consejo, de 11 de abril de 2024. f) (Anulada) g) Plataforma en línea de alquiler de corta duración: plataforma en línea en el sentido del artículo 3.i) del Reglamento (UE) 2022/2065 del Parlamento Europeo y del Consejo de 19 de octubre de 2022 relativo a un mercado único de servicios digitales y por el que se modifica la Directiva 2000/31/CE, que permite a los huéspedes celebrar contratos a distancia con anfitriones para la prestación de servicios de alquiler de alojamientos de corta duración."
+      }
+    ],
+    "guard": "",
+    "first_answer": "",
+    "first_invalid": [],
+    "model_calls": 2,
+    "input_tokens": 3941,
+    "output_tokens": 411,
+    "seconds": 3.92,
+    "error": ""
+  },
+  "add_again": {
+    "question": "Añade al índice este documento: corpus/BOE-A-2024-26931.xml",
+    "answer": "El documento `corpus/BOE-A-2024-26931.xml` (RD 1312/2024) ya estaba indexado y no ha sufrido cambios, por lo que no se ha añadido de nuevo.",
+    "refused": false,
+    "citations": [],
+    "invalid_citations": [],
+    "retrieved": [],
+    "tool_trace": [
+      {
+        "tool": "add_document",
+        "args": {
+          "path": "corpus/BOE-A-2024-26931.xml"
+        },
+        "output": "'RD 1312/2024' was already indexed and is unchanged (29 chunks): nothing was added."
+      }
+    ],
+    "guard": "",
+    "first_answer": "",
+    "first_invalid": [],
+    "model_calls": 2,
+    "input_tokens": 2577,
+    "output_tokens": 90,
+    "seconds": 2.43,
+    "error": ""
+  }
+}
