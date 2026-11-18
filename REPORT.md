@@ -71,9 +71,7 @@ The model now automatically picks the best method based on the table above: **se
 
 ## Tools and subagent
 
-The MCP server (`server.py`) gives two tools:
-- **`search(query)`:** searches the padel papers and returns the 5 best passages. Each passage comes with its citation (e.g. `cite as [munoz2022 p.5]`), the paper title and the section.
-- **`add_document(path)`:** adds a new file (PDF, text or web page) to the database using the same cleaning and cutting steps as the rest.
+The MCP server (`server.py`) gives us two tools: The search query searches the padel papers and returns the 5 best passages. Each passage comes with its citation, the paper title, and the section. The second tool is add_document, which adds a new file (PDF, text, or web page) to the database using the same cleaning and cutting steps as the rest.
 
 **Example search result** (question: "Is a heavier padel racket associated with more upper-body injuries in amateur players?"):
 
