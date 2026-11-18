@@ -206,6 +206,8 @@ EXTRA GUARDRAIL, GROUNDING: after the model answers, code checks that every cita
 
 Case where it fired: in q05, the model merged 2 passages into 1 citation, `[reg-2019-947, Annex > Part A > UAS.OPEN.030, reg-2019-947, Annex > Part A > UAS.OPEN.040]`, which matches no retrieved passage. After the retry, it cited each passage separately and the answer was correct.
 
+CALL LIMIT: at most 8 model calls per question (`ModelCallLimitMiddleware`), as the `agent.py` template asks, so a loop cannot run up cost.
+
 ## Evaluation
 
 *Code checks, the judge's rubric, your agreement with the judge, and results: correct, unsupported, correct refusals, wrong refusals.*
@@ -237,11 +239,13 @@ RESULTS (37 questions):
 | Correct refusals | 6 |
 | Wrong refusals | 0 |
 
+These are the judge's verdicts (refusals graded in code). The Failures section uses my final grades.
+
 ## Failures
 
 *Failed questions by cause, with counts, and what to fix first.*
 
-3 answers failed: q02 (flagged by the judge), and q12 and q30 (accepted by the judge, rejected by my grades).
+3 answers failed: q02, q12 and q30. The judge accepted q12 and q30; my grades rejected them. The judge found q02 unsupported. I had graded q02 correct because my reference answer made the same mistake, and re-reading UAS.OPEN.020 showed the judge was right. I left my grade unchanged so the agreement figures stay honest.
 
 | Cause | Count | Questions |
 |---|---|---|
@@ -249,7 +253,7 @@ RESULTS (37 questions):
 | Wrong answer from the right passage | 2 | q02: applied the rule for C0 and sub-250 g drones (may overfly uninvolved persons) to a C1 drone, which must NOT overfly them. q30: recital 16 (privacy risk) was retrieved, but the answer gave the conditions for registering instead of the reason. |
 | Unsupported claim | 0 | |
 | Wrong refusal | 0 | |
-| Bad test question | 1 | q02: my reference answer made the same C1 mistake. |
+| Bad test question | 0 | |
 
 What to fix first:
 1. The q02 kind, the most EXPENSIVE error for this user. Correct q02's reference answer and add an AGENTS.md rule: state which drone class or condition each quoted clause applies to, and match it to the user's case.
@@ -259,7 +263,7 @@ What to fix first:
 
 *Would you let users rely on it, for what, with which safeguard? Cost and latency per question.*
 
-Yes, for finding and quoting the EU rule that applies, with its citation, as a first check before accepting a job. It never invented a citation and refused all 6 unanswerable questions, but 3 of 31 answerable answers were wrong in a way that reads as confident.
+Yes, for finding and quoting the EU rule that applies, with its citation, as a first check before accepting a job. No final answer cited a passage that search did not return (the guardrail caught 2 attempts, in q05 and q20), and it refused all 6 unanswerable questions, but 3 of 31 answerable answers were wrong in a way that reads as confident.
 
 SAFEGUARD: the user opens the cited article before flying, and treats "The documents do not cover this" and anything national (fines, notifications, local zones) as a prompt to check with AESA.
 
@@ -271,4 +275,4 @@ SAFEGUARD: the user opens the cited article before flying, and treats "The docum
 ## AI use
 
 *What you used and how, or "none".*
-I read the assignment instructions and looked for relevant corpuses on Google, and then used Claude to write the code, instructing it what to do using the assignment instructions, verifying the results, and ensuring they were what was expected; if not, I prompted Claude to adjust the index, agent, and evaluate files. I also graded the 23 answers myself, and then wrote the report.
+I looked for relevant corpuses on Google, and then used Claude to write the code, instructing it what to do using the assignment instructions, verifying the results, and ensuring they were what was expected; if not, I prompted Claude to adjust the index, agent, and evaluate files accordingly. I also graded the 23 answers myself, and then wrote the report.
