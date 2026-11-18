@@ -161,7 +161,7 @@ My takeaway was that the judge is good at checking if answers are right, but not
 
 ## Failures
 
-The program labels each failure automatically. I checked them and corrected two wrong labels in `eval/failure_overrides.csv`.
+The program labels each failure automatically. I checked them in eval/failure_overrides.csv: I corrected two wrong labels (q01, q32) and added one failure the judge missed (q12).
 
 | Cause | Count | Questions | What went wrong |
 |---|---|---|---|
@@ -177,14 +177,15 @@ A pattern I have noticed is that 3 of the 5 real failures are two-part questions
 These are the things I would fix first:
 1. Remove the second line of figure captions during cleaning. This fixes q11 and q12, and only one paper needs re-embedding.
 2. Next, I would handle two-part questions better by telling the agent to search once for each part, or return more results. This targets q25, q29 and q42.
-3. Finally, I would recognize refusal words differently and tell the judge that the physiotherapist sentence is allowed. This fixes the false alarms on q32 and q01.
+3. Finally, I would make the code recognise refusals that use different wording, and tell the judge that the physiotherapist sentence is allowed. This fixes the false alarms on q32 and q01.
 
 ## Decision
 Yes, I would let people rely on this tool, but only as a research tool for club staff, always showing its sources. Not directly for players, and never for medical decisions as this could lead to further injuries. I recommend this setup because 89% of answerable questions were answered correctly. Every citation pointed to a real page, and it never made up an answer to a question the papers can't answer. For this use case, where saying "I don't know" is cheap and a wrong answer is costly, that matters most. Now there is the risk that sometimes a wrong number comes with a real-looking citation (q11, q12), and the AI judge didn't notice it. That is where safeguards are required:
 - First of all, staff must open the cited page before telling a player any number or recommendation. The answer always gives the paper and page, so this takes seconds.
 - Secondly, questions about a specific person's pain go to a physiotherapist, as the assistant already says.
 - Finally, two-part questions should be asked as two separate questions until fix 2 is done.
-After running these models, I estimate the cost and speed per question to around 4,600 input and 125 output tokens, 2 AI calls, and 3.5 seconds on average (longest: 12.7 s). The judge adds about 2,500 tokens per question. On the Gemini free tier, it costs €0. The whole evaluation used about 300,000 tokens.
+
+After running these models, I measured the cost and speed per question to around 4,600 input and 125 output tokens, 2 AI calls, and 3.5 seconds on average (longest: 12.7 s). The judge adds about 2,500 tokens per question. On the Gemini free tier, it costs €0. The whole evaluation used about 300,000 tokens.
 
 ## AI use
 I used Claude as an assistant:
