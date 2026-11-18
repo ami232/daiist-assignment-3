@@ -56,8 +56,8 @@ Two examples:
 - **unanswerable (q32):** "What exact racket weight in grams should a player with tennis elbow use?" Expected: the assistant says the papers don't give this.
 
 ## Retrieval
-
-**Hit rate** = how often the right passage is among the top 1, 3 or 5 search results (36 answerable questions). I compared the two chunking methods, each with normal search ("dense") and with a mix of normal and keyword search ("hybrid").
+When looking at the retrieval, what matters is the hit rate: how often the right passage appears among the top 1, 3, or 5 search results for the answerable questions. I compared the two chunking methods, each with normal search (dense) and with a mix of normal and keyword search (hybrid)
+**Hit rate** = how often the right passage is among the top 1, 3, or 5 search results (36 answerable questions). I compared the two chunking methods, each with normal search ("dense") and with a mix of normal and keyword search ("hybrid").
 
 | Method | Pieces | Hit@1 | Hit@3 | Hit@5 | Multi: both passages in top 5 | Words sent to the AI |
 |---|---|---|---|---|---|---|
@@ -66,11 +66,8 @@ Two examples:
 | **section + dense** ✅ | 284 | **0.750** | **0.917** | **0.972** | 0.429 | 1,062 |
 | section + hybrid | 284 | 0.611 | 0.833 | 0.889 | 0.571 | 1,080 |
 
-**What this shows:**
-- **Cutting by sections works best.** The right passage comes first 75% of the time (vs 67%) and is in the top 5 for 97% of questions. Whole paragraphs keep their meaning. The cost is more text sent to the AI (1,062 words instead of 740).
-- **Adding keyword search made results worse for normal questions.** It pushed down good results that simply repeat common words like "racket" or "injury". But it helped find the *second* passage of two-part questions.
-
-**Choice:** the program picks the best method automatically from these numbers: **section + dense, top 5 results**. The weak point is two-part questions: only 43% get both passages in the top 5.
+This table shows that cutting by sections works best, as the right passage comes first 75% of the time (against 67%) and is usually in the top 5 for 97% of questions. The whole paragraphs do keep their meaning; however, the cost is more text sent to AI (1,062 words instead of 740). The second takeaway was that adding keyword search made results worse for normal questions, as it pushed down the good results that simply repeat common words such as "racket" or "injury". It did, however, help find the "second" passage of two-part questions.
+The model now automatically picks the best method based on the table above: **section + dense, top 5 results**. The weak point is two-part questions: only 43% get both passages in the top 5. 
 
 ## Tools and subagent
 
