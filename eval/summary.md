@@ -28,7 +28,8 @@ Agent uses: articles / vector / k=5
 
 ## Judge vs human
 
-- no human labels yet
+- correct: 100% agreement over 33 answers (kappa 1.0); disagree on none
+- supported: 88% agreement over 33 answers (kappa 0.0); disagree on q06, q11, q20, q26
 
 ## Failure hints (confirm each by reading the case)
 

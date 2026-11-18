@@ -32,7 +32,25 @@
     "avg_seconds": 6.0,
     "max_seconds": 11.7
   },
-  "agreement": {},
+  "agreement": {
+    "correct": {
+      "n": 33,
+      "agreement": 1.0,
+      "cohen_kappa": 1.0,
+      "disagreements": []
+    },
+    "supported": {
+      "n": 33,
+      "agreement": 0.879,
+      "cohen_kappa": 0.0,
+      "disagreements": [
+        "q06",
+        "q11",
+        "q20",
+        "q26"
+      ]
+    }
+  },
   "failure_hints": {
     "retrieval miss": 1,
     "unsupported claim (answered an unanswerable question)": 1
