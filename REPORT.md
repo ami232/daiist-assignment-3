@@ -5,13 +5,13 @@
 - **Group**: BBADBA 5A
 
 ## Use case
-The idea behind this is for staff members at a padel club, such as the person selling a racket in the pro shop or even coaches. It is quite common in such environments for amateur players to ask, "Should I buy a light racket because my elbow hurts?" or "Do round rackets have a bigger sweet spot?"
+The idea behind this is to support staff members at a padel club, such as the person selling rackets in the pro shop or coaches. In such environments, it is common for amateur players to ask, "Should I buy a light racket because my elbow hurts?" or "Do round rackets have a bigger sweet spot?"
 The objective of the answer is to pass that knowledge to the player so they can decide whether to buy a new racket, change how often they play, or whether visiting a physiotherapist is the right call.
-A wrong answer costs money, as a player may injure themselves. Let's say that we informed a player with elbow pain that a heavy racket is fine; however, it ends up making the injury worse. Tennis elbow turns out to be the most common injury in our papers. Saying "I don't know" only costs us a few minutes; the same goes for referring to a coach or physiotherapist. The assistant should refuse rather than guess, which means all answers must quote the source or state that the corpus does not cover this information.
+A wrong answer costs money, as a player may injure themselves. Let's say we told a player with elbow pain that a heavy racket is fine, but it ends up making the injury worse. Tennis elbow is the most common injury in our papers. Saying "I don't know" only costs us a few minutes; the same goes for referring to a coach or physiotherapist. The assistant should refuse rather than guess, which means all answers must quote the source or state that the corpus does not cover this information.
 
 ## Corpus
 
-The corpus consists of 9 scientific papers about padel rackets and injuries, none of which contain personal data. All licenses allow this use; therefore, I saved the PDFs in 'corpus/'. Note that the word counts are after cleaning the PDFs.
+The corpus consists of 9 scientific papers about padel rackets and injuries, none of which contain personal data. All licenses allow this use; therefore, I saved the PDFs in 'corpus/'. Note that the word counts reflect the PDFs after cleaning.
 
 | ID | Paper | Link | Date | Licence | Words |
 |---|---|---|---|---|---|
@@ -30,25 +30,17 @@ Later, for the "add a document" test, I also added the Wikipedia article *Padel*
 
 ## Ingestion
 Extraction happens page by page, so every piece of text remembers its page number. 
-Regarding cleaning, it removes things that are not considered as real content like page headers and footers, page numbers, license boxes, figure captions, broken symbols from equations, and everything after "References" (references, funding, author details).
-
-**One problem I fixed: text appearing twice.** Two of the PDFs secretly contain each paragraph two or three times. The program read all the copies, so one paper looked twice as long as it really is (9,283 words instead of about 4,850), and search results were full of copies of the same sentence. The fix compares each line with the text already kept, ignoring spaces and line breaks, and skips it if it's a repeat. After the fix, each section appears only once.
-
-**A problem found later (not fixed yet):** when a figure caption runs over two lines, only the first line is removed. A leftover such as "104 padel rackets analyzed." stays in the text, and it caused a wrong number in two answers (see Failures).
-
-**Chunking (cutting the text into pieces).** I tried two ways:
+For cleaning, it removes things that aren't considered real content, like page headers and footers, page numbers, license boxes, figure captions, broken symbols from equations, and everything after "References" (references, funding, author details).
+I did have to fix an issue where two PDFs secretly contained each paragraph two or three times. This made the program read all the copies, so one paper looked twice as long as it really was (9,283 words instead of 4,850), and the search result was then full of duplicate sentences. The fix worked by comparing each line with the text already kept, ignoring spaces and line breaks, and skipping any repeats. After the fix, each section appeared only once. Later on, I ran into another issue that I haven't fixed yet. It involves figure captions running over two lines, where only the first line is removed. We end up with leftovers such as "104 padel rackets analyzed", which caused wrong numbers in two answers (see Failures section).
+Regarding chunking, I approached this in two ways:
 - **Fixed:** pieces of 150 words, overlapping by 25 words, cut anywhere.
 - **Section:** follow the paper's own sections ("3. Results", "4. Discussion") and keep whole paragraphs together, about 260 words per piece. A piece never mixes two sections.
-
-**Information saved with each piece:** paper ID, title, year, page(s), section, file, link and licence. The citation the assistant must use looks like `[munoz2022 p.5]`.
-
-**Embedding.** Each piece is turned into a vector with Gemini (`gemini-embedding-2`) and saved in a Chroma database in `index/`. Vectors are saved as soon as they arrive, and pieces that already have a vector are skipped, so a crash or the daily limit loses nothing.
-
-**Number of pieces:** 440 (fixed) and 284 (section). `index/` is 13.9 MB.
+Additionally, for each piece saved, include the paper ID, title, year, page(s), section, file, link, and license. And finally, the citation assistant must output the following format: `[munoz2022 p.5]`.
+Now, on the embedding side, each piece was turned into a vector with Gemini (`gemini-embedding-2`) and saved in a Chroma database in `index/`. Vectors are saved on arrival, and pieces that already have a vector are skipped, so that a crash or daily limit loses nothing. 
+After calling the ingestion process, I ended with 440 fixed and 284 section pieces, with a total storage size of 13.9 MB.
 
 ## Test set
-
-I wrote 42 questions by reading the papers and choosing facts a padel shop or coach could be asked about. For each question I wrote the correct answer and the page where it is. A small script checked that the answer really is on that page.
+My test set consisted of 42 handwritten questions after reading the papers and choosing the facts a padel shop or coach would be asked about. Each question included the expected answer and the page where it appears, along with a small script that checked whether the answer was actually on that page.
 
 | Type | Number |
 |---|---|
@@ -57,7 +49,7 @@ I wrote 42 questions by reading the papers and choosing facts a padel shop or co
 | unanswerable (the papers don't contain the answer) | 6 |
 | **Total** | **42** |
 
-The unanswerable questions are close to the topic on purpose, to tempt the assistant to guess. For example, the papers mention the wrist strap but not its length, and they link heavy rackets to injuries but never say which weight someone with tennis elbow should use.
+The unanswerable questions are close to the topic on purpose, to tempt the assistant to guess. For example, there were papers that mentioned the wrist strap but not its length, and they link heavy rackets to injuries but never say which weight someone with tennis elbow should use.
 
 Two examples:
 - **multi (q27):** "Is racket weight linked to injuries, and is it linked to where the sweet spot is?" Answer: rackets of 350 g or more were linked to more injuries (munoz2022, p.5), but weight has no link with the sweet spot's position (blanes2023, p.8).
