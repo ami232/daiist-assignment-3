@@ -132,17 +132,17 @@ My agent (`agent.py`) uses LangChain with Gemini (`gemini-flash-lite-latest`). I
 7. Never add a document unless asked.
 8. Keep answers short.
 
-**Approval step.** Before `add_document` runs, the program stops and asks a human "Approve? [y/N]" (shown in the demo above). If nobody is there to answer, it says no. This means the automatic tests can never add documents by accident.
+Before adding documents, the program stops and asks a human, "Approve? [y/N]" (shown in the demo above). If nobody is there to answer, it says no. This means the automatic tests can never add documents by accident.
 
-**Limits.** Max 4 tool calls and 8 AI calls per question.
+Regarding limits, I decided on a maximum of 4 tool calls and 8 AI calls per question.
 
-**My extra guardrail: checking citations.** After the agent answers, the code checks that every citation points to a page the search really returned. If an answer has no citation, or cites a page that wasn't found, the agent gets one chance to fix it. If it still fails, the answer is replaced by "The corpus does not cover this."
+As an extra guardrail, after the agent answers, the code checks that every citation points to a page the search really returned. If an answer has no citation, or cites a page that wasn't found, the agent gets one chance to fix it. If it still fails, the answer is replaced by "The corpus does not cover this."
 
-It fired on **2 questions**:
+This fired on **2 questions**:
 - **q17:** the first answer had the right numbers but **no citation**. After the warning, it added `[blanes2022 p.4]` and the answer was correct.
 - **q29:** the first answer cited **page 4, which was never found by the search**, so the citation was made up. After the warning, the citation was fixed, but the answer was still incomplete (see Failures).
 
-In the end, **100% of answers had only real citations.**
+In the end, 100% of answers had only real citations.
 
 ## Evaluation
 
