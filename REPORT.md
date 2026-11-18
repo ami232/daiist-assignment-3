@@ -1,12 +1,12 @@
 # Assignment 3 Report
 
 - **Name**: Lucía Muñoz Chicote
-- **Student ID**: ✍️
-- **Group**: ✍️ [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
+- **Student ID**: 19445
+- **Group**: BBADBA 5B
 
 ## Use case
 
-✍️ **YOU WRITE** (3–5 sentences, your decision): who asks (a tenant, student or small landlord in Spain), what they do with the answer (sign, pay, leave a flat, write to the landlord), and why a wrong answer costs more than "I don't know" (lost deposit, an illegal rent increase accepted, leaving a flat they had the right to stay in; "I don't know" only sends them to a lawyer, the OCU or the regional housing office).
+The users are tenants in Spain, often young people renting for the first time, who want to know where they stand before they talk to their landlord: whether they can leave early, whether a rent rise is legal, who pays for a repair. They act on the answer straight away. They might withhold rent, accept a fee or move out. A wrong answer can cost them their deposit or their home, or lead them to give up a right they have. An “I don’t know, ask your regional housing office” only costs them some time. That’s why the system has to answer only from the text of the law, cite the article, and say clearly when the corpus doesn’t cover the question.
 
 ## Corpus
 
@@ -33,7 +33,7 @@ The laws contain no personal data. Document added later through `add_document`: 
 
 ## Test set
 
-✍️ **YOU WRITE**: how you wrote the questions (from the article list of the three laws, as a tenant would ask them, in English because the course is in English; reference answers checked against the article text), and that three references (q08 IBI, q22, q25) turned out to be outdated by the October 2026 LAU reform and were corrected, two of them while grading.
+I wrote 33 questions in plain language, the way a tenant would ask them, without legal terms. I wrote them myself instead of copying the three example questions. For each one I wrote down the law and article that answer it and the correct answer in one sentence. There are three types. 21 are single (one article), across the LAU, LDV and LPH. 6 are multi and need two articles put together (for example, the minimum term when the landlord is a company plus who pays the agency fee). 6 are unanswerable: they sound like housing questions but depend on other laws, such as padrón registration, the Bono Alquiler Joven or regional tax deductions. I wrote the reference answers from what I knew of the LAU. Three of them (q08, q22, q25) turned out to be out of date after the 2026 reform: I found q08 before running the evaluation and q22 and q25 while grading, and corrected all three against the current text.
 
 | Kind | Count |
 |---|---|
@@ -75,7 +75,7 @@ Hit = the expected law and article is in the top k. 27 answerable questions; for
 
 Chosen: **articles + vector, k = 5** (`retrieval.py`: `SEARCH_DESIGN`, `SEARCH_METHOD`, `SEARCH_K`).
 
-✍️ **YOU WRITE**: why you chose it from the numbers. Points you can use: best on every measure in table A; BM25 fails on English questions against a Spanish corpus, and hybrid inherits that noise; in table B the designs are within 1–2 questions of each other (27 questions, so not a real difference), and BM25 works once the query is Spanish; article chunks also give citations that point to one article. Table B also shows that the agent's rewrite of the question loses information (vector hit@5 1.00 → 0.89), which is what happened in q11.
+I chunked by article because the article is the unit a tenant needs and the unit the system cites. A fixed-size chunk can cut a rule in half or mix two articles, and then the citation would point to the wrong place. I used vector search instead of keyword search because tenants don’t use the law’s words: they say “leave early”, not “desistimiento”, and “deposit”, not “fianza”. Here the questions are also in English and the law in Spanish, which is why BM25 on the questions as written found almost nothing (4%). With the questions as written (table A), this setup found the right article first in 74% of questions and within the top 5 in 100%, against 67% and 96% for fixed-size chunks with vector search. With the Spanish queries the agent actually sends (table B), the options are within 1–2 questions of each other, so the numbers alone don’t separate them; the citation argument is what decided it. The failures it still has are in multi questions where the second article uses different vocabulary from the question (q26: it found LAU Art. 17 but not the gran tenedor definition in LDV Art. 3).
 
 ## Tools and subagent
 
@@ -126,7 +126,7 @@ Artículo 36. Fianza.
 - *correct* 1/0: same key facts as the reference (numbers, deadlines, who does what, conditions); for multi, both parts; for unanswerable, 1 only if it says the laws don't cover it and doesn't guess.
 - *supported* 1/0: every factual claim appears in the evidence (paraphrase OK); a pure refusal is supported.
 
-✍️ **YOU WRITE**: whether you keep this rubric (it is the draft in `evaluate.py`, `JUDGE_RUBRIC`) and why.
+I’m keeping the rubric: correct (1/0) and supported (1/0), with a note for every 0. Splitting them separates two different risks. An answer can be right but include things that aren’t in the retrieved article (q06), and for a legal assistant that’s still a problem, because the tenant can’t check where it comes from. Binary scores also make it easier to compare my grades with the judge’s. One limit: it doesn’t score form (language mixing, the line in Arabic), so I record those as quality notes alongside.
 
 **Agreement with my grades** (33 answers in `eval/human_labels.csv`, graded before reading the judge):
 
@@ -163,14 +163,30 @@ Data for each case (from `results.csv`, my notes and the trace):
 | q25 (damp) | Correct, but the answer starts with a meaningless line in Arabic | Yes | quality issue |
 | q08, q22, q25 references | Reference answers outdated by the 2026 LAU reform; the agent was right, the reference wrong | | corrected |
 
-✍️ **YOU WRITE**: classify each failure (retrieval miss, wrong answer from the right passage, unsupported claim, wrong refusal, bad test question), give the counts, and say what to fix first.
+| Category | Cases | Count |
+|---|---|---|
+| Wrong retrieval (wrong law or article) | q11 | 1 |
+| Incomplete retrieval in a multi question | q26 | 1 |
+| Misreading of the retrieved text | q20 | 1 |
+| Unsupported synthesis (an inference not in the text) | q06 | 1 |
+| Bad test question (partly answerable from the corpus) | q31 | 1 |
+| Quality: wrong language | q18, q21, q29, q30 | 4 |
+| Quality: generation bug (Arabic line, “PHS” typo) | q25, q32 | 2 |
+
+What I’d fix first is retrieval, because it’s behind the only incorrect answer (q11: it searched the LPH and missed LAU Art. 23 on landlord consent) and behind q26. Two concrete changes: a filter or boost for the LAU when the question is about the tenant–landlord relationship, and, for multi questions, a second search on the concepts the first article mentions but doesn’t define (such as “gran tenedor”). After that, I’d force the answer language to match the question, which is cheap and fixes four cases.
 
 ## Decision
 
 Cost per question (33 questions, final run): **5,689 tokens** on average (input + output, all model calls), **6.0 s** on average, 11.7 s max; 1–3 model calls and 1–2 searches per question, one query embedding per new search. On the free tier this costs 0 €, limited by 15 requests/minute per model and 1,000 embeddings/day.
 
-✍️ **YOU WRITE**: would you let users rely on it, for what, and with which safeguard?
+I would let people rely on it, but only as a first step to understand their rights, not as a substitute for legal advice. With 32/33 correct, and 5 of 6 unanswerable questions refused (the sixth, q31, was partly answerable from LAU Art. 36), it’s reliable for direct questions about the LAU. It also did better than my own reference answers on the 2026 reform, because it reads the current BOE text. The supported score (29/33) shows it sometimes adds things that aren’t in the article, so I’d require three protections: every answer shows the article text it’s based on, so the tenant can check it; it says “I don’t know” instead of guessing when nothing relevant comes up; and when the answer leads to an action with consequences (not paying, leaving the flat, going to court) it recommends confirming with the housing office or a lawyer.
 
 ## AI use
 
-✍️ **YOU CHECK**: I used Claude Code (Anthropic) to write the code (`index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py`, `add_document_demo.py`), to debug it (Gemini model and quota errors, the MCP adapter incompatibility), to check my reference answers against the BOE text, and to fill in the factual parts of this report (tables, numbers, descriptions). The decisions were mine: use case and corpus, the language of the questions, the test set, the design choice, the judge rubric, my 33 grades, the failure analysis and the decision.
+I used Claude Code (Anthropic) as a coding assistant throughout the assignment.
+
+- **Code:** Claude wrote the code (`index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py`, `add_document_demo.py`, `AGENTS.md` and the subagent file) and debugged it with me: the BOE XML keeping old versions of each article, the embedding batch error, the Gemini models that were unavailable or overloaded, the free-tier rate and daily quota limits, and the incompatibility of `langchain-mcp-adapters` with the current MCP library.
+- **Options, not decisions:** for each choice it gave me options with pros and cons and I picked: the corpus (I changed from US supplement regulation to Spanish housing law because it interested me more), English questions, articles + vector, and keeping the rubric.
+- **Checking my work:** it checked my reference answers against the current BOE text and showed me where they didn’t match; I decided to correct q08, and found q22 and q25 myself while grading. It also compared my written sections with the results and pointed out two things that didn’t match the data (q31 was not refused; table B), which I fixed.
+- **Report:** it filled in the factual parts (corpus table, ingestion, retrieval tables, tool descriptions, guardrails, results, cost) from the code and the evaluation output.
+- **Mine:** the use case, the 33 questions and reference answers, my 33 grades and notes (graded before seeing the judge), the design choice, the rubric decision, the failure classification, what to fix first, and the decision. The system itself uses Gemini (embeddings, agent, judge); I did not use it to write anything.
