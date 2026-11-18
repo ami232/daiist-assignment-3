@@ -166,7 +166,9 @@ def token_usage(messages) -> tuple[int, int]:
 
 def build_model(name: str):
     from langchain_google_genai import ChatGoogleGenerativeAI
-    return ChatGoogleGenerativeAI(model=name, temperature=0, max_retries=MODEL_RETRIES,
+    # No temperature: these models use fixed sampling settings, so the same question can get
+    # slightly different answers on different runs.
+    return ChatGoogleGenerativeAI(model=name, max_retries=MODEL_RETRIES,
                                   timeout=MODEL_TIMEOUT, google_api_key=load_api_key())
 
 
