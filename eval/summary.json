@@ -1,0 +1,92 @@
+{
+  "questions_answered": 42,
+  "correct_answers": 32,
+  "answerable": 36,
+  "unsupported_answers": 1,
+  "correct_refusals": 5,
+  "unanswerable": 6,
+  "wrong_refusals": 1,
+  "answered_unanswerable": 1,
+  "citations_valid_rate": 1.0,
+  "guardrail_fired": 2,
+  "judge_correct_rate": 0.905,
+  "judge_supported_rate": 0.976,
+  "avg_input_tokens": 4606,
+  "avg_output_tokens": 125,
+  "avg_model_calls": 2.12,
+  "avg_seconds": 3.5,
+  "max_seconds": 12.65,
+  "failure_causes": {
+    "not a failure (judge rubric)": 1,
+    "retrieval miss": 1,
+    "unsupported claim": 1,
+    "wrong answer from right passage": 2,
+    "wrong refusal": 1,
+    "not a failure (refusal worded differently)": 1
+  },
+  "human_vs_judge": {
+    "n": 28,
+    "correct": {
+      "agreement": 0.964,
+      "kappa": 0.837,
+      "n": 28,
+      "disagreements": [
+        "q42"
+      ]
+    },
+    "supported": {
+      "agreement": 0.893,
+      "kappa": -0.05,
+      "n": 28,
+      "disagreements": [
+        "q01",
+        "q11",
+        "q12"
+      ]
+    }
+  },
+  "retrieval": [
+    {
+      "design": "fixed+dense",
+      "chunks": 440,
+      "hit@1": 0.667,
+      "hit@3": 0.861,
+      "hit@5": 0.944,
+      "multi_all@5": 0.143,
+      "words_in_prompt@5": 740
+    },
+    {
+      "design": "fixed+hybrid",
+      "chunks": 440,
+      "hit@1": 0.639,
+      "hit@3": 0.778,
+      "hit@5": 0.889,
+      "multi_all@5": 0.429,
+      "words_in_prompt@5": 739
+    },
+    {
+      "design": "section+dense",
+      "chunks": 284,
+      "hit@1": 0.75,
+      "hit@3": 0.917,
+      "hit@5": 0.972,
+      "multi_all@5": 0.429,
+      "words_in_prompt@5": 1062
+    },
+    {
+      "design": "section+hybrid",
+      "chunks": 284,
+      "hit@1": 0.611,
+      "hit@3": 0.833,
+      "hit@5": 0.889,
+      "multi_all@5": 0.571,
+      "words_in_prompt@5": 1080
+    }
+  ],
+  "production_design": {
+    "design": "section",
+    "hybrid": false,
+    "k": 5,
+    "chosen_by": "evaluate.py: max hit@5, then hit@1, then fewest words"
+  }
+}

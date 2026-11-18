@@ -1,0 +1,5 @@
+design,chunks,hit@1,hit@3,hit@5,multi_all@5,words_in_prompt@5
+fixed+dense,440,0.667,0.861,0.944,0.143,740
+fixed+hybrid,440,0.639,0.778,0.889,0.429,739
+section+dense,284,0.75,0.917,0.972,0.429,1062
+section+hybrid,284,0.611,0.833,0.889,0.571,1080

@@ -1,0 +1,158 @@
+{
+  "blanes2023": {
+    "title": "Identifying the Sweet Spot of Padel Rackets with a Robot",
+    "file": "sensors-23-09908.pdf",
+    "url": "https://www.mdpi.com/1424-8220/23/24/9908/pdf",
+    "licence": "CC BY 4.0",
+    "year": 2023,
+    "venue": "Sensors 23(24):9908",
+    "origin": "corpus",
+    "sha256": "e4fcfe9429d8c6aba4f31e193a8aaa4f6fe149da01f05cb1e27579b3e7c226b9",
+    "words": 4853,
+    "raw_words": 9283,
+    "chunks": {
+      "fixed": 39,
+      "section": 22
+    }
+  },
+  "blanes2022": {
+    "title": "Identifying the Inertial Properties of a Padel Racket: An Experimental Maneuverability Proposal",
+    "file": "sensors-22-09266.pdf",
+    "url": "https://www.mdpi.com/1424-8220/22/23/9266/pdf",
+    "licence": "CC BY 4.0",
+    "year": 2022,
+    "venue": "Sensors 22(23):9266",
+    "origin": "corpus",
+    "sha256": "0d4c3898f6347fbbaeb99ca64821c18ebbb058a14d522ced10259b7df835975c",
+    "words": 8092,
+    "raw_words": 15345,
+    "chunks": {
+      "fixed": 65,
+      "section": 43
+    }
+  },
+  "munoz2022": {
+    "title": "Incidence of Upper Body Injuries in Amateur Padel Players",
+    "file": "ijerph-19-16858.pdf",
+    "url": "https://www.mdpi.com/1660-4601/19/24/16858/pdf",
+    "licence": "CC BY 4.0",
+    "year": 2022,
+    "venue": "Int. J. Environ. Res. Public Health 19(24):16858",
+    "origin": "corpus",
+    "sha256": "4d04096042190901d0235ee07832d41f3013c3dc762255ecaac64bc8b584017a",
+    "words": 4424,
+    "raw_words": 5979,
+    "chunks": {
+      "fixed": 36,
+      "section": 23
+    }
+  },
+  "dahmen2023": {
+    "title": "Incidence, prevalence and nature of injuries in padel: a systematic review",
+    "file": "e001607.full.pdf",
+    "url": "https://bmjopensem.bmj.com/content/bmjosem/9/2/e001607.full.pdf",
+    "licence": "CC BY-NC 4.0",
+    "year": 2023,
+    "venue": "BMJ Open Sport & Exercise Medicine 9(2):e001607",
+    "origin": "corpus",
+    "sha256": "9841a62ed336c49ceed38eecaf08164877e448b0b92ddf711c2511539b2a933f",
+    "words": 5014,
+    "raw_words": 7975,
+    "chunks": {
+      "fixed": 40,
+      "section": 24
+    }
+  },
+  "garcia2022": {
+    "title": "Performance Outcome Measures in Padel: A Scoping Review",
+    "file": "ijerph-19-04395.pdf",
+    "url": "https://www.mdpi.com/1660-4601/19/7/4395/pdf",
+    "licence": "CC BY 4.0",
+    "year": 2022,
+    "venue": "Int. J. Environ. Res. Public Health 19(7):4395",
+    "origin": "corpus",
+    "sha256": "3ee94ecc6d01c29cafed5c11d79fd2aa2e2d5be7406f54ecdcbc82b9ed78df8f",
+    "words": 5500,
+    "raw_words": 9184,
+    "chunks": {
+      "fixed": 44,
+      "section": 29
+    }
+  },
+  "martin2025": {
+    "title": "Topics of Study in Under-18 Padel Categories: A Scoping Review",
+    "file": "sports-13-00075.pdf",
+    "url": "https://www.mdpi.com/2075-4663/13/3/75/pdf",
+    "licence": "CC BY 4.0",
+    "year": 2025,
+    "venue": "Sports 13(3):75",
+    "origin": "corpus",
+    "sha256": "d621a95dded21e1e0118619eede9916397fa509412cbe02cff61637d5b774bf6",
+    "words": 6898,
+    "raw_words": 9509,
+    "chunks": {
+      "fixed": 55,
+      "section": 38
+    }
+  },
+  "aguilar2026": {
+    "title": "Epidemiology, Incidence, Prevalence, and Treatment of Injuries in Padel: A Scoping Review",
+    "file": "applsci-16-02680.pdf",
+    "url": "https://www.mdpi.com/2076-3417/16/6/2680/pdf",
+    "licence": "CC BY 4.0",
+    "year": 2026,
+    "venue": "Applied Sciences 16(6):2680",
+    "origin": "corpus",
+    "sha256": "2a3f1131f5bb9ea0278da2293438f948e9927051a010f6df8ba30b9d1bfd56c5",
+    "words": 7144,
+    "raw_words": 9366,
+    "chunks": {
+      "fixed": 57,
+      "section": 37
+    }
+  },
+  "portugal2025": {
+    "title": "Sport-Related Injuries in Portuguese Padel Practitioners and Their Characteristics",
+    "file": "medicina-61-01707.pdf",
+    "url": "https://www.mdpi.com/1648-9144/61/9/1707/pdf",
+    "licence": "CC BY 4.0",
+    "year": 2025,
+    "venue": "Medicina 61(9):1707",
+    "origin": "corpus",
+    "sha256": "b27e122666d5b9c8c27b4132782b454bf3c519a178e39e7657e7fdbc68ee3158",
+    "words": 8515,
+    "raw_words": 11428,
+    "chunks": {
+      "fixed": 68,
+      "section": 39
+    }
+  },
+  "madinah2025": {
+    "title": "Assessing the Spread of the Sport of Padel and the Prevalence and Causes of Injuries Among Padel Players",
+    "file": "healthcare-13-00367.pdf",
+    "url": "https://www.mdpi.com/2227-9032/13/4/367/pdf",
+    "licence": "CC BY 4.0",
+    "year": 2025,
+    "venue": "Healthcare 13(4):367",
+    "origin": "corpus",
+    "sha256": "743f3fd41cec77903996c4f20b569f0aeb76df5b10f59f7bdb3105ac19f1e704",
+    "words": 4436,
+    "raw_words": 5551,
+    "chunks": {
+      "fixed": 36,
+      "section": 29
+    }
+  },
+  "padel_wikipedia": {
+    "title": "padel_wikipedia",
+    "file": "padel_wikipedia.txt",
+    "url": "",
+    "licence": "unknown (added by user)",
+    "origin": "added",
+    "sha256": "568b7af2efb1f10a1f0a7ceef2390b0f5290e1c48776f81f5bdef0d156d7c950",
+    "words": 3001,
+    "chunks": {
+      "section": 13
+    }
+  }
+}
