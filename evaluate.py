@@ -296,7 +296,7 @@ async def before_after(questions: list[dict], answers_base: dict) -> None:
     lines.append(f"## Before (base corpus only)\n\n{before['answer'] if before else '(not run)'}\n")
     if not added:
         lines.append(f"## After\n\nNo document has been added yet. Run in a terminal:\n\n"
-                     f"    uv run python main.py ask \"Añade el documento {ADDED_DOC.relative_to(ROOT)}\"\n")
+                     f"    uv run python main.py ask \"Add the document {ADDED_DOC.relative_to(ROOT)}\"\n")
     else:
         cache = load_jsonl(ANSWERS)
         k = key_for(AGENT_VERSION, q["id"], q["question"], "False")

@@ -46,14 +46,16 @@ FALLBACKS = [m for m in os.environ.get("GEMINI_FALLBACKS", "gemini-3.6-flash,gem
 
 CITE_RE = re.compile(r"\[([A-ZÁÉÍÓÚ][\w/.\-]*),\s*([^\]\[]+?)\]")
 OFFERED_RE = re.compile(r"cite as \[([^,\]]+),\s*([^\]]+)\]")
-REFUSAL_RE = re.compile(r"no lo s[ée]|does not cover|no cubre|no contiene|no (?:aparece|figura|se regula)|"
+REFUSAL_RE = re.compile(r"i don'?t know|i do not know|no lo s[ée]|does not cover|no cubre|no contiene|no (?:aparece|figura|se regula)|"
                         r"no (?:puedo|es posible) (?:dar|responder|confirmar)|not covered|no incluye", re.I)
-WITHHELD = ("No lo sé: no he podido dar una respuesta respaldada por citas válidas del corpus. "
-            "Consulta el texto del BOE o a un profesional.")
+WITHHELD = ("I don't know: I could not produce an answer backed by valid citations from the corpus. "
+            "Please check the law on boe.es or ask a professional.")
 
 
 def norm_cite(source: str, loc: str) -> tuple[str, str]:
+    loc = loc.split(",")[0]                                    # "Artículo 3, k" -> "Artículo 3"
     loc = re.sub(r"\s*\(parte \d+/\d+\)", "", loc.strip().rstrip("."))
+    loc = re.sub(r"^(art[íi]culo \d+(?: bis| ter)?)[.\s]\d.*$", r"\1", loc, flags=re.I)  # "Artículo 9.1" -> "Artículo 9"
     return source.strip(), re.sub(r"\s+", " ", loc).lower()
 
 

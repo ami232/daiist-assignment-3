@@ -1,5 +1,5 @@
 design,method,questions,hit@1,hit@3,hit@5,all_passages@5,words_in_prompt@5
-fixed,vector,29,0.724,0.931,1.0,0.966,1493
-fixed,hybrid,29,0.759,0.931,1.0,0.931,1493
-structure,vector,29,0.931,0.966,0.966,0.931,999
-structure,hybrid,29,0.724,0.828,0.897,0.828,1030
+fixed,vector,29,0.759,0.966,1.0,0.931,1493
+fixed,hybrid,29,0.759,0.931,1.0,0.966,1493
+structure,vector,29,0.897,0.966,0.966,0.897,910
+structure,hybrid,29,0.793,0.966,0.966,0.862,940
