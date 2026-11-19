@@ -12,3 +12,6 @@ corpus/
 
 # Never commit your API key
 .env
+
+# scratch files left by the assistant
+_to_delete/

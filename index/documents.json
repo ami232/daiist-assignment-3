@@ -1,0 +1,89 @@
+{
+  "amoxicillin": {
+    "chunks": 32,
+    "designs": [
+      "fixed",
+      "structure"
+    ],
+    "effective_time": "20261113",
+    "file": "amoxicillin.json",
+    "set_id": "987786a1-d748-4b42-abb5-62a2f38ef195",
+    "sha256": "0e147f5049e0e54b",
+    "title": "Amoxicillin",
+    "words": 5266
+  },
+  "apixaban": {
+    "chunks": 105,
+    "designs": [
+      "structure"
+    ],
+    "file": "apixaban.json",
+    "sha256": "e8720200d87a0cc8",
+    "words": 18608
+  },
+  "atorvastatin": {
+    "chunks": 61,
+    "designs": [
+      "fixed",
+      "structure"
+    ],
+    "effective_time": "20261112",
+    "file": "atorvastatin.json",
+    "set_id": "8cc6240a-58d3-4bca-aa1e-662228957f75",
+    "sha256": "54c8619fd2ef4964",
+    "title": "Atorvastatin calcium",
+    "words": 10742
+  },
+  "lisinopril": {
+    "chunks": 46,
+    "designs": [
+      "fixed",
+      "structure"
+    ],
+    "effective_time": "20261112",
+    "file": "lisinopril.json",
+    "set_id": "dd015c18-1ea6-44e3-9186-8d2f8444d874",
+    "sha256": "08947c4dff492e00",
+    "title": "LISINOPRIL",
+    "words": 7725
+  },
+  "metformin": {
+    "chunks": 41,
+    "designs": [
+      "fixed",
+      "structure"
+    ],
+    "effective_time": "20261110",
+    "file": "metformin.json",
+    "set_id": "ec43efb2-8a50-4bac-9576-f4303841a497",
+    "sha256": "1f2d487910929316",
+    "title": "Metformin Hydrochloride",
+    "words": 6710
+  },
+  "sertraline": {
+    "chunks": 71,
+    "designs": [
+      "fixed",
+      "structure"
+    ],
+    "effective_time": "20261105",
+    "file": "sertraline.json",
+    "set_id": "687ebdc4-6946-454e-8d46-3207488ccf32",
+    "sha256": "d5f8e9c435a86e7e",
+    "title": "Sertraline Hydrochloride",
+    "words": 12913
+  },
+  "warfarin": {
+    "chunks": 50,
+    "designs": [
+      "fixed",
+      "structure"
+    ],
+    "effective_time": "20261109",
+    "file": "warfarin.json",
+    "set_id": "61ab23a7-bc67-4777-854a-bf43c788a69a",
+    "sha256": "feef7fd3f2d82e40",
+    "title": "Warfarin Sodium",
+    "words": 8685
+  }
+}

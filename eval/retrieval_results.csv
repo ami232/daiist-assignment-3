@@ -1,0 +1,5 @@
+design,chunks,hit@1,hit@3,hit@5,multi_both@5,words_in_prompt@5
+fixed + dense,276,0.733,0.867,0.967,0.75,1087
+fixed + hybrid,276,0.7,0.933,0.967,0.625,1087
+structure + dense,406,0.767,0.933,1.0,0.875,923
+structure + hybrid,406,0.667,0.9,0.967,0.625,921
