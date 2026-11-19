@@ -1,22 +1,42 @@
 """
 Assignment 3: build the index (`main.py index`).
 
-Step 1 (this part): download the corpus into corpus/ (git-ignored), extract the
-text page by page and clean it. Later steps add chunking and embedding.
+1. Download the corpus into corpus/ (git-ignored).
+2. Extract the text page by page and clean it.
+3. Cut each page into overlapping chunks of about 200 words, keeping the
+   document and page number of every chunk.
+4. Embed the chunks with Gemini (one request per chunk) and store them in a ChromaDB index in index/.
+   Each batch is saved as soon as it is embedded, and chunks that already have
+   a vector are skipped, so a crash or the daily limit loses nothing.
 
-The per-file steps are functions, so server.py's add-document tool can import
-them instead of rewriting them.
+The per-file steps are functions (`chunk_file`, `embed_and_store`), so
+server.py's add-document tool can import them instead of rewriting them.
 """
 
 import logging
 import re
+import sys
+import time
 from pathlib import Path
 
+import chromadb
 import httpx
+from google import genai
 from pypdf import PdfReader
+
+from api_key import load_api_key
 
 ROOT = Path(__file__).resolve().parent
 CORPUS_DIR = ROOT / "corpus"
+INDEX_DIR = ROOT / "index"
+COLLECTION = "eic_chunks"
+
+CHUNK_WORDS = 200  # words per chunk
+OVERLAP_WORDS = 40  # words shared with the previous chunk, so a sentence cut at the edge is not lost
+
+EMBED_MODEL = "gemini-embedding-2"
+EMBED_DIM = 768  # smaller than the default 3072: keeps index/ small, with little loss in quality
+BATCH_SIZE = 20  # chunks embedded before each save to index/
 
 # pypdf prints harmless "Ignoring wrong pointing object" warnings for the Work Programme PDF.
 logging.getLogger("pypdf").setLevel(logging.ERROR)
@@ -93,26 +113,116 @@ def clean_page(text: str) -> str:
     return text.strip()
 
 
-def load_document(doc: dict) -> list[dict]:
-    """Download, extract and clean one document. Returns one record per non-empty page."""
-    path = download(doc)
+def load_pages(path: Path, source: str, title: str) -> list[dict]:
+    """Extract and clean one PDF. Returns one record per page that has real text."""
     pages = []
     for page_number, raw in extract_pages(path):
         text = clean_page(raw)
         if len(text.split()) < 20:  # cover pages, blank pages, pure tables of contents
             continue
-        pages.append({"source": doc["source"], "title": doc["title"], "page": page_number, "text": text})
+        pages.append({"source": source, "title": title, "page": page_number, "text": text})
     return pages
 
 
+def chunk_pages(pages: list[dict]) -> list[dict]:
+    """Cut every page into chunks of CHUNK_WORDS words that overlap by OVERLAP_WORDS.
+    A chunk never crosses a page, so its page number is always exact."""
+    step = CHUNK_WORDS - OVERLAP_WORDS
+    chunks = []
+    for page in pages:
+        words = page["text"].split()
+        starts = range(0, max(len(words) - OVERLAP_WORDS, 1), step)
+        for i, start in enumerate(starts):
+            piece = words[start:start + CHUNK_WORDS]
+            chunks.append({
+                "id": f"{page['source']}-p{page['page']:03d}-c{i}",
+                "text": " ".join(piece),
+                "source": page["source"],
+                "title": page["title"],
+                "page": page["page"],
+                "words": len(piece),
+            })
+    return chunks
+
+
+def chunk_file(path: Path, source: str | None = None, title: str | None = None) -> list[dict]:
+    """Extract, clean and chunk one PDF file. Used for the corpus and by add_document."""
+    path = Path(path)
+    source = source or re.sub(r"\W+", "_", path.stem).strip("_").lower()
+    title = title or path.stem
+    return chunk_pages(load_pages(path, source, title))
+
+
+def get_collection():
+    """Open (or create) the ChromaDB collection stored in index/."""
+    client = chromadb.PersistentClient(path=str(INDEX_DIR))
+    return client.get_or_create_collection(COLLECTION, metadata={"hnsw:space": "cosine"})
+
+
+def embed_one(client: genai.Client, text: str) -> list[float]:
+    """Embed one text, waiting and retrying if we hit the per-minute rate limit.
+    (gemini-embedding-2 merges a list of texts into ONE vector, so we send them one by one.)"""
+    for attempt in range(6):
+        try:
+            result = client.models.embed_content(
+                model=EMBED_MODEL, contents=text, config={"output_dimensionality": EMBED_DIM}
+            )
+            return result.embeddings[0].values
+        except genai.errors.ClientError as error:
+            if error.code != 429 or attempt == 5:
+                raise
+            print("  Rate limit reached, waiting 60 seconds ...", file=sys.stderr)
+            time.sleep(60)
+
+
+def embed_texts(client: genai.Client, texts: list[str]) -> list[list[float]]:
+    """Embed a batch of texts, one request each."""
+    vectors = []
+    for text in texts:
+        vectors.append(embed_one(client, text))
+        time.sleep(0.7)  # stay under the free tier's requests-per-minute limit
+    return vectors
+
+
+def document_text(chunk: dict) -> str:
+    """What we embed for a chunk: its title and page, then its text (the format Google suggests)."""
+    return f"title: {chunk['title']}, page {chunk['page']} | text: {chunk['text']}"
+
+
+def embed_and_store(chunks: list[dict], collection=None) -> int:
+    """Embed the chunks that are not in the index yet and save them, batch by batch.
+    Returns how many chunks were added."""
+    collection = collection or get_collection()
+    existing = set(collection.get(ids=[c["id"] for c in chunks], include=[])["ids"]) if chunks else set()
+    todo = [c for c in chunks if c["id"] not in existing]
+    if not todo:
+        return 0
+    client = genai.Client(api_key=load_api_key())
+    added = 0
+    for i in range(0, len(todo), BATCH_SIZE):
+        batch = todo[i:i + BATCH_SIZE]
+        vectors = embed_texts(client, [document_text(c) for c in batch])
+        collection.add(
+            ids=[c["id"] for c in batch],
+            embeddings=vectors,
+            documents=[c["text"] for c in batch],
+            metadatas=[{k: c[k] for k in ("source", "title", "page", "words")} for c in batch],
+        )
+        added += len(batch)
+        print(f"  embedded and saved {added}/{len(todo)} chunks")
+    return added
+
+
 def main() -> None:
-    total_words = 0
+    collection = get_collection()
+    total_chunks = 0
     for doc in DOCUMENTS:
-        pages = load_document(doc)
-        words = sum(len(p["text"].split()) for p in pages)
-        total_words += words
-        print(f"{doc['title']}: {len(pages)} pages kept, {words:,} words")
-    print(f"Total: {total_words:,} words")
+        chunks = chunk_file(download(doc), doc["source"], doc["title"])
+        total_chunks += len(chunks)
+        print(f"{doc['title']}: {len(chunks)} chunks")
+        added = embed_and_store(chunks, collection)
+        print(f"  {added} new chunks embedded, {len(chunks) - added} already in the index")
+    print(f"Done: {total_chunks} chunks, {collection.count()} in the index.")
 
 
 if __name__ == "__main__":
