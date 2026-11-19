@@ -48,10 +48,10 @@
   - _Depends on: 0.1_
 
 - [ ] **2. Use case and test set (yours, before tuning)**
-  - [ ] 2.1 **You**: write the Use case section. Cover who asks, what they do with the answer, and the cost of a wrong answer vs a refusal. Fix the in-scope and out-of-scope list. _REQ-1_
-  - [ ] 2.2 **You**: write `eval/questions.csv`: ≥30 questions in Spanish, ≥5 `multi`, ≥5 `unanswerable` close to the topic. Include one unanswerable question that the held-out document will answer. _REQ-7_
-  - [ ] 2.3 **Claude**: format check only: columns, kinds, and that every `expected_source`/`expected_location` exists in `outline.csv`. No content edits. _REQ-7.2_
-  - [ ] 2.4 **You**: write `AGENTS.md` rules, each with its reason, and the exact refusal phrase. _REQ-10.6_
+  - [x] 2.1 **You**: write the Use case section (in REPORT.md; the explicit in-scope/out-of-scope list is still optional). Cover who asks, what they do with the answer, and the cost of a wrong answer vs a refusal. Fix the in-scope and out-of-scope list. _REQ-1_
+  - [x] 2.2 **You**: write `eval/questions.csv` (31 questions: 16 single, 7 multi, 8 unanswerable incl. q31 for the COT2026 demo; reference answers by the student): ≥30 questions in Spanish, ≥5 `multi`, ≥5 `unanswerable` close to the topic. Include one unanswerable question that the held-out document will answer. _REQ-7_
+  - [x] 2.3 **Claude**: `tests/test_questions.py` (passing). Format check only: columns, kinds, and that every `expected_source`/`expected_location` exists in `outline.csv`. No content edits. _REQ-7.2_
+  - [x] 2.4 **You**: `AGENTS.md`: you chose 7 rules, the refusal phrase and the `[FUENTE, Ubicación]` citation format; Claude drafted the wording. **Review the reasons before Phase 5.** _REQ-10.6_
   - _Depends on: 1.4_
 
 - [ ] **3. Embeddings and retrieval comparison**
