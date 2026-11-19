@@ -1,0 +1,96 @@
+{
+ "q01": [
+  "\\$70\\.00 (?:and|to) \\$78\\.00"
+ ],
+ "q02": [
+  "(?<![\\d.,])801,351,354[\\s\\S]*(?<![\\d.,])23,648,646"
+ ],
+ "q03": [
+  "general corporate purposes"
+ ],
+ "q04": [
+  "concurrent private placement by approximately \\$793 million"
+ ],
+ "q05": [
+  "(?<![\\d.,])65\\.79"
+ ],
+ "q06": [
+  "(?<![\\d.,])123,750,000"
+ ],
+ "q07": [
+  "non-founder directors[\\s\\S]{0,600}180th day"
+ ],
+ "q08": [
+  "(?:authority|power|entitled) to elect (?:and remove )?(?:the Class T directors, who together will constitute a majority|a majority|the smallest number of directors that constitutes a majority)"
+ ],
+ "q09": [
+  "(?<![\\d.,])50\\.1%"
+ ],
+ "q10": [
+  "responsibl[ey] develop(?:ment)? and maint(?:ain|enance) (?:of )?advanced AI for the long-term benefit of humanity"
+ ],
+ "q11": [
+  "Kingdom of Sweden"
+ ],
+ "q12": [
+  "discretionary allocation"
+ ],
+ "q13": [
+  "(?<![\\d.,])1,900 customers with \\$1 million"
+ ],
+ "q14": [
+  "Pay-for-intelligence"
+ ],
+ "q15": [
+  "reliance on a limited number of CSPs"
+ ],
+ "q16": [
+  "Bartz[\\s\\S]{0,300}\\$1\\.5 billion"
+ ],
+ "q17": [
+  "(?<![\\d.,])4,585[\\s\\S]*(?<![\\d.,])41,965"
+ ],
+ "q18": [
+  "\\(4\\)\\s?%[\\s\\S]*12\\s?%"
+ ],
+ "q19": [
+  "\\$120\\.00"
+ ],
+ "q20": [
+  "completeness, comprehensibility and consisten"
+ ],
+ "q21": [
+  "employees, excluding our co-founders"
+ ],
+ "q22": [
+  "majority of the Whole Board, including at least one At-Large Director"
+ ],
+ "q23": [
+  "Robinhood",
+  "which are resident or located in (?:one of|any of) the Covered EEA Countries"
+ ],
+ "q24": [
+  "Micron, Microsoft,? and TSMC",
+  "not be subject to the lock-up"
+ ],
+ "q25": [
+  "(?<![\\d.,])84\\.6 billion",
+  "(?<![\\d.,])900\\.9 billion"
+ ],
+ "q26": [
+  "(?:GPU|TPU|Trainium)[\\s\\S]{0,400}(?:GPU|TPU|Trainium)[\\s\\S]{0,400}(?:GPU|TPU|Trainium)",
+  "reliance on a limited number of CSPs"
+ ],
+ "q27": [
+  "at least \\$5\\.0 billion",
+  "(?<![\\d.,])95\\.6 billion"
+ ],
+ "q28": [
+  "top five customers represented approximately 25%",
+  "(?<![\\d.,])33,242"
+ ],
+ "q29": [
+  "co-founders,? during the period[\\s\\S]{0,400}365th day",
+  "The Class F Sunset Time (?:occurs|will occur)"
+ ]
+}
