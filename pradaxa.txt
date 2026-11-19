@@ -1,0 +1,662 @@
+
+===== pradaxa | SmPC 4.1, SmPC 4.2 | page 2 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.1 Therapeutic indications; SmPC 4.2 Posology and method of administration
+4.1 Therapeutic indications
+Primary prevention of venous thromboembolic events (VTE) in adult patients who have undergone elective total hip replacement surgery or total knee replacement surgery.
+Treatment of VTE and prevention of recurrent VTE in paediatric patients aged 8 to less than 18 years of age.
+4.2 Posology and method of administration
+Posology
+Pradaxa capsules can be used in adults and paediatric patients aged 8 years or older who are able to swallow the capsules whole.
+Primary prevention of VTE in orthopaedic surgery
+The recommended doses of dabigatran etexilate and the duration of therapy for primary prevention of VTE in orthopaedic surgery are shown in table 1.
+Table 1: Dose recommendations and duration of therapy for primary prevention of VTE in orthopaedic surgery
+Treatment initiation on the day of surgery 1-4 hours after completed surgery Maintenance dose starting on the first day after surgery Duration of maintenance dose Patients following elective knee replacement surgery single capsule of 110 mg dabigatran etexilate 220 mg dabigatran etexilate once daily taken as 2 capsules of 110 mg 10 days Patients following elective hip replacement surgery 28-35 days
+Dose reduction recommended
+Patients with moderate renal impairment (creatinine clearance (CrCL 30-50 mL/min) single capsule of 75 mg dabigatran etexilate 150 mg dabigatran etexilate once daily taken as 2 capsules of 75 mg 10 days (knee replacement surgery) or 28-35 days (hip replacement surgery) Patients who receive concomitant verapamil*, amiodarone, quinidine Patients aged 75 or above *For patients with moderate renal impairment concomitantly treated with verapamil see Special populations
+For both surgeries, if haemostasis is not secured, initiation of treatment should be delayed. If treatment is not started on the day of surgery then treatment should be initiated with 2 capsules once daily.
+Assessment of renal function prior to and during dabigatran etexilate treatment
+
+===== pradaxa | SmPC 4.2 | page 3 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.2 Posology and method of administration
+In all patients and especially in the elderly (> 75 years), as renal impairment may be frequent in this age group: • Renal function should be assessed by calculating the creatinine clearance (CrCL) prior to initiation of treatment with dabigatran etexilate to exclude patients with severe renal impairment (i.e. CrCL < 30 mL/min) (see sections 4.3, 4.4 and 5.2). • Renal function should also be assessed when a decline in renal function is suspected during treatment (e.g. hypovolaemia, dehydration, and in case of concomitant use of certain medicinal products).
+The method to be used to estimate renal function (CrCL in mL/min) is the Cockcroft-Gault method.
+Missed dose
+It is recommended to continue with the remaining daily doses of dabigatran etexilate at the same time of the next day.
+No double dose should be taken to make up for missed individual doses.
+Discontinuation of dabigatran etexilate
+Dabigatran etexilate treatment should not be discontinued without medical advice. Patients should be instructed to contact the treating physician if they develop gastrointestinal symptoms such as dyspepsia (see section 4.8).
+Switching
+Dabigatran etexilate treatment to parenteral anticoagulant: It is recommended to wait 24 hours after the last dose before switching from dabigatran etexilate to a parenteral anticoagulant (see section 4.5).
+Parenteral anticoagulants to dabigatran etexilate: The parenteral anticoagulant should be discontinued and dabigatran etexilate should be started 0-2 hours prior to the time that the next dose of the alternate therapy would be due, or at the time of discontinuation in case of continuous treatment (e.g. intravenous Unfractionated Heparin (UFH)) (see section 4.5).
+Special populations
+Renal impairment
+Treatment with dabigatran etexilate in patients with severe renal impairment (CrCL < 30 mL/min) is contraindicated (see section 4.3).
+
+===== pradaxa | SmPC 4.2 | page 4 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.2 Posology and method of administration
+In patients with moderate renal impairment (CrCL 30-50 mL/min), a dose reduction is recommended (see table 1 above and sections 4.4 and 5.1).
+Concomitant use of dabigatran etexilate with mild to moderate P-glycoprotein (P-gp) inhibitors, i.e. amiodarone, quinidine or verapamil
+Dosing should be reduced as indicated in table 1 (see also sections 4.4 and 4.5). In this situation dabigatran etexilate and these medicinal products should be taken at the same time.
+In patients with moderate renal impairment and concomitantly treated with verapamil, a dose reduction of dabigatran etexilate to 75 mg daily should be considered (see sections 4.4 and 4.5).
+Elderly
+For elderly patients > 75 years, a dose reduction is recommended (see table 1 above and sections 4.4 and 5.1).
+Weight
+There is very limited clinical experience in patients with a body weight < 50 kg or > 110 kg at the recommended posology. Given the available clinical and kinetic data no adjustment is necessary (see section 5.2), but close clinical surveillance is recommended (see section 4.4).
+Gender
+No dose adjustment is necessary (see section 5.2).
+Paediatric population
+There is no relevant use of dabigatran etexilate in the paediatric population for the indication of primary prevention of VTE in patients who have undergone elective total hip replacement surgery or total knee replacement surgery.
+Treatment of VTE and prevention of recurrent VTE in paediatric patients
+For the treatment of VTE in paediatric patients, treatment should be initiated following treatment with a parenteral anticoagulant for at least 5 days. For prevention of recurrent VTE, treatment should be initiated following previous treatment.
+Dabigatran etexilate capsules should be taken twice daily, one dose in the morning and one dose in the evening, at approximately the same time every day. The dosing interval should be as close to 12 hours as possible.
+
+===== pradaxa | SmPC 4.2 | page 5 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.2 Posology and method of administration
+The recommended dose of dabigatran etexilate capsules is based on the patient’s weight and age as shown in table 2. The dose should be adjusted according to weight and age as treatment progresses.
+For weight and age combinations not listed in the dosing table no dosing recommendation can be provided.
+Table 2: Single and total daily dabigatran etexilate doses in milligrams (mg) by weight in kilograms (kg) and age in years of the patient
+Weight / age combinations Single dose in mg Total daily dose in mg Weight in kg Age in years 11 to < 13 8 to < 9 75 150 13 to < 16 8 to < 11 110 220 16 to < 21 8 to < 14 110 220 21 to < 26 8 to < 16 150 300 26 to < 31 8 to < 18 150 300 31 to < 41 8 to < 18 185 370 41 to < 51 8 to < 18 220 440 51 to < 61 8 to < 18 260 520 61 to < 71 8 to < 18 300 600 71 to < 81 8 to < 18 300 600 > 81 10 to < 18 300 600 Single doses requiring combinations of more than one capsule: 300 mg: two 150 mg capsules or four 75 mg capsules 260 mg: one 110 mg plus one 150 mg capsule or one 110 mg plus two 75 mg capsules 220 mg: two 110 mg capsules 185 mg: one 75 mg plus one 110 mg capsule 150 mg: one 150 mg capsule or two 75 mg capsules
+Assessment of renal function prior to and during treatment
+
+===== pradaxa | SmPC 4.2 | page 5 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.2 Posology and method of administration
+Prior to the initiation of treatment, the estimated glomerular filtration rate (eGFR) should be estimated using the Schwartz formula (method used for creatinine assessment to be checked with local lab).
+Treatment with dabigatran etexilate in paediatric patients with eGFR < 50 mL/min/1.73 m2 is contraindicated (see section 4.3).
+Patients with an eGFR ≥ 50 mL/min/1.73 m2 should be treated with the dose according to table 2.
+While on treatment, renal function should be assessed in certain clinical situations when it is suspected that the renal function could decline or deteriorate (such as hypovolemia, dehydration, and with certain co-medications, etc).
+Duration of use
+The duration of therapy should be individualised based on the benefit risk assessment.
+Missed dose
+A forgotten dabigatran etexilate dose may still be taken up to 6 hours prior to the next scheduled dose. From 6 hours prior to the next scheduled dose onwards, the missed dose should be omitted. A double dose to make up for missed individual doses must never be taken.
+Discontinuation of dabigatran etexilate
+Dabigatran etexilate treatment should not be discontinued without medical advice. Patients or their caregivers should be instructed to contact the treating physician if the patient develops gastrointestinal symptoms such as dyspepsia (see section 4.8).
+Switching
+Dabigatran etexilate treatment to parenteral anticoagulant: It is recommended to wait 12 hours after the last dose before switching from dabigatran etexilate to a parenteral anticoagulant (see section 4.5).
+Dabigatran etexilate treatment to Vitamin K antagonists (VKA): Patients should start VKA 3 days before discontinuing dabigatran etexilate. Because dabigatran etexilate can impact the international normalised ratio (INR), the INR will better reflect VKA’s effect only after dabigatran etexilate has been stopped for at least 2 days. Until then, INR values should be interpreted with caution.
+
+===== pradaxa | SmPC 4.2 | page 6 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.2 Posology and method of administration
+VKA to dabigatran etexilate: The VKA should be stopped. Dabigatran etexilate can be given as soon as the INR is < 2.0.
+Method of administration
+This medicinal product is for oral use. The capsules can be taken with or without food. The capsules should be swallowed as a whole with a glass of water, to facilitate delivery to the stomach. Patients should be instructed not to open the capsule as this may increase the risk of bleeding (see sections 5.2 and 6.6).
+
+===== pradaxa | SmPC 4.2 | page 31 =====
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.2 Posology and method of administration
+4.2 Posology and method of administration
+Posology
+Primary prevention of VTE in orthopaedic surgery
+Dose reduction recommended
+Missed dose
+Discontinuation of dabigatran etexilate
+Switching
+Special populations
+Renal impairment
+Elderly
+Weight
+Gender
+Paediatric population
+Prevention of stroke and systemic embolism in adult patients with NVAF with one or more risk factors (SPAF) Treatment of DVT and PE and prevention of recurrent DVT and PE in adults (DVT/PE)
+The recommended doses of dabigatran etexilate in the indications SPAF, DVT and PE are shown in table 2.
+Table 2: Dose recommendations for SPAF, DVT and PE
+Dose recommendation Prevention of stroke and systemic embolism in adult patients with NVAF with one or more risk factors (SPAF) 300 mg dabigatran etexilate taken as one 150 mg capsule twice daily Treatment of DVT and PE and prevention of recurrent DVT and PE in adults (DVT/PE) 300 mg dabigatran etexilate taken as one 150 mg capsule twice daily following treatment with a parenteral anticoagulant for at least 5 days
+Dose reduction recommended
+Patients aged ≥ 80 years daily dose of 220 mg dabigatran etexilate taken as one 110 mg capsule twice daily Patients who receive concomitant verapamil
+Dose reduction for consideration
+Patients between 75-80 years daily dose of dabigatran etexilate of 300 mg or 220 mg should be selected based on an individual assessment of the thromboembolic risk and the risk of bleeding Patients with moderate renal impairment (CrCL 30-50 mL/min) Patients with gastritis, esophagitis or gastroesophageal reflux Other patients at increased risk of bleeding For DVT/PE the recommendation for the use of 220 mg dabigatran etexilate taken as one 110 mg capsule twice daily is based on pharmacokinetic and pharmacodynamic analyses and has not been studied in this clinical setting. See further down and sections 4.4, 4.5, 5.1 and 5.2.
+
+===== pradaxa | SmPC 4.2 | page 34 =====
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.2 Posology and method of administration
+In case of intolerability to dabigatran etexilate, patients should be instructed to immediately consult their treating physician in order to be switched to alternate acceptable treatment options for prevention of stroke and systemic embolism associated with atrial fibrillation or for DVT/PE.
+Additional requirements in patients with mild to moderate renal impairment and in patients aged over 75 years: • Renal function should be assessed during treatment with dabigatran etexilate at least once a year or more frequently as needed in certain clinical situations when it is suspected that the renal function could decline or deteriorate (e.g. hypovolaemia, dehydration, and in case of concomitant use of certain medicinal products).
+Duration of use
+The duration of use of dabigatran etexilate in the indications SPAF, DVT and PE are shown in table 3.
+Table 3: Duration of use for SPAF and DVT/PE
+Indication Duration of use SPAF Therapy should be continued long term. DVT/PE The duration of therapy should be individualised after careful assessment of the treatment benefit against the risk for bleeding (see section 4.4). Short duration of therapy (at least 3 months) should be based on transient risk factors (e.g. recent surgery, trauma, immobilisation) and longer durations should be based on permanent risk factors or idiopathic DVT or PE.
+Missed dose
+A forgotten dabigatran etexilate dose may still be taken up to 6 hours prior to the next scheduled dose. From 6 hours prior to the next scheduled dose on, the missed dose should be omitted.
+Discontinuation of dabigatran etexilate
+Switching
+
+===== pradaxa | SmPC 4.2 | page 35 =====
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.2 Posology and method of administration
+Dabigatran etexilate treatment to Vitamin K antagonists (VKA): The starting time of the VKA should be adjusted based on CrCL as follows: • CrCL ≥ 50 mL/min, VKA should be started 3 days before discontinuing dabigatran etexilate • CrCL ≥ 30-< 50 mL/min, VKA should be started 2 days before discontinuing dabigatran etexilate
+Because dabigatran etexilate can impact the International Normalised Ratio (INR), the INR will better reflect VKA’s effect only after dabigatran etexilate has been stopped for at least 2 days. Until then, INR values should be interpreted with caution.
+Cardioversion (SPAF)
+Patients can stay on dabigatran etexilate while being cardioverted.
+Catheter ablation for atrial fibrillation (SPAF)
+There are no data available for 110 mg twice daily dabigatran etexilate treatment.
+Percutaneous coronary intervention (PCI) with stenting (SPAF)
+Patients with non valvular atrial fibrillation who undergo a PCI with stenting can be treated with dabigatran etexilate in combination with antiplatelets after haemostasis is achieved (see section 5.1).
+Special populations
+Elderly
+For dose modifications in this population see table 2 above.
+Patients at risk of bleeding
+Patients with an increased bleeding risk (see sections 4.4, 4.5, 5.1 and 5.2) should be closely monitored clinically (looking for signs of bleeding or anaemia). Dose adjustment should be decided at the discretion of the physician, following assessment of the potential benefit and risk to an individual patient (see table 2 above). A coagulation test (see section 4.4) may help to identify patients with an increased bleeding risk caused by excessive dabigatran exposure. When excessive dabigatran exposure is identified in patients at high risk of bleeding, a reduced dose of 220 mg taken as one 110 mg capsule twice daily is recommended. When clinically relevant bleeding occurs, treatment should be interrupted.
+
+===== pradaxa | SmPC 4.2 | page 36 =====
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.2 Posology and method of administration
+For subjects with gastritis, esophagitis, or gastroesophageal reflux, a dose reduction may be considered due to the elevated risk of major gastro-intestinal bleeding (see table 2 above and section 4.4).
+Renal impairment
+No dose adjustment is necessary in patients with mild renal impairment (CrCL 50- ≤ 80 mL/min). For patients with moderate renal impairment (CrCL 30-50 mL/min) the recommended dose of dabigatran etexilate is also 300 mg taken as one 150 mg capsule twice daily. However, for patients with high risk of bleeding, a dose reduction of dabigatran etexilate to 220 mg taken as one 110 mg capsule twice daily should be considered (see sections 4.4 and 5.2). Close clinical surveillance is recommended in patients with renal impairment.
+No dose adjustment is necessary for concomitant use of amiodarone or quinidine (see sections 4.4, 4.5 and 5.2).
+Dose reductions are recommended for patients who receive concomitantly verapamil (see table 2 above and sections 4.4 and 4.5). In this situation dabigatran etexilate and verapamil should be taken at the same time.
+Weight
+No dose adjustment is necessary (see section 5.2), but close clinical surveillance is recommended in patients with a body weight < 50 kg (see section 4.4).
+Gender
+Paediatric population
+There is no relevant use of dabigatran etexilate in the paediatric population for the indication of prevention of stroke and systemic embolism in patients with NVAF.
+The recommended dose of dabigatran etexilate capsules is based on the patient’s weight and age as shown in table 4. The dose should be adjusted according to weight and age as treatment progresses.
+Table 4: Single and total daily dabigatran etexilate doses in milligrams (mg) by weight in kilograms (kg) and age in years of the patient
+Patients with an eGFR ≥ 50 mL/min/1.73 m2 should be treated with the dose according to table 4.
+
+===== pradaxa | SmPC 4.2, SmPC 4.3 | page 38 =====
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.2 Posology and method of administration; SmPC 4.3 Contraindications
+Duration of use
+Missed dose
+Discontinuation of dabigatran etexilate
+Switching
+Method of administration
+4.3 Contraindications
+• Hypersensitivity to the active substance or to any of the excipients listed in section 6.1 • Severe renal impairment (CrCL < 30 mL/min) in adult patients • eGFR < 50 mL/min/1.73 m2 in paediatric patients • Active clinically significant bleeding • Lesion or condition, if considered a significant risk factor for major bleeding. This may include current or recent gastrointestinal ulceration, presence of malignant neoplasms at high risk of
+bleeding, recent brain or spinal injury, recent brain, spinal or ophthalmic surgery, recent intracranial haemorrhage, known or suspected oesophageal varices, arteriovenous malformations, vascular aneurysms or major intraspinal or intracerebral vascular abnormalities • Concomitant treatment with any other anticoagulants e.g. unfractionated heparin (UFH), low molecular weight heparins (enoxaparin, dalteparin etc), heparin derivatives (fondaparinux etc), oral anticoagulants (warfarin, rivaroxaban, apixaban etc) except under specific circumstances. These are switching anticoagulant therapy (see section 4.2), when UFH is given at doses necessary to maintain an open central venous or arterial catheter or when UFH is given during catheter ablation for atrial fibrillation (see section 4.5) • Hepatic impairment or liver disease expected to have any impact on survival • Concomitant treatment with the following strong P-gp inhibitors: systemic ketoconazole, cyclosporine, itraconazole, dronedarone and the fixed-dose combination glecaprevir/pibrentasvir (see section 4.5) • Prosthetic heart valves requiring anticoagulant treatment (see section 5.1).
+
+===== pradaxa | SmPC 4.2 | page 73 =====
+Pradaxa | Pradaxa 150 mg hard capsules | SmPC 4.2 Posology and method of administration
+4.2 Posology and method of administration
+Posology
+The recommended doses of dabigatran etexilate in the indications SPAF, DVT and PE are shown in table 1.
+Table 1: Dose recommendations for SPAF, DVT and PE
+Dose reduction recommended
+Dose reduction for consideration
+Duration of use
+The duration of use of dabigatran etexilate in the indications SPAF, DVT and PE are shown in table 2.
+Table 2: Duration of use for SPAF and DVT/PE
+Missed dose
+Discontinuation of dabigatran etexilate
+Switching
+Cardioversion (SPAF)
+Catheter ablation for atrial fibrillation (SPAF)
+Catheter ablation can be conducted in patients on 150 mg twice daily dabigatran etexilate treatment. Dabigatran etexilate treatment does not need to be interrupted (see section 5.1).
+Percutaneous coronary intervention (PCI) with stenting (SPAF)
+Special populations
+Elderly
+For dose modifications in this population see table 1 above.
+Patients at risk of bleeding
+Patients with an increased bleeding risk (see sections 4.4, 4.5, 5.1 and 5.2) should be closely monitored clinically (looking for signs of bleeding or anaemia). Dose adjustment should be decided at the discretion of the physician, following assessment of the potential benefit and risk to an individual patient (see table 1 above). A coagulation test (see section 4.4) may help to identify patients with an increased bleeding risk caused by excessive dabigatran exposure. When excessive dabigatran exposure is identified in patients at high risk of bleeding, a reduced dose of 220 mg taken as one 110 mg capsule twice daily is recommended. When clinically relevant bleeding occurs, treatment should be interrupted.
+For subjects with gastritis, esophagitis, or gastroesophageal reflux, a dose reduction may be considered due to the elevated risk of major gastro-intestinal bleeding (see table 1 above and section 4.4).
+Renal impairment
+
+===== pradaxa | SmPC 4.2 | page 76 =====
+Pradaxa | Pradaxa 150 mg hard capsules | SmPC 4.2 Posology and method of administration
+Dose reductions are recommended for patients who receive concomitantly verapamil (see table 1 above and sections 4.4 and 4.5). In this situation dabigatran etexilate and verapamil should be taken at the same time.
+Weight
+Gender
+Paediatric population
+The recommended dose of dabigatran etexilate capsules is based on the patient’s weight and age as shown in table 3. The dose should be adjusted according to weight and age as treatment progresses.
+Table 3: Single and total daily dabigatran etexilate doses in milligrams (mg) by weight in kilograms (kg) and age in years of the patient
+Patients with an eGFR ≥ 50 mL/min/1.73 m2 should be treated with the dose according to table 3.
+Duration of use
+Missed dose
+Discontinuation of dabigatran etexilate
+Switching
+Method of administration
+
+(13 chunk(s) of pradaxa in SmPC 4.2)
+
+===== pradaxa | SmPC 4.3 | page 6 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.3 Contraindications
+4.3 Contraindications
+• Hypersensitivity to the active substance or to any of the excipients listed in section 6.1 • Severe renal impairment (CrCL < 30 mL/min) in adult patients • eGFR < 50 mL/min/1.73 m2 in paediatric patients • Active clinically significant bleeding • Lesion or condition, if considered a significant risk factor for major bleeding. This may include current or recent gastrointestinal ulceration, presence of malignant neoplasms at high risk of bleeding, recent brain or spinal injury, recent brain, spinal or ophthalmic surgery, recent intracranial haemorrhage, known or suspected oesophageal varices, arteriovenous malformations, vascular aneurysms or major intraspinal or intracerebral vascular abnormalities • Concomitant treatment with any other anticoagulants e.g. unfractionated heparin (UFH), low molecular weight heparins (enoxaparin, dalteparin etc), heparin derivatives (fondaparinux etc), oral anticoagulants (warfarin, rivaroxaban, apixaban etc) except under specific circumstances. These are switching anticoagulant therapy (see section 4.2), when UFH is given at doses necessary to maintain an open central venous or arterial catheter or when UFH is given during catheter ablation for atrial fibrillation (see section 4.5) • Hepatic impairment or liver disease expected to have any impact on survival • Concomitant treatment with the following strong P-gp inhibitors: systemic ketoconazole, cyclosporine, itraconazole, dronedarone and the fixed-dose combination glecaprevir/pibrentasvir (see section 4.5) • Prosthetic heart valves requiring anticoagulant treatment (see section 5.1).
+
+===== pradaxa | SmPC 4.2, SmPC 4.3 | page 38 =====
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.2 Posology and method of administration; SmPC 4.3 Contraindications
+Duration of use
+Missed dose
+Discontinuation of dabigatran etexilate
+Switching
+Method of administration
+4.3 Contraindications
+• Hypersensitivity to the active substance or to any of the excipients listed in section 6.1 • Severe renal impairment (CrCL < 30 mL/min) in adult patients • eGFR < 50 mL/min/1.73 m2 in paediatric patients • Active clinically significant bleeding • Lesion or condition, if considered a significant risk factor for major bleeding. This may include current or recent gastrointestinal ulceration, presence of malignant neoplasms at high risk of
+bleeding, recent brain or spinal injury, recent brain, spinal or ophthalmic surgery, recent intracranial haemorrhage, known or suspected oesophageal varices, arteriovenous malformations, vascular aneurysms or major intraspinal or intracerebral vascular abnormalities • Concomitant treatment with any other anticoagulants e.g. unfractionated heparin (UFH), low molecular weight heparins (enoxaparin, dalteparin etc), heparin derivatives (fondaparinux etc), oral anticoagulants (warfarin, rivaroxaban, apixaban etc) except under specific circumstances. These are switching anticoagulant therapy (see section 4.2), when UFH is given at doses necessary to maintain an open central venous or arterial catheter or when UFH is given during catheter ablation for atrial fibrillation (see section 4.5) • Hepatic impairment or liver disease expected to have any impact on survival • Concomitant treatment with the following strong P-gp inhibitors: systemic ketoconazole, cyclosporine, itraconazole, dronedarone and the fixed-dose combination glecaprevir/pibrentasvir (see section 4.5) • Prosthetic heart valves requiring anticoagulant treatment (see section 5.1).
+
+(2 chunk(s) of pradaxa in SmPC 4.3)
+
+===== pradaxa | SmPC 4.5 | page 11 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+4.5 Interaction with other medicinal products and other forms of interaction
+Transporter interactions
+Dabigatran etexilate is a substrate for the efflux transporter P-gp. Concomitant administration of P-gp inhibitors (see table 7) is expected to result in increased dabigatran plasma concentrations.
+If not otherwise specifically described, close clinical surveillance (looking for signs of bleeding or anaemia) is required when dabigatran is co-administered with strong P-gp inhibitors. Dose reductions may be required in combination with some P-gp inhibitors (see sections 4.2, 4.3, 4.4 and 5.1).
+Table 7: Transporter interactions
+P-gp inhibitors
+Concomitant use contraindicated (see section 4.3)
+Ketoconazole Ketoconazole increased total dabigatran AUC0-∞ and Cmax values by 2.38-fold and 2.35-fold, respectively, after a single oral dose of 400 mg, and by 2.53-fold and 2.49-fold, respectively, after multiple oral dosing of 400 mg ketoconazole once daily. Dronedarone When dabigatran etexilate and dronedarone were given at the same time total dabigatran AUC0-∞ and Cmax values increased by about 2.4-fold and 2.3-fold, respectively, after multiple dosing of 400 mg dronedarone bid, and about 2.1-fold and 1.9-fold, respectively, after a single dose of 400 mg. Itraconazole, cyclosporine Based on in vitro results a similar effect as with ketoconazole may be expected. Glecaprevir / pibrentasvir The concomitant use of dabigatran etexilate with the fixed-dose combination of the P-gp inhibitors glecaprevir/pibrentasvir has been shown to increase exposure of dabigatran and may increase the risk of bleeding.
+Concomitant use not recommended
+Tacrolimus Tacrolimus has been found in vitro to have a similar level of inhibitory effect on P-gp as that seen with itraconazole and cyclosporine. Dabigatran etexilate has not been clinically studied together with tacrolimus. However, limited clinical data with
+another P-gp substrate (everolimus) suggest that the inhibition of P-gp with tacrolimus is weaker than that observed with strong P-gp inhibitors.
+
+===== pradaxa | SmPC 4.5 | page 12 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+Cautions to be exercised in case concomitant use (see sections 4.2 and 4.4)
+Verapamil When dabigatran etexilate (150 mg) was co-administered with oral verapamil, the Cmax and AUC of dabigatran were increased but the magnitude of this change differs depending on timing of administration and formulation of verapamil (see sections 4.2 and 4.4).
+The greatest elevation of dabigatran exposure was observed with the first dose of an immediate release formulation of verapamil administered one hour prior to the dabigatran etexilate intake (increase of Cmax by about 2.8-fold and AUC by about 2.5-fold). The effect was progressively decreased with administration of an extended release formulation (increase of Cmax by about 1.9-fold and AUC by about 1.7-fold) or administration of multiple doses of verapamil (increase of Cmax by about 1.6-fold and AUC by about 1.5-fold).
+
+===== pradaxa | SmPC 4.5 | page 12 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+There was no meaningful interaction observed when verapamil was given 2 hours after dabigatran etexilate (increase of Cmax by about 1.1-fold and AUC by about 1.2-fold). This is explained by completed dabigatran absorption after 2 hours. Amiodarone When dabigatran etexilate was co-administered with a single oral dose of 600 mg amiodarone, the extent and rate of absorption of amiodarone and its active metabolite DEA were essentially unchanged. The dabigatran AUC and Cmax were increased by about 1.6-fold and 1.5-fold, respectively. In view of the long half-life of amiodarone the potential for an interaction may exist for weeks after discontinuation of amiodarone (see sections 4.2 and 4.4). Quinidine Quinidine was given as 200 mg dose every 2nd hour up to a total dose of 1 000 mg. Dabigatran etexilate was given twice daily over 3 consecutive days, on the 3rd day either with or without quinidine. Dabigatran AUCτ,ss and Cmax,ss were increased on average by 1.53-fold and 1.56-fold, respectively with concomitant quinidine (see sections 4.2 and 4.4). Clarithromycin When clarithromycin (500 mg twice daily) was administered together with dabigatran etexilate in healthy volunteers, increase of AUC by about 1.19-fold and Cmax by about 1.15-fold was observed. Ticagrelor When a single dose of 75 mg dabigatran etexilate was coadministered simultaneously with a loading dose of 180 mg ticagrelor, the dabigatran AUC and Cmax were increased by 1.73-fold and 1.95-fold, respectively. After multiple doses of ticagrelor 90 mg b.i.d. the increase of dabigatran exposure is 1.56-fold and 1.46-fold for Cmax and AUC, respectively.
+
+===== pradaxa | SmPC 4.5 | page 12 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+Concomitant administration of a loading dose of 180 mg ticagrelor and 110 mg dabigatran etexilate (in steady state) increased the dabigatran AUCτ,ss and Cmax,ss by 1.49-fold and 1.65-fold, respectively, compared with dabigatran etexilate given alone. When a loading dose of 180 mg ticagrelor was given 2 hours after 110 mg dabigatran etexilate (in steady state), the increase of dabigatran AUCτ,ss and Cmax,ss was reduced to 1.27-fold and 1.23-fold, respectively, compared with dabigatran etexilate given alone. This staggered intake is the recommended administration for start of ticagrelor with a loading dose.
+Concomitant administration of 90 mg ticagrelor b.i.d. (maintenance dose) with 110 mg dabigatran etexilate increased the adjusted dabigatran AUCτ,ss and Cmax,ss 1.26-fold and 1.29-fold, respectively, compared with dabigatran etexilate given alone. Posaconazole Posaconazole also inhibits P-gp to some extent but has not been clinically studied. Caution should be exercised when dabigatran etexilate is co-administered with posaconazole.
+P-gp inducers
+Concomitant use should be avoided.
+e.g. rifampicin, St. John´s wort (Hypericum perforatum), carbamazepine, or phenytoin Concomitant administration is expected to result in decreased dabigatran concentrations.
+Pre-dosing of the probe inducer rifampicin at a dose of 600 mg once daily for 7 days decreased total dabigatran peak and total exposure by 65.5 % and 67 %, respectively. The inducing effect was diminished resulting in dabigatran exposure close to the reference by day 7 after cessation of rifampicin treatment. No further increase in bioavailability was observed after another 7 days.
+Protease inhibitors such as ritonavir
+Concomitant use not recommended
+e.g. ritonavir and its combinations with other protease inhibitors These affect P-gp (either as inhibitor or as inducer). They have not been studied and are therefore not recommended for concomitant treatment with dabigatran etexilate.
+P-gp substrate
+
+===== pradaxa | SmPC 4.5 | page 13 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+Digoxin In a study performed with 24 healthy subjects, when dabigatran etexilate was co-administered with digoxin, no changes on digoxin and no clinically relevant changes on dabigatran exposure have been observed.
+Anticoagulants and antiplatelet aggregation medicinal products
+There is no or only limited experience with the following treatments which may increase the risk of bleeding when used concomitantly with dabigatran etexilate: anticoagulants such as unfractionated heparin (UFH), low molecular weight heparins (LMWH), and heparin derivatives (fondaparinux, desirudin), thrombolytic medicinal products, and vitamin K antagonists, rivaroxaban or other oral anticoagulants (see section 4.3), and antiplatelet aggregation medicinal products such as GPIIb/IIIa receptor antagonists, ticlopidine, prasugrel, ticagrelor, dextran, and sulfinpyrazone (see section 4.4).
+UFH can be administered at doses necessary to maintain a patent central venous or arterial catheter or during catheter ablation for atrial fibrillation (see section 4.3).
+Table 8: Interactions with anticoagulants and antiplatelet aggregation medicinal products
+
+===== pradaxa | SmPC 4.5 | page 14 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+NSAIDs NSAIDs given for short-term analgesia have been shown not to be associated with increased bleeding risk when given in conjunction with dabigatran etexilate. With chronic use in a phase III clinical trial comparing dabigatran to warfarin for stroke prevention in atrial fibrillation patients (RE-LY), NSAIDs increased the risk of bleeding by approximately 50 % on both dabigatran etexilate and warfarin. Clopidogrel In young healthy male volunteers, the concomitant administration of dabigatran etexilate and clopidogrel resulted in no further prolongation of capillary bleeding times compared to clopidogrel monotherapy. In addition, dabigatran AUCτ,ss and Cmax,ss and the coagulation measures for dabigatran effect or the inhibition of platelet aggregation as measure of clopidogrel effect remained essentially unchanged comparing combined treatment and the respective mono-treatments. With a loading dose of 300 mg or 600 mg clopidogrel, dabigatran AUCτ,ss and Cmax,ss were increased by about 30-40 % (see section 4.4). ASA Co-administration of ASA and 150 mg dabigatran etexilate twice daily may increase the risk for any bleeding from 12 % to 18 % and 24 % with 81 mg and 325 mg ASA, respectively (see section 4.4). LMWH The concomitant use of LMWHs, such as enoxaparin and dabigatran etexilate has not been specifically investigated. After switching from 3-day treatment of once daily 40 mg enoxaparin s.c., 24 hours after the last dose of enoxaparin the exposure to dabigatran was slightly lower than that after administration of dabigatran etexilate (single dose of 220 mg) alone. A higher anti-FXa/FIIa activity was observed after dabigatran etexilate administration with enoxaparin pre-treatment compared to that after treatment with dabigatran etexilate alone. This is considered to be due to the carry-over effect of enoxaparin treatment, and regarded as not clinically relevant. Other dabigatran related anti-coagulation tests were not changed significantly by the pre-treatment of enoxaparin.
+Other interactions
+
+===== pradaxa | SmPC 4.5 | page 14 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+Table 9: Other interactions
+Selective serotonin re-uptake inhibitors (SSRIs) or selective serotonin norepinephrine re-uptake inhibitors (SNRIs)
+SSRIs, SNRIs SSRIs and SNRIs increased the risk of bleeding in all treatment groups of a phase III clinical trial comparing dabigatran to warfarin for stroke prevention in atrial fibrillation patients (RE-LY).
+Substances influencing gastric pH
+Pantoprazole When Pradaxa was co-administered with pantoprazole, a decrease in the dabigatran AUC of approximately 30 % was observed. Pantoprazole and other proton-pump inhibitors (PPI) were co-administered with Pradaxa in clinical trials, and concomitant PPI treatment did not appear to reduce the efficacy of Pradaxa. Ranitidine Ranitidine administration together with dabigatran etexilate had no clinically relevant effect on the extent of absorption of dabigatran.
+Interactions linked to dabigatran etexilate and dabigatran metabolic profile
+Dabigatran etexilate and dabigatran are not metabolised by the cytochrome P450 system and have no in vitro effects on human cytochrome P450 enzymes. Therefore, related medicinal product interactions are not expected with dabigatran.
+Paediatric population
+Interaction studies have only been performed in adults.
+
+===== pradaxa | SmPC 4.5 | page 44 =====
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+4.5 Interaction with other medicinal products and other forms of interaction
+Transporter interactions
+Dabigatran etexilate is a substrate for the efflux transporter P-gp. Concomitant administration of P-gp inhibitors (see table 9) is expected to result in increased dabigatran plasma concentrations.
+Table 9: Transporter interactions
+P-gp inhibitors
+Concomitant use contraindicated (see section 4.3)
+Concomitant use not recommended
+Tacrolimus Tacrolimus has been found in vitro to have a similar level of inhibitory effect on P-gp as that seen with itraconazole and cyclosporine. Dabigatran etexilate has not been clinically studied together with tacrolimus. However, limited clinical data with another P-gp substrate (everolimus) suggest that the inhibition of P-gp with tacrolimus is weaker than that observed with strong P-gp inhibitors.
+P-gp inducers
+Concomitant use should be avoided.
+Protease inhibitors such as ritonavir
+Concomitant use not recommended
+P-gp substrate
+Anticoagulants and antiplatelet aggregation medicinal products
+From the data collected in the phase III study RE-LY (see section 5.1) it was observed that the concomitant use of other oral or parenteral anticoagulants increases major bleeding rates with both dabigatran etexilate and warfarin by approximately 2.5-fold, mainly related to situations when switching from one anticoagulant to another (see section 4.3). Furthermore, concomitant use of antiplatelets, ASA or clopidogrel approximately doubled major bleeding rates with both dabigatran etexilate and warfarin (see section 4.4).
+Table 10: Interactions with anticoagulants and antiplatelet aggregation medicinal products
+
+===== pradaxa | SmPC 4.5 | page 47 =====
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+NSAIDs NSAIDs given for short-term analgesia have been shown not to be associated with increased bleeding risk when given in conjunction with dabigatran etexilate. With chronic use in the RE-LY study, NSAIDs increased the risk of bleeding by approximately 50 % on both dabigatran etexilate and warfarin. Clopidogrel In young healthy male volunteers, the concomitant administration of dabigatran etexilate and clopidogrel resulted in no further prolongation of capillary bleeding times compared to clopidogrel monotherapy. In addition, dabigatran AUCτ,ss and Cmax,ss and the coagulation measures for dabigatran effect or the inhibition of platelet aggregation as measure of clopidogrel effect remained essentially unchanged comparing combined treatment and the respective mono-treatments. With a loading dose of 300 mg or 600 mg clopidogrel, dabigatran AUCτ,ss and Cmax,ss were increased by about 30-40 % (see section 4.4). ASA Co-administration of ASA and 150 mg dabigatran etexilate twice daily may increase the risk for any bleeding from 12 % to 18 % and 24 % with 81 mg and 325 mg ASA, respectively (see section 4.4). LMWH The concomitant use of LMWHs, such as enoxaparin and dabigatran etexilate has not been specifically investigated. After switching from 3-day treatment of once daily 40 mg enoxaparin s.c., 24 hours after the last dose of enoxaparin the exposure to dabigatran was slightly lower than that after administration of dabigatran etexilate (single dose of 220 mg) alone. A higher anti-FXa/FIIa activity was observed after dabigatran etexilate administration with enoxaparin pre-treatment compared to that after treatment with dabigatran etexilate alone. This is considered to be due to the carry-over effect of enoxaparin treatment, and regarded as not clinically relevant. Other dabigatran related anti-coagulation tests were not changed significantly by the pre-treatment of enoxaparin.
+Other interactions
+Table 11: Other interactions
+
+===== pradaxa | SmPC 4.5, SmPC 4.6, SmPC 4.7, SmPC 4.8 | page 47 =====
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction; SmPC 4.6 Fertility, pregnancy and lactation; SmPC 4.7 Effects on ability to drive and use machines; SmPC 4.8 Undesirable effects
+SSRIs, SNRIs SSRIs and SNRIs increased the risk of bleeding in RE-LY in all treatment groups,
+Substances influencing gastric pH
+Paediatric population
+4.6 Fertility, pregnancy and lactation
+Women of childbearing potential
+Pregnancy
+Breast-feeding
+Fertility
+No human data available.
+4.7 Effects on ability to drive and use machines
+4.8 Undesirable effects
+Summary of the safety profile
+Dabigatran etexilate has been evaluated in clinical trials overall in approximately 64 000 patients; thereof approximately 35 000 patients were treated with dabigatran etexilate. In total, about 9 % of patients treated for elective hip or knee surgery (short-term treatment for up to 42 days), 22 % of patients with atrial fibrillation treated for the prevention of stroke and systemic embolism (long-term treatment for up to 3 years), 14 % of patients treated for DVT/PE and 15 % of patients treated for DVT/PE prevention experienced adverse reactions.
+The most commonly reported events are bleedings occurring in approximately 14 % of patients treated short-term for elective hip or knee replacement surgery, 16.6 % in patients with atrial fibrillation treated long-term for the prevention of stroke and systemic embolism, and in 14.4 % of adult patients treated for DVT/PE. Furthermore, bleeding occurred in 19.4 % of patients in the DVT/PE prevention trial RE-MEDY (adult patients) and in 10.5 % of patients in the DVT/PE prevention trial RE-SONATE (adult patients).
+Since the patient populations treated in the three indications are not comparable and bleeding events are distributed over several System Organ Classes (SOC), a summary description of major and any bleeding are broken down by indication and provided in tables 13-17 below.
+Although low in frequency in clinical trials, major or severe bleeding may occur and, regardless of location, may lead to disabling, life-threatening or even fatal outcomes.
+Tabulated list of adverse reactions
+
+===== pradaxa | SmPC 4.4, SmPC 4.5 | page 84 =====
+Pradaxa | Pradaxa 150 mg hard capsules | SmPC 4.4 Special warnings and precautions for use; SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+Active cancer patients (DVT/PE, paediatric VTE)
+Paediatric population
+4.5 Interaction with other medicinal products and other forms of interaction
+Transporter interactions
+Dabigatran etexilate is a substrate for the efflux transporter P-gp. Concomitant administration of P-gp inhibitors (see table 8) is expected to result in increased dabigatran plasma concentrations.
+Table 8: Transporter interactions
+P-gp inhibitors
+Concomitant use contraindicated (see section 4.3)
+Concomitant use not recommended
+P-gp inducers
+Concomitant use should be avoided.
+e.g. rifampicin, St. John´s wort (Hypericum Concomitant administration is expected to result in decreased dabigatran concentrations.
+perforatum), carbamazepine, or phenytoin Pre-dosing of the probe inducer rifampicin at a dose of 600 mg once daily for 7 days decreased total dabigatran peak and total exposure by 65.5 % and 67 %, respectively. The inducing effect was diminished resulting in dabigatran exposure close to the reference by day 7 after cessation of rifampicin treatment. No further increase in bioavailability was observed after another 7 days.
+Protease inhibitors such as ritonavir
+Concomitant use not recommended
+P-gp substrate
+Anticoagulants and antiplatelet aggregation medicinal products
+Table 9: Interactions with anticoagulants and antiplatelet aggregation medicinal products
+Other interactions
+Table 10: Other interactions
+Substances influencing gastric pH
+Paediatric population
+
+(11 chunk(s) of pradaxa in SmPC 4.5)
+
+===== pradaxa | SmPC 4.9 | page 20 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.9 Overdose
+4.9 Overdose
+Dabigatran etexilate doses beyond those recommended, expose the patient to increased risk of bleeding.
+In case of an overdose suspicion, coagulation tests can help to determine a bleeding risk (see sections 4.4 and 5.1). A calibrated quantitative dTT test or repetitive dTT measurements allow prediction of the time by when certain dabigatran levels will be reached (see section 5.1), also in case additional measures e.g. dialysis have been initiated.
+Excessive anticoagulation may require interruption of dabigatran etexilate treatment. Since dabigatran is excreted predominantly by the renal route adequate diuresis must be maintained. As protein binding is low, dabigatran can be dialysed; there is limited clinical experience to demonstrate the utility of this approach in clinical studies (see section 5.2).
+Management of bleeding complications
+In the event of haemorrhagic complications, dabigatran etexilate treatment must be discontinued and the source of bleeding investigated. Depending on the clinical situation appropriate supportive treatment, such as surgical haemostasis and blood volume replacement, should be undertaken at the prescriber’s discretion.
+For adult patients in situations when rapid reversal of the anticoagulant effect of dabigatran is required the specific reversal agent (idarucizumab) antagonizing the pharmacodynamic effect of dabigatran is available. The efficacy and safety of idarucizumab have not been established in paediatric patients (see section 4.4).
+
+===== pradaxa | SmPC 4.9 | page 20 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.9 Overdose
+Coagulation factor concentrates (activated or non-activated) or recombinant Factor VIIa may be taken into account. There is some experimental evidence to support the role of these medicinal products in reversing the anticoagulant effect of dabigatran, but data on their usefulness in clinical settings and also on the possible risk of rebound thromboembolism is very limited. Coagulation tests may become unreliable following administration of suggested coagulation factor concentrates. Caution should be exercised when interpreting these tests. Consideration should also be given to administration of platelet concentrates in cases where thrombocytopenia is present or long acting antiplatelet medicinal products have been used. All symptomatic treatment should be given according to the physician’s judgement.
+Depending on local availability, a consultation of a coagulation expert should be considered in case of major bleedings.
+
+===== pradaxa | SmPC 4.9, SmPC 5, SmPC 5.1 | page 55 =====
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.9 Overdose; SmPC 5 PHARMACOLOGICAL PROPERTIES; SmPC 5.1 Pharmacodynamic properties
+4.9 Overdose
+Management of bleeding complications
+5. PHARMACOLOGICAL PROPERTIES
+5.1 Pharmacodynamic properties
+Mechanism of action
+Dabigatran etexilate is a small molecule prodrug which does not exhibit any pharmacological activity. After oral administration, dabigatran etexilate is rapidly absorbed and converted to dabigatran by esterase-catalysed hydrolysis in plasma and in the liver. Dabigatran is a potent, competitive, reversible direct thrombin inhibitor and is the main active principle in plasma. Since thrombin (serine protease) enables the conversion of fibrinogen into fibrin during the coagulation cascade, its inhibition prevents the development of thrombus. Dabigatran inhibits free thrombin, fibrin-bound thrombin and thrombin-induced platelet aggregation.
+Pharmacodynamic effects
+In general, it can be assumed that these measures of anti-coagulant activity may reflect dabigatran levels and can provide guidance for the assessment of bleeding risk, i.e. exceeding the 90th percentile of dabigatran trough levels or a coagulation assay such as aPTT measured at trough (for aPTT thresholds see section 4.4, table 6) is considered to be associated with an increased risk of bleeding.
+Primary prevention of VTE in orthopaedic surgery
+In patients treated for prevention of VTEs after hip or knee replacement surgery with 220 mg
+dabigatran etexilate once daily, • the 90th percentile of dabigatran plasma concentrations was 67 ng/mL, measured at trough (20-28 hours after the previous dose) (see section 4.4 and 4.9), • the 90th percentile of aPTT at trough (20-28 hours after the previous dose) was 51 seconds, which would be 1.3-fold upper limit of normal.
+Prevention of stroke and systemic embolism in adult patients with NVAF with one or more risk factors (SPAF)
+
+===== pradaxa | SmPC 4.9, SmPC 5, SmPC 5.1 | page 94 =====
+Pradaxa | Pradaxa 150 mg hard capsules | SmPC 4.9 Overdose; SmPC 5 PHARMACOLOGICAL PROPERTIES; SmPC 5.1 Pharmacodynamic properties
+4.9 Overdose
+Management of bleeding complications
+In the event of haemorrhagic complications, dabigatran etexilate treatment must be discontinued and
+the source of bleeding investigated. Depending on the clinical situation appropriate supportive treatment, such as surgical haemostasis and blood volume replacement, should be undertaken at the prescriber’s discretion.
+5. PHARMACOLOGICAL PROPERTIES
+5.1 Pharmacodynamic properties
+Mechanism of action
+Pharmacodynamic effects
+The aPTT test is widely available and provides an approximate indication of the anticoagulation intensity achieved with dabigatran. However, the aPTT test has limited sensitivity and is not suitable
+for precise quantification of anticoagulant effect, especially at high plasma concentrations of dabigatran. Although high aPTT values should be interpreted with caution, a high aPTT value indicates that the patient is anticoagulated.
+In general, it can be assumed that these measures of anti-coagulant activity may reflect dabigatran levels and can provide guidance for the assessment of bleeding risk, i.e. exceeding the 90th percentile of dabigatran trough levels or a coagulation assay such as aPTT measured at trough (for aPTT thresholds see section 4.4, table 5) is considered to be associated with an increased risk of bleeding.
+Clinical efficacy and safety
+Ethnic origin
+The clinical evidence for the efficacy of dabigatran etexilate is derived from the RE-LY study (Randomised Evaluation of Long –term anticoagulant therapy) a multi-centre, multi-national,
+randomised parallel group study of two blinded doses of dabigatran etexilate (110 mg and 150 mg twice daily) compared to open-label warfarin in patients with atrial fibrillation at moderate to high risk of stroke and systemic embolism. The primary objective in this study was to determine if dabigatran etexilate was non-inferior to warfarin in reducing the occurrence of the composite endpoint stroke and systemic embolism. Statistical superiority was also analysed.
+Tables 17-19 display details of key results in the overall population:
+
+(4 chunk(s) of pradaxa in SmPC 4.9)
+
+===== pradaxa | Leaflet 3 | page 155 =====
+Pradaxa | Pradaxa 75 mg hard capsules | Leaflet 3 How to take Pradaxa
+3. How to take Pradaxa
+Pradaxa capsules can be used in adults and children aged 8 years or older who are able to swallow the capsules whole.
+Always take this medicine exactly as your doctor has told you. Check with your doctor if you are not sure.
+Take Pradaxa as recommended for the following conditions:
+Prevention of blood clot formation after knee or hip replacement surgery
+The recommended dose is 220 mg once a day (taken as 2 capsules of 110 mg).
+If your kidney function is decreased by more than half or if you are 75 years of age or older, the
+recommended dose is 150 mg once a day (taken as 2 capsules of 75 mg).
+If you are taking amiodarone, quinidine or verapamil containing medicines the recommended dose is 150 mg once a day (taken as 2 capsules of 75 mg).
+If you are taking verapamil containing medicines and your kidney function is decreased by more than half, you should be treated with a reduced dose of 75 mg Pradaxa because your bleeding risk may be increased.
+For both surgery types, treatment should not be started if there is bleeding from the site of operation. If the treatment cannot be started until the day after surgery, dosing should be started with 2 capsules once a day.
+After knee replacement surgery
+You should start treatment with Pradaxa within 1-4 hours after surgery finishes, taking a single capsule. Thereafter two capsules once a day should be taken for a total of 10 days.
+After hip replacement surgery You should start treatment with Pradaxa within 1-4 hours after surgery finishes, taking a single capsule. Thereafter two capsules once a day should be taken for a total of 28-35 days.
+
+===== pradaxa | Leaflet 3 | page 156 =====
+Pradaxa | Pradaxa 75 mg hard capsules | Leaflet 3 How to take Pradaxa
+Treatment of blood clots and prevention of blood clots from reoccurring in children
+Pradaxa should be taken twice daily, one dose in the morning and one dose in the evening, at approximately the same time every day. The dosing interval should be as close to 12 hours as possible.
+The recommended dose depends on weight and age. Your doctor will determine the correct dose. Your doctor may adjust the dose as treatment progresses. Keep using all other medicines, unless your doctor tells you to stop using any.
+Table 1 shows single and total daily Pradaxa doses in milligrams (mg). The doses depend on weight in kilograms (kg) and age in years of the patient.
+Table 1: Dosing table for Pradaxa capsules
+
+===== pradaxa | Leaflet 3 | page 156 =====
+Pradaxa | Pradaxa 75 mg hard capsules | Leaflet 3 How to take Pradaxa
+Weight / age combinations Single dose in mg Total daily dose in mg Weight in kg Age in years 11 to less than 13 kg 8 to less than 9 years 75 150 13 to less than 16 kg 8 to less than 11 years 110 220 16 to less than 21 kg 8 to less than 14 years 110 220 21 to less than 26 kg 8 to less than 16 years 150 300 26 to less than 31 kg 8 to less than 18 years 150 300 31 to less than 41 kg 8 to less than 18 years 185 370 41 to less than 51 kg 8 to less than 18 years 220 440 51 to less than 61 kg 8 to less than 18 years 260 520 61 to less than 71 kg 8 to less than 18 years 300 600 71 to less than 81 kg 8 to less than 18 years 300 600 81 kg or greater 10 to less than 18 years 300 600 Single doses requiring combinations of more than one capsule: 300 mg: two 150 mg capsules or four 75 mg capsules 260 mg: one 110 mg plus one 150 mg capsule or one 110 mg plus two 75 mg capsules 220 mg: two 110 mg capsules 185 mg: one 75 mg plus one 110 mg capsule
+150 mg: one 150 mg capsule or two 75 mg capsules
+How to take Pradaxa
+Pradaxa can be taken with or without food. The capsule should be swallowed whole with a glass of water, to ensure delivery to the stomach. Do not break, chew, or empty the pellets from the capsule since this may increase the risk of bleeding.
+Instructions for opening the blisters
+
+===== pradaxa | Leaflet 3 | page 157 =====
+Pradaxa | Pradaxa 75 mg hard capsules | Leaflet 3 How to take Pradaxa
+The following pictogram illustrates how to take Pradaxa capsules out of the blister
+Tear off one individual blister from the blister card along the perforated line
+Peel off the backing foil and remove the capsule.
+• Do not push the capsules through the blister foil. • Do not peel off the blister foil until a capsule is required.
+Instructions for the bottle
+• Push and turn for opening. • After removing the capsule, place the cap back on the bottle and tightly close the bottle right away after you take your dose.
+Change of anticoagulant treatment
+Without specific guidance from your doctor do not change your anticoagulant treatment.
+If you take more Pradaxa than you should
+Taking too much of this medicine increases the risk of bleeding. Contact your doctor immediately if you have taken too many capsules. Specific treatment options are available.
+If you forget to take Pradaxa
+Prevention of blood clot formation after knee or hip replacement surgery Continue with your remaining daily doses of Pradaxa at the same time of the next day. Do not take a double dose to make up for a forgotten dose.
+Treatment of blood clots and prevention of blood clots from reoccurring in children A forgotten dose can still be taken up to 6 hours prior to the next due dose. A missed dose should be omitted if the remaining time is below 6 hours prior to the next due dose. Do not double a dose to make up for a forgotten dose.
+If you stop taking Pradaxa
+Take Pradaxa exactly as prescribed. Do not stop taking this medicine without talking to your doctor first, because the risk of developing a blood clot could be higher if you stop treatment too early. Contact your doctor if you experience indigestion after taking Pradaxa.
+
+===== pradaxa | Leaflet 3, Leaflet 4 | page 158 =====
+Pradaxa | Pradaxa 75 mg hard capsules | Leaflet 3 How to take Pradaxa; Leaflet 4 Possible side effects
+If you have any further questions on the use of this medicine, ask your doctor or pharmacist.
+4. Possible side effects
+Like all medicines, this medicine can cause side effects, although not everybody gets them.
+Pradaxa affects blood clotting, so most side effects are related to signs such as bruising or bleeding. Major or severe bleeding may occur, these constitute the most serious side effects and, regardless of location, may become disabling, life-threatening or even lead to death. In some cases these bleedings may not be obvious.
+If you experience any bleeding event that does not stop by itself or if you experience signs of excessive bleeding (exceptional weakness, tiredness, paleness, dizziness, headache or unexplained swelling) consult your doctor immediately. Your doctor may decide to keep you under closer observation or change your medicine.
+Tell your doctor immediately, if you experience a serious allergic reaction which causes difficulty in breathing or dizziness.
+Possible side effects are listed below, grouped by how likely they are to happen.
+Common (may affect up to 1 in 10 people): ­ A fall in the amount of haemoglobin in the blood (the substance in the red blood cells) ­ Unusual laboratory test results on liver function
+
+===== pradaxa | Leaflet, Leaflet 1, Leaflet 2, Leaflet 3, Leaflet 4, Leaflet 5, Leaflet 6 | page 164 =====
+Pradaxa | Pradaxa 110 mg hard capsules | Leaflet; Leaflet 1 What Pradaxa is and what it is used for; Leaflet 2 What you need to know before you take Pradaxa; Leaflet 3 How to take Pradaxa; Leaflet 4 Possible side effects; Leaflet 5 How to store Pradaxa; Leaflet 6 Contents of the pack and other information
+Pradaxa 110 mg hard capsules dabigatran etexilate
+What is in this leaflet
+1. What Pradaxa is and what it is used for
+2. What you need to know before you take Pradaxa
+3. How to take Pradaxa
+4. Possible side effects
+5. How to store Pradaxa
+6. Contents of the pack and other information
+1. What Pradaxa is and what it is used for
+Pradaxa is used in adults to:
+- prevent blood clots in the brain (stroke) and other blood vessels in the body if you have a form of irregular heart rhythm called nonvalvular atrial fibrillation and at least one additional risk factor.
+- treat blood clots in the veins of your legs and lungs and to prevent blood clots from re-occurring in the vein of your legs and lungs.
+Pradaxa is used in children to:
+
+===== pradaxa | Leaflet 3 | page 166 =====
+Pradaxa | Pradaxa 110 mg hard capsules | Leaflet 3 How to take Pradaxa
+3. How to take Pradaxa
+If your kidney function is decreased by more than half or if you are 75 years of age or older, the recommended dose is 150 mg once a day (taken as 2 capsules of 75 mg).
+After knee replacement surgery
+Prevention of brain or body vessel obstruction by blood clot formation developing after abnormal heart beats and Treatment of blood clots in the veins of your legs and lungs including prevention of blood clots from re-occurring in the vein of your legs and lungs
+The recommended dose is 300 mg taken as one 150 mg capsule twice a day.
+If you are 80 years or older, the recommended dose is 220 mg taken as one 110 mg capsule twice a day.
+If you are taking verapamil containing medicines, you should be treated with a reduced Pradaxa dose of 220 mg taken as one 110 mg capsule twice a day, because your bleeding risk may be increased.
+If you have a potentially higher risk for bleeding, your doctor may decide to prescribe a dose of 220 mg taken as one 110 mg capsule twice a day.
+You can continue to take this medicine if your heart beat needs to be restored to normal by a procedure called cardioversion. Take Pradaxa as your physician has told you.
+If a medical device (stent) has been deployed in a blood vessel to keep it open in a procedure called percutaneous coronary intervention with stenting, you can be treated with Pradaxa after your physician has decided that normal control of blood coagulation is achieved. Take Pradaxa as your physician has told you.
+Table 1: Dosing table for Pradaxa capsules
+
+===== pradaxa | Leaflet 3 | page 168 =====
+Pradaxa | Pradaxa 110 mg hard capsules | Leaflet 3 How to take Pradaxa
+Weight / age combinations Single dose in mg Total daily dose in mg Weight in kg Age in years 11 to less than 13 kg 8 to less than 9 years 75 150 13 to less than 16 kg 8 to less than 11 years 110 220 16 to less than 21 kg 8 to less than 14 years 110 220 21 to less than 26 kg 8 to less than 16 years 150 300 26 to less than 31 kg 8 to less than 18 years 150 300 31 to less than 41 kg 8 to less than 18 years 185 370 41 to less than 51 kg 8 to less than 18 years 220 440 51 to less than 61 kg 8 to less than 18 years 260 520 61 to less than 71 kg 8 to less than 18 years 300 600 71 to less than 81 kg 8 to less than 18 years 300 600 81 kg or greater 10 to less than 18 years 300 600 Single doses requiring combinations of more than one capsule: 300 mg: two 150 mg capsules or four 75 mg capsules 260 mg: one 110 mg plus one 150 mg capsule or one 110 mg plus two 75 mg capsules 220 mg: two 110 mg capsules 185 mg: one 75 mg plus one 110 mg capsule 150 mg: one 150 mg capsule or two 75 mg capsules
+How to take Pradaxa
+Instructions for opening the blisters
+Instructions for the bottle
+Change of anticoagulant treatment
+If you forget to take Pradaxa
+
+===== pradaxa | Leaflet 3 | page 169 =====
+Pradaxa | Pradaxa 110 mg hard capsules | Leaflet 3 How to take Pradaxa
+Use in adults: Prevention of brain or body vessel obstruction by blood clot formation developing after abnormal heart beats and treatment of blood clots in the veins of your legs and lungs including prevention of blood clots from re-occurring in the vein of your legs and lungs Use in children: Treatment of blood clots and prevention of blood clots from reoccurring A forgotten dose can still be taken up to 6 hours prior to the next due dose. A missed dose should be omitted if the remaining time is below 6 hours prior to the next due dose. Do not double a dose to make up for a forgotten dose.
+If you stop taking Pradaxa
+
+===== pradaxa | Leaflet, Leaflet 1, Leaflet 2, Leaflet 3, Leaflet 4, Leaflet 5, Leaflet 6 | page 177 =====
+Pradaxa | Pradaxa 150 mg hard capsules | Leaflet; Leaflet 1 What Pradaxa is and what it is used for; Leaflet 2 What you need to know before you take Pradaxa; Leaflet 3 How to take Pradaxa; Leaflet 4 Possible side effects; Leaflet 5 How to store Pradaxa; Leaflet 6 Contents of the pack and other information
+Pradaxa 150 mg hard capsules dabigatran etexilate
+What is in this leaflet
+1. What Pradaxa is and what it is used for
+2. What you need to know before you take Pradaxa
+3. How to take Pradaxa
+4. Possible side effects
+5. How to store Pradaxa
+6. Contents of the pack and other information
+1. What Pradaxa is and what it is used for
+Pradaxa is used in adults to:
+Pradaxa is used in children to:
+2. What you need to know before you take Pradaxa
+Do not take Pradaxa
+- if you are allergic to dabigatran etexilate or any of the other ingredients of this medicine (listed in section 6). - if you have severely reduced kidney function. - if you are currently bleeding. - if you have a disease in an organ of the body that increases the risk of serious bleeding (e.g., stomach ulcer, injury or bleeding in the brain, recent surgery of the brain or eyes). - if you have an increased tendency to bleed. This may be inborn, of unknown cause or due to other medicines.
+
+===== pradaxa | Leaflet 3 | page 179 =====
+Pradaxa | Pradaxa 150 mg hard capsules | Leaflet 3 How to take Pradaxa
+3. How to take Pradaxa
+Prevention of brain or body vessel obstruction by blood clot formation developing after abnormal
+heart beats and Treatment of blood clots in the veins of your legs and lungs including prevention of blood clots from re-occurring in the vein of your legs and lungs
+If you are 80 years or older, the recommended dose is 220 mg taken as one 110 mg capsule twice daily.
+You can continue to take this medicine if your heart beat needs to be restored to normal by a procedure called cardioversion or by a procedure called catheter ablation for atrial fibrillation. Take Pradaxa as your physician has told you.
+Table 1: Dosing table for Pradaxa capsules
+How to take Pradaxa
+Instructions for opening the blisters
+Instructions for the bottle
+Change of anticoagulant treatment
+If you forget to take Pradaxa
+A forgotten dose can still be taken up to 6 hours prior to the next due dose. A missed dose should be omitted if the remaining time is below 6 hours prior to the next due dose. Do not double a dose to make up for a forgotten dose.
+If you stop taking Pradaxa
+
+(11 chunk(s) of pradaxa in Leaflet 3)
+
+===== pradaxa | Leaflet 3, Leaflet 4 | page 158 =====
+Pradaxa | Pradaxa 75 mg hard capsules | Leaflet 3 How to take Pradaxa; Leaflet 4 Possible side effects
+If you have any further questions on the use of this medicine, ask your doctor or pharmacist.
+4. Possible side effects
+Like all medicines, this medicine can cause side effects, although not everybody gets them.
+Pradaxa affects blood clotting, so most side effects are related to signs such as bruising or bleeding. Major or severe bleeding may occur, these constitute the most serious side effects and, regardless of location, may become disabling, life-threatening or even lead to death. In some cases these bleedings may not be obvious.
+If you experience any bleeding event that does not stop by itself or if you experience signs of excessive bleeding (exceptional weakness, tiredness, paleness, dizziness, headache or unexplained swelling) consult your doctor immediately. Your doctor may decide to keep you under closer observation or change your medicine.
+Tell your doctor immediately, if you experience a serious allergic reaction which causes difficulty in breathing or dizziness.
+Possible side effects are listed below, grouped by how likely they are to happen.
+Common (may affect up to 1 in 10 people): ­ A fall in the amount of haemoglobin in the blood (the substance in the red blood cells) ­ Unusual laboratory test results on liver function
+
+===== pradaxa | Leaflet 4 | page 158 =====
+Pradaxa | Pradaxa 75 mg hard capsules | Leaflet 4 Possible side effects
+Uncommon (may affect up to 1 in 100 people): ­ Bleeding may happen from the nose, into the stomach or bowel, from penis/vagina or urinary tract (incl. blood in the urine that stains the urine pink or red), from piles, from the rectum, under the skin, into a joint, from or after an injury or after an operation ­ Haematoma formation or bruising occurring after an operation ­ Blood detected in the stools by a laboratory test ­ A fall in the number of red cells in the blood ­ A decrease in the proportion of blood cells ­ Allergic reaction ­ Vomiting ­ Frequent loose or liquid bowel movements ­ Feeling sick ­ Wound secretion (liquid exuding from the surgical wound) ­ Liver enzymes increased ­ Yellowing of the skin or whites of the eyes, caused by liver or blood problems
+Rare (may affect up to 1 in 1 000 people): ­ Bleeding ­ Bleeding may happen in the brain, from a surgical incision, from the site of entry of an injection or from the site of entry of a catheter into a vein ­ Blood-stained discharge from the site of entry of a catheter into a vein ­ Coughing of blood or blood stained sputum
+
+===== pradaxa | Leaflet 4 | page 159 =====
+Pradaxa | Pradaxa 75 mg hard capsules | Leaflet 4 Possible side effects
+­ A fall in the number of platelets in the blood ­ A fall in the number of red cells in the blood after an operation ­ Serious allergic reaction which causes difficulty in breathing or dizziness ­ Serious allergic reaction which causes swelling of the face or throat ­ Skin rash notable for dark red, raised, itchy bumps caused by an allergic reaction ­ Sudden change of the skin which affects its colour and appearance ­ Itching ­ Ulcer in the stomach or bowel (incl. ulcer in the gullet) ­ Inflammation of the gullet and stomach ­ Reflux of gastric juice into the gullet ­ Belly ache or stomach ache ­ Indigestion ­ Difficulty in swallowing ­ Fluid exiting a wound ­ Fluid exiting a wound after an operation
+Not known (frequency cannot be estimated from the available data): ­ Difficulty in breathing or wheezing ­ Decreases in the number or even lack of white blood cells (which help to fight infections) ­ Hair loss
+Common (may affect up to 1 in 10 people): ­ A fall in the number of red cells in the blood ­ A fall in the number of platelets in the blood ­ Skin rash notable for dark red, raised, itchy bumps caused by an allergic reaction ­ Sudden change of the skin which affects its colour and appearance ­ Haematoma formation ­ Nosebleed ­ Reflux of gastric juice into the gullet ­ Vomiting ­ Feeling sick ­ Frequent loose or liquid bowel movements ­ Indigestion ­ Hair loss ­ Liver enzymes increased
+
+===== pradaxa | Leaflet 4 | page 159 =====
+Pradaxa | Pradaxa 75 mg hard capsules | Leaflet 4 Possible side effects
+Uncommon (may affect up to 1 in 100 people): ­ Decrease in the number of white blood cells (which help to fight infections) ­ Bleeding may happen into the stomach or bowel, from the brain, from the rectum, from penis/vagina or urinary tract (incl. blood in the urine that stains the urine pink or red), or under the skin ­ A fall in the amount of haemoglobin in the blood (the substance in the red blood cells) ­ A decrease in the proportion of blood cells ­ Itching ­ Coughing of blood or blood stained sputum ­ Belly ache or stomach ache ­ Inflammation of the gullet and stomach ­ Allergic reaction ­ Difficulty in swallowing ­ Yellowing of the skin or whites of the eyes, caused by liver or blood problems
+Not known (frequency cannot be estimated from the available data): ­ Lack of white blood cells (which help to fight infections) ­ Serious allergic reaction which causes difficulty in breathing or dizziness ­ Serious allergic reaction which causes swelling of the face or throat
+­ Difficulty in breathing or wheezing ­ Bleeding ­ Bleeding may happen into a joint or from an injury, from a surgical incision, or from the site of entry of an injection or from the site of entry of a catheter into a vein ­ Bleeding may happen from piles ­ Ulcer in the stomach or bowel (incl. ulcer in the gullet) ­ Unusual laboratory test results on liver function
+
+===== pradaxa | Leaflet 4, Leaflet 5 | page 160 =====
+Pradaxa | Pradaxa 75 mg hard capsules | Leaflet 4 Possible side effects; Leaflet 5 How to store Pradaxa
+Reporting of side effects If you get any side effects, talk to your doctor or pharmacist. This includes any possible side effects not listed in this leaflet. You can also report side effects directly via the national reporting system listed in Appendix V. By reporting side effects you can help provide more information on the safety of this medicine.
+5. How to store Pradaxa
+Keep this medicine out of the sight and reach of children.
+Do not use this medicine after the expiry date which is stated on the carton, blister or bottle after “EXP”. The expiry date refers to the last day of that month.
+Blister: Store in the original package in order to protect from moisture.
+Bottle: Once opened, the medicine must be used within 4 months. Keep the bottle tightly closed. Store in the original package in order to protect from moisture.
+Do not throw away any medicines via wastewater. Ask your pharmacist how to throw away medicines you no longer use. These measures will help protect the environment.
+
+===== pradaxa | Leaflet, Leaflet 1, Leaflet 2, Leaflet 3, Leaflet 4, Leaflet 5, Leaflet 6 | page 164 =====
+Pradaxa | Pradaxa 110 mg hard capsules | Leaflet; Leaflet 1 What Pradaxa is and what it is used for; Leaflet 2 What you need to know before you take Pradaxa; Leaflet 3 How to take Pradaxa; Leaflet 4 Possible side effects; Leaflet 5 How to store Pradaxa; Leaflet 6 Contents of the pack and other information
+Pradaxa 110 mg hard capsules dabigatran etexilate
+What is in this leaflet
+1. What Pradaxa is and what it is used for
+2. What you need to know before you take Pradaxa
+3. How to take Pradaxa
+4. Possible side effects
+5. How to store Pradaxa
+6. Contents of the pack and other information
+1. What Pradaxa is and what it is used for
+Pradaxa is used in adults to:
+- prevent blood clots in the brain (stroke) and other blood vessels in the body if you have a form of irregular heart rhythm called nonvalvular atrial fibrillation and at least one additional risk factor.
+- treat blood clots in the veins of your legs and lungs and to prevent blood clots from re-occurring in the vein of your legs and lungs.
+Pradaxa is used in children to:
+
+===== pradaxa | Leaflet 4 | page 169 =====
+Pradaxa | Pradaxa 110 mg hard capsules | Leaflet 4 Possible side effects
+4. Possible side effects
+Tell your doctor immediately, if you experience a serious allergic reaction which causes difficulty in
+breathing or dizziness.
+Rare (may affect up to 1 in 1 000 people): ­ Bleeding ­ Bleeding may happen in the brain, from a surgical incision, from the site of entry of an injection or from the site of entry of a catheter into a vein ­ Blood-stained discharge from the site of entry of a catheter into a vein ­ Coughing of blood or blood stained sputum ­ A fall in the number of platelets in the blood ­ A fall in the number of red cells in the blood after an operation ­ Serious allergic reaction which causes difficulty in breathing or dizziness ­ Serious allergic reaction which causes swelling of the face or throat ­ Skin rash notable for dark red, raised, itchy bumps caused by an allergic reaction ­ Sudden change of the skin which affects its colour and appearance ­ Itching ­ Ulcer in the stomach or bowel (incl. ulcer in the gullet) ­ Inflammation of the gullet and stomach ­ Reflux of gastric juice into the gullet ­ Belly ache or stomach ache ­ Indigestion ­ Difficulty in swallowing ­ Fluid exiting a wound ­ Fluid exiting a wound after an operation
+Prevention of brain or body vessel obstruction by blood clot formation developing after abnormal heart beats
+
+===== pradaxa | Leaflet 4 | page 171 =====
+Pradaxa | Pradaxa 110 mg hard capsules | Leaflet 4 Possible side effects
+Common (may affect up to 1 in 10 people): ­ Bleeding may happen from the nose, into the stomach or bowel, from penis/vagina or urinary tract (incl. blood in the urine that stains the urine pink or red), or under the skin ­ A fall in the number of red cells in the blood ­ Belly ache or stomach ache ­ Indigestion ­ Frequent loose or liquid bowel movements ­ Feeling sick
+Uncommon (may affect up to 1 in 100 people): ­ Bleeding ­ Bleeding may happen from piles, from the rectum, or in the brain. ­ Haematoma formation ­ Coughing of blood or blood stained sputum ­ A fall in the number of platelets in the blood ­ A fall in the amount of haemoglobin in the blood (the substance in the red blood cells) ­ Allergic reaction ­ Sudden change of the skin which affects its colour and appearance ­ Itching ­ Ulcer in the stomach or bowel (incl. ulcer in the gullet) ­ Inflammation of the gullet and stomach ­ Reflux of gastric juice into the gullet ­ Vomiting ­ Difficulty in swallowing ­ Unusual laboratory test results on liver function
+
+===== pradaxa | Leaflet 4 | page 171 =====
+Pradaxa | Pradaxa 110 mg hard capsules | Leaflet 4 Possible side effects
+Rare (may affect up to 1 in 1 000 people): ­ Bleeding may happen into a joint, from a surgical incision, from an injury, from the site of entry of an injection or from the site of entry of a catheter into a vein ­ Serious allergic reaction which causes difficulty in breathing or dizziness ­ Serious allergic reaction which causes swelling of the face or throat ­ Skin rash notable for dark red, raised, itchy bumps caused by an allergic reaction ­ A decrease in the proportion of blood cells ­ Liver enzymes increased ­ Yellowing of the skin or whites of the eyes, caused by liver or blood problems
+In a clinical trial the rate of heart attacks with Pradaxa was numerically higher than with warfarin. The overall occurrence was low.
+Treatment of blood clots in the veins of your legs and lungs including prevention of blood clots from re-occurring in the veins of your legs and/or lungs
+Common (may affect up to 1 in 10 people): ­ Bleeding may happen from the nose, into the stomach or bowel, from the rectum, from penis/vagina or urinary tract (incl. blood in the urine that stains the urine pink or red), or under the skin ­ Indigestion
+
+===== pradaxa | Leaflet 4 | page 172 =====
+Pradaxa | Pradaxa 110 mg hard capsules | Leaflet 4 Possible side effects
+Uncommon (may affect up to 1 in 100 people): ­ Bleeding ­ Bleeding may happen into a joint or from an injury ­ Bleeding may happen from piles ­ A fall in the number of red cells in the blood ­ Haematoma formation ­ Coughing of blood or blood stained sputum ­ Allergic reaction ­ Sudden change of the skin which affects its colour and appearance ­ Itching ­ Ulcer in the stomach or bowel (incl. ulcer in the gullet) ­ Inflammation of the gullet and stomach ­ Reflux of gastric juice into the gullet ­ Feeling sick ­ Vomiting ­ Belly ache or stomach ache ­ Frequent loose or liquid bowel movements ­ Unusual laboratory test results on liver function ­ Liver enzymes increased
+Rare (may affect up to 1 in 1 000 people): ­ Bleeding may happen, from a surgical incision, or from the site of entry of an injection or from the site of entry of a catheter into a vein or from the brain ­ A fall in the number of platelets in the blood ­ Serious allergic reaction which causes difficulty in breathing or dizziness ­ Serious allergic reaction which causes swelling of the face or throat ­ Skin rash notable for dark red, raised, itchy bumps caused by an allergic reaction ­ Difficulty in swallowing
+Not known (frequency cannot be estimated from the available data): ­ Difficulty in breathing or wheezing ­ A fall in the amount of haemoglobin in the blood (the substance in the red blood cells) ­ A decrease in the proportion of blood cells ­ Decreases in the number or even lack of white blood cells (which help to fight infections) ­ Yellowing of the skin or whites of the eyes, caused by liver or blood problems ­ Hair loss
+
+===== pradaxa | Leaflet 4 | page 172 =====
+Pradaxa | Pradaxa 110 mg hard capsules | Leaflet 4 Possible side effects
+In the trial program the rate of heart attacks with Pradaxa was higher than with warfarin. The overall occurence was low. No imbalance in the rate of heart attacks was observed in patients treated with dabigatran versus patients treated with placebo.
+Not known (frequency cannot be estimated from the available data): ­ Lack of white blood cells (which help to fight infections) ­ Serious allergic reaction which causes difficulty in breathing or dizziness ­ Serious allergic reaction which causes swelling of the face or throat ­ Difficulty in breathing or wheezing ­ Bleeding ­ Bleeding may happen into a joint or from an injury, from a surgical incision, or from the site of entry of an injection or from the site of entry of a catheter into a vein ­ Bleeding may happen from piles ­ Ulcer in the stomach or bowel (incl. ulcer in the gullet) ­ Unusual laboratory test results on liver function
+
+===== pradaxa | Leaflet, Leaflet 1, Leaflet 2, Leaflet 3, Leaflet 4, Leaflet 5, Leaflet 6 | page 177 =====
+Pradaxa | Pradaxa 150 mg hard capsules | Leaflet; Leaflet 1 What Pradaxa is and what it is used for; Leaflet 2 What you need to know before you take Pradaxa; Leaflet 3 How to take Pradaxa; Leaflet 4 Possible side effects; Leaflet 5 How to store Pradaxa; Leaflet 6 Contents of the pack and other information
+Pradaxa 150 mg hard capsules dabigatran etexilate
+What is in this leaflet
+1. What Pradaxa is and what it is used for
+2. What you need to know before you take Pradaxa
+3. How to take Pradaxa
+4. Possible side effects
+5. How to store Pradaxa
+6. Contents of the pack and other information
+1. What Pradaxa is and what it is used for
+Pradaxa is used in adults to:
+Pradaxa is used in children to:
+2. What you need to know before you take Pradaxa
+Do not take Pradaxa
+- if you are allergic to dabigatran etexilate or any of the other ingredients of this medicine (listed in section 6). - if you have severely reduced kidney function. - if you are currently bleeding. - if you have a disease in an organ of the body that increases the risk of serious bleeding (e.g., stomach ulcer, injury or bleeding in the brain, recent surgery of the brain or eyes). - if you have an increased tendency to bleed. This may be inborn, of unknown cause or due to other medicines.
+
+===== pradaxa | Leaflet 4 | page 182 =====
+Pradaxa | Pradaxa 150 mg hard capsules | Leaflet 4 Possible side effects
+4. Possible side effects
+Rare (may affect up to 1 in 1 000 people): ­ Bleeding may happen into a joint, from a surgical incision, from an injury, from the site of entry of an injection or from the site of entry of a catheter into a vein ­ Serious allergic reaction which causes difficulty in breathing or dizziness ­ Serious allergic reaction which causes swelling of the face or throat
+­ Skin rash notable for dark red, raised, itchy bumps caused by an allergic reaction ­ A decrease in the proportion of blood cells ­ Liver enzymes increased ­ Yellowing of the skin or whites of the eyes, caused by liver or blood problems
+In a clinical trial the rate of heart attacks with Pradaxa was numerically higher than with warfarin. The overall occurence was low.
+Not known (frequency cannot be estimated from the available data): ­ Difficulty in breathing or wheezing ­ A fall in the amount of haemoglobin in the blood (the substance in the red blood cells) ­ A decrease in the proportion of blood cells ­ Decreases in the number or even lack of white blood cells (which help to fight infections) ­ Yellowing of the skin or whites of the eyes, caused by liver or blood problems
+­ Hair loss
+In the trial program the rate of heart attacks with Pradaxa was higher than with warfarin. The overall occurrence was low. No imbalance in the rate of heart attacks was observed in patients treated with dabigatran versus patients treated with placebo.
+
+(13 chunk(s) of pradaxa in Leaflet 4)

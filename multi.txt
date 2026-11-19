@@ -1,0 +1,134 @@
+
+===== pradaxa | SmPC 4.6 | page 15 =====
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.6 Fertility, pregnancy and lactation
+4.6 Fertility, pregnancy and lactation
+Women of childbearing potential
+Women of childbearing potential should avoid pregnancy during treatment with Pradaxa.
+Pregnancy
+There is limited amount of data from the use of Pradaxa in pregnant women. Studies in animals have shown reproductive toxicity (see section 5.3). The potential risk for humans is unknown.
+Pradaxa should not be used during pregnancy unless clearly necessary.
+Breast-feeding
+There are no clinical data of the effect of dabigatran on infants during breast-feeding. Breast-feeding should be discontinued during treatment with Pradaxa.
+Fertility
+No human data available.
+In animal studies an effect on female fertility was observed in the form of a decrease in implantations and an increase in pre-implantation loss at 70 mg/kg (representing a 5-fold higher plasma exposure level compared to patients). No other effects on female fertility were observed. There was no influence on male fertility. At doses that were toxic to the mothers (representing a 5- to 10-fold higher plasma exposure level to patients), a decrease in foetal body weight and embryofoetal viability along with an increase in foetal variations were observed in rats and rabbits. In the pre- and post-natal study, an increase in foetal mortality was observed at doses that were toxic to the dams (a dose corresponding to a plasma exposure level 4-fold higher than observed in patients).
+
+===== pradaxa | SmPC 4.5, SmPC 4.6, SmPC 4.7, SmPC 4.8 | page 47 =====
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction; SmPC 4.6 Fertility, pregnancy and lactation; SmPC 4.7 Effects on ability to drive and use machines; SmPC 4.8 Undesirable effects
+SSRIs, SNRIs SSRIs and SNRIs increased the risk of bleeding in RE-LY in all treatment groups,
+Substances influencing gastric pH
+Paediatric population
+4.6 Fertility, pregnancy and lactation
+Women of childbearing potential
+Pregnancy
+Breast-feeding
+Fertility
+No human data available.
+4.7 Effects on ability to drive and use machines
+4.8 Undesirable effects
+Summary of the safety profile
+Dabigatran etexilate has been evaluated in clinical trials overall in approximately 64 000 patients; thereof approximately 35 000 patients were treated with dabigatran etexilate. In total, about 9 % of patients treated for elective hip or knee surgery (short-term treatment for up to 42 days), 22 % of patients with atrial fibrillation treated for the prevention of stroke and systemic embolism (long-term treatment for up to 3 years), 14 % of patients treated for DVT/PE and 15 % of patients treated for DVT/PE prevention experienced adverse reactions.
+The most commonly reported events are bleedings occurring in approximately 14 % of patients treated short-term for elective hip or knee replacement surgery, 16.6 % in patients with atrial fibrillation treated long-term for the prevention of stroke and systemic embolism, and in 14.4 % of adult patients treated for DVT/PE. Furthermore, bleeding occurred in 19.4 % of patients in the DVT/PE prevention trial RE-MEDY (adult patients) and in 10.5 % of patients in the DVT/PE prevention trial RE-SONATE (adult patients).
+Since the patient populations treated in the three indications are not comparable and bleeding events are distributed over several System Organ Classes (SOC), a summary description of major and any bleeding are broken down by indication and provided in tables 13-17 below.
+Although low in frequency in clinical trials, major or severe bleeding may occur and, regardless of location, may lead to disabling, life-threatening or even fatal outcomes.
+Tabulated list of adverse reactions
+
+===== pradaxa | SmPC 4.6, SmPC 4.7, SmPC 4.8 | page 88 =====
+Pradaxa | Pradaxa 150 mg hard capsules | SmPC 4.6 Fertility, pregnancy and lactation; SmPC 4.7 Effects on ability to drive and use machines; SmPC 4.8 Undesirable effects
+4.6 Fertility, pregnancy and lactation
+Women of childbearing potential
+Pregnancy
+Breast-feeding
+Fertility
+No human data available.
+4.7 Effects on ability to drive and use machines
+4.8 Undesirable effects
+Summary of the safety profile
+Dabigatran etexilate has been evaluated in clinical trials overall in approximately 64 000 patients; thereof approximately 35 000 patients were treated with dabigatran etexilate. In total, 22 % of patients with atrial fibrillation treated for the prevention of stroke and systemic embolism (long-term treatment for up to 3 years), 14 % of patients treated for DVT/PE and 15 % of patients treated for DVT/PE prevention experienced adverse reactions.
+The most commonly reported events are bleedings occurring in approximately 16.6 % in patients with atrial fibrillation treated long-term for the prevention of stroke and systemic embolism and in 14.4 % of adult patients treated for DVT/PE. Furthermore, bleeding occurred in 19.4 % of patients in the DVT/PE prevention trial RE-MEDY (adult patients) and in 10.5 % of patients in the DVT/PE prevention trial RE-SONATE (adult patients).
+Since the patient populations treated in the three indications are not comparable and bleeding events are distributed over several System Organ Classes (SOC), a summary description of major and any bleeding are broken down by indication and are provided in tables 12-15 below.
+Although low in frequency in clinical trials, major or severe bleeding may occur and, regardless of
+location, may lead to disabling, life-threatening or even fatal outcomes.
+Tabulated list of adverse reactions
+
+(3 chunk(s) of pradaxa in SmPC 4.6)
+
+===== xarelto | SmPC 4.6 | page 9 =====
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.6 Fertility, pregnancy and lactation
+4.6 Fertility, pregnancy and lactation
+Pregnancy Safety and efficacy of Xarelto have not been established in pregnant women. Studies in animals have shown reproductive toxicity (see section 5.3). Due to the potential reproductive toxicity, the intrinsic risk of bleeding and the evidence that rivaroxaban passes the placenta, Xarelto is contraindicated during pregnancy (see section 4.3). Women of child-bearing potential should avoid becoming pregnant during treatment with rivaroxaban.
+Breast-feeding Safety and efficacy of Xarelto have not been established in breast-feeding women. Data from animals indicate that rivaroxaban is secreted into milk. Therefore Xarelto is contraindicated during breast-
+feeding (see section 4.3). A decision must be made whether to discontinue breast-feeding or to discontinue/abstain from therapy.
+Fertility No specific studies with rivaroxaban in humans have been conducted to evaluate effects on fertility. In a study on male and female fertility in rats no effects were seen (see section 5.3).
+
+===== xarelto | SmPC 4.6, SmPC 4.7, SmPC 4.8 | page 36 =====
+Xarelto | Xarelto 10 mg film-coated tablets | SmPC 4.6 Fertility, pregnancy and lactation; SmPC 4.7 Effects on ability to drive and use machines; SmPC 4.8 Undesirable effects
+4.6 Fertility, pregnancy and lactation
+Breast-feeding Safety and efficacy of Xarelto have not been established in breast-feeding women. Data from animals indicate that rivaroxaban is secreted into milk. Therefore Xarelto is contraindicated during breastfeeding (see section 4.3). A decision must be made whether to discontinue breast-feeding or to discontinue/abstain from therapy.
+4.7 Effects on ability to drive and use machines
+4.8 Undesirable effects
+5 mg co-administered with ASA or 10 mg alone 47 months 3,256** 5 mg co-administered with ASA 42 months * Patients exposed to at least one dose of rivaroxaban ** From the VOYAGER PAD study
+Eye disorders Eye haemorrhage (incl. conjunctival haemorrhage)
+Cardiac disorders Tachycardia Vascular disorders Hypotension, haematoma
+
+===== xarelto | SmPC 4.6 | page 150 =====
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | SmPC 4.6 Fertility, pregnancy and lactation
+4.6 Fertility, pregnancy and lactation
+Pregnancy Safety and efficacy of Xarelto have not been established in pregnant women. Studies in animals have shown reproductive toxicity (see section 5.3). Due to the potential reproductive toxicity, the intrinsic risk of bleeding and the evidence that rivaroxaban passes the placenta, Xarelto is contraindicated during pregnancy (see section 4.3). Female adolescents of child-bearing potential should avoid becoming pregnant during treatment with rivaroxaban.
+
+(3 chunk(s) of xarelto in SmPC 4.6)
+
+===== xarelto | SmPC 4.9 | page 14 =====
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.9 Overdose
+4.9 Overdose
+Rare cases of overdose up to 1,960 mg have been reported. In case of overdose, the patient should be observed carefully for bleeding complications or other adverse reactions (see section “Management of bleeding”). Due to limited absorption a ceiling effect with no further increase in average plasma exposure is expected at supratherapeutic doses of 50 mg rivaroxaban or above. A specific reversal agent (andexanet alfa) antagonising the pharmacodynamic effect of rivaroxaban is available (refer to the Summary of Product Characteristics of andexanet alfa). The use of activated charcoal to reduce absorption in case of rivaroxaban overdose may be considered.
+
+===== xarelto | SmPC 4.9 | page 14 =====
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.9 Overdose
+Management of bleeding Should a bleeding complication arise in a patient receiving rivaroxaban, the next rivaroxaban administration should be delayed or treatment should be discontinued as appropriate. Rivaroxaban has a half-life of approximately 5 to 13 hours (see section 5.2). Management should be individualised according to the severity and location of the haemorrhage. Appropriate symptomatic treatment could be used as needed, such as mechanical compression (e.g. for severe epistaxis), surgical haemostasis with bleeding control procedures, fluid replacement and haemodynamic support, blood products (packed red cells or fresh frozen plasma, depending on associated anaemia or coagulopathy) or platelets. If bleeding cannot be controlled by the above measures, either the administration of a specific factor Xa inhibitor reversal agent (andexanet alfa), which antagonises the pharmacodynamic effect of rivaroxaban, or a specific procoagulant agent, such as prothrombin complex concentrate (PCC), activated prothrombin complex concentrate (APCC) or recombinant factor VIIa (r-FVIIa), should be considered. However, there is currently very limited clinical experience with the use of these medicinal products in individuals receiving rivaroxaban. The recommendation is also based on limited non-clinical data. Re-dosing of recombinant factor VIIa shall be considered and titrated depending on improvement of bleeding. Depending on local availability, a consultation with a coagulation expert should be considered in case of major bleedings (see section 5.1).
+Protamine sulphate and vitamin K are not expected to affect the anticoagulant activity of rivaroxaban. There is limited experience with tranexamic acid and no experience with aminocaproic acid and aprotinin in individuals receiving rivaroxaban. There is neither scientific rationale for benefit nor experience with the use of the systemic haemostatic desmopressin in individuals receiving rivaroxaban. Due to the high plasma protein binding rivaroxaban is not expected to be dialysable.
+
+===== xarelto | SmPC 4.9 | page 68 =====
+Xarelto | Xarelto 15 mg film-coated tablets | SmPC 4.9 Overdose
+4.9 Overdose
+In adults, rare cases of overdose up to 1,960 mg have been reported. In case of overdose, the patient should be observed carefully for bleeding complications or other adverse reactions (see section “Management of bleeding”). There is limited data available in children. Due to limited absorption a ceiling effect with no further increase in average plasma exposure is expected at supratherapeutic doses of 50 mg rivaroxaban or above in adults, however, no data is available at supratherapeutic doses in children. A specific reversal agent (andexanet alfa) antagonising the pharmacodynamic effect of rivaroxaban is available for adults, but not established in children (refer to the Summary of Product Characteristics of andexanet alfa). The use of activated charcoal to reduce absorption in case of rivaroxaban overdose may be considered.
+
+===== xarelto | SmPC 4.9 | page 69 =====
+Xarelto | Xarelto 15 mg film-coated tablets | SmPC 4.9 Overdose
+Management of bleeding Should a bleeding complication arise in a patient receiving rivaroxaban, the next rivaroxaban administration should be delayed or treatment should be discontinued as appropriate. Rivaroxaban has a half-life of approximately 5 to 13 hours in adults. The half life in children estimated using population pharmacokinetic (popPK) modelling approaches is shorter (see section 5.2). Management should be individualised according to the severity and location of the haemorrhage. Appropriate symptomatic treatment could be used as needed, such as mechanical compression (e.g. for severe epistaxis), surgical haemostasis with bleeding control procedures, fluid replacement and haemodynamic support, blood products (packed red cells or fresh frozen plasma, depending on associated anaemia or coagulopathy) or platelets. If bleeding cannot be controlled by the above measures, either the administration of a specific factor Xa inhibitor reversal agent (andexanet alfa), which antagonises the pharmacodynamic effect of rivaroxaban, or a specific procoagulant agent, such as prothrombin complex concentrate (PCC), activated prothrombin complex concentrate (APCC) or recombinant factor VIIa (r-FVIIa), should be considered. However, there is currently very limited clinical experience with the use of these medicinal products in adults and in children receiving rivaroxaban. The recommendation is also based on limited non-clinical data. Re-dosing of recombinant factor VIIa shall be considered and titrated depending on improvement of bleeding. Depending on local availability, a consultation with a coagulation expert should be considered in case of major bleedings (see section 5.1).
+
+===== xarelto | SmPC 4.9 | page 69 =====
+Xarelto | Xarelto 15 mg film-coated tablets | SmPC 4.9 Overdose
+Protamine sulphate and vitamin K are not expected to affect the anticoagulant activity of rivaroxaban. There is limited experience with tranexamic acid and no experience with aminocaproic acid and aprotinin in adults receiving rivaroxaban. There is no experience on the use of these agents in children receiving rivaroxaban. There is neither scientific rationale for benefit nor experience with the use of the systemic haemostatic desmopressin in individuals receiving rivaroxaban. Due to the high plasma protein binding rivaroxaban is not expected to be dialysable.
+
+===== xarelto | SmPC 4.8, SmPC 4.9, SmPC 5, SmPC 5.1 | page 96 =====
+Xarelto | Xarelto 20 mg film-coated tablets | SmPC 4.8 Undesirable effects; SmPC 4.9 Overdose; SmPC 5 PHARMACOLOGICAL PROPERTIES; SmPC 5.1 Pharmacodynamic properties
+4.8 Undesirable effects
+Eye disorders Eye haemorrhage (incl. conjunctival haemorrhage)
+Cardiac disorders Tachycardia Vascular disorders Hypotension, haematoma
+4.9 Overdose
+5. PHARMACOLOGICAL PROPERTIES
+5.1 Pharmacodynamic properties
+Paediatric population PT (neoplastin reagent), aPTT, and anti-Xa assay (with a calibrated quantitative test) display a close correlation to plasma concentrations in children. The correlation between anti-Xa to plasma concentrations is linear with a slope close to 1. Individual discrepancies with higher or lower anti-Xa values as compared to the corresponding plasma concentrations may occur. There is no need for routine monitoring of coagulation parameters during clinical treatment with rivaroxaban. However, if clinically indicated, rivaroxaban concentrations can be measured by calibrated quantitative anti-Factor Xa tests in mcg/L (see table 13 in section 5.2 for ranges of observed rivaroxaban plasma concentrations in children). The lower limit of quantifications must be considered when the anti-Xa test is used to quantify plasma concentrations of rivaroxaban in children. No threshold for efficacy or safety events has been established.
+Patients undergoing cardioversion A prospective, randomised, open-label, multicentre, exploratory study with blinded endpoint evaluation (X-VERT) was conducted in 1504 patients (oral anticoagulant naive and pre-treated) with non-valvular atrial fibrillation scheduled for cardioversion to compare rivaroxaban with dose-adjusted
+
+===== xarelto | SmPC 4.8, SmPC 4.9, SmPC 5, SmPC 5.1 | page 125 =====
+Xarelto | Xarelto 15 mg film-coated tablets | SmPC 4.8 Undesirable effects; SmPC 4.9 Overdose; SmPC 5 PHARMACOLOGICAL PROPERTIES; SmPC 5.1 Pharmacodynamic properties
+4.8 Undesirable effects
+Eye disorders Eye haemorrhage (incl. conjunctival haemorrhage)
+Cardiac disorders Tachycardia Vascular disorders Hypotension, haematoma
+4.9 Overdose
+5. PHARMACOLOGICAL PROPERTIES
+5.1 Pharmacodynamic properties
+
+===== xarelto | SmPC 4.9 | page 155 =====
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | SmPC 4.9 Overdose
+4.9 Overdose
+In adults, rare cases of overdose up to 1,960 mg have been reported. In case of overdose, the patient should be observed carefully for bleeding complications or other adverse reactions (see section “Management of bleeding”). There is limited data available in children. Due to limited absorption a ceiling effect with no further increase in average plasma exposure is expected at supratherapeutic doses of 50 mg rivaroxaban or above in adults, however no data is available at supratherapeutic doses in children. A specific reversal agent antagonising the pharmacodynamic effect of rivaroxaban is not established in children. The use of activated charcoal to reduce absorption in case of rivaroxaban overdose may be considered. Due to the high plasma protein binding rivaroxaban is not expected to be dialysable.
+Management of bleeding Should a bleeding complication arise in a patient receiving rivaroxaban, the next rivaroxaban administration should be delayed or treatment should be discontinued as appropriate. Rivaroxaban has a half-life of approximately 5 to 13 hours in adults. The half-life in children estimated using population pharmacokinetic (popPK) modelling approaches is shorter (see section 5.2). Management should be individualised according to the severity and location of the haemorrhage. Appropriate symptomatic treatment could be used as needed, such as mechanical compression (e.g. for severe epistaxis), surgical haemostasis with bleeding control procedures, fluid replacement and haemodynamic support, blood products (packed red cells or fresh frozen plasma, depending on associated anaemia or coagulopathy) or platelets. If bleeding cannot be controlled by the above measures, administration of a specific procoagulant agent should be considered, such as prothrombin complex concentrate (PCC), activated prothrombin complex concentrate (APCC) or recombinant factor VIIa (r-FVIIa). However, there is currently very limited clinical experience with the use of these medicinal products in adults and in children receiving rivaroxaban (see section 5.1).
+
+===== xarelto | SmPC 4.9 | page 156 =====
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | SmPC 4.9 Overdose
+Protamine sulphate and vitamin K are not expected to affect the anticoagulant activity of rivaroxaban. There is limited experience with tranexamic acid and no experience with aminocaproic acid and aprotinin in adults receiving rivaroxaban. There is no experience on the use of these agents in children receiving rivaroxaban. There is neither scientific rationale for benefit nor experience with the use of the systemic haemostatic desmopressin in individuals receiving rivaroxaban.
+
+(9 chunk(s) of xarelto in SmPC 4.9)

@@ -1,0 +1,2505 @@
+# Answers to grade by hand
+
+Grade these in eval/human_labels.csv before opening verdicts.jsonl.
+
+---
+
+## q01 (single)
+
+**Question:** I forgot my Eliquis last night, can I take two tablets this morning?
+
+**Reference:** No. A missed evening dose can only be taken the same evening; do not double the next morning, continue twice daily as normal.
+
+**Agent answer:** No, do not take two doses the next morning [eliquis p.143 Leaflet 3]. 
+
+If you miss a dose of Eliquis, you should not take two doses the next morning to make up for a forgotten dose [eliquis p.143 Leaflet 3]. Instead, continue to follow your regular twice-daily dosing schedule on the following day [eliquis p.143 Leaflet 3]. 
+
+(Note: This guidance applies specifically to Eliquis; information for Xarelto and Pradaxa is not covered here.)
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[xarelto p.257 Leaflet 3] (distance 0.21)
+Xarelto | Xarelto 15 mg film-coated tablets | Leaflet 3 How to take Xarelto
+If you forget to take Xarelto - Adults, children and adolescents: If you are taking one 20 mg tablet or one 15 mg tablet once a day and have missed a dose, take it as soon as you remember. Do not take more than one tablet in a single day to make up for a forgotten dose. Take the next tablet on the following day and then carry on taking one tablet once a day.
+- Adults: If you are taking one 15 mg tablet twice a day and have missed a dose, take it as soon as you remember. Do not take more than two 15 mg tablets in a single day. If you forget to take a dose you can take two 15 mg tablets at the same time to get a total of two tablets (30 mg) on one day. On the following day you should carry on taking one 15 mg tablet twice a day.
+If you stop taking Xarelto Do not stop taking Xarelto without talking to your doctor first, because Xarelto treats and prevents serious conditions.
+
+[eliquis p.143 Leaflet 3] (distance 0.221)
+Eliquis | Eliquis 2.5 mg film-coated tablets | Leaflet 3 How to take Eliquis
+- Changing from treatment with anticoagulant containing vitamin K antagonist (e.g., warfarin) to Eliquis Stop taking the medicine containing a vitamin K antagonist. Your doctor needs to do blood-measurements and instruct you when to start taking Eliquis.
+- Changing from Eliquis to anticoagulant treatment containing vitamin K antagonist (e.g., warfarin). If your doctor tells you that you have to start taking the medicine containing a vitamin K antagonist, continue to take Eliquis for at least 2 days after your first dose of the medicine containing a vitamin K antagonist. Your doctor needs to do blood-measurements and instruct you when to stop taking Eliquis.
+Patients undergoing cardioversion If your abnormal heartbeat needs to be restored to normal by a procedure called cardioversion, take this medicine at the times your doctor tells you, to prevent blood clots in blood vessels in your brain and other blood vessels in your body.
+If you take more Eliquis than you should Tell your doctor immediately if you have taken more than the prescribed dose of this medicine. Take the medicine pack with you, even if there are no tablets left.
+If you take more Eliquis than recommended, you may have an increased risk of bleeding. If bleeding occurs, surgery, blood transfusions, or other treatments that may reverse anti-factor Xa activity may be required.
+If you forget to take Eliquis - If you miss a morning dose, take it as soon as you remember and it may be taken together with the evening dose. - A missed evening dose can only be taken during the same evening. Do not take two doses the next morning, instead continue to follow the dosing schedule twice daily as recommended on the next day.
+
+[eliquis p.4 SmPC 4.2] (distance 0.234)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+Based on VTE treatment guidelines in the paediatric population, duration of overall therapy should be individualised after careful assessment of the treatment benefit and the risk for bleeding (see section 4.4).
+Missed dose in adults and paediatric patients A missed morning dose should be taken immediately when it is noticed, and it may be taken together with the evening dose. A missed evening dose can only be taken during the same evening, the patient should not take two doses the next morning. The patient should continue with the intake of the regular dose twice daily as recommended on the following day.
+Switching Switching treatment from parenteral anticoagulants to Eliquis (and vice versa) can be done at the next scheduled dose (see section 4.5). These medicinal products should not be administered simultaneously.
+Switching from vitamin K antagonist (VKA) therapy to Eliquis When converting patients from vitamin K antagonist (VKA) therapy to Eliquis, warfarin or other VKA therapy should be discontinued and Eliquis started when the international normalised ratio (INR) is < 2.
+Switching from Eliquis to VKA therapy When converting patients from Eliquis to VKA therapy, administration of Eliquis should be continued for at least 2 days after beginning VKA therapy. After 2 days of coadministration of Eliquis with VKA therapy, an INR should be obtained prior to the next scheduled dose of Eliquis. Coadministration of Eliquis and VKA therapy should be continued until the INR is ≥ 2.
+No data are available for paediatric patients.
+Elderly VTEp and VTEt – No dose adjustment required (see sections 4.4 and 5.2).
+NVAF – No dose adjustment required, unless criteria for dose reduction are met (see Dose reduction at the beginning of section 4.2).
+Renal impairment
+Adult patients In adult patients with mild or moderate renal impairment, the following recommendations apply:
+
+[eliquis p.68 SmPC 4.2] (distance 0.235)
+Eliquis | Eliquis 0.15 mg granules in capsules for opening | SmPC 4.2 Posology and method of administration
+Table 1: Dose recommendations for treatment of VTE and prevention of recurrent VTE in paediatric patients, by weight in kg (after initial parenteral anticoagulation) Days 1-7 Day 8 and beyond Pharmaceutical forms Body weight (kg) Dosing schedule Maximum daily dose Dosing schedule Maximum daily dose Granules in capsules for opening 0.15 mg 4 to < 5 0.6 mg twice daily 1.2 mg 0.3 mg twice daily 0.6 mg Coated granules in sachet 0.5 mg, 1.5 mg, 2.0 mg 5 to < 6 1 mg twice daily 2 mg 0.5 mg twice daily 1 mg 6 to < 9 2 mg twice daily 4 mg 1 mg twice daily 2 mg 9 to < 12 3 mg twice daily 6 mg 1.5 mg twice daily 3 mg 12 to < 18 4 mg twice daily 8 mg 2 mg twice daily 4 mg 18 to < 25 6 mg twice daily 12 mg 3 mg twice daily 6 mg 25 to < 35 8 mg twice daily 16 mg 4 mg twice daily 8 mg Film-coated tablets 2.5 mg and 5.0 mg ≥ 35 10 mg twice daily 20 mg 5 mg twice daily 10 mg
+Missed dose A missed morning dose should be taken immediately when it is noticed, and it may be taken together with the evening dose. A missed evening dose can only be taken during the same evening, the patient should not take two doses the next morning. The patient should continue with the intake of the regular dose twice daily as recommended on the following day.
+
+[xarelto p.265 Leaflet 3] (distance 0.235)
+Xarelto | Xarelto 15 mg film-coated tablets | Leaflet 3 How to take Xarelto
+3. How to take Xarelto
+How much to take The recommended dose is one tablet Xarelto 15 mg twice a day for the first 3 weeks. For treatment after 3 weeks, the recommended dose is one tablet Xarelto 20 mg once a day. This Xarelto 15 mg and 20 mg treatment initiation pack is only for the first 4 weeks of treatment. Upon completion of this pack, treatment will continue on Xarelto 20 mg once daily as your doctor has told you. If you have kidney problems, your doctor may decide to reduce the dose for the treatment after 3 weeks to one tablet Xarelto 15 mg once a day if the risk for bleeding is greater than the risk for having another blood clot.
+If you forget to take Xarelto - If you are taking one 15 mg tablet twice a day and have missed a dose, take it as soon as you remember. Do not take more than two 15 mg tablets in a single day. If you forget to take a dose you can take two 15 mg tablets at the same time to get a total of two tablets (30 mg) on one day. On the following day you should carry on taking one 15 mg tablet twice a day.
+- If you are taking one 20 mg tablet once a day and have missed a dose, take it as soon as you remember. Do not take more than one tablet in a single day to make up for a forgotten dose. Take the next tablet on the following day and then carry on taking one tablet once a day.
+```
+</details>
+
+---
+
+## q02 (single)
+
+**Question:** My father had an eye operation last week, can he start taking Eliquis?
+
+**Reference:** No. Recent eye (ophthalmic), brain or spinal surgery is a contraindication because of the risk of major bleeding.
+
+**Agent answer:** Apixaban (Eliquis) should be restarted after the invasive procedure or surgical intervention as soon as possible provided the clinical situation allows and adequate haemostasis has been established [eliquis p.8 SmPC 4.4]. 
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[eliquis p.8 SmPC 4.4] (distance 0.2)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.4 Special warnings and precautions for use
+Apixaban has not been studied in paediatric patients with prosthetic heart valves; therefore, the use of apixaban is not recommended.
+Patients with antiphospholipid syndrome
+Direct acting Oral Anticoagulants (DOACs) including apixaban are not recommended for patients with a history of thrombosis who are diagnosed with antiphospholipid syndrome. In particular for patients that are triple positive (for lupus anticoagulant, anticardiolipin antibodies, and anti-beta 2-glycoprotein I antibodies), treatment with DOACs could be associated with increased rates of recurrent thrombotic events compared with vitamin K antagonist therapy.
+Surgery and invasive procedures
+Apixaban should be discontinued at least 48 hours prior to elective surgery or invasive procedures with a moderate or high risk of bleeding. This includes interventions for which the probability of clinically significant bleeding cannot be excluded or for which the risk of bleeding would be unacceptable.
+Apixaban should be discontinued at least 24 hours prior to elective surgery or invasive procedures with a low risk of bleeding. This includes interventions for which any bleeding that occurs is expected to be minimal, non-critical in its location or easily controlled.
+If surgery or invasive procedures cannot be delayed, appropriate caution should be exercised, taking into consideration an increased risk of bleeding. This risk of bleeding should be weighed against the urgency of intervention.
+Apixaban should be restarted after the invasive procedure or surgical intervention as soon as possible provided the clinical situation allows and adequate haemostasis has been established (for cardioversion see section 4.2).
+For patients undergoing catheter ablation for atrial fibrillation, apixaban treatment does not need to be interrupted (see sections 4.2, 4.3 and 4.5).
+Temporary discontinuation
+
+[eliquis p.40 SmPC 4.4] (distance 0.227)
+Eliquis | Eliquis 5 mg film-coated tablets | SmPC 4.4 Special warnings and precautions for use
+4.4 Special warnings and precautions for use
+Haemorrhage risk
+Interaction with other medicinal products affecting haemostasis
+In patients with atrial fibrillation and conditions that warrant mono or dual antiplatelet therapy, a careful assessment of the potential benefits against the potential risks should be made before combining this therapy with Eliquis.
+Patients with prosthetic heart valves
+Patients with antiphospholipid syndrome
+Direct acting Oral Anticoagulants (DOACs) including apixaban are not recommended for patients with a history of thrombosis who are diagnosed with antiphospholipid syndrome. In particular for patients that are triple positive (for lupus anticoagulant, anticardiolipin antibodies, and anti-beta
+2-glycoprotein I antibodies), treatment with DOACs could be associated with increased rates of recurrent thrombotic events compared with vitamin K antagonist therapy.
+Surgery and invasive procedures
+Temporary discontinuation
+Spinal/epidural anaesthesia or puncture
+When neuraxial anaesthesia (spinal/epidural anaesthesia) or spinal/epidural puncture is employed, patients treated with antithrombotic agents for prevention of thromboembolic complications are at risk of developing an epidural or spinal haematoma which can result in long-term or permanent paralysis. The risk of these events may be increased by the postoperative use of indwelling epidural catheters or the concomitant use of medicinal products affecting haemostasis. Indwelling epidural or intrathecal catheters must be removed at least 5 hours prior to the first dose of apixaban. The risk may also be increased by traumatic or repeated epidural or spinal puncture. Patients are to be frequently monitored for signs and symptoms of neurological impairment (e.g., numbness or weakness of the legs, bowel or bladder dysfunction). If neurological compromise is noted, urgent diagnosis and treatment is necessary. Prior to neuraxial intervention the physician should consider the potential benefit versus the risk in anticoagulated patients or in patients to be anticoagulated for thromboprophylaxis.
+Patients with active cancer
+Patients with renal impairment
+
+[eliquis p.8 SmPC 4.4] (distance 0.228)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.4 Special warnings and precautions for use
+Discontinuing anticoagulants, including apixaban, for active bleeding, elective surgery, or invasive procedures places patients at an increased risk of thrombosis. Lapses in therapy should be avoided and if anticoagulation with apixaban must be temporarily discontinued for any reason, therapy should be restarted as soon as possible.
+Spinal/epidural anaesthesia or puncture
+When neuraxial anaesthesia (spinal/epidural anaesthesia) or spinal/epidural puncture is employed, patients treated with antithrombotic agents for prevention of thromboembolic complications are at risk
+of developing an epidural or spinal haematoma which can result in long-term or permanent paralysis. The risk of these events may be increased by the post-operative use of indwelling epidural catheters or the concomitant use of medicinal products affecting haemostasis. Indwelling epidural or intrathecal catheters must be removed at least 5 hours prior to the first dose of apixaban. The risk may also be increased by traumatic or repeated epidural or spinal puncture. Patients are to be frequently monitored for signs and symptoms of neurological impairment (e.g., numbness or weakness of the legs, bowel or bladder dysfunction). If neurological compromise is noted, urgent diagnosis and treatment is necessary. Prior to neuraxial intervention the physician should consider the potential benefit versus the risk in anticoagulated patients or in patients to be anticoagulated for thromboprophylaxis.
+
+[eliquis p.142 Leaflet 3] (distance 0.236)
+Eliquis | Eliquis 2.5 mg film-coated tablets | Leaflet 3 How to take Eliquis
+If you have had a major hip operation you will usually take the tablets for 32 to 38 days. If you have had a major knee operation you will usually take the tablets for 10 to 14 days.
+To prevent a blood clot from forming in the heart in patients with an irregular heart beat and at least one additional risk factor. The recommended dose is one tablet of Eliquis 5 mg twice a day.
+The recommended dose is one tablet of Eliquis 2.5 mg twice a day if: - you have severely reduced kidney function; - two or more of the following apply to you: - your blood test results suggest poor kidney function (value of serum creatinine is 1.5 mg/dL (133 micromole/L) or greater); - you are 80 years old or older; - your weight is 60 kg or lower.
+The recommended dose is one tablet twice a day, for example, one in the morning and one in the evening. Your doctor will decide how long you must continue treatment for.
+To treat blood clots in the veins of your legs and blood clots in the blood vessels of your lungs The recommended dose is two tablets of Eliquis 5 mg twice a day for the first 7 days, for example, two in the morning and two in the evening. After 7 days the recommended dose is one tablet of Eliquis 5 mg twice a day, for example, one in the morning and one in the evening.
+For preventing blood clots from re-occurring following completion of 6 months of treatment The recommended dose is one tablet of Eliquis 2.5 mg twice a day for example, one in the morning and one in the evening. Your doctor will decide how long you must continue treatment for.
+
+[eliquis p.2 SmPC 4.2] (distance 0.236)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+4.2 Posology and method of administration
+Posology
+Prevention of VTE (VTEp): elective hip or knee replacement surgery in adults The recommended dose of apixaban is 2.5 mg taken orally twice daily. The initial dose should be taken 12 to 24 hours after surgery.
+Physicians may consider the potential benefits of earlier anticoagulation for VTE prophylaxis as well as the risks of post-surgical bleeding in deciding on the time of administration within this time window.
+In patients undergoing hip replacement surgery The recommended duration of treatment is 32 to 38 days.
+In patients undergoing knee replacement surgery The recommended duration of treatment is 10 to 14 days.
+Prevention of stroke and systemic embolism in adult patients with non-valvular atrial fibrillation (NVAF) The recommended dose of apixaban is 5 mg taken orally twice daily.
+Dose reduction The recommended dose of apixaban is 2.5 mg taken orally twice daily in patients with NVAF and at least two of the following characteristics: age ≥ 80 years, body weight ≤ 60 kg, or serum creatinine ≥ 1.5 mg/dL (133 micromole/L).
+Therapy should be continued long-term.
+Treatment of DVT, treatment of PE and prevention of recurrent DVT and PE (VTEt) in adults The recommended dose of apixaban for the treatment of acute DVT and treatment of PE is 10 mg taken orally twice daily for the first 7 days followed by 5 mg taken orally twice daily. As per available medical guidelines, short duration of treatment (at least 3 months) should be based on transient risk factors (e.g., recent surgery, trauma, immobilisation).
+```
+</details>
+
+---
+
+## q03 (single)
+
+**Question:** I take Eliquis and I have back pain, can I take naproxen or an aspirin?
+
+**Reference:** Only with caution: NSAIDs like naproxen and aspirin increase the bleeding risk when combined with apixaban, so check with the pharmacist or doctor first.
+
+**Agent answer:** Anti-inflammatory or pain medicines such as acetylsalicylic acid (aspirin) or naproxen may increase the effects of Eliquis and increase the chance of unwanted bleeding [eliquis p.140 Leaflet 2, eliquis p.152 Leaflet 2]. Eliquis should be used with caution when coadministered with NSAIDs and ASA (acetylsalicylic acid) because these medicinal products typically increase the bleeding risk [eliquis p.12 SmPC 4.5, eliquis p.44 SmPC 4.5]. Additionally, if you are older than 75 years and taking acetylsalicylic acid, you may have an increased chance of bleeding [eliquis p.140 Leaflet 2, eliquis p.152 Leaflet 2]. 
+
+Xarelto and Pradaxa are not covered for this interaction.
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[eliquis p.12 SmPC 4.5] (distance 0.155)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+Apixaban coadministered with clopidogrel (75 mg once a day) or with the combination of clopidogrel 75 mg and ASA 162 mg once daily, or with prasugrel (60 mg followed by 10 mg once daily) in Phase I studies did not show a relevant increase in template bleeding time, or further inhibition of platelet aggregation, compared to administration of the antiplatelet agents without apixaban. Increases in clotting tests (PT, INR, and aPTT) were consistent with the effects of apixaban alone.
+Naproxen (500 mg), an inhibitor of P-gp, led to a 1.5-fold and 1.6-fold increase in mean apixaban AUC and Cmax, respectively. Corresponding increases in clotting tests were observed for apixaban. No changes were observed in the effect of naproxen on arachidonic acid-induced platelet aggregation and no clinically relevant prolongation of bleeding time was observed after concomitant administration of apixaban and naproxen.
+Despite these findings, there may be individuals with a more pronounced pharmacodynamic response when antiplatelet agents are coadministered with apixaban. Apixaban should be used with caution when coadministered with SSRIs/SNRIs, NSAIDs, ASA and/or P2Y12 inhibitors because these medicinal products typically increase the bleeding risk (see section 4.4).
+There is limited experience of co-administration with other platelet aggregation inhibitors (such as GPIIb/IIIa receptor antagonists, dipyridamole, dextran or sulfinpyrazone) or thrombolytic agents. As such agents increase the bleeding risk, co-administration of these medicinal products with apixaban is not recommended (see section 4.4).
+Other concomitant therapies
+
+[eliquis p.11 SmPC 4.5] (distance 0.185)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+Coadministration of apixaban with rifampicin, a strong inducer of both CYP3A4 and P-gp, led to an approximate 54% and 42% decrease in mean apixaban AUC and Cmax, respectively. The concomitant use of apixaban with other strong CYP3A4 and P-gp inducers (e.g., phenytoin, carbamazepine, phenobarbital or St. John’s Wort) may also lead to reduced apixaban plasma concentrations. No dose adjustment for apixaban is required during concomitant therapy with such medicinal products, however in patients receiving concomitant systemic treatment with strong inducers of both CYP3A4 and P-gp apixaban should be used with caution for the prevention of VTE in elective hip or knee replacement surgery, for the prevention of stroke and systemic embolism in patients with NVAF and for the prevention of recurrent DVT and PE.
+Apixaban is not recommended for the treatment of DVT and PE in patients receiving concomitant systemic treatment with strong inducers of both CYP3A4 and P-gp since efficacy may be compromised (see section 4.4).
+Anticoagulants, platelet aggregation inhibitors, SSRIs/SNRIs and NSAIDs
+Due to an increased bleeding risk, concomitant treatment with any other anticoagulants is contraindicated except under specific circumstances of switching anticoagulant therapy, when UFH is given at doses necessary to maintain an open central venous or arterial catheter or when UFH is given during catheter ablation for atrial fibrillation (see section 4.3).
+After combined administration of enoxaparin (40 mg single dose) with apixaban (5 mg single dose), an additive effect on anti-Factor Xa activity was observed.
+Pharmacokinetic or pharmacodynamic interactions were not evident when apixaban was coadministered with ASA 325 mg once a day.
+
+[eliquis p.140 Leaflet 2] (distance 0.194)
+Eliquis | Eliquis 2.5 mg film-coated tablets | Leaflet 2 What you need to know before you take Eliquis
+Some medicines may increase the effects of Eliquis and some may decrease its effects. Your doctor will decide, if you should be treated with Eliquis when taking these medicines and how closely you should be monitored.
+The following medicines may increase the effects of Eliquis and increase the chance for unwanted bleeding: - some medicines for fungal infections (e.g., ketoconazole, etc.); - some antiviral medicines for HIV/AIDS (e.g., ritonavir); - other medicines that are used to reduce blood clotting (e.g., enoxaparin, etc.);
+- anti-inflammatory or pain medicines (e.g., acetylsalicylic acid or naproxen). Especially, if you are older than 75 years and are taking acetylsalicylic acid, you may have an increased chance of bleeding; - medicines for high blood pressure or heart problems (e.g., diltiazem); - antidepressant medicines called selective serotonin re-uptake inhibitors or serotonin norepinephrine re-uptake inhibitors.
+The following medicines may reduce the ability of Eliquis to help prevent blood clots from forming: - medicines to prevent epilepsy or seizures (e.g., phenytoin, etc.); - St John’s Wort (a herbal supplement used for depression); - medicines to treat tuberculosis or other infections (e.g., rifampicin).
+Pregnancy and breast-feeding If you are pregnant or breast-feeding, think you may be pregnant or are planning to have a baby, ask your doctor, pharmacist or nurse for advice before taking this medicine.
+The effects of Eliquis on pregnancy and the unborn child are not known. You should not take this medicine if you are pregnant. Contact your doctor immediately if you become pregnant while taking this medicine.
+It is not known if Eliquis passes into human breast milk. Ask your doctor, pharmacist or nurse for advice before taking this medicine while breast-feeding. They will advise you whether to stop breast-feeding or to stop/not start taking this medicine.
+
+[eliquis p.44 SmPC 4.5] (distance 0.198)
+Eliquis | Eliquis 5 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+4.5 Interaction with other medicinal products and other forms of interaction
+Inhibitors of CYP3A4 and P-gp
+Inducers of CYP3A4 and P-gp
+Coadministration of apixaban with rifampicin, a strong inducer of both CYP3A4 and P-gp, led to an approximate 54% and 42% decrease in mean apixaban AUC and Cmax, respectively. The concomitant use of apixaban with other strong CYP3A4 and P-gp inducers (e.g., phenytoin, carbamazepine, phenobarbital or St. John’s Wort) may also lead to reduced apixaban plasma concentrations. No dose adjustment for apixaban is required during concomitant therapy with such medicinal products, however in patients receiving concomitant systemic treatment with strong inducers of both CYP3A4 and P-gp apixaban should be used with caution for the prevention of stroke and systemic embolism in patients with NVAF and for the prevention of recurrent DVT and PE. Apixaban is not recommended for the treatment of DVT and PE in patients receiving concomitant systemic treatment with strong inducers of both CYP3A4 and P-gp since efficacy may be compromised (see section 4.4).
+Despite these findings, there may be individuals with a more pronounced pharmacodynamic response when antiplatelet agents are coadministered with apixaban. Apixaban should be used with caution
+when coadministered with SSRIs/SNRIs, NSAIDs, ASA and/or P2Y12 inhibitors because these medicinal products typically increase the bleeding risk (see section 4.4).
+Other concomitant therapies
+Effect of apixaban on other medicinal products
+
+[eliquis p.152 Leaflet 2] (distance 0.202)
+Eliquis | Eliquis 5 mg film-coated tablets | Leaflet 2 What you need to know before you take Eliquis
+2. What you need to know before you take Eliquis
+Do not take Eliquis if - you are allergic to apixaban or any of the other ingredients of this medicine (listed in section 6); - you are bleeding excessively; - you have a disease in an organ of the body that increases the risk of serious bleeding (such as an active or a recent ulcer of your stomach or bowel, recent bleeding in your brain); - you have a liver disease which leads to increased risk of bleeding (hepatic coagulopathy); - you are taking medicines to prevent blood clotting (e.g., warfarin, rivaroxaban, dabigatran or heparin), except when changing anticoagulant treatment, while having a venous or arterial line
+and you get heparin through this line to keep it open, or if a tube is inserted into your blood vessel (catheter ablation) to treat an irregular heartbeat (arrhythmia).
+The following medicines may increase the effects of Eliquis and increase the chance for unwanted bleeding: - some medicines for fungal infections (e.g., ketoconazole, etc.); - some antiviral medicines for HIV/AIDS (e.g., ritonavir); - other medicines that are used to reduce blood clotting (e.g., enoxaparin, etc.); - anti-inflammatory or pain medicines (e.g., acetylsalicylic acid or naproxen). Especially, if you are older than 75 years and are taking acetylsalicylic acid, you may have an increased chance of bleeding; - medicines for high blood pressure or heart problems (e.g., diltiazem); - antidepressant medicines called selective serotonin re-uptake inhibitors or serotonin norepinephrine re-uptake inhibitors.
+```
+</details>
+
+---
+
+## q04 (single)
+
+**Question:** I just found out I'm pregnant and I take Eliquis, can I keep taking it?
+
+**Reference:** Better to avoid it: there are no data in pregnant women, so as a precaution apixaban should be avoided during pregnancy. She should talk to her doctor.
+
+**Agent answer:** The product information in the corpus does not cover this; please ask the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[eliquis p.13 SmPC 4.5] (distance 0.137)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction; SmPC 4.6 Fertility, pregnancy and lactation
+Interaction studies have not been performed in paediatrics.
+The above mentioned interaction data was obtained in adults and the warnings in section 4.4 should be taken into account for the paediatric population.
+4.6 Fertility, pregnancy and lactation
+Pregnancy
+There are no data from the use of apixaban in pregnant women. Animal studies do not indicate direct or indirect harmful effects with respect to reproductive toxicity (see section 5.3). As a precautionary measure, it is preferable to avoid the use of apixaban during pregnancy.
+Breast-feeding
+It is unknown whether apixaban or its metabolites are excreted in human milk. Available data in animals have shown excretion of apixaban in milk (see section 5.3). A risk to the suckling child cannot be excluded.
+A decision must be made whether to discontinue breast-feeding or to discontinue/abstain from apixaban therapy taking into account the benefit of breast-feeding for the child and the benefit of therapy for the woman.
+Fertility
+Studies in animals dosed with apixaban have shown no effect on fertility (see section 5.3).
+
+[eliquis p.140 Leaflet 2] (distance 0.172)
+Eliquis | Eliquis 2.5 mg film-coated tablets | Leaflet 2 What you need to know before you take Eliquis
+Some medicines may increase the effects of Eliquis and some may decrease its effects. Your doctor will decide, if you should be treated with Eliquis when taking these medicines and how closely you should be monitored.
+The following medicines may increase the effects of Eliquis and increase the chance for unwanted bleeding: - some medicines for fungal infections (e.g., ketoconazole, etc.); - some antiviral medicines for HIV/AIDS (e.g., ritonavir); - other medicines that are used to reduce blood clotting (e.g., enoxaparin, etc.);
+- anti-inflammatory or pain medicines (e.g., acetylsalicylic acid or naproxen). Especially, if you are older than 75 years and are taking acetylsalicylic acid, you may have an increased chance of bleeding; - medicines for high blood pressure or heart problems (e.g., diltiazem); - antidepressant medicines called selective serotonin re-uptake inhibitors or serotonin norepinephrine re-uptake inhibitors.
+The following medicines may reduce the ability of Eliquis to help prevent blood clots from forming: - medicines to prevent epilepsy or seizures (e.g., phenytoin, etc.); - St John’s Wort (a herbal supplement used for depression); - medicines to treat tuberculosis or other infections (e.g., rifampicin).
+Pregnancy and breast-feeding If you are pregnant or breast-feeding, think you may be pregnant or are planning to have a baby, ask your doctor, pharmacist or nurse for advice before taking this medicine.
+The effects of Eliquis on pregnancy and the unborn child are not known. You should not take this medicine if you are pregnant. Contact your doctor immediately if you become pregnant while taking this medicine.
+It is not known if Eliquis passes into human breast milk. Ask your doctor, pharmacist or nurse for advice before taking this medicine while breast-feeding. They will advise you whether to stop breast-feeding or to stop/not start taking this medicine.
+
+[eliquis p.165 Leaflet 2] (distance 0.174)
+Eliquis | Eliquis 0.15 mg granules in capsules for opening | Leaflet 2 What you need to know before you give Eliquis
+Some medicines may increase the effects of Eliquis and some may decrease its effects. The child’s doctor will decide, if the child should be treated with Eliquis when taking these medicines and how closely the child should be monitored.
+The following medicines may increase the effects of Eliquis and increase the chance for unwanted bleeding: - some medicines for fungal infections (e.g., ketoconazole, etc.); - some antiviral medicines for HIV / AIDS (e.g., ritonavir); - other medicines that are used to reduce blood clotting (e.g., enoxaparin, etc.); - anti-inflammatory or pain medicines (e.g., acetylsalicylic acid or naproxen); - medicines for high blood pressure or heart problems (e.g., diltiazem); - antidepressant medicines called selective serotonin re-uptake inhibitors or serotonin norepinephrine re-uptake inhibitors.
+Pregnancy and breast-feeding If the adolescent is pregnant or breast-feeding, think the adolescent may be pregnant or is planning to have a baby, ask the adolescent’s doctor, pharmacist or nurse for advice before taking this medicine.
+The effects of Eliquis on pregnancy and the unborn child are not known. You should not give this medicine if the adolescent is pregnant. Contact the adolescent’s doctor immediately if the adolescent becomes pregnant while taking this medicine.
+Adolescents who have periods, may experience heavier menstrual bleeding with Eliquis. Please contact the child’s doctor for any questions.
+It is not known if Eliquis passes into human breast milk. Ask the adolescent’s doctor, pharmacist or nurse for advice before giving this medicine to the adolescent if they are breast-feeding. They will advise you whether the adolescent should stop breast-feeding while receiving Eliquis or, instead, should stop taking this medicine.
+Driving and using machines Eliquis has not been shown to impair ability to drive or use machines.
+
+[eliquis p.47 SmPC 4.6] (distance 0.187)
+Eliquis | Eliquis 5 mg film-coated tablets | SmPC 4.6 Fertility, pregnancy and lactation; SmPC 4.7 Effects on ability to drive and use machines; SmPC 4.8 Undesirable effects
+4.6 Fertility, pregnancy and lactation
+Pregnancy
+Breast-feeding
+Fertility
+4.7 Effects on ability to drive and use machines
+4.8 Undesirable effects
+Summary of the safety profile
+In adults, the safety of apixaban has been investigated in 7 Phase III clinical studies including more than 21 000 patients: more than 5 000 patients in VTEp studies, and more than 11 000 patients in NVAF studies and more than 4 000 patients in the VTE treatment (VTEt) studies, for an average total exposure of 20 days, 1.7 years and 221 days respectively (see section 5.1).
+Tabulated list of adverse reactions
+Table 3 shows the adverse reactions ranked under headings of system organ class and frequency using the following convention: very common (≥ 1/10) common (≥ 1/100 to < 1/10); uncommon (≥ 1/1 000 to < 1/100); rare (≥ 1/10 000 to < 1/1 000); very rare (< 1/10 000); not known (cannot be estimated from the available data) in adults for NVAF and VTEp or VTEt and in paediatric patients from 28 days to < 18 years of age for VTEt and prevention of recurrent VTE.
+
+[eliquis p.99 SmPC 4.6] (distance 0.193)
+Eliquis | Eliquis 0.5 mg coated granule in sachet | SmPC 4.6 Fertility, pregnancy and lactation; SmPC 4.7 Effects on ability to drive and use machines; SmPC 4.8 Undesirable effects
+4.6 Fertility, pregnancy and lactation
+Pregnancy
+Breast-feeding
+Fertility
+4.7 Effects on ability to drive and use machines
+4.8 Undesirable effects
+Summary of the safety profile
+Tabulated list of adverse reactions
+Table 2: Tabulated adverse reactions System organ class Prevention of VTE in adult patients who have undergone elective hip or knee replacement surgery (VTEp) Prevention of stroke and systemic embolism in adult patients with NVAF, with one or more risk factors (NVAF) Treatment of DVT and PE, and prevention of recurrent DVT and PE (VTEt) in adult patients Treatment of VTE and prevention of recurrent VTE in paediatric patients from 28 days to less than 18 years of age Blood and lymphatic system disorders Anaemia Common Common Common Common Thrombocytopenia Uncommon Uncommon Common Common Immune system disorders Hypersensitivity, allergic oedema and Anaphylaxis Rare Uncommon Uncommon Common‡ Pruritus Uncommon Uncommon Uncommon* Common Angioedema Not known Not known Not known Not known Nervous system disorders Brain haemorrhage† Not known Uncommon Rare Not known Eye disorders Eye haemorrhage (including conjunctival haemorrhage) Rare Common Uncommon Not known Vascular disorders Haemorrhage, haematoma Common Common Common Common Hypotension (including procedural hypotension) Uncommon Common Uncommon Common Intra-abdominal haemorrhage Not known Uncommon Not known Not known Respiratory, thoracic and mediastinal disorders Epistaxis Uncommon Common Common Very common Haemoptysis Rare Uncommon Uncommon Not known Respiratory tract haemorrhage Not known Rare Rare Not known
+```
+</details>
+
+---
+
+## q05 (single)
+
+**Question:** A patient on Eliquis has a life-threatening bleed, is there an antidote?
+
+**Reference:** Yes. For life-threatening or uncontrolled bleeding in adults, the factor Xa reversal agent andexanet alfa is available; PCCs or recombinant factor VIIa may also be considered.
+
+**Agent answer:** Yes, for adults, a reversal agent for factor Xa inhibitors (andexanet alfa) is available for situations in which reversal of anticoagulation is needed due to life-threatening or uncontrolled bleeding [eliquis p.18 SmPC 4.9]. 
+
+Additionally, the administration of prothrombin complex concentrates (PCCs) or recombinant factor VIIa may also be considered [eliquis p.18 SmPC 4.9]. For the paediatric population, a specific reversal agent (andexanet alfa) antagonising the pharmacodynamic effect of apixaban is not established, and transfusion of fresh frozen plasma, administration of PCCs, or recombinant factor VIIa may be considered [eliquis p.18 SmPC 4.9]. Depending on local availability, consultation with a coagulation expert should be considered in the case of major bleeding [eliquis p.18 SmPC 4.9].
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[eliquis p.18 SmPC 4.9] (distance 0.16)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.9 Overdose
+For situations in which reversal of anticoagulation is needed due to life-threatening or uncontrolled bleeding, a reversal agent for factor Xa inhibitors (andexanet alfa) is available for adults (see section 4.4). Administration of prothrombin complex concentrates (PCCs) or recombinant factor VIIa may also be considered. Reversal of apixaban pharmacodynamic effects, as demonstrated by changes in the thrombin generation assay, was evident at the end of infusion and reached baseline values within 4 hours after the start of a 30 minute 4-factor PCC infusion in healthy subjects. However, there is no clinical experience with the use of 4-factor PCC products to reverse bleeding in individuals who have received apixaban. Currently there is no experience with the use of recombinant factor VIIa in individuals receiving apixaban. Re-dosing of recombinant factor VIIa could be considered and titrated depending on improvement of bleeding.
+A specific reversal agent (andexanet alfa) antagonising the pharmacodynamic effect of apixaban is not established in the paediatric population (refer to the summary of product characteristics of andexanet alfa). Transfusion of fresh frozen plasma, or administration of PCCs, or recombinant factor VIIa may also be considered.
+Depending on local availability, coagulation expert consultation should be considered in case of major bleeding.
+
+[eliquis p.7 SmPC 4.4] (distance 0.185)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.4 Special warnings and precautions for use
+4.4 Special warnings and precautions for use
+Haemorrhage risk
+As with other anticoagulants, patients taking apixaban are to be carefully observed for signs of bleeding. It is recommended to be used with caution in conditions with increased risk of haemorrhage. Apixaban administration should be discontinued if severe haemorrhage occurs (see sections 4.8 and 4.9).
+Although treatment with apixaban does not require routine monitoring of exposure, a calibrated quantitative anti-Factor Xa assay may be useful in exceptional situations where knowledge of apixaban exposure may help to inform clinical decisions, e.g., overdose and emergency surgery (see section 5.1).
+A specific reversal agent (andexanet alfa) antagonising the pharmacodynamic effect of apixaban is available for adults. However, its safety and efficacy have not been established in paediatric patients (refer to the summary of product characteristics of andexanet alfa). Transfusion of fresh frozen plasma, administration of prothrombin complex concentrates (PCCs), or recombinant factor VIIa may be considered. However, there is no clinical experience with the use of 4-factor PCC products to reverse bleeding in paediatric and adult patients who have received apixaban.
+Interaction with other medicinal products affecting haemostasis
+Due to an increased bleeding risk, concomitant treatment with any other anticoagulants is contraindicated (see section 4.3).
+The concomitant use of apixaban with antiplatelet agents increases the risk of bleeding (see section 4.5).
+Care is to be taken if patients are treated concomitantly with selective serotonin reuptake inhibitors (SSRIs) or serotonin norepinephrine reuptake inhibitors (SNRIs), or non-steroidal anti-inflammatory drugs (NSAIDs), including acetylsalicylic acid.
+Following surgery, other platelet aggregation inhibitors are not recommended concomitantly with apixaban (see section 4.5).
+In patients with atrial fibrillation and conditions that warrant mono or dual antiplatelet therapy, a careful assessment of the potential benefits against the potential risks should be made before combining this therapy with apixaban.
+
+[eliquis p.18 SmPC 4.9] (distance 0.189)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.9 Overdose
+4.9 Overdose
+Overdose of apixaban may result in a higher risk of bleeding. In the event of haemorrhagic complications, treatment must be discontinued and the source of bleeding investigated. The initiation of appropriate treatment, e.g., surgical haemostasis, the transfusion of fresh frozen plasma or the administration of a reversal agent for factor Xa inhibitors should be considered (see section 4.4).
+In controlled clinical studies, orally-administered apixaban in healthy adult subjects at doses up to 50 mg daily for 3 to 7 days (25 mg twice daily (bid) for 7 days or 50 mg once daily (od) for 3 days) had no clinically relevant adverse reactions.
+In healthy adult subjects, administration of activated charcoal 2 and 6 hours after ingestion of a 20 mg dose of apixaban reduced mean apixaban AUC by 50% and 27%, respectively, and had no impact on Cmax. Mean half-life of apixaban decreased from 13.4 hours when apixaban was administered alone to 5.3 hours and 4.9 hours, respectively, when activated charcoal was administered 2 and 6 hours after apixaban. Thus, administration of activated charcoal may be useful in the management of apixaban overdose or accidental ingestion.
+Haemodialysis decreased apixaban AUC by 14% in subjects with end-stage renal disease (ESRD), when a single dose of apixaban 5 mg was administered orally. Therefore, haemodialysis is unlikely to be an effective means of managing apixaban overdose.
+
+[eliquis p.70 SmPC 4.4] (distance 0.201)
+Eliquis | Eliquis 0.15 mg granules in capsules for opening | SmPC 4.4 Special warnings and precautions for use
+4.4 Special warnings and precautions for use
+Haemorrhage risk
+A specific reversal agent (andexanet alfa) antagonising the pharmacodynamic effect of apixaban is available for adults. However, its safety and efficacy have not been established in paediatric patients (refer to the summary of product characteristics of andexanet alfa). Transfusion of fresh frozen plasma, administration of prothrombin complex concentrates (PCCs),or recombinant factor VIIa may also be considered. However, there is no clinical experience with the use of 4factor PCC products to reverse bleeding in paediatric and adult patients who have received apixaban.
+Interaction with other medicinal products affecting haemostasis
+Patients with prosthetic heart valve
+Patients with antiphospholipid syndrome
+Surgery and invasive procedures
+Temporary discontinuation
+Spinal/epidural anaesthesia or puncture
+When neuraxial anaesthesia (spinal/epidural anaesthesia) or spinal/epidural puncture is employed, patients treated with antithrombotic agents for prevention of thromboembolic complications are at risk of developing an epidural or spinal haematoma which can result in long-term or permanent paralysis. The risk of these events may be increased by the post-operative use of indwelling epidural catheters or the concomitant use of medicinal products affecting haemostasis. Indwelling epidural or intrathecal catheters must be removed at least 5 hours prior to the first dose of apixaban. The risk may also be increased by traumatic or repeated epidural or spinal puncture. Patients are to be frequently monitored for signs and symptoms of neurological impairment (e.g., numbness or weakness of the legs, bowel or bladder dysfunction). If neurological compromise is noted, urgent diagnosis and treatment is necessary. Prior to neuraxial intervention the physician should consider the potential benefit versus the risk in anticoagulated patients or in patients to be anticoagulated for thromboprophylaxis.
+Patients with active cancer
+Patients with renal impairment
+Body weight
+Patients with hepatic impairment
+
+[eliquis p.51 SmPC 4.9] (distance 0.202)
+Eliquis | Eliquis 5 mg film-coated tablets | SmPC 4.9 Overdose; SmPC 5 PHARMACOLOGICAL PROPERTIES; SmPC 5.1 Pharmacodynamic properties
+4.9 Overdose
+A specific reversal agent (andexanet alfa) antagonising the pharmacodynamic effect of apixaban is not established in the paediatric population (refer to the summary of product characteristics of andexanet alfa). Transfusion of fresh frozen plasma, or administration of prothrombin complex concentrates (PCCs), or recombinant factor VIIa may also be considered.
+5. PHARMACOLOGICAL PROPERTIES
+5.1 Pharmacodynamic properties
+Mechanism of action
+Pharmacodynamic effects
+Table 4 below shows the predicted steady state exposure and anti-Factor Xa activity for each adult indication. In non-valvular atrial fibrillation patients taking apixaban for the prevention of stroke and systemic embolism, the results demonstrate a less than 1.7-fold fluctuation in peak-to-trough levels. In patients taking apixaban for the treatment of DVT and PE or prevention of recurrent DVT and PE, the results demonstrate a less than 2.2-fold fluctuation in peak-to-trough levels.
+Table 4: Predicted apixaban steady-state exposure and anti-Factor Xa activity Apix. Cmax (ng/mL) Apix. Cmin (ng/mL) Apix. anti-Factor Xa activity max (IU/mL) Apix. anti-Factor Xa activity min (IU/mL) Median [5th, 95th percentile] Prevention of stroke and systemic embolism: NVAF 2.5 mg twice daily* 123 [69, 221] 79 [34, 162] 1.8 [1.0, 3.3] 1.2 [0.51, 2.4] 5 mg twice daily 171 [91, 321] 103 [41, 230] 2.6 [1.4, 4.8] 1.5 [0.61, 3.4]
+Paediatric population
+Clinical efficacy and safety
+ARISTOTLE study In the ARISTOTLE study a total of 18,201 adult patients were randomised to double-blind treatment with apixaban 5 mg twice daily (or 2.5 mg twice daily in selected patients [4.7%], see section 4.2) or warfarin (target INR range 2.0-3.0), patients were exposed to study active substance for a mean of 20 months. The mean age was 69.1 years, the mean CHADS2 score was 2.1, 18.9% of patients had prior stroke or TIA.
+```
+</details>
+
+---
+
+## q06 (single)
+
+**Question:** My grandmother takes Eliquis but can't swallow tablets, what can she do?
+
+**Reference:** Talk to the doctor; the tablet may be crushed and mixed with water, 5% glucose in water, apple juice or apple puree and taken immediately.
+
+**Agent answer:** If your grandmother has difficulty swallowing the tablet whole, talk to your doctor about other ways to take Eliquis [eliquis p.141 Leaflet 3]. 
+
+The tablet may be crushed and mixed with water, or 5% glucose in water, or apple juice or apple puree, immediately before taking it [eliquis p.141 Leaflet 3]. 
+
+Instructions for crushing:
+* Crush the tablets with a pestle and mortar [eliquis p.141 Leaflet 3].
+* Transfer all the powder carefully into a suitable container then mix the powder with a little e.g., 30 mL (2 tablespoons), water or one of the other liquids mentioned above to make a mixture [eliquis p.141 Leaflet 3].
+* Swallow the mixture [eliquis p.141 Leaflet 3].
+* Rinse the pestle and mortar used for crushing the tablet and the container, with a little water or one of the other liquids (e.g., 30 mL), and swallow the rinse [eliquis p.141 Leaflet 3].
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[eliquis p.6 SmPC 4.2] (distance 0.138)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+Method of administration in adults and paediatric patients
+Oral use Eliquis should be swallowed with water, with or without food.
+For patients who are unable to swallow whole tablets, Eliquis tablets may be crushed and suspended in water, or 5% glucose in water (G5W), or apple juice or mixed with apple puree and immediately administered orally (see section 5.2). Alternatively, Eliquis tablets may be crushed and suspended in 60 mL of water or G5W and immediately delivered through a nasogastric tube (see section 5.2). Crushed Eliquis tablets are stable in water, G5W, apple juice, and apple puree for up to 4 hours.
+
+[eliquis p.141 Leaflet 3] (distance 0.157)
+Eliquis | Eliquis 2.5 mg film-coated tablets | Leaflet 3 How to take Eliquis
+3. How to take Eliquis
+Always take this medicine exactly as your doctor or pharmacist has told you. Check with your doctor, pharmacist or nurse if you are not sure.
+Dose Swallow the tablet with a drink of water. Eliquis can be taken with or without food. Try to take the tablets at the same times every day to have the best treatment effect.
+If you have difficulty swallowing the tablet whole, talk to your doctor about other ways to take Eliquis. The tablet may be crushed and mixed with water, or 5% glucose in water, or apple juice or apple puree, immediately before you take it.
+Instructions for crushing: • Crush the tablets with a pestle and mortar. • Transfer all the powder carefully into a suitable container then mix the powder with a little e.g., 30 mL (2 tablespoons), water or one of the other liquids mentioned above to make a mixture. • Swallow the mixture. • Rinse the pestle and mortar you used for crushing the tablet and the container, with a little water or one of the other liquids (e.g., 30 mL), and swallow the rinse.
+If necessary, your doctor may also give you the crushed Eliquis tablet mixed in 60 mL of water or 5% glucose in water, through a nasogastric tube.
+Take Eliquis as recommended for the following:
+To prevent blood clots from forming after hip or knee replacement operations. The recommended dose is one tablet of Eliquis 2.5 mg twice a day. For example, one in the morning and one in the evening. You should take the first tablet 12 to 24 hours after your operation.
+
+[eliquis p.70 SmPC 4.2] (distance 0.175)
+Eliquis | Eliquis 0.15 mg granules in capsules for opening | SmPC 4.2 Posology and method of administration
+The capsule for opening should NOT be swallowed. The capsule must be opened and the entire contents should be sprinkled in liquid and administered. Eliquis granules should be mixed with either water or baby formula as described in the instructions for use (IFU). The liquid mixture should be administered within 2 hours of preparation. Alternatively, for patients who have difficulty swallowing, the liquid mixture can be delivered through a gastrostomy tube and nasogastric tube.
+Detailed instructions for the use of this medicinal product are provided in the instructions for use.
+
+[xarelto p.58 SmPC 4.2] (distance 0.204)
+Xarelto | Xarelto 15 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+Crushing of tablets For patients who are unable to swallow whole tablets, Xarelto granules for oral suspension should be used. If the oral suspension is not immediately available, when doses of 15 mg or 20 mg rivaroxaban are prescribed, these could be provided by crushing the 15 mg or 20 mg tablet and mixing it with water or apple puree immediately prior to use and administering orally. The crushed tablet may be given through a nasogastric or gastric feeding tube (see sections 5.2 and 6.6).
+
+[eliquis p.166 Leaflet 2] (distance 0.206)
+Eliquis | Eliquis 0.15 mg granules in capsules for opening | Leaflet 2 What you need to know before you give Eliquis; Leaflet 3 How to give Eliquis
+Eliquis contains sucrose If you have been told by the child’s doctor that the child has an intolerance to some sugars, contact the child’s doctor before giving this medicine.
+3. How to give Eliquis
+Always give the child this medicine exactly as the child’s doctor has told you. Check with the child’s doctor, pharmacist or nurse if you are not sure.
+Dose
+Try to give the dose at the same time every day to have the best treatment effect.
+If the child has difficulty swallowing you may be able to give the liquid mixture through a gastrostomy tube or nasogastric tube. Talk to your doctor about other ways to give Eliquis.
+As the Eliquis dose is based on body weight it is important to keep scheduled doctor’s visits because the dose may need to be adjusted as the weight changes. This ensures that the child receives the correct dose of Eliquis. Your doctor may adjust the child’s dose when needed. Below is the table that your doctor will use. Do not adjust the dose yourself.
+```
+</details>
+
+---
+
+## q07 (single)
+
+**Question:** Does Eliquis need to be kept in the fridge?
+
+**Reference:** No. Eliquis tablets do not require any special storage conditions.
+
+**Agent answer:** No, Eliquis does not require any special storage conditions [eliquis p.148 Leaflet 5].
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[eliquis p.148 Leaflet 5] (distance 0.21)
+Eliquis | Eliquis 2.5 mg film-coated tablets | Leaflet 5 How to store Eliquis
+5. How to store Eliquis
+Keep this medicine out of the sight and reach of children.
+Do not use this medicine after the expiry date which is stated on the carton and on the blister after EXP. The expiry date refers to the last day of that month.
+This medicine does not require any special storage conditions.
+Do not throw away any medicines via wastewater or household waste. Ask your pharmacist how to throw away medicines you no longer use. These measures will help protect the environment.
+
+[eliquis p.168 Leaflet 5] (distance 0.229)
+Eliquis | Eliquis 0.15 mg granules in capsules for opening | Leaflet 5 How to store Eliquis; Leaflet 6 Contents of the pack and other information
+5. How to store Eliquis
+Do not use this medicine after the expiry date which is stated on the carton and on the bottle after EXP. The expiry date refers to the last day of that month.
+6. Contents of the pack and other information
+What Eliquis contains • The active substance is apixaban. Each capsule for opening contains 0.15 mg apixaban. • The other ingredients are: - Granules: hypromellose (E464), sugar spheres (composed of sugar syrup, corn starch (E1450), and sucrose). See section 2 “Eliquis contains sucrose”. • Capsule shell: gelatin (E441), titanium dioxide (E171), iron oxide yellow (E172) • Black printing ink: shellac (E904), propylene glycol (E1520), iron oxide black
+What Eliquis looks like and contents of the pack Granules are white to off-white in appearance and are presented in containers to be opened (the capsule should not be swallowed whole).
+The capsule have a clear body and a yellow opaque top.
+Eliquis is available in bottles, inside a carton. Each bottle contains 28 capsules for opening.
+Patient Card: handling information Inside the Eliquis pack together with the package leaflet you will find a Patient Card or the child’s doctor might give you a similar card.
+This Patient Card includes information that will be helpful to the child and alert other doctors that the child is taking Eliquis. This card should be with the child or the caregiver at all times.
+
+[eliquis p.34 SmPC 6.1] (distance 0.234)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 6.1 List of excipients; SmPC 6.2 Incompatibilities; SmPC 6.3 Shelf life; SmPC 6.4 Special precautions for storage; SmPC 6.5 Nature and contents of container
+6.1 List of excipients
+Tablet core
+Lactose Microcrystalline cellulose (E460) Croscarmellose sodium Sodium laurilsulfate Magnesium stearate (E470b)
+Film coat
+Lactose monohydrate Hypromellose (E464) Titanium dioxide (E171) Triacetin Yellow iron oxide (E172)
+6.2 Incompatibilities
+Not applicable
+6.3 Shelf life
+3 years
+6.4 Special precautions for storage
+This medicinal product does not require any special storage conditions.
+6.5 Nature and contents of container
+Alu-PVC/PVdC blisters. Cartons of 10, 20, 56, 60, 168 and 200 film-coated tablets. Alu PVC/PVdC perforated unit dose blisters of 60x1 and 100x1 film-coated tablets.
+Not all pack sizes may be marketed.
+
+[eliquis p.88 SmPC 6.1] (distance 0.24)
+Eliquis | Eliquis 0.15 mg granules in capsules for opening | SmPC 6.1 List of excipients; SmPC 6.2 Incompatibilities; SmPC 6.3 Shelf life; SmPC 6.4 Special precautions for storage; SmPC 6.5 Nature and contents of container
+6.1 List of excipients
+Granules content
+Hypromellose (E464) Sugar spheres (composed of sugar syrup, maize starch (E1450), and sucrose)
+Capsule shell
+Gelatin (E441) Titanium dioxide (E171) Iron oxide yellow (E172)
+Black printing ink
+Shellac (E904) Propylene glycol (E1520) Iron oxide black
+6.2 Incompatibilities
+Not applicable
+6.3 Shelf life
+3 years Once mixed with water or baby formula, the liquid mixture must be used within 2 hours.
+6.4 Special precautions for storage
+6.5 Nature and contents of container
+High-density polyethylene (HDPE) bottle with a foil induction seal and a child-resistant polypropylene cap packed into a carton. Each bottle contains 28 capsules for opening.
+
+[eliquis p.176 Leaflet 3] (distance 0.244)
+Eliquis | Eliquis 0.5 mg coated granule in sachet | Leaflet 3 How to give Eliquis; Leaflet 4 Possible side effects; Leaflet 5 How to store Eliquis; Leaflet 6 Contents of the pack and other information
+3. How to give Eliquis
+Dose
+4. Possible side effects
+5. How to store Eliquis
+Do not use this medicine after the expiry date which is stated on the carton and on the sachet after EXP. The expiry date refers to the last day of that month.
+6. Contents of the pack and other information
+What Eliquis contains • The active substance is apixaban. Each sachet contains 0.5 mg, 1.5 mg or 2 mg apixaban. • The other ingredients are: - Granule core: lactose (see section 2 “Eliquis contains lactose (a type of sugar) and sodium”), microcrystalline cellulose, croscarmellose sodium (see section 2 “Eliquis contains lactose (a type of sugar) and sodium”), sodium laurilsulfate, magnesium stearate (E470b); - Film coat: lactose monohydrate (see section 2 “Eliquis contains lactose (a type of sugar) and sodium”), hypromellose (E464), titanium dioxide (E171), triacetin, iron oxide red (E172).
+What Eliquis looks like and contents of the pack 0.5 mg pink round coated granules in 0.5 mg, 1.5 mg, and 2 mg sachets
+- Aluminium foil sachet containing one 0.5 mg coated granule - Aluminium foil sachet containing three 0.5 mg coated granules - Aluminium foil sachet containing four 0.5 mg coated granules
+Each carton contains 28 sachets.
+```
+</details>
+
+---
+
+## q08 (single)
+
+**Question:** I forgot to take my Xarelto this morning (I take it once a day), what should I do?
+
+**Reference:** Take it as soon as you remember that same day and continue once daily the next day; do not take a double dose on the same day to make up for it.
+
+**Agent answer:** If you are taking one 20 mg or 15 mg tablet once a day, take the missed dose as soon as you remember [xarelto p.257 Leaflet 3]. 
+
+Do not take more than one tablet in a single day to make up for a forgotten dose [xarelto p.257 Leaflet 3]. Take the next tablet on the following day and then carry on taking one tablet once a day [xarelto p.257 Leaflet 3].
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[xarelto p.257 Leaflet 3] (distance 0.155)
+Xarelto | Xarelto 15 mg film-coated tablets | Leaflet 3 How to take Xarelto
+If you forget to take Xarelto - Adults, children and adolescents: If you are taking one 20 mg tablet or one 15 mg tablet once a day and have missed a dose, take it as soon as you remember. Do not take more than one tablet in a single day to make up for a forgotten dose. Take the next tablet on the following day and then carry on taking one tablet once a day.
+- Adults: If you are taking one 15 mg tablet twice a day and have missed a dose, take it as soon as you remember. Do not take more than two 15 mg tablets in a single day. If you forget to take a dose you can take two 15 mg tablets at the same time to get a total of two tablets (30 mg) on one day. On the following day you should carry on taking one 15 mg tablet twice a day.
+If you stop taking Xarelto Do not stop taking Xarelto without talking to your doctor first, because Xarelto treats and prevents serious conditions.
+
+[xarelto p.275 Leaflet 3] (distance 0.16)
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | Leaflet 3 How to take or give Xarelto
+If you or the child spits up the dose or vomits - less than 30 minutes after the intake of Xarelto, take or give a new dose. - more than 30 minutes after the intake of Xarelto, do not take or give a new dose. Continue to take or give the next Xarelto dose at the next scheduled time.
+Contact the doctor if you or the child repeatedly spit up the dose or vomit after taking Xarelto.
+If you forget to take or give Xarelto - If you are taking or giving Xarelto once a day, take or give the missed Xarelto dose as soon as you remember on the same day. If this is not possible, skip this dose. Then take or give the next Xarelto dose on the following day. Do not take or give more than one dose per day. - If you are taking or giving Xarelto twice a day: • Missed morning dose: Take or give the missed dose as soon as you remember. You may take or give it together with the evening dose. • Missed evening dose: You may take or give the missed dose only in the same evening. Do not take or give two doses the next morning. - If you are taking or giving Xarelto three times a day, do not make up for the missed dose. Continue with the next scheduled dose (given every 8 hours).
+On the day following a missed dose, continue as prescribed by the doctor once, twice or three times a day.
+If you take or give more Xarelto than you should Contact your doctor immediately if you have taken or given too much Xarelto oral suspension. Taking or giving too much Xarelto increases the risk of bleeding.
+
+[xarelto p.143 SmPC 4.2] (distance 0.17)
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | SmPC 4.2 Posology and method of administration
+Missed doses • Once a day regimen If taken once a day, a missed dose should be taken as soon as possible after it is noticed, but only on the same day. If this is not possible, the patient should skip the dose and continue with the next dose as prescribed. The patient should not take two doses to make up for a missed dose.
+• Two times a day regimen If taken twice a day, a missed morning dose should be taken immediately when it is noticed, and it may be taken together with the evening dose. A missed evening dose can only be taken during the same evening, the patient should not take two doses the next morning.
+• Three times a day regimen If taken three times a day, the three times daily administration schedule with approximately 8-hour intervals should simply be resumed at the next scheduled dose without compensating for the missed dose.
+On the following day, the child should continue with the regular once, twice or three times daily regimen.
+Converting from parenteral anticoagulants to Xarelto For patients currently receiving a parenteral anticoagulant, start Xarelto 0 to 2 hours before the time of the next scheduled administration of the parenteral medicinal product (e.g. LMWH) or at the time of discontinuation of a continuously administered parenteral medicinal product (e.g. intravenous unfractionated heparin).
+Converting from Xarelto to parenteral anticoagulants Discontinue Xarelto and give the first dose of parenteral anticoagulant at the time that the next Xarelto dose would be taken.
+
+[xarelto p.265 Leaflet 3] (distance 0.181)
+Xarelto | Xarelto 15 mg film-coated tablets | Leaflet 3 How to take Xarelto
+3. How to take Xarelto
+How much to take The recommended dose is one tablet Xarelto 15 mg twice a day for the first 3 weeks. For treatment after 3 weeks, the recommended dose is one tablet Xarelto 20 mg once a day. This Xarelto 15 mg and 20 mg treatment initiation pack is only for the first 4 weeks of treatment. Upon completion of this pack, treatment will continue on Xarelto 20 mg once daily as your doctor has told you. If you have kidney problems, your doctor may decide to reduce the dose for the treatment after 3 weeks to one tablet Xarelto 15 mg once a day if the risk for bleeding is greater than the risk for having another blood clot.
+If you forget to take Xarelto - If you are taking one 15 mg tablet twice a day and have missed a dose, take it as soon as you remember. Do not take more than two 15 mg tablets in a single day. If you forget to take a dose you can take two 15 mg tablets at the same time to get a total of two tablets (30 mg) on one day. On the following day you should carry on taking one 15 mg tablet twice a day.
+- If you are taking one 20 mg tablet once a day and have missed a dose, take it as soon as you remember. Do not take more than one tablet in a single day to make up for a forgotten dose. Take the next tablet on the following day and then carry on taking one tablet once a day.
+
+[xarelto p.30 SmPC 4.2] (distance 0.182)
+Xarelto | Xarelto 10 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+If a dose is missed during the once daily treatment phase, the patient should take Xarelto immediately, and continue on the following day with the once daily intake as recommended. The dose should not be doubled within the same day to make up for a missed dose.
+Converting from Vitamin K Antagonists (VKA) to Xarelto For patients treated for DVT, PE and prevention of recurrence, VKA treatment should be stopped and Xarelto therapy should be initiated once the INR is ≤ 2.5.
+When converting patients from VKAs to Xarelto, International Normalised Ratio (INR) values will be falsely elevated after the intake of Xarelto. The INR is not valid to measure the anticoagulant activity of Xarelto, and therefore should not be used (see section 4.5).
+- For the prevention of VTE in adult patients undergoing elective hip or knee replacement surgery, no dose adjustment is necessary in patients with mild renal impairment (creatinine clearance 50 - 80 ml/min) or moderate renal impairment (creatinine clearance 30- 49 ml/min) (see section 5.2).
+```
+</details>
+
+---
+
+## q09 (single)
+
+**Question:** Can a patient with kidney failure (creatinine clearance below 15 ml/min) take Xarelto?
+
+**Reference:** No. Use of Xarelto is not recommended when creatinine clearance is below 15 ml/min; between 15 and 29 ml/min it must be used with caution.
+
+**Agent answer:** Use of Xarelto is not recommended in patients with a creatinine clearance below 15 ml/min [xarelto p.82 SmPC 5.2]. There are no data available for patients in this category [xarelto p.82 SmPC 5.2]. 
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[xarelto p.82 SmPC 5.2] (distance 0.132)
+Xarelto | Xarelto 15 mg film-coated tablets | SmPC 5.2 Pharmacokinetic properties
+Renal impairment In adults, there was an increase in rivaroxaban exposure correlated to decrease in renal function, as assessed via creatinine clearance measurements. In individuals with mild (creatinine clearance 50 - 80 ml/min), moderate (creatinine clearance 30 - 49 ml/min) and severe (creatinine clearance 15 - 29 ml/min) renal impairment, rivaroxaban plasma concentrations (AUC) were increased 1.4, 1.5 and 1.6 fold respectively. Corresponding increases in pharmacodynamic effects were more pronounced. In individuals with mild, moderate and severe renal impairment the overall inhibition of factor Xa activity was increased by a factor of 1.5, 1.9 and 2.0 respectively as compared to healthy volunteers; prolongation of PT was similarly increased by a factor of 1.3, 2.2 and 2.4 respectively. There are no data in patients with creatinine clearance < 15 ml/min. Due to the high plasma protein binding rivaroxaban is not expected to be dialysable.
+Use is not recommended in patients with creatinine clearance < 15 ml/min. Rivaroxaban is to be used with caution in patients with creatinine clearance 15 - 29 ml/min (see section 4.4). No clinical data is available in children 1 year or older with moderate or severe renal impairment (glomerular filtration rate < 50 mL/min/1.73 m2).
+Pharmacokinetic data in patients In patients receiving rivaroxaban for treatment of acute DVT 20 mg once daily the geometric mean concentration (90% prediction interval) 2 - 4 h and about 24 h after dose (roughly representing maximum and minimum concentrations during the dose interval) was 215 (22 - 535) and 32 (6 - 239) mcg/l, respectively.
+
+[xarelto p.56 SmPC 4.2] (distance 0.143)
+Xarelto | Xarelto 15 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+Special populations Renal impairment Adults: Limited clinical data for patients with severe renal impairment (creatinine clearance 15 - 29 ml/min) indicate that rivaroxaban plasma concentrations are significantly increased. Therefore, Xarelto is to be used with caution in these patients. Use is not recommended in patients with creatinine clearance < 15 ml/min (see sections 4.4 and 5.2).
+In patients with moderate (creatinine clearance 30 - 49 ml/min) or severe (creatinine clearance 1529 ml/min) renal impairment the following dose recommendations apply:
+- For the prevention of stroke and systemic embolism in patients with non-valvular atrial fibrillation, the recommended dose is 15 mg once daily (see section 5.2).
+- For the treatment of DVT, treatment of PE and prevention of recurrent DVT and PE: patients should be treated with 15 mg twice daily for the first 3 weeks. Thereafter, when the recommended dose is 20 mg once daily, a reduction of the dose from 20 mg once daily to 15 mg once daily should be considered if the patient’s assessed risk for bleeding outweighs the risk for recurrent DVT and PE. The recommendation for the use of 15 mg is based on PK modelling and has not been studied in this clinical setting (see sections 4.4, 5.1 and 5.2). When the recommended dose is 10 mg once daily, no dose adjustment from the recommended dose is necessary.
+No dose adjustment is necessary in patients with mild renal impairment (creatinine clearance 50 - 80 ml/min) (see section 5.2).
+
+[xarelto p.25 SmPC 5.2] (distance 0.145)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 5.2 Pharmacokinetic properties
+Renal impairment There was an increase in rivaroxaban exposure correlated to decrease in renal function, as assessed via creatinine clearance measurements. In individuals with mild (creatinine clearance 50 - 80 ml/min), moderate (creatinine clearance 30 - 49 ml/min) and severe (creatinine clearance 15 - 29 ml/min) renal impairment, rivaroxaban plasma concentrations (AUC) were increased 1.4, 1.5 and 1.6 fold respectively. Corresponding increases in pharmacodynamic effects were more pronounced. In individuals with mild, moderate and severe renal impairment the overall inhibition of factor Xa activity was increased by a factor of 1.5, 1.9 and 2.0 respectively as compared to healthy volunteers; prolongation of PT was similarly increased by a factor of 1.3, 2.2 and 2.4 respectively. There are no data in patients with creatinine clearance < 15 ml/min. Due to the high plasma protein binding rivaroxaban is not expected to be dialysable. Use is not recommended in patients with creatinine clearance < 15 ml/min. Rivaroxaban is to be used with caution in patients with creatinine clearance 15 - 29 ml/min (see section 4.4).
+Pharmacokinetic data in patients In patients receiving rivaroxaban 2.5 mg twice daily for the prevention of atherothrombotic events in patients with ACS the geometric mean concentration (90% prediction interval) 2 - 4 h and about 12 h after dose (roughly representing maximum and minimum concentrations during the dose interval) was 47 (13 - 123) and 9.2 (4.4 - 18) mcg/l, respectively.
+
+[xarelto p.114 SmPC 5.2] (distance 0.151)
+Xarelto | Xarelto 20 mg film-coated tablets | SmPC 5.2 Pharmacokinetic properties
+An exploratory analysis did not reveal relevant inter-ethnic differences in rivaroxaban exposure among Japanese, Chinese or Asian children outside Japan and China compared to the respective overall paediatric population.
+Renal impairment In adults, there was an increase in rivaroxaban exposure correlated to decrease in renal function, as assessed via creatinine clearance measurements. In individuals with mild (creatinine clearance 50 - 80 ml/min), moderate (creatinine clearance 30 - 49 ml/min) and severe (creatinine clearance 15 - 29 ml/min) renal impairment, rivaroxaban plasma concentrations (AUC) were increased 1.4, 1.5 and 1.6 fold respectively. Corresponding increases in pharmacodynamic effects were more pronounced. In individuals with mild, moderate and severe renal impairment the overall inhibition of factor Xa activity was increased by a factor of 1.5, 1.9 and 2.0 respectively as compared to healthy volunteers; prolongation of PT was similarly increased by a factor of 1.3, 2.2 and 2.4 respectively. There are no data in patients with creatinine clearance < 15 ml/min. Due to the high plasma protein binding rivaroxaban is not expected to be dialysable. Use is not recommended in patients with creatinine clearance < 15 ml/min. Rivaroxaban is to be used with caution in patients with creatinine clearance 15 - 29 ml/min (see section 4.4). No clinical data is available in children 1 year or older with moderate or severe renal impairment (glomerular filtration rate < 50 mL/min/1.73 m2).
+
+[xarelto p.58 SmPC 4.3] (distance 0.152)
+Xarelto | Xarelto 15 mg film-coated tablets | SmPC 4.3 Contraindications; SmPC 4.4 Special warnings and precautions for use
+4.3 Contraindications
+Active clinically significant bleeding.
+4.4 Special warnings and precautions for use
+Several sub-groups of patients, as detailed below, are at increased risk of bleeding. These patients are to be carefully monitored for signs and symptoms of bleeding complications and anaemia after initiation of treatment (see section 4.8). Any unexplained fall in haemoglobin or blood pressure should lead to a search for a bleeding site.
+Paediatric population There is limited data in children with cerebral vein and sinus thrombosis who have a CNS infection (see section 5.1). The risk of bleeding should be carefully evaluated before and during therapy with rivaroxaban.
+Renal impairment In adult patients with severe renal impairment (creatinine clearance < 30 ml/min) rivaroxaban plasma levels may be significantly increased (1.6 fold on average) which may lead to an increased bleeding risk. Xarelto is to be used with caution in patients with creatinine clearance 15 - 29 ml/min. Use is not recommended in patients with creatinine clearance < 15 ml/min (see sections 4.2 and 5.2). Xarelto should be used with caution in patients with renal impairment concomitantly receiving other medicinal products which increase rivaroxaban plasma concentrations (see section 4.5). Xarelto is not recommended in children and adolescents with moderate or severe renal impairment (glomerular filtration rate < 50 mL/min/1.73 m2), as no clinical data is available.
+```
+</details>
+
+---
+
+## q10 (single)
+
+**Question:** My uncle has liver cirrhosis, can he be given Xarelto?
+
+**Reference:** Not if his liver disease causes clotting problems and bleeding risk: Xarelto is contraindicated in liver disease with coagulopathy, including cirrhosis Child Pugh B and C.
+
+**Agent answer:** Rivaroxaban (Xarelto) is contraindicated in patients with hepatic disease associated with coagulopathy and clinically relevant bleeding risk, which includes cirrhotic patients classified as Child-Pugh B and C [xarelto p.4 SmPC 4.3]. 
+
+Apixaban (Eliquis) and dabigatran (Pradaxa) are not covered in these search results.
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[xarelto p.161 SmPC 5.2] (distance 0.143)
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | SmPC 5.2 Pharmacokinetic properties
+Special populations Hepatic impairment No clinical data is available in children with hepatic impairment. In adults, cirrhotic patients with mild hepatic impairment (classified as Child Pugh A) exhibited only minor changes in rivaroxaban pharmacokinetics (1.2 fold increase in rivaroxaban AUC on average), nearly comparable to their matched healthy control group. In cirrhotic patients with moderate hepatic impairment (classified as Child Pugh B), rivaroxaban mean AUC was significantly increased by 2.3 fold compared to healthy volunteers. Unbound AUC was increased 2.6 fold. These patients also had reduced renal elimination of rivaroxaban, similar to patients with moderate renal impairment. There are no data in patients with severe hepatic impairment. The inhibition of factor Xa activity was increased by a factor of 2.6 in patients with moderate hepatic impairment as compared to healthy volunteers; prolongation of PT was similarly increased by a factor of 2.1. Patients with moderate hepatic impairment were more sensitive to rivaroxaban resulting in a steeper PK/PD relationship between concentration and PT. Rivaroxaban is contraindicated in patients with hepatic disease associated with coagulopathy and clinically relevant bleeding risk, including cirrhotic patients with Child Pugh B and C (see section 4.3).
+
+[xarelto p.82 SmPC 5.2] (distance 0.146)
+Xarelto | Xarelto 15 mg film-coated tablets | SmPC 5.2 Pharmacokinetic properties
+Hepatic impairment Cirrhotic adult patients with mild hepatic impairment (classified as Child Pugh A) exhibited only minor changes in rivaroxaban pharmacokinetics (1.2 fold increase in rivaroxaban AUC on average), nearly comparable to their matched healthy control group. In cirrhotic patients with moderate hepatic impairment (classified as Child Pugh B), rivaroxaban mean AUC was significantly increased by 2.3 fold compared to healthy volunteers. Unbound AUC was increased 2.6 fold. These patients also had reduced renal elimination of rivaroxaban, similar to patients with moderate renal impairment. There are no data in patients with severe hepatic impairment. The inhibition of factor Xa activity was increased by a factor of 2.6 in patients with moderate hepatic impairment as compared to healthy volunteers; prolongation of PT was similarly increased by a factor of 2.1. Patients with moderate hepatic impairment were more sensitive to rivaroxaban resulting in a steeper PK/PD relationship between concentration and PT. Rivaroxaban is contraindicated in patients with hepatic disease associated with coagulopathy and clinically relevant bleeding risk, including cirrhotic patients with Child Pugh B and C (see section 4.3). No clinical data is available in children with hepatic impairment.
+
+[xarelto p.25 SmPC 5.2] (distance 0.157)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 5.2 Pharmacokinetic properties
+Different weight categories Extremes in body weight (< 50 kg or > 120 kg) had only a small influence on rivaroxaban plasma concentrations (less than 25%). No dose adjustment is necessary.
+Inter-ethnic differences No clinically relevant inter-ethnic differences among Caucasian, African-American, Hispanic, Japanese or Chinese patients were observed regarding rivaroxaban pharmacokinetics and pharmacodynamics.
+Hepatic impairment Cirrhotic patients with mild hepatic impairment (classified as Child Pugh A) exhibited only minor changes in rivaroxaban pharmacokinetics (1.2 fold increase in rivaroxaban AUC on average), nearly comparable to their matched healthy control group. In cirrhotic patients with moderate hepatic impairment (classified as Child Pugh B), rivaroxaban mean AUC was significantly increased by 2.3 fold compared to healthy volunteers. Unbound AUC was increased 2.6 fold. These patients also had reduced renal elimination of rivaroxaban, similar to patients with moderate renal impairment. There are no data in patients with severe hepatic impairment. The inhibition of factor Xa activity was increased by a factor of 2.6 in patients with moderate hepatic impairment as compared to healthy volunteers; prolongation of PT was similarly increased by a factor of 2.1. Patients with moderate hepatic impairment were more sensitive to rivaroxaban resulting in a steeper PK/PD relationship between concentration and PT. Rivaroxaban is contraindicated in patients with hepatic disease associated with coagulopathy and clinically relevant bleeding risk, including cirrhotic patients with Child Pugh B and C (see section 4.3).
+
+[xarelto p.4 SmPC 4.3] (distance 0.178)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.3 Contraindications
+4.3 Contraindications
+Hypersensitivity to the active substance or to any of the excipients listed in section 6.1.
+Active clinically significant bleeding.
+Lesion or condition, if considered to be a significant risk for major bleeding. This may include current or recent gastrointestinal ulceration, presence of malignant neoplasms at high risk of bleeding, recent brain or spinal injury, recent brain, spinal or ophthalmic surgery, recent intracranial haemorrhage, known or suspected oesophageal varices, arteriovenous malformations, vascular aneurysms or major intraspinal or intracerebral vascular abnormalities.
+Concomitant treatment with any other anticoagulants, e.g. unfractionated heparin (UFH), low molecular weight heparins (enoxaparin, dalteparin, etc.), heparin derivatives (fondaparinux, etc.), oral anticoagulants (warfarin, dabigatran etexilate, apixaban, etc.) except under specific circumstances of switching anticoagulant therapy (see section 4.2) or when UFH is given at doses necessary to maintain an open central venous or arterial catheter (see section 4.5).
+Concomitant treatment of ACS with antiplatelet therapy in patients with a prior stroke or a transient ischaemic attack (TIA) (see section 4.4).
+Concomitant treatment of CAD/PAD with ASA in patients with previous haemorrhagic or lacunar stroke, or any stroke within a month (see section 4.4).
+Hepatic disease associated with coagulopathy and clinically relevant bleeding risk including cirrhotic patients with Child Pugh B and C (see section 5.2).
+Pregnancy and breast-feeding (see section 4.6).
+
+[xarelto p.3 SmPC 4.2] (distance 0.189)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+Converting from parenteral anticoagulants to Xarelto For patients currently receiving a parenteral anticoagulant, discontinue the parenteral anticoagulant and start Xarelto 0 to 2 hours before the time that the next scheduled administration of the parenteral medicinal product (e.g. low molecular weight heparins) would be due or at the time of discontinuation of a continuously administered parenteral medicinal product (e.g. intravenous unfractionated heparin).
+Converting from Xarelto to parenteral anticoagulants Give the first dose of parenteral anticoagulant at the time the next Xarelto dose would be taken.
+Special populations Renal impairment Limited clinical data for patients with severe renal impairment (creatinine clearance 15 - 29 ml/min) indicate that rivaroxaban plasma concentrations are significantly increased. Therefore, Xarelto is to be used with caution in these patients. Use is not recommended in patients with creatinine clearance < 15 ml/min (see sections 4.4 and 5.2).
+No dose adjustment is necessary in patients with mild renal impairment (creatinine clearance 50 - 80 ml/min) or moderate renal impairment (creatinine clearance 30 - 49 ml/min) (see section 5.2).
+Hepatic impairment Xarelto is contraindicated in patients with hepatic disease associated with coagulopathy and clinically relevant bleeding risk including cirrhotic patients with Child Pugh B and C (see sections 4.3 and 5.2).
+Elderly population No dose adjustment (see sections 4.4 and 5.2) The risk of bleeding increases with increasing age (see section 4.4).
+Body weight No dose adjustment (see sections 4.4 and 5.2)
+Gender No dose adjustment (see section 5.2)
+Paediatric population The safety and efficacy of Xarelto 2.5 mg tablets in children aged 0 to 18 years have not been established. No data are available. Therefore, Xarelto 2.5 mg tablets are not recommended for use in children below 18 years of age.
+```
+</details>
+
+---
+
+## q11 (single)
+
+**Question:** A patient on Xarelto has developed a severe spreading skin rash, what should they do?
+
+**Reference:** Stop rivaroxaban at the first appearance of a severe skin rash and see the doctor; serious skin reactions such as Stevens-Johnson syndrome and DRESS have been reported.
+
+**Agent answer:** Tell your doctor immediately [xarelto p.239 Leaflet 4]. 
+
+Severe skin reactions, such as a spreading intense skin rash, blisters, or mucosal lesions (e.g., in the mouth or eyes), or signs of DRESS syndrome (rash, fever, inflammation of internal organs, blood abnormalities, and systemic illness), are very rare side effects of Xarelto [xarelto p.239 Leaflet 4]. 
+
+Patients appear to be at the highest risk for these serious skin reactions early in the course of therapy, with the onset occurring in the majority of cases within the first weeks of treatment [xarelto p.7 SmPC 4.4]. Xarelto should be discontinued at the first appearance of a severe skin rash (e.g., spreading, intense, and/or blistering) or any other sign of hypersensitivity in conjunction with mucosal lesions [xarelto p.7 SmPC 4.4]. 
+
+Eliquis and Pradaxa are not covered in this context.
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[xarelto p.239 Leaflet 4] (distance 0.186)
+Xarelto | Xarelto 2.5 mg film-coated tablets | Leaflet 4 Possible side effects
+4. Possible side effects
+Like all medicines, Xarelto can cause side effects, although not everybody gets them.
+Like other similar medicines to reduce the formation of blood clots, Xarelto may cause bleeding which may potentially be life threatening. Excessive bleeding may lead to a sudden drop in blood pressure (shock). In some cases the bleeding may not be obvious.
+Tell your doctor immediately if you experience any of the following side effects: • Signs of bleeding - bleeding into the brain or inside the skull (symptoms can include headache, one-sided weakness, vomiting, seizures, decreased level of consciousness, and neck stiffness. A serious medical emergency. Seek medical attention immediately!) - long or excessive bleeding - exceptional weakness, tiredness, paleness, dizziness, headache, unexplained swelling, breathlessness, chest pain or angina pectoris Your doctor may decide to keep you under closer observation or change the treatment.
+• Signs of severe skin reactions - spreading intense skin rash, blisters or mucosal lesions, e.g. in the mouth or eyes (Stevens-Johnson syndrome/toxic epidermal necrolysis). - a drug reaction that causes rash, fever, inflammation of internal organs, blood abnormalities and systemic illness (DRESS syndrome). The frequency of these side effects is very rare (up to 1 in 10,000 people).
+• Signs of severe allergic reactions - swelling of the face, lips, mouth, tongue or throat; difficulty swallowing; hives and breathing difficulties; sudden drop in blood pressure. The frequencies of severe allergic reactions are very rare (anaphylactic reactions, including anaphylactic shock; may affect up to 1 in 10,000 people) and uncommon (angioedema and allergic oedema; may affect up to 1 in 100 people).
+Overall list of possible side effects
+
+[xarelto p.12 SmPC 4.8] (distance 0.212)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.8 Undesirable effects
+Table 3: All adverse reactions reported in adult patients in phase III clinical studies or through post-marketing use* and in two phase II and two phase III studies in paediatric patients Common Uncommon Rare Very rare Not known Blood and lymphatic system disorders Anaemia (incl. respective laboratory parameters) Thrombocytosis (incl. platelet count increased)A, thrombocytopenia
+Immune system disorders Allergic reaction, dermatitis allergic, angioedema and allergic oedema Anaphylactic reactions including anaphylactic shock
+Nervous system disorders Dizziness, headache Cerebral and intracranial haemorrhage, syncope
+Eye disorders Eye haemorrhage (incl. conjunctival haemorrhage)
+Cardiac disorders Tachycardia Vascular disorders Hypotension, haematoma
+Respiratory, thoracic and mediastinal disorders Epistaxis, haemoptysis Eosinophilic pneumonia
+Gastrointestinal disorders Gingival bleeding, gastrointestinal tract haemorrhage (incl. rectal haemorrhage), gastrointestinal and abdominal pains, dyspepsia, nausea, constipationA, diarrhoea, vomitingA Dry mouth Hepatobiliary disorders Increase in transaminases Hepatic impairment, increased bilirubin, increased blood alkaline phosphataseA, increased GGTA Jaundice, bilirubin conjugated increased (with or without concomitant increase of ALT), cholestasis, hepatitis (incl. hepatocellular injury)
+Common Uncommon Rare Very rare Not known Skin and subcutaneous tissue disorders Pruritus (incl. uncommon cases of generalised pruritus), rash, ecchymosis, cutaneous and subcutaneous haemorrhage Urticaria Stevens-Johnson syndrome/Toxic Epidermal Necrolysis, DRESS syndrome
+Musculoskeletal and connective tissue disorders Pain in extremityA Haemarthrosis Muscle haemorrhage Compartment syndrome secondary to a bleeding Renal and urinary disorders Urogenital tract haemorrhage (incl. haematuria and menorrhagiaB), renal impairment (incl. blood creatinine increased, blood urea increased) Renal failure/acute renal failure secondary to a bleeding sufficient to cause hypoperfusion, Anticoagulantrelated nephropathy General disorders and administration site conditions FeverA, peripheral oedema, decreased general strength and energy (incl. fatigue and asthenia) Feeling unwell (incl. malaise) Localised oedemaA Investigations Increased LDHA, increased lipaseA, increased amylaseA
+
+[xarelto p.275 Leaflet 3] (distance 0.213)
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | Leaflet 3 How to take or give Xarelto; Leaflet 4 Possible side effects
+If you stop taking or giving Xarelto Do not stop Xarelto without talking to your doctor first, because Xarelto treats and prevents serious conditions.
+4. Possible side effects
+Like all medicines, this medicine can cause side effects, although not everybody gets them.
+Tell your doctor immediately if you or the child experience any of the following side effects: • Signs of bleeding - bleeding into the brain or inside the skull (symptoms can include headache, one-sided weakness, vomiting, seizures, decreased level of consciousness, and neck stiffness. A serious medical emergency. Seek medical attention immediately!) - long or excessive bleeding - exceptional weakness, tiredness, paleness, dizziness, headache, unexplained swelling, breathlessness, chest pain or angina pectoris
+Your doctor may decide to keep you or the child under closer observation or change the treatment.
+Overall list of possible side effects found in adults and children and adolescents:
+Uncommon (may affect up to 1 in 100 people) - bleeding into the brain or inside the skull (see above, possible side effects which may be a sign of bleeding) - bleeding into a joint causing pain and swelling - thrombocytopenia (low number of platelets, which are cells that help blood to clot) - allergic reactions, including allergic skin reactions - impaired function of the liver (may be seen in tests performed by your doctor) - blood tests may show an increase in bilirubin, some pancreatic or liver enzymes or in the number of platelets - fainting - feeling unwell - faster heartbeat - dry mouth - hives
+
+[xarelto p.7 SmPC 4.4] (distance 0.214)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.4 Special warnings and precautions for use
+Dosing recommendations before and after invasive procedures and surgical intervention If an invasive procedure or surgical intervention is required, Xarelto 2.5 mg should be stopped at least 12 hours before the intervention, if possible and based on the clinical judgement of the physician. If a patient is to undergo elective surgery and anti-platelet effect is not desired, platelet aggregation inhibitors should be discontinued as directed by the manufacturer’s prescribing information. If the procedure cannot be delayed the increased risk of bleeding should be assessed against the urgency of the intervention. Xarelto should be restarted as soon as possible after the invasive procedure or surgical intervention provided the clinical situation allows and adequate haemostasis has been established as determined by the treating physician (see section 5.2).
+Elderly population Increasing age may increase haemorrhagic risk (see sections 5.1 and 5.2).
+Dermatological reactions Serious skin reactions, including Stevens-Johnson syndrome/toxic epidermal necrolysis and DRESS syndrome, have been reported during post-marketing surveillance in association with the use of rivaroxaban (see section 4.8). Patients appear to be at highest risk for these reactions early in the course of therapy: the onset of the reaction occurring in the majority of cases within the first weeks of treatment. Rivaroxaban should be discontinued at the first appearance of a severe skin rash (e.g. spreading, intense and/or blistering), or any other sign of hypersensitivity in conjunction with mucosal lesions.
+Information about excipients Xarelto contains lactose. Patients with rare hereditary problems of galactose intolerance, total lactase deficiency or glucose-galactose malabsorption should not take this medicinal product. This medicinal product contains less than 1 mmol sodium (23 mg) per dosage unit, that is to say essentially “sodium-free”.
+
+[xarelto p.257 Leaflet 4] (distance 0.221)
+Xarelto | Xarelto 15 mg film-coated tablets | Leaflet 4 Possible side effects
+4. Possible side effects
+Tell your doctor immediately if you or the child experience any of the following side effects: • Signs of bleeding - bleeding into the brain or inside the skull (symptoms can include headache, one-sided weakness, vomiting, seizures, decreased level of consciousness, and neck stiffness. A serious medical emergency. Seek medical attention immediately!) - long or excessive bleeding - exceptional weakness, tiredness, paleness, dizziness, headache, unexplained swelling, breathlessness, chest pain or angina pectoris Your doctor may decide to keep you under closer observation or change the treatment.
+Overall list of possible side effects found in adults, children and adolescents Common (may affect up to 1 in 10 people) - reduction in red blood cells which can make the skin pale and cause weakness or breathlessness - bleeding in the stomach or bowel, urogenital bleeding (including blood in the urine and heavy menstrual bleeding), nose bleed, bleeding in the gum - bleeding into the eye (including bleeding from the whites of the eyes) - bleeding into tissue or a cavity of the body (haematoma, bruising) - coughing up blood - bleeding from the skin or under the skin - bleeding following an operation - oozing of blood or fluid from surgical wound - swelling in the limbs - pain in the limbs - impaired function of the kidneys (may be seen in tests performed by your doctor) - fever - stomach ache, indigestion, feeling or being sick, constipation, diarrhoea - low blood pressure (symptoms may be feeling dizzy or fainting when standing up) - decreased general strength and energy (weakness, tiredness), headache, dizziness - rash, itchy skin - blood tests may show an increase in some liver enzymes
+```
+</details>
+
+---
+
+## q12 (single)
+
+**Question:** What are the most common types of bleeding seen with Xarelto?
+
+**Reference:** Nosebleeds (epistaxis, about 4.5%) and gastrointestinal bleeding (about 3.8%) are the most commonly reported bleedings.
+
+**Agent answer:** The most commonly reported bleedings with Xarelto are epistaxis (nose bleed) (4.5 %) and gastrointestinal tract haemorrhage (3.8 %) [xarelto p.10 SmPC 4.8]. 
+
+Other common types of bleeding seen with Xarelto (may affect up to 1 in 10 people) include:
+* Bleeding in the stomach or bowel [xarelto p.240 Leaflet 4]
+* Urogenital bleeding (including blood in the urine and heavy menstrual bleeding) [xarelto p.240 Leaflet 4]
+* Bleeding in the gum [xarelto p.240 Leaflet 4]
+* Bleeding into the eye (including bleeding from the whites of the eyes) [xarelto p.240 Leaflet 4]
+* Bleeding into tissue or a cavity of the body (haematoma, bruising) [xarelto p.240 Leaflet 4]
+* Coughing up blood [xarelto p.240 Leaflet 4]
+* Bleeding from the skin or under the skin [xarelto p.240 Leaflet 4]
+* Bleeding following an operation and oozing of blood or fluid from surgical wounds [xarelto p.240 Leaflet 4]
+
+Mucosal bleedings (such as epistaxis, gingival, gastrointestinal, and genitourinary, including abnormal vaginal or increased menstrual bleeding) were seen more frequently during long-term treatment [xarelto p.14 SmPC 4.8]. 
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[xarelto p.240 Leaflet 4] (distance 0.163)
+Xarelto | Xarelto 2.5 mg film-coated tablets | Leaflet 4 Possible side effects
+Common (may affect up to 1 in 10 people) - reduction in red blood cells which can make the skin pale and cause weakness or breathlessness - bleeding in the stomach or bowel, urogenital bleeding (including blood in the urine and heavy menstrual bleeding), nose bleed, bleeding in the gum - bleeding into the eye (including bleeding from the whites of the eyes) - bleeding into tissue or a cavity of the body (haematoma, bruising) - coughing up blood - bleeding from the skin or under the skin - bleeding following an operation - oozing of blood or fluid from surgical wound - swelling in the limbs - pain in the limbs - impaired function of the kidneys (may be seen in tests performed by your doctor) - fever - stomach ache, indigestion, feeling or being sick, constipation, diarrhoea - low blood pressure (symptoms may be feeling dizzy or fainting when standing up) - decreased general strength and energy (weakness, tiredness), headache, dizziness - rash, itchy skin - blood tests may show an increase in some liver enzymes
+Uncommon (may affect up to 1 in 100 people) - bleeding into the brain or inside the skull (see above, signs of bleeding) - bleeding into a joint causing pain and swelling - thrombocytopenia (low number of platelets, which are cells that help blood to clot) - allergic reactions, including allergic skin reactions - impaired function of the liver (may be seen in tests performed by your doctor)
+- blood tests may show an increase in bilirubin, some pancreatic or liver enzymes or in the number of platelets - fainting - feeling unwell - faster heartbeat - dry mouth - hives
+
+[xarelto p.12 SmPC 4.8] (distance 0.163)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.8 Undesirable effects
+Table 3: All adverse reactions reported in adult patients in phase III clinical studies or through post-marketing use* and in two phase II and two phase III studies in paediatric patients Common Uncommon Rare Very rare Not known Blood and lymphatic system disorders Anaemia (incl. respective laboratory parameters) Thrombocytosis (incl. platelet count increased)A, thrombocytopenia
+Immune system disorders Allergic reaction, dermatitis allergic, angioedema and allergic oedema Anaphylactic reactions including anaphylactic shock
+Nervous system disorders Dizziness, headache Cerebral and intracranial haemorrhage, syncope
+Eye disorders Eye haemorrhage (incl. conjunctival haemorrhage)
+Cardiac disorders Tachycardia Vascular disorders Hypotension, haematoma
+Respiratory, thoracic and mediastinal disorders Epistaxis, haemoptysis Eosinophilic pneumonia
+Gastrointestinal disorders Gingival bleeding, gastrointestinal tract haemorrhage (incl. rectal haemorrhage), gastrointestinal and abdominal pains, dyspepsia, nausea, constipationA, diarrhoea, vomitingA Dry mouth Hepatobiliary disorders Increase in transaminases Hepatic impairment, increased bilirubin, increased blood alkaline phosphataseA, increased GGTA Jaundice, bilirubin conjugated increased (with or without concomitant increase of ALT), cholestasis, hepatitis (incl. hepatocellular injury)
+Common Uncommon Rare Very rare Not known Skin and subcutaneous tissue disorders Pruritus (incl. uncommon cases of generalised pruritus), rash, ecchymosis, cutaneous and subcutaneous haemorrhage Urticaria Stevens-Johnson syndrome/Toxic Epidermal Necrolysis, DRESS syndrome
+Musculoskeletal and connective tissue disorders Pain in extremityA Haemarthrosis Muscle haemorrhage Compartment syndrome secondary to a bleeding Renal and urinary disorders Urogenital tract haemorrhage (incl. haematuria and menorrhagiaB), renal impairment (incl. blood creatinine increased, blood urea increased) Renal failure/acute renal failure secondary to a bleeding sufficient to cause hypoperfusion, Anticoagulantrelated nephropathy General disorders and administration site conditions FeverA, peripheral oedema, decreased general strength and energy (incl. fatigue and asthenia) Feeling unwell (incl. malaise) Localised oedemaA Investigations Increased LDHA, increased lipaseA, increased amylaseA
+
+[xarelto p.10 SmPC 4.8] (distance 0.167)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.8 Undesirable effects
+Table 1: Number of patients studied, total daily dose and maximum treatment duration in adult and paediatric phase III studies Indication Number of patients* Total daily dose Maximum treatment duration Prevention of venous thromboembolism (VTE) in adult patients undergoing elective hip or knee replacement surgery 6,097 10 mg 39 days Prevention of VTE in medically ill patients 3,997 10 mg 39 days Treatment of deep vein thrombosis (DVT), pulmonary embolism (PE) and prevention of recurrence 6,790 Day 1 - 21: 30 mg Day 22 and onwards: 20 mg After at least 6 months: 10 mg or 20 mg 21 months Treatment of VTE and prevention of VTE recurrence in term neonates and children aged less than 18 years following initiation of standard anticoagulation treatment 329 Body weight-adjusted dose to achieve a similar exposure as that observed in adults treated for DVT with 20 mg rivaroxaban once daily 12 months Prevention of stroke and systemic embolism in patients with nonvalvular atrial fibrillation 7,750 20 mg 41 months Prevention of atherothrombotic events in patients after an ACS 10,225 5 mg or 10 mg respectively, coadministered with either ASA or ASA plus clopidogrel or ticlopidine 31 months Prevention of atherothrombotic events in patients with CAD/PAD 18,244
+5 mg co-administered with ASA or 10 mg alone 47 months 3,256** 5 mg co-administered with ASA 42 months
+Indication Number of patients* Total daily dose Maximum treatment duration * Patients exposed to at least one dose of rivaroxaban ** From the VOYAGER PAD study
+The most commonly reported adverse reactions in patients receiving rivaroxaban were bleedings (see section 4.4. and ‘Description of selected adverse reactions’ below) (Table 2). The most commonly reported bleedings were epistaxis (4.5 %) and gastrointestinal tract haemorrhage (3.8 %).
+
+[xarelto p.14 SmPC 4.8] (distance 0.168)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.8 Undesirable effects
+Description of selected adverse reactions Due to the pharmacological mode of action, the use of Xarelto may be associated with an increased risk of occult or overt bleeding from any tissue or organ which may result in post haemorrhagic anaemia. The signs, symptoms, and severity (including fatal outcome) will vary according to the location and degree or extent of the bleeding and/or anaemia (see section 4.9 “Management of bleeding”). In the clinical studies mucosal bleedings (i.e. epistaxis, gingival, gastrointestinal, genito urinary including abnormal vaginal or increased menstrual bleeding) and anaemia were seen more frequently during long term rivaroxaban treatment compared with VKA treatment. Thus, in addition to adequate clinical surveillance, laboratory testing of haemoglobin/haematocrit could be of value to detect occult bleeding and quantify the clinical relevance of overt bleeding, as judged to be appropriate. The risk of bleedings may be increased in certain patient groups, e.g. those patients with uncontrolled severe arterial hypertension and/or on concomitant treatment affecting haemostasis (see section 4.4 “Haemorrhagic risk”). Menstrual bleeding may be intensified and/or prolonged. Haemorrhagic complications may present as weakness, paleness, dizziness, headache or unexplained swelling, dyspnoea and unexplained shock. In some cases as a consequence of anaemia, symptoms of cardiac ischaemia like chest pain or angina pectoris have been observed. Known complications secondary to severe bleeding such as compartment syndrome and renal failure due to hypoperfusion, or anticoagulant-related nephropathy have been reported for Xarelto. Therefore, the possibility of haemorrhage is to be considered in evaluating the condition in any anticoagulated patient.
+Reporting of suspected adverse reactions Reporting suspected adverse reactions after authorisation of the medicinal product is important. It allows continued monitoring of the benefit/risk balance of the medicinal product. Healthcare professionals are asked to report any suspected adverse reactions via the national reporting system listed in Appendix V.
+
+[xarelto p.248 Leaflet 4] (distance 0.168)
+Xarelto | Xarelto 10 mg film-coated tablets | Leaflet 4 Possible side effects
+4. Possible side effects
+Overall list of possible side effects Common (may affect up to 1 in 10 people) - reduction in red blood cells which can make the skin pale and cause weakness or breathlessness - bleeding in the stomach or bowel, urogenital bleeding (including blood in the urine and heavy menstrual bleeding), nose bleed, bleeding in the gum - bleeding into the eye (including bleeding from the whites of the eyes) - bleeding into tissue or a cavity of the body (haematoma, bruising) - coughing up blood - bleeding from the skin or under the skin - bleeding following an operation - oozing of blood or fluid from surgical wound - swelling in the limbs - pain in the limbs - impaired function of the kidneys (may be seen in tests performed by your doctor) - fever - stomach ache, indigestion, feeling or being sick, constipation, diarrhoea - low blood pressure (symptoms may be feeling dizzy or fainting when standing up) - decreased general strength and energy (weakness, tiredness), headache, dizziness - rash, itchy skin - blood tests may show an increase in some liver enzymes
+Uncommon (may affect up to 1 in 100 people) - bleeding into the brain or inside the skull (see above, signs of bleeding) - bleeding into a joint causing pain and swelling - thrombocytopenia (low number of platelets, which are cells that help blood to clot) - allergic reactions, including allergic skin reactions - impaired function of the liver (may be seen in tests performed by your doctor) - blood tests may show an increase in bilirubin, some pancreatic or liver enzymes or in the number of platelets - fainting - feeling unwell - faster heartbeat - dry mouth - hives
+```
+</details>
+
+---
+
+## q13 (single)
+
+**Question:** Is it safe to drive while taking Xarelto?
+
+**Reference:** Xarelto can cause dizziness (common) or fainting (uncommon); if affected, do not drive, ride a bicycle or use machines.
+
+**Agent answer:** Xarelto has minor influence on the ability to drive and use machines [xarelto p.10 SmPC 4.7]. 
+
+However, adverse reactions such as dizziness (frequency: common) and fainting/syncope (frequency: uncommon) have been reported [xarelto p.10 SmPC 4.7, xarelto p.238 Leaflet 2]. You should not drive, ride a bicycle, or use any tools or machines if you are affected by these symptoms [xarelto p.10 SmPC 4.7, xarelto p.238 Leaflet 2].
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[xarelto p.10 SmPC 4.7] (distance 0.12)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.7 Effects on ability to drive and use machines; SmPC 4.8 Undesirable effects
+4.7 Effects on ability to drive and use machines
+Xarelto has minor influence on the ability to drive and use machines. Adverse reactions like syncope (frequency: uncommon) and dizziness (frequency: common) have been reported (see section 4.8). Patients experiencing these adverse reactions should not drive or use machines.
+4.8 Undesirable effects
+Summary of the safety profile The safety of rivaroxaban has been evaluated in thirteen pivotal phase III studies (see Table 1).
+Overall, 69,608 adult patients in nineteen phase III studies and 488 paediatric patients in two phase II and two phase III studies were exposed to rivaroxaban.
+
+[xarelto p.273 Leaflet 2] (distance 0.183)
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | Leaflet 2 What you need to know before you take or give Xarelto
+Pregnancy and breast-feeding • If you or the adolescent are pregnant or breast-feeding do not take or give Xarelto. • If there is a chance that you or the adolescent could become pregnant, a reliable contraceptive should be used while taking Xarelto. • If you or the adolescent become pregnant while taking this medicine, tell your doctor immediately, who will decide how the treatment should be continued.
+Driving and using machines Xarelto may cause dizziness or fainting. You or the child should not drive, ride a bicycle or use any tools or machines if affected by these symptoms.
+Xarelto contains sodium benzoate and sodium This medicine contains 1.8 mg sodium benzoate (E 211) in each mL oral suspension. Sodium benzoate (E 211) may increase jaundice (yellowing of the skin and eyes) in newborn babies (up to 4 weeks old). This medicine contains less than 1 mmol sodium (23 mg) per millilitre, that is to say essentially “sodium-free”.
+
+[xarelto p.238 Leaflet 2] (distance 0.185)
+Xarelto | Xarelto 2.5 mg film-coated tablets | Leaflet 2 What you need to know before you take Xarelto
+If any of the above apply to you, tell your doctor before taking Xarelto, because the effect of Xarelto may be increased. Your doctor will decide, if you should be treated with this medicine and if you should be kept under closer observation. If your doctor thinks that you are at increased risk of developing stomach or bowel ulcers, he may also use a preventative ulcer treatment.
+• If you are taking ▪ some medicines for treatment of epilepsy (phenytoin, carbamazepine, phenobarbital) ▪ St John’s Wort (Hypericum perforatum), a herbal product used for depression ▪ rifampicin, an antibiotic If any of the above apply to you, tell your doctor before taking Xarelto, because the effect of Xarelto may be reduced. Your doctor will decide, if you should be treated with Xarelto and if you should be kept under closer observation.
+Pregnancy and breast---feeding Do not take Xarelto if you are pregnant or breast-feeding. If there is a chance that you could become pregnant, use a reliable contraceptive while you are taking Xarelto. If you become pregnant while you are taking this medicine, tell your doctor immediately, who will decide how you should be treated.
+Driving and using machines Xarelto may cause dizziness (common side effect) or fainting (uncommon side effect) (see section 4, ”Possible side effects”). You should not drive, ride a bicycle or use any tools or machines if you are affected by these symptoms.
+Xarelto contains lactose and sodium If you have been told by your doctor that you have an intolerance to some sugars, contact your doctor before taking this medicine. This medicine contains less than 1 mmol sodium (23 mg) per tablet, that is to say essentially ”sodiumfree”.
+
+[xarelto p.36 SmPC 4.6] (distance 0.203)
+Xarelto | Xarelto 10 mg film-coated tablets | SmPC 4.6 Fertility, pregnancy and lactation; SmPC 4.7 Effects on ability to drive and use machines; SmPC 4.8 Undesirable effects
+4.6 Fertility, pregnancy and lactation
+Breast-feeding Safety and efficacy of Xarelto have not been established in breast-feeding women. Data from animals indicate that rivaroxaban is secreted into milk. Therefore Xarelto is contraindicated during breastfeeding (see section 4.3). A decision must be made whether to discontinue breast-feeding or to discontinue/abstain from therapy.
+4.7 Effects on ability to drive and use machines
+4.8 Undesirable effects
+5 mg co-administered with ASA or 10 mg alone 47 months 3,256** 5 mg co-administered with ASA 42 months * Patients exposed to at least one dose of rivaroxaban ** From the VOYAGER PAD study
+Eye disorders Eye haemorrhage (incl. conjunctival haemorrhage)
+Cardiac disorders Tachycardia Vascular disorders Hypotension, haematoma
+
+[xarelto p.275 Leaflet 3] (distance 0.21)
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | Leaflet 3 How to take or give Xarelto; Leaflet 4 Possible side effects
+If you stop taking or giving Xarelto Do not stop Xarelto without talking to your doctor first, because Xarelto treats and prevents serious conditions.
+4. Possible side effects
+Like all medicines, this medicine can cause side effects, although not everybody gets them.
+Tell your doctor immediately if you or the child experience any of the following side effects: • Signs of bleeding - bleeding into the brain or inside the skull (symptoms can include headache, one-sided weakness, vomiting, seizures, decreased level of consciousness, and neck stiffness. A serious medical emergency. Seek medical attention immediately!) - long or excessive bleeding - exceptional weakness, tiredness, paleness, dizziness, headache, unexplained swelling, breathlessness, chest pain or angina pectoris
+Your doctor may decide to keep you or the child under closer observation or change the treatment.
+Overall list of possible side effects found in adults and children and adolescents:
+Uncommon (may affect up to 1 in 100 people) - bleeding into the brain or inside the skull (see above, possible side effects which may be a sign of bleeding) - bleeding into a joint causing pain and swelling - thrombocytopenia (low number of platelets, which are cells that help blood to clot) - allergic reactions, including allergic skin reactions - impaired function of the liver (may be seen in tests performed by your doctor) - blood tests may show an increase in bilirubin, some pancreatic or liver enzymes or in the number of platelets - fainting - feeling unwell - faster heartbeat - dry mouth - hives
+```
+</details>
+
+---
+
+## q14 (single)
+
+**Question:** How long can I keep the Xarelto oral suspension for my child once it has been prepared?
+
+**Reference:** 14 days at room temperature after preparation (store below 30 °C, upright, do not freeze).
+
+**Agent answer:** After preparation, the suspension has a shelf life of 14 days if stored at room temperature (do not store above 30 °C and do not freeze) [xarelto p.284 Leaflet 6]. Be sure to write the expiry date (date of preparation plus 14 days) on the dedicated field on the bottle label [xarelto p.284 Leaflet 6].
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[xarelto p.289 Leaflet 1] (distance 0.115)
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | Leaflet 1 Preparing the oral suspension
+f. If there are clumps or sediment repeat steps d. to f.
+→ When no clumps or deposits are left, the suspension is ready for use. Do not add more water to the bottle. The suspension has a shelf life of 14 days at room temperature.
+g. Write the date of expiry of the just prepared suspension on the label of the bottle. Date of preparation + 14 days The shown pictogram is only an example.
+
+[xarelto p.284 Leaflet 6] (distance 0.135)
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | Leaflet 6 Contents of the pack and other information
+• Only use non-carbonated drinking water to prepare the suspension to avoid bubbles. That means you can use either ▪ fresh tap water or ▪ non-carbonated (still) mineral water • It is very important that the precise amount of water is added to the granules in the bottle to ensure the correct concentration of Xarelto. ▪ Use the water syringe for measurement of 50 mL water, see below for more information. ▪ Measure the amount water to be provided to the bottle very carefully. • After preparation the suspension can be used for 14 days if stored at room temperature. Ensure to write the expiry date of the suspension (date of preparation plus 14 days) on the dedicated field on the bottle label. • Do not store the suspension above 30 °C. Do not freeze. If the suspension has been stored in the refrigerator, allow the suspension to adjust to room temperature before extracting the relevant dose. • Shake the suspension for initial preparation for at least 60 seconds. • Shake the suspension in the bottle for at least 10 seconds before each administration. • It is very important that the prescribed dose volume of Xarelto is being administered. ▪ Make sure that you know the prescribed dose and frequency of administration. Ask your doctor or pharmacist if you do not know the prescribed dose and frequency. ▪ Carefully adjust the blue syringe according the prescribed volume. ▪ Administer the prescribed dose by using the blue syringe. Follow the doctor’s instructions on how often per day you should administer the prescribed dose. ▪ Check for air bubbles in the blue syringe before administration of the oral suspension. • If your child repeatedly does not take all the required dose or spits some of it out, call your child’s doctor to
+
+[xarelto p.300 Leaflet 6] (distance 0.142)
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | Leaflet 6 Damage/Malfunction
+• Only use non-carbonated drinking water to prepare the suspension to avoid bubbles. That means you can use either ▪ fresh tap water or ▪ non-carbonated (still) mineral water • It is very important that the precise amount of water is added to the granules in the bottle to ensure the correct concentration of Xarelto. ▪ Use the water syringe for measurement of 100 mL water, see below for more information. ▪ Measure the amount water to be provided to the bottle very carefully. • After preparation the suspension can be used for 14 days if stored at room temperature. Ensure to write the expiry date of the suspension (date of preparation plus 14 days) on the dedicated field on the bottle label. • Do not store the suspension above 30 °C. Do not freeze. If the suspension has been stored in the refrigerator, allow the suspension to adjust to room temperature before extracting the relevant dose. • Shake the suspension for initial preparation for at least 60 seconds. • Shake the suspension in the bottle for at least 10 seconds before each administration. • It is very important that the prescribed dose volume of Xarelto is being administered. ▪ Make sure that you know the prescribed dose and frequency of administration. Ask your doctor or pharmacist if you do not know the prescribed dose and frequency. ▪ Carefully adjust the blue syringe according the prescribed volume. ▪ Administer the prescribed dose by using the blue syringe. Follow the doctor’s instructions on how often per day you should administer the prescribed dose. ▪ Check for air bubbles in the blue syringe before administration of the oral suspension. • If your child repeatedly does not take all the required dose or spits some of it out, call your child’s doctor to
+
+[xarelto p.163 SmPC 6.1] (distance 0.147)
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | SmPC 6.1 List of excipients; SmPC 6.2 Incompatibilities; SmPC 6.3 Shelf life; SmPC 6.4 Special precautions for storage
+6.1 List of excipients
+Citric acid, anhydrous (E 330) Hypromellose (2910) Mannitol (E 421) Microcrystalline cellulose and carmellose sodium Sodium benzoate (E 211) Sucralose (E 955) Xanthan gum (E 415) Flavour sweet and creamy: flavouring substances, maltodextrin (maize), propylene glycol (E 1520) and acacia gum (E 414).
+6.2 Incompatibilities
+Not applicable.
+6.3 Shelf life
+3 years After reconstitution the suspension is stable for 14 days.
+6.4 Special precautions for storage
+Do not store above 30 °C. Do not freeze. Store the prepared suspension upright.
+
+[xarelto p.277 Leaflet 5] (distance 0.15)
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | Leaflet 5 How to store Xarelto; Leaflet 6 Contents of the pack and other information
+5. How to store Xarelto
+Do not use this medicine after the expiry date which is stated on the carton and on the bottle after EXP. The expiry date refers to the last day of that month. After preparation, the shelf life of the suspension is 14 days at room temperature.
+6. Contents of the pack and other information
+What Xarelto contains - The active substance is rivaroxaban. One glass bottle contains either • 51.7 mg of rivaroxaban, for 50 mL of water to be added, • or 103.4 mg of rivaroxaban, for 100 mL water to be added. After preparation, each mL of the suspension contains 1 mg of rivaroxaban. - The other ingredients are: Citric acid, anhydrous (E 330), hypromellose (2910), mannitol (E 421), microcrystalline cellulose, carboxymethylcellulose sodium, sodium benzoate (E 211) (see section 2 “Xarelto contains sodium benzoate and sodium”), sucralose (E 955), xanthan gum (E 415), flavour sweet and creamy (consist of flavouring substances, maltodextrin (maize), propylene glycol (E 1520) and acacia gum (E 414)).
+What Xarelto looks like and contents of the pack Xarelto granules for oral suspension are white granules in a glass bottle with child resistant screw cap.
+Pack sizes - For children weighing less than 4 kg: Folding box with one brown glass bottle containing 2.625 g granules (corresponding to 51.7 mg rivaroxaban), two 1 mL blue syringes, one 60 mL water syringe for adding of 50 mL of water, and one adapter. - For children weighing 4 kg or more: Folding box with one brown glass bottle containing 5.25 g granules (corresponding to 103.4 mg rivaroxaban), two 5 mL and two 10 mL blue syringes, one 100 mL water syringe for adding of 100 mL of water, and one adapter.
+Not all pack sizes may be marketed.
+```
+</details>
+
+---
+
+## q15 (single)
+
+**Question:** My grandfather is 82 and has atrial fibrillation, what Pradaxa dose should he take?
+
+**Reference:** Patients aged 80 or over get a reduced dose: 220 mg per day, taken as one 110 mg capsule twice daily (instead of 150 mg twice daily).
+
+**Agent answer:** For patients with atrial fibrillation (prevention of stroke and systemic embolism) who are 80 years or older, the recommended dose of Pradaxa is a daily dose of 220 mg taken as one 110 mg capsule twice daily [pradaxa p.31 SmPC 4.2, pradaxa p.179 Leaflet 3].
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[pradaxa p.5 SmPC 4.2] (distance 0.169)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.2 Posology and method of administration
+The recommended dose of dabigatran etexilate capsules is based on the patient’s weight and age as shown in table 2. The dose should be adjusted according to weight and age as treatment progresses.
+For weight and age combinations not listed in the dosing table no dosing recommendation can be provided.
+Table 2: Single and total daily dabigatran etexilate doses in milligrams (mg) by weight in kilograms (kg) and age in years of the patient
+Weight / age combinations Single dose in mg Total daily dose in mg Weight in kg Age in years 11 to < 13 8 to < 9 75 150 13 to < 16 8 to < 11 110 220 16 to < 21 8 to < 14 110 220 21 to < 26 8 to < 16 150 300 26 to < 31 8 to < 18 150 300 31 to < 41 8 to < 18 185 370 41 to < 51 8 to < 18 220 440 51 to < 61 8 to < 18 260 520 61 to < 71 8 to < 18 300 600 71 to < 81 8 to < 18 300 600 > 81 10 to < 18 300 600 Single doses requiring combinations of more than one capsule: 300 mg: two 150 mg capsules or four 75 mg capsules 260 mg: one 110 mg plus one 150 mg capsule or one 110 mg plus two 75 mg capsules 220 mg: two 110 mg capsules 185 mg: one 75 mg plus one 110 mg capsule 150 mg: one 150 mg capsule or two 75 mg capsules
+Assessment of renal function prior to and during treatment
+
+[pradaxa p.36 SmPC 4.2] (distance 0.17)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.2 Posology and method of administration
+For subjects with gastritis, esophagitis, or gastroesophageal reflux, a dose reduction may be considered due to the elevated risk of major gastro-intestinal bleeding (see table 2 above and section 4.4).
+Renal impairment
+No dose adjustment is necessary in patients with mild renal impairment (CrCL 50- ≤ 80 mL/min). For patients with moderate renal impairment (CrCL 30-50 mL/min) the recommended dose of dabigatran etexilate is also 300 mg taken as one 150 mg capsule twice daily. However, for patients with high risk of bleeding, a dose reduction of dabigatran etexilate to 220 mg taken as one 110 mg capsule twice daily should be considered (see sections 4.4 and 5.2). Close clinical surveillance is recommended in patients with renal impairment.
+No dose adjustment is necessary for concomitant use of amiodarone or quinidine (see sections 4.4, 4.5 and 5.2).
+Dose reductions are recommended for patients who receive concomitantly verapamil (see table 2 above and sections 4.4 and 4.5). In this situation dabigatran etexilate and verapamil should be taken at the same time.
+Weight
+No dose adjustment is necessary (see section 5.2), but close clinical surveillance is recommended in patients with a body weight < 50 kg (see section 4.4).
+Gender
+Paediatric population
+There is no relevant use of dabigatran etexilate in the paediatric population for the indication of prevention of stroke and systemic embolism in patients with NVAF.
+The recommended dose of dabigatran etexilate capsules is based on the patient’s weight and age as shown in table 4. The dose should be adjusted according to weight and age as treatment progresses.
+Table 4: Single and total daily dabigatran etexilate doses in milligrams (mg) by weight in kilograms (kg) and age in years of the patient
+Patients with an eGFR ≥ 50 mL/min/1.73 m2 should be treated with the dose according to table 4.
+
+[pradaxa p.179 Leaflet 3] (distance 0.177)
+Pradaxa | Pradaxa 150 mg hard capsules | Leaflet 3 How to take Pradaxa
+3. How to take Pradaxa
+Prevention of brain or body vessel obstruction by blood clot formation developing after abnormal
+heart beats and Treatment of blood clots in the veins of your legs and lungs including prevention of blood clots from re-occurring in the vein of your legs and lungs
+If you are 80 years or older, the recommended dose is 220 mg taken as one 110 mg capsule twice daily.
+You can continue to take this medicine if your heart beat needs to be restored to normal by a procedure called cardioversion or by a procedure called catheter ablation for atrial fibrillation. Take Pradaxa as your physician has told you.
+Table 1: Dosing table for Pradaxa capsules
+How to take Pradaxa
+Instructions for opening the blisters
+Instructions for the bottle
+Change of anticoagulant treatment
+If you forget to take Pradaxa
+A forgotten dose can still be taken up to 6 hours prior to the next due dose. A missed dose should be omitted if the remaining time is below 6 hours prior to the next due dose. Do not double a dose to make up for a forgotten dose.
+If you stop taking Pradaxa
+
+[pradaxa p.61 SmPC 5.1] (distance 0.18)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 5.1 Pharmacodynamic properties
+Endpoint Dabigatran etexilate 110 mg twice daily vs. Warfarin Dabigatran etexilate 150 mg twice daily vs. warfarin Age (years) < 65 1.10 (0.64, 1.87) 0.51 (0.26, 0.98) 65 ≤ and < 75 0.86 (0.62, 1.19) 0.67 (0.47, 0.95) ≥ 75 0.88 (0.66, 1.17) 0.68 (0.50, 0.92) ≥ 80 0.68 (0.44, 1.05) 0.67 (0.44, 1.02) CrCL(mL/min) 30 ≤ and < 50 0.89 (0.61, 1.31) 0.48 (0.31, 0.76) 50 ≤ and < 80 0.91 (0.68, 1.20) 0.65 (0.47, 0.88) ≥ 80 0.81 (0.51, 1.28) 0.69 (0.43, 1.12)
+For the primary safety endpoint of major bleeding there was an interaction of treatment effect and age. The relative risk of bleeding with dabigatran compared to warfarin increased with age. Relative risk was highest in patients ≥ 75 years. The concomitant use of antiplatelets ASA or clopidogrel approximately doubles MBE rates with both dabigatran etexilate and warfarin. There was no significant interaction of treatment effects with the subgroups of renal function and CHADS2 score.
+Table 26: Hazard Ratio and 95 % CI for major bleeds by subgroups
+Endpoint Dabigatran etexilate 110 mg twice daily vs. Warfarin Dabigatran etexilate 150 mg twice daily vs. Warfarin Age (years) < 65 0.32 (0.18, 0.57) 0.35 (0.20, 0.61) 65 ≤ and < 75 0.71 (0.56, 0.89) 0.82 (0.66, 1.03) ≥ 75 1.01 (0.84, 1.23) 1.19 (0.99, 1.43) ≥ 80 1.14 (0.86, 1.51) 1.35 (1.03, 1.76)
+CrCL(mL/min) 30 ≤ and < 50 1.02 (0.79, 1.32) 0.94 (0.73, 1.22) 50 ≤ and < 80 0.75 (0.61, 0.92) 0.90 (0.74, 1.09) ≥ 80 0.59 (0.43, 0.82) 0.87 (0.65, 1.17) ASA use 0.84 (0.69, 1.03) 0.97 (0.79, 1.18) Clopidogrel use 0.89 (0.55, 1.45) 0.92 (0.57, 1.48)
+RELY-ABLE (Long term multi-center extension of dabigatran treatment in patients with atrial fibrillation who completed the RE-LY trial)
+
+[pradaxa p.73 SmPC 4.2] (distance 0.181)
+Pradaxa | Pradaxa 150 mg hard capsules | SmPC 4.2 Posology and method of administration
+4.2 Posology and method of administration
+Posology
+The recommended doses of dabigatran etexilate in the indications SPAF, DVT and PE are shown in table 1.
+Table 1: Dose recommendations for SPAF, DVT and PE
+Dose reduction recommended
+Dose reduction for consideration
+Duration of use
+The duration of use of dabigatran etexilate in the indications SPAF, DVT and PE are shown in table 2.
+Table 2: Duration of use for SPAF and DVT/PE
+Missed dose
+Discontinuation of dabigatran etexilate
+Switching
+Cardioversion (SPAF)
+Catheter ablation for atrial fibrillation (SPAF)
+Catheter ablation can be conducted in patients on 150 mg twice daily dabigatran etexilate treatment. Dabigatran etexilate treatment does not need to be interrupted (see section 5.1).
+Percutaneous coronary intervention (PCI) with stenting (SPAF)
+Special populations
+Elderly
+For dose modifications in this population see table 1 above.
+Patients at risk of bleeding
+Patients with an increased bleeding risk (see sections 4.4, 4.5, 5.1 and 5.2) should be closely monitored clinically (looking for signs of bleeding or anaemia). Dose adjustment should be decided at the discretion of the physician, following assessment of the potential benefit and risk to an individual patient (see table 1 above). A coagulation test (see section 4.4) may help to identify patients with an increased bleeding risk caused by excessive dabigatran exposure. When excessive dabigatran exposure is identified in patients at high risk of bleeding, a reduced dose of 220 mg taken as one 110 mg capsule twice daily is recommended. When clinically relevant bleeding occurs, treatment should be interrupted.
+For subjects with gastritis, esophagitis, or gastroesophageal reflux, a dose reduction may be considered due to the elevated risk of major gastro-intestinal bleeding (see table 1 above and section 4.4).
+Renal impairment
+
+[pradaxa p.5 SmPC 4.2] (distance 0.175)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.2 Posology and method of administration
+The recommended dose of dabigatran etexilate capsules is based on the patient’s weight and age as shown in table 2. The dose should be adjusted according to weight and age as treatment progresses.
+For weight and age combinations not listed in the dosing table no dosing recommendation can be provided.
+Table 2: Single and total daily dabigatran etexilate doses in milligrams (mg) by weight in kilograms (kg) and age in years of the patient
+Weight / age combinations Single dose in mg Total daily dose in mg Weight in kg Age in years 11 to < 13 8 to < 9 75 150 13 to < 16 8 to < 11 110 220 16 to < 21 8 to < 14 110 220 21 to < 26 8 to < 16 150 300 26 to < 31 8 to < 18 150 300 31 to < 41 8 to < 18 185 370 41 to < 51 8 to < 18 220 440 51 to < 61 8 to < 18 260 520 61 to < 71 8 to < 18 300 600 71 to < 81 8 to < 18 300 600 > 81 10 to < 18 300 600 Single doses requiring combinations of more than one capsule: 300 mg: two 150 mg capsules or four 75 mg capsules 260 mg: one 110 mg plus one 150 mg capsule or one 110 mg plus two 75 mg capsules 220 mg: two 110 mg capsules 185 mg: one 75 mg plus one 110 mg capsule 150 mg: one 150 mg capsule or two 75 mg capsules
+Assessment of renal function prior to and during treatment
+
+[pradaxa p.36 SmPC 4.2] (distance 0.18)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.2 Posology and method of administration
+For subjects with gastritis, esophagitis, or gastroesophageal reflux, a dose reduction may be considered due to the elevated risk of major gastro-intestinal bleeding (see table 2 above and section 4.4).
+Renal impairment
+No dose adjustment is necessary in patients with mild renal impairment (CrCL 50- ≤ 80 mL/min). For patients with moderate renal impairment (CrCL 30-50 mL/min) the recommended dose of dabigatran etexilate is also 300 mg taken as one 150 mg capsule twice daily. However, for patients with high risk of bleeding, a dose reduction of dabigatran etexilate to 220 mg taken as one 110 mg capsule twice daily should be considered (see sections 4.4 and 5.2). Close clinical surveillance is recommended in patients with renal impairment.
+No dose adjustment is necessary for concomitant use of amiodarone or quinidine (see sections 4.4, 4.5 and 5.2).
+Dose reductions are recommended for patients who receive concomitantly verapamil (see table 2 above and sections 4.4 and 4.5). In this situation dabigatran etexilate and verapamil should be taken at the same time.
+Weight
+No dose adjustment is necessary (see section 5.2), but close clinical surveillance is recommended in patients with a body weight < 50 kg (see section 4.4).
+Gender
+Paediatric population
+There is no relevant use of dabigatran etexilate in the paediatric population for the indication of prevention of stroke and systemic embolism in patients with NVAF.
+The recommended dose of dabigatran etexilate capsules is based on the patient’s weight and age as shown in table 4. The dose should be adjusted according to weight and age as treatment progresses.
+Table 4: Single and total daily dabigatran etexilate doses in milligrams (mg) by weight in kilograms (kg) and age in years of the patient
+Patients with an eGFR ≥ 50 mL/min/1.73 m2 should be treated with the dose according to table 4.
+
+[pradaxa p.73 SmPC 4.2] (distance 0.185)
+Pradaxa | Pradaxa 150 mg hard capsules | SmPC 4.2 Posology and method of administration
+4.2 Posology and method of administration
+Posology
+The recommended doses of dabigatran etexilate in the indications SPAF, DVT and PE are shown in table 1.
+Table 1: Dose recommendations for SPAF, DVT and PE
+Dose reduction recommended
+Dose reduction for consideration
+Duration of use
+The duration of use of dabigatran etexilate in the indications SPAF, DVT and PE are shown in table 2.
+Table 2: Duration of use for SPAF and DVT/PE
+Missed dose
+Discontinuation of dabigatran etexilate
+Switching
+Cardioversion (SPAF)
+Catheter ablation for atrial fibrillation (SPAF)
+Catheter ablation can be conducted in patients on 150 mg twice daily dabigatran etexilate treatment. Dabigatran etexilate treatment does not need to be interrupted (see section 5.1).
+Percutaneous coronary intervention (PCI) with stenting (SPAF)
+Special populations
+Elderly
+For dose modifications in this population see table 1 above.
+Patients at risk of bleeding
+Patients with an increased bleeding risk (see sections 4.4, 4.5, 5.1 and 5.2) should be closely monitored clinically (looking for signs of bleeding or anaemia). Dose adjustment should be decided at the discretion of the physician, following assessment of the potential benefit and risk to an individual patient (see table 1 above). A coagulation test (see section 4.4) may help to identify patients with an increased bleeding risk caused by excessive dabigatran exposure. When excessive dabigatran exposure is identified in patients at high risk of bleeding, a reduced dose of 220 mg taken as one 110 mg capsule twice daily is recommended. When clinically relevant bleeding occurs, treatment should be interrupted.
+For subjects with gastritis, esophagitis, or gastroesophageal reflux, a dose reduction may be considered due to the elevated risk of major gastro-intestinal bleeding (see table 1 above and section 4.4).
+Renal impairment
+
+[pradaxa p.31 SmPC 4.2] (distance 0.186)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.2 Posology and method of administration
+4.2 Posology and method of administration
+Posology
+Primary prevention of VTE in orthopaedic surgery
+Dose reduction recommended
+Missed dose
+Discontinuation of dabigatran etexilate
+Switching
+Special populations
+Renal impairment
+Elderly
+Weight
+Gender
+Paediatric population
+Prevention of stroke and systemic embolism in adult patients with NVAF with one or more risk factors (SPAF) Treatment of DVT and PE and prevention of recurrent DVT and PE in adults (DVT/PE)
+The recommended doses of dabigatran etexilate in the indications SPAF, DVT and PE are shown in table 2.
+Table 2: Dose recommendations for SPAF, DVT and PE
+Dose recommendation Prevention of stroke and systemic embolism in adult patients with NVAF with one or more risk factors (SPAF) 300 mg dabigatran etexilate taken as one 150 mg capsule twice daily Treatment of DVT and PE and prevention of recurrent DVT and PE in adults (DVT/PE) 300 mg dabigatran etexilate taken as one 150 mg capsule twice daily following treatment with a parenteral anticoagulant for at least 5 days
+Dose reduction recommended
+Patients aged ≥ 80 years daily dose of 220 mg dabigatran etexilate taken as one 110 mg capsule twice daily Patients who receive concomitant verapamil
+Dose reduction for consideration
+Patients between 75-80 years daily dose of dabigatran etexilate of 300 mg or 220 mg should be selected based on an individual assessment of the thromboembolic risk and the risk of bleeding Patients with moderate renal impairment (CrCL 30-50 mL/min) Patients with gastritis, esophagitis or gastroesophageal reflux Other patients at increased risk of bleeding For DVT/PE the recommendation for the use of 220 mg dabigatran etexilate taken as one 110 mg capsule twice daily is based on pharmacokinetic and pharmacodynamic analyses and has not been studied in this clinical setting. See further down and sections 4.4, 4.5, 5.1 and 5.2.
+
+[pradaxa p.61 SmPC 5.1] (distance 0.192)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 5.1 Pharmacodynamic properties
+Endpoint Dabigatran etexilate 110 mg twice daily vs. Warfarin Dabigatran etexilate 150 mg twice daily vs. warfarin Age (years) < 65 1.10 (0.64, 1.87) 0.51 (0.26, 0.98) 65 ≤ and < 75 0.86 (0.62, 1.19) 0.67 (0.47, 0.95) ≥ 75 0.88 (0.66, 1.17) 0.68 (0.50, 0.92) ≥ 80 0.68 (0.44, 1.05) 0.67 (0.44, 1.02) CrCL(mL/min) 30 ≤ and < 50 0.89 (0.61, 1.31) 0.48 (0.31, 0.76) 50 ≤ and < 80 0.91 (0.68, 1.20) 0.65 (0.47, 0.88) ≥ 80 0.81 (0.51, 1.28) 0.69 (0.43, 1.12)
+For the primary safety endpoint of major bleeding there was an interaction of treatment effect and age. The relative risk of bleeding with dabigatran compared to warfarin increased with age. Relative risk was highest in patients ≥ 75 years. The concomitant use of antiplatelets ASA or clopidogrel approximately doubles MBE rates with both dabigatran etexilate and warfarin. There was no significant interaction of treatment effects with the subgroups of renal function and CHADS2 score.
+Table 26: Hazard Ratio and 95 % CI for major bleeds by subgroups
+Endpoint Dabigatran etexilate 110 mg twice daily vs. Warfarin Dabigatran etexilate 150 mg twice daily vs. Warfarin Age (years) < 65 0.32 (0.18, 0.57) 0.35 (0.20, 0.61) 65 ≤ and < 75 0.71 (0.56, 0.89) 0.82 (0.66, 1.03) ≥ 75 1.01 (0.84, 1.23) 1.19 (0.99, 1.43) ≥ 80 1.14 (0.86, 1.51) 1.35 (1.03, 1.76)
+CrCL(mL/min) 30 ≤ and < 50 1.02 (0.79, 1.32) 0.94 (0.73, 1.22) 50 ≤ and < 80 0.75 (0.61, 0.92) 0.90 (0.74, 1.09) ≥ 80 0.59 (0.43, 0.82) 0.87 (0.65, 1.17) ASA use 0.84 (0.69, 1.03) 0.97 (0.79, 1.18) Clopidogrel use 0.89 (0.55, 1.45) 0.92 (0.57, 1.48)
+RELY-ABLE (Long term multi-center extension of dabigatran treatment in patients with atrial fibrillation who completed the RE-LY trial)
+```
+</details>
+
+---
+
+## q16 (single)
+
+**Question:** Can a patient with a mechanical heart valve take Pradaxa?
+
+**Reference:** No. Prosthetic heart valves requiring anticoagulant treatment are a contraindication for Pradaxa.
+
+**Agent answer:** No, Pradaxa is contraindicated for patients with prosthetic heart valves requiring anticoagulant treatment [pradaxa p.6 SmPC 4.3]. 
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[pradaxa p.6 SmPC 4.3] (distance 0.186)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.3 Contraindications
+4.3 Contraindications
+• Hypersensitivity to the active substance or to any of the excipients listed in section 6.1 • Severe renal impairment (CrCL < 30 mL/min) in adult patients • eGFR < 50 mL/min/1.73 m2 in paediatric patients • Active clinically significant bleeding • Lesion or condition, if considered a significant risk factor for major bleeding. This may include current or recent gastrointestinal ulceration, presence of malignant neoplasms at high risk of bleeding, recent brain or spinal injury, recent brain, spinal or ophthalmic surgery, recent intracranial haemorrhage, known or suspected oesophageal varices, arteriovenous malformations, vascular aneurysms or major intraspinal or intracerebral vascular abnormalities • Concomitant treatment with any other anticoagulants e.g. unfractionated heparin (UFH), low molecular weight heparins (enoxaparin, dalteparin etc), heparin derivatives (fondaparinux etc), oral anticoagulants (warfarin, rivaroxaban, apixaban etc) except under specific circumstances. These are switching anticoagulant therapy (see section 4.2), when UFH is given at doses necessary to maintain an open central venous or arterial catheter or when UFH is given during catheter ablation for atrial fibrillation (see section 4.5) • Hepatic impairment or liver disease expected to have any impact on survival • Concomitant treatment with the following strong P-gp inhibitors: systemic ketoconazole, cyclosporine, itraconazole, dronedarone and the fixed-dose combination glecaprevir/pibrentasvir (see section 4.5) • Prosthetic heart valves requiring anticoagulant treatment (see section 5.1).
+
+[pradaxa p.38 SmPC 4.2] (distance 0.191)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.2 Posology and method of administration; SmPC 4.3 Contraindications
+Duration of use
+Missed dose
+Discontinuation of dabigatran etexilate
+Switching
+Method of administration
+4.3 Contraindications
+• Hypersensitivity to the active substance or to any of the excipients listed in section 6.1 • Severe renal impairment (CrCL < 30 mL/min) in adult patients • eGFR < 50 mL/min/1.73 m2 in paediatric patients • Active clinically significant bleeding • Lesion or condition, if considered a significant risk factor for major bleeding. This may include current or recent gastrointestinal ulceration, presence of malignant neoplasms at high risk of
+bleeding, recent brain or spinal injury, recent brain, spinal or ophthalmic surgery, recent intracranial haemorrhage, known or suspected oesophageal varices, arteriovenous malformations, vascular aneurysms or major intraspinal or intracerebral vascular abnormalities • Concomitant treatment with any other anticoagulants e.g. unfractionated heparin (UFH), low molecular weight heparins (enoxaparin, dalteparin etc), heparin derivatives (fondaparinux etc), oral anticoagulants (warfarin, rivaroxaban, apixaban etc) except under specific circumstances. These are switching anticoagulant therapy (see section 4.2), when UFH is given at doses necessary to maintain an open central venous or arterial catheter or when UFH is given during catheter ablation for atrial fibrillation (see section 4.5) • Hepatic impairment or liver disease expected to have any impact on survival • Concomitant treatment with the following strong P-gp inhibitors: systemic ketoconazole, cyclosporine, itraconazole, dronedarone and the fixed-dose combination glecaprevir/pibrentasvir (see section 4.5) • Prosthetic heart valves requiring anticoagulant treatment (see section 5.1).
+
+[pradaxa p.66 SmPC 5.1] (distance 0.195)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 5.1 Pharmacodynamic properties
+Dabigatran etexilate 150 mg twice daily Placebo Treated patients 681 662 Recurrent symptomatic VTE and related deaths 3 (0.4 %) 37 (5.6 %) Hazard Ratio vs placebo (95 % confidence interval) 0.08 (0.02, 0.25) p-value for superiority < 0.0001 Secondary efficacy endpoints Recurrent symptomatic VTE and all-cause deaths 3 (0.4 %) 37 (5.6 %) 95 % confidence interval 0.09, 1.28 3.97, 7.62 Symptomatic DVT 2 (0.3 %) 23 (3.5 %) 95 % confidence interval 0.04, 1.06 2.21, 5.17 Symptomatic PE 1 (0.1 %) 14 (2.1 %) 95 % confidence interval 0.00, 0.82 1.16, 3.52 VTE-related deaths 0 (0) 0 (0) 95 % confidence interval 0.00, 0.54 0.00, 0.56 Unexplained deaths 0 (0) 2 (0.3 %) 95 % confidence interval 0.00, 0.54 0.04, 1.09 All-cause deaths 0 (0) 2 (0.3 %) 95 % confidence interval 0.00, 0.54 0.04, 1.09
+A phase II study examined dabigatran etexilate and warfarin in a total of 252 patients with recent mechanical valve replacement surgery (i.e. within the current hospital stay) and in patients who received a mechanical heart valve replacement more than three months ago. More thromboembolic events (mainly strokes and symptomatic/asymptomatic prosthetic valve thrombosis) and more bleeding events were observed with dabigatran etexilate than with warfarin. In the early post-operative patients, major bleeding manifested predominantly as haemorrhagic pericardial effusions, specifically in patients who started dabigatran etexilate early (i.e. on Day 3) after heart valve replacement surgery (see section 4.3).
+Paediatric population
+Clinical trials in VTE prophylaxis following major joint replacement surgery Prevention of stroke and systemic embolism in adult patients with NVAF with one or more risk factors
+
+[pradaxa p.153 Leaflet 2] (distance 0.2)
+Pradaxa | Pradaxa 75 mg hard capsules | Leaflet 2 What you need to know before you take Pradaxa
+2. What you need to know before you take Pradaxa
+Do not take Pradaxa
+- if you are allergic to dabigatran etexilate or any of the other ingredients of this medicine (listed in section 6). - if you have severely reduced kidney function. - if you are currently bleeding. - if you have a disease in an organ of the body that increases the risk of serious bleeding (e.g., stomach ulcer, injury or bleeding in the brain, recent surgery of the brain or eyes). - if you have an increased tendency to bleed. This may be inborn, of unknown cause or due to other medicines. - if you are taking medicines to prevent blood clotting (e.g. warfarin, rivaroxaban, apixaban or heparin), except when changing anticoagulant treatment, while having a venous or arterial line and you get heparin through this line to keep it open or while your heart beat is being restored to normal by a procedure called catheter ablation for atrial fibrillation. - if you have a severely reduced liver function or liver disease which could possibly cause death.
+- if you are taking oral ketoconazole or itraconazole, medicines to treat fungal infections. - if you are taking oral cyclosporine, a medicine to prevent organ rejection after transplantation. - if you are taking dronedarone, a medicine used to treat abnormal heart beat. - if you are taking a combination product of glecaprevir and pibrentasvir, an antiviral medicine used to treat hepatitis C - if you have received an artificial heart valve which requires permanent blood thinning.
+Warnings and precautions
+Talk to your doctor before taking Pradaxa. You may also need to talk to your doctor during treatment with this medicine if you experience symptoms or if you have to undergo surgery.
+
+[pradaxa p.112 Annex II] (distance 0.204)
+Pradaxa | Pradaxa 150 mg hard capsules | Annex II
+The Prescriber Guide should contain the following key safety messages: • Details of populations potentially at higher risk of bleeding • Information on medicinal products that are contraindicated or which should be used with caution due to an increased risk of bleeding and/or increased dabigatran exposure • Contraindication for patients with prosthetic heart valves requiring anticoagulant treatment • Dosing tables (only for paediatric VTE) • Recommendation for kidney function measurement • Recommendations for dose reduction in at risk populations (only for adult indications) • Management of overdose situations • The use of coagulation tests and their interpretation • That all patients/carers should be provided with a Patient alert card and be counselled about: ▪ Signs or symptoms of bleeding and when to seek attention from a health care provider. ▪ Importance of treatment compliance ▪ Necessity to carry the Patient alert card with them at all times ▪ The need to inform Health Care Professionals about all medicines the patient is currently taking ▪ The need to inform Health Care Professionals that they are taking Pradaxa if they need to have any surgery or invasive procedure. • An instruction how to take Pradaxa
+The MAH shall also provide a patient alert card in each pack of the medicinal product, the text of which is included in Annex III.
+```
+</details>
+
+---
+
+## q17 (single)
+
+**Question:** I take Pradaxa, can I take an anti-inflammatory painkiller for a few days?
+
+**Reference:** Short-term NSAIDs for pain were not associated with more bleeding with dabigatran, but long-term use increased bleeding risk by about 50%; check with the doctor or pharmacist.
+
+**Agent answer:** NSAIDs (non-steroidal anti-inflammatory drugs) given for short-term analgesia have been shown not to be associated with increased bleeding risk when given in conjunction with dabigatran etexilate [pradaxa p.14 SmPC 4.5, pradaxa p.47 SmPC 4.5]. However, the product information lists anti-inflammatory and pain reliever medicines (such as acetylsalicylic acid, ibuprofen, and diclofenac) among medicines that can affect treatment or are mentioned in warnings regarding bleeding risks [pradaxa p.7 SmPC 4.4, pradaxa p.154 Leaflet 2, pradaxa p.179 Leaflet 2].
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[pradaxa p.14 SmPC 4.5] (distance 0.183)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+NSAIDs NSAIDs given for short-term analgesia have been shown not to be associated with increased bleeding risk when given in conjunction with dabigatran etexilate. With chronic use in a phase III clinical trial comparing dabigatran to warfarin for stroke prevention in atrial fibrillation patients (RE-LY), NSAIDs increased the risk of bleeding by approximately 50 % on both dabigatran etexilate and warfarin. Clopidogrel In young healthy male volunteers, the concomitant administration of dabigatran etexilate and clopidogrel resulted in no further prolongation of capillary bleeding times compared to clopidogrel monotherapy. In addition, dabigatran AUCτ,ss and Cmax,ss and the coagulation measures for dabigatran effect or the inhibition of platelet aggregation as measure of clopidogrel effect remained essentially unchanged comparing combined treatment and the respective mono-treatments. With a loading dose of 300 mg or 600 mg clopidogrel, dabigatran AUCτ,ss and Cmax,ss were increased by about 30-40 % (see section 4.4). ASA Co-administration of ASA and 150 mg dabigatran etexilate twice daily may increase the risk for any bleeding from 12 % to 18 % and 24 % with 81 mg and 325 mg ASA, respectively (see section 4.4). LMWH The concomitant use of LMWHs, such as enoxaparin and dabigatran etexilate has not been specifically investigated. After switching from 3-day treatment of once daily 40 mg enoxaparin s.c., 24 hours after the last dose of enoxaparin the exposure to dabigatran was slightly lower than that after administration of dabigatran etexilate (single dose of 220 mg) alone. A higher anti-FXa/FIIa activity was observed after dabigatran etexilate administration with enoxaparin pre-treatment compared to that after treatment with dabigatran etexilate alone. This is considered to be due to the carry-over effect of enoxaparin treatment, and regarded as not clinically relevant. Other dabigatran related anti-coagulation tests were not changed significantly by the pre-treatment of enoxaparin.
+Other interactions
+
+[pradaxa p.47 SmPC 4.5] (distance 0.191)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+NSAIDs NSAIDs given for short-term analgesia have been shown not to be associated with increased bleeding risk when given in conjunction with dabigatran etexilate. With chronic use in the RE-LY study, NSAIDs increased the risk of bleeding by approximately 50 % on both dabigatran etexilate and warfarin. Clopidogrel In young healthy male volunteers, the concomitant administration of dabigatran etexilate and clopidogrel resulted in no further prolongation of capillary bleeding times compared to clopidogrel monotherapy. In addition, dabigatran AUCτ,ss and Cmax,ss and the coagulation measures for dabigatran effect or the inhibition of platelet aggregation as measure of clopidogrel effect remained essentially unchanged comparing combined treatment and the respective mono-treatments. With a loading dose of 300 mg or 600 mg clopidogrel, dabigatran AUCτ,ss and Cmax,ss were increased by about 30-40 % (see section 4.4). ASA Co-administration of ASA and 150 mg dabigatran etexilate twice daily may increase the risk for any bleeding from 12 % to 18 % and 24 % with 81 mg and 325 mg ASA, respectively (see section 4.4). LMWH The concomitant use of LMWHs, such as enoxaparin and dabigatran etexilate has not been specifically investigated. After switching from 3-day treatment of once daily 40 mg enoxaparin s.c., 24 hours after the last dose of enoxaparin the exposure to dabigatran was slightly lower than that after administration of dabigatran etexilate (single dose of 220 mg) alone. A higher anti-FXa/FIIa activity was observed after dabigatran etexilate administration with enoxaparin pre-treatment compared to that after treatment with dabigatran etexilate alone. This is considered to be due to the carry-over effect of enoxaparin treatment, and regarded as not clinically relevant. Other dabigatran related anti-coagulation tests were not changed significantly by the pre-treatment of enoxaparin.
+Other interactions
+Table 11: Other interactions
+
+[pradaxa p.7 SmPC 4.4] (distance 0.205)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.4 Special warnings and precautions for use
+4.4 Special warnings and precautions for use
+Haemorrhagic risk
+Dabigatran etexilate should be used with caution in conditions with an increased risk of bleeding or with concomitant use of medicinal products affecting haemostasis by inhibition of platelet aggregation. Bleeding can occur at any site during therapy. An unexplained fall in haemoglobin and/or haematocrit or blood pressure should lead to a search for a bleeding site.
+For adult patients in situations of life-threatening or uncontrolled bleeding, when rapid reversal of the anticoagulation effect of dabigatran is required, the specific reversal agent idarucizumab is available. The efficacy and safety of idarucizumab have not been established in paediatric patients. Haemodialysis can remove dabigatran. For adult patients, fresh whole blood or fresh frozen plasma, coagulation factor concentration (activated or non-activated), recombinant factor VIIa or platelet concentrates are other possible options (see also section 4.9).
+Use of platelet aggregation inhibitors such as clopidogrel and acetylsalicylic acid (ASA) or non steroidal antiinflammatory drugs (NSAID), as well as the presence of esophagitis, gastritis or gastroesophageal reflux increase the risk of GI bleeding.
+Risk factors
+Table 3 summarises factors which may increase the haemorrhagic risk.
+Table 3: Factors which may increase the haemorrhagic risk.
+Risk factor Pharmacodynamic and kinetic factors Age ≥ 75 years Factors increasing dabigatran plasma levels Major: • Moderate renal impairment in adult patients (30-50 mL/min CrCL) • Strong P-gp inhibitors (see section 4.3 and 4.5) • Mild to moderate P-gp inhibitor co-medication (e.g. amiodarone, verapamil, quinidine and ticagrelor; see section 4.5)
+
+[pradaxa p.179 Leaflet 2] (distance 0.209)
+Pradaxa | Pradaxa 150 mg hard capsules | Leaflet 2 What you need to know before you take Pradaxa
+- Medicines to reduce blood clotting (e.g. warfarin, phenprocoumon, acenocoumarol, heparin, clopidogrel, prasugrel, ticagrelor, rivaroxaban, acetylsalicylic acid) - Medicines to treat fungal infections (e.g. ketoconazole, itraconazole), unless they are only applied to the skin - Medicines to treat abnormal heart beats (e.g. amiodarone, dronedarone, quinidine, verapamil). If you are taking verapamil containing medicines, your doctor may tell you to use a reduced dose of Pradaxa depending on the condition for which it is prescribed to you. See section 3. - Medicines to prevent organ rejection after transplantation (e.g. tacrolimus, cyclosporine) - A combination product of glecaprevir and pibrentasvir (an antiviral medicine used to treat hepatitis C) - Anti-inflammatory and pain reliever medicines (e.g. acetylsalicylic acid, ibuprofen, diclofenac) - St. John´s wort, a herbal medicine for depression - Antidepressant medicines called selective serotonin re-uptake inhibitors or serotoninnorepinephrine re-uptake inhibitors - Rifampicin or clarithromycin (two antibiotics) - Anti-viral medicines for AIDS (e.g. ritonavir) - Certain medicines for treatment of epilepsy (e.g. carbamazepine, phenytoin)
+Pregnancy and breast-feeding
+Driving and using machines
+
+[pradaxa p.154 Leaflet 2] (distance 0.21)
+Pradaxa | Pradaxa 75 mg hard capsules | Leaflet 2 What you need to know before you take Pradaxa
+Tell your doctor if you have or have had any medical conditions or illnesses, in particular any of those included in the following list:
+- if you have an increased bleeding risk, such as: ▪ if you have been recently bleeding. ▪ if you have had a surgical tissue removal (biopsy) in the past month. ▪ if you have had a serious injury (e.g. a bone fracture, head injury or any injury requiring surgical treatment). ▪ if you are suffering from an inflammation of the gullet or stomach. ▪ if you have problems with reflux of gastric juice into the gullet. ▪ if you are receiving medicines which could increase the risk of bleeding. See ‘Other medicines and Pradaxa’ below. ▪ if you are taking anti-inflammatory medicines such as diclofenac, ibuprofen, piroxicam. ▪ if you are suffering from an infection of the heart (bacterial endocarditis). ▪ if you know you have decreased kidney function, or you are suffering from dehydration (symptoms include feeling thirsty and passing reduced amounts of dark-coloured (concentrated) / foaming urine). ▪ if you are older than 75 years. ▪ if you are an adult patient and weigh 50 kg or less. ▪ only if used for children: if the child has an infection around or within the brain.
+- if you have had a heart attack or if you have been diagnosed with conditions that increase the risk to develop a heart attack.
+- if you have a liver disease that is associated with changes in the blood tests. The use of this medicine is not recommended in this case.
+Take special care with Pradaxa
+```
+</details>
+
+---
+
+## q18 (single)
+
+**Question:** Can dialysis remove Pradaxa from the blood after an overdose?
+
+**Reference:** Yes. Because protein binding is low, dabigatran can be dialysed, although clinical experience with this approach is limited.
+
+**Agent answer:** Yes, as protein binding is low, dabigatran can be dialysed [pradaxa p.20 SmPC 4.9]. There is limited clinical experience to demonstrate the utility of this approach in clinical studies [pradaxa p.20 SmPC 4.9].
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[pradaxa p.20 SmPC 4.9] (distance 0.147)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.9 Overdose
+4.9 Overdose
+Dabigatran etexilate doses beyond those recommended, expose the patient to increased risk of bleeding.
+In case of an overdose suspicion, coagulation tests can help to determine a bleeding risk (see sections 4.4 and 5.1). A calibrated quantitative dTT test or repetitive dTT measurements allow prediction of the time by when certain dabigatran levels will be reached (see section 5.1), also in case additional measures e.g. dialysis have been initiated.
+Excessive anticoagulation may require interruption of dabigatran etexilate treatment. Since dabigatran is excreted predominantly by the renal route adequate diuresis must be maintained. As protein binding is low, dabigatran can be dialysed; there is limited clinical experience to demonstrate the utility of this approach in clinical studies (see section 5.2).
+Management of bleeding complications
+In the event of haemorrhagic complications, dabigatran etexilate treatment must be discontinued and the source of bleeding investigated. Depending on the clinical situation appropriate supportive treatment, such as surgical haemostasis and blood volume replacement, should be undertaken at the prescriber’s discretion.
+For adult patients in situations when rapid reversal of the anticoagulant effect of dabigatran is required the specific reversal agent (idarucizumab) antagonizing the pharmacodynamic effect of dabigatran is available. The efficacy and safety of idarucizumab have not been established in paediatric patients (see section 4.4).
+
+[pradaxa p.26 SmPC 5.2] (distance 0.191)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 5.2 Pharmacokinetic properties
+In a small number of adult volunteers with severe renal insufficiency (CrCL 10-30 mL/min), the exposure (AUC) to dabigatran was approximately 6 times higher and the half-life approximately 2 times longer than that observed in a population without renal insufficiency (see sections 4.2, 4.3 and 4.4).
+Table 16: Half-life of total dabigatran in healthy subjects and subjects with impaired renal function.
+glomerular filtration rate (CrCL,) [mL/min] gMean (gCV %; range) half-life [h] > 80 13.4 (25.7 %; 11.0-21.6) > 50-≤ 80 15.3 (42.7 %; 11.7-34.1) > 30-≤ 50 18.4 (18.5 %; 13.3-23.0) ≤ 30 27.2 (15.3 %; 21.6-35.0)
+Additionally, dabigatran exposure (at trough and peak) was assessed in a prospective open label randomised pharmacokinetic study in NVAF patients with severe renal impairment (defined as creatinine clearance [CrCl] 15-30 mL/min) receiving dabigatran etexilate 75 mg twice daily. This regimen resulted in a geometric mean trough concentration of 155 ng/mL (gCV of 76.9 %), measured immediately before administration of the next dose and in a geometric mean peak concentration of 202 ng/mL (gCV of 70.6 %) measured two hours after the administration of the last dose.
+Clearance of dabigatran by haemodialysis was investigated in 7 adult patients with end-stage renal disease (ESRD) without atrial fibrillation. Dialysis was conducted with 700 mL/min dialysate flow rate, four hour duration and a blood flow rate of either 200 mL/min or 350-390 mL/min. This resulted in a removal of 50 % to 60 % of dabigatran concentrations, respectively. The amount of substance cleared by dialysis is proportional to the blood flow rate up to a blood flow rate of 300 mL/min. The anticoagulant activity of dabigatran decreased with decreasing plasma concentrations and the PK/PD relationship was not affected by the procedure.
+
+[pradaxa p.9 SmPC 4.4] (distance 0.202)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.4 Special warnings and precautions for use
+The use of fibrinolytic medicinal products for the treatment of acute ischemic stroke may be considered if the patient presents with a dTT, ECT or aPTT not exceeding the upper limit of normal (ULN) according to the local reference range.
+Surgery and interventions
+Patients on dabigatran etexilate who undergo surgery or invasive procedures are at increased risk for bleeding. Therefore, surgical interventions may require the temporary discontinuation of dabigatran etexilate.
+Caution should be exercised when treatment is temporarily discontinued for interventions and anticoagulant monitoring is warranted. Clearance of dabigatran in patients with renal insufficiency may take longer (see section 5.2). This should be considered in advance of any procedures. In such cases a coagulation test (see sections 4.4 and 5.1) may help to determine whether haemostasis is still impaired.
+Emergency surgery or urgent procedures
+Dabigatran etexilate should be temporarily discontinued. When rapid reversal of the anticoagulation effect is required the specific reversal agent (idarucizumab) to dabigatran is available for adult patients. The efficacy and safety of idarucizumab have not been established in paediatric patients. Haemodialysis can remove dabigatran.
+Reversing dabigatran therapy exposes patients to the thrombotic risk of their underlying disease. Dabigatran etexilate treatment can be re-initiated 24 hours after administration of idarucizumab, if the patient is clinically stable and adequate haemostasis has been achieved.
+Subacute surgery/interventions
+Dabigatran etexilate should be temporarily discontinued. A surgery / intervention should be delayed if possible until at least 12 hours after the last dose. If surgery cannot be delayed the risk of bleeding may be increased. This risk of bleeding should be weighed against the urgency of intervention.
+Elective surgery
+
+[pradaxa p.8 SmPC 4.4] (distance 0.206)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.4 Special warnings and precautions for use
+Patients who develop acute renal failure must discontinue dabigatran etexilate (see also section 4.3).
+When severe bleedings occur, treatment must be discontinued, the source of bleeding investigated and use of the specific reversal agent (idarucizumab) may be considered in adult patients. The efficacy and safety of idarucizumab have not been established in paediatric patients. Haemodialysis can remove dabigatran.
+Use of proton-pump inhibitors
+The administration of a proton-pump inhibitor (PPI) can be considered to prevent GI bleeding. In case of paediatric patients local labeling recommendations for proton pump inhibitors have to be followed.
+Laboratory coagulation parameters
+Although this medicinal product does not in general require routine anticoagulant monitoring, the measurement of dabigatran related anticoagulation may be helpful to detect excessive high exposure to dabigatran in the presence of additional risk factors. Diluted thrombin time (dTT), ecarin clotting time (ECT) and activated partial thromboplastin time (aPTT) may provide useful information, but results should be interpreted with caution due to inter-test variability (see section 5.1). The international normalised ratio (INR) test is unreliable in patients on dabigatran etexilate and false positive INR elevations have been reported. Therefore INR tests should not be performed.
+Table 4 shows coagulation test thresholds at trough for adult patients that may be associated with an increased risk of bleeding. Respective thresholds for paediatric patients are not known (see section 5.1).
+Table 4: Coagulation test thresholds at trough for adult patients that may be associated with an increased risk of bleeding.
+Test (trough value) Threshold dTT [ng/mL] > 67 ECT [x-fold upper limit of normal] No data aPTT [x-fold upper limit of normal] > 1.3 INR Should not be performed
+Use of fibrinolytic medicinal products for the treatment of acute ischemic stroke
+
+[pradaxa p.20 SmPC 4.9] (distance 0.207)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.9 Overdose
+Coagulation factor concentrates (activated or non-activated) or recombinant Factor VIIa may be taken into account. There is some experimental evidence to support the role of these medicinal products in reversing the anticoagulant effect of dabigatran, but data on their usefulness in clinical settings and also on the possible risk of rebound thromboembolism is very limited. Coagulation tests may become unreliable following administration of suggested coagulation factor concentrates. Caution should be exercised when interpreting these tests. Consideration should also be given to administration of platelet concentrates in cases where thrombocytopenia is present or long acting antiplatelet medicinal products have been used. All symptomatic treatment should be given according to the physician’s judgement.
+Depending on local availability, a consultation of a coagulation expert should be considered in case of major bleedings.
+```
+</details>
+
+---
+
+## q19 (single)
+
+**Question:** How long do I need to take Pradaxa after a knee replacement?
+
+**Reference:** Start 1-4 hours after surgery with one capsule, then two capsules once a day for a total of 10 days (28-35 days after a hip replacement).
+
+**Agent answer:** After knee replacement surgery, you should take Pradaxa for a total of 10 days [pradaxa p.155 Leaflet 3, pradaxa p.2 SmPC 4.1]. 
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[pradaxa p.155 Leaflet 3] (distance 0.179)
+Pradaxa | Pradaxa 75 mg hard capsules | Leaflet 3 How to take Pradaxa
+3. How to take Pradaxa
+Pradaxa capsules can be used in adults and children aged 8 years or older who are able to swallow the capsules whole.
+Always take this medicine exactly as your doctor has told you. Check with your doctor if you are not sure.
+Take Pradaxa as recommended for the following conditions:
+Prevention of blood clot formation after knee or hip replacement surgery
+The recommended dose is 220 mg once a day (taken as 2 capsules of 110 mg).
+If your kidney function is decreased by more than half or if you are 75 years of age or older, the
+recommended dose is 150 mg once a day (taken as 2 capsules of 75 mg).
+If you are taking amiodarone, quinidine or verapamil containing medicines the recommended dose is 150 mg once a day (taken as 2 capsules of 75 mg).
+If you are taking verapamil containing medicines and your kidney function is decreased by more than half, you should be treated with a reduced dose of 75 mg Pradaxa because your bleeding risk may be increased.
+For both surgery types, treatment should not be started if there is bleeding from the site of operation. If the treatment cannot be started until the day after surgery, dosing should be started with 2 capsules once a day.
+After knee replacement surgery
+You should start treatment with Pradaxa within 1-4 hours after surgery finishes, taking a single capsule. Thereafter two capsules once a day should be taken for a total of 10 days.
+After hip replacement surgery You should start treatment with Pradaxa within 1-4 hours after surgery finishes, taking a single capsule. Thereafter two capsules once a day should be taken for a total of 28-35 days.
+
+[pradaxa p.2 SmPC 4.1] (distance 0.198)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.1 Therapeutic indications; SmPC 4.2 Posology and method of administration
+4.1 Therapeutic indications
+Primary prevention of venous thromboembolic events (VTE) in adult patients who have undergone elective total hip replacement surgery or total knee replacement surgery.
+Treatment of VTE and prevention of recurrent VTE in paediatric patients aged 8 to less than 18 years of age.
+4.2 Posology and method of administration
+Posology
+Pradaxa capsules can be used in adults and paediatric patients aged 8 years or older who are able to swallow the capsules whole.
+Primary prevention of VTE in orthopaedic surgery
+The recommended doses of dabigatran etexilate and the duration of therapy for primary prevention of VTE in orthopaedic surgery are shown in table 1.
+Table 1: Dose recommendations and duration of therapy for primary prevention of VTE in orthopaedic surgery
+Treatment initiation on the day of surgery 1-4 hours after completed surgery Maintenance dose starting on the first day after surgery Duration of maintenance dose Patients following elective knee replacement surgery single capsule of 110 mg dabigatran etexilate 220 mg dabigatran etexilate once daily taken as 2 capsules of 110 mg 10 days Patients following elective hip replacement surgery 28-35 days
+Dose reduction recommended
+Patients with moderate renal impairment (creatinine clearance (CrCL 30-50 mL/min) single capsule of 75 mg dabigatran etexilate 150 mg dabigatran etexilate once daily taken as 2 capsules of 75 mg 10 days (knee replacement surgery) or 28-35 days (hip replacement surgery) Patients who receive concomitant verapamil*, amiodarone, quinidine Patients aged 75 or above *For patients with moderate renal impairment concomitantly treated with verapamil see Special populations
+For both surgeries, if haemostasis is not secured, initiation of treatment should be delayed. If treatment is not started on the day of surgery then treatment should be initiated with 2 capsules once daily.
+Assessment of renal function prior to and during dabigatran etexilate treatment
+
+[pradaxa p.166 Leaflet 3] (distance 0.208)
+Pradaxa | Pradaxa 110 mg hard capsules | Leaflet 3 How to take Pradaxa
+3. How to take Pradaxa
+If your kidney function is decreased by more than half or if you are 75 years of age or older, the recommended dose is 150 mg once a day (taken as 2 capsules of 75 mg).
+After knee replacement surgery
+Prevention of brain or body vessel obstruction by blood clot formation developing after abnormal heart beats and Treatment of blood clots in the veins of your legs and lungs including prevention of blood clots from re-occurring in the vein of your legs and lungs
+The recommended dose is 300 mg taken as one 150 mg capsule twice a day.
+If you are 80 years or older, the recommended dose is 220 mg taken as one 110 mg capsule twice a day.
+If you are taking verapamil containing medicines, you should be treated with a reduced Pradaxa dose of 220 mg taken as one 110 mg capsule twice a day, because your bleeding risk may be increased.
+If you have a potentially higher risk for bleeding, your doctor may decide to prescribe a dose of 220 mg taken as one 110 mg capsule twice a day.
+You can continue to take this medicine if your heart beat needs to be restored to normal by a procedure called cardioversion. Take Pradaxa as your physician has told you.
+If a medical device (stent) has been deployed in a blood vessel to keep it open in a procedure called percutaneous coronary intervention with stenting, you can be treated with Pradaxa after your physician has decided that normal control of blood coagulation is achieved. Take Pradaxa as your physician has told you.
+Table 1: Dosing table for Pradaxa capsules
+
+[pradaxa p.22 SmPC 5.1] (distance 0.211)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 5.1 Pharmacodynamic properties
+No clinically relevant ethnic differences among Caucasians, African-American, Hispanic, Japanese or Chinese patients were observed.
+Clinical trials in VTE prophylaxis following major joint replacement surgery
+In 2 large randomised, parallel group, double-blind, dose-confirmatory trials, patients undergoing elective major orthopaedic surgery (one for knee replacement surgery and one for hip replacement surgery) received 75 mg or 110 mg dabigatran etexilate within 1-4 hours of surgery followed by 150 mg or 220 mg once daily thereafter, haemostasis having been secured, or enoxaparin 40 mg on the day prior to surgery and daily thereafter. In the RE-MODEL trial (knee replacement) treatment was for 6-10 days and in the RE-NOVATE trial (hip replacement) for 28-35 days. Totals of 2 076 patients (knee) and 3 494 (hip) were treated respectively.
+Composite of total VTE (including pulmonary embolism (PE), proximal and distal deep vein thrombosis (DVT), whatever symptomatic or asymptomatic detected by routine venography) and all-cause mortality constituted the primary end-point for both studies. Composite of major VTE (including PE and proximal DVT, whatever symptomatic or asymptomatic detected by routine venography) and VTE-related mortality constituted a secondary end-point and is considered of better clinical relevance. Results of both studies showed that the antithrombotic effect of 220 mg and 150 mg dabigatran etexilate were statistically non-inferior to that of enoxaparin on total VTE and all-cause mortality. The point estimate for incidence of major VTE and VTE related mortality for the 150 mg dose was slightly worse than enoxaparin (table 13). Better results were seen with the 220 mg dose where the point estimate of Major VTE was slightly better than enoxaparin (table 13).
+The clinical studies have been conducted in a patient population with a mean age > 65 years.
+
+[pradaxa p.34 SmPC 4.2] (distance 0.211)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.2 Posology and method of administration
+In case of intolerability to dabigatran etexilate, patients should be instructed to immediately consult their treating physician in order to be switched to alternate acceptable treatment options for prevention of stroke and systemic embolism associated with atrial fibrillation or for DVT/PE.
+Additional requirements in patients with mild to moderate renal impairment and in patients aged over 75 years: • Renal function should be assessed during treatment with dabigatran etexilate at least once a year or more frequently as needed in certain clinical situations when it is suspected that the renal function could decline or deteriorate (e.g. hypovolaemia, dehydration, and in case of concomitant use of certain medicinal products).
+Duration of use
+The duration of use of dabigatran etexilate in the indications SPAF, DVT and PE are shown in table 3.
+Table 3: Duration of use for SPAF and DVT/PE
+Indication Duration of use SPAF Therapy should be continued long term. DVT/PE The duration of therapy should be individualised after careful assessment of the treatment benefit against the risk for bleeding (see section 4.4). Short duration of therapy (at least 3 months) should be based on transient risk factors (e.g. recent surgery, trauma, immobilisation) and longer durations should be based on permanent risk factors or idiopathic DVT or PE.
+Missed dose
+A forgotten dabigatran etexilate dose may still be taken up to 6 hours prior to the next scheduled dose. From 6 hours prior to the next scheduled dose on, the missed dose should be omitted.
+Discontinuation of dabigatran etexilate
+Switching
+```
+</details>
+
+---
+
+## q20 (single)
+
+**Question:** I'm on Pradaxa and have a nosebleed that won't stop and feel very weak and dizzy, what should I do?
+
+**Reference:** Consult your doctor immediately: bleeding that does not stop by itself, or signs of excessive bleeding such as weakness, paleness, dizziness or headache, need urgent attention.
+
+**Agent answer:** If you experience any bleeding event that does not stop by itself, or if you experience signs of excessive bleeding such as exceptional weakness, tiredness, paleness, dizziness, headache, or unexplained swelling, you should consult your doctor immediately [pradaxa p.158 Leaflet 3]. Haemorrhagic complications may present as weakness, paleness, dizziness, headache, unexplained swelling, dyspnoea, and unexplained shock [pradaxa p.50 SmPC 4.8]. 
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[pradaxa p.50 SmPC 4.8] (distance 0.181)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.8 Undesirable effects
+Due to the pharmacological mode of action, the use of dabigatran etexilate may be associated with an increased risk of occult or overt bleeding from any tissue or organ. The signs, symptoms, and severity (including fatal outcome) will vary according to the location and degree or extent of the bleeding and/or anaemia. In the clinical studies mucosal bleedings (e.g. gastrointestinal, genitourinary) were seen more frequently during long term dabigatran etexilate treatment compared with VKA treatment. Thus, in addition to adequate clinical surveillance, laboratory testing of haemoglobin/haematocrit is of value to detect occult bleeding. The risk of bleedings may be increased in certain patient groups e.g. those patients with moderate renal impairment and/or on concomitant treatment affecting haemostasis or strong P-gp inhibitors (see section 4.4 Haemorrhagic risk). Haemorrhagic complications may present as weakness, paleness, dizziness, headache or unexplained swelling, dyspnoea, and
+unexplained shock.
+Primary prevention of VTE in orthopaedic surgery
+The table 13 shows the number (%) of patients experiencing the adverse reaction bleeding during the treatment period in the VTE prevention in the two pivotal clinical trials, according to dose.
+Table 13: Number (%) of patients experiencing the adverse reaction bleeding
+Dabigatran etexilate 150 mg once daily N (%) Dabigatran etexilate 220 mg once daily N (%) Enoxaparin
+Prevention of stroke and systemic embolism in adult patients with NVAF with one or more risk factors
+The table 14 shows bleeding events broken down to major and any bleeding in the pivotal study testing the prevention of thromboembolic stroke and systemic embolism in patients with atrial fibrillation.
+Table 14: Bleeding events in a study testing the prevention of thromboembolic stroke and systemic embolism in patients with atrial fibrillation
+
+[pradaxa p.158 Leaflet 3] (distance 0.191)
+Pradaxa | Pradaxa 75 mg hard capsules | Leaflet 3 How to take Pradaxa; Leaflet 4 Possible side effects
+If you have any further questions on the use of this medicine, ask your doctor or pharmacist.
+4. Possible side effects
+Like all medicines, this medicine can cause side effects, although not everybody gets them.
+Pradaxa affects blood clotting, so most side effects are related to signs such as bruising or bleeding. Major or severe bleeding may occur, these constitute the most serious side effects and, regardless of location, may become disabling, life-threatening or even lead to death. In some cases these bleedings may not be obvious.
+If you experience any bleeding event that does not stop by itself or if you experience signs of excessive bleeding (exceptional weakness, tiredness, paleness, dizziness, headache or unexplained swelling) consult your doctor immediately. Your doctor may decide to keep you under closer observation or change your medicine.
+Tell your doctor immediately, if you experience a serious allergic reaction which causes difficulty in breathing or dizziness.
+Possible side effects are listed below, grouped by how likely they are to happen.
+Common (may affect up to 1 in 10 people): ­ A fall in the amount of haemoglobin in the blood (the substance in the red blood cells) ­ Unusual laboratory test results on liver function
+
+[pradaxa p.17 SmPC 4.8] (distance 0.197)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.8 Undesirable effects
+Due to the pharmacological mode of action, the use of dabigatran etexilate may be associated with an increased risk of occult or overt bleeding from any tissue or organ. The signs, symptoms, and severity (including fatal outcome) will vary according to the location and degree or extent of the bleeding and/or anaemia. In the clinical studies mucosal bleedings (e.g. gastrointestinal, genitourinary) were seen more frequently during long term dabigatran etexilate treatment compared with VKA treatment. Thus, in addition to adequate clinical surveillance, laboratory testing of haemoglobin/haematocrit is of value to detect occult bleeding. The risk of bleedings may be increased in certain patient groups e.g. those patients with moderate renal impairment and/or on concomitant treatment affecting haemostasis or strong P-gp inhibitors (see section 4.4 Haemorrhagic risk). Haemorrhagic complications may present as weakness, paleness, dizziness, headache or unexplained swelling, dyspnoea, and unexplained shock.
+Known bleeding complications such as compartment syndrome and acute renal failure due to hypoperfusion and anticoagulant-related nephropathy in patients with predisposing risk factors have been reported for dabigatran etexilate. Therefore, the possibility of haemorrhage is to be considered in evaluating the condition in any anticoagulated patient. For adult patients, a specific reversal agent for dabigatran, idarucizumab, is available in case of uncontrollable bleeding (see Section 4.9).
+The table 11 shows the number (%) of patients experiencing the adverse reaction bleeding during the treatment period in the indication primary VTE prevention after hip or knee replacement surgery in the two pivotal clinical trials, according to dose.
+Table 11: Number (%) of patients experiencing the adverse reaction bleeding
+Dabigatran etexilate 150 mg N (%) Dabigatran etexilate 220 mg N (%) Enoxaparin
+N (%) Treated 1 866 (100.0) 1 825 (100.0) 1 848 (100.0) Major bleeding 24 (1.3) 33 (1.8) 27 (1.5) Any bleeding 258 (13.8) 251 (13.8) 247 (13.4)
+
+[pradaxa p.189 Leaflet 6] (distance 0.198)
+Pradaxa | Pradaxa 150 mg hard capsules | Leaflet 6 Contents of the pack and other information
+About your / your child’s treatment • Pradaxa® thins the blood. It is used to treat existing blood clots or to prevent the formation of dangerous blood clots. • Follow your / your child’s doctor’s instructions when taking Pradaxa®. Never skip a dose or stop the intake of Pradaxa® without talking to your / your child’s doctor. • Inform your / your child’s doctor about all medicines you / your child are / is currently taking. • Inform your / your child’s doctor about the intake of Pradaxa® before any surgery / invasive procedure. • Pradaxa® capsules can be taken with or without food. The capsule should be swallowed whole with a glass of water. The capsule must not be broken or chewed and the pellets must not be emptied from the capsule.
+When to seek medical advice • Taking Pradaxa® may increase the risk of bleeding. Speak to your / your child’s doctor immediately if you / your child experience(s) signs and symptoms of bleeding such as: swelling, discomfort, unusual pain or headache, dizziness, paleness, weakness, unusual bruising, nosebleeds, bleeding of gums, unusual long bleeding cuts, abnormal menstrual flow or vaginal bleeding, blood in the urine which may be pink or brown, red/black stools, coughing up blood, vomiting blood or coffee ground like material. • In case of fall or injury, especially if the head is hit, urgently seek medical advice. • Do not stop intake of Pradaxa® without talking to your / your child’s doctor, if you / your child experience(s) heartburn, nausea, vomiting, stomach discomfort, bloating or upper abdominal pain.
+Pradaxa® Information for Healthcare Professionals
+
+[pradaxa p.171 Leaflet 4] (distance 0.2)
+Pradaxa | Pradaxa 110 mg hard capsules | Leaflet 4 Possible side effects
+Common (may affect up to 1 in 10 people): ­ Bleeding may happen from the nose, into the stomach or bowel, from penis/vagina or urinary tract (incl. blood in the urine that stains the urine pink or red), or under the skin ­ A fall in the number of red cells in the blood ­ Belly ache or stomach ache ­ Indigestion ­ Frequent loose or liquid bowel movements ­ Feeling sick
+Uncommon (may affect up to 1 in 100 people): ­ Bleeding ­ Bleeding may happen from piles, from the rectum, or in the brain. ­ Haematoma formation ­ Coughing of blood or blood stained sputum ­ A fall in the number of platelets in the blood ­ A fall in the amount of haemoglobin in the blood (the substance in the red blood cells) ­ Allergic reaction ­ Sudden change of the skin which affects its colour and appearance ­ Itching ­ Ulcer in the stomach or bowel (incl. ulcer in the gullet) ­ Inflammation of the gullet and stomach ­ Reflux of gastric juice into the gullet ­ Vomiting ­ Difficulty in swallowing ­ Unusual laboratory test results on liver function
+```
+</details>
+
+---
+
+## q21 (multi)
+
+**Question:** Can a pregnant woman take Xarelto or Pradaxa?
+
+**Reference:** Xarelto is contraindicated in pregnancy. Pradaxa should not be used during pregnancy unless clearly necessary. Women who could become pregnant should avoid pregnancy on either.
+
+**Agent answer:** According to the product information:
+
+* **Xarelto (rivaroxaban):** Safety and efficacy have not been established in pregnant women [xarelto p.9 SmPC 4.6]. Due to potential reproductive toxicity, the intrinsic risk of bleeding, and evidence that it passes the placenta, Xarelto is contraindicated during pregnancy [xarelto p.9 SmPC 4.6]. Women of child-bearing potential should avoid becoming pregnant during treatment [xarelto p.9 SmPC 4.6].
+* **Pradaxa (dabigatran):** There is a limited amount of data from the use of Pradaxa in pregnant women, and the potential risk for humans is unknown [pradaxa p.15 SmPC 4.6]. Pradaxa should not be used during pregnancy unless clearly necessary [pradaxa p.15 SmPC 4.6]. Women of childbearing potential should avoid pregnancy during treatment [pradaxa p.15 SmPC 4.6].
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+Error executing tool search
+
+Error executing tool search
+
+[pradaxa p.15 SmPC 4.6] (distance 0.174)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.6 Fertility, pregnancy and lactation
+4.6 Fertility, pregnancy and lactation
+Women of childbearing potential
+Women of childbearing potential should avoid pregnancy during treatment with Pradaxa.
+Pregnancy
+There is limited amount of data from the use of Pradaxa in pregnant women. Studies in animals have shown reproductive toxicity (see section 5.3). The potential risk for humans is unknown.
+Pradaxa should not be used during pregnancy unless clearly necessary.
+Breast-feeding
+There are no clinical data of the effect of dabigatran on infants during breast-feeding. Breast-feeding should be discontinued during treatment with Pradaxa.
+Fertility
+No human data available.
+In animal studies an effect on female fertility was observed in the form of a decrease in implantations and an increase in pre-implantation loss at 70 mg/kg (representing a 5-fold higher plasma exposure level compared to patients). No other effects on female fertility were observed. There was no influence on male fertility. At doses that were toxic to the mothers (representing a 5- to 10-fold higher plasma exposure level to patients), a decrease in foetal body weight and embryofoetal viability along with an increase in foetal variations were observed in rats and rabbits. In the pre- and post-natal study, an increase in foetal mortality was observed at doses that were toxic to the dams (a dose corresponding to a plasma exposure level 4-fold higher than observed in patients).
+
+[pradaxa p.88 SmPC 4.6] (distance 0.214)
+Pradaxa | Pradaxa 150 mg hard capsules | SmPC 4.6 Fertility, pregnancy and lactation; SmPC 4.7 Effects on ability to drive and use machines; SmPC 4.8 Undesirable effects
+4.6 Fertility, pregnancy and lactation
+Women of childbearing potential
+Pregnancy
+Breast-feeding
+Fertility
+No human data available.
+4.7 Effects on ability to drive and use machines
+4.8 Undesirable effects
+Summary of the safety profile
+Dabigatran etexilate has been evaluated in clinical trials overall in approximately 64 000 patients; thereof approximately 35 000 patients were treated with dabigatran etexilate. In total, 22 % of patients with atrial fibrillation treated for the prevention of stroke and systemic embolism (long-term treatment for up to 3 years), 14 % of patients treated for DVT/PE and 15 % of patients treated for DVT/PE prevention experienced adverse reactions.
+The most commonly reported events are bleedings occurring in approximately 16.6 % in patients with atrial fibrillation treated long-term for the prevention of stroke and systemic embolism and in 14.4 % of adult patients treated for DVT/PE. Furthermore, bleeding occurred in 19.4 % of patients in the DVT/PE prevention trial RE-MEDY (adult patients) and in 10.5 % of patients in the DVT/PE prevention trial RE-SONATE (adult patients).
+Since the patient populations treated in the three indications are not comparable and bleeding events are distributed over several System Organ Classes (SOC), a summary description of major and any bleeding are broken down by indication and are provided in tables 12-15 below.
+Although low in frequency in clinical trials, major or severe bleeding may occur and, regardless of
+location, may lead to disabling, life-threatening or even fatal outcomes.
+Tabulated list of adverse reactions
+
+[pradaxa p.47 SmPC 4.5] (distance 0.231)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction; SmPC 4.6 Fertility, pregnancy and lactation; SmPC 4.7 Effects on ability to drive and use machines; SmPC 4.8 Undesirable effects
+SSRIs, SNRIs SSRIs and SNRIs increased the risk of bleeding in RE-LY in all treatment groups,
+Substances influencing gastric pH
+Paediatric population
+4.6 Fertility, pregnancy and lactation
+Women of childbearing potential
+Pregnancy
+Breast-feeding
+Fertility
+No human data available.
+4.7 Effects on ability to drive and use machines
+4.8 Undesirable effects
+Summary of the safety profile
+Dabigatran etexilate has been evaluated in clinical trials overall in approximately 64 000 patients; thereof approximately 35 000 patients were treated with dabigatran etexilate. In total, about 9 % of patients treated for elective hip or knee surgery (short-term treatment for up to 42 days), 22 % of patients with atrial fibrillation treated for the prevention of stroke and systemic embolism (long-term treatment for up to 3 years), 14 % of patients treated for DVT/PE and 15 % of patients treated for DVT/PE prevention experienced adverse reactions.
+The most commonly reported events are bleedings occurring in approximately 14 % of patients treated short-term for elective hip or knee replacement surgery, 16.6 % in patients with atrial fibrillation treated long-term for the prevention of stroke and systemic embolism, and in 14.4 % of adult patients treated for DVT/PE. Furthermore, bleeding occurred in 19.4 % of patients in the DVT/PE prevention trial RE-MEDY (adult patients) and in 10.5 % of patients in the DVT/PE prevention trial RE-SONATE (adult patients).
+Since the patient populations treated in the three indications are not comparable and bleeding events are distributed over several System Organ Classes (SOC), a summary description of major and any bleeding are broken down by indication and provided in tables 13-17 below.
+Although low in frequency in clinical trials, major or severe bleeding may occur and, regardless of location, may lead to disabling, life-threatening or even fatal outcomes.
+Tabulated list of adverse reactions
+
+[xarelto p.150 SmPC 4.6] (distance 0.234)
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | SmPC 4.6 Fertility, pregnancy and lactation
+4.6 Fertility, pregnancy and lactation
+Pregnancy Safety and efficacy of Xarelto have not been established in pregnant women. Studies in animals have shown reproductive toxicity (see section 5.3). Due to the potential reproductive toxicity, the intrinsic risk of bleeding and the evidence that rivaroxaban passes the placenta, Xarelto is contraindicated during pregnancy (see section 4.3). Female adolescents of child-bearing potential should avoid becoming pregnant during treatment with rivaroxaban.
+
+[pradaxa p.155 Leaflet 2] (distance 0.238)
+Pradaxa | Pradaxa 75 mg hard capsules | Leaflet 2 What you need to know before you take Pradaxa
+- Medicines to reduce blood clotting (e.g. warfarin, phenprocoumon, acenocoumarol, heparin, clopidogrel, prasugrel, ticagrelor, rivaroxaban, acetylsalicylic acid) - Medicines to treat fungal infections (e.g. ketoconazole, itraconazole), unless they are only applied to the skin - Medicines to treat abnormal heart beats (e.g. amiodarone, dronedarone, quinidine, verapamil). If you are taking amiodarone, quinidine or verapamil containing medicines, your doctor may tell you to use a reduced dose of Pradaxa depending on the condition for which it is prescribed to you. See also section 3. - Medicines to prevent organ rejection after transplantation (e.g. tacrolimus, cyclosporine) - A combination product of glecaprevir and pibrentasvir (an antiviral medicine used to treat hepatitis C) - Anti-inflammatory and pain reliever medicines (e.g. acetylsalicylic acid, ibuprofen, diclofenac) - St. John´s wort, a herbal medicine for depression - Antidepressant medicines called selective serotonin re-uptake inhibitors or serotoninnorepinephrine re-uptake inhibitors - Rifampicin or clarithromycin (two antibiotics) - Anti-viral medicines for AIDS (e.g. ritonavir) - Certain medicines for treatment of epilepsy (e.g. carbamazepine, phenytoin)
+Pregnancy and breast-feeding
+The effects of Pradaxa on pregnancy and the unborn child are not known. You should not take this medicine if you are pregnant unless your doctor advises you that it is safe to do so. If you are a woman of child-bearing age, you should avoid becoming pregnant while you are taking Pradaxa.
+You should not breast-feed while you are taking Pradaxa.
+Driving and using machines
+Pradaxa has no known effects on the ability to drive or use machines.
+
+[xarelto p.150 SmPC 4.6] (distance 0.159)
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | SmPC 4.6 Fertility, pregnancy and lactation
+4.6 Fertility, pregnancy and lactation
+Pregnancy Safety and efficacy of Xarelto have not been established in pregnant women. Studies in animals have shown reproductive toxicity (see section 5.3). Due to the potential reproductive toxicity, the intrinsic risk of bleeding and the evidence that rivaroxaban passes the placenta, Xarelto is contraindicated during pregnancy (see section 4.3). Female adolescents of child-bearing potential should avoid becoming pregnant during treatment with rivaroxaban.
+
+[xarelto p.9 SmPC 4.6] (distance 0.176)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.6 Fertility, pregnancy and lactation
+4.6 Fertility, pregnancy and lactation
+Pregnancy Safety and efficacy of Xarelto have not been established in pregnant women. Studies in animals have shown reproductive toxicity (see section 5.3). Due to the potential reproductive toxicity, the intrinsic risk of bleeding and the evidence that rivaroxaban passes the placenta, Xarelto is contraindicated during pregnancy (see section 4.3). Women of child-bearing potential should avoid becoming pregnant during treatment with rivaroxaban.
+Breast-feeding Safety and efficacy of Xarelto have not been established in breast-feeding women. Data from animals indicate that rivaroxaban is secreted into milk. Therefore Xarelto is contraindicated during breast-
+feeding (see section 4.3). A decision must be made whether to discontinue breast-feeding or to discontinue/abstain from therapy.
+Fertility No specific studies with rivaroxaban in humans have been conducted to evaluate effects on fertility. In a study on male and female fertility in rats no effects were seen (see section 5.3).
+
+[pradaxa p.15 SmPC 4.6] (distance 0.219)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.6 Fertility, pregnancy and lactation
+4.6 Fertility, pregnancy and lactation
+Women of childbearing potential
+Women of childbearing potential should avoid pregnancy during treatment with Pradaxa.
+Pregnancy
+There is limited amount of data from the use of Pradaxa in pregnant women. Studies in animals have shown reproductive toxicity (see section 5.3). The potential risk for humans is unknown.
+Pradaxa should not be used during pregnancy unless clearly necessary.
+Breast-feeding
+There are no clinical data of the effect of dabigatran on infants during breast-feeding. Breast-feeding should be discontinued during treatment with Pradaxa.
+Fertility
+No human data available.
+In animal studies an effect on female fertility was observed in the form of a decrease in implantations and an increase in pre-implantation loss at 70 mg/kg (representing a 5-fold higher plasma exposure level compared to patients). No other effects on female fertility were observed. There was no influence on male fertility. At doses that were toxic to the mothers (representing a 5- to 10-fold higher plasma exposure level to patients), a decrease in foetal body weight and embryofoetal viability along with an increase in foetal variations were observed in rats and rabbits. In the pre- and post-natal study, an increase in foetal mortality was observed at doses that were toxic to the dams (a dose corresponding to a plasma exposure level 4-fold higher than observed in patients).
+
+[xarelto p.254 Leaflet 2] (distance 0.225)
+Xarelto | Xarelto 15 mg film-coated tablets | Leaflet 2 What you need to know before you take Xarelto
+2. What you need to know before you take Xarelto
+Do not take Xarelto - if you are allergic to rivaroxaban or any of the other ingredients of this medicine (listed in section 6) - if you are bleeding excessively - if you have a disease or condition in an organ of the body that increases the risk of serious bleeding (e.g. stomach ulcer, injury or bleeding in the brain, recent surgery of the brain or eyes) - if you are taking medicines to prevent blood clotting (e.g. warfarin, dabigatran, apixaban or heparin), except when changing anticoagulant treatment or while getting heparin through a venous or arterial line to keep it open. - if you have a liver disease which leads to an increased risk of bleeding - if you are pregnant or are breast-feeding Do not take Xarelto and tell your doctor if any of these apply to you.
+
+[xarelto p.26 SmPC 5.3] (distance 0.228)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 5.3 Preclinical safety data
+5.3 Preclinical safety data
+Non-clinical data reveal no special hazard for humans based on conventional studies of safety pharmacology, single dose toxicity, phototoxicity, genotoxicity, carcinogenic potential and juvenile toxicity. Effects observed in repeat-dose toxicity studies were mainly due to the exaggerated pharmacodynamic activity of rivaroxaban. In rats, increased IgG and IgA plasma levels were seen at clinically relevant exposure levels. In rats, no effects on male or female fertility were seen. Animal studies have shown reproductive toxicity related to the pharmacological mode of action of rivaroxaban (e.g. haemorrhagic complications). Embryo-foetal toxicity (post-implantation loss, retarded/progressed ossification, hepatic multiple light coloured spots) and an increased incidence of common malformations as well as placental changes were observed at clinically relevant plasma concentrations. In the pre- and postnatal study in rats, reduced viability of the offspring was observed at doses that were toxic to the dams.
+```
+</details>
+
+---
+
+## q22 (multi)
+
+**Question:** After an overdose, can dialysis remove Xarelto or Pradaxa?
+
+**Reference:** Rivaroxaban (Xarelto) is not expected to be dialysable because of high protein binding; dabigatran (Pradaxa) can be dialysed because protein binding is low, though experience is limited.
+
+**Agent answer:** Based on the product information:
+
+* **Pradaxa (dabigatran):** Because protein binding is low, dabigatran can be dialysed, although there is limited clinical experience to demonstrate the utility of this approach in clinical studies [pradaxa p.20 SmPC 4.9].
+* **Xarelto (rivaroxaban):** Due to the high plasma protein binding, rivaroxaban is not expected to be dialysable [xarelto p.14 SmPC 4.9, xarelto p.69 SmPC 4.9, xarelto p.155 SmPC 4.9].
+
+*(Note: Eliquis is not covered in the provided passages.)*
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[pradaxa p.20 SmPC 4.9] (distance 0.182)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.9 Overdose
+4.9 Overdose
+Dabigatran etexilate doses beyond those recommended, expose the patient to increased risk of bleeding.
+In case of an overdose suspicion, coagulation tests can help to determine a bleeding risk (see sections 4.4 and 5.1). A calibrated quantitative dTT test or repetitive dTT measurements allow prediction of the time by when certain dabigatran levels will be reached (see section 5.1), also in case additional measures e.g. dialysis have been initiated.
+Excessive anticoagulation may require interruption of dabigatran etexilate treatment. Since dabigatran is excreted predominantly by the renal route adequate diuresis must be maintained. As protein binding is low, dabigatran can be dialysed; there is limited clinical experience to demonstrate the utility of this approach in clinical studies (see section 5.2).
+Management of bleeding complications
+In the event of haemorrhagic complications, dabigatran etexilate treatment must be discontinued and the source of bleeding investigated. Depending on the clinical situation appropriate supportive treatment, such as surgical haemostasis and blood volume replacement, should be undertaken at the prescriber’s discretion.
+For adult patients in situations when rapid reversal of the anticoagulant effect of dabigatran is required the specific reversal agent (idarucizumab) antagonizing the pharmacodynamic effect of dabigatran is available. The efficacy and safety of idarucizumab have not been established in paediatric patients (see section 4.4).
+
+[xarelto p.155 SmPC 4.9] (distance 0.198)
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | SmPC 4.9 Overdose
+4.9 Overdose
+In adults, rare cases of overdose up to 1,960 mg have been reported. In case of overdose, the patient should be observed carefully for bleeding complications or other adverse reactions (see section “Management of bleeding”). There is limited data available in children. Due to limited absorption a ceiling effect with no further increase in average plasma exposure is expected at supratherapeutic doses of 50 mg rivaroxaban or above in adults, however no data is available at supratherapeutic doses in children. A specific reversal agent antagonising the pharmacodynamic effect of rivaroxaban is not established in children. The use of activated charcoal to reduce absorption in case of rivaroxaban overdose may be considered. Due to the high plasma protein binding rivaroxaban is not expected to be dialysable.
+Management of bleeding Should a bleeding complication arise in a patient receiving rivaroxaban, the next rivaroxaban administration should be delayed or treatment should be discontinued as appropriate. Rivaroxaban has a half-life of approximately 5 to 13 hours in adults. The half-life in children estimated using population pharmacokinetic (popPK) modelling approaches is shorter (see section 5.2). Management should be individualised according to the severity and location of the haemorrhage. Appropriate symptomatic treatment could be used as needed, such as mechanical compression (e.g. for severe epistaxis), surgical haemostasis with bleeding control procedures, fluid replacement and haemodynamic support, blood products (packed red cells or fresh frozen plasma, depending on associated anaemia or coagulopathy) or platelets. If bleeding cannot be controlled by the above measures, administration of a specific procoagulant agent should be considered, such as prothrombin complex concentrate (PCC), activated prothrombin complex concentrate (APCC) or recombinant factor VIIa (r-FVIIa). However, there is currently very limited clinical experience with the use of these medicinal products in adults and in children receiving rivaroxaban (see section 5.1).
+
+[xarelto p.14 SmPC 4.9] (distance 0.2)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.9 Overdose
+Management of bleeding Should a bleeding complication arise in a patient receiving rivaroxaban, the next rivaroxaban administration should be delayed or treatment should be discontinued as appropriate. Rivaroxaban has a half-life of approximately 5 to 13 hours (see section 5.2). Management should be individualised according to the severity and location of the haemorrhage. Appropriate symptomatic treatment could be used as needed, such as mechanical compression (e.g. for severe epistaxis), surgical haemostasis with bleeding control procedures, fluid replacement and haemodynamic support, blood products (packed red cells or fresh frozen plasma, depending on associated anaemia or coagulopathy) or platelets. If bleeding cannot be controlled by the above measures, either the administration of a specific factor Xa inhibitor reversal agent (andexanet alfa), which antagonises the pharmacodynamic effect of rivaroxaban, or a specific procoagulant agent, such as prothrombin complex concentrate (PCC), activated prothrombin complex concentrate (APCC) or recombinant factor VIIa (r-FVIIa), should be considered. However, there is currently very limited clinical experience with the use of these medicinal products in individuals receiving rivaroxaban. The recommendation is also based on limited non-clinical data. Re-dosing of recombinant factor VIIa shall be considered and titrated depending on improvement of bleeding. Depending on local availability, a consultation with a coagulation expert should be considered in case of major bleedings (see section 5.1).
+Protamine sulphate and vitamin K are not expected to affect the anticoagulant activity of rivaroxaban. There is limited experience with tranexamic acid and no experience with aminocaproic acid and aprotinin in individuals receiving rivaroxaban. There is neither scientific rationale for benefit nor experience with the use of the systemic haemostatic desmopressin in individuals receiving rivaroxaban. Due to the high plasma protein binding rivaroxaban is not expected to be dialysable.
+
+[xarelto p.69 SmPC 4.9] (distance 0.201)
+Xarelto | Xarelto 15 mg film-coated tablets | SmPC 4.9 Overdose
+Protamine sulphate and vitamin K are not expected to affect the anticoagulant activity of rivaroxaban. There is limited experience with tranexamic acid and no experience with aminocaproic acid and aprotinin in adults receiving rivaroxaban. There is no experience on the use of these agents in children receiving rivaroxaban. There is neither scientific rationale for benefit nor experience with the use of the systemic haemostatic desmopressin in individuals receiving rivaroxaban. Due to the high plasma protein binding rivaroxaban is not expected to be dialysable.
+
+[xarelto p.69 SmPC 4.9] (distance 0.217)
+Xarelto | Xarelto 15 mg film-coated tablets | SmPC 4.9 Overdose
+Management of bleeding Should a bleeding complication arise in a patient receiving rivaroxaban, the next rivaroxaban administration should be delayed or treatment should be discontinued as appropriate. Rivaroxaban has a half-life of approximately 5 to 13 hours in adults. The half life in children estimated using population pharmacokinetic (popPK) modelling approaches is shorter (see section 5.2). Management should be individualised according to the severity and location of the haemorrhage. Appropriate symptomatic treatment could be used as needed, such as mechanical compression (e.g. for severe epistaxis), surgical haemostasis with bleeding control procedures, fluid replacement and haemodynamic support, blood products (packed red cells or fresh frozen plasma, depending on associated anaemia or coagulopathy) or platelets. If bleeding cannot be controlled by the above measures, either the administration of a specific factor Xa inhibitor reversal agent (andexanet alfa), which antagonises the pharmacodynamic effect of rivaroxaban, or a specific procoagulant agent, such as prothrombin complex concentrate (PCC), activated prothrombin complex concentrate (APCC) or recombinant factor VIIa (r-FVIIa), should be considered. However, there is currently very limited clinical experience with the use of these medicinal products in adults and in children receiving rivaroxaban. The recommendation is also based on limited non-clinical data. Re-dosing of recombinant factor VIIa shall be considered and titrated depending on improvement of bleeding. Depending on local availability, a consultation with a coagulation expert should be considered in case of major bleedings (see section 5.1).
+```
+</details>
+
+---
+
+## q23 (multi)
+
+**Question:** A patient's creatinine clearance is 20 ml/min. Can they take Eliquis or Pradaxa?
+
+**Reference:** Eliquis can be used with caution (in atrial fibrillation at the lower 2.5 mg twice daily dose); Pradaxa is contraindicated below 30 ml/min.
+
+**Agent answer:** Based on the official product information:
+
+* **Eliquis (apixaban):** A creatinine clearance of 20 ml/min falls into the severe renal impairment range (15-29 mL/min) [eliquis p.9 SmPC 4.4]. Apixaban can be used in patients with severe renal impairment, but with specific conditions depending on the indication:
+  * For the prevention of VTE in elective hip or knee replacement surgery, the treatment of DVT, treatment of PE, and prevention of recurrent DVT and PE, it is to be used with caution [eliquis p.9 SmPC 4.4, eliquis p.4 SmPC 4.2].
+  * For the prevention of stroke and systemic embolism in patients with non-valvular atrial fibrillation (NVAF), patients should receive the lower dose of 2.5 mg twice daily [eliquis p.9 SmPC 4.4, eliquis p.4 SmPC 4.2]. 
+
+* **Pradaxa (dabigatran):** Treatment with Pradaxa in adult patients with severe renal impairment (CrCL < 30 mL/min) is **contraindicated** [pradaxa p.38 SmPC 4.2]. Therefore, a patient with a creatinine clearance of 20 ml/min cannot take Pradaxa [pradaxa p.38 SmPC 4.2]. 
+
+Xarelto (rivaroxaban) is not covered for this specific query.
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[eliquis p.9 SmPC 4.4] (distance 0.171)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.4 Special warnings and precautions for use
+Adult patients Limited clinical data indicate that apixaban plasma concentrations are increased in patients with severe renal impairment (creatinine clearance 15-29 mL/min) which may lead to an increased bleeding risk. For the prevention of VTE in elective hip or knee replacement surgery (VTEp), the treatment of DVT, treatment of PE and prevention of recurrent DVT and PE (VTEt), apixaban is to be used with caution in patients with severe renal impairment (creatinine clearance 15-29 mL/min) (see sections 4.2 and 5.2).
+For the prevention of stroke and systemic embolism in patients with NVAF, patients with severe renal impairment (creatinine clearance 15-29 mL/min), and patients with serum creatinine ≥ 1.5 mg/dL (133 micromole/L) associated with age ≥ 80 years or body weight ≤ 60 kg should receive the lower dose of apixaban 2.5 mg twice daily (see section 4.2).
+In patients with creatinine clearance < 15 mL/min, or in patients undergoing dialysis, there is no clinical experience therefore apixaban is not recommended (see sections 4.2 and 5.2).
+Paediatric patients Paediatric patients with severe renal impairment have not been studied and therefore should not receive apixaban (see sections 4.2 and 5.2).
+Elderly patients
+Increasing age may increase haemorrhagic risk (see section 5.2).
+Also, the coadministration of apixaban with ASA in elderly patients should be used cautiously because of a potentially higher bleeding risk.
+Body weight
+In adults, low body weight (< 60 kg) may increase haemorrhagic risk (see section 5.2).
+Patients with hepatic impairment
+Apixaban is contraindicated in patients with hepatic disease associated with coagulopathy and clinically relevant bleeding risk (see section 4.3).
+It is not recommended in patients with severe hepatic impairment (see section 5.2).
+It should be used with caution in patients with mild or moderate hepatic impairment (Child Pugh A or B) (see sections 4.2 and 5.2).
+
+[eliquis p.4 SmPC 4.2] (distance 0.173)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+- for the prevention of VTE in elective hip or knee replacement surgery (VTEp), for the treatment of DVT, treatment of PE and prevention of recurrent DVT and PE (VTEt), no dose adjustment is necessary (see section 5.2).
+- for the prevention of stroke and systemic embolism in patients with NVAF and serum creatinine ≥ 1.5 mg/dL (133 micromole/L) associated with age ≥ 80 years or body weight ≤ 60 kg, a dose reduction is necessary (see above subheading regarding Dose reduction). In the absence of other criteria for dose reduction (age, body weight), no dose adjustment is necessary (see section 5.2).
+In adult patients with severe renal impairment (creatinine clearance 15-29 mL/min) the following recommendations apply (see sections 4.4 and 5.2):
+- for the prevention of VTE in elective hip or knee replacement surgery (VTEp), for the treatment of DVT, treatment of PE and prevention of recurrent DVT and PE (VTEt) apixaban is to be used with caution;
+- for the prevention of stroke and systemic embolism in patients with NVAF, patients should receive the lower dose of apixaban 2.5 mg twice daily.
+In patients with creatinine clearance < 15 mL/min, or in patients undergoing dialysis, there is no clinical experience therefore apixaban is not recommended (see sections 4.4 and 5.2).
+Paediatric population Based on adult data and limited data in paediatric patients (see section 5.2), no dose adjustment is necessary in paediatric patients with mild to moderate renal impairment. Apixaban is not recommended in paediatric patients with severe renal impairment (see section 4.4).
+Hepatic impairment Eliquis is contraindicated in adult patients with hepatic disease associated with coagulopathy and clinically relevant bleeding risk (see section 4.3).
+It is not recommended in patients with severe hepatic impairment (see sections 4.4. and 5.2).
+
+[eliquis p.43 SmPC 4.4] (distance 0.195)
+Eliquis | Eliquis 5 mg film-coated tablets | SmPC 4.4 Special warnings and precautions for use
+Adult patients Limited clinical data indicate that apixaban plasma concentrations are increased in patients with severe renal impairment (creatinine clearance 15-29 mL/min) which may lead to an increased bleeding risk. For the treatment of DVT, treatment of PE and prevention of recurrent DVT and PE (VTEt), apixaban is to be used with caution in patients with severe renal impairment (creatinine clearance 15-29 mL/min) (see sections 4.2 and 5.2).
+Elderly patients
+Increasing age may increase haemorrhagic risk (see section 5.2). Also, the co-administration of apixaban with ASA in elderly patients should be used cautiously because of a potentially higher bleeding risk.
+Body weight
+Patients with hepatic impairment
+The use of apixaban is not recommended in patients receiving concomitant systemic treatment with strong inhibitors of both CYP3A4 and P-gp, such as azole-antimycotics (e.g., ketoconazole, itraconazole, voriconazole and posaconazole) and HIV protease inhibitors (e.g., ritonavir). These medicinal products may increase apixaban exposure by 2-fold (see section 4.5) or greater in the presence of additional factors that increase apixaban exposure (e.g., severe renal impairment). No clinical data are available in paediatric patients receiving concomitant systemic treatment with strong inhibitors of both CYP 3A4 and P-gp (see section 4.5).
+- for the prevention of stroke and systemic embolism in patients with NVAF and for the prevention of recurrent DVT and PE, apixaban should be used with caution;
+Laboratory parameters
+Information about excipients
+
+[eliquis p.142 Leaflet 3] (distance 0.196)
+Eliquis | Eliquis 2.5 mg film-coated tablets | Leaflet 3 How to take Eliquis
+If you have had a major hip operation you will usually take the tablets for 32 to 38 days. If you have had a major knee operation you will usually take the tablets for 10 to 14 days.
+To prevent a blood clot from forming in the heart in patients with an irregular heart beat and at least one additional risk factor. The recommended dose is one tablet of Eliquis 5 mg twice a day.
+The recommended dose is one tablet of Eliquis 2.5 mg twice a day if: - you have severely reduced kidney function; - two or more of the following apply to you: - your blood test results suggest poor kidney function (value of serum creatinine is 1.5 mg/dL (133 micromole/L) or greater); - you are 80 years old or older; - your weight is 60 kg or lower.
+The recommended dose is one tablet twice a day, for example, one in the morning and one in the evening. Your doctor will decide how long you must continue treatment for.
+To treat blood clots in the veins of your legs and blood clots in the blood vessels of your lungs The recommended dose is two tablets of Eliquis 5 mg twice a day for the first 7 days, for example, two in the morning and two in the evening. After 7 days the recommended dose is one tablet of Eliquis 5 mg twice a day, for example, one in the morning and one in the evening.
+For preventing blood clots from re-occurring following completion of 6 months of treatment The recommended dose is one tablet of Eliquis 2.5 mg twice a day for example, one in the morning and one in the evening. Your doctor will decide how long you must continue treatment for.
+
+[eliquis p.86 SmPC 5.2] (distance 0.203)
+Eliquis | Eliquis 0.15 mg granules in capsules for opening | SmPC 5.2 Pharmacokinetic properties
+Table 5: eGFR eligibility thresholds for study CV185325 Postnatal age (gender) GFR reference range (mL/min/1.73 m2) Eligibility threshold for eGFR* 1 week (males and females) 41 ± 15 ≥ 8 2-8 weeks (males and females) 66 ± 25 ≥ 12 > 8 weeks to < 2 years (males and females) 96 ± 22 ≥ 22 2-12 years (males and females) 133 ± 27 ≥ 30 13-17 years (males) 140 ± 30 ≥ 30 13-17 years (females) 126 ± 22 ≥ 30 *Eligibility threshold for CV185325 study participation, where estimated glomerular filtration rate (eGFR) was calculated per the updated bedside Schwartz equation (Schwartz, GJ et al., CJASN 2009). This per protocol threshold corresponded to the eGFR below which a prospective patient was considered to have “inadequate renal function” that precluded participation in Study CV185325. Each threshold was defined as an eGFR < 30% of 1 standard deviation (SD) below the GFR reference range for age and gender. Threshold values for patients < 2 years of age correspond to an eGFR < 30 mL/min/1.73 m2, the conventional definition of severe renal failure in patients > 2 years of age.
+In adults, there was no impact of impaired renal function on peak concentration of apixaban. There was an increase in apixaban exposure correlated to decrease in renal function, as assessed via measured creatinine clearance. In individuals with mild (creatinine clearance 51-80 mL/min), moderate (creatinine clearance 30-50 mL/min) and severe (creatinine clearance 15-29 mL/min) renal impairment, apixaban plasma concentrations (AUC) were increased 16, 29, and 44% respectively, compared to individuals with normal creatinine clearance. Renal impairment had no evident effect on the relationship between apixaban plasma concentration and anti-Factor Xa activity.
+
+[pradaxa p.3 SmPC 4.2] (distance 0.175)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.2 Posology and method of administration
+In all patients and especially in the elderly (> 75 years), as renal impairment may be frequent in this age group: • Renal function should be assessed by calculating the creatinine clearance (CrCL) prior to initiation of treatment with dabigatran etexilate to exclude patients with severe renal impairment (i.e. CrCL < 30 mL/min) (see sections 4.3, 4.4 and 5.2). • Renal function should also be assessed when a decline in renal function is suspected during treatment (e.g. hypovolaemia, dehydration, and in case of concomitant use of certain medicinal products).
+The method to be used to estimate renal function (CrCL in mL/min) is the Cockcroft-Gault method.
+Missed dose
+It is recommended to continue with the remaining daily doses of dabigatran etexilate at the same time of the next day.
+No double dose should be taken to make up for missed individual doses.
+Discontinuation of dabigatran etexilate
+Dabigatran etexilate treatment should not be discontinued without medical advice. Patients should be instructed to contact the treating physician if they develop gastrointestinal symptoms such as dyspepsia (see section 4.8).
+Switching
+Dabigatran etexilate treatment to parenteral anticoagulant: It is recommended to wait 24 hours after the last dose before switching from dabigatran etexilate to a parenteral anticoagulant (see section 4.5).
+Parenteral anticoagulants to dabigatran etexilate: The parenteral anticoagulant should be discontinued and dabigatran etexilate should be started 0-2 hours prior to the time that the next dose of the alternate therapy would be due, or at the time of discontinuation in case of continuous treatment (e.g. intravenous Unfractionated Heparin (UFH)) (see section 4.5).
+Special populations
+Renal impairment
+Treatment with dabigatran etexilate in patients with severe renal impairment (CrCL < 30 mL/min) is contraindicated (see section 4.3).
+
+[pradaxa p.68 SmPC 5.2] (distance 0.175)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 5.2 Pharmacokinetic properties
+In a small number of adult volunteers with severe renal insufficiency (CrCL 10-30 mL/min), the
+exposure (AUC) to dabigatran was approximately 6 times higher and the half-life approximately 2 times longer than that observed in a population without renal insufficiency (see sections 4.2, 4.3 and 4.4).
+Table 30: Half-life of total dabigatran in healthy subjects and subjects with impaired renal function.
+The median CrCL in RE-LY was 68.4 mL/min. Almost half (45.8 %) of the RE-LY patients had a CrCL > 50-< 80 mL/min. Patients with moderate renal impairment (CrCL between 30 and 50 mL/min) had on average 2.29-fold and 1.81-fold higher pre- and post-dose dabigatran plasma concentrations, respectively, when compared with patients without renal impairment (CrCL ≥ 80 mL/min).
+The median CrCL in the RE-COVER study was 100.3 mL/min. 21.7 % of patients had mild renal impairment (CrCL > 50 - < 80 mL/min) and 4.5 % of patients had a moderate renal impairment (CrCL between 30 and 50 mL/min). Patients with mild and moderate renal impairment had at steady state an average 1.7-fold and 3.4-fold higher pre-dose dabigatran plasma concentrations compared with patients with CrCL > 80 mL/min, respectively. Similar values for CrCL were found in RE-COVER II.
+The median CrCL in the RE-MEDY and RE-SONATE studies were 99.0 mL/min and 99.7 mL/min, respectively. 22.9 % and 22.5 % of the patients had a CrCL > 50-< 80 mL/min, and 4.1 % and 4.8 % had a CrCL between 30 and 50 mL/min in the RE-MEDY and RE-SONATE studies.
+
+[pradaxa p.26 SmPC 5.2] (distance 0.177)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 5.2 Pharmacokinetic properties
+In a small number of adult volunteers with severe renal insufficiency (CrCL 10-30 mL/min), the exposure (AUC) to dabigatran was approximately 6 times higher and the half-life approximately 2 times longer than that observed in a population without renal insufficiency (see sections 4.2, 4.3 and 4.4).
+Table 16: Half-life of total dabigatran in healthy subjects and subjects with impaired renal function.
+glomerular filtration rate (CrCL,) [mL/min] gMean (gCV %; range) half-life [h] > 80 13.4 (25.7 %; 11.0-21.6) > 50-≤ 80 15.3 (42.7 %; 11.7-34.1) > 30-≤ 50 18.4 (18.5 %; 13.3-23.0) ≤ 30 27.2 (15.3 %; 21.6-35.0)
+Additionally, dabigatran exposure (at trough and peak) was assessed in a prospective open label randomised pharmacokinetic study in NVAF patients with severe renal impairment (defined as creatinine clearance [CrCl] 15-30 mL/min) receiving dabigatran etexilate 75 mg twice daily. This regimen resulted in a geometric mean trough concentration of 155 ng/mL (gCV of 76.9 %), measured immediately before administration of the next dose and in a geometric mean peak concentration of 202 ng/mL (gCV of 70.6 %) measured two hours after the administration of the last dose.
+Clearance of dabigatran by haemodialysis was investigated in 7 adult patients with end-stage renal disease (ESRD) without atrial fibrillation. Dialysis was conducted with 700 mL/min dialysate flow rate, four hour duration and a blood flow rate of either 200 mL/min or 350-390 mL/min. This resulted in a removal of 50 % to 60 % of dabigatran concentrations, respectively. The amount of substance cleared by dialysis is proportional to the blood flow rate up to a blood flow rate of 300 mL/min. The anticoagulant activity of dabigatran decreased with decreasing plasma concentrations and the PK/PD relationship was not affected by the procedure.
+
+[pradaxa p.38 SmPC 4.2] (distance 0.202)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.2 Posology and method of administration; SmPC 4.3 Contraindications
+Duration of use
+Missed dose
+Discontinuation of dabigatran etexilate
+Switching
+Method of administration
+4.3 Contraindications
+• Hypersensitivity to the active substance or to any of the excipients listed in section 6.1 • Severe renal impairment (CrCL < 30 mL/min) in adult patients • eGFR < 50 mL/min/1.73 m2 in paediatric patients • Active clinically significant bleeding • Lesion or condition, if considered a significant risk factor for major bleeding. This may include current or recent gastrointestinal ulceration, presence of malignant neoplasms at high risk of
+bleeding, recent brain or spinal injury, recent brain, spinal or ophthalmic surgery, recent intracranial haemorrhage, known or suspected oesophageal varices, arteriovenous malformations, vascular aneurysms or major intraspinal or intracerebral vascular abnormalities • Concomitant treatment with any other anticoagulants e.g. unfractionated heparin (UFH), low molecular weight heparins (enoxaparin, dalteparin etc), heparin derivatives (fondaparinux etc), oral anticoagulants (warfarin, rivaroxaban, apixaban etc) except under specific circumstances. These are switching anticoagulant therapy (see section 4.2), when UFH is given at doses necessary to maintain an open central venous or arterial catheter or when UFH is given during catheter ablation for atrial fibrillation (see section 4.5) • Hepatic impairment or liver disease expected to have any impact on survival • Concomitant treatment with the following strong P-gp inhibitors: systemic ketoconazole, cyclosporine, itraconazole, dronedarone and the fixed-dose combination glecaprevir/pibrentasvir (see section 4.5) • Prosthetic heart valves requiring anticoagulant treatment (see section 5.1).
+
+[pradaxa p.6 SmPC 4.3] (distance 0.206)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.3 Contraindications
+4.3 Contraindications
+• Hypersensitivity to the active substance or to any of the excipients listed in section 6.1 • Severe renal impairment (CrCL < 30 mL/min) in adult patients • eGFR < 50 mL/min/1.73 m2 in paediatric patients • Active clinically significant bleeding • Lesion or condition, if considered a significant risk factor for major bleeding. This may include current or recent gastrointestinal ulceration, presence of malignant neoplasms at high risk of bleeding, recent brain or spinal injury, recent brain, spinal or ophthalmic surgery, recent intracranial haemorrhage, known or suspected oesophageal varices, arteriovenous malformations, vascular aneurysms or major intraspinal or intracerebral vascular abnormalities • Concomitant treatment with any other anticoagulants e.g. unfractionated heparin (UFH), low molecular weight heparins (enoxaparin, dalteparin etc), heparin derivatives (fondaparinux etc), oral anticoagulants (warfarin, rivaroxaban, apixaban etc) except under specific circumstances. These are switching anticoagulant therapy (see section 4.2), when UFH is given at doses necessary to maintain an open central venous or arterial catheter or when UFH is given during catheter ablation for atrial fibrillation (see section 4.5) • Hepatic impairment or liver disease expected to have any impact on survival • Concomitant treatment with the following strong P-gp inhibitors: systemic ketoconazole, cyclosporine, itraconazole, dronedarone and the fixed-dose combination glecaprevir/pibrentasvir (see section 4.5) • Prosthetic heart valves requiring anticoagulant treatment (see section 5.1).
+```
+</details>
+
+---
+
+## q24 (multi)
+
+**Question:** Do Eliquis and Xarelto 20 mg need to be taken with food?
+
+**Reference:** Eliquis can be taken with or without food; Xarelto 15 mg and 20 mg tablets must be taken with food.
+
+**Agent answer:** * **Eliquis (apixaban):** Can be taken with or without food [eliquis p.141 Leaflet 3].
+* **Xarelto 20 mg (rivaroxaban):** Must be taken together with a meal [xarelto p.256 Leaflet 3].
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[eliquis p.141 Leaflet 3] (distance 0.163)
+Eliquis | Eliquis 2.5 mg film-coated tablets | Leaflet 3 How to take Eliquis
+3. How to take Eliquis
+Always take this medicine exactly as your doctor or pharmacist has told you. Check with your doctor, pharmacist or nurse if you are not sure.
+Dose Swallow the tablet with a drink of water. Eliquis can be taken with or without food. Try to take the tablets at the same times every day to have the best treatment effect.
+If you have difficulty swallowing the tablet whole, talk to your doctor about other ways to take Eliquis. The tablet may be crushed and mixed with water, or 5% glucose in water, or apple juice or apple puree, immediately before you take it.
+Instructions for crushing: • Crush the tablets with a pestle and mortar. • Transfer all the powder carefully into a suitable container then mix the powder with a little e.g., 30 mL (2 tablespoons), water or one of the other liquids mentioned above to make a mixture. • Swallow the mixture. • Rinse the pestle and mortar you used for crushing the tablet and the container, with a little water or one of the other liquids (e.g., 30 mL), and swallow the rinse.
+If necessary, your doctor may also give you the crushed Eliquis tablet mixed in 60 mL of water or 5% glucose in water, through a nasogastric tube.
+Take Eliquis as recommended for the following:
+To prevent blood clots from forming after hip or knee replacement operations. The recommended dose is one tablet of Eliquis 2.5 mg twice a day. For example, one in the morning and one in the evening. You should take the first tablet 12 to 24 hours after your operation.
+
+[eliquis p.6 SmPC 4.2] (distance 0.172)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+Method of administration in adults and paediatric patients
+Oral use Eliquis should be swallowed with water, with or without food.
+For patients who are unable to swallow whole tablets, Eliquis tablets may be crushed and suspended in water, or 5% glucose in water (G5W), or apple juice or mixed with apple puree and immediately administered orally (see section 5.2). Alternatively, Eliquis tablets may be crushed and suspended in 60 mL of water or G5W and immediately delivered through a nasogastric tube (see section 5.2). Crushed Eliquis tablets are stable in water, G5W, apple juice, and apple puree for up to 4 hours.
+
+[eliquis p.31 SmPC 5.2] (distance 0.189)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 5.2 Pharmacokinetic properties
+5.2 Pharmacokinetic properties
+Absorption
+In adults, the absolute bioavailability of apixaban is approximately 50% for doses up to 10 mg. Apixaban is rapidly absorbed with maximum concentrations (Cmax) appearing 3 to 4 hours after tablet intake. Intake with food does not affect apixaban AUC or Cmax at the 10 mg dose. Apixaban can be taken with or without food.
+Apixaban demonstrates linear pharmacokinetics with dose proportional increases in exposure for oral doses up to 10 mg. At doses ≥ 25 mg apixaban displays dissolution limited absorption with decreased bioavailability. Apixaban exposure parameters exhibit low to moderate variability reflected by a within-subject and inter-subject variability of ~20% CV and ~30% CV, respectively.
+Following oral administration of 10 mg of apixaban as 2 crushed 5 mg tablets suspended in 30 mL of water, exposure was comparable to exposure after oral administration of 2 whole 5 mg tablets. Following oral administration of 10 mg of apixaban as 2 crushed 5 mg tablets with 30 g of apple puree, the Cmax and AUC were 21% and 16% lower, respectively, when compared to administration of 2 whole 5 mg tablets. The reduction in exposure is not considered clinically relevant.
+Following administration of a crushed 5 mg apixaban tablet suspended in 60 mL of G5W and delivered via a nasogastric tube, exposure was similar to exposure seen in other clinical studies involving healthy subjects receiving a single oral 5 mg apixaban tablet dose.
+Given the predictable, dose-proportional pharmacokinetic profile of apixaban, the bioavailability results from the conducted studies are applicable to lower apixaban doses.
+Paediatric population
+Apixaban is rapidly absorbed, reaching maximum concentration (Cmax) approximately 2 hours after single-dose administration.
+Distribution
+In adults, plasma protein binding is approximately 87%. The volume of distribution (Vss) is approximately 21 litres.
+
+[eliquis p.70 SmPC 4.2] (distance 0.224)
+Eliquis | Eliquis 0.15 mg granules in capsules for opening | SmPC 4.2 Posology and method of administration
+The capsule for opening should NOT be swallowed. The capsule must be opened and the entire contents should be sprinkled in liquid and administered. Eliquis granules should be mixed with either water or baby formula as described in the instructions for use (IFU). The liquid mixture should be administered within 2 hours of preparation. Alternatively, for patients who have difficulty swallowing, the liquid mixture can be delivered through a gastrostomy tube and nasogastric tube.
+Detailed instructions for the use of this medicinal product are provided in the instructions for use.
+
+[eliquis p.143 Leaflet 3] (distance 0.226)
+Eliquis | Eliquis 2.5 mg film-coated tablets | Leaflet 3 How to take Eliquis
+If you are not sure what to do or have missed more than one dose, ask your doctor, pharmacist or nurse.
+If you stop taking Eliquis Do not stop taking this medicine without talking to your doctor first, because the risk of developing a blood clot could be higher if you stop treatment too early.
+If you have any further questions on the use of this medicine, ask your doctor, pharmacist or nurse.
+
+[xarelto p.256 Leaflet 3] (distance 0.162)
+Xarelto | Xarelto 15 mg film-coated tablets | Leaflet 3 How to take Xarelto
+3. How to take Xarelto
+You must take Xarelto together with a meal. Swallow the tablet(s) preferably with water.
+If you have difficulty swallowing the tablet whole, talk to your doctor about other ways to take Xarelto. The tablet may be crushed and mixed with water or apple puree immediately before you take it. This mixture should be immediately followed by food. If necessary, your doctor may also give you the crushed Xarelto tablet through a stomach tube.
+How much to take • Adults ▪ To prevent blood clots in brain (stroke) and other blood vessels in your body The recommended dose is one tablet Xarelto 20 mg once a day. If you have kidney problems, the dose may be reduced to one tablet Xarelto 15 mg once a day.
+If you need a procedure to treat blocked blood vessels in your heart (called a percutaneous coronary intervention - PCI with an insertion of a stent), there is limited evidence to reduce the dose to one tablet Xarelto 15 mg once a day (or to one tablet Xarelto 10 mg once a day in case your kidneys are not working properly) in addition to an antiplatelet medicine such as clopidogrel.
+
+[xarelto p.112 SmPC 5.2] (distance 0.165)
+Xarelto | Xarelto 20 mg film-coated tablets | SmPC 5.2 Pharmacokinetic properties
+Absorption The following information is based on the data obtained in adults. Rivaroxaban is rapidly absorbed with maximum concentrations (Cmax) appearing 2 - 4 hours after tablet intake. Oral absorption of rivaroxaban is almost complete and oral bioavailability is high (80 - 100%) for the 2.5 mg and 10 mg tablet dose, irrespective of fasting/fed conditions. Intake with food does not affect rivaroxaban AUC or Cmax at the 2.5 mg and 10 mg dose. Due to a reduced extent of absorption an oral bioavailability of 66% was determined for the 20 mg tablet under fasting conditions. When rivaroxaban 20 mg tablets are taken together with food increases in mean AUC by 39% were observed when compared to tablet intake under fasting conditions, indicating almost complete absorption and high oral bioavailability. Rivaroxaban 15 mg and 20 mg are to be taken with food (see section 4.2). Rivaroxaban pharmacokinetics are approximately linear up to about 15 mg once daily in fasting state. Under fed conditions rivaroxaban 10 mg, 15 mg and 20 mg tablets demonstrated dose-proportionality. At higher doses rivaroxaban displays dissolution limited absorption with decreased bioavailability and decreased absorption rate with increased dose. Variability in rivaroxaban pharmacokinetics is moderate with inter-individual variability (CV%) ranging from 30% to 40%. Absorption of rivaroxaban is dependent on the site of its release in the gastrointestinal tract. A 29% and 56% decrease in AUC and Cmax compared to tablet was reported when rivaroxaban granulate is released in the proximal small intestine. Exposure is further reduced when rivaroxaban is released in the distal small intestine, or ascending colon. Therefore, administration of rivaroxaban distal to the stomach should be avoided since this can result in reduced absorption and related rivaroxaban exposure. Bioavailability (AUC and Cmax) was comparable for 20 mg rivaroxaban administered orally as a crushed tablet
+
+[xarelto p.86 SmPC 4.2] (distance 0.171)
+Xarelto | Xarelto 20 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+4.2 Posology and method of administration
+The dose for children and adolescent is calculated based on body weight. - Body weight of 50 kg or more: a once daily dose of 20 mg rivaroxaban is recommended. This is the maximum daily dose. - Body weight from 30 to 50 kg: a once daily dose of 15 mg rivaroxaban is recommended. This is the maximum daily dose. - For patients with body weight less 30 kg refer to the Summary of Product Characteristics of Xarelto granules for oral suspension.
+In patients with moderate (creatinine clearance 30 - 49 ml/min) or severe (creatinine clearance 15 - 29 ml/min) renal impairment the following dose recommendations apply:
+Children and adolescents weighing more than 50 kg Xarelto is for oral use. The patient should be advised to swallow the tablet with liquid. It should also be taken with food (see section 5.2). The tablets should be taken approximately 24 hours apart.
+
+[xarelto p.57 SmPC 4.2] (distance 0.171)
+Xarelto | Xarelto 15 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+Paediatric population The safety and efficacy of Xarelto in children aged 0 to < 18 years have not been established in the indication prevention of stroke and systemic embolism in patients with non-valvular atrial fibrillation.
+No data are available. Therefore, it is not recommended for use in children below 18 years of age in indications other than the treatment of VTE and prevention of VTE recurrence.
+Method of administration Adults Xarelto is for oral use. The tablets are to be taken with food (see section 5.2).
+Crushing of tablets For patients who are unable to swallow whole tablets, Xarelto tablet may be crushed and mixed with water or apple puree immediately prior to use and administered orally. After the administration of crushed Xarelto 15 mg or 20 mg film-coated tablets, the dose should be immediately followed by food. The crushed tablet may also be given through gastric tubes (see sections 5.2 and 6.6).
+Children and adolescents weighing 30 kg to 50 kg Xarelto is for oral use. The patient should be advised to swallow the tablet with liquid. It should also be taken with food (see section 5.2). The tablets should be taken approximately 24 hours apart.
+In case the patient immediately spits up the dose or vomits within 30 minutes after receiving the dose, a new dose should be given. However, if the patient vomits more than 30 minutes after the dose, the dose should not be re-administered and the next dose should be taken as scheduled.
+The tablet must not be split in an attempt to provide a fraction of a tablet dose.
+
+[xarelto p.137 SmPC 5.2] (distance 0.173)
+Xarelto | Xarelto 15 mg film-coated tablets | SmPC 5.2 Pharmacokinetic properties
+Absorption Rivaroxaban is rapidly absorbed with maximum concentrations (Cmax) appearing 2 - 4 hours after tablet intake. Oral absorption of rivaroxaban is almost complete and oral bioavailability is high (80 - 100%) for the 2.5 mg and 10 mg tablet dose, irrespective of fasting/fed conditions. Intake with food does not affect rivaroxaban AUC or Cmax at the 2.5 mg and 10 mg dose. Due to a reduced extent of absorption an oral bioavailability of 66% was determined for the 20 mg tablet under fasting conditions. When rivaroxaban 20 mg tablets are taken together with food increases in mean AUC by 39% were observed when compared to tablet intake under fasting conditions, indicating almost complete absorption and high oral bioavailability. Rivaroxaban 15 mg and 20 mg are to be taken with food (see section 4.2). Rivaroxaban pharmacokinetics are approximately linear up to about 15 mg once daily in fasting state. Under fed conditions rivaroxaban 10 mg, 15 mg and 20 mg tablets demonstrated dose-proportionality. At higher doses rivaroxaban displays dissolution limited absorption with decreased bioavailability and decreased absorption rate with increased dose. Variability in rivaroxaban pharmacokinetics is moderate with inter-individual variability (CV%) ranging from 30% to 40%. Absorption of rivaroxaban is dependent on the site of its release in the gastrointestinal tract. A 29% and 56% decrease in AUC and Cmax compared to tablet was reported when rivaroxaban granulate is released in the proximal small intestine. Exposure is further reduced when rivaroxaban is released in the distal small intestine, or ascending colon. Therefore, administration of rivaroxaban distal to the stomach should be avoided since this can result in reduced absorption and related rivaroxaban exposure. Bioavailability (AUC and Cmax) was comparable for 20 mg rivaroxaban administered orally as a crushed tablet mixed in apple puree, or suspended in water and administered via
+```
+</details>
+
+---
+
+## q25 (multi)
+
+**Question:** I forgot a dose: what's the rule for Pradaxa and for Eliquis?
+
+**Reference:** Pradaxa: a forgotten dose can still be taken up to 6 hours before the next one, otherwise skip it. Eliquis: a missed morning dose can be taken when remembered (even with the evening dose); a missed evening dose only the same evening. Never double a dose with either.
+
+**Agent answer:** Las reglas sobre qué hacer si se olvida una dosis de Pradaxa (dabigatrán) o de Eliquis (apixaban) son las siguientes:
+
+### Pradaxa (dabigatrán)
+* **Para la prevención de coágulos tras cirugía de reemplazo de rodilla o cadera:** Se debe continuar con las dosis diarias restantes de Pradaxa a la misma hora del día siguiente [pradaxa p.157 Leaflet 3]. 
+* **Para otras indicaciones (como prevención de obstrucción de vasos por coágulos debido a latidos cardíacos anormales, o tratamiento y prevención de coágulos en venas de piernas y pulmones):** 
+  * Una dosis olvidada se puede tomar todavía hasta **6 horas** antes de la siguiente dosis programada [pradaxa p.34 SmPC 4.2].
+  * Si quedan **menos de 6 horas** para la siguiente dosis, se debe omitir la dosis olvidada [pradaxa p.179 Leaflet 3].
+* **Regla general:** No se debe tomar una dosis doble para compensar una dosis olvidada [pradaxa p.3 SmPC 4.2, pradaxa p.157 Leaflet 3].
+
+### Eliquis (apixaban)
+* **Si se olvida una dosis por la mañana:** Debe tomarse inmediatamente en cuanto se recuerde, y puede tomarse junto con la dosis de la tarde [eliquis p.143 Leaflet 3].
+* **Si se olvida una dosis por la tarde:** Solo puede tomarse durante la misma tarde; **no** se deben tomar dos dosis a la mañana siguiente [eliquis p.143 Leaflet 3].
+* Se debe continuar con la toma de la dosis regular dos veces al día tal como se recomienda al día siguiente [eliquis p.143 Leaflet 3].
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[pradaxa p.179 Leaflet 3] (distance 0.166)
+Pradaxa | Pradaxa 150 mg hard capsules | Leaflet 3 How to take Pradaxa
+3. How to take Pradaxa
+Prevention of brain or body vessel obstruction by blood clot formation developing after abnormal
+heart beats and Treatment of blood clots in the veins of your legs and lungs including prevention of blood clots from re-occurring in the vein of your legs and lungs
+If you are 80 years or older, the recommended dose is 220 mg taken as one 110 mg capsule twice daily.
+You can continue to take this medicine if your heart beat needs to be restored to normal by a procedure called cardioversion or by a procedure called catheter ablation for atrial fibrillation. Take Pradaxa as your physician has told you.
+Table 1: Dosing table for Pradaxa capsules
+How to take Pradaxa
+Instructions for opening the blisters
+Instructions for the bottle
+Change of anticoagulant treatment
+If you forget to take Pradaxa
+A forgotten dose can still be taken up to 6 hours prior to the next due dose. A missed dose should be omitted if the remaining time is below 6 hours prior to the next due dose. Do not double a dose to make up for a forgotten dose.
+If you stop taking Pradaxa
+
+[pradaxa p.169 Leaflet 3] (distance 0.168)
+Pradaxa | Pradaxa 110 mg hard capsules | Leaflet 3 How to take Pradaxa
+Use in adults: Prevention of brain or body vessel obstruction by blood clot formation developing after abnormal heart beats and treatment of blood clots in the veins of your legs and lungs including prevention of blood clots from re-occurring in the vein of your legs and lungs Use in children: Treatment of blood clots and prevention of blood clots from reoccurring A forgotten dose can still be taken up to 6 hours prior to the next due dose. A missed dose should be omitted if the remaining time is below 6 hours prior to the next due dose. Do not double a dose to make up for a forgotten dose.
+If you stop taking Pradaxa
+
+[pradaxa p.34 SmPC 4.2] (distance 0.173)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.2 Posology and method of administration
+In case of intolerability to dabigatran etexilate, patients should be instructed to immediately consult their treating physician in order to be switched to alternate acceptable treatment options for prevention of stroke and systemic embolism associated with atrial fibrillation or for DVT/PE.
+Additional requirements in patients with mild to moderate renal impairment and in patients aged over 75 years: • Renal function should be assessed during treatment with dabigatran etexilate at least once a year or more frequently as needed in certain clinical situations when it is suspected that the renal function could decline or deteriorate (e.g. hypovolaemia, dehydration, and in case of concomitant use of certain medicinal products).
+Duration of use
+The duration of use of dabigatran etexilate in the indications SPAF, DVT and PE are shown in table 3.
+Table 3: Duration of use for SPAF and DVT/PE
+Indication Duration of use SPAF Therapy should be continued long term. DVT/PE The duration of therapy should be individualised after careful assessment of the treatment benefit against the risk for bleeding (see section 4.4). Short duration of therapy (at least 3 months) should be based on transient risk factors (e.g. recent surgery, trauma, immobilisation) and longer durations should be based on permanent risk factors or idiopathic DVT or PE.
+Missed dose
+A forgotten dabigatran etexilate dose may still be taken up to 6 hours prior to the next scheduled dose. From 6 hours prior to the next scheduled dose on, the missed dose should be omitted.
+Discontinuation of dabigatran etexilate
+Switching
+
+[pradaxa p.157 Leaflet 3] (distance 0.176)
+Pradaxa | Pradaxa 75 mg hard capsules | Leaflet 3 How to take Pradaxa
+The following pictogram illustrates how to take Pradaxa capsules out of the blister
+Tear off one individual blister from the blister card along the perforated line
+Peel off the backing foil and remove the capsule.
+• Do not push the capsules through the blister foil. • Do not peel off the blister foil until a capsule is required.
+Instructions for the bottle
+• Push and turn for opening. • After removing the capsule, place the cap back on the bottle and tightly close the bottle right away after you take your dose.
+Change of anticoagulant treatment
+Without specific guidance from your doctor do not change your anticoagulant treatment.
+If you take more Pradaxa than you should
+Taking too much of this medicine increases the risk of bleeding. Contact your doctor immediately if you have taken too many capsules. Specific treatment options are available.
+If you forget to take Pradaxa
+Prevention of blood clot formation after knee or hip replacement surgery Continue with your remaining daily doses of Pradaxa at the same time of the next day. Do not take a double dose to make up for a forgotten dose.
+Treatment of blood clots and prevention of blood clots from reoccurring in children A forgotten dose can still be taken up to 6 hours prior to the next due dose. A missed dose should be omitted if the remaining time is below 6 hours prior to the next due dose. Do not double a dose to make up for a forgotten dose.
+If you stop taking Pradaxa
+Take Pradaxa exactly as prescribed. Do not stop taking this medicine without talking to your doctor first, because the risk of developing a blood clot could be higher if you stop treatment too early. Contact your doctor if you experience indigestion after taking Pradaxa.
+
+[pradaxa p.3 SmPC 4.2] (distance 0.187)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.2 Posology and method of administration
+In all patients and especially in the elderly (> 75 years), as renal impairment may be frequent in this age group: • Renal function should be assessed by calculating the creatinine clearance (CrCL) prior to initiation of treatment with dabigatran etexilate to exclude patients with severe renal impairment (i.e. CrCL < 30 mL/min) (see sections 4.3, 4.4 and 5.2). • Renal function should also be assessed when a decline in renal function is suspected during treatment (e.g. hypovolaemia, dehydration, and in case of concomitant use of certain medicinal products).
+The method to be used to estimate renal function (CrCL in mL/min) is the Cockcroft-Gault method.
+Missed dose
+It is recommended to continue with the remaining daily doses of dabigatran etexilate at the same time of the next day.
+No double dose should be taken to make up for missed individual doses.
+Discontinuation of dabigatran etexilate
+Dabigatran etexilate treatment should not be discontinued without medical advice. Patients should be instructed to contact the treating physician if they develop gastrointestinal symptoms such as dyspepsia (see section 4.8).
+Switching
+Dabigatran etexilate treatment to parenteral anticoagulant: It is recommended to wait 24 hours after the last dose before switching from dabigatran etexilate to a parenteral anticoagulant (see section 4.5).
+Parenteral anticoagulants to dabigatran etexilate: The parenteral anticoagulant should be discontinued and dabigatran etexilate should be started 0-2 hours prior to the time that the next dose of the alternate therapy would be due, or at the time of discontinuation in case of continuous treatment (e.g. intravenous Unfractionated Heparin (UFH)) (see section 4.5).
+Special populations
+Renal impairment
+Treatment with dabigatran etexilate in patients with severe renal impairment (CrCL < 30 mL/min) is contraindicated (see section 4.3).
+
+[eliquis p.143 Leaflet 3] (distance 0.17)
+Eliquis | Eliquis 2.5 mg film-coated tablets | Leaflet 3 How to take Eliquis
+- Changing from treatment with anticoagulant containing vitamin K antagonist (e.g., warfarin) to Eliquis Stop taking the medicine containing a vitamin K antagonist. Your doctor needs to do blood-measurements and instruct you when to start taking Eliquis.
+- Changing from Eliquis to anticoagulant treatment containing vitamin K antagonist (e.g., warfarin). If your doctor tells you that you have to start taking the medicine containing a vitamin K antagonist, continue to take Eliquis for at least 2 days after your first dose of the medicine containing a vitamin K antagonist. Your doctor needs to do blood-measurements and instruct you when to stop taking Eliquis.
+Patients undergoing cardioversion If your abnormal heartbeat needs to be restored to normal by a procedure called cardioversion, take this medicine at the times your doctor tells you, to prevent blood clots in blood vessels in your brain and other blood vessels in your body.
+If you take more Eliquis than you should Tell your doctor immediately if you have taken more than the prescribed dose of this medicine. Take the medicine pack with you, even if there are no tablets left.
+If you take more Eliquis than recommended, you may have an increased risk of bleeding. If bleeding occurs, surgery, blood transfusions, or other treatments that may reverse anti-factor Xa activity may be required.
+If you forget to take Eliquis - If you miss a morning dose, take it as soon as you remember and it may be taken together with the evening dose. - A missed evening dose can only be taken during the same evening. Do not take two doses the next morning, instead continue to follow the dosing schedule twice daily as recommended on the next day.
+
+[eliquis p.143 Leaflet 3] (distance 0.173)
+Eliquis | Eliquis 2.5 mg film-coated tablets | Leaflet 3 How to take Eliquis
+If you are not sure what to do or have missed more than one dose, ask your doctor, pharmacist or nurse.
+If you stop taking Eliquis Do not stop taking this medicine without talking to your doctor first, because the risk of developing a blood clot could be higher if you stop treatment too early.
+If you have any further questions on the use of this medicine, ask your doctor, pharmacist or nurse.
+
+[eliquis p.4 SmPC 4.2] (distance 0.178)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+Based on VTE treatment guidelines in the paediatric population, duration of overall therapy should be individualised after careful assessment of the treatment benefit and the risk for bleeding (see section 4.4).
+Missed dose in adults and paediatric patients A missed morning dose should be taken immediately when it is noticed, and it may be taken together with the evening dose. A missed evening dose can only be taken during the same evening, the patient should not take two doses the next morning. The patient should continue with the intake of the regular dose twice daily as recommended on the following day.
+Switching Switching treatment from parenteral anticoagulants to Eliquis (and vice versa) can be done at the next scheduled dose (see section 4.5). These medicinal products should not be administered simultaneously.
+Switching from vitamin K antagonist (VKA) therapy to Eliquis When converting patients from vitamin K antagonist (VKA) therapy to Eliquis, warfarin or other VKA therapy should be discontinued and Eliquis started when the international normalised ratio (INR) is < 2.
+Switching from Eliquis to VKA therapy When converting patients from Eliquis to VKA therapy, administration of Eliquis should be continued for at least 2 days after beginning VKA therapy. After 2 days of coadministration of Eliquis with VKA therapy, an INR should be obtained prior to the next scheduled dose of Eliquis. Coadministration of Eliquis and VKA therapy should be continued until the INR is ≥ 2.
+No data are available for paediatric patients.
+Elderly VTEp and VTEt – No dose adjustment required (see sections 4.4 and 5.2).
+NVAF – No dose adjustment required, unless criteria for dose reduction are met (see Dose reduction at the beginning of section 4.2).
+Renal impairment
+Adult patients In adult patients with mild or moderate renal impairment, the following recommendations apply:
+
+[eliquis p.68 SmPC 4.2] (distance 0.182)
+Eliquis | Eliquis 0.15 mg granules in capsules for opening | SmPC 4.2 Posology and method of administration
+Table 1: Dose recommendations for treatment of VTE and prevention of recurrent VTE in paediatric patients, by weight in kg (after initial parenteral anticoagulation) Days 1-7 Day 8 and beyond Pharmaceutical forms Body weight (kg) Dosing schedule Maximum daily dose Dosing schedule Maximum daily dose Granules in capsules for opening 0.15 mg 4 to < 5 0.6 mg twice daily 1.2 mg 0.3 mg twice daily 0.6 mg Coated granules in sachet 0.5 mg, 1.5 mg, 2.0 mg 5 to < 6 1 mg twice daily 2 mg 0.5 mg twice daily 1 mg 6 to < 9 2 mg twice daily 4 mg 1 mg twice daily 2 mg 9 to < 12 3 mg twice daily 6 mg 1.5 mg twice daily 3 mg 12 to < 18 4 mg twice daily 8 mg 2 mg twice daily 4 mg 18 to < 25 6 mg twice daily 12 mg 3 mg twice daily 6 mg 25 to < 35 8 mg twice daily 16 mg 4 mg twice daily 8 mg Film-coated tablets 2.5 mg and 5.0 mg ≥ 35 10 mg twice daily 20 mg 5 mg twice daily 10 mg
+Missed dose A missed morning dose should be taken immediately when it is noticed, and it may be taken together with the evening dose. A missed evening dose can only be taken during the same evening, the patient should not take two doses the next morning. The patient should continue with the intake of the regular dose twice daily as recommended on the following day.
+
+[eliquis p.167 Leaflet 3] (distance 0.187)
+Eliquis | Eliquis 0.15 mg granules in capsules for opening | Leaflet 3 How to give Eliquis
+- Changing from treatment with anticoagulant containing vitamin K antagonist (e.g., warfarin) to Eliquis Stop giving the medicine containing a vitamin K antagonist. The child’s doctor needs to do bloodmeasurements and instruct you when to start giving the child Eliquis.
+If you give the child more Eliquis than you should
+Tell the child’s doctor immediately if you have given the child more than the prescribed dose of this medicine. Take the medicine pack with you, even if there are no medicine left.
+If you give the child more Eliquis than recommended, the child may have an increased risk of bleeding. If bleeding occurs, surgery, blood transfusions, or other treatments that may reverse antifactor Xa activity may be required.
+If you forget to give the child Eliquis - If the child has missed a morning dose, give it as soon as you remember and it may be given together with the evening dose. - A missed evening dose can only be given during the same evening. Do not give two doses the next morning, instead continue to follow the dosing schedule twice daily as recommended on the next day.
+If the child has missed more than one dose of Eliquis, ask the child’s doctor, pharmacist or nurse what to do.
+If the child stops taking Eliquis: Do not stop giving this medicine to the child without talking to the child’s doctor first, because the risk of developing a blood clot could be higher if the child stops treatment too early.
+If you have any further questions on the use of this medicine, ask the child’s doctor, pharmacist or nurse.
+```
+</details>
+
+---
+
+## q26 (multi)
+
+**Question:** A patient needs ketoconazole tablets for a fungal infection, is that OK with Eliquis or with Xarelto?
+
+**Reference:** Not recommended with either: ketoconazole is a strong CYP3A4 and P-gp inhibitor that raises apixaban and rivaroxaban levels and the bleeding risk.
+
+**Agent answer:** No, taking ketoconazole tablets is not recommended with either Eliquis or Xarelto:
+
+* **Eliquis:** The use of apixaban is not recommended in patients receiving concomitant systemic treatment with strong inhibitors of both CYP3A4 and P-gp, such as azole-antimycotics (e.g., ketoconazole, itraconazole, voriconazole and posaconazole) [eliquis p.11 SmPC 4.5]. These medicines may increase apixaban exposure by 2-fold or greater, which can increase the chance for unwanted bleeding [eliquis p.10 SmPC 4.4, eliquis p.152 Leaflet 2].
+* **Xarelto:** The use of Xarelto is not recommended in patients receiving concomitant systemic treatment with azole-antimycotics such as ketoconazole, itraconazole, voriconazole and posaconazole [xarelto p.8 SmPC 4.5]. Co-administration with ketoconazole led to a 2.6 fold increase in mean rivaroxaban AUC and significant increases in pharmacodynamic effects, which may lead to an increased bleeding risk [xarelto p.8 SmPC 4.5].
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[eliquis p.11 SmPC 4.5] (distance 0.16)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+4.5 Interaction with other medicinal products and other forms of interaction
+Inhibitors of CYP3A4 and P-gp
+Coadministration of apixaban with ketoconazole (400 mg once a day), a strong inhibitor of both CYP3A4 and P-gp, led to a 2-fold increase in mean apixaban AUC and a 1.6-fold increase in mean apixaban Cmax.
+The use of apixaban is not recommended in patients receiving concomitant systemic treatment with strong inhibitors of both CYP3A4 and P-gp, such as azole-antimycotics (e.g., ketoconazole, itraconazole, voriconazole and posaconazole) and HIV protease inhibitors (e.g., ritonavir) (see section 4.4).
+Active substances which are not considered strong inhibitors of both CYP3A4 and P-gp, (e.g., amiodarone, clarithromycin, diltiazem, fluconazole, naproxen, quinidine, verapamil) are expected to increase apixaban plasma concentration to a lesser extent. No dose adjustment for apixaban is required when coadministered with agents that are not strong inhibitors of both CYP3A4 and P-gp. For example, diltiazem (360 mg once a day), considered a moderate CYP3A4 and a weak P-gp inhibitor, led to a 1.4-fold increase in mean apixaban AUC and a 1.3-fold increase in Cmax. Naproxen (500 mg, single dose) an inhibitor of P-gp but not an inhibitor of CYP3A4, led to a 1.5-fold and 1.6-fold increase in mean apixaban AUC and Cmax, respectively. Clarithromycin (500 mg, twice a day), an inhibitor of P-gp and a strong inhibitor of CYP3A4, led to a 1.6-fold and 1.3-fold increase in mean apixaban AUC and Cmax respectively.
+Inducers of CYP3A4 and P-gp
+
+[eliquis p.10 SmPC 4.4] (distance 0.193)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.4 Special warnings and precautions for use
+Patients with elevated liver enzymes ALT/AST > 2 x ULN or total bilirubin ≥ 1.5 x ULN were excluded in clinical studies. Therefore apixaban should be used cautiously in this population (see section 5.2). Prior to initiating apixaban, liver function testing should be performed.
+Interaction with inhibitors of both cytochrome P450 3A4 (CYP3A4) and P-glycoprotein (P-gp)
+The use of apixaban is not recommended in patients receiving concomitant systemic treatment with strong inhibitors of both CYP3A4 and P-gp, such as azole-antimycotics (e.g., ketoconazole, itraconazole, voriconazole and posaconazole) and HIV protease inhibitors (e.g., ritonavir). These medicinal products may increase apixaban exposure by 2-fold (see section 4.5), or greater in the presence of additional factors that increase apixaban exposure (e.g., severe renal impairment).
+No clinical data are available in paediatric patients receiving concomitant systemic treatment with strong inhibitors of both CYP 3A4 and P-gp (see section 4.5).
+Interaction with inducers of both CYP3A4 and P-gp
+The concomitant use of apixaban with strong CYP3A4 and P-gp inducers (e.g., rifampicin, phenytoin, carbamazepine, phenobarbital or St. John’s Wort) may lead to a ~50% reduction in apixaban exposure. In a clinical study in atrial fibrillation patients, diminished efficacy and a higher risk of bleeding were observed with coadministration of apixaban with strong inducers of both CYP3A4 and P-gp compared with using apixaban alone.
+In patients receiving concomitant systemic treatment with strong inducers of both CYP3A4 and P-gp the following recommendations apply (see section 4.5):
+- for the prevention of VTE in elective hip or knee replacement surgery, for the prevention of stroke and systemic embolism in patients with NVAF and for the prevention of recurrent DVT and PE, apixaban should be used with caution;
+- for the treatment of DVT and treatment of PE, apixaban should not be used since efficacy may be compromised.
+
+[eliquis p.152 Leaflet 2] (distance 0.196)
+Eliquis | Eliquis 5 mg film-coated tablets | Leaflet 2 What you need to know before you take Eliquis
+2. What you need to know before you take Eliquis
+Do not take Eliquis if - you are allergic to apixaban or any of the other ingredients of this medicine (listed in section 6); - you are bleeding excessively; - you have a disease in an organ of the body that increases the risk of serious bleeding (such as an active or a recent ulcer of your stomach or bowel, recent bleeding in your brain); - you have a liver disease which leads to increased risk of bleeding (hepatic coagulopathy); - you are taking medicines to prevent blood clotting (e.g., warfarin, rivaroxaban, dabigatran or heparin), except when changing anticoagulant treatment, while having a venous or arterial line
+and you get heparin through this line to keep it open, or if a tube is inserted into your blood vessel (catheter ablation) to treat an irregular heartbeat (arrhythmia).
+The following medicines may increase the effects of Eliquis and increase the chance for unwanted bleeding: - some medicines for fungal infections (e.g., ketoconazole, etc.); - some antiviral medicines for HIV/AIDS (e.g., ritonavir); - other medicines that are used to reduce blood clotting (e.g., enoxaparin, etc.); - anti-inflammatory or pain medicines (e.g., acetylsalicylic acid or naproxen). Especially, if you are older than 75 years and are taking acetylsalicylic acid, you may have an increased chance of bleeding; - medicines for high blood pressure or heart problems (e.g., diltiazem); - antidepressant medicines called selective serotonin re-uptake inhibitors or serotonin norepinephrine re-uptake inhibitors.
+
+[eliquis p.43 SmPC 4.4] (distance 0.205)
+Eliquis | Eliquis 5 mg film-coated tablets | SmPC 4.4 Special warnings and precautions for use
+Adult patients Limited clinical data indicate that apixaban plasma concentrations are increased in patients with severe renal impairment (creatinine clearance 15-29 mL/min) which may lead to an increased bleeding risk. For the treatment of DVT, treatment of PE and prevention of recurrent DVT and PE (VTEt), apixaban is to be used with caution in patients with severe renal impairment (creatinine clearance 15-29 mL/min) (see sections 4.2 and 5.2).
+Elderly patients
+Increasing age may increase haemorrhagic risk (see section 5.2). Also, the co-administration of apixaban with ASA in elderly patients should be used cautiously because of a potentially higher bleeding risk.
+Body weight
+Patients with hepatic impairment
+The use of apixaban is not recommended in patients receiving concomitant systemic treatment with strong inhibitors of both CYP3A4 and P-gp, such as azole-antimycotics (e.g., ketoconazole, itraconazole, voriconazole and posaconazole) and HIV protease inhibitors (e.g., ritonavir). These medicinal products may increase apixaban exposure by 2-fold (see section 4.5) or greater in the presence of additional factors that increase apixaban exposure (e.g., severe renal impairment). No clinical data are available in paediatric patients receiving concomitant systemic treatment with strong inhibitors of both CYP 3A4 and P-gp (see section 4.5).
+- for the prevention of stroke and systemic embolism in patients with NVAF and for the prevention of recurrent DVT and PE, apixaban should be used with caution;
+Laboratory parameters
+Information about excipients
+
+[eliquis p.44 SmPC 4.5] (distance 0.205)
+Eliquis | Eliquis 5 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+4.5 Interaction with other medicinal products and other forms of interaction
+Inhibitors of CYP3A4 and P-gp
+Inducers of CYP3A4 and P-gp
+Coadministration of apixaban with rifampicin, a strong inducer of both CYP3A4 and P-gp, led to an approximate 54% and 42% decrease in mean apixaban AUC and Cmax, respectively. The concomitant use of apixaban with other strong CYP3A4 and P-gp inducers (e.g., phenytoin, carbamazepine, phenobarbital or St. John’s Wort) may also lead to reduced apixaban plasma concentrations. No dose adjustment for apixaban is required during concomitant therapy with such medicinal products, however in patients receiving concomitant systemic treatment with strong inducers of both CYP3A4 and P-gp apixaban should be used with caution for the prevention of stroke and systemic embolism in patients with NVAF and for the prevention of recurrent DVT and PE. Apixaban is not recommended for the treatment of DVT and PE in patients receiving concomitant systemic treatment with strong inducers of both CYP3A4 and P-gp since efficacy may be compromised (see section 4.4).
+Despite these findings, there may be individuals with a more pronounced pharmacodynamic response when antiplatelet agents are coadministered with apixaban. Apixaban should be used with caution
+when coadministered with SSRIs/SNRIs, NSAIDs, ASA and/or P2Y12 inhibitors because these medicinal products typically increase the bleeding risk (see section 4.4).
+Other concomitant therapies
+Effect of apixaban on other medicinal products
+
+[xarelto p.8 SmPC 4.5] (distance 0.137)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+4.5 Interaction with other medicinal products and other forms of interaction
+CYP3A4 and P-gp inhibitors Co-administration of rivaroxaban with ketoconazole (400 mg once a day) or ritonavir (600 mg twice a day) led to a 2.6 fold / 2.5 fold increase in mean rivaroxaban AUC and a 1.7 fold / 1.6 fold increase in mean rivaroxaban Cmax, with significant increases in pharmacodynamic effects which may lead to an increased bleeding risk. Therefore, the use of Xarelto is not recommended in patients receiving concomitant systemic treatment with azole-antimycotics such as ketoconazole, itraconazole, voriconazole and posaconazole or HIV protease inhibitors. These active substances are strong inhibitors of both CYP3A4 and P-gp (see section 4.4).
+Active substances strongly inhibiting only one of the rivaroxaban elimination pathways, either CYP3A4 or P-gp, are expected to increase rivaroxaban plasma concentrations to a lesser extent. Clarithromycin (500 mg twice a day), for instance, considered as a strong CYP3A4 inhibitor and moderate P-gp inhibitor, led to a 1.5 fold increase in mean rivaroxaban AUC and a 1.4 fold increase in Cmax. The interaction with clarithromycin is likely not clinically relevant in most patients but can be potentially significant in high-risk patients. (For patients with renal impairment: see section 4.4).
+
+[xarelto p.34 SmPC 4.5] (distance 0.152)
+Xarelto | Xarelto 10 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+4.5 Interaction with other medicinal products and other forms of interaction
+CYP3A4 and P-gp inhibitors Co-administration of rivaroxaban with ketoconazole (400 mg once a day) or ritonavir (600 mg twice a day) led to a 2.6 fold / 2.5 fold increase in mean rivaroxaban AUC and a 1.7 fold / 1.6 fold increase in mean rivaroxaban Cmax, with significant increases in pharmacodynamic effects which may lead to an increased bleeding risk. Therefore, the use of Xarelto is not recommended in patients receiving concomitant systemic treatment with azole-antimycotics such as ketoconazole, itraconazole,
+voriconazole and posaconazole or HIV protease inhibitors. These active substances are strong inhibitors of both CYP3A4 and P-gp (see section 4.4).
+NSAIDs/platelet aggregation inhibitors No clinically relevant prolongation of bleeding time was observed after concomitant administration of rivaroxaban (15 mg) and 500 mg naproxen. Nevertheless, there may be individuals with a more pronounced pharmacodynamic response. No clinically significant pharmacokinetic or pharmacodynamic interactions were observed when rivaroxaban was co-administered with 500 mg acetylsalicylic acid. Clopidogrel (300 mg loading dose followed by 75 mg maintenance dose) did not show a pharmacokinetic interaction with rivaroxaban (15 mg) but a relevant increase in bleeding time was observed in a subset of patients which was not correlated to platelet aggregation, P-selectin or GPIIb/IIIa receptor levels. Care is to be taken if patients are treated concomitantly with NSAIDs (including acetylsalicylic acid) and platelet aggregation inhibitors because these medicinal products typically increase the bleeding risk (see section 4.4).
+
+[xarelto p.90 SmPC 4.3] (distance 0.158)
+Xarelto | Xarelto 20 mg film-coated tablets | SmPC 4.3 Contraindications; SmPC 4.4 Special warnings and precautions for use
+4.3 Contraindications
+Active clinically significant bleeding.
+4.4 Special warnings and precautions for use
+Interaction with other medicinal products The use of Xarelto is not recommended in patients receiving concomitant systemic treatment with azole-antimycotics (such as ketoconazole, itraconazole, voriconazole and posaconazole) or HIV protease inhibitors (e.g. ritonavir). These active substances are strong inhibitors of both CYP3A4 and P-gp and therefore may increase rivaroxaban plasma concentrations to a clinically relevant degree (2.6 fold on average) which may lead to an increased bleeding risk. No clinical data is available in children receiving concomitant systemic treatment with strong inhibitors of both CYP3A4 and P-gp (see section 4.5).
+
+[xarelto p.59 SmPC 4.4] (distance 0.169)
+Xarelto | Xarelto 15 mg film-coated tablets | SmPC 4.4 Special warnings and precautions for use
+Interaction with other medicinal products The use of Xarelto is not recommended in patients receiving concomitant systemic treatment with azole-antimycotics (such as ketoconazole, itraconazole, voriconazole and posaconazole) or HIV protease inhibitors (e.g. ritonavir). These active substances are strong inhibitors of both CYP3A4 and P-gp and therefore may increase rivaroxaban plasma concentrations to a clinically relevant degree (2.6 fold on average) which may lead to an increased bleeding risk. No clinical data is available in children receiving concomitant systemic treatment with strong inhibitors of both CYP 3A4 and P-gp (see section 4.5).
+Care is to be taken if patients are treated concomitantly with medicinal products affecting haemostasis such as non-steroidal anti-inflammatory medicinal products (NSAIDs), acetylsalicylic acid and platelet aggregation inhibitors or selective serotonin reuptake inhibitors (SSRIs), and serotonin norepinephrine reuptake inhibitors (SNRIs). For patients at risk of ulcerative gastrointestinal disease an appropriate prophylactic treatment may be considered (see section 4.5).
+Patients with non-valvular atrial fibrillation who undergo PCI with stent placement Clinical data are available from an interventional study with the primary objective to assess safety in patients with non-valvular atrial fibrillation who undergo PCI with stent placement. Data on efficacy in this population are limited (see sections 4.2 and 5.1). No data are available for such patients with a history of stroke/ transient ischaemic attack (TIA).
+
+[xarelto p.8 SmPC 4.5] (distance 0.171)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+Erythromycin (500 mg three times a day), which inhibits CYP3A4 and P-gp moderately, led to a 1.3 fold increase in mean rivaroxaban AUC and Cmax. The interaction with erythromycin is likely not clinically relevant in most patients but can be potentially significant in high-risk patients. In subjects with mild renal impairment erythromycin (500 mg three times a day) led to a 1.8 fold increase in mean rivaroxaban AUC and 1.6 fold increase in Cmax when compared to subjects with normal renal function. In subjects with moderate renal impairment, erythromycin led to a 2.0 fold increase in mean rivaroxaban AUC and 1.6 fold increase in Cmax when compared to subjects with normal renal function. The effect of erythromycin is additive to that of renal impairment (see section 4.4).
+Fluconazole (400 mg once daily), considered as a moderate CYP3A4 inhibitor, led to a 1.4 fold increase in mean rivaroxaban AUC and a 1.3 fold increase in mean Cmax. The interaction with fluconazole is likely not clinically relevant in most patients but can be potentially significant in highrisk patients. (For patients with renal impairment: see section 4.4).
+Given the limited clinical data available with dronedarone, co-administration with rivaroxaban should be avoided.
+Anticoagulants After combined administration of enoxaparin (40 mg single dose) with rivaroxaban (10 mg single dose) an additive effect on anti-factor Xa activity was observed without any additional effects on clotting tests (PT, aPTT). Enoxaparin did not affect the pharmacokinetics of rivaroxaban. Due to the increased bleeding risk care is to be taken if patients are treated concomitantly with any other anticoagulants (see sections 4.3 and 4.4).
+```
+</details>
+
+---
+
+## q27 (unanswerable)
+
+**Question:** What is the dose of edoxaban (Lixiana) for atrial fibrillation?
+
+**Reference:** The documents do not cover edoxaban (Lixiana); check its own product information or ask the pharmacist.
+
+**Agent answer:** The product information in the corpus does not cover this; please ask the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[eliquis p.2 SmPC 4.2] (distance 0.255)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+4.2 Posology and method of administration
+Posology
+Prevention of VTE (VTEp): elective hip or knee replacement surgery in adults The recommended dose of apixaban is 2.5 mg taken orally twice daily. The initial dose should be taken 12 to 24 hours after surgery.
+Physicians may consider the potential benefits of earlier anticoagulation for VTE prophylaxis as well as the risks of post-surgical bleeding in deciding on the time of administration within this time window.
+In patients undergoing hip replacement surgery The recommended duration of treatment is 32 to 38 days.
+In patients undergoing knee replacement surgery The recommended duration of treatment is 10 to 14 days.
+Prevention of stroke and systemic embolism in adult patients with non-valvular atrial fibrillation (NVAF) The recommended dose of apixaban is 5 mg taken orally twice daily.
+Dose reduction The recommended dose of apixaban is 2.5 mg taken orally twice daily in patients with NVAF and at least two of the following characteristics: age ≥ 80 years, body weight ≤ 60 kg, or serum creatinine ≥ 1.5 mg/dL (133 micromole/L).
+Therapy should be continued long-term.
+Treatment of DVT, treatment of PE and prevention of recurrent DVT and PE (VTEt) in adults The recommended dose of apixaban for the treatment of acute DVT and treatment of PE is 10 mg taken orally twice daily for the first 7 days followed by 5 mg taken orally twice daily. As per available medical guidelines, short duration of treatment (at least 3 months) should be based on transient risk factors (e.g., recent surgery, trauma, immobilisation).
+
+[pradaxa p.73 SmPC 4.2] (distance 0.259)
+Pradaxa | Pradaxa 150 mg hard capsules | SmPC 4.2 Posology and method of administration
+4.2 Posology and method of administration
+Posology
+The recommended doses of dabigatran etexilate in the indications SPAF, DVT and PE are shown in table 1.
+Table 1: Dose recommendations for SPAF, DVT and PE
+Dose reduction recommended
+Dose reduction for consideration
+Duration of use
+The duration of use of dabigatran etexilate in the indications SPAF, DVT and PE are shown in table 2.
+Table 2: Duration of use for SPAF and DVT/PE
+Missed dose
+Discontinuation of dabigatran etexilate
+Switching
+Cardioversion (SPAF)
+Catheter ablation for atrial fibrillation (SPAF)
+Catheter ablation can be conducted in patients on 150 mg twice daily dabigatran etexilate treatment. Dabigatran etexilate treatment does not need to be interrupted (see section 5.1).
+Percutaneous coronary intervention (PCI) with stenting (SPAF)
+Special populations
+Elderly
+For dose modifications in this population see table 1 above.
+Patients at risk of bleeding
+Patients with an increased bleeding risk (see sections 4.4, 4.5, 5.1 and 5.2) should be closely monitored clinically (looking for signs of bleeding or anaemia). Dose adjustment should be decided at the discretion of the physician, following assessment of the potential benefit and risk to an individual patient (see table 1 above). A coagulation test (see section 4.4) may help to identify patients with an increased bleeding risk caused by excessive dabigatran exposure. When excessive dabigatran exposure is identified in patients at high risk of bleeding, a reduced dose of 220 mg taken as one 110 mg capsule twice daily is recommended. When clinically relevant bleeding occurs, treatment should be interrupted.
+For subjects with gastritis, esophagitis, or gastroesophageal reflux, a dose reduction may be considered due to the elevated risk of major gastro-intestinal bleeding (see table 1 above and section 4.4).
+Renal impairment
+
+[eliquis p.142 Leaflet 3] (distance 0.268)
+Eliquis | Eliquis 2.5 mg film-coated tablets | Leaflet 3 How to take Eliquis
+If you have had a major hip operation you will usually take the tablets for 32 to 38 days. If you have had a major knee operation you will usually take the tablets for 10 to 14 days.
+To prevent a blood clot from forming in the heart in patients with an irregular heart beat and at least one additional risk factor. The recommended dose is one tablet of Eliquis 5 mg twice a day.
+The recommended dose is one tablet of Eliquis 2.5 mg twice a day if: - you have severely reduced kidney function; - two or more of the following apply to you: - your blood test results suggest poor kidney function (value of serum creatinine is 1.5 mg/dL (133 micromole/L) or greater); - you are 80 years old or older; - your weight is 60 kg or lower.
+The recommended dose is one tablet twice a day, for example, one in the morning and one in the evening. Your doctor will decide how long you must continue treatment for.
+To treat blood clots in the veins of your legs and blood clots in the blood vessels of your lungs The recommended dose is two tablets of Eliquis 5 mg twice a day for the first 7 days, for example, two in the morning and two in the evening. After 7 days the recommended dose is one tablet of Eliquis 5 mg twice a day, for example, one in the morning and one in the evening.
+For preventing blood clots from re-occurring following completion of 6 months of treatment The recommended dose is one tablet of Eliquis 2.5 mg twice a day for example, one in the morning and one in the evening. Your doctor will decide how long you must continue treatment for.
+
+[pradaxa p.179 Leaflet 3] (distance 0.269)
+Pradaxa | Pradaxa 150 mg hard capsules | Leaflet 3 How to take Pradaxa
+3. How to take Pradaxa
+Prevention of brain or body vessel obstruction by blood clot formation developing after abnormal
+heart beats and Treatment of blood clots in the veins of your legs and lungs including prevention of blood clots from re-occurring in the vein of your legs and lungs
+If you are 80 years or older, the recommended dose is 220 mg taken as one 110 mg capsule twice daily.
+You can continue to take this medicine if your heart beat needs to be restored to normal by a procedure called cardioversion or by a procedure called catheter ablation for atrial fibrillation. Take Pradaxa as your physician has told you.
+Table 1: Dosing table for Pradaxa capsules
+How to take Pradaxa
+Instructions for opening the blisters
+Instructions for the bottle
+Change of anticoagulant treatment
+If you forget to take Pradaxa
+A forgotten dose can still be taken up to 6 hours prior to the next due dose. A missed dose should be omitted if the remaining time is below 6 hours prior to the next due dose. Do not double a dose to make up for a forgotten dose.
+If you stop taking Pradaxa
+
+[xarelto p.56 SmPC 4.2] (distance 0.271)
+Xarelto | Xarelto 15 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+Special populations Renal impairment Adults: Limited clinical data for patients with severe renal impairment (creatinine clearance 15 - 29 ml/min) indicate that rivaroxaban plasma concentrations are significantly increased. Therefore, Xarelto is to be used with caution in these patients. Use is not recommended in patients with creatinine clearance < 15 ml/min (see sections 4.4 and 5.2).
+In patients with moderate (creatinine clearance 30 - 49 ml/min) or severe (creatinine clearance 1529 ml/min) renal impairment the following dose recommendations apply:
+- For the prevention of stroke and systemic embolism in patients with non-valvular atrial fibrillation, the recommended dose is 15 mg once daily (see section 5.2).
+- For the treatment of DVT, treatment of PE and prevention of recurrent DVT and PE: patients should be treated with 15 mg twice daily for the first 3 weeks. Thereafter, when the recommended dose is 20 mg once daily, a reduction of the dose from 20 mg once daily to 15 mg once daily should be considered if the patient’s assessed risk for bleeding outweighs the risk for recurrent DVT and PE. The recommendation for the use of 15 mg is based on PK modelling and has not been studied in this clinical setting (see sections 4.4, 5.1 and 5.2). When the recommended dose is 10 mg once daily, no dose adjustment from the recommended dose is necessary.
+No dose adjustment is necessary in patients with mild renal impairment (creatinine clearance 50 - 80 ml/min) (see section 5.2).
+```
+</details>
+
+---
+
+## q28 (unanswerable)
+
+**Question:** How much does Eliquis cost in Spain, and is it reimbursed by the public health system?
+
+**Reference:** The documents do not include prices or reimbursement information; ask the pharmacist.
+
+**Agent answer:** The product information in the corpus does not cover this; please ask the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[eliquis p.139 Leaflet 1] (distance 0.265)
+Eliquis | Eliquis 2.5 mg film-coated tablets | Leaflet 1 What Eliquis is and what it is used for
+1. What Eliquis is and what it is used for
+Eliquis contains the active substance apixaban and belongs to a group of medicines called anticoagulants. This medicine helps to prevent blood clots from forming by blocking Factor Xa, which is an important component of blood clotting.
+Eliquis is used in adults: - to prevent blood clots (deep vein thrombosis [DVT]) from forming after hip or knee replacement operations. After an operation to the hip or knee you may be at a higher risk of developing blood clots in your leg veins. This can cause the legs to swell, with or without pain. If a blood clot travels from your leg to your lungs, it can block blood flow causing breathlessness, with or without chest pain. This condition (pulmonary embolism) can be life-threatening and requires immediate medical attention.
+- to prevent a blood clot from forming in the heart in patients with an irregular heart beat (atrial fibrillation) and at least one additional risk factor. Blood clots may break off and travel to the brain and lead to a stroke or to other organs and prevent normal blood flow to that organ (also known as a systemic embolism). A stroke can be life-threatening and requires immediate medical attention.
+- to treat blood clots in the veins of your legs (deep vein thrombosis) and in the blood vessels of your lungs (pulmonary embolism), and to prevent blood clots from re-occurring in the blood vessels of your legs and/or lungs.
+Eliquis is used in children aged 28 days to less than 18 years to treat blood clots and to prevent reoccurrence of blood clots in the veins or in the blood vessels of the lungs.
+For body weight appropriate recommended dose, see section 3.
+
+[eliquis p.2 SmPC 4.2] (distance 0.272)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+4.2 Posology and method of administration
+Posology
+Prevention of VTE (VTEp): elective hip or knee replacement surgery in adults The recommended dose of apixaban is 2.5 mg taken orally twice daily. The initial dose should be taken 12 to 24 hours after surgery.
+Physicians may consider the potential benefits of earlier anticoagulation for VTE prophylaxis as well as the risks of post-surgical bleeding in deciding on the time of administration within this time window.
+In patients undergoing hip replacement surgery The recommended duration of treatment is 32 to 38 days.
+In patients undergoing knee replacement surgery The recommended duration of treatment is 10 to 14 days.
+Prevention of stroke and systemic embolism in adult patients with non-valvular atrial fibrillation (NVAF) The recommended dose of apixaban is 5 mg taken orally twice daily.
+Dose reduction The recommended dose of apixaban is 2.5 mg taken orally twice daily in patients with NVAF and at least two of the following characteristics: age ≥ 80 years, body weight ≤ 60 kg, or serum creatinine ≥ 1.5 mg/dL (133 micromole/L).
+Therapy should be continued long-term.
+Treatment of DVT, treatment of PE and prevention of recurrent DVT and PE (VTEt) in adults The recommended dose of apixaban for the treatment of acute DVT and treatment of PE is 10 mg taken orally twice daily for the first 7 days followed by 5 mg taken orally twice daily. As per available medical guidelines, short duration of treatment (at least 3 months) should be based on transient risk factors (e.g., recent surgery, trauma, immobilisation).
+
+[eliquis p.40 SmPC 4.4] (distance 0.272)
+Eliquis | Eliquis 5 mg film-coated tablets | SmPC 4.4 Special warnings and precautions for use
+4.4 Special warnings and precautions for use
+Haemorrhage risk
+Interaction with other medicinal products affecting haemostasis
+In patients with atrial fibrillation and conditions that warrant mono or dual antiplatelet therapy, a careful assessment of the potential benefits against the potential risks should be made before combining this therapy with Eliquis.
+Patients with prosthetic heart valves
+Patients with antiphospholipid syndrome
+Direct acting Oral Anticoagulants (DOACs) including apixaban are not recommended for patients with a history of thrombosis who are diagnosed with antiphospholipid syndrome. In particular for patients that are triple positive (for lupus anticoagulant, anticardiolipin antibodies, and anti-beta
+2-glycoprotein I antibodies), treatment with DOACs could be associated with increased rates of recurrent thrombotic events compared with vitamin K antagonist therapy.
+Surgery and invasive procedures
+Temporary discontinuation
+Spinal/epidural anaesthesia or puncture
+When neuraxial anaesthesia (spinal/epidural anaesthesia) or spinal/epidural puncture is employed, patients treated with antithrombotic agents for prevention of thromboembolic complications are at risk of developing an epidural or spinal haematoma which can result in long-term or permanent paralysis. The risk of these events may be increased by the postoperative use of indwelling epidural catheters or the concomitant use of medicinal products affecting haemostasis. Indwelling epidural or intrathecal catheters must be removed at least 5 hours prior to the first dose of apixaban. The risk may also be increased by traumatic or repeated epidural or spinal puncture. Patients are to be frequently monitored for signs and symptoms of neurological impairment (e.g., numbness or weakness of the legs, bowel or bladder dysfunction). If neurological compromise is noted, urgent diagnosis and treatment is necessary. Prior to neuraxial intervention the physician should consider the potential benefit versus the risk in anticoagulated patients or in patients to be anticoagulated for thromboprophylaxis.
+Patients with active cancer
+Patients with renal impairment
+
+[eliquis p.9 SmPC 4.4] (distance 0.273)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.4 Special warnings and precautions for use
+There is no clinical experience with the use of apixaban with indwelling intrathecal or epidural catheters. In case there is such need and based on the general PK characteristics of apixaban, a time interval of 20-30 hours (i.e., 2 x half-life) between the last dose of apixaban and catheter withdrawal should elapse, and at least one dose should be omitted before catheter withdrawal. The next dose of apixaban may be given at least 5 hours after catheter removal. As with all new anticoagulant medicinal products, experience with neuraxial blockade is limited and extreme caution is therefore recommended when using apixaban in the presence of neuraxial blockade.
+No data are available on the timing of the placement or removal of neuraxial catheter in paediatric patients while on apixaban. In such cases, discontinue apixaban and consider a short acting parenteral anticoagulant.
+Haemodynamically unstable PE patients or patients who require thrombolysis or pulmonary embolectomy
+Apixaban is not recommended as an alternative to unfractionated heparin in patients with pulmonary embolism who are haemodynamically unstable or may receive thrombolysis or pulmonary embolectomy since the safety and efficacy of apixaban have not been established in these clinical situations.
+Patients with active cancer
+Patients with active cancer can be at high risk of both venous thromboembolism and bleeding events. When apixaban is considered for DVT or PE treatment in cancer patients, a careful assessment of the benefits against the risks should be made (see also section 4.3).
+Patients with renal impairment
+
+[eliquis p.36 SmPC 1] (distance 0.274)
+Eliquis | Eliquis 5 mg film-coated tablets | SmPC 1 NAME OF THE MEDICINAL PRODUCT; SmPC 2 QUALITATIVE AND QUANTITATIVE COMPOSITION; SmPC 3 PHARMACEUTICAL FORM; SmPC 4 CLINICAL PARTICULARS; SmPC 4.1 Therapeutic indications; SmPC 4.2 Posology and method of administration
+Eliquis 5 mg film-coated tablets
+2. QUALITATIVE AND QUANTITATIVE COMPOSITION
+Each film-coated tablet contains 5 mg apixaban.
+Excipients with known effect
+Each 5 mg film-coated tablet contains 103 mg lactose (see section 4.4).
+3. PHARMACEUTICAL FORM
+Film-coated tablet (tablet) Pink, oval tablets (10 mm x 5mm) debossed with 894 on one side and 5 on the other side.
+4. CLINICAL PARTICULARS
+4.1 Therapeutic indications
+Adults
+Paediatric population
+4.2 Posology and method of administration
+Posology
+Therapy should be continued long-term.
+Missed dose for adults and paediatric patients A missed morning dose should be taken immediately when it is noticed, and it may be taken together with the evening dose. A missed evening dose can only be taken during the same evening, the patient should not take two doses the next morning. The patient should continue with the intake of the regular dose twice daily as recommended on the following day.
+No data are available for paediatric patients.
+Elderly VTEt - No dose adjustment required (see sections 4.4 and 5.2).
+Renal impairment
+Adult patients
+In adult patients with mild or moderate renal impairment, the following recommendations apply:
+- for the treatment of DVT, treatment of PE and prevention of recurrent DVT and PE (VTEt), no dose adjustment is necessary (see section 5.2).
+- for the prevention of stroke and systemic embolism in patients with NVAF and serum creatinine ≥ 1.5 mg/dL (133 micromole/L) associated with age ≥ 80 years or body weight ≤ 60 kg, a dose reduction is necessary (see above subheading Dose reduction). In the absence of other criteria for dose reduction (age, body weight), no dose adjustment is necessary (see section 5.2).
+- for the treatment of DVT, treatment of PE and prevention of recurrent DVT and PE (VTEt) apixaban is to be used with caution;
+```
+</details>
+
+---
+
+## q29 (unanswerable)
+
+**Question:** Can I drink alcohol while taking Xarelto?
+
+**Reference:** The documents do not say anything about alcohol; ask the doctor or pharmacist.
+
+**Agent answer:** The product information in the corpus does not cover the use of alcohol with Xarelto (rivaroxaban). 
+
+The other medicines mentioned (Eliquis and Pradaxa) are also not covered regarding alcohol.
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[xarelto p.9 SmPC 4.5] (distance 0.197)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+Other concomitant therapies No clinically significant pharmacokinetic or pharmacodynamic interactions were observed when rivaroxaban was co-administered with midazolam (substrate of CYP3A4), digoxin (substrate of P-gp), atorvastatin (substrate of CYP3A4 and P-gp) or omeprazole (proton pump inhibitor). Rivaroxaban neither inhibits nor induces any major CYP isoforms like CYP3A4. No clinically relevant interaction with food was observed (see section 4.2).
+Laboratory parameters Clotting parameters (e.g. PT, aPTT, HepTest) are affected as expected by the mode of action of rivaroxaban (see section 5.1).
+
+[xarelto p.4 SmPC 4.2] (distance 0.204)
+Xarelto | Xarelto 2.5 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+Method of administration Xarelto is for oral use. The tablets can be taken with or without food (see sections 4.5 and 5.2).
+Crushing of tablets For patients who are unable to swallow whole tablets, Xarelto tablet may be crushed and mixed with water or apple puree immediately prior to use and administered orally. The crushed tablet may also be given through gastric tubes (see sections 5.2 and 6.6).
+
+[xarelto p.167 Annex II] (distance 0.21)
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | Annex II
+The MAH must agree the content and format of the Prescriber Guide together with a communication plan, with the national competent authority in each Member State prior to distribution of the educational pack in their territory. The Prescriber Guide should contain the following key safety messages: • Details of populations potentially at higher risk of bleeding • Recommendations for dose reduction in at risk populations • Guidance regarding switching from or to rivaroxaban treatment • The need for intake of the 15 mg and 20 mg tablets with food • Management of overdose situations • The use of coagulation tests and their interpretation • That all patients should be counselled about: ➢ Signs or symptoms of bleeding and when to seek attention from a health care provider. ➢ Importance of treatment compliance ➢ The need for intake of the 15 mg and 20 mg tablets with food ➢ Necessity to carry the Patient Alert Card that is included in each pack, with them at all times ➢ The need to inform Health Care Professionals that they are taking Xarelto if they need to have any surgery or invasive procedure. • That all parents/caregivers of paediatric patients and all paediatric patients administered Xarelto granules for oral suspension should be counselled about: ➢ reconstitution and dosing of the oral suspension
+The MAH shall also provide a Patient Alert Card in each medicine pack, the text of which is included in Annex III.
+
+[xarelto p.256 Leaflet 3] (distance 0.218)
+Xarelto | Xarelto 15 mg film-coated tablets | Leaflet 3 How to take Xarelto
+3. How to take Xarelto
+You must take Xarelto together with a meal. Swallow the tablet(s) preferably with water.
+If you have difficulty swallowing the tablet whole, talk to your doctor about other ways to take Xarelto. The tablet may be crushed and mixed with water or apple puree immediately before you take it. This mixture should be immediately followed by food. If necessary, your doctor may also give you the crushed Xarelto tablet through a stomach tube.
+How much to take • Adults ▪ To prevent blood clots in brain (stroke) and other blood vessels in your body The recommended dose is one tablet Xarelto 20 mg once a day. If you have kidney problems, the dose may be reduced to one tablet Xarelto 15 mg once a day.
+If you need a procedure to treat blocked blood vessels in your heart (called a percutaneous coronary intervention - PCI with an insertion of a stent), there is limited evidence to reduce the dose to one tablet Xarelto 15 mg once a day (or to one tablet Xarelto 10 mg once a day in case your kidneys are not working properly) in addition to an antiplatelet medicine such as clopidogrel.
+
+[xarelto p.34 SmPC 4.5] (distance 0.22)
+Xarelto | Xarelto 10 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+4.5 Interaction with other medicinal products and other forms of interaction
+CYP3A4 and P-gp inhibitors Co-administration of rivaroxaban with ketoconazole (400 mg once a day) or ritonavir (600 mg twice a day) led to a 2.6 fold / 2.5 fold increase in mean rivaroxaban AUC and a 1.7 fold / 1.6 fold increase in mean rivaroxaban Cmax, with significant increases in pharmacodynamic effects which may lead to an increased bleeding risk. Therefore, the use of Xarelto is not recommended in patients receiving concomitant systemic treatment with azole-antimycotics such as ketoconazole, itraconazole,
+voriconazole and posaconazole or HIV protease inhibitors. These active substances are strong inhibitors of both CYP3A4 and P-gp (see section 4.4).
+NSAIDs/platelet aggregation inhibitors No clinically relevant prolongation of bleeding time was observed after concomitant administration of rivaroxaban (15 mg) and 500 mg naproxen. Nevertheless, there may be individuals with a more pronounced pharmacodynamic response. No clinically significant pharmacokinetic or pharmacodynamic interactions were observed when rivaroxaban was co-administered with 500 mg acetylsalicylic acid. Clopidogrel (300 mg loading dose followed by 75 mg maintenance dose) did not show a pharmacokinetic interaction with rivaroxaban (15 mg) but a relevant increase in bleeding time was observed in a subset of patients which was not correlated to platelet aggregation, P-selectin or GPIIb/IIIa receptor levels. Care is to be taken if patients are treated concomitantly with NSAIDs (including acetylsalicylic acid) and platelet aggregation inhibitors because these medicinal products typically increase the bleeding risk (see section 4.4).
+
+[xarelto p.167 Annex II] (distance 0.205)
+Xarelto | Xarelto 1 mg/mL granules for oral suspension | Annex II
+The MAH must agree the content and format of the Prescriber Guide together with a communication plan, with the national competent authority in each Member State prior to distribution of the educational pack in their territory. The Prescriber Guide should contain the following key safety messages: • Details of populations potentially at higher risk of bleeding • Recommendations for dose reduction in at risk populations • Guidance regarding switching from or to rivaroxaban treatment • The need for intake of the 15 mg and 20 mg tablets with food • Management of overdose situations • The use of coagulation tests and their interpretation • That all patients should be counselled about: ➢ Signs or symptoms of bleeding and when to seek attention from a health care provider. ➢ Importance of treatment compliance ➢ The need for intake of the 15 mg and 20 mg tablets with food ➢ Necessity to carry the Patient Alert Card that is included in each pack, with them at all times ➢ The need to inform Health Care Professionals that they are taking Xarelto if they need to have any surgery or invasive procedure. • That all parents/caregivers of paediatric patients and all paediatric patients administered Xarelto granules for oral suspension should be counselled about: ➢ reconstitution and dosing of the oral suspension
+The MAH shall also provide a Patient Alert Card in each medicine pack, the text of which is included in Annex III.
+
+[xarelto p.236 Leaflet] (distance 0.212)
+Xarelto | Xarelto 2.5 mg film-coated tablets | Leaflet
+Read all of this leaflet carefully before you start taking this medicine because it contains important information for you. - Keep this leaflet. You may need to read it again. - If you have any further questions, ask your doctor or pharmacist. - This medicine has been prescribed for you only. Do not pass it on to others. It may harm them, even if their signs of illness are the same as yours. - If you get any side effects, talk to your doctor or pharmacist. This includes any possible side effects not listed in this leaflet. See section 4.
+What is in this leaflet
+
+[xarelto p.237 Leaflet 2] (distance 0.216)
+Xarelto | Xarelto 2.5 mg film-coated tablets | Leaflet 2 What you need to know before you take Xarelto
+Take special care with Xarelto • if you have an increased risk of bleeding, as could be the case in situations such as: ▪ severe kidney disease, since your kidney function may affect the amount of medicine that works in your body ▪ if you are taking other medicines to prevent blood clotting (e.g. warfarin, dabigatran, apixaban or heparin), when changing anticoagulant treatment or while getting heparin through a venous or arterial line to keep it open (see section “Other medicines and Xarelto”) ▪ bleeding disorders ▪ very high blood pressure, not controlled by medical treatment ▪ diseases of your stomach or bowel that might result in bleeding, e.g. inflammation of the bowels or stomach, or inflammation of the oesophagus (gullet), e.g. due to gastroesophageal reflux disease (disease where stomach acid goes upwards into the oesophagus) or tumours located in the stomach or bowels or genital tract or urinary tract ▪ a problem with the blood vessels in the back of your eyes (retinopathy) ▪ a lung disease where your bronchi are widened and filled with pus (bronchiectasis), or previous bleeding from your lung ▪ you are older than 75 years ▪ you weigh less than 60 kg ▪ you have a coronary artery disease with severe symptomatic heart failure • if you have a prosthetic heart valve • if you know that you have a disease called antiphospholipid syndrome (a disorder of the immune system that causes an increased risk of blood clots), tell your doctor who will decide if the treatment may need to be changed.
+If any of the above apply to you, tell your doctor before you take Xarelto. Your doctor will decide, if you should be treated with this medicine and if you should be kept under closer observation.
+
+[xarelto p.236 Leaflet 2] (distance 0.217)
+Xarelto | Xarelto 2.5 mg film-coated tablets | Leaflet 2 What you need to know before you take Xarelto
+2. What you need to know before you take Xarelto
+Do not take Xarelto • if you are allergic to rivaroxaban or any of the other ingredients of this medicine (listed in section 6)
+• if you are bleeding excessively • if you have a disease or condition in an organ of the body that increases the risk of serious bleeding (e.g. stomach ulcer, injury or bleeding in the brain, recent surgery of the brain or eyes) • if you are taking medicines to prevent blood clotting (e.g. warfarin, dabigatran, apixaban or heparin), except when changing anticoagulant treatment or while getting heparin through a venous or arterial line to keep it open • if you have an acute coronary syndrome and previously had a bleeding or a blood clot in your brain (stroke) • if you have coronary artery disease or peripheral artery disease and previously had a bleeding in your brain (stroke) or where there was a blockage of the small arteries providing blood to the brain’s deep tissues (lacunar stroke) or if you had a blood clot in your brain (ischaemic, nonlacunar stroke) in the previous month • if you have a liver disease which leads to an increased risk of bleeding • if you are pregnant or breast-feeding Do not take Xarelto and tell your doctor if any of these apply to you.
+Warnings and precautions Talk to your doctor or pharmacist before taking Xarelto. Xarelto should not be used in combination with certain other medicines which reduce blood clotting such as prasugrel or ticagrelor other than acetylsalicylic acid and clopidogrel/ticlopidine.
+
+[xarelto p.245 Leaflet 2] (distance 0.218)
+Xarelto | Xarelto 10 mg film-coated tablets | Leaflet 2 What you need to know before you take Xarelto
+2. What you need to know before you take Xarelto
+Do not take Xarelto - if you are allergic to rivaroxaban or any of the other ingredients of this medicine (listed in section 6) - if you are bleeding excessively - if you have a disease or condition in an organ of the body that increases the risk of serious bleeding (e.g. stomach ulcer, injury or bleeding in the brain, recent surgery of the brain or eyes) - if you are taking medicines to prevent blood clotting (e.g. warfarin, dabigatran, apixaban or heparin), except when changing anticoagulant treatment or while getting heparin through a venous or arterial line to keep it open - if you have a liver disease which leads to an increased risk of bleeding - if you are pregnant or breast-feeding Do not take Xarelto and tell your doctor if any of these apply to you.
+Warnings and precautions Talk to your doctor or pharmacist before taking Xarelto.
+```
+</details>
+
+---
+
+## q30 (unanswerable)
+
+**Question:** Can I take ginkgo biloba supplements with Pradaxa?
+
+**Reference:** The documents do not mention ginkgo biloba; ask the doctor or pharmacist before taking it.
+
+**Agent answer:** The product information in the corpus does not cover this; please ask the pharmacist or doctor.
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[pradaxa p.14 SmPC 4.5] (distance 0.208)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+Table 9: Other interactions
+Selective serotonin re-uptake inhibitors (SSRIs) or selective serotonin norepinephrine re-uptake inhibitors (SNRIs)
+SSRIs, SNRIs SSRIs and SNRIs increased the risk of bleeding in all treatment groups of a phase III clinical trial comparing dabigatran to warfarin for stroke prevention in atrial fibrillation patients (RE-LY).
+Substances influencing gastric pH
+Pantoprazole When Pradaxa was co-administered with pantoprazole, a decrease in the dabigatran AUC of approximately 30 % was observed. Pantoprazole and other proton-pump inhibitors (PPI) were co-administered with Pradaxa in clinical trials, and concomitant PPI treatment did not appear to reduce the efficacy of Pradaxa. Ranitidine Ranitidine administration together with dabigatran etexilate had no clinically relevant effect on the extent of absorption of dabigatran.
+Interactions linked to dabigatran etexilate and dabigatran metabolic profile
+Dabigatran etexilate and dabigatran are not metabolised by the cytochrome P450 system and have no in vitro effects on human cytochrome P450 enzymes. Therefore, related medicinal product interactions are not expected with dabigatran.
+Paediatric population
+Interaction studies have only been performed in adults.
+
+[pradaxa p.14 SmPC 4.5] (distance 0.21)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+NSAIDs NSAIDs given for short-term analgesia have been shown not to be associated with increased bleeding risk when given in conjunction with dabigatran etexilate. With chronic use in a phase III clinical trial comparing dabigatran to warfarin for stroke prevention in atrial fibrillation patients (RE-LY), NSAIDs increased the risk of bleeding by approximately 50 % on both dabigatran etexilate and warfarin. Clopidogrel In young healthy male volunteers, the concomitant administration of dabigatran etexilate and clopidogrel resulted in no further prolongation of capillary bleeding times compared to clopidogrel monotherapy. In addition, dabigatran AUCτ,ss and Cmax,ss and the coagulation measures for dabigatran effect or the inhibition of platelet aggregation as measure of clopidogrel effect remained essentially unchanged comparing combined treatment and the respective mono-treatments. With a loading dose of 300 mg or 600 mg clopidogrel, dabigatran AUCτ,ss and Cmax,ss were increased by about 30-40 % (see section 4.4). ASA Co-administration of ASA and 150 mg dabigatran etexilate twice daily may increase the risk for any bleeding from 12 % to 18 % and 24 % with 81 mg and 325 mg ASA, respectively (see section 4.4). LMWH The concomitant use of LMWHs, such as enoxaparin and dabigatran etexilate has not been specifically investigated. After switching from 3-day treatment of once daily 40 mg enoxaparin s.c., 24 hours after the last dose of enoxaparin the exposure to dabigatran was slightly lower than that after administration of dabigatran etexilate (single dose of 220 mg) alone. A higher anti-FXa/FIIa activity was observed after dabigatran etexilate administration with enoxaparin pre-treatment compared to that after treatment with dabigatran etexilate alone. This is considered to be due to the carry-over effect of enoxaparin treatment, and regarded as not clinically relevant. Other dabigatran related anti-coagulation tests were not changed significantly by the pre-treatment of enoxaparin.
+Other interactions
+
+[pradaxa p.13 SmPC 4.5] (distance 0.21)
+Pradaxa | Pradaxa 75 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+Digoxin In a study performed with 24 healthy subjects, when dabigatran etexilate was co-administered with digoxin, no changes on digoxin and no clinically relevant changes on dabigatran exposure have been observed.
+Anticoagulants and antiplatelet aggregation medicinal products
+There is no or only limited experience with the following treatments which may increase the risk of bleeding when used concomitantly with dabigatran etexilate: anticoagulants such as unfractionated heparin (UFH), low molecular weight heparins (LMWH), and heparin derivatives (fondaparinux, desirudin), thrombolytic medicinal products, and vitamin K antagonists, rivaroxaban or other oral anticoagulants (see section 4.3), and antiplatelet aggregation medicinal products such as GPIIb/IIIa receptor antagonists, ticlopidine, prasugrel, ticagrelor, dextran, and sulfinpyrazone (see section 4.4).
+UFH can be administered at doses necessary to maintain a patent central venous or arterial catheter or during catheter ablation for atrial fibrillation (see section 4.3).
+Table 8: Interactions with anticoagulants and antiplatelet aggregation medicinal products
+
+[pradaxa p.44 SmPC 4.5] (distance 0.212)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+4.5 Interaction with other medicinal products and other forms of interaction
+Transporter interactions
+Dabigatran etexilate is a substrate for the efflux transporter P-gp. Concomitant administration of P-gp inhibitors (see table 9) is expected to result in increased dabigatran plasma concentrations.
+Table 9: Transporter interactions
+P-gp inhibitors
+Concomitant use contraindicated (see section 4.3)
+Concomitant use not recommended
+Tacrolimus Tacrolimus has been found in vitro to have a similar level of inhibitory effect on P-gp as that seen with itraconazole and cyclosporine. Dabigatran etexilate has not been clinically studied together with tacrolimus. However, limited clinical data with another P-gp substrate (everolimus) suggest that the inhibition of P-gp with tacrolimus is weaker than that observed with strong P-gp inhibitors.
+P-gp inducers
+Concomitant use should be avoided.
+Protease inhibitors such as ritonavir
+Concomitant use not recommended
+P-gp substrate
+Anticoagulants and antiplatelet aggregation medicinal products
+From the data collected in the phase III study RE-LY (see section 5.1) it was observed that the concomitant use of other oral or parenteral anticoagulants increases major bleeding rates with both dabigatran etexilate and warfarin by approximately 2.5-fold, mainly related to situations when switching from one anticoagulant to another (see section 4.3). Furthermore, concomitant use of antiplatelets, ASA or clopidogrel approximately doubled major bleeding rates with both dabigatran etexilate and warfarin (see section 4.4).
+Table 10: Interactions with anticoagulants and antiplatelet aggregation medicinal products
+
+[pradaxa p.47 SmPC 4.5] (distance 0.215)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+NSAIDs NSAIDs given for short-term analgesia have been shown not to be associated with increased bleeding risk when given in conjunction with dabigatran etexilate. With chronic use in the RE-LY study, NSAIDs increased the risk of bleeding by approximately 50 % on both dabigatran etexilate and warfarin. Clopidogrel In young healthy male volunteers, the concomitant administration of dabigatran etexilate and clopidogrel resulted in no further prolongation of capillary bleeding times compared to clopidogrel monotherapy. In addition, dabigatran AUCτ,ss and Cmax,ss and the coagulation measures for dabigatran effect or the inhibition of platelet aggregation as measure of clopidogrel effect remained essentially unchanged comparing combined treatment and the respective mono-treatments. With a loading dose of 300 mg or 600 mg clopidogrel, dabigatran AUCτ,ss and Cmax,ss were increased by about 30-40 % (see section 4.4). ASA Co-administration of ASA and 150 mg dabigatran etexilate twice daily may increase the risk for any bleeding from 12 % to 18 % and 24 % with 81 mg and 325 mg ASA, respectively (see section 4.4). LMWH The concomitant use of LMWHs, such as enoxaparin and dabigatran etexilate has not been specifically investigated. After switching from 3-day treatment of once daily 40 mg enoxaparin s.c., 24 hours after the last dose of enoxaparin the exposure to dabigatran was slightly lower than that after administration of dabigatran etexilate (single dose of 220 mg) alone. A higher anti-FXa/FIIa activity was observed after dabigatran etexilate administration with enoxaparin pre-treatment compared to that after treatment with dabigatran etexilate alone. This is considered to be due to the carry-over effect of enoxaparin treatment, and regarded as not clinically relevant. Other dabigatran related anti-coagulation tests were not changed significantly by the pre-treatment of enoxaparin.
+Other interactions
+Table 11: Other interactions
+```
+</details>
+
+---
+
+## q31 (unanswerable)
+
+**Question:** Is there a cheaper generic version of apixaban I can switch to?
+
+**Reference:** The documents do not cover generic versions; ask the pharmacist or doctor.
+
+**Agent answer:** The product information in the corpus does not cover this; please ask the pharmacist or doctor.
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[eliquis p.139 Leaflet 1] (distance 0.244)
+Eliquis | Eliquis 2.5 mg film-coated tablets | Leaflet 1 What Eliquis is and what it is used for
+1. What Eliquis is and what it is used for
+Eliquis contains the active substance apixaban and belongs to a group of medicines called anticoagulants. This medicine helps to prevent blood clots from forming by blocking Factor Xa, which is an important component of blood clotting.
+Eliquis is used in adults: - to prevent blood clots (deep vein thrombosis [DVT]) from forming after hip or knee replacement operations. After an operation to the hip or knee you may be at a higher risk of developing blood clots in your leg veins. This can cause the legs to swell, with or without pain. If a blood clot travels from your leg to your lungs, it can block blood flow causing breathlessness, with or without chest pain. This condition (pulmonary embolism) can be life-threatening and requires immediate medical attention.
+- to prevent a blood clot from forming in the heart in patients with an irregular heart beat (atrial fibrillation) and at least one additional risk factor. Blood clots may break off and travel to the brain and lead to a stroke or to other organs and prevent normal blood flow to that organ (also known as a systemic embolism). A stroke can be life-threatening and requires immediate medical attention.
+- to treat blood clots in the veins of your legs (deep vein thrombosis) and in the blood vessels of your lungs (pulmonary embolism), and to prevent blood clots from re-occurring in the blood vessels of your legs and/or lungs.
+Eliquis is used in children aged 28 days to less than 18 years to treat blood clots and to prevent reoccurrence of blood clots in the veins or in the blood vessels of the lungs.
+For body weight appropriate recommended dose, see section 3.
+
+[eliquis p.18 SmPC 5.1] (distance 0.245)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 5.1 Pharmacodynamic properties
+5.1 Pharmacodynamic properties
+Pharmacotherapeutic group: Antithrombotic agents, direct factor Xa inhibitors, ATC code: B01AF02
+Mechanism of action
+Apixaban is a potent, oral, reversible, direct and highly selective active site inhibitor of factor Xa. It does not require antithrombin III for antithrombotic activity. Apixaban inhibits free and clot-bound factor Xa, and prothrombinase activity. Apixaban has no direct effects on platelet aggregation, but indirectly inhibits platelet aggregation induced by thrombin. By inhibiting factor Xa, apixaban prevents thrombin generation and thrombus development. Preclinical studies of apixaban in animal models have demonstrated antithrombotic efficacy in the prevention of arterial and venous thrombosis at doses that preserved haemostasis.
+Pharmacodynamic effects
+The pharmacodynamic effects of apixaban are reflective of the mechanism of action (FXa inhibition). As a result of FXa inhibition, apixaban prolongs clotting tests such as prothrombin time (PT), INR and activated partial thromboplastin time (aPTT). In adults, changes observed in these clotting tests at the expected therapeutic dose are small and subject to a high degree of variability. They are not recommended to assess the pharmacodynamic effects of apixaban. In the thrombin generation assay, apixaban reduced endogenous thrombin potential, a measure of thrombin generation in human plasma.
+
+[eliquis p.2 SmPC 4.2] (distance 0.245)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.2 Posology and method of administration
+4.2 Posology and method of administration
+Posology
+Prevention of VTE (VTEp): elective hip or knee replacement surgery in adults The recommended dose of apixaban is 2.5 mg taken orally twice daily. The initial dose should be taken 12 to 24 hours after surgery.
+Physicians may consider the potential benefits of earlier anticoagulation for VTE prophylaxis as well as the risks of post-surgical bleeding in deciding on the time of administration within this time window.
+In patients undergoing hip replacement surgery The recommended duration of treatment is 32 to 38 days.
+In patients undergoing knee replacement surgery The recommended duration of treatment is 10 to 14 days.
+Prevention of stroke and systemic embolism in adult patients with non-valvular atrial fibrillation (NVAF) The recommended dose of apixaban is 5 mg taken orally twice daily.
+Dose reduction The recommended dose of apixaban is 2.5 mg taken orally twice daily in patients with NVAF and at least two of the following characteristics: age ≥ 80 years, body weight ≤ 60 kg, or serum creatinine ≥ 1.5 mg/dL (133 micromole/L).
+Therapy should be continued long-term.
+Treatment of DVT, treatment of PE and prevention of recurrent DVT and PE (VTEt) in adults The recommended dose of apixaban for the treatment of acute DVT and treatment of PE is 10 mg taken orally twice daily for the first 7 days followed by 5 mg taken orally twice daily. As per available medical guidelines, short duration of treatment (at least 3 months) should be based on transient risk factors (e.g., recent surgery, trauma, immobilisation).
+
+[eliquis p.24 SmPC 5.1] (distance 0.251)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 5.1 Pharmacodynamic properties
+Table 9: Key efficacy outcomes in patients with atrial fibrillation in the AVERROES study Apixaban N = 2,807 n (%/year) ASA N = 2,791 n (%/year) Hazard ratio (95% CI) p-value Stroke or systemic embolism* 51 (1.62) 113 (3.63) 0.45 (0.32, 0.62) < 0.000 Stroke Ischaemic or unspecified 43 (1.37) 97 (3.11) 0.44 (0.31, 0.63) Haemorrhagic 6 (0.19) 9 (0.28) 0.67 (0.24, 1.88) Systemic embolism 2 (0.06) 13 (0.41) 0.15 (0.03, 0.68) Stroke, systemic embolism, MI, or vascular death*† 132 (4.21) 197 (6.35) 0.66 (0.53, 0.83) 0.003 Myocardial infarction 24 (0.76) 28 (0.89) 0.86 (0.50, 1.48) Vascular death 84 (2.65) 96 (3.03) 0.87 (0.65, 1.17) All-cause death† 111 (3.51) 140 (4.42) 0.79 (0.62, 1.02) 0.068 * Assessed by sequential testing strategy designed to control the overall type I error in the trial. † Secondary endpoint.
+There was no statistically significant difference in the incidence of major bleeding between apixaban and ASA (see Table 10).
+Table 10: Bleeding events in patients with atrial fibrillation in the AVERROES study Apixaban N = 2,798 n (%/year) ASA N = 2,780 n (%/year) Hazard ratio (95% CI) p-value Major* 45 (1.41) 29 (0.92) 1.54 (0.96, 2.45) 0.0716 Fatal, n 5 (0.16) 5 (0.16) Intracranial, n 11 (0.34) 11 (0.35) Major + CRNM† 140 (4.46) 101 (3.24) 1.38 (1.07, 1.78) 0.0144 All 325 (10.85) 250 (8.32) 1.30 (1.10, 1.53) 0.0017 *Major bleeding defined per International Society on Thrombosis and Haemostasis (ISTH) criteria. † Clinically relevant non-major
+NVAF patients with ACS and/or undergoing PCI AUGUSTUS, an open-label, randomised, controlled, 2 by 2 factorial design trial, enrolled 4614 adult patients with NVAF who had ACS (43%) and/or underwent PCI (56%). All patients received background therapy with a P2Y12 inhibitor (clopidogrel: 90.3%) prescribed per local standard of care.
+
+[eliquis p.22 SmPC 5.1] (distance 0.252)
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 5.1 Pharmacodynamic properties
+ADVANCE-3 ADVANCE-2 Apixaban 2.5 mg po twice daily 35 ± 3 d Enoxaparin 40 mg sc once daily 35 ± 3 d Apixaban 2.5 mg po twice daily 12 ± 2 d Enoxaparin 40 mg sc once daily 12 ± 2 d Post-surgery treatment period 2 Major 9 (0.3%) 11 (0.4%) 4 (0.3%) 9 (0.6%) Fatal 0 0 0 0 Major + CRNM 96 (3.6%) 115 (4.3%) 41 (2.7%) 56 (3.7%) All 261 (9.8%) 293 (11.0%) 89 (5.9%) 103 (6.8%) * All the bleeding criteria included surgical site bleeding 1 Includes events occurring after first dose of enoxaparin (pre-surgery) 2 Includes events occurring after first dose of apixaban (post-surgery)
+The overall incidences of adverse reactions of bleeding, anaemia and abnormalities of transaminases (e.g., ALT levels) were numerically lower in patients on apixaban compared to enoxaparin in the phase II and phase III studies in elective hip and knee replacement surgery.
+In the knee replacement surgery study during the intended treatment period, in the apixaban arm 4 cases of PE were diagnosed against no cases in the enoxaparin arm. No explanation can be given to this higher number of PE.
+Prevention of stroke and systemic embolism in patients with non-valvular atrial fibrillation (NVAF) A total of 23,799 adult patients were randomised in the clinical program (ARISTOTLE: apixaban versus warfarin, AVERROES: apixaban versus ASA) including 11,927 randomised to apixaban. The program was designed to demonstrate the efficacy and safety of apixaban for the prevention of stroke and systemic embolism in patients with non-valvular atrial fibrillation (NVAF) and one or more additional risk factors, such as: • prior stroke or transient ischaemic attack (TIA) • age ≥ 75 years • hypertension • diabetes mellitus • symptomatic heart failure (NYHA Class ≥ II)
+```
+</details>
+
+---
+
+## q32 (unanswerable)
+
+**Question:** Can I get a tattoo while taking Pradaxa?
+
+**Reference:** The documents do not cover tattoos; ask the doctor before any procedure that causes bleeding.
+
+**Agent answer:** The product information in the corpus does not cover this; please ask the pharmacist or doctor.
+
+Confirm with the pharmacist or doctor.
+
+<details><summary>Retrieved passages</summary>
+
+```
+[pradaxa p.41 SmPC 4.4] (distance 0.217)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.4 Special warnings and precautions for use
+Test (trough value) Indication Primary prevention of VTE in orthopaedic surgery SPAF and DVT/PE dTT [ng/mL] > 67 > 200 ECT [x-fold upper limit of normal] No data > 3 aPTT [x-fold upper limit of normal] > 1.3 > 2 INR Should not be performed Should not be performed
+Surgery and interventions
+Patients can stay on dabigatran etexilate while being cardioverted. There are no data available for 110 mg twice daily dabigatran etexilate treatment in patients undergoing catheter ablation for atrial fibrillation (see section 4.2).
+Caution should be exercised when treatment is temporarily discontinued for interventions and
+anticoagulant monitoring is warranted. Clearance of dabigatran in patients with renal insufficiency may take longer (see section 5.2). This should be considered in advance of any procedures. In such cases a coagulation test (see sections 4.4 and 5.1) may help to determine whether haemostasis is still impaired.
+Emergency surgery or urgent procedures
+Subacute surgery/interventions
+Elective surgery
+Table 7 summarises discontinuation rules before invasive or surgical procedures for adult patients.
+Table 7: Discontinuation rules before invasive or surgical procedures for adult patients
+Discontinuation rules before invasive or surgical procedures for paediatric patients are summarised in table 8.
+Table 8: Discontinuation rules before invasive or surgical procedures for paediatric patients
+Spinal anaesthesia/epidural anaesthesia/lumbar puncture
+The risk of spinal or epidural haematoma may be increased in cases of traumatic or repeated puncture and by the prolonged use of epidural catheters. After removal of a catheter, an interval of at least
+2 hours should elapse before the administration of the first dose of dabigatran etexilate. These patients require frequent observation for neurological signs and symptoms of spinal or epidural haematoma.
+Postoperative phase
+
+[pradaxa p.31 SmPC 1] (distance 0.221)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 1 NAME OF THE MEDICINAL PRODUCT; SmPC 2 QUALITATIVE AND QUANTITATIVE COMPOSITION; SmPC 3 PHARMACEUTICAL FORM; SmPC 4 CLINICAL PARTICULARS; SmPC 4.1 Therapeutic indications
+Pradaxa 110 mg hard capsules
+2. QUALITATIVE AND QUANTITATIVE COMPOSITION
+Each hard capsule contains 110 mg of dabigatran etexilate (as mesilate).
+3. PHARMACEUTICAL FORM
+Hard capsule.
+Capsules with light blue, opaque cap and light blue, opaque body of size 1 (approx. 19 × 7 mm) filled with yellowish pellets. The cap is imprinted with the Boehringer Ingelheim company symbol, the body with “R110”.
+4. CLINICAL PARTICULARS
+4.1 Therapeutic indications
+Prevention of stroke and systemic embolism in adult patients with non-valvular atrial fibrillation (NVAF), with one or more risk factors, such as prior stroke or transient ischemic attack (TIA); age ≥ 75 years; heart failure (NYHA Class ≥ II); diabetes mellitus; hypertension.
+Treatment of deep vein thrombosis (DVT) and pulmonary embolism (PE), and prevention of recurrent DVT and PE in adults.
+
+[pradaxa p.34 SmPC 4.2] (distance 0.221)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.2 Posology and method of administration
+In case of intolerability to dabigatran etexilate, patients should be instructed to immediately consult their treating physician in order to be switched to alternate acceptable treatment options for prevention of stroke and systemic embolism associated with atrial fibrillation or for DVT/PE.
+Additional requirements in patients with mild to moderate renal impairment and in patients aged over 75 years: • Renal function should be assessed during treatment with dabigatran etexilate at least once a year or more frequently as needed in certain clinical situations when it is suspected that the renal function could decline or deteriorate (e.g. hypovolaemia, dehydration, and in case of concomitant use of certain medicinal products).
+Duration of use
+The duration of use of dabigatran etexilate in the indications SPAF, DVT and PE are shown in table 3.
+Table 3: Duration of use for SPAF and DVT/PE
+Indication Duration of use SPAF Therapy should be continued long term. DVT/PE The duration of therapy should be individualised after careful assessment of the treatment benefit against the risk for bleeding (see section 4.4). Short duration of therapy (at least 3 months) should be based on transient risk factors (e.g. recent surgery, trauma, immobilisation) and longer durations should be based on permanent risk factors or idiopathic DVT or PE.
+Missed dose
+A forgotten dabigatran etexilate dose may still be taken up to 6 hours prior to the next scheduled dose. From 6 hours prior to the next scheduled dose on, the missed dose should be omitted.
+Discontinuation of dabigatran etexilate
+Switching
+
+[pradaxa p.63 SmPC 5.1] (distance 0.224)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 5.1 Pharmacodynamic properties
+The incidence of the primary endpoint was 15.4 % (151 patients) in the dabigatran etexilate 110 mg dual-therapy group as compared with 26.9 % (264 patients) in the warfarin triple-therapy group (HR 0.52; 95 % CI 0.42, 0.63; P< 0.0001 for non-inferiority and P< 0.0001 for superiority) and 20.2 % (154 patients) in the dabigatran etexilate 150 mg dual-therapy group as compared with 25.7 % (196 patients) in the corresponding warfarin triple-therapy group (HR 0.72; 95 % CI 0.58, 0.88; P< 0.0001 for non-inferiority and P = 0.002 for superiority). As part of the descriptive analysis, TIMI (Thrombolysis In Myocardial Infarction) major bleeding events was lower in both dabigatran etexilate dual-therapy groups than in the warfarin triple-therapy group: 14 events (1.4 %) in the dabigatran etexilate 110 mg dual-therapy group as compared with 37 events (3.8 %) in the warfarin triple-therapy group (HR 0.37; 95 % CI 0.20, 0.68; P = 0.002) and 16 events (2.1 %) in the dabigatran etexilate 150 mg dual-therapy group as compared with 30 events (3.9 %) in the corresponding warfarin tripletherapy group (HR 0.51; 95 % CI 0.28, 0.93; P = 0.03). Both dabigatran etexilate dual-therapy groups had lower rates of intracranial hemorrhage than the corresponding warfarin triple-therapy group: 3 events (0.3 %) in the 110 mg dabigatran etexilate dual-therapy group as compared with 10 events (1.0 %) in the warfarin triple-therapy group (HR 0.30; 95 % CI 0.08, 1.07; P = 0.06) and 1 event (0.1 %) in the 150 mg dabigatran etexilate dual-therapy group as compared with 8 events (1.0 %) in the corresponding warfarin triple-therapy group (HR 0.12; 95 % CI 0.02, 0.98; P = 0.047). The incidence of the composite efficacy endpoint of death, thromboembolic events (myocardial infarction, stroke, or systemic embolism) or unplanned revascularization in the two dabigatran etexilate
+
+[pradaxa p.51 SmPC 4.8] (distance 0.225)
+Pradaxa | Pradaxa 110 mg hard capsules | SmPC 4.8 Undesirable effects
+Dabigatran etexilate 110 mg twice daily Dabigatran etexilate 150 mg twice daily Warfarin Subjects randomised 6 015 6 076 6 022 Major bleeding 347 (2.92 %) 409 (3.40 %) 426 (3.61 %) Intracranial bleeding 27 (0.23 %) 39 (0.32 %) 91 (0.77 %) GI bleeding 134 (1.13 %) 192 (1.60 %) 128 (1.09 %) Fatal bleeding 26 (0.22 %) 30 (0.25 %) 42 (0.36 %) Minor bleeding 1 566 (13.16 %) 1 787 (14.85 %) 1 931 (16.37 %) Any bleeding 1 759 (14.78 %) 1 997 (16.60 %) 2 169 (18.39 %)
+Subjects randomised to dabigatran etexilate 110 mg twice daily or 150 mg twice daily had a significantly lower risk for life-threatening bleeds and intracranial bleeding compared to warfarin [p < 0.05]. Both dose strengths of dabigatran etexilate had also a statistically significant lower total bleed rate. Subjects randomised to 110 mg dabigatran etexilate twice daily had a significantly lower risk for major bleeds compared with warfarin (hazard ratio 0.81 [p = 0.0027]). Subjects randomised to 150 mg dabigatran etexilate twice daily had a significantly higher risk for major GI bleeds compared with warfarin (hazard ratio 1.48 [p = 0.0005]. This effect was seen primarily in patients ≥ 75 years. The clinical benefit of dabigatran with regard to stroke and systemic embolism prevention and decreased risk of ICH compared to warfarin is preserved across individual subgroups, e.g. renal impairment, age, concomitant medicinal product use such as anti-platelets or P-gp inhibitors. While certain patient subgroups are at an increased risk of major bleeding when treated with an anticoagulant, the excess bleeding risk for dabigatran is due to GI bleeding, typically seen within the first 3-6 months following initiation of dabigatran etexilate therapy.
+Treatment of DVT and PE, and prevention of recurrent DVT and PE in adults (DVT/PE treatment)
+```
+</details>

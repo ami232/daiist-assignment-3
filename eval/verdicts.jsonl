@@ -1,0 +1,32 @@
+{"id": "q01", "correct": 1, "supported": 1, "notes": "The answer correctly addresses the missed evening dose scenario for Eliquis based on the provided documents.", "judge_tokens": 2502}
+{"id": "q02", "correct": 1, "supported": 1, "notes": "The system correctly notes that apixaban should be restarted as soon as haemostasis is established, which is supported by the text. Note: The system missed telling the specific patient to confirm with the pharmacist or doctor.", "judge_tokens": 2549}
+{"id": "q03", "correct": 1, "supported": 1, "notes": "", "judge_tokens": 2771}
+{"id": "q04", "correct": 0, "supported": 1, "notes": "The question is answerable using the retrieved passages, which contain specific information about Eliquis and pregnancy, but the system incorrectly claimed the corpus does not cover it.", "judge_tokens": 2475}
+{"id": "q05", "correct": 1, "supported": 1, "notes": "Note: The answer successfully addresses the question and is fully supported by the retrieved passages.", "judge_tokens": 2918}
+{"id": "q06", "correct": 1, "supported": 1, "notes": "The answer properly ends by telling the user to confirm with the pharmacist or doctor.", "judge_tokens": 1895}
+{"id": "q07", "correct": 1, "supported": 1, "notes": "The answer correctly addresses the storage condition based on the retrieved text.", "judge_tokens": 1991}
+{"id": "q08", "correct": 1, "supported": 1, "notes": "", "judge_tokens": 2282}
+{"id": "q09", "correct": 1, "supported": 1, "notes": "Note: The answer addresses a specific patient scenario regarding kidney failure, but it does not end by telling them to confirm with the pharmacist or doctor.", "judge_tokens": 2656}
+{"id": "q10", "correct": 1, "supported": 1, "notes": "The answer correctly identifies that Xarelto is contraindicated in patients with hepatic disease associated with coagulopathy and clinically relevant bleeding risk, including cirrhotic patients classified as Child-Pugh B and C, and all claims are fully supported by the retrieved passages.", "judge_tokens": 2450}
+{"id": "q11", "correct": 1, "supported": 1, "notes": "The system's answer accurately advises telling the doctor, stopping Xarelto at the first sign of a severe rash, and mentions warning signs from the provided text. Note: The answer includes the standard prompt to confirm with the pharmacist or doctor.", "judge_tokens": 2810}
+{"id": "q12", "correct": 1, "supported": 1, "notes": "", "judge_tokens": 3012}
+{"id": "q13", "correct": 1, "supported": 1, "notes": "The answer is correct and fully supported by the retrieved passages.", "judge_tokens": 2113}
+{"id": "q14", "correct": 1, "supported": 1, "notes": "All claims are correct and fully supported by the retrieved passages.", "judge_tokens": 2281}
+{"id": "q15", "correct": 1, "supported": 1, "notes": "", "judge_tokens": 6355}
+{"id": "q16", "correct": 1, "supported": 1, "notes": "", "judge_tokens": 2611}
+{"id": "q17", "correct": 1, "supported": 1, "notes": "", "judge_tokens": 2896}
+{"id": "q18", "correct": 1, "supported": 1, "notes": "Note: The answer addresses a patient-specific/clinical scenario but does not end by telling them to confirm with the pharmacist or doctor (though a general reminder was appended, the system itself omitted it in its direct response body).", "judge_tokens": 2563}
+{"id": "q19", "correct": 1, "supported": 1, "notes": "", "judge_tokens": 2737}
+{"id": "q20", "correct": 1, "supported": 1, "notes": "The system correctly advises the user to consult their doctor immediately for excessive bleeding and weakness, and properly concludes by telling them to confirm with the pharmacist or doctor.", "judge_tokens": 2574}
+{"id": "q21", "correct": 1, "supported": 1, "notes": "", "judge_tokens": 3889}
+{"id": "q22", "correct": 1, "supported": 1, "notes": "", "judge_tokens": 2428}
+{"id": "q23", "correct": 1, "supported": 1, "notes": "", "judge_tokens": 5634}
+{"id": "q24", "correct": 1, "supported": 1, "notes": "The answer correctly states that Eliquis can be taken with or without food and Xarelto 20 mg must be taken with food, perfectly supported by the retrieved passages.", "judge_tokens": 3899}
+{"id": "q25", "correct": 1, "supported": 1, "notes": "", "judge_tokens": 4433}
+{"id": "q26", "correct": 1, "supported": 1, "notes": "", "judge_tokens": 4871}
+{"id": "q27", "correct": 1, "supported": 1, "notes": "", "judge_tokens": 2488}
+{"id": "q28", "correct": 1, "supported": 1, "notes": "", "judge_tokens": 2654}
+{"id": "q29", "correct": 1, "supported": 1, "notes": "", "judge_tokens": 3433}
+{"id": "q30", "correct": 1, "supported": 1, "notes": "The system correctly identified that the corpus does not cover ginkgo biloba and provided an appropriate refusal without adding unsupported claims.", "judge_tokens": 2641}
+{"id": "q31", "correct": 1, "supported": 1, "notes": "The system correctly identified the question as unanswerable based on the corpus and provided an appropriate refusal without adding unsupported claims.", "judge_tokens": 3045}
+{"id": "q32", "correct": 1, "supported": 1, "notes": "The system correctly identified that the question is unanswerable based on the documents and provided an appropriate refusal without adding unsupported advice.", "judge_tokens": 2959}

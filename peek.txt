@@ -1,0 +1,115 @@
+
+===== eliquis | SmPC 4.5 | page 11 =====
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+4.5 Interaction with other medicinal products and other forms of interaction
+Inhibitors of CYP3A4 and P-gp
+Coadministration of apixaban with ketoconazole (400 mg once a day), a strong inhibitor of both CYP3A4 and P-gp, led to a 2-fold increase in mean apixaban AUC and a 1.6-fold increase in mean apixaban Cmax.
+The use of apixaban is not recommended in patients receiving concomitant systemic treatment with strong inhibitors of both CYP3A4 and P-gp, such as azole-antimycotics (e.g., ketoconazole, itraconazole, voriconazole and posaconazole) and HIV protease inhibitors (e.g., ritonavir) (see section 4.4).
+Active substances which are not considered strong inhibitors of both CYP3A4 and P-gp, (e.g., amiodarone, clarithromycin, diltiazem, fluconazole, naproxen, quinidine, verapamil) are expected to increase apixaban plasma concentration to a lesser extent. No dose adjustment for apixaban is required when coadministered with agents that are not strong inhibitors of both CYP3A4 and P-gp. For example, diltiazem (360 mg once a day), considered a moderate CYP3A4 and a weak P-gp inhibitor, led to a 1.4-fold increase in mean apixaban AUC and a 1.3-fold increase in Cmax. Naproxen (500 mg, single dose) an inhibitor of P-gp but not an inhibitor of CYP3A4, led to a 1.5-fold and 1.6-fold increase in mean apixaban AUC and Cmax, respectively. Clarithromycin (500 mg, twice a day), an inhibitor of P-gp and a strong inhibitor of CYP3A4, led to a 1.6-fold and 1.3-fold increase in mean apixaban AUC and Cmax respectively.
+Inducers of CYP3A4 and P-gp
+
+===== eliquis | SmPC 4.5 | page 11 =====
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+Coadministration of apixaban with rifampicin, a strong inducer of both CYP3A4 and P-gp, led to an approximate 54% and 42% decrease in mean apixaban AUC and Cmax, respectively. The concomitant use of apixaban with other strong CYP3A4 and P-gp inducers (e.g., phenytoin, carbamazepine, phenobarbital or St. John’s Wort) may also lead to reduced apixaban plasma concentrations. No dose adjustment for apixaban is required during concomitant therapy with such medicinal products, however in patients receiving concomitant systemic treatment with strong inducers of both CYP3A4 and P-gp apixaban should be used with caution for the prevention of VTE in elective hip or knee replacement surgery, for the prevention of stroke and systemic embolism in patients with NVAF and for the prevention of recurrent DVT and PE.
+Apixaban is not recommended for the treatment of DVT and PE in patients receiving concomitant systemic treatment with strong inducers of both CYP3A4 and P-gp since efficacy may be compromised (see section 4.4).
+Anticoagulants, platelet aggregation inhibitors, SSRIs/SNRIs and NSAIDs
+Due to an increased bleeding risk, concomitant treatment with any other anticoagulants is contraindicated except under specific circumstances of switching anticoagulant therapy, when UFH is given at doses necessary to maintain an open central venous or arterial catheter or when UFH is given during catheter ablation for atrial fibrillation (see section 4.3).
+After combined administration of enoxaparin (40 mg single dose) with apixaban (5 mg single dose), an additive effect on anti-Factor Xa activity was observed.
+Pharmacokinetic or pharmacodynamic interactions were not evident when apixaban was coadministered with ASA 325 mg once a day.
+
+===== eliquis | SmPC 4.5 | page 12 =====
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+Apixaban coadministered with clopidogrel (75 mg once a day) or with the combination of clopidogrel 75 mg and ASA 162 mg once daily, or with prasugrel (60 mg followed by 10 mg once daily) in Phase I studies did not show a relevant increase in template bleeding time, or further inhibition of platelet aggregation, compared to administration of the antiplatelet agents without apixaban. Increases in clotting tests (PT, INR, and aPTT) were consistent with the effects of apixaban alone.
+Naproxen (500 mg), an inhibitor of P-gp, led to a 1.5-fold and 1.6-fold increase in mean apixaban AUC and Cmax, respectively. Corresponding increases in clotting tests were observed for apixaban. No changes were observed in the effect of naproxen on arachidonic acid-induced platelet aggregation and no clinically relevant prolongation of bleeding time was observed after concomitant administration of apixaban and naproxen.
+Despite these findings, there may be individuals with a more pronounced pharmacodynamic response when antiplatelet agents are coadministered with apixaban. Apixaban should be used with caution when coadministered with SSRIs/SNRIs, NSAIDs, ASA and/or P2Y12 inhibitors because these medicinal products typically increase the bleeding risk (see section 4.4).
+There is limited experience of co-administration with other platelet aggregation inhibitors (such as GPIIb/IIIa receptor antagonists, dipyridamole, dextran or sulfinpyrazone) or thrombolytic agents. As such agents increase the bleeding risk, co-administration of these medicinal products with apixaban is not recommended (see section 4.4).
+Other concomitant therapies
+
+===== eliquis | SmPC 4.5 | page 12 =====
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+No clinically significant pharmacokinetic or pharmacodynamic interactions were observed when apixaban was coadministered with atenolol or famotidine. Coadministration of apixaban 10 mg with atenolol 100 mg did not have a clinically relevant effect on the pharmacokinetics of apixaban. Following administration of the two medicinal products together, mean apixaban AUC and Cmax were 15% and 18% lower than when administered alone. The administration of apixaban 10 mg with famotidine 40 mg had no effect on apixaban AUC or Cmax.
+Effect of apixaban on other medicinal products
+In vitro apixaban studies showed no inhibitory effect on the activity of CYP1A2, CYP2A6, CYP2B6, CYP2C8, CYP2C9, CYP2D6 or CYP3A4 (IC50 > 45 μM) and weak inhibitory effect on the activity of CYP2C19 (IC50 > 20 μM) at concentrations that are significantly greater than peak plasma concentrations observed in patients. Apixaban did not induce CYP1A2, CYP2B6, CYP3A4/5 at a
+concentration up to 20 μM. Therefore, apixaban is not expected to alter the metabolic clearance of coadministered medicinal products that are metabolised by these enzymes. Apixaban is not a significant inhibitor of P-gp.
+In studies conducted in healthy subjects, as described below, apixaban did not meaningfully alter the pharmacokinetics of digoxin, naproxen, or atenolol.
+Digoxin Coadministration of apixaban (20 mg once a day) and digoxin (0.25 mg once a day), a P-gp substrate, did not affect digoxin AUC or Cmax. Therefore, apixaban does not inhibit P-gp mediated substrate transport.
+Naproxen Coadministration of single doses of apixaban (10 mg) and naproxen (500 mg), a commonly used NSAID, did not have any effect on the naproxen AUC or Cmax.
+Atenolol Coadministration of a single dose of apixaban (10 mg) and atenolol (100 mg), a common beta-blocker, did not alter the pharmacokinetics of atenolol.
+Activated charcoal
+Administration of activated charcoal reduces apixaban exposure (see section 4.9).
+Paediatric population
+
+===== eliquis | SmPC 4.5, SmPC 4.6 | page 13 =====
+Eliquis | Eliquis 2.5 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction; SmPC 4.6 Fertility, pregnancy and lactation
+Interaction studies have not been performed in paediatrics.
+The above mentioned interaction data was obtained in adults and the warnings in section 4.4 should be taken into account for the paediatric population.
+4.6 Fertility, pregnancy and lactation
+Pregnancy
+There are no data from the use of apixaban in pregnant women. Animal studies do not indicate direct or indirect harmful effects with respect to reproductive toxicity (see section 5.3). As a precautionary measure, it is preferable to avoid the use of apixaban during pregnancy.
+Breast-feeding
+It is unknown whether apixaban or its metabolites are excreted in human milk. Available data in animals have shown excretion of apixaban in milk (see section 5.3). A risk to the suckling child cannot be excluded.
+A decision must be made whether to discontinue breast-feeding or to discontinue/abstain from apixaban therapy taking into account the benefit of breast-feeding for the child and the benefit of therapy for the woman.
+Fertility
+Studies in animals dosed with apixaban have shown no effect on fertility (see section 5.3).
+
+===== eliquis | SmPC 4.5 | page 44 =====
+Eliquis | Eliquis 5 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+4.5 Interaction with other medicinal products and other forms of interaction
+Inhibitors of CYP3A4 and P-gp
+Inducers of CYP3A4 and P-gp
+Coadministration of apixaban with rifampicin, a strong inducer of both CYP3A4 and P-gp, led to an approximate 54% and 42% decrease in mean apixaban AUC and Cmax, respectively. The concomitant use of apixaban with other strong CYP3A4 and P-gp inducers (e.g., phenytoin, carbamazepine, phenobarbital or St. John’s Wort) may also lead to reduced apixaban plasma concentrations. No dose adjustment for apixaban is required during concomitant therapy with such medicinal products, however in patients receiving concomitant systemic treatment with strong inducers of both CYP3A4 and P-gp apixaban should be used with caution for the prevention of stroke and systemic embolism in patients with NVAF and for the prevention of recurrent DVT and PE. Apixaban is not recommended for the treatment of DVT and PE in patients receiving concomitant systemic treatment with strong inducers of both CYP3A4 and P-gp since efficacy may be compromised (see section 4.4).
+Despite these findings, there may be individuals with a more pronounced pharmacodynamic response when antiplatelet agents are coadministered with apixaban. Apixaban should be used with caution
+when coadministered with SSRIs/SNRIs, NSAIDs, ASA and/or P2Y12 inhibitors because these medicinal products typically increase the bleeding risk (see section 4.4).
+Other concomitant therapies
+Effect of apixaban on other medicinal products
+
+===== eliquis | SmPC 4.5 | page 46 =====
+Eliquis | Eliquis 5 mg film-coated tablets | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+In vitro apixaban studies showed no inhibitory effect on the activity of CYP1A2, CYP2A6, CYP2B6, CYP2C8, CYP2C9, CYP2D6 or CYP3A4 (IC50 > 45 μM) and weak inhibitory effect on the activity of CYP2C19 (IC50 > 20 μM) at concentrations that are significantly greater than peak plasma concentrations observed in patients. Apixaban did not induce CYP1A2, CYP2B6, CYP3A4/5 at a concentration up to 20 μM. Therefore, apixaban is not expected to alter the metabolic clearance of coadministered medicinal products that are metabolised by these enzymes. Apixaban is not a significant inhibitor of P-gp.
+Activated charcoal
+Paediatric population
+Interaction studies have not been performed in paediatrics. The above mentioned interaction data was obtained in adults and the warnings in section 4.4 should be taken into account for the paediatric population.
+
+===== eliquis | SmPC 4.5 | page 74 =====
+Eliquis | Eliquis 0.15 mg granules in capsules for opening | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+4.5 Interaction with other medicinal products and other forms of interaction
+Interaction studies have not been performed in paediatrics. The below mentioned interaction data was obtained in adults and the warnings in section 4.4 should be taken into account for the paediatric population.
+Inhibitors of CYP3A4 and P-gp
+Active substances which are not considered strong inhibitors of both CYP3A4 and P-gp, (e.g., amiodarone, clarithromycin, diltiazem, fluconazole, naproxen, quinidine, verapamil) are expected to increase apixaban plasma concentration to a lesser extent. No dose adjustment for apixaban is required when coadministered with agents that are not strong inhibitors of both CYP3A4 and Pgp. For example, diltiazem (360 mg once a day), considered a moderate CYP3A4 and a weak Pgp inhibitor, led to a 1.4-fold increase in mean apixaban AUC and a 1.3-fold increase in Cmax. Naproxen (500 mg, single dose) an inhibitor of Pgp but not an inhibitor of CYP3A4, led to a 1.5-fold and 1.6-fold increase in mean apixaban AUC and Cmax, respectively. Clarithromycin (500 mg, twice a day), an inhibitor of P-gp and a strong inhibitor of CYP3A4, led to a 1.6-fold and 1.3-fold increase in mean apixaban AUC and Cmax respectively.
+Inducers of CYP3A4 and P-gp
+Other concomitant therapies
+Effect of apixaban on other medicinal products
+In vitro apixaban studies showed no inhibitory effect on the activity of CYP1A2, CYP2A6, CYP2B6, CYP2C8, CYP2C9, CYP2D6 or CYP3A4 (IC50 > 45 µM) and weak inhibitory effect on the activity of CYP2C19 (IC50 > 20 µM) at concentrations that are significantly greater than peak plasma concentrations observed in patients. Apixaban did not induce CYP1A2, CYP2B6, CYP3A4/5 at a concentration up to 20 µM. Therefore, apixaban is not expected to alter the metabolic clearance of coadministered medicinal products that are metabolised by these enzymes. Apixaban is not a significant inhibitor of P-gp.
+
+===== eliquis | SmPC 4.5, SmPC 4.6, SmPC 4.7, SmPC 4.8 | page 76 =====
+Eliquis | Eliquis 0.15 mg granules in capsules for opening | SmPC 4.5 Interaction with other medicinal products and other forms of interaction; SmPC 4.6 Fertility, pregnancy and lactation; SmPC 4.7 Effects on ability to drive and use machines; SmPC 4.8 Undesirable effects
+Activated charcoal
+Paediatric population
+4.6 Fertility, pregnancy and lactation
+Pregnancy
+Breast-feeding
+Fertility
+4.7 Effects on ability to drive and use machines
+4.8 Undesirable effects
+Summary of the safety profile
+Adult population Apixaban has been investigated in over 7 Phase III clinical studies including more than 21 000 patients: more than 5 000 patients in VTEp studies, more than 11 000 patients in NVAF studies and more than 4 000 patients in the VTE treatment (VTEt) studies, for an average total exposure of 20 days, 1.7 years and 221 days respectively (see section 5.1).
+Common adverse reactions were haemorrhage, contusion, epistaxis, and haematoma (see Table 2 for adverse reaction profile and frequencies by indication).
+Tabulated list of adverse reactions
+Table 2 shows the adverse reactions ranked under headings of system organ class and frequency using the following convention: very common (≥ 1/10); common (≥ 1/100 to < 1/10); uncommon (≥ 1/1 000 to < 1/100); rare (≥ 1/10 000 to < 1/1 000); very rare (< 1/10 000); not known (cannot be estimated from the available data) in adults for VTEp, NVAF and VTEt and in paediatric patients from 28 days to < 18 years of age for VTEt and prevention of recurrent VTE.
+The frequencies of adverse reactions reported in Table 2 for paediatric patients are derived from study CV185325, in which they received apixaban for treatment of VTE and prevention of recurrent VTE.
+
+===== eliquis | SmPC 4.5 | page 97 =====
+Eliquis | Eliquis 0.5 mg coated granule in sachet | SmPC 4.5 Interaction with other medicinal products and other forms of interaction
+4.5 Interaction with other medicinal products and other forms of interaction
+Interaction studies have not been performed in paediatric patients.
+The below mentioned interaction data was obtained in adults and the warnings in section 4.4 should be taken into account for the paediatric population.
+Inhibitors of CYP3A4 and P-gp
+Active substances which are not considered strong inhibitors of both CYP3A4 and P-gp, (e.g., amiodarone, clarithromycin, diltiazem, fluconazole, naproxen, quinidine, verapamil) are expected to increase apixaban plasma concentration to a lesser extent. No dose adjustment for apixaban is required when coadministered with agents that are not strong inhibitors of both CYP3A4 and P-gp. For example, diltiazem (360 mg once a day), considered a moderate CYP3A4 and a weak P-gp inhibitor, led to a 1.4-fold increase in mean apixaban AUC and a 1.3-fold increase in Cmax. Naproxen (500 mg, single dose) an inhibitor of P-gp but not an inhibitor of CYP3A4, led to a 1.5-fold and 1.6-fold increase in mean apixaban AUC and Cmax, respectively. Clarithromycin (500 mg, twice a day), an
+inhibitor of P-gp and a strong inhibitor of CYP3A4, led to a 1.6-fold and 1.3-fold increase in mean apixaban AUC and Cmax respectively.
+Inducers of CYP3A4 and P-gp
+Other concomitant therapies
+Effect of apixaban on other medicinal products
+Activated charcoal
+Paediatric population Interaction studies have not been performed in paediatrics. The above mentioned interaction data was obtained in adults and the warnings in section 4.4 should be taken into account for the paediatric population.
+
+(10 chunk(s) of eliquis in SmPC 4.5)
