@@ -28,6 +28,14 @@ All three are public documents from the official EIC website and contain no pers
 
 *How you extract, clean and chunk; one extraction problem you fixed; chunk metadata; number of chunks.*
 
+Extraction is done page by page from the chosen PDFs with `pypdf`, while keeping the page number. There were certain cleaning steps in order to only maintain necessary information that is of value for the use of the tool. For example, the Guide's repeated page header was removed, lone page numbers and table of contents lines were removed, and pages that had less than 20 words were skipped (covers, blank pages). The chunks are composed of 200 words with a 40-word overlap, never crossing a page. I used a single chunk size on purpose, to stay within the 1,000-embeddings-a-day limit, and compared two search methods instead, since that needs no extra embeddings.
+
+In the process of extraction I faced a problem that might seem simple at first glance but had to be addressed in order to capture the real meaning of words. The PDFs include some words with stray spaces such as "high -risk" and "co -investment" (38 cases in the Work Programme and 9 in the Investment Guidelines). As seen, there is an extra space just before the hyphen and it could end up being interpreted as two separate pieces. For key processes such as keyword search, this can be critical as it may miss matches due to these slight errors. I fixed this in the cleaning step by removing the space before the hyphen, so the search now sees the actual words. 
+
+To maintain traceability and identify sources, each chunk stores its document (source), document title, page number and word count as metadata. Each chunk also gets a unique ID built from the document, page and chunk number, for example `work_programme_2027-p031-c2`. 
+
+Following the specifications of chunk size, word overlap and no page crossing, I ended up with a total of 631 chunks within my index. They are divided into the three documents: 516 Work Programme, 59 Guide, 56 Investment Guidelines. They were then embedded with gemini-embedding-2 at 768 dimensions. 
+
 
 
 ## Test set
