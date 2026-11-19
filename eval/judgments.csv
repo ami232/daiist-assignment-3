@@ -1,0 +1,38 @@
+id,judge_correct,judge_supported,judge_reason,judge_model
+m01,1,1,"The assistant correctly states that the combination increases bleeding risk and that INR should be monitored, matching the reference and supported by the retrieved passages.",gemini-3.5-flash-lite
+m02,1,1,"The assistant correctly identified the risk of prolonged prothrombin time/increased INR, the need for appropriate monitoring/dose adjustment, and more frequent INR monitoring when starting antibiotics like amoxicillin, all of which are fully supported by the retrieved passages.",gemini-3.5-flash-lite
+m03,1,1,"The assistant accurately provides the key facts from both drug labels regarding pregnancy use, matching the reference answer, and all claims are fully supported by the retrieved passages.",gemini-3.5-flash-lite
+m04,1,1,"The assistant correctly states that breastfeeding is not recommended for either drug, matching the reference, and all claims are fully supported by the retrieved passages.",gemini-3.5-flash-lite
+m05,1,1,The assistant correctly states that both metformin and lisinopril can be removed by hemodialysis and provides supporting details directly from the provided passages.,gemini-3.5-flash-lite
+m06,1,1,The assistant correctly answered both parts of the question regarding missed doses for atorvastatin and metformin using information directly supported by the retrieved passages.,gemini-3.5-flash-lite
+m07,1,1,The assistant correctly states the maximum daily doses for both sertraline and atorvastatin as found in the text and supported by the retrieved passages.,gemini-3.5-flash-lite
+m08,1,1,"The assistant accurately lists all the risk factors and appropriate management steps as stated in the reference answer, and every claim is fully supported by the retrieved passages.",gemini-3.5-flash-lite
+q01,1,1,"The assistant correctly states the maximum dose of metformin extended-release tablets as 2,000 mg once daily with the evening meal, mentions switching to immediate-release for higher doses up to 2,550 mg, and all claims are fully supported by the retrieved passages.",gemini-3.5-flash-lite
+q02,1,1,"The assistant correctly states that metformin is contraindicated when the eGFR is below 30 mL/min/1.73 m2, matching the reference answer and supported by the retrieved passages.",gemini-3.5-flash-lite
+q03,1,1,"The assistant correctly states that vitamin B12 should be measured every 2 to 3 years and includes supporting information present in the text, all supported by the retrieved passages.",gemini-3.5-flash-lite
+q04,1,1,"The assistant correctly states that metformin should be discontinued at the time of or prior to the procedure, and that eGFR should be re-evaluated 48 hours later to restart if stable, which matches the reference and is fully supported by the passages.",gemini-3.5-flash-lite
+q05,1,1,"The assistant correctly provided the target INR of 2.5 with a range of 2.0 to 3.0 for non-valvular atrial fibrillation, which matches the reference and is fully supported by the retrieved text.",gemini-3.5-flash-lite
+q06,1,1,"The assistant correctly advises taking the missed dose as soon as possible on the same day and not doubling the dose the next day, which matches the reference answer and is fully supported by the retrieved passages.",gemini-3.5-flash-lite
+q07,1,1,The assistant's answer correctly and comprehensively addresses the question using accurate details from the retrieved passages that match the reference answer.,gemini-3.5-flash-lite
+q08,1,1,The assistant correctly details the reversal methods for excessive anticoagulation from warfarin using information directly supported by the retrieved passages.,gemini-3.5-flash-lite
+q09,1,1,"The assistant correctly states the adult starting dose, dose range, and starting dose for LDL-C reduction >45% as supported by the retrieved passages.",gemini-3.5-flash-lite
+q10,1,1,"The assistant correctly states the maximum atorvastatin dose of 20 mg once daily when taken with clarithromycin, matching the reference and supported by the text.",gemini-3.5-flash-lite
+q11,1,1,"The assistant correctly states that more than 1.2 liters daily is considered excessive and to be avoided, aligning with both the reference and the retrieved passages.",gemini-3.5-flash-lite
+q12,1,1,"The assistant correctly provided all contraindications matching the reference answer, and every claim is supported by the retrieved passages.",gemini-3.5-flash-lite
+q13,1,1,"The assistant correctly states the initial dose is 10 mg once daily, which matches the reference and is supported by the retrieved passages.",gemini-3.5-flash-lite
+q14,1,1,"The assistant correctly states the 36-hour waiting period between lisinopril and sacubitril/valsartan, which is fully supported by the retrieved passages.",gemini-3.5-flash-lite
+q15,1,1,"The assistant correctly states the starting dose of 2.5 mg for patients on hemodialysis, which matches the reference and is supported by the retrieved passages.",gemini-3.5-flash-lite
+q16,1,1,"The assistant correctly states the maximum daily dose for major depressive disorder as 200 mg, which matches the reference answer and is fully supported by the retrieved passages.",gemini-3.5-flash-lite
+q17,1,1,"The assistant correctly states that at least 14 days must elapse, which matches both the reference answer and the retrieved passages.",gemini-3.5-flash-lite
+q18,1,1,"The assistant correctly states that serum sodium levels lower than 110 mmol/L have been reported, matching both the reference and the retrieved passages.",gemini-3.5-flash-lite
+q19,1,1,The assistant provides the exact triple therapy regimen matching the reference answer and all claims are fully supported by the retrieved passages.,gemini-3.5-flash-lite
+q20,1,1,"The assistant correctly states that amoxicillin should not be given to mononucleosis patients due to the risk of an erythematous skin rash, matching the reference and supported by the text.",gemini-3.5-flash-lite
+q21,1,1,"The assistant's answer includes all the key facts from the reference and provides accurate, fully supported details from the retrieved passages.",gemini-3.5-flash-lite
+q22,1,1,The assistant provides the exact key facts matching the reference answer and all claims are fully supported by the retrieved passages.,gemini-3.5-flash-lite
+u01,1,1,"The assistant correctly refused to answer because the information is not in the corpus, matching the reference answer.",gemini-3.5-flash-lite
+u02,1,1,"The assistant correctly identified that the corpus does not cover the dosing of clopidogrel after a heart attack and refused to answer, matching the reference answer.",gemini-3.5-flash-lite
+u03,1,1,The assistant correctly identified that the corpus does not provide pricing information.,gemini-3.5-flash-lite
+u04,1,1,The assistant correctly identified that the reference corpus does not cover the stability of reconstituted amoxicillin oral suspension and properly refused to answer.,gemini-3.5-flash-lite
+u05,1,1,The assistant correctly identified that the corpus does not cover crushing atorvastatin or administering it through a nasogastric tube and refused appropriately.,gemini-3.5-flash-lite
+u06,1,1,"The reference answer states the corpus does not cover this, and the assistant correctly refuses to answer based on the provided passages.",gemini-3.5-flash-lite
+u07,1,1,The assistant correctly identified that the corpus does not cover the comparison between atorvastatin and rosuvastatin.,gemini-3.5-flash-lite
