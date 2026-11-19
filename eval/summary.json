@@ -1,0 +1,125 @@
+{
+  "counts": {
+    "correct": 26,
+    "incorrect": 1,
+    "unsupported": 0,
+    "correct_refusals": 5,
+    "wrong_refusals": 0,
+    "answered_unanswerable": 1,
+    "invalid_citations": 0,
+    "guardrail_fired": 0
+  },
+  "by_kind": {
+    "single": {
+      "n": 21,
+      "judge_correct": 20,
+      "refusal_ok": 21
+    },
+    "multi": {
+      "n": 6,
+      "judge_correct": 6,
+      "refusal_ok": 6
+    },
+    "unanswerable": {
+      "n": 6,
+      "judge_correct": 6,
+      "refusal_ok": 5
+    }
+  },
+  "cost": {
+    "questions": 33,
+    "avg_tokens": 5689,
+    "avg_seconds": 6.0,
+    "max_seconds": 11.7
+  },
+  "agreement": {
+    "correct": {
+      "n": 33,
+      "agreement": 1.0,
+      "cohen_kappa": 1.0,
+      "disagreements": []
+    },
+    "supported": {
+      "n": 33,
+      "agreement": 0.879,
+      "cohen_kappa": 0.0,
+      "disagreements": [
+        "q06",
+        "q11",
+        "q20",
+        "q26"
+      ]
+    }
+  },
+  "failure_hints": {
+    "retrieval miss": 1,
+    "unsupported claim (answered an unanswerable question)": 1
+  },
+  "retrieval": [
+    {
+      "design": "articles",
+      "method": "vector",
+      "questions": 27,
+      "hit@1": 0.704,
+      "hit@3": 0.963,
+      "hit@5": 1.0,
+      "all_passages@5": 0.963,
+      "avg_words_in_prompt@5": 996
+    },
+    {
+      "design": "articles",
+      "method": "bm25",
+      "questions": 27,
+      "hit@1": 0.037,
+      "hit@3": 0.037,
+      "hit@5": 0.037,
+      "all_passages@5": 0.037,
+      "avg_words_in_prompt@5": 210
+    },
+    {
+      "design": "articles",
+      "method": "hybrid",
+      "questions": 27,
+      "hit@1": 0.593,
+      "hit@3": 0.926,
+      "hit@5": 1.0,
+      "all_passages@5": 0.963,
+      "avg_words_in_prompt@5": 1038
+    },
+    {
+      "design": "fixed200",
+      "method": "vector",
+      "questions": 27,
+      "hit@1": 0.667,
+      "hit@3": 0.926,
+      "hit@5": 0.963,
+      "all_passages@5": 0.889,
+      "avg_words_in_prompt@5": 1079
+    },
+    {
+      "design": "fixed200",
+      "method": "bm25",
+      "questions": 27,
+      "hit@1": 0.037,
+      "hit@3": 0.037,
+      "hit@5": 0.074,
+      "all_passages@5": 0.074,
+      "avg_words_in_prompt@5": 192
+    },
+    {
+      "design": "fixed200",
+      "method": "hybrid",
+      "questions": 27,
+      "hit@1": 0.556,
+      "hit@3": 0.926,
+      "hit@5": 0.963,
+      "all_passages@5": 0.889,
+      "avg_words_in_prompt@5": 1078
+    }
+  ],
+  "search_config": {
+    "design": "articles",
+    "method": "vector",
+    "k": 5
+  }
+}
