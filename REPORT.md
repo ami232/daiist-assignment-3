@@ -97,7 +97,196 @@ Artículo 36. Fianza.
 
 **Subagent** (`.claude/agents/corpus-researcher.md`, tool: `mcp__corpus__search` only): searches with Spanish legal terms, up to 3 searches; answers in 3–8 sentences citing every claim with the exact "Cite as" label; if the passages don't answer, starts with "I can't find the answer in the corpus laws (LAU, LDV, LPH)." and says what is missing; flags rules that depend on the contract date, a company landlord / gran tenedor, or a zona tensionada.
 
-**Transcript from Claude Code:** ✍️ (to paste after running it)
+**Transcript from Claude Code** (full export in `eval/subagent_transcript.txt`). In Claude Code, opened in the repo folder, `/mcp` showed `corpus` connected with 2 tools; the main session delegated the question to `corpus-researcher`, which answered only from `search` results (3 searches) with the exact citation labels, and listed what it had not retrieved (arts. 9, 10 and 17.6) instead of filling the gaps from memory.
+
+<details><summary>Transcript</summary>
+
+```text
+▗ ▗   ▖ ▖  Claude Code v2.1.322
+           Opus 5.5 · Claude Team
+ ▘▘   ▝▝   ~/Desktop/daiist-assignment-3
+
+  Fable 5.2 is here for your longest and toughest coding tasks. It draws down usage faster than Opus 5.5. Switch with /model.
+
+⏺ Your organization may apply global configuration to Claude Code. These
+  settings are centrally managed by your IT administrator.
+
+❯ Use the corpus-researcher subagent to answer: my landlord wants to raise the  
+  rent in the middle of the contract, can he?                                   
+
+⏺ corpus-researcher(Mid-contract rent increase question)
+  ⎿  Backgrounded agent (↓ to manage · ctrl+o to expand)
+
+⏺ I've passed your question to the corpus-researcher subagent. It's checking the
+  indexed BOE texts (the LAU, the 2023 housing law and the LPH) for three
+  things: whether rent can change during the contract, raises tied to
+  improvement works, and limits at renewal, including in stressed-market areas.
+  I'll send you its answer with the article citations when it finishes.
+
+✻ Churned for 7s · done 9:21
+
+› Message from corpus-researcher
+  **Short answer:** Mostly no. During the contract, the landlord can only raise
+  the rent through the yearly update, and only if the contract provides for one.
+  That update is capped by the IRAV index. On top of that, he can raise it for
+  improvement works under strict conditions, or if the tenant agrees.
+
+  **Annual update (art. 18 LAU, consolidated text as of 2026-11-13)**
+  - The rent can only change once a year, on the anniversary of the contract,
+  and only as the parties agreed: "la renta sólo podrá ser actualizada por el
+  arrendador o el arrendatario en la fecha en que se cumpla cada año de vigencia
+  del contrato, en los términos pactados por las partes" [LAU, Artículo 18].
+  - **If the contract says nothing:** there is no update at all. "En defecto de
+  pacto expreso, no se aplicará actualización de rentas a los contratos" [LAU,
+  Artículo 18].
+  - **Which index applies:** if the contract provides for an update but does not
+  name an index or method, the rent is updated by "la variación anual del
+  Índice de Referencia para la Actualización Anual de los Contratos de
+  Arrendamiento de Vivienda (IRAV)" [LAU, Artículo 18].
+  - **Cap:** "En todo caso, el incremento producido como consecuencia de la
+  actualización anual de la renta no podrá exceder del resultado de aplicar la
+  variación porcentual experimentada por el [...] (IRAV)" [LAU, Artículo 18]. So
+  even a clause tied to CPI (IPC) or a fixed percentage cannot go above the
+  IRAV.
+  - The INE (Spain's statistics office) was told to define this index "con el
+  objeto de evitar incrementos desproporcionados en la renta" [LAU, Disposición
+  adicional undécima].
+  - **Procedure:** the new rent can only be charged "a partir del mes siguiente
+  a aquel en que la parte interesada lo notifique a la otra parte por escrito,
+  expresando el porcentaje de alteración aplicado". The tenant can ask for the
+  INE certificate. A note on the previous month's rent receipt counts as notice
+  [LAU, Artículo 18].
+
+  **Improvement works (art. 19 LAU)**
+  - **Without the tenant's consent:** only after "cinco años de duración del
+  contrato, o siete años si el arrendador fuese persona jurídica" (a company or
+  other legal entity). The increase is the money invested × the legal interest
+  rate + 3 points, "sin que pueda exceder el aumento del veinte por ciento de la
+  renta vigente". Public subsidies must be deducted from the amount invested,
+  and the contract can exclude this right ("salvo pacto en contrario") [LAU,
+  Artículo 19 (parte 1/2)].
+  - **When it applies:** from the month after the landlord's written notice,
+  which must show the calculation and include copies of the cost documents [LAU,
+  Artículo 19 (parte 1/2)].
+  - **With the tenant's consent:** at any time, improvement works can be done
+  and the rent raised "previo acuerdo entre arrendador y arrendatario", without
+  interrupting or restarting the compulsory extension (art. 9) or the tacit
+  extension (art. 10). The works must go beyond the landlord's ordinary repair
+  duty under art. 21 [LAU, Artículo 19 (parte 2/2)].
+  - **Related:** if the tenant has to put up with improvement works, the rent
+  goes down in proportion to the part of the home they cannot use [LAU, Artículo
+  22].
+
+  **Extensions (prórroga) and new contracts in stressed areas (zona
+  tensionada)**
+  - Art. 19.4 says an agreed increase does not interrupt "el periodo de prórroga
+  obligatoria [...] o de prórroga tácita" [LAU, Artículo 19 (parte 2/2)]. This
+  suggests the extensions run under the same contract and the same rent rules
+  (the annual update only).
+  - **Gap:** I did not retrieve the text of arts. 9 and 10, so I cannot quote a
+  rule that expressly bans renegotiating the rent at extension.
+  - **Large landlord (gran tenedor) in a declared zona tensionada:** the
+  starting rent of a *new* contract cannot exceed the reference price index, and
+  extra charges cannot be passed on to get around that cap [LAU, Artículo 17
+  (parte 4/5)].
+    - This only applies to contracts signed after Ley 12/2023 came into force
+  and once the index system is approved [LAU, Disposición transitoria séptima].
+    - The same cap applies to a home not rented as a primary residence in the
+  last five years, if the ministry's resolution says so [LAU, Artículo 17 (parte
+  5/5)].
+  - **New contract above the previous rent:** it can only go beyond the old
+  contract's annual update by up to 10% over the last rent of the previous five
+  years, and only in listed cases: recent renovation, an energy-saving
+  improvement of 30%, accessibility works, or a contract of 10 years or more
+  [LAU, Artículo 17 (parte 3/5)].
+  - **Successive temporary (short-stay) contracts:** cannot increase the rent by
+  more than the IRAV per year [LAU, Artículo 17 (parte 5/5)].
+  - **How zones are declared:** by the housing authority, for three years,
+  renewable every year [LDV, Artículo 18 (parte 3/5)].
+  - **Whether these rules apply depends on three things:** whether the zone is
+  declared, whether the landlord is a gran tenedor, and when the contract was
+  signed.
+
+  **What the corpus doesn't cover / where I'm uncertain**
+  1. I did not retrieve the general rule of art. 17.6 (the cap for a new
+  contract on a home in a zona tensionada, any landlord). I only have its
+  exceptions, quoted above.
+  2. The retrieved passages say nothing about the temporary 2% (2023) and 3%
+  (2024) caps on annual updates. They also don't give a specific reform name or
+  date. The consolidated LAU dated 2026-11-13 simply shows the IRAV as the
+  default index and the cap, which is the version in force as of November 2026
+  as far as the corpus shows.
+  3. I did not retrieve arts. 9 and 10 (contract length and extensions).
+  4. The actual IRAV figures, which zones are declared, and the gran tenedor
+  definition are not in the passages I retrieved. Regional rules and the
+  tenant's own contract clause would also need checking.
+
+  I stopped at 3 searches. More searches on arts. 9, 10 and 17.6 would close
+  gaps 1 and 3.
+
+⏺ Mostly no. Under the LAU, the rent can't simply be renegotiated partway
+  through the contract. During the contract there are only three ways it can go
+  up:
+
+  1. The yearly update, and only if the contract provides for one (art. 18 LAU)
+  - It can only happen once a year, on the contract's anniversary, "en los
+    términos pactados por las partes."
+  - If your contract says nothing about updates, the rent can't be updated at 
+    all: "En defecto de pacto expreso, no se aplicará actualización de rentas."
+  - The rise can never exceed the IRAV, the official index that the INE (Spain's
+    national statistics office) publishes for updating rental contracts. This
+    holds even if your contract ties the update to IPC (inflation) or a fixed
+    percentage.
+  - He must tell you in writing and state the percentage. The new rent only
+    applies from the following month, and you can ask for the INE certificate. A
+    note on the previous month's rent receipt counts as notice.
+
+  2. Improvement works (art. 19 LAU)
+  - Without your consent: only after the contract has lasted 5 years (7 if the
+    landlord is a company). The rise is the amount invested × the legal interest
+    rate + 3 points, capped at 20% of the current rent.
+    - Any public subsidies he received must be subtracted from the investment.
+    - He must notify you in writing, showing the calculation and enclosing
+      copies of the cost documents.
+    - The contract can rule this out entirely.
+  - With your consent: at any time, for works that go beyond ordinary repairs.
+    Agreeing to this doesn't restart your extension periods.
+  - While works are going on, your rent goes down in proportion to the part of
+    the home you can't use (art. 22).
+
+  3. You agree to it. Nothing obliges you to accept a mid-contract increase
+  outside the two routes above.
+
+  Stressed-market areas (zonas tensionadas, art. 17). These rules cover new
+  contracts, not your current one. In a declared zone, a landlord who owns many
+  properties (a gran tenedor) can't set a new contract's starting rent above the
+  official reference price index. Whether this matters for you later depends on
+  whether your area is declared, whether he counts as a gran tenedor, and when
+  the contract was signed.
+
+  What to do: check your contract for an update clause. If there's none, he
+  can't raise the rent. If there is one, the annual rise is capped at the IRAV
+  and needs written notice.
+
+  What the subagent didn't confirm:
+  - It didn't retrieve arts. 9 and 10 (contract length and extensions). It
+    infers that the rent can't be renegotiated at an extension, but it has no
+    text that says so expressly.
+  - It didn't retrieve the general cap in art. 17.6 that applies to any landlord
+    in a zona tensionada.
+  - The corpus doesn't contain the current IRAV figures, the list of declared
+    zones, or the definition of gran tenedor. Regional rules may also apply.
+
+  This is a reading of the state law in the corpus, not legal advice for your
+  situation. I can send the subagent back to search arts. 9, 10 and 17.6 to fill
+  those gaps.
+
+✻ Worked for 10s · done 9:22
+
+⏺ Agent "Mid-contract rent increase question" finished · 30s
+```
+
+</details>
 
 ## Adding a document
 
