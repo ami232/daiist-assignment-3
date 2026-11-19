@@ -1,0 +1,356 @@
+{
+ "question": "¿Cuál era el salario mínimo interprofesional en 2025?",
+ "document": "Real_Decreto_87-2025_SMI_2025.pdf",
+ "index_start": {
+  "chunks": 788,
+  "documents": [],
+  "index_mb": 14.13
+ },
+ "index_end": {
+  "chunks": 801,
+  "documents": [
+   "real_decreto_87-2025_smi_2025"
+  ],
+  "index_mb": 14.37
+ },
+ "steps": [
+  {
+   "step": 1,
+   "label": "BEFORE: a question the corpus cannot answer",
+   "prompt": "¿Cuál era el salario mínimo interprofesional en 2025?",
+   "approval_requests": [],
+   "answer": "No encuentro esto en los documentos. Los documentos disponibles contienen el Real Decreto 126/2026, que fija el salario mínimo interprofesional para el año 2026 en 1.221 euros al mes (o 40,70 euros al día) [B-smi-0004], pero no recogen la tabla de cuantías concretas del salario mínimo interprofesional para 2025 del Real Decreto 87/2025 [B-smi-0001].",
+   "sources": [
+    {
+     "id": "B-smi-0004",
+     "title": "Real Decreto 126/2026, salario mínimo interprofesional para 2026",
+     "location": "Artículo 1",
+     "pages": "p. 3"
+    },
+    {
+     "id": "B-smi-0001",
+     "title": "Real Decreto 126/2026, salario mínimo interprofesional para 2026",
+     "location": "Preliminar",
+     "pages": "pp. 1-2"
+    }
+   ],
+   "refused": true,
+   "guardrail": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "seconds": 13.8,
+   "error": null,
+   "tool_calls": [
+    {
+     "tool": "search",
+     "args": {
+      "query": "salario minimo interprofesional 2025"
+     },
+     "status": "ok",
+     "result": "5 passages for: 'salario minimo interprofesional 2025', most similar first.\n\n[1] Real Decreto 126/2026, salario mínimo interprofesional para 2026 | Artículo 1 | p. 3 | id B-smi-0004\nArtículo 1. Cuantía del salario mínimo interprofesional.\nEl salario mínimo para cualesquiera actividades en la agricultura, en la industria y en los\nservicios, sin distinción de sexo ni edad de las personas trabajadora"
+    },
+    {
+     "tool": "search",
+     "args": {
+      "query": "cuantía salario mínimo interprofesional 2025 Real Decreto 87/2025"
+     },
+     "status": "ok",
+     "result": "5 passages for: 'cuantía salario mínimo interprofesional 2025 Real Decreto 87/2025', most similar first.\n\n[1] Real Decreto 126/2026, salario mínimo interprofesional para 2026 | Artículo 1 | p. 3 | id B-smi-0004\nArtículo 1. Cuantía del salario mínimo interprofesional.\nEl salario mínimo para cualesquiera actividades en la agricultura, en la industria y en los\nservicios, sin distinción de sexo ni eda"
+    }
+   ],
+   "index_before": {
+    "chunks": 788,
+    "documents": [],
+    "index_mb": 14.13
+   },
+   "index_after": {
+    "chunks": 788,
+    "documents": [],
+    "index_mb": 14.13
+   }
+  },
+  {
+   "step": 2,
+   "label": "NO: the assistant is asked to add the document and the answer is NO",
+   "prompt": "Por favor, añade este documento al corpus: /Users/tessacorreig/Documents/daiist-assignment-3/demo/Real_Decreto_87-2025_SMI_2025.pdf",
+   "approval_requests": [
+    {
+     "tool": "add_document",
+     "args": {
+      "path": "/Users/tessacorreig/Documents/daiist-assignment-3/demo/Real_Decreto_87-2025_SMI_2025.pdf"
+     },
+     "approved": false
+    }
+   ],
+   "answer": "El salario mínimo interprofesional para 2026 queda fijado en 40,70 euros al día o 1.221 euros al mes [B-smi-0004]. Esta cuantía se establece en el Real Decreto 126/2026 para cualesquiera actividades en la agricultura, la industria y los servicios [B-smi-0004].",
+   "sources": [
+    {
+     "id": "B-smi-0004",
+     "title": "Real Decreto 126/2026, salario mínimo interprofesional para 2026",
+     "location": "Artículo 1",
+     "pages": "p. 3"
+    }
+   ],
+   "refused": false,
+   "guardrail": "fixed_on_retry",
+   "model": "gemini-3.5-flash-lite",
+   "seconds": 11.6,
+   "error": null,
+   "tool_calls": [
+    {
+     "tool": "add_document",
+     "args": {
+      "path": "/Users/tessacorreig/Documents/daiist-assignment-3/demo/Real_Decreto_87-2025_SMI_2025.pdf"
+     },
+     "status": "not_approved",
+     "result": "The user did not approve adding this file. It was NOT added."
+    },
+    {
+     "tool": "search",
+     "args": {
+      "query": "salario minimo interprofesional 2026"
+     },
+     "status": "ok",
+     "result": "5 passages for: 'salario minimo interprofesional 2026', most similar first.\n\n[1] Real Decreto 126/2026, salario mínimo interprofesional para 2026 | Preliminar | pp. 1-2 | id B-smi-0001\nReal Decreto 126/2026, de 18 de febrero, por el que se fija el salario\nmínimo interprofesional para 2026.\nMinisterio de Trabajo y Economía Social\n«BOE» núm. 44, de 19 de febrero de 2026\nReferencia: BOE-A-2026-3815\nT"
+    }
+   ],
+   "index_before": {
+    "chunks": 788,
+    "documents": [],
+    "index_mb": 14.13
+   },
+   "index_after": {
+    "chunks": 788,
+    "documents": [],
+    "index_mb": 14.13
+   }
+  },
+  {
+   "step": 3,
+   "label": "YES: you approve adding the document",
+   "prompt": "Por favor, añade este documento al corpus: /Users/tessacorreig/Documents/daiist-assignment-3/demo/Real_Decreto_87-2025_SMI_2025.pdf",
+   "approval_requests": [
+    {
+     "tool": "add_document",
+     "args": {
+      "path": "/Users/tessacorreig/Documents/daiist-assignment-3/demo/Real_Decreto_87-2025_SMI_2025.pdf"
+     },
+     "approved": true
+    }
+   ],
+   "answer": "El salario mínimo interprofesional para 2025 queda fijado en 39,47 euros al día o 1184 euros al mes, según esté fijado por días o por meses [B-real_decreto_87-2025_smi_2025-0004].",
+   "sources": [
+    {
+     "id": "B-real_decreto_87-2025_smi_2025-0004",
+     "title": "Real_Decreto_87-2025_SMI_2025",
+     "location": "Artículo 1",
+     "pages": "p. 2"
+    }
+   ],
+   "refused": false,
+   "guardrail": "fixed_on_retry",
+   "model": "gemini-3.5-flash-lite",
+   "seconds": 27.7,
+   "error": null,
+   "tool_calls": [
+    {
+     "tool": "add_document",
+     "args": {
+      "path": "/Users/tessacorreig/Documents/daiist-assignment-3/demo/Real_Decreto_87-2025_SMI_2025.pdf"
+     },
+     "status": "ok",
+     "result": "Added 'Real_Decreto_87-2025_SMI_2025' (source name: real_decreto_87-2025_smi_2025): 13 passages, 2163 words. It can be searched now."
+    },
+    {
+     "tool": "search",
+     "args": {
+      "query": "Real Decreto 87 2025 SMI 2025"
+     },
+     "status": "ok",
+     "result": "5 passages for: 'Real Decreto 87 2025 SMI 2025', most similar first.\n\n[1] Real_Decreto_87-2025_SMI_2025 | Preliminar | p. 1 | id B-real_decreto_87-2025_smi_2025-0001\nI. DISPOSICIONES GENERALES\nMINISTERIO DE TRABAJO Y ECONOMÍA SOCIAL\n2576 Real Decreto 87/2025, de 11 de febrero, por el que se fija el salario mínimo\ninterprofesional para 2025.\nEn cumplimiento del mandato al Gobierno para fijar anualm"
+    }
+   ],
+   "index_before": {
+    "chunks": 788,
+    "documents": [],
+    "index_mb": 14.13
+   },
+   "index_after": {
+    "chunks": 801,
+    "documents": [
+     "real_decreto_87-2025_smi_2025"
+    ],
+    "index_mb": 14.37
+   }
+  },
+  {
+   "step": 4,
+   "label": "AFTER: the same question again",
+   "prompt": "¿Cuál era el salario mínimo interprofesional en 2025?",
+   "approval_requests": [],
+   "answer": "En 2025, el salario mínimo interprofesional quedó fijado en 39,47 euros al día o 1.184 euros al mes, según estuviera fijado por días o por meses [B-real_decreto_87-2025_smi_2025-0004]. Esta cuantía se estableció mediante el Real Decreto 87/2025 para cualquier actividad en la agricultura, la industria y los servicios [B-real_decreto_87-2025_smi_2025-0001, B-real_decreto_87-2025_smi_2025-0004].",
+   "sources": [
+    {
+     "id": "B-real_decreto_87-2025_smi_2025-0004",
+     "title": "Real_Decreto_87-2025_SMI_2025",
+     "location": "Artículo 1",
+     "pages": "p. 2"
+    },
+    {
+     "id": "B-real_decreto_87-2025_smi_2025-0001",
+     "title": "Real_Decreto_87-2025_SMI_2025",
+     "location": "Preliminar",
+     "pages": "p. 1"
+    }
+   ],
+   "refused": false,
+   "guardrail": "ok",
+   "model": "gemini-3.5-flash-lite",
+   "seconds": 9.3,
+   "error": null,
+   "tool_calls": [
+    {
+     "tool": "search",
+     "args": {
+      "query": "salario minimo interprofesional 2025"
+     },
+     "status": "ok",
+     "result": "5 passages for: 'salario minimo interprofesional 2025', most similar first.\n\n[1] Real_Decreto_87-2025_SMI_2025 | Artículo 1 | p. 2 | id B-real_decreto_87-2025_smi_2025-0004\nArtículo 1. Cuantía del salario mínimo interprofesional.\nEl salario mínimo para cualesquiera actividades en la agricultura, en la industria y en\nlos servicios, sin distinción de sexo ni edad de los trabajadores, queda fijado en"
+    }
+   ],
+   "index_before": {
+    "chunks": 801,
+    "documents": [
+     "real_decreto_87-2025_smi_2025"
+    ],
+    "index_mb": 14.37
+   },
+   "index_after": {
+    "chunks": 801,
+    "documents": [
+     "real_decreto_87-2025_smi_2025"
+    ],
+    "index_mb": 14.37
+   }
+  },
+  {
+   "step": 5,
+   "label": "TWICE: add the same file again",
+   "prompt": "Por favor, añade este documento al corpus: /Users/tessacorreig/Documents/daiist-assignment-3/demo/Real_Decreto_87-2025_SMI_2025.pdf",
+   "approval_requests": [
+    {
+     "tool": "add_document",
+     "args": {
+      "path": "/Users/tessacorreig/Documents/daiist-assignment-3/demo/Real_Decreto_87-2025_SMI_2025.pdf"
+     },
+     "approved": true
+    }
+   ],
+   "answer": "El Real Decreto 87/2025 fija el salario mínimo interprofesional para el año 2025 en 39,47 euros al día o 1184 euros al mes [Real_Decreto_87-2025_SMI_2025 | Artículo 1 | p. 2 | id B-real_decreto_87-2025_smi_2025-0004]. Este documento ya se encontraba previamente añadido en el corpus.",
+   "sources": [
+    {
+     "id": "B-real_decreto_87-2025_smi_2025-0004",
+     "title": "Real_Decreto_87-2025_SMI_2025",
+     "location": "Artículo 1",
+     "pages": "p. 2"
+    }
+   ],
+   "refused": false,
+   "guardrail": "fixed_on_retry",
+   "model": "gemini-3.5-flash-lite",
+   "seconds": 19.6,
+   "error": null,
+   "tool_calls": [
+    {
+     "tool": "add_document",
+     "args": {
+      "path": "/Users/tessacorreig/Documents/daiist-assignment-3/demo/Real_Decreto_87-2025_SMI_2025.pdf"
+     },
+     "status": "ok",
+     "result": "Skipped: 'Real_Decreto_87-2025_SMI_2025' is already indexed (added before as Real_Decreto_87-2025_SMI_2025.pdf). Nothing was changed."
+    },
+    {
+     "tool": "search",
+     "args": {
+      "query": "Real Decreto 87 2025 SMI"
+     },
+     "status": "ok",
+     "result": "5 passages for: 'Real Decreto 87 2025 SMI', most similar first.\n\n[1] Real_Decreto_87-2025_SMI_2025 | Preliminar | p. 1 | id B-real_decreto_87-2025_smi_2025-0001\nI. DISPOSICIONES GENERALES\nMINISTERIO DE TRABAJO Y ECONOMÍA SOCIAL\n2576 Real Decreto 87/2025, de 11 de febrero, por el que se fija el salario mínimo\ninterprofesional para 2025.\nEn cumplimiento del mandato al Gobierno para fijar anualmente "
+    }
+   ],
+   "index_before": {
+    "chunks": 801,
+    "documents": [
+     "real_decreto_87-2025_smi_2025"
+    ],
+    "index_mb": 14.37
+   },
+   "index_after": {
+    "chunks": 801,
+    "documents": [
+     "real_decreto_87-2025_smi_2025"
+    ],
+    "index_mb": 14.37
+   }
+  },
+  {
+   "step": 6,
+   "label": "RENAMED: add a copy of the file under another name",
+   "prompt": "Por favor, añade este documento al corpus: /Users/tessacorreig/Documents/daiist-assignment-3/demo/copia_del_decreto.pdf",
+   "approval_requests": [
+    {
+     "tool": "add_document",
+     "args": {
+      "path": "/Users/tessacorreig/Documents/daiist-assignment-3/demo/copia_del_decreto.pdf"
+     },
+     "approved": true
+    }
+   ],
+   "answer": "No encuentro esto en los documentos. Los documentos cubren las cuantías del salario mínimo interprofesional (Real Decreto 126/2026) y las reglas de incorporación de complementos salariales [B-smi-0005].",
+   "sources": [
+    {
+     "id": "B-smi-0005",
+     "title": "Real Decreto 126/2026, salario mínimo interprofesional para 2026",
+     "location": "Artículo 2",
+     "pages": "p. 3"
+    }
+   ],
+   "refused": true,
+   "guardrail": "fixed_on_retry",
+   "model": "gemini-3.5-flash-lite",
+   "seconds": 19.8,
+   "error": null,
+   "tool_calls": [
+    {
+     "tool": "add_document",
+     "args": {
+      "path": "/Users/tessacorreig/Documents/daiist-assignment-3/demo/copia_del_decreto.pdf"
+     },
+     "status": "ok",
+     "result": "Skipped: 'Real_Decreto_87-2025_SMI_2025' is already indexed (added before as Real_Decreto_87-2025_SMI_2025.pdf). Nothing was changed."
+    },
+    {
+     "tool": "search",
+     "args": {
+      "query": "añadir documento corpus smi reales decretos"
+     },
+     "status": "ok",
+     "result": "5 passages for: 'añadir documento corpus smi reales decretos', most similar first.\n\n[1] Real Decreto 126/2026, salario mínimo interprofesional para 2026 | Preliminar | pp. 1-2 | id B-smi-0001\nReal Decreto 126/2026, de 18 de febrero, por el que se fija el salario\nmínimo interprofesional para 2026.\nMinisterio de Trabajo y Economía Social\n«BOE» núm. 44, de 19 de febrero de 2026\nReferencia: BOE-A-2026"
+    }
+   ],
+   "index_before": {
+    "chunks": 801,
+    "documents": [
+     "real_decreto_87-2025_smi_2025"
+    ],
+    "index_mb": 14.37
+   },
+   "index_after": {
+    "chunks": 801,
+    "documents": [
+     "real_decreto_87-2025_smi_2025"
+    ],
+    "index_mb": 14.37
+   }
+  }
+ ]
+}
