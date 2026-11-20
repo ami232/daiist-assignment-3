@@ -1,11 +1,269 @@
 """
-Assignment 3: evaluation (`main.py evaluate`). May be evaluate.ipynb instead.
+Assignment 3: evaluation (`main.py evaluate`).
 
-Hit rate at 1/3/5 per retrieval design; agent answers on every question;
-code checks; an LLM judge with a rubric and the retrieved text as evidence;
-agreement with eval/human_labels.csv. Save results in eval/.
+Stage 1, retrieval: Hit@1/3/5, recall@5 and words added to the prompt for every
+retrieval design in rag.RETRIEVAL_DESIGNS, over the answerable questions of
+eval/questions.csv -> eval/retrieval.csv (per question) and
+eval/retrieval_summary.csv (per design). Query vectors are cached, so a re-run
+embeds nothing new.
 
-Start from session 10's 07-own-harness/evaluate.py.
+Stage 2, end to end: the agent (agent.py, add_document always denied so the
+shipped index never changes) answers every question -> eval/answers.jsonl,
+resumable: ids already there are skipped. Then code checks on each answer
+(refusal phrase, citations present in that run's search results, expected
+source cited, BOE notice) -> eval/checks.csv.
+
+Stage 3 (not written yet, waits for the student's rubric): LLM judge and
+agreement with eval/human_labels.csv.
+
+Started from session 10's 07-own-harness/evaluate.py.
 """
 
-raise NotImplementedError("Write your evaluation stage.")
+import asyncio
+import csv
+import json
+import logging
+import sys
+import time
+from pathlib import Path
+
+import index as ix
+import rag
+
+ROOT = Path(__file__).resolve().parent
+EVAL_DIR = ROOT / "eval"
+QUESTIONS = EVAL_DIR / "questions.csv"
+RETRIEVAL_CSV = EVAL_DIR / "retrieval.csv"
+RETRIEVAL_SUMMARY = EVAL_DIR / "retrieval_summary.csv"
+ANSWERS = EVAL_DIR / "answers.jsonl"
+CHECKS_CSV = EVAL_DIR / "checks.csv"
+KS = (1, 3, 5)
+PAUSE = 4            # seconds between questions: stays under the free tier's requests-per-minute
+
+
+def read_questions() -> list[dict]:
+    with QUESTIONS.open(newline="", encoding="utf-8") as f:
+        return [r for r in csv.DictReader(f) if r["question"].strip()]
+
+
+def expected_pairs(row: dict) -> list[tuple[str, str]]:
+    """[(source, location)] from the `;`-separated columns (one source may apply to every location)."""
+    sources = [s.strip() for s in row["expected_source"].split(";") if s.strip()]
+    locations = [loc.strip() for loc in row["expected_location"].split(";") if loc.strip()]
+    if len(sources) == 1:
+        sources *= len(locations)
+    if len(sources) != len(locations):
+        raise ValueError(f"{row['id']}: {len(sources)} sources but {len(locations)} locations")
+    return list(zip(sources, locations))
+
+
+def evaluate_retrieval(questions: list[dict]) -> list[dict]:
+    answerable = [q for q in questions if q["kind"].strip() != "unanswerable"]
+    rows = []
+    for design, (chunking, mode) in rag.RETRIEVAL_DESIGNS.items():
+        if ix.open_collection(chunking).count() == 0:
+            print(f"  {design}: collection {chunking!r} is empty, skipped (run `main.py index`).")
+            continue
+        for q in answerable:
+            pairs = expected_pairs(q)
+            hits = rag.retrieve(q["question"], design, k=max(KS))
+            found = [any(h.covers(s, loc) for s, loc in pairs) for h in hits]
+            row = {"design": design, "chunking": chunking, "mode": mode, "id": q["id"], "kind": q["kind"]}
+            for k in KS:
+                row[f"hit@{k}"] = int(any(found[:k]))
+            row["recall@5"] = round(sum(any(h.covers(s, loc) for h in hits) for s, loc in pairs) / len(pairs), 3)
+            row["first_hit_rank"] = found.index(True) + 1 if any(found) else ""
+            for k in KS:
+                row[f"words@{k}"] = sum(h.meta["n_words"] for h in hits[:k])
+            row["expected"] = "; ".join(f"[{s}, {loc}]" for s, loc in pairs)
+            row["retrieved"] = "; ".join(h.citation for h in hits)
+            rows.append(row)
+    return rows
+
+
+def summarise(rows: list[dict]) -> list[dict]:
+    summary = []
+    for design in dict.fromkeys(r["design"] for r in rows):
+        mine = [r for r in rows if r["design"] == design]
+        line = {"design": design, "chunking": mine[0]["chunking"], "mode": mine[0]["mode"], "questions": len(mine)}
+        for k in KS:
+            line[f"hit@{k}"] = round(sum(r[f"hit@{k}"] for r in mine) / len(mine), 3)
+        line["recall@5"] = round(sum(r["recall@5"] for r in mine) / len(mine), 3)
+        multi = [r for r in mine if r["kind"] == "multi"]
+        line["multi_recall@5"] = round(sum(r["recall@5"] for r in multi) / len(multi), 3) if multi else ""
+        for k in KS:
+            line[f"words@{k}"] = round(sum(r[f"words@{k}"] for r in mine) / len(mine))
+        summary.append(line)
+    return summary
+
+
+# --------------------------------------------------------------------------- #
+# End to end: answers                                                          #
+# --------------------------------------------------------------------------- #
+
+def read_answers() -> dict[str, dict]:
+    if not ANSWERS.is_file():
+        return {}
+    rows = [json.loads(line) for line in ANSWERS.read_text(encoding="utf-8").splitlines() if line.strip()]
+    return {r["id"]: r for r in rows}
+
+
+async def run_answers(questions: list[dict]) -> int:
+    """Answer every question not yet in answers.jsonl, appending one line each. Returns how many are missing."""
+    import agent
+
+    done = read_answers()
+    todo = [q for q in questions if q["id"] not in done]
+    if not todo:
+        return 0
+    print(f"  {len(done)} already answered, {len(todo)} to go (model {agent.MODEL})")
+    async with agent.open_agent(approve=agent.deny) as runner:
+        for n, q in enumerate(todo, 1):
+            for attempt in range(1, 4):
+                try:
+                    result = await agent.ask(runner, q["question"])
+                    break
+                except Exception as error:  # noqa: BLE001 - quota or network: wait, then keep what we have
+                    per_minute = "429" in str(error) and "PerDay" not in str(error)
+                    if per_minute and attempt < 3:
+                        print(f"  {q['id']}: requests-per-minute limit, waiting 65s")
+                        await asyncio.sleep(65)
+                        continue
+                    print(f"  {q['id']}: stopped ({type(error).__name__}: {str(error)[:200]}). Re-run to resume.")
+                    return len(todo) - n + 1
+            with ANSWERS.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"id": q["id"], "kind": q["kind"], **result}, ensure_ascii=False) + "\n")
+            flag = " guardrail:" + result["citation_guardrail"] if result["citation_guardrail"] else ""
+            print(f"  {q['id']} {q['kind']:<12} {result['searches']} searches  {result['tokens']['total']:>6} tokens  "
+                  f"{result['seconds']:>5.1f}s{flag}")
+            if n < len(todo):
+                time.sleep(PAUSE)
+    return 0
+
+
+# --------------------------------------------------------------------------- #
+# End to end: code checks                                                      #
+# --------------------------------------------------------------------------- #
+
+def code_checks(q: dict, a: dict) -> dict:
+    """What code can check exactly about one answer."""
+    import agent
+
+    text = a["answer"]
+    cited = rag.citations_in(text)
+    retrieved = {pair for c in a["retrieved_citations"] for pair in rag.citations_in(c)}
+    invalid = [f"[{s}, {loc}]" for s, loc in cited if (s, loc) not in retrieved]
+    refused = agent.REFUSAL in text
+    answerable = q["kind"] != "unanswerable"
+    expected = expected_pairs(q) if answerable else []
+    hit = [pair for pair in expected if pair in cited]
+
+    if not answerable:
+        outcome = "correct_refusal" if refused and not cited else ("partial_on_unanswerable" if refused else "answered_unanswerable")
+    elif refused and not cited:
+        outcome = "wrong_refusal"
+    else:
+        outcome = "answered_partial" if refused else "answered"
+
+    return {
+        "id": q["id"],
+        "kind": q["kind"],
+        "outcome": outcome,
+        "refused": int(refused),
+        "n_citations": len(cited),
+        "citations_valid": int(not invalid),
+        "invalid_citations": "; ".join(invalid),
+        "expected_cited": round(len(hit) / len(expected), 3) if expected else "",
+        "any_expected_cited": (int(bool(hit)) if expected else ""),
+        "boe_notice": int(rag.BOE_NOTICE in text) if cited else "",
+        "searches": a["searches"],
+        "guardrail": a["citation_guardrail"] or "",
+        "stopped": a["stopped"] or "",
+        "tokens": a["tokens"]["total"],
+        "seconds": a["seconds"],
+    }
+
+
+def summarise_checks(rows: list[dict]) -> dict:
+    n = len(rows)
+    answerable = [r for r in rows if r["kind"] != "unanswerable"]
+    answered = [r for r in answerable if r["outcome"] != "wrong_refusal"]
+    with_citations = [r for r in rows if r["n_citations"]]
+    count = lambda outcome: sum(r["outcome"] == outcome for r in rows)  # noqa: E731
+    return {
+        "questions": n,
+        "answered": len(answered),
+        "wrong_refusals": count("wrong_refusal"),
+        "correct_refusals": count("correct_refusal"),
+        "answered_unanswerable": count("answered_unanswerable") + count("partial_on_unanswerable"),
+        "all_citations_valid": round(sum(r["citations_valid"] for r in rows) / n, 3),
+        "expected_source_cited": round(sum(r["any_expected_cited"] for r in answered) / max(len(answered), 1), 3),
+        "boe_notice_when_citing": round(sum(r["boe_notice"] for r in with_citations) / max(len(with_citations), 1), 3),
+        "guardrail_fired": sum(bool(r["guardrail"]) for r in rows),
+        "mean_tokens": round(sum(r["tokens"] for r in rows) / n),
+        "mean_seconds": round(sum(r["seconds"] for r in rows) / n, 1),   # includes waits on rate limits
+        "median_seconds": round(sorted(r["seconds"] for r in rows)[n // 2], 1),
+        "mean_searches": round(sum(r["searches"] for r in rows) / n, 2),
+    }
+
+
+def write_grading_sheet(questions: list[dict], answers: dict[str, dict]) -> None:
+    """eval/answers.md: question, reference and answer side by side, for grading by hand (no judge verdicts)."""
+    lines = ["# Respuestas del agente, para calificar a mano",
+             "", "Califica en `eval/human_labels.csv` (id, correct, supported, notes) **antes** de abrir "
+             "`eval/judge.csv`. Generado por `evaluate.py`.", ""]
+    for q in questions:
+        a = answers.get(q["id"])
+        if not a:
+            continue
+        lines += [f"## {q['id']} ({q['kind']}): {q['question']}", "",
+                  f"**Esperado:** {q['expected_source']} {q['expected_location']}".rstrip(), "",
+                  f"**Referencia:** {q['reference_answer']}", "",
+                  f"**Fragmentos recuperados:** {', '.join(a['retrieved_citations']) or '(ninguno)'}", "",
+                  "**Respuesta:**", "", *[f"> {line}" for line in a["answer"].splitlines()], "", "---", ""]
+    (EVAL_DIR / "answers.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def write_csv(path: Path, rows: list[dict]) -> None:
+    with path.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)
+
+
+def main() -> None:
+    logging.basicConfig(level=logging.WARNING, stream=sys.stderr, format="%(name)s: %(message)s")
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    questions = read_questions()
+
+    print("=== Retrieval: hit rate per design ===\n")
+    rows = evaluate_retrieval(questions)
+    if not rows:
+        raise SystemExit("No design could be evaluated: the index is empty.")
+    write_csv(RETRIEVAL_CSV, rows)
+    summary = summarise(rows)
+    write_csv(RETRIEVAL_SUMMARY, summary)
+    columns = list(summary[0])
+    print("  ".join(f"{c:>16}" if i == 0 else f"{c:>9}" for i, c in enumerate(columns)))
+    for line in summary:
+        print("  ".join(f"{str(line[c]):>16}" if i == 0 else f"{str(line[c]):>9}" for i, c in enumerate(columns)))
+    print(f"\nPer question: {RETRIEVAL_CSV.relative_to(ROOT)}; per design: {RETRIEVAL_SUMMARY.relative_to(ROOT)}")
+    print(f"Shipped design (rag.SHIPPED): {rag.SHIPPED}, k={rag.SHIPPED_K}")
+
+    print("\n=== End to end: agent answers ===\n")
+    missing = asyncio.run(run_answers(questions))
+    answers = read_answers()
+    rows = [code_checks(q, answers[q["id"]]) for q in questions if q["id"] in answers]
+    write_csv(CHECKS_CSV, rows)
+    write_grading_sheet(questions, answers)
+    print(f"\n=== End to end: code checks ({len(rows)}/{len(questions)} answered) ===\n")
+    for key, value in summarise_checks(rows).items():
+        print(f"  {key:<24} {value}")
+    print(f"\nPer answer: {CHECKS_CSV.relative_to(ROOT)}; answers and traces: {ANSWERS.relative_to(ROOT)}")
+    print("\n=== Judge and human agreement ===\n\nNot implemented yet: waits for the rubric (tasks.md 6.3).")
+    if missing:
+        raise SystemExit(f"\n{missing} questions still unanswered (quota or network). Run `main.py evaluate` again.")
+
+
+if __name__ == "__main__":
+    main()

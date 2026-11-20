@@ -32,9 +32,9 @@
 ---
 
 - [ ] **0. Setup and unknowns**
-  - [ ] 0.1 **You**: create `.env` with your Gemini key; `uv run python api_key.py` passes. _REQ-13_
+  - [x] 0.1 **You**: create `.env` with your Gemini key; `uv run python api_key.py` passes. _REQ-13_
   - [x] 0.2 Session 10's `07-own-harness/` was fetched from [ami232/daiist-agents](https://github.com/ami232/daiist-agents) into `planning/reference/`. _REQ-10, REQ-11_
-  - [ ] 0.3 **Claude**: list the models the key can access; confirm the `gemini-embedding-2` task type and dimension options; pick the chat model with you. _Design: open questions 2–3_
+  - [x] 0.3 **Claude**: the key reaches `gemini-embedding-2`, `gemini-3.5-flash-lite` (agent) and `gemini-3.5-flash` (judge). Embeddings: task as a text prefix, `output_dimensionality=768` works and comes back normalised, one vector per `Content`. _Design: open questions 2–3_
   - [x] 0.4 **Together**: find the authoritative BOE source for the held-out document H1. Found Orden PJC/297/2026 (BOE-A-2026-7296), arts. 18–19, verified against the BOE text. _REQ-11.6_
   - [x] 0.5 **Claude**: `uv add "langchain[mcp]>=1.4.7"` (for `MCPAdapter`, as in the course harness); `rank-bm25` only if design C is chosen. `pyproject.toml` and `uv.lock` are updated, not committed yet. _REQ-13_
 
@@ -55,31 +55,31 @@
   - _Depends on: 1.4_
 
 - [ ] **3. Embeddings and retrieval comparison**
-  - [ ] 3.1 **Claude**: `embed_and_store` with batching, persist-per-batch, 429 stop/resume; query-embedding cache; `rag.retrieve` (dense, hybrid, filter). _REQ-5, REQ-6_
-  - [ ] 3.2 **Together**: choose the chunk parameters for designs A and B 🟨; Claude runs `main.py index` for B (day 1) and A (day 1 or 2, depending on quota). _REQ-4.3, REQ-5_
-  - [ ] 3.3 **Claude**: retrieval part of `evaluate.py`: Hit@1/3/5 and words-in-prompt per design → `eval/retrieval.csv`. _REQ-6.1–6.2_
-  - [ ] 3.4 **You**: pick the shipped design and k from the table, and write the justification. _REQ-6.4_
+  - [x] 3.1 **Claude**: `embed_and_store` with batching, persist-per-batch, 429 stop/resume; query-embedding cache; `rag.retrieve` (dense, hybrid BM25 + RRF, source filter). Tested offline with a fake embedder (`tests/test_rag.py`); not yet run against Gemini. _REQ-5, REQ-6_
+  - [x] 3.2 **Together**: chunk parameters chosen 2026-11-20: keep B `article` ≤400 words and A `fixed` 200/40. `main.py index` embedded both designs on 2026-11-20 (261 + 382 chunks; per-minute 429s waited out). _REQ-4.3, REQ-5_
+  - [x] 3.3 **Claude**: retrieval part of `evaluate.py`: Hit@1/3/5, recall@5 and words-in-prompt per design → `eval/retrieval.csv` + `eval/retrieval_summary.csv`. Designs: A_fixed, B_article, C_article_hybrid. _REQ-6.1–6.2_
+  - [ ] 3.4 **You**: shipped design chosen 2026-11-20: **B_article, k=5** (hit@5 1.00 like A, multi recall@5 0.88 vs 0.67; hybrid C worse on every metric). **Still yours:** write the justification in REPORT.md. _REQ-6.4_
   - [ ] 3.5 **Claude**: confirm `index/` is under 90 MB and commit it. _REQ-5.6_
   - _Depends on: Phase 2 (test set frozen)_
 
 - [ ] **4. MCP server and subagent**
-  - [ ] 4.1 **Claude**: `server.py` `search` (shipped design, formatted citations, BOE notice), with real docstrings. _REQ-8.1, 8.4, 8.6_
-  - [ ] 4.2 **You**: decide the already-indexed policy 🟨. **Claude**: implement `add_document` by importing `index.py`, with path validation and error strings. _REQ-8.2–8.5_
-  - [ ] 4.3 **Claude**: check the tools from Claude Code (`/mcp`) and confirm `check.py` step 3 passes. _REQ-8_
+  - [x] 4.1 **Claude**: `server.py` `search` (shipped design, formatted citations, BOE notice), with real docstrings. Starts over MCP in ~2.5 s. _REQ-8.1, 8.4, 8.6_
+  - [x] 4.2 **You**: already-indexed policy decided 2026-11-20: version-aware (same date → no-op; newer → replace; older → nothing). **Claude**: `add_document` via `index.index_file`, with path validation and error strings. _REQ-8.2–8.5_
+  - [ ] 4.3 **Claude**: check the tools from Claude Code (`/mcp`) and confirm `check.py` step 3 passes. `check.py` passes all 4 steps (2026-11-20); `/mcp` check still to do. _REQ-8_
   - [ ] 4.4 **Together**: write the description and instructions for `.claude/agents/corpus-researcher.md`. **You**: run it from Claude Code on a real question and paste the transcript into REPORT.md. _REQ-9_
   - _Depends on: 3.4_
 
 - [ ] **5. Harness (`agent.py`)**
-  - [ ] 5.1 **Claude**: adapt the session 10 harness: `create_agent` with the Gemini chat model, MCP tools from `server.py`, `AGENTS.md` as system prompt; `answer()` returns the trace, tokens and seconds; CLI output. _REQ-10.1, 10.5_
-  - [ ] 5.2 **Claude**: human approval middleware for `add_document`, auto-denied when there is no TTY. _REQ-10.2_
-  - [ ] 5.3 **Claude**: tool-call limit. _REQ-10.3_
-  - [ ] 5.4 **You**: choose the extra guardrail 🟨. **Claude**: implement it. **You**: capture one case where it fired. _REQ-10.4_
+  - [x] 5.1 **Claude**: adapt the session 10 harness: `create_agent` with the Gemini chat model, MCP tools from `server.py`, `AGENTS.md` as system prompt; `answer()` returns the trace, tokens and seconds; CLI output. Model name still to confirm (0.3). _REQ-10.1, 10.5_
+  - [x] 5.2 **Claude**: human approval middleware for `add_document`, auto-denied when there is no TTY. _REQ-10.2_
+  - [x] 5.3 **Claude**: tool-call limit (≤4 searches, ≤8 model calls). _REQ-10.3_
+  - [ ] 5.4 **You**: guardrail chosen 2026-11-20: citation validator (repair once, then refuse). **Claude**: implemented (`agent.validate_citations`, tested with a scripted model). **You**: capture one case where it fired. _REQ-10.4_
   - [ ] 5.5 **Claude**: `check.py` passes fully on Windows. _REQ-13_
   - _Depends on: Phase 4_
 
 - [ ] **6. End-to-end evaluation**
-  - [ ] 6.1 **Claude**: resumable run of `answer()` on all questions → `eval/answers.jsonl` (tokens, seconds). _REQ-11.1_
-  - [ ] 6.2 **Claude**: code checks (refusal phrase, citation validity, expected source cited) → `eval/checks.csv`. _REQ-11.2_
+  - [x] 6.1 **Claude**: resumable run of `answer()` on all questions → `eval/answers.jsonl` (tokens, seconds), plus `eval/answers.md` for hand grading. 31/31 answered on 2026-11-20. _REQ-11.1_
+  - [x] 6.2 **Claude**: code checks (refusal phrase, citation validity, expected source cited, BOE notice) → `eval/checks.csv`. _REQ-11.2_
   - [ ] 6.3 **You**: write the judge rubric 🟨. **Claude**: implement the judge with structured output → `eval/judge.csv`. _REQ-11.3_
   - [ ] 6.4 **You**: grade at least 20 answers in `eval/human_labels.csv` **before opening `judge.csv`**. _REQ-11.4_
   - [ ] 6.5 **Claude**: agreement (% and κ) and summary counts; `eval/summary.json`. _REQ-11.4–11.5_

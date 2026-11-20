@@ -1,0 +1,666 @@
+# Respuestas del agente, para calificar a mano
+
+Califica en `eval/human_labels.csv` (id, correct, supported, notes) **antes** de abrir `eval/judge.csv`. Generado por `evaluate.py`.
+
+## q01 (multi): ¿Qué requisitos tengo que cumplir para que se me considere autónomo? ¿Cuenta si solo trabajo de forma ocasional?
+
+**Esperado:** LETA;LGSS Artículo 1;Artículo 305
+
+**Referencia:** Es autónomo quien hace una actividad económica o profesional con ánimo de lucro de forma habitual, personal y directa, por cuenta propia y sin estar bajo la dirección de otra persona. Para entrar en el RETA además hay que ser mayor de 18 años. Si el trabajo es solo ocasional no se cumple el requisito de habitualidad.
+
+**Fragmentos recuperados:** [LGSS, Artículo 316], [LGSS, Artículo 305], [LGSS, Artículo 308], [LGSS, Artículo 313], [LGSS, Artículo 331]
+
+**Respuesta:**
+
+> Para que una persona física sea considerada trabajadora autónoma y deba quedar obligatoriamente incluida en el campo de aplicación de la Seguridad Social, debe cumplir los siguientes requisitos generales:
+> 
+> * Ser mayor de dieciocho años [LGSS, Artículo 305].
+> * Realizar una actividad económica o profesional a título lucrativo [LGSS, Artículo 305].
+> * Que dicha actividad se ejerza de forma **habitual**, personal, directa, por cuenta propia y fuera del ámbito de dirección y organización de otra persona [LGSS, Artículo 305]. La actividad puede dar o no ocupación a trabajadores por cuenta ajena [LGSS, Artículo 305].
+> 
+> En cuanto a tu pregunta sobre si cuenta trabajar **solo de forma ocasional**, la normativa de la Seguridad Social exige explícitamente el requisito de la **habitualidad** para la inclusión obligatoria en el Régimen Especial de los Trabajadores por Cuenta Propia o Autónomos [LGSS, Artículo 305]. 
+> 
+> Dado que cada caso puede presentar particularidades (como umbrales de ingresos o interpretaciones jurisprudenciales sobre la habitualidad), se recomienda consultar esta situación concreta con un técnico especialista.
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q02 (single): ¿Qué derechos tengo como autónomo (descanso, conciliación, protección social)?
+
+**Esperado:** LETA Artículo 4
+
+**Referencia:** Tienes derecho a la no discriminación, a la intimidad y la dignidad, a la formación, a la seguridad y salud en el trabajo y a cobrar a tiempo. También a conciliar tu actividad con la vida familiar, pudiendo suspenderla por nacimiento, lactancia, riesgo en el embarazo o la lactancia, adopción o acogimiento. Y a la protección de la Seguridad Social en esas mismas situaciones.
+
+**Fragmentos recuperados:** [LETA, Artículo 4], [LETA, Artículo 30], [LETA, Artículo 14], [LETA, Artículo 26]
+
+**Respuesta:**
+
+> Según el texto consolidado a 2 de septiembre de 2026 de la Ley del Estatuto del Trabajo Autónomo (LETA), tienes reconocidos los siguientes derechos en materia de conciliación, descanso y protección social:
+> 
+> * **Conciliación de la vida personal y familiar:** Tienes derecho a conciliar tu actividad profesional con la vida personal y familiar, incluyendo la suspensión de tu actividad en situaciones de nacimiento, ejercicio corresponsable del cuidado del lactante, riesgo durante el embarazo, riesgo durante la lactancia, adopción, guarda con fines de adopción y acogimiento familiar (con los requisitos legales del Código Civil o leyes civiles autonómicas) [LETA, Artículo 4]. Además, se contemplan bonificaciones específicas en la cuota de la Seguridad Social condicionadas a la contratación de un trabajador para facilitar la conciliación por cuidado de menores de 12 años, familiares en situación de dependencia o familiares con discapacidad [LETA, Artículo 30]. En el caso específico de los autónomos económicamente dependientes (TRADE), el horario de actividad procurará adaptarse para facilitar la conciliación, y las mujeres víctimas de violencia de género o violencias sexuales tienen derecho a la adaptación de dicho horario [LETA, Artículo 14].
+> * **Descanso:** Los trabajadores autónomos económicamente dependientes tienen derecho a una interrupción anual de su actividad de 18 días hábiles (sin perjuicio de mejoras por contrato o acuerdo) y a que se determine mediante contrato o acuerdo su régimen de descanso semanal y días festivos [LETA, Artículo 14].
+> * **Protección social:** La acción protectora de la Seguridad Social para los trabajadores autónomos comprende, entre otros aspectos, la asistencia sanitaria (maternidad, enfermedad común o profesional, y accidentes), las prestaciones económicas por incapacidad temporal, riesgo durante el embarazo, nacimiento y cuidado de menor, ejercicio corresponsable del cuidado del lactante, riesgo durante la lactancia, cuidado de menores afectados por cáncer u otra enfermedad grave, incapacidad permanente, jubilación, muerte y supervivencia, prestaciones por hijo a cargo, y la cobertura específica de accidentes de trabajo y enfermedades profesionales [LETA, Artículo 26].
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q03 (single): ¿Qué obligaciones asumo al hacerme autónomo?
+
+**Esperado:** LETA Artículo 5
+
+**Referencia:** Debes cumplir tus contratos, las normas de seguridad y salud, las normas deontológicas de tu profesión y tus obligaciones fiscales. Además tienes que afiliarte a la Seguridad Social, comunicar altas y bajas y cotizar.
+
+**Fragmentos recuperados:** [LGSS, Artículo 307], [LETA, Artículo 5], [LETA, Artículo 24], [RGAT, Artículo 9], [LGSS, Artículo 347]
+
+**Respuesta:**
+
+> Como trabajador autónomo, asumes una serie de deberes profesionales y obligaciones legales fundamentales. Según los textos consolidados, los deberes profesionales básicos son:
+> 
+> * Cumplir con las obligaciones derivadas de los contratos celebrados con buena fe, usos y ley [LETA, Artículo 5].
+> * Cumplir con las obligaciones en materia de seguridad y salud laborales, así como las normas colectivas del lugar de prestación [LETA, Artículo 5].
+> * Afiliarse, comunicar las altas, bajas y variaciones de datos, y cotizar al régimen de la Seguridad Social [LGSS, Artículo 307] [LETA, Artículo 5] [LETA, Artículo 24].
+> * Cumplir con las obligaciones fiscales y tributarias establecidas legalmente [LETA, Artículo 5], lo que incluye la presentación de declaraciones censales antes del inicio de la actividad [RGAT, Artículo 9].
+> * Cumplir con cualesquiera otras obligaciones de la legislación aplicable y las normas deontológicas de la profesión [LETA, Artículo 5].
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q04 (multi): Casi todos mis ingresos vienen de un solo cliente: ¿soy un TRADE? ¿Qué cambia para mí?
+
+**Esperado:** LETA;LETA;LETA;LGSS Artículo 11;Artículo 12;Artículo 14;Artículo 317
+
+**Referencia:** Si eres TRADE, el contrato con tu cliente principal debe ir por escrito, registrarse e indicar expresamente que dependes económicamente de él (solo se puede ser TRADE respecto de un cliente). Tienes derecho a 18 días hábiles de descanso al año y tienes cubiertas obligatoriamente la incapacidad temporal y los accidentes de trabajo y enfermedades profesionales, incluido el accidente al ir o volver del trabajo.
+
+**Fragmentos recuperados:** [LETA, Artículo 11], [LETA, Artículo 12], [LETA, Artículo 11 bis], [LETA, Artículo 15], [LETA, Artículo 14]
+
+**Respuesta:**
+
+> Para ser considerado un trabajador autónomo económicamente dependiente (TRADE), debes cumplir las siguientes condiciones según el texto consolidado a 2 de septiembre de 2026:
+> 
+> * Realizar la actividad de forma habitual, personal, directa y predominante para un cliente, del que dependes económicamente por percibir de él al menos el **75 por ciento** de tus ingresos por rendimientos de trabajo y de actividades económicas o profesionales [LETA, Artículo 11].
+> * **No tener a tu cargo trabajadores por cuenta ajena** ni contratar o subcontratar la actividad con terceros (salvo excepciones muy concretas por riesgo durante el embarazo, lactancia, nacimiento, cuidado de menores o familiares en situación de dependencia, permitiendo en esos casos un único trabajador) [LETA, Artículo 11].
+> * La condición de dependiente solo se puede ostentar respecto a **un único cliente** [LETA, Artículo 12].
+> 
+> **¿Qué cambia para ti si eres TRADE?**
+> 
+> * **Contrato obligatorio:** Debes formalizar un contrato por escrito con tu cliente en el que expresamente hagas constar tu condición de TRADE, y este contrato debe ser registrado en la oficina pública correspondiente [LETA, Artículo 12].
+> * **Derecho a solicitarlo:** Si reúnes los requisitos, puedes solicitar a tu cliente por comunicación fehaciente la formalización del contrato como TRADE [LETA, Artículo 11 bis].
+> * **Jornada y descansos:** Tienes derecho a una interrupción de la actividad anual de 18 días hábiles (sin perjuicio de mejoras por contrato) y a un régimen de descanso semanal, festivos y cuantía máxima de jornada fijados en vuestro acuerdo [LETA, Artículo 14]. El horario procurará permitir la conciliación [LETA, Artículo 14].
+> * **Extinción e indemnizaciones:** La ley regula causas específicas de extinción del contrato y prevé indemnizaciones tasadas (por ejemplo, si el cliente resuelve el contrato sin causa justificada) [LETA, Artículo 15].
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q05 (single): ¿Qué es la tarifa plana y cuánto pagaría durante el primer año?
+
+**Esperado:** LETA Artículo 38 ter
+
+**Referencia:** La tarifa plana es una cuota reducida de Seguridad Social durante los 12 meses naturales completos siguientes al alta, sin cotizar por cese de actividad ni por formación profesional. La cuantía la fija cada año la Ley de Presupuestos Generales del Estado, que no está entre mis fuentes, así que no puedo darte la cifra.
+
+**Fragmentos recuperados:** [LETA, Artículo 38 ter], [LETA, Artículo 38], [LETA, Artículo 38 quinquies]
+
+**Respuesta:**
+
+> La llamada «tarifa plana» consiste en una cuota reducida en la cotización a la Seguridad Social aplicable a los trabajadores por cuenta propia o autónomos que causen alta inicial o que no hubieran estado en situación de alta en los dos años inmediatamente anteriores, a contar desde la fecha de efectos del alta en el Régimen Especial de la Seguridad Social de los Trabajadores por Cuenta Propia o Autónomos [LETA, Artículo 38 ter].
+> 
+> Durante los doce meses naturales completos siguientes a la fecha de efectos del alta, con carácter general se aplica una cuota reducida por contingencias comunes y profesionales, quedando los trabajadores excepcionados de cotizar por cese de actividad y por formación profesional [LETA, Artículo 38 ter]. 
+> 
+> La normativa establece que la cuantía anual exacta de esta cuota reducida se fijará en la respectiva Ley de Presupuestos Generales del Estado [LETA, Artículo 38 ter]. Por este motivo, y dado que las cantidades concretas dependen de la normativa aplicable en cada momento y de los datos particulares, se recomienda confirmar la cuantía exacta con un profesional especialista.
+> 
+> Según el texto consolidado a 2 de septiembre de 2026 [LETA, Artículo 38 ter].
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q06 (single): Si en el primer año gano poco, ¿puedo alargar la tarifa plana?
+
+**Esperado:** LETA Artículo 38 ter
+
+**Referencia:** Sí, puedes tener 12 meses más de cuota reducida si tus rendimientos netos anuales son inferiores al salario mínimo interprofesional. Si ese segundo periodo abarca dos años naturales, tienes que cumplir el requisito en cada uno de ellos.
+
+**Fragmentos recuperados:** [LETA, Artículo 38 ter], [LETA, Artículo 38 quinquies], [LETA, Artículo 38]
+
+**Respuesta:**
+
+> Sí. Según el texto consolidado a 2 de septiembre de 2026, transcurrido el primer año de cuota reducida por inicio de actividad, se puede aplicar una cuota reducida durante los siguientes doce meses naturales completos siempre que los rendimientos económicos netos anuales sean inferiores al salario mínimo interprofesional anual correspondiente [LETA, Artículo 38 ter]. 
+> 
+> Para ello, es necesario solicitarlo antes del inicio de ese segundo período y acompañarlo de una declaración relativa a que se prevé obtener unos rendimientos económicos netos inferiores al salario mínimo interprofesional vigente en los años naturales en que se aplique [LETA, Artículo 38 ter].
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q07 (multi): Aparte de la tarifa plana, ¿hay otras bonificaciones a las que pueda acogerme?
+
+**Esperado:** LETA;LETA;LETA;LETA;LETA;LETA Artículo 30;Artículo 35;Artículo 38;Artículo 38 bis;Artículo 38 quater;Artículo 38 quinquies
+
+**Referencia:** Sí, hay bonificaciones por:
+* contratar a alguien para conciliar la vida profesional y familiar;
+* dar de alta a familiares colaboradores;
+* descanso por nacimiento, adopción, acogimiento o riesgo en el embarazo o la lactancia;
+* reincorporación de trabajadoras autónomas;
+* cuidado de un menor con cáncer u otra enfermedad grave;
+* trabajar en una empresa emergente en pluriactividad.
+
+**Fragmentos recuperados:** [LETA, Artículo 38 ter], [LETA, Artículo 38 quinquies], [LETA, Artículo 38], [LETA, Artículo 36], [LETA, Artículo 38 bis]
+
+**Respuesta:**
+
+> Sí, según el Estatuto del Trabajo Autónomo, existen diversas medidas, reducciones y bonificaciones en la cotización a la Seguridad Social aplicables a diferentes supuestos:
+> 
+> * **Prórroga de la cuota reducida por inicio de actividad:** Tras los primeros doce meses de cuota reducida inicial, se puede aplicar una cuota reducida durante los siguientes doce meses naturales completos siempre que los rendimientos económicos netos anuales sean inferiores al salario mínimo interprofesional anual correspondiente [LETA, Artículo 38 ter].
+> * **Bonificación para autónomos de empresas emergentes en pluriactividad:** Los trabajadores autónomos que posean el control efectivo de una empresa emergente y que, de forma simultánea, trabajen por cuenta ajena para otro empleador tienen derecho a una bonificación del 100 por cien de la cuota correspondiente a la base mínima durante los tres primeros años [LETA, Artículo 38 quinquies].
+> * **Bonificación durante períodos de descanso o riesgo (nacimiento, adopción, riesgo durante el embarazo, etc.):** Se otorga una bonificación del 100 por cien de la cuota por contingencias comunes durante los períodos de descanso por nacimiento, adopción, guarda, acogimiento, riesgo durante el embarazo o riesgo durante la lactancia natural [LETA, Artículo 38].
+> * **Bonificación por reincorporación tras el cese por maternidad o paternidad:** Las trabajadoras autónomas que se reincorporen a la actividad por cuenta propia dentro de los dos años siguientes a haber cesado por nacimiento de hijo, adopción, guarda, acogimiento o tutela tienen derecho a una bonificación del 80 por ciento de la cuota por contingencias comunes durante los veinticuatro meses siguientes [LETA, Artículo 38 bis].
+> * **Bonificación para autónomos en Ceuta y Melilla:** Los autónomos que residan y ejerzan su actividad en las Ciudades de Ceuta y Melilla en determinados sectores (como agricultura, industria, comercio, hostelería, turismo, entre otros) tienen derecho a una bonificación del 75 por ciento de la cuota por contingencias comunes [LETA, Artículo 36].
+> 
+> *Nota: Para verificar si cumples los requisitos concretos de cada bonificación, es recomendable consultar con un profesional.*
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q08 (single): Estoy cobrando el paro: ¿puedo cobrarlo de una vez para montar mi negocio o usarlo para pagar las cuotas?
+
+**Esperado:** LETA Artículo 34
+
+**Referencia:** Puedes cobrar el paro de una vez (pago único) por el importe de la inversión necesaria para empezar, y destinar hasta el 15 % a asesoramiento o formación. También puedes recibirlo mes a mes para pagar las cuotas, siempre que sigas de alta. Tienes que pedirlo antes de iniciar la actividad, y no tienes derecho si en los 24 meses anteriores compaginaste trabajo por cuenta propia con el paro.
+
+**Fragmentos recuperados:** [LETA, Artículo 39], [LETA, Artículo 34]
+
+**Respuesta:**
+
+> Sí, es posible percibir la prestación por desempleo en la modalidad de pago único (capitalización) para montar un negocio, así como utilizarla para subvencionar o abonar las cuotas de la Seguridad Social. Según la normativa aplicable, las opciones son las siguientes:
+> 
+> * **Pago único para la inversión o constitución:** Los beneficiarios de prestaciones por desempleo de nivel contributivo pueden solicitar hasta el 100 por cien del valor actual del importe de la prestación para realizar una inversión para el desarrollo de la actividad como trabajadores autónomos, constituir una entidad mercantil o realizar una aportación al capital social de la misma, incluyendo cargas tributarias y gastos de constitución y puesta en funcionamiento, así como hasta un 15 por ciento para servicios específicos de asesoramiento, formación e información [LETA, Artículo 34].
+> * **Abono mensual para el pago de cotizaciones:** La entidad gestora también puede abonar mensualmente el importe de la prestación por desempleo para subvencionar o compensar la cotización del trabajador a la Seguridad Social (tanto mediante el pago único parcial por el importe restante como solicitando específicamente esta modalidad de abono mensual para las cuotas) [LETA, Artículo 34].
+> 
+> **Requisitos y plazos clave:**
+> * La solicitud del abono de la prestación en cualquiera de estas modalidades **debe ser de fecha anterior a la fecha de inicio de la actividad** como trabajador autónomo o a la incorporación a la sociedad (considerando como inicio la fecha que figura en la solicitud de alta en la Seguridad Social) [LETA, Artículo 34].
+> * No se tiene derecho a esta modalidad si en los 24 meses anteriores a la solicitud se ha compatibilizado el trabajo por cuenta propia con la prestación por desempleo contributiva [LETA, Artículo 34].
+> 
+> *(Información recogida según el texto consolidado del Estatuto del trabajo autónomo a 2 de septiembre de 2026).*
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q09 (unanswerable): ¿Tengo que darme de alta en el RETA antes de empezar a facturar o puedo hacerlo después?
+
+**Esperado:**
+
+**Referencia:** No se ha encontrado contenido relacionado a tu pregunta en los documentos a los que tengo acceso. Consulte con un técnico especialista.
+
+**Fragmentos recuperados:** [LGSS, Artículo 307], [LETA, Artículo 38 ter], [LGSS, Artículo 305], [LGSS, Artículo 319], [LETA, Artículo 33], [LETA, Artículo 25]
+
+**Respuesta:**
+
+> No se ha encontrado contenido relacionado a tu pregunta en los documentos a los que tengo acceso. Consulte con un técnico especialista.
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q10 (single): ¿Cómo se calcula mi cuota si mis ingresos son bajos o irregulares?
+
+**Esperado:** LGSS Artículo 308
+
+**Referencia:** La cuota depende de tus rendimientos netos anuales. Eliges una base según la previsión de tu media mensual dentro de la tabla general, o de la tabla reducida si prevés ganar por debajo del tramo 1. Puedes cambiar la base durante el año para ajustarla a lo que vayas ganando.
+
+**Fragmentos recuperados:** [LGSS, Artículo 308], [LETA, Artículo 38 ter], [LGSS, Artículo 313 bis]
+
+**Respuesta:**
+
+> Las personas trabajadoras autónomas cotizan en función de los rendimientos anuales obtenidos en el ejercicio de sus actividades económicas, empresariales o profesionales [LGSS, Artículo 308]. 
+> 
+> Para calcular la cuota se deben seguir las siguientes reglas (según el texto consolidado de la Ley General de la Seguridad Social a 11 de noviembre de 2026):
+> 
+> * **Previsión inicial:** Los autónomos deben elegir una base de cotización mensual que corresponda dentro de la tabla general o reducida establecida anualmente en la Ley de Presupuestos Generales del Estado, basándose en una previsión del promedio mensual de sus rendimientos netos anuales [LGSS, Artículo 308].
+> * **Cálculo de los rendimientos netos:** Se tiene en cuenta la totalidad de los rendimientos netos obtenidos durante el año natural por las distintas actividades [LGSS, Artículo 308]. Para las actividades en estimación directa, el rendimiento computable es el rendimiento neto incrementado en el importe de las cuotas de la Seguridad Social y aportaciones a mutualidades alternativas del titular [LGSS, Artículo 308]. A estos rendimientos se les aplica una deducción por gastos genéricos del 7 por ciento (o del 3 por ciento para determinados administradores o socios que cumplan los requisitos) [LGSS, Artículo 308].
+> * **Regularización posterior:** Una vez conocidos los rendimientos netos definitivos del ejercicio, se determinan las bases de cotización definitivas y se regulariza la cotización provisional efectuada durante el año [LGSS, Artículo 308]. Si la cotización provisional fue inferior a la que correspondía por los ingresos reales, se deberá ingresar la diferencia [LGSS, Artículo 308]. Si fue superior, la Tesorería General de la Seguridad Social procederá a devolver de oficio la diferencia [LGSS, Artículo 308].
+> * **Incentivos para ingresos bajos:** Si se cumplen los requisitos de acceso y los rendimientos netos anuales son inferiores al salario mínimo interprofesional, se pueden aplicar cuotas reducidas específicas en periodos de inicio de actividad según lo previsto legalmente [LETA, Artículo 38 ter].
+> 
+> *Se recomienda confirmar el cálculo exacto y la aplicación de los tramos con un profesional especialista.*
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q11 (single): ¿Qué pasa si al final del año mis ingresos reales no coinciden con los que declaré?
+
+**Esperado:** LGSS Artículo 308
+
+**Referencia:** Las bases que eliges durante el año son provisionales. Al año siguiente, con los rendimientos que comunica Hacienda, se regulariza la cotización. Si pagaste menos de la base mínima de tu tramo, tienes que abonar la diferencia hasta el último día del mes siguiente a la notificación, sin recargo ni intereses si pagas en ese plazo.
+
+**Fragmentos recuperados:** [LGSS, Artículo 308]
+
+**Respuesta:**
+
+> Los trabajadores autónomos cotizan de forma provisional en función de su previsión de rendimientos netos anuales [LGSS, Artículo 308]. Una vez finalizado el ejercicio y obtenidos los datos fiscales reales comunicados por la Administración tributaria, la Seguridad Social realiza una regularización para determinar las bases de cotización y las cuotas definitivas de ese año [LGSS, Artículo 308]. 
+> 
+> Según lo previsto en el procedimiento de regularización:
+> 
+> * **Si cotizaste por debajo de tu tramo real (la cotización provisional fue inferior):** Deberás ingresar la diferencia entre ambas cotizaciones hasta el último día del mes siguiente a aquel en que se te notifique el resultado de la regularización, sin que se apliquen intereses de demora ni recargo alguno siempre que se abone dentro de ese plazo [LGSS, Artículo 308].
+> * **Si cotizaste por encima de tu tramo real (la cotización provisional fue superior):** La Tesorería General de la Seguridad Social procederá a devolver de oficio la diferencia entre ambas cotizaciones —sin aplicar intereses— antes del 30 de abril del ejercicio siguiente a aquel en que la Administración tributaria haya comunicado los rendimientos computables [LGSS, Artículo 308].
+> 
+> *(Nota: para determinar los rendimientos netos a efectos de esta regularización, la norma contempla el cálculo sobre los ingresos fiscalmente deducibles aplicando una deducción por gastos genéricos del 7 %, o del 3 % para autónomos societarios o autónomos agrarios que cumplan los requisitos) [LGSS, Artículo 308].*
+> 
+> Se recomienda consultar con un profesional especialista para verificar cómo afecta la regularización a tu caso concreto.
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q12 (single): Si me pongo enfermo y no puedo trabajar, ¿cobro algo? ¿Desde qué día?
+
+**Esperado:** LGSS Artículo 321
+
+**Referencia:** Sí, cobras una prestación por incapacidad temporal desde el cuarto día de baja. Si la causa es un accidente de trabajo o una enfermedad profesional, la cobras desde el día siguiente a la baja.
+
+**Fragmentos recuperados:** [LGSS, Artículo 321], [LETA, Artículo 26], [LGSS, Artículo 343], [LGSS, Artículo 315], [LGSS, Artículo 326]
+
+**Respuesta:**
+
+> Sí, la acción protectora del régimen especial de autónomos comprende las prestaciones económicas en las situaciones de incapacidad temporal [LETA, Artículo 26], cuya cobertura tiene carácter obligatorio (salvo excepciones específicas como en determinados supuestos de pluriactividad) [LGSS, Artículo 315].
+> 
+> Sobre **desde qué día** se cobra:
+> * En caso de enfermedad común o accidente no laboral, el nacimiento de la prestación económica se producirá **a partir del cuarto día** de la baja en la actividad [LGSS, Artículo 321].
+> * Si la baja se origina a causa de un **accidente de trabajo o enfermedad profesional**, la prestación nacerá a partir del día siguiente al de la baja [LGSS, Artículo 321].
+> 
+> *Nota: No se calcula una cantidad concreta ni se indican porcentajes específicos por tramos personales en esta respuesta; para verificar la cuantía exacta aplicable a su base reguladora según el texto consolidado a 11 de noviembre de 2026 de la LGSS, consulte con un profesional.*
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q13 (single): ¿Qué me cubre la cotización por accidente de trabajo y enfermedad profesional?
+
+**Esperado:** LGSS Artículo 316
+
+**Referencia:** Te da las mismas prestaciones que en el Régimen General por accidente de trabajo y enfermedad profesional. Cubre el accidente causado directamente por tu trabajo, el accidente al ir o volver del local de trabajo (si no es tu domicilio y está declarado a Hacienda) y las enfermedades profesionales del listado oficial (RD 1299/2006).
+
+**Fragmentos recuperados:** [LETA, Artículo 26], [LGSS, Artículo 316], [LGSS, Artículo 326], [LGSS, Artículo 317], [LETA, Artículo 8]
+
+**Respuesta:**
+
+> La cobertura de las contingencias profesionales determinará la obligación de efectuar las correspondientes cotizaciones, y por ellas se reconocerán las prestaciones que se conceden por las mismas a los trabajadores incluidos en el Régimen General de la Seguridad Social [LGSS, Artículo 316]. 
+> 
+> A efectos de esta cobertura:
+> * Se entenderá como **accidente de trabajo** el ocurrido como consecuencia directa e inmediata del trabajo que el trabajador autónomo realiza por su propia cuenta y que determina su inclusión en el campo de aplicación de su régimen especial, así como el sufrido al ir o al volver del lugar de la prestación de la actividad económica o profesional (considerándose como tal el establecimiento en donde ejerza habitualmente su actividad siempre que no coincida con su domicilio y se corresponda con el local, nave u oficina declarado como afecto a la actividad económica a efectos fiscales) [LGSS, Artículo 316].
+> * Se entenderá por **enfermedad profesional** la contraída a consecuencia del trabajo ejecutado por cuenta propia, que esté provocada por la acción de los elementos y sustancias y en las actividades que se especifican en la lista de enfermedades profesionales con las relaciones de las principales actividades capaces de producirlas, anexa al Real Decreto 1299/2006, de 10 de noviembre [LGSS, Artículo 316].
+> 
+> Los datos anteriores corresponden al texto consolidado de la Ley General de la Seguridad Social a 11 de noviembre de 2026 [LGSS, Artículo 316].
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q14 (multi): Si el negocio no funciona y lo cierro, ¿tengo algún tipo de paro? ¿Qué requisitos pide?
+
+**Esperado:** LGSS;LGSS Artículo 330;Artículo 331
+
+**Referencia:** Sí, existe la prestación por cese de actividad. Requisitos:
+* estar de alta en el RETA;
+* tener el periodo mínimo cotizado;
+* estar en situación legal de cese, firmar el acuerdo de actividad y estar disponible para volver a trabajar;
+* no haber alcanzado la edad de jubilación;
+* estar al corriente de cuotas (si no lo estás, tienes 30 días para ponerte al día).
+Las causas del cese pueden ser económicas (por ejemplo, pérdidas de más del 10 % de los ingresos en un año, sin contar el primero), fuerza mayor, pérdida de la licencia, violencia de género o divorcio.
+
+**Fragmentos recuperados:** [LGSS, Artículo 331], [LGSS, Artículo 330], [LETA, Disposición adicional cuarta], [LGSS, Artículo 341]
+
+**Respuesta:**
+
+> Sí, los trabajadores autónomos disponen de una protección por cese de actividad (comúnmente conocido como el "paro" de los autónomos), regulada en la Ley General de la Seguridad Social [LGSS, Artículo 331]. 
+> 
+> Para poder acceder a esta prestación, según el texto consolidado a 11 de noviembre de 2026, deben cumplirse los siguientes requisitos:
+> 
+> * Estar afiliados y en alta en el régimen correspondiente (RETA o Régimen Especial de los Trabajadores del Mar) [LGSS, Artículo 330].
+> * Tener cubierto el período mínimo de cotización exigido por cese de actividad [LGSS, Artículo 330].
+> * Encontrarse en situación legal de cese de actividad, suscribir el acuerdo de actividad y acreditar activa disponibilidad para la reincorporación al mercado de trabajo mediante las actividades formativas, de orientación profesional y de promoción de la actividad emprendedora a las que pueda convocar el servicio público de empleo correspondiente [LGSS, Artículo 330].
+> * En el supuesto de cese definitivo, no haber cumplido la edad ordinaria para causar derecho a la pensión contributiva de jubilación, salvo que no se tenga acreditado el período de cotización requerido para ello [LGSS, Artículo 330].
+> * Hallarse al corriente en el pago de las cuotas a la Seguridad Social (si no se cumple en la fecha del cese, el órgano gestor dará un plazo improrrogable de treinta días naturales para ingresar las deudas) [LGSS, Artículo 330].
+> 
+> Además, para que se considere que existe una **situación legal de cese de actividad**, deben concurrir causas económicas, técnicas, productivas, organizativas o de fuerza mayor que hagan inviable continuar con el negocio (como pérdidas en un año completo superiores al 10 % de los ingresos, ejecuciones judiciales o administrativas de deudas que alcancen al menos el 30 % de los ingresos, declaración judicial de concurso, entre otros supuestos específicos), exigiendo en los establecimientos abiertos al público su cierre durante la percepción del subsidio o su transmisión a terceros [LGSS, Artículo 331].
+> 
+> Le recomendamos consultar con un profesional para verificar el cumplimiento exacto de estos requisitos y los periodos de cotización necesarios para su caso particular.
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q15 (multi): ¿Tengo que hacer factura en todas las ventas o me vale un tique?
+
+**Esperado:** RF;RF Artículo 2;Artículo 4
+
+**Referencia:** Tienes que hacer factura en todas tus ventas y servicios. Puedes usar factura simplificada (tique) si el importe no pasa de 400 € con IVA, o de 3.000 € en actividades concretas como el comercio minorista, la hostelería o la peluquería.
+
+**Fragmentos recuperados:** [RF, Artículo 2], [RF, Artículo 1], [RF, Artículo 3], [RF, Artículo 11], [RF, Artículo 4], [RF, Artículo 7]
+
+**Respuesta:**
+
+> En general, los empresarios y profesionales están obligados a expedir factura y copia de esta por las entregas de bienes y prestaciones de servicios que realicen en el desarrollo de su actividad [RF, Artículo 2]. No obstante, la normativa de facturación permite utilizar la **factura simplificada** (lo que comúnmente se conoce como tique) en lugar de una factura ordinaria en determinados supuestos [RF, Artículo 4].
+> 
+> ### Cuándo se puede usar la factura simplificada (tique)
+> 
+> Puedes expedir una factura simplificada en lugar de una factura ordinaria en los siguientes casos:
+> 1. **Operaciones de importe reducido:** Cuando el importe de la operación no exceda de **400 euros** (IVA incluido) [RF, Artículo 4].
+> 2. **Ventas al por menor y sectores específicos:** Cuando el importe no exceda de **3.000 euros** (IVA incluido) y se trate de ventas al por menor (donde el destinatario es un consumidor final), ventas o servicios a domicilio, hostelería y restauración, transporte de personas, servicios de peluquería, utilización de instalaciones deportivas, aparcamiento de vehículos, entre otros supuestos expresamente previstos [RF, Artículo 4].
+> 
+> ### Cuándo es OBLIGATORIO hacer factura ordinaria
+> 
+> Aun estando en los supuestos anteriores, **deberá expedirse factura ordinaria en todo caso** (y no vale un tique o factura simplificada) cuando:
+> * El destinatario sea un empresario o profesional que actúe como tal, o bien una persona jurídica que no actúe como empresario o profesional, o una Administración Pública [RF, Artículo 2] [RF, Artículo 4].
+> * El destinatario exija la factura para el ejercicio de cualquier derecho de naturaleza tributaria [RF, Artículo 2].
+> * Se trate de determinadas operaciones intracomunitarias, exportaciones o entregas de bienes objeto de instalación o montaje, entre otras exclusiones específicas [RF, Artículo 2] [RF, Artículo 4].
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q16 (single): ¿Qué datos debe llevar obligatoriamente una factura?
+
+**Esperado:** RF Artículo 6
+
+**Referencia:** Debe llevar:
+* número y serie;
+* fecha de expedición;
+* nombre y NIF del emisor (el del destinatario en ciertos casos);
+* domicilio de ambos;
+* descripción de la operación con base imponible y precio unitario;
+* tipo de IVA y cuota por separado;
+* fecha de la operación si es distinta de la de expedición;
+* menciones especiales cuando proceda (exención, inversión del sujeto pasivo, criterio de caja, etc.).
+
+**Fragmentos recuperados:** [RF, Artículo 6], [RF, Artículo 7]
+
+**Respuesta:**
+
+> Según el texto consolidado a 31 de marzo de 2026 del Reglamento por el que se regulan las obligaciones de facturación, toda factura ordinaria debe contener obligatoriamente los siguientes datos [RF, Artículo 6]:
+> 
+> * **Número y, en su caso, serie:** su numeración debe ser correlativa dentro de cada serie [RF, Artículo 6].
+> * **Fecha de expedición** [RF, Artículo 6].
+> * **Nombre y apellidos, razón o denominación social completa**, tanto del expedidor como del destinatario [RF, Artículo 6].
+> * **Número de Identificación Fiscal (NIF)** del expedidor y, en determinados supuestos (como entregas intracomunitarias o cuando el destinatario sea el sujeto pasivo del impuesto), también el del destinatario [RF, Artículo 6].
+> * **Domicilio** tanto del obligado a expedir la factura como del destinatario [RF, Artículo 6].
+> * **Descripción de las operaciones:** detalles necesarios para determinar la base imponible, el precio unitario sin IVA y los descuentos o rebajas no incluidos en dicho precio [RF, Artículo 6].
+> * **Tipo o tipos impositivos** aplicados [RF, Artículo 6].
+> * **Cuota tributaria** repercutida, consignada por separado [RF, Artículo 6].
+> * **Fecha de la operación o del pago anticipado**, si es distinta a la de expedición [RF, Artículo 6].
+> * **Menciones especiales**, cuando proceda (por ejemplo, indicación de operación exenta, mención de "inversión del sujeto pasivo", "régimen especial del criterio de caja", etc.) [RF, Artículo 6].
+> * **Código QR y mención específica** ("Factura verificable en la sede electrónica de la AEAT" o "VERI*FACTU"), en el caso de utilizar sistemas informáticos de facturación acogidos a dicha normativa [RF, Artículo 6].
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q17 (single): ¿Estoy obligado a usar factura electrónica si trabajo con empresas?
+
+**Esperado:** RF Artículo 8 bis
+
+**Referencia:** Sí, la factura electrónica es obligatoria cuando el cliente es un empresario o profesional establecido en España, en las condiciones que fije la Ley 56/2007 y su desarrollo. No se aplica a las facturas simplificadas.
+
+**Fragmentos recuperados:** [RF, Artículo 8 bis], [RF, Artículo 9], [RF, Artículo 10], [RF, Artículo 1], [RF, Artículo 2]
+
+**Respuesta:**
+
+> Según el texto consolidado a 31 de marzo de 2026, será obligatoria la factura electrónica cuando el destinatario de la operación sea un empresario o profesional que tenga en España la sede de su actividad económica, un establecimiento permanente o su domicilio o residencia habitual, siempre que se trate de operaciones destinadas a dicha sede, establecimiento, domicilio o residencia [RF, Artículo 8 bis]. 
+> 
+> Esta obligación no se aplicará cuando se expida factura simplificada, salvo en determinados supuestos específicos previstos en la normativa [RF, Artículo 8 bis].
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q18 (single): ¿En qué plazo tengo que emitir la factura después de hacer el trabajo?
+
+**Esperado:** RF Artículo 11
+
+**Referencia:** Debes emitirla en el momento de la operación. Si el cliente es empresario o profesional, tienes hasta el día 16 del mes siguiente al devengo del IVA.
+
+**Fragmentos recuperados:** [RF, Artículo 11], [RF, Artículo 18], [RF, Artículo 13], [RF, Artículo 2], [RF, Artículo 8 bis]
+
+**Respuesta:**
+
+> Según el texto consolidado a 31 de marzo de 2026 del Reglamento por el que se regulan las obligaciones de facturación, el plazo para expedir la factura depende de quién sea el destinatario de la operación:
+> 
+> * **Si el destinatario es un consumidor u otro particular (que no actúa como empresario o profesional):** la factura deberá ser expedida en el momento de realizarse la operación [RF, Artículo 11].
+> * **Si el destinatario es un empresario o profesional que actúa como tal:** la factura deberá expedirse antes del día 16 del mes siguiente a aquel en que se haya producido el devengo del Impuesto correspondiente a dicha operación [RF, Artículo 11].
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q19 (single): Me equivoqué en una factura que ya envié: ¿cómo la corrijo?
+
+**Esperado:** RF Artículo 15
+
+**Referencia:** Tienes que emitir una factura rectificativa nueva que identifique la factura original, en una serie específica. Debes hacerlo en cuanto detectes el error y siempre dentro de los 4 años desde el devengo.
+
+**Fragmentos recuperados:** [RF, Artículo 15], [RF, Artículo 11], [RF, Artículo 24], [RF, Disposición transitoria segunda]
+
+**Respuesta:**
+
+> Según el Reglamento de facturación, deberá expedirse una factura rectificativa cuando la factura original no cumpla alguno de los requisitos exigidos, cuando las cuotas impositivas repercutidas se hayan determinado incorrectamente, o cuando se produzcan circunstancias que den lugar a la modificación de la base imponible [RF, Artículo 15].
+> 
+> Para realizar la corrección, se deben tener en cuenta las siguientes reglas según el texto consolidado a 31 de marzo de 2026:
+> 
+> * **Plazo:** la expedición de la factura rectificativa debe efectuarse tan pronto como se tenga constancia de la circunstancia que obliga a ello, siempre que no hayan transcurrido cuatro años desde el devengo del impuesto o desde que se produjeron las circunstancias que permiten la modificación [RF, Artículo 15].
+> * **Forma:** la rectificación se realiza mediante la emisión de una nueva factura en la que se hagan constar los datos identificativos de la factura original que se está rectificando [RF, Artículo 15].
+> * **Contenido de la rectificación:** se debe expresar claramente la rectificación efectuada. Los importes o cuotas se pueden indicar directamente con su signo, o bien reflejando cómo quedan tras la rectificación, indicando en ambos casos el importe de dicha rectificación [RF, Artículo 15].
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q20 (multi): ¿Cuánto tiempo tengo que guardar las facturas y en qué formato?
+
+**Esperado:** RF;RF Artículo 19;Artículo 21
+
+**Referencia:** Si las guardas en formato electrónico, deben conservarse legibles en su formato original, garantizando que son auténticas e íntegras, y con acceso en línea para Hacienda. El plazo lo fija la Ley General Tributaria, que no está entre mis fuentes.
+
+**Fragmentos recuperados:** [RF, Artículo 20], [RF, Artículo 21], [RF, Artículo 19], [RF, Artículo 22], [RF, Artículo 23], [RGAT, Artículo 29]
+
+**Respuesta:**
+
+> Sobre el formato y la forma de conservación, las facturas (tanto en papel como en formato electrónico) se deben conservar por cualquier medio que permita garantizar al obligado a su conservación la autenticidad de su origen, la integridad de su contenido y su legibilidad, así como el acceso a ellos por parte de la Administración tributaria sin demora [RF, Artículo 20]. 
+> 
+> En particular, la obligación de conservación se puede cumplir mediante la utilización de medios electrónicos, asegurando la legibilidad en el formato original en el que se hayan recibido o remitido, así como la de los datos asociados y mecanismos de verificación de firma u otros elementos autorizados que garanticen la autenticidad de su origen y la integridad de su contenido [RF, Artículo 20] [RF, Artículo 21]. Además, los documentos conservados por medios electrónicos deben gestionarse de forma que garanticen un acceso en línea, su carga remota, visualización, búsqueda selectiva, copia, descarga e impresión ante cualquier solicitud de la Administración tributaria [RF, Artículo 21].
+> 
+> Los empresarios o profesionales deben conservar las facturas durante el plazo previsto en la Ley 58/2003, General Tributaria [RF, Artículo 19]. 
+> 
+> *(Información recogida según el texto consolidado del Reglamento de facturación a 31 de marzo de 2026).*
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q21 (unanswerable): ¿Qué modelo uso para darme de alta en Hacienda, el 036 o el 037?
+
+**Esperado:**
+
+**Referencia:** No se ha encontrado contenido relacionado a tu pregunta en los documentos a los que tengo acceso. Consulte con un técnico especialista.
+
+**Fragmentos recuperados:** [RGAT, Artículo 9], [RGAT, Artículo 13]
+
+**Respuesta:**
+
+> No se ha encontrado contenido relacionado a tu pregunta en los documentos a los que tengo acceso. Consulte con un técnico especialista.
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q22 (multi): ¿Cuándo tengo que presentar el alta en Hacienda y cómo me doy de baja si cierro?
+
+**Esperado:** RGAT;RGAT Artículo 9;Artículo 11
+
+**Referencia:** El alta en el censo debe presentarse antes de empezar la actividad, es decir, antes de la primera venta, compra, cobro, pago o contratación. Si cierras, tienes un mes desde el cese para presentar la baja.
+
+**Fragmentos recuperados:** [RGAT, Artículo 9], [RGAT, Artículo 10], [RGAT, Artículo 11]
+
+**Respuesta:**
+
+> De acuerdo con el texto consolidado a 28 de octubre de 2026 del Reglamento General de las actuaciones y los procedimientos de gestión e inspección tributaria (RGAT):
+> 
+> * **Cuándo presentar el alta:** La declaración de alta en el Censo de Empresarios, Profesionales y Retenedores debe presentarse **con anterioridad al inicio de las correspondientes actividades** [RGAT, Artículo 9]. A estos efectos, se entiende que se produce el comienzo de una actividad empresarial o profesional desde el momento en que se realicen cualesquiera entregas, prestaciones o adquisiciones de bienes o servicios, se efectúen cobros o pagos, o se contrate personal laboral con la finalidad de intervenir en la producción o distribución de bienes o servicios [RGAT, Artículo 9].
+> * **Cómo darse de baja si cierras:** Quienes cesen en el desarrollo de todo tipo de actividades empresariales o profesionales deben presentar la correspondiente declaración para comunicar dicha circunstancia a efectos de su baja en el Censo de Empresarios, Profesionales y Retenedores [RGAT, Artículo 11]. Esta declaración de baja debe presentarse **en el plazo de un mes** desde que se cumplan las condiciones de cese [RGAT, Artículo 11]. Asimismo, cuando una sociedad o entidad se disuelva, la declaración de baja deberá presentarse en el plazo de un mes desde que se haya realizado, en su caso, la cancelación efectiva de los correspondientes asientos en el Registro Mercantil [RGAT, Artículo 11].
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q23 (single): Si me mudo, ¿tengo que comunicárselo a Hacienda? ¿En qué plazo?
+
+**Esperado:** RGAT Artículo 17
+
+**Referencia:** Sí, tienes que comunicárselo a Hacienda en el plazo de un mes desde la mudanza.
+
+**Fragmentos recuperados:** [RGAT, Artículo 17], [RGAT, Artículo 13], [RGAT, Artículo 10], [RGAT, Artículo 12]
+
+**Respuesta:**
+
+> Sí, las personas físicas que deban estar en el Censo de Empresarios, Profesionales y Retenedores tienen la obligación de comunicar el cambio de domicilio fiscal a la Administración tributaria mediante la presentación de la declaración censal de modificación [RGAT, Artículo 17] [RGAT, Artículo 10]. 
+> 
+> El plazo para efectuar dicha comunicación es de **un mes** a partir del momento en que se produzca el cambio [RGAT, Artículo 17].
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q24 (single): Como autónomo, ¿necesito un NIF distinto del de mi DNI?
+
+**Esperado:** RGAT Artículo 19
+
+**Referencia:** No. Si eres español, tu NIF es tu número de DNI con su letra.
+
+**Fragmentos recuperados:** [RGAT, Artículo 26], [RGAT, Artículo 27], [RGAT, Artículo 19], [RGAT, Artículo 21], [RGAT, Artículo 18]
+
+**Respuesta:**
+
+> Para las personas físicas de nacionalidad española, el número de identificación fiscal (NIF) será el número de su documento nacional de identidad seguido del correspondiente código o carácter de verificación constituido por una letra mayúscula [RGAT, Artículo 19]. Así, según el texto consolidado a 28 de octubre de 2026, no necesitas un NIF distinto al de tu DNI para ejercer como autónomo persona física.
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q25 (single): ¿Qué libros registro estoy obligado a llevar?
+
+**Esperado:** RGAT Artículo 29
+
+**Referencia:** Tienes que anotar las operaciones en un plazo de 3 meses desde que se realizan, y siempre antes de que termine el plazo de la declaración correspondiente. Los libros deben conservarse en tu domicilio fiscal. Qué libros concretos tienes que llevar lo dice la normativa de cada impuesto, que no está entre mis fuentes.
+
+**Fragmentos recuperados:** [RGAT, Artículo 29], [LETA, Artículo 5], [LETA, Artículo 1], [RF, Artículo 1], [RGAT, Artículo 3], [RGAT, Artículo 2], [RGAT, Artículo 10]
+
+**Respuesta:**
+
+> No se ha encontrado contenido relacionado a tu pregunta en los documentos a los que tengo acceso. Consulte con un técnico especialista.
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q26 (unanswerable): ¿Me conviene más crear una SL que ser autónomo?
+
+**Esperado:**
+
+**Referencia:** No se ha encontrado contenido relacionado a tu pregunta en los documentos a los que tengo acceso. Consulte con un técnico especialista.
+
+**Fragmentos recuperados:** [LETA, Artículo 1], [LETA, Artículo 11], [LETA, Artículo 38 ter], [LETA, Artículo 2], [LETA, Artículo 23]
+
+**Respuesta:**
+
+> No se ha encontrado contenido relacionado a tu pregunta en los documentos a los que tengo acceso. Consulte con un técnico especialista.
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q27 (unanswerable): ¿Qué gastos puedo deducirme en el IRPF (móvil, coche, parte del alquiler de casa)?
+
+**Esperado:**
+
+**Referencia:** No se ha encontrado contenido relacionado a tu pregunta en los documentos a los que tengo acceso. Consulte con un técnico especialista.
+
+**Fragmentos recuperados:** [LETA, Artículo 1], [LETA, Artículo 36], [LGSS, Artículo 308], [RGAT, Artículo 3], [LETA, Artículo 38 ter]
+
+**Respuesta:**
+
+> No se ha encontrado contenido relacionado a tu pregunta en los documentos a los que tengo acceso. Consulte con un técnico especialista.
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q28 (unanswerable): ¿Qué tipo de IVA aplico a mis servicios y cuándo presento el modelo 303?
+
+**Esperado:**
+
+**Referencia:** No se ha encontrado contenido relacionado a tu pregunta en los documentos a los que tengo acceso. Consulte con un técnico especialista.
+
+**Fragmentos recuperados:** [RGAT, Artículo 9], [RGAT, Artículo 3], [RF, Artículo 3]
+
+**Respuesta:**
+
+> No se ha encontrado contenido relacionado a tu pregunta en los documentos a los que tengo acceso. Consulte con un técnico especialista.
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q29 (unanswerable): ¿Necesito una licencia del ayuntamiento para abrir un local?
+
+**Esperado:**
+
+**Referencia:** No se ha encontrado contenido relacionado a tu pregunta en los documentos a los que tengo acceso. Consulte con un técnico especialista.
+
+**Fragmentos recuperados:** [LETA, Artículo 1], [LETA, Artículo 27], [LETA, Artículo 29], [LETA, Artículo 22], [LETA, Artículo 33]
+
+**Respuesta:**
+
+> No se ha encontrado contenido relacionado a tu pregunta en los documentos a los que tengo acceso. Consulte con un técnico especialista.
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q30 (unanswerable): ¿Qué ayudas da mi comunidad autónoma a jóvenes emprendedores?
+
+**Esperado:**
+
+**Referencia:** No se ha encontrado contenido relacionado a tu pregunta en los documentos a los que tengo acceso. Consulte con un técnico especialista.
+
+**Fragmentos recuperados:** [LETA, Artículo 29], [LETA, Artículo 27], [LETA, Artículo 38 quinquies], [LETA, Artículo 38 ter], [LETA, Artículo 33]
+
+**Respuesta:**
+
+> No se ha encontrado contenido relacionado a tu pregunta en los documentos a los que tengo acceso. Consulte con un técnico especialista.
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---
+
+## q31 (unanswerable): Actualmente facturo entorno a 600 euros al mes. ¿Qué tramo de cotización me corresponde?
+
+**Esperado:**
+
+**Referencia:** No se ha encontrado contenido relacionado a tu pregunta en los documentos a los que tengo acceso. Consulte con un técnico especialista.
+
+**Fragmentos recuperados:** [LGSS, Artículo 308], [LETA, Artículo 38 ter]
+
+**Respuesta:**
+
+> Los autónomos deben cotizar en función de los rendimientos netos anuales obtenidos en el ejercicio de sus actividades, eligiendo una base de cotización mensual dentro de la tabla general o de la tabla reducida que establece anualmente la Ley de Presupuestos Generales del Estado [LGSS, Artículo 308]. 
+> 
+> La base de cotización mensual se elige en función de la previsión del promedio mensual de los rendimientos netos anuales [LGSS, Artículo 308]. Para calcular dicho rendimiento neto computable se aplican las normas del Impuesto sobre la Renta de las Personas Físicas (IRPF), teniendo en cuenta la totalidad de los rendimientos netos de las actividades económicas, empresariales o profesionales [LGSS, Artículo 308].
+> 
+> Dado que los tramos específicos de rendimientos netos y las correspondientes bases de cotización se fijan detalladamente en las tablas de la Ley de Presupuestos Generales del Estado para cada ejercicio, se recomienda confirmar el tramo exacto y el cálculo con un profesional especialista.
+> 
+> Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+
+---

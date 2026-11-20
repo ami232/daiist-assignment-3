@@ -7,7 +7,8 @@ text from the BOE open-data API into corpus/ (git-ignored). Pipeline per file:
     fetch(source)                 -> corpus/<BOE id>.xml (+ .meta.xml)
     load_document(path)           -> DocMeta, [Block]   (current text only, notes stripped)
     chunk_document(meta, blocks, design) -> [Chunk]     (source + location metadata)
-    embed_and_store(chunks, ...)  -> Chroma in index/   (Phase 3, not written yet)
+    embed_and_store(chunks, collection) -> Chroma in index/chroma (only chunks without a saved vector)
+    index_file(path)              -> all of the above for one file, with the duplicate policy
 
 server.py's add_document imports these functions; nothing here prints to
 stdout on import or from the per-file functions (log to stderr only).
@@ -34,6 +35,14 @@ ROOT = Path(__file__).resolve().parent
 CORPUS_DIR = ROOT / "corpus"
 INDEX_DIR = ROOT / "index"
 OUTLINE_CSV = INDEX_DIR / "outline.csv"
+CHROMA_DIR = INDEX_DIR / "chroma"
+
+# Embeddings. gemini-embedding-2 takes no task_type: the task goes in the text as a prefix
+# (EMBED_STYLE "prefix"). Set it to "task_type" for models that take the parameter instead.
+EMBED_MODEL = "gemini-embedding-2"
+EMBED_DIM = 768                  # reduced output size: keeps index/ small, cosine distance is unaffected
+EMBED_STYLE = "prefix"
+EMBED_BATCH = 50                 # texts per request; every text counts against the daily quota
 
 BOE_API = "https://www.boe.es/datosabiertos/api/legislacion-consolidada/id/{boe_id}/{part}"
 BOE_HTML = "https://www.boe.es/buscar/act.php?id={boe_id}"
@@ -81,11 +90,13 @@ class ChunkDesign:
     overlap: int = 40            # fixed: words shared by consecutive windows
 
 
-# PROVISIONAL parameters. Choosing them is the student's decision (tasks.md 3.2).
+# Parameters chosen by the student on 2026-11-20 (tasks.md 3.2).
 DESIGNS: dict[str, ChunkDesign] = {
     "article": ChunkDesign("article", "article", max_words=400),
     "fixed": ChunkDesign("fixed", "fixed", size=200, overlap=40),
 }
+# The chunking the server searches and add_document writes to (rag.SHIPPED, tasks.md 3.4).
+SHIPPED_DESIGN = "article"
 
 
 # --------------------------------------------------------------------------- #
@@ -407,6 +418,172 @@ def chunk_document(meta: DocMeta, blocks: list[Block], design: str | ChunkDesign
 
 
 # --------------------------------------------------------------------------- #
+# Embed and store                                                              #
+# --------------------------------------------------------------------------- #
+
+class QuotaExhausted(RuntimeError):
+    """The Gemini quota is used up (daily, or per minute for longer than we are willing to wait)."""
+
+
+_genai = None
+_chroma = None
+
+
+def _genai_client():
+    global _genai
+    if _genai is None:
+        from google import genai
+
+        from api_key import load_api_key
+        _genai = genai.Client(api_key=load_api_key())
+    return _genai
+
+
+def embedding_input(text: str, kind: str, title: str | None = None) -> str:
+    """The text actually sent to the embedding model: the task travels as a prefix."""
+    if EMBED_STYLE != "prefix":
+        return text
+    if kind == "query":
+        return f"task: search result | query: {text}"
+    return f"title: {title or 'none'} | text: {text}"
+
+
+def _retry_delay(error: Exception) -> float | None:
+    """Seconds Google asks us to wait, or None when the quota is a daily one (waiting won't help)."""
+    message = str(error)
+    if "PerDay" in message or "per day" in message.lower():
+        return None
+    match = re.search(r"retryDelay['\"]?\s*:\s*['\"]?(\d+(?:\.\d+)?)s", message)
+    return float(match.group(1)) if match else 30.0
+
+
+def embed_texts(texts: list[str], kind: str = "document", titles: list[str] | None = None) -> list[list[float]]:
+    """Embed one batch with a single API call. kind is "document" or "query".
+
+    Retries server errors and short per-minute 429s; raises QuotaExhausted when the
+    quota is gone, so the caller can stop with everything embedded so far saved.
+    """
+    from google.genai import errors, types
+
+    config = types.EmbedContentConfig(output_dimensionality=EMBED_DIM)
+    if EMBED_STYLE == "task_type":
+        config.task_type = "RETRIEVAL_QUERY" if kind == "query" else "RETRIEVAL_DOCUMENT"
+    # One Content per text: a single Content with several parts would come back as ONE vector.
+    contents = [types.Content(parts=[types.Part(text=embedding_input(t, kind, titles[i] if titles else None))])
+                for i, t in enumerate(texts)]
+    for attempt in range(1, 5):
+        try:
+            response = _genai_client().models.embed_content(model=EMBED_MODEL, contents=contents, config=config)
+            vectors = [list(e.values) for e in response.embeddings]
+            if len(vectors) != len(texts):
+                raise RuntimeError(f"Asked for {len(texts)} embeddings, got {len(vectors)}")
+            return vectors
+        except errors.APIError as error:
+            if error.code == 429:
+                wait = _retry_delay(error)
+                if wait is None or wait > 90 or attempt == 4:
+                    raise QuotaExhausted(f"Embedding quota exhausted: {error}") from error
+            elif error.code and error.code >= 500 and attempt < 4:
+                wait = 2 ** attempt
+            else:
+                raise
+            log.warning("Embedding API %s; retrying in %.0fs", error.code, wait)
+            time.sleep(wait + 1)
+    raise AssertionError("unreachable")
+
+
+def open_collection(design: str = SHIPPED_DESIGN):
+    """The persistent Chroma collection of one chunking design (created empty if missing)."""
+    global _chroma
+    import chromadb
+    from chromadb.config import Settings
+
+    if _chroma is None:
+        CHROMA_DIR.mkdir(parents=True, exist_ok=True)
+        _chroma = chromadb.PersistentClient(path=str(CHROMA_DIR), settings=Settings(anonymized_telemetry=False))
+    return _chroma.get_or_create_collection(
+        design, metadata={"hnsw:space": "cosine", "embed_model": EMBED_MODEL, "embed_dim": EMBED_DIM},
+    )
+
+
+def _title(chunk: Chunk) -> str:
+    return f"{chunk.law_title} — {chunk.location}"
+
+
+def embed_and_store(chunks: list[Chunk], collection, embed=None) -> dict:
+    """Embed the chunks that have no saved vector yet and upsert them, one batch at a time.
+
+    Each batch is written before the next request, so a crash or the quota loses at most
+    one batch. Returns {"added", "skipped", "pending"} (+ "error" if the quota ran out).
+    """
+    embed = embed or embed_texts                 # looked up at call time, so tests can swap it
+    ids = [c.id for c in chunks]
+    saved = set(collection.get(ids=ids, include=[])["ids"]) if ids else set()
+    todo = [c for c in chunks if c.id not in saved]
+    result = {"added": 0, "skipped": len(chunks) - len(todo), "pending": len(todo)}
+    for i in range(0, len(todo), EMBED_BATCH):
+        batch = todo[i:i + EMBED_BATCH]
+        try:
+            vectors = embed([c.text for c in batch], "document", [_title(c) for c in batch])
+        except QuotaExhausted as error:
+            log.warning("%s", error)
+            result["error"] = "quota"
+            return result
+        collection.upsert(
+            ids=[c.id for c in batch],
+            embeddings=vectors,
+            documents=[c.text for c in batch],
+            metadatas=[c.metadata() for c in batch],
+        )
+        result["added"] += len(batch)
+        result["pending"] -= len(batch)
+        log.info("  %s: %d/%d embedded", collection.name, result["added"], len(todo))
+    return result
+
+
+def prune(chunks: list[Chunk], collection, boe_ids: set[str]) -> int:
+    """Delete stored chunks of these documents that the current chunking no longer produces."""
+    keep = {c.id for c in chunks}
+    stored = collection.get(where={"boe_id": {"$in": sorted(boe_ids)}}, include=[])["ids"]
+    stale = [i for i in stored if i not in keep]
+    if stale:
+        collection.delete(ids=stale)
+    return len(stale)
+
+
+def index_file(path: Path, design: str = SHIPPED_DESIGN, collection=None) -> dict:
+    """Index one BOE XML file into a design's collection (used by server.py's add_document).
+
+    Duplicate policy (PROPOSED default, REQ-8.3, the student's decision):
+      - same BOE id and same consolidation date, every chunk stored -> "already" (no-op)
+      - same BOE id, newer consolidation date -> "replaced" (old chunks deleted first)
+      - same BOE id, older consolidation date -> "older" (nothing changes)
+      - new BOE id, or same version only partly stored -> "added" (missing chunks embedded)
+    """
+    meta, blocks = load_document(Path(path))
+    if not blocks:
+        raise ValueError(f"{Path(path).name} has no articles to index")
+    chunks = chunk_document(meta, blocks, design)
+    collection = collection if collection is not None else open_collection(design)
+    summary = {"source": meta.source, "boe_id": meta.boe_id, "title": meta.title,
+               "updated": meta.updated, "chunks": len(chunks)}
+
+    stored = collection.get(where={"boe_id": meta.boe_id}, include=["metadatas"])
+    dates = {m["updated"] for m in stored["metadatas"]}
+    if dates:
+        newest = max(dates)
+        if meta.updated < newest:
+            return {**summary, "status": "older", "stored_updated": newest, "added": 0, "skipped": 0, "pending": 0}
+        if meta.updated > newest:
+            collection.delete(ids=stored["ids"])
+            summary["status"] = "replaced"
+        elif set(stored["ids"]) >= {c.id for c in chunks}:
+            return {**summary, "status": "already", "added": 0, "skipped": len(chunks), "pending": 0}
+    summary.setdefault("status", "added")
+    return {**summary, **embed_and_store(chunks, collection)}
+
+
+# --------------------------------------------------------------------------- #
 # Outline (lookup table for writing eval/questions.csv)                       #
 # --------------------------------------------------------------------------- #
 
@@ -464,8 +641,26 @@ def main() -> None:
     if total < 50_000:
         raise SystemExit(f"Corpus has {total} words; the brief asks for at least 50,000.")
 
-    # Phase 3: embed_and_store() for each design goes here.
-    print("Embedding: not implemented yet (Phase 3).")
+    # Embed every design, the shipped one first so it is complete before the quota runs out.
+    # Held-out documents are left for add_document (the before/after demo).
+    indexed = [(meta, blocks) for source, meta, blocks in docs if not source.held_out]
+    boe_ids = {meta.boe_id for meta, _ in indexed}
+    pending = 0
+    print(f"\nEmbedding with {EMBED_MODEL} ({EMBED_DIM} dims) into {CHROMA_DIR.relative_to(ROOT)}")
+    for design in sorted(DESIGNS, key=lambda d: d != SHIPPED_DESIGN):
+        chunks = [c for meta, blocks in indexed for c in chunk_document(meta, blocks, design)]
+        collection = open_collection(design)
+        removed = prune(chunks, collection, boe_ids)
+        result = embed_and_store(chunks, collection) if pending == 0 else {
+            "added": 0, "skipped": 0, "pending": len(chunks)}   # quota already gone: don't ask again
+        pending += result["pending"]
+        print(f"  {design:<8} {len(chunks):>4} chunks: {result['added']} embedded now, "
+              f"{result['skipped']} already saved, {result['pending']} pending"
+              + (f", {removed} stale removed" if removed else ""))
+    if pending:
+        raise SystemExit(f"\n{pending} chunks still need a vector (embedding quota). "
+                         "Everything else is saved; run `main.py index` again after the quota resets.")
+    print("Index complete.")
 
 
 if __name__ == "__main__":
