@@ -353,15 +353,16 @@ Data for each case (from `results.csv`, my notes and the trace):
 | q25 (damp) | Correct, but the answer starts with a meaningless line in Arabic | Yes | quality issue |
 | q08, q22, q25 references | Reference answers outdated by the 2026 LAU reform; the agent was right, the reference wrong | | corrected |
 
-| Category | Cases | Count |
-|---|---|---|
-| Wrong retrieval (wrong law or article) | q11 | 1 |
-| Incomplete retrieval in a multi question | q26 | 1 |
-| Misreading of the retrieved text | q20 | 1 |
-| Unsupported synthesis (an inference not in the text) | q06 | 1 |
-| Bad test question (partly answerable from the corpus) | q31 | 1 |
-| Quality: wrong language | q18, q21, q29, q30 | 4 |
-| Quality: generation bug (Arabic line, “PHS” typo) | q25, q32 | 2 |
+| Category | Cases | Count | Why |
+|---|---|---|---|
+| Retrieval miss | q11, q26 | 2 | q11: it searched the LPH and never retrieved LAU Art. 23, so it could not give the key fact (the landlord’s written consent). q26 (main cause): it never retrieved LDV Art. 3. |
+| Wrong answer from the right passage | q20 | 1 | It had LPH Art. 7 but mixed two different penalties and said “eviction for up to three years”. |
+| Unsupported claim | q06 (+ q26) | 1 (+1) | q06: the article was right, but the “3 months in total” rule is its own sum of deposit and guarantee and is not written in the law. q26 also filled the gap from the missing LDV Art. 3 with the “gran tenedor” definition from its own knowledge (counted once, under retrieval miss). |
+| Wrong refusal | — | 0 | |
+| Bad test question | q31, q08, q22, q25 | 4 | q31: I marked it unanswerable, but LAU Art. 36 forbids requiring non-payment insurance; the agent got it right, said that part and said the rest is not covered. q08, q22, q25: my references were outdated after the 2026 reform; the agent was right because it uses the text in force. |
+| **Total** | | **8** | 4 system failures, 4 test-set errors |
+
+Quality notes (not failures of content): wrong answer language in q18, q21, q29, q30; a meaningless Arabic line at the start of q25; the typo “PHS” for LPH in q32.
 
 What I’d fix first is retrieval, because it’s behind the only incorrect answer (q11: it searched the LPH and missed LAU Art. 23 on landlord consent) and behind q26. Two concrete changes: a filter or boost for the LAU when the question is about the tenant–landlord relationship, and, for multi questions, a second search on the concepts the first article mentions but doesn’t define (such as “gran tenedor”). After that, I’d force the answer language to match the question, which is cheap and fixes four cases.
 
