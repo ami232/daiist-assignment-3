@@ -1,6 +1,9 @@
 """
 Human grading of agent answers: `uv run python eval/grade.py`
 
+Passages are printed in full (no truncation); before grading you can also print every
+passage the agent retrieved, which is the evidence for SUPPORTED.
+
 Shows, one at a time, the question, the reference answer, its essential facts (the same
 criteria the judge gets, fixed before any answer existed: eval/essential_facts.json), the
 agent's answer and the passages the agent cited (taken from its own search results). It
@@ -52,6 +55,25 @@ def cited_passages(answer: dict) -> list[str]:
     return list(dict.fromkeys(blocks))
 
 
+def all_passages(answer: dict) -> list[str]:
+    """Every passage the agent's searches returned (the SUPPORTED evidence), once per chunk."""
+    seen, blocks = set(), []
+    for text in answer.get("retrieved", []):
+        for block in re.split(r"\n(?=\[\d+\] \[)", text):
+            head = re.match(r"\[\d+\] \[[^\]]+\][^\n]*?chunk ([^)\s]+)\)", block)
+            if head and head.group(1) not in seen:
+                seen.add(head.group(1))
+                blocks.append(block.strip())
+    return blocks
+
+
+def show(title: str, passages: list[str]) -> None:
+    print(f"{title} ({len(passages)}), shown in full:")
+    for p in passages:
+        print(f"\n  {p}\n  " + "-" * 60)
+    print()
+
+
 def ask(prompt: str, allowed: set[str]) -> str:
     while True:
         value = input(prompt).strip()
@@ -85,10 +107,16 @@ def main() -> None:
                 print(f"  - must NOT be stated: {fact}")
             print()
         print(f"ANSWER:\n{a['answer']}\n")
-        passages = cited_passages(a)
-        print(f"CITED PASSAGES ({len(passages)}):")
-        for p in passages:
-            print(f"  {p[:1500]}\n")
+        show("CITED PASSAGES", cited_passages(a))
+        everything = all_passages(a)
+        while True:  # optional views before grading; nothing is saved here
+            choice = input(f"[Enter] grade  [a] all {len(everything)} retrieved passages  [r] answer again: ").strip().lower()
+            if choice == "a":
+                show("ALL RETRIEVED PASSAGES", everything)
+            elif choice == "r":
+                print(f"\nANSWER:\n{a['answer']}\n")
+            elif choice == "":
+                break
         correct = ask("correct? [1/0] ", {"0", "1"})
         supported = ask("supported? [1/0] ", {"0", "1"})
         notes = input("notes (required if any 0): ").strip()
