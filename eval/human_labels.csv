@@ -9,7 +9,7 @@ q15,0,1,"The agent incorrectly refused to answer a question that is answerable f
 q33,1,1,
 q13,1,1,
 q28,1,1,
-q22,1,1,"The answer correctly states the quorum requirements, but the additional claim regarding the waiver by a majority of At-Large Directors is not supported by the cited passage available for review."
+q22,1,1,
 q34,1,1,
 q01,1,1,"The answer correctly states the preliminary IPO price range ($70–$78) and midpoint ($74). Both figures are supported by the retrieved evidence, but the agent merges two source references into a single citation, violating the required citation format."
 q23,1,1,No factual issues identified. Minor citation-format issue: two EU references are merged into one citation.
@@ -19,7 +19,7 @@ q08,1,1,
 q35,1,1,
 q20,1,1,
 q14,1,1,
-q31,1,1,"The answer correctly refuses to provide a first-day closing price. However, the claim that trading was expected to begin on November 19, 2026, is not supported by the retrieved passage shown, which only mentions publication of offering results around November 18."
+q31,1,1,
 q25,1,1,"The answer correctly provides all three essential facts. It additionally distinguishes the $320.0 billion contractual obligations table subtotal from the broader $900.9 billion aggregate commitments, although this distinction could be presented more clearly."
 q07,1,1,
 q17,1,1,
