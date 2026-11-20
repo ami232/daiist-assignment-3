@@ -27,6 +27,7 @@ import os
 import re
 import statistics
 import sys
+import threading
 import time
 from collections import Counter, deque
 from dataclasses import asdict, dataclass, field
@@ -1003,12 +1004,23 @@ def embed_query(question: str) -> list[float]:
     return embed_texts([f"task: question answering | query: {question}"])[0]
 
 
+_COLLECTIONS: dict[str, object] = {}
+_COLLECTION_LOCK = threading.Lock()
+
+
 def collection():
+    """The persistent Chroma collection, opened once per process. The MCP server runs tool
+    calls in worker threads; opening PersistentClient from two threads at once (parallel
+    searches) broke Chroma's initialisation, so the first open is serialised."""
     import chromadb
     from chromadb.config import Settings
 
-    client = chromadb.PersistentClient(path=str(CHROMA_DIR), settings=Settings(anonymized_telemetry=False))
-    return client.get_or_create_collection(COLLECTION, metadata={"hnsw:space": "cosine"})
+    with _COLLECTION_LOCK:
+        key = str(CHROMA_DIR)
+        if key not in _COLLECTIONS:
+            client = chromadb.PersistentClient(path=key, settings=Settings(anonymized_telemetry=False))
+            _COLLECTIONS[key] = client.get_or_create_collection(COLLECTION, metadata={"hnsw:space": "cosine"})
+        return _COLLECTIONS[key]
 
 
 def _metadata(chunk: Chunk) -> dict:

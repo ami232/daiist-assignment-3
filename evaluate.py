@@ -10,8 +10,11 @@ Stages (all cached in eval/, so a re-run spends no API calls unless inputs chang
   checks        code checks, no API: refusal behaviour, citation validity, expected citation,
                 evidence retrieved by the agent, figures not found in the retrieved passages,
                 reference figures found in the answer -> eval/code_checks.csv.
-  judge         LLM judge with the rubric in eval/judge_rubric.md and the retrieved passages
-                as evidence -> eval/judge.jsonl.
+  facts         ESSENTIAL FACTS of each question, extracted by the judge model from the question
+                and the reference answer ONLY (no agent answer is shown) -> eval/essential_facts.json;
+                entries reviewed by the student are marked "frozen" and never regenerated.
+  judge         LLM judge with the rubric in eval/judge_rubric.md, the essential facts and the
+                retrieved passages as evidence -> eval/judge.jsonl. It never reads human labels.
   agreement     human grades (eval/human_labels.csv, done BEFORE reading the judge) vs judge:
                 % agreement and Cohen's kappa -> eval/agreement.json.
   before_after  q30 (final price) on a COPY of the index before and after add_document
@@ -43,13 +46,14 @@ PATTERNS = EVAL / "evidence_patterns.json"
 ANSWERS = EVAL / "answers.jsonl"
 CHECKS = EVAL / "code_checks.csv"
 RUBRIC = EVAL / "judge_rubric.md"
+FACTS = EVAL / "essential_facts.json"
 JUDGE = EVAL / "judge.jsonl"
 HUMAN = EVAL / "human_labels.csv"
 AGREEMENT = EVAL / "agreement.json"
 BEFORE_AFTER = EVAL / "before_after.json"
 SUMMARY = EVAL / "summary.json"
 KS = (1, 3, 5)
-STAGES = ("retrieval", "answers", "checks", "judge", "agreement", "before_after", "summary")
+STAGES = ("retrieval", "facts", "answers", "checks", "judge", "agreement", "before_after", "summary")
 JUDGE_MODEL = os.environ.get("GEMINI_JUDGE_MODEL", "gemini-3.1-flash-lite")
 PAUSE_BETWEEN_QUESTIONS = float(os.environ.get("EVAL_PAUSE_SECONDS", "4"))
 BEFORE_AFTER_QID = "q30"
@@ -221,7 +225,8 @@ TRIVIAL_NUMBERS = {"1", "2", "3", "4", "5", "10", "2023", "2024", "2025", "2026"
 
 def numbers(text: str) -> set[str]:
     """Figures in a text, normalised ('$(41,965)' -> '41,965'); citations removed first."""
-    text = re.sub(r"\[[A-Z][A-Z0-9-]+ \|[^\]]*\]", " ", text)
+    text = re.sub(r"\[[A-Z][A-Z0-9-]+ \|[^\]]*\]", " ", text)       # answer citations
+    text = re.sub(r"\[[A-Z][A-Z0-9-]+,[^\]]*\]", " ", text)         # source notes in the reference
     out = set()
     for raw in NUMBER_RE.findall(text):
         n = raw.strip("$()%").rstrip(".,")
@@ -261,7 +266,7 @@ def stage_checks() -> None:
         else:
             row["wrong_refusal"] = int(a["refusal"])
             groups = cq.parse_expected(q)
-            cited = agent.CITATION_RE.findall(a["answer"])
+            cited = agent.find_citations(a["answer"])
             row["cites_expected_all"] = int(all(any(s == cs and cq.location_matches(l, cl) for s, l in g for cs, cl, _ in cited)
                                                 for g in groups))
             row["evidence_retrieved_all"] = int(all(re.search(p, retrieved_text, re.I) for p in patterns[q["id"]]))
@@ -273,6 +278,77 @@ def stage_checks() -> None:
 
 
 # --------------------------------------------------------------------------- judge
+
+FACTS_TEMPLATE = """You prepare grading criteria for a question about the Anthropic IPO filings.
+You see only the question and the evaluator's reference answer; no assistant answer exists yet.
+
+QUESTION:
+{question}
+
+QUESTION TYPE: {kind}
+
+REFERENCE ANSWER:
+{reference}
+
+List the ESSENTIAL FACTS: the facts the QUESTION explicitly asks for, exactly as the reference
+states them (each figure with its unit, period and basis; dates; share classes; parties;
+conditions), one short self-contained statement each. Put context and details the question
+did not ask for under "secondary". Ignore bracketed source notes. If the question type is
+unanswerable, the only essential fact is that the requested information is not in the corpus;
+list under "must_not_state" what an answer must not present as the missing fact.
+
+Reply with JSON only: {{"essential": ["..."], "secondary": ["..."], "must_not_state": ["..."]}}"""
+
+
+def model_text(response) -> str:
+    content = response.content
+    if isinstance(content, str):
+        return content
+    return "".join(p.get("text", "") if isinstance(p, dict) else str(p) for p in content)
+
+
+def stage_facts(ids: set[str] | None, fresh: bool, model=None) -> dict:
+    """Answer-blind: the prompt holds only the question and the reference, so the criteria
+    cannot be adapted to what the agent answered."""
+    cache = json.loads(FACTS.read_text(encoding="utf-8")) if FACTS.is_file() else {}
+    model = model or judge_model()
+    name = getattr(model, "model", JUDGE_MODEL)
+    for q in load_questions():
+        if ids and q["id"] not in ids:
+            continue
+        if cache.get(q["id"], {}).get("frozen"):
+            continue  # reviewed and frozen by the student: never regenerated, even with --fresh
+        key = sha(q["question"], q["reference_answer"], q["kind"], FACTS_TEMPLATE, name)
+        if not fresh and cache.get(q["id"], {}).get("key") == key:
+            continue
+        log(f"facts: {q['id']}")
+        try:
+            response = model.invoke(FACTS_TEMPLATE.format(question=q["question"], kind=q["kind"],
+                                                          reference=q["reference_answer"]))
+            match = re.search(r"\{.*\}", model_text(response), re.S)
+            facts = json.loads(match.group(0)) if match else None
+            if not facts or not isinstance(facts.get("essential"), list) or not facts["essential"]:
+                raise ValueError(f"no essential facts in: {model_text(response)[:200]}")
+        except Exception as error:  # noqa: BLE001
+            if is_daily_quota_error(error):
+                log("facts: daily chat quota exhausted; stopping (cached facts are kept)")
+                break
+            log(f"facts: {q['id']} failed: {type(error).__name__}: {str(error)[:200]}")
+            continue
+        cache[q["id"]] = {"key": key, "model": name, "essential": facts["essential"],
+                          "secondary": facts.get("secondary", []), "must_not_state": facts.get("must_not_state", [])}
+        FACTS.write_text(json.dumps(dict(sorted(cache.items())), indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    return cache
+
+
+def format_facts(entry: dict) -> str:
+    lines = [f"- {f}" for f in entry["essential"]]
+    if entry.get("must_not_state"):
+        lines += ["Must NOT be stated as the answer:"] + [f"- {f}" for f in entry["must_not_state"]]
+    if entry.get("secondary"):
+        lines += ["Secondary (not required):"] + [f"- {f}" for f in entry["secondary"]]
+    return "\n".join(lines)
+
 
 JUDGE_TEMPLATE = """You are grading an AI assistant's answer about the Anthropic IPO filings.
 
@@ -287,22 +363,31 @@ QUESTION TYPE: {kind}
 REFERENCE ANSWER (written by the evaluator from the documents):
 {reference}
 
+ESSENTIAL FACTS (fixed before any answer was seen):
+{facts}
+
 PASSAGES THE ASSISTANT RETRIEVED (the only admissible evidence):
 {passages}
 
 ASSISTANT'S ANSWER:
 {answer}
 
-Reply with JSON only: {{"correct": 0 or 1, "supported": 0 or 1, "rationale": "<one or two sentences>"}}"""
+Grade the two labels separately, in this order:
+1. CORRECT: compare the answer with each essential fact (and the reference). Do not consider
+   whether its claims appear in the passages; an extra claim that does not contradict the
+   reference does not change CORRECT.
+2. SUPPORTED: check every factual claim and citation against the passages. Do not consider
+   the reference answer.
+
+Reply with JSON only:
+{{"correct_reason": "<one sentence>", "correct": 0 or 1, "supported_reason": "<one sentence>", "supported": 0 or 1}}"""
 
 
 def judge_model():
-    from langchain_google_genai import ChatGoogleGenerativeAI
+    import agent
 
-    from api_key import load_api_key
-
-    load_api_key()
-    return ChatGoogleGenerativeAI(model=JUDGE_MODEL, temperature=0, timeout=90, max_retries=2)
+    # same request limiter and daily budget as the agent; default thinking for grading
+    return agent.chat_model(JUDGE_MODEL, reasoning_effort=None)
 
 
 def parse_verdict(text: str) -> dict:
@@ -311,7 +396,8 @@ def parse_verdict(text: str) -> dict:
         raise ValueError(f"judge did not return JSON: {text[:200]}")
     verdict = json.loads(match.group(0))
     return {"correct": int(verdict["correct"]), "supported": int(verdict["supported"]),
-            "rationale": str(verdict.get("rationale", ""))[:600]}
+            "correct_reason": str(verdict.get("correct_reason", ""))[:400],
+            "supported_reason": str(verdict.get("supported_reason", ""))[:400]}
 
 
 def stage_judge(ids: set[str] | None, fresh: bool, model=None) -> None:
@@ -320,23 +406,24 @@ def stage_judge(ids: set[str] | None, fresh: bool, model=None) -> None:
     rubric = RUBRIC.read_text(encoding="utf-8")
     answers, cache = read_jsonl(ANSWERS), read_jsonl(JUDGE)
     model = model or judge_model()
+    todo = {q["id"] for q in load_questions() if q["id"] in answers and not answers[q["id"]].get("error")}
+    facts = stage_facts(ids & todo if ids else todo, fresh=False, model=model)  # cached; answer-blind
     for q in load_questions():
         a = answers.get(q["id"])
-        if (ids and q["id"] not in ids) or not a or a.get("error"):
+        if (ids and q["id"] not in ids) or not a or a.get("error") or q["id"] not in facts:
             continue
-        key = sha(a["answer"], q["reference_answer"], rubric, getattr(model, "model", JUDGE_MODEL))
+        key = sha(a["answer"], q["reference_answer"], json.dumps(facts[q["id"]]["essential"]), rubric,
+                  getattr(model, "model", JUDGE_MODEL))
         if not fresh and cache.get(q["id"], {}).get("key") == key:
             continue
         prompt = JUDGE_TEMPLATE.format(rubric=rubric, question=q["question"], kind=q["kind"],
-                                       reference=q["reference_answer"],
+                                       reference=q["reference_answer"], facts=format_facts(facts[q["id"]]),
                                        passages="\n\n".join(a.get("retrieved", [])) or "(none)", answer=a["answer"])
         log(f"judge: {q['id']}")
         started = time.perf_counter()
         try:
             response = model.invoke(prompt)
-            content = response.content if isinstance(response.content, str) else "".join(
-                p.get("text", "") if isinstance(p, dict) else str(p) for p in response.content)
-            record = {"id": q["id"], "key": key, **parse_verdict(content),
+            record = {"id": q["id"], "key": key, **parse_verdict(model_text(response)),
                       "judge_model": getattr(model, "model", JUDGE_MODEL),
                       "tokens": (response.usage_metadata or {}).get("total_tokens", 0),
                       "seconds": round(time.perf_counter() - started, 2)}
@@ -479,6 +566,8 @@ def main() -> None:
         log(f"\n=== {stage} ===")
         if stage == "retrieval":
             stage_retrieval()
+        elif stage == "facts":
+            stage_facts(ids, fresh)
         elif stage == "answers":
             stage_answers(ids, fresh)
         elif stage == "checks":
