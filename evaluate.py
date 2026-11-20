@@ -1,11 +1,497 @@
 """
-Assignment 3: evaluation (`main.py evaluate`). May be evaluate.ipynb instead.
+Assignment 3: evaluation (`main.py evaluate`; `python evaluate.py [stage ...] [--ids q01,q02] [--fresh]`).
 
-Hit rate at 1/3/5 per retrieval design; agent answers on every question;
-code checks; an LLM judge with a rubric and the retrieved text as evidence;
-agreement with eval/human_labels.csv. Save results in eval/.
+Stages (all cached in eval/, so a re-run spends no API calls unless inputs change):
 
-Start from session 10's 07-own-harness/evaluate.py.
+  retrieval     Hit@1/3/5 per design (vector, bm25, hybrid), by location and by evidence;
+                single = any alternative, multi = any group / all groups; words and latency.
+  answers       the agent (agent.run) answers every question; answer, tool trace, retrieved
+                passages, guardrail events, tokens and seconds -> eval/answers.jsonl.
+  checks        code checks, no API: refusal behaviour, citation validity, expected citation,
+                evidence retrieved by the agent, figures not found in the retrieved passages,
+                reference figures found in the answer -> eval/code_checks.csv.
+  judge         LLM judge with the rubric in eval/judge_rubric.md and the retrieved passages
+                as evidence -> eval/judge.jsonl.
+  agreement     human grades (eval/human_labels.csv, done BEFORE reading the judge) vs judge:
+                % agreement and Cohen's kappa -> eval/agreement.json.
+  before_after  q30 (final price) on a COPY of the index before and after add_document
+                (the price notice) -> eval/before_after.json. The committed index is untouched.
+  summary       results by kind, failures, tokens and seconds per question -> eval/summary.json.
 """
 
-raise NotImplementedError("Write your evaluation stage.")
+from __future__ import annotations
+
+import csv
+import hashlib
+import json
+import os
+import re
+import shutil
+import statistics
+import sys
+import tempfile
+import time
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent
+sys.path.insert(0, str(ROOT / "eval"))
+import check_questions as cq  # noqa: E402  (annotation format and matching rules)
+
+EVAL = ROOT / "eval"
+QUESTIONS = EVAL / "questions.csv"
+PATTERNS = EVAL / "evidence_patterns.json"
+ANSWERS = EVAL / "answers.jsonl"
+CHECKS = EVAL / "code_checks.csv"
+RUBRIC = EVAL / "judge_rubric.md"
+JUDGE = EVAL / "judge.jsonl"
+HUMAN = EVAL / "human_labels.csv"
+AGREEMENT = EVAL / "agreement.json"
+BEFORE_AFTER = EVAL / "before_after.json"
+SUMMARY = EVAL / "summary.json"
+KS = (1, 3, 5)
+STAGES = ("retrieval", "answers", "checks", "judge", "agreement", "before_after", "summary")
+JUDGE_MODEL = os.environ.get("GEMINI_JUDGE_MODEL", "gemini-3.1-flash-lite")
+PAUSE_BETWEEN_QUESTIONS = float(os.environ.get("EVAL_PAUSE_SECONDS", "4"))
+BEFORE_AFTER_QID = "q30"
+ADDED_DOCUMENT = ROOT / "corpus" / "after" / "notice-of-price.pdf"
+ADDED_DOCUMENT_URL = "https://ipo.anthropic.com/documents/eu/notice-of-price.pdf"
+
+
+def log(message: str) -> None:
+    print(message, file=sys.stderr, flush=True)
+
+
+def load_questions() -> list[dict]:
+    with QUESTIONS.open(newline="", encoding="utf-8") as f:
+        return [r for r in csv.DictReader(f) if r["question"].strip()]
+
+
+def sha(*parts: str) -> str:
+    return hashlib.sha256("\x1f".join(parts).encode()).hexdigest()[:16]
+
+
+def read_jsonl(path: Path) -> dict[str, dict]:
+    """Latest record per id."""
+    out = {}
+    if path.is_file():
+        for line in path.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                rec = json.loads(line)
+                out[rec["id"]] = rec
+    return out
+
+
+def append_jsonl(path: Path, record: dict) -> None:
+    with path.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(record, ensure_ascii=False) + "\n")
+
+
+def is_daily_quota_error(error: Exception) -> bool:
+    text = str(error)
+    return "RESOURCE_EXHAUSTED" in text and ("PerDay" in text or "per day" in text.lower())
+
+
+# --------------------------------------------------------------------------- retrieval metrics
+
+def group_hit_ranks(hits: list, groups: list[list[tuple[str, str]]], patterns: list[str]) -> list[dict]:
+    """For each evidence group, the 1-based rank of the first retrieved chunk that
+    satisfies it by location and by evidence (None if not retrieved)."""
+    out = []
+    for group, pattern in zip(groups, patterns):
+        loc_rank = next((r for r, h in enumerate(hits, 1)
+                         if any(h.source == s and cq.location_matches(l, h.location) for s, l in group)), None)
+        ev_rank = next((r for r, h in enumerate(hits, 1) if re.search(pattern, h.text, re.I)), None)
+        out.append({"location": loc_rank, "evidence": ev_rank})
+    return out
+
+
+def hits_at(ranks: list[dict], kind: str, k: int, metric: str) -> dict[str, int]:
+    found = [r[metric] is not None and r[metric] <= k for r in ranks]
+    if kind == "multi":
+        return {"any": int(any(found)), "all": int(all(found))}
+    return {"any": int(any(found)), "all": int(any(found))}  # single: one group of alternatives
+
+
+def run_retrieval(designs: tuple[str, ...], search_fn, k_max: int = 5) -> tuple[list[dict], list[dict]]:
+    questions = [q for q in load_questions() if q["kind"] != "unanswerable"]
+    patterns = json.loads(PATTERNS.read_text(encoding="utf-8"))
+    rows = []
+    for design in designs:
+        for q in questions:
+            groups = cq.parse_expected(q)
+            started = time.perf_counter()
+            hits = search_fn(q["question"], k_max, design)
+            seconds = time.perf_counter() - started
+            ranks = group_hit_ranks(hits, groups, patterns[q["id"]])
+            row = {"design": design, "id": q["id"], "kind": q["kind"], "seconds": round(seconds, 3),
+                   "words_top3": sum(len(h.text.split()) for h in hits[:3]),
+                   "words_top5": sum(len(h.text.split()) for h in hits[:5]),
+                   "retrieved": " || ".join(f"{h.source} | {h.location} | p. {h.page}" for h in hits)}
+            for metric in ("location", "evidence"):
+                row[f"{metric}_ranks"] = ";".join("-" if r[metric] is None else str(r[metric]) for r in ranks)
+                for k in KS:
+                    h = hits_at(ranks, q["kind"], k, metric)
+                    row[f"{metric}_any@{k}"], row[f"{metric}_all@{k}"] = h["any"], h["all"]
+            rows.append(row)
+    summary = []
+    for design in designs:
+        for subset in ("single", "multi", "all answerable"):
+            sel = [r for r in rows if r["design"] == design and (subset == "all answerable" or r["kind"] == subset)]
+            if not sel:
+                continue
+            s = {"design": design, "questions": subset, "n": len(sel)}
+            for metric in ("location", "evidence"):
+                for k in KS:
+                    s[f"{metric}_hit@{k}"] = round(statistics.mean(r[f"{metric}_any@{k}"] for r in sel), 3)
+                    if subset != "single":
+                        s[f"{metric}_hit_all@{k}"] = round(statistics.mean(r[f"{metric}_all@{k}"] for r in sel), 3)
+            s["avg_words_top3"] = round(statistics.mean(r["words_top3"] for r in sel))
+            s["avg_words_top5"] = round(statistics.mean(r["words_top5"] for r in sel))
+            s["median_seconds"] = round(statistics.median(r["seconds"] for r in sel), 3)
+            summary.append(s)
+    return rows, summary
+
+
+def write_csv(path: Path, rows: list[dict]) -> None:
+    fields = []
+    for r in rows:
+        fields += [k for k in r if k not in fields]
+    with path.open("w", newline="", encoding="utf-8") as f:
+        w = csv.DictWriter(f, fieldnames=fields)
+        w.writeheader()
+        w.writerows(rows)
+
+
+def stage_retrieval() -> None:
+    import retrieval
+
+    rows, summary = run_retrieval(retrieval.DESIGNS, retrieval.search)
+    write_csv(EVAL / "retrieval_results.csv", rows)
+    write_csv(EVAL / "retrieval_summary.csv", summary)
+    log("\nRetrieval (answerable questions; hit = any alternative / any group):")
+    for s in summary:
+        log(f"  {s['design']:7} {s['questions']:15} n={s['n']:2}  "
+            f"loc@1/3/5 {s['location_hit@1']:.2f}/{s['location_hit@3']:.2f}/{s['location_hit@5']:.2f}  "
+            f"evid@1/3/5 {s['evidence_hit@1']:.2f}/{s['evidence_hit@3']:.2f}/{s['evidence_hit@5']:.2f}  "
+            f"words(top5) {s['avg_words_top5']}")
+
+
+# --------------------------------------------------------------------------- answers
+
+def answer_key(q: dict) -> str:
+    import agent
+    import server
+
+    return sha(q["question"], agent.MODEL, (ROOT / "AGENTS.md").read_text(encoding="utf-8"), server.SEARCH_DESIGN)
+
+
+def reject_all(request: dict) -> dict:
+    return {"type": "reject", "message": "Evaluation run: documents are never added here."}
+
+
+def stage_answers(ids: set[str] | None, fresh: bool) -> None:
+    import agent
+
+    cache = read_jsonl(ANSWERS)
+    todo = [q for q in load_questions() if not ids or q["id"] in ids]
+    for n, q in enumerate(todo, 1):
+        key = answer_key(q)
+        if not fresh and cache.get(q["id"], {}).get("key") == key and not cache[q["id"]].get("error"):
+            continue
+        log(f"answers: {q['id']} ({n}/{len(todo)})")
+        record = {"id": q["id"], "key": key, "kind": q["kind"]}
+        try:
+            record.update(agent.run(q["question"], approve=reject_all))
+        except Exception as error:  # noqa: BLE001 - keep going, record the failure
+            record.update(error=f"{type(error).__name__}: {str(error)[:500]}")
+            append_jsonl(ANSWERS, record)
+            if is_daily_quota_error(error):
+                log("answers: daily chat quota exhausted; stopping (cached answers are kept)")
+                return
+            continue
+        append_jsonl(ANSWERS, record)
+        time.sleep(PAUSE_BETWEEN_QUESTIONS)
+
+
+# --------------------------------------------------------------------------- code checks
+
+NUMBER_RE = re.compile(r"(?<![\w.])\$?\(?\d[\d,]*(?:\.\d+)?\)?%?")
+TRIVIAL_NUMBERS = {"1", "2", "3", "4", "5", "10", "2023", "2024", "2025", "2026", "2027"}
+
+
+def numbers(text: str) -> set[str]:
+    """Figures in a text, normalised ('$(41,965)' -> '41,965'); citations removed first."""
+    text = re.sub(r"\[[A-Z][A-Z0-9-]+ \|[^\]]*\]", " ", text)
+    out = set()
+    for raw in NUMBER_RE.findall(text):
+        n = raw.strip("$()%").rstrip(".,")
+        if n and n not in TRIVIAL_NUMBERS and not re.fullmatch(r"\d", n):
+            out.add(n)
+    return out
+
+
+def stage_checks() -> None:
+    from langchain_core.messages import ToolMessage
+
+    import agent
+
+    patterns = json.loads(PATTERNS.read_text(encoding="utf-8"))
+    answers = read_jsonl(ANSWERS)
+    rows = []
+    for q in load_questions():
+        a = answers.get(q["id"])
+        if not a or a.get("error"):
+            rows.append({"id": q["id"], "kind": q["kind"], "status": "missing" if not a else "error"})
+            continue
+        retrieved_text = "\n".join(a.get("retrieved", []))
+        retrieved = agent.retrieved_citations(
+            [ToolMessage(content=t, tool_call_id=f"stored-{n}", name="search") for n, t in enumerate(a.get("retrieved", []))])
+        citation = agent.check_citations(a["answer"], retrieved)
+        partial = int(a.get("partial_refusal", bool(re.search(r"(?m)^\s*NOT IN CORPUS:", a["answer"])) and not a["refusal"]))
+        row = {"id": q["id"], "kind": q["kind"], "status": "ok", "refusal": int(a["refusal"]), "partial_refusal": partial,
+               "citations": len(a.get("citations", [])), "citations_valid": int(citation["ok"] or a["refusal"]),
+               "searches": sum(t["tool"] == "search" for t in a.get("tool_calls", [])),
+               "guardrail_fired": int(any(e["event"] == "guardrail" for e in a.get("events", [])))}
+        answer_numbers = numbers(a["answer"])
+        unsupported = sorted(n for n in answer_numbers if n not in retrieved_text)
+        row["numbers_in_answer"] = len(answer_numbers)
+        row["numbers_not_in_passages"] = ";".join(unsupported)
+        if q["kind"] == "unanswerable":
+            row["correct_refusal"] = int(a["refusal"])   # a partial answer to an unanswerable question is not a refusal
+        else:
+            row["wrong_refusal"] = int(a["refusal"])
+            groups = cq.parse_expected(q)
+            cited = agent.CITATION_RE.findall(a["answer"])
+            row["cites_expected_all"] = int(all(any(s == cs and cq.location_matches(l, cl) for s, l in g for cs, cl, _ in cited)
+                                                for g in groups))
+            row["evidence_retrieved_all"] = int(all(re.search(p, retrieved_text, re.I) for p in patterns[q["id"]]))
+            ref = numbers(q["reference_answer"])
+            row["reference_numbers_found"] = f"{len([n for n in ref if n in answer_numbers])}/{len(ref)}"
+        rows.append(row)
+    write_csv(CHECKS, rows)
+    log(f"checks: {sum(r['status'] == 'ok' for r in rows)} answers checked -> {CHECKS.name}")
+
+
+# --------------------------------------------------------------------------- judge
+
+JUDGE_TEMPLATE = """You are grading an AI assistant's answer about the Anthropic IPO filings.
+
+RUBRIC (follow it exactly):
+{rubric}
+
+QUESTION:
+{question}
+
+QUESTION TYPE: {kind}
+
+REFERENCE ANSWER (written by the evaluator from the documents):
+{reference}
+
+PASSAGES THE ASSISTANT RETRIEVED (the only admissible evidence):
+{passages}
+
+ASSISTANT'S ANSWER:
+{answer}
+
+Reply with JSON only: {{"correct": 0 or 1, "supported": 0 or 1, "rationale": "<one or two sentences>"}}"""
+
+
+def judge_model():
+    from langchain_google_genai import ChatGoogleGenerativeAI
+
+    from api_key import load_api_key
+
+    load_api_key()
+    return ChatGoogleGenerativeAI(model=JUDGE_MODEL, temperature=0, timeout=90, max_retries=2)
+
+
+def parse_verdict(text: str) -> dict:
+    match = re.search(r"\{.*\}", text, re.S)
+    if not match:
+        raise ValueError(f"judge did not return JSON: {text[:200]}")
+    verdict = json.loads(match.group(0))
+    return {"correct": int(verdict["correct"]), "supported": int(verdict["supported"]),
+            "rationale": str(verdict.get("rationale", ""))[:600]}
+
+
+def stage_judge(ids: set[str] | None, fresh: bool, model=None) -> None:
+    if not RUBRIC.is_file():
+        raise SystemExit(f"{RUBRIC.relative_to(ROOT)} is missing: write the judge rubric first.")
+    rubric = RUBRIC.read_text(encoding="utf-8")
+    answers, cache = read_jsonl(ANSWERS), read_jsonl(JUDGE)
+    model = model or judge_model()
+    for q in load_questions():
+        a = answers.get(q["id"])
+        if (ids and q["id"] not in ids) or not a or a.get("error"):
+            continue
+        key = sha(a["answer"], q["reference_answer"], rubric, getattr(model, "model", JUDGE_MODEL))
+        if not fresh and cache.get(q["id"], {}).get("key") == key:
+            continue
+        prompt = JUDGE_TEMPLATE.format(rubric=rubric, question=q["question"], kind=q["kind"],
+                                       reference=q["reference_answer"],
+                                       passages="\n\n".join(a.get("retrieved", [])) or "(none)", answer=a["answer"])
+        log(f"judge: {q['id']}")
+        started = time.perf_counter()
+        try:
+            response = model.invoke(prompt)
+            content = response.content if isinstance(response.content, str) else "".join(
+                p.get("text", "") if isinstance(p, dict) else str(p) for p in response.content)
+            record = {"id": q["id"], "key": key, **parse_verdict(content),
+                      "judge_model": getattr(model, "model", JUDGE_MODEL),
+                      "tokens": (response.usage_metadata or {}).get("total_tokens", 0),
+                      "seconds": round(time.perf_counter() - started, 2)}
+        except Exception as error:  # noqa: BLE001
+            if is_daily_quota_error(error):
+                log("judge: daily chat quota exhausted; stopping (cached verdicts are kept)")
+                return
+            log(f"judge: {q['id']} failed: {type(error).__name__}: {str(error)[:200]}")
+            continue
+        append_jsonl(JUDGE, record)
+        time.sleep(PAUSE_BETWEEN_QUESTIONS)
+
+
+# --------------------------------------------------------------------------- agreement
+
+def cohen_kappa(a: list[int], b: list[int]) -> float | None:
+    n = len(a)
+    if n == 0:
+        return None
+    po = sum(x == y for x, y in zip(a, b)) / n
+    pa, pb = sum(a) / n, sum(b) / n
+    pe = pa * pb + (1 - pa) * (1 - pb)
+    return None if pe == 1 else round((po - pe) / (1 - pe), 3)
+
+
+def stage_agreement() -> None:
+    if not HUMAN.is_file():
+        log("agreement: eval/human_labels.csv not found; skipped")
+        return
+    with HUMAN.open(newline="", encoding="utf-8") as f:
+        human = {r["id"].strip(): r for r in csv.DictReader(f) if (r.get("id") or "").strip()}
+    judge = read_jsonl(JUDGE)
+    both = sorted(set(human) & set(judge))
+    result = {"n": len(both)}
+    for field in ("correct", "supported"):
+        h = [int(human[i][field]) for i in both]
+        j = [int(judge[i][field]) for i in both]
+        result[field] = {"agreement": round(sum(x == y for x, y in zip(h, j)) / len(both), 3) if both else None,
+                         "cohen_kappa": cohen_kappa(h, j),
+                         "human_positive_rate": round(sum(h) / len(h), 3) if h else None,
+                         "judge_positive_rate": round(sum(j) / len(j), 3) if j else None,
+                         "disagreements": [i for i, x, y in zip(both, h, j) if x != y]}
+    AGREEMENT.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
+    log(f"agreement: n={result['n']}  correct {result['correct']['agreement']} (kappa {result['correct']['cohen_kappa']})  "
+        f"supported {result['supported']['agreement']} (kappa {result['supported']['cohen_kappa']})")
+
+
+# --------------------------------------------------------------------------- before / after
+
+def stage_before_after(fresh: bool) -> None:
+    import asyncio
+
+    import agent
+    from mcp import ClientSession, StdioServerParameters
+    from mcp.client.stdio import stdio_client
+
+    if BEFORE_AFTER.is_file() and not fresh:
+        log("before_after: cached result kept (use --fresh to redo)")
+        return
+    q = next(q for q in load_questions() if q["id"] == BEFORE_AFTER_QID)
+    if not ADDED_DOCUMENT.is_file():
+        import httpx
+
+        ADDED_DOCUMENT.parent.mkdir(parents=True, exist_ok=True)
+        ADDED_DOCUMENT.write_bytes(httpx.get(ADDED_DOCUMENT_URL, timeout=60, follow_redirects=True).content)
+    with tempfile.TemporaryDirectory() as tmp:
+        index_copy = Path(tmp) / "index"
+        shutil.copytree(ROOT / "index", index_copy)
+        env = {"CORPUS_INDEX_DIR": str(index_copy)}
+        before = agent.run(q["question"], approve=reject_all, server_env=env)
+
+        async def add() -> str:
+            params = StdioServerParameters(command=sys.executable, args=["server.py"], cwd=str(ROOT), env={**os.environ, **env})
+            async with stdio_client(params) as (read, write):
+                async with ClientSession(read, write) as session:
+                    await session.initialize()
+                    res = await session.call_tool("add_document", {"path": str(ADDED_DOCUMENT.relative_to(ROOT))})
+                    return "\n".join(getattr(c, "text", "") for c in res.content)
+
+        add_report = asyncio.run(add())
+        after = agent.run(q["question"], approve=reject_all, server_env=env)
+    keep = ("answer", "citations", "refusal", "tool_calls", "model_calls", "input_tokens", "output_tokens", "seconds")
+    result = {"question_id": q["id"], "question": q["question"], "document": ADDED_DOCUMENT.name,
+              "add_document_report": add_report,
+              "before": {k: before[k] for k in keep}, "after": {k: after[k] for k in keep}}
+    BEFORE_AFTER.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    log(f"before_after: before refusal={before['refusal']}  after refusal={after['refusal']}")
+
+
+# --------------------------------------------------------------------------- summary
+
+def stage_summary() -> None:
+    answers, judge = read_jsonl(ANSWERS), read_jsonl(JUDGE)
+    checks = {r["id"]: r for r in csv.DictReader(CHECKS.open(encoding="utf-8"))} if CHECKS.is_file() else {}
+    questions = load_questions()
+    done = [q for q in questions if q["id"] in answers and not answers[q["id"]].get("error")]
+    by_kind = {}
+    for kind in ("single", "multi", "unanswerable"):
+        sel = [q["id"] for q in done if q["kind"] == kind]
+        judged = [i for i in sel if i in judge]
+        entry = {"answered": len(sel), "judged": len(judged),
+                 "correct": sum(judge[i]["correct"] for i in judged),
+                 "supported": sum(judge[i]["supported"] for i in judged),
+                 "refusals": sum(answers[i]["refusal"] for i in sel),
+                 "partial_refusals": sum(bool(answers[i].get("partial_refusal")) for i in sel)}
+        if kind == "unanswerable":
+            entry["correct_refusals"] = entry["refusals"]
+        else:
+            entry["wrong_refusals"] = entry["refusals"]
+            entry["unsupported_numbers"] = sum(bool(checks.get(i, {}).get("numbers_not_in_passages")) for i in sel)
+        by_kind[kind] = entry
+    rec = [answers[q["id"]] for q in done]
+    cost = {
+        "questions": len(rec),
+        "mean_seconds": round(statistics.mean(r["seconds"] for r in rec), 1) if rec else None,
+        "median_seconds": round(statistics.median(r["seconds"] for r in rec), 1) if rec else None,
+        "mean_input_tokens": round(statistics.mean(r["input_tokens"] for r in rec)) if rec else None,
+        "mean_output_tokens": round(statistics.mean(r["output_tokens"] for r in rec)) if rec else None,
+        "mean_model_calls": round(statistics.mean(r["model_calls"] for r in rec), 2) if rec else None,
+        "mean_searches": round(statistics.mean(sum(t["tool"] == "search" for t in r["tool_calls"]) for r in rec), 2) if rec else None,
+        "models_used": sorted({m for r in rec for m in r.get("models_used", [])}),
+        "judge_tokens_total": sum(j.get("tokens", 0) for j in judge.values()),
+    }
+    summary = {"by_kind": by_kind, "cost_per_question": cost,
+               "missing_or_failed": [q["id"] for q in questions if q not in done]}
+    SUMMARY.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
+    log("summary: " + json.dumps(summary)[:900])
+
+
+# --------------------------------------------------------------------------- main
+
+def main() -> None:
+    args = sys.argv[1:]
+    fresh = "--fresh" in args
+    ids = None
+    if "--ids" in args:
+        ids = set(args[args.index("--ids") + 1].split(","))
+    stages = [a for a in args if a in STAGES] or list(STAGES)
+    for stage in stages:
+        log(f"\n=== {stage} ===")
+        if stage == "retrieval":
+            stage_retrieval()
+        elif stage == "answers":
+            stage_answers(ids, fresh)
+        elif stage == "checks":
+            stage_checks()
+        elif stage == "judge":
+            stage_judge(ids, fresh)
+        elif stage == "agreement":
+            stage_agreement()
+        elif stage == "before_after":
+            stage_before_after(fresh)
+        elif stage == "summary":
+            stage_summary()
+
+
+if __name__ == "__main__":
+    main()
