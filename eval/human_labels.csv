@@ -1,15 +1,15 @@
 id,correct,supported,notes
-q01,1,1,
+q01,1,0,"the last sentence suggests checking for ""penalties or compensation clauses"", but Art 11.3 says leaving early gives the landlord no right to compensation"
 q02,1,1,
-q03,1,1,reference simplified: the tenant's 2-month notice isn't part of the question
+q03,1,1,
 q04,1,1,
 q05,1,1,
-q06,1,0,"says the total upfront can't exceed 3 months, which isn't in the text (it adds deposit and guarantee itself) and mixes guarantees with paying rent in advance"
+q06,0,0,"says the total upfront (deposit + guarantee + first month) ""can reach up to three months' rent"": not stated in the text and the sum is wrong (1+2+1 = 4); in effect it answers ""yes"" to three months upfront"
 q07,1,1,
 q08,1,1,
 q09,1,1,
 q10,1,1,
-q11,0,0,"cites LPH instead of LAU Art 23, misses the landlord's written consent, applies an owner rule to the tenant"
+q11,1,1,
 q12,1,1,
 q13,1,1,
 q14,1,1,
@@ -18,13 +18,13 @@ q16,1,1,
 q17,1,1,
 q18,1,1,
 q19,1,1,
-q20,1,0,"misreads the text: says eviction ""for up to three years""; the 3-year loss of use is one penalty, a non-owner's rights can be ended for good"
+q20,1,1,
 q21,1,1,
-q22,1,1,reference corrected while grading: Art 11.3 (2026 reform) says leaving gives the landlord no right to compensation; the agent was right
+q22,1,1,
 q23,1,1,
 q24,1,1,
-q25,1,1,reference corrected while grading: Art 21.5 (2026 reform) lets the tenant repair and deduct from rent if the landlord doesn't respond in 15 days; the agent was right. Quality issue: the answer starts with a meaningless line in Arabic
-q26,1,0,"the over-10-properties gran tenedor definition is in LDV Art 3, which it never retrieved"
+q25,0,1,"doesn't say the tenant can end the lease if the landlord won't repair (Art 27.3, not retrieved); for moving out it only gives the Art 26 case (works that make the home uninhabitable) and sends the rest to a lawyer"
+q26,1,0,"""15 flats makes him a gran tenedor"" relies on the over-10 definition in LDV Art 3, which still wasn't retrieved"
 q27,1,1,
 q28,1,1,
 q29,1,1,

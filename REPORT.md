@@ -293,14 +293,15 @@ Artículo 36. Fianza.
 - **Already indexed:** chunk ids are a hash of their text. If every chunk of the file is already stored, `add_document` embeds nothing and says "Already indexed … unchanged". If the same source is stored but its text changed (a newer consolidated version from the BOE), the new chunks are embedded and the old ones deleted, so search never shows two versions of one law. Tested: adding `corpus/BOE-A-1960-10906.xml` (LPH) again → *"Already indexed: LPH (…), 60 chunks, unchanged. Nothing was embedded."*
 - **Unanswerable question:** q29, Bono Alquiler Joven. **Document added:** Real Decreto 42/2022 (BOE-A-2022-802), 219 chunks. The daily limit of 1,000 embeddings stopped it after 150 chunks; those were kept, and the rest were embedded the next day without re-embedding anything (`add_document_demo.py`).
 - **Before:** *"I can't find the answer in the corpus laws (LAU, LDV, LPH). The provided laws do not contain details about the amount or application process for the Bono Alquiler Joven, and you should consult your comunidad autónoma's housing department, official government portals, or an information office for assistance."*
-- **After:** the search now returns only Real Decreto 42/2022 passages (Artículos 1, 8, 11, 30 and the Preámbulo), and the answer gives the amount: *"the state regulations set the Bono Alquiler Joven at **250 euros per month** for a period of two years (up to 6,000 euros in total), provided the applicant meets income limits and rent caps [BOE-A-2022-802, Preámbulo, Artículo 8, Artículo 11]"*, and says that the application itself is handled by each comunidad autónoma. It still opens with the refusal sentence ("I can't find the answer in the corpus laws (LAU, LDV, LPH)..."), because `AGENTS.md` and that sentence describe the corpus as three fixed laws; after an `add_document` the prompt should describe the corpus as whatever is indexed. Full output: `eval/add_document_demo.md`.
+- **After (round 1 rules):** the search returned only Real Decreto 42/2022 passages and the answer gave the amount (*"250 euros per month for a period of two years (up to 6,000 euros in total)"* [BOE-A-2022-802, Preámbulo, Artículo 8, Artículo 11]), but it still opened with the refusal sentence, because `AGENTS.md` described the corpus as three fixed laws.
+- **After (round 2 rules, see Round 2):** it answers directly: *"The Bono Alquiler Joven provides a direct subsidy of **250 euros per month** for up to two years (a total of 6,000 euros across 24 monthly payments), limited to the monthly rent [BOE-A-2022-802, Artículo 11, Preámbulo]. It is aimed at young people up to 35 years of age inclusive [...] whose household income does not exceed 3 times the IPREM [BOE-A-2022-802, Preámbulo]. Regarding how to apply, the management, processing, and resolution of the subsidy correspond entirely to the competent bodies of your autonomous community [BOE-A-2022-802, Artículo 4] [...]"* The "before" answer with the round 2 rules is still a correct refusal, but came out in Spanish. Full output: `eval/add_document_demo.md`.
 - **add_document result:** *"Replaced BOE-A-2022-802 (...): 219 chunks in the index (69 newly embedded, 150 reused, 0 outdated chunks removed)."*
 
 ## Harness and guardrails
 
 `agent.py`: LangChain `create_agent` on `gemini-3.5-flash-lite` (fallback `gemini-flash-lite-latest` when the first is overloaded; `gemini-2.5-flash` is no longer offered to new API keys), with the tools of `server.py` over MCP stdio and `AGENTS.md` as the system prompt.
 
-- **AGENTS.md rules (each with its reason in the file):** search before answering; answer only from the search results; cite every claim with the exact label; when not covered, start with the fixed refusal sentence and say what is missing; answer partly when only part is covered; flag conditions (contract date, company landlord, zona tensionada); be short, no personal legal advice; `add_document` only on request.
+- **AGENTS.md rules (each with its reason in the file):** search before answering; answer only from the search results; cite every claim with the exact label; when not covered, start with the fixed refusal sentence and say what is missing; answer partly when only part is covered; flag conditions (contract date, company landlord, zona tensionada); be short, no personal legal advice; `add_document` only on request; answer in the language of the question (rule 9, added in round 2). In round 2 the intro also says the corpus includes any document added with `add_document`, and rule 5 says a partial answer must not start with the refusal sentence.
 - **Approval:** `HumanInTheLoopMiddleware` interrupts every `add_document` call. In a terminal it asks "Approve? [y/N]"; with no terminal (evaluation, CI) it rejects. Example: *"Añade al índice el archivo corpus/BOE-A-1960-10906.xml"* → `[approval] add_document(...) rejected: no human at the terminal.` → the agent replied that the file was not added because the call was not approved.
 - **Call limits:** at most 8 model calls and 4 searches per question.
 - **Extra guardrail: citation check.** After the agent answers, code checks that every `[SOURCE, location]` it cites is a passage `search` returned in that run, and that an answer that isn't a refusal cites something. If not, the agent gets one chance to fix it with the list of valid labels; if it still fails, the answer is replaced by a refusal. Paragraph references ("Artículo 21.4") count as their article.
@@ -314,20 +315,21 @@ Artículo 36. Fianza.
 
 **LLM judge** (`gemini-3.5-flash-lite`), given the question, its kind, the reference answer, the agent's answer and, as evidence, the exact passages the agent retrieved. Rubric:
 - *correct* 1/0: same key facts as the reference (numbers, deadlines, who does what, conditions); for multi, both parts; for unanswerable, 1 only if it says the laws don't cover it and doesn't guess.
-- *supported* 1/0: every factual claim appears in the evidence (paraphrase OK); a pure refusal is supported.
+- *supported* 1/0, **v1** (round 1): every factual claim appears in the evidence (paraphrase OK); a pure refusal is supported.
+- *supported* 1/0, **v2** (round 2, current `JUDGE_RUBRIC`): the judge first lists every factual claim and copies, for each, the exact sentence of the evidence that states it; a claim without a quote is unsupported. Recommendations to consult someone and statements that the corpus does not cover the question are not claims. I chose this general rule instead of adding rules written for my own cases (e.g. about sums or definitions), so that agreement with my grades still measures the judge. v1 verdicts are in `eval/judge_v1.csv`.
 
 I’m keeping the rubric: correct (1/0) and supported (1/0), with a note for every 0. Splitting them separates two different risks. An answer can be right but include things that aren’t in the retrieved article (q06), and for a legal assistant that’s still a problem, because the tenant can’t check where it comes from. Binary scores also make it easier to compare my grades with the judge’s. One limit: it doesn’t score form (language mixing, the line in Arabic), so I record those as quality notes alongside.
 
-**Agreement with my grades** (33 answers in `eval/human_labels.csv`, graded before reading the judge):
+**Agreement with my grades, round 1** (33 answers in `eval/human_labels_v1.csv`, graded before reading the judge; judge v1):
 
 | | Agreement | Cohen's κ | Disagreements |
 |---|---|---|---|
 | correct | 100% | 1.00 | none |
 | supported | 88% | 0.00 | q06, q11, q20, q26 |
 
-The judge marked all 33 answers *supported*; I found 4 with claims that are not in the retrieved text. The 88% only reflects that 29 of 33 really were supported; κ = 0 shows the judge adds nothing beyond "always 1" on this criterion.
+The judge marked all 33 answers *supported*; I found 4 with claims that are not in the retrieved text. The 88% only reflects that 29 of 33 really were supported; κ = 0 shows the judge adds nothing beyond "always 1" on this criterion. Re-judging the same round 1 answers with rubric v2 gave 73% agreement and κ = 0.03: it now caught q06, but marked six answers I graded supported as unsupported (q09, q14, q15 for applying a quoted rule to the user's facts; q28, q30, q31 for statements about what other laws regulate), and still gave 1 to q26, where the definition was in the retrieved LDV Preámbulo but cited to LAU Art. 17. So the judge checks whether a claim is somewhere in the evidence, not whether it is in the passage cited.
 
-**Results (final run, articles + vector):**
+**Results, round 1 (articles + vector):**
 
 | Result | Count |
 |---|---|
@@ -341,23 +343,23 @@ The judge marked all 33 answers *supported*; I found 4 with claims that are not 
 
 ## Failures
 
-Data for each case (from `results.csv`, my notes and the trace):
+Round 1. Data for each case (from my notes and the trace):
 
 | Id | What went wrong | Expected article retrieved? | My note |
 |---|---|---|---|
 | q11 (knock down a wall) | Answered with LPH rules for owners, missed the landlord's written consent | No: the agent searched owners'-community wording; LAU art. 23 never came back | cites LPH instead of LAU Art 23, applies an owner rule to the tenant |
 | q06 (pay day / 3 months upfront) | Adds "total upfront can't exceed 3 months" by summing deposit + guarantee itself | Yes | mixes guarantees with paying rent in advance |
 | q20 (noisy neighbours) | Says eviction "for up to three years" | Yes (LPH art. 7) | misreads the 3-year penalty |
-| q26 (landlord with 15 flats) | States the "more than 10 properties" definition without retrieving LDV art. 3 | LAU 17 yes, LDV 3 no | definition never retrieved |
+| q26 (landlord with 15 flats) | States the "more than 10 properties" definition and cites it to LAU art. 17, which doesn't contain it; it appears only in the retrieved LDV Preámbulo (not binding) | LAU 17 yes, LDV 3 no | cited to the wrong passage; operative definition (LDV art. 3) never retrieved |
 | q31 (home insurance) | Didn't use the refusal sentence; said the laws don't require it and cited LAU art. 36, which does forbid requiring non-payment insurance | n/a | graded correct by me and the judge |
 | q25 (damp) | Correct, but the answer starts with a meaningless line in Arabic | Yes | quality issue |
 | q08, q22, q25 references | Reference answers outdated by the 2026 LAU reform; the agent was right, the reference wrong | | corrected |
 
 | Category | Cases | Count | Why |
 |---|---|---|---|
-| Retrieval miss | q11, q26 | 2 | q11: it searched the LPH and never retrieved LAU Art. 23, so it could not give the key fact (the landlord’s written consent). q26 (main cause): it never retrieved LDV Art. 3. |
+| Retrieval miss | q11, q26 | 2 | q11: it searched the LPH and never retrieved LAU Art. 23, so it could not give the key fact (the landlord’s written consent). q26 (main cause): it never retrieved LDV Art. 3, which holds the binding definition. |
 | Wrong answer from the right passage | q20 | 1 | It had LPH Art. 7 but mixed two different penalties and said “eviction for up to three years”. |
-| Unsupported claim | q06 (+ q26) | 1 (+1) | q06: the article was right, but the “3 months in total” rule is its own sum of deposit and guarantee and is not written in the law. q26 also filled the gap from the missing LDV Art. 3 with the “gran tenedor” definition from its own knowledge (counted once, under retrieval miss). |
+| Unsupported claim | q06 (+ q26) | 1 (+1) | q06: the article was right, but the “3 months in total” rule is its own sum of deposit and guarantee and is not written in the law. q26 also cited the “gran tenedor” definition to LAU Art. 17, which doesn’t contain it; the definition was only in the non-binding LDV Preámbulo (counted once, under retrieval miss). |
 | Wrong refusal | — | 0 | |
 | Bad test question | q31, q08, q22, q25 | 4 | q31: I marked it unanswerable, but LAU Art. 36 forbids requiring non-payment insurance; the agent got it right, said that part and said the rest is not covered. q08, q22, q25: my references were outdated after the 2026 reform; the agent was right because it uses the text in force. |
 | **Total** | | **8** | 4 system failures, 4 test-set errors |
@@ -365,6 +367,48 @@ Data for each case (from `results.csv`, my notes and the trace):
 Quality notes (not failures of content): wrong answer language in q18, q21, q29, q30; a meaningless Arabic line at the start of q25; the typo “PHS” for LPH in q32.
 
 What I’d fix first is retrieval, because it’s behind the only incorrect answer (q11: it searched the LPH and missed LAU Art. 23 on landlord consent) and behind q26. Two concrete changes: a filter or boost for the LAU when the question is about the tenant–landlord relationship, and, for multi questions, a second search on the concepts the first article mentions but doesn’t define (such as “gran tenedor”). After that, I’d force the answer language to match the question, which is cheap and fixes four cases.
+
+## Round 2: after fixing the agent
+
+After the failure analysis I changed `AGENTS.md` (rule 9 on answer language; the corpus described as "the indexed documents"; rule 5: no refusal sentence at the start of a partial answer), re-ran all 33 questions (`evaluate.py --fresh`), re-judged them with rubric v2, and graded all 33 new answers again myself before reading the judge (`eval/human_labels.csv`; round 1 files: `answers_v1.jsonl`, `human_labels_v1.csv`, `judge_v1.csv`). Retrieval was not changed. The add_document demo was re-run with the same rules (see Adding a document).
+
+| | Round 1 | Round 2 |
+|---|---|---|
+| Correct (my grades) | 32/33 | 31/33 (q06, q25) |
+| Supported (my grades) | 29/33 | 30/33 (q01, q06, q26) |
+| Answers in the wrong language | 4 | 0 |
+| Generation glitches (Arabic line, “PHS”) | 2 | 0 |
+| q11 (knock down a wall) | incorrect, LAU Art. 23 not retrieved | correct, LAU Art. 23 retrieved |
+| Bono Alquiler Joven “after” | answer opened with the refusal sentence | direct answer |
+| Judge vs me, correct | 100%, κ 1.00 (v1) | 91%, κ −0.04 (v2); disagree on q06, q10, q25 |
+| Judge vs me, supported | 88%, κ 0.00 (v1) | 82%, κ 0.42 (v2); disagree on q14, q15, q22, q25, q28, q33 |
+| Tokens / seconds per question | 5,689 / 6.0 s | 5,703 / 2.7 s |
+
+The supported κ rising from 0 to 0.42 means the v2 judge now separates supported from unsupported answers instead of always saying 1. The correct κ is negative because almost every answer is correct, so the three disagreements weigh a lot (in q10 the judge marked 0 an answer I graded correct; in q06 and q25 it marked 1 answers I graded incorrect).
+
+**Retrieval with the agent's round 2 queries.** The new rules changed the queries the agent writes, so table B changed:
+
+| Design | Method | hit@1 | hit@3 | hit@5 |
+|---|---|---|---|---|
+| articles | vector | 0.67 | 0.93 | 0.96 |
+| articles | BM25 | 0.52 | 0.85 | 0.89 |
+| articles | hybrid | 0.78 | 0.93 | 0.93 |
+| fixed200 | vector | 0.78 | 0.96 | 0.96 |
+| fixed200 | BM25 | 0.52 | 0.81 | 0.93 |
+| fixed200 | hybrid | 0.85 | 0.93 | 0.96 |
+
+In round 2 I keep articles + vector: at hit@5, which is what the agent actually reads, it ties for best (0.96), and the differences at hit@3 and hit@5 are at most one question (about 0.04). It is clearly weaker at hit@1 (0.67 vs 0.85 for fixed200 hybrid), but whole-article chunks keep each citation pointing to one complete rule, and the next step I would test is hybrid search on articles, which raises hit@1 to 0.78 without changing the chunking.
+
+**Round 2 failures:**
+
+| Category | Cases | Count | Why |
+|---|---|---|---|
+| Retrieval miss | q25, q26 | 2 | q25: without LAU Art. 27.3 it could not say the tenant can end the lease if the landlord won’t repair; with what it had (Arts. 21 and 26) it answered well. q26 (main cause): it still did not retrieve LDV Art. 3. |
+| Wrong answer from the right passage | q06 | 1 | It had LAU Arts. 17 and 36 but combined them itself into a figure the law doesn’t give, and added it up wrong (1+2+1 = 4, not 3). Also an unsupported claim. |
+| Unsupported claim | q01 (+ q06, q26) | 1 (+2) | q01: Art. 11 was retrieved, but it adds its own advice (“check for penalty clauses”), which isn’t in the text and contradicts Art. 11.3. q26 again gives the “gran tenedor” definition without support. |
+| Wrong refusal | — | 0 | |
+| Bad test question | — | 0 | (q31 still answered partly from LAU Art. 36, which I already counted in round 1) |
+| **Total** | | **4** | |
 
 ## Decision
 

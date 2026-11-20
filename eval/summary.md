@@ -4,9 +4,9 @@
 
 | design | method | hit@1 | hit@3 | hit@5 | all passages@5 | words in prompt |
 |---|---|---|---|---|---|---|
-| articles | vector | 0.704 | 0.963 | 1.0 | 0.963 | 996 |
-| articles | bm25 | 0.037 | 0.037 | 0.037 | 0.037 | 210 |
-| articles | hybrid | 0.593 | 0.926 | 1.0 | 0.963 | 1038 |
+| articles | vector | 0.741 | 0.963 | 1.0 | 0.963 | 989 |
+| articles | bm25 | 0.037 | 0.037 | 0.037 | 0.037 | 219 |
+| articles | hybrid | 0.63 | 0.926 | 1.0 | 0.963 | 1032 |
 | fixed200 | vector | 0.667 | 0.926 | 0.963 | 0.889 | 1079 |
 | fixed200 | bm25 | 0.037 | 0.037 | 0.074 | 0.074 | 192 |
 | fixed200 | hybrid | 0.556 | 0.926 | 0.963 | 0.889 | 1078 |
@@ -15,12 +15,12 @@
 
 | design | method | hit@1 | hit@3 | hit@5 |
 |---|---|---|---|---|
-| articles | vector | 0.667 | 0.889 | 0.889 |
-| articles | bm25 | 0.333 | 0.778 | 0.852 |
-| articles | hybrid | 0.741 | 0.889 | 0.889 |
-| fixed200 | vector | 0.704 | 0.926 | 0.926 |
-| fixed200 | bm25 | 0.407 | 0.667 | 0.815 |
-| fixed200 | hybrid | 0.704 | 0.852 | 0.926 |
+| articles | vector | 0.667 | 0.926 | 0.963 |
+| articles | bm25 | 0.519 | 0.852 | 0.889 |
+| articles | hybrid | 0.778 | 0.926 | 0.926 |
+| fixed200 | vector | 0.778 | 0.963 | 0.963 |
+| fixed200 | bm25 | 0.519 | 0.815 | 0.926 |
+| fixed200 | hybrid | 0.852 | 0.926 | 0.963 |
 
 Agent uses: articles / vector / k=5
 
@@ -30,7 +30,7 @@ Agent uses: articles / vector / k=5
 |---|---|
 | correct | 26 |
 | incorrect | 1 |
-| unsupported | 0 |
+| unsupported | 9 |
 | correct refusals | 5 |
 | wrong refusals | 0 |
 | answered unanswerable | 1 |
@@ -39,14 +39,16 @@ Agent uses: articles / vector / k=5
 
 ## Judge vs human
 
-- correct: 100% agreement over 33 answers (kappa 1.0); disagree on none
-- supported: 88% agreement over 33 answers (kappa 0.0); disagree on q06, q11, q20, q26
+- correct: 91% agreement over 33 answers (kappa -0.042); disagree on q06, q10, q25
+- supported: 82% agreement over 33 answers (kappa 0.421); disagree on q14, q15, q22, q25, q28, q33
 
 ## Failure hints (confirm each by reading the case)
 
+- unsupported claim: 6
+- wrong answer from the right passage: 1
 - retrieval miss: 1
 - unsupported claim (answered an unanswerable question): 1
 
 ## Cost per question
 
-- 5689 tokens, 6.0 s on average (max 11.7 s), 33 questions
+- 5703 tokens, 2.7 s on average (max 6.5 s), 33 questions

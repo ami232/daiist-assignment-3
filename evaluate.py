@@ -43,6 +43,9 @@ PAUSE = 8.0  # seconds between agent questions: the free tier allows 15 requests
 RATE_LIMIT_WAIT = 45  # seconds to wait after a 429 before retrying
 
 # ---- the judge's rubric (yours to decide: edit it, and describe it in REPORT.md) ----
+# v2: supported is checked claim by claim with a quote (v1 graded the answer as a whole; its verdicts
+# are kept in eval/judge_v1.csv for comparison).
+JUDGE_RUBRIC_VERSION = "v2"
 JUDGE_RUBRIC = """You grade answers from an assistant about Spanish housing law (LAU, LDV, LPH).
 You get: the question, its kind, a reference answer written by a human, the assistant's answer,
 and EVIDENCE = the exact passages the assistant retrieved. Judge only against these; ignore your own legal knowledge.
@@ -53,12 +56,18 @@ correct (1/0):
   refusal = 0. For multi-passage questions, BOTH parts must be answered.
 - unanswerable question: 1 only if the assistant says the laws don't cover it and does not give a
   substantive answer anyway. Any guessed answer = 0.
-supported (1/0):
-- 1 if every factual claim in the answer appears in the EVIDENCE (paraphrase is fine). 0 if any claim,
-  number or condition is not in the evidence, even if it is true in real life.
-- A pure refusal with no claims is supported = 1.
 
-Reply with JSON only: {"correct": 0 or 1, "supported": 0 or 1, "reason": "<one sentence>"}"""
+supported (1/0), checked claim by claim:
+- First list every factual claim in the answer (each number, deadline, condition, definition, who-does-what).
+- For each claim, copy the exact sentence from the EVIDENCE that states it. If you cannot quote a sentence
+  that states the claim itself, the claim is unsupported.
+- Recommendations to consult someone (a lawyer, a housing office) and statements that the corpus does not
+  cover the question are not factual claims and need no quote.
+- supported = 1 only if every claim has a quote.
+
+Reply with JSON only:
+{"claims": [{"claim": "<short>", "quote": "<exact sentence from the evidence, or empty if none>"}],
+ "correct": 0 or 1, "supported": 0 or 1, "reason": "<one sentence; name any unsupported claim>"}"""
 
 
 def log(*args) -> None:
@@ -247,7 +256,7 @@ def judge(questions: list[dict], answers: dict[str, dict]) -> dict[str, dict]:
         if not a:
             continue
         c = cached.get(q["id"])
-        if c and c.get("answer_hash") == str(hash_answer(a["answer"])):
+        if c and c.get("answer_hash") == str(hash_answer(a["answer"])) and c.get("rubric") == JUDGE_RUBRIC_VERSION:
             verdicts[q["id"]] = c
             continue
         evidence = "\n\n".join(t["output"] for t in a["trace"] if t["tool"] == "search") or "(nothing retrieved)"
@@ -258,7 +267,10 @@ def judge(questions: list[dict], answers: dict[str, dict]) -> dict[str, dict]:
             raw = raw if isinstance(raw, str) else "".join(p.get("text", "") for p in raw if isinstance(p, dict))
             v = json.loads(re.search(r"\{.*\}", raw, re.S).group(0))
             verdicts[q["id"]] = {"id": q["id"], "correct": int(v["correct"]), "supported": int(v["supported"]),
-                                 "reason": v.get("reason", ""), "answer_hash": hash_answer(a["answer"])}
+                                 "reason": v.get("reason", ""), "answer_hash": hash_answer(a["answer"]),
+                                 "rubric": JUDGE_RUBRIC_VERSION,
+                                 "unsupported_claims": " | ".join(c.get("claim", "") for c in v.get("claims", [])
+                                                                  if not (c.get("quote") or "").strip())}
         except Exception as error:  # noqa: BLE001
             log(f"  judge failed on {q['id']}: {str(error)[:150]}")
         time.sleep(4)

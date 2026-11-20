@@ -2,7 +2,7 @@
   "counts": {
     "correct": 26,
     "incorrect": 1,
-    "unsupported": 0,
+    "unsupported": 9,
     "correct_refusals": 5,
     "wrong_refusals": 0,
     "answered_unanswerable": 1,
@@ -28,30 +28,38 @@
   },
   "cost": {
     "questions": 33,
-    "avg_tokens": 5689,
-    "avg_seconds": 6.0,
-    "max_seconds": 11.7
+    "avg_tokens": 5703,
+    "avg_seconds": 2.7,
+    "max_seconds": 6.5
   },
   "agreement": {
     "correct": {
       "n": 33,
-      "agreement": 1.0,
-      "cohen_kappa": 1.0,
-      "disagreements": []
+      "agreement": 0.909,
+      "cohen_kappa": -0.042,
+      "disagreements": [
+        "q06",
+        "q10",
+        "q25"
+      ]
     },
     "supported": {
       "n": 33,
-      "agreement": 0.879,
-      "cohen_kappa": 0.0,
+      "agreement": 0.818,
+      "cohen_kappa": 0.421,
       "disagreements": [
-        "q06",
-        "q11",
-        "q20",
-        "q26"
+        "q14",
+        "q15",
+        "q22",
+        "q25",
+        "q28",
+        "q33"
       ]
     }
   },
   "failure_hints": {
+    "unsupported claim": 6,
+    "wrong answer from the right passage": 1,
     "retrieval miss": 1,
     "unsupported claim (answered an unanswerable question)": 1
   },
@@ -60,11 +68,11 @@
       "design": "articles",
       "method": "vector",
       "questions": 27,
-      "hit@1": 0.704,
+      "hit@1": 0.741,
       "hit@3": 0.963,
       "hit@5": 1.0,
       "all_passages@5": 0.963,
-      "avg_words_in_prompt@5": 996
+      "avg_words_in_prompt@5": 989
     },
     {
       "design": "articles",
@@ -74,17 +82,17 @@
       "hit@3": 0.037,
       "hit@5": 0.037,
       "all_passages@5": 0.037,
-      "avg_words_in_prompt@5": 210
+      "avg_words_in_prompt@5": 219
     },
     {
       "design": "articles",
       "method": "hybrid",
       "questions": 27,
-      "hit@1": 0.593,
+      "hit@1": 0.63,
       "hit@3": 0.926,
       "hit@5": 1.0,
       "all_passages@5": 0.963,
-      "avg_words_in_prompt@5": 1038
+      "avg_words_in_prompt@5": 1032
     },
     {
       "design": "fixed200",
