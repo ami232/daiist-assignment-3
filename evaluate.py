@@ -75,14 +75,29 @@ def sha(*parts: str) -> str:
 
 
 def read_jsonl(path: Path) -> dict[str, dict]:
-    """Latest record per id."""
+    """Latest non-superseded record per id (superseded attempts stay in the file as an audit trail)."""
     out = {}
     if path.is_file():
         for line in path.read_text(encoding="utf-8").splitlines():
             if line.strip():
                 rec = json.loads(line)
-                out[rec["id"]] = rec
+                if not rec.get("superseded"):
+                    out[rec["id"]] = rec
     return out
+
+
+def mark_superseded(path: Path, qid: str, reason: str) -> None:
+    """Flag every earlier record of qid as superseded, with the reason, before a new one is appended."""
+    lines = path.read_text(encoding="utf-8").splitlines() if path.is_file() else []
+    out = []
+    for line in lines:
+        if line.strip():
+            rec = json.loads(line)
+            if rec["id"] == qid and not rec.get("superseded"):
+                rec.update(superseded=True, superseded_reason=reason)
+            line = json.dumps(rec, ensure_ascii=False)
+        out.append(line)
+    path.write_text("\n".join(out) + ("\n" if out else ""), encoding="utf-8")
 
 
 def append_jsonl(path: Path, record: dict) -> None:
@@ -204,6 +219,8 @@ def stage_answers(ids: set[str] | None, fresh: bool) -> None:
             continue
         log(f"answers: {q['id']} ({n}/{len(todo)})")
         record = {"id": q["id"], "key": key, "kind": q["kind"]}
+        if q["id"] in cache:
+            mark_superseded(ANSWERS, q["id"], "replaced by a later run (--fresh, error or changed inputs)")
         try:
             record.update(agent.run(q["question"], approve=reject_all))
         except Exception as error:  # noqa: BLE001 - keep going, record the failure

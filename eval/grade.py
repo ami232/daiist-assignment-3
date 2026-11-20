@@ -34,7 +34,8 @@ def latest_answers() -> dict:
     for line in ANSWERS.read_text(encoding="utf-8").splitlines():
         if line.strip():
             rec = json.loads(line)
-            out[rec["id"]] = rec
+            if not rec.get("superseded"):  # earlier attempts kept only as an audit trail
+                out[rec["id"]] = rec
     return out
 
 
