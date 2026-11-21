@@ -160,6 +160,8 @@ def agent_stage(questions: list[dict], fresh: bool) -> dict:
                 record = {"id": q["id"], "question": q["question"], "kind": q["kind"], **outcome}
                 break
             except Exception as error:  # noqa: BLE001 - e.g. a rate limit: wait and try again
+                if type(error).__name__ == "AllModelsExhausted":
+                    raise SystemExit(f"\nSTOP: {error}\nYour {len(done)} saved answers are kept. Run the command again later or with more models.")
                 print(f"  {q['id']}: attempt {attempt + 1} failed ({type(error).__name__}: {str(error)[:120]})")
                 time.sleep(20 * (attempt + 1))
         if record is None:
@@ -247,28 +249,39 @@ def code_checks(questions: list[dict], answers: dict) -> dict:
 # Stage 5: the LLM judge
 # ============================================================================
 def call_judge(prompt: str) -> dict:
-    """Ask Gemini for a JSON verdict. JUDGE_MODEL overrides the model (default: the agent's model)."""
+    """Ask Gemini for a JSON verdict. JUDGE_MODEL overrides the model; default: the agent's model chain.
+
+    When a model has used up its free daily requests, the next model in the chain is used.
+    """
     import os
 
     from google import genai
     from google.genai import types
 
-    from agent import choose_model
+    from agent import choose_model, is_daily_quota, mark_exhausted
     from api_key import load_api_key
 
     client = genai.Client(api_key=load_api_key())
-    model = os.environ.get("JUDGE_MODEL") or choose_model()
     config = types.GenerateContentConfig(temperature=0, response_mime_type="application/json")
-    for attempt in range(4):
+    attempt = 0
+    while attempt < 6:
+        model = os.environ.get("JUDGE_MODEL") or choose_model()
         try:
             reply = client.models.generate_content(model=model, contents=prompt, config=config)
             verdict = json.loads(reply.text)
             verdict["judge_model"] = model
             return verdict
         except Exception as error:  # noqa: BLE001 - rate limits and the odd malformed reply
-            print(f"  judge attempt {attempt + 1} failed ({type(error).__name__}: {str(error)[:100]})")
-            time.sleep(15 * (attempt + 1))
-    raise RuntimeError("the judge failed 4 times in a row")
+            if is_daily_quota(error):
+                mark_exhausted(model)
+                print(f"  judge: {model} has used up its free requests for today. Switching model...")
+                if os.environ.get("JUDGE_MODEL"):
+                    raise SystemExit(f"JUDGE_MODEL={model} is out of free requests. Unset it or choose another model.")
+                continue
+            attempt += 1
+            print(f"  judge attempt {attempt} failed ({type(error).__name__}: {str(error)[:100]})")
+            time.sleep(15 * attempt)
+    raise RuntimeError("the judge failed 6 times in a row")
 
 
 def judge_prompt(q: dict, a: dict) -> str:

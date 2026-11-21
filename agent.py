@@ -13,6 +13,7 @@ run_agent(question) returns the answer and the tool trace, for evaluate.py.
 """
 
 import asyncio
+import json
 import os
 import re
 import sys
@@ -50,26 +51,81 @@ def log(*args) -> None:
 
 
 # ---------------------------------------------------------------- the model
-DEFAULT_MODEL = "gemini-3.6-flash"  # tested on 2026-11-21: answered in 7 s; 2.5-flash is closed to new users,
-#                                     3.5/3.7/3.8-flash timed out or returned 503 "high demand"
-MAX_ATTEMPTS = 6  # Google sometimes answers 503 "high demand"; we wait and try the same question again
+# The free Gemini tier allows only about 20 requests PER DAY PER MODEL (measured on 2026-11-21: the error says
+# "limit: 20 ... per day"). One question needs 2 or 3 requests, so one model covers only ~8 questions.
+# So we keep a list of models and move to the next one when a model runs out. Each saved answer records which
+# model wrote it (record["model"]), and the report must say so.
+DEFAULT_MODEL = "gemini-3.6-flash"
+MAX_ATTEMPTS = 6  # for temporary errors only (503 "high demand", timeouts, per-minute limits)
+QUOTA_FILE = ROOT / "eval" / "model_quota.json"  # which models are used up today (not committed; see .gitignore)
+
+
+class AllModelsExhausted(RuntimeError):
+    pass
+
+
+def model_chain() -> list[str]:
+    """GEMINI_MODELS="a,b,c" (tried in order), else GEMINI_MODEL, else DEFAULT_MODEL."""
+    raw = os.environ.get("GEMINI_MODELS") or os.environ.get("GEMINI_MODEL") or DEFAULT_MODEL
+    return [m.strip() for m in raw.split(",") if m.strip()]
+
+
+def _today() -> str:
+    return time.strftime("%Y-%m-%d")
+
+
+def exhausted_models() -> set:
+    try:
+        data = json.loads(QUOTA_FILE.read_text(encoding="utf-8"))
+        return set(data["models"]) if data.get("date") == _today() else set()
+    except (OSError, ValueError, KeyError):
+        return set()
+
+
+def mark_exhausted(model: str) -> None:
+    used = exhausted_models() | {model}
+    QUOTA_FILE.parent.mkdir(exist_ok=True)
+    QUOTA_FILE.write_text(json.dumps({"date": _today(), "models": sorted(used)}), encoding="utf-8")
 
 
 def choose_model() -> str:
-    """GEMINI_MODEL if set, else DEFAULT_MODEL."""
-    return os.environ.get("GEMINI_MODEL") or DEFAULT_MODEL
+    """The first model in the chain that still has free requests today."""
+    used = exhausted_models()
+    for name in model_chain():
+        if name not in used:
+            return name
+    raise AllModelsExhausted(
+        "Every model in your list has used up its free requests for today: " + ", ".join(model_chain()) + ".\n"
+        "Add more models, e.g. export GEMINI_MODELS=gemini-3.6-flash,gemini-3.1-flash-lite,gemini-3.5-flash"
+    )
+
+
+def _error_text(error: BaseException) -> str:
+    parts = getattr(error, "exceptions", None)
+    if parts:
+        return " ".join(_error_text(p) for p in parts)
+    text = f"{type(error).__name__} {error}"
+    if error.__cause__ is not None:
+        text += f" {_error_text(error.__cause__)}"
+    return text
+
+
+def is_daily_quota(error: BaseException) -> bool:
+    """True when the model has used its free requests for the whole day (waiting will not help)."""
+    text = _error_text(error)
+    return "PerDay" in text or "per day" in text or "limit: 0" in text
 
 
 def is_transient(error: BaseException) -> bool:
-    """True for errors that go away by themselves (503 high demand, 504 timeout, 429 rate limit)."""
-    parts = getattr(error, "exceptions", None)
-    if parts:
-        return any(is_transient(p) for p in parts)
-    text = f"{type(error).__name__} {error}"
-    if error.__cause__ is not None:
-        text += f" {error.__cause__}"
+    """True for errors that go away by themselves (503 high demand, 504 timeout, per-minute limit)."""
+    if is_daily_quota(error):
+        return False
+    text = _error_text(error)
     return any(word in text for word in ("503", "504", "429", "UNAVAILABLE", "DEADLINE", "RESOURCE_EXHAUSTED",
                                          "Timeout", "timed out", "ReadError", "ConnectError"))
+
+
+CURRENT_MODEL = {"name": None}
 
 
 def make_model():
@@ -78,6 +134,7 @@ def make_model():
     from api_key import load_api_key
 
     name = choose_model()
+    CURRENT_MODEL["name"] = name
     log(f"[agent] model: {name}")
     return ChatGoogleGenerativeAI(model=name, api_key=load_api_key(), temperature=0, timeout=90, max_retries=1), name
 
@@ -174,12 +231,24 @@ async def ask(question: str, interactive: bool = False) -> dict:
 
 
 def run_agent(question: str, interactive: bool = False) -> dict:
-    """Synchronous wrapper used by evaluate.py. Retries temporary Google errors (503, timeouts, 429)."""
-    for attempt in range(1, MAX_ATTEMPTS + 1):
+    """Synchronous wrapper used by evaluate.py.
+
+    Temporary Google errors (503, timeouts): wait and retry the same model.
+    Daily quota used up: mark the model as used up and continue with the next model in the chain.
+    """
+    attempt = 0
+    while True:
         try:
             return asyncio.run(ask(question, interactive=interactive))
         except BaseException as error:  # noqa: BLE001 - ExceptionGroup from the MCP task group
-            if isinstance(error, KeyboardInterrupt) or attempt == MAX_ATTEMPTS or not is_transient(error):
+            if isinstance(error, (KeyboardInterrupt, AllModelsExhausted)):
+                raise
+            if is_daily_quota(error) and CURRENT_MODEL["name"]:
+                mark_exhausted(CURRENT_MODEL["name"])
+                log(f"[agent] {CURRENT_MODEL['name']} has used up its free requests for today. Switching model...")
+                continue  # choose_model() raises AllModelsExhausted when nothing is left
+            attempt += 1
+            if attempt >= MAX_ATTEMPTS or not is_transient(error):
                 raise
             wait = min(10 * attempt, 40)
             log(f"[agent] Google is busy (attempt {attempt}/{MAX_ATTEMPTS}). Trying again in {wait}s...")
