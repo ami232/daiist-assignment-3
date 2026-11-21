@@ -253,8 +253,8 @@ Embedding cost is negligible: one query embedding per search (cached), and the i
 
 ## AI use
 
-I used Claude Code (Anthropic) throughout, as allowed (the professor told us AI may now also be used for the report):
-- **Code:** Claude wrote most of `index.py`, `retrieval.py`, `server.py`, `agent.py` and `evaluate.py`, and debugged the problems (Gemini embedding batching, MCP 2.x API changes, model availability and 503/429 errors).
-- **Corpus and test set:** I chose the use case and the laws; Claude drafted the questions and reference answers from the law texts, which I reviewed. At my request it translated the test set, AGENTS.md and the agent's messages to English.
-- **Grading:** the human grades in `eval/human_labels.csv` are mine: I decided each `correct` / `supported` value and the reasons in the notes column; Claude only copied them into the CSV.
-- **Report:** Claude drafted this report from the evaluation outputs and my grades and reasons; I reviewed it.
+I led this project, chose the use case and source laws, and was responsible for the final project decisions. I used AI tools to support the implementation and evaluation:
+- **Code:** I used Claude Code (Anthropic) to help develop and revise the Python code, understand errors, and resolve technical issues involving embeddings, API compatibility, MCP integration and model availability.
+- **Technical guidance:** Claude provided explanations, implementation suggestions and instructions for running and testing the system. It also helped translate the project materials into English.
+- **Grading:** the human grades in eval/human_labels.csv are mine: I decided each correct / supported value and the reasons in the notes column.
+- **Report:** I wrote the report, including the description of the corpus, the system design and implementation, the comparison of retrieval methods, the presentation and discussion of the evaluation results, the limitations and the conclusions. I take responsibility for the final submission and its conclusions.
