@@ -22,8 +22,8 @@ All four are the full programmes for the Spanish general election of 23 July 202
 
 ## vox_2023.pdf
 - Party: Vox
-- URL: https://www.voxespana.es/programa/programa-electoral-vox
+- URL: https://files.mediaset.es/file/2023/0707/15/programa-vox-completo-pdf
 - Downloaded: 2026-11-21
-- Pages / words: 66 / 7,659
+- Pages / words: 178 / 26,537
 
 Reuse terms not found for any
