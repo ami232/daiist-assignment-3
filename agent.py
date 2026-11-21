@@ -42,6 +42,11 @@ ROOT = Path(__file__).resolve().parent
 SYSTEM_PROMPT = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
 MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.8-flash")
 # Free-tier models often return 503 "high demand"; fall back to these, in order.
+# Seconds before a hung request (504 / no answer) counts as failed, so the fallback model takes over.
+TIMEOUT = float(os.environ.get("GEMINI_TIMEOUT", "40"))
+# Bump when a change can alter the answers; evaluate.py caches answers per revision.
+# Timeouts and retries do not change what the model answers, so they do not bump it.
+AGENT_REVISION = "2026-11-19"
 FALLBACKS = [m for m in os.environ.get("GEMINI_FALLBACKS", "gemini-3.6-flash,gemini-3.5-flash-lite").split(",") if m]
 
 CITE_RE = re.compile(r"\[([A-ZÁÉÍÓÚ][\w/.\-]*),\s*([^\]\[]+?)\]")
@@ -156,8 +161,8 @@ def check_citations(answer: str, offered: set) -> list[str]:
 async def run_async(question: str, approver=ask_human, base_only: bool = False, tools=None) -> dict:
     started = time.time()
     load_api_key()
-    model = ChatGoogleGenerativeAI(model=MODEL, temperature=0, max_retries=2)
-    fallbacks = [ChatGoogleGenerativeAI(model=m, temperature=0, max_retries=2) for m in FALLBACKS]
+    model = ChatGoogleGenerativeAI(model=MODEL, temperature=0, max_retries=1, timeout=TIMEOUT)
+    fallbacks = [ChatGoogleGenerativeAI(model=m, temperature=0, max_retries=1, timeout=TIMEOUT) for m in FALLBACKS]
     approval = ApproveAddDocument(approver)
 
     async def go(tool_list):

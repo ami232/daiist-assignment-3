@@ -25,7 +25,7 @@ import time
 from pathlib import Path
 
 import retrieval
-from agent import FALLBACKS, MODEL, SYSTEM_PROMPT, check_citations, corpus_tools, is_refusal, norm_cite, run_async, CITE_RE
+from agent import AGENT_REVISION, FALLBACKS, MODEL, SYSTEM_PROMPT, check_citations, corpus_tools, is_refusal, norm_cite, run_async, CITE_RE
 from index import genai_client
 
 ROOT = Path(__file__).resolve().parent
@@ -119,7 +119,7 @@ def append_jsonl(path: Path, row: dict) -> None:
 
 # --------------------------------------------------------------------------- 2. agent answers
 
-AGENT_VERSION = key_for(MODEL, SYSTEM_PROMPT, Path(ROOT / "agent.py").read_text(encoding="utf-8"),
+AGENT_VERSION = key_for(MODEL, SYSTEM_PROMPT, AGENT_REVISION,
                         retrieval.DEFAULT_DESIGN, retrieval.DEFAULT_METHOD)
 
 
