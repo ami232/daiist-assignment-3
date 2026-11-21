@@ -53,7 +53,8 @@ AGREEMENT = EVAL / "agreement.json"
 BEFORE_AFTER = EVAL / "before_after.json"
 SUMMARY = EVAL / "summary.json"
 KS = (1, 3, 5)
-STAGES = ("retrieval", "facts", "answers", "checks", "judge", "agreement", "before_after", "summary")
+STAGES = ("retrieval", "facts", "answers", "checks", "judge", "agreement", "before_after", "summary",
+          "before_after_hybrid")  # the last one is an optional sensitivity test, not run by default
 JUDGE_MODEL = os.environ.get("GEMINI_JUDGE_MODEL", "gemini-3.1-flash-lite")
 PAUSE_BETWEEN_QUESTIONS = float(os.environ.get("EVAL_PAUSE_SECONDS", "4"))
 BEFORE_AFTER_QID = "q30"
@@ -517,7 +518,47 @@ def stage_agreement() -> None:
 
 # --------------------------------------------------------------------------- before / after
 
+def index_fingerprint(index_dir: Path) -> dict:
+    """Content fingerprint of an index (ids, texts, metadata of every stored chunk), read in a
+    separate process so this process never opens the original collection for writing."""
+    import subprocess
+
+    code = ("import hashlib, json, index as ix; c = ix.collection(); "
+            "d = c.get(include=['documents', 'metadatas']); "
+            "rows = sorted(zip(d['ids'], d['documents'], [json.dumps(m, sort_keys=True) for m in d['metadatas']])); "
+            "print(json.dumps({'vectors': c.count(), 'sha256': hashlib.sha256(json.dumps(rows).encode()).hexdigest(), "
+            "'sources': sorted({m['source'] for m in d['metadatas']})}))")
+    out = subprocess.run([sys.executable, "-c", code], cwd=ROOT, capture_output=True, text=True, check=True,
+                         env={**os.environ, "CORPUS_INDEX_DIR": str(index_dir)})
+    return json.loads(out.stdout.strip().splitlines()[-1])
+
+
+def answer_trace(record: dict) -> dict:
+    """What the report needs from one agent run: answer, citations and their validity, and
+    the passages each search returned (by citation)."""
+    from langchain_core.messages import ToolMessage
+
+    import agent
+
+    retrieved = agent.retrieved_citations(
+        [ToolMessage(content=t, tool_call_id=f"r{n}", name="search") for n, t in enumerate(record.get("retrieved", []))])
+    check = agent.check_citations(record["answer"], retrieved)
+    return {
+        "answer": record["answer"], "refusal": record["refusal"], "citations": record.get("citations", []),
+        "citations_valid": check["ok"] or record["refusal"], "citation_problem": check["problem"],
+        "searches": [t["args"].get("query") for t in record.get("tool_calls", []) if t["tool"] == "search"],
+        "retrieved_passages": [[m.group(0) for m in agent.RESULT_RE.finditer(t)] for t in record.get("retrieved", [])],
+        "events": record.get("events", []), "model_calls": record.get("model_calls"),
+        "input_tokens": record.get("input_tokens"), "output_tokens": record.get("output_tokens"),
+        "seconds": record.get("seconds"), "models_used": record.get("models_used"),
+    }
+
+
 def stage_before_after(fresh: bool) -> None:
+    """q30 before/after adding the final price notice. BEFORE is the frozen, evaluated answer;
+    AFTER re-asks the same question with the same model, AGENTS.md and retrieval design on a
+    COPY of the index to which add_document (through the MCP server) added the notice. The
+    committed index and eval/answers.jsonl are fingerprinted before and after."""
     import asyncio
 
     import agent
@@ -528,19 +569,109 @@ def stage_before_after(fresh: bool) -> None:
         log("before_after: cached result kept (use --fresh to redo)")
         return
     q = next(q for q in load_questions() if q["id"] == BEFORE_AFTER_QID)
+    frozen = read_jsonl(ANSWERS).get(q["id"])
+    if not frozen or frozen.get("error"):
+        raise SystemExit("before_after: run the answers stage first (the frozen q30 answer is the baseline)")
+    same_setup = frozen["key"] == answer_key(q)  # same question, model, AGENTS.md and retrieval design
+    if not same_setup:
+        raise SystemExit("before_after: model, AGENTS.md or retrieval design changed since the frozen answer")
     if not ADDED_DOCUMENT.is_file():
         import httpx
 
         ADDED_DOCUMENT.parent.mkdir(parents=True, exist_ok=True)
         ADDED_DOCUMENT.write_bytes(httpx.get(ADDED_DOCUMENT_URL, timeout=60, follow_redirects=True).content)
+
+    original_index = ROOT / "index"
+    answers_sha = hashlib.sha256(ANSWERS.read_bytes()).hexdigest()
+    original_before = index_fingerprint(original_index)
     with tempfile.TemporaryDirectory() as tmp:
         index_copy = Path(tmp) / "index"
-        shutil.copytree(ROOT / "index", index_copy)
+        shutil.copytree(original_index, index_copy)
         env = {"CORPUS_INDEX_DIR": str(index_copy)}
-        before = agent.run(q["question"], approve=reject_all, server_env=env)
+        copy_before = index_fingerprint(index_copy)
+
+        async def add_twice() -> list[str]:  # second call shows the duplicate policy
+            params = StdioServerParameters(command=sys.executable, args=["server.py"], cwd=str(ROOT),
+                                           env={**os.environ, **env})
+            reports = []
+            async with stdio_client(params) as (read, write):
+                async with ClientSession(read, write) as session:
+                    await session.initialize()
+                    for _ in range(2):
+                        res = await session.call_tool("add_document", {"path": str(ADDED_DOCUMENT.relative_to(ROOT))})
+                        reports.append("\n".join(getattr(c, "text", "") for c in res.content))
+            return reports
+
+        add_report, duplicate_report = asyncio.run(add_twice())
+        copy_after = index_fingerprint(index_copy)
+        registry = json.loads((index_copy / "added_documents.json").read_text(encoding="utf-8"))
+        after = agent.run(q["question"], approve=reject_all, server_env=env)
+    original_after = index_fingerprint(original_index)
+
+    after_trace = answer_trace(after)
+    after_trace["cites_added_document"] = any(c.startswith("[NOTICE-OF-PRICE") for c in after_trace["citations"])
+    after_trace["added_document_retrieved"] = any(c.startswith("[1] [NOTICE-OF-PRICE") or "[NOTICE-OF-PRICE" in c
+                                                  for search in after_trace["retrieved_passages"] for c in search)
+    result = {
+        "question_id": q["id"], "question": q["question"], "reference_answer": q["reference_answer"],
+        "setup": {"model": agent.MODEL, "retrieval_design": "vector (server default), k = 5",
+                  "agents_md_unchanged_since_frozen_answer": same_setup},
+        "document": {"file": str(ADDED_DOCUMENT.relative_to(ROOT)), "url": ADDED_DOCUMENT_URL,
+                     "sha256": hashlib.sha256(ADDED_DOCUMENT.read_bytes()).hexdigest(),
+                     "bytes": ADDED_DOCUMENT.stat().st_size, "registry_entry": registry},
+        "add_document_report": add_report, "add_document_again_report": duplicate_report,
+        "index_copy": {"before": copy_before, "after": copy_after},
+        "before": {"source": "frozen answer from eval/answers.jsonl (evaluated with the 35 questions)",
+                   **answer_trace(frozen)},
+        "after": after_trace,
+        "originals_unchanged": {"index": original_before == original_after,
+                                "answers_jsonl": answers_sha == hashlib.sha256(ANSWERS.read_bytes()).hexdigest(),
+                                "index_fingerprint": original_after},
+    }
+    BEFORE_AFTER.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    log(f"before_after: before refusal={frozen['refusal']}  after refusal={after['refusal']}  "
+        f"cites notice={after_trace['cites_added_document']}  originals unchanged={result['originals_unchanged']['index']}")
+
+
+def _usage_snapshot() -> dict:
+    import agent
+    import index as ix
+
+    chat = json.loads(agent.CHAT_USAGE_FILE.read_text()) if agent.CHAT_USAGE_FILE.is_file() else {}
+    emb = json.loads(ix.USAGE_FILE.read_text()) if ix.USAGE_FILE.is_file() else {}
+    return {"chat": {f"{d}/{m}": n for d, ms in chat.items() for m, n in ms.items()}, "embeddings": emb}
+
+
+def stage_before_after_hybrid(fresh: bool) -> None:
+    """Exploratory sensitivity test run AFTER the official before/after and its diagnosis:
+    same question, model, AGENTS.md, guardrails and k = 5 on a fresh copy of the index with
+    the notice added through add_document; ONLY the retrieval design changes (vector ->
+    hybrid). One run, recorded as it comes; the official result is not modified."""
+    import asyncio
+
+    import agent
+    from mcp import ClientSession, StdioServerParameters
+    from mcp.client.stdio import stdio_client
+
+    if not BEFORE_AFTER.is_file():
+        raise SystemExit("before_after_hybrid: run the official before_after stage first")
+    result = json.loads(BEFORE_AFTER.read_text(encoding="utf-8"))
+    if "sensitivity_hybrid" in result and not fresh:
+        log("before_after_hybrid: cached result kept (use --fresh to redo)")
+        return
+    official = json.dumps({k: v for k, v in result.items() if k != "sensitivity_hybrid"}, sort_keys=True)
+    q = next(q for q in load_questions() if q["id"] == BEFORE_AFTER_QID)
+    usage_before = _usage_snapshot()
+    original_index = ROOT / "index"
+    original_before = index_fingerprint(original_index)
+    with tempfile.TemporaryDirectory() as tmp:
+        index_copy = Path(tmp) / "index"
+        shutil.copytree(original_index, index_copy)
+        env = {"CORPUS_INDEX_DIR": str(index_copy), "CORPUS_SEARCH_DESIGN": "hybrid"}
 
         async def add() -> str:
-            params = StdioServerParameters(command=sys.executable, args=["server.py"], cwd=str(ROOT), env={**os.environ, **env})
+            params = StdioServerParameters(command=sys.executable, args=["server.py"], cwd=str(ROOT),
+                                           env={**os.environ, **env})
             async with stdio_client(params) as (read, write):
                 async with ClientSession(read, write) as session:
                     await session.initialize()
@@ -548,13 +679,38 @@ def stage_before_after(fresh: bool) -> None:
                     return "\n".join(getattr(c, "text", "") for c in res.content)
 
         add_report = asyncio.run(add())
-        after = agent.run(q["question"], approve=reject_all, server_env=env)
-    keep = ("answer", "citations", "refusal", "tool_calls", "model_calls", "input_tokens", "output_tokens", "seconds")
-    result = {"question_id": q["id"], "question": q["question"], "document": ADDED_DOCUMENT.name,
-              "add_document_report": add_report,
-              "before": {k: before[k] for k in keep}, "after": {k: after[k] for k in keep}}
+        copy_after = index_fingerprint(index_copy)
+        run = agent.run(q["question"], approve=reject_all, server_env=env)
+    original_after = index_fingerprint(original_index)
+    usage_after = _usage_snapshot()
+
+    trace = answer_trace(run)
+    ranks = []
+    for search in trace["retrieved_passages"]:
+        pos = next((n for n, c in enumerate(search, 1) if "[NOTICE-OF-PRICE |" in c), None)
+        ranks.append(pos)
+    trace.update(
+        retrieval_design_in_results=sorted({m.group(1) for t in run.get("retrieved", [])
+                                            for m in re.finditer(r"\(design: (\w+), top", t)}),
+        notice_rank_per_search=ranks,
+        cites_added_document=any(c.startswith("[NOTICE-OF-PRICE") for c in trace["citations"]),
+        states_83=bool(re.search(r"\$\s?83(\.00)?\b", run["answer"])))
+    delta = {k: {key: usage_after[k].get(key, 0) - usage_before[k].get(key, 0)
+                 for key in usage_after[k] if usage_after[k].get(key, 0) != usage_before[k].get(key, 0)}
+             for k in ("chat", "embeddings")}
+    result["sensitivity_hybrid"] = {
+        "status": "exploratory sensitivity test, run once after the official experiment and its diagnosis; "
+                  "does not replace the official result",
+        "changed": "retrieval design vector -> hybrid (CORPUS_SEARCH_DESIGN=hybrid); k = 5; everything else as official",
+        "add_document_report": add_report, "index_copy_after": copy_after,
+        "after_hybrid": trace, "api_usage": delta,
+        "originals_unchanged": {"index": original_before == original_after,
+                                "answers_jsonl_sha256": hashlib.sha256(ANSWERS.read_bytes()).hexdigest()},
+    }
+    assert json.dumps({k: v for k, v in result.items() if k != "sensitivity_hybrid"}, sort_keys=True) == official
     BEFORE_AFTER.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    log(f"before_after: before refusal={before['refusal']}  after refusal={after['refusal']}")
+    log(f"before_after_hybrid: refusal={run['refusal']}  notice rank per search={ranks}  "
+        f"cites notice={trace['cites_added_document']}  $83={trace['states_83']}  usage={delta}")
 
 
 # --------------------------------------------------------------------------- summary
@@ -605,7 +761,7 @@ def main() -> None:
     ids = None
     if "--ids" in args:
         ids = set(args[args.index("--ids") + 1].split(","))
-    stages = [a for a in args if a in STAGES] or list(STAGES)
+    stages = [a for a in args if a in STAGES] or [s for s in STAGES if s != "before_after_hybrid"]
     for stage in stages:
         log(f"\n=== {stage} ===")
         if stage == "retrieval":
@@ -624,6 +780,8 @@ def main() -> None:
             stage_before_after(fresh)
         elif stage == "summary":
             stage_summary()
+        elif stage == "before_after_hybrid":
+            stage_before_after_hybrid(fresh)
 
 
 if __name__ == "__main__":

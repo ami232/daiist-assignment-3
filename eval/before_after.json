@@ -1,0 +1,188 @@
+{
+  "question_id": "q30",
+  "question": "What was the final IPO offer price per Class A share?",
+  "reference_answer": "Not answerable from the frozen D1–D3 corpus: those documents provide only a preliminary $70.00–$78.00 range. The final price is intentionally reserved for the add-document before/after experiment.",
+  "setup": {
+    "model": "gemini-3.5-flash-lite",
+    "retrieval_design": "vector (server default), k = 5",
+    "agents_md_unchanged_since_frozen_answer": true
+  },
+  "document": {
+    "file": "corpus/after/notice-of-price.pdf",
+    "url": "https://ipo.anthropic.com/documents/eu/notice-of-price.pdf",
+    "sha256": "701074182cc827bb5646ecadcfb46363983f67e9d491c953b10e956b531db2ed",
+    "bytes": 29298,
+    "registry_entry": {
+      "NOTICE-OF-PRICE": {
+        "file": "corpus/after/notice-of-price.pdf",
+        "sha256": "701074182cc827bb5646ecadcfb46363983f67e9d491c953b10e956b531db2ed",
+        "chunks": 1,
+        "words": 347,
+        "added_at": "2026-11-21T09:27:06"
+      }
+    }
+  },
+  "add_document_report": "Added NOTICE-OF-PRICE from notice-of-price.pdf: 1 chunks, 347 words; 1 embedded now, 0 already stored; new document. It is now searchable and cited as [NOTICE-OF-PRICE | section | p. page].",
+  "add_document_again_report": "Already indexed: identical content was added on 2026-11-21T09:27:06 as NOTICE-OF-PRICE (1 chunks). Nothing was embedded.",
+  "index_copy": {
+    "before": {
+      "vectors": 946,
+      "sha256": "61a0032e89c076f80bfdf2e181d1867e17a5d668ed4fa3e95cd73fdd76d7408b",
+      "sources": [
+        "CHARTER",
+        "EU-PROSPECTUS",
+        "US-PROSPECTUS"
+      ]
+    },
+    "after": {
+      "vectors": 947,
+      "sha256": "849a306511b56d4c5171ec20c8a980fd6e93b4abb9f7ba5ca549af2786e9c48e",
+      "sources": [
+        "CHARTER",
+        "EU-PROSPECTUS",
+        "NOTICE-OF-PRICE",
+        "US-PROSPECTUS"
+      ]
+    }
+  },
+  "before": {
+    "source": "frozen answer from eval/answers.jsonl (evaluated with the 35 questions)",
+    "answer": "NOT IN CORPUS: The corpus contains only preliminary offering documents (setting an estimated price range of $70.00 to $78.00 per share, with an assumed midpoint of $74.00) [EU-PROSPECTUS | Cover Page and Important Notice | p. cover, US-PROSPECTUS | USE OF PROCEEDS | p. 128], and states that the final public offering price was expected to be published on or about November 18, 2026 [EU-PROSPECTUS | 8. Details of the Offer > 8.1 Terms and Conditions of the Offer > 8.1.3 Pricing | p. 204], but the final pricing is not included in the filings.",
+    "refusal": true,
+    "citations": [
+      "[EU-PROSPECTUS | Cover Page and Important Notice | p. cover]",
+      "[US-PROSPECTUS | USE OF PROCEEDS | p. 128]",
+      "[EU-PROSPECTUS | 8. Details of the Offer > 8.1 Terms and Conditions of the Offer > 8.1.3 Pricing | p. 204]"
+    ],
+    "citations_valid": true,
+    "citation_problem": null,
+    "searches": [
+      "final IPO offer price per Class A share"
+    ],
+    "retrieved_passages": [
+      [
+        "[1] [EU-PROSPECTUS | 8. Details of the Offer > 8.1 Terms and Conditions of the Offer > 8.1.3 Pricing | p. 203]",
+        "[2] [US-PROSPECTUS | UNDERWRITING > Lock-Up and Market Standoff Agreements | p. 337]",
+        "[3] [EU-PROSPECTUS | 8. Details of the Offer > 8.1 Terms and Conditions of the Offer > 8.1.3 Pricing | p. 204]",
+        "[4] [EU-PROSPECTUS | Cover Page and Important Notice | p. cover]",
+        "[5] [US-PROSPECTUS | USE OF PROCEEDS | p. 128]"
+      ]
+    ],
+    "events": [],
+    "model_calls": 2,
+    "input_tokens": 5027,
+    "output_tokens": 182,
+    "seconds": 19.33,
+    "models_used": [
+      "gemini-3.5-flash-lite"
+    ]
+  },
+  "after": {
+    "answer": "NOT IN CORPUS: The final IPO offer price per Class A share is not in the corpus, as the filings are pre-pricing preliminary documents that only disclose an estimated offering price range of $70.00 to $78.00 per share (with an assumed midpoint of $74.00 per share) for the U.S. offering and a maximum public offering price of $120.00 per share for the European and Swiss retail offerings [EU-PROSPECTUS | 8. Details of the Offer > 8.1 Terms and Conditions of the Offer > 8.1.3 Pricing | p. 203].",
+    "refusal": true,
+    "citations": [
+      "[EU-PROSPECTUS | 8. Details of the Offer > 8.1 Terms and Conditions of the Offer > 8.1.3 Pricing | p. 203]"
+    ],
+    "citations_valid": true,
+    "citation_problem": null,
+    "searches": [
+      "final IPO offer price per Class A share"
+    ],
+    "retrieved_passages": [
+      [
+        "[1] [EU-PROSPECTUS | 8. Details of the Offer > 8.1 Terms and Conditions of the Offer > 8.1.3 Pricing | p. 203]",
+        "[2] [US-PROSPECTUS | UNDERWRITING > Lock-Up and Market Standoff Agreements | p. 337]",
+        "[3] [EU-PROSPECTUS | 8. Details of the Offer > 8.1 Terms and Conditions of the Offer > 8.1.3 Pricing | p. 204]",
+        "[4] [EU-PROSPECTUS | Cover Page and Important Notice | p. cover]",
+        "[5] [US-PROSPECTUS | USE OF PROCEEDS | p. 128]"
+      ]
+    ],
+    "events": [],
+    "model_calls": 2,
+    "input_tokens": 5027,
+    "output_tokens": 160,
+    "seconds": 14.44,
+    "models_used": [
+      "gemini-3.5-flash-lite"
+    ],
+    "cites_added_document": false,
+    "added_document_retrieved": false
+  },
+  "originals_unchanged": {
+    "index": true,
+    "answers_jsonl": true,
+    "index_fingerprint": {
+      "vectors": 946,
+      "sha256": "61a0032e89c076f80bfdf2e181d1867e17a5d668ed4fa3e95cd73fdd76d7408b",
+      "sources": [
+        "CHARTER",
+        "EU-PROSPECTUS",
+        "US-PROSPECTUS"
+      ]
+    }
+  },
+  "sensitivity_hybrid": {
+    "status": "exploratory sensitivity test, run once after the official experiment and its diagnosis; does not replace the official result",
+    "changed": "retrieval design vector -> hybrid (CORPUS_SEARCH_DESIGN=hybrid); k = 5; everything else as official",
+    "add_document_report": "Added NOTICE-OF-PRICE from notice-of-price.pdf: 1 chunks, 347 words; 1 embedded now, 0 already stored; new document. It is now searchable and cited as [NOTICE-OF-PRICE | section | p. page].",
+    "index_copy_after": {
+      "vectors": 947,
+      "sha256": "849a306511b56d4c5171ec20c8a980fd6e93b4abb9f7ba5ca549af2786e9c48e",
+      "sources": [
+        "CHARTER",
+        "EU-PROSPECTUS",
+        "NOTICE-OF-PRICE",
+        "US-PROSPECTUS"
+      ]
+    },
+    "after_hybrid": {
+      "answer": "The final public offering price per share of Class A common stock has been set at $83.00 per share, which is applicable to all investors across the entire global offering [NOTICE-OF-PRICE | Anthropic provides notice of the final public offering price in the European retail | p. 1].",
+      "refusal": false,
+      "citations": [
+        "[NOTICE-OF-PRICE | Anthropic provides notice of the final public offering price in the European retail | p. 1]"
+      ],
+      "citations_valid": true,
+      "citation_problem": null,
+      "searches": [
+        "final IPO offer price per Class A share"
+      ],
+      "retrieved_passages": [
+        [
+          "[1] [EU-PROSPECTUS | 8. Details of the Offer > 8.1 Terms and Conditions of the Offer > 8.1.3 Pricing | p. 204]",
+          "[2] [NOTICE-OF-PRICE | Anthropic provides notice of the final public offering price in the European retail | p. 1]",
+          "[3] [EU-PROSPECTUS | 8. Details of the Offer > 8.3 Placing and Underwriting > 8.3.2.1 Paid by us | p. 212-213]",
+          "[4] [EU-PROSPECTUS | Cover Page and Important Notice | p. cover]",
+          "[5] [EU-PROSPECTUS | 8. Details of the Offer > 8.1 Terms and Conditions of the Offer > 8.1.9 Termination of the Offering | p. 209]"
+        ]
+      ],
+      "events": [],
+      "model_calls": 2,
+      "input_tokens": 5061,
+      "output_tokens": 84,
+      "seconds": 14.13,
+      "models_used": [
+        "gemini-3.5-flash-lite"
+      ],
+      "retrieval_design_in_results": [
+        "hybrid"
+      ],
+      "notice_rank_per_search": [
+        2
+      ],
+      "cites_added_document": true,
+      "states_83": true
+    },
+    "api_usage": {
+      "chat": {
+        "2026-11-21/gemini-3.5-flash-lite": 2
+      },
+      "embeddings": {
+        "2026-11-21": 1
+      }
+    },
+    "originals_unchanged": {
+      "index": true,
+      "answers_jsonl_sha256": "171b7795a454110659185f934d6c43710bf8d4d4f7b825c06b0a125df8136038"
+    }
+  }
+}
