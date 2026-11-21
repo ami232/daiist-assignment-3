@@ -38,4 +38,18 @@ Decisions made by Máximo during development, with the alternatives and the evid
 - Storage "similar to ChromaDB": JSONL files in `index/` (chunks per design plus one shared vector cache) and cosine-similarity search with numpy. It is transparent, fits in git and does not depend on Chroma versions.
 - Each vector is saved as soon as it arrives, keyed by a hash of (model, dimensions, task, text). Re-running `main.py index` spends no embeddings, and question vectors are cached too.
 - **Problem found:** with `gemini-embedding-2`, a list of texts is embedded as **one** input and returns a single vector. It was spotted because only 10 vectors had been saved for 469 chunks. Fixed by sending each text as its own `Content` and checking that the number of vectors matches.
-- **First sign of the "wrong year" risk:** for the question "What was the EV sales share in Europe in 2024?", the fixed design ranks a chunk from the 2026 report first instead of the 2025 one.
+- **First sign of the "wrong year" risk (seen before the test set existed):** for the question "What was the EV sales share in Europe in 2024?", the fixed design ranks a chunk from the 2026 report first instead of the 2025 one.
+
+## 7. Test set (`eval/questions.csv`)
+
+- **Written by Máximo** from the PDFs, in English, before any retrieval tuning. Claude only checked it (format, counts, that each answer is in the indexed text on the stated page, and that unanswerable questions are not answered by the corpus) and suggested where coverage was thin. The questions themselves were not changed by Claude.
+- **Counts:** 32 questions = 20 `single`, 6 `multi`, 6 `unanswerable`. By document (answerable passages): GEVO2026 most, then GEVO2025 and GCMO2026.
+- **Location convention:** `expected_source` = document code (`GEVO2026`, `GEVO2025`, `GCMO2026`); `expected_location` = printed page number. For `multi`, both lists are `;`-separated in the same order.
+- **Design choices:**
+  - Answers are taken from body text, not charts (charts are not indexed), and every question states the year it refers to, because two editions of the same report are in the corpus.
+  - `multi` questions compare the two editions (2024 vs 2025 figures) or cross documents (EV battery deployment + lithium demand; lithium price spike + sodium-ion batteries).
+  - After a first review, two questions on the outlook chapter (ch. 9, the largest chapter and the most relevant one for a consultant) replaced two regional market questions.
+  - **Unanswerable questions are near-misses:** the corpus contains related figures that could tempt the system into an unsupported answer (Spain's +80% sales growth vs Spain's sales *share*; the 2025 battery price decline vs the full-year 2026 change; other countries' 2040 targets vs a Spain 2040 projection). Two very specific questions first drafted (nickel content of a Tesla Model 3, maintenance cost of a VW ID.3) were replaced because they would be too easy to refuse.
+  - `q32` (Q2 2026 global EV sales vs Q2 2025) is unanswerable with the initial corpus but answered by the held-out July 2026 report ("4% higher year-on-year"): it is the question for the add_document before/after demo.
+  - `q01` is an easy, clearly answerable `single` question because `check.py` uses it to test the search tool and `main.py ask`.
+- **Two examples:** q09 (`single`): "How much battery capacity was deployed in electric vehicles worldwide in 2025 and how much did deployment grow from 2024?" → GEVO2026 p. 92, "1.2 TWh, almost +30%". q23 (`multi`): "How did the electric share of new car sales in Europe change between 2024 and 2025?" → GEVO2025 p. 17 + GEVO2026 p. 21, "about 20% → 28%".
