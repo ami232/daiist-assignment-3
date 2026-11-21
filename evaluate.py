@@ -466,26 +466,53 @@ def cohen_kappa(a: list[int], b: list[int]) -> float | None:
     return None if pe == 1 else round((po - pe) / (1 - pe), 3)
 
 
+def confusion(h: list[int], j: list[int]) -> dict:
+    """Rows = human label, columns = judge label."""
+    return {f"human_{a}_judge_{b}": sum(x == a and y == b for x, y in zip(h, j)) for a in (1, 0) for b in (1, 0)}
+
+
+def agreement_block(h: list[int], j: list[int], ids: list[str]) -> dict:
+    kappa = cohen_kappa(h, j)
+    constant = [name for name, labels in (("human", h), ("judge", j)) if labels and len(set(labels)) == 1]
+    note = None
+    if constant:  # chance agreement equals observed structure: kappa is 0 or undefined, not a measure of agreement
+        note = (f"kappa not interpretable: {' and '.join(constant)} labels have no variance "
+                f"(all {h[0] if 'human' in constant else j[0]})")
+    return {"n": len(ids),
+            "agreement": round(sum(x == y for x, y in zip(h, j)) / len(ids), 3) if ids else None,
+            "cohen_kappa": None if constant else kappa,
+            "kappa_note": note,
+            "confusion": confusion(h, j),
+            "human_positive_rate": round(sum(h) / len(h), 3) if h else None,
+            "judge_positive_rate": round(sum(j) / len(j), 3) if j else None,
+            "disagreements": [i for i, x, y in zip(ids, h, j) if x != y]}
+
+
 def stage_agreement() -> None:
+    """The only stage that reads the human labels (after the judge has run)."""
     if not HUMAN.is_file():
         log("agreement: eval/human_labels.csv not found; skipped")
         return
     with HUMAN.open(newline="", encoding="utf-8") as f:
         human = {r["id"].strip(): r for r in csv.DictReader(f) if (r.get("id") or "").strip()}
     judge = read_jsonl(JUDGE)
+    kinds = {q["id"]: q["kind"] for q in load_questions()}
     both = sorted(set(human) & set(judge))
     result = {"n": len(both)}
     for field in ("correct", "supported"):
         h = [int(human[i][field]) for i in both]
         j = [int(judge[i][field]) for i in both]
-        result[field] = {"agreement": round(sum(x == y for x, y in zip(h, j)) / len(both), 3) if both else None,
-                         "cohen_kappa": cohen_kappa(h, j),
-                         "human_positive_rate": round(sum(h) / len(h), 3) if h else None,
-                         "judge_positive_rate": round(sum(j) / len(j), 3) if j else None,
-                         "disagreements": [i for i, x, y in zip(both, h, j) if x != y]}
+        result[field] = agreement_block(h, j, both)
+        result[field]["by_kind"] = {}
+        for kind in ("single", "multi", "unanswerable"):
+            sel = [n for n, i in enumerate(both) if kinds[i] == kind]
+            result[field]["by_kind"][kind] = {
+                "n": len(sel), "agreement": round(sum(h[n] == j[n] for n in sel) / len(sel), 3) if sel else None,
+                "human_positive": sum(h[n] for n in sel), "judge_positive": sum(j[n] for n in sel)}
     AGREEMENT.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     log(f"agreement: n={result['n']}  correct {result['correct']['agreement']} (kappa {result['correct']['cohen_kappa']})  "
-        f"supported {result['supported']['agreement']} (kappa {result['supported']['cohen_kappa']})")
+        f"supported {result['supported']['agreement']} (kappa {result['supported']['cohen_kappa']}"
+        f"{'; ' + result['supported']['kappa_note'] if result['supported']['kappa_note'] else ''})")
 
 
 # --------------------------------------------------------------------------- before / after
