@@ -12,6 +12,8 @@ import numpy as np
 
 import index as ix
 
+TOP_K = 5  # chunks returned to the agent: k=5 finds both passages of every multi question
+
 _loaded: dict[str, tuple[list[dict], np.ndarray]] = {}
 
 
@@ -40,7 +42,7 @@ def reload(design: str | None = None) -> None:
         _loaded.clear()
 
 
-def search(query: str, k: int = 5, design: str = ix.CHUNKING) -> list[dict]:
+def search(query: str, k: int = TOP_K, design: str = ix.CHUNKING) -> list[dict]:
     """Top-k chunks by cosine similarity, each with its score."""
     chunks, m = _load(design)
     if not chunks:

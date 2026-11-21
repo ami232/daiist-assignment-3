@@ -418,7 +418,7 @@ def _split_section(section, src: Source, start_index: int, max_words: int) -> li
 
 CHUNKERS = {"fixed": chunk_fixed, "structured": chunk_structured}
 DESIGNS = list(CHUNKERS)  # both are indexed so evaluate.py can compare them
-CHUNKING = "fixed"  # the design the server uses; decided from the retrieval numbers
+CHUNKING = "structured"  # the design the server uses: chosen from hit rate (eval/retrieval_summary.md)
 
 
 def chunk_file(path: str | Path, design: str = CHUNKING, **kwargs) -> list[Chunk]:

@@ -53,3 +53,26 @@ Decisions made by Máximo during development, with the alternatives and the evid
   - `q32` (Q2 2026 global EV sales vs Q2 2025) is unanswerable with the initial corpus but answered by the held-out July 2026 report ("4% higher year-on-year"): it is the question for the add_document before/after demo.
   - `q01` is an easy, clearly answerable `single` question because `check.py` uses it to test the search tool and `main.py ask`.
 - **Two examples:** q09 (`single`): "How much battery capacity was deployed in electric vehicles worldwide in 2025 and how much did deployment grow from 2024?" → GEVO2026 p. 92, "1.2 TWh, almost +30%". q23 (`multi`): "How did the electric share of new car sales in Europe change between 2024 and 2025?" → GEVO2025 p. 17 + GEVO2026 p. 21, "about 20% → 28%".
+
+## 8. Retrieval metric
+
+- **Hit definition (decision):** a retrieved chunk is a hit for an expected passage when it comes from the expected document **and** its page range includes the expected page (exact page, no ±1 tolerance, so errors are not hidden).
+- **Multi-passage questions (decision):** strict — a `multi` question counts as a hit at k only if **both** expected passages are in the top k, because the agent cannot answer correctly with only one. The partial score (share of expected passages found) is reported as a secondary figure to explain failures.
+- Unanswerable questions have no expected passage and are excluded from hit rate (they are evaluated end to end).
+- Also reported: words added to the prompt at each k (sum of the words of the top-k chunks), because larger chunks may raise hit rate at a higher token cost.
+
+## 9. Retrieval results and design choice
+
+Results on the 26 answerable questions (`eval/retrieval_summary.md`, per question in `eval/retrieval_results.csv`):
+
+| Design | hit@1 | hit@3 | hit@5 | words@5 |
+|---|---|---|---|---|
+| A · fixed 150 (overlap 30) | 58% | 73% | 85% | 750 |
+| B · structured (sections ≤250 + header) | 77% | 88% | 100% | 988 |
+
+- `single`: fixed 75% / 95% / 100%; structured 100% / 100% / 100%.
+- `multi` (strict): fixed 0% / 0% / 33%; structured 0% / 50% / 100%. Strict hit@1 is 0% by construction for both designs, because one chunk rarely covers two passages; partial@1 (fixed 50%, structured 33%) shows that one passage is usually found first.
+- **Why fixed fails:** all four of its misses at k=5 (q21-q24) are multi questions where the GEVO 2025 passage is never retrieved; the GEVO 2026 chunk with the same topic always wins. This is the **"wrong edition"** problem, also visible in single questions (q13, a 2024 UK figure: top-1 is a 2026 chunk). Fixed chunks carry no title or year in their text, and they cut sections in the middle.
+- **Why structured works:** each chunk starts with "report title · chapter · heading", so the edition year and topic are part of the embedded text. IEA headings often state the key figure (e.g. "Close to 55% of new cars sold in China were electric in 2025"), and whole sections keep the answer together.
+- **Decision (Máximo): structured design, k = 5.** It wins at every k, and k=5 is the smallest k that finds both passages of every multi question, at ~990 words (~1,300 tokens) per search, about 30% more than fixed. k=3 would drop to 50% on multi questions.
+- **Caveat:** 26 questions is a small sample (one question ≈ 4 points), and the questions were written from body text, which helps any design. The "wrong edition" pattern is the robust finding.
