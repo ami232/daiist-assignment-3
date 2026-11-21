@@ -58,15 +58,15 @@ The issue was fixed useing `clean_page`, it drops these lines with a pattern for
 | multi | 1 (Art. 6 + Annex III) | | | 6 (5 AI Act + GDPR, 1 Pay Transparency + GDPR) |
 | unanswerable | | | | 6 (no expected source) |
 
-The questions were written before running any retrieval evaluation. First, I went through all the articles and HR/People Analytics would need were analysed and went through. From AI Act: Art. 3 (provider vs deployer), 4 (AI literacy), 5 (emotion recognition ban), 6 + Annex III (high-risk), 14 (human oversight), 25 (putting your logo on a tool), 26 (log retention), 50 (chatbot transparency). From GDPR: Art. 12 (deadline to answer), 15 (copy of the HR file), 17 (deleting a CV), 30 (records of processing). From Pay Transparency:Art. 5 (pay-history question), 7 (pay information and gag clauses), 9 (reporting dates), 10 (joint pay assessment).
+The questions were written before running any retrieval evaluation. First, I went through the articles an HR / People Analytics analyst would need. From the AI Act: Art. 3 (provider vs deployer), 4 (AI literacy), 5 (emotion recognition ban), 6 + Annex III (high-risk), 14 (human oversight), 25 (putting your logo on a tool), 26 (log retention), 50 (chatbot transparency). From the GDPR: Art. 12 (deadline to answer), 15 (copy of the HR file), 17 (deleting a CV), 30 (records of processing). From the Pay Transparency Directive: Art. 5 (pay-history question), 7 (pay information and gag clauses), 9 (reporting dates), 10 (joint pay assessment).
 
-The process was first writing one question per article with an HR language rather than using law's words. For example, “software that reads employees’ facial expressions” instead of “emotion recognition”, and “how much they earn in their current job” instead of “pay history”. The I thought of different situations an HR would use the agent, some of this situations are: an AI tool that auto-rejects CVs (Annex III + GDPR Art. 22), what to do before a performance-scoring tool goes live (AI Act Art. 26(7) + GDPR Art. 35), reusing pay-gap data for an attrition model (Pay Transparency Art. 12 + GDPR Art. 5), what to tell candidates (AI Act Art. 26(11) + GDPR Art. 13), maximum fines (AI Act Art. 99 + GDPR Art. 83).
+I first wrote one question per article in everyday HR language rather than the law's words. For example, "software that reads employees' facial expressions" instead of "emotion recognition", and "how much they earn in their current job" instead of "pay history". Then I thought of different situations in which HR would use the agent. Some of these situations are: an AI tool that auto-rejects CVs (Annex III + GDPR Art. 22), what to do before a performance-scoring tool goes live (AI Act Art. 26(7) + GDPR Art. 35), reusing pay-gap data for an attrition model (Pay Transparency Art. 12 + GDPR Art. 5), what to tell candidates (AI Act Art. 26(11) + GDPR Art. 13) and maximum fines (AI Act Art. 99 + GDPR Art. 83).
 
-Thee reference answers were written by me with the article and paragraph. 
+The reference answers were written by me, with the article and paragraph.
 
-For the unanswerable questions I chose questiosn that HR would ask on the same topic but that are not on the corpus.The unanswerable topics I chose were the following:Spanish law (q26, q27, q30), excluded AI Act chapters (q28, q29) and application dates (q09).
+For the unanswerable questions I chose questions that HR would ask on the same topic but that are not in the corpus. The unanswerable topics I chose were the following: Spanish law (q26, q27, q30), excluded AI Act chapters (q28, q29) and application dates (q09). I checked each one against the indexed text to make sure the corpus does not answer it.
 
-I checked each one against the indexed text to make sure the corpus does not answer it. Here are two examples, one that can be answered and the other unanserable:
+Here are two examples, one that can be answered and one that is unanswerable:
 - q21:“We’re about to switch on an AI tool that scores employee performance. What do we need to do before it goes live?”
   - Source: ai_act;gdpr. Location: Article 26;Article 35.
   - Reference: inform workers’ representatives and affected workers before use (AI Act 26(7)), and carry out a DPIA (GDPR 35(1), (3)(a)).
@@ -74,7 +74,7 @@ I checked each one against the indexed text to make sure the corpus does not ans
   - No source
   - Reference: the corpus doesn’t cover general-purpose AI model obligations (AI Act Chapter V excluded), so the assistant should say it doesn’t know.
 
-The corrections made after checking the answers were that q09 changed to unanswerable because Art. 113 is outside the corpus; q04 changed to multi; q20 reduced to the two passages it uses; q14’s reference reworded to what Art. 30(5) says; “none” changed to empty for unanswerable rows.
+The corrections made after checking the questions against the text were: q09 changed to unanswerable because Art. 113 is outside the corpus; q04 changed to multi; q20 reduced to the two passages it uses; q14's reference reworded to what Art. 30(5) says; "none" changed to empty for unanswerable rows.
 
 ## Retrieval
 
@@ -99,6 +99,7 @@ Mean top-1 distance shows that 0.232 for answerable questions and 0.267 for unan
 Only 2 of 7 multi questions get both passages in the top 5, because one search rarely brings back articles from two different laws. That’s why rule 1 of `AGENTS.md` asks the agent to search once per law or per part of the question.
 
 ## Tools and subagent
+
 **MCP server** (`server.py`, server name `corpus`): loads `index/` at start-up, never re-embeds the corpus, logs only to stderr.
  
 - `search(query, source="")`. Tool description (docstring):
@@ -107,7 +108,10 @@ Only 2 of 7 multi questions get both passages in the top 5, because one search r
 - `add_document(path)`. Tool description:
   > Add a document (PDF or .txt) to the searchable index. The file is extracted, cleaned and chunked by article (or by page if it has no articles), embedded and stored, so `search` can find it right away. The file name without extension becomes its source name in citations. If the same file was already added with the same content, nothing changes; if its content changed, the old version is replaced.
   It imports `chunk_file` and `embed_and_store` from `index.py`, so the pipeline is not rewritten.
-**One search result** (q01, first of 5):
+
+**One search result** 
+(q01, first of 5):
+
 ```text
 Result 1 [ai_act, Article 3(1)-(6), p. 46] (distance 0.1975)
 AI Act > Chapter I – GENERAL PROVISIONS
@@ -252,6 +256,7 @@ For the purposes of this Regulation, the following definitions apply:
 ⏺ Agent "Employer AI monitoring notice" finished · 23s
 
 ## Adding a document
+
 **If the document is already indexed.** A document is identified by its file name (source). Adding the same file with identical content changes nothing and the tool says so. If the content changed, the old chunks that no longer exist are deleted and only new or changed chunks are embedded, so no quota is wasted.
  
 **Before and after.** Unanswerable question: q09, "From what date do the high-risk AI rules apply to the HR tools we use?" (the answer is in AI Act Art. 113, Chapter XIII, outside the corpus). Document added: `extra/ai_act_final_provisions.txt`, AI Act Chapter XIII (Articles 102–113) extracted from the same EUR-Lex PDF (same licence): 16 chunks, 16 embeddings.
@@ -263,7 +268,11 @@ For the purposes of this Regulation, the following definitions apply:
 | 3. Add the same file again |`The document extra/ai_act_final_provisions.txt has been verified and is already indexed in the system.` (no new embeddings)|
 | 4. After, original AGENTS.md rule 5 | `The documents I have do not cover this` |
 | 5. After, rule 5 made conditional | `The documents I have do not cover this`, although search returned `[ai_act_final_provisions, Article 113]` as result 1 (agent's query: `application date high risk AI systems HR tools date`, source `ai_act`) |
-| 6. After removing "application dates" from rule 5 | ✍️ paste the answer |
+| 6. After removing "application dates" from rule 5 | "The general rules for high-risk AI systems—which include HR tools for recruitment, candidate evaluation, worker management, and task allocation listed in Annex III—apply from **2 August 2026** [ai_act, Annex III(4), pp. 127-128; ai_act_final_provisions, Article 113, p. 1]." (2 searches, 20.1 s) |
+
+**Interpretation.** The retrieval worked as soon as the document was added. Article 113 was the first result already at step 5. The refusal at steps 4 and 5 came from the prompt, not the search, because the fixed list of missing topics in rule 5 included application dates. Rule 5 was changed after the evaluation so the 30 evaluated answers used the original rules. An insight is that making the rule conditional was not enough for the lite model it only worked when removig the topic from the list. 
+
+**Lessons learnt.** When a document is added, `AGENTS.md` must be updated too. 
 
 ## Harness and guardrails
 
@@ -277,20 +286,76 @@ For the purposes of this Regulation, the following definitions apply:
  
 **Extra guardrail: citation check.** Every citation in the answer must match a passage that search returned in that run, and an answer that is not a refusal must cite at least one. On a violation the agent gets one chance to rewrite; if it fails again the answer is withheld and replaced by the refusal sentence.
  
-**A case where it fired.** In the 30-question evaluation it fired 0 times: every citation was valid.
+**A case where it fired.** In the 30-question evaluation it fired 0 times: every citation was valid. My agent behaved too well because in all 30 evaluation questions it only cited articles it had really retrieved, so the check neved had anything to catch. To prove that the agent works i did two things:
+- Tried to trick the agent: By asking to cite things it had not looked up. Both times it refused. A refusa has no citations so there was nothing for the check to catch.
+- Trested the check directly: I gave the check a fake answer, for example: "You have one month [gdpr, Article 99]". Together with a fake search result that only contained Article 12. The check said the following: ['[gdpr, Article 99] was not returned by the search tool in this conversation']
 
 ## Evaluation
 
-*Code checks, the judge's rubric, your agreement with the judge, and results: correct, unsupported, correct refusals, wrong refusals.*
+**Code checks.** Refusal (exact sentence), citations present, citations valid (each one was returned by search), whether the expected passage was retrieved and cited, and search errors.
+ 
+**LLM judge.** A different model from the agent (gemini-3.1-flash-lite) grades non-refusals with a rubric: 
+- correct = the main fact of the reference is right and nothing contradicts it
+- supported = every claim is in the retrieved passages (a true claim from outside the passages makes it unsupported, not incorrect)
+
+Applying a retrieved rule to the user's own situation is not a new claim, but a general statement about how things usually are is a new claim and makes the answer unsupported. The judge lists every claim and whether it is in the retrieved text before deciding. Refusals are decided in code: right for unanswerable questions, wrong otherwise.
+ 
+**Results** (30 questions, `eval/e2e_summary.csv`, `eval/human_labels.csv`)
+ 
+| | Judge | My grades |
+|---|---|---|
+| Correct, all | 29/30 (0.967) | 25/30 (0.833) |
+| Correct, answerable | 23/24 (0.958) | 19/24 (0.792) |
+| Supported, answered questions | 18/24 (0.75) | 18/24 (0.75) |
+| Correct refusals (unanswerable) | 6/6 | 6/6 |
+| Wrong refusals (answerable) | 0/24 | 0/24 |
+| Citations valid (code) | 30/30 | |
+| Expected passage retrieved (code) | 21/24 (0.875) | |
+| Search errors / guardrail fired | 0 / 0 | |
+ 
+**Agreement with my grades.** 30 answers graded by hand in `eval/human_labels.csv`, before reading the judge's verdicts. Agreement on correct **26/30 (87 %)** and on supported **26/30 (87 %)** (`eval/agreement.csv`).
+- Correct: I gave 0 and the judge 1 on q05, q22, q23, q25; never the other way round.
+- Supported: I gave 0 and the judge 1 on q02, q15; I gave 1 and the judge 0 on q13, q24.
+
+**Earlier runs, kept as evidence.**
+- `eval/answers_run1_search_bug.jsonl`: when the agent ran two searches in parallel (multi questions), each opened its own ChromaDB client at the same moment and ChromaDB crashed (`'RustBindingsAPI' object has no attribute 'bindings'`). Search returned nothing and the agent refused q20 and q22. Fixed by sharing one client under a lock (`get_collection` in `index.py`); the rerun had 0 search errors.
+- `eval/judgements_run1_same_model.jsonl`: with the judge on the agent's own model and a verdict-first prompt, every answer got correct = 1 and supported = 1 (100 %). Moving the judge to another model and asking for claim-by-claim checks gave the results above.
+
+**Interpretation.**
+On correct, the judge is more lenient than me: it checks whether the headline answer matches my reference, and stops there. Three of the four are multi questions where the second law wasn’t retrieved. The judge doesn’t notice what’s missing, only whether what’s there contradicts the reference.
+
+I kept the rubric unchanged so the disagreements stay in the results as a finding. The judge’s 0.958 for correct answers is optimistic; my own figure is 0.792. The judge is good for spotting wrong statements and unsupported claims, where it agrees with me 87% of the time, but it is not reliable for detecting missing information. On supported, the disagreements go both ways (I was stricter on q02 and q15, the judge on q13 and q24), so it isn’t leniency; the line between “applying a rule to the user’s case” and “adding a new claim” is genuinely fuzzy. The judge alone would overestimate quality. For multi-part questions, a human, or a rubric that treats each part of the question as a main fact, is needed.
+
 
 ## Failures
+Questions that failed by my grades (correct = 0 or supported = 0):
+| Q | Kind | Correct / supported (mine) | Expected passage retrieved | Code's suggested cause | My classification |
+|---|---|---|---|---|---|
+| q02 | single | 1 / 0 | yes | (none) | **Unsupported claim.** Correct, but gives examples of high-risk systems (recruitment, performance evaluation) when Annex III was not retrieved. |
+| q04 | multi | 1 / 0 | yes | unsupported claim | **Unsupported claim.** Correct, but "typically involves profiling" is the agent's own generalisation; no profiling definition was retrieved. |
+| q05 | single | 0 / 1 | yes | (none) | **Wrong answer from the right passage.** Art. 6(3)-(4) was retrieved and the body is right, but the opening "Yes" contradicts the reference's "Not necessarily". |
+| q14 | single | 1 / 0 | yes | unsupported claim | **Unsupported claim.** Correct, but makes claims about HR (special categories are regularly processed, processing is continuous) that are not in Art. 30. |
+| q15 | single | 1 / 0 | yes | (none) | **Unsupported claim.** Correct, but "prevent the perpetuation of pay gaps" is not in Art. 5 (it comes from Recital 33, which is outside the corpus). |
+| q20 | multi | 0 / 0 | yes | wrong answer from right passage | **Wrong answer from the right passage** (also unsupported claim). Annex III and Art. 22 were retrieved, but it says the setup "violates" the AI Act (high-risk ≠ prohibited) and overstates Art. 22(3). |
+| q22 | multi | 0 / 0 | **no** (Pay Transparency not retrieved) | unsupported claim | **Retrieval miss**. PTD Art. 12(2), the key rule, was never retrieved, so the agent fell back on GDPR purpose limitation and implied reuse might be allowed. The "attrition models are typically high-risk" claim is a separate, secondary problem. |
+| q23 | multi | 0 / 1 | **no** (GDPR not retrieved) | (none) | **Retrieval miss**. GDPR Art. 13(2)(f) was never retrieved, so the "what exactly" part is missing. |
+| q25 | multi | 0 / 1 | **no** (AI Act Art. 10 not retrieved) | (none) | **Retrieval miss.** AI Act Art. 10(5) was never retrieved, so the agent missed the bias-testing exception and pointed the user the wrong way. |
 
-*Failed questions by cause, with counts, and what to fix first.*
+There are 4 counts of Unsupported claim, 3 counts of retrieval miss and 2 counts of wrong answer from the right passage.
+Some questions need two laws to answer, for example the GDPR and the Pay Transparency Directive. When my system searches, it finds the right law when the agent asks it to. The problem is that the agent did not search the law it needed. So the agent answers with half the information and the answer comes out wrong.  That is what happens with q22,q23 and q25. I would fix this failures first because it is a problem that causes the most wrong answers and the agent needs a change in how it plans the searches. 
 
 ## Decision
 
-*Would you let users rely on it, for what, with which safeguard? Cost and latency per question.*
+**Cost and latency per question** (agent gemini-3.5-flash-lite, 30 questions): on average **4,453 input + 170 output tokens** and **10.1 s**, with 1–3 searches per question (each search embeds one query); the judge used about 2,650 tokens per graded answer. Everything ran on the free tier: flash-lite allows 500 requests a day, while the larger flash model's 20 a day was too low to run the evaluation, which is why the agent uses flash-lite.
 
+**Would I let HR rely on it?** Partly. For single-article lookups like deadlines, thresholds, definitions and who counts as provider or deployer, it got 16 of 17 right. It also correctly said “I don’t know” on all 6 questions the documents don’t cover, so it doesn’t make up answers outside its sources. I would not rely on it for questions that combine several laws: it got 4 of 7 wrong. In three of those, the agent never searched the second law it needed.In q22 and q25, that led it to tell the user the wrong thing. Even when it is right, it sometimes adds things the documents don’t say (4 answers had unsupported claims), so a correct-looking answer still needs checking.
+
+**Safeguards:**
+- Every answer shows its citations, and HR checks the cited article before acting on it.
+- It keeps saying “the documents don’t cover this” for anything outside the corpus.
+- A lawyer reviews anything that leads to a decision with legal effect on a person, such as hiring, firing or pay.
+- The list of topics the system doesn’t cover stays in sync with what is actually in the index, so refusals stay accurate when documents are added.
+ 
 ## AI use
 
 Claude Code (Opus 5.5) helped with code (index, retrieval, server, agent, evaluation), including debugging the ChromaDB concurrency crash and the free-tier rate limits, drafted the subagent file, and compiled the tables and numbers in this report from the files in `eval/`. I reviewed, ran and tested all code locally. The use case, corpus scope, chunking and retrieval choice, refusal rules, judge rubric, test set, my own grades, the analysis and the ship decision are mine. 
