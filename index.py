@@ -247,6 +247,15 @@ def raw_path(source: Source) -> Path:
     return RAW_DIR / source.url.rsplit("/", 1)[-1]
 
 
+# SEC's CDN appends a bot-management <script> tag with a random path to every response, so two
+# downloads of the same filing differ in ~50 bytes. The content hash ignores only that tag.
+CDN_SCRIPT_TAG = re.compile(rb'<script type="text/javascript"\s+src="/[A-Za-z0-9/_+=-]+"></script>')
+
+
+def content_sha256(path: Path) -> str:
+    return hashlib.sha256(CDN_SCRIPT_TAG.sub(b"", path.read_bytes())).hexdigest()
+
+
 def download(source: Source, manifest: dict) -> Path:
     """Fetch one source into corpus/raw/ unless present, and verify its pinned SHA-256.
 
@@ -255,6 +264,7 @@ def download(source: Source, manifest: dict) -> Path:
     """
     path = raw_path(source)
     pinned = manifest["documents"].get(source.doc_id, {}).get("sha256")
+    pinned_content = manifest["documents"].get(source.doc_id, {}).get("content_sha256")
     if not path.is_file():
         agent = env_value("SEC_USER_AGENT")
         if not agent:
@@ -277,16 +287,19 @@ def download(source: Source, manifest: dict) -> Path:
         time.sleep(0.2)  # SEC fair access: at most 10 requests per second
         log(f"downloaded {path.name} ({len(response.content) / 1e6:.1f} MB)")
 
-    digest = sha256_file(path)
-    if pinned and digest != pinned:
+    digest, content = sha256_file(path), content_sha256(path)
+    if pinned and digest != pinned and content != pinned_content:
         raise SystemExit(
-            f"{path.name} does not match the frozen corpus (sha256 {digest[:12]}... != {pinned[:12]}...).\n"
+            f"{path.name} does not match the frozen corpus (sha256 {digest[:12]}... != {pinned[:12]}...; "
+            f"content sha256 {content[:12]}... != {str(pinned_content)[:12]}...).\n"
             "  Delete it from corpus/raw/ and run again to re-download the frozen version."
         )
+    if pinned and digest != pinned:
+        log(f"{path.name}: same content as the frozen file (differs only in SEC's injected CDN script tag)")
     manifest["documents"].setdefault(source.doc_id, {}).update(
         title=source.title, url=source.url, form=source.form, accession=source.accession,
         filed=source.filed, status=source.status, role=source.role, file=path.name,
-        bytes=path.stat().st_size, sha256=digest,
+        bytes=path.stat().st_size, sha256=pinned or digest, content_sha256=pinned_content or content,
         licence="SEC EDGAR public filing content: free to access and reuse (sec.gov Webmaster FAQ).",
     )
     return path
@@ -1102,10 +1115,33 @@ def survey(chunks: list[Chunk], stats: dict) -> None:
     log(f"daily quota: {DAILY_LIMIT}, used today (local count): {used_today()}")
 
 
+def verify_committed_index(missing: list[str]) -> None:
+    """Check that every chunk in index/chunks.jsonl has a stored vector (no API calls)."""
+    if not CHUNKS_FILE.is_file():
+        raise SystemExit(f"{CHUNKS_FILE.relative_to(ROOT)} is missing and the corpus cannot be downloaded: "
+                         'set SEC_USER_AGENT="<organisation or name> <contact email>" in .env and run again.')
+    chunk_ids = {json.loads(line)["id"] for line in CHUNKS_FILE.read_text(encoding="utf-8").splitlines() if line.strip()}
+    stored = set(collection().get(ids=sorted(chunk_ids), include=[])["ids"])
+    if stored != chunk_ids:
+        raise SystemExit(f"index/ is incomplete: {len(chunk_ids - stored)} of {len(chunk_ids)} chunks have no vector. "
+                         "Set SEC_USER_AGENT in .env and run `main.py index` to rebuild.")
+    log(f"index: corpus/raw/ lacks {', '.join(missing)} and SEC_USER_AGENT is not set, so the corpus was not "
+        f"re-downloaded.\nindex: the committed index is complete: {len(chunk_ids)} chunks, all embedded "
+        f"({CHROMA_DIR.relative_to(ROOT)}); 0 embedded now.\nindex: to rebuild it from the SEC filings, set "
+        'SEC_USER_AGENT="<organisation or name> <contact email>" in .env (only new or changed chunks are embedded).')
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--survey", action="store_true", help="build chunks and report; no embeddings")
     args = parser.parse_args()
+
+    missing = [s for s in SOURCES if not raw_path(s).is_file()]
+    if missing and not env_value("SEC_USER_AGENT"):
+        # A fresh clone has no corpus/raw/ (git-ignored) and may have no SEC contact to download it.
+        # The committed index is the product of this pipeline, so verify it instead of failing.
+        verify_committed_index([s.doc_id for s in missing])
+        return
 
     chunks, stats = build_chunks()
     survey(chunks, stats)

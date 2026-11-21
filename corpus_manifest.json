@@ -12,7 +12,8 @@
       "file": "anthropicpbc-sx1ax3.htm",
       "bytes": 14896151,
       "sha256": "d3a6ab8f4ce5aad0106d4755090d8299436cccfd87b4195f292be5aec88ba048",
-      "licence": "SEC EDGAR public filing content: free to access and reuse (sec.gov Webmaster FAQ)."
+      "licence": "SEC EDGAR public filing content: free to access and reuse (sec.gov Webmaster FAQ).",
+      "content_sha256": "cccb7d61cc61bd54919d35963ca0972bc7d0e66bc38e62df1a7959c3f9916d51"
     },
     "EU-PROSPECTUS": {
       "title": "EEA prospectus approved by BaFin, dated 2026-11-11 (filed on EDGAR as FWP 2026-11-12)",
@@ -25,7 +26,8 @@
       "file": "anthropicpbc-fwpxeeaprospea.htm",
       "bytes": 1693184,
       "sha256": "8d6316c0ab6f034595bd5d87c8305a6eaa437ece695825955ac03539cf330c46",
-      "licence": "SEC EDGAR public filing content: free to access and reuse (sec.gov Webmaster FAQ)."
+      "licence": "SEC EDGAR public filing content: free to access and reuse (sec.gov Webmaster FAQ).",
+      "content_sha256": "2b330a1b10f4cfc0698efc6d35dbbf4b8a56e27a6ecedd21208d545eb771cfea"
     },
     "CHARTER": {
       "title": "Amended and Restated Certificate of Incorporation, effective at IPO completion (Exhibit 3.3 to Form S-1)",
@@ -38,7 +40,8 @@
       "file": "exhibit33-sx1.htm",
       "bytes": 165725,
       "sha256": "88a6aaabbdf2014d32716ddbf4a27d18761d0a28b5bbb9a0d84ace160f12d739",
-      "licence": "SEC EDGAR public filing content: free to access and reuse (sec.gov Webmaster FAQ)."
+      "licence": "SEC EDGAR public filing content: free to access and reuse (sec.gov Webmaster FAQ).",
+      "content_sha256": "9a6e0e6357f3b626ac783b56e3385c3947c1a17c5a76685009ca2368d7c62a7c"
     }
   }
 }
