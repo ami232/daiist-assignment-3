@@ -1,1 +1,37 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,1,1,
+q04,1,1,
+q05,1,0,"main answer matches the reference, but the extra details go beyond the cited article"
+q06,1,1,
+q07,1,1,
+q08,1,1,
+q09,1,1,
+q10,1,1,
+q11,1,1,
+q12,1,1,
+q13,1,0,"main answer matches the reference, but the extra details go beyond the cited article"
+q14,1,0,"main answer matches the reference, but the extra details go beyond the cited article"
+q15,1,0,"main answer matches the reference, but the extra details go beyond the cited article"
+q16,1,1,
+q17,1,1,
+q18,1,0,"main answer matches the reference, but the extra details go beyond the cited article"
+q19,1,1,
+q20,1,1,
+q21,1,1,
+q22,1,1,
+q23,1,0,"ambiguous question (company as tenant vs landlord); the expected solution is included, plus unsupported extras"
+q24,1,1,
+q25,1,1,
+q26,1,1,
+q27,1,0,the energy-rating A/B alternative is not in the cited article
+q28,1,1,
+q29,0,0,misses that LAU art. 27.3.a allows termination for lack of repairs
+q30,1,0,"correct 'I don't know', but adds explanations not from the sources"
+q31,1,1,
+q32,1,1,
+q33,1,0,"correct 'I don't know', but adds explanations not from the sources"
+q34,1,0,"correct 'I don't know', but adds explanations not from the sources"
+q35,1,0,"correct 'I don't know', but adds explanations not from the sources"
+q36,1,1,

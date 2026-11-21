@@ -1,0 +1,266 @@
+id,kind,question,reference_answer,agent_answer,citations_the_search_returned,correct,supported,notes
+q01,single,What is the minimum length of a rental contract for a primary residence if the landlord is an individual?,"Five years: if a shorter term is agreed, the contract is renewed compulsorily year by year up to five years, unless the tenant gives at least 30 days' notice that they do not want to renew.","The minimum duration of a rental contract for a primary residence (*arrendamiento de vivienda*) when the landlord is an individual (*persona física*) is **5 years** through statutory annual extensions [LAU, Artículo 9.1].
+
+Here is how it works:
+* **Freely agreed initial term:** The parties can freely agree on the initial duration. However, if the agreed duration is less than 5 years, the contract is automatically renewed annually (*prórroga obligatoria*) until it reaches a minimum of 5 years [LAU, Artículo 9.1].
+* **Tenant's right to end it:** These annual extensions are mandatory for the landlord, but the tenant can prevent renewal by giving at least **30 days' notice** before the contract ends or before any extension ends [LAU, Artículo 9.1].
+* **Unspecified duration:** If no duration is agreed upon or it is indefinite, the lease is deemed to be signed for 1 year, still subject to the tenant's right to annual renewals up to the 5-year minimum [LAU, Artículo 9.2].
+* **Exception for landlord's personal need:** Once the first year has passed, mandatory annual extensions do not apply if the contract expressly stated at the time of signing that the landlord would need to occupy the home before 5 years as a permanent residence for themselves, their first-degree relatives (by blood or adoption), or their spouse in cases of divorce, legal separation, or marriage annulment [LAU, Artículo 9.3].","[LAU, artículo 10] [LAU, artículo 9 bis] [LAU, artículo 9] [LAU, preámbulo]",,,
+q02,single,When can a tenant leave before the end of a primary-residence lease and how much notice must they give?,"After at least six months, giving the landlord at least thirty days' notice; it gives the landlord no right to compensation.","A tenant can terminate a primary-residence lease early (early withdrawal or *desistimiento del contrato*) once at least **six months** have passed, provided they give the landlord a minimum of **30 days' advance notice** [LAU, Artículo 11].
+
+Key rules governing this early departure include:
+
+* **No landlord compensation:** Exercising this early departure right does not generate any right to compensation (*indemnización*) in favor of the landlord [LAU, Artículo 11].
+* **Spouse or cohabiting partner rights:** If the tenant decides to withdraw without the consent of a cohabiting spouse or partner (who has lived with them permanently for at least two years, or regardless of time if they have children in common), the lease may continue for the benefit of that spouse or partner [LAU, Artículo 12].","[LAU, artículo 11] [LAU, artículo 12] [LAU, artículo 27] [LAU, artículo 9 bis] [LAU, artículo 9]",,,
+q03,single,How much cash deposit (fianza) has to be paid when signing a residential lease?,One month's rent (two months for leases for uses other than housing).,"When signing a residential lease in Spain, the mandatory legal cash deposit (*fianza en metálico*) is **one month's rent** [LAU, Artículo 36.1].
+
+### Key rules and limits:
+* **Mandatory legal deposit (*fianza*):** Exactly **one month's rent** must be demanded by the landlord and paid in cash/funds by the tenant upon signing the contract [LAU, Artículo 36.1].
+* **Additional guarantees (*garantía adicional*):** The parties may agree on additional guarantees beyond the legal deposit. However, for contracts up to 5 years (or up to 7 years if the landlord is a company/legal entity), this additional guarantee **cannot exceed two months' rent** [LAU, Artículo 36.5].
+* **No default insurance requirement:** Under no circumstances can the tenant be required to take out rent default insurance (*seguro de impago de renta*) or similar coverage [LAU, Artículo 36.5].
+* **Updates during the term:** The legal deposit cannot be updated during the first 5 years of the lease (or the first 7 years if the landlord is a legal entity), though it can be adjusted if the contract is renewed thereafter [LAU, Artículo 36.2].","[LAU, artículo 17] [LAU, artículo 36] [LAU, disposición adicional tercera] [LAU, preámbulo]",,,
+q04,single,On which days of the month must rent be paid if the contract says nothing?,"Unless agreed otherwise, rent is paid monthly within the first seven days of the month; the landlord cannot demand more than one month in advance.","If the contract does not state otherwise, rent must be paid monthly **within the first 7 days of the month** [LAU, Artículo 17]. 
+
+Under the same rule, the landlord cannot demand advance payment of more than one month's rent [LAU, Artículo 17].","[LAU, artículo 17] [LAU, artículo 20] [LAU, artículo 27] [LAU, preámbulo]",,,
+q05,single,My contract says nothing about updating the rent. Can the landlord raise it every year?,No. Without an express agreement the rent is not updated.,"**No**, your landlord cannot raise your rent each year if your contract does not mention it.
+
+Under Spanish tenancy law, rent updates (*actualización de la renta*) can only take place upon the completion of each full year of the lease and strictly under the terms agreed upon by the parties. If there is no express agreement in the contract allowing for rent updates, **no rent update can be applied** [LAU, Artículo 18]. 
+
+Therefore, your rent must remain the same for the duration of the contract.","[LAU, artículo 17] [LAU, artículo 18] [LAU, disposición transitoria tercera]",,,
+q06,single,"If the tenant dies, within what period must the landlord be notified so that a family member can take over the lease?","Three months from the death, in writing, with the registered death certificate and the identity of the person taking over; otherwise the lease ends.","The landlord must receive written notice within **three months** of the tenant's death [LAU, Artículo 16].
+
+### Requirements for residential leases
+To exercise the right to take over the lease (subrogation / *subrogación*), the landlord must receive written notification within that three-month window containing [LAU, Artículo 16]:
+* An official civil registry death certificate (*certificado registral de defunción*).
+* The identity of the person subrogating into the contract.
+* The family relationship (*parentesco*) to the deceased.
+* Initial proof (*principio de prueba*) showing that the legal requirements for subrogation are met (e.g., proof of cohabitation).
+
+### Consequences of missing the deadline
+* If this notice is not received within three months, the tenancy is terminated [LAU, Artículo 16].
+* If terminated, all eligible family members who could have taken over the lease—except those who waived their option in writing to the landlord within one month of the death—are jointly and severally liable (*solidariamente obligados*) for the rent during those three months [LAU, Artículo 16].
+
+*(Note: For commercial leases / leases for non-residential use where a business or professional activity is carried out, the written notice period for an heir to take over the lease is **two months** from the tenant's death [LAU, Artículo 33]).*","[LAU, artículo 16] [LAU, artículo 33] [LAU, disposición transitoria segunda]",,,
+q07,single,"My landlord is doing maintenance works in my flat that will last a month. Do I have to put up with them, and do I get a rent reduction?",If the works cannot wait until the lease ends the tenant must accept them; if they last more than twenty days the rent is reduced in proportion to the part of the home the tenant cannot use.,"**Yes, you must tolerate the works, and yes, you are entitled to a rent reduction.**
+
+Here are the specific rules under Spanish law:
+
+1. **Obligation to tolerate the works:** If maintenance works (*obras de conservación*) cannot reasonably be postponed until the end of the tenancy, you are legally obliged to endure them, even if they are very annoying or deprive you of a part of the home [LAU, Artículo 21].
+2. **Rent reduction:** If the works last **more than 20 days** (which a one-month project does), the rent must be reduced in proportion to the part of the property you are deprived of using [LAU, Artículo 21].
+
+**Important exception:**
+If the maintenance works make the property completely uninhabitable, you have the right to choose between [LAU, Artículo 26]:
+* **Suspending the contract:** The lease term is frozen and your obligation to pay rent is completely suspended until the works are finished.
+* **Terminating the contract (*desistir del contrato*):** Ending the tenancy without having to pay any compensation.","[LAU, artículo 21 bis] [LAU, artículo 21] [LAU, artículo 22] [LAU, artículo 26]",,,
+q08,single,How much notice must the landlord give before doing improvement works in the rented home?,"In writing, at least three months in advance, stating the nature, start, duration and expected cost; the tenant may withdraw from the contract within one month.","The landlord must give at least **three months' advance notice in writing** [LAU, Artículo 22.2].
+
+According to the law:
+
+* **Notice details:** The landlord’s written notice must state the nature of the improvement works (*obras de mejora*), their start date, expected duration, and foreseeable cost [LAU, Artículo 22.2]. The tenant is only obligated to endure improvements whose execution cannot reasonably be deferred until the lease ends [LAU, Artículo 22.1].
+* **Tenant's right to cancel the lease:** Within **one month** of receiving the notice, the tenant may withdraw from the contract (*desistir del contrato*), unless the works do not affect the dwelling or affect it in an irrelevant way. If the tenant chooses to terminate, the tenancy ends within **two months** of the withdrawal notice, and the landlord cannot start the works during this two-month period [LAU, Artículo 22.2].
+* **Rent reduction and compensation:** If the tenant remains in the home during the works, they are entitled to a rent reduction proportional to the part of the dwelling they are deprived of, as well as compensation for any expenses the works force them to incur [LAU, Artículo 22.3].","[LAU, artículo 19] [LAU, artículo 21 bis] [LAU, artículo 21] [LAU, artículo 22] [LAU, artículo 23]",,,
+q09,single,Can I sublet the whole flat I am renting?,No. It can only be sublet partially and with the landlord's written consent; the sublet rent cannot exceed the rent of the lease.,"**No.** You cannot sublet the entire flat [LAU, Artículo 8]. 
+
+Under Spanish residential tenancy law, subletting is subject to the following rules:
+
+* **Partial subletting only:** A rented residential property can only be sublet partially (e.g., a room), never in its entirety [LAU, Artículo 8].
+* **Prior written consent:** You must obtain the landlord's prior written consent (*previo consentimiento escrito del arrendador*) before subletting any part of the flat [LAU, Artículo 8].
+* **Rent cap:** The price you charge the subtenant cannot exceed the total rent you pay to the landlord for the lease [LAU, Artículo 8].
+* **Termination:** The subtenant's right to occupy the room expires automatically whenever your main tenancy contract ends [LAU, Artículo 8].","[LAU, artículo 14] [LAU, artículo 2] [LAU, artículo 32] [LAU, artículo 5] [LAU, artículo 8]",,,
+q10,single,How long can a temporary housing lease last?,"More than thirty-one days and, as a general rule, no more than twelve months in total, depending on the reason for the temporary stay.","A temporary housing lease (*arrendamiento de vivienda temporal*) is **freely agreed by the parties**, but it must be **longer than 31 days** and, as a general rule, **cannot exceed 12 months** [LAU, Artículo 9 bis].
+
+Key rules regarding duration and conditions include:
+
+* **Extensions:** If the lease was signed for less than 12 months and the reason for the temporary stay continues, it can be extended by express agreement between the parties, generally up to a maximum combined limit of 12 months [LAU, Artículo 9 bis].
+* **Justified cause required:** The contract must explicitly state a real, provable reason for the temporary relocation (*causa de temporalidad*), such as temporary work or study [LAU, Artículo 2, Artículo 7]. 
+* **Conversion to permanent lease:** If a temporary lease exceeds 12 months without a justified cause, or if more than two consecutive temporary contracts are signed or renewed between the same parties for the same property, the contract will be legally considered a primary residence lease (*arrendamiento de vivienda habitual*), triggering the mandatory minimum duration and renewal protections [LAU, Artículo 9 bis].","[LAU, artículo 2] [LAU, artículo 3] [LAU, artículo 7] [LAU, artículo 9 bis] [LDV, disposición adicional quinta]",,,
+q11,single,"In a temporary housing lease, when can the tenant withdraw and with how much notice?","Once at least one month has passed since signing, giving at least ten days' notice.","In a temporary housing lease (*arrendamiento de vivienda temporal*), the tenant can withdraw (*desistir*) from the contract once at least **one month** (*un mes*) has passed since its formalisation [LAU, Artículo 11.2]. 
+
+The requirements and conditions are:
+* **Notice period:** The tenant must give the landlord at least **10 days' notice** (*antelación mínima de diez días*) [LAU, Artículo 11.2].
+* **Compensation:** Exercising this right of withdrawal does not give the landlord any right to compensation (*indemnización*) [LAU, Artículo 11.3].","[LAU, artículo 11] [LAU, artículo 35] [LAU, artículo 3] [LAU, artículo 7] [LAU, artículo 9 bis]",,,
+q12,single,Can I knock down a partition wall in my rented flat without the landlord's permission?,No. Works that change the layout of the home need the landlord's written consent; otherwise the landlord can demand that it be restored or terminate the contract.,"**No.** You cannot knock down a partition wall without the landlord's written consent.
+
+Under Spanish tenancy law:
+
+1. **Written permission is mandatory:** The tenant cannot carry out works that modify the configuration of the dwelling (*modifiquen la configuración de la vivienda*) without the landlord’s express written consent (*consentimiento del arrendador, expresado por escrito*) [LAU, Artículo 23]. Knocking down an interior wall changes the layout of the property.
+2. **Safety and stability limits:** Under no circumstances may a tenant carry out works that reduce the stability or safety of the building or dwelling [LAU, Artículo 23].
+
+### Consequences if you do it without permission
+If you carry out unauthorized works:
+* **Contract termination:** The landlord is legally entitled to terminate the lease contract (*resolución del contrato*) [LAU, Artículo 23] [LAU, Artículo 27].
+* **Restoration or forfeiture:** When the lease ends, the landlord can demand that you return the property to its original condition at your own expense, or choose to keep the alteration without paying you any compensation [LAU, Artículo 23].
+* **Immediate restoration:** If the works compromise the stability or safety of the building or home, the landlord can demand the immediate restoration of the property to its previous state without waiting for the lease to end [LAU, Artículo 23].","[LAU, artículo 21 bis] [LAU, artículo 21] [LAU, artículo 22] [LAU, artículo 23] [LAU, artículo 24] [LAU, artículo 26] [LAU, artículo 27]",,,
+q13,single,My landlord has not returned my deposit after the lease ended. Does it earn interest?,Yes. The balance to be returned earns the statutory interest rate once one month has passed since the keys were handed back without it being returned.,"**Yes.** The remaining balance of your deposit (*saldo de la fianza*) earns legal interest (*interés legal*) if **one month** has passed since you surrendered the keys (*entrega de las llaves*) and the landlord has not returned the deposit [LAU, Artículo 36]. 
+
+### Conditions
+* **Grace Period:** The landlord has 1 month from key surrender to inspect the property and return the deposit without accruing interest [LAU, Artículo 36].
+* **Interest Accrual:** Once that 1-month period passes, any unpaid amount begins to accrue legal interest automatically [LAU, Artículo 36].
+
+*(Note: The exact annual percentage for the legal interest rate is set each year by Spanish state budget legislation, which is not part of the indexed tenancy laws. If your landlord refuses to return the deposit, consider contacting a legal professional or your local consumer rights office for assistance with formal demands or legal action.)*","[LAU, artículo 17] [LAU, artículo 36] [LAU, disposición adicional tercera] [LAU, preámbulo]",,,
+q14,single,Can the landlord require me to take out rent-default insurance?,No. The tenant can never be required to take out rent-default insurance or similar cover.,"**No.** The landlord cannot require you to take out rent-default insurance (*seguro de impago de renta*) or any similar coverage [LAU, Artículo 36].
+
+Under Spanish law:
+* **Prohibition on tenant-paid insurance:** While the parties may agree on additional guarantees (*garantías adicionales*) to back the tenant's obligations, the law explicitly prohibits requiring the tenant to contract or pay for rent-default insurance or analogous coverages [LAU, Artículo 36].
+* **Cap on additional guarantees:** If any additional guarantees are agreed upon for a primary residence lease, their total value cannot exceed two months' rent for contracts of up to 5 years (or up to 7 years if the landlord is a company/legal entity) [LAU, Artículo 36].","[LAU, artículo 36] [LAU, artículo 9 bis] [LAU, disposición adicional tercera] [LAU, preámbulo]",,,
+q15,single,Can the landlord take the home back before five years to live in it himself?,"Only if the landlord is an individual, the first year has passed and that need was stated expressly in the contract; they must give at least two months' notice.","**Yes, but only under strict conditions.** A landlord can stop the compulsory extension (*prórroga obligatoria*) before five years to reclaim the property as a permanent home, but all of the following requirements must be met [LAU, Artículo 9]:
+
+1. **Individual owner:** The landlord must be an individual (*persona física*), not a corporate entity [LAU, Artículo 9.3].
+2. **Stipulated in the contract:** This potential need must have been **expressly stated in the lease contract** at the time it was signed [LAU, Artículo 9.3].
+3. **One year completed:** At least one full year of the lease contract must have passed [LAU, Artículo 9.3].
+4. **Qualifying beneficiaries:** The property must be needed as a permanent residence for the landlord, their first-degree relatives by blood or adoption, or their spouse in cases of a final court judgment of separation, divorce, or annulment [LAU, Artículo 9.3].
+5. **Notice period:** The landlord must give the tenant at least **two months' written notice** before the date the property is needed, specifying the cause [LAU, Artículo 9.3].
+
+---
+
+### What if the landlord does not move in?
+If the landlord or their eligible relative does not occupy the home within **three months** of the tenant moving out (unless due to force majeure (*fuerza mayor*)), the tenant has 30 days to choose one of two remedies [LAU, Artículo 9.3]:
+* **Return to the property** for a new period of up to five years under the previous conditions, plus reimbursement of eviction expenses; **or**
+* **Receive compensation** equal to one month's rent for every year remaining to complete five years [LAU, Artículo 9.3].","[LAU, artículo 10] [LAU, artículo 9 bis] [LAU, artículo 9]",,,
+q16,single,What criteria are used to declare a stressed residential market area (zona de mercado residencial tensionado)?,"That the average cost of mortgage or rent plus expenses and basic utilities exceeds 30% of average household income, or that prices have grown in the previous five years at least three percentage points more than the regional CPI.","To declare a stressed residential market area (*zona de mercado residencial tensionado*), the competent regional housing administration must demonstrate a special risk of insufficient housing supply under affordable conditions and show that **at least one of the following two criteria** is met [LDV, Artículo 18.1, 18.3]:
+
+1. **Housing cost burden:** The average cost of the mortgage or rent, plus basic utilities and expenses, exceeds **30%** of the average household income [LDV, Artículo 18.3.a].
+2. **Housing price growth:** The purchase or rental price of housing in the area has experienced, in the 5 years prior to the declaration, a cumulative growth rate that is at least **3 percentage points higher** than the cumulative growth of the regional Consumer Price Index (*índice de precios de consumo*) [LDV, Artículo 18.3.b].
+
+### Additional Key Conditions:
+* **Supporting report:** The declaration must be justified by an explanatory report (*memoria*) using objective data regarding housing supply and local demographics [LDV, Artículo 18.3].
+* **Duration:** The initial declaration of a stressed market area is valid for **3 years** and can be extended annually if the underlying conditions persist [LDV, Artículo 18.2.d].","[LDV, artículo 18] [LDV, preámbulo]",,,
+q17,single,Can I ask whether the flat contains asbestos before signing the lease?,Yes. A prospective tenant can request information on the presence of asbestos or other hazardous substances before the contract is signed.,"**Yes**, you can ask about asbestos before signing the lease [LDV, Artículo 31].
+
+Under Spanish housing law, any person interested in renting a property being offered has the right to request information regarding the detection of asbestos (*amianto*) or other dangerous or harmful substances to health [LDV, Artículo 31]. 
+
+This request can be made prior to formalizing the transaction (signing the contract) and prior to paying any deposit or advance payment (*entrega de cualquier cantidad a cuenta*) [LDV, Artículo 31]. The requested information must be provided in an accessible format and on a durable medium (*soporte duradero*) [LDV, Artículo 31].","[LAU, artículo 21 bis] [LAU, artículo 26] [LDV, artículo 31] [LDV, preámbulo]",,,
+q18,single,What is the minimum size of an owners' association's reserve fund?,It cannot be less than 10% of its latest ordinary budget.,"The reserve fund (fondo de reserva) of an owners' association must be endowed with an amount that in no case can be less than **10 percent of its latest ordinary budget** [LPH, Artículo noveno]. 
+
+Additionally, the law establishes the following rules:
+* The reserve fund cannot be lower than this legal minimum at any moment during the budgetary year [LPH, Disposición adicional primera].
+* If amounts are withdrawn from the fund during the year for conservation, repair, rehabilitation, or accessibility and energy efficiency works, those amounts count toward the minimum calculation, and the necessary contributions must be made at the start of the following budgetary year to cover the withdrawn amounts [LPH, Disposición adicional primera].","[LPH, artículo noveno] [LPH, disposición adicional primera] [LPH, disposición adicional tercera]",,,
+q19,single,What court procedure can the owners' association use to claim unpaid fees from a neighbour?,"The special payment-order procedure (proceso monitorio) for owners' associations, attaching a certificate of the agreement settling the debt (other procedures remain available).","The owners' association can use the **special monitor procedure** (*proceso monitorio especial*), without prejudice to other judicial procedures or mediation, arbitration, or conciliation [LPH, Artículo veintiuno]. 
+
+Through this procedure, the community can claim all amounts owed for common expenses (both ordinary and extraordinary, general or individualisable, and the reserve fund) [LPH, Artículo veintiuno].
+
+Key aspects of the procedure include:
+* **Documentation required:** The initial claim must be accompanied by a certificate of the debt settlement agreement issued by the secretary of the community with the approval of the president (or signed solely by a professionally qualified secretary-administrator who is not intervening professionally in the judicial claim) [LPH, Artículo veintiuno]. The certificate must detail the owed amount, and proof must be provided that the debt was notified to the debtor (which can subsidiarily be done on the community's notice board for at least three days) [LPH, Artículo veintiuno].
+* **Registered owner:** The registered titleholder may be sued to support the enforcement against the property registered in their name [LPH, Artículo veintiuno].
+* **Precautionary attachment:** If the debtor opposes the initial monitor claim, the community can request the precautionary attachment of sufficient assets of the debtor to cover the claimed amount, interest, and costs, which the court will grant without requiring the creditor to post a bond [LPH, Artículo veintiuno].
+* **Costs and fees:** If the community obtains a fully favorable judgment, the debtor must pay the fees and rights of the lawyer and procurator, even if their intervention was not mandatory [LPH, Artículo veintiuno].","[LPH, artículo quince] [LPH, artículo veintidós] [LPH, artículo veintiuno]",,,
+q20,single,A neighbour carries out disturbing activities in his flat. Who must demand that he stop?,"The president of the owners' association, on their own initiative or at the request of any owner or occupant, demands that the activity stop immediately, warning of legal action.","The **president of the community of owners** (*presidente de la comunidad*) must require the person carrying out the disturbing, unhealthy, harmful, dangerous, or unlawful activities to stop them immediately [LPH, Artículo séptimo]. 
+
+This requirement can be made:
+* On the president's own initiative (*a iniciativa propia*), or
+* At the request of any of the other owners or occupants (*cualquiera de los propietarios u ocupantes*) [LPH, Artículo séptimo].
+
+If the offender continues their behavior, the president—after obtaining authorization from the General Meeting of Owners (*Junta de propietarios*)—may file a cessation lawsuit (*acción de cesación*) against them [LPH, Artículo séptimo].","[LPH, artículo dieciocho] [LPH, artículo noveno] [LPH, artículo quince] [LPH, artículo séptimo]",,,
+q21,single,"If I rent a flat out by rooms, is there a limit on the total rent?",Yes. The sum of the rents of the room contracts in force at the same time cannot exceed the rent for the whole home.,"Yes, there is a limit. 
+
+In contracts for partial room rentals ([arrendamiento parcial por habitaciones]), the sum of the rents agreed in the partial contracts that are simultaneously in force for the same property **cannot exceed the total rent of a whole-property lease** for that same home [LAU, Artículo 17].
+
+Furthermore, if the property is located in a **stressed residential market zone** [zona de mercado residencial tensionado], the rent of the whole-property lease (or, if there isn't one, the sum of the simultaneous room rents) must also comply with the general rent-cap limitations established for stressed zones [LAU, Artículo 17].","[LAU, artículo 17] [LAU, artículo 5] [LAU, disposición transitoria segunda] [LAU, disposición transitoria séptima]",,,
+q22,single,Can I sign a clause in the contract waiving my right of first refusal (tanteo y retracto)?,No. The parties cannot agree that the tenant waives the preferential right to buy.,"No, the parties cannot agree to waive the tenant's right of preferential acquisition (right of first refusal [tanteo] and retraction [retracto]) [LAU, Artículo 25]. 
+
+Any clause in the contract in which the tenant waives this right is legally invalid [LAU, Artículo 25].","[LAU, artículo 13] [LAU, artículo 25] [LAU, disposición transitoria tercera]",,,
+q23,multi,I am renting to a company (a legal entity) for three years. What is the minimum length of the contract and how much notice must the landlord give if they do not want to renew it at the end?,"Seven years minimum because the landlord is a legal entity; at expiry the landlord must give at least four months' notice (the tenant two), otherwise it renews annually for up to three more years.","Whether the contract is governed by the rules for a **primary home [arrendamiento de vivienda]** (where a company rents a home for its employees to live in) or a **use other than as a home [uso distinto del de vivienda]** (such as an office or commercial space) depends on how the contract is structured. 
+
+---
+
+### Scenario A: The contract is for residential use (e.g., rented by a company to house an employee)
+
+If the landlord is a legal entity (a company), the rules are as follows:
+
+* **Minimum length:** The contract length is freely agreed upon by the parties. However, if the agreed initial term is **less than 7 years**, the contract is subject to mandatory annual extensions until it reaches a **minimum duration of 7 years**, unless the tenant (the company) notifies the landlord of its intention not to renew [LAU, Artículo 9.1]. Since you agreed to 3 years initially, the tenant has the right to extend it annually up to 7 years.
+* **Landlord's notice for non-renewal:** 
+  * **At the end of the mandatory 7-year period** (or any of its annual extensions before reaching 7 years): The law does not grant the landlord the right to terminate the contract at 3 years against the tenant's wish, because of the 7-year minimum protection for corporate landlords [LAU, Artículo 9.1]. Once the full 7-year minimum period is reached, if either party does not wish to renew, the landlord must give at least **4 months' notice** prior to the expiry date, and the tenant must give at least **2 months' notice** [LAU, Artículo 10.1]. 
+  * If no one gives notice at the 7-year mark, the contract enters a tacit extension [prórroga tácita] of up to 3 additional annual periods [LAU, Artículo 10.1].
+
+---
+
+### Scenario B: The contract is for a use other than as a home (e.g., an office, commercial premises, or business use)
+
+If the contract is for business or professional use rather than residential housing:
+
+* **Minimum length:** The duration is **freely determined by the parties' will** [LAU, Artículo 4.3]. There is no statutory minimum length like 5 or 7 years; if you contract for 3 years, the contract simply lasts for 3 years [LAU, Artículo 34].
+* **Landlord's notice for non-renewal:** Because these contracts are governed first by the will of the parties [LAU, Artículo 4.3], any notice requirements for non-renewal at the end of the term **must be written into the contract itself**. If the contract is silent, it terminates automatically upon reaching the 3-year end date, and there is no automatic statutory extension or mandatory notice period unless stipulated in the agreement (though specific compensation rules may apply if public retail sales have been conducted there for the last 5 years and the tenant requests renewal) [LAU, Artículo 34].","[LAU, artículo 10] [LAU, artículo 33] [LAU, artículo 34] [LAU, artículo 3] [LAU, artículo 4] [LAU, artículo 9 bis] [LAU, artículo 9] [LAU, disposición transitoria tercera] [LAU, preámbulo]",,,
+q24,multi,What is a large landlord (gran tenedor) and what must they do if a vulnerable tenant asks for the extraordinary extension at the end of the contract?,"Someone who owns more than ten residential urban properties or more than 1,500 m² of residential floor space (excluding garages and storage rooms); they must accept the extraordinary extension of up to one year if the tenant proves vulnerability with a social-services report.","### Definition of a Large Landlord (*Gran Tenedor*)
+
+A large landlord (*gran tenedor*) is defined as any natural or legal person who owns:
+* More than **ten residential urban properties**, or 
+* A built-up residential surface area of **more than 1,500 m²** (excluding garages and storage rooms) [LDV, Artículo 3].
+
+*Note:* This general definition can be lowered by an autonomous community in a declared stressed residential market area (*entorno de mercado residencial tensionado*) to owners of **five or more** residential properties [LDV, Artículo 3]. This status is accredited via a certificate from the Property Registry (*Registro de la Propiedad*) [LDV, Artículo 3].
+
+---
+
+### Obligation Regarding the Extraordinary Extension (*Prórroga Extra extraordinaria*)
+
+When a lease (or its mandatory or tacit extension period) reaches its end, a tenant who is in a situation of social and economic vulnerability may request an **extraordinary extension** of the contract for a maximum period of **one year**, during which the same terms and conditions of the current contract continue to apply [LAU, Artículo 10].
+
+* **Requirement:** The tenant must accredit their situation of social and economic vulnerability using a report or certificate issued within the last year by municipal or autonomous social services [LAU, Artículo 10].
+* **Mandatory Acceptance:** If the landlord is a large landlord (*gran tenedor*), **they must obligatorily accept** this request, unless a new rental contract has already been signed between the parties [LAU, Artículo 10].","[LAU, artículo 10] [LDV, artículo 3] [LDV, disposición transitoria tercera] [LDV, preámbulo]",,,
+q25,multi,"On a five-year residential lease, can the landlord charge me the estate agency fees, and how much can they ask as a guarantee on top of the deposit?",No: property management and contract formalisation costs cannot be passed on to the tenant. The additional guarantee cannot exceed two months' rent.,"**Estate Agency Fees:**
+No, the landlord cannot charge you the estate agency fees or the costs of formalising the contract [LAU, Artículo 20]. The law states that management and formalisation fees cannot be passed on to the tenant, either directly or indirectly, under any concept or name [LAU, Artículo 20].
+
+**Additional Guarantee:**
+Apart from the mandatory cash deposit (fianza) of one month's rent [LAU, Artículo 36], the landlord can ask for additional guarantees (garantías adicionales) to secure compliance with your obligations [LAU, Artículo 36]. For a residential lease of up to five years, the value of this additional guarantee **cannot exceed two monthly rent payments** [LAU, Artículo 36]. Additionally, landlords are explicitly prohibited from requiring the tenant to take out rent default insurance (seguros de impago de renta) or similar coverages [LAU, Artículo 36].","[LAU, artículo 17] [LAU, artículo 1] [LAU, artículo 20] [LAU, artículo 36] [LAU, disposición adicional tercera] [LAU, preámbulo]",,,
+q26,multi,"I want to rent my flat to tourists. Is that governed by the LAU, and what majority does the owners' association need to limit or ban it?","No: tourist lets under a specific regime are excluded from the LAU. An agreement approving, limiting or banning them needs three fifths of the owners representing three fifths of the ownership shares.","**Is it governed by the LAU?**
+
+No. Tourist rentals are expressly excluded from the scope of the Urban Leases Act [LAU, Artículo 5].
+
+**What majority does the owners' association need to limit or ban it?**
+
+The owners' association requires the favorable vote of **three-fifths of the total owners** who also represent **three-fifths of the ownership quotas** to explicitly approve, limit, condition, or prohibit tourist rental activity [LPH, Artículo diecisiete]. This same majority is required for agreements establishing special expense quotas or an increase of up to 20% in the common expense participation for the dwelling where the activity takes place [LPH, Artículo diecisiete]. 
+
+Furthermore, any owner wanting to carry out a tourist rental must previously obtain the express approval of the owners' association under those same terms [LPH, Artículo séptimo].","[LAU, artículo 38] [LAU, artículo 5] [LAU, disposición adicional segunda] [LAU, disposición final primera] [LPH, artículo diecisiete] [LPH, artículo séptimo] [LPH, disposición adicional segunda]",,,
+q27,multi,"How long does a stressed-area declaration last, and how much can the rent of a new contract in that area rise compared with the previous one?","Three years, extendable annually. The initial rent cannot exceed that of the last contract in force in the previous five years (as updated), except for an extra 10% in cases such as renovation, energy improvement, accessibility or contracts of ten years or more.","### Duration of a Stressed-Area Declaration
+The initial validity of a stressed residential market zone [zona de mercado residencial tensionado] declaration is **three years** [LDV, Artículo 18]. It can be extended annually following the same procedure if the conditions that motivated the declaration persist and the public measures taken to improve the situation are justified [LDV, Artículo 18].
+
+### Rent Increase Limit for a New Contract
+For a new lease contract in a stressed area, the agreed rent **cannot exceed the last rent of the previous lease contract** that was in effect within the last five years, after applying the annual update clause of that previous contract [LAU, Artículo 17]. 
+
+However, the rent may be increased by **up to a maximum of 10%** beyond the previous rent only if certain conditions are met [LAU, Artículo 17]:
+* **Rehabilitation:** The property has undergone a rehabilitation action finalized within the two years prior to the new contract [LAU, Artículo 17].
+* **Energy efficiency:** Actions have been carried out resulting in a primary non-renewable energy consumption reduction of at least 30%, or an improvement in the energy rating to 'A' or 'B', finalized within the two years prior to the new contract [LAU, Artículo 17].
+* **Long-term contract:** A contract of 10 or more years is signed, or a right to extend the contract for 10 or more years is granted to the tenant under the terms established by law [LAU, Artículo 17].
+
+*Note: If no lease contract has been in effect for the property in the last five years, a special limit may apply if explicitly provided in the resolution establishing the stressed zone [LAU, Artículo 17].*","[LAU, artículo 17] [LDV, artículo 18]",,,
+q28,multi,"My landlord is selling the flat. Do I have a right to buy it first and within what period, and must the buyer respect my lease?","Yes, a right of first refusal within 30 calendar days of formal notice (right of redemption if not notified). The buyer takes over the lease for the first five years (seven if the landlord was a legal entity).","**Yes, you have the right of first refusal, and the buyer must respect your lease under the following conditions:**
+
+### 1. Right to Buy First (Right of Preferential Acquisition)
+* **Right of First Refusal (*Tanteo*):** If your landlord decides to sell the flat, you have the right to match the sale price and conditions. You must exercise this right within **thirty natural days** from the day after you are reliably notified (*notificación fehaciente*) of the decision to sell, the price, and the essential conditions [LAU, Artículo 25].
+* **Right of Retraction (*Retracto*):** If the landlord sells the flat without notifying you, if essential details are omitted from the notification, or if the actual sale price is lower than what you were told, you have the right to step into the buyer's shoes and purchase the property on the same terms. This right expires **thirty natural days** from the day after the new owner reliably notifies you of the final sale conditions by giving you a copy of the deed [LAU, Artículo 25].
+* **Waiver:** Any agreement in the contract where the tenant waives these rights is invalid [LAU, Artículo 25].
+
+### 2. Must the Buyer Respect Your Lease?
+* **During the first 5 or 7 years:** The buyer is automatically subrogated into the landlord's rights and obligations for the **first five years** of the contract (or **seven years** if the previous landlord was a legal entity/company), even if the buyer is a third party protected by Article 34 of the Mortgage Law (*Ley Hipotecaria*) [LAU, Artículo 14].
+* **For contracts longer than 5 or 7 years:** If your lease is for a longer agreed duration, the buyer must respect the full term *unless* they meet the good-faith third-party requirements of the Mortgage Law [LAU, Artículo 14]. If they are protected and terminate the lease early after the initial 5 or 7 years, the former landlord must indemnify you with **one month's current rent for each remaining year** of the contract that exceeds that initial period [LAU, Artículo 14].
+
+*If you are facing a dispute regarding a sale or notification deadlines, it is recommended to consult a lawyer or your local consumer office.*","[LAU, artículo 13] [LAU, artículo 14] [LAU, artículo 25] [LAU, artículo 29] [LAU, artículo 31]",,,
+q29,multi,"My landlord will not carry out necessary repairs. Can I terminate the contract, and how long do they have to reply if I send them a written quote?","Yes, failure to carry out the repairs in Article 21 allows the tenant to terminate the contract. After a written request with a quote the landlord has fifteen calendar days; if they do not reply the tenant may do the work and deduct it from the rent.","The landlord has a maximum period of **fifteen calendar days** from the receipt of your written request (with a reasonable quote attached) to accept the budget, propose an alternative repair, or execute the repair directly [LAU, Artículo 21]. 
+
+Regarding your contract, the indexed laws (the Urban Leases Act, [LAU]) do not specifically provide a right to terminate the contract (*desistimiento*) simply because a landlord fails to carry out necessary habitability repairs. Instead, if the landlord fails to reply within the 15-day deadline or refuses without justification, the law allows you to execute the necessary repairs yourself and deduct their cost from future rent [LAU, Artículo 21]. 
+
+*(Note: Article 21 bis also mentions a 5-business-day reply deadline for temporary housing conservation, but standard residential repairs fall under the 15-calendar-day rule with an attached quote [LAU, Artículo 21]).*
+
+For a dispute over repairs or contract termination options, it is recommended to consult a lawyer or a local consumer office.","[LAU, artículo 21 bis] [LAU, artículo 21] [LAU, artículo 22] [LAU, artículo 23]",,,
+q30,unanswerable,Within what period must the occupant of a home produce a title justifying their possession when the owner asks a court for immediate recovery of a squatted home?,"The corpus (LAU, Housing Law, LPH) does not regulate the procedure for recovering illegally occupied homes; the assistant should say it does not cover this.","I don't know: the indexed laws (the Urban Leases Act, the Housing Law, and the Owners' Associations Act) do not cover the specific procedural deadlines for an occupant to justify their possession in a court action for the immediate recovery of a squatted home. 
+
+That specific procedure is regulated by the Civil Procedure Law (*Ley de Enjuiciamiento Civil*, specifically the summary procedure for illegal squatting under Article 250.1.4º), which is not part of the indexed corpus. You would need to consult the Civil Procedure Law or a legal professional in Spain for the exact procedural deadlines.","[LAU, artículo 9] [LAU, disposición adicional quinta] [LDV, artículo 10] [LDV, artículo 16] [LDV, artículo 6] [LDV, disposición transitoria primera] [LDV, disposición transitoria tercera]",,,
+q31,unanswerable,What is the value of the IRAV rent index that the INE has published this month?,The corpus defines the IRAV as the cap on rent updates but does not contain its published value; it should say it does not know and point to the INE.,"I don't know: the indexed laws mention the Índice de Referencia para la Actualización Anual de los Contratos de Arrendamiento de Vivienda (IRAV) as the reference index for rent updates [LAU, Artículo 18], but they do not contain the monthly values published by the National Statistics Institute (INE). You will need to check the official INE website or publications for the current monthly figure.","[LAU, artículo 17] [LAU, artículo 18] [LAU, disposición adicional undécima] [LAU, disposición final tercera] [LDV, disposición final sexta]",,,
+q32,unanswerable,Which municipalities in Catalonia have been declared stressed residential market areas?,The corpus regulates how stressed areas are declared but does not list the declared areas; it should say it does not cover this.,"I don't know: the indexed laws do not contain a list of the specific municipalities in Catalonia declared as stressed residential market areas [zonas de mercado residencial tensionado]. 
+
+While the indexed legislation (such as the Housing Law, [LDV, Artículo 18]) establishes the legal requirements and procedures for declaring such areas, the actual lists or resolutions designating specific municipalities are issued by the competent housing administrations and published periodically by the Ministry [LAU, Disposición transitoria séptima], which are outside the scope of the indexed national statutes. 
+
+To find the current list of municipalities, you should check the official resolutions published in the State Official Gazette (*Boletín Oficial del Estado* - BOE), the Official Gazette of the Generalitat of Catalonia (*Diari Oficial de la Generalitat de Catalunya* - DOGC), or consult the housing department of the Generalitat of Catalonia.","[LAU, disposición transitoria séptima] [LDV, artículo 18]",,,
+q33,unanswerable,How much Property Transfer Tax (ITP) does the tenant pay when signing a lease?,The corpus does not regulate ITP; it should say it does not cover this.,"I don't know: the indexed laws (the Urban Leases Act [LAU], the Housing Law [LDV], and the Horizontal Property Act [LPH]) do not cover the Property Transfer Tax (*Impuesto sobre Transmisiones Patrimoniales*, ITP). 
+
+The ITP is a regional tax regulated by tax law (*Ley del Impuesto sobre Transmisiones Patrimoniales y Actos Jurídicos Documentados*) and regional autonomous community regulations, which are outside the scope of the laws currently in our corpus. To find out the applicable tax rate and how it is calculated for a residential lease in Spain, you should check the official website of the tax agency (*Agencia Tributaria*) or the regional tax authority (*Hacienda Autonómica*) of the region where the property is located, or consult a local tax advisor.","[LAU, artículo 14] [LAU, artículo 17] [LAU, artículo 20] [LAU, disposición final primera] [LDV, disposición final segunda]",,,
+q34,unanswerable,How much money per month does the Bono Alquiler Joven (youth rent subsidy) pay and who can apply?,The corpus does not regulate the Bono Alquiler Joven; it should say it does not cover this.,"I don't know: the indexed laws (the Urban Leases Act, the Housing Law, and the Horizontal Property Act) do not cover the *Bono Alquiler Joven* or its amounts and requirements. 
+
+These types of housing subsidies are typically regulated by specific Royal Decrees and regional housing department orders rather than the core rental and property laws in our corpus. You can check the official Ministry of Housing and Urban Agenda website or your regional autonomous community's housing department for details on current amounts, deadlines, and application rules.","[LAU, disposición adicional cuarta] [LAU, disposición adicional undécima] [LAU, disposición final primera] [LDV, preámbulo]",,,
+q35,unanswerable,What prison sentence does the crime of squatting in a home (usurpación) carry?,The corpus does not contain the Criminal Code; it should say it does not cover this.,"I don't know: the indexed laws (the Urban Leases Act, the Housing Law, and the Horizontal Property Act) do not cover criminal penalties or prison sentences for the crime of squatting (*usurpación*). 
+
+Criminal offenses and their penalties in Spain are regulated by the Spanish Penal Code (*Código Penal*), which is not part of the current legal corpus. To find the specific prison sentences for *usurpación*, you should consult the Spanish Penal Code (specifically articles relating to *usurpación de bienes inmuebles*) or seek advice from a criminal lawyer or legal aid office (*turno de oficio*).","[LAU, artículo 5] [LDV, artículo 10] [LDV, artículo 6] [LDV, disposición transitoria tercera] [LDV, preámbulo]",,,
+q36,unanswerable,"Within what period must the deposit be lodged with the Community of Madrid's agency, and what is the fine if it is not?",The LAU lets regions require deposits to be lodged but the corpus does not contain Madrid's rules; it should say it does not cover the period or the fine.,"I don't know: the indexed laws do not specify the exact deposit deadline or the regional fines for the Community of Madrid. 
+
+While the Urban Leases Act allows autonomous communities to require landlords to deposit the rent deposit ([LAU, Disposición adicional tercera]), the specific deadlines and penalty amounts are established by regional housing regulations or regional decrees, which are not covered in the indexed state laws. 
+
+To find the exact period and fines applicable in Madrid, you should consult the regional housing department (*Consejería de Vivienda de la Comunidad de Madrid*) or a local lawyer.","[LAU, artículo 38] [LAU, artículo 43] [LAU, artículo 47] [LAU, artículo 50] [LAU, disposición adicional tercera]",,,
