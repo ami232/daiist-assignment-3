@@ -1,0 +1,77 @@
+{
+  "n": 35,
+  "correct": {
+    "n": 35,
+    "agreement": 0.971,
+    "cohen_kappa": 0.785,
+    "kappa_note": null,
+    "confusion": {
+      "human_1_judge_1": 32,
+      "human_1_judge_0": 1,
+      "human_0_judge_1": 0,
+      "human_0_judge_0": 2
+    },
+    "human_positive_rate": 0.943,
+    "judge_positive_rate": 0.914,
+    "disagreements": [
+      "q25"
+    ],
+    "by_kind": {
+      "single": {
+        "n": 22,
+        "agreement": 1.0,
+        "human_positive": 21,
+        "judge_positive": 21
+      },
+      "multi": {
+        "n": 7,
+        "agreement": 0.857,
+        "human_positive": 6,
+        "judge_positive": 5
+      },
+      "unanswerable": {
+        "n": 6,
+        "agreement": 1.0,
+        "human_positive": 6,
+        "judge_positive": 6
+      }
+    }
+  },
+  "supported": {
+    "n": 35,
+    "agreement": 0.971,
+    "cohen_kappa": null,
+    "kappa_note": "kappa not interpretable: human labels have no variance (all 1)",
+    "confusion": {
+      "human_1_judge_1": 34,
+      "human_1_judge_0": 1,
+      "human_0_judge_1": 0,
+      "human_0_judge_0": 0
+    },
+    "human_positive_rate": 1.0,
+    "judge_positive_rate": 0.971,
+    "disagreements": [
+      "q15"
+    ],
+    "by_kind": {
+      "single": {
+        "n": 22,
+        "agreement": 0.955,
+        "human_positive": 22,
+        "judge_positive": 21
+      },
+      "multi": {
+        "n": 7,
+        "agreement": 1.0,
+        "human_positive": 7,
+        "judge_positive": 7
+      },
+      "unanswerable": {
+        "n": 6,
+        "agreement": 1.0,
+        "human_positive": 6,
+        "judge_positive": 6
+      }
+    }
+  }
+}

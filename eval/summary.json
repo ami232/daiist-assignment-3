@@ -1,0 +1,47 @@
+{
+  "by_kind": {
+    "single": {
+      "answered": 22,
+      "judged": 22,
+      "correct": 21,
+      "supported": 21,
+      "refusals": 1,
+      "partial_refusals": 0,
+      "wrong_refusals": 1,
+      "unsupported_numbers": 0
+    },
+    "multi": {
+      "answered": 7,
+      "judged": 7,
+      "correct": 5,
+      "supported": 7,
+      "refusals": 0,
+      "partial_refusals": 0,
+      "wrong_refusals": 0,
+      "unsupported_numbers": 2
+    },
+    "unanswerable": {
+      "answered": 6,
+      "judged": 6,
+      "correct": 6,
+      "supported": 6,
+      "refusals": 6,
+      "partial_refusals": 0,
+      "correct_refusals": 6
+    }
+  },
+  "cost_per_question": {
+    "questions": 35,
+    "mean_seconds": 30.5,
+    "median_seconds": 22.2,
+    "mean_input_tokens": 9219,
+    "mean_output_tokens": 371,
+    "mean_model_calls": 2.49,
+    "mean_searches": 1.43,
+    "models_used": [
+      "gemini-3.5-flash-lite"
+    ],
+    "judge_tokens_total": 163070
+  },
+  "missing_or_failed": []
+}

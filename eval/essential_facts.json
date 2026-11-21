@@ -1,0 +1,492 @@
+{
+  "q01": {
+    "key": "43af1d7cbfec77f5",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The preliminary Class A IPO price range was $70.00–$78.00 per share.",
+      "The midpoint of the preliminary Class A IPO price range was $74.00."
+    ],
+    "secondary": [],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q02": {
+    "key": "018089ee51a80d72",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The total number of Class A shares offered in the preliminary base IPO was 825,000,000.",
+      "The number of Class A shares offered by Anthropic was 801,351,354.",
+      "The number of Class A shares offered by selling stockholders was 23,648,646."
+    ],
+    "secondary": [
+      "The figures exclude the overallotment option and the Class N private placement."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q03": {
+    "key": "2778b7739dce3aec",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The net proceeds were intended for general corporate purposes, including working capital, operating expenses, and capital expenditures.",
+      "The net proceeds were intended for investments in compute and infrastructure.",
+      "The net proceeds were intended for the hiring and retention of highly skilled personnel.",
+      "A portion of the proceeds could be used to acquire or invest in businesses, products, services, or technologies.",
+      "A portion of the proceeds was intended to satisfy anticipated RSU settlement tax withholding and remittance obligations of $3.8 billion."
+    ],
+    "secondary": [
+      "The $3.8 billion figure is based on an assumed $74.00 midpoint price and an assumed 50.90% tax withholding rate.",
+      "There were no agreements or commitments for material acquisitions at the time of the filing."
+    ],
+    "must_not_state": [
+      "Any claim that there were existing agreements or commitments for material acquisitions.",
+      "Any claim that the $3.8 billion figure is a final or fixed tax obligation rather than an anticipated amount based on specific assumptions."
+    ],
+    "frozen": true
+  },
+  "q04": {
+    "key": "99a4c89fb922bafb",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The combined net proceeds from the offering and concurrent private placement would change by approximately $793 million for a $1.00 change in the assumed offering price."
+    ],
+    "secondary": [
+      "The sensitivity analysis is based on the preliminary Use of Proceeds section of the IPO filings."
+    ],
+    "must_not_state": [
+      "Any specific dollar amount other than $793 million as the sensitivity figure for a $1.00 price change."
+    ],
+    "frozen": true
+  },
+  "q05": {
+    "key": "b540259ac5da109c",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The estimated immediate dilution in net tangible book value per share for new IPO investors is $65.79 per share."
+    ],
+    "secondary": [
+      "The calculation is based on a pro forma as adjusted net tangible book value of $8.21 per share as of September 30, 2026.",
+      "The calculation assumes an offering price of $74.00 per share."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q06": {
+    "key": "9e43751cc7fa7304",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The underwriters' overallotment option covered up to 123,750,000 additional Class A shares."
+    ],
+    "secondary": [
+      "The figure is based on the preliminary prospectus."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q07": {
+    "key": "f1dde136dda3fcaa",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The lock-up period ends upon the earlier of two specific events.",
+      "The first event is 6:00 AM Eastern Time on the second full trading day following the Q1 Earnings Release Date.",
+      "The second event is the close of trading on the 180th day after the date of the prospectus."
+    ],
+    "secondary": [
+      "If the 180th day is not a trading day, the second event occurs on the last trading day before the 180th day.",
+      "These lock-up terms apply to non-founder directors, officers, and current and former employees and consultants."
+    ],
+    "must_not_state": [],
+    "frozen": true,
+    "student_edit": "180th-day trading-day condition moved to secondary"
+  },
+  "q08": {
+    "key": "3d39df5085400dfd",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The Long-Term Benefit Trust (LTBT) held the power to elect Class T directors.",
+      "The Long-Term Benefit Trust (LTBT) held the power to remove Class T directors.",
+      "Class T directors constituted a majority of the board."
+    ],
+    "secondary": [],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q09": {
+    "key": "850c20d761e6b213",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The Class F common stock held by the Founder LLC carried an aggregate number of votes equal to 50.1% of the total voting power of the outstanding capital stock.",
+      "This voting power applied to matters submitted to stockholders generally.",
+      "This voting power applied before the Class F Sunset Time."
+    ],
+    "secondary": [
+      "The Class F common stock consisted of a single share.",
+      "The Founder LLC is composed of the co-founders.",
+      "The 50.1% figure represents voting power rather than economic ownership."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q10": {
+    "key": "87a12ac67868910f",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The specific public benefit the corporation will promote is to responsibly develop and maintain advanced AI for the long-term benefit of humanity."
+    ],
+    "secondary": [
+      "This public benefit is stated in Article III of the amended and restated certificate of incorporation."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q11": {
+    "key": "5a476a88d70385c5",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The nine EEA countries covered by the European retail offering are Germany, Denmark, Finland, France, Ireland, the Netherlands, Norway, Spain, and Sweden.",
+      "Switzerland was not part of the nine-country group."
+    ],
+    "secondary": [
+      "Switzerland was addressed separately in the prospectus."
+    ],
+    "must_not_state": [
+      "Switzerland was one of the nine covered EEA countries."
+    ],
+    "frozen": true
+  },
+  "q12": {
+    "key": "ce3015e5bfe68c99",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The underwriters decided how Class A shares were allotted to retail investors.",
+      "Allocations could differ because orders were subject to the underwriters' discretion to reject orders in whole or in part.",
+      "Allocations could differ because financial intermediaries could apply their own allocation principles to their clients."
+    ],
+    "secondary": [
+      "The allotment process applied to the European and Swiss retail offerings.",
+      "The information is sourced from the Plan of Allotment section of the EU Prospectus."
+    ],
+    "must_not_state": [
+      "The information is not in the corpus."
+    ],
+    "frozen": true
+  },
+  "q13": {
+    "key": "e8bd73a77e62fdb3",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "As of September 30, 2026, more than 1,900 customers generated $1 million or more of revenue for Anthropic on a trailing-twelve-month (TTM) basis."
+    ],
+    "secondary": [
+      "Approximately 250 customers had $10 million or more of revenue on a TTM basis as of September 30, 2026."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q14": {
+    "key": "b94543178e49c566",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The substantial majority of Anthropic's revenue came from pay-for-intelligence consumption-based pricing."
+    ],
+    "secondary": [
+      "The consumption is notably usage measured in tokens.",
+      "This information is derived from the 'How We Generate Revenue' section of the US Prospectus."
+    ],
+    "must_not_state": [],
+    "frozen": true,
+    "student_edit": "token measurement moved to secondary"
+  },
+  "q15": {
+    "key": "dcbb00002bd3fdef",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "Anthropic identified Amazon, Google, and Microsoft as the major cloud service providers (CSPs) it relies on.",
+      "Anthropic identified that these CSPs have strategic and investment relationships with the company and are also its customers, creating potential conflicts of interest."
+    ],
+    "secondary": [
+      "Broadcom is identified as a supplier of compute and critical components of its compute infrastructure, rather than a CSP.",
+      "These dependencies and relationships could adversely affect Anthropic's access to compute."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q16": {
+    "key": "fff5840308cdd230",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "Anthropic agreed to settle the Bartz copyright class action for $1.5 billion.",
+      "The settlement agreement was reached in September 2025.",
+      "The settlement was approved by the district court in July 2026."
+    ],
+    "secondary": [
+      "The case is titled Bartz, et al. v. Anthropic PBC."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q17": {
+    "key": "640452adf522c06a",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "For the full fiscal year 2025, Anthropic's revenue was $4,585 million.",
+      "For the full fiscal year 2025, Anthropic's net loss was $41,965 million."
+    ],
+    "secondary": [
+      "The figures are derived from the Consolidated Statements of Operations."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q18": {
+    "key": "d93b29ababab9726",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "For the nine months ended September 30, 2026, the Adjusted Operating Margin (non-GAAP) was 12%.",
+      "For the nine months ended September 30, 2026, the GAAP operating margin was (4)%."
+    ],
+    "secondary": [],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q19": {
+    "key": "404407e93cb2419b",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The maximum per-share price specified in the European retail offering documentation was $120.00."
+    ],
+    "secondary": [
+      "This price was a ceiling rather than the preliminary expected offering range or the final IPO price."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q20": {
+    "key": "faecd751306efb28",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "BaFin's approval covered the completeness of the prospectus.",
+      "BaFin's approval covered the comprehensibility of the prospectus.",
+      "BaFin's approval covered the consistency of the prospectus.",
+      "The approval did not imply an endorsement of Anthropic.",
+      "The approval did not imply an endorsement of the securities."
+    ],
+    "secondary": [],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q21": {
+    "key": "b198a28a415c1a10",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "Class E common stock was intended for employees other than the co-founders.",
+      "Class E common stock carried limited voting rights.",
+      "Class E common stock carried no economic rights."
+    ],
+    "secondary": [],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q22": {
+    "key": "1c61a161f0d123d0",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "A quorum of the board required a majority of the Whole Board.",
+      "The quorum required the presence of at least one At-Large Director."
+    ],
+    "secondary": [
+      "The charter describes a reconvening mechanism after at least 48 hours."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q23": {
+    "key": "9ab4de9ebeabbae5",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The US retail brokerage channels identified for IPO share sales were Charles Schwab, Fidelity, Robinhood, SoFi, and E*TRADE.",
+      "The European retail tranche was eligible to retail investors who are not qualified investors under the Prospectus Regulation.",
+      "Eligible European retail investors must be resident or located in one of the Covered EEA Countries."
+    ],
+    "secondary": [
+      "The eligibility criteria for the European retail tranche are defined in the EU Prospectus, Section 8.1.1 / D.1."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q24": {
+    "key": "a5b677946de385fd",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The strategic investors named in the Class N private placement are Google, NVIDIA, AMD, Broadcom, Micron, Microsoft, and TSMC.",
+      "The Class N private placement shares were not subject to the IPO lock-up."
+    ],
+    "secondary": [
+      "The private placement was valued at approximately $26.0 billion.",
+      "Resale of the Class N shares is subject to restrictions including Rule 144."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q25": {
+    "key": "0ef13e5e5c4f5891",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The estimated net proceeds from the offering and the concurrent private placement at the assumed $74.00 midpoint price were approximately $84.6 billion.",
+      "The reported total contractual obligations were approximately $900.9 billion.",
+      "The type of expense accounting for substantially all of the contractual obligations was compute and infrastructure."
+    ],
+    "secondary": [
+      "The estimated net proceeds would be approximately $93.7 billion if the underwriters’ option is exercised in full.",
+      "Payments under other compute and infrastructure arrangements without a fixed dollar commitment, estimated at $150–175 billion, were excluded from the total contractual obligations."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q26": {
+    "key": "788d76ded6a9fb25",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "Anthropic's multi-chip compute strategy includes AWS Trainium.",
+      "Anthropic's multi-chip compute strategy includes Google TPUs.",
+      "Anthropic's multi-chip compute strategy includes NVIDIA GPUs.",
+      "Anthropic's multi-chip compute strategy includes AMD GPUs.",
+      "Anthropic disclosed a risk regarding its reliance on a limited number of cloud service providers."
+    ],
+    "secondary": [],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q27": {
+    "key": "eb33801787cbd71f",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The revolving credit agreement requires a minimum liquidity of $5.0 billion as of the last day of each fiscal quarter, beginning with the quarter ending December 31, 2026.",
+      "As of September 30, 2026, Anthropic reported $95.6 billion in cash and cash equivalents.",
+      "As of September 30, 2026, Anthropic reported $36.3 billion in short-term investments."
+    ],
+    "secondary": [
+      "The reported cash and cash equivalents and short-term investments should not automatically be treated as the covenant-defined liquidity measure."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q28": {
+    "key": "a921e7db92b9215d",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "For the nine months ended September 30, 2026, the five largest customers represented approximately 25% of revenue.",
+      "For the nine months ended September 30, 2026, total revenue was $33,242 million."
+    ],
+    "secondary": [
+      "No single customer exceeded 10% of revenue during the nine-month period ended September 30, 2026."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q29": {
+    "key": "2daa10c441e668cc",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The co-founders' lock-up ends on the earlier of 6:00 AM Eastern Time on the second full trading day following the Q3 Earnings Release Date or the close of trading on the 365th day after the prospectus date.",
+      "The Class F voting-power sunset occurs when no Class F common stock remains outstanding.",
+      "The Class F voting-power sunset occurs upon the completion of the Class F Transition Period.",
+      "The Class F Transition Period commences when there have been fewer than three Continuing Founders for 90 consecutive calendar days."
+    ],
+    "secondary": [
+      "The expiration of the lock-up is subject to timed automatic expirations.",
+      "The condition regarding no Class F common stock remaining outstanding includes redemption agreed by a Supermajority of the Continuing Founders or dissolution of the Founder LLC."
+    ],
+    "must_not_state": [],
+    "frozen": true
+  },
+  "q30": {
+    "key": "db9dec4102abb404",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The final IPO offer price per Class A share is not available in the provided corpus."
+    ],
+    "secondary": [
+      "The provided documents only contain a preliminary price range of $70.00–$78.00 per share."
+    ],
+    "must_not_state": [
+      "Any specific dollar amount as the final IPO offer price."
+    ],
+    "frozen": true
+  },
+  "q31": {
+    "key": "b9dfad382d4c5898",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The requested information regarding the closing price of Anthropic shares on their first day of public trading is not available in the provided corpus."
+    ],
+    "secondary": [],
+    "must_not_state": [
+      "Any closing price for the first day of trading, or an estimate of it (e.g. the price range, the $74.00 midpoint or the $120.00 maximum price presented as the closing price)."
+    ],
+    "frozen": true,
+    "student_edit": "must_not_state narrowed to the requested fact (dates/context from the documents allowed)"
+  },
+  "q32": {
+    "key": "349eef8d563ea08c",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The actual revenue for Anthropic in Q4 2026 is not available in the provided corpus."
+    ],
+    "secondary": [
+      "Reported financial results in the corpus only cover periods ending on or before September 30, 2026.",
+      "Run-rate revenue is not equivalent to actual Q4 financial results."
+    ],
+    "must_not_state": [
+      "Any specific numerical figure for Q4 2026 revenue.",
+      "Any claim that Q4 2026 financial results are included in the D1-D3 corpus."
+    ],
+    "frozen": true
+  },
+  "q33": {
+    "key": "63c0dcc2132aaf99",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The requested information regarding a consensus 12-month analyst price target for Anthropic shares is not available in the provided corpus."
+    ],
+    "secondary": [
+      "Anthropic has not conducted an IPO as of the knowledge cutoff date.",
+      "The corpus does not contain analyst research or price target data."
+    ],
+    "must_not_state": [
+      "Any consensus analyst price target, or an estimate of it (e.g. a figure derived from the price range or from other figures in the filings)."
+    ],
+    "frozen": true,
+    "student_edit": "must_not_state narrowed to the requested fact (dates/context from the documents allowed)"
+  },
+  "q34": {
+    "key": "409d42e76e90145b",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The requested information regarding the CEO's individual total compensation for fiscal 2025 is not available in the provided corpus."
+    ],
+    "secondary": [
+      "Executive compensation information was intentionally excluded from the processed documents."
+    ],
+    "must_not_state": [
+      "Any specific dollar amount for salary, bonus, or equity awards for the CEO for fiscal 2025."
+    ],
+    "frozen": true
+  },
+  "q35": {
+    "key": "372155c06552b8b1",
+    "model": "gemini-3.1-flash-lite",
+    "essential": [
+      "The requested revenue guidance for full-year 2027 is not available in the provided corpus."
+    ],
+    "secondary": [
+      "Run-rate revenue figures do not constitute formal management guidance."
+    ],
+    "must_not_state": [
+      "Any specific revenue dollar amount for 2027",
+      "Any projected growth percentage for 2027",
+      "Any claim that management provided guidance for 2027"
+    ],
+    "frozen": true
+  }
+}
