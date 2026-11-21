@@ -140,7 +140,67 @@ How to work:
 Reply in two to six sentences, then list the citations you used. Finish with: "This reads the texts; it is not legal advice."
 ```
 
-**Transcript from my editor:** TODO (paste one conversation from Claude Code or Copilot where the subagent answers a question).
+**Transcript from my editor** (Claude Code in VS Code, `corpus` MCP server connected, 21 Nov 2026, 14:35). The editor's main Claude delegates to `corpus-researcher` and relays its answer. Lines unrelated to this project are left out.
+
+```
+USER: Use the corpus-researcher agent to answer: "Do we have to tell users that our customer-support chatbot is an AI?"
+
+Agent: Chatbot AI disclosure question
+  IN: Answer this user question from the corpus: "Do we have to tell users that our customer-support chatbot is an AI?"
+      Context: a company deploys/provides a customer-support chatbot that interacts directly with people. Check the AI Act
+      for transparency obligations for AI systems that interact with natural persons (who must inform, when, exceptions,
+      and how/when the information must be given). Also check whether the GDPR adds anything relevant to informing users
+      (e.g. information to data subjects, automated decision-making) - search it separately with its own wording. Return a
+      short cited answer per the corpus rules, or say the corpus does not cover it.
+  Finished
+
+ANSWER:
+Yes, under the AI Act, unless an exception applies. The corpus-researcher agent found this:
+
+The rule: providers "shall ensure that AI systems intended to interact directly with natural persons are designed and
+developed in such a way that the natural persons concerned are informed that they are interacting with an AI system"
+[AI Act, Article 50(1)-(2)].
+Exceptions: you don't have to say so if it is "obvious from the point of view of a natural person who is reasonably
+well-informed, observant and circumspect", or for AI systems authorised by law to fight criminal offences
+[AI Act, Article 50(1)-(2)].
+How and when: the notice must be given "in a clear and distinguishable manner at the latest at the time of the first
+interaction or exposure" and must meet accessibility requirements [AI Act, Article 50(4)-(7)].
+GDPR: it has no rule about saying a chatbot is an AI. If the chatbot collects personal data, you must tell users who you
+are, why you process their data, on what legal basis, and who receives it [GDPR, Article 13(1)]. You must also tell them
+about any automated decision-making under Article 22 [GDPR, Article 13(2)-(4)].
+The agent's search left two gaps:
+ - Who carries the duty: the passages it found put the duty on the provider of the AI system. If your company only
+   deploys someone else's chatbot, the corpus results don't say what you must do yourselves.
+ - Automated decisions: it didn't retrieve GDPR Article 22, so it can't say whether your chatbot counts as automated
+   decision-making.
+This reads the texts; it is not legal advice.
+
+USER: Use the corpus-researcher agent to answer: "Which Spanish authority supervises the AI Act?"
+
+Agent: Spanish AI Act authority question
+  IN: Answer this user question from the corpus: "Which Spanish authority supervises the AI Act?" Search the AI Act for
+      what it says about national competent authorities / market surveillance authorities and how Member States designate
+      them. Do not answer from memory; if the corpus does not name a specific Spanish authority, say so per the corpus
+      rules and add what the closest passage does say, cited.
+  Finished
+
+ANSWER:
+The corpus does not cover this. The AI Act leaves it to each Member State to pick its own authority, and Spain's choice
+is not in the corpus.
+
+What the AI Act does say:
+ - Each country designates its own: every Member State "shall establish or designate as national competent authorities at
+   least one notifying authority and at least one market surveillance authority", and these authorities must act
+   "independently, impartially and without bias" [AI Act, Article 70(1)-(2)].
+ - Where to look: Member States must publish how to contact these authorities "by 2 August 2025". "The Commission shall
+   make a list of the single points of contact publicly available" [AI Act, Article 70(2)-(3)].
+ - EU bodies: for Union institutions, bodies, offices or agencies, "the European Data Protection Supervisor shall act as
+   the competent authority for their supervision" [AI Act, Article 70(6)-(9)].
+To get the Spanish name, you'd need Spain's own designation or the Commission's list. Neither is in the corpus.
+This reads the texts; it is not legal advice.
+```
+
+What it shows. Question 1: the subagent searched the AI Act and the GDPR separately, cited exact articles and quoted the text. It also said honestly what its searches did not cover (the deployer's duty, GDPR Article 22), which is a retrieval gap I can use as a test case. Question 2 (the same topic as unanswerable q31): it began with the exact refusal wording required by `AGENTS.md`, said what is missing, and only added cited nearby passages. Note that the editor's main Claude wrote the delegation prompts, including the hint to search the GDPR "separately with its own wording", so this shows the subagent following instructions, not a bare question.
 
 ## Adding a document
 
