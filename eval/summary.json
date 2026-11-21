@@ -1,0 +1,48 @@
+{
+  "model": "gemini-3.8-flash",
+  "judge_model": "gemini-3.8-flash",
+  "design": "structure",
+  "method": "vector",
+  "questions": 36,
+  "correct": 35,
+  "correct_answerable": "28/29",
+  "unsupported": 0,
+  "correct_refusals": "7/7",
+  "wrong_refusals": "0/29",
+  "citations_valid": "36/36",
+  "cites_expected_article": "29/29",
+  "guardrail_fired": 1,
+  "failures_by_cause": {
+    "wrong answer from right passage": 1
+  },
+  "mean_tokens_per_question": 5890,
+  "mean_seconds_per_question": 116.7,
+  "agreement_with_human": {
+    "graded_by_human": 36,
+    "correct": {
+      "n": 36,
+      "agreement": 1.0,
+      "cohen_kappa": 1.0,
+      "disagreements": []
+    },
+    "supported": {
+      "n": 36,
+      "agreement": 0.667,
+      "cohen_kappa": 0.0,
+      "disagreements": [
+        "q05",
+        "q13",
+        "q14",
+        "q15",
+        "q18",
+        "q23",
+        "q27",
+        "q29",
+        "q30",
+        "q33",
+        "q34",
+        "q35"
+      ]
+    }
+  }
+}
