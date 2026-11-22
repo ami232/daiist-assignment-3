@@ -1,8 +1,8 @@
 # Assignment 3 Report
 
-- **Name**: [TODO: your full name]
-- **Student ID**: [TODO]
-- **Group**: [TODO: BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
+- **Name**: María Martínez González
+- **Student ID**: 18751
+- **Group**: BBADBA 5B
 
 ## Use case
 
