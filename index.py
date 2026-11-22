@@ -85,6 +85,11 @@ RETRIEVAL_DESIGNS = {
 }
 DIVERSE_CANDIDATES = 3  # fetch k x 3 candidates before applying the per-page cap
 
+# The design chosen from the retrieval evaluation (hit@5 90% with 598 words,
+# against 93% with 942 words for fixed): used by server.py and the agent.
+SEARCH_DESIGN = "structure-diverse"
+SEARCH_K = 5
+
 STRUCTURE_MAX_WORDS = 300
 FIXED_WINDOW_WORDS = 200
 OVERLAP_WORDS = 40
