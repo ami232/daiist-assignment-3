@@ -1,75 +1,112 @@
-id,kind,design,rank_any,rank_all,top_score,top1,words@1,words@3,words@5
-q01,single,structure,1,1,0.8338,travel-and-leave/leave › Types of leave › Annual leave,124,368,677
-q01,single,fixed,1,1,0.7661,travel-and-leave/leave › Reasons someone can take leave,200,600,1000
-q02,single,structure,1,1,0.7348,travel-and-leave/leave › Types of leave › Annual leave › Use or Lose,183,512,725
-q02,single,fixed,1,1,0.7239,travel-and-leave/leave › Types of leave › Annual leave › Use or Lose,200,600,1000
-q03,single,structure,1,1,0.7697,travel-and-leave/leave › Types of leave › Court leave (jury duty),105,536,679
-q03,single,fixed,1,1,0.7507,travel-and-leave/leave › Types of leave › Court leave (jury duty),200,600,1000
-q04,single,structure,1,1,0.8441,travel-and-leave/leave › Types of leave › Sick leave › For bereavement purposes,106,276,459
-q04,single,fixed,1,1,0.8074,travel-and-leave/leave › Types of leave › Sick leave › For bereavement purposes › Civilian,200,600,1000
-q05,single,structure,1,1,0.8708,travel-and-leave/leave › Types of leave › Administrative Leave,116,472,698
-q05,single,fixed,1,1,0.8268,"travel-and-leave/leave › Types of leave › Administrative Leave › Blood, bone marrow, and organ donation",200,600,1000
-q06,single,structure,1,1,0.7885,travel-and-leave/leave › Types of leave › Award leave,205,512,583
-q06,single,fixed,1,1,0.7325,travel-and-leave/leave › Types of leave › Award leave,200,600,1000
-q07,single,structure,1,1,0.818,travel-and-leave/leave › Types of leave › Unpaid leave,185,386,706
-q07,single,fixed,1,1,0.7858,travel-and-leave/leave › Types of leave › Unpaid leave,147,547,947
-q08,single,structure,1,1,0.8188,travel-and-leave/paid-parental-leave › About PPL,233,420,482
-q08,single,fixed,1,1,0.793,travel-and-leave/paid-parental-leave › Introduction,200,600,1000
-q09,single,structure,1,1,0.734,travel-and-leave/paid-parental-leave › About PPL,233,457,572
-q09,single,fixed,1,1,0.7235,travel-and-leave/paid-parental-leave › Introduction,200,492,892
-q10,single,structure,1,1,0.8407,travel-and-leave/paid-parental-leave › Requesting paid parental leave › After birth/placement,138,360,686
-q10,single,fixed,1,1,0.7981,travel-and-leave/paid-parental-leave › Requesting paid parental leave › After birth/placement,200,600,892
-q11,single,structure,1,1,0.8206,travel-and-leave/fmla › About FMLA,110,251,410
-q11,single,fixed,1,1,0.805,travel-and-leave/fmla › Introduction,200,562,962
-q12,single,structure,1,1,0.8965,travel-and-leave/voluntary-leave-transfer-program › To receive donated hours › Eligibility,71,293,618
-q12,single,fixed,1,1,0.8553,travel-and-leave/voluntary-leave-transfer-program › Introduction,200,504,904
-q13,single,structure,1,1,0.7297,"travel-and-leave/overtime › Credit hours, in flexible work schedules",138,310,674
-q13,single,fixed,1,1,0.7191,"travel-and-leave/overtime › Overtime and Compensatory (Comp) time › Compensatory (Comp) time, depending on your salary level",200,600,868
-q14,single,structure,1,1,0.8201,"travel-and-leave/overtime › Overtime and Compensatory (Comp) time › Compensatory (Comp) time, depending on your salary level",159,303,453
-q14,single,fixed,1,1,0.7924,"travel-and-leave/overtime › Overtime and Compensatory (Comp) time › Compensatory (Comp) time, depending on your salary level",200,596,996
-q15,single,structure,2,2,0.8273,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Flexible schedule › Types of flexible schedules › Variable Week",149,414,651
-q15,single,fixed,1,1,0.7751,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Flexible schedule › Types of flexible schedules › Flexitour",200,600,1000
-q16,single,structure,1,1,0.7688,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Compressed schedule",240,527,744
-q16,single,fixed,1,1,0.7092,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Standard schedule",200,600,872
-q17,single,structure,4,4,0.7918,travel-and-leave/travel-and-leave-policies/travel-guide-faq › Questions about reimbursement › Issues with reimbursement,209,567,1069
-q17,single,fixed,1,1,0.7931,travel-and-leave/travel-and-leave-policies/travel-guide-4-reimbursement › Brief overview of vouchers,139,537,937
-q18,single,structure,1,1,0.7948,travel-and-leave/travel-and-leave-policies/unofficial-foreign-travel › Reporting Personal Foreign Travel,66,201,417
-q18,single,fixed,1,1,0.7977,travel-and-leave/travel-and-leave-policies/unofficial-foreign-travel › Reporting Personal Foreign Travel,132,532,930
-q19,single,structure,1,1,0.8514,getting-started/equipment › Laptop › Bring Your Own Device (BYOD),209,473,797
-q19,single,fixed,1,1,0.7811,getting-started/equipment › Laptop › Bring Your Own Device (BYOD),200,600,1000
-q20,single,structure,1,1,0.783,getting-started/equipment › Phone › Rules,279,571,765
-q20,single,fixed,1,1,0.7368,getting-started/equipment › Laptop › Admin rights,200,600,1000
-q21,single,structure,1,1,0.7845,travel-and-leave/going-out-of-office › Your overall responsibilities,115,351,641
-q21,single,fixed,1,1,0.7455,travel-and-leave/going-out-of-office › Your overall responsibilities,200,600,1000
-q22,single,structure,1,1,0.8502,hiring-staying-or-changing-jobs/promotions › Introduction to the Merit Promotion process,272,325,602
-q22,single,fixed,1,1,0.7988,hiring-staying-or-changing-jobs/promotions › Introduction to the Merit Promotion process,200,482,882
-q23,multi,structure,1,3,0.7908,travel-and-leave/leave › Types of leave › Sick leave,126,263,474
-q23,multi,fixed,2,4,0.7551,travel-and-leave/fmla › How FMLA works,200,600,962
-q24,multi,structure,1,,0.8154,travel-and-leave/fmla › How FMLA works › Paid Parental Leave and FMLA,118,321,491
-q24,multi,fixed,1,4,0.8183,travel-and-leave/fmla › How FMLA works,200,562,962
-q25,multi,structure,1,,0.798,travel-and-leave/advanced-sick-leave › Introduction,90,382,552
-q25,multi,fixed,1,5,0.7765,travel-and-leave/advanced-sick-leave › Introduction,200,514,914
-q26,multi,structure,1,,0.8228,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Flexible schedule › Holidays and flexible schedules",131,397,757
-q26,multi,fixed,1,4,0.7857,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Flexible schedule › Types of flexible schedules › Maxiflex",200,600,1000
-q27,multi,structure,2,5,0.8017,hiring-staying-or-changing-jobs/leaving-tts › Introduction,12,254,378
-q27,multi,fixed,1,5,0.804,hiring-staying-or-changing-jobs/leaving-tts › Introduction,200,600,1000
-q28,multi,structure,1,4,0.8225,travel-and-leave/leave › Types of leave › Award leave,205,647,832
-q28,multi,fixed,1,5,0.7885,travel-and-leave/leave › Types of leave › Award leave,200,600,865
-q29,multi,structure,1,,0.8504,"travel-and-leave/overtime › Travel comp time, for everyone › Understanding travel comp time",101,245,542
-q29,multi,fixed,1,,0.832,"travel-and-leave/overtime › Travel comp time, for everyone › Understanding travel comp time",196,596,996
-q30,unanswerable,structure,,,0.7656,getting-started/classes/benefits › Transit subsidies,9,279,789
-q30,unanswerable,fixed,,,0.6654,getting-started/classes/benefits › Retirement › TSP (Thrift Savings Plan),77,472,872
-q31,unanswerable,structure,,,0.7793,travel-and-leave/leave › Types of leave › Annual leave,124,518,723
-q31,unanswerable,fixed,,,0.7476,travel-and-leave/leave › Introduction,200,600,1000
-q32,unanswerable,structure,,,0.7407,travel-and-leave/travel-and-leave-policies/travel-guide-3-travel › Meals and Incidental Expenses (M&IE),287,600,805
-q32,unanswerable,fixed,,,0.7317,travel-and-leave/travel-and-leave-policies/travel-guide-faq › Questions about reimbursement › Questions about entering specific expenses › How should I claim meals and incidental expenses?,200,600,1000
-q33,unanswerable,structure,,,0.7219,getting-started/classes/benefits › Retirement › TSP (Thrift Savings Plan),157,400,762
-q33,unanswerable,fixed,,,0.7014,getting-started/classes/benefits › Retirement › TSP (Thrift Savings Plan),77,477,877
-q34,unanswerable,structure,,,0.7672,hiring-staying-or-changing-jobs/ttsjobs › Introduction,12,296,342
-q34,unanswerable,fixed,,,0.7292,hiring-staying-or-changing-jobs/ttsjobs › Introduction,200,469,869
-q35,unanswerable,structure,,,0.7397,travel-and-leave/travel-and-leave-policies/first-time-travel-get-in-concur-pre-olu › Introduction,296,489,614
-q35,unanswerable,fixed,,,0.731,general-information-and-resources/employee-resources-policies/benefits-links › Introduction,200,477,877
-q36,unanswerable,structure,,,0.7932,hiring-staying-or-changing-jobs/ttsjobs › Introduction,12,106,311
-q36,unanswerable,fixed,,,0.7258,hiring-staying-or-changing-jobs/ttsjobs › Introduction,200,346,746
-q37,unanswerable,structure,,,0.7449,general-information-and-resources/employee-resources-policies/employment-verification › Introduction,9,66,316
-q37,unanswerable,fixed,,,0.7173,general-information-and-resources/employee-resources-policies/employment-verification › Introduction,131,508,844
+id,kind,design,rank_any,rank_all,rank_all_touch,top_score,top1,words@1,words@3,words@5
+q01,single,structure,1,1,1,0.8338,travel-and-leave/leave › Types of leave › Annual leave,124,368,677
+q01,single,fixed,1,1,1,0.7661,travel-and-leave/leave › Reasons someone can take leave,200,600,1000
+q01,single,structure-diverse,1,1,1,0.8338,travel-and-leave/leave › Types of leave › Annual leave,124,368,740
+q02,single,structure,1,1,1,0.7348,travel-and-leave/leave › Types of leave › Annual leave › Use or Lose,183,512,725
+q02,single,fixed,1,1,1,0.7239,travel-and-leave/leave › Types of leave › Annual leave › Use or Lose,200,600,1000
+q02,single,structure-diverse,1,1,1,0.7348,travel-and-leave/leave › Types of leave › Annual leave › Use or Lose,183,397,533
+q03,single,structure,1,1,1,0.7697,travel-and-leave/leave › Types of leave › Court leave (jury duty),105,536,679
+q03,single,fixed,1,1,1,0.7507,travel-and-leave/leave › Types of leave › Court leave (jury duty),200,600,1000
+q03,single,structure-diverse,1,1,1,0.7697,travel-and-leave/leave › Types of leave › Court leave (jury duty),105,528,753
+q04,single,structure,1,1,1,0.8441,travel-and-leave/leave › Types of leave › Sick leave › For bereavement purposes,106,276,459
+q04,single,fixed,2,2,1,0.8074,travel-and-leave/leave › Types of leave › Sick leave › For bereavement purposes › Civilian,200,600,1000
+q04,single,structure-diverse,1,1,1,0.8441,travel-and-leave/leave › Types of leave › Sick leave › For bereavement purposes,106,276,481
+q05,single,structure,1,1,1,0.8708,travel-and-leave/leave › Types of leave › Administrative Leave,116,472,698
+q05,single,fixed,1,1,1,0.8268,"travel-and-leave/leave › Types of leave › Administrative Leave › Blood, bone marrow, and organ donation",200,600,1000
+q05,single,structure-diverse,1,1,1,0.8708,travel-and-leave/leave › Types of leave › Administrative Leave,116,329,515
+q06,single,structure,1,1,1,0.7885,travel-and-leave/leave › Types of leave › Award leave,205,512,583
+q06,single,fixed,1,1,1,0.7325,travel-and-leave/leave › Types of leave › Award leave,200,600,1000
+q06,single,structure-diverse,1,1,1,0.7885,travel-and-leave/leave › Types of leave › Award leave,205,381,856
+q07,single,structure,1,1,1,0.818,travel-and-leave/leave › Types of leave › Unpaid leave,185,386,706
+q07,single,fixed,1,1,1,0.7858,travel-and-leave/leave › Types of leave › Unpaid leave,147,547,947
+q07,single,structure-diverse,1,1,1,0.818,travel-and-leave/leave › Types of leave › Unpaid leave,185,386,682
+q08,single,structure,1,1,1,0.8188,travel-and-leave/paid-parental-leave › About PPL,233,420,482
+q08,single,fixed,1,1,1,0.793,travel-and-leave/paid-parental-leave › Introduction,200,600,1000
+q08,single,structure-diverse,1,1,1,0.8188,travel-and-leave/paid-parental-leave › About PPL,233,420,553
+q09,single,structure,1,1,1,0.734,travel-and-leave/paid-parental-leave › About PPL,233,457,572
+q09,single,fixed,1,1,1,0.7235,travel-and-leave/paid-parental-leave › Introduction,200,492,892
+q09,single,structure-diverse,1,1,1,0.734,travel-and-leave/paid-parental-leave › About PPL,233,412,640
+q10,single,structure,1,1,1,0.8407,travel-and-leave/paid-parental-leave › Requesting paid parental leave › After birth/placement,138,360,686
+q10,single,fixed,1,1,1,0.7981,travel-and-leave/paid-parental-leave › Requesting paid parental leave › After birth/placement,200,600,892
+q10,single,structure-diverse,1,1,1,0.8407,travel-and-leave/paid-parental-leave › Requesting paid parental leave › After birth/placement,138,317,467
+q11,single,structure,1,1,1,0.8206,travel-and-leave/fmla › About FMLA,110,251,410
+q11,single,fixed,1,1,1,0.805,travel-and-leave/fmla › Introduction,200,562,962
+q11,single,structure-diverse,1,1,1,0.8206,travel-and-leave/fmla › About FMLA,110,265,456
+q12,single,structure,1,1,1,0.8965,travel-and-leave/voluntary-leave-transfer-program › To receive donated hours › Eligibility,71,293,618
+q12,single,fixed,1,1,1,0.8553,travel-and-leave/voluntary-leave-transfer-program › Introduction,200,504,904
+q12,single,structure-diverse,1,1,1,0.8965,travel-and-leave/voluntary-leave-transfer-program › To receive donated hours › Eligibility,71,211,338
+q13,single,structure,1,1,1,0.7297,"travel-and-leave/overtime › Credit hours, in flexible work schedules",138,310,674
+q13,single,fixed,1,1,1,0.7191,"travel-and-leave/overtime › Overtime and Compensatory (Comp) time › Compensatory (Comp) time, depending on your salary level",200,600,868
+q13,single,structure-diverse,1,1,1,0.7297,"travel-and-leave/overtime › Credit hours, in flexible work schedules",138,440,749
+q14,single,structure,1,1,1,0.8201,"travel-and-leave/overtime › Overtime and Compensatory (Comp) time › Compensatory (Comp) time, depending on your salary level",159,303,453
+q14,single,fixed,1,1,1,0.7924,"travel-and-leave/overtime › Overtime and Compensatory (Comp) time › Compensatory (Comp) time, depending on your salary level",200,596,996
+q14,single,structure-diverse,1,1,1,0.8201,"travel-and-leave/overtime › Overtime and Compensatory (Comp) time › Compensatory (Comp) time, depending on your salary level",159,416,839
+q15,single,structure,2,2,2,0.8273,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Flexible schedule › Types of flexible schedules › Variable Week",149,414,651
+q15,single,fixed,1,1,1,0.7751,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Flexible schedule › Types of flexible schedules › Flexitour",200,600,1000
+q15,single,structure-diverse,2,2,2,0.8273,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Flexible schedule › Types of flexible schedules › Variable Week",149,372,464
+q16,single,structure,1,1,1,0.7688,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Compressed schedule",240,527,744
+q16,single,fixed,1,1,1,0.7092,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Standard schedule",200,600,872
+q16,single,structure-diverse,1,1,1,0.7688,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Compressed schedule",240,527,624
+q17,single,structure,4,4,4,0.7918,travel-and-leave/travel-and-leave-policies/travel-guide-faq › Questions about reimbursement › Issues with reimbursement,209,567,1069
+q17,single,fixed,1,1,1,0.7931,travel-and-leave/travel-and-leave-policies/travel-guide-4-reimbursement › Brief overview of vouchers,139,537,937
+q17,single,structure-diverse,4,4,4,0.7918,travel-and-leave/travel-and-leave-policies/travel-guide-faq › Questions about reimbursement › Issues with reimbursement,209,567,962
+q18,single,structure,1,1,1,0.7948,travel-and-leave/travel-and-leave-policies/unofficial-foreign-travel › Reporting Personal Foreign Travel,66,201,417
+q18,single,fixed,1,1,1,0.7977,travel-and-leave/travel-and-leave-policies/unofficial-foreign-travel › Reporting Personal Foreign Travel,132,532,930
+q18,single,structure-diverse,1,1,1,0.7948,travel-and-leave/travel-and-leave-policies/unofficial-foreign-travel › Reporting Personal Foreign Travel,66,201,417
+q19,single,structure,1,1,1,0.8514,getting-started/equipment › Laptop › Bring Your Own Device (BYOD),209,473,797
+q19,single,fixed,1,1,1,0.7811,getting-started/equipment › Laptop › Bring Your Own Device (BYOD),200,600,1000
+q19,single,structure-diverse,1,1,1,0.8514,getting-started/equipment › Laptop › Bring Your Own Device (BYOD),209,533,688
+q20,single,structure,1,1,1,0.783,getting-started/equipment › Phone › Rules,279,571,765
+q20,single,fixed,1,1,1,0.7368,getting-started/equipment › Laptop › Admin rights,200,600,1000
+q20,single,structure-diverse,1,1,1,0.783,getting-started/equipment › Phone › Rules,279,412,487
+q21,single,structure,1,1,1,0.7845,travel-and-leave/going-out-of-office › Your overall responsibilities,115,351,641
+q21,single,fixed,1,1,1,0.7455,travel-and-leave/going-out-of-office › Your overall responsibilities,200,600,1000
+q21,single,structure-diverse,1,1,1,0.7845,travel-and-leave/going-out-of-office › Your overall responsibilities,115,351,641
+q22,single,structure,1,1,1,0.8502,hiring-staying-or-changing-jobs/promotions › Introduction to the Merit Promotion process,272,325,602
+q22,single,fixed,1,1,1,0.7988,hiring-staying-or-changing-jobs/promotions › Introduction to the Merit Promotion process,200,482,882
+q22,single,structure-diverse,1,1,1,0.8502,hiring-staying-or-changing-jobs/promotions › Introduction to the Merit Promotion process,272,325,671
+q23,multi,structure,1,3,3,0.7908,travel-and-leave/leave › Types of leave › Sick leave,126,263,474
+q23,multi,fixed,2,4,4,0.7551,travel-and-leave/fmla › How FMLA works,200,600,962
+q23,multi,structure-diverse,1,3,3,0.7908,travel-and-leave/leave › Types of leave › Sick leave,126,263,454
+q24,multi,structure,1,,,0.8154,travel-and-leave/fmla › How FMLA works › Paid Parental Leave and FMLA,118,321,491
+q24,multi,fixed,1,4,4,0.8183,travel-and-leave/fmla › How FMLA works,200,562,962
+q24,multi,structure-diverse,1,5,5,0.8154,travel-and-leave/fmla › How FMLA works › Paid Parental Leave and FMLA,118,321,623
+q25,multi,structure,1,,,0.798,travel-and-leave/advanced-sick-leave › Introduction,90,382,552
+q25,multi,fixed,1,,5,0.7765,travel-and-leave/advanced-sick-leave › Introduction,200,514,914
+q25,multi,structure-diverse,1,,,0.798,travel-and-leave/advanced-sick-leave › Introduction,90,382,552
+q26,multi,structure,1,,,0.8228,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Flexible schedule › Holidays and flexible schedules",131,397,757
+q26,multi,fixed,1,4,4,0.7857,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Flexible schedule › Types of flexible schedules › Maxiflex",200,600,1000
+q26,multi,structure-diverse,1,4,4,0.8228,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Flexible schedule › Holidays and flexible schedules",131,338,435
+q27,multi,structure,2,5,5,0.8017,hiring-staying-or-changing-jobs/leaving-tts › Introduction,12,254,378
+q27,multi,fixed,1,5,5,0.804,hiring-staying-or-changing-jobs/leaving-tts › Introduction,200,600,1000
+q27,multi,structure-diverse,2,,,0.8017,hiring-staying-or-changing-jobs/leaving-tts › Introduction,12,446,570
+q28,multi,structure,1,4,4,0.8225,travel-and-leave/leave › Types of leave › Award leave,205,647,832
+q28,multi,fixed,1,5,5,0.7885,travel-and-leave/leave › Types of leave › Award leave,200,600,865
+q28,multi,structure-diverse,1,4,4,0.8225,travel-and-leave/leave › Types of leave › Award leave,205,647,832
+q29,multi,structure,1,,,0.8504,"travel-and-leave/overtime › Travel comp time, for everyone › Understanding travel comp time",101,245,542
+q29,multi,fixed,1,,,0.832,"travel-and-leave/overtime › Travel comp time, for everyone › Understanding travel comp time",196,596,996
+q29,multi,structure-diverse,1,,,0.8504,"travel-and-leave/overtime › Travel comp time, for everyone › Understanding travel comp time",101,195,501
+q30,unanswerable,structure,,,,0.7656,getting-started/classes/benefits › Transit subsidies,9,279,789
+q30,unanswerable,fixed,,,,0.6654,getting-started/classes/benefits › Retirement › TSP (Thrift Savings Plan),77,472,872
+q30,unanswerable,structure-diverse,,,,0.7656,getting-started/classes/benefits › Transit subsidies,9,279,789
+q31,unanswerable,structure,,,,0.7793,travel-and-leave/leave › Types of leave › Annual leave,124,518,723
+q31,unanswerable,fixed,,,,0.7476,travel-and-leave/leave › Introduction,200,600,1000
+q31,unanswerable,structure-diverse,,,,0.7793,travel-and-leave/leave › Types of leave › Annual leave,124,518,723
+q32,unanswerable,structure,,,,0.7407,travel-and-leave/travel-and-leave-policies/travel-guide-3-travel › Meals and Incidental Expenses (M&IE),287,600,805
+q32,unanswerable,fixed,,,,0.7317,travel-and-leave/travel-and-leave-policies/travel-guide-faq › Questions about reimbursement › Questions about entering specific expenses › How should I claim meals and incidental expenses?,200,600,1000
+q32,unanswerable,structure-diverse,,,,0.7407,travel-and-leave/travel-and-leave-policies/travel-guide-3-travel › Meals and Incidental Expenses (M&IE),287,600,950
+q33,unanswerable,structure,,,,0.7219,getting-started/classes/benefits › Retirement › TSP (Thrift Savings Plan),157,400,762
+q33,unanswerable,fixed,,,,0.7014,getting-started/classes/benefits › Retirement › TSP (Thrift Savings Plan),77,477,877
+q33,unanswerable,structure-diverse,,,,0.7219,getting-started/classes/benefits › Retirement › TSP (Thrift Savings Plan),157,400,542
+q34,unanswerable,structure,,,,0.7672,hiring-staying-or-changing-jobs/ttsjobs › Introduction,12,296,342
+q34,unanswerable,fixed,,,,0.7292,hiring-staying-or-changing-jobs/ttsjobs › Introduction,200,469,869
+q34,unanswerable,structure-diverse,,,,0.7672,hiring-staying-or-changing-jobs/ttsjobs › Introduction,12,296,342
+q35,unanswerable,structure,,,,0.7397,travel-and-leave/travel-and-leave-policies/first-time-travel-get-in-concur-pre-olu › Introduction,296,489,614
+q35,unanswerable,fixed,,,,0.731,general-information-and-resources/employee-resources-policies/benefits-links › Introduction,200,477,877
+q35,unanswerable,structure-diverse,,,,0.7397,travel-and-leave/travel-and-leave-policies/first-time-travel-get-in-concur-pre-olu › Introduction,296,489,614
+q36,unanswerable,structure,,,,0.7932,hiring-staying-or-changing-jobs/ttsjobs › Introduction,12,106,311
+q36,unanswerable,fixed,,,,0.7258,hiring-staying-or-changing-jobs/ttsjobs › Introduction,200,346,746
+q36,unanswerable,structure-diverse,,,,0.7932,hiring-staying-or-changing-jobs/ttsjobs › Introduction,12,106,311
+q37,unanswerable,structure,,,,0.7449,general-information-and-resources/employee-resources-policies/employment-verification › Introduction,9,66,316
+q37,unanswerable,fixed,,,,0.7173,general-information-and-resources/employee-resources-policies/employment-verification › Introduction,131,508,844
+q37,unanswerable,structure-diverse,,,,0.7449,general-information-and-resources/employee-resources-policies/employment-verification › Introduction,9,66,316

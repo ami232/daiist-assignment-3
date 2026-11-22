@@ -15,7 +15,9 @@ Pipeline, one function per step so server.py can reuse them:
                              embed only chunks without a saved vector, store
                              them in ChromaDB in index/, batch by batch
     retrieve(query, k, design)
-                             the k closest chunks with their citations
+                             the k closest chunks with their citations;
+                             design "structure-diverse" caps results at 2
+                             chunks per page
 
 Two chunking designs are built, so the evaluation can compare them:
 
@@ -73,6 +75,15 @@ TEXTS_PER_MINUTE = 90  # the free tier allows 100 embedded texts a minute; keep 
 
 DESIGNS = ("structure", "fixed")
 COLLECTIONS = {"structure": "tts-structure", "fixed": "tts-fixed"}
+# Retrieval designs: (collection's chunking design, max chunks per page or None).
+# "structure-diverse" reuses the structure vectors but keeps at most 2 chunks
+# per page in the results, so one page cannot fill every slot.
+RETRIEVAL_DESIGNS = {
+    "structure": ("structure", None),
+    "fixed": ("fixed", None),
+    "structure-diverse": ("structure", 2),
+}
+DIVERSE_CANDIDATES = 3  # fetch k x 3 candidates before applying the per-page cap
 
 STRUCTURE_MAX_WORDS = 300
 FIXED_WINDOW_WORDS = 200
@@ -372,7 +383,7 @@ def pack_paragraphs(body: str, max_words: int, overlap: int) -> list[str]:
 
 
 def make_chunk(text: str, source: str, title: str, location: str, design: str, origin: str, url: str,
-               covered: str = "") -> dict:
+               covered: str = "", section_words: str = "{}") -> dict:
     digest = hashlib.sha1(f"{design}|{source}|{location}|{text}".encode()).hexdigest()[:20]
     return {
         "id": f"{design}-{digest}",
@@ -382,6 +393,7 @@ def make_chunk(text: str, source: str, title: str, location: str, design: str, o
             "title": title,
             "location": location,
             "sections": covered or location,  # every heading path the chunk contains
+            "section_words": section_words,  # JSON: words of body text per heading path
             "url": url,
             "design": design,
             "origin": origin,  # "corpus" from index.py, "added" from add_document
@@ -399,7 +411,7 @@ def common_prefix(a: list[str], b: list[str]) -> list[str]:
     return prefix
 
 
-def merge_small_sections(units: list[tuple[list[str], str]]) -> list[tuple[list[str], str, list[list[str]]]]:
+def merge_small_sections(units: list[tuple[list[str], str]]) -> list[tuple[list[str], str, list[tuple[list[str], str]]]]:
     """Join sections under MERGE_MIN_WORDS with the sections that follow them.
 
     The handbook has many tiny sections ("The following practices help us
@@ -409,7 +421,7 @@ def merge_small_sections(units: list[tuple[list[str], str]]) -> list[tuple[list[
     STRUCTURE_MAX_WORDS. The merged chunk's path is the headings the parts
     have in common, and each absorbed part keeps its own heading as a line.
     A heading with no body at all is simply dropped: its children carry it
-    in their own path. Returns (path, text, every heading path merged in).
+    in their own path. Returns (path, text, [(heading path, body) of every part]).
     """
     merged = []
     buffer_path, buffer_text, buffer_parts = None, "", []
@@ -431,58 +443,87 @@ def merge_small_sections(units: list[tuple[list[str], str]]) -> list[tuple[list[
                 own = path[len(shared):]
                 part = (SEPARATOR.join(own) + "\n" + body) if own else body
                 buffer_path, buffer_text = shared, buffer_text + "\n\n" + part
-                buffer_parts.append(path)
+                buffer_parts.append((path, body))
                 continue
             else:
                 merged.append((buffer_path, buffer_text, buffer_parts))
-        buffer_path, buffer_text, buffer_parts = path, body, [path]
+        buffer_path, buffer_text, buffer_parts = path, body, [(path, body)]
     if buffer_path is not None and words(buffer_text) >= MIN_SECTION_WORDS:
         merged.append((buffer_path, buffer_text, buffer_parts))
     return merged
 
 
-def chunk_structure(title: str, text: str) -> list[tuple[str, str, str]]:
-    """Design "structure": (location, chunk text, sections) triples, one per
-    heading section (small sections merged, long ones split at paragraphs).
-    `sections` lists every heading path inside the chunk, separated by " | "."""
+def page_units(title: str, text: str) -> list[tuple[list[str], str]]:
+    """(heading path, body) per section, with an H1 that repeats the title removed."""
     units = []
     for path, body in sections(text):
         if path and path[0].strip().lower() == title.strip().lower():
             path = path[1:]  # an H1 that repeats the page title adds nothing
         units.append((path, body))
+    return units
+
+
+def as_location(path: list[str]) -> str:
+    return SEPARATOR.join(path) or "Introduction"
+
+
+def chunk_structure(title: str, text: str) -> list[tuple[str, str, str, str]]:
+    """Design "structure": (location, chunk text, sections, section_words), one
+    per heading section (small sections merged, long ones split at paragraphs).
+
+    `sections` lists every heading path inside the chunk, separated by " | ".
+    `section_words` (JSON) says how many body words each path contributes, so
+    the evaluation can tell a chunk that holds a section from one that only
+    brushes it.
+    """
     out = []
-    for path, body, parts in merge_small_sections(units):
-        location = SEPARATOR.join(path) or "Introduction"
+    for path, body, parts in merge_small_sections(page_units(title, text)):
+        location = as_location(path)
         header = SEPARATOR.join([title] + path)
-        covered = " | ".join(SEPARATOR.join(p) or "Introduction" for p in parts)
-        for piece in pack_paragraphs(body, STRUCTURE_MAX_WORDS, OVERLAP_WORDS):
-            out.append((location, f"{header}\n\n{piece}", covered))
+        covered = " | ".join(as_location(p) for p, _ in parts)
+        pieces = pack_paragraphs(body, STRUCTURE_MAX_WORDS, OVERLAP_WORDS)
+        for piece in pieces:
+            counts: dict[str, int] = {}
+            for part_path, part_body in parts:
+                n = len(part_body.split())
+                if len(pieces) > 1:  # a long section was split: count only what is in this piece
+                    if len(parts) == 1:
+                        n = len(piece.split())
+                    elif not (part_body.strip()[:80] in piece or part_body.strip()[-80:] in piece):
+                        continue
+                    n = min(n, len(piece.split()))
+                counts[as_location(part_path)] = counts.get(as_location(part_path), 0) + n
+            out.append((location, f"{header}\n\n{piece}", covered, json.dumps(counts)))
     return out
 
 
-def chunk_fixed(title: str, text: str) -> list[tuple[str, str, str]]:
+def chunk_fixed(title: str, text: str) -> list[tuple[str, str, str, str]]:
     """Design "fixed": 200-word windows over the whole page, headings ignored.
 
     The location is still recorded (the heading in force where the window
     starts), so retrieval can be scored the same way for both designs.
     """
-    words, paths = [], []
-    for path, body in sections(text):
-        if path and path[0].strip().lower() == title.strip().lower():
-            path = path[1:]
-        location = SEPARATOR.join(path) or "Introduction"
+    words, paths, is_body = [], [], []
+    for path, body in page_units(title, text):
+        location = as_location(path)
         heading_words = path[-1].split() if path else []
-        for word in heading_words + body.split():
+        for j, word in enumerate(heading_words + body.split()):
             words.append(word)
             paths.append(location)
+            is_body.append(j >= len(heading_words))  # heading words are not counted as content
     if not words:
         return []
     step = FIXED_WINDOW_WORDS - OVERLAP_WORDS
     starts = range(0, max(1, len(words) - OVERLAP_WORDS), step)
     out = []
     for i in starts:
-        inside = list(dict.fromkeys(paths[i:i + FIXED_WINDOW_WORDS]))  # headings the window spans
-        out.append((paths[i], " ".join(words[i:i + FIXED_WINDOW_WORDS]), " | ".join(inside)))
+        window = range(i, min(i + FIXED_WINDOW_WORDS, len(words)))
+        inside = list(dict.fromkeys(paths[j] for j in window))  # headings the window spans
+        counts: dict[str, int] = {}
+        for j in window:
+            if is_body[j]:
+                counts[paths[j]] = counts.get(paths[j], 0) + 1
+        out.append((paths[i], " ".join(words[j] for j in window), " | ".join(inside), json.dumps(counts)))
     return out
 
 
@@ -499,8 +540,8 @@ def chunk_file(path: Path, design: str = "structure", origin: str = "corpus") ->
     title, text, _ = clean_file(path)
     pairs = chunk_structure(title, text) if design == "structure" else chunk_fixed(title, text)
     chunks = {}
-    for location, chunk_text, covered in pairs:
-        chunk = make_chunk(chunk_text, source, title, location, design, origin, url, covered)
+    for location, chunk_text, covered, section_words in pairs:
+        chunk = make_chunk(chunk_text, source, title, location, design, origin, url, covered, section_words)
         chunks[chunk["id"]] = chunk  # identical text in the same place counts once
     return list(chunks.values())
 
@@ -629,6 +670,27 @@ def embed_and_store(chunks: list[dict], collection) -> int:
     return len(missing)
 
 
+def refresh_metadata(chunks: list[dict], collection) -> int:
+    """Update stored metadata that no longer matches the chunker's, without re-embedding.
+
+    The id depends only on the text, so a metadata-only change (such as a new
+    field) keeps the id and the vector; only the metadata is rewritten.
+    """
+    stored = collection.get(ids=[c["id"] for c in chunks], include=["metadatas"])
+    current = dict(zip(stored["ids"], stored["metadatas"]))
+    changed = [c for c in chunks if c["id"] in current and current[c["id"]] != c["metadata"]]
+    for i in range(0, len(changed), 500):
+        batch = changed[i:i + 500]
+        collection.update(ids=[c["id"] for c in batch], metadatas=[c["metadata"] for c in batch])
+    return len(changed)
+
+
+def section_word_totals(path: Path) -> dict[str, int]:
+    """Body words per heading path in a page, used to judge whether a chunk holds a section."""
+    title, text, _ = clean_file(path)
+    return {as_location(p): len(body.split()) for p, body in page_units(title, text)}
+
+
 def remove_stale(collection, keep_ids: set[str]) -> int:
     """Delete corpus chunks that the current chunking no longer produces.
 
@@ -673,20 +735,34 @@ def embed_query(text: str, cache: bool = True) -> list[float]:
 def retrieve(query: str | list[float], k: int = 5, design: str = "structure", cache: bool = True) -> list[dict]:
     """The k chunks closest to the query, best first.
 
-    `query` is the question text, or an already computed query vector. Each
-    result has the chunk's text, its metadata, and `score`, the cosine
-    similarity (1 = same direction, 0 = unrelated).
+    `query` is the question text, or an already computed query vector.
+    `design` is one of RETRIEVAL_DESIGNS. Each result has the chunk's text,
+    its metadata, and `score`, the cosine similarity (1 = same direction,
+    0 = unrelated).
     """
+    chunking, per_page = RETRIEVAL_DESIGNS[design]
     vector = embed_query(query, cache=cache) if isinstance(query, str) else query
-    found = get_collection(design).query(
-        query_embeddings=[vector], n_results=k, include=["documents", "metadatas", "distances"]
+    found = get_collection(chunking).query(
+        query_embeddings=[vector],
+        n_results=k * DIVERSE_CANDIDATES if per_page else k,
+        include=["documents", "metadatas", "distances"],
     )
-    return [
+    candidates = [
         {"id": i, "text": doc, **meta, "score": round(1 - distance, 4)}
         for i, doc, meta, distance in zip(
             found["ids"][0], found["documents"][0], found["metadatas"][0], found["distances"][0]
         )
     ]
+    if not per_page:
+        return candidates
+    results, per_source = [], {}
+    for chunk in candidates:  # best first; skip a page once it has per_page chunks
+        if per_source.get(chunk["source"], 0) < per_page:
+            results.append(chunk)
+            per_source[chunk["source"]] = per_source.get(chunk["source"], 0) + 1
+        if len(results) == k:
+            break
+    return results
 
 
 # ============================================================================
@@ -737,6 +813,9 @@ def main() -> int:
     for design in DESIGNS:
         collection = get_collection(design)
         removed = remove_stale(collection, {c["id"] for c in all_chunks[design]})
+        refreshed = refresh_metadata(all_chunks[design], collection)
+        if refreshed:
+            log(f"{design}: metadata refreshed for {refreshed} chunks (no re-embedding)")
         try:
             added = embed_and_store(all_chunks[design], collection)
         except (EmbeddingBudgetExceeded, genai_errors.APIError) as error:

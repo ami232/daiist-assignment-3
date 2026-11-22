@@ -1,11 +1,13 @@
 """
 Assignment 3: evaluation (`main.py evaluate`).
 
-Stage 1, retrieval (this file so far): for every test question and both
-chunking designs, does the right passage reach the top k?
+Stage 1, retrieval (this file so far): for every test question and each
+retrieval design (structure, fixed, structure-diverse), does the right
+passage reach the top k?
 
-    hit@k (single)          a top-k chunk is from the expected page AND
-                            contains the expected section
+    hit@k (single)          a top-k chunk is from the expected page AND holds
+                            at least 30 words of the expected section (or all
+                            of it, if the section is shorter)
     hit@k (multi, strict)   every expected passage is in the top k
     hit@k (multi, partial)  at least one expected passage is in the top k
     words@k                 words the top k chunks would add to the prompt
@@ -37,6 +39,8 @@ RETRIEVAL_SUMMARY = EVAL_DIR / "retrieval_summary.json"
 
 KS = (1, 3, 5)
 TOP = max(KS)
+MIN_PASSAGE_WORDS = 30  # a chunk must hold this much of a section to count as containing it
+DESIGNS = list(ix.RETRIEVAL_DESIGNS)
 
 
 def load_questions() -> list[dict]:
@@ -56,26 +60,43 @@ def load_questions() -> list[dict]:
 # Matching a retrieved chunk against an expected passage
 # ============================================================================
 
-def contains_passage(chunk: dict, source: str, location: str) -> bool:
-    """True if the chunk is from `source` and covers the section `location`.
+_section_totals: dict[str, dict[str, int]] = {}
 
-    A chunk's `sections` field lists every heading path inside it. It covers
-    the expected section if one of those paths is the section itself or one
-    of its sub-sections (expected "Types of leave › Annual leave" is covered
-    by a chunk holding "Types of leave › Annual leave › Use or Lose").
+
+def within(section: str, location: str) -> bool:
+    """The section is the expected location itself or one of its sub-sections."""
+    return section == location or section.startswith(location + ix.SEPARATOR)
+
+
+def words_needed(source: str, location: str) -> int:
+    """MIN_PASSAGE_WORDS, or the whole section's size if it is shorter."""
+    if source not in _section_totals:
+        _section_totals[source] = ix.section_word_totals(ix.local_path(source))
+    total = sum(n for s, n in _section_totals[source].items() if within(s, location))
+    return max(1, min(MIN_PASSAGE_WORDS, total))
+
+
+def contains_passage(chunk: dict, source: str, location: str, touch: bool = False) -> bool:
+    """True if the chunk is from `source` and holds the section `location`.
+
+    Default rule: the chunk holds at least MIN_PASSAGE_WORDS body words of
+    the section (sub-sections included), counted from its `section_words`
+    metadata. touch=True is the first, lenient rule: any overlap at all,
+    even the last line of a section, counts. It favoured fixed windows,
+    which span 2.7 sections on average against 1.1 for structure chunks.
     """
     if chunk["source"] != source:
         return False
-    for section in chunk["sections"].split(" | "):
-        if section == location or section.startswith(location + ix.SEPARATOR):
-            return True
-    return False
+    if touch:
+        return any(within(s, location) for s in chunk["sections"].split(" | "))
+    held = sum(n for s, n in json.loads(chunk["section_words"]).items() if within(s, location))
+    return held >= words_needed(source, location)
 
 
-def first_rank(results: list[dict], source: str, location: str) -> int | None:
+def first_rank(results: list[dict], source: str, location: str, touch: bool = False) -> int | None:
     """1-based rank of the first chunk containing this passage, or None."""
     for rank, chunk in enumerate(results, start=1):
-        if contains_passage(chunk, source, location):
+        if contains_passage(chunk, source, location, touch):
             return rank
     return None
 
@@ -88,10 +109,11 @@ def retrieval_stage(questions: list[dict]) -> dict:
     rows = []
     for q in questions:
         vector = ix.embed_query(q["question"])  # one embedding per question, cached on disk
-        for design in ix.DESIGNS:
+        for design in DESIGNS:
             results = ix.retrieve(vector, k=TOP, design=design)
             ranks = [first_rank(results, s, l) for s, l in q["expected"]]
             found = [r for r in ranks if r is not None]
+            touch_ranks = [first_rank(results, s, l, touch=True) for s, l in q["expected"]]
             row = {
                 "id": q["id"],
                 "kind": q["kind"],
@@ -100,6 +122,8 @@ def retrieval_stage(questions: list[dict]) -> dict:
                 "rank_any": min(found) if found else "",
                 # rank where ALL expected passages have appeared (strict hit)
                 "rank_all": max(ranks) if ranks and None not in ranks else "",
+                # same, with the first lenient rule (kept to show its bias)
+                "rank_all_touch": max(touch_ranks) if touch_ranks and None not in touch_ranks else "",
                 "top_score": results[0]["score"],
                 "top1": f"{results[0]['source']} › {results[0]['location']}",
             }
@@ -112,7 +136,7 @@ def retrieval_stage(questions: list[dict]) -> dict:
         writer.writeheader()
         writer.writerows(rows)
 
-    summary = {d: summarise(rows, d) for d in ix.DESIGNS}
+    summary = {d: summarise(rows, d) for d in DESIGNS}
     RETRIEVAL_SUMMARY.write_text(json.dumps(summary, indent=2), encoding="utf-8")
     print_summary(summary, len(questions))
     return summary
@@ -141,6 +165,7 @@ def summarise(rows: list[dict], design: str) -> dict:
                 "single": round(hit_rate(single, k, "rank_all"), 3),
                 "multi_strict": round(hit_rate(multi, k, "rank_all"), 3),
                 "multi_partial": round(hit_rate(multi, k, "rank_any"), 3),
+                "all_answerable_touch_rule": round(hit_rate(answerable, k, "rank_all_touch"), 3),
             }
             for k in KS
         },
@@ -154,19 +179,21 @@ def summarise(rows: list[dict], design: str) -> dict:
 
 
 def print_summary(summary: dict, n: int) -> None:
-    print("=" * 78)
-    print(f"RETRIEVAL: {n} questions, {summary[ix.DESIGNS[0]]['n_answerable']} answerable")
-    print("=" * 78)
-    header = f"{'':<26}" + "".join(f"{d + ' @' + str(k):>13}" for d in ix.DESIGNS for k in KS)
-    print(header)
+    width = 30 + 7 * len(KS) * len(DESIGNS)
+    print("=" * width)
+    print(f"RETRIEVAL: {n} questions, {summary[DESIGNS[0]]['n_answerable']} answerable")
+    print("=" * width)
+    print(f"{'':<30}" + "".join(f"{d:^{7 * len(KS)}}" for d in DESIGNS))
+    print(f"{'':<30}" + "".join(f"{'@' + str(k):>7}" for _ in DESIGNS for k in KS))
     for label, key in [("hit rate, all answerable", "all_answerable"), ("  single", "single"),
-                       ("  multi (both passages)", "multi_strict"), ("  multi (at least one)", "multi_partial")]:
-        cells = "".join(f"{summary[d]['hit']['@' + str(k)][key]:>13.0%}" for d in ix.DESIGNS for k in KS)
-        print(f"{label:<26}{cells}")
-    cells = "".join(f"{summary[d]['words_added']['@' + str(k)]:>13}" for d in ix.DESIGNS for k in KS)
-    print(f"{'words added to prompt':<26}{cells}")
-    print("=" * 78)
-    for d in ix.DESIGNS:
+                       ("  multi (both passages)", "multi_strict"), ("  multi (at least one)", "multi_partial"),
+                       ("old rule: chunk touches section", "all_answerable_touch_rule")]:
+        cells = "".join(f"{summary[d]['hit']['@' + str(k)][key]:>7.0%}" for d in DESIGNS for k in KS)
+        print(f"{label:<30}{cells}")
+    cells = "".join(f"{summary[d]['words_added']['@' + str(k)]:>7}" for d in DESIGNS for k in KS)
+    print(f"{'words added to prompt':<30}{cells}")
+    print("=" * width)
+    for d in DESIGNS:
         s = summary[d]
         print(f"{d}: MRR (single) {s['mrr_single']:.3f}; best score answerable "
               f"{s['top_score_answerable']['mean']:.3f} (min {s['top_score_answerable']['min']:.3f}), "
