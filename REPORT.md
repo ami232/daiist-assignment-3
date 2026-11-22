@@ -83,7 +83,20 @@ The evaluation removes the added passages afterwards, so the committed index kee
 - **Approval.** `add_document` only runs if a human approves it in the terminal; with no terminal (for example under `check.py`) it is denied. In the add-document test the approval was requested once and granted.
 - **Call limit.** At most 6 tool calls per question; further calls are blocked and the model is told to answer with what it has.
 - **Extra guardrail: citation check in code.** Every `[source, location]` in the answer must match a passage that `search` returned in that run (paragraph ranges and article parts are matched by number). Otherwise, or if the model answered without searching, a warning is appended to the answer and a flag is recorded.
-- **Case where it fired:** [TODO: paste the output of the demo command that limits the agent to one tool call.] In the 32-question evaluation it never flagged an unsupported citation. It did fire once on the add-document request ("answered without searching"), which was a false alarm; I changed it so a pure add-document request is not flagged.
+- **Case where it fired (controlled test).** In the 32-question evaluation no answer was flagged for an unsupported citation, so I forced the call limit with `MAX_TOOL_CALLS=1` on q13, a question that needs two searches. The first search ran; the second was blocked and the agent had to answer with what it had:
+
+```
+When notifying a supervisory authority of a personal data breach, a controller is required to provide the name and contact details of its data protection officer (DPO) or another contact point [gdpr, Article 33(3)(b); edpb_breach_notification, para 131 (p.27)].
+
+The provided documents do not contain information regarding whether a DPO can be an outside consultant.
+
+--- tool trace ---
+search({'query': 'breach notification content data protection officer contact details'}) -> ok
+search({'query': 'can the data protection officer be an external consultant'}) -> blocked: call limit
+guardrail flags: call_limit
+```
+
+  The answer is honest about the missing half, but it is wrong for the question (Article 37(6) says a DPO may be an external contractor), which shows what the limit costs: with the default limit of 6 this question is answered correctly. In the real run the citation check fired once, on the add-document request ("answered without searching"); that was a false alarm, so a pure add-document request is no longer flagged.
 
 ## Evaluation
 
