@@ -35,7 +35,7 @@ HUMAN_LABELS = EVAL / "human_labels.csv"
 ANSWERS = EVAL / "agent_answers.json"
 VERDICTS = EVAL / "judge_verdicts.json"
 BEFORE_AFTER = EVAL / "before_after.json"
-JUDGE_MODEL = os.environ.get("JUDGE_MODEL", "gemini-3.5-flash")
+JUDGE_MODEL = os.environ.get("JUDGE_MODEL", "gemini-3.5-flash-lite")
 
 # The document added in the before/after test, and the unanswerable question it answers.
 ADDED_DOC = ROOT / "corpus" / "edpb_video_devices.pdf"
@@ -242,24 +242,34 @@ def code_checks(row: dict, result: dict) -> dict:
 
 # ---------------------------------------------------------------- 4. LLM judge
 
+JUDGE_FALLBACKS = ["gemini-3.1-flash-lite", "gemini-flash-lite-latest", "gemini-3.8-flash"]
+
+
 def judge_call(prompt: str) -> str:
     from google import genai
     from google.genai import types
 
     client = genai.Client(api_key=load_api_key())
-    for attempt in range(6):
-        try:
-            response = client.models.generate_content(
-                model=JUDGE_MODEL if attempt < 3 else "gemini-3.8-flash",   # fall back if overloaded
-                contents=prompt,
-                config=types.GenerateContentConfig(temperature=0, response_mime_type="application/json"),
-            )
-            return response.text
-        except Exception as error:
-            if attempt == 5 or "429" not in str(error) and "503" not in str(error):
-                raise
-            time.sleep(15 * (attempt + 1))
-    return ""
+    last_error = None
+    for model in [JUDGE_MODEL, *[m for m in JUDGE_FALLBACKS if m != JUDGE_MODEL]]:
+        for attempt in range(3):
+            try:
+                response = client.models.generate_content(
+                    model=model,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(temperature=0, response_mime_type="application/json"),
+                )
+                return response.text
+            except Exception as error:
+                last_error = error
+                text = str(error)
+                if not any(word in text for word in ("429", "503", "504", "UNAVAILABLE", "DEADLINE")):
+                    raise
+                delay = re.search(r"'retryDelay': '(\d+)s'", text)
+                if "RESOURCE_EXHAUSTED" in text and delay and int(delay.group(1)) > 300:
+                    break                      # daily quota used up: next model
+                time.sleep(10 * (attempt + 1))
+    raise last_error
 
 
 def evidence_text(result: dict) -> str:

@@ -31,8 +31,8 @@ from mcp.client.stdio import stdio_client
 from api_key import load_api_key
 
 ROOT = Path(__file__).resolve().parent
-MODEL = os.environ.get("CHAT_MODEL", "gemini-3.5-flash")
-FALLBACK_MODELS = ["gemini-3.8-flash", "gemini-flash-latest", "gemini-3.1-flash-lite"]   # tried in order if MODEL is overloaded or gone
+MODEL = os.environ.get("CHAT_MODEL", "gemini-3.1-flash-lite")
+FALLBACK_MODELS = ["gemini-3.5-flash-lite", "gemini-flash-lite-latest", "gemini-3.8-flash"]   # tried in order if MODEL is overloaded or gone
 MAX_TOOL_CALLS = 6          # guardrail 2: hard limit of tool calls per question
 RUN_TIMEOUT = 120           # seconds for one whole question; then it is retried (see run_agent)
 RECURSION_LIMIT = 25        # safety net for the agent loop itself
@@ -192,14 +192,26 @@ def _error_text(error: BaseException) -> str:
 
 
 RETRYABLE = ("TimeoutError", "503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "NOT_FOUND", "high demand", "overloaded", "timed out")
+UNUSABLE: set[str] = set()   # models whose daily free quota is used up (or that no longer exist) in this run
+
+
+def is_unusable(text: str) -> bool:
+    """A 429 that says to wait minutes or hours is a daily quota; NOT_FOUND means the model is gone."""
+    if "NOT_FOUND" in text:
+        return True
+    delay = re.search(r"'retryDelay': '(\d+)s'", text)
+    return "RESOURCE_EXHAUSTED" in text and bool(delay) and int(delay.group(1)) > 300
 
 
 def run_agent(question: str, approve=cli_approve) -> dict:
     """Answer one question. Returns {answer, trace, flags, seconds, tokens, model} (used by evaluate.py).
-    If the model is overloaded or unavailable, it retries once and then tries the fallback models."""
+    If the model is overloaded it retries and then tries the fallback models; a model whose daily
+    quota is used up is skipped for the rest of the run."""
     names = [MODEL, *[m for m in FALLBACK_MODELS if m != MODEL]] if isinstance(MODEL, str) else [MODEL]
     last_error = None
     for name in names:
+        if name in UNUSABLE:
+            continue
         for attempt in range(2):
             try:
                 return asyncio.run(asyncio.wait_for(_run(question, approve, name), RUN_TIMEOUT))
@@ -208,8 +220,14 @@ def run_agent(question: str, approve=cli_approve) -> dict:
                 if not any(word in text for word in RETRYABLE):
                     raise
                 last_error = error
-                print(f"[agent] {name} failed ({text[-160:]}); retrying or switching model...", file=sys.stderr, flush=True)
+                if is_unusable(text):
+                    UNUSABLE.add(name)
+                    print(f"[agent] {name} has no quota left today; skipping it.", file=sys.stderr, flush=True)
+                    break
+                print(f"[agent] {name} failed ({text[-120:]}); retrying or switching model...", file=sys.stderr, flush=True)
                 time.sleep(20 * (attempt + 1))
+    if last_error is None:
+        raise RuntimeError("No chat model with free quota left today. Try again tomorrow after 09:00 (Spain).")
     raise last_error
 
 
