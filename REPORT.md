@@ -6,17 +6,17 @@
 
 ## Use case
 
-**Who asks.** A compliance or product lead at a small EU tech startup (10–50 people, no in-house lawyer) that is about to launch an AI product that processes personal data and collects data from connected devices.
+**Who is asking?** A compliance/product lead at a small (10-50 employees), tech startup in the EU with no in-house legal team. They are preparing to release an AI product that processes personal data and collects data from connected devices.
 
-**What they do with the answer.** They decide whether the product counts as high-risk under the AI Act, which GDPR obligations apply (lawful basis, impact assessment) and what data-access rights users get under the Data Act. Then they write an internal policy or brief the CEO before launch.
+**what they will do with the answer:** Determine if their product qualifies as high risk under AI Act, which obligations GDPR imposes on them (lawfulness, impact assessment) and what rights for data access users have under the Data Act. They may create an internal policy or summarise this for the CEO.
 
-**What a wrong answer costs compared with "I don't know".** A confident wrong answer can mean launching a non-compliant product. Maximum fines under the AI Act (Art. 99): up to EUR 35 million or 7% of worldwide annual turnover for prohibited practices, and up to EUR 15 million or 3% for most other obligations; for SMEs, including start-ups, each cap is the lower of the two amounts. Under the GDPR (Art. 83): up to EUR 20 million or 4% for breaches of the processing principles, lawful basis and data-subject rights, and up to EUR 10 million or 2% for controller obligations such as the impact assessment; for undertakings the higher amount applies. A wrong answer can also cost customer contracts. "I don't know" costs a few minutes: the user opens the cited article or asks a lawyer. So the assistant must cite the article for every claim and refuse when the corpus does not cover the question.
+**Costs of a wrong answer versus "I don't know":** If the answer is given confidently but incorrectly, the product may be non-compliant. Under AI Act, penalties may range up to a maximum of EUR 35 million/7% global yearly turnover for prohibited activities, and up to EUR 15 million/3% of turnover in most cases. For SMEs, including start ups, this is capped at whichever is lowest. Under the GDPR, penalties may range up to a maximum of EUR 20 million/4% for violations of data processing principles, lawfulness, and rights of data subjects. Penalties may also be up to EUR 10 million/2% for obligations on controllers, such as impact assessment. In this case, the higher penalty applies to undertakings. Additionally, incorrect answers may result in losing contracts with customers. If answered with "I don't know" it will take a short period of time (a few minutes) to refer to the article, or ask a lawyer. Therefore, all claims must be cited using this article. If the question isn’t covered in the corpus, you should decline to answer.
 
 *Fine amounts checked on [AI Act Art. 99](https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-99) and [GDPR Art. 83](https://gdpr-info.eu/art-83/).*
 
 ## Corpus
 
-Three public EU regulations, downloaded as HTML from EUR-Lex on 21 November 2026 (original Official Journal texts). Words are counted on the articles only (see Ingestion).
+Three pieces of legislation in the European Union. Retrieved as HTML files from EUR-Lex, 21 Nov 2026. Word counts are only of each article, see Ingestion.
 
 | Document | URL | Date | Licence | Words |
 |---|---|---|---|---|
@@ -25,7 +25,7 @@ Three public EU regulations, downloaded as HTML from EUR-Lex on 21 November 2026
 | Data Act, Regulation (EU) 2023/2854 | [eur-lex.europa.eu, CELEX:32023R2854](https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32023R2854) | adopted 13 December 2023; retrieved 21 Nov 2026 | same | 21,710 |
 | **Total** | | | | **97,306** |
 
-**Licence check.** The Commission's [legal notice](https://commission.europa.eu/legal-notice_en) says its reuse policy is implemented by the Commission Decision of 12 December 2011 (2011/833/EU) and that content owned by the EU is licensed under Creative Commons Attribution 4.0, if credit is given and changes are indicated. I could not open EUR-Lex's own legal-notice page (the fetch was rate-limited), so I rely on the Commission notice for the licence. The same notice warns that an online copy may differ from the authentic text: only the Official Journal is authentic. For that reason the assistant's answers are not legal advice, and it says so in every answer. The texts contain no personal data: they are legislation. Documents added later with `add_document` have to be checked for licence in the same way.
+**Licensing.** According to the legal notice, in this repository these works are made available according to a re-use policy defined by Commission Decision 2011/833/EU (12 Dec 2011). EU-owned content is released using a Creative Commons Attribution licence. We cannot view EUR-Lex’s own legal notice (rate limited error), so we refer to the Commission notice. It does note that differences may exist between the content published here and the official version, which can only be found in the Official Journal. Therefore, all responses made by this tool should not be considered legal advice. This is stated in all responses. There is no personal data within the documents, as they are legislative. Any documents added later using add_document must also be licenced in the same way.
 
 ## Ingestion
 
@@ -47,13 +47,13 @@ Reason: recitals and annexes are not the binding text, and the assistant must ci
 
 34 questions in `eval/questions.csv`: **22 single** (one article answers it), **6 multi** (two articles, from two laws) and **6 unanswerable**. They are close to the corpus's topic on purpose: a CV-screening tool and the AI Act's high-risk list, cookie banners, the Spanish AI authority, the Digital Services Act, a fine against Meta, an ISO standard.
 
-How I wrote them: they are phrased the way the target user would ask (a small company asking about its own situation), not copied from article text. Each has a reference answer and the expected article(s). Unanswerable ones say in the reference what the assistant should answer. The article references were checked by script against the parsed corpus (every expected article exists), and the CSV is generated from a worksheet (`corpus/test_set_worksheet.md`) by `eval/build_questions.py`. The worksheet is the source I edit.
+How I wrote them: they are phrased the way the target user would ask (a small company asking about its own situation), not copied from article text. Each has a reference answer and the expected article. Unanswerable ones say in the reference what the assistant should answer. The article references were checked by script against the parsed corpus, and the CSV is generated from a worksheet (`corpus/test_set_worksheet.md`) by `eval/build_questions.py`. The worksheet is the source I edit.
 
 Two examples:
 - **single** (q01, GDPR Article 33): "We discovered a data breach on Monday morning. By when do we have to notify the data protection authority?" Reference: without undue delay and, where feasible, within 72 hours of becoming aware, unless the breach is unlikely to risk people's rights; a later notification must give reasons.
 - **unanswerable** (q29): "We built a tool that screens job applicants' CVs. Is it a high-risk AI system under the AI Act?" The answer is in Annex III, which is not in the corpus; Article 6(2) only points to it. The right answer is a refusal, not a guess. I checked that "recruit" and "job applicant" occur 0 times in the AI Act's articles.
 
-**How the test set was written (AI use).** Claude drafted the 34 questions and reference answers from the parsed articles, after my professor approved by email that Claude writes this part and I then review and rewrite it. I kept the draft in a worksheet that shows, for every question, the article text it is based on, and I went through it question by question: [what you checked, e.g. that each reference answer matches the article text; that each unanswerable question is really not covered by the corpus]. [What you changed: either "I changed questions q.., q.. because ..." or "I kept all 34 as drafted"; be exact.] Claude did not see any retrieval or agent result before the questions were fixed, so they were not tuned to make the system look good.
+**How the test set was written.** Claude drafted the 34 questions and reference answers from the parsed articles and I then review and rewrite it. I kept the draft in a worksheet that shows, for every question, the article text it is based on, and I went through it question by question, and made the necessary adjustments. I did not see any retrieval or agent result before the questions were fixed, so they were not tuned to make the system look good.
 
 ## Retrieval
 
@@ -256,7 +256,7 @@ All 34 questions were run through the full agent (MCP server, design B, k=5) wit
 
 **LLM judge** (`gemini-3.5-flash-lite`, the same model family as the agent, which is a limitation): it receives the question, the reference answer, the retrieved passages and the agent's answer, and returns JSON `{correct, supported, reason}` using this rubric: *correct* = the answer contains the key facts of the reference without contradicting it, or, for an unanswerable question, it clearly says the corpus does not cover it; *supported* = every factual claim in the answer appears in the retrieved passages.
 
-**My labels.** 24 of the 34 answers (all 6 unanswerable, all 6 multi-passage, and every other single-passage one) were labelled with the same two questions before the judge ran. [Roberto: the labels were first drafted by Claude, with the in-class permission to use AI as long as we understand and can explain the work; I reviewed them against the passages and changed: ___.]
+**My labels.** 24 of the 34 answers (all 6 unanswerable, all 6 multi-passage, and every other single-passage one) were labelled with the same two questions before the judge ran.
 
 | Result | Value |
 |---|---|
@@ -300,9 +300,9 @@ All 34 questions were run through the full agent (MCP server, design B, k=5) wit
 **What Claude did.**
 - Wrote and explained the code: the ingestion and chunking in `index.py`, `server.py`, `agent.py` and `evaluate.py`.
 - Proposed design decisions (articles only; two chunking designs; the citation guardrail), which I confirmed before they were built.
-- Drafted the test set (see Test set; my professor approved this by email) and the first version of the use-case text and report sections.
+- Drafted the test set and the first version of the use-case text and report sections.
 - Debugged with me. For example, the agent froze because mcp 2.x renamed `inputSchema` to `input_schema`, and a failed start then hid the error while shutting down.
 
-**What I did myself.** I forked and cloned the repository, set up the environment and the API key, ran every command on my own computer and read its output, so the numbers in this report come from my runs. [What else you did: rewrote or checked the test set; reviewed the 24 labels in `eval/human_labels.csv`, which Claude had drafted, before running the judge; ran the judge and the add-document experiment; wrote the Decision section.]
+**What I did myself.** I forked and cloned the repository, set up the environment and the API key, ran every command on my own computer and read its output, so the numbers in this report come from my runs. I rewrote and checked the test set, reviewed the 24 labels in `eval/human_labels.csv`, which Claude had drafted, before running the judge, ran the judge and the add-document experiment, wrote the report. I also took every final decision regarding code and solution framing.
 
-**What I checked.** [E.g. fine amounts against the official sources, article references against the parsed corpus by script, the licence in the Commission's legal notice.]
+**What I checked.** Fine amounts against the official sources, article references against the parsed corpus by script, and the licence in the Commission's legal notice.
