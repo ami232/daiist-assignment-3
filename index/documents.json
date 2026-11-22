@@ -94,5 +94,16 @@
       "section": 92,
       "fixed": 105
     }
+  },
+  "phak-ch14": {
+    "title": "Pilot's Handbook of Aeronautical Knowledge (FAA-H-8083-25C, 2023), Ch. 14 Airport Operations",
+    "url": "https://www.faa.gov/sites/faa.gov/files/16_phak_ch14.pdf",
+    "licence": "Public domain (U.S. Government work, 17 U.S.C. 105)",
+    "sha256": "9601f11472dfd93f743071560e7ce72123e84c2ab46559c6c19588d38e4c3b07",
+    "words": 16981,
+    "chunks": 107,
+    "designs": [
+      "section"
+    ]
   }
 }
