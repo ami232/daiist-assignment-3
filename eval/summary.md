@@ -13,11 +13,11 @@
 
 ## End to end (32 of 32 questions answered, 32 judged)
 
-- correct and supported answers: 25 of 25 answerable
-- unsupported answers (judge): 0
+- correct and supported answers: 21 of 25 answerable
+- unsupported answers (judge): 1
 - correct refusals: 6 of 7 unanswerable
-- wrong refusals (code check, answerable questions refused): 2
-- code checks passed: 24 of 32
+- wrong refusals (code check, answerable questions refused): 1
+- code checks passed: 23 of 32
 - guardrail flags: none
 
 ## Agreement with your grades
@@ -31,6 +31,7 @@
 
 ## Failure candidates (check them by hand and fill final_category in eval/failures.csv)
 
+- retrieval miss: 4
 - unsupported claim: 1
 
 ## Before / after adding a document

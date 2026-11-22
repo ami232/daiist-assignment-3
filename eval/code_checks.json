@@ -93,7 +93,7 @@
     "searched": true,
     "has_citation": true,
     "citations_valid": true,
-    "refused": true,
+    "refused": false,
     "expected_retrieved": false,
     "expected_cited": false,
     "code_pass": false
@@ -165,10 +165,10 @@
     "searched": true,
     "has_citation": true,
     "citations_valid": true,
-    "refused": true,
+    "refused": false,
     "expected_retrieved": null,
     "expected_cited": null,
-    "code_pass": true
+    "code_pass": false
   },
   "q20": {
     "searched": true,
