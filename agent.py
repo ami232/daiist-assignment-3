@@ -31,7 +31,7 @@ from mcp.client.stdio import stdio_client
 from api_key import load_api_key
 
 ROOT = Path(__file__).resolve().parent
-MODEL = os.environ.get("CHAT_MODEL", "gemini-2.5-flash")
+MODEL = os.environ.get("CHAT_MODEL", "gemini-3.8-flash")
 MAX_TOOL_CALLS = 6          # guardrail 2: hard limit of tool calls per question
 RECURSION_LIMIT = 25        # safety net for the agent loop itself
 
