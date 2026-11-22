@@ -35,9 +35,7 @@ BATCH_SIZE = 20  # texts per embedding request (each text counts against the dai
 
 DESIGNS = ("fixed", "structure")  # the two chunking designs we compare
 
-# >>> Update this after you have read the numbers from `main.py evaluate`. <<<
-# The server and the agent use it. design: "fixed" | "structure"; method: "dense" | "hybrid".
-CHOSEN = {"design": "structure", "method": "hybrid", "k": 5}
+CHOSEN = {"design": "structure", "method": "dense", "k": 5}
 
 
 def log(*args) -> None:
