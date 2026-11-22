@@ -355,6 +355,9 @@ def human_agreement(verdicts: dict) -> dict:
     return out
 
 
+PASSAGE_RE = re.compile(r"\[(\d+)\] source: (\S+) \| location: ([^|\n]+?) \| distance: ([\d.]+)\n(.*?)(?=\n\n\[\d+\] source: |\Z)", re.S)
+
+
 def write_grading_sheet(rows: list[dict], answers: dict) -> None:
     """A sheet for grading by hand. It has no judge verdicts, so you grade before seeing them."""
     lines = [
@@ -363,28 +366,31 @@ def write_grading_sheet(rows: list[dict], answers: dict) -> None:
         "Fill `eval/human_labels.csv` (columns id, correct, supported, notes) for at least 20 of them,",
         "**before** looking at `eval/judge_verdicts.json`.",
         "- `correct` = 1 if the answer matches the reference answer (or is a proper refusal for an unanswerable question), else 0.",
-        "- `supported` = 1 if every claim is in the retrieved passages, else 0. Explain every 0 in `notes`.",
+        "- `supported` = 1 if every claim is in the retrieved passages shown below, else 0. Explain every 0 in `notes`.",
         "",
     ]
     for row in rows:
         result = answers.get(row["id"])
         if not result:
             continue
-        passages = []
+        retrieved = []
         for step in result["trace"]:
-            if step["tool"] == "search":
-                passages.append(step["result"])
+            if step["tool"] == "search" and step["status"] == "ok":
+                retrieved += [(m[1], m[2].strip(), m[4].strip()) for m in PASSAGE_RE.findall(step["result"])]
+        cited = CITE_RE.findall(result["answer"])
+        shown = [(s, l, t) for s, l, t in retrieved if any(loc_match(cs, cl, s, l) for cs, cl in cited)]
         lines += [
             f"## {row['id']} ({row['kind']})",
             f"**Question:** {row['question']}",
             f"**Reference answer:** {row['reference_answer']}",
             f"**Agent answer:** {result['answer']}",
             f"**Searches:** {[s['args'].get('query') for s in result['trace'] if s['tool'] == 'search']}",
-            "**Retrieved (first 250 characters of each passage):**",
+            f"**All retrieved locations:** {sorted({f'{s}: {l}' for s, l, _ in retrieved})}",
+            "**Full text of the retrieved passages the answer cites:**" if shown else "**The answer cites no retrieved passage.**",
         ]
-        for block in passages[:1]:
-            for chunk in block.split("\n\n[")[:5]:
-                lines.append(f"- {chunk.strip()[:250]}")
+        for s, l, t in shown[:4]:
+            lines.append(f"> **{s}, {l}**: {t[:1500]}")
+            lines.append("")
         lines.append("")
     (EVAL / "grading_sheet.md").write_text("\n".join(lines), encoding="utf-8")
 
