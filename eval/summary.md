@@ -22,7 +22,9 @@
 
 ## Agreement with your grades
 
-- no usable grades found in eval/human_labels.csv yet. Grade with eval/grading_sheet.md.
+- compared on 24 answers (you graded 24)
+- agreement on `correct`: 0.96, on `supported`: 0.96, on both: 0.92
+- disagreements: q15, q19
 
 ## Cost per question
 

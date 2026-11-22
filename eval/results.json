@@ -46,8 +46,17 @@
     }
   },
   "agreement": {
-    "graded_by_you": 0,
-    "compared": 0
+    "graded_by_you": 24,
+    "compared": 24,
+    "agreement_correct": 0.9583333333333334,
+    "kappa_correct": 0.7777777777777781,
+    "agreement_supported": 0.9583333333333334,
+    "kappa_supported": 0.0,
+    "agreement_both": 0.9166666666666666,
+    "disagreements": [
+      "q15",
+      "q19"
+    ]
   },
   "answered": 32,
   "judged": 32
