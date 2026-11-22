@@ -59,11 +59,13 @@ def _normalise(text: str) -> str:
 
 
 def _numbers(location: str) -> set[int]:
-    """Paragraph or article numbers a location covers: 'paras 28-29 (p.10)' -> {28, 29}."""
+    """Paragraph or article numbers a location covers.
+    'paras 28-29 (p.10)' -> {28, 29}; 'Article 4 part 2' -> {4}; 'Article 15 to Article 16' -> {15, 16}."""
     text = _normalise(location)
     if text.startswith("article"):
-        match = re.search(r"\d+", text)
-        return {int(match.group())} if match else set()
+        text = re.sub(r"part \d+|\(\d+\)|\([a-z]\)", " ", text)      # drop 'part 2', '(1)', '(a)'
+        found = [int(n) for n in re.findall(r"\d+", text)]
+        return set(range(min(found), max(found) + 1)) if found else set()
     text = re.sub(r"\(p\.[^)]*\)", "", text)          # drop the page part
     numbers = set()
     for start, end in re.findall(r"(\d+)(?:\s*-\s*(\d+))?", text):

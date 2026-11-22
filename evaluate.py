@@ -114,11 +114,17 @@ def expected_pairs(row: dict) -> list[tuple[str, str]]:
 
 
 def loc_match(exp_source: str, exp_loc: str, source: str, loc: str) -> bool:
-    """Same source, same kind (article or paragraph) and a shared number.
-    'para 33 (p.11)' matches a chunk 'paras 31-33 (p.11)'; 'Article 33' matches 'Article 33 part 2'."""
+    """Same source and the same place.
+    'para 33 (p.11)' matches 'paras 31-33 (p.11)' (design b) and also a chunk labelled only
+    'p.11' or 'p.10 to p.11' (design a on PDFs); 'Article 33' matches 'Article 33 part 2'."""
     if exp_source != source:
         return False
-    if _normalise(exp_loc).startswith("article") != _normalise(loc).startswith("article"):
+    chunk = _normalise(loc)
+    if chunk.startswith("p."):                      # chunk labelled by page only
+        pages = [int(n) for n in re.findall(r"p\.(\d+)", chunk)]
+        page = re.search(r"\(p\.(\d+)", _normalise(exp_loc))
+        return bool(pages and page and min(pages) <= int(page.group(1)) <= max(pages))
+    if _normalise(exp_loc).startswith("article") != chunk.startswith("article"):
         return False
     wanted = _numbers(exp_loc)
     return (not wanted) or bool(wanted & _numbers(loc))
