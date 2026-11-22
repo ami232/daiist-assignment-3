@@ -1,0 +1,45 @@
+{
+  "questions": 35,
+  "retrieval_chosen": {
+    "design": "structure",
+    "method": "hybrid"
+  },
+  "correct": 34,
+  "supported": 35,
+  "unsupported": 0,
+  "correct_refusals": 6,
+  "unanswerable": 7,
+  "wrong_refusals": 0,
+  "answerable": 28,
+  "answerable_correct": 28,
+  "invalid_citation_answers": 0,
+  "guardrail_fired": 0,
+  "mean_tokens_in": 5943,
+  "mean_tokens_out": 648,
+  "mean_seconds": 110.7,
+  "p90_seconds": 178.3,
+  "failures_by_class": {
+    "unsupported claim (answered an unanswerable question)": 1
+  },
+  "human_agreement": {
+    "graded": 26,
+    "correct": {
+      "n": 26,
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "disagreements": []
+    },
+    "supported": {
+      "n": 26,
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "disagreements": []
+    }
+  },
+  "add_document_demo": {
+    "question": "Does the ban on emotion recognition at work also cover job candidates during hiring?",
+    "chunks_added": {
+      "structure": 222
+    }
+  }
+}

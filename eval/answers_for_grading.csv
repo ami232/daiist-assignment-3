@@ -1,0 +1,295 @@
+id,question,reference_answer,answer
+q01,Do we have to tell guests that they are talking to an AI chatbot?,"Yes. Providers must design AI systems that interact directly with people so that the people are informed they are dealing with an AI, unless this is obvious to a reasonably well-informed, observant person given the context (Art. 50(1)). The information must come at the latest at the first interaction (Art. 50(5)).","Yes, generally you must inform guests that they are interacting with an AI system. According to the AI Act:
+
+*   **General Obligation:** Providers must ensure that AI systems intended to interact directly with natural persons are designed so that those persons are informed they are interacting with an AI system `[ai_act, Article 50(1)-(3)]`.
+*   **Exception:** This obligation does not apply if it is ""obvious from the point of view of a natural person who is reasonably well-informed, observant and circumspect, taking into account the circumstances and the context of use"" `[ai_act, Article 50(1)-(3)]`.
+*   **Timing and Manner:** The information must be provided in a ""clear and distinguishable manner"" and no later than the ""time of the first interaction or exposure"" `[ai_act, Article 50(4)-(7)]`. It must also meet applicable accessibility requirements `[ai_act, Article 50(4)-(7)]`.
+
+This is a reading of the text, not legal advice."
+q02,Which AI practices does the AI Act prohibit when it comes to inferring people's emotions?,"Article 5(1)(f) prohibits AI systems that infer emotions of a natural person in the workplace and in education institutions, except for medical or safety reasons.","The AI Act prohibits the use of AI systems to infer the emotions of a natural person in the following areas:
+*   **Workplace** [ai_act, Article 5(1) (continued, part 2)]
+*   **Education institutions** [ai_act, Article 5(1) (continued, part 2)]
+
+**Exception:** This prohibition does not apply if the AI system is intended to be put into the market or used for **medical or safety reasons** [ai_act, Article 5(1) (continued, part 2)].
+
+This is a reading of the text, not legal advice."
+q03,What does the AI Act require of a hotel regarding AI literacy of its staff?,"Providers and deployers must take measures, to their best extent, to ensure a sufficient level of AI literacy of their staff and other persons operating or using AI systems on their behalf, taking into account their knowledge, experience, training and the context of use.","As a deployer of AI systems, a hotel must take measures to ensure, to its best extent, a sufficient level of AI literacy for its staff and any other persons operating or using the AI systems on its behalf [ai_act, Article 4].
+
+In doing so, the hotel must take into account:
+* The technical knowledge, experience, education, and training of the staff [ai_act, Article 4].
+* The context in which the AI systems are used [ai_act, Article 4].
+* The persons or groups of persons on whom the AI systems are used [ai_act, Article 4].
+
+""AI literacy"" is defined as the skills, knowledge, and understanding that enable deployers (and others) to make an informed deployment of AI systems and to be aware of the opportunities, risks, and possible harm the AI may cause [ai_act, Article 3(56)].
+
+This is a reading of the text, not legal advice."
+q04,When is an AI system listed in Annex III not considered high-risk?,"When it does not pose a significant risk of harm to health, safety or fundamental rights, e.g. it performs a narrow procedural task, improves a previously completed human activity, detects decision patterns without replacing human assessment, or does a preparatory task. It is always high-risk if it performs profiling of natural persons (Art. 6(3)).","An AI system listed in Annex III is not considered high-risk if it does not pose a significant risk of harm to the health, safety, or fundamental rights of natural persons, including by not materially influencing the outcome of decision making [ai_act, Article 6(3)].
+
+This applies if any of the following conditions are fulfilled [ai_act, Article 6(3)]:
+*   The system is intended to perform a narrow procedural task;
+*   The system is intended to improve the result of a previously completed human activity;
+*   The system is intended to detect decision-making patterns or deviations from prior patterns and is not meant to replace or influence the previously completed human assessment, without proper human review; or
+*   The system is intended to perform a preparatory task to an assessment relevant for the use cases listed in Annex III.
+
+**Important exception:** An AI system referred to in Annex III shall always be considered high-risk if it performs profiling of natural persons [ai_act, Article 6(3)].
+
+Providers who determine that an AI system in Annex III is not high-risk must document their assessment before the system is placed on the market or put into service and are subject to registration obligations [ai_act, Article 6(4)].
+
+This is a reading of the text, not legal advice."
+q05,What is the maximum fine for using an AI practice that the AI Act prohibits?,"Up to EUR 35 000 000 or, for an undertaking, up to 7% of total worldwide annual turnover of the preceding financial year, whichever is higher (Art. 99(3)).","Non-compliance with the prohibition of AI practices referred to in Article 5 is subject to administrative fines of up to EUR 35,000,000 or, if the offender is an undertaking, up to 7% of its total worldwide annual turnover for the preceding financial year, whichever is higher [ai_act, Article 99(3)].
+
+In the case of SMEs, including start-ups, the fine shall be up to the percentage or amount referred to above, whichever is lower [ai_act, Article 99(6)].
+
+This is a reading of the text, not legal advice."
+q06,Does the AI Act apply to a company outside the EU that uses an AI system?,"Yes, if the output produced by the AI system is used in the Union (Art. 2(1)(c)); providers and deployers established in a third country are covered in that case.","Yes, the AI Act can apply to a company located outside the EU (in a ""third country"") that uses an AI system in the following case:
+
+*   The AI Act applies to deployers of AI systems established or located in a third country if the output produced by the AI system is used in the Union `[ai_act, Article 2(1)(c)]`.
+
+For completeness, the Act also applies to providers located in a third country who place AI systems on the market or put them into service in the Union `[ai_act, Article 2(1)(a)]`.
+
+This is a reading of the text, not legal advice."
+q07,How does the AI Act define a deployer?,"A natural or legal person, public authority, agency or other body using an AI system under its authority, except where the system is used in the course of a personal non-professional activity (Art. 3(4)).","Under the AI Act, a **deployer** is defined as a natural or legal person, public authority, agency, or other body that uses an AI system under its authority, unless the AI system is used for a personal non-professional activity `[ai_act, Article 3(4)]`.
+
+This is a reading of the text, not legal advice."
+q08,Within how many hours must a data breach be reported to the authority under the GDPR?,"Without undue delay and, where feasible, not later than 72 hours after becoming aware of it, unless the breach is unlikely to result in a risk to people's rights and freedoms; a late notification must give reasons for the delay (Art. 33(1)).","In the event of a personal data breach, the controller must notify the competent supervisory authority without undue delay and, where feasible, no later than 72 hours after becoming aware of the breach [gdpr, Article 33(1)-(5)]. 
+
+This notification is not required if the breach is unlikely to result in a risk to the rights and freedoms of natural persons [gdpr, Article 33(1)-(5)]. If the notification is made after the 72-hour window, it must include the reasons for the delay [gdpr, Article 33(1)-(5)].
+
+This is a reading of the text, not legal advice."
+q09,Can a guest withdraw their consent to data processing at any time?,Yes. The data subject has the right to withdraw consent at any time (Art. 7(3)).,"Yes, a data subject (such as a guest) has the right to withdraw their consent to the processing of their personal data at any time [gdpr, Article 7(3)]. 
+
+The following conditions apply:
+* **Lawfulness of prior processing:** Withdrawing consent does not affect the lawfulness of any processing that was based on consent before the withdrawal occurred [gdpr, Article 7(3)].
+* **Information requirement:** The data subject must be informed of their right to withdraw consent before they give it [gdpr, Article 7(3)], and the controller must provide this information when personal data are obtained [gdpr, Article 13(2)(c)].
+* **Ease of withdrawal:** It must be as easy to withdraw consent as it was to give it [gdpr, Article 7(3)].
+* **Right to erasure:** If consent is withdrawn and there is no other legal ground for the processing, the data subject has the right to have their personal data erased without undue delay [gdpr, Article 17(1)(b)].
+
+This is a reading of the text, not legal advice."
+q10,When must an organisation appoint a data protection officer?,"When it is a public authority, or its core activities require regular and systematic monitoring of data subjects on a large scale, or consist of large-scale processing of special categories of data or criminal convictions data (Art. 37(1)).","A controller and processor must designate a data protection officer (DPO) in the following cases [gdpr, Article 37(1)]:
+
+*   The processing is carried out by a public authority or body, except for courts acting in their judicial capacity [gdpr, Article 37(1)(a)].
+*   The core activities consist of processing operations which, due to their nature, scope, and/or purposes, require regular and systematic monitoring of data subjects on a large scale [gdpr, Article 37(1)(b)].
+*   The core activities consist of processing on a large scale of special categories of data (pursuant to Article 9) and personal data relating to criminal convictions and offences (referred to in Article 10) [gdpr, Article 37(1)(c)].
+
+In cases other than those listed above, a DPO may be designated voluntarily, or must be designated if required by Union or Member State law [gdpr, Article 37(4)].
+
+This is a reading of the text, not legal advice."
+q11,Can a hotel take decisions about guests based solely on automated processing?,"People have the right not to be subject to a decision based solely on automated processing, including profiling, that has legal or similarly significant effects. Exceptions: necessary for a contract, authorised by law with safeguards, or based on explicit consent, with safeguards such as the right to human intervention (Art. 22).","Under the GDPR, guests have the right not to be subject to a decision based solely on automated processing (including profiling) if that decision produces legal effects concerning them or similarly significantly affects them [gdpr, Article 22(1)-(4)].
+
+However, a hotel may take such decisions if the decision:
+* is necessary for entering into, or performing, a contract between the guest and the hotel [gdpr, Article 22(1)-(4)];
+* is authorised by Union or Member State law, provided that law also establishes suitable measures to safeguard the guest's rights, freedoms, and legitimate interests [gdpr, Article 22(1)-(4)]; or
+* is based on the guest's explicit consent [gdpr, Article 22(1)-(4)].
+
+In cases where the decision is based on a contract or explicit consent, the hotel must implement suitable safeguards, including at least the right for the guest to:
+* obtain human intervention [gdpr, Article 22(1)-(4)];
+* express their point of view [gdpr, Article 22(1)-(4)]; and
+* contest the decision [gdpr, Article 22(1)-(4)].
+
+Additionally, these automated decisions cannot be based on special categories of personal data unless specific conditions under Article 9(2)(a) or (g) apply and suitable safeguards are in place [gdpr, Article 22(1)-(4)].
+
+This is a reading of the text, not legal advice."
+q12,What is the minimum age for a child to consent to data processing under the GDPR?,16 years for information society services offered directly to a child; Member States may lower it by law but not below 13 (Art. 8(1)).,"In relation to the offer of information society services directly to a child, the processing of the child's personal data is lawful if the child is at least 16 years old [gdpr, Article 8(1)-(3)]. 
+
+If the child is below 16, processing is lawful only if consent is given or authorized by the holder of parental responsibility over the child [gdpr, Article 8(1)-(3)]. However, Member States may establish a lower age for these purposes, provided that such age is not below 13 years [gdpr, Article 8(1)-(3)].
+
+This is a reading of the text, not legal advice."
+q13,How many main elements does the Commission see in the definition of an AI system?,"Seven: a machine-based system; designed to operate with varying levels of autonomy; that may exhibit adaptiveness after deployment; for explicit or implicit objectives; infers how to generate outputs from input; such as predictions, content, recommendations or decisions; that can influence physical or virtual environments (para. 9).","The Commission identifies seven main elements in the definition of an AI system [ai_system_definition_guidelines, Part II, paras (8)-(10)]:
+
+1. A machine-based system;
+2. Designed to operate with varying levels of autonomy;
+3. May exhibit adaptiveness after deployment;
+4. Operates for explicit or implicit objectives;
+5. Infers, from the input it receives, how to generate outputs;
+6. Such as predictions, content, recommendations, or decisions;
+7. That can influence physical or virtual environments [ai_system_definition_guidelines, Part II, paras (8)-(10)].
+
+This is a reading of the text, not legal advice."
+q14,Are linear or logistic regression models AI systems according to the Commission guidelines?,"Systems used to improve mathematical optimisation or to approximate traditional well-established optimisation methods, such as linear or logistic regression, fall outside the AI system definition because they do not transcend basic data processing (para. 42).","According to the Commission guidelines, systems used to improve mathematical optimisation or to accelerate and approximate traditional, well-established optimisation methods—specifically including **linear or logistic regression methods**—fall outside the scope of the AI system definition [ai_system_definition_guidelines, Section 5.2, para (42)]. This is because such models, while capable of inference, do not transcend ""basic data processing"" [ai_system_definition_guidelines, Section 5.2, para (42)].
+
+This is a reading of the text, not legal advice."
+q15,Which AI uses in employment are classified as high-risk?,"AI for recruitment and selection (targeted job ads, filtering applications, evaluating candidates) and AI used to decide on terms of work, promotion or termination, to allocate tasks based on behaviour or traits, or to monitor and evaluate performance and behaviour (Annex III, point 4).","Under the AI Act, AI systems used for employment, workers' management, and access to self-employment are classified as high-risk in the following cases [ai_act, Annex III(4)]:
+
+*   **Recruitment and selection:** Systems used for the recruitment or selection of natural persons, specifically for placing targeted job advertisements, analyzing and filtering job applications, and evaluating candidates [ai_act, Annex III(4)(a)].
+*   **Work-related decisions and monitoring:** Systems used to make decisions affecting terms of work-related relationships, the promotion or termination of such relationships, the allocation of tasks based on individual behavior or personal traits/characteristics, or to monitor and evaluate the performance and behavior of persons in these relationships [ai_act, Annex III(4)(b)].
+
+**Exceptions:**
+An AI system listed in Annex III may not be considered high-risk if it does not pose a significant risk of harm to the health, safety, or fundamental rights of natural persons (including by not materially influencing the outcome of decision-making) [ai_act, Article 6(3)]. This applies if the system is intended to:
+*   Perform a narrow procedural task [ai_act, Article 6(3)(a)];
+*   Improve the result of a previously completed human activity [ai_act, Article 6(3)(b)];
+*   Detect decision-making patterns or deviations from prior patterns without replacing or influencing the human assessment without proper review [ai_act, Article 6(3)(c)]; or
+*   Perform a preparatory task to an assessment relevant to the use cases in Annex III [ai_act, Article 6(3)(d)].
+
+However, any AI system referred to in Annex III that performs **profiling of natural persons** is always considered high-risk [ai_act, Article 6(3)].
+
+This is a reading of the text, not legal advice."
+q16,"From which date does the AI Act apply, and which parts apply earlier?",It applies from 2 August 2026. Chapters I and II (including the prohibitions) apply from 2 February 2025; some other parts from 2 August 2025; Article 6(1) and its obligations from 2 August 2027 (Art. 113).,"The AI Act applies from **2 August 2026** [ai_act, Article 113]. However, certain parts apply earlier:
+
+*   **2 February 2025**: Chapters I and II [ai_act, Article 113].
+*   **2 August 2025**: Chapter III Section 4, Chapter V, Chapter VII, Chapter XII, and Article 78 (with the exception of Article 101) [ai_act, Article 113].
+
+Additionally, Article 6(1) and its corresponding obligations apply later, from **2 August 2027** [ai_act, Article 113].
+
+This is a reading of the text, not legal advice."
+q17,What must a deployer of a high-risk AI system do about human oversight?,"Assign human oversight to natural persons with the necessary competence, training, authority and support, use the system according to its instructions, and monitor its operation (Art. 26(1), (2), (5)).","A deployer of a high-risk AI system must:
+
+*   **Assign human oversight** to natural persons who possess the necessary authority, training, competence, and support [ai_act, Article 26(1)-(5)].
+*   **Implement oversight measures** that are identified by the provider as being appropriate for the deployer to implement [ai_act, Article 14(1)-(4)].
+*   **Ensure the system is used** in accordance with the accompanying instructions for use by taking appropriate organisational and technical measures [ai_act, Article 26(1)-(5)].
+*   **Include a description** of how human oversight measures are implemented (following the instructions for use) as part of a fundamental rights impact assessment, if the deployer is a body governed by public law, a private entity providing public services, or falls under specific categories in Annex III [ai_act, Article 27(1)-(4)].
+
+This is a reading of the text, not legal advice."
+q18,Does a hotel using AI to detect guests' emotions have to tell the guests?,"Yes. Deployers of an emotion recognition system must inform the natural persons exposed to it of its operation and process the personal data in line with the GDPR (Art. 50(3)), at the latest at first exposure (Art. 50(5)).","Yes, a hotel using an emotion recognition system—defined as an AI system used to identify or infer the emotions or intentions of natural persons based on their biometric data `[ai_act, Article 3(39)]`—must inform the guests.
+
+According to the AI Act:
+*   **Obligation to Inform**: Deployers of an emotion recognition system shall inform the natural persons exposed to the system of its operation `[ai_act, Article 50(3)]`.
+*   **Timing and Manner**: This information must be provided in a clear and distinguishable manner, at the latest at the time of the first interaction or exposure `[ai_act, Article 50(5)]`.
+*   **Data Protection**: The deployer must also process the personal data in accordance with the GDPR (Regulation (EU) 2016/679) `[ai_act, Article 50(3)]`.
+
+This transparency obligation does not apply if the system is permitted by law to detect, prevent, or investigate criminal offences, subject to appropriate safeguards `[ai_act, Article 50(3)]`.
+
+This is a reading of the text, not legal advice."
+q19,What is the maximum GDPR fine for breaching the basic principles of processing?,"Up to EUR 20 000 000 or, for an undertaking, up to 4% of total worldwide annual turnover of the preceding financial year, whichever is higher (Art. 83(5)).","Infringements of the basic principles for processing, including conditions for consent (pursuant to Articles 5, 6, 7 and 9), are subject to administrative fines up to 20,000,000 EUR, or in the case of an undertaking, up to 4% of the total worldwide annual turnover of the preceding financial year, whichever is higher [gdpr, Article 83(4)-(8)].
+
+This is a reading of the text, not legal advice."
+q20,Are small businesses fined the same way as large ones under the AI Act?,"For SMEs, including start-ups, each fine is up to the percentage or amount in the Article, whichever is lower (Art. 99(6)).","No, small businesses are not fined the same way as large ones. The AI Act includes specific provisions to protect the economic viability of SMEs:
+
+*   **Lower Caps for SMEs:** For SMEs (including start-ups), administrative fines shall be up to the percentage or the fixed amount referred to in the relevant penalty provision, **whichever is lower** `[ai_act, Article 99(6)]`.
+*   **Consideration of Interests:** Member States must ensure that penalties are effective, proportionate, and dissuasive, while taking into account the interests of SMEs and start-ups and their economic viability `[ai_act, Article 99(1)]`.
+*   **Assessment Factors:** When deciding whether to impose a fine and determining its amount, authorities must consider the size, annual turnover, and market share of the operator committing the infringement `[ai_act, Article 99(7)(d)]`.
+
+This is a reading of the text, not legal advice."
+q21,In what cases can a guest ask the hotel to erase their personal data?,"E.g. the data are no longer necessary for the purposes collected, consent is withdrawn and there is no other legal ground, the person objects, the data were unlawfully processed, or erasure is required by law (Art. 17(1)).","A guest has the right to obtain the erasure of their personal data without undue delay in the following cases [gdpr, Article 17(1)]:
+
+*   The data are no longer necessary for the purposes for which they were collected or processed [gdpr, Article 17(1)(a)].
+*   The guest withdraws the consent on which the processing is based, and there is no other legal ground for the processing [gdpr, Article 17(1)(b)].
+*   The guest objects to the processing and there are no overriding legitimate grounds for it, or the guest objects to processing pursuant to Article 21(2) [gdpr, Article 17(1)(c)].
+*   The personal data have been unlawfully processed [gdpr, Article 17(1)(d)].
+*   The data must be erased to comply with a legal obligation in Union or Member State law [gdpr, Article 17(1)(e)].
+*   The data were collected in relation to the offer of information society services referred to in Article 8(1) [gdpr, Article 17(1)(f)].
+
+This right does not apply if processing is necessary for [gdpr, Article 17(3)]:
+*   Exercising the right of freedom of expression and information [gdpr, Article 17(3)(a)].
+*   Compliance with a legal obligation under Union or Member State law, or for the performance of a task carried out in the public interest or in the exercise of official authority [gdpr, Article 17(3)(b)].
+*   Reasons of public interest in the area of public health [gdpr, Article 17(3)(c)].
+*   Archiving purposes in the public interest, scientific or historical research, or statistical purposes, if erasure would likely render the objectives of that processing impossible or seriously impair them [gdpr, Article 17(3)(d)].
+*   The establishment, exercise, or defence of legal claims [gdpr, Article 17(3)(e)].
+
+This is a reading of the text, not legal advice."
+q22,What is an emotion recognition system according to the AI Act?,An AI system for the purpose of identifying or inferring emotions or intentions of natural persons on the basis of their biometric data (Art. 3(39)).,"According to the AI Act, an ""emotion recognition system"" is defined as an AI system used to identify or infer the emotions or intentions of natural persons based on their biometric data [ai_act, Article 3(39)].
+
+This is a reading of the text, not legal advice."
+q23,Our booking chatbot collects guests' personal data. What do the AI Act and the GDPR each require us to tell guests?,"AI Act Art. 50(1): guests must be informed they are interacting with an AI system, unless obvious. GDPR Art. 13: when collecting personal data the controller must give the controller's identity, purposes, legal basis, recipients, retention and rights, among others.","Under the AI Act and the GDPR, you have the following transparency obligations for your booking chatbot:
+
+**EU AI Act**
+*   **Disclosure of AI interaction:** You must ensure that guests are informed they are interacting with an AI system [ai_act, Article 50(1)-(3)].
+*   **Exception:** This is not required if the interaction is ""obvious from the point of view of a natural person who is reasonably well-informed, observant and circumspect,"" considering the context and circumstances of use [ai_act, Article 50(1)-(3)].
+*   **Timing and Manner:** This information must be provided in a ""clear and distinguishable manner"" no later than the first interaction [ai_act, Article 50(4)-(7)].
+
+**GDPR**
+When collecting personal data from guests, you must provide the following information at the time the data is obtained [gdpr, Article 13(1)-(2)]:
+*   **Identity and Contact:** Your identity and contact details (and those of your representative or Data Protection Officer, if applicable) [gdpr, Article 13(1)-(2)].
+*   **Purpose and Legal Basis:** The purposes of the processing and the legal basis used (including the legitimate interests pursued if applicable) [gdpr, Article 13(1)-(2)].
+*   **Recipients and Transfers:** Any recipients of the data and information regarding transfers to third countries or international organisations, including the safeguards in place [gdpr, Article 13(1)-(2)].
+*   **Storage and Rights:** The storage period (or criteria to determine it) and the guests' rights to access, rectify, erase, restrict, or object to processing, as well as the right to data portability and to lodge a complaint with a supervisory authority [gdpr, Article 13(1)-(2)].
+*   **Consent and Requirements:** The right to withdraw consent (if applicable) and whether providing the data is a statutory or contractual requirement, including the consequences of not providing it [gdpr, Article 13(1)-(2)].
+*   **Automated Decision-Making:** If the chatbot uses automated decision-making or profiling (as per Article 22(1) and (4)), you must provide meaningful information about the logic involved, as well as the significance and envisaged consequences for the guest [gdpr, Article 13(1)-(2)].
+
+This is a reading of the text, not legal advice."
+q24,What are the maximum fines for breaching the AI Act's transparency duties and for breaching the GDPR's basic principles?,"AI Act Art. 99(4)(g): transparency obligations under Art. 50, up to EUR 15 000 000 or 3% of worldwide annual turnover. GDPR Art. 83(5): basic principles, up to EUR 20 000 000 or 4%. In both, the higher amount applies (lower for SMEs under the AI Act).","*   **AI Act transparency duties:** Non-compliance with transparency obligations for providers and deployers (pursuant to Article 50) is subject to administrative fines of up to EUR 15,000,000 or, if the offender is an undertaking, up to 3% of its total worldwide annual turnover for the preceding financial year, whichever is higher `[ai_act, Article 99(1)-(6)]`. For SMEs and start-ups, the fine is the lower of these two amounts `[ai_act, Article 99(1)-(6)]`. For Union institutions, bodies, offices, and agencies, non-compliance with obligations other than those in Article 5 is subject to fines of up to EUR 750,000 `[ai_act, Article 100(1)-(4)]`.
+*   **GDPR basic principles:** Infringements of the basic principles for processing, including conditions for consent (pursuant to Articles 5, 6, 7, and 9), are subject to administrative fines of up to EUR 20,000,000 or, in the case of an undertaking, up to 4% of the total worldwide annual turnover of the preceding financial year, whichever is higher `[gdpr, Article 83(4)-(8)]`.
+
+This is a reading of the text, not legal advice."
+q25,"If we use AI to screen job applications, is it high-risk and what must we ensure about oversight?","Yes, recruitment and selection AI is listed in Annex III point 4(a), so it is high-risk (Art. 6(2)). The deployer must assign human oversight to competent, trained persons with authority (Art. 26(2)) and use the system per its instructions.","Yes, AI systems used to analyze and filter job applications or to evaluate candidates for recruitment and selection are classified as high-risk [ai_act, Annex III(1)-(4)].
+
+Regarding oversight, the following must be ensured:
+
+*   **Design and Development:** The system must be designed and developed (including its human-machine interface) so that it can be effectively overseen by natural persons while in use [ai_act, Article 14(1)].
+*   **Objective:** Oversight must aim to prevent or minimize risks to fundamental rights, health, or safety [ai_act, Article 14(2)].
+*   **Capabilities of Overseers:** Natural persons assigned to oversight must be enabled to:
+    *   Understand the system's capacities and limitations and monitor its operation to detect anomalies or dysfunctions [ai_act, Article 14(4)(a)].
+    *   Remain aware of ""automation bias"" (the tendency to over-rely on the AI's output) [ai_act, Article 14(4)(b)].
+    *   Correctly interpret the system's output [ai_act, Article 14(4)(c)].
+    *   Decide to disregard, override, reverse the output, or not use the system in a particular situation [ai_act, Article 14(4)(d)].
+    *   Intervene or interrupt the system, for example, via a ""stop"" button [ai_act, Article 14(4)(e)].
+*   **Deployer Obligations:** The deployer must assign human oversight to individuals who possess the necessary authority, support, training, and competence [ai_act, Article 26(2)].
+
+This is a reading of the text, not legal advice."
+q26,Which rules give people a right against automated decisions and a right to an explanation of them?,GDPR Art. 22: right not to be subject to solely automated decisions with legal or similarly significant effects. AI Act Art. 86: persons affected by a decision based on output of an Annex III high-risk system (except point 2) have the right to a clear and meaningful explanation from the deployer of the AI system's role and main elements of the decision.,"The right against automated decisions and the right to an explanation are covered by the GDPR and the AI Act:
+
+*   **Right against automated decisions (GDPR):** Data subjects have the right not to be subject to a decision based solely on automated processing, including profiling, if it produces legal effects or similarly significantly affects them `[gdpr, Article 22(1)-(4)]`. This does not apply if the decision is necessary for a contract, authorized by Union or Member State law, or based on explicit consent `[gdpr, Article 22(1)-(4)]`. In the cases of contract or consent, the controller must ensure the right to human intervention, the right to express a point of view, and the right to contest the decision `[gdpr, Article 22(1)-(4)]`.
+*   **Right to an explanation (AI Act):** Any affected person subject to a decision taken by a deployer based on the output of a high-risk AI system listed in Annex III (excluding those under point 2) has the right to obtain clear and meaningful explanations of the AI system's role in the decision-making procedure and the main elements of the decision `[ai_act, Article 86(1)-(3)]`. This applies if the decision produces legal effects or similarly significantly affects the person in a way they consider to have an adverse impact on their health, safety, or fundamental rights `[ai_act, Article 86(1)-(3)]`. This right is subject to exceptions in Union or national law and applies only if the right is not already provided for under Union law `[ai_act, Article 86(1)-(3)]`.
+
+This is a reading of the text, not legal advice."
+q27,When do we have to assess the impact on fundamental rights under the AI Act and when a data protection impact assessment under the GDPR?,"AI Act Art. 27: before deploying a high-risk system, for deployers that are public-law bodies or private entities providing public services, and for deployers of Annex III point 5(b) and (c) systems (credit scoring, life and health insurance pricing). GDPR Art. 35: before processing likely to result in high risk, in particular systematic and extensive profiling-based evaluation with significant effects, large-scale special-category data, or large-scale systematic monitoring of public areas.","Under the AI Act and the GDPR, the requirements for impact assessments are as follows:
+
+**Fundamental Rights Impact Assessment (FRIA) – AI Act**
+A FRIA must be performed prior to the first use of a high-risk AI system referred to in Article 6(2) `[ai_act, Article 27(1)-(2)]`, except for those intended for use in the area listed in point 2 of Annex III `[ai_act, Article 27(1)]`. This obligation applies to:
+*   Deployers that are bodies governed by public law `[ai_act, Article 27(1)]`;
+*   Deployers that are private entities providing public services `[ai_act, Article 27(1)]`;
+*   Deployers of high-risk AI systems referred to in points 5 (b) and (c) of Annex III `[ai_act, Article 27(1)]`.
+
+If the obligations of the FRIA are already met through a GDPR data protection impact assessment, the FRIA shall complement that assessment `[ai_act, Article 27(4)]`.
+
+**Data Protection Impact Assessment (DPIA) – GDPR**
+A DPIA must be carried out prior to processing when a type of processing—particularly one using new technologies—is likely to result in a high risk to the rights and freedoms of natural persons `[gdpr, Article 35(1)]`. It is specifically required when:
+*   There is systematic and extensive evaluation of personal aspects based on automated processing (including profiling) that produces legal effects or similarly significantly affects the person `[gdpr, Article 35(3)(a)]`;
+*   Special categories of data (Article 9(1)) or data relating to criminal convictions and offences (Article 10) are processed on a large scale `[gdpr, Article 35(3)(b)]`;
+*   A publicly accessible area is systematically monitored on a large scale `[gdpr, Article 35(3)(c)]`.
+
+Supervisory authorities may also publish lists of processing operations that specifically require or do not require a DPIA `[gdpr, Article 35(4)-(5)]`.
+
+This is a reading of the text, not legal advice."
+q28,"Is a simple rule-based reservation system an AI system, and how does the AI Act define an AI system?","AI Act Art. 3(1) defines it as a machine-based system with varying autonomy that infers from input how to generate outputs. The Commission guidelines say systems based solely on rules defined by natural persons to automatically execute operations are not AI systems (para. 40), so a purely rule-based system falls outside.","The AI Act defines an **AI system** as a ""machine-based system that is designed to operate with varying levels of autonomy and that may exhibit adaptiveness after deployment, and that, for explicit or implicit objectives, infers, from the input it receives, how to generate outputs such as predictions, content, recommendations, or decisions that can influence physical or virtual environments"" `[ai_system_definition_guidelines, Part II, para (8)]`.
+
+Whether a simple rule-based reservation system is an AI system depends on its specific architecture and functionality `[ai_system_definition_guidelines, Part III, para (61)]`:
+
+*   **Likely NOT an AI system:** ""Basic data processing systems"" that follow ""predefined, explicit instructions or operations"" and operate based on ""fixed human-programmed rules"" without using ""learning, reasoning or modelling"" or ""logic-based inference"" to generate outputs are excluded from the definition `[ai_system_definition_guidelines, Section 5.2, para (46)]`. Similarly, systems based on ""classical heuristics"" that apply ""predefined rules or algorithms to derive solutions"" rather than data-driven learning may fall outside the scope `[ai_system_definition_guidelines, Section 5.2, para (48)]`.
+*   **Potentially an AI system:** An ""expert system"" that is capable of producing an output on its own (such as a recommendation) based on human input may be considered to have ""some degree of independence of action"" (autonomy), which is a necessary condition for the AI system definition `[ai_system_definition_guidelines, Section 2, para (18), (20)]`.
+
+Because no ""automatic determination"" is possible, each system must be assessed based on its specific characteristics `[ai_system_definition_guidelines, Part I, para (6); Part III, para (62)]`.
+
+*This is a reading of the text, not legal advice.*"
+q29,Which Spanish authority checks whether hotels comply with the AI Act?,The indexed documents do not name Spain's authority. The AI Act only says each Member State must designate national competent authorities (Art. 70).,"The indexed documents do not specify which Spanish authority is responsible for checking compliance with the AI Act.
+
+They do, however, state that each Member State must establish or designate at least one notifying authority and at least one market surveillance authority [ai_act, Article 70(1)-(7)]. Member States are required to make information on how to contact these authorities publicly available by 2 August 2025 [ai_act, Article 70(1)-(7)].
+
+This is a reading of the text, not legal advice."
+q30,At what age can a minor in Spain consent to a hotel processing their data?,The indexed documents only give the GDPR default of 16 with Member States allowed to go as low as 13; they do not say what Spain chose.,"The indexed documents do not cover the specific age of consent for minors in Spain, as national laws are not included in the corpus.
+
+Regarding the general EU rule, the GDPR states that for the offer of information society services directly to a child, processing of personal data is lawful if the child is at least 16 years old [gdpr, Article 8(1)-(3)]. If the child is under 16, processing is lawful only if consent is given or authorized by the holder of parental responsibility [gdpr, Article 8(1)-(3)]. However, Member States may provide by law for a lower age, provided it is not below 13 years [gdpr, Article 8(1)-(3)].
+
+This is a reading of the text, not legal advice."
+q31,What was the biggest fine imposed so far under the AI Act?,"The documents contain the text of the rules and the maximum fines, not enforcement decisions, so they cannot say.","The indexed documents do not contain information on specific fines that have been imposed so far, as they consist of the legal texts and guidelines rather than enforcement records or case law.
+
+However, the AI Act specifies the maximum administrative fines that can be imposed for certain infringements:
+* Up to **EUR 35,000,000** or **7% of total worldwide annual turnover** for the preceding financial year (whichever is higher) for non-compliance with the prohibition of AI practices referred to in Article 5 `[ai_act, Article 99(3)]`.
+* Up to **EUR 15,000,000** or **3% of total worldwide annual turnover** for the preceding financial year (whichever is higher) for non-compliance with other obligations related to operators or notified bodies, including transparency obligations `[ai_act, Article 99(4)]`.
+* Up to **EUR 7,500,000** or **1% of total worldwide annual turnover** for the preceding financial year (whichever is higher) for supplying incorrect, incomplete, or misleading information to notified bodies or national competent authorities `[ai_act, Article 99(5)]`.
+
+This is a reading of the text, not legal advice."
+q32,Which harmonised standard proves that our high-risk system meets the AI Act's accuracy requirements?,The indexed texts do not list specific technical standards; they only refer generally to standards and presumption of conformity.,"The indexed documents do not name a specific harmonised standard. 
+
+However, they state that high-risk AI systems that conform to harmonised standards (or parts thereof) published in the Official Journal of the European Union are presumed to be in conformity with the requirements set out in Section 2 of Chapter III of the AI Act, to the extent that those standards cover those requirements [ai_act, Article 40(1)]. The Commission is responsible for issuing standardisation requests to cover all requirements in that section [ai_act, Article 40(2)].
+
+This is a reading of the text, not legal advice."
+q33,Does the ePrivacy Directive require a cookie banner for our hotel's chatbot widget?,"The ePrivacy Directive is not in the indexed documents (AI Act, GDPR, AI system definition guidelines).","The indexed documents do not cover the requirements of the ePrivacy Directive or the necessity of cookie banners.
+
+The corpus does cover related transparency and information obligations, such as:
+* **GDPR:** Principles of lawfulness, fairness, and transparency [gdpr, Article 5(1)-(2)], and the specific information that must be provided to data subjects when their personal data is collected [gdpr, Article 13(1)-(2)].
+* **AI Act:** The obligation for providers to ensure that natural persons are informed they are interacting with an AI system, unless this is obvious [ai_act, Article 50(1)-(3)].
+
+This is a reading of the text, not legal advice."
+q34,Does the ban on emotion recognition at work also cover job candidates during hiring?,"The AI Act text only says workplace and education institutions and does not say whether candidates are covered; the indexed documents do not answer it. (After adding the Commission guidelines on prohibited practices: yes, the notion of workplace also applies to candidates in selection and hiring.)","The EU AI Act prohibits the use of AI systems to infer the emotions of a natural person in the ""areas of workplace and education institutions,"" unless the system is intended for medical or safety reasons `[ai_act, Article 5(1) (continued, part 2)]`. 
+
+While the text does not explicitly define ""areas of workplace,"" it classifies AI systems used for the ""recruitment or selection of natural persons,"" specifically those used to ""evaluate candidates,"" under the area of ""Employment, workers’ management and access to self-employment"" `[ai_act, Annex III(1)-(4)]`.
+
+This is a reading of the text, not legal advice."
+q35,How do I apply to Spain's national AI regulatory sandbox and what does it cost?,The AI Act only requires Member States to set up sandboxes (Art. 57); Spain's application procedure and costs are not in the indexed documents.,"The indexed documents do not cover the specific application process or costs for Spain's national AI regulatory sandbox, as they do not include national laws or specific national implementation details.
+
+They do, however, provide the following general EU-level rules for national AI regulatory sandboxes:
+* **Establishment**: Member States must ensure their competent authorities establish at least one national AI regulatory sandbox, which must be operational by 2 August 2026 [ai_act, Article 57(1)].
+* **Costs**: Access to these sandboxes must be free of charge for SMEs, including start-ups, although national competent authorities may recover exceptional costs in a fair and proportionate manner [ai_act, Article 58(2)(d)].
+* **Application Process**: Procedures for application, selection, and participation must be simple, easily intelligible, and clearly communicated [ai_act, Article 58(2)(g)]. National competent authorities must inform applicants of their decision within three months of the application [ai_act, Article 58(2)(a)].
+
+This is a reading of the text, not legal advice."

@@ -1,0 +1,6 @@
+id,kind,question,answer,failure,judge_reason
+q34,unanswerable,Does the ban on emotion recognition at work also cover job candidates during hiring?,"The EU AI Act prohibits the use of AI systems to infer the emotions of a natural person in the ""areas of workplace and education institutions,"" unless the system is intended for medical or safety reasons `[ai_act, Article 5(1) (continued, part 2)]`. 
+
+While the text does not explicitly define ""areas of workplace,"" it classifies AI systems used for the ""recruitment or selection of natural persons,"" specifically those used to ""evaluate candidates,"" under the area of ""Employment, workers’ management and access to self-employment"" `[ai_act, Annex III(1)-(4)]`.
+
+This is a reading of the text, not legal advice.",unsupported claim (answered an unanswerable question),"The assistant attempted to interpret the text rather than explicitly stating that the documents do not cover the question, which is required for an unanswerable question to be marked correct."

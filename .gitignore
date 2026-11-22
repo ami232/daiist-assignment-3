@@ -12,3 +12,6 @@ corpus/
 
 # Never commit your API key
 .env
+
+# Document added by the add-document demo (downloaded by evaluate.py)
+extra/

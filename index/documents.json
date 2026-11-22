@@ -1,0 +1,32 @@
+{
+  "ai_act": {
+    "chunks": {
+      "fixed": 174,
+      "structure": 196
+    },
+    "sha256": "bba630444b3278e881066774002a1d7824308934f49ccfa203e65be43692f55e",
+    "title": "AI Act (Regulation (EU) 2024/1689)",
+    "words": 52242,
+    "file": "ai_act.pdf"
+  },
+  "gdpr": {
+    "chunks": {
+      "fixed": 99,
+      "structure": 131
+    },
+    "sha256": "bd84e63f5b622b739a83389afc3b30d240f792bb88d8eb03a816c9a82b0c2499",
+    "title": "GDPR (Regulation (EU) 2016/679)",
+    "words": 29682,
+    "file": "gdpr.pdf"
+  },
+  "ai_system_definition_guidelines": {
+    "chunks": {
+      "fixed": 18,
+      "structure": 18
+    },
+    "sha256": "fe39f41d061184a913c32f1f92aaaa30a096858fa168c6053e22a19eef58910e",
+    "title": "Commission Guidelines on the definition of an AI system (C(2025) 5053)",
+    "words": 5455,
+    "file": "ai_system_definition_guidelines.pdf"
+  }
+}
