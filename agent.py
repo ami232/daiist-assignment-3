@@ -31,8 +31,8 @@ from mcp.client.stdio import stdio_client
 from api_key import load_api_key
 
 ROOT = Path(__file__).resolve().parent
-MODEL = os.environ.get("CHAT_MODEL", "gemini-3.8-flash")
-FALLBACK_MODELS = ["gemini-3.5-flash", "gemini-flash-latest"]   # tried in order if MODEL is overloaded or gone
+MODEL = os.environ.get("CHAT_MODEL", "gemini-3.5-flash")
+FALLBACK_MODELS = ["gemini-3.8-flash", "gemini-flash-latest"]   # tried in order if MODEL is overloaded or gone
 MAX_TOOL_CALLS = 6          # guardrail 2: hard limit of tool calls per question
 RECURSION_LIMIT = 25        # safety net for the agent loop itself
 
@@ -145,7 +145,7 @@ async def _run(question: str, approve, model_name=None) -> dict:
                 )
 
             chosen = model_name or MODEL
-            model = ChatGoogleGenerativeAI(model=chosen, temperature=0, max_retries=6) if isinstance(chosen, str) else chosen
+            model = ChatGoogleGenerativeAI(model=chosen, temperature=0, max_retries=2) if isinstance(chosen, str) else chosen
             agent = create_agent(model, [wrap(t) for t in mcp_tools], system_prompt=system_prompt())
             state = await agent.ainvoke(
                 {"messages": [{"role": "user", "content": question}]},

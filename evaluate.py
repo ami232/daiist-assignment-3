@@ -35,7 +35,7 @@ HUMAN_LABELS = EVAL / "human_labels.csv"
 ANSWERS = EVAL / "agent_answers.json"
 VERDICTS = EVAL / "judge_verdicts.json"
 BEFORE_AFTER = EVAL / "before_after.json"
-JUDGE_MODEL = os.environ.get("JUDGE_MODEL", "gemini-3.8-flash")
+JUDGE_MODEL = os.environ.get("JUDGE_MODEL", "gemini-3.5-flash")
 
 # The document added in the before/after test, and the unanswerable question it answers.
 ADDED_DOC = ROOT / "corpus" / "edpb_video_devices.pdf"
@@ -238,7 +238,7 @@ def judge_call(prompt: str) -> str:
     for attempt in range(6):
         try:
             response = client.models.generate_content(
-                model=JUDGE_MODEL if attempt < 3 else "gemini-3.5-flash",   # fall back if overloaded
+                model=JUDGE_MODEL if attempt < 3 else "gemini-3.8-flash",   # fall back if overloaded
                 contents=prompt,
                 config=types.GenerateContentConfig(temperature=0, response_mime_type="application/json"),
             )
