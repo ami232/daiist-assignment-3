@@ -57,19 +57,24 @@ Two examples:
 
 ## Retrieval
 
-Hit rate = share of answerable questions where **all** expected articles appear among the top-k chunks (strict for multi). The 6 unanswerable questions have nothing to hit and are left out (28 questions). Query embeddings are cached in `eval/query_cache.json`. Code: `evaluate.py`, results in `eval/retrieval_results.json`.
+Hit rate = share of answerable questions where **all** expected articles appear among the top-k chunks (strict for multi). The 6 unanswerable questions have nothing to hit and are left out (28 questions: 22 single, 6 multi). "Multi coverage" is the average share of the expected articles found. "Words" is the average amount of text the top-k chunks add to the prompt of one query. Query embeddings are cached in `eval/query_cache.json`, so both designs saw the very same query vectors. Code: `evaluate.py`; results: `eval/retrieval_results.json`.
 
-**Design A (`fixed`):**
+| design | k | all (28) | single (22) | multi, all found (6) | multi coverage | words added to the prompt |
+|---|---|---|---|---|---|---|
+| A `fixed` (819 chunks) | 1 | 68% (19) | 86% (19) | 0/6 | 42% | 146 |
+| A `fixed` | 3 | 79% (22) | 100% (22) | 0/6 | 50% | 431 |
+| A `fixed` | 5 | 82% (23) | 100% (22) | 1/6 | 58% | 726 |
+| B `structure` (926 chunks) | 1 | 68% (19) | 86% (19) | 0/6 | 50% | 126 |
+| B `structure` | 3 | 82% (23) | 100% (22) | 1/6 | 58% | 369 |
+| B `structure` | 5 | **86% (24)** | 100% (22) | **2/6** | **67%** | **596** |
 
-| k | all (28) | single (22) | multi, all found (6) | multi coverage | words added to the prompt |
-|---|---|---|---|---|---|
-| 1 | 68% (19) | 86% (19) | 0/6 | 42% | 146 |
-| 3 | 79% (22) | 100% (22) | 0/6 | 50% | 431 |
-| 5 | 82% (23) | 100% (22) | 1/6 | 58% | 727 |
+**What the numbers say.**
+- Both designs find the right article for every single-passage question from k=3. At k=1 both miss 3 of them.
+- Design B is never worse and is better from k=3: one more hit than A at k=3 (23 against 22) and one more at k=5 (24 against 23), both in the multi-passage questions, and it also adds fewer words to the prompt (596 against 726 at k=5, 18% less) because its chunks are shorter (103 words on average against 137).
+- Multi-passage questions are the weak spot of both: all expected articles are found for 2 of 6 even with B at k=5. Example q23 (AI Act Article 27 + GDPR Article 35) with design A: the top five were four chunks of Article 27 and one of Article 77, with nothing from the GDPR. Chunks of one article crowd out the second law. This is why the tool description and `AGENTS.md` tell the agent to search once per law.
+- Caution: 28 questions are few, so one question moves a rate by about 3.5 points. The gaps (1 to 2 questions) are small, but B is at least as good everywhere and cheaper, so there is no reason to prefer A.
 
-Single-passage questions are solved by k=3. Multi-passage questions are the weak spot: 1 of 6 even at k=5. Example q23 (AI Act Article 27 + GDPR Article 35): the top five were four chunks of Article 27 and one of Article 77, with nothing from the GDPR. Chunks of the same article crowd out the second law. Two things can help: search once per law (the tool description and `AGENTS.md` ask for this) and, if time allows, limit how many chunks one article may take.
-
-**Design B (`structure`):** TODO after the index is built (the free daily embedding quota was used by design A on 21 November; B is built on 22 November). Then: table as above, the design I choose and why, with words added to the prompt.
+**Design chosen: B (`structure`), k = 5.** One chunk per numbered paragraph matches how the law is written and how it is cited ("Article 6(2)"), it gave the best hit rate and it adds the least text. I keep k=5 (the default of `search`): going from k=3 to k=5 costs about 227 more words (roughly 300 tokens) per search and brings the one extra multi-passage hit. Design A stays in the index only to document the comparison. A possible improvement I did not build: limit how many chunks one article may take in the top k, so a second law can get in.
 
 ## Tools and subagent
 
@@ -206,7 +211,16 @@ What it shows. Question 1: the subagent searched the AI Act and the GDPR separat
 
 **Already indexed.** Chunk ids are a hash of design, source, location and text, so `add_document` computes the chunks of a file and embeds only those whose id is not stored yet. Adding the same file twice changes nothing, costs no quota and the tool says "already indexed". A real run on `corpus/gdpr.html`: `[fixed] 259 chunks, 259 already stored, 0 to embed`. A file that is partly indexed only gets its new chunks. The tool also refuses paths outside the project folder.
 
-**The experiment.** TODO: unanswerable question q29 (CV screening); document added: `corpus/ai_act_annex_iii.html` (Annex III of the AI Act, "High-risk AI systems referred to in Article 6(2)", 8 chunks in design B and 10 in design A, 1,177 words); answer before and after. It runs in `evaluate.py` on a throw-away copy of the index, so the committed index and all other results stay unchanged. Results go to `eval/add_document_demo.json`.
+**The experiment.** Question q29 (unanswerable): "We built a tool that screens job applicants' CVs. Is it a high-risk AI system under the AI Act?" The reason it cannot be answered is that Article 6(2) points to Annex III for the list of high-risk uses, and the annex is not in the corpus. The document added is `corpus/ai_act_annex_iii.html` (Annex III, "High-risk AI systems referred to in Article 6(2)", 1,177 words, 8 chunks in design B). It runs in `evaluate.py` on a throw-away copy of the index, so the committed index and all other results stay unchanged; the raw output is in `eval/add_document_demo.json`.
+
+| Step | What the agent did | Result |
+|---|---|---|
+| Before | 4 searches | Said the corpus does not cover the full text of Annex III, then explained the general rules of Article 6(2)-(3) (exceptions, profiling). It gave no answer about CV screening. |
+| Add | `add_document` through the agent | "Added 8 new chunks from ai_act_annex_iii.html (source 'AI Act Annex III'); 0 of its 8 chunks were already indexed. Index now holds 934 chunks." (926 + 8) |
+| After | 3 searches | "Yes": systems used to recruit or select people, in particular to analyse and filter job applications, are high-risk under Annex III point 4 [AI Act Annex III, Annex III(4)], with the Article 6(3) exceptions and the profiling rule. The citations match retrieved passages. |
+| Add again | `add_document` | "already indexed: all 8 chunks exist, nothing added." The index does not grow. |
+
+What changed is only the evidence: the same agent, prompt and question went from "cannot say" to a cited answer once the missing text was indexed. This also confirms that the q29 failure in the evaluation is a gap in the corpus and not a reasoning error. The "after" answer was read by me against Annex III point 4(a) and is consistent with it.
 
 ## Harness and guardrails
 
@@ -230,21 +244,54 @@ What it shows. Question 1: the subagent searched the AI Act and the GDPR separat
 
 **Approval step.** `add_document` changes the index and costs quota, so before it runs the harness asks "Allow? [y/N]" in the terminal. With no terminal (evaluation, scheduled runs) the answer is no and the agent is told "Not approved by the user". Tested by hand with `corpus/gdpr.html`.
 
-**Call limit.** At most 6 tool calls per question (`ToolCallLimitMiddleware`, then the run ends). The hardest question I tried (CV screening) used 5 searches.
+**Call limit.** At most 6 tool calls per question (`ToolCallLimitMiddleware`, then the run ends). In the evaluation 33 of the 34 questions needed one or two calls; only q29 (CV screening, whose key text is missing from the index) used all six and hit the limit.
 
-**My extra guardrail: citation check.** After the model answers, code extracts every `[Source, Article N]` citation and checks it against the passages the search tool really returned in that run. A citation with no matching passage is listed in the result (`unverified_citations`) and flagged at the end of the answer: "[guardrail] These citations do not match any retrieved passage; do not rely on them". Reason: a made-up citation is what makes a wrong legal answer look trustworthy. It does not judge the answer's content (the judge does that). One real case where it fired: TODO (from the evaluation run).
+**My extra guardrail: citation check.** After the model answers, code extracts every `[Source, Article N]` citation and checks it against the passages the search tool really returned in that run. A citation with no matching passage is listed in the result (`unverified_citations`) and flagged at the end of the answer: "[guardrail] These citations do not match any retrieved passage; do not rely on them". Reason: a made-up citation is what makes a wrong legal answer look trustworthy. It does not judge the answer's content (the judge does that). **It never fired on a real answer:** in the 34 evaluation answers every citation matched a retrieved passage (`unverified_citations` is empty for all of them). So I tested it on a constructed case using the real search results of q09: the answer "...at most EUR 5 000 000 [AI Act, Article 99(6)] and must register first [AI Act, Article 85]" is returned with "[guardrail] These citations do not match any retrieved passage; do not rely on them: [AI Act, Article 85]". The test also shows the limit: the invented amount "EUR 5 000 000" was not caught, because the guardrail checks citations, not numbers or claims.
 
 ## Evaluation
 
-*Code checks, the judge's rubric, your agreement with the judge, and results: correct, unsupported, correct refusals, wrong refusals.*
+All 34 questions were run through the full agent (MCP server, design B, k=5) with `STAGE=answers`, then judged and compared with my labels. Raw files: `eval/agent_answers.json`, `eval/judge_verdicts.json`, `eval/human_labels.csv`, `eval/evaluation_summary.json`.
+
+**Code checks** (no model involved, per answer): did it search at all; did it refuse (the phrase "The corpus does not cover this" in the first 160 characters); does it have citations and are they all backed by a retrieved passage; did the retrieved passages and the citations contain the expected article; did it hit the 6-call limit.
+
+**LLM judge** (`gemini-3.5-flash-lite`, the same model family as the agent, which is a limitation): it receives the question, the reference answer, the retrieved passages and the agent's answer, and returns JSON `{correct, supported, reason}` using this rubric: *correct* = the answer contains the key facts of the reference without contradicting it, or, for an unanswerable question, it clearly says the corpus does not cover it; *supported* = every factual claim in the answer appears in the retrieved passages.
+
+**My labels.** 24 of the 34 answers (all 6 unanswerable, all 6 multi-passage, and every other single-passage one) were labelled with the same two questions before the judge ran. [Roberto: the labels were first drafted by Claude, with the in-class permission to use AI as long as we understand and can explain the work; I reviewed them against the passages and changed: ___.]
+
+| Result | Value |
+|---|---|
+| Questions answered without error | 34/34 (28 answerable + 6 unanswerable) |
+| Judged correct | 34/34 |
+| Unsupported answers | 0 |
+| Correct refusals on unanswerable questions | 5/6 by the code check (q29 is not counted, see Failures) |
+| Wrong refusals on answerable questions | 0/28 |
+| Judge vs my labels, `correct` | 23/24 = 96% |
+| Judge vs my labels, `supported` | 24/24 = 100% |
+| Disagreements | q07 (1) |
+
+**How to read it.** The 96% is weaker evidence than it looks. The judge said "correct" for all 34 answers, and 23 of my 24 labels are also "correct", so a judge that always answered "correct" would score the same 96%. The one answer where I found a real problem, q07, is the one the judge missed: the agent listed the deployer's obligations but left out the duty to inform workers (Article 26(7)), and the judge's reason says it "states all the main obligations". So the judge is too lenient for missing items. With 34 questions and 24 labels, one question is about 4 points, so these differences are small.
 
 ## Failures
 
-*Failed questions by cause, with counts, and what to fix first.*
+| Cause | Count | Questions | How it was found |
+|---|---|---|---|
+| Needed text is not in the index (Annex III) | 1 | q29 | Code check (counted as "answered an unanswerable question") |
+| Incomplete answer because a relevant passage was not retrieved (Article 26(7)) | 1 | q07 | My labels only; code check and judge missed it |
+| Wrong refusals, unsupported claims, invalid citations, errors | 0 | | |
+
+**q29.** The agent did not guess: it said that Annex III is missing and that it cannot confirm the classification, so I and the judge counted it as a correct refusal in substance. The code check counts it as a failure because the answer did not start with the required phrase and it used all 6 searches. I kept the code check as it is and did not tune it to the result, so the table shows the disagreement. The experiment in "Adding a document" shows the cause: once Annex III is indexed the same agent answers with a citation.
+
+**q07.** Retrieval returned Article 26(1)-(6) and (8) but not 26(7), which is about informing workers, so the answer is correct as far as it goes but incomplete. This is the same weakness as in the retrieval section: chunks of the same article crowd out the passage that is needed.
+
+**Fix first:** (1) put Annex III (and the other annexes the articles point to) in the corpus permanently, since Article 6(2) cannot be applied without it and it is the failure with legal weight; (2) for list-type questions such as "what are our obligations", tell the agent to run a second search for the remaining items; (3) only then touch the refusal wording. I have not built these yet.
 
 ## Decision
 
-*Would you let users rely on it, for what, with which safeguard? Cost and latency per question.*
+**Reliance.** I would let people use it to find and read the relevant articles of the AI Act, the GDPR and the Data Act faster, not to take legal decisions from it. In 28 answerable questions it made no wrong refusal and no unsupported claim, but one answer was incomplete in a way the automatic checks did not see (q07), and the sample is small (34 questions). Every answer says it is not legal advice.
+
+**Safeguard.** Show the cited passages next to the answer and keep the citation check on, so the user can read the source. Keep the approval step for `add_document`. Do not use the judge as the only quality gate: it said "correct" to everything, including the one incomplete answer. Keep a human reading of a sample of answers, as in this evaluation.
+
+**Cost and latency per question** (mean over the 34 questions): 4,317 input tokens and 155 output tokens, 6.2 seconds and 1.3 tool calls. The judge adds one more model call per question. Everything ran on the Gemini free tier, so the money cost here was zero; the limits that mattered were the per-minute request limit (the evaluation waits and retries) and about 1,000 embedded texts per day.
 
 ## AI use
 
@@ -256,6 +303,6 @@ What it shows. Question 1: the subagent searched the AI Act and the GDPR separat
 - Drafted the test set (see Test set; my professor approved this by email) and the first version of the use-case text and report sections.
 - Debugged with me. For example, the agent froze because mcp 2.x renamed `inputSchema` to `input_schema`, and a failed start then hid the error while shutting down.
 
-**What I did myself.** I forked and cloned the repository, set up the environment and the API key, ran every command on my own computer and read its output, so the numbers in this report come from my runs. [What else you did: rewrote or checked the test set; graded the 24 answers by hand in `eval/human_labels.csv` before reading the judge; wrote the Decision section.]
+**What I did myself.** I forked and cloned the repository, set up the environment and the API key, ran every command on my own computer and read its output, so the numbers in this report come from my runs. [What else you did: rewrote or checked the test set; reviewed the 24 labels in `eval/human_labels.csv`, which Claude had drafted, before running the judge; ran the judge and the add-document experiment; wrote the Decision section.]
 
 **What I checked.** [E.g. fine amounts against the official sources, article references against the parsed corpus by script, the licence in the Commission's legal notice.]

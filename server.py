@@ -22,7 +22,7 @@ from mcp.server.mcpserver import MCPServer
 from index import (ROOT, DailyQuotaError, chunk_file, embed_and_store,
                    embed_query, get_collection)
 
-DESIGN = os.environ.get("CORPUS_DESIGN", "fixed")
+DESIGN = os.environ.get("CORPUS_DESIGN", "structure")  # chosen in REPORT.md (Retrieval)
 TOP_K = int(os.environ.get("TOP_K", "5"))
 
 mcp = MCPServer("corpus", log_level="WARNING")

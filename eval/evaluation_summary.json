@@ -1,0 +1,36 @@
+{
+ "correct": 34,
+ "unsupported": 0,
+ "correct_refusals": 5,
+ "wrong_refusals": 0,
+ "answered_unanswerable": 1,
+ "judged": 34,
+ "errors": 0,
+ "limit_hit": 1,
+ "answerable": 28,
+ "unanswerable": 6,
+ "failures_by_cause": {
+  "answered an unanswerable question": {
+   "count": 1,
+   "ids": [
+    "q29"
+   ]
+  }
+ },
+ "cost_per_question": {
+  "questions": 34,
+  "input_tokens": 4317,
+  "output_tokens": 155,
+  "seconds": 6.2,
+  "tool_calls": 1.3
+ },
+ "agreement_with_human": {
+  "graded": 24,
+  "correct_agreement": 0.9583333333333334,
+  "supported_agreement": 1.0,
+  "both_agreement": 0.9583333333333334,
+  "disagreements": [
+   "q07"
+  ]
+ }
+}

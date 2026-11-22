@@ -1,0 +1,172 @@
+{
+ "q01": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer accurately captures the 72-hour rule, conditions, and exception found in the reference and retrieved passages."
+ },
+ "q02": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identifies the company as a 'deployer' and defines both terms accurately based on the retrieved passages."
+ },
+ "q03": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly states the prohibition on using emotion inference AI in the workplace with the medical/safety exception, fully matching the reference and passages."
+ },
+ "q04": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer accurately captures the key rules, conditions, and exceptions from the reference and is fully supported by the retrieved passages."
+ },
+ "q05": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant accurately provides the quality criteria for training data as outlined in the reference and retrieved passages."
+ },
+ "q06": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer accurately captures all key elements of human oversight listed in the reference answer and is fully supported by the retrieved passages."
+ },
+ "q07": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly states all the main obligations of a high-risk AI system deployer, and every claim is supported by the retrieved passages."
+ },
+ "q08": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly and comprehensively answers the question based on the retrieved passages."
+ },
+ "q09": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly states the maximum fines for start-ups, properly applying the lower limit rule and referencing all necessary details directly from the provided passages."
+ },
+ "q10": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant accurately provides the application dates and exceptions as found in the retrieved passages."
+ },
+ "q11": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer accurately captures the definition of personal data from GDPR Article 4(1) using only information found in the retrieved passages."
+ },
+ "q12": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly lists all the data processing principles and accountability requirement, which are fully supported by the retrieved passages."
+ },
+ "q13": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The answer accurately lists the legal grounds for processing personal data as outlined in the reference and retrieved passages."
+ },
+ "q14": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer covers the rule, exceptions, and conditions as stated in the reference and supported by the retrieved passages."
+ },
+ "q15": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The answer provides the correct timeframe, grounds for erasure, and exceptions, all supported by the retrieved GDPR passages."
+ },
+ "q16": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer accurately covers the general rule, exceptions, and safeguards regarding automated decision-making as detailed in the retrieved GDPR passages."
+ },
+ "q17": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer accurately covers the key rule and specific conditions for carrying out a DPIA based entirely on the retrieved passages."
+ },
+ "q18": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant accurately provides the key rules and conditions regarding user data access based on the retrieved passages."
+ },
+ "q19": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant provides the correct rule and conditions based strictly on the retrieved passages."
+ },
+ "q20": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant accurately answers the question with the key rules from the passages and cites them correctly."
+ },
+ "q21": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer accurately captures the key rule and conditions from the reference text, and all claims are fully supported by the retrieved passages."
+ },
+ "q22": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly states that cloud providers must remove obstacles to switching and details the regulations on switching charges, all of which are supported by the retrieved passages."
+ },
+ "q23": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly explains that the GDPR assessment does not replace the AI Act assessment, but rather complements it, and this is fully supported by the retrieved passages."
+ },
+ "q24": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identifies the AI Act as having the higher fine and provides accurate details supported by the passages."
+ },
+ "q25": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The answer accurately explains the human involvement requirements under both the GDPR and the AI Act, fully supported by the retrieved passages."
+ },
+ "q26": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The answer accurately conveys the substance of the reference answer and is fully supported by the retrieved passages."
+ },
+ "q27": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly states the requirements for sharing personal data of a non-user based on the retrieved passages."
+ },
+ "q28": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly states the rule from Article 26(9) of the AI Act, which is fully supported by the retrieved passages."
+ },
+ "q29": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly declines to answer due to the missing Annex III while accurately citing Article 6 principles from the corpus."
+ },
+ "q30": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly declines to answer based on the corpus while accurately citing related consent provisions."
+ },
+ "q31": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly declines to answer due to the corpus not covering the specific authority and stays faithful to the retrieved text."
+ },
+ "q32": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly declined to answer due to the absence of the Digital Services Act in the corpus."
+ },
+ "q33": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly declined to answer due to the corpus limitations and did not assert any outside facts as true."
+ },
+ "q34": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly declines to answer based on the missing information in the corpus while appropriately mentioning the related context found in the passages."
+ }
+}

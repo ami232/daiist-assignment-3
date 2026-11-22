@@ -19,11 +19,13 @@ Environment
 Answers and verdicts are cached in eval/*.json, so a re-run only asks what is missing.
 """
 
+import asyncio
 import csv
 import hashlib
 import json
 import os
 import sys
+import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -363,6 +365,28 @@ def _slim(result: dict) -> dict:
     return out
 
 
+PACE_SECONDS = float(os.environ.get("PACE_SECONDS", "9"))  # free tier: ~15 model calls a minute, 2 per question
+
+
+def _is_rate_limit(e: Exception) -> bool:
+    s = str(e)
+    return "429" in s or "RESOURCE_EXHAUSTED" in s or "rate limit" in s.lower()
+
+
+async def _with_retry(call, what: str, tries: int = 4, wait: int = 65):
+    """Run `await call()`; on a per-minute 429 wait and retry. A daily limit is not retried."""
+    for attempt in range(1, tries + 1):
+        try:
+            return await call()
+        except Exception as e:
+            daily = "perday" in str(e).lower().replace(" ", "").replace("_", "")
+            if _is_rate_limit(e) and not daily and attempt < tries:
+                log(f"  {what}: rate limit (429), waiting {wait}s (try {attempt}/{tries})")
+                await asyncio.sleep(wait)
+            else:
+                raise
+
+
 def _load(path: Path) -> dict:
     return json.loads(path.read_text()) if path.exists() and not os.environ.get("FRESH") else {}
 
@@ -378,14 +402,16 @@ async def answers_stage(questions: list[dict]) -> dict:
         # evaluation is unattended: add_document is always refused here (the demo stage approves it on purpose)
         async with Harness(approve=lambda tool, args: False) as h:
             for i, q in enumerate(todo, 1):
+                started = time.time()
                 try:
-                    answers[q["id"]] = _slim(await h.ask(q["question"]))
+                    answers[q["id"]] = _slim(await _with_retry(lambda: h.ask(q["question"]), q["id"]))
                     r = answers[q["id"]]
                     log(f"  [{i}/{len(todo)}] {q['id']} {r['seconds']}s, {len(r['trace'])} tool calls")
                 except Exception as e:
                     answers[q["id"]] = {"error": f"{type(e).__name__}: {str(e)[:300]}"}
                     log(f"  [{i}/{len(todo)}] {q['id']} ERROR {answers[q['id']]['error']}")
                 ANSWERS.write_text(json.dumps(answers, indent=1))
+                await asyncio.sleep(max(0.0, PACE_SECONDS - (time.time() - started)))
     write_grading_sheet(questions, answers)
     return answers
 
@@ -409,12 +435,13 @@ async def judge_stage(questions: list[dict], answers: dict) -> dict:
                   f"{q['reference_answer']}\n\nRETRIEVED PASSAGES:\n{_passages(r) or '(none)'}\n\nASSISTANT ANSWER:\n{r['raw_answer']}")
         for attempt in (1, 2):
             try:
-                verdicts[q["id"]] = parse_verdict(str((await llm.ainvoke(prompt)).text))
+                verdicts[q["id"]] = parse_verdict(str((await _with_retry(lambda: llm.ainvoke(prompt), q["id"])).text))
                 break
             except Exception as e:
                 verdicts[q["id"]] = {"error": f"{type(e).__name__}: {str(e)[:200]}"}
         log(f"  [{i}/{len(todo)}] {q['id']} -> {verdicts[q['id']]}")
         VERDICTS.write_text(json.dumps(verdicts, indent=1))
+        await asyncio.sleep(PACE_SECONDS / 2)
     return verdicts
 
 
