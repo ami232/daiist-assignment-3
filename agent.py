@@ -33,7 +33,7 @@ from api_key import load_api_key
 ROOT = Path(__file__).resolve().parent
 MODEL = os.environ.get("CHAT_MODEL", "gemini-3.1-flash-lite")
 FALLBACK_MODELS = ["gemini-3.5-flash-lite", "gemini-flash-lite-latest", "gemini-3.8-flash"]   # tried in order if MODEL is overloaded or gone
-MAX_TOOL_CALLS = 6          # guardrail 2: hard limit of tool calls per question
+MAX_TOOL_CALLS = int(os.environ.get("MAX_TOOL_CALLS", 6))   # guardrail 2: hard limit of tool calls per question
 RUN_TIMEOUT = 120           # seconds for one whole question; then it is retried (see run_agent)
 RECURSION_LIMIT = 25        # safety net for the agent loop itself
 
@@ -164,7 +164,8 @@ async def _run(question: str, approve, model_name=None) -> dict:
         tokens["output"] += usage.get("output_tokens", 0)
 
     # guardrail 3: citation check
-    if not any(s["tool"] == "search" and s["status"] == "ok" for s in trace):
+    used_tools = {s["tool"] for s in trace if s["status"] == "ok"}
+    if "search" not in used_tools and "add_document" not in used_tools:   # a pure add-document request needs no search
         flags.append("no_search")
         answer += "\n\n[Guardrail] This answer was given without searching the corpus; do not rely on it."
     bad = check_citations(answer, trace)
