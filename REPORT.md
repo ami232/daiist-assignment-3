@@ -180,7 +180,54 @@ question." and use no other knowledge (IFRA, national rules, non-EU law).
 
 **Transcript from my editor (VS Code, GitHub Copilot, agent mode):**
 
-*[PENDING: paste the Copilot transcript here]*
+GitHub Copilot does not read the Claude Code tool name `mcp__corpus__search`:
+the first attempt delegated to the subagent, which got no tool and answered
+"The corpus does not cover this question." without searching. Copilot names MCP
+tools `server/tool`, so the same subagent is also in
+`.github/agents/corpus-researcher.agent.md` with `tools: ['corpus/search']`.
+With it:
+
+> **Me:** Use the corpus-researcher subagent to answer: Which fragrance
+> allergens must be declared on a perfume label, and from what concentration?
+>
+> *Copilot: delegated task to corpus-researcher (MAI Code 2 Flash), 1 m 11 s,
+> 28 `search` calls, e.g. `"fragrance allergens declaration perfume label
+> 0.001% leave-on 0.01% rinse-off Annex III list"`, `"Article 19 1 g list of
+> ingredients fragrance allergens perfume"`, `"ANNEX III entry 67"`, …*
+>
+> **corpus-researcher:** A perfume label must declare these fragrance allergens
+> when present above **0,001 %** for leave-on products or **0,01 %** for
+> rinse-off products: Amyl cinnamal, Amylcinnamyl alcohol, Anise alcohol,
+> Benzyl alcohol, Benzyl benzoate, Benzyl cinnamate, Benzyl salicylate,
+> Butylphenyl methylpropional, Cinnamal, Cinnamyl alcohol, Citral, Citronellol,
+> Coumarin, Eugenol, Evernia furfuracea extract, Evernia prunastri extract,
+> Farnesol, Geraniol, Hexyl cinnamal, Hydroxycitronellal, Hydroxyisohexyl
+> 3-cyclohexene carboxaldehyde, Isoeugenol, Alpha-Isomethyl ionone, Limonene,
+> Linalool, Methyl 2-Octynoate. [Regulation (EC) No 1223/2009 (consolidated
+> 2025-05-01) | ANNEX III, entries 67-69] [… | ANNEX III, entries 69-71]
+> [… | ANNEX III, entries 72-78] [… | ANNEX III, entries 80-93]
+>
+> Additional allergens include Acetyl Cedrene, Amyl Salicylate, Anethole,
+> Benzaldehyde, Camphor, Beta-Caryophyllene, Carvone, Dimethyl Phenethyl
+> Acetate, Hexadecanolactone, Hexamethylindanopyran, Linalyl Acetate, Menthol,
+> Trimethylcyclopentenyl Methylisopentenol, Salicylaldehyde, Santalol,
+> Sclareol, Terpineol, Tetramethyl Acetyloctahydronaphthalenes,
+> Trimethylbenzenepropanol, Vanillin, and specified essential oils and
+> extracts. [… | ANNEX III, entries 325-349] [… | ANNEX III, entries 356-357]
+> [… | ANNEX III, entries 367-370]
+>
+> The allergen or substance must be individually named in the ingredient
+> list; "parfum" or "aroma" does not replace separate declaration where Annex
+> III requires it. [Regulation (EC) No 1223/2009 (consolidated 2025-05-01) |
+> Article 19, Labelling]
+
+**What this shows.** The thresholds and the Article 19 rule are right and
+cited. But in the editor none of `agent.py`'s guardrails apply: no call limit
+(28 searches instead of at most 4) and no citation check, and four of its
+seven Annex III citations are not real passages: "entries 67-69", "72-78",
+"80-93" and "325-349" merge or reshape several chunks (checked against the
+index; 69-71, 356-357 and 367-370 exist). A long list built from many chunks is exactly where a check against
+the retrieved passages is needed before the team copies it onto a label.
 
 ## Adding a document
 
