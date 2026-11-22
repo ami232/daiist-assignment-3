@@ -464,6 +464,7 @@ dependencies = [
     { name = "numpy" },
     { name = "pandas" },
     { name = "pypdf" },
+    { name = "truststore" },
 ]
 
 [package.metadata]
@@ -481,6 +482,7 @@ requires-dist = [
     { name = "numpy", specifier = ">=2.0" },
     { name = "pandas", specifier = ">=2.2" },
     { name = "pypdf", specifier = ">=6.0" },
+    { name = "truststore", specifier = ">=0.10.5" },
 ]
 
 [[package]]

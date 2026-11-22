@@ -20,7 +20,7 @@ import re
 import time
 from pathlib import Path
 
-from agent import CITATION, REFUSAL, ask
+from agent import HEADER, REFUSAL, ask, check_citations, citations
 from index import DESIGNS, collection
 from retrieval import search
 
@@ -35,7 +35,9 @@ the passages the assistant retrieved, and the assistant's answer.
 
 correct = 1 if the answer gives the same rule, number and condition as the
   reference answer (other wording is fine; extra correct detail is fine;
-  a missing key condition or a different number is 0). For a question the
+  a missing key condition or a different number is 0). Do not mark an answer
+  wrong for a correct legal point the reference omits, such as an exception
+  stated in the retrieved passages. For a question the
   corpus cannot answer, correct = 1 only if the assistant says the corpus does
   not cover it. If the assistant refuses a question that has a reference
   answer, correct = 0.
@@ -125,7 +127,11 @@ def answers(questions: list[dict]) -> dict[str, dict]:
     with path.open("a" if cached else "w", encoding="utf-8") as f:
         for q in questions:
             if q["question"] in cached:
-                out[q["id"]] = cached[q["question"]]
+                a = cached[q["question"]]
+                # Re-apply the current citation guardrail to the model's raw answer.
+                retrieved = {(s.strip(), l.strip()) for s, l in HEADER.findall(a["retrieved"])}
+                a["answer"], a["guardrail"] = check_citations(a["raw_answer"], retrieved)
+                out[q["id"]] = a
                 continue
             for attempt in range(3):
                 try:
@@ -146,7 +152,7 @@ def answers(questions: list[dict]) -> dict[str, dict]:
 
 def code_checks(q: dict, a: dict) -> dict:
     refused = a["answer"].strip().startswith(REFUSAL)
-    cited = [(s.strip(), l.strip()) for s, l in CITATION.findall(a["answer"])]
+    cited = citations(a["answer"])
     pairs = expected_pairs(q) if q["kind"] != "unanswerable" else []
     cites_expected = any(hits_expected({"source": s, "location": l, "text": a["retrieved"]}, es, el)
                          for s, l in cited for es, el in pairs)

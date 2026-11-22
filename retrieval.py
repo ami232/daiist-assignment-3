@@ -19,7 +19,7 @@ from index import DEFAULT_DESIGN, INDEX, collection, embed
 
 QUERY_CACHE = INDEX / "query_cache.json"
 DEFAULT_K = 5
-HYBRID = True  # the chosen design; see REPORT.md, Retrieval
+HYBRID = False  # chosen by hit rate: hybrid did not help (REPORT.md, Retrieval)
 RRF_K = 60
 
 

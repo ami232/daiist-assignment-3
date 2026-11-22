@@ -23,8 +23,14 @@ import sys
 import time
 from pathlib import Path
 
-import httpx
-from bs4 import BeautifulSoup
+import truststore
+
+# Trust the operating system's certificates, so the code also works on networks
+# that inspect HTTPS (a university or antivirus proxy) without extra settings.
+truststore.inject_into_ssl()
+
+import httpx  # noqa: E402
+from bs4 import BeautifulSoup  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent
 CORPUS = ROOT / "corpus"
@@ -239,10 +245,30 @@ def extract_text(path: Path) -> list[dict]:
     return [{"location": f"paragraph {i}", "text": p} for i, p in enumerate(paras, start=1) if p]
 
 
+def extract_html(path: Path) -> list[dict]:
+    """Any other web page: paragraphs and list items under their nearest heading."""
+    soup = BeautifulSoup(path.read_text(encoding="utf-8", errors="replace"), "html.parser")
+    for el in soup(["script", "style", "nav", "header", "footer", "aside", "form"]):
+        el.decompose()
+    main = soup.find("main") or soup.find("article") or soup.body or soup
+    heading, blocks = "", []
+    for el in main.find_all(["h1", "h2", "h3", "h4", "p", "li"]):
+        text = clean(el.get_text(" "))
+        if not text:
+            continue
+        bold = el.find(["strong", "b"])
+        if el.name.startswith("h") or (el.name == "p" and bold is not None and len(text.split()) <= 12
+                                        and clean(bold.get_text(" ")) == text and not re.search(r"\d", text)):
+            heading = text  # a real heading, or a short all-bold paragraph (not a "21 CFR 701.2" reference)
+        elif el.name == "p" or el.find(["ul", "ol", "p"]) is None:
+            blocks.append({"location": f"section '{heading}'" if heading else "introduction", "text": text})
+    return blocks
+
+
 def extract(path: Path) -> list[dict]:
     suffix = path.suffix.lower()
     if suffix in (".xhtml", ".html", ".htm"):
-        return extract_xhtml(path)
+        return extract_xhtml(path) or extract_html(path)
     if suffix == ".pdf":
         return extract_pdf(path)
     return extract_text(path)
@@ -372,8 +398,9 @@ def embed_and_store(chunks: list[dict], design: str = DEFAULT_DESIGN) -> int:
     stored stays stored, and the next run carries on from there.
     """
     col = collection(design)
-    have = set(col.get(ids=[c["id"] for c in chunks], include=[])["ids"]) if chunks else set()
-    todo = [c for c in {c["id"]: c for c in chunks}.values() if c["id"] not in have]
+    unique = list({c["id"]: c for c in chunks}.values())  # a page can repeat a paragraph word for word
+    have = set(col.get(ids=[c["id"] for c in unique], include=[])["ids"]) if unique else set()
+    todo = [c for c in unique if c["id"] not in have]
     done = 0
     for i in range(0, len(todo), BATCH):
         batch = todo[i:i + BATCH]

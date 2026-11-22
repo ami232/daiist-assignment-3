@@ -24,6 +24,10 @@ import sys
 import time
 from pathlib import Path
 
+import truststore
+
+truststore.inject_into_ssl()  # use the OS certificates (see index.py)
+
 from langchain.agents import create_agent
 from langchain.agents.middleware import ModelCallLimitMiddleware, ToolCallLimitMiddleware
 from langchain_core.tools import StructuredTool
@@ -39,7 +43,7 @@ ROOT = Path(__file__).resolve().parent
 CHAT_MODEL = os.environ.get("CHAT_MODEL", "gemini-3.1-flash-lite")
 MAX_MODEL_CALLS, MAX_TOOL_CALLS = 6, 4
 REFUSAL = "The corpus does not cover this question."
-CITATION = re.compile(r"\[([^\[\]|]+?)\s*\|\s*([^\[\]]+?)\]")
+BRACKET = re.compile(r"\[([^\[\]]*\|[^\[\]]*)\]")
 HEADER = re.compile(r"^\[\d+\] (.+?) \| (.+)$", re.M)
 
 
@@ -77,20 +81,50 @@ def text_of(content) -> str:
     return "".join(part.get("text", "") if isinstance(part, dict) else str(part) for part in content)
 
 
+def citations(answer: str) -> list[tuple[str, str]]:
+    """Every (source, location) the answer cites.
+
+    The model sometimes puts several in one bracket, "[A | x; B | y]" or
+    "[A | x; y]", or adds a point number, "x (1)": split and tidy those, so the
+    guardrail judges what is cited, not how it is punctuated.
+    """
+    cited = []
+    for group in BRACKET.findall(answer):
+        source = ""
+        for part in re.split(r";\s*", group):
+            if "|" in part:
+                source, location = (x.strip() for x in part.split("|", 1))
+            else:
+                location = part.strip()
+            location = re.sub(r"\s*\(\d+\)$", "", location)
+            if source and location:
+                cited.append((source, location))
+    return cited
+
+
+def is_retrieved(cite: tuple[str, str], retrieved: set[tuple[str, str]]) -> bool:
+    """A citation counts if search returned that passage: same document (a
+    shortened title is fine) and the same location, or its article/section
+    without the title ("Article 2" for "Article 2, Definitions")."""
+    source, location = cite
+    return any((source in s or s in source) and (location == loc or loc.startswith(location + ","))
+               for s, loc in retrieved)
+
+
 def check_citations(answer: str, retrieved: set[tuple[str, str]]) -> tuple[str, str | None]:
     """The citation guardrail. Returns (answer to show, why it fired or None)."""
     if answer.strip().startswith(REFUSAL):
         return answer, None
-    cited = [(s.strip(), loc.strip()) for s, loc in CITATION.findall(answer)]
+    cited = citations(answer)
     if not cited:
         return REFUSAL, "the answer cited no passage"
-    bad = [c for c in cited if c not in retrieved]
+    bad = [c for c in cited if not is_retrieved(c, retrieved)]
     if bad:
         return REFUSAL, f"cited passages search never returned: {bad}"
     return answer, None
 
 
-async def ask_async(question: str, approve=terminal_approval) -> dict:
+async def ask_async(question: str, approve=terminal_approval, extra_rules: str = "") -> dict:
     load_api_key()
     started = time.time()
     # Pass our environment on: the MCP client's default one is minimal and
@@ -104,7 +138,7 @@ async def ask_async(question: str, approve=terminal_approval) -> dict:
         agent = create_agent(
             ChatGoogleGenerativeAI(model=CHAT_MODEL, temperature=0, timeout=90, max_retries=3),
             tools=tools,
-            system_prompt=system_prompt(),
+            system_prompt=system_prompt() + (f"\n\n{extra_rules}" if extra_rules else ""),
             middleware=[ModelCallLimitMiddleware(run_limit=MAX_MODEL_CALLS, exit_behavior="end"),
                         ToolCallLimitMiddleware(run_limit=MAX_TOOL_CALLS, exit_behavior="continue")],
         )
@@ -122,14 +156,27 @@ async def ask_async(question: str, approve=terminal_approval) -> dict:
             passages.append(text)
             retrieved |= {(s.strip(), loc.strip()) for s, loc in HEADER.findall(text)}
     raw = text_of(result["messages"][-1].content).strip() or REFUSAL
-    answer, fired = check_citations(raw, retrieved)
+    tools_used = {t["tool"] for t in trace}
+    if "add_document" in tools_used and "search" not in tools_used:
+        answer, fired = raw, None  # reporting on an added file, not answering from the corpus
+    else:
+        answer, fired = check_citations(raw, retrieved)
     return {"question": question, "answer": answer, "raw_answer": raw, "guardrail": fired,
             "trace": trace, "retrieved": "\n\n".join(passages), "tokens": tokens,
             "seconds": round(time.time() - started, 1)}
 
 
-def ask(question: str, approve=terminal_approval) -> dict:
-    return asyncio.run(ask_async(question, approve))
+def ask(question: str, approve=terminal_approval, attempts: int = 4, extra_rules: str = "") -> dict:
+    """Answer one question; retry when Gemini is overloaded (503) or times out."""
+    for attempt in range(attempts):
+        try:
+            return asyncio.run(ask_async(question, approve, extra_rules))
+        except Exception as error:  # noqa: BLE001 - the 503 arrives wrapped in an ExceptionGroup
+            if attempt == attempts - 1:
+                raise
+            wait = 20 * (attempt + 1)
+            print(f"(agent call failed: {str(error)[:80]}; retrying in {wait}s)", file=sys.stderr)
+            time.sleep(wait)
 
 
 if __name__ == "__main__":
