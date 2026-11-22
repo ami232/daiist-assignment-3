@@ -191,21 +191,27 @@ def retrieval_eval(rows: list[dict]) -> dict:
 # ---------------------------------------------------------------- 2. agent answers
 
 def answer_all(rows: list[dict], force: bool) -> dict:
+    """Answer every question. Done answers are kept; failed ones are retried in later rounds
+    (the Gemini API sometimes answers 503 'high demand' for a few minutes)."""
     answers = {} if force else load_json(ANSWERS)
-    errors = []
+    for round_number in range(1, 6):
+        missing = [r for r in rows if r["id"] not in answers]
+        if not missing:
+            break
+        if round_number > 1:
+            print(f"  round {round_number}: {len(missing)} question(s) left; waiting 60 s before retrying", flush=True)
+            time.sleep(60)
+        for row in missing:
+            print(f"  {row['id']} ({row['kind']}): {row['question'][:70]}", flush=True)
+            try:
+                answers[row["id"]] = run_agent(row["question"], approve=lambda tool, args: False)
+            except Exception as error:  # keep going; the next round retries this question
+                print(f"    failed: {type(error).__name__}: {str(error)[:120]}", flush=True)
+                continue
+            save_json(ANSWERS, answers)
     for row in rows:
-        if row["id"] in answers:
-            continue
-        print(f"  {row['id']} ({row['kind']}): {row['question'][:70]}", flush=True)
-        try:
-            answers[row["id"]] = run_agent(row["question"], approve=lambda tool, args: False)
-        except Exception as error:  # keep going; a re-run retries this question
-            errors.append((row["id"], f"{type(error).__name__}: {str(error)[:200]}"))
-            print(f"    failed: {errors[-1][1]}", flush=True)
-            continue
-        save_json(ANSWERS, answers)
-    for qid, message in errors:
-        print(f"  WARNING {qid} has no answer yet ({message}). Run the evaluation again to retry.")
+        if row["id"] not in answers:
+            print(f"  WARNING {row['id']} has no answer yet. Run the evaluation again later to finish it.")
     return answers
 
 
@@ -517,7 +523,11 @@ def main() -> None:
     verdicts = judge_all(rows, answers, args.force)
     agreement = human_agreement(verdicts)
     print("4. Before / after")
-    ba = before_after(rows, answers, args.force)
+    try:
+        ba = before_after(rows, answers, args.force)
+    except Exception as error:
+        print(f"  WARNING before/after failed ({type(error).__name__}: {str(error)[:150]}). Run again later.")
+        ba = {}
     failures = failure_candidates(rows, answers, verdicts, checks)
     summary = summarise(rows, retrieval, answers, verdicts, checks, agreement, ba, failures)
     (EVAL / "summary.md").write_text(summary, encoding="utf-8")

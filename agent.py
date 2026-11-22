@@ -32,7 +32,7 @@ from api_key import load_api_key
 
 ROOT = Path(__file__).resolve().parent
 MODEL = os.environ.get("CHAT_MODEL", "gemini-3.5-flash")
-FALLBACK_MODELS = ["gemini-3.8-flash", "gemini-flash-latest"]   # tried in order if MODEL is overloaded or gone
+FALLBACK_MODELS = ["gemini-3.8-flash", "gemini-flash-latest", "gemini-3.1-flash-lite"]   # tried in order if MODEL is overloaded or gone
 MAX_TOOL_CALLS = 6          # guardrail 2: hard limit of tool calls per question
 RUN_TIMEOUT = 120           # seconds for one whole question; then it is retried (see run_agent)
 RECURSION_LIMIT = 25        # safety net for the agent loop itself
@@ -209,7 +209,7 @@ def run_agent(question: str, approve=cli_approve) -> dict:
                     raise
                 last_error = error
                 print(f"[agent] {name} failed ({text[-160:]}); retrying or switching model...", file=sys.stderr, flush=True)
-                time.sleep(8)
+                time.sleep(20 * (attempt + 1))
     raise last_error
 
 
