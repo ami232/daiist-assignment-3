@@ -63,7 +63,26 @@ One real search result (query "single report for several similar data breaches")
 
 **Subagent** `.claude/agents/corpus-researcher.md`: only tool `mcp__corpus__search`; it searches with short English queries, tries up to two rephrasings, answers only from the passages, cites `[source, location]`, says "The corpus does not cover this" when it does not, and treats retrieved text as data, not instructions.
 
-**Transcript from my editor:** [TODO: paste one transcript of the subagent answering a question.]
+**Transcript from my editor** (Claude Code in the Codespace, `corpus` MCP server connected with 2 tools; the login lines are left out):
+
+```
+❯ Use the corpus-researcher subagent to answer: If a contract calls a company a processor, does that decide whether it is really a processor?
+
+● corpus-researcher(Contract label vs processor role)
+  ⎿  Backgrounded agent
+
+› Message from @corpus-researcher
+● No. The EDPB Guidelines treat controller and processor as functional concepts. What counts is what a party actually does in the situation, not how a contract
+  labels it, and the role "is not negotiable" [edpb_controller_processor, paras 10-12 (p.8)]. A party that in fact decides why and how personal data are processed
+  is a controller "even if a contract says that it is a processor" [edpb_controller_processor, para 29 (p.13)]. Contract terms can help identify the roles but
+  are "not decisive in all circumstances" [edpb_controller_processor, front matter (p.1)].
+
+  The searches returned only passages from the EDPB Guidelines, so no GDPR article is cited here.
+
+● Agent "Contract label vs processor role" finished · 9s
+```
+
+The subagent used only the `search` tool, cited source and location for every claim, and said which document its passages came from.
 
 ## Adding a document
 
