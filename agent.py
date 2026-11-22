@@ -34,6 +34,7 @@ ROOT = Path(__file__).resolve().parent
 MODEL = os.environ.get("CHAT_MODEL", "gemini-3.5-flash")
 FALLBACK_MODELS = ["gemini-3.8-flash", "gemini-flash-latest"]   # tried in order if MODEL is overloaded or gone
 MAX_TOOL_CALLS = 6          # guardrail 2: hard limit of tool calls per question
+RUN_TIMEOUT = 120           # seconds for one whole question; then it is retried (see run_agent)
 RECURSION_LIMIT = 25        # safety net for the agent loop itself
 
 
@@ -147,7 +148,7 @@ async def _run(question: str, approve, model_name=None) -> dict:
                 )
 
             chosen = model_name or MODEL
-            model = ChatGoogleGenerativeAI(model=chosen, temperature=0, max_retries=2) if isinstance(chosen, str) else chosen
+            model = ChatGoogleGenerativeAI(model=chosen, temperature=0, max_retries=2, timeout=60) if isinstance(chosen, str) else chosen
             agent = create_agent(model, [wrap(t) for t in mcp_tools], system_prompt=system_prompt())
             state = await agent.ainvoke(
                 {"messages": [{"role": "user", "content": question}]},
@@ -190,7 +191,7 @@ def _error_text(error: BaseException) -> str:
     return " | ".join(parts)
 
 
-RETRYABLE = ("503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "NOT_FOUND", "high demand", "overloaded", "timed out")
+RETRYABLE = ("TimeoutError", "503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "NOT_FOUND", "high demand", "overloaded", "timed out")
 
 
 def run_agent(question: str, approve=cli_approve) -> dict:
@@ -201,7 +202,7 @@ def run_agent(question: str, approve=cli_approve) -> dict:
     for name in names:
         for attempt in range(2):
             try:
-                return asyncio.run(_run(question, approve, name))
+                return asyncio.run(asyncio.wait_for(_run(question, approve, name), RUN_TIMEOUT))
             except Exception as error:
                 text = _error_text(error)
                 if not any(word in text for word in RETRYABLE):
