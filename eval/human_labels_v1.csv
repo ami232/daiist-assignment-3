@@ -1,0 +1,34 @@
+id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,1,1,reference simplified: the tenant's 2-month notice isn't part of the question
+q04,1,1,
+q05,1,1,
+q06,1,0,"says the total upfront can't exceed 3 months, which isn't in the text (it adds deposit and guarantee itself) and mixes guarantees with paying rent in advance"
+q07,1,1,
+q08,1,1,
+q09,1,1,
+q10,1,1,
+q11,0,0,"cites LPH instead of LAU Art 23, misses the landlord's written consent, applies an owner rule to the tenant"
+q12,1,1,
+q13,1,1,
+q14,1,1,
+q15,1,1,
+q16,1,1,
+q17,1,1,
+q18,1,1,
+q19,1,1,
+q20,1,0,"misreads the text: says eviction ""for up to three years""; the 3-year loss of use is one penalty, a non-owner's rights can be ended for good"
+q21,1,1,
+q22,1,1,reference corrected while grading: Art 11.3 (2026 reform) says leaving gives the landlord no right to compensation; the agent was right
+q23,1,1,
+q24,1,1,
+q25,1,1,reference corrected while grading: Art 21.5 (2026 reform) lets the tenant repair and deduct from rent if the landlord doesn't respond in 15 days; the agent was right. Quality issue: the answer starts with a meaningless line in Arabic
+q26,1,0,"the 'more than ten properties' gran tenedor definition is cited to LAU Art 17, which doesn't contain it; it was only retrieved in the LDV Preámbulo, which is not binding (the operative definition is LDV Art 3, never retrieved)"
+q27,1,1,
+q28,1,1,
+q29,1,1,
+q30,1,1,
+q31,1,1,
+q32,1,1,
+q33,1,1,

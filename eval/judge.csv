@@ -1,0 +1,34 @@
+id,correct,supported,reason,answer_hash,rubric,unsupported_claims
+q01,1,0,"The claim that the user must wait until the six-month mark has elapsed is unsupported by an explicit quote stating that specific conclusion, although it logically follows from the first claim.",8835ae5db630,v2,"Since you signed only 4 months ago, you must wait until the six-month mark has elapsed before you can leave under this provision"
+q02,1,1,"All factual claims are accurate, completely address the question, and are fully supported by the provided evidence.",3cb169813ed1,v2,
+q03,1,1,The assistant correctly identifies the 4-month notice period required from the landlord and details the yearly extension up to 3 years.,62c6c03c5d12,v2,
+q04,1,1,"The assistant correctly and fully answers the question with all necessary conditions and deadlines, supported entirely by the evidence.",0db65fc457cf,v2,
+q05,1,1,All claims are correct and fully supported by the provided evidence.,61405574b1d2,v2,
+q06,1,0,The claim that for temporary leases the additional guarantee cannot exceed one month's rent is not supported by the evidence.,fa06074734d3,v2,"for temporary leases, the additional guarantee cannot exceed one month's rent"
+q07,1,1,"The assistant correctly states that without an express agreement, rent updates do not apply, which is supported by the evidence.",6e9f3cc09d3a,v2,
+q08,1,1,"The assistant correctly and completely answers both parts of the question, and all factual claims are fully supported by the evidence.",81a4d6c8f1fa,v2,
+q09,1,1,"The assistant correctly and comprehensively answers who pays for repairs, outlining landlord obligations, tenant exceptions, notification rules, and timeframes based directly on the provided text.",e8944d36a92a,v2,
+q10,0,1,"The assistant's answer is incorrect because it introduces a distinction for temporary leases based on new law provisions not implied by the standard lease question, failing to give a direct definitive 'no' for standard residential rentals.",6b0d3149d0b7,v2,
+q11,1,1,The assistant correctly and comprehensively answers the question based on the provided evidence covering both tenant and owner scenarios.,d709a16da055,v2,
+q12,1,1,The assistant correctly answered all aspects of the question and every claim is directly supported by the evidence.,eba778ef11c6,v2,
+q13,1,1,All factual claims are accurate according to the LAU and directly supported by the provided evidence.,313ab6bf06c7,v2,
+q14,1,0,"The assistant claims the law does not set a strict final deadline, which is unsupported by the evidence.",c7cbb59fa84c,v2,"The law does not set a strict final deadline for the landlord to return the cash deposit | Since you handed back the keys two months ago, your deposit has been overdue for a month, meaning it is now generating legal interest."
+q15,1,0,The claim that a 6-month bank guarantee is illegal is not explicitly supported by a direct quote in the evidence.,19bca8dacfd7,v2,A 6-month bank guarantee is not legal for a standard housing rental contract.
+q16,1,1,The assistant correctly answered the question and all claims are directly supported by the evidence.,a69f7912a441,v2,
+q17,1,1,The assistant correctly and completely explains the rent limitations in stressed housing markets with full support from the evidence.,7ef8d884b52e,v2,
+q18,1,1,The assistant fully answers the question with accurate details directly supported by Article 31 of the LDV.,01bf117e7da6,v2,
+q19,1,1,The assistant's answer correctly details the requirements for declaring a stressed housing market based strictly on the provided evidence.,9689c46250c9,v2,
+q20,1,1,The assistant correctly identifies the legal mechanisms under the LPH regarding annoying activities and provides fully supported claims.,5c0cf2e8a7ca,v2,
+q21,1,1,The assistant correctly answered the question using precise legal details directly supported by the evidence.,d8cf65f904f8,v2,
+q22,1,0,The claim that the law does not set a fixed calendar date for its return is unsupported by the evidence.,73da67fe007d,v2,the law does not set a fixed calendar date for its return upon handing over the keys
+q23,1,1,"The assistant correctly answers both parts of the question, providing accurate details supported by the evidence.",3bc178c9da01,v2,
+q24,1,1,All claims are supported by the provided text from the LAU and directly answer both parts of the question.,0dda9dd6daf0,v2,
+q25,1,0,The claim that you cannot simply stop paying rent on your own initiative is not directly supported by an exact quote in the evidence.,affc59155ff0,v2,You cannot simply stop paying the rent on your own initiative
+q26,1,0,"The claims about the landlord owning 15 flats and the property being in a stressed area are factual assumptions from the prompt rather than facts stated in the evidence text itself, lacking direct quotes.",9c349f8f4db1,v2,The landlord owns 15 flats making them a gran tenedor | The property is located in a stressed residential market area
+q27,1,1,The assistant fully answers both parts of the question in accordance with the legal text and all claims are directly backed by quotes.,3f6167eb5606,v2,
+q28,1,0,"The assistant correctly identified that the corpus laws do not cover the question, but the claim that the laws do not regulate the municipal population register lacks a supporting quote from the evidence.",2afc188ca79c,v2,The state laws in the corpus do not regulate the municipal population register or documentation required by town halls.
+q29,1,1,"The question is unanswerable from the corpus, and the assistant correctly stated it could not find the answer without providing any substantive guessed details.",c1bd02edba80,v2,
+q30,1,1,"The question is unanswerable from the corpus, and the assistant correctly recognized this without guessing any reference prices.",35c067d7176e,v2,
+q31,1,1,The assistant correctly identified that the corpus does not cover general home insurance requirements while accurately citing the specific prohibition on rent default insurance.,2c2c0f71ea90,v2,
+q32,1,1,The assistant correctly identified that the corpus does not provide the specific answer and gave no unsupported factual claims.,6318fabcadf3,v2,
+q33,1,0,"Although the question is correctly treated as unanswerable based on the corpus, the assistant makes a substantive factual claim about what regional tax deductions depend on that is not supported by any quote from the evidence.",7ee1cb3ff26e,v2,"Regional tax deductions for rent in the Community of Madrid depend on regional tax laws and regional income tax (IRPF) regulations, which are not covered in these national housing laws."
