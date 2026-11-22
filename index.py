@@ -59,7 +59,7 @@ def read_pages(path: Path) -> list[tuple[int, str]]:
 
     from pypdf import PdfReader
 
-    logging.getLogger("pypdf").setLevel(logging.ERROR)  # silence "SymbolSetEncoding" font warnings
+    logging.getLogger("pypdf").setLevel(logging.CRITICAL)  # silence "SymbolSetEncoding" font warnings
     reader = PdfReader(str(path))
     return [(n, page.extract_text() or "") for n, page in enumerate(reader.pages, 1)]
 
