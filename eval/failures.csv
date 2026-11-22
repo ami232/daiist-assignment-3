@@ -1,0 +1,2 @@
+id,kind,auto_category,judge_reason,final_category,notes
+q19,unanswerable,unsupported claim,"The question is classified as unanswerable because the specific documents do not cover retention periods for security cameras, but the assistant treated it as answerable and provided a partial answer based on general storage limitation principles.",,

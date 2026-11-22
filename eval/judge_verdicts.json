@@ -1,0 +1,162 @@
+{
+  "q01": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant accurately provides the key facts from the reference answer regarding timelines and extensions, and all claims are fully supported by the retrieved passages."
+  },
+  "q02": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant provides all the key facts required by the reference answer based on Article 37(1) and correctly cites the retrieved passages."
+  },
+  "q03": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly states that a person can claim compensation from the controller or processor, detailing liability rules supported by the retrieved GDPR provisions."
+  },
+  "q04": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly states that the breach must be notified, explains the availability breach aspect, and accurately references passage [2]."
+  },
+  "q05": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant accurately answers that a bundled notification is possible for similar breaches under specific conditions, perfectly matching the reference answer and supported by the retrieved passages."
+  },
+  "q06": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly states that a processor can notify on behalf of the controller if authorized and in the contract, and that legal responsibility remains with the controller, fully supported by the retrieved passages."
+  },
+  "q07": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly and completely answers the question using only facts and citations from the provided passages."
+  },
+  "q08": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant accurately explains that the company is generally responsible as the controller while employees act under its authority, and correctly notes the exception where an employee processes data for their own purposes. All claims are fully supported by the retrieved passages."
+  },
+  "q09": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly identifies the 72-hour deadline, when the period starts (upon becoming aware with a reasonable degree of certainty), and provides valid citations from the retrieved passages."
+  },
+  "q10": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly answers both parts of the multi-question, capturing the rules on encrypted data breaches and customer notification, and every claim is fully supported by the retrieved passages."
+  },
+  "q11": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly answers both parts of the multi-question, capturing the requirement to document breaches and the fact that the GDPR sets no specific retention period, using only facts and citations from the retrieved passages."
+  },
+  "q12": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly identifies that the service provider becomes a controller, infringes the GDPR, and may face sanctions, supported by paragraph 81."
+  },
+  "q13": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly answered both parts of the question, covering the breach notification requirement regarding the DPO's name/contact details and the fact that the DPO can be an external contractor via a service contract, using appropriate citations from the retrieved passages."
+  },
+  "q14": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly identifies when joint controllership exists and what must be arranged, with all facts and citations directly supported by the retrieved passages."
+  },
+  "q15": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly identifies that the controller must carry out the DPIA prior to high-risk processing and lists the specific requirements found in the retrieved passages. Although it does not mention the processor's role (which was not present in the retrieved passages), it correctly covers the main points available in the text."
+  },
+  "q16": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly identified that the documents do not cover the Spanish authority's specific forms and accurately cited the general notification requirements from the text."
+  },
+  "q17": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly identified that the corpus does not cover the NIS2 Directive and mentioned the related NIS Directive correctly without fabricating outside information."
+  },
+  "q18": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly identified that the question is unanswerable based on the corpus and correctly noted that cookie banners are not addressed while mentioning related provisions properly."
+  },
+  "q19": {
+    "correct": 0,
+    "supported": 1,
+    "reason": "The question is classified as unanswerable because the specific documents do not cover retention periods for security cameras, but the assistant treated it as answerable and provided a partial answer based on general storage limitation principles."
+  },
+  "q20": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly identified that the unanswerable question about the EU AI Act is not covered by the provided corpus."
+  },
+  "q21": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly identified that the unanswerable question is not covered by the retrieved documents and refused appropriately without introducing external information."
+  },
+  "q22": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly identified that the question is unanswerable based on the provided documents and avoided unsupported claims."
+  },
+  "q23": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly states that consent can be withdrawn at any time, that it must be as easy to withdraw as to give, and provides matching citations from the retrieved passages."
+  },
+  "q24": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly answered the question using only the provided GDPR Article 20 text, matching all key points of the reference answer."
+  },
+  "q25": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly states that a data subject can object at any time to direct marketing and the company must stop, fully supported by Article 21(2)-(3) in the retrieved passages."
+  },
+  "q26": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly identifies the factors required when deciding on a fine, and all claims are fully supported by the retrieved GDPR provisions with proper citations."
+  },
+  "q27": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly identifies the three kinds of personal data breaches with all key facts from the reference answer, and every claim and citation is fully supported by the retrieved passages."
+  },
+  "q28": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant accurately answers why the type of data matters using the key facts from the reference and completely supported by the retrieved passages."
+  },
+  "q29": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant accurately answers the question using the key facts from the reference answer, and all claims are fully supported by the retrieved passages with correct citations."
+  },
+  "q30": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly explains that a processor can choose technical and organisational means and non-essential implementation aspects without becoming a controller, provided they stay within the controller's instructions. All claims are fully supported by the retrieved passages."
+  },
+  "q31": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly explains that duties depend on whether the receiving company acts as a controller or processor rather than just being a recipient, fully supported by the retrieved passages."
+  },
+  "q32": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The assistant correctly states that the provided corpus does not cover the specific interaction with intellectual property law, and handles the unanswerable/missing information appropriately based on the evidence."
+  }
+}

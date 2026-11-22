@@ -1,0 +1,51 @@
+design,id,kind,hit@1,hit@3,hit@5,top5
+a,q01,single,1,1,1,gdpr:Article 12 | gdpr:Article 12 | gdpr:Article 12 to Article 13 | gdpr:Article 61 | gdpr:Article 17
+a,q02,single,1,1,1,gdpr:Article 36 to Article 37 | gdpr:Article 37 | gdpr:Article 37 to Article 38 | edpb_breach_notification:p.27 | gdpr:Article 38 to Article 39
+a,q03,single,1,1,1,gdpr:Article 82 | gdpr:Article 81 to Article 82 | gdpr:Article 82 to Article 83 | gdpr:Article 47 | gdpr:Article 79 to Article 80
+a,q04,single,0,1,1,edpb_breach_notification:p.31 | edpb_breach_notification:p.11 | edpb_breach_notification:p.31 | edpb_breach_notification:p.33 | edpb_breach_notification:p.19
+a,q05,single,1,1,1,edpb_breach_notification:p.16 | edpb_breach_notification:p.16 to p.17 | edpb_breach_notification:p.15 | edpb_breach_notification:p.33 | edpb_breach_notification:p.6
+a,q06,single,1,1,1,edpb_breach_notification:p.14 | edpb_breach_notification:p.28 | edpb_breach_notification:p.6 | edpb_breach_notification:p.32 to p.33 | edpb_controller_processor:p.39
+a,q07,single,0,0,0,edpb_controller_processor:p.13 | edpb_controller_processor:p.3 | edpb_controller_processor:p.27 | edpb_controller_processor:p.16 | edpb_controller_processor:p.14
+a,q08,single,1,1,1,edpb_controller_processor:p.10 to p.11 | edpb_controller_processor:p.29 | edpb_controller_processor:p.10 | edpb_controller_processor:p.12 | gdpr:Article 82
+a,q09,multi,0,0,0,edpb_breach_notification:p.31 | edpb_breach_notification:p.12 | edpb_breach_notification:p.33 | edpb_breach_notification:p.9 | edpb_breach_notification:p.11 to p.12
+a,q10,multi,0,0,0,edpb_breach_notification:p.19 | edpb_breach_notification:p.31 | edpb_breach_notification:p.19 | edpb_breach_notification:p.18 | edpb_breach_notification:p.19
+a,q11,multi,0,0,0,edpb_breach_notification:p.26 | edpb_breach_notification:p.26 | edpb_breach_notification:p.26 to p.27 | gdpr:Article 30 | edpb_breach_notification:p.12
+a,q12,multi,0,0,0,edpb_controller_processor:p.26 | edpb_controller_processor:p.27 | edpb_controller_processor:p.27 | edpb_controller_processor:p.29 | edpb_controller_processor:p.27
+a,q13,multi,0,0,1,edpb_breach_notification:p.27 | edpb_breach_notification:p.6 | edpb_breach_notification:p.27 to p.28 | gdpr:Article 36 to Article 37 | gdpr:Article 33
+a,q14,multi,0,1,1,gdpr:Article 26 | edpb_controller_processor:p.19 | edpb_controller_processor:p.20 | edpb_controller_processor:p.3 | edpb_controller_processor:p.19
+a,q15,multi,0,0,1,gdpr:Article 35 | gdpr:Article 35 | edpb_controller_processor:p.27 | edpb_controller_processor:p.16 | edpb_controller_processor:p.39
+a,q23,single,1,1,1,gdpr:Article 7 to Article 8 | gdpr:Article 21 | gdpr:Article 6 | gdpr:Article 5 | gdpr:Article 12 to Article 13
+a,q24,single,1,1,1,gdpr:Article 19 to Article 20 | gdpr:Article 20 to Article 21 | gdpr:Article 12 to Article 13 | gdpr:Article 13 | gdpr:Article 45
+a,q25,single,1,1,1,gdpr:Article 21 | gdpr:Article 12 to Article 13 | gdpr:Article 13 | gdpr:Article 5 | gdpr:Article 17
+a,q26,single,1,1,1,gdpr:Article 83 | gdpr:Article 83 | gdpr:Article 83 | gdpr:Article 83 | gdpr:Article 83
+a,q27,single,1,1,1,edpb_breach_notification:p.8 | edpb_breach_notification:p.7 to p.8 | edpb_breach_notification:p.9 | edpb_breach_notification:p.7 | edpb_breach_notification:p.25
+a,q28,single,1,1,1,edpb_breach_notification:p.24 | edpb_breach_notification:p.25 to p.26 | edpb_breach_notification:p.24 | edpb_breach_notification:p.25 | edpb_breach_notification:p.24
+a,q29,single,1,1,1,edpb_breach_notification:p.25 to p.26 | edpb_breach_notification:p.33 | edpb_breach_notification:p.24 | edpb_breach_notification:p.24 | edpb_breach_notification:p.25
+a,q30,single,0,0,0,edpb_controller_processor:p.27 | edpb_controller_processor:p.27 | edpb_controller_processor:p.27 | edpb_controller_processor:p.28 | edpb_controller_processor:p.16
+a,q31,single,0,0,0,edpb_controller_processor:p.29 to p.30 | edpb_controller_processor:p.30 | gdpr:Article 28 | gdpr:Article 28 | gdpr:Article 4
+a,q32,single,1,1,1,edpb_controller_processor:p.9 | edpb_controller_processor:p.3 | edpb_controller_processor:p.9 | edpb_controller_processor:p.11 | edpb_controller_processor:p.51
+b,q01,single,1,1,1,gdpr:Article 12(3)-(4) | gdpr:Article 15(1) | gdpr:Article 17(1) | gdpr:Article 13(2) | gdpr:Article 17(2)
+b,q02,single,1,1,1,gdpr:Article 37(1)-(3) | gdpr:Article 37(4)-(7) | gdpr:Article 38 | gdpr:Article 39 | gdpr:Article 35(1)-(3)
+b,q03,single,1,1,1,gdpr:Article 82(1)-(4) | gdpr:Article 82(5)-(6) | gdpr:Article 79 | gdpr:Article 77 | gdpr:Article 80
+b,q04,single,1,1,1,edpb_breach_notification:para 33 (p.11) | edpb_breach_notification:para 138 (p.29) | edpb_breach_notification:para 138 (p.29) | edpb_breach_notification:para 79 (p.19) | edpb_breach_notification:paras 60-61 (p.16)
+b,q05,single,1,1,1,edpb_breach_notification:paras 64-65 (p.16) | edpb_breach_notification:paras 62-63 (p.16) | edpb_breach_notification:paras 47-49 (p.14) | gdpr:Article 33(1)-(3) | edpb_breach_notification:paras 66-68 (p.17)
+b,q06,single,1,1,1,edpb_breach_notification:paras 47-49 (p.14) | edpb_controller_processor:paras 136-137 (p.39) | edpb_breach_notification:paras 72-74 (p.18) | edpb_breach_notification:para 136 (p.28) | gdpr:Article 33(1)-(3)
+b,q07,single,0,0,1,edpb_controller_processor:para 29 (p.13) | edpb_controller_processor:para 30 (p.13) | edpb_controller_processor:paras 27-28 (p.12) | edpb_controller_processor:paras 10-12 (p.8) | edpb_controller_processor:para 104 (p.32)
+b,q08,single,1,1,1,edpb_controller_processor:para 19 (p.10) | edpb_controller_processor:para 88 (p.29) | edpb_controller_processor:para 18 (p.10) | edpb_controller_processor:para 27 (p.12) | edpb_controller_processor:para 17 (p.10)
+b,q09,multi,0,0,0,edpb_breach_notification:para 33 (p.11) | edpb_breach_notification:paras 28-29 (p.10) | edpb_breach_notification:para 138 (p.29) | edpb_breach_notification:para 138 (p.29) | edpb_breach_notification:para 36 (p.12)
+b,q10,multi,0,0,0,edpb_breach_notification:para 78 (p.19) | edpb_breach_notification:paras 76-77 (p.18) | edpb_breach_notification:para 76 (p.18) | edpb_breach_notification:para 79 (p.19) | edpb_breach_notification:para 138 (p.29)
+b,q11,multi,0,0,0,edpb_breach_notification:paras 122-123 (p.26) | edpb_breach_notification:para 124 (p.26) | gdpr:Article 30(1) | edpb_breach_notification:paras 119-121 (p.26) | edpb_breach_notification:paras 125-127 (p.27)
+b,q12,multi,0,0,0,edpb_controller_processor:para 81 (p.26) | edpb_controller_processor:para 83 (p.27) | edpb_controller_processor:para 88 (p.29) | edpb_controller_processor:para 89 (p.29) | edpb_controller_processor:para 30 (p.13)
+b,q13,multi,0,0,0,edpb_breach_notification:paras 131-132 (p.27) | gdpr:Article 37(4)-(7) | edpb_breach_notification:paras 133-134 (p.27) | edpb_breach_notification:paras 128-130 (p.27) | edpb_breach_notification:paras 47-49 (p.14)
+b,q14,multi,0,0,1,gdpr:Article 26 | edpb_controller_processor:para 55 (p.19) | edpb_controller_processor:para 191 (p.48) | edpb_controller_processor:para 51 (p.19) | edpb_controller_processor:paras 53-54 (p.19)
+b,q15,multi,0,0,1,gdpr:Article 35(1)-(3) | gdpr:Article 35(7)-(9) | gdpr:Article 35(10)-(11) | edpb_controller_processor:paras 136-137 (p.39) | edpb_controller_processor:para 138 (p.39)
+b,q23,single,1,1,1,gdpr:Article 7 | gdpr:Article 21(1)-(4) | gdpr:Article 8 | gdpr:Article 17(1) | gdpr:Article 6(1)
+b,q24,single,1,1,1,gdpr:Article 20 | gdpr:Article 15(1) | gdpr:Article 15(2)-(4) | gdpr:Article 28(3) | gdpr:Article 45(1)-(2)
+b,q25,single,1,1,1,gdpr:Article 21(1)-(4) | gdpr:Article 21(5)-(6) | gdpr:Article 18 | gdpr:Article 22 | gdpr:Article 7
+b,q26,single,1,1,1,gdpr:Article 83(2) | gdpr:Article 83(2)-(3) | gdpr:Article 83(5)-(6) | gdpr:Article 83(1) | gdpr:Article 83(4)
+b,q27,single,1,1,1,edpb_breach_notification:paras 15-17 (p.7) | edpb_breach_notification:paras 18-19 (p.8) | edpb_breach_notification:para 14 (p.7) | edpb_breach_notification:para 114 (p.25) | edpb_breach_notification:para 13 (p.7)
+b,q28,single,1,1,1,edpb_breach_notification:paras 107-108 (p.24) | edpb_breach_notification:paras 109-110 (p.24) | edpb_breach_notification:paras 102-103 (p.23) | edpb_breach_notification:paras 104-106 (p.23) | edpb_breach_notification:paras 117-118 (p.25)
+b,q29,single,0,1,1,edpb_breach_notification:paras 109-110 (p.24) | edpb_breach_notification:paras 117-118 (p.25) | edpb_breach_notification:paras 107-108 (p.24) | edpb_breach_notification:paras 112-113 (p.25) | edpb_breach_notification:paras 114-116 (p.25)
+b,q30,single,0,0,1,edpb_controller_processor:para 82 (p.26) | edpb_controller_processor:para 82 (p.26) | edpb_controller_processor:para 30 (p.13) | edpb_controller_processor:para 40 (p.15) | edpb_controller_processor:para 83 (p.27)
+b,q31,single,0,1,1,edpb_controller_processor:para 92 (p.30) | edpb_controller_processor:paras 85-87 (p.28) | edpb_controller_processor:para 89 (p.29) | edpb_controller_processor:para 89 (p.29) | edpb_controller_processor:para 70 (p.24)
+b,q32,single,1,1,1,edpb_controller_processor:paras 13-14 (p.9) | edpb_controller_processor:para 17 (p.10) | edpb_controller_processor:front matter (p.1) | edpb_controller_processor:para 15 (p.9) | edpb_controller_processor:paras 22-23 (p.11)
