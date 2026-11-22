@@ -32,6 +32,7 @@ from api_key import load_api_key
 
 ROOT = Path(__file__).resolve().parent
 MODEL = os.environ.get("CHAT_MODEL", "gemini-3.8-flash")
+FALLBACK_MODELS = ["gemini-3.5-flash", "gemini-flash-latest"]   # tried in order if MODEL is overloaded or gone
 MAX_TOOL_CALLS = 6          # guardrail 2: hard limit of tool calls per question
 RECURSION_LIMIT = 25        # safety net for the agent loop itself
 
@@ -101,7 +102,7 @@ def check_citations(answer: str, trace: list[dict]) -> list[str]:
     return bad
 
 
-async def _run(question: str, approve) -> dict:
+async def _run(question: str, approve, model_name=None) -> dict:
     load_api_key()
     started = time.time()
     trace: list[dict] = []
@@ -143,7 +144,8 @@ async def _run(question: str, approve) -> dict:
                     coroutine=call,
                 )
 
-            model = ChatGoogleGenerativeAI(model=MODEL, temperature=0, max_retries=6) if isinstance(MODEL, str) else MODEL
+            chosen = model_name or MODEL
+            model = ChatGoogleGenerativeAI(model=chosen, temperature=0, max_retries=6) if isinstance(chosen, str) else chosen
             agent = create_agent(model, [wrap(t) for t in mcp_tools], system_prompt=system_prompt())
             state = await agent.ainvoke(
                 {"messages": [{"role": "user", "content": question}]},
@@ -174,12 +176,38 @@ async def _run(question: str, approve) -> dict:
         "flags": list(dict.fromkeys(flags)),
         "seconds": round(time.time() - started, 1),
         "tokens": tokens,
+        "model": chosen if isinstance(chosen, str) else "custom",
     }
 
 
+def _error_text(error: BaseException) -> str:
+    """Text of an error including the errors inside exception groups."""
+    parts = [f"{type(error).__name__}: {error}"]
+    for inner in getattr(error, "exceptions", ()):
+        parts.append(_error_text(inner))
+    return " | ".join(parts)
+
+
+RETRYABLE = ("503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "NOT_FOUND", "high demand", "overloaded", "timed out")
+
+
 def run_agent(question: str, approve=cli_approve) -> dict:
-    """Answer one question. Returns {answer, trace, flags, seconds, tokens} (used by evaluate.py)."""
-    return asyncio.run(_run(question, approve))
+    """Answer one question. Returns {answer, trace, flags, seconds, tokens, model} (used by evaluate.py).
+    If the model is overloaded or unavailable, it retries once and then tries the fallback models."""
+    names = [MODEL, *[m for m in FALLBACK_MODELS if m != MODEL]] if isinstance(MODEL, str) else [MODEL]
+    last_error = None
+    for name in names:
+        for attempt in range(2):
+            try:
+                return asyncio.run(_run(question, approve, name))
+            except Exception as error:
+                text = _error_text(error)
+                if not any(word in text for word in RETRYABLE):
+                    raise
+                last_error = error
+                print(f"[agent] {name} failed ({text[-160:]}); retrying or switching model...", file=sys.stderr, flush=True)
+                time.sleep(8)
+    raise last_error
 
 
 def main() -> None:

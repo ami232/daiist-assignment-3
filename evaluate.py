@@ -238,7 +238,7 @@ def judge_call(prompt: str) -> str:
     for attempt in range(6):
         try:
             response = client.models.generate_content(
-                model=JUDGE_MODEL,
+                model=JUDGE_MODEL if attempt < 3 else "gemini-3.5-flash",   # fall back if overloaded
                 contents=prompt,
                 config=types.GenerateContentConfig(temperature=0, response_mime_type="application/json"),
             )
