@@ -12,3 +12,6 @@ corpus/
 
 # Never commit your API key
 .env
+
+# Temporary files written while saving the index
+index/*.tmp
