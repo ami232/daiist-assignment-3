@@ -1,0 +1,5 @@
+design,hit@1,hit@3,hit@5,all@1,all@3,all@5,words_in_prompt@5
+structure + vector,0.704,0.889,0.926,0.556,0.778,0.815,913
+structure + hybrid,0.704,0.852,0.926,0.519,0.741,0.815,945
+fixed + vector,0.593,0.741,0.852,0.481,0.593,0.741,985
+fixed + hybrid,0.519,0.778,0.926,0.407,0.63,0.778,997

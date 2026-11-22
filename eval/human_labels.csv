@@ -1,1 +1,33 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,1,1,
+q04,1,0,"Covers the general obligations but does not give the concrete list of articles in the reference answer."
+q05,1,1,
+q06,1,1,
+q07,1,1,
+q08,1,0,"Adds format and language requirements that are not in the reference answer; I did not verify them in the passages."
+q09,1,1,
+q10,1,0,"The update obligation matches, but the review of the safety report is extra information not in the reference."
+q11,1,0,"The conclusion is right, but it adds specific conditions on alternative methods that I could not verify in the passages."
+q12,1,1,
+q13,1,1,
+q14,1,1,
+q15,1,0,"Adds criteria on the average end user and evidence that are not in the reference and that I could not verify in the passages."
+q16,1,0,"Adds that products must not be presented as having characteristics they do not have; I could not verify it in the passages."
+q17,0,1,"Does not state the 12 months that the question and the reference answer mention."
+q18,1,1,
+q19,1,0,"Adds several extra criteria that are not in the reference and whose presence in the passages I did not verify."
+q20,1,1,"The hyperbole exception has a legal basis (655/2013 Annex 3(5)); my reference was incomplete."
+q21,0,1,"Does not give the full list of contents of Parts A and B of the safety report."
+q22,0,1,"Refuses although the corpus answers it (withheld by the citation guardrail); a refusal makes no unsupported claim."
+q23,1,1,
+q24,1,1,
+q25,1,1,
+q26,0,1,"Does not say what the safety assessment must consider about effects on the skin."
+q27,1,1,
+q28,1,1,
+q29,1,1,
+q30,1,1,
+q31,1,1,
+q32,0,0,"Does not say the corpus does not cover private certificates; it answers with extra information on cruelty-free claims."

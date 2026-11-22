@@ -1,0 +1,71 @@
+{
+  "questions": 32,
+  "correct (judge)": 28,
+  "answered": 27,
+  "answered and correct": 24,
+  "unsupported answers": 0,
+  "correct refusals": 4,
+  "wrong refusals": 1,
+  "unanswerable answered anyway": 1,
+  "guardrail fired": 1,
+  "avg tokens per question": 3830,
+  "avg seconds per question": 29.7,
+  "judge model": "gemini-3.1-flash-lite",
+  "graded_by_me": 32,
+  "agreement_correct": 0.906,
+  "agreement_supported": 0.719,
+  "disagreements": [
+    "q04",
+    "q08",
+    "q10",
+    "q11",
+    "q15",
+    "q16",
+    "q17",
+    "q19",
+    "q22",
+    "q32"
+  ],
+  "retrieval": [
+    {
+      "design": "structure + vector",
+      "hit@1": 0.704,
+      "hit@3": 0.889,
+      "hit@5": 0.926,
+      "all@1": 0.556,
+      "all@3": 0.778,
+      "all@5": 0.815,
+      "words_in_prompt@5": 913
+    },
+    {
+      "design": "structure + hybrid",
+      "hit@1": 0.704,
+      "hit@3": 0.852,
+      "hit@5": 0.926,
+      "all@1": 0.519,
+      "all@3": 0.741,
+      "all@5": 0.815,
+      "words_in_prompt@5": 945
+    },
+    {
+      "design": "fixed + vector",
+      "hit@1": 0.593,
+      "hit@3": 0.741,
+      "hit@5": 0.852,
+      "all@1": 0.481,
+      "all@3": 0.593,
+      "all@5": 0.741,
+      "words_in_prompt@5": 985
+    },
+    {
+      "design": "fixed + hybrid",
+      "hit@1": 0.519,
+      "hit@3": 0.778,
+      "hit@5": 0.926,
+      "all@1": 0.407,
+      "all@3": 0.63,
+      "all@5": 0.778,
+      "words_in_prompt@5": 997
+    }
+  ]
+}
