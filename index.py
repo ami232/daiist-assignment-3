@@ -205,6 +205,11 @@ TITLE_LINE = re.compile(r"^title:\s*(.+?)\s*$", re.MULTILINE)
 # The lookbehind stops team mailboxes such as kc-payroll.finance@gsa.gov from
 # matching on their "payroll.finance" tail.
 PERSONAL_EMAIL = re.compile(r"(?<![\w.-])([a-z]+)\.([a-z]+)@gsa\.gov\b", re.IGNORECASE)
+# "Firstname Lastname at someone@..." or "Firstname Lastname (someone@...)",
+# possibly across a line break.
+NAME_BEFORE_EMAIL = re.compile(r"\b([A-Z][a-z]+)\s+([A-Z][a-z]+)(?=\s+(?:at\s+)?\(?[\w.+-]+@)")
+NOT_A_SURNAME = {"Team", "Office", "Desk", "Service", "Services", "Group", "Center",
+                 "Coordinator", "Specialist", "Support", "Operations", "Ops"}
 
 
 def redact_personal_data(text: str) -> tuple[str, dict]:
@@ -227,8 +232,18 @@ def redact_personal_data(text: str) -> tuple[str, dict]:
 
     text = PERSONAL_EMAIL.sub(replace_email, text)
     for last in last_names:
-        text, n = re.subn(rf"\b[A-Z][a-z]+ {last}\b", "[staff member]", text)
+        text, n = re.subn(rf"\b[A-Z][a-z]+\s+{last}\b", "[staff member]", text)
         counts["names"] += n
+
+    # A person's name written next to a team mailbox ("email Jane Doe at
+    # team@gsa.gov") is personal data too, even though the mailbox is not.
+    def replace_name(match: re.Match) -> str:
+        if match.group(2) in NOT_A_SURNAME:
+            return match.group(0)  # "Events Team (tts-events@gsa.gov)" stays
+        counts["names"] += 1
+        return "[staff member]"
+
+    text = NAME_BEFORE_EMAIL.sub(replace_name, text)
     return text, counts
 
 
@@ -250,7 +265,8 @@ def clean_markdown(raw: str) -> tuple[str, str, dict]:
     text = re.sub(r"!\[[^\]]*\]\([^)]*\)", "", text)
     text = re.sub(r"\{%-?\s*image\b.*?%\}", "", text, flags=re.DOTALL)
     # {% slack_channel "parents" %} -> the #parents Slack channel
-    text = re.sub(r'\{%-?\s*slack_channel\s+"([^"]+)"(?:\s+"[^"]*")?\s*-?%\}', r"the #\1 Slack channel", text)
+    # Some pages already write the # inside the tag ("#people-ops"), so it is stripped first.
+    text = re.sub(r'\{%-?\s*slack_channel\s+"#?([^"]+)"(?:\s+"[^"]*")?\s*-?%\}', r"the #\1 Slack channel", text)
     # Links keep their text and lose their target, including {% page "..." %} targets.
     text = re.sub(r"\[([^\]]+)\]\((?:[^()]|\([^)]*\))*\)", r"\1", text)
     text = re.sub(r"\[([^\]]+)\]\[[^\]]*\]", r"\1", text)  # [text][ref]
