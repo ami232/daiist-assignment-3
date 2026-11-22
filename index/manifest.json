@@ -1,0 +1,26 @@
+[
+  {
+    "name": "lau.pdf",
+    "url": "https://boe.es/buscar/pdf/1994/BOE-A-1994-26003-consolidado.pdf",
+    "date": "2026-11-21",
+    "licence": "BOE, reuse with attribution",
+    "words": 23672,
+    "sha1": "69166fefad234003b39d74845b44da66292ff458"
+  },
+  {
+    "name": "ley_vivienda.pdf",
+    "url": "https://www.boe.es/buscar/pdf/2023/BOE-A-2023-12203-consolidado.pdf",
+    "date": "2026-11-21",
+    "licence": "BOE, reuse with attribution",
+    "words": 32288,
+    "sha1": "249b1727af8d3d0333e17f5d30aed457ec82bd88"
+  },
+  {
+    "name": "lph.pdf",
+    "url": "https://www.boe.es/buscar/pdf/1960/BOE-A-1960-10906-consolidado.pdf",
+    "date": "2026-11-21",
+    "licence": "BOE, reuse with attribution",
+    "words": 11582,
+    "sha1": "4cd08a97fc94c13e8d54240d287b0dbfde16fe75"
+  }
+]
