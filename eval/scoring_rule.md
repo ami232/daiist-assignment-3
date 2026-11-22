@@ -55,3 +55,16 @@ Retrieval is scored separately from answer correctness.
 - q07: required `gdpr:Article 33; edpb_breach:Section II.B.1`
 - q09: required `gdpr:Article 8; edpb_consent:Section 7.1.3`,
   equivalent = `=edpb_consent:Section 7.1`
+
+
+## Clarifications added before the first measurement
+
+- In a multi question, an equivalent location stands in for one specific required
+  passage. A prefix `N>` names it (1-based, in the order of `expected_location`),
+  e.g. `1>=edpb_consent:Section 7.1` replaces the first required passage. An
+  equivalent without a prefix may replace any required passage.
+- Designs compared: `dense` (vector search) and `hybrid` (vector search + BM25
+  keyword search, merged by reciprocal rank fusion). Any other indexed chunking
+  design is also run as dense and hybrid. The constants in `evaluate.py` are not
+  tuned after the first run.
+  
