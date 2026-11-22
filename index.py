@@ -14,6 +14,8 @@ Pipeline, one function per step so server.py can reuse them:
     embed_and_store(chunks, collection)
                              embed only chunks without a saved vector, store
                              them in ChromaDB in index/, batch by batch
+    retrieve(query, k, design)
+                             the k closest chunks with their citations
 
 Two chunking designs are built, so the evaluation can compare them:
 
@@ -55,6 +57,7 @@ HOLDOUT_DIR = CORPUS_DIR / "holdout"
 INDEX_DIR = ROOT / "index"
 CHROMA_DIR = INDEX_DIR / "chroma"
 MANIFEST_PATH = INDEX_DIR / "corpus_manifest.json"
+QUERY_CACHE_PATH = INDEX_DIR / "query_vectors.json"
 
 REPO = "18F/handbook"
 COMMIT = "c220f93896b39e9e4ab0f486a1d5bf346ac06e3e"  # last commit, 4 June 2026
@@ -636,6 +639,54 @@ def remove_stale(collection, keep_ids: set[str]) -> int:
     if stale:
         collection.delete(ids=stale)
     return len(stale)
+
+
+# ============================================================================
+# 5. Search (used by evaluate.py, server.py and the agent)
+# ============================================================================
+
+_query_cache: dict | None = None
+
+
+def embed_query(text: str, cache: bool = True) -> list[float]:
+    """Embed a question with task type RETRIEVAL_QUERY.
+
+    With cache=True the vector is saved in index/query_vectors.json, keyed by
+    a hash of the model and the text, so the test questions are embedded once
+    and every later evaluation run is free. The server passes cache=False:
+    real users' questions should not be written into the repository.
+    """
+    global _query_cache
+    key = hashlib.sha1(f"{EMBED_MODEL}|{text}".encode()).hexdigest()[:20]
+    if cache:
+        if _query_cache is None:
+            _query_cache = json.loads(QUERY_CACHE_PATH.read_text()) if QUERY_CACHE_PATH.exists() else {}
+        if key in _query_cache:
+            return _query_cache[key]
+    vector = embed_texts([text], task_type="RETRIEVAL_QUERY")[0]
+    if cache:
+        _query_cache[key] = vector
+        QUERY_CACHE_PATH.write_text(json.dumps(_query_cache))
+    return vector
+
+
+def retrieve(query: str | list[float], k: int = 5, design: str = "structure", cache: bool = True) -> list[dict]:
+    """The k chunks closest to the query, best first.
+
+    `query` is the question text, or an already computed query vector. Each
+    result has the chunk's text, its metadata, and `score`, the cosine
+    similarity (1 = same direction, 0 = unrelated).
+    """
+    vector = embed_query(query, cache=cache) if isinstance(query, str) else query
+    found = get_collection(design).query(
+        query_embeddings=[vector], n_results=k, include=["documents", "metadatas", "distances"]
+    )
+    return [
+        {"id": i, "text": doc, **meta, "score": round(1 - distance, 4)}
+        for i, doc, meta, distance in zip(
+            found["ids"][0], found["documents"][0], found["metadatas"][0], found["distances"][0]
+        )
+    ]
 
 
 # ============================================================================
