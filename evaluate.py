@@ -44,12 +44,12 @@ BEFORE_AFTER_QUESTION = "q19"
 
 CITE_RE = re.compile(r"\[([a-z_0-9]+),\s*([^\]]+)\]")
 REFUSAL_RE = re.compile(
-    r"(corpus (does not|doesn't|do not) (cover|contain|include|address)"
-    r"|(does not|doesn't|do not) (cover|contain|address|include|provide|specify|mention)"
-    r"|not (covered|addressed|mentioned|specified) (in|by)"
+    r"((corpus|documents?|passages?|guidelines|texts?) (does|do|did) (not|n't) "
+    r"(cover|contain|include|address|mention|provide|specify|discuss|say|answer))"
+    r"|((is|are) not (covered|addressed|mentioned) (in|by) the (corpus|documents?|passages?|guidelines))"
     r"|cannot (answer|be answered)|can't answer|unable to (find|answer)"
-    r"|no (relevant )?(information|passage|passages)"
-    r"|(is|are) not (part of|in) the (corpus|documents))",
+    r"|no (relevant )?(information|passages?) (is |are |was |were )?(found|available|provided)"
+    r"|(is|are) not (part of|in) the (corpus|documents?)",
     re.I,
 )
 
@@ -77,8 +77,18 @@ supported
 - 0 if any claim relies on knowledge that is not in the retrieved passages, or a citation
   points to something that was not retrieved.
 
-Judge only what is written. Do not reward length or confidence. Reply with JSON only:
-{"correct": 0 or 1, "supported": 0 or 1, "reason": "one or two sentences"}"""
+Important rules
+- An answer that says "the corpus does not mention / cover this" is a refusal, whatever else it adds.
+  For an answerable question (single or multi) a refusal is ALWAYS correct = 0: the test author
+  guarantees the answer is in the corpus (see WHERE THE ANSWER IS).
+- For an unanswerable question, an answer that gives a substantive answer (even a "general
+  principle") instead of saying the documents do not cover it is correct = 0.
+- Compare the key facts of the answer with the reference answer one by one before deciding.
+- Do not reward length or confidence. Judge only what is written.
+
+Reply with JSON only, writing the reasoning FIRST:
+{"reason": "compare the answer with the reference, fact by fact, in one or two sentences",
+ "correct": 0 or 1, "supported": 0 or 1}"""
 
 
 # ---------------------------------------------------------------- small helpers
@@ -298,6 +308,7 @@ def judge_all(rows: list[dict], answers: dict, force: bool) -> dict:
         prompt = (
             f"{RUBRIC}\n\n--- QUESTION ---\n{row['question']}\n\n--- KIND ---\n{row['kind']}\n\n"
             f"--- REFERENCE ANSWER ---\n{row['reference_answer']}\n\n"
+            f"--- WHERE THE ANSWER IS (test author) ---\n{row['expected_source'] or 'nowhere: the corpus cannot answer this'} {row['expected_location']}\n\n"
             f"--- RETRIEVED PASSAGES (evidence) ---\n{evidence_text(result)}\n\n"
             f"--- ASSISTANT ANSWER ---\n{result['answer']}\n"
         )
@@ -511,6 +522,7 @@ def summarise(rows, retrieval, answers, verdicts, checks, agreement, ba, failure
 def main() -> None:
     parser = argparse.ArgumentParser(description="Evaluate the RAG system.")
     parser.add_argument("--force", action="store_true", help="redo agent answers, verdicts and before/after")
+    parser.add_argument("--rejudge", action="store_true", help="grade the saved answers again with the judge (keeps the answers)")
     parser.add_argument("--retrieval-only", action="store_true", help="only the hit rate comparison")
     args = parser.parse_args()
 
@@ -530,7 +542,7 @@ def main() -> None:
     checks = {r["id"]: code_checks(r, answers[r["id"]]) for r in rows if r["id"] in answers}
     save_json(EVAL / "code_checks.json", checks)
     print("3. LLM judge")
-    verdicts = judge_all(rows, answers, args.force)
+    verdicts = judge_all(rows, answers, args.force or args.rejudge)
     agreement = human_agreement(verdicts)
     print("4. Before / after")
     try:
