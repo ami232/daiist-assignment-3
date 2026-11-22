@@ -1,0 +1,38 @@
+{
+  "GEVO2026": {
+    "chunks": {
+      "fixed": 276,
+      "structured": 188
+    },
+    "title": "Global EV Outlook 2026",
+    "year": 2026,
+    "file": "GlobalEVOutlook2026.pdf",
+    "publisher": "IEA",
+    "licence": "CC BY 4.0",
+    "sha256": "7f0e1575fa3679fe195c24b6adfd036c28ac90f7d0680ef127d62b4f481e8300"
+  },
+  "GEVO2025": {
+    "chunks": {
+      "fixed": 109,
+      "structured": 73
+    },
+    "title": "Global EV Outlook 2025",
+    "year": 2025,
+    "file": "GlobalEVOutlook2025.pdf",
+    "publisher": "IEA",
+    "licence": "CC BY 4.0",
+    "sha256": "7522f23a3844c6a51190d6a6b70dd348ff1cc8061b1f5d8be2eecb25d6c20ce6"
+  },
+  "GCMO2026": {
+    "chunks": {
+      "fixed": 84,
+      "structured": 61
+    },
+    "title": "Global Critical Minerals Outlook 2026",
+    "year": 2026,
+    "file": "GlobalCriticalMineralsOutlook2026.pdf",
+    "publisher": "IEA",
+    "licence": "CC BY 4.0",
+    "sha256": "722c7333e2100b2404f9fb9b25f693ec1670a6cbd54961a0ee45541cecc43db0"
+  }
+}

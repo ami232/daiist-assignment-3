@@ -1,6 +1,6 @@
 # Decision log (draft for REPORT.md)
 
-Decisions made by Máximo during development, with the alternatives and the evidence considered. It is the basis for writing REPORT.md in his own words.
+Decisions made by Máximo during development, with the alternatives and the evidence considered. How decisions were made: at each decision point Claude (the AI assistant that wrote the code) explained the possible options, with evidence and a recommendation, and Máximo chose which one to take. It is the basis for writing REPORT.md in his own words.
 
 ## 1. Use case (2026-11-21)
 
@@ -19,6 +19,7 @@ Decisions made by Máximo during development, with the alternatives and the evid
 
 - With `pypdf`, words were split ("sale s", "r ecently") and chart labels were mixed into the text. Switched to **PyMuPDF**, which gives the font size of every line: body text is ~11 pt, headings ≥14 pt, and noise (running headers, chart axes, notes) ≤9 pt. Only body text and headings are kept.
 - Other fixes: reading order on the two-column pages of the minerals report, "CO₂" coming out as "CO", and paragraphs cut by a page or column break, which are now joined.
+- Found later, while testing the MCP server (2026-11-22): the PDF of GEVO 2026 repeats the last two lines of p. 18 at the top of p. 19, so one chunk contained a sentence twice. When a paragraph continues on the next page and the new page starts with the same 8+ words, the repetition is now removed. It changed 1 structured chunk; in the fixed design the windows after that point shifted (71 chunks re-embedded).
 
 ## 4. Figure notes and footnotes
 
@@ -32,10 +33,11 @@ Decisions made by Máximo during development, with the alternatives and the evid
 - **Rejected:** fixed 100 versus fixed 250 (~980 embeddings, compares size only) and fixed versus hybrid search (does not compare chunkings; hybrid search can be added later as a third design at no embedding cost).
 - The final design will be chosen from hit rate @1/3/5.
 
-## 6. Embeddings and storage (technical choices proposed by Claude, to review)
+## 6. Embeddings and storage (2026-11-22)
 
-- `gemini-embedding-2` model with 768-dimensional vectors instead of 3,072, so `index/` stays small (7.5 MB in total). Task type `RETRIEVAL_DOCUMENT` for chunks and `RETRIEVAL_QUERY` for questions.
-- Storage "similar to ChromaDB": JSONL files in `index/` (chunks per design plus one shared vector cache) and cosine-similarity search with numpy. It is transparent, fits in git and does not depend on Chroma versions.
+- **Vector size (decision):** `gemini-embedding-2` with **768** dimensions. Alternatives: 1,536 (~15 MB) and 3,072 (~30 MB, maximum quality). Reason: the model is trained so that shorter vectors lose very little quality, the structured design already reaches 100% hit@5 (so a gain could not even be measured), `index/` stays at 8.4 MB, and changing would cost a full re-embedding (~900 texts, about one day of free quota).
+- **Task type (decision):** `RETRIEVAL_DOCUMENT` for chunks and `RETRIEVAL_QUERY` for questions, Google's recommended setup for search, so a short question lands close to the long passage that answers it. Rejected: one generic vector for both (usually slightly worse for question → passage search, and it would need re-embedding).
+- **Storage (decision):** JSONL files in `index/` (chunks per design plus one shared vector cache) and cosine-similarity search with numpy, the "similar to ChromaDB" option allowed by the brief. Reason: every chunk can be opened and read with its page, the search is ~20 lines that can be explained, and there is no extra dependency; at ~320 chunks a full scan takes milliseconds. Rejected: ChromaDB (a binary folder that cannot be read in git; its speed only matters at thousands or millions of chunks).
 - Each vector is saved as soon as it arrives, keyed by a hash of (model, dimensions, task, text). Re-running `main.py index` spends no embeddings, and question vectors are cached too.
 - **Problem found:** with `gemini-embedding-2`, a list of texts is embedded as **one** input and returns a single vector. It was spotted because only 10 vectors had been saved for 469 chunks. Fixed by sending each text as its own `Content` and checking that the number of vectors matches.
 - **First sign of the "wrong year" risk (seen before the test set existed):** for the question "What was the EV sales share in Europe in 2024?", the fixed design ranks a chunk from the 2026 report first instead of the 2025 one.
@@ -67,12 +69,38 @@ Results on the 26 answerable questions (`eval/retrieval_summary.md`, per questio
 
 | Design | hit@1 | hit@3 | hit@5 | words@5 |
 |---|---|---|---|---|
-| A · fixed 150 (overlap 30) | 58% | 73% | 85% | 750 |
-| B · structured (sections ≤250 + header) | 77% | 88% | 100% | 988 |
+| A · fixed 150 (overlap 30) | 58% | 69% | 81% | 750 |
+| B · structured (sections ≤250 + header) | 77% | 88% | 100% | 984 |
 
-- `single`: fixed 75% / 95% / 100%; structured 100% / 100% / 100%.
+- `single`: fixed 75% / 90% / 95%; structured 100% / 100% / 100%.
 - `multi` (strict): fixed 0% / 0% / 33%; structured 0% / 50% / 100%. Strict hit@1 is 0% by construction for both designs, because one chunk rarely covers two passages; partial@1 (fixed 50%, structured 33%) shows that one passage is usually found first.
-- **Why fixed fails:** all four of its misses at k=5 (q21-q24) are multi questions where the GEVO 2025 passage is never retrieved; the GEVO 2026 chunk with the same topic always wins. This is the **"wrong edition"** problem, also visible in single questions (q13, a 2024 UK figure: top-1 is a 2026 chunk). Fixed chunks carry no title or year in their text, and they cut sections in the middle.
+- **Why fixed fails:** four of its five misses at k=5 (q21-q24) are multi questions where the GEVO 2025 passage is never retrieved; the GEVO 2026 chunk with the same topic always wins. This is the **"wrong edition"** problem, also visible in single questions (q13, a 2024 UK figure: top-1 is a 2026 chunk). Fixed chunks carry no title or year in their text, and they cut sections in the middle. (The fifth miss, q03, appeared after the duplicated-lines fix in section 3 shifted the fixed windows: the table above is the re-run; before the fix fixed scored 58% / 73% / 85%. Structured did not change.)
 - **Why structured works:** each chunk starts with "report title · chapter · heading", so the edition year and topic are part of the embedded text. IEA headings often state the key figure (e.g. "Close to 55% of new cars sold in China were electric in 2025"), and whole sections keep the answer together.
 - **Decision (Máximo): structured design, k = 5.** It wins at every k, and k=5 is the smallest k that finds both passages of every multi question, at ~990 words (~1,300 tokens) per search, about 30% more than fixed. k=3 would drop to 50% on multi questions.
 - **Caveat:** 26 questions is a small sample (one question ≈ 4 points), and the questions were written from body text, which helps any design. The "wrong edition" pattern is the robust finding.
+
+## 10. MCP server and duplicate policy for add_document (2026-11-22)
+
+- **Decision (Máximo): content-based policy.** `index/documents.json` stores a SHA-256 hash of each indexed file and its number of chunks.
+  - Same content as a document already indexed → nothing is changed and no embeddings are spent ("Already indexed").
+  - Same document (same document id: a known IEA report, or the file name for new documents), different content → the new version **replaces** the old one, so two versions with different figures never mix in search results.
+  - Otherwise → added.
+- **Reason:** the IEA publishes revised versions of its reports (GEVO 2026 has a "revised version" with corrections), and a consultant always wants the latest one; keeping both would let the agent cite a corrected figure. Rejected: always refuse (cannot update a corrected report) and always add (duplicate chunks, mixed versions).
+- **Known limit:** a new document is identified by its file name, so two different reports saved with the same file name would be treated as versions of one document.
+- **Accepted formats (decision):** PDF only, so a new report goes through the same font-size cleaning, chapters and headings as the rest of the corpus. Rejected: also .txt/.md (a second, simpler pipeline whose chunks would cite less precisely; not needed for IEA reports).
+- **Index a new document goes to (decision):** the structured design only (the one the server searches). Reason: half the embeddings, and the fixed-vs-structured comparison stays on the same 3 documents the test set was written for. Rejected: both designs.
+- **On failure (decision):** all or nothing. Chunks are written to the index only after every vector has arrived, so a failure (e.g. the daily quota running out mid-report) leaves the index unchanged and returns an error; vectors already received stay cached, so a retry does not pay for them again. Rejected: saving what arrived (half a report would be searchable, and the agent could wrongly say the document does not contain something that is on a missing page).
+- Errors (missing file, wrong format, quota) are returned to the caller as tool errors instead of stopping the server.
+- `search` returns the 5 best passages, each with a header "Source: <doc_id>, p. <page> | title (year) | chapter · section | relevance" so the agent can cite (doc_id, p. page) with the same codes as the test set.
+- **Tool descriptions (reviewed and approved by Máximo):** Claude explained what each description needs to tell the model; Máximo reviewed them and approved them. `search` states what the corpus covers (reports, chapters, topics), that chart-only figures are not indexed, to use one focused query per fact with the year (two editions cover the same topics), how to cite, and that no matching passage means the corpus does not contain the answer. `add_document` states what it does, PDF only, the duplicate policy, and to call it only when the user asked to add that file.
+- **Tested** over MCP stdio as `check.py` does: both tools listed; q01 answered by GEVO2026 pp. 18-19 at rank 1; adding a corpus PDF again → "Already indexed" in 0.0 s; missing file and non-PDF → error. Added / replaced tested on a scratch copy of the index with a one-page test PDF (the July 2026 report is still held out for the demo).
+
+## 11. Subagent `corpus-researcher` (2026-11-22)
+
+`.claude/agents/corpus-researcher.md`, a Claude Code subagent whose only tool is `mcp__corpus__search`.
+
+- **When to delegate (decision):** any factual question on the corpus topics (EV sales, shares, stock, prices, batteries, critical minerals, projections), so Claude Code delegates automatically and the searches do not fill the main conversation. Rejected: only when the user names the subagent (predictable, but it would rarely be used).
+- **Refusal rule (decision):** give a figure only if a retrieved passage states it for exactly what was asked (same place, year and metric); simple arithmetic between two cited figures is allowed, showing both; never own knowledge, estimates or a related figure instead (Europe for Spain, 2025 for 2026, sales for share, forecast for actual). Otherwise: "The corpus does not cover this." Reason: in this use case a wrong figure is expensive and a refusal costs ~10 minutes. Rejected: no arithmetic at all (would fail the multi questions that compare 2024 and 2025) and flagged approximations (exactly the near-miss trap the unanswerable questions test). The same rule will go into `AGENTS.md` for `agent.py`.
+- **Partly answerable questions (decision):** answer the covered part with its citation and say which part is not covered. Rejected: refuse the whole question (throws away verified information).
+- **Search budget (decision):** at most 3 searches per question: one per fact (multi questions need two) plus one reworded search. Each search adds ~1,300 tokens. Rejected: one search (too few for multi questions) and no limit (unpredictable cost).
+- Answer format: 1-4 sentences, every figure cited as (doc_id, p. page), the same codes as the test set.

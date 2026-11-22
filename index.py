@@ -119,8 +119,9 @@ def source_for(path: Path) -> Source:
         if Path(src.file).name == path.name:
             return src
     with pymupdf.open(path) as doc:
-        title = (doc.metadata or {}).get("title") or path.stem
-    year = re.search(r"(20\d\d)", path.stem)
+        meta = doc.metadata or {}
+    title = meta.get("title") or path.stem
+    year = re.search(r"(20\d\d)", f"{path.stem} {title} {meta.get('creationDate', '')[2:6]}")
     return Source(
         doc_id=re.sub(r"[^A-Za-z0-9]+", "", path.stem)[:40] or "doc",
         title=title,
@@ -226,6 +227,15 @@ def _classify(size: float, body: float) -> str:
     return "small"  # chart labels, captions, notes, footnotes, running headers
 
 
+def _repeated_lines(prev: str, text: str, min_words: int = 8) -> int:
+    """Number of words at the end of `prev` repeated at the start of `text` (0 if fewer than min_words)."""
+    a, b = prev.split(), text.split()
+    for n in range(min(len(a), len(b)), min_words - 1, -1):
+        if a[-n:] == b[:n]:
+            return n
+    return 0
+
+
 def extract_paragraphs(path: Path, pages: list[tuple[int, int]] | None = None,
                        keep_notes: bool = KEEP_NOTES) -> list[Paragraph]:
     """Extract clean paragraphs from a PDF, each tagged with page, chapter and heading.
@@ -254,8 +264,14 @@ def extract_paragraphs(path: Path, pages: list[tuple[int, int]] | None = None,
             if len(text.split()) < 4 and not re.search(r"[a-z]{3}", text):
                 return  # stray chart label at body size
             prev = out[-1] if out else None
-            if (prev and not prev.is_heading and prev.chapter == chapter
-                    and not re.search(r"[.!?:”\")]$", prev.text) and text[0].islower()):
+            open_prev = (prev and not prev.is_heading and prev.chapter == chapter
+                         and not re.search(r"[.!?:”\")]$", prev.text))
+            overlap = _repeated_lines(prev.text, text) if open_prev else 0
+            if overlap:
+                # the PDF repeats the last lines of a page at the top of the next one
+                prev.text = " ".join(prev.text.split()[:-overlap] + [text])
+                prev.page_end = pno + 1
+            elif open_prev and text[0].islower():
                 prev.text += " " + text  # paragraph continues after a page/column break
                 prev.page_end = pno + 1
             else:
@@ -552,12 +568,81 @@ def embed_and_store(chunks: list[Chunk], design: str = CHUNKING) -> int:
     return len(chunks)
 
 
+# --------------------------------------------------------------------------
+# Document registry and duplicate policy
+# --------------------------------------------------------------------------
+# index/documents.json records, for every indexed document, a SHA-256 hash of
+# the file and its number of chunks per design. Policy when a document is
+# indexed (decided by Máximo, DECISIONS.md section 10):
+#   - same content as a document already indexed -> nothing to do, no embeddings spent
+#   - same document (same doc_id), different content -> new version replaces the old one
+#   - otherwise -> added
+DOCUMENTS_FILE = INDEX_DIR / "documents.json"
+
+
+def file_hash(path: str | Path) -> str:
+    import hashlib
+    h = hashlib.sha256()
+    with Path(path).open("rb") as f:
+        for block in iter(lambda: f.read(1 << 20), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def load_documents() -> dict[str, dict]:
+    if not DOCUMENTS_FILE.exists():
+        return {}
+    return json.loads(DOCUMENTS_FILE.read_text(encoding="utf-8"))
+
+
+def _register(src: Source, sha256: str, design: str, n_chunks: int) -> None:
+    docs = load_documents()
+    entry = docs.get(src.doc_id, {})
+    if entry.get("sha256") != sha256:  # new document or new version: forget old chunk counts
+        entry = {"chunks": {}}
+    entry.update(title=src.title, year=src.year, file=src.file, publisher=src.publisher,
+                 licence=src.licence, sha256=sha256)
+    entry["chunks"][design] = n_chunks
+    docs[src.doc_id] = entry
+    INDEX_DIR.mkdir(exist_ok=True)
+    DOCUMENTS_FILE.write_text(json.dumps(docs, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def index_document(path: str | Path, design: str = CHUNKING) -> dict:
+    """Index one file under the duplicate policy above (used by server.py's add_document).
+
+    Returns {"status": "unchanged" | "replaced" | "added", "doc_id", "title",
+    "chunks", "old_chunks", "pages"}. Chunks are only written once every
+    embedding has arrived, so a failure leaves the index as it was.
+    """
+    path = Path(path)
+    sha256 = file_hash(path)
+    docs = load_documents()
+    for doc_id, entry in docs.items():
+        if entry.get("sha256") == sha256 and design in entry.get("chunks", {}):
+            return {"status": "unchanged", "doc_id": doc_id, "title": entry["title"],
+                    "chunks": entry["chunks"][design], "old_chunks": entry["chunks"][design], "pages": ""}
+    src = source_for(path)
+    old = docs.get(src.doc_id, {}).get("chunks", {}).get(design)
+    chunks = chunk_file(path, design)
+    if not chunks:
+        raise ValueError(f"No text could be extracted from {path.name} (scanned or empty PDF?)")
+    embed_and_store(chunks, design)
+    _register(src, sha256, design, len(chunks))
+    return {"status": "replaced" if old is not None else "added", "doc_id": src.doc_id,
+            "title": src.title, "chunks": len(chunks), "old_chunks": old,
+            "pages": f"{min(c.page for c in chunks)}-{max(c.page_end for c in chunks)}"}
+
+
 def build_index() -> None:
     """`main.py index`: chunk every corpus document with each design, embed, store."""
     for design in DESIGNS:
-        chunks = [c for s in SOURCES for c in chunk_file(CORPUS_DIR / s.file, design)]
+        per_doc = {s.doc_id: chunk_file(CORPUS_DIR / s.file, design) for s in SOURCES}
+        chunks = [c for cs in per_doc.values() for c in cs]
         print(f"[{design}] {len(chunks)} chunks", file=sys.stderr)
         embed_and_store(chunks, design)  # documents added later with add_document are kept
+        for s in SOURCES:
+            _register(s, file_hash(CORPUS_DIR / s.file), design, len(per_doc[s.doc_id]))
     size_mb = sum(p.stat().st_size for p in INDEX_DIR.iterdir()) / 1e6
     print(f"Index ready in {INDEX_DIR} ({size_mb:.1f} MB)")
 

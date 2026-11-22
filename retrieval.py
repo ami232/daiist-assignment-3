@@ -34,6 +34,11 @@ def _load(design: str) -> tuple[list[dict], np.ndarray]:
     return _loaded[design]
 
 
+def loaded_chunks(design: str = ix.CHUNKING) -> list[dict]:
+    """The searchable chunks of a design (loads the index on first use)."""
+    return _load(design)[0]
+
+
 def reload(design: str | None = None) -> None:
     """Forget the in-memory copy (after add_document changed the index)."""
     if design:
