@@ -1,0 +1,7 @@
+design,method,hit@1,hit@3,hit@5,single_hit@5,multi_hit@5,words_in_prompt@5,n_questions
+fixed,dense,,,,,,0,0
+fixed,bm25,,,,,,0,0
+fixed,hybrid,,,,,,0,0
+structure,dense,,,,,,0,0
+structure,bm25,,,,,,0,0
+structure,hybrid,,,,,,0,0

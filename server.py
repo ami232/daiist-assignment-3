@@ -14,7 +14,6 @@ from mcp.server.mcpserver import MCPServer
 import index as indexer
 import rag
 
-# >>> EDIT: describe YOUR corpus. The model decides when to call the tool from this text. <<<
 CORPUS_DESCRIPTION = "Spanish housing and rental law: the Ley de Arrendamientos Urbanos (LAU), the 2023 Ley por el derecho a la vivienda and the Ley de Propiedad Horizontal"
 
 SEARCH_DESCRIPTION = (
