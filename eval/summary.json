@@ -1,0 +1,69 @@
+{
+  "agent_model": "gemini-3.1-flash-lite",
+  "judge_model": "gemini-3.5-flash",
+  "answered_questions": 37,
+  "outcomes": {
+    "answered": 29,
+    "wrong refusal": 0,
+    "correct refusal": 5,
+    "answered an unanswerable question": 3
+  },
+  "judge": {
+    "correct": "20/22",
+    "correct_by_kind": {
+      "single": "20/22",
+      "multi": "0/0",
+      "unanswerable": "0/0"
+    },
+    "supported": "22/22",
+    "unsupported_answers": [],
+    "incorrect": [
+      "q03",
+      "q15"
+    ]
+  },
+  "code_checks": {
+    "invalid_citations": [],
+    "guardrail_retried": [
+      "q12",
+      "q17",
+      "q27",
+      "q31",
+      "q36"
+    ],
+    "guardrail_blocked": []
+  },
+  "human_vs_judge": "no human labels yet",
+  "cost_per_question": {
+    "model_calls": {
+      "mean": 2.2,
+      "median": 2.0
+    },
+    "input_tokens": {
+      "mean": 4246.1,
+      "median": 3630.0
+    },
+    "output_tokens": {
+      "mean": 155.3,
+      "median": 123.0
+    },
+    "seconds": {
+      "mean": 8.0,
+      "median": 5.9
+    },
+    "judge_input_tokens": {
+      "mean": 1807.6,
+      "median": 1806.5
+    },
+    "judge_output_tokens": {
+      "mean": 564.4,
+      "median": 443.5
+    }
+  },
+  "add_document_demo": {
+    "question": "How do I sign up for the transit subsidy, and which organization code do I enter?",
+    "before": "To sign up for the transit subsidy, please see the transit benefit page [Benefits \u203a Transit subsidies].\n\nThe handbook does not provide specific instructions for signing up or the organization code to enter for the transit subsidy. Please contact People Ops (TTS-PeopleOps@gsa.gov) for assistance with this process.\n\n*This handbook is a snapshot from June 2026; please confirm with HR.*",
+    "add_document": "added 'Transit Benefit' (general-information-and-resources/employee-resources-policies/transit-benefit): 5 passages embedded",
+    "after": "To sign up for the transit subsidy, go to https://transitapp.ost.dot.gov/, click **Register**, update your password, log in with your government email, review the \"Rules of behavior,\" click **I Agree**, click **Transit Benefit Application**, select \"Certify/Enroll,\" and click **Continue** [Transit Benefit \u203a Enrolling in transit benefit].\n\nRegarding the organization codes:\n*   Use **T-TECH TRANSFORMATION SERVICE** as your organizational code [Transit Benefit \u203a Enrolling in transit benefit].\n*   Within the \"Transit Benefit Program Application\" section of the form, enter **Q - Federal Acquisition Service** for the \"Organization Code\" field [Transit Benefit \u203a Enrolling in transit benefit].\n\n*This handbook is a snapshot from June 2026; please confirm with HR.*"
+  }
+}
