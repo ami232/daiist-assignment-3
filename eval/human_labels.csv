@@ -1,1 +1,33 @@
 id,correct,supported,notes
+q01,1,0,contenido correcto pero cita invalida tras el reintento del guardrail
+q02,1,1,correcto; cita el texto de la LAU copiado en ley_vivienda p.42
+q03,1,1,ok
+q04,0,1,incompleta: omite la regla de actualizacion solo anual (IRAV)
+q05,1,1,ok
+q06,1,1,ok
+q07,1,1,ok
+q08,1,1,ok
+q09,1,1,ok
+q10,1,1,responde vivienda y ademas local de negocio
+q11,1,1,ok
+q12,1,1,ok
+q13,1,1,ok
+q14,1,1,ok
+q15,1,1,ok
+q16,1,1,ok
+q17,1,1,ok
+q18,1,1,ok
+q19,1,1,ok
+q20,1,1,anade el 10 por ciento del art 9.1.f; esta en el corpus
+q21,1,0,gran tenedor bien; la parte LAU cita un pasaje no recuperado
+q22,1,1,ok
+q23,1,1,ok
+q24,1,1,el guardrail salto una vez y corrigio
+q25,1,1,ok
+q26,1,1,ok
+q27,1,1,rechazo correcto
+q28,1,1,rechazo correcto
+q29,0,1,debia rechazar; respondio con una cita que no contesta la pregunta
+q30,1,1,rechazo correcto
+q31,1,1,rechazo correcto
+q32,1,1,rechazo correcto

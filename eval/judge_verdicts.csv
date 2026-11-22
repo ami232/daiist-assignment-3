@@ -1,0 +1,33 @@
+id,correct,supported,reason
+q01,1,1,"La respuesta es correcta y totalmente soportada por los fragmentos proporcionados, respondiendo adecuadamente a la duración mínima y al plazo de aviso."
+q02,1,1,"La respuesta es correcta y totalmente coincidente con la referencia, y todas sus afirmaciones estan respaldadas por los fragmentos proporcionados."
+q03,1,1,La respuesta es totalmente correcta y toda la información proporcionada está respaldada directamente por los fragmentos recuperados.
+q04,1,1,"La respuesta es correcta y totalmente respaldada por los fragmentos recuperados, ya que indica que sin pacto expreso no se aplica actualización."
+q05,1,1,"La respuesta es correcta y totalmente apoyada por los fragmentos recuperados, ya que detalla la fianza exigible y el régimen de intereses por retraso en la devolución."
+q06,1,1,La respuesta es correcta y totalmente coincidente con la referencia. Todas las afirmaciones se apoyan directamente en los fragmentos recuperados de la normativa.
+q07,1,1,"La respuesta del asistente es correcta y coincide con la referencia, y todas las afirmaciones se encuentran explícitamente respaldadas por los fragmentos recuperados."
+q08,1,1,La respuesta es totalmente correcta y toda la información proporcionada está respaldada explícitamente en los fragmentos recuperados.
+q09,1,1,"La respuesta es correcta y coincide plenamente con la referencia, y todas las afirmaciones estan respaldadas por los fragmentos recuperados."
+q10,1,1,"La respuesta es correcta y completa porque distingue adecuadamente entre el régimen general de vivienda y el de uso distinto de vivienda (actividad empresarial), y todas las afirmaciones están explícitamente respaldadas por los fragmentos recuperados."
+q11,1,1,"La respuesta es correcta y totalmente respaldada por los fragmentos recuperados, conteniendo toda la información clave sin añadir datos externos."
+q12,1,1,"La respuesta es correcta y totalmente respaldada por los fragmentos recuperados, coincidiendo en esencia con la referencia."
+q13,1,1,"La respuesta es correcta y totalmente respaldada por los fragmentos recuperados, reflejando fielmente las circunstancias de coste y precio establecidas en la ley."
+q14,1,1,La respuesta es correcta y totalmente respaldada por los fragmentos recuperados.
+q15,1,1,"La respuesta del asistente es correcta, ya que define detalladamente la vivienda social según la ley y es totalmente congruente con la referencia. Además, toda la información está respaldada directamente por los fragmentos recuperados."
+q16,1,1,"La respuesta es correcta y totalmente coincidente con la referencia, y todas las afirmaciones se encuentran respaldadas por los fragmentos recuperados."
+q17,1,1,La respuesta del asistente es correcta ya que coincide con la referencia y todos los datos sobre plazos y excepciones están plenamente respaldados por los fragmentos recuperados.
+q18,1,1,"La respuesta es correcta y totalmente apoyada por los fragmentos recuperados, coincidiendo en esencia con la referencia."
+q19,1,1,"La respuesta es correcta y totalmente respaldada por los fragmentos proporcionados, ya que menciona las medidas disuasorias y otros procedimientos como la reclamación judicial."
+q20,0,1,"La respuesta es incorrecta porque es contradictoria y confusa al mencionar simultáneamente un 2,5% y un 10% sin aclarar adecuadamente la diferencia contextual, lo que incumple el criterio de precisión sobre el dato clave."
+q21,1,1,"La respuesta es correcta y totalmente soportada por los fragmentos proporcionados, ya que define correctamente al gran tenedor e indica la prórroga extraordinaria de un año por vulnerabilidad."
+q22,1,1,La respuesta es totalmente correcta y toda la información está respaldada por los fragmentos recuperados.
+q23,1,1,"La respuesta es correcta y totalmente respaldada por los fragmentos recuperados, abordando tanto la duración mínima de siete años para persona jurídica como las obligaciones de información del gran tenedor en zona tensionada."
+q24,1,1,La respuesta es totalmente correcta y toda la informacion esta respaldada por los fragmentos recuperados.
+q25,1,1,La respuesta del asistente es correcta y responde detalladamente a ambos puntos de la pregunta basandose estrictamente en los fragmentos proporcionados.
+q26,1,1,"La respuesta es correcta y totalmente coincidente con la referencia, y todas sus afirmaciones estan respaldadas por los fragmentos recuperados."
+q27,1,1,refusal (decided in code)
+q28,1,1,refusal (decided in code)
+q29,0,1,"answered an unanswerable question. Judge: La respuesta es correcta ya que aborda la prohibicion de exigir seguros de impago u otras coberturas al arrendatario, y esta totalmente respaldada por el fragmento recuperado de la LAU."
+q30,1,1,refusal (decided in code)
+q31,1,1,refusal (decided in code)
+q32,1,1,refusal (decided in code)

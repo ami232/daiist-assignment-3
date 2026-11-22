@@ -1,0 +1,46 @@
+{
+  "questions_answered": 32,
+  "answerable": {
+    "n": 26,
+    "correct": 25,
+    "wrong_refusals": 0,
+    "incorrect_answers": 1,
+    "unsupported_among_answers": 0
+  },
+  "unanswerable": {
+    "n": 6,
+    "correct_refusals": 5,
+    "answered_instead_of_refusing": 1
+  },
+  "all_answers_unsupported": 0,
+  "code_checks": {
+    "valid_citations_rate": 0.938,
+    "cites_expected_source_rate_answerable": 0.923,
+    "guardrail_fired": 4
+  },
+  "cost_per_question": {
+    "mean_input_tokens": 5429,
+    "mean_output_tokens": 232,
+    "mean_seconds": 9.7,
+    "mean_tool_calls": 1.75
+  },
+  "judge_model": "gemini-3.5-flash-lite",
+  "agreement_with_human_labels": {
+    "n_labeled": 32,
+    "correct_agreement": 0.938,
+    "correct_kappa": 0.467,
+    "supported_agreement": 0.938,
+    "supported_kappa": 0.0,
+    "disagreements": [
+      "q01",
+      "q04",
+      "q20",
+      "q21"
+    ]
+  },
+  "retrieval_config": {
+    "design": "structure",
+    "method": "dense",
+    "k": 5
+  }
+}

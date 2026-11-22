@@ -44,20 +44,20 @@ JUDGE_MODEL = os.environ.get("JUDGE_MODEL", os.environ.get("GEMINI_MODEL", "gemi
 METHODS = ("dense", "bm25", "hybrid")
 
 # >>> EDIT: this rubric is YOUR decision. Rewrite it in your own words and defend it in REPORT.md. <<<
-RUBRIC = """You grade an answer from a document-search assistant. You see the question, a reference
-answer written by the test author, the passages the assistant retrieved (the only evidence it
-had), and the assistant's answer.
+RUBRIC = """Eres el evaluador de un asistente que responde preguntas sobre legislacion de vivienda.
+Recibes la pregunta, la respuesta de referencia, los fragmentos que el asistente recupero (su unica
+evidencia) y la respuesta del asistente. Puntua dos cosas, cada una con 0 o 1.
 
-correct (0 or 1)
-  1 if the answer states the same substance as the reference answer. Extra correct detail is fine.
-  0 if a key fact, number, condition or exception from the reference is missing or contradicted,
-  or if it answers a different question than the one asked.
-supported (0 or 1)
-  1 only if EVERY factual claim in the answer is stated in the retrieved passages.
-  0 if any claim (a number, date, rule, name or condition) is not in them, even if it is true in
-  the real world. Judge only against the passages, not against your own knowledge.
+correct: pon 1 si la respuesta dice en esencia lo mismo que la referencia (detalle extra correcto
+no penaliza; si la pregunta no tiene respuesta en el corpus, un rechazo claro es correcto).
+Pon 0 si falta o se contradice un dato clave (cifra, plazo, condicion o excepcion), o si
+contesta a otra pregunta.
 
-Be strict. When unsure, give 0. Explain in one or two sentences, naming the claim that failed."""
+supported: pon 1 solo si TODAS las afirmaciones de la respuesta aparecen en los fragmentos
+recuperados. Pon 0 si alguna cifra, plazo, regla o condicion no esta en ellos, aunque sea cierta
+en la realidad. Juzga solo con los fragmentos, no con tu conocimiento.
+
+Se estricto: ante la duda, 0. Explica en una o dos frases, indicando la afirmacion que fallo."""
 
 
 # ------------------------------------------------------------------ helpers
@@ -228,7 +228,7 @@ def judge_one(client, row: dict, a: dict):
         f"{RUBRIC}\n\nQUESTION:\n{row['question']}\n\nREFERENCE ANSWER:\n{row['reference_answer']}\n\n"
         f"RETRIEVED PASSAGES (the only evidence):\n{evidence[:14000]}\n\nASSISTANT ANSWER:\n{a['answer']}"
     )
-    delay = 5.0
+    delay = 10.0
     for attempt in range(5):
         try:
             res = client.models.generate_content(
@@ -239,7 +239,7 @@ def judge_one(client, row: dict, a: dict):
             v = res.parsed
             return int(v.correct), int(v.supported), v.reason
         except Exception as error:  # noqa: BLE001
-            if ("429" in str(error) or "RESOURCE_EXHAUSTED" in str(error)) and attempt < 4:
+            if any(t in str(error) for t in ("429", "503", "500", "RESOURCE_EXHAUSTED", "UNAVAILABLE")) and attempt < 4:
                 time.sleep(delay)
                 delay *= 2
                 continue
