@@ -450,6 +450,13 @@ def before_after(rows: list[dict], answers: dict, force: bool) -> dict:
 # ---------------------------------------------------------------- 7. summary
 
 def failure_candidates(rows, answers, verdicts, checks) -> list[dict]:
+    """Questions the judge did not pass. Your own final_category and notes from an earlier run are kept."""
+    previous = {}
+    try:
+        with (EVAL / "failures.csv").open(newline="", encoding="utf-8") as f:
+            previous = {r["id"]: r for r in csv.DictReader(f)}
+    except OSError:
+        pass
     failures = []
     for row in rows:
         qid = row["id"]
@@ -468,7 +475,9 @@ def failure_candidates(rows, answers, verdicts, checks) -> list[dict]:
         else:
             category = "wrong answer from right passage"
         failures.append({"id": qid, "kind": row["kind"], "auto_category": category,
-                         "judge_reason": verdict["reason"], "final_category": "", "notes": ""})
+                         "judge_reason": verdict["reason"],
+                         "final_category": previous.get(qid, {}).get("final_category", ""),
+                         "notes": previous.get(qid, {}).get("notes", "")})
     with (EVAL / "failures.csv").open("w", newline="", encoding="utf-8") as f:
         writer = csv.DictWriter(f, fieldnames=["id", "kind", "auto_category", "judge_reason", "final_category", "notes"])
         writer.writeheader()
