@@ -1,0 +1,290 @@
+{
+  "q01": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q02": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q03": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q04": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q05": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q06": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q07": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q08": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q09": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": false,
+    "expected_cited": false,
+    "code_pass": false
+  },
+  "q10": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": false,
+    "expected_cited": false,
+    "code_pass": false
+  },
+  "q11": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": false,
+    "expected_cited": false,
+    "code_pass": false
+  },
+  "q12": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": false,
+    "expected_cited": false,
+    "code_pass": false
+  },
+  "q13": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q14": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q15": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": false,
+    "expected_cited": false,
+    "code_pass": false
+  },
+  "q16": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": true,
+    "expected_retrieved": null,
+    "expected_cited": null,
+    "code_pass": true
+  },
+  "q17": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": true,
+    "expected_retrieved": null,
+    "expected_cited": null,
+    "code_pass": true
+  },
+  "q18": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": true,
+    "expected_retrieved": null,
+    "expected_cited": null,
+    "code_pass": true
+  },
+  "q19": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": null,
+    "expected_cited": null,
+    "code_pass": false
+  },
+  "q20": {
+    "searched": true,
+    "has_citation": false,
+    "citations_valid": true,
+    "refused": true,
+    "expected_retrieved": null,
+    "expected_cited": null,
+    "code_pass": true
+  },
+  "q21": {
+    "searched": true,
+    "has_citation": false,
+    "citations_valid": true,
+    "refused": true,
+    "expected_retrieved": null,
+    "expected_cited": null,
+    "code_pass": true
+  },
+  "q22": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": true,
+    "expected_retrieved": null,
+    "expected_cited": null,
+    "code_pass": true
+  },
+  "q23": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q24": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q25": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q26": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q27": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q28": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q29": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": true,
+    "expected_cited": true,
+    "code_pass": true
+  },
+  "q30": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": false,
+    "expected_cited": false,
+    "code_pass": false
+  },
+  "q31": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": false,
+    "expected_retrieved": false,
+    "expected_cited": false,
+    "code_pass": false
+  },
+  "q32": {
+    "searched": true,
+    "has_citation": true,
+    "citations_valid": true,
+    "refused": true,
+    "expected_retrieved": false,
+    "expected_cited": false,
+    "code_pass": false
+  }
+}

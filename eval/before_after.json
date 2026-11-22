@@ -1,0 +1,32 @@
+{
+  "question_id": "q19",
+  "question": "How long should a shop keep its security camera recordings?",
+  "document": "corpus/edpb_video_devices.pdf",
+  "before": {
+    "answer": "The GDPR does not specify a fixed retention period for security camera recordings. Under the principle of \"storage limitation,\" personal data must be kept in a form that permits identification of data subjects for no longer than is necessary for the purposes for which the data are processed [gdpr, Article 5(1)(e)]. It is the responsibility of the controller to determine the appropriate retention period in accordance with these principles [edpb_breach_notification, para 124 (p.26)].",
+    "flags": []
+  },
+  "add_request": {
+    "answer": "The document `edpb_video_devices.pdf` has been successfully added to the corpus, with 81 passages indexed.\n\n[Guardrail] This answer was given without searching the corpus; do not rely on it.",
+    "approvals_asked": [
+      {
+        "tool": "add_document",
+        "args": {
+          "path": "corpus/edpb_video_devices.pdf"
+        }
+      }
+    ],
+    "tool_results": [
+      "Added 'edpb_video_devices': 81 new passage(s), 0 already present, 81 in total."
+    ]
+  },
+  "after": {
+    "answer": "Personal data must not be stored longer than necessary for the purposes for which it is processed [edpb_video_devices, p.28]. For a small shop, a storage period of 24 hours is often sufficient to detect vandalism, though longer periods may be justified by factors like weekends or holidays [edpb_video_devices, p.28].\n\nIn general, data should ideally be erased automatically after a few days, and any storage period exceeding 72 hours requires stronger justification regarding its necessity and legitimacy [edpb_video_devices, p.28]. It is the controller's responsibility to define and justify the retention period based on the principles of necessity and proportionality [edpb_video_devices, p.28].",
+    "flags": [],
+    "searches": [
+      {
+        "query": "retention period security camera recordings GDPR"
+      }
+    ]
+  }
+}
