@@ -155,7 +155,7 @@ def chunk_file(path: Path, source: str | None = None, title: str | None = None) 
 
 def get_collection():
     """Open (or create) the ChromaDB collection stored in index/."""
-    client = chromadb.PersistentClient(path=str(INDEX_DIR))
+    client = chromadb.PersistentClient(path=str(INDEX_DIR), settings=chromadb.Settings(anonymized_telemetry=False))
     return client.get_or_create_collection(COLLECTION, metadata={"hnsw:space": "cosine"})
 
 
@@ -209,7 +209,7 @@ def embed_and_store(chunks: list[dict], collection=None) -> int:
             metadatas=[{k: c[k] for k in ("source", "title", "page", "words")} for c in batch],
         )
         added += len(batch)
-        print(f"  embedded and saved {added}/{len(todo)} chunks")
+        print(f"  embedded and saved {added}/{len(todo)} chunks", file=sys.stderr)  # stderr: stdout is the MCP channel
     return added
 
 
