@@ -46,32 +46,42 @@ async def load_mcp_tools(stack):
 
 # 2. Guardrail around the tools: ask the person at the keyboard before add_document changes the index.
 #    The model cannot skip it, because the harness runs it, not the model.
-def approval_guardrail(auto_approve):
+def approval_guardrail(auto_approve, auto_deny=False):
     @wrap_tool_call
     async def ask_before_changing_index(request, handler):
         call = request.tool_call
-        if call["name"] in NEEDS_APPROVAL and not auto_approve:
-            answer = input(f"  Allow {call['name']}({call['args']})? [y/N] ")
-            if answer.strip().lower() != "y":
+        if call["name"] in NEEDS_APPROVAL:
+            if auto_deny:  # evaluation: the index must not change, and nobody is at the keyboard
+                print(f"  [approval] {call['name']} denied automatically (evaluation)", file=sys.stderr, flush=True)
                 return ToolMessage(
-                    content="The user refused this tool call. Do not try to add the document another way.",
+                    content="Adding documents is disabled in this session. Do not try to add the document another way.",
                     tool_call_id=call["id"],
                     status="error",
                 )
+            if auto_approve:
+                print(f"  [approval] {call['name']}({call['args']}) approved automatically", file=sys.stderr, flush=True)
+            else:
+                answer = input(f"  Allow {call['name']}({call['args']})? [y/N] ")
+                if answer.strip().lower() != "y":
+                    return ToolMessage(
+                        content="The user refused this tool call. Do not try to add the document another way.",
+                        tool_call_id=call["id"],
+                        status="error",
+                    )
         return await handler(request)
 
     return ask_before_changing_index
 
 
 # 3. The agent: model + tools + standing rules + guardrails. create_agent runs the loop.
-def build_agent(tools, auto_approve=False):
+def build_agent(tools, auto_approve=False, auto_deny=False):
     load_api_key()  # puts GEMINI_API_KEY into the environment for langchain-google-genai
     return create_agent(
         model=ChatGoogleGenerativeAI(model=MODEL),
         tools=tools,
         system_prompt=(ROOT / "AGENTS.md").read_text(encoding="utf-8"),
         middleware=[
-            approval_guardrail(auto_approve),
+            approval_guardrail(auto_approve, auto_deny),
             ModelCallLimitMiddleware(run_limit=MODEL_CALL_LIMIT),
         ],
     )
@@ -100,10 +110,19 @@ CITATION = re.compile(
 CASE = re.compile(r"VIII ZR \d+/\d+")
 
 
-def retrieved_locations(messages) -> list[str]:
-    """Locations of the chunks returned by search in this run ('[1] BGH VIII ZR 62/19, Leitsatz')."""
-    return [m.group(1).strip() for msg in messages if isinstance(msg, ToolMessage)
-            for m in re.finditer(r"^\[\d+\] (.+)$", msg.text, re.M)]
+def tool_texts(messages) -> list[str]:
+    return [m.text for m in messages if isinstance(m, ToolMessage)]
+
+
+def retrieved_locations(texts: list[str]) -> list[str]:
+    """Locations of the chunks returned by search ('[1] BGH VIII ZR 62/19, Leitsatz'), in order, without repeats."""
+    return list(dict.fromkeys(m.group(1).strip() for t in texts for m in re.finditer(r"^\[\d+\] (.+)$", t, re.M)))
+
+
+def chunk_lookup() -> dict[str, dict]:
+    """Every stored chunk by location: its metadata plus 'text'."""
+    got = index.get_collection().get(include=["metadatas", "documents"])
+    return {m["location"]: {**m, "text": d} for m, d in zip(got["metadatas"], got["documents"])}
 
 
 def _rns(spec: str) -> set[str]:
@@ -132,9 +151,13 @@ def citation_ok(cited: str, chunks: list[dict]) -> bool:
 
 
 def check_citations(answer: str, messages) -> list[str]:
-    """Cited locations (and bare case numbers) not backed by a chunk retrieved in this run."""
-    by_location = {m["location"]: m for m in index.get_collection().get(include=["metadatas"])["metadatas"]}
-    chunks = [by_location[loc] for loc in retrieved_locations(messages) if loc in by_location]
+    return check_citations_in(answer, tool_texts(messages))
+
+
+def check_citations_in(answer: str, texts: list[str], lookup: dict | None = None) -> list[str]:
+    """Cited locations (and bare case numbers) not backed by a chunk the search tool returned (texts = tool results)."""
+    lookup = lookup if lookup is not None else chunk_lookup()
+    chunks = [lookup[loc] for loc in retrieved_locations(texts) if loc in lookup]
     problems = [c for c in dict.fromkeys(m.group(0) for m in CITATION.finditer(answer)) if not citation_ok(c, chunks)]
     retrieved_cases = {c["doc_id"].removeprefix("BGH ") for c in chunks}
     problems += [f"BGH {case} (not retrieved)" for case in dict.fromkeys(CASE.findall(answer))

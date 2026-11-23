@@ -1,7 +1,8 @@
 """
 Assignment 3: evaluation (`main.py evaluate`).
 
-Retrieval matching is defined here; the evaluation run itself comes later.
+Retrieval evaluation (hit rate per design) and end-to-end evaluation (agent answers, code checks,
+LLM judge, agreement with human labels, add_document demo). `main.py evaluate` runs both.
 
 expected_location in eval/questions.csv names ONE Rn. or § per passage, `;` between passages:
     "BGH VIII ZR 107/20, Rn. 18"   "BGH VIII ZR 107/20, Leitsatz"
@@ -14,6 +15,7 @@ so hit rates stay comparable across chunking designs.
 from __future__ import annotations
 
 import csv
+import sys
 import json
 import re
 from pathlib import Path
@@ -241,16 +243,456 @@ def misses(result: dict, design: str, k: int = max(KS)) -> str:
     return "\n\n".join(out) or "none"
 
 
+# ---------------------------------------------------------------- end-to-end evaluation
+#
+# Same pattern as the lab's 07-own-harness/evaluate.py: run the agent on every question, check in code what
+# code can check, and let a stronger model grade the rest against a rubric, with the retrieved passages as
+# evidence and the reasoning written before each verdict. Answers and verdicts are cached, so a rerun
+# (also check.py --evaluate) spends no tokens.
+
+ANSWERS_CACHE = CACHE_DIR / "answers.json"
+VERDICTS_CACHE = CACHE_DIR / "verdicts.json"
+ANSWERS_JSONL = ROOT / "eval" / "answers.jsonl"
+VERDICTS_JSONL = ROOT / "eval" / "verdicts.jsonl"
+SUMMARY_MD = ROOT / "eval" / "summary.md"
+TO_GRADE_MD = ROOT / "eval" / "to_grade.md"
+DEMO_MD = ROOT / "eval" / "add_document_demo.md"
+HUMAN_LABELS = ROOT / "eval" / "human_labels.csv"
+
+JUDGE_MODEL = "gemini-3.1-pro-preview"  # stronger than the agent's gemini-3.8-flash; the only Pro open on this key
+HOLDOUT_FILE = "corpus/holdout/jb-KORE303622026.xml"
+HOLDOUT_DOC = "BGH VIII ZR 6/24"
+DEMO_QID = "q33"
+
+JUDGE_PROMPT = """You are grading an AI assistant that answers landlords' questions about German residential \
+service charges (Betriebskosten). It must answer only from the retrieved passages below, cite them, and say \
+when they don't cover the question.
+
+Grade two criteria independently. For each, write your reasoning first, then the verdict.
+
+1. correct
+   - Answerable question: the answer reaches the same conclusion as the reference answer and states the \
+conditions or exceptions the reference treats as decisive. Extra correct detail is fine; missing minor detail \
+is fine; contradicting the reference fails.
+   - Unanswerable question (kind "unanswerable"): passes only if the answer says the documents don't cover the \
+question, without giving a substantive answer to it. Mentioning related rules the passages do contain is fine \
+if it is clearly separate from the refusal.
+2. supported
+   - Every factual or legal claim in the answer is stated in the retrieved passages. Saying the documents don't \
+cover something, and referring the user to a lawyer or tax advisor, are not claims. A claim that is true but \
+not in the passages fails. Judge the content; a wrong citation label alone does not fail this criterion.
+
+Question ({kind}): {question}
+
+Reference answer (written by a person from the sources):
+{reference}
+
+Retrieved passages (everything the search tool returned to the assistant):
+{passages}
+
+Assistant's answer:
+{answer}"""
+
+
+def _grade_model():
+    from pydantic import BaseModel, Field
+
+    class Grade(BaseModel):
+        """The judge's structured output: reasoning first, then the verdict, for each criterion."""
+        correct_reasoning: str = Field(description="Two to four sentences comparing the answer with the reference "
+                                                   "answer (for an unanswerable question: does it refuse?).")
+        correct: bool = Field(description="True only if the answer meets criterion 1.")
+        supported_reasoning: str = Field(description="Two to four sentences checking the answer's claims against the "
+                                                     "retrieved passages; name any claim that is not in them.")
+        supported: bool = Field(description="True only if every claim is in the retrieved passages.")
+
+    return Grade
+
+
+REFUSAL = re.compile(
+    r"(?:documents?|corpus|sources?|passages?|search results?|materials?|statutes?|case law)\b[^.\n]{0,160}?"
+    r"(?:do(?:es)?\s*n[o’']?t|do not|does not|did not|contain no|provide no|say nothing)\s*"
+    r"(?:cover|contain|address|say|state|answer|mention|include|provide|deal|specify|regulate|govern)?"
+    r"|not covered by|no (?:retrieved |relevant )?passages?\b"
+    r"|(?:cannot|can't|can’t|could not|couldn't|couldn’t)\s+(?:answer|find)",
+    re.I,
+)
+OPENING = 600  # characters: a refusal here is the answer's main message, later it is a caveat
+
+
+def refusal(answer: str) -> dict:
+    """Code check (b): does the answer say the documents don't cover the question?
+    'anywhere' counts for unanswerable questions (related rules may come first); 'opening' means the answer
+    leads with it, which for an answerable question is a wrong refusal rather than a caveat."""
+    m = REFUSAL.search(answer)
+    return {"anywhere": bool(m), "opening": bool(m) and m.start() < OPENING}
+
+
+def cited_docs(answer: str) -> set[str]:
+    import agent
+    docs = {f"BGH {c}" for c in agent.CASE.findall(answer)}
+    docs |= {m.group(0).split()[-1] for m in agent.CITATION.finditer(answer) if not m.group(0).startswith("BGH")}
+    return docs
+
+
+def _sha(*parts: str) -> str:
+    import hashlib
+    return hashlib.sha256("\n\x1e".join(parts).encode()).hexdigest()[:24]
+
+
+def answer_key(question: str, variant: str = "evaluation") -> str:
+    import agent
+    return _sha(variant, question, (ROOT / "AGENTS.md").read_text(encoding="utf-8"), agent.MODEL)
+
+
+def tool_results(trace: list[str]) -> list[str]:
+    return [line.removeprefix("result ") for line in trace if line.startswith("result ")]
+
+
+class DailyQuota(RuntimeError):
+    pass
+
+
+def _rate_limited(error: Exception) -> tuple[bool, bool]:
+    text = f"{type(error).__name__} {error}"
+    limited = any(s in text for s in ("429", "RESOURCE_EXHAUSTED", "ResourceExhausted", "503", "UNAVAILABLE", "overloaded"))
+    daily = limited and any(s in text for s in ("PerDay", "per day", "PerDayPer"))
+    return limited, daily
+
+
+async def ask_with_retries(ag, agent_obj, question: str, attempts: int = 6) -> dict:
+    import asyncio
+    for attempt in range(attempts):
+        try:
+            answer, trace, stats = await ag.ask(agent_obj, question)
+        except Exception as error:  # noqa: BLE001 - classify and retry rate limits only
+            limited, daily = _rate_limited(error)
+            if daily:
+                raise DailyQuota(str(error)[:300]) from error
+            if not limited or attempt == attempts - 1:
+                raise
+            wait = 30 * (attempt + 1)
+            print(f"    rate limited, waiting {wait}s ({attempt + 1}/{attempts})", file=sys.stderr, flush=True)
+            await asyncio.sleep(wait)
+            continue
+        if any("daily embedding quota" in r for r in tool_results(trace)):
+            raise DailyQuota("the search tool hit the daily embedding quota")
+        return {"question": question, "answer": answer, "trace": trace, "stats": stats}
+    raise RuntimeError("unreachable")
+
+
+async def run_answers(questions: list[dict]) -> dict:
+    """Answer every question once (cached). add_document is denied automatically, so the index cannot change."""
+    from contextlib import AsyncExitStack
+    import agent as ag
+    import retrieval
+
+    cache = retrieval.JsonCache(ANSWERS_CACHE)
+    todo = [q for q in questions if cache.get(answer_key(q["question"])) is None]
+    if todo:
+        print(f"Answering {len(todo)} of {len(questions)} questions (the rest are cached) ...", flush=True)
+        async with AsyncExitStack() as stack:
+            agent_obj = ag.build_agent(await ag.load_mcp_tools(stack), auto_deny=True)
+            for i, q in enumerate(todo, 1):
+                record = await ask_with_retries(ag, agent_obj, q["question"])
+                cache.put(answer_key(q["question"]), record)
+                s = record["stats"]
+                print(f"  {i}/{len(todo)} {q['id']}: {s['model_calls']} calls, "
+                      f"{s['input_tokens'] + s['output_tokens']:,} tokens, {s['seconds']} s", flush=True)
+    return {q["id"]: cache.get(answer_key(q["question"])) for q in questions}
+
+
+def passages_text(trace: list[str], lookup: dict) -> str:
+    import agent
+    locations = agent.retrieved_locations(tool_results(trace))
+    if not locations:
+        return "(the assistant did not search)"
+    return "\n\n".join(f"[{loc}]\n{lookup[loc]['text'] if loc in lookup else '(chunk not in index)'}" for loc in locations)
+
+
+async def judge_answers(questions: list[dict], answers: dict, lookup: dict) -> dict:
+    """Grade every answer with the judge (cached by judge model, prompt, question, reference and answer)."""
+    import asyncio
+    import retrieval
+    from langchain_google_genai import ChatGoogleGenerativeAI
+    from api_key import load_api_key
+
+    cache = retrieval.JsonCache(VERDICTS_CACHE)
+    judge = None
+    verdicts = {}
+    for q in questions:
+        rec = answers[q["id"]]
+        passages = passages_text(rec["trace"], lookup)
+        key = _sha(JUDGE_MODEL, JUDGE_PROMPT, q["question"], q["reference_answer"], rec["answer"], passages)
+        if (hit := cache.get(key)) is None:
+            if judge is None:
+                load_api_key()
+                judge = ChatGoogleGenerativeAI(model=JUDGE_MODEL, temperature=0).with_structured_output(_grade_model())
+            prompt = JUDGE_PROMPT.format(kind=q["kind"], question=q["question"], reference=q["reference_answer"],
+                                         passages=passages, answer=rec["answer"])
+            for attempt in range(6):
+                try:
+                    hit = (await judge.ainvoke(prompt)).model_dump()
+                    break
+                except Exception as error:  # noqa: BLE001
+                    limited, daily = _rate_limited(error)
+                    if daily:
+                        raise DailyQuota(str(error)[:300]) from error
+                    if not limited or attempt == 5:
+                        raise
+                    await asyncio.sleep(30 * (attempt + 1))
+            cache.put(key, hit)
+            print(f"  judged {q['id']}", flush=True)
+        verdicts[q["id"]] = hit
+    return verdicts
+
+
+def code_checks(q: dict, rec: dict, lookup: dict) -> dict:
+    import agent
+    problems = agent.check_citations_in(rec["answer"], tool_results(rec["trace"]), lookup)
+    expected = {s.strip() for s in q["expected_source"].split(";") if s.strip()}
+    cited = cited_docs(rec["answer"])
+    return {
+        "citations": len(list(agent.CITATION.finditer(rec["answer"]))),
+        "citations_valid": not problems,
+        "invalid_citations": problems,
+        "refusal": refusal(rec["answer"]),
+        "cites_expected_source": bool(expected & cited) if expected else None,
+    }
+
+
+def cited_passages(answer: str, trace: list[str], lookup: dict) -> list[dict]:
+    """Retrieved chunks that back the answer's citations (for the blind grading file)."""
+    import agent
+    chunks = [lookup[loc] for loc in agent.retrieved_locations(tool_results(trace)) if loc in lookup]
+    out = []
+    for cite in dict.fromkeys(m.group(0) for m in agent.CITATION.finditer(answer)):
+        for c in chunks:
+            if agent.citation_ok(cite, [c]) and c not in out:
+                out.append(c)
+    return out
+
+
+def write_to_grade(questions: list[dict], answers: dict, lookup: dict) -> None:
+    lines = [
+        "# Blind grading\n",
+        "For each question, grade the agent's answer in `eval/human_labels.csv` (columns `id,correct,supported,notes`) "
+        "before you look at the judge's verdicts:\n",
+        "- `correct` 1/0: matches your reference answer (for unanswerable questions: a proper refusal).",
+        "- `supported` 1/0: every claim is in the retrieved text.",
+        "- `notes`: why, for every 0.\n",
+        "Only the passages the answer cites are shown below; the judge saw everything the search tool returned "
+        "(`eval/answers.jsonl`, field `trace`).\n\n---\n",
+    ]
+    for q in questions:
+        rec = answers[q["id"]]
+        lines += [f"## {q['id']} ({q['kind']})\n", f"**Question:** {q['question']}\n",
+                  f"**Your reference answer:** {q['reference_answer']}\n", "**Agent's answer:**\n",
+                  "\n".join("> " + l if l else ">" for l in rec["answer"].splitlines()) + "\n"]
+        cited = cited_passages(rec["answer"], rec["trace"], lookup)
+        lines.append("**Cited passages:**" + ("" if cited else " none matched a retrieved chunk") + "\n")
+        for c in cited:
+            body = c["text"].split("\n", 1)[1] if "\n" in c["text"] else c["text"]
+            lines.append(f"<details><summary>{c['location']}</summary>\n\n{body}\n\n</details>\n")
+        lines.append("---\n")
+    TO_GRADE_MD.write_text("\n".join(lines), encoding="utf-8")
+
+
+def read_human_labels() -> dict:
+    if not HUMAN_LABELS.is_file():
+        return {}
+    with HUMAN_LABELS.open(newline="", encoding="utf-8") as f:
+        return {r["id"].strip(): r for r in csv.DictReader(f) if (r.get("id") or "").strip()}
+
+
+def agreement(verdicts: dict, human: dict) -> dict:
+    out = {}
+    for col in ("correct", "supported"):
+        pairs = [(qid, str(int(verdicts[qid][col])), human[qid][col].strip()) for qid in human
+                 if qid in verdicts and human[qid].get(col, "").strip() in ("0", "1")]
+        out[col] = {"n": len(pairs), "agree": sum(j == h for _, j, h in pairs),
+                    "disagreements": [{"id": qid, "judge": int(j), "human": int(h), "notes": human[qid].get("notes", ""),
+                                       "judge_reasoning": verdicts[qid][f"{col}_reasoning"]}
+                                      for qid, j, h in pairs if j != h]}
+    return out
+
+
+def summarize(questions: list[dict], rows: dict) -> str:
+    kinds = ["single", "multi", "unanswerable"]
+    groups = {k: [r for r in rows.values() if r["kind"] == k] for k in kinds}
+    groups["all"] = list(rows.values())
+    answerable = lambda rs: [r for r in rs if r["kind"] != "unanswerable"]  # noqa: E731
+
+    def n(rs, f):
+        return sum(1 for r in rs if f(r))
+
+    def cell(rs, f, base=None):
+        base = rs if base is None else base
+        return f"{n(rs, f)}/{len(base)}" if base else "–"
+
+    lines = ["# End-to-end evaluation\n",
+             f"Agent: {rows[questions[0]['id']]['agent_model']} with retrieval design B (k=5). "
+             f"Judge: {JUDGE_MODEL}. {len(rows)} questions.\n",
+             "Correct and supported come from the judge; refusals and the three code checks are computed in code.\n",
+             "| | single | multi | unanswerable | all |", "|---|---|---|---|---|"]
+    table = [
+        ("Correct (judge)", lambda r: r["judge"]["correct"]),
+        ("Supported (judge)", lambda r: r["judge"]["supported"]),
+        ("Unsupported (judge)", lambda r: not r["judge"]["supported"]),
+        ("Says the documents don't cover it, anywhere (code)", lambda r: r["checks"]["refusal"]["anywhere"]),
+        ("… and leads with it, first 600 characters (code)", lambda r: r["checks"]["refusal"]["opening"]),
+        ("Correct refusals: unanswerable, says not covered", lambda r: r["kind"] == "unanswerable" and r["checks"]["refusal"]["anywhere"]),
+        ("Wrong refusals: answerable, leads with not covered", lambda r: r["kind"] != "unanswerable" and r["checks"]["refusal"]["opening"]),
+        ("Wrong refusals: unanswerable, never says not covered", lambda r: r["kind"] == "unanswerable" and not r["checks"]["refusal"]["anywhere"]),
+        ("Answerable with a gap caveat later in the answer", lambda r: r["kind"] != "unanswerable" and r["checks"]["refusal"]["anywhere"] and not r["checks"]["refusal"]["opening"]),
+        ("(a) All citations valid (code)", lambda r: r["checks"]["citations_valid"]),
+        ("(c) Cites an expected source (code)", lambda r: bool(r["checks"]["cites_expected_source"])),
+        ("Citation guardrail fired", lambda r: r["stats"]["guardrail"]["fired"]),
+        ("Answer flagged by the guardrail", lambda r: bool(r["stats"]["guardrail"]["unverified"])),
+    ]
+    for label, f in table:
+        cells = []
+        for k in kinds + ["all"]:
+            rs = groups[k]
+            if label.startswith("(c)"):
+                rs_ = answerable(rs)
+                cells.append(cell(rs_, f) if rs_ else "–")
+            else:
+                cells.append(cell(rs, f))
+        lines.append(f"| {label} | " + " | ".join(cells) + " |")
+
+    def stat(key, rs, fn):
+        vals = [r["stats"][key] if key != "tokens" else r["stats"]["input_tokens"] + r["stats"]["output_tokens"] for r in rs]
+        return fn(vals) if vals else 0
+
+    lines += ["\n| Per question | single | multi | unanswerable | all |", "|---|---|---|---|---|"]
+    for label, key, fn, fmt in [
+        ("Tokens, average", "tokens", lambda v: sum(v) / len(v), "{:,.0f}"),
+        ("Tokens, max", "tokens", max, "{:,.0f}"),
+        ("Seconds, average", "seconds", lambda v: sum(v) / len(v), "{:.1f}"),
+        ("Seconds, max", "seconds", max, "{:.1f}"),
+        ("Model calls, average", "model_calls", lambda v: sum(v) / len(v), "{:.1f}"),
+    ]:
+        lines.append(f"| {label} | " + " | ".join(fmt.format(stat(key, groups[k], fn)) for k in kinds + ["all"]) + " |")
+    total_in = sum(r["stats"]["input_tokens"] for r in rows.values())
+    total_out = sum(r["stats"]["output_tokens"] for r in rows.values())
+    lines.append(f"\nAgent totals for the run: {total_in:,} input + {total_out:,} output tokens. Seconds include the "
+                 "translation step in the search tool and the guardrail's retry; tokens are the agent model's only "
+                 "(the translation step adds ~270 tokens per search, see retrieval_results.md).")
+    return "\n".join(lines) + "\n"
+
+
+async def run_demo(before: dict) -> dict:
+    """Before/after for q33: add the holdout through add_document (approved), ask again, remove the holdout."""
+    from contextlib import AsyncExitStack
+    import agent as ag
+    import index
+    import retrieval
+
+    cache = retrieval.JsonCache(ANSWERS_CACHE)
+    key_add, key_after = answer_key(f"Add the document {HOLDOUT_FILE}", "demo-add"), answer_key(before["question"], "demo-after")
+    if cache.get(key_after) is None:
+        try:
+            async with AsyncExitStack() as stack:
+                agent_obj = ag.build_agent(await ag.load_mcp_tools(stack), auto_approve=True)
+                add = await ask_with_retries(ag, agent_obj, f"Add the document {HOLDOUT_FILE}")
+                if not any(HOLDOUT_DOC in r and ("added" in r or "already indexed" in r) for r in tool_results(add["trace"])):
+                    raise RuntimeError(f"add_document did not add the holdout: {add['trace']}")
+                after = await ask_with_retries(ag, agent_obj, before["question"])
+        finally:
+            removed = index.delete_document(HOLDOUT_DOC)  # keep the committed index at the base corpus
+            print(f"  demo: removed {removed} holdout chunks from the index", flush=True)
+        cache.put(key_add, add)
+        cache.put(key_after, after)
+    add, after = cache.get(key_add), cache.get(key_after)
+
+    def block(title, rec):
+        trace = "\n".join(ag.short(l) for l in rec["trace"])
+        s = rec["stats"]
+        return (f"## {title}\n\n**Trace** ({s['model_calls']} model calls, {s['input_tokens'] + s['output_tokens']:,} "
+                f"tokens, {s['seconds']} s):\n\n```text\n{trace}\n```\n\n**Answer:**\n\n{rec['answer']}\n")
+
+    DEMO_MD.write_text(
+        f"# add_document demo ({DEMO_QID})\n\n**Question:** {before['question']}\n\n"
+        f"Before: the base index (201 chunks) has no passage on comparison quotes. Then `{HOLDOUT_FILE}` "
+        f"({HOLDOUT_DOC}, 20 May 2026) is added through the `add_document` tool, with approval, and the question is "
+        "asked again. Afterwards the holdout is removed so the committed index stays at the base corpus.\n\n"
+        + block("Before (from the evaluation run)", before) + "\n"
+        + block("Adding the document (approved)", add) + "\n"
+        + block("After", after),
+        encoding="utf-8",
+    )
+    return {"add": add, "after": after}
+
+
+def evaluate_end_to_end() -> dict:
+    import asyncio
+    import agent as ag
+    import index
+
+    questions = load_questions()
+    collection = index.get_collection()
+    if index.stored_ids(collection, HOLDOUT_DOC):  # the "before" answers need the base corpus only
+        print(f"  removing {HOLDOUT_DOC} left in the index by an earlier run", flush=True)
+        index.delete_document(HOLDOUT_DOC, collection)
+
+    answers = asyncio.run(run_answers(questions))
+    lookup = ag.chunk_lookup()
+    verdicts = asyncio.run(judge_answers(questions, answers, lookup))
+
+    rows = {}
+    for q in questions:
+        rec = answers[q["id"]]
+        rows[q["id"]] = {"id": q["id"], "kind": q["kind"], "question": q["question"], "answer": rec["answer"],
+                         "trace": rec["trace"], "stats": rec["stats"], "agent_model": ag.MODEL,
+                         "checks": code_checks(q, rec, lookup), "judge": verdicts[q["id"]]}
+
+    with ANSWERS_JSONL.open("w", encoding="utf-8") as f:
+        for r in rows.values():
+            f.write(json.dumps({k: r[k] for k in ("id", "kind", "question", "answer", "trace", "stats", "agent_model", "checks")},
+                               ensure_ascii=False) + "\n")
+    with VERDICTS_JSONL.open("w", encoding="utf-8") as f:
+        for r in rows.values():
+            v = r["judge"]
+            f.write(json.dumps({"id": r["id"], "correct": int(v["correct"]), "supported": int(v["supported"]),
+                                "correct_reasoning": v["correct_reasoning"], "supported_reasoning": v["supported_reasoning"],
+                                "judge_model": JUDGE_MODEL}, ensure_ascii=False) + "\n")
+    write_to_grade(questions, answers, lookup)
+
+    summary = summarize(questions, rows)
+    human = read_human_labels()
+    if human:
+        agree = agreement(verdicts, human)
+        summary += "\n## Agreement with your labels (eval/human_labels.csv)\n\n"
+        for col, a in agree.items():
+            summary += f"- {col}: {a['agree']}/{a['n']} agree" + (f" ({a['agree'] / a['n']:.0%})" if a["n"] else "") + "\n"
+        for col, a in agree.items():
+            for d in a["disagreements"]:
+                summary += (f"\n**{d['id']} {col}:** you {d['human']}, judge {d['judge']}. Your note: {d['notes'] or '–'}. "
+                            f"Judge: {d['judge_reasoning']}\n")
+    else:
+        summary += "\nAgreement with your labels: eval/human_labels.csv has no rows yet (grade eval/to_grade.md first).\n"
+
+    demo_q = next(q for q in questions if q["id"] == DEMO_QID)
+    asyncio.run(run_demo(answers[demo_q["id"]]))
+    summary += f"\nadd_document demo ({DEMO_QID}, before and after): eval/add_document_demo.md\n"
+    SUMMARY_MD.write_text(summary, encoding="utf-8")
+    return {"rows": rows, "summary": summary}
+
+
 def main() -> None:
     problems = validate_test_set()
     print("test set locations OK" if not problems else "\n".join(problems))
     result = evaluate_retrieval()
     print("\n" + retrieval_report(result))
-    best = max(DESIGNS, key=lambda d: tuple(result["summary"][d]["exact"]["overall"][k] for k in sorted(KS, reverse=True)))
-    print(f"Exact-passage misses at k={max(KS)} for the design with the highest exact hit rate at k=5 "
-          f"(ties: k=3, k=1): {best}\n")
-    print(misses(result, best))
-    print("\nEnd-to-end evaluation (agent answers, judge, human agreement) is not written yet.")
+    print("Retrieval details: eval/retrieval_results.md and .json\n")
+    try:
+        e2e = evaluate_end_to_end()
+    except DailyQuota as error:
+        print(f"\nStopped: daily quota reached ({error}). Answers and verdicts so far are cached; "
+              "run `main.py evaluate` again after the reset (09:00 in Spain) to continue.")
+        sys.exit(1)
+    print(e2e["summary"])
 
 
 if __name__ == "__main__":
