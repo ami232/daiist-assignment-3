@@ -4,8 +4,6 @@
 - **Student ID**: 20013
 - **Group**: BBADBA 5B
 
-> **Draft status.** Facts, tables and numbers are filled in from the project files. Places marked **✍️ YOUR WORDS** still need my own wording. Sentences in *"quotes"* under my name are my own words from my review sessions.
-
 ## Use case
 
 | | |
@@ -17,7 +15,7 @@
 
 So the system must prefer refusing over guessing, and every claim must be checkable through a citation to the exact article.
 
-✍️ YOUR WORDS: 3–4 sentences on why you picked this use case and why a wrong answer matters more than "I don't know" here.
+I picked Spanish rental law partly because of my own experience renting a flat, where many situations came up in which an assistant like this would have helped me understand my rights and handle things better. It's also a good test case because the law has been reformed several times in a few years (RDL 7/2019, Ley 12/2023 and a change to LAU art. 10 in force from November 2026), and many tenants rely on websites that fall behind the official text: while grading, I found two legal websites still describing old versions of LAU articles 11 and 21. The assistant is for a tenant with a concrete problem, such as an ignored repair, a deposit or leaving early, who wants to know which article applies before going to a lawyer or the housing office. A wrong answer is much worse than "I don't know": in q04 the agent said a tenant could leave early "unless the contract has a compensation clause", but the current art. 11.3 says leaving gives the landlord no right to compensation, so a tenant could stay in a flat they could leave for free, or pay money they don't owe, while "I don't know" only sends them to ask someone else.
 
 ## Corpus
 
@@ -35,7 +33,7 @@ Downloaded in November 2026. Laws contain no personal data.
 
 **Limitation found during evaluation:** RDL 7/2019 is an *amending* law. It carries the 2019 wording of the articles it changed in other laws. For example, it carries the 2019 tourist-flat rule of the LPH, but not the express-approval requirement added by LO 1/2025 (in force 3 April 2025), so an answer built from it can be out of date.
 
-✍️ YOUR WORDS: one or two sentences on why these three laws fit the use case.
+The LAU (Ley 29/1994) is the base law for renting a home and covers deposits, duration, repairs and leaving early, while RDL 7/2019 and Ley 12/2023 are the two recent reforms that changed it (contract length, stressed zones, large landlords, rent limits). Together they come to about 68,400 words, and I kept only the current version of each article, labelling the LAU art. 10 change that applies from 15 November 2026 as future text.
 
 ## Ingestion
 
@@ -58,22 +56,20 @@ Examples:
 - *multi:* "Si el arrendador es una empresa, ¿cuánto dura como mínimo el contrato y durante cuánto tiempo no se actualiza la fianza?" → LAU Art. 9 + Art. 36: seven years in both cases.
 - *unanswerable:* "¿Cuál es el valor del IRAV publicado para octubre de 2026?" → the corpus only says the rent update cannot exceed the IRAV; it gives no published values.
 
-**A test-set error found and fixed:** the original q34 ("Can the owners' community ban tourist flats?") was labelled unanswerable, but RDL 7/2019 answers it, so the agent "failed" by answering correctly. I checked candidate replacements against the corpus with two searches each (one casual, one in legal Spanish) and replaced it with "¿Puede votar en la junta de propietarios un propietario que debe cuotas de comunidad?", which none of the three laws covers (LPH art. 15.2 does).
-
-✍️ YOUR WORDS: how the questions were written and how you reviewed them. Be honest that they were drafted with AI help from the article texts, and say what you checked or changed.
+The 35 questions (22 single-article, 7 multi-article, 6 unanswerable) were first drafted by Claude from the article texts, and I reviewed all of them before running the test. We found that q34 ("can the building ban tourist flats?") was marked unanswerable although RDL 7/2019 answers it, so I replaced it with "can an owner who owes community fees vote?" after checking that none of the three laws covers it; I didn't change any other question. Because the questions were written from the articles themselves, they are probably easier to search for than real tenant questions, which is a limitation of this test.
 
 ## Retrieval
 
 Hit = a retrieved chunk has the expected law and article. Measured on the 29 answerable questions, initial corpus only.
 
-| Design | hit@1 | hit@3 | hit@5 | all passages @5 (multi) | words added to prompt @5 |
+| Design | hit@1 | hit@3 | hit@5 | two-article questions with both articles @5 | words added to prompt @5 |
 |---|---|---|---|---|---|
-| **articles** (one chunk per article) | 0.793 | **1.000** | 1.000 | **0.931** | 1,427 |
-| fixed200 (200 words, 50 overlap) | 0.759 | 0.897 | 1.000 | 0.862 | 1,074 |
+| **articles** (one chunk per article) | 0.793 | **1.000** | 1.000 | **5/7** | 1,427 |
+| fixed200 (200 words, 50 overlap) | 0.759 | 0.897 | 1.000 | 3/7 | 1,074 |
 
-**Chosen: articles.** It finds the right article in the top 3 for every question, finds both passages of multi questions more often, and its chunks match how answers are cited. The cost is about 350 more words per prompt.
+(Over all 29 answerable questions, "every expected article in the top 5" is 0.931 for articles and 0.862 for fixed200; single-article questions always succeed at @5, so the whole difference comes from the 7 two-article questions.)
 
-✍️ YOUR WORDS: one or two sentences on why you'd accept the extra words for these gains.
+I chose one chunk per article because it put the right article in the top 3 for every question (100% against 90% for 200-word pieces) and, for the 7 two-article questions, delivered both articles in 5 of them (against 3). With fixed pieces, 4 of the 7 two-article questions would reach the agent missing one of the articles it needs, which means at best an incomplete answer or a wrong "I don't know" and at worst an answer from memory, so about 350 extra words per question (a fraction of a cent) is a cheap price, and it also matches how lawyers cite: by article.
 
 ## Tools and subagent
 
@@ -184,7 +180,7 @@ After reviewing the 4 disagreements against the passages, I agreed with the judg
 
 My words: *"I now agree with the judge, showing its true power."*
 
-✍️ YOUR WORDS: one or two more sentences on what this means: when would you trust the judge alone, and when do you still need a human?
+The AI judge was better than me at spotting invented details: it found 4 that I missed, and in q04 I had even praised the invented part as "more complete". But it gave q04 and q25 different grades for the same mistake, so I would trust it alone to grade at scale and flag problems, while a human still has to check every flagged answer against the law text, especially when the claim could cost a tenant money.
 
 ## Failures
 
@@ -232,8 +228,6 @@ My reasons (from `eval/failures.csv`):
 
 ## AI use
 
-✍️ YOUR WORDS. Facts to include, so the disclosure is complete and accurate:
-- **Code:** written with Claude Code: `index.py`, `server.py`, `agent.py`, `evaluate.py`, `guardrail_test.py`, the subagent file and the grading page.
-- **Proposed by Claude, reviewed and accepted by me:** the corpus (three BOE laws), article-based chunking (chosen by the retrieval numbers), the AGENTS.md rules, the citation guard, the judge rubric, the first draft of the 35 test questions and reference answers.
-- **Decided or done by me:** the topic (Spanish rental law); the replacement unanswerable question (chosen from options Claude checked against the corpus); grading 20 answers before seeing the judge's grades; reviewing the 4 disagreements; classifying every failure, including checking three of them against the law myself; the ship decision and its safeguards.
-- **Also used:** Gemini models for embeddings, the agent and the judge.
+Claude wrote the code (the BOE download and cleaning, chunking, the MCP server, agent.py, the evaluation scripts and the grading page), ran the guardrail tests, drafted the first version of the 35 questions, set up each step with options to choose from, and helped me draft the wording of this report. I made the decisions: the topic, one chunk per article after seeing the comparison, the replacement for q34, my own grades for 20 answers (given before I saw the judge's), the classification of the failures, and the ship decision with its safety measures. Checking three failures against the law myself showed why this matters: two legal websites, and a web lookup by Claude in another chat, described an older version of articles 11 and 21, and only the BOE text in the corpus was current.
+
+Models used: Gemini (`gemini-embedding-2` for embeddings, `gemini-3.5-flash-lite` for the agent, `gemini-3-flash-preview` with fallbacks for the judge) and Claude (Claude Code) for coding and drafting.

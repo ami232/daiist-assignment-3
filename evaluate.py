@@ -366,7 +366,7 @@ def summary(questions, retrieval_rows, answers, verdicts, agree) -> None:
         f"Agent model: `{os.environ.get("AGENT_MODEL", "gemini-3.5-flash-lite")}` · judge: `{', '.join(JUDGE_MODELS)}` (fallback order) · "
         f"embeddings: `{index.EMBED_MODEL}` ({index.EMBED_DIM} d) · design served: `{index.DEFAULT_DESIGN}`", "",
         "## Retrieval (answerable questions)", "",
-        "| design | hit@1 | hit@3 | hit@5 | all passages@5 (multi) | words in prompt @5 |", "|---|---|---|---|---|---|",
+        "| design | hit@1 | hit@3 | hit@5 | all expected passages@5 (all answerable) | words in prompt @5 |", "|---|---|---|---|---|---|",
         *[f"| {r['design']} | {r['hit@1']} | {r['hit@3']} | {r['hit@5']} | {r['all_passages@5']} | {r['words_in_prompt@5']} |"
           for r in retrieval_rows], "",
         f"## End to end ({n} questions: {len(ans)} answerable, {len(una)} unanswerable)", "",

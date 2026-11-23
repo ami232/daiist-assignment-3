@@ -92,7 +92,7 @@ Unanswerable questions:
 
 ## 5. Retrieval comparison
 
-| Design | hit@1 | hit@3 | hit@5 | both passages @5 (multi) | words added to prompt (top 5) |
+| Design | hit@1 | hit@3 | hit@5 | all expected passages @5 (all 29 answerable; two-article questions: 5/7 vs 3/7) | words added to prompt (top 5) |
 |---|---|---|---|---|---|
 | **articles** | 0.79 | **1.00** | 1.00 | **0.93** | 1,427 |
 | fixed200 | 0.76 | 0.90 | 1.00 | 0.86 | 1,074 |
