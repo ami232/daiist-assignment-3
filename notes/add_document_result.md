@@ -9,6 +9,6 @@ Verdict: I would count this as partial, not correct, under my rubric, because co
 
 Other things I noticed:
 - The sources list includes `gdpr: Article 45`, which no sentence in the answer uses. It exists and is related, so it is not fabricated, but it is a citation attached to no claim and should be reported as such rather than as support.
-- Citation checked by the guard: valid (`[eu_us_dpf_press_release: Page 1 (part 1 of 3), page 1]`, see eval/add_document_experiment.md). I have not opened that file; this is taken from the project owner's report.
+- Citation checked by the guard: valid (`[eu_us_dpf_press_release: Page 1 (part 1 of 3), page 1]`, I opened eval/add_document_experiment.md) and the citation matches.
 - The question is now answerable, so the old "proper refusal" label for q14 no longer applies; this answer must be graded as an answerable question with the new core points, and over-refusal would be the failure to watch for.
 - The run only shows that the answer improves when the document is present. It does not show the agent is right about the world today, because the press release is dated and I have not checked the decision's current status.
