@@ -24,41 +24,42 @@
   }
  ],
  "agreement": {
-  "graded": 0
+  "graded": 18,
+  "correct": {
+   "n": 18,
+   "agreement": 0.944,
+   "kappa": 0.64,
+   "disagreements": [
+    "q04"
+   ]
+  },
+  "supported": {
+   "n": 18,
+   "agreement": 0.778,
+   "kappa": 0.0,
+   "disagreements": [
+    "q04",
+    "q07",
+    "q25",
+    "q32"
+   ]
+  }
  },
  "failures": {
-  "not judged": [
-   "q01",
+  "unsupported claim": [
    "q04",
-   "q05",
    "q07",
-   "q08",
-   "q09",
-   "q10",
-   "q11",
-   "q12",
-   "q13",
-   "q14",
-   "q15",
-   "q16",
-   "q17",
-   "q18",
-   "q19",
-   "q20",
-   "q21",
-   "q22",
-   "q23",
-   "q24",
-   "q25",
-   "q26",
-   "q28",
-   "q29",
-   "q30",
-   "q31",
-   "q32",
+   "q25"
+  ],
+  "wrong refusal": [
+   "q20"
+  ],
+  "unsupported claim (answered an unanswerable question)": [
+   "q32"
+  ],
+  "not judged": [
    "q33",
-   "q34",
-   "q35"
+   "q34"
   ]
  },
  "mean_tokens": 6428.885714285714,

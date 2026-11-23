@@ -13,8 +13,8 @@ Agent model: `gemini-3.5-flash-lite` · judge: `gemini-3-flash-preview, gemini-3
 
 | metric | value |
 |---|---|
-| judged correct | 4/4 |
-| judged supported | 4/4 |
+| judged correct | 31/33 |
+| judged supported | 29/33 |
 | correct refusals (code) | 6/6 |
 | answered an unanswerable question (code) | 0/6 |
 | wrong refusals (code) | 1/29 |
@@ -27,8 +27,12 @@ Agent model: `gemini-3.5-flash-lite` · judge: `gemini-3-flash-preview, gemini-3
 
 ## Suggested failure causes (check each by hand)
 
-- **not judged** (31): q01, q04, q05, q07, q08, q09, q10, q11, q12, q13, q14, q15, q16, q17, q18, q19, q20, q21, q22, q23, q24, q25, q26, q28, q29, q30, q31, q32, q33, q34, q35
+- **not judged** (2): q33, q34
+- **unsupported claim** (3): q04, q07, q25
+- **unsupported claim (answered an unanswerable question)** (1): q32
+- **wrong refusal** (1): q20
 
 ## Judge vs human
 
-- eval/human_labels.csv has no grades yet.
+- **correct**: 94% agreement on 18 answers (Cohen's κ = 0.64); disagreements: q04
+- **supported**: 78% agreement on 18 answers (Cohen's κ = 0.0); disagreements: q04, q07, q25, q32
