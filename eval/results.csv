@@ -1,0 +1,38 @@
+id,kind,citations,citations_valid,outcome,guardrail,judge_correct,judge_supported,human_correct,human_supported,model_calls,input_tokens,output_tokens,seconds,judge_input_tokens,judge_output_tokens
+q01,single,1,True,answered,pass,1,1,1,1,2,3259,80,5.57,1473,321
+q02,single,2,True,answered,pass,1,1,1,1,2,3612,88,5.21,1830,323
+q03,single,2,True,answered,pass,0,1,1,1,2,3698,123,4.92,1981,1841
+q04,single,1,True,answered,pass,1,1,1,1,2,3448,112,4.82,1702,462
+q05,single,1,True,answered,pass,1,1,1,1,2,3730,71,4.43,1952,595
+q06,single,2,True,answered,pass,1,1,1,1,2,3698,99,4.47,1965,444
+q07,single,2,True,answered,pass,1,1,1,1,2,3559,123,3.56,1832,433
+q08,single,4,True,answered,pass,1,1,1,1,2,3475,192,4.91,1814,950
+q09,single,2,True,answered,pass,1,1,1,1,2,3359,143,9.21,1652,424
+q10,single,5,True,answered,pass,1,1,1,1,2,3376,225,5.0,1730,387
+q11,single,1,True,answered,pass,1,1,1,1,2,3354,94,6.31,1561,443
+q12,single,4,True,answered,retried,1,1,1,1,3,5463,411,6.01,1547,573
+q13,single,2,True,answered,pass,1,1,1,1,2,3618,98,5.17,1871,431
+q14,single,2,True,answered,pass,1,1,1,1,2,3801,130,5.93,2091,493
+q15,single,1,True,answered,pass,0,1,1,0,2,3133,95,5.42,1371,1200
+q16,single,2,True,answered,pass,1,1,1,1,2,3458,99,23.96,1707,438
+q17,single,2,True,answered,retried,1,1,1,1,3,7593,253,7.3,2551,627
+q18,single,2,True,answered,pass,1,1,1,1,2,3544,115,5.41,1799,470
+q19,single,1,True,answered,pass,1,1,1,1,2,3661,71,6.25,1882,569
+q20,single,2,True,answered,pass,1,1,1,1,2,3770,84,4.7,2012,269
+q21,single,1,True,answered,pass,1,1,1,1,2,3446,65,4.29,1650,313
+q22,single,2,True,answered,pass,1,1,1,1,2,3527,124,5.45,1795,411
+q23,multi,4,True,answered,pass,1,1,1,1,3,5753,238,8.22,2792,757
+q24,multi,2,True,answered,pass,1,1,1,1,2,3533,187,6.61,1866,792
+q25,multi,6,True,answered,pass,0,1,0,1,2,3234,231,43.53,1625,1189
+q26,multi,5,True,answered,pass,1,1,1,1,3,6069,329,11.79,3177,563
+q27,multi,3,True,answered,retried,1,1,1,1,3,8158,381,7.55,2805,502
+q28,multi,5,True,answered,pass,1,1,1,1,2,5514,297,13.48,3894,542
+q29,multi,4,True,answered,pass,1,1,1,1,3,7377,220,6.47,3077,380
+q30,unanswerable,1,True,answered an unanswerable question,pass,1,1,1,1,2,4117,102,8.75,2375,568
+q31,unanswerable,2,True,answered an unanswerable question,retried,1,1,1,1,3,5939,235,5.47,1791,412
+q32,unanswerable,1,True,answered an unanswerable question,pass,1,1,1,1,2,4161,116,5.96,2435,490
+q33,unanswerable,0,True,correct refusal,pass,1,1,1,1,2,3630,86,5.44,1877,512
+q34,unanswerable,1,True,correct refusal,pass,1,1,1,1,2,3722,132,5.72,2011,1063
+q35,unanswerable,0,True,correct refusal,pass,1,1,1,1,2,3211,88,6.93,1448,309
+q36,unanswerable,0,True,correct refusal,retried,1,1,1,1,3,5791,137,14.84,1618,282
+q37,unanswerable,0,True,correct refusal,pass,1,1,1,1,2,3314,72,7.27,1529,279

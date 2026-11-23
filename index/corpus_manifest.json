@@ -1,0 +1,596 @@
+{
+  "corpus": "TTS Handbook (Technology Transformation Services, US GSA)",
+  "repository": "https://github.com/18F/handbook",
+  "commit": "c220f93896b39e9e4ab0f486a1d5bf346ac06e3e",
+  "licence": "Public domain (US government work) and CC0 1.0",
+  "built": "2026-11-23",
+  "embedding_model": "gemini-embedding-2",
+  "pages": 62,
+  "words_raw": 60269,
+  "words_clean": 57138,
+  "chunks": {
+    "structure": 505,
+    "fixed": 369
+  },
+  "redactions": {
+    "general-information-and-resources/employee-resources-policies/deaf-hoh": {
+      "emails": 2,
+      "names": 2
+    },
+    "getting-started/classes/travel-101": {
+      "emails": 1,
+      "names": 0
+    },
+    "hiring-staying-or-changing-jobs/resume": {
+      "emails": 2,
+      "names": 1
+    },
+    "travel-and-leave/travel-and-leave-policies/travel-guide-faq": {
+      "emails": 0,
+      "names": 1
+    }
+  },
+  "holdout": [
+    "general-information-and-resources/employee-resources-policies/transit-benefit"
+  ],
+  "page_list": [
+    {
+      "source": "about-us/centers-of-excellence/operations/conduct-and-norms",
+      "title": "Conduct and norms",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/about-us/centers-of-excellence/operations/conduct-and-norms.md",
+      "words_raw": 1051,
+      "words_clean": 1024,
+      "chunks_structure": 7,
+      "chunks_fixed": 7
+    },
+    {
+      "source": "about-us/code-of-conduct",
+      "title": "Code of conduct",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/about-us/code-of-conduct.md",
+      "words_raw": 750,
+      "words_clean": 738,
+      "chunks_structure": 7,
+      "chunks_fixed": 5
+    },
+    {
+      "source": "general-information-and-resources/employee-resources-policies/benefits-links",
+      "title": "Benefits links and resources",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/general-information-and-resources/employee-resources-policies/benefits-links.md",
+      "words_raw": 228,
+      "words_clean": 208,
+      "chunks_structure": 4,
+      "chunks_fixed": 2
+    },
+    {
+      "source": "general-information-and-resources/employee-resources-policies/daily-checkin",
+      "title": "Daily Check-in",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/general-information-and-resources/employee-resources-policies/daily-checkin.md",
+      "words_raw": 86,
+      "words_clean": 68,
+      "chunks_structure": 3,
+      "chunks_fixed": 1
+    },
+    {
+      "source": "general-information-and-resources/employee-resources-policies/deaf-hoh",
+      "title": "Resources for Deaf and Hard of Hearing individuals in TTS",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/general-information-and-resources/employee-resources-policies/deaf-hoh.md",
+      "words_raw": 2425,
+      "words_clean": 2390,
+      "chunks_structure": 18,
+      "chunks_fixed": 15
+    },
+    {
+      "source": "general-information-and-resources/employee-resources-policies/employment-verification",
+      "title": "Employment Verification",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/general-information-and-resources/employee-resources-policies/employment-verification.md",
+      "words_raw": 152,
+      "words_clean": 132,
+      "chunks_structure": 2,
+      "chunks_fixed": 1
+    },
+    {
+      "source": "general-information-and-resources/employee-resources-policies/hosting-non-government-speakers",
+      "title": "Guidance on hosting non-government speakers",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/general-information-and-resources/employee-resources-policies/hosting-non-government-speakers.md",
+      "words_raw": 539,
+      "words_clean": 514,
+      "chunks_structure": 5,
+      "chunks_fixed": 3
+    },
+    {
+      "source": "general-information-and-resources/employee-resources-policies/supporting-deaf-hoh-colleagues",
+      "title": "Working effectively & inclusively with your Deaf and Hard of Hearing colleagues",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/general-information-and-resources/employee-resources-policies/supporting-deaf-hoh-colleagues.md",
+      "words_raw": 480,
+      "words_clean": 454,
+      "chunks_structure": 4,
+      "chunks_fixed": 3
+    },
+    {
+      "source": "general-information-and-resources/employee-resources-policies/veterans-service-members",
+      "title": "Veteran & service member resources",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/general-information-and-resources/employee-resources-policies/veterans-service-members.md",
+      "words_raw": 532,
+      "words_clean": 503,
+      "chunks_structure": 7,
+      "chunks_fixed": 3
+    },
+    {
+      "source": "general-information-and-resources/employee-resources-policies/work-schedules",
+      "title": "Work schedules",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/general-information-and-resources/employee-resources-policies/work-schedules.md",
+      "words_raw": 1419,
+      "words_clean": 1369,
+      "chunks_structure": 14,
+      "chunks_fixed": 9
+    },
+    {
+      "source": "general-information-and-resources/reasonable-accommodations",
+      "title": "Reasonable Accommodations",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/general-information-and-resources/reasonable-accommodations.md",
+      "words_raw": 1758,
+      "words_clean": 1744,
+      "chunks_structure": 18,
+      "chunks_fixed": 11
+    },
+    {
+      "source": "getting-started/classes/benefits",
+      "title": "Benefits",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/getting-started/classes/benefits.md",
+      "words_raw": 3829,
+      "words_clean": 3624,
+      "chunks_structure": 30,
+      "chunks_fixed": 23
+    },
+    {
+      "source": "getting-started/classes/travel-101",
+      "title": "TTS Travel 101",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/getting-started/classes/travel-101.md",
+      "words_raw": 784,
+      "words_clean": 647,
+      "chunks_structure": 4,
+      "chunks_fixed": 4
+    },
+    {
+      "source": "getting-started/equipment",
+      "title": "Equipment",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/getting-started/equipment.md",
+      "words_raw": 2023,
+      "words_clean": 1960,
+      "chunks_structure": 17,
+      "chunks_fixed": 12
+    },
+    {
+      "source": "hiring-staying-or-changing-jobs/assignee-detail",
+      "title": "Internal hiring and internal TTS details",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/hiring-staying-or-changing-jobs/assignee-detail.md",
+      "words_raw": 441,
+      "words_clean": 419,
+      "chunks_structure": 6,
+      "chunks_fixed": 3
+    },
+    {
+      "source": "hiring-staying-or-changing-jobs/external-details",
+      "title": "Details with Other Agencies",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/hiring-staying-or-changing-jobs/external-details.md",
+      "words_raw": 1297,
+      "words_clean": 1257,
+      "chunks_structure": 6,
+      "chunks_fixed": 8
+    },
+    {
+      "source": "hiring-staying-or-changing-jobs/fair-and-equitable-hiring-practices",
+      "title": "Merit Systems Principles Hiring Practices",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/hiring-staying-or-changing-jobs/fair-and-equitable-hiring-practices.md",
+      "words_raw": 325,
+      "words_clean": 305,
+      "chunks_structure": 2,
+      "chunks_fixed": 2
+    },
+    {
+      "source": "hiring-staying-or-changing-jobs/gsa-details",
+      "title": "Details within GSA",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/hiring-staying-or-changing-jobs/gsa-details.md",
+      "words_raw": 750,
+      "words_clean": 725,
+      "chunks_structure": 4,
+      "chunks_fixed": 5
+    },
+    {
+      "source": "hiring-staying-or-changing-jobs/hiring",
+      "title": "Hiring",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/hiring-staying-or-changing-jobs/hiring.md",
+      "words_raw": 383,
+      "words_clean": 350,
+      "chunks_structure": 7,
+      "chunks_fixed": 2
+    },
+    {
+      "source": "hiring-staying-or-changing-jobs/hiring-authorities",
+      "title": "Hiring Authorities",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/hiring-staying-or-changing-jobs/hiring-authorities.md",
+      "words_raw": 744,
+      "words_clean": 721,
+      "chunks_structure": 6,
+      "chunks_fixed": 5
+    },
+    {
+      "source": "hiring-staying-or-changing-jobs/leaving-tts",
+      "title": "Leaving TTS & Offboarding",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/hiring-staying-or-changing-jobs/leaving-tts.md",
+      "words_raw": 1774,
+      "words_clean": 1752,
+      "chunks_structure": 15,
+      "chunks_fixed": 11
+    },
+    {
+      "source": "hiring-staying-or-changing-jobs/promotions",
+      "title": "Promotions",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/hiring-staying-or-changing-jobs/promotions.md",
+      "words_raw": 438,
+      "words_clean": 406,
+      "chunks_structure": 3,
+      "chunks_fixed": 3
+    },
+    {
+      "source": "hiring-staying-or-changing-jobs/resume",
+      "title": "Writing a federal government resume",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/hiring-staying-or-changing-jobs/resume.md",
+      "words_raw": 2457,
+      "words_clean": 2357,
+      "chunks_structure": 15,
+      "chunks_fixed": 15
+    },
+    {
+      "source": "hiring-staying-or-changing-jobs/term-extensions",
+      "title": "Term extensions",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/hiring-staying-or-changing-jobs/term-extensions.md",
+      "words_raw": 749,
+      "words_clean": 735,
+      "chunks_structure": 4,
+      "chunks_fixed": 5
+    },
+    {
+      "source": "hiring-staying-or-changing-jobs/ttsjobs",
+      "title": "TTSJobs",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/hiring-staying-or-changing-jobs/ttsjobs.md",
+      "words_raw": 267,
+      "words_clean": 235,
+      "chunks_structure": 5,
+      "chunks_fixed": 2
+    },
+    {
+      "source": "performance-management/dates",
+      "title": "Performance Management Important Dates",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/performance-management/dates.md",
+      "words_raw": 435,
+      "words_clean": 387,
+      "chunks_structure": 3,
+      "chunks_fixed": 3
+    },
+    {
+      "source": "performance-management/employee-resources",
+      "title": "Performance Management Employee Resources",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/performance-management/employee-resources.md",
+      "words_raw": 692,
+      "words_clean": 664,
+      "chunks_structure": 8,
+      "chunks_fixed": 4
+    },
+    {
+      "source": "performance-management/end-of-year/hrlinks-steps",
+      "title": "End of Year Performance Management HRLinks Steps",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/performance-management/end-of-year/hrlinks-steps.md",
+      "words_raw": 1076,
+      "words_clean": 1046,
+      "chunks_structure": 17,
+      "chunks_fixed": 7
+    },
+    {
+      "source": "performance-management/index",
+      "title": "Performance Management Overview",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/performance-management/index.md",
+      "words_raw": 1072,
+      "words_clean": 1046,
+      "chunks_structure": 8,
+      "chunks_fixed": 7
+    },
+    {
+      "source": "performance-management/mid-year",
+      "title": "Performance Management Mid Year Review",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/performance-management/mid-year.md",
+      "words_raw": 327,
+      "words_clean": 296,
+      "chunks_structure": 3,
+      "chunks_fixed": 2
+    },
+    {
+      "source": "performance-management/mid-year/hrlinks-steps",
+      "title": "Mid Year Performance Management HRLinks Steps",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/performance-management/mid-year/hrlinks-steps.md",
+      "words_raw": 642,
+      "words_clean": 607,
+      "chunks_structure": 12,
+      "chunks_fixed": 4
+    },
+    {
+      "source": "performance-management/supervisor-resources",
+      "title": "Performance Management Supervisor Resources",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/performance-management/supervisor-resources.md",
+      "words_raw": 1681,
+      "words_clean": 1647,
+      "chunks_structure": 14,
+      "chunks_fixed": 10
+    },
+    {
+      "source": "training-and-development/conferences-events-training",
+      "title": "Conferences, events, and training",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/training-and-development/conferences-events-training.md",
+      "words_raw": 1296,
+      "words_clean": 1250,
+      "chunks_structure": 10,
+      "chunks_fixed": 8
+    },
+    {
+      "source": "training-and-development/details-professional-development",
+      "title": "Looking at details for professional growth",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/training-and-development/details-professional-development.md",
+      "words_raw": 371,
+      "words_clean": 342,
+      "chunks_structure": 2,
+      "chunks_fixed": 2
+    },
+    {
+      "source": "training-and-development/external-speaking-request-playbook",
+      "title": "External speaking request playbook",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/training-and-development/external-speaking-request-playbook.md",
+      "words_raw": 3062,
+      "words_clean": 2831,
+      "chunks_structure": 17,
+      "chunks_fixed": 18
+    },
+    {
+      "source": "training-and-development/idp",
+      "title": "Individual Development Plan",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/training-and-development/idp.md",
+      "words_raw": 309,
+      "words_clean": 266,
+      "chunks_structure": 5,
+      "chunks_fixed": 2
+    },
+    {
+      "source": "training-and-development/index",
+      "title": "Development and training",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/training-and-development/index.md",
+      "words_raw": 702,
+      "words_clean": 669,
+      "chunks_structure": 8,
+      "chunks_fixed": 4
+    },
+    {
+      "source": "training-and-development/olu",
+      "title": "Online Learning University",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/training-and-development/olu.md",
+      "words_raw": 221,
+      "words_clean": 205,
+      "chunks_structure": 4,
+      "chunks_fixed": 2
+    },
+    {
+      "source": "training-and-development/working-groups-and-guilds-101",
+      "title": "Working Groups, Guilds, and other Communities of Practice",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/training-and-development/working-groups-and-guilds-101.md",
+      "words_raw": 1010,
+      "words_clean": 901,
+      "chunks_structure": 8,
+      "chunks_fixed": 6
+    },
+    {
+      "source": "travel-and-leave/advanced-sick-leave",
+      "title": "Advanced sick leave",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/advanced-sick-leave.md",
+      "words_raw": 291,
+      "words_clean": 276,
+      "chunks_structure": 3,
+      "chunks_fixed": 2
+    },
+    {
+      "source": "travel-and-leave/fmla",
+      "title": "Family Medical Leave Act (FMLA)",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/fmla.md",
+      "words_raw": 507,
+      "words_clean": 490,
+      "chunks_structure": 9,
+      "chunks_fixed": 3
+    },
+    {
+      "source": "travel-and-leave/going-out-of-office",
+      "title": "Going out of office",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/going-out-of-office.md",
+      "words_raw": 519,
+      "words_clean": 493,
+      "chunks_structure": 5,
+      "chunks_fixed": 3
+    },
+    {
+      "source": "travel-and-leave/july-13-travel-guidance",
+      "title": "Updated Travel Guidance for GSA Employees (07/13/2021)",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/july-13-travel-guidance.md",
+      "words_raw": 149,
+      "words_clean": 136,
+      "chunks_structure": 1,
+      "chunks_fixed": 1
+    },
+    {
+      "source": "travel-and-leave/leave",
+      "title": "Leave types",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/leave.md",
+      "words_raw": 2813,
+      "words_clean": 2736,
+      "chunks_structure": 21,
+      "chunks_fixed": 17
+    },
+    {
+      "source": "travel-and-leave/overtime",
+      "title": "Compensation for working extra hours",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/overtime.md",
+      "words_raw": 1058,
+      "words_clean": 1007,
+      "chunks_structure": 12,
+      "chunks_fixed": 6
+    },
+    {
+      "source": "travel-and-leave/paid-parental-leave",
+      "title": "Paid parental leave (PPL)",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/paid-parental-leave.md",
+      "words_raw": 772,
+      "words_clean": 745,
+      "chunks_structure": 8,
+      "chunks_fixed": 5
+    },
+    {
+      "source": "travel-and-leave/travel-and-leave-policies/first-time-travel-complete-concur-profile",
+      "title": "Complete Concur profile",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/travel-and-leave-policies/first-time-travel-complete-concur-profile.md",
+      "words_raw": 338,
+      "words_clean": 274,
+      "chunks_structure": 2,
+      "chunks_fixed": 2
+    },
+    {
+      "source": "travel-and-leave/travel-and-leave-policies/first-time-travel-get-in-concur",
+      "title": "Get access to Concur",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/travel-and-leave-policies/first-time-travel-get-in-concur.md",
+      "words_raw": 914,
+      "words_clean": 846,
+      "chunks_structure": 9,
+      "chunks_fixed": 5
+    },
+    {
+      "source": "travel-and-leave/travel-and-leave-policies/first-time-travel-get-in-concur-pre-olu",
+      "title": "Get set up to travel for TTS <em>before</em> GSA onboarding",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/travel-and-leave-policies/first-time-travel-get-in-concur-pre-olu.md",
+      "words_raw": 735,
+      "words_clean": 681,
+      "chunks_structure": 3,
+      "chunks_fixed": 4
+    },
+    {
+      "source": "travel-and-leave/travel-and-leave-policies/first-time-travel-travel-card",
+      "title": "Get a travel card",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/travel-and-leave-policies/first-time-travel-travel-card.md",
+      "words_raw": 132,
+      "words_clean": 76,
+      "chunks_structure": 1,
+      "chunks_fixed": 1
+    },
+    {
+      "source": "travel-and-leave/travel-and-leave-policies/moving",
+      "title": "Moving and changing your address",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/travel-and-leave-policies/moving.md",
+      "words_raw": 652,
+      "words_clean": 623,
+      "chunks_structure": 11,
+      "chunks_fixed": 4
+    },
+    {
+      "source": "travel-and-leave/travel-and-leave-policies/travel-guide-2-book-travel",
+      "title": "Book travel in Concur and secure approvals",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/travel-and-leave-policies/travel-guide-2-book-travel.md",
+      "words_raw": 480,
+      "words_clean": 377,
+      "chunks_structure": 3,
+      "chunks_fixed": 3
+    },
+    {
+      "source": "travel-and-leave/travel-and-leave-policies/travel-guide-3-travel",
+      "title": "What to consider while traveling",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/travel-and-leave-policies/travel-guide-3-travel.md",
+      "words_raw": 1240,
+      "words_clean": 1171,
+      "chunks_structure": 12,
+      "chunks_fixed": 7
+    },
+    {
+      "source": "travel-and-leave/travel-and-leave-policies/travel-guide-4-reimbursement",
+      "title": "Get reimbursed",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/travel-and-leave-policies/travel-guide-4-reimbursement.md",
+      "words_raw": 385,
+      "words_clean": 300,
+      "chunks_structure": 1,
+      "chunks_fixed": 2
+    },
+    {
+      "source": "travel-and-leave/travel-and-leave-policies/travel-guide-a-amended-authorizations",
+      "title": "Appendix A - Amended authorizations",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/travel-and-leave-policies/travel-guide-a-amended-authorizations.md",
+      "words_raw": 1442,
+      "words_clean": 1380,
+      "chunks_structure": 9,
+      "chunks_fixed": 9
+    },
+    {
+      "source": "travel-and-leave/travel-and-leave-policies/travel-guide-b-after-hours-emergency-travel-authorizations",
+      "title": "Appendix B - After-hours emergency travel authorizations",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/travel-and-leave-policies/travel-guide-b-after-hours-emergency-travel-authorizations.md",
+      "words_raw": 428,
+      "words_clean": 391,
+      "chunks_structure": 3,
+      "chunks_fixed": 3
+    },
+    {
+      "source": "travel-and-leave/travel-and-leave-policies/travel-guide-email-templates",
+      "title": "Travel Approval Email Templates",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/travel-and-leave-policies/travel-guide-email-templates.md",
+      "words_raw": 400,
+      "words_clean": 336,
+      "chunks_structure": 4,
+      "chunks_fixed": 2
+    },
+    {
+      "source": "travel-and-leave/travel-and-leave-policies/travel-guide-faq",
+      "title": "Frequently Asked Questions",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/travel-and-leave-policies/travel-guide-faq.md",
+      "words_raw": 6776,
+      "words_clean": 6612,
+      "chunks_structure": 42,
+      "chunks_fixed": 41
+    },
+    {
+      "source": "travel-and-leave/travel-and-leave-policies/unofficial-foreign-travel",
+      "title": "Unofficial Foreign Travel",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/travel-and-leave-policies/unofficial-foreign-travel.md",
+      "words_raw": 178,
+      "words_clean": 136,
+      "chunks_structure": 2,
+      "chunks_fixed": 1
+    },
+    {
+      "source": "travel-and-leave/travel-and-leave-policies/working-while-traveling",
+      "title": "Working While Traveling",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/travel-and-leave-policies/working-while-traveling.md",
+      "words_raw": 149,
+      "words_clean": 124,
+      "chunks_structure": 1,
+      "chunks_fixed": 1
+    },
+    {
+      "source": "travel-and-leave/travel-guide-table-of-contents",
+      "title": "Travel Guide Table of Contents",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/travel-guide-table-of-contents.md",
+      "words_raw": 561,
+      "words_clean": 381,
+      "chunks_structure": 4,
+      "chunks_fixed": 3
+    },
+    {
+      "source": "travel-and-leave/voluntary-leave-transfer-program",
+      "title": "Voluntary Leave Transfer Program",
+      "url": "https://github.com/18F/handbook/blob/c220f93896b39e9e4ab0f486a1d5bf346ac06e3e/pages/travel-and-leave/voluntary-leave-transfer-program.md",
+      "words_raw": 773,
+      "words_clean": 753,
+      "chunks_structure": 7,
+      "chunks_fixed": 5
+    }
+  ]
+}
