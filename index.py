@@ -377,9 +377,10 @@ def index_file(path: str | Path, designs=DESIGNS) -> dict:
 
 # --------------------------------------------------------------------------- search (used by server.py and evaluate.py)
 
-def search(query: str, k: int = 5, design: str = DEFAULT_DESIGN, query_vector=None) -> list[dict]:
+def search(query: str, k: int = 5, design: str = DEFAULT_DESIGN, query_vector=None,
+           where: dict | None = None) -> list[dict]:
     vec = query_vector if query_vector is not None else embed_query(query)
-    res = collection(design).query(query_embeddings=[vec], n_results=k,
+    res = collection(design).query(query_embeddings=[vec], n_results=k, where=where,
                                    include=["documents", "metadatas", "distances"])
     return [{"id": i, "text": d, "score": round(1 - dist, 4), **m}
             for i, d, m, dist in zip(res["ids"][0], res["documents"][0], res["metadatas"][0], res["distances"][0])]

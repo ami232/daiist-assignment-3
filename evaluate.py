@@ -37,6 +37,8 @@ KS = (1, 3, 5)
 JUDGE_MODELS = [m for m in os.environ.get("JUDGE_MODELS", "gemini-3-flash-preview,gemini-3.8-flash").split(",") if m]
 DEMO_QUESTION_ID = "q34"           # "¿Puede votar en la junta un propietario que debe cuotas de comunidad?"
 DEMO_DOC = "BOE-A-1960-10906"      # Ley de Propiedad Horizontal, not in the initial corpus
+# retrieval is always measured on the initial corpus, even after documents were added
+INITIAL_CORPUS = {"doc_id": {"$in": list(index.DOCUMENTS)}}
 
 
 def log(*a):
@@ -85,7 +87,7 @@ def retrieval(questions: list[dict]) -> list[dict]:
         hits_all = {k: 0 for k in KS}
         words, per_q = 0, []
         for q in answerable:
-            res = index.search(q["question"], k=max(KS), design=design)  # query vectors are cached
+            res = index.search(q["question"], k=max(KS), design=design, where=INITIAL_CORPUS)  # query vectors are cached
             words += sum(len(r["text"].split()) for r in res)
             pairs = expected_pairs(q)
             first = next((i + 1 for i, r in enumerate(res) if any(matches(r, p) for p in pairs)), None)
