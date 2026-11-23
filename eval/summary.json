@@ -24,18 +24,18 @@
   }
  ],
  "agreement": {
-  "graded": 18,
+  "graded": 20,
   "correct": {
-   "n": 18,
-   "agreement": 0.944,
-   "kappa": 0.64,
+   "n": 20,
+   "agreement": 0.95,
+   "kappa": 0.643,
    "disagreements": [
     "q04"
    ]
   },
   "supported": {
-   "n": 18,
-   "agreement": 0.778,
+   "n": 20,
+   "agreement": 0.8,
    "kappa": 0.0,
    "disagreements": [
     "q04",
@@ -56,10 +56,6 @@
   ],
   "unsupported claim (answered an unanswerable question)": [
    "q32"
-  ],
-  "not judged": [
-   "q33",
-   "q34"
   ]
  },
  "mean_tokens": 6428.885714285714,

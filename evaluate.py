@@ -34,7 +34,7 @@ JUDGE = EVAL / "judge.jsonl"
 HUMAN = EVAL / "human_labels.csv"
 DEMO = EVAL / "add_document_demo.md"
 KS = (1, 3, 5)
-JUDGE_MODELS = [m for m in os.environ.get("JUDGE_MODELS", "gemini-3-flash-preview,gemini-3.8-flash").split(",") if m]
+JUDGE_MODELS = [m for m in os.environ.get("JUDGE_MODELS", "gemini-3-flash-preview,gemini-3.8-flash,gemini-3.5-flash").split(",") if m]
 DEMO_QUESTION_ID = "q34"           # "¿Puede votar en la junta un propietario que debe cuotas de comunidad?"
 DEMO_DOC = "BOE-A-1960-10906"      # Ley de Propiedad Horizontal, not in the initial corpus
 # retrieval is always measured on the initial corpus, even after documents were added

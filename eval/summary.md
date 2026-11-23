@@ -1,6 +1,6 @@
 # Evaluation summary
 
-Agent model: `gemini-3.5-flash-lite` · judge: `gemini-3-flash-preview, gemini-3.8-flash` (fallback order) · embeddings: `gemini-embedding-2` (768 d) · design served: `articles`
+Agent model: `gemini-3.5-flash-lite` · judge: `gemini-3-flash-preview, gemini-3.8-flash, gemini-3.5-flash` (fallback order) · embeddings: `gemini-embedding-2` (768 d) · design served: `articles`
 
 ## Retrieval (answerable questions)
 
@@ -13,8 +13,8 @@ Agent model: `gemini-3.5-flash-lite` · judge: `gemini-3-flash-preview, gemini-3
 
 | metric | value |
 |---|---|
-| judged correct | 31/33 |
-| judged supported | 29/33 |
+| judged correct | 33/35 |
+| judged supported | 31/35 |
 | correct refusals (code) | 6/6 |
 | answered an unanswerable question (code) | 0/6 |
 | wrong refusals (code) | 1/29 |
@@ -27,12 +27,11 @@ Agent model: `gemini-3.5-flash-lite` · judge: `gemini-3-flash-preview, gemini-3
 
 ## Suggested failure causes (check each by hand)
 
-- **not judged** (2): q33, q34
 - **unsupported claim** (3): q04, q07, q25
 - **unsupported claim (answered an unanswerable question)** (1): q32
 - **wrong refusal** (1): q20
 
 ## Judge vs human
 
-- **correct**: 94% agreement on 18 answers (Cohen's κ = 0.64); disagreements: q04
-- **supported**: 78% agreement on 18 answers (Cohen's κ = 0.0); disagreements: q04, q07, q25, q32
+- **correct**: 95% agreement on 20 answers (Cohen's κ = 0.643); disagreements: q04
+- **supported**: 80% agreement on 20 answers (Cohen's κ = 0.0); disagreements: q04, q07, q25, q32
