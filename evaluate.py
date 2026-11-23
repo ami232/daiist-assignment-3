@@ -30,6 +30,7 @@ import random
 import re
 import statistics
 import sys
+import time
 from collections import Counter, defaultdict
 from pathlib import Path
 
@@ -56,6 +57,10 @@ BM25_K1, BM25_B = 1.5, 0.75
 MIN_LABELS = 20
 LABEL_SEED = 7            # fixes the order of the label sheet (a random order, the same on every run)
 JUDGE_MODEL = os.environ.get("JUDGE_MODEL", "gemini-3.5-flash")
+# gemini-3.5-flash is limited to 5 requests a minute and 20 a day on the free tier, flash-lite to 15 and 500:
+# pause between judge calls so the per-minute limit is not hit. Verdicts are saved one by one: a run that
+# reaches the daily limit stops, and running again later (after 09:00 Spanish time) continues.
+JUDGE_PAUSE = float(os.environ.get("JUDGE_PAUSE", "0" if "lite" in JUDGE_MODEL else "13"))
 # Refusal check in code: a refusal says so up front, so only the start of the answer is searched. A heuristic:
 # it is compared with the judge and with your grades, not trusted on its own.
 REFUSAL = re.compile(
@@ -580,17 +585,24 @@ def judge_stage(rows: list[dict], records: dict[str, dict], checks: dict[str, di
         judge = ChatGoogleGenerativeAI(model=JUDGE_MODEL, max_retries=6).with_structured_output(Verdict)
         rubric = RUBRIC.read_text(encoding="utf-8")
         print(f"\nThe judge ({JUDGE_MODEL}) grades {len(todo)} answer(s).", file=sys.stderr)
+        failures = 0
         for row in todo:
             try:
                 verdicts[row["id"]] = judge_one(judge, rubric, row, records[row["id"]], checks[row["id"]])
             except Exception as error:
                 print(f"  judge failed on {row['id']}: {type(error).__name__}: {str(error)[:200]}", file=sys.stderr)
+                failures += 1
+                if failures >= 3:
+                    print("  stopping after 3 failures in a row (a quota limit?). Run again later to continue.", file=sys.stderr)
+                    break
                 continue
+            failures = 0
             with VERDICTS.open("w", newline="", encoding="utf-8") as f:
                 writer = csv.DictWriter(f, fieldnames=["id", "verdict", "correct", "supported", "reason"])
                 writer.writeheader()
                 writer.writerows({"id": i, **v} for i, v in verdicts.items())
-            print(f"  judged {row['id']}", file=sys.stderr)
+            print(f"  judged {row['id']} ({len(verdicts)}/{len(records)})", file=sys.stderr)
+            time.sleep(JUDGE_PAUSE)
     return verdicts
 
 

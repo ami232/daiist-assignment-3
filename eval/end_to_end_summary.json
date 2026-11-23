@@ -51,5 +51,99 @@
     "total_input_tokens": 114138,
     "total_output_tokens": 8333
   },
-  "human_graded": 0
+  "human_graded": 30,
+  "human_grades": {
+    "answerable": {
+      "correct": {
+        "n": 25,
+        "yes": 24,
+        "rate": 0.96
+      },
+      "supported": {
+        "n": 25,
+        "yes": 18,
+        "rate": 0.72
+      }
+    },
+    "unanswerable": {
+      "correct": {
+        "n": 5,
+        "yes": 5,
+        "rate": 1.0
+      },
+      "supported": {
+        "n": 5,
+        "yes": 5,
+        "rate": 1.0
+      }
+    }
+  },
+  "human_partial": [
+    "q19"
+  ],
+  "judge_model": "gemini-3.5-flash-lite",
+  "judge_partial": [
+    "q11",
+    "q22",
+    "q26"
+  ],
+  "judge_grades": {
+    "answerable": {
+      "correct": {
+        "n": 25,
+        "yes": 22,
+        "rate": 0.88
+      },
+      "supported": {
+        "n": 25,
+        "yes": 25,
+        "rate": 1.0
+      }
+    },
+    "unanswerable": {
+      "correct": {
+        "n": 5,
+        "yes": 5,
+        "rate": 1.0
+      },
+      "supported": {
+        "n": 5,
+        "yes": 5,
+        "rate": 1.0
+      }
+    }
+  },
+  "judge_vs_human": {
+    "answers_graded_by_both": 30,
+    "correct": {
+      "agree": 26,
+      "of": 30,
+      "rate": 0.867,
+      "cohen_kappa": -0.053,
+      "human_1_judge_0": [
+        "q11",
+        "q22",
+        "q26"
+      ],
+      "human_0_judge_1": [
+        "q19"
+      ]
+    },
+    "supported": {
+      "agree": 23,
+      "of": 30,
+      "rate": 0.767,
+      "cohen_kappa": 0.0,
+      "human_1_judge_0": [],
+      "human_0_judge_1": [
+        "q01",
+        "q04",
+        "q09",
+        "q10",
+        "q16",
+        "q22",
+        "q27"
+      ]
+    }
+  }
 }
