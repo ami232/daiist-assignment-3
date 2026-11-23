@@ -52,7 +52,3 @@ Push to your fork, open a PR to https://github.com/ami232/daiist-assignment-3, s
 | **× Written comprehension check** | **0–100%** |
 
 The comprehension check, written in class without your code, multiplies the subtotal.
-
-## AI use
-
-Allowed for code; disclose it in REPORT.md. The decisions (use case, chunking, design choice, refusals, judge rubric, ship decision), the test set, your own grades and the report's analysis must be yours.
