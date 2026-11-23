@@ -68,25 +68,61 @@ def _split_long(u: dict) -> list[dict]:
             lines.append(line)
         else:
             lines.extend(s for s in re.split(r"(?<=[.;])\s+(?=[A-ZÄÖÜ(])", line) if s)
-    pieces, cur = [], []
+    # Track the Absatz / Nummer each line belongs to, so a piece starting mid-Nr. still covers that Nr.
+    pieces: list[dict] = []
+    cur: list[str] = []
+    cur_abs: list[str] = []
+    cur_nrs: list[str] = []
+    abs_now = nr_now = ""
     for line in lines:
         if cur and _words("\n".join(cur + [line])) > MAX_WORDS:
-            pieces.append("\n".join(cur))
-            cur = []
+            pieces.append({"text": "\n".join(cur), "abs": cur_abs, "nrs": cur_nrs})
+            cur, cur_abs, cur_nrs = [], [], []
+        if m := re.match(r"\((\d+[a-z]?)\)", line):
+            abs_now, nr_now = m.group(1), ""
+        elif m := re.match(r"(\d+[a-z]?)\. ", line):
+            nr_now = m.group(1)
         cur.append(line)
+        if abs_now and abs_now not in cur_abs:
+            cur_abs.append(abs_now)
+        if nr_now and f"{abs_now}|{nr_now}" not in cur_nrs:
+            cur_nrs.append(f"{abs_now}|{nr_now}")  # Nr. qualified by its Abs. ("" if none)
     if cur:
-        pieces.append("\n".join(cur))
-    return [{**u, "text": p, "piece": i + 1, "pieces": len(pieces)} for i, p in enumerate(pieces)]
+        pieces.append({"text": "\n".join(cur), "abs": cur_abs, "nrs": cur_nrs})
+    return [{**u, **p, "piece": i + 1, "pieces": len(pieces)} for i, p in enumerate(pieces)]
 
 
-def _statute_detail(text: str) -> str:
-    """'Abs. 2–3' or 'Nr. 9–12' for a piece of a long §, from its leading paragraph/item numbers."""
-    abs_ = re.findall(r"^\((\d+[a-z]?)\)", text, re.M)
-    nrs = re.findall(r"^(\d+[a-z]?)\. ", text, re.M)
-    for label, found in (("Abs.", abs_), ("Nr.", nrs)):
-        if found:
-            return f"{label} {found[0]}" if found[0] == found[-1] else f"{label} {found[0]}–{found[-1]}"
+def _span(values: list[str]) -> str:
+    return values[0] if len(values) == 1 else f"{values[0]}–{values[-1]}"
+
+
+def _statute_detail(group: list[dict]) -> str:
+    """'Abs. 2–3' or 'Nr. 5–13' for a piece of a long §."""
+    abs_ = [a for u in group for a in u.get("abs", [])]
+    nrs = [n.split("|")[1] for u in group for n in u.get("nrs", [])]
+    if abs_ and len(set(abs_)) > 1 or (abs_ and not nrs):
+        return f"Abs. {_span(list(dict.fromkeys(abs_)))}"
+    if nrs:
+        return f"Nr. {_span(list(dict.fromkeys(nrs)))}"
     return ""
+
+
+def _unit_keys(u: dict) -> list[str]:
+    """What a unit covers, as keys a test-set location can be matched against.
+
+    Judgment: 'Rn. 18' or 'Leitsatz'. Statute: '§ 556' for a whole §; a piece of a split §
+    gives '§ 2*' (part of § 2) plus '§ 556 Abs. 3', '§ 9 Abs. 2 Nr. 1' or '§ 2 Nr. 10' for what it contains.
+    """
+    if u["doc_type"] == "judgment":
+        return [f"Rn. {u['rn']}"] if u.get("rn") else [u["section"]]
+    para = u["location"].removesuffix(f" {u['doc_id']}")
+    if "piece" not in u:
+        return [para]
+    keys = [f"{para}*"] + [f"{para} Abs. {a}" for a in u.get("abs", [])]
+    for qualified in u.get("nrs", []):
+        a, n = qualified.split("|")
+        keys.append(f"{para} Abs. {a} Nr. {n}" if a else f"{para} Nr. {n}")
+    return keys
 
 
 def _rn_ranges(rns: list[str]) -> str:
@@ -112,7 +148,7 @@ def _location(group: list[dict]) -> str:
     head_first = first["location"].removesuffix(f" {doc}")
     head_last = last["location"].removesuffix(f" {doc}")
     if head_first == head_last:
-        detail = _statute_detail("\n".join(u["text"] for u in group)) if "piece" in first else ""
+        detail = _statute_detail(group) if "piece" in first else ""
         return f"{head_first} {detail} {doc}".replace("  ", " ") if detail else first["location"]
     return f"§§ {head_first.removeprefix('§ ')}–{head_last.removeprefix('§ ')} {doc}"
 
@@ -136,6 +172,8 @@ def _make_chunk(group: list[dict]) -> dict:
         "version": first.get("version", ""),
         "url": first["url"],
         "words": _words(text),
+        # '|Rn. 11|Rn. 12|' — what this chunk covers; hit-rate matching uses this, not the location string
+        "covers": "|" + "|".join(dict.fromkeys(k for u in group for k in _unit_keys(u))) + "|",
     }
     chunk_id = hashlib.sha1(f"{location}\n{text}".encode()).hexdigest()[:20]
     return {"id": chunk_id, "text": f"{header}\n{text}", "metadata": meta}
@@ -239,6 +277,13 @@ def embed_and_store(chunks: list[dict], collection=None, source: str = "base") -
     return done
 
 
+def sync_metadata(collection, chunks: list[dict], source: str = "base") -> None:
+    """Refresh metadata of already-embedded chunks (no embedding calls)."""
+    for i in range(0, len(chunks), 100):
+        batch = chunks[i:i + 100]
+        collection.update(ids=[c["id"] for c in batch], metadatas=[{**c["metadata"], "source": source} for c in batch])
+
+
 def remove_stale(collection, chunks: list[dict]) -> int:
     """Delete base-corpus chunks that the current chunking no longer produces (added documents are kept)."""
     current = {c["id"] for c in chunks}
@@ -292,6 +337,7 @@ def main() -> None:
         stored = collection.count()
         print(f"\nDaily embedding quota reached. {stored} chunks stored; run `main.py index` again after the reset.")
         sys.exit(1)
+    sync_metadata(collection, chunks)
     print(f"\nembedded {embedded} new chunk(s) in {time.time() - started:.0f}s; removed {removed} stale; "
           f"collection '{COLLECTION}' holds {collection.count()} chunks")
 
