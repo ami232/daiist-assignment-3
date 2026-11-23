@@ -5,10 +5,19 @@ __pycache__/
 .ipynb_checkpoints/
 *.pyc
 
-# Documents downloaded by your index stage. Commit them only if their licence allows it.
-corpus/
+# SEC filings are public. Commit the extracted section text (small) so `main.py index`
+# runs on a fresh clone without downloading; skip the raw HTML and full text, except
+# the 10-Q that the add_document demo feeds through the full pipeline.
+corpus/**/raw.htm
+corpus/**/full.txt
+corpus/**/*.part
+corpus/question_map.md
+!corpus/GS_10Q_Q3_2026/raw.htm
 
 # Your index belongs in index/, committed. Your evaluation results belong in eval/, committed.
 
 # Never commit your API key
 .env
+
+# Working notes for writing REPORT.md (not part of the submission)
+REPORT_NOTES.md

@@ -1,0 +1,4 @@
+design,questions,hit@1,single hit@1,multi all@1,multi any@1,words@1,figure hit@1,hit@3,single hit@3,multi all@3,multi any@3,words@3,figure hit@3,hit@5,single hit@5,multi all@5,multi any@5,words@5,figure hit@5
+A_fixed,26,0.615,0.8,0.0,1.0,329,0.688,0.808,0.9,0.5,1.0,990,0.812,0.846,0.95,0.5,1.0,1651,0.812
+B_structure,26,0.538,0.7,0.0,1.0,269,0.688,0.962,0.95,1.0,1.0,802,1.0,1.0,1.0,1.0,1.0,1341,1.0
+B_structure+hybrid,26,0.577,0.75,0.0,1.0,263,0.688,0.923,0.95,0.833,1.0,805,0.875,0.923,0.95,0.833,1.0,1333,0.875

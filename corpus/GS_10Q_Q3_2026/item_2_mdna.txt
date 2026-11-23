@@ -1,0 +1,653 @@
+Introduction
+The Goldman Sachs Group, Inc. (Group Inc. or parent company), a Delaware corporation, together with its consolidated subsidiaries, is a leading global financial institution that delivers a broad range of financial services to a large and diversified client base that includes corporations, financial institutions, governments and individuals. Founded in 1869, we are headquartered in New York and maintain offices in all major financial centers around the world. We manage and report our activities in three business segments: Global Banking & Markets, Asset & Wealth Management and Platform Solutions. See "Results of Operations" for further information about our business segments.
+When we use the terms "we," "us" and "our," we mean Group Inc. and its consolidated subsidiaries. When we use the term "our subsidiaries," we mean the consolidated subsidiaries of Group Inc.
+Group Inc. is a bank holding company and a financial holding company regulated by the Board of Governors of the Federal Reserve System (FRB).
+This Management's Discussion and Analysis of Financial Condition and Results of Operations should be read in conjunction with our Annual Report on Form 10-K for the year ended December 31, 2025. References to "the 2025 Form 10-K" are to our Annual Report on Form 10-K for the year ended December 31, 2025. References to "this Form 10-Q" are to our Quarterly Report on Form 10-Q for the quarterly period ended September 30, 2026. All references to "the consolidated financial statements" or "Statistical Disclosures" are to Part I, Item 1 of this Form 10-Q. The consolidated financial statements are unaudited. All references to September 2026, June 2026 and September 2025 refer to our periods ended, or the dates, as the context requires, September 30, 2026, June 30, 2026 and September 30, 2025, respectively. All references to December 2025 refer to the date December 31, 2025. Any reference to a future year refers to a year ending on December 31 of that year. Certain reclassifications have been made to previously reported amounts to conform to the current presentation.
+Executive Overview
+Three Months Ended September 2026 versus September 2025. We generated net earnings of $5.29 billion for the third quarter of 2026, compared with $4.10 billion for the third quarter of 2025. Diluted earnings per common share (EPS) was $17.01 for the third quarter of 2026, compared with $12.25 for the third quarter of 2025. Annualized return on average common shareholders' equity (ROE) was 18.7% for the third quarter of 2026, compared with 14.2% for the third quarter of 2025. Book value per common share was $372.64 as of September 2026, 1.4% higher compared with June 2026 and 4.2% higher compared with December 2025.
+Net revenues were $18.68 billion for the third quarter of 2026, 23% higher than the third quarter of 2025, primarily reflecting significantly higher net revenues in Global Banking & Markets. The increase in net revenues in Global Banking & Markets reflected significantly higher net revenues in Equities and Investment banking fees. Net revenues in Asset & Wealth Management were higher, reflecting significantly higher Management and other fees and Incentive fees, partially offset by significantly lower net revenues in Investments and Private banking and lending. Net revenues in Platform Solutions were significantly lower, primarily reflecting net markdowns related to the Apple Card loan portfolio, which was transferred to held for sale in the fourth quarter of 2025.
+Provision for credit losses was $368 million for the third quarter of 2026, compared with $339 million for the third quarter of 2025. Provisions for the third quarter of 2026 primarily reflected impairments related to wholesale loans. Provisions for the third quarter of 2025 primarily reflected net provisions related to the credit card portfolio, which was transferred to held for sale in the fourth quarter of 2025.
+Operating expenses were $11.31 billion for the third quarter of 2026, 20% higher than the third quarter of 2025, primarily reflecting significantly higher transaction based expenses and higher compensation and benefits expenses (reflecting improved operating performance). Our efficiency ratio (total operating expenses divided by total net revenues) was 60.5% for the third quarter of 2026, compared with 62.3% for the third quarter of 2025.
+During the third quarter of 2026, we returned a total of $4.49 billion of capital to common shareholders, including $3.00 billion of common share repurchases and $1.49 billion of common stock dividends. As of September 2026, our Common Equity Tier 1 (CET1) capital ratio was 12.4% under the Standardized Capital Rules and 13.6% under the Advanced Capital Rules. See Note 20 to the consolidated financial statements for further information about our capital ratios.
+Nine Months Ended September 2026 versus September 2025. We generated net earnings of $17.55 billion for the first nine months of 2026, compared with $12.56 billion for the first nine months of 2025. Diluted EPS was $55.56 for the first nine months of 2026, compared with $37.33 for the first nine months of 2025. Annualized ROE was 20.7% for the first nine months of 2026, compared with 14.6% for the first nine months of 2025.
+Net revenues were $56.24 billion for the first nine months of 2026, 25% higher than the first nine months of 2025, primarily reflecting significantly higher net revenues in Global Banking & Markets. The increase in net revenues in Global Banking & Markets primarily reflected significantly higher net revenues in Equities and Investment banking fees and higher net revenues in Fixed Income, Currency and Commodities (FICC). Net revenues in Asset & Wealth Management were higher, primarily reflecting higher Management and other fees and significantly higher Incentive fees, partially offset by lower net revenues in Private banking and lending. Net revenues in Platform Solutions were significantly lower, primarily reflecting net markdowns related to the Apple Card loan portfolio, which was transferred to held for sale in the fourth quarter of 2025.
+Provision for credit losses was $785 million for the first nine months of 2026, compared with $1.01 billion for the first nine months of 2025. Provisions for the first nine months of 2026 reflected impairments and growth related to wholesale loans. Provisions for the first nine months of 2025 reflected net provisions related to the credit card portfolio, which was transferred to held for sale in the fourth quarter of 2025, and impairments related to wholesale loans.
+Operating expenses were $33.41 billion for the first nine months of 2026, 20% higher than the first nine months of 2025, primarily reflecting significantly higher transaction based expenses and higher compensation and benefits expenses (reflecting improved operating performance). Our efficiency ratio was 59.4% for the first nine months of 2026, compared with 62.1% for the first nine months of 2025.
+During the first nine months of 2026, we returned a total of $16.23 billion of capital to common shareholders, including $12.00 billion of common stock repurchases and $4.23 billion of common stock dividends.
+Business Environment
+During the third quarter of 2026, the operating environment was generally characterized by resilient economic activity (particularly in the U.S.), ongoing geopolitical concerns (including the conflict in the Middle East), a focus on investments related to artificial intelligence (AI) and uncertainty in the outlook for inflation. This environment contributed to periods of market volatility, increased oil prices and higher bond yields, while equity markets proved resilient. Concerns about inflationary pressures prompted actions by central banks globally with respect to policy interest rates during the third quarter of 2026, which included rate hikes by the Federal Reserve and the European Central Bank.
+The economic outlook remains uncertain, reflecting concerns about the continuation or further escalation of the conflict in the Middle East, inflation, central bank policies and investment demands related to AI. See "Results of Operations — Segment Assets and Operating Results — Segment Operating Results" for further information about the operating environment for each of our business segments.
+Results of Operations
+The composition of our net revenues has varied over time as financial markets and the scope of our operations have changed. The composition of net revenues can also vary over the shorter term due to fluctuations in U.S. and global economic and market conditions. See "Risk Factors" in Part I, Item 1A of the 2025 Form 10-K for further information about the impact of economic and market conditions on our results of operations.
+Financial Overview
+The table below presents an overview of our financial results and selected financial ratios.
+Three Months Ended September | Nine Months Ended September
+$ in millions, except per share amounts | 2026 | 2025 | 2026 | 2025
+Net revenues | $18,679 | $15,184 | $56,244 | $44,829
+Pre-tax earnings | $7,003 | $5,392 | $22,052 | $15,997
+Net earnings | $5,294 | $4,098 | $17,552 | $12,559
+Net earnings to common | $5,122 | $3,860 | $16,924 | $11,916
+Diluted EPS | $17.01 | $12.25 | $55.56 | $37.33
+ROE | 18.7% | 14.2% | 20.7% | 14.6%
+ROTE | 20.5% | 15.2% | 22.4% | 15.6%
+Net earnings to average assets | 1.0% | 0.9% | 1.1% | 0.9%
+Return on shareholders' equity | 17.1% | 13.3% | 19.0% | 13.6%
+Average equity to average assets | 5.7% | 6.8% | 5.9% | 7.0%
+Dividend payout ratio | 29.4% | 32.7% | 25.2% | 26.8%
+Our target (through-the-cycle) is to achieve ROE within a range of 14% to 16% and return on average tangible common shareholders' equity (ROTE) within a range of 15% to 17%.
+In the table above:
+•Net earnings to common represents net earnings applicable to common shareholders, which is calculated as net earnings less preferred stock dividends.
+•ROE is calculated by dividing annualized net earnings to common by average monthly common shareholders' equity.
+•ROTE is calculated by dividing annualized net earnings to common by average monthly tangible common shareholders' equity. Tangible common shareholders' equity is calculated as total shareholders' equity less preferred stock, goodwill and identifiable intangible assets. We believe that tangible common shareholders' equity is meaningful because it is a measure that we and investors use to assess capital adequacy and that ROTE is meaningful because it measures the performance of businesses consistently, whether they were acquired or developed internally. Tangible common shareholders' equity and ROTE are non-GAAP measures and may not be comparable to similar non-GAAP measures used by other companies.
+The table below presents our average equity and the reconciliation of average common shareholders' equity to average tangible common shareholders' equity.
+Average for the
+Three Months Ended September | Nine Months Ended September
+$ in millions | 2026 | 2025 | 2026 | 2025
+Total shareholders' equity | $123,721 | $123,507 | $123,028 | $123,444
+Preferred stock | (14,341) | (15,153) | (13,968) | (14,963)
+Common shareholders' equity | 109,380 | 108,354 | 109,060 | 108,481
+Goodwill | (7,347) | (5,944) | (6,987) | (5,907)
+Identifiable intangible assets | (1,912) | (870) | (1,529) | (862)
+Tangible common shareholders' equity | $100,121 | $101,540 | $100,544 | $101,712
+•Net earnings to average assets is calculated by dividing annualized net earnings by average total assets.
+•Return on shareholders' equity is calculated by dividing annualized net earnings by average shareholders' equity.
+•Average equity to average assets is calculated by dividing average shareholders' equity by average total assets.
+•Dividend payout ratio is calculated by dividing dividends declared per common share by diluted EPS.
+Net Revenues
+The table below presents our net revenues by line item.
+Three Months Ended September | Nine Months Ended September
+$ in millions | 2026 | 2025 | 2026 | 2025
+Investment banking | $3,233 | $2,659 | $9,477 | $6,769
+Investment management | 4,102 | 2,952 | 10,659 | 8,548
+Commissions and fees | 1,515 | 1,110 | 4,366 | 3,537
+Market making | 5,658 | 3,868 | 18,756 | 14,324
+Other principal transactions | 401 | 743 | 1,707 | 1,800
+Total non-interest revenues | 14,909 | 11,332 | 44,965 | 34,978
+Interest income | 22,793 | 20,822 | 65,477 | 59,994
+Interest expense | 19,023 | 16,970 | 54,198 | 50,143
+Net interest income | 3,770 | 3,852 | 11,279 | 9,851
+Total net revenues | $18,679 | $15,184 | $56,244 | $44,829
+In the table above:
+•Investment banking consists of revenues (excluding net interest) from financial advisory and underwriting assignments. These activities are included in Global Banking & Markets.
+•Investment management consists of revenues (excluding net interest) from providing asset management and wealth advisory services. These activities are included in Asset & Wealth Management.
+•Commissions and fees consists of revenues from executing and clearing client transactions on major stock, options and futures exchanges worldwide, as well as over-the-counter (OTC) transactions. Substantially all of these activities are included in Global Banking & Markets.
+•Market making consists of revenues (excluding net interest) from client execution activities related to making markets in interest rate products, credit products, mortgages, currencies, commodities and equity products. These activities are included in Global Banking & Markets.
+•Other principal transactions consists of revenues (excluding net interest) from our investing activities (primarily included in Asset & Wealth Management) and lending activities (primarily included in Global Banking & Markets).
+•See Note 25 to the consolidated financial statements for further information about total non-interest revenues and net interest income.
+Operating Environment. During the third quarter of 2026, the operating environment was generally characterized by resilient economic activity, ongoing geopolitical tensions, a focus on investments related to AI and continued broad macroeconomic concerns and uncertainties, including those about inflation, interest rates and central bank policies. Industry-wide investment banking volumes in completed mergers and acquisitions, equity underwriting and debt underwriting each decreased compared with the second quarter of 2026, but remained robust. In market making, activity levels remained robust compared with the prior quarter. Additionally, bond prices were generally lower and global equity prices were generally slightly higher compared with the end of the second quarter of 2026. In the U.S., the rate of unemployment remained low and consumer spending exhibited continued strength.
+If uncertainty and concerns about geopolitical tensions, the conflict in the Middle East, investment demands related to AI and the economic outlook remain elevated or increase, including those about inflation, interest rates and central bank policies, it may lead to a further decline in bond prices or a decline in equity prices, a decline in market-making activity levels, or a further decline in investment banking activity levels, and net revenues and provision for credit losses would likely be negatively impacted. See "Segment Assets and Operating Results — Segment Operating Results" for information about the operating environment and material trends and uncertainties that may impact our results of operations.
+Three Months Ended September 2026 versus September 2025. Net revenues in the consolidated statements of earnings were $18.68 billion for the third quarter of 2026, 23% higher than the third quarter of 2025, primarily reflecting significantly higher market making revenues, investment management revenues, investment banking revenues, and commissions and fees.
+Non-Interest Revenues. Investment banking revenues in the consolidated statements of earnings were $3.23 billion for the third quarter of 2026, 22% higher than the third quarter of 2025, primarily due to higher revenues in advisory, reflecting an increase in completed mergers and acquisitions volumes, and significantly higher revenues in equity underwriting, primarily reflecting higher revenues from initial public offerings and secondary offerings. Revenues in debt underwriting were also higher, primarily reflecting significantly higher net revenues from investment-grade activity.
+Investment management revenues in the consolidated statements of earnings were $4.10 billion for the third quarter of 2026, 39% higher than the third quarter of 2025, due to significantly higher management and other fees, primarily reflecting the impact of higher average assets under supervision (AUS), and incentive fees, driven by fund distributions.
+Commissions and fees in the consolidated statements of earnings were $1.52 billion for the third quarter of 2026, 36% higher than the third quarter of 2025, reflecting significantly higher commissions and fees in Equities, due to generally higher market volumes.
+Market making revenues in the consolidated statements of earnings were $5.66 billion for the third quarter of 2026, 46% higher than the third quarter of 2025, reflecting significantly higher revenues from financing activities, partially offset by lower revenues from intermediation activities. The increase from financing activities reflected significantly higher revenues in equities financing. The decrease from intermediation activities primarily reflected significantly lower revenues in mortgages, interest rate and credit products, partially offset by significantly higher revenues in equity products and commodities.
+Other principal transactions revenues in the consolidated statements of earnings were $401 million for the third quarter of 2026, 46% lower than the third quarter of 2025, primarily reflecting net markdowns related to the Apple Card loan portfolio, which was transferred to held for sale in the fourth quarter of 2025, and net markdowns in debt investments compared with net markups in the prior year period.
+Net Interest Income. Net interest income in the consolidated statements of earnings was $3.77 billion for the third quarter of 2026, 2% lower than the third quarter of 2025, reflecting an increase in interest expense, partially offset by an increase in interest income. The increase in interest expense primarily related to borrowings, collateralized financings, deposits, and other interest-bearing liabilities (each reflecting the impact of higher average balances, partially offset by lower average interest rates). The increase in interest income primarily related to other interest-earning assets, trading assets, and investments (each reflecting the impact of higher average balances), partially offset by a decrease in interest income related to loans and deposits with banks (both reflecting the impact of lower average interest rates). See "Statistical Disclosures — Distribution of Assets, Liabilities and Shareholders' Equity" for further information about our sources of net interest income.
+Nine Months Ended September 2026 versus September 2025. Net revenues in the consolidated statements of earnings were $56.24 billion for the first nine months of 2026, 25% higher than the first nine months of 2025, primarily reflecting significantly higher market making revenues, investment banking revenues, investment management revenues and commissions and fees.
+Non-Interest Revenues. Investment banking revenues in the consolidated statements of earnings were $9.48 billion for the first nine months of 2026, 40% higher than the first nine months of 2025, due to significantly higher revenues in advisory (reflecting an increase in industry-wide completed mergers and acquisitions volumes), in equity underwriting (primarily reflecting significantly higher revenues from initial public offerings, convertible and secondary offerings) and in debt underwriting (primarily reflecting significantly higher revenues from investment-grade and asset-backed activity).
+Investment management revenues in the consolidated statements of earnings were $10.66 billion for the first nine months of 2026, 25% higher than the first nine months of 2025, due to higher management and other fees, primarily reflecting the impact of higher average AUS, and significantly higher incentive fees, primarily driven by fund distributions.
+Commissions and fees in the consolidated statements of earnings were $4.37 billion for the first nine months of 2026, 23% higher than the first nine months of 2025, reflecting significantly higher commissions and fees in Equities, due to generally higher market volumes.
+Market making revenues in the consolidated statements of earnings were $18.76 billion for the first nine months of 2026, 31% higher than the first nine months of 2025, reflecting significantly higher revenues from financing activities and higher revenues from intermediation activities. The increase from financing activities reflected significantly higher revenues in equities financing. The increase from intermediation activities primarily reflected significantly higher revenues in equity products and commodities, partially offset by significantly lower revenues in interest rate products and mortgages.
+Other principal transactions revenues in the consolidated statements of earnings were $1.71 billion for the first nine months of 2026, 5% lower than the first nine months of 2025, primarily reflecting net markdowns related to the Apple Card loan portfolio, which was transferred to held for sale in the fourth quarter of 2025, partially offset by significantly higher net gains from direct investments related to our Global Banking & Markets activities.
+Net Interest Income. Net interest income in the consolidated statements of earnings was $11.28 billion for the first nine months of 2026, 14% higher than the first nine months of 2025, reflecting an increase in interest income, partially offset by an increase in interest expense. The increase in interest income related to other interest-earning assets and investments (both reflecting the impact of higher average balances) and trading assets (reflecting the impact of higher average balances, partially offset by lower yields), partially offset by a decrease in interest income related to loans (reflecting the impact of lower average interest rates, partially offset by higher average balances). The increase in interest expense primarily related to collateralized financings (reflecting the impact of higher average balances) and deposits, borrowings and other interest-bearing liabilities (each reflecting the impact of higher average balances, partially offset by lower average interest rates). See "Statistical Disclosures — Distribution of Assets, Liabilities and Shareholders' Equity" for further information about our sources of net interest income.
+Provision for Credit Losses
+Provision for credit losses consists of provision for credit losses on financial assets and commitments accounted for at amortized cost, including loans and lending commitments held for investment. See Note 9 to the consolidated financial statements for further information about the provision for credit losses on loans and lending commitments.
+The table below presents our provision for credit losses.
+Three Months Ended September | Nine Months Ended September
+$ in millions | 2026 | 2025 | 2026 | 2025
+Provision for credit losses | $368 | $339 | $785 | $1,010
+Three Months Ended September 2026 versus September 2025. Provision for credit losses in the consolidated statements of earnings was $368 million for the third quarter of 2026, compared with $339 million for the third quarter of 2025. Provisions for the third quarter of 2026 primarily reflected impairments related to wholesale loans. Provisions for the third quarter of 2025 primarily reflected net provisions related to the credit card portfolio, which was transferred to held for sale in the fourth quarter of 2025.
+Nine Months Ended September 2026 versus September 2025. Provision for credit losses in the consolidated statements of earnings was $785 million for the first nine months of 2026, compared with $1.01 billion for the first nine months of 2025. Provisions for the first nine months of 2026 reflected impairments and growth related to wholesale loans. Provisions for the first nine months of 2025 reflected net provisions related to the credit card portfolio, which was transferred to held for sale in the fourth quarter of 2025, and impairments related to wholesale loans.
+Operating Expenses
+Our operating expenses are primarily influenced by compensation, headcount and levels of business activity. Compensation and benefits includes salaries, estimated year-end discretionary compensation, amortization of equity awards and other items, such as benefits. Discretionary compensation is significantly impacted by, among other factors, the level of net revenues, net of provision for credit losses, overall financial performance, prevailing labor markets, business mix, the structure of our share-based awards and the external environment.
+The table below presents our operating expenses by line item and headcount.
+Three Months Ended September | Nine Months Ended September
+$ in millions | 2026 | 2025 | 2026 | 2025
+Compensation and benefits | $5,122 | $4,680 | $16,638 | $14,241
+Transaction based | 3,021 | 1,968 | 8,588 | 5,773
+Market development | 183 | 171 | 567 | 494
+Communications and technology | 674 | 545 | 1,892 | 1,581
+Depreciation and amortization | 537 | 531 | 1,541 | 1,655
+Occupancy | 249 | 242 | 747 | 709
+Professional fees | 424 | 432 | 1,175 | 1,296
+Other expenses | 1,098 | 884 | 2,259 | 2,073
+Total operating expenses | $11,308 | $9,453 | $33,407 | $27,822
+Headcount at period-end | 47,500 | 48,300
+Three Months Ended September 2026 versus September 2025. Operating expenses in the consolidated statements of earnings were $11.31 billion for the third quarter of 2026, 20% higher than the third quarter of 2025. Our efficiency ratio was 60.5% for the third quarter of 2026, compared with 62.3% for the third quarter of 2025.
+The increase in operating expenses, compared with the third quarter of 2025, primarily reflected significantly higher transaction based expenses and higher compensation and benefits expenses (reflecting improved operating performance). In addition, charitable contributions to Goldman Sachs Gives (in other expenses) were significantly higher. The impact of charitable contributions was an increase in non-compensation expenses for the third quarter of 2026 of approximately $450 million, which, after the impact of taxes, reduced diluted EPS by approximately $1.00, and both annualized ROE and annualized ROTE by approximately 1.1 percentage points. See "Financial Overview" for further information about ROE and ROTE. Net provisions for litigation and regulatory proceedings were $23 million for the third quarter of 2026, compared with $131 million for the third quarter of 2025.
+As of September 2026, headcount decreased 2% compared with September 2025 and increased 3% compared with June 2026, reflecting the timing of campus hires.
+Nine Months Ended September 2026 versus September 2025. Operating expenses in the consolidated statements of earnings were $33.41 billion for the first nine months of 2026, 20% higher than the first nine months of 2025. Our efficiency ratio was 59.4% for the first nine months of 2026, compared with 62.1% for the first nine months of 2025. The ratio of compensation and benefits to net revenues, net of provision for credit losses, was 30.0% for the first nine months of 2026, compared with 31.0% for the first half of 2026 and 32.5% for the first nine months of 2025.
+The increase in operating expenses, compared with the first nine months of 2025, primarily reflected significantly higher transaction based expenses and higher compensation and benefits expenses (reflecting improved operating performance). Net provisions for litigation and regulatory proceedings were $37 million for the first nine months of 2026, compared with $121 million for the first nine months of 2025.
+As of September 2026, headcount was essentially unchanged compared with December 2025.
+Provision for Taxes
+The effective tax rate for the first nine months of 2026 was 20.4%, down from the full year effective tax rate of 21.4% for 2025, primarily due to an increase in tax benefits on the settlement of employee share-based awards, partially offset by a decrease in other permanent tax benefits, for the first nine months of 2026 compared with the full year of 2025. The increase compared with 18.5% for the first half of 2026 was primarily due to a decrease in the impact of tax benefits on the settlement of employee share-based awards for the first nine months of 2026 compared with the first half of 2026. The impact of tax benefits related to employee share-based awards was a reduction to provision for taxes for the first nine months of 2026 of approximately $975 million, which reduced our effective tax rate by 4.4 percentage points, and increased our diluted EPS by approximately $3.20 and annualized ROE by 1.1 percentage points.
+The Organisation for Economic Co-operation and Development/G20 (OECD/G20) Global Anti-Base Erosion Model Rules (Pillar II Model Rules) aim to ensure that multinationals with revenues in excess of EUR 750 million pay a minimum effective corporate tax rate of 15% (minimum tax) in each jurisdiction in which they operate. The U.K. and other non-U.S. jurisdictions in which we operate have enacted certain portions of the Pillar II Model Rules through domestic legislation (Pillar II legislation). In January 2026, the OECD/G20 released administrative guidance that allows multinationals with a U.S. parent to elect the side-by-side safe harbor. The safe harbor, once enacted by each jurisdiction, is expected to deem certain Pillar II minimum taxes to be zero for tax years beginning on or after January 1, 2026. As of September 2026, certain jurisdictions have adopted the safe harbor; however, the majority of jurisdictions in which we operate that enacted Pillar II legislation will need to adopt the safe harbor into their local laws through legislation or administrative procedures. We expect the safe harbor to be enacted in various jurisdictions during 2026 and 2027. Domestic minimum top-up taxes still apply under the Pillar II legislation in certain non-U.S. jurisdictions in which we operate. The Pillar II legislation did not have a material impact on the effective tax rate for the first nine months of 2026 and, depending on the amount of our earnings and the geographic mix of our earnings, is not expected to have a material impact on our 2026 annual effective tax rate. Any domestic minimum top-up taxes under the Pillar II legislation will be recognized in the period in which they are incurred.
+We expect our 2026 annual effective tax rate to be approximately 20%, but it could be lower if any tax audits are resolved in the fourth quarter of 2026.
+Segment Assets and Operating Results
+Beginning with the fourth quarter of 2025, we made certain changes to our segments as we continued to narrow our strategic focus with respect to consumer-related activities within Platform Solutions. Prior periods are presented on a comparable basis. See "Business — Our Business Segments" in Part I, Item 1 of the 2025 Form 10-K for further information.
+Segment Assets. The table below presents assets by segment.
+As of
+September | December
+$ in millions | 2026 | 2025
+Global Banking & Markets | $1,939,612 | $1,582,670
+Asset & Wealth Management | 210,899 | 198,570
+Platform Solutions | 29,915 | 28,080
+Total | $2,180,426 | $1,809,320
+The allocation process for segment assets is based on the activities of these segments. The allocation of assets includes allocation of global core liquid assets (GCLA) (which consists of unencumbered, highly liquid securities and cash), which is included within cash and cash equivalents, collateralized agreements, trading assets and investments on our balance sheet. Due to the integrated nature of these segments, estimates and judgments are made in allocating these assets. See "Risk Management — Liquidity Risk Management" for further information about our GCLA.
+Segment Operating Results. The table below presents our segment operating results.
+Three Months Ended September | Nine Months Ended September
+$ in millions | 2026 | 2025 | 2026 | 2025
+Global Banking & Markets
+Net revenues | $13,458 | $10,168 | $41,716 | $31,042
+Provision for credit losses | 345 | 82 | 668 | 321
+Operating expenses | 7,331 | 5,828 | 22,286 | 17,637
+Pre-tax earnings | $5,782 | $4,258 | $18,762 | $13,084
+Net earnings to common | $4,219 | $3,040 | $14,422 | $9,763
+Average common equity | $81,485 | $79,338 | $81,705 | $79,401
+Return on average common equity | 20.7% | 15.3% | 23.5% | 16.4%
+Asset & Wealth Management
+Net revenues | $5,051 | $4,418 | $13,726 | $11,960
+Provision for credit losses | 23 | (29) | 116 | (107)
+Operating expenses | 3,712 | 3,291 | 10,252 | 9,162
+Pre-tax earnings | $1,316 | $1,156 | $3,358 | $2,905
+Net earnings to common | $983 | $846 | $2,573 | $2,169
+Average common equity | $24,427 | $24,759 | $23,793 | $24,691
+Return on average common equity | 16.1% | 13.7% | 14.4% | 11.7%
+Platform Solutions
+Net revenues | $170 | $598 | $802 | $1,827
+Provision for credit losses | – | 286 | 1 | 796
+Operating expenses | 265 | 334 | 869 | 1,023
+Pre-tax earnings/(loss) | $(95) | $(22) | $(68) | $8
+Net earnings/(loss) to common | $(80) | $(26) | $(71) | $(16)
+Average common equity | $3,468 | $4,257 | $3,562 | $4,389
+Return on average common equity | (9.2)% | (2.4)% | (2.7)% | (0.5)%
+Total
+Net revenues | $18,679 | $15,184 | $56,244 | $44,829
+Provision for credit losses | 368 | 339 | 785 | 1,010
+Operating expenses | 11,308 | 9,453 | 33,407 | 27,822
+Pre-tax earnings | $7,003 | $5,392 | $22,052 | $15,997
+Net earnings to common | $5,122 | $3,860 | $16,924 | $11,916
+Average common equity | $109,380 | $108,354 | $109,060 | $108,481
+Return on average common equity | 18.7% | 14.2% | 20.7% | 14.6%
+Net revenues in our segments include allocations of interest income and interest expense based on the funding generated by, or the funding and liquidity requirements of, the respective segments. See Note 25 to the consolidated financial statements for further information about our business segments.
+The allocation of common shareholders' equity and preferred stock dividends to each segment is based on the estimated amount of equity required to support the activities of the segment under relevant regulatory capital requirements. Net earnings for each segment is calculated by applying the firmwide tax rate to each segment's pre-tax earnings.
+Compensation and benefits expenses within our segments reflect, among other factors, our overall performance, as well as the performance of individual businesses. Consequently, pre-tax margins in one segment of our business may be significantly affected by the performance of our other business segments. A description of segment operating results follows.
+Global Banking & Markets
+Global Banking & Markets generates revenues from the following:
+Investment banking fees. We provide advisory and underwriting services and help companies raise capital to strengthen and grow their businesses. Investment banking fees includes the following:
+•Advisory. Includes strategic advisory assignments with respect to mergers and acquisitions, divestitures, corporate defense activities, restructurings and spin-offs.
+•Underwriting. Includes public offerings and private placements in both local and cross-border transactions of a wide range of securities and other financial instruments, including acquisition financing.
+FICC. FICC generates revenues from intermediation and financing activities.
+•FICC intermediation. Includes client execution activities related to making markets in both cash and derivative instruments, as detailed below.
+Interest Rate Products. Government bonds (including inflation-linked securities) across maturities, other government-backed securities, and interest rate swaps, options and other derivatives.
+Credit Products. Investment-grade and high-yield corporate securities, credit derivatives, exchange-traded funds (ETFs), bank and bridge loans, municipal securities, distressed debt and trade claims.
+Mortgages. Commercial mortgage-related securities, loans and derivatives, residential mortgage-related securities, loans and derivatives (including U.S. government agency-issued collateralized mortgage obligations and other securities and loans), and other asset-backed securities, loans and derivatives.
+Currencies. Currency options, spot/forwards and other derivatives on G-10 currencies and emerging-market products.
+Commodities. Commodity derivatives and, to a lesser extent, physical commodities, involving crude oil and petroleum products, natural gas, agricultural, base, precious and other metals, electricity, including renewable power, environmental products and other commodity products.
+•FICC financing. Includes (i) secured lending to our clients through structured mortgage and other asset-backed lending, (ii) financing through securities purchased under agreements to resell (resale agreements) and (iii) other FICC financing (including commodity financing to clients through structured transactions, facilitating institutional primary loans for syndication and providing structured letters of credit to corporate clients).
+Equities. Equities generates revenues from intermediation and financing activities.
+•Equities intermediation. We make markets in equity and equity-related products, including ETFs, convertible securities, options, futures and OTC derivative instruments. We also structure and make markets in derivatives on indices, industry sectors, financial measures and individual company stocks. Our exchange-based market-making activities include making markets in stocks and ETFs, futures and options on major exchanges worldwide. In addition, we generate commissions and fees from executing and clearing institutional client transactions on major stock, options and futures exchanges worldwide, as well as OTC transactions.
+•Equities financing. Includes prime financing, which provides financing to our clients for their securities trading activities through margin loans that are generally collateralized by securities or cash. Prime financing also includes services which involve lending securities to cover institutional clients' short sales and borrowing securities to cover our short sales and to make deliveries into the market. We are also an active participant in broker-to-broker securities lending and third-party agency lending activities. In addition, we execute swap transactions to provide our clients with exposure to securities and indices. Financing activities also include portfolio financing, which clients can utilize to manage their investment portfolios, and other equity financing activities, including securities-based loans to individuals.
+Market-Making Activities
+As a market maker, we facilitate transactions in both liquid and less liquid markets, primarily for institutional clients, such as corporations, financial institutions, investment funds and governments, to assist clients in meeting their investment objectives and in managing their risks. In this role, we seek to earn the difference between the price at which a market participant is willing to sell an instrument to us and the price at which another market participant is willing to buy it from us, and vice versa (i.e., bid/offer spread). In addition, we maintain (i) market-making positions, typically for a short period of time, in response to, or in anticipation of, client demand, and (ii) positions to actively manage our risk exposures that arise from these market-making activities (collectively, inventory). Our inventory is recorded in trading assets (long positions) or trading liabilities (short positions) in our consolidated balance sheets.
+Our results are influenced by a combination of interconnected drivers, including (i) client activity levels and transactional bid/offer spreads (collectively, client activity), and (ii) changes in the fair value of our inventory and interest income and interest expense related to the holding, hedging and funding of our inventory (collectively, market-making inventory changes). Due to the integrated nature of our market-making activities, disaggregation of net revenues into client activity and market-making inventory changes is judgmental and has inherent complexities and limitations.
+The amount and composition of our net revenues vary over time as these drivers are impacted by multiple interrelated factors affecting economic and market conditions, including volatility and liquidity in the market, changes in interest rates, currency exchange rates, credit spreads, equity prices and commodity prices, investor confidence, and other macroeconomic concerns and uncertainties.
+In general, assuming all other market-making conditions remain constant, increases in client activity levels or bid/offer spreads tend to result in increases in net revenues, and decreases tend to have the opposite effect. However, changes in market-making conditions can materially impact client activity levels and bid/offer spreads, as well as the fair value of our inventory. For example, a decrease in liquidity in the market could have the impact of (i) increasing our bid/offer spread, (ii) decreasing investor confidence and thereby decreasing client activity levels, and (iii) widening of credit spreads on our inventory positions.
+Other. We lend to corporate clients, including through relationship lending and acquisition financing. The hedges related to this lending and financing activity are also reported as part of Other. Additionally, we provide transaction banking services, such as deposit taking, payments solutions and other cash management services, for corporate and institutional clients. Transaction banking revenues include net interest income attributed to transaction banking deposits. Other also includes investing activities related to our Global Banking & Markets activities.
+The table below presents our Global Banking & Markets assets.
+As of
+September | December
+$ in millions | 2026 | 2025
+Cash and cash equivalents | $146,072 | $131,809
+Collateralized agreements | 349,335 | 314,212
+Customer and other receivables | 194,044 | 163,150
+Trading assets | 770,087 | 610,513
+Investments | 254,480 | 174,052
+Loans | 199,477 | 167,629
+Other assets | 26,117 | 21,305
+Total | $1,939,612 | $1,582,670
+The table below presents details about our Global Banking & Markets loans.
+As of
+September | December
+$ in millions | 2026 | 2025
+Corporate | $34,377 | $25,337
+Real estate | 58,724 | 49,811
+Securities-based | 8,678 | 5,591
+Other collateralized | 99,182 | 88,205
+Other | 86 | 121
+Loans, gross | 201,047 | 169,065
+Allowance for loan losses | (1,570) | (1,436)
+Total loans | $199,477 | $167,629
+The table below presents our average Global Banking & Markets gross loans.
+Three Months Ended September | Nine Months Ended September
+$ in millions | 2026 | 2025 | 2026 | 2025
+Loans | $196,563 | $151,158 | $188,327 | $145,953
+The table below presents our Global Banking & Markets operating results.
+Three Months Ended September | Nine Months Ended September
+$ in millions | 2026 | 2025 | 2026 | 2025
+Advisory | $1,654 | $1,404 | $4,526 | $3,370
+Equity underwriting | 666 | 465 | 2,186 | 1,263
+Debt underwriting | 904 | 788 | 2,747 | 2,129
+Investment banking fees | 3,224 | 2,657 | 9,459 | 6,762
+FICC intermediation | 2,264 | 2,437 | 8,589 | 8,250
+FICC financing | 1,207 | 1,056 | 3,485 | 3,165
+FICC | 3,471 | 3,493 | 12,074 | 11,415
+Equities intermediation | 3,076 | 2,020 | 9,951 | 7,162
+Equities financing | 3,365 | 1,716 | 9,232 | 5,067
+Equities | 6,441 | 3,736 | 19,183 | 12,229
+Other | 322 | 282 | 1,000 | 636
+Net revenues | 13,458 | 10,168 | 41,716 | 31,042
+Provision for credit losses | 345 | 82 | 668 | 321
+Operating expenses | 7,331 | 5,828 | 22,286 | 17,637
+Pre-tax earnings | 5,782 | 4,258 | 18,762 | 13,084
+Provision for taxes | 1,422 | 1,028 | 3,829 | 2,812
+Net earnings | 4,360 | 3,230 | 14,933 | 10,272
+Preferred stock dividends | 141 | 190 | 511 | 509
+Net earnings to common | $4,219 | $3,040 | $14,422 | $9,763
+Average common equity | $81,485 | $79,338 | $81,705 | $79,401
+Return on average common equity | 20.7% | 15.3% | 23.5% | 16.4%
+The table below presents our FICC and Equities net revenues by line item in the consolidated statements of earnings.
+$ in millions | FICC | Equities
+Three Months Ended September 2026
+Market making | $772 | $4,886
+Commissions and fees | – | 1,624
+Other principal transactions | 332 | 20
+Net interest income | 2,367 | (89)
+Total | $3,471 | $6,441
+Three Months Ended September 2025
+Market making | $1,609 | $2,259
+Commissions and fees | – | 1,202
+Other principal transactions | 218 | 19
+Net interest income | 1,666 | 256
+Total | $3,493 | $3,736
+Nine Months Ended September 2026
+Market making | $4,815 | $13,941
+Commissions and fees | – | 4,792
+Other principal transactions | 774 | 50
+Net interest income | 6,485 | 400
+Total | $12,074 | $19,183
+Nine Months Ended September 2025
+Market making | $6,355 | $7,969
+Commissions and fees | – | 3,703
+Other principal transactions | 696 | 28
+Net interest income | 4,364 | 529
+Total | $11,415 | $12,229
+In the table above:
+•See "Net Revenues" for information about market making revenues, commissions and fees, other principal transactions revenues and net interest income. See Note 25 to the consolidated financial statements for net interest income by segment.
+•The primary driver of net revenues for FICC intermediation for all periods was client activity.
+•The increase in net interest income across FICC and Equities for the third quarter of 2026 compared with the third quarter of 2025 reflected an increase in interest-earning assets, partially offset by an increase in funding costs. Due to the nature of activities within FICC and Equities and the composition of their associated balance sheet, we assess the performance of these businesses based on total net revenues, as offsets can occur across revenue line items. For example, cash instruments that generate interest income are, in some cases, hedged or funded by derivatives for which changes in fair value are reflected in market making revenues. Also, certain activities produce market making revenues but incur interest expense related to the funding of the related inventory.
+The table below presents our financial advisory and underwriting transaction volumes.
+Three Months Ended September | Nine Months Ended September
+$ in billions | 2026 | 2025 | 2026 | 2025
+Announced mergers and acquisitions | $262 | $402 | $1,500 | $1,106
+Completed mergers and acquisitions | $407 | $372 | $1,331 | $911
+Equity and equity-related offerings | $24 | $15 | $83 | $50
+Debt offerings | $89 | $85 | $342 | $270
+In the table above:
+•Volumes are per Dealogic.
+•Announced and completed mergers and acquisitions volumes are based on full credit to each of the advisors in a transaction. Equity and equity-related and debt offerings are based on full credit for single book managers and equal credit for joint book managers. Transaction volumes may not be indicative of net revenues in a given period. In addition, transaction volumes for prior periods may vary from amounts previously reported due to the subsequent withdrawal or a change in the value of a transaction.
+•Equity and equity-related offerings includes Rule 144A and public common stock offerings, convertible offerings and rights offerings.
+•Debt offerings includes non-convertible preferred stock, mortgage-backed securities, asset-backed securities and taxable municipal debt. It also includes publicly registered and Rule 144A issues and excludes leveraged loans.
+Operating Environment. During the third quarter of 2026, Global Banking & Markets operated in an environment generally characterized by resilient economic activity, ongoing geopolitical tensions, a focus on investments related to AI and continued broad macroeconomic concerns and uncertainties, including those about inflation, interest rates and central bank policies.
+In investment banking, industry-wide completed mergers and acquisitions volumes, equity underwriting and debt underwriting each decreased compared with the second quarter of 2026, but activity remained robust.
+In interest rates, the yield on 10-year U.S. and U.K. government bonds increased during the quarter. In equities, the S&P 500 Index increased by 2% and the MSCI World Index increased by 1% compared with the end of the second quarter of 2026. Additionally, the price of crude oil increased during the quarter.
+In the future, if market and economic conditions deteriorate, market-making activity levels decline or investment banking activity levels continue to decline, or credit spreads related to hedges on our relationship lending portfolio tighten, net revenues in Global Banking & Markets would likely be negatively impacted. In addition, if economic conditions deteriorate or if the creditworthiness of borrowers deteriorates, provision for credit losses would likely be negatively impacted.
+Three Months Ended September 2026 versus September 2025. Net revenues in Global Banking & Markets were $13.46 billion for the third quarter of 2026, 32% higher than the third quarter of 2025.
+Investment banking fees were $3.22 billion, 21% higher than the third quarter of 2025, primarily due to higher net revenues in Advisory, reflecting an increase in completed mergers and acquisitions volumes, and significantly higher net revenues in Equity underwriting, primarily reflecting higher net revenues from initial public offerings and secondary offerings. Net revenues in Debt underwriting were also higher, primarily reflecting significantly higher net revenues from investment-grade activity.
+As of September 2026, our Investment banking fees backlog decreased compared with June 2026, primarily reflecting lower estimated net revenues from potential advisory transactions.
+Our backlog represents an estimate of our net revenues from future transactions where we believe that future revenue realization is more likely than not. We believe changes in our backlog may be a useful indicator of client activity levels which, over the long term, impact our net revenues. However, the time frame for completion and corresponding revenue recognition of transactions in our backlog varies based on the nature of the assignment, as certain transactions may remain in our backlog for longer periods of time. In addition, our backlog is subject to certain limitations, such as assumptions about the likelihood that individual client transactions will occur in the future. Transactions may be cancelled or modified, and transactions not included in the estimate may also occur.
+Net revenues in FICC were $3.47 billion, essentially unchanged compared with the third quarter of 2025. Net revenues in FICC intermediation were lower, due to significantly lower net revenues in mortgages and credit products and lower net revenues in interest rate products, partially offset by significantly higher net revenues in currencies and commodities. Net revenues in FICC financing were higher, primarily due to higher net revenues in mortgages and structured lending.
+Compared with the third quarter of 2025, FICC intermediation net revenues reflected the impact of less favorable market-making conditions on our inventory, largely offset by significantly higher client activity. The following provides information about our FICC intermediation net revenues by business, compared with results for the third quarter of 2025:
+•Net revenues in mortgages and credit products reflected the impact of less favorable market-making conditions on our inventory.
+•Net revenues in interest rate products reflected the impact of less favorable market-making conditions on our inventory, partially offset by higher client activity.
+•Net revenues in currencies and commodities primarily reflected higher client activity.
+Net revenues in Equities were $6.44 billion, 72% higher than the third quarter of 2025, due to significantly higher net revenues in Equities financing (driven by significantly higher net revenues in prime financing and portfolio financing) and in Equities intermediation (primarily driven by significantly higher net revenues in derivatives).
+Net revenues in Other were $322 million for the third quarter of 2026, compared with $282 million for the third quarter of 2025, primarily reflecting higher net revenues in transaction banking.
+Provision for credit losses was $345 million for the third quarter of 2026, compared with $82 million for the third quarter of 2025. Provisions for the third quarter of 2026 primarily reflected impairments related to wholesale loans. Provisions for the third quarter of 2025 reflected impairments and growth related to wholesale loans.
+Operating expenses were $7.33 billion for the third quarter of 2026, 26% higher than the third quarter of 2025, primarily due to significantly higher transaction based expenses and higher compensation and benefits expenses (reflecting improved operating performance). Pre-tax earnings were $5.78 billion for the third quarter of 2026, 36% higher than the third quarter of 2025.
+Nine Months Ended September 2026 versus September 2025. Net revenues in Global Banking & Markets were $41.72 billion for the first nine months of 2026, 34% higher than the first nine months of 2025.
+Investment banking fees were $9.46 billion, 40% higher than the first nine months of 2025, due to significantly higher net revenues in Advisory (reflecting an increase in industry-wide completed mergers and acquisitions volumes), in Equity underwriting (primarily reflecting significantly higher net revenues from initial public offerings, convertible offerings and secondary offerings), and in Debt underwriting (primarily reflecting significantly higher net revenues from investment-grade and asset-backed activity).
+As of September 2026, our Investment banking fees backlog decreased slightly compared with December 2025, primarily reflecting lower estimated net revenues from potential debt underwriting transactions.
+Net revenues in FICC were $12.07 billion, 6% higher than the first nine months of 2025. Net revenues in FICC intermediation were slightly higher, due to significantly higher net revenues in commodities and currencies, largely offset by significantly lower net revenues in interest rate products, mortgages and credit products. Net revenues in FICC financing were higher, primarily reflecting higher net revenues in mortgages and structured lending.
+Compared with the first nine months of 2025, FICC intermediation net revenues reflected higher client activity, partially offset by the impact of less favorable market-making conditions on our inventory. The following provides information about our FICC intermediation net revenues by business, compared with results for the first nine months of 2025:
+•Net revenues in commodities and currencies reflected the impact of improved market-making conditions on our inventory and higher client activity.
+•Net revenues in interest rate products reflected the impact of less favorable market-making conditions on our inventory, partially offset by higher client activity.
+•Net revenues in mortgages and credit products reflected the impact of less favorable market-making conditions on our inventory.
+Net revenues in Equities were $19.18 billion, 57% higher than the first nine months of 2025, due to significantly higher net revenues in Equities financing (primarily driven by significantly higher net revenues in prime financing) and in Equities intermediation (primarily driven by significantly higher net revenues in derivatives).
+Net revenues in Other were $1.00 billion for the first nine months of 2026, compared with $636 million for the first nine months of 2025, with the increase primarily reflecting significantly higher net gains from direct investments and significantly higher net revenues in transaction banking.
+Provision for credit losses was $668 million for the first nine months of 2026, compared with $321 million for the first nine months of 2025. Provisions for the first nine months of both 2026 and 2025 reflected impairments and growth related to wholesale loans.
+Operating expenses were $22.29 billion for the first nine months of 2026, 26% higher than the first nine months of 2025, primarily due to significantly higher transaction based expenses and higher compensation and benefits expenses (reflecting improved operating performance). Pre-tax earnings were $18.76 billion for the first nine months of 2026, 43% higher than the first nine months of 2025.
+Asset & Wealth Management
+Asset & Wealth Management provides investment services to help clients preserve and grow their financial assets and achieve their financial goals. We provide these services to our clients, both institutional and individuals, including investors who primarily access our products through a network of third-party distributors around the world.
+We manage client assets across a broad range of investment strategies and asset classes, including equity, fixed income and alternative investments. We provide investment solutions, including those managed on a fiduciary basis by our portfolio managers, as well as those managed by third-party managers. We offer our investment solutions in a variety of structures, including separately managed accounts, mutual funds, ETFs, private partnerships and other commingled vehicles.
+We also provide tailored wealth advisory services, primarily to ultra-high-net-worth clients. We operate globally, serving individuals, families, family offices, and foundations and endowments. Our relationships are established directly or introduced through companies that sponsor financial wellness or financial planning programs for their employees, as well as through corporate referrals.
+We offer personalized financial planning to individuals and also provide customized investment advisory solutions, and offer structuring and execution capabilities in securities and derivative products across all major global markets. In addition, we offer clients a full range of private banking services, including a variety of deposit alternatives and loans that our clients use to finance investments in both financial and nonfinancial assets, bridge cash flow timing gaps or provide liquidity and flexibility for other needs. We also raise deposits from consumers through Marcus by Goldman Sachs (Marcus).
+We invest alongside our clients that invest in investment funds that we raise or manage. We also have investments in alternative assets across a range of asset classes. Our investing activities, which are typically longer-term, include investments in corporate equity, credit, real estate and infrastructure assets.
+Asset & Wealth Management generates revenues from the following:
+•Management and other fees. We receive fees related to managing assets for institutional and individual clients, providing investing and wealth advisory solutions, providing financial planning and counseling services, and executing brokerage transactions for wealth management clients. The vast majority of revenues in management and other fees consists of asset-based fees on client assets that we manage. For further information about assets under supervision, see "Assets Under Supervision" below. The fees that we charge vary by asset class, client channel and the types of services provided, and are affected by investment performance, as well as asset inflows and redemptions.
+•Incentive fees. In certain circumstances, we also receive incentive fees based on a percentage of a fund's or a separately managed account's return, or when the return exceeds a specified benchmark or other performance targets. Such fees include carried interest, which consists of the increased share of the income and gains derived primarily from our private equity and credit funds when the return on a fund's investments over the life of the fund exceeds certain threshold returns.
+•Private banking and lending. Our private banking and lending activities include issuing loans to our wealth management clients. Such loans are generally secured by commercial and residential real estate, securities or other assets. We also raise deposits from wealth management clients through our private bank and Marcus. Private banking and lending revenues include net interest income allocated to deposits and net interest income earned on loans to individual clients.
+•Investments. Includes investments related to our asset management activities. These investments include public and private equity securities, debt securities and loans, related to corporate, real estate and infrastructure assets. We also make investments through consolidated investment entities (CIEs), substantially all of which are engaged in real estate investment activities.
+We have announced the following targets relating to Asset & Wealth Management:
+•Achieve ROE in the high-teens (approximately 17% to 19%) and pre-tax margin of approximately 30%, both within the medium term (three- to five-year time horizon from year-end 2025).
+•Achieve annual long-term fee-based net inflows from the wealth management client channel of approximately 5% of the channel's long-term AUS.
+•Grow our total alternative AUS to $750 billion by the end of 2030.
+•Grow our total credit alternative assets to $300 billion by the end of 2028.
+•Achieve an annual double-digit percentage growth rate for Management and other fees from alternatives.
+•Raise between $75 billion and $100 billion of third-party commitments in our alternatives business annually.
+The table below presents our Asset & Wealth Management assets.
+As of
+September | December
+$ in millions | 2026 | 2025
+Cash and cash equivalents | $28,089 | $30,220
+Collateralized agreements | 8,818 | 18,459
+Customer and other receivables | 30,880 | 22,628
+Trading assets | 56,087 | 42,711
+Investments | 18,449 | 20,069
+Loans | 56,200 | 50,282
+Other assets | 12,376 | 14,201
+Total | $210,899 | $198,570
+The table below presents details about our Asset & Wealth Management loans.
+As of
+September | December
+$ in millions | 2026 | 2025
+Corporate | $4,697 | $5,322
+Real estate | 21,264 | 19,494
+Securities-based | 13,259 | 12,488
+Other collateralized | 13,389 | 10,791
+Other | 4,329 | 2,896
+Loans, gross | 56,938 | 50,991
+Allowance for loan losses | (738) | (709)
+Total loans | $56,200 | $50,282
+In the table above, gross loans included $50.94 billion of loans as of September 2026 and $44.70 billion of loans as of December 2025 that were related to Private banking and lending.
+The table below presents our average Asset & Wealth Management gross loans.
+Three Months Ended September | Nine Months Ended September
+$ in millions | 2026 | 2025 | 2026 | 2025
+Loans | $55,709 | $50,969 | $53,534 | $49,175
+The table below presents our Asset & Wealth Management operating results.
+Three Months Ended September | Nine Months Ended September
+$ in millions | 2026 | 2025 | 2026 | 2025
+Management and other fees | $3,587 | $2,943 | $10,019 | $8,446
+Incentive fees | 587 | 76 | 882 | 308
+Private banking and lending | 827 | 1,057 | 2,154 | 2,571
+Investments | 50 | 342 | 671 | 635
+Net revenues | 5,051 | 4,418 | 13,726 | 11,960
+Provision for credit losses | 23 | (29) | 116 | (107)
+Operating expenses | 3,712 | 3,291 | 10,252 | 9,162
+Pre-tax earnings | 1,316 | 1,156 | 3,358 | 2,905
+Provision for taxes | 306 | 270 | 685 | 624
+Net earnings | 1,010 | 886 | 2,673 | 2,281
+Preferred stock dividends | 27 | 40 | 100 | 112
+Net earnings to common | $983 | $846 | $2,573 | $2,169
+Average common equity | $24,427 | $24,759 | $23,793 | $24,691
+Return on average common equity | 16.1% | 13.7% | 14.4% | 11.7%
+In the table above, Management and other fees included fees from alternatives of $860 million for the three months ended September 2026, $602 million for the three months ended September 2025, $2.18 billion for the nine months ended September 2026 and $1.72 billion for the nine months ended September 2025.
+We expect Incentive fees to remain elevated in the fourth quarter of 2026.
+The table below presents our Asset management and Wealth management net revenues by line item in Asset & Wealth Management.
+$ in millions | Asset management | Wealth management | Asset & Wealth Management
+Three Months Ended September 2026
+Management and other fees | $1,545 | $2,042 | $3,587
+Incentive fees | 587 | – | 587
+Private banking and lending | – | 827 | 827
+Investments | 62 | (12) | 50
+Total | $2,194 | $2,857 | $5,051
+Three Months Ended September 2025
+Management and other fees | $1,254 | $1,689 | $2,943
+Incentive fees | 76 | – | 76
+Private banking and lending | – | 1,057 | 1,057
+Investments | 342 | – | 342
+Total | $1,672 | $2,746 | $4,418
+Nine Months Ended September 2026
+Management and other fees | $4,285 | $5,734 | $10,019
+Incentive fees | 882 | – | 882
+Private banking and lending | – | 2,154 | 2,154
+Investments | 685 | (14) | 671
+Total | $5,852 | $7,874 | $13,726
+Nine Months Ended September 2025
+Management and other fees | $3,656 | $4,790 | $8,446
+Incentive fees | 308 | – | 308
+Private banking and lending | – | 2,571 | 2,571
+Investments | 635 | – | 635
+Total | $4,599 | $7,361 | $11,960
+Operating Environment. During the third quarter of 2026, Asset & Wealth Management operated in an environment generally characterized by resilient economic activity, ongoing geopolitical tensions, a focus on investments related to AI and continued broad macroeconomic concerns and uncertainties. Bond prices were generally lower and global equity prices were generally slightly higher compared with the end of the second quarter of 2026, affecting levels of assets under supervision.
+In the future, if market and economic conditions deteriorate, it may lead to a further decline in fixed income prices or a decline in equity prices, or investors transitioning to asset classes that typically generate lower fees or withdrawing their assets, and net revenues in Asset & Wealth Management would likely be negatively impacted.
+Three Months Ended September 2026 versus September 2025. Net revenues in Asset & Wealth Management were $5.05 billion for the third quarter of 2026, 14% higher than the third quarter of 2025, reflecting significantly higher Management and other fees and Incentive fees, partially offset by significantly lower net revenues in Investments and Private banking and lending.
+The increase in Management and other fees primarily reflected the impact of higher average assets under supervision. The increase in Incentive fees was driven by fund distributions. The decrease in Investments net revenues included net markdowns in debt investments compared with net markups in the prior year period. The decrease in Private banking and lending net revenues reflected the payment of interest on a previously impaired loan in the prior year period.
+Provision for credit losses was $23 million for the third quarter of 2026, compared with a net benefit of $29 million for the third quarter of 2025.
+Operating expenses were $3.71 billion for the third quarter of 2026, 13% higher than the third quarter of 2025, primarily due to higher compensation and benefits expenses (reflecting improved operating performance) and higher transaction based expenses. Pre-tax earnings were $1.32 billion for the third quarter of 2026, 14% higher than the third quarter of 2025.
+Nine Months Ended September 2026 versus September 2025. Net revenues in Asset & Wealth Management were $13.73 billion for the first nine months of 2026, 15% higher than the first nine months of 2025, primarily reflecting higher Management and other fees and significantly higher Incentive fees, partially offset by lower net revenues in Private banking and lending.
+The increase in Management and other fees primarily reflected the impact of higher average assets under supervision. The increase in Incentive fees was primarily driven by fund distributions. The decrease in Private banking and lending net revenues reflected the impact of lower net interest margin related to Marcus deposits and the payment of interest on a previously impaired loan in the prior year period, partially offset by higher average Marcus and private bank deposit balances and higher average loan balances. Net revenues in Investments were slightly higher.
+Provision for credit losses was $116 million for the first nine months of 2026, compared with a net benefit of $107 million for the first nine months of 2025. Provisions for the first nine months of 2026 reflected impairments. The net benefit for the first nine months of 2025 reflected a reserve reduction related to lower balances in the wholesale portfolio.
+Operating expenses were $10.25 billion for the first nine months of 2026, 12% higher than the first nine months of 2025, primarily due to higher compensation and benefits expenses (reflecting improved operating performance). Pre-tax earnings were $3.36 billion for the first nine months of 2026 (pre-tax margin of 24%), 16% higher than the first nine months of 2025.
+Assets Under Supervision. AUS includes our institutional clients' assets, assets sourced through third-party distributors and high-net-worth clients' assets where we earn a fee for managing assets on a discretionary basis. This includes net assets in our mutual funds, ETFs, hedge funds, credit funds, private equity funds, real estate funds, and separately managed accounts for institutional and individual investors. AUS also includes client assets invested with third-party managers, private bank deposits and advisory relationships where we earn a fee for advisory and other services, but do not have investment discretion. AUS does not include the self-directed brokerage assets of our clients.
+In the fourth quarter of 2025, we made certain changes to the classification of our AUS. See "Results of Operations — Asset & Wealth Management — Assets Under Supervision" in Management's Discussion and Analysis of the 2025 Form 10-K for further information about such changes. In addition, beginning in the second quarter of 2026, certain assets have been reclassified from funds and discretionary accounts to advisory and OCIO accounts (accounts for which we are the outsourced chief investment officer of our clients) to better reflect the investment type of these assets. Prior period amounts have been conformed to the current presentation.
+The table below presents information about our period-end AUS by asset class, region and vehicle.
+As of September
+$ in billions | 2026 | 2025
+Asset Class
+Alternative investments | $491 | $390
+Equity | 1,150 | 914
+Fixed income | 1,405 | 1,297
+Total long-term AUS | 3,046 | 2,601
+Liquidity products | 1,051 | 851
+Total AUS | $4,097 | $3,452
+Region
+Americas | $3,021 | $2,410
+EMEA | 799 | 794
+Asia | 277 | 248
+Total AUS | $4,097 | $3,452
+Vehicle
+Separate accounts | $2,180 | $1,886
+Public funds | 1,181 | 1,055
+Private funds and other | 736 | 511
+Total AUS | $4,097 | $3,452
+In the table above:
+•Liquidity products includes money market funds and private bank deposits.
+•EMEA represents Europe, Middle East and Africa.
+The table below presents our total long-term AUS by client channel.
+As of September
+$ in billions | 2026 | 2025
+Institutional | $1,245 | $1,161
+Wealth management | 1,087 | 914
+Third-party distributed | 714 | 526
+Total long-term AUS | $3,046 | $2,601
+Total wealth management client assets (consisting of AUS, brokerage assets and Marcus deposits) were approximately $2.1 trillion as of September 2026 and approximately $1.8 trillion as of September 2025.
+The table below presents changes in our AUS.
+Three Months Ended September | Nine Months Ended September
+$ in billions | 2026 | 2025 | 2026 | 2025
+Beginning balance | $4,041 | $3,293 | $3,606 | $3,137
+Net inflows/(outflows):
+Alternative investments | 34 | 12 | 66 | 25
+Equity | 13 | 5 | 83 | 24
+Fixed income | 50 | 39 | 101 | 53
+Total long-term AUS net inflows/(outflows) | 97 | 56 | 250 | 102
+Liquidity products | (14) | 23 | 150 | 6
+Total AUS net inflows/(outflows) | 83 | 79 | 400 | 108
+Net market appreciation/(depreciation) | (27) | 80 | 91 | 207
+Ending balance | $4,097 | $3,452 | $4,097 | $3,452
+In the table above:
+•During the three months ended September 2026, our AUS increased $56 billion due to net inflows (reflecting net inflows in fixed income, alternative investments and equity, partially offset by net outflows in liquidity products), partially offset by net market depreciation (reflecting net market depreciation in fixed income, partially offset by net market appreciation in equity).
+•During the three months ended September 2025, our AUS increased $159 billion due to net market appreciation (primarily in equity and fixed income assets) and net inflows (reflecting net inflows across all asset classes, primarily in fixed income and liquidity products).
+•During the nine months ended September 2026, our AUS increased $491 billion due to net inflows (reflecting net inflows across all asset classes) and net market appreciation (primarily in equity).
+•During the nine months ended September 2025, our AUS increased $315 billion due to net market appreciation (primarily in equity and fixed income) and net inflows (primarily in fixed income, alternative investments and equity).
+•Total long-term AUS net inflows/(outflows) for the nine months ended September 2026 included $31 billion of inflows in equity assets in connection with the acquisition of Innovator Capital Management, LLC, and $5 billion of inflows in alternative investments in connection with the acquisition of Industry Ventures, partially offset by $15 billion of outflows in fixed income and equity assets in connection with the disposition of Goldman Sachs TFI.
+The table below presents information about our total long-term AUS net inflows/(outflows) by client channel.
+Three Months Ended September | Nine Months Ended September
+$ in billions | 2026 | 2025 | 2026 | 2025
+Institutional | $31 | $31 | $65 | $34
+Wealth management | 47 | 14 | 88 | 40
+Third-party distributed | 19 | 11 | 97 | 28
+Total long-term AUS net inflows/(outflows) | $97 | $56 | $250 | $102
+The table below presents information about our average monthly AUS by asset class.
+Average for the
+Three Months Ended September | Nine Months Ended September
+$ in billions | 2026 | 2025 | 2026 | 2025
+Asset Class
+Alternative investments | $478 | $379 | $452 | $366
+Equity | 1,139 | 881 | 1,063 | 826
+Fixed income | 1,407 | 1,259 | 1,375 | 1,221
+Total long-term AUS | 3,024 | 2,519 | 2,890 | 2,413
+Liquidity products | 1,051 | 839 | 978 | 840
+Total AUS | $4,075 | $3,358 | $3,868 | $3,253
+We earn management fees on client assets that we manage and also receive incentive fees based on a percentage of a fund's or a separately managed account's return, or when the return exceeds a specified benchmark or other performance targets. These incentive fees are recognized when it is probable that a significant reversal of such fees will not occur. Our estimated unrecognized incentive fees were $6.15 billion as of September 2026 and $5.24 billion as of December 2025. Such amounts are based on the completion of the funds' financial statements, which is generally one quarter in arrears. These fees will be recognized, assuming no decline in fair value, if and when it is probable that a significant reversal of such fees will not occur, which is generally when such fees are no longer subject to fluctuations in the market value of the assets.
+The table below presents our average effective management fee (which excludes non-asset-based fees) earned on our AUS by asset class.
+Three Months Ended September | Nine Months Ended September
+Effective fees (bps) | 2026 | 2025 | 2026 | 2025
+Alternative investments | 61 | 59 | 60 | 59
+Equity | 51 | 54 | 52 | 54
+Fixed income | 16 | 17 | 16 | 17
+Liquidity products | 12 | 14 | 13 | 14
+Total average effective fee | 30 | 31 | 30 | 31
+The table below presents details about our monthly average AUS for alternative assets and the average effective management fee we earned on such assets.
+Funds & discretionary accounts | Advisory | Total
+$ in billions | Direct strategies | Fund of funds | Total | & OCIO accounts | alternative AUS
+Three Months Ended September 2026
+Average AUS
+Corporate equity | $58 | $92 | $150 | $43 | $193
+Credit | 75 | 6 | 81 | 24 | 105
+Real estate | 21 | 7 | 28 | 21 | 49
+Hedge funds and other | 57 | 18 | 75 | 56 | 131
+Total | $211 | $123 | $334 | $144 | $478
+Effective Fees (bps)
+Corporate equity | 120 | 71 | 93 | 20 | 75
+Credit | 79 | 50 | 78 | 19 | 64
+Real estate | 63 | 68 | 64 | 7 | 39
+Hedge funds and other | 66 | 74 | 68 | 17 | 46
+Total | 85 | 71 | 81 | 17 | 61
+Three Months Ended September 2025
+Average AUS
+Corporate equity | $40 | $74 | $114 | $31 | $145
+Credit | 61 | 5 | 66 | 26 | 92
+Real estate | 20 | 7 | 27 | 13 | 40
+Hedge funds and other | 47 | 13 | 60 | 42 | 102
+Total | $168 | $99 | $267 | $112 | $379
+Effective Fees (bps)
+Corporate equity | 124 | 64 | 88 | 21 | 73
+Credit | 67 | 40 | 67 | 17 | 56
+Real estate | 66 | 71 | 67 | 11 | 47
+Hedge funds and other | 67 | 77 | 69 | 19 | 48
+Total | 81 | 67 | 76 | 18 | 59
+Nine Months Ended September 2026
+Average AUS
+Corporate equity | $54 | $84 | $138 | $40 | $178
+Credit | 72 | 6 | 78 | 25 | 103
+Real estate | 21 | 8 | 29 | 19 | 48
+Hedge funds and other | 54 | 16 | 70 | 53 | 123
+Total | $201 | $114 | $315 | $137 | $452
+Effective Fees (bps)
+Corporate equity | 127 | 66 | 93 | 19 | 75
+Credit | 76 | 45 | 75 | 19 | 61
+Real estate | 64 | 65 | 65 | 8 | 42
+Hedge funds and other | 66 | 72 | 67 | 18 | 46
+Total | 86 | 67 | 80 | 17 | 60
+Nine Months Ended September 2025
+Average AUS
+Corporate equity | $38 | $72 | $110 | $30 | $140
+Credit | 58 | 4 | 62 | 25 | 87
+Real estate | 20 | 7 | 27 | 13 | 40
+Hedge funds and other | 46 | 12 | 58 | 41 | 99
+Total | $162 | $95 | $257 | $109 | $366
+Effective Fees (bps)
+Corporate equity | 123 | 64 | 87 | 22 | 72
+Credit | 72 | 45 | 71 | 19 | 56
+Real estate | 64 | 68 | 65 | 12 | 47
+Hedge funds and other | 68 | 76 | 69 | 19 | 49
+Total | 82 | 66 | 77 | 19 | 59
+In the table above, direct strategies primarily includes our private equity, growth equity, private credit, liquid alternatives and real estate strategies. Fund of funds primarily includes our business which invests in leading private equity, hedge fund, real estate and credit third-party managers as a limited partner, secondary-market investor, co-investor or management company partner.
+In addition to our AUS, we have discretion over alternative investments where we currently do not earn management fees (non-fee-earning alternative assets).
+The table below presents information about our period-end AUS for alternative assets, non-fee-earning alternative assets and total alternative assets.
+AUS | Total
+$ in billions | Funds & discretionary | Advisory & OCIO | Total AUS | Non-fee- earning | alternative assets
+As of September 2026
+Corporate equity | $159 | $43 | $202 | $91 | $293
+Credit | 79 | 27 | 106 | 125 | 231
+Real estate | 27 | 20 | 47 | 22 | 69
+Hedge funds and other | 78 | 58 | 136 | 4 | 140
+Total | $343 | $148 | $491 | $242 | $733
+As of September 2025
+Corporate equity | $116 | $34 | $150 | $84 | $234
+Credit | 68 | 26 | 94 | 93 | 187
+Real estate | 28 | 13 | 41 | 21 | 62
+Hedge funds and other | 62 | 43 | 105 | 2 | 107
+Total | $274 | $116 | $390 | $200 | $590
+In the table above:
+•Substantially all non-fee-earning alternative assets consist of funds and discretionary accounts.
+•Corporate equity primarily includes private equity.
+•Total alternative assets included uncalled capital that is available for future investing of $102 billion as of September 2026 and $73 billion as of September 2025.
+•Non-fee-earning alternative assets primarily includes investments that we hold on our balance sheet, our unfunded commitments, unfunded commitments of our clients (where we do not charge fees on commitments), credit facilities collateralized by fund assets and employee funds. Our calculation of non-fee-earning alternative assets may not be comparable to similar calculations used by other companies.
+•Non-fee-earning alternative assets primarily includes our direct investing strategies, including private equity, growth equity, private credit and real estate strategies.
+The table below presents information about third-party commitments raised in our alternatives business from the beginning of 2020 through the third quarter of 2026.
+As of
+$ in billions | September 2026
+Included in AUS | $425
+Included in non-fee-earning alternative assets | 135
+Third-party commitments raised | $560
+In the table above, commitments included in non-fee-earning alternative assets included approximately $108 billion, which will begin to earn fees (and become AUS) if and when the commitments are drawn and assets are invested. In the third quarter of 2026, we raised $37 billion in third-party commitments in our alternatives business, including $12 billion in corporate equity, $16 billion in credit, $1 billion in real estate and $8 billion in hedge funds and other. We have raised $122 billion in third-party commitments in the first nine months of 2026 and expect fundraising for full year 2026 to be approximately $150 billion.
+The table below presents information about alternative investments that we hold on our balance sheet.
+As of
+September | December
+$ in billions | 2026 | 2025
+Product
+Loans | $5.3 | $5.7
+Debt securities | 7.0 | 8.1
+Equity securities | 10.8 | 11.2
+Other | 1.3 | 1.9
+Total | $24.4 | $26.9
+Region
+Americas | 58% | 56%
+EMEA | 31% | 33%
+Asia | 11% | 11%
+Total | 100% | 100%
+Industry
+Consumer & Retail | 8% | 8%
+Financial Institutions | 11% | 10%
+Healthcare | 9% | 9%
+Industrials | 10% | 11%
+Natural Resources & Utilities | 8% | 8%
+Real Estate | 14% | 15%
+Technology, Media & Telecommunications | 30% | 30%
+Other | 10% | 9%
+Total | 100% | 100%
+In the table above, other investments include tax credit investments (accounted for under the proportional amortization method of accounting) of $0.7 billion as of both September 2026 and December 2025. Additionally, other investments include CIEs, which held assets (generally accounted for at historical cost less depreciation) of $0.6 billion as of September 2026 and $1.2 billion as of December 2025, and were funded with liabilities of $0.2 billion as of September 2026 and approximately $0.6 billion as of December 2025. Substantially all such liabilities were nonrecourse, thereby reducing our equity at risk.
+Platform Solutions
+Substantially all of the revenues in Platform Solutions are from activities related to issuing credit cards to and raising deposits from Apple Card customers and related to businesses that have been exited. In December 2025, we entered into an agreement to transition the Apple Card program to another issuer. The transition is expected to be completed in approximately 24 months from the date of the agreement.
+The table below presents our Platform Solutions assets.
+As of
+September | December
+$ in millions | 2026 | 2025
+Cash and cash equivalents | $2,606 | $2,230
+Collateralized agreements | 875 | 1,544
+Customer and other receivables | 64 | 64
+Trading assets | 5,556 | 3,572
+Investments | 116 | 141
+Loans | 19,968 | 19,823
+Other assets | 730 | 706
+Total | $29,915 | $28,080
+In the table above, substantially all loans consisted of credit card loans.
+The table below presents our average Platform Solutions gross loans.
+Three Months Ended September | Nine Months Ended September
+$ in millions | 2026 | 2025 | 2026 | 2025
+Loans | $19,701 | $20,519 | $19,414 | $20,656
+The table below presents our Platform Solutions operating results.
+Three Months Ended September | Nine Months Ended September
+$ in millions | 2026 | 2025 | 2026 | 2025
+Net revenues | $170 | $598 | $802 | $1,827
+Provision for credit losses | – | 286 | 1 | 796
+Operating expenses | 265 | 334 | 869 | 1,023
+Pre-tax earnings/(loss) | (95) | (22) | (68) | 8
+Provision/(benefit) for taxes | (19) | (4) | (14) | 2
+Net earnings/(loss) | (76) | (18) | (54) | 6
+Preferred stock dividends | 4 | 8 | 17 | 22
+Net earnings/(loss) to common | $(80) | $(26) | $(71) | $(16)
+Average common equity | $3,468 | $4,257 | $3,562 | $4,389
+Return on average common equity | (9.2)% | (2.4)% | (2.7)% | (0.5)%
+Operating Environment. The operating environment for Platform Solutions is primarily impacted by the economic environment in the U.S., which, during the third quarter of 2026, was generally characterized by resilient economic activity (including continued strength in consumer spending), concerns about inflation, and a continued low rate of unemployment.
+In the future, if economic conditions deteriorate, it may lead to a deterioration in consumer credit, and net revenues in Platform Solutions would likely be negatively impacted.
+Three Months Ended September 2026 versus September 2025. Net revenues in Platform Solutions were $170 million for the third quarter of 2026, 72% lower than the third quarter of 2025, primarily reflecting net markdowns related to the Apple Card loan portfolio, which was transferred to held for sale in the fourth quarter of 2025.
+Provision for credit losses was $286 million for the third quarter of 2025, reflecting net provisions related to the credit card portfolio, which was transferred to held for sale in the fourth quarter of 2025.
+Operating expenses were $265 million for the third quarter of 2026, 21% lower than the third quarter of 2025, primarily reflecting lower operating expenses related to the General Motors (GM) credit card program, which was sold in 2025. Pre-tax loss was $95 million for the third quarter of 2026, compared with a pre-tax loss of $22 million for the third quarter of 2025.
+Nine Months Ended September 2026 versus September 2025. Net revenues in Platform Solutions were $802 million for the first nine months of 2026, 56% lower than the first nine months of 2025, primarily reflecting net markdowns related to the Apple Card loan portfolio, which was transferred to held for sale in the fourth quarter of 2025.
+Provision for credit losses was $1 million for the first nine months of 2026, compared with $796 million for the first nine months of 2025. Provisions for the first nine months of 2025 reflected net provisions related to the credit card portfolio, which was transferred to held for sale in the fourth quarter of 2025.
+Operating expenses were $869 million for the first nine months of 2026, 15% lower than the first nine months of 2025, reflecting lower operating expenses related to the GM credit card program, which was sold in 2025. Pre-tax loss was $68 million for the first nine months of 2026, compared with pre-tax earnings of $8 million for the first nine months of 2025.
+Geographic Data
+See Note 25 to the consolidated financial statements for a summary of our total net revenues and pre-tax earnings by geographic region.
