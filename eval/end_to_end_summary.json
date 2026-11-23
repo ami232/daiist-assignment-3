@@ -1,0 +1,54 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "code_checks": {
+    "answerable": {
+      "questions": 25,
+      "answers_with_a_valid_citation_and_no_invalid_one": 20,
+      "answers_with_an_unverified_citation": 5,
+      "answers_without_any_citation": 0,
+      "answers_that_look_like_a_refusal": [
+        "q04"
+      ],
+      "agent_retrieval": {
+        "hit": 21,
+        "equivalent": 1,
+        "miss": 3
+      }
+    },
+    "unanswerable": {
+      "questions": 5,
+      "refused": 5,
+      "not_refused": []
+    }
+  },
+  "cost": {
+    "questions": 30,
+    "seconds": {
+      "mean": 6.6,
+      "median": 3.5,
+      "p90": 13.2,
+      "max": 27.9
+    },
+    "input_tokens": {
+      "mean": 3804.6,
+      "median": 3503.0,
+      "p90": 3903,
+      "max": 7532
+    },
+    "output_tokens": {
+      "mean": 277.8,
+      "median": 269.0,
+      "p90": 423,
+      "max": 588
+    },
+    "searches": {
+      "mean": 1.1,
+      "median": 1.0,
+      "p90": 1,
+      "max": 2
+    },
+    "total_input_tokens": 114138,
+    "total_output_tokens": 8333
+  },
+  "human_graded": 0
+}

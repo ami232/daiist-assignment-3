@@ -29,7 +29,7 @@ from mcp.client.stdio import stdio_client
 from api_key import load_api_key
 
 ROOT = Path(__file__).resolve().parent
-MODEL = os.environ.get("AGENT_MODEL", "gemini-3.5-flash")   # change here, or set AGENT_MODEL
+MODEL = os.environ.get("AGENT_MODEL", "gemini-3.5-flash-lite")   # free tier: 500 requests a day (gemini-3.5-flash: 20)
 MAX_TOOL_CALLS = 6      # per question
 MAX_MODEL_CALLS = 10    # per question
 MCP_TIMEOUT = 600       # seconds for one tool call: add_document embeds one request per passage
@@ -179,17 +179,36 @@ async def _answer(session, definitions, question: str, approve) -> dict:
     }
 
 
-async def _run(questions: list[str], approve) -> list[dict]:
+async def _run(questions: list[str], approve, on_result=None, keep_going: bool = False) -> list[dict]:
     params = StdioServerParameters(command=sys.executable, args=[str(ROOT / "server.py")], cwd=str(ROOT))
+    results = []
     async with stdio_client(params) as (read, write):
         async with ClientSession(read, write) as session:
             await session.initialize()
             definitions = (await session.list_tools()).tools
-            return [await _answer(session, definitions, q, approve) for q in questions]
+            failures = 0
+            for question in questions:
+                try:
+                    result = await _answer(session, definitions, question, approve)
+                except Exception as error:
+                    if not keep_going:
+                        raise
+                    # one failed question must not lose the others; the caller can run it again
+                    print(f"  failed: {question[:60]!r}: {type(error).__name__}: {str(error)[:200]}", file=sys.stderr)
+                    failures += 1
+                    if failures >= 3:
+                        print("  stopping after 3 failures in a row (a quota limit?). Run again later to continue.", file=sys.stderr)
+                        break
+                    continue
+                failures = 0
+                results.append(result)
+                if on_result:
+                    on_result(result)     # lets the caller save each answer as soon as it exists
+    return results
 
 
-def ask_many(questions: list[str], approve=cli_approve) -> list[dict]:
-    return asyncio.run(_run(questions, approve))
+def ask_many(questions: list[str], approve=cli_approve, on_result=None, keep_going: bool = False) -> list[dict]:
+    return asyncio.run(_run(questions, approve, on_result, keep_going))
 
 
 def ask(question: str, approve=cli_approve) -> dict:

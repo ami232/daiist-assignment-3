@@ -1,8 +1,16 @@
 """
 Assignment 3: evaluation (`main.py evaluate`).
 
-Stage 1 (this file, so far): retrieval hit rate at k = 1, 3, 5 per retrieval design,
-scored with the rule in eval/scoring_rule.md (fixed before any measurement).
+Stage 1: retrieval hit rate at k = 1, 3, 5 per retrieval design, scored with the rule in
+eval/scoring_rule.md (fixed before any measurement).
+
+Stage 2: end-to-end. The agent answers every question (saved one by one in eval/answers.jsonl, so an
+interrupted run resumes), then code checks (citations, refusals, what the agent retrieved, cost), then
+eval/label_sheet.md for your own grades. The LLM judge runs only after eval/human_labels.csv has 20+
+grades, so you grade before you see any verdict.
+
+  uv run python main.py evaluate            # everything; finished steps are skipped
+  uv run python evaluate.py --redo          # throw away answers and verdicts, run the agent again
 
 Designs compared (every design that has an index in index/ is tried):
   dense_<design>   vector search only (Gemini embeddings in ChromaDB)
@@ -17,7 +25,10 @@ Writes: eval/retrieval_results.csv (one row per question and design)
 import csv
 import json
 import math
+import os
+import random
 import re
+import statistics
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -30,11 +41,30 @@ QUESTIONS = EVAL_DIR / "questions.csv"
 QUERY_CACHE = EVAL_DIR / "query_cache.json"      # query vectors, so a re-run costs no quota (not committed)
 RESULTS_CSV = EVAL_DIR / "retrieval_results.csv"
 SUMMARY_JSON = EVAL_DIR / "retrieval_summary.json"
+ANSWERS = EVAL_DIR / "answers.jsonl"                 # full record per question: answer, tool trace, tokens, seconds
+ANSWERS_CSV = EVAL_DIR / "answers.csv"               # the same, one readable row per question, with the code checks
+LABEL_SHEET = EVAL_DIR / "label_sheet.md"            # what you read when you grade
+HUMAN_LABELS = EVAL_DIR / "human_labels.csv"
+RUBRIC = EVAL_DIR / "judge_rubric.md"                # written by you
+VERDICTS = EVAL_DIR / "judge_verdicts.csv"
+E2E_SUMMARY = EVAL_DIR / "end_to_end_summary.json"
 
 KS = (1, 3, 5)
 POOL = 30                 # candidates taken from each ranking before fusion
 RRF_K = 60                # reciprocal rank fusion constant
 BM25_K1, BM25_B = 1.5, 0.75
+MIN_LABELS = 20
+LABEL_SEED = 7            # fixes the order of the label sheet (a random order, the same on every run)
+JUDGE_MODEL = os.environ.get("JUDGE_MODEL", "gemini-3.5-flash")
+# Refusal check in code: a refusal says so up front, so only the start of the answer is searched. A heuristic:
+# it is compared with the judge and with your grades, not trusted on its own.
+REFUSAL = re.compile(
+    r"(?:do(?:es)? not|don't|doesn't|cannot|can't|could not|couldn't|unable to|not able to)\b[^.\n]{0,80}?"
+    r"\b(?:cover|address|contain|include|find|provide|specify|mention|answer)"
+    r"|\bnot covered\b|\bno (?:relevant )?(?:information|passages?|provisions?)\b|\boutside (?:the )?scope\b",
+    re.IGNORECASE,
+)
+REFUSAL_WINDOW = 400
 STOPWORDS = set(
     "a an and are as at be but by for from has have how i if in is it its my of on or our so that the their "
     "them then there these they this to us was we what when where which who will with you your do does can "
@@ -274,10 +304,347 @@ def print_summary(summary: dict, results: list[dict]) -> None:
         print(f"  {design}: {', '.join(by_design[design]) or 'none'}")
     print(f"\nWrote {RESULTS_CSV.relative_to(ROOT)} and {SUMMARY_JSON.relative_to(ROOT)}")
 
+# --------------------------------------------------------------------------
+# 4. End-to-end: the agent answers every question
+# --------------------------------------------------------------------------
+
+def load_answers() -> dict[str, dict]:
+    records: dict[str, dict] = {}
+    if ANSWERS.is_file():
+        for line in ANSWERS.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                record = json.loads(line)
+                records[record["id"]] = record       # a later line replaces an earlier one
+    return records
+
+
+def answers_stage(rows: list[dict], redo: bool) -> dict[str, dict]:
+    if redo:
+        for path in (ANSWERS, VERDICTS):
+            path.unlink(missing_ok=True)
+    records = load_answers()
+    todo = [r for r in rows if r["id"] not in records or records[r["id"]]["question"] != r["question"]]
+    if todo:
+        import agent
+
+        by_question = {r["question"]: r for r in todo}
+        print(f"\nThe agent answers {len(todo)} question(s) ({len(rows) - len(todo)} already saved). "
+              "Ctrl+C stops safely; run again to continue.", file=sys.stderr)
+
+        def save(result: dict) -> None:
+            row = by_question[result["question"]]
+            record = {"id": row["id"], "kind": row["kind"].strip().lower(), **result}
+            with ANSWERS.open("a", encoding="utf-8") as f:
+                f.write(json.dumps(record, ensure_ascii=False) + "\n")
+            records[record["id"]] = record
+            print(f"  [{len(records)}/{len(rows)}] {record['id']}: {record['seconds']} s, "
+                  f"{len(record['tool_calls'])} tool call(s)", file=sys.stderr)
+
+        # No terminal approval during evaluation: add_document is always refused here.
+        agent.ask_many([r["question"] for r in todo], approve=lambda tool, args: False, on_result=save, keep_going=True)
+    missing = [r["id"] for r in rows if r["id"] not in records]
+    if missing:
+        print(f"\nNo answer yet for: {', '.join(missing)}. Run the evaluation again to retry them.", file=sys.stderr)
+    return records
+
+
+# --------------------------------------------------------------------------
+# 5. Checks in code
+# --------------------------------------------------------------------------
+
+def seen_chunks(retrieved: list) -> list[dict]:
+    """What the agent actually retrieved, in the shape outcome() reads: source and section of each passage."""
+    import agent
+
+    chunks = []
+    for source, location in retrieved:
+        refs = agent.references(location)
+        if refs:
+            kind, ident = refs[0]
+            chunks.append({"source": source, "section": f"{kind} {ident}"})
+    return chunks
+
+
+def code_checks(rows: list[dict], records: dict[str, dict]) -> list[dict]:
+    checks = []
+    for row in rows:
+        record = records.get(row["id"])
+        if not record:
+            continue
+        kind = row["kind"].strip().lower()
+        valid, invalid = record["valid_citations"], record["invalid_citations"]
+        check = {
+            "id": row["id"],
+            "kind": kind,
+            "searches": sum(c["tool"] == "search" for c in record["tool_calls"]),
+            "valid_citations": len(valid),
+            "invalid_citations": len(invalid),
+            "refused": bool(REFUSAL.search(record["raw_answer"][:REFUSAL_WINDOW])),
+            "agent_retrieval": "",
+            "input_tokens": record["input_tokens"],
+            "output_tokens": record["output_tokens"],
+            "seconds": record["seconds"],
+            "flags": "; ".join(record["flags"]),
+        }
+        if kind != "unanswerable":
+            ranked = seen_chunks(record["retrieved"])
+            check["agent_retrieval"] = outcome(row, ranked, max(len(ranked), 1))
+        checks.append(check)
+    return checks
+
+
+def write_answers_csv(checks: list[dict], records: dict[str, dict], rows: list[dict]) -> None:
+    questions = {r["id"]: r["question"] for r in rows}
+    fields = ["id", "kind", "question", "answer", "searches", "valid_citations", "invalid_citations", "refused",
+              "agent_retrieval", "input_tokens", "output_tokens", "seconds", "flags"]
+    with ANSWERS_CSV.open("w", newline="", encoding="utf-8") as f:
+        writer = csv.DictWriter(f, fieldnames=fields)
+        writer.writeheader()
+        for check in checks:
+            writer.writerow({**check, "question": questions[check["id"]], "answer": records[check["id"]]["raw_answer"]})
+
+
+def cost_summary(checks: list[dict]) -> dict:
+    def stats(values: list[float]) -> dict:
+        ordered = sorted(values)
+        return {"mean": round(statistics.mean(values), 1), "median": round(statistics.median(values), 1),
+                "p90": round(ordered[min(len(ordered) - 1, math.ceil(0.9 * len(ordered)) - 1)], 1),
+                "max": round(max(values), 1)}
+
+    return {
+        "questions": len(checks),
+        "seconds": stats([c["seconds"] for c in checks]),
+        "input_tokens": stats([c["input_tokens"] for c in checks]),
+        "output_tokens": stats([c["output_tokens"] for c in checks]),
+        "searches": stats([c["searches"] for c in checks]),
+        "total_input_tokens": sum(c["input_tokens"] for c in checks),
+        "total_output_tokens": sum(c["output_tokens"] for c in checks),
+    }
+
+
+def code_summary(checks: list[dict]) -> dict:
+    answerable = [c for c in checks if c["kind"] != "unanswerable"]
+    unanswerable = [c for c in checks if c["kind"] == "unanswerable"]
+    return {
+        "answerable": {
+            "questions": len(answerable),
+            "answers_with_a_valid_citation_and_no_invalid_one": sum(c["valid_citations"] > 0 and c["invalid_citations"] == 0 for c in answerable),
+            "answers_with_an_unverified_citation": sum(c["invalid_citations"] > 0 for c in answerable),
+            "answers_without_any_citation": sum(c["valid_citations"] + c["invalid_citations"] == 0 for c in answerable),
+            "answers_that_look_like_a_refusal": [c["id"] for c in answerable if c["refused"]],
+            "agent_retrieval": {k: sum(c["agent_retrieval"] == k for c in answerable) for k in ("hit", "equivalent", "miss")},
+        },
+        "unanswerable": {
+            "questions": len(unanswerable),
+            "refused": sum(c["refused"] for c in unanswerable),
+            "not_refused": [c["id"] for c in unanswerable if not c["refused"]],
+        },
+    }
+
+
+# --------------------------------------------------------------------------
+# 6. Your grades: the sheet you read, the file you fill in
+# --------------------------------------------------------------------------
+
+def write_label_sheet(rows: list[dict], records: dict[str, dict]) -> None:
+    order = [r for r in rows if r["id"] in records]
+    random.Random(LABEL_SEED).shuffle(order)
+    parts = [
+        "# Label sheet\n",
+        "Grade the answers in this order (it is random) in `eval/human_labels.csv`, one line per answer: "
+        "`id,correct,supported,notes`. At least 20; more is better. This file shows no judge verdicts.\n",
+        "- `correct`: 1 if the answer is right against the reference answer (for an unanswerable question: "
+        "a proper refusal), else 0.\n- `supported`: 1 if every claim in the answer is in the retrieved passages "
+        "below, else 0.\n- `notes`: why, for every 0.\n",
+    ]
+    for n, row in enumerate(order, 1):
+        record = records[row["id"]]
+        searches = [c for c in record["tool_calls"] if c["tool"] == "search"]
+        evidence = "\n\n".join(f"Search: {c['args'].get('query', '')}\n\n{c['result']}" for c in searches) or "(no search)"
+        parts.append(
+            f"\n---\n\n## {n}. {row['id']} ({row['kind'].strip().lower()})\n\n"
+            f"**Question:** {row['question']}\n\n**Reference answer:** {row['reference_answer']}\n\n"
+            f"**Agent answer:**\n\n```text\n{record['raw_answer']}\n```\n\n"
+            f"<details><summary>Passages the agent retrieved</summary>\n\n```text\n{evidence}\n```\n\n</details>\n"
+        )
+    LABEL_SHEET.write_text("".join(parts), encoding="utf-8")
+
+
+def load_human_labels(known_ids: set[str]) -> dict[str, dict]:
+    labels: dict[str, dict] = {}
+    if not HUMAN_LABELS.is_file():
+        return labels
+    with HUMAN_LABELS.open(newline="", encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            id_ = (r.get("id") or "").strip()
+            correct, supported = (r.get("correct") or "").strip(), (r.get("supported") or "").strip()
+            if id_ in known_ids and correct in ("0", "1") and supported in ("0", "1"):
+                labels[id_] = {"correct": int(correct), "supported": int(supported)}
+    return labels
+
+
+# --------------------------------------------------------------------------
+# 7. The LLM judge and its agreement with you
+# --------------------------------------------------------------------------
+
+def judge_one(judge, rubric: str, row: dict, record: dict) -> dict:
+    searches = [c for c in record["tool_calls"] if c["tool"] == "search"]
+    evidence = "\n\n".join(f"Search: {c['args'].get('query', '')}\n{c['result']}" for c in searches) or "(no search)"
+    unanswerable = row["kind"].strip().lower() == "unanswerable"
+    prompt = (
+        f"{rubric.strip()}\n\n=== CASE ===\n"
+        f"Question: {row['question']}\n"
+        f"The documents {'do NOT answer this question' if unanswerable else 'answer this question'}.\n"
+        f"Reference answer: {row['reference_answer']}\n\n"
+        f"Passages the assistant retrieved:\n{evidence}\n\n"
+        f"Assistant's answer:\n{record['raw_answer']}\n\n"
+        "=== END OF CASE ===\nGive a short reason first, then correct and supported."
+    )
+    verdict = judge.invoke(prompt)
+    return {"correct": int(bool(verdict.correct)), "supported": int(bool(verdict.supported)), "reason": verdict.reason}
+
+
+def judge_stage(rows: list[dict], records: dict[str, dict]) -> dict[str, dict]:
+    from pydantic import BaseModel, Field
+
+    from langchain_google_genai import ChatGoogleGenerativeAI
+
+    from api_key import load_api_key
+
+    class Verdict(BaseModel):
+        reason: str = Field(description="One or two sentences: what decides the two verdicts.")
+        correct: bool = Field(description="Right against the reference answer, or a proper refusal.")
+        supported: bool = Field(description="Every claim in the answer is in the retrieved passages.")
+
+    verdicts: dict[str, dict] = {}
+    if VERDICTS.is_file():
+        with VERDICTS.open(newline="", encoding="utf-8") as f:
+            for r in csv.DictReader(f):
+                verdicts[r["id"]] = {"correct": int(r["correct"]), "supported": int(r["supported"]), "reason": r["reason"]}
+    todo = [r for r in rows if r["id"] in records and r["id"] not in verdicts]
+    if todo:
+        load_api_key()
+        judge = ChatGoogleGenerativeAI(model=JUDGE_MODEL, max_retries=6).with_structured_output(Verdict)
+        rubric = RUBRIC.read_text(encoding="utf-8")
+        print(f"\nThe judge ({JUDGE_MODEL}) grades {len(todo)} answer(s).", file=sys.stderr)
+        for row in todo:
+            try:
+                verdicts[row["id"]] = judge_one(judge, rubric, row, records[row["id"]])
+            except Exception as error:
+                print(f"  judge failed on {row['id']}: {type(error).__name__}: {str(error)[:200]}", file=sys.stderr)
+                continue
+            with VERDICTS.open("w", newline="", encoding="utf-8") as f:
+                writer = csv.DictWriter(f, fieldnames=["id", "correct", "supported", "reason"])
+                writer.writeheader()
+                writer.writerows({"id": i, **v} for i, v in verdicts.items())
+            print(f"  judged {row['id']}", file=sys.stderr)
+    return verdicts
+
+
+def kappa(pairs: list[tuple[int, int]]) -> float | None:
+    n = len(pairs)
+    observed = sum(a == b for a, b in pairs) / n
+    a1, b1 = sum(a for a, _ in pairs) / n, sum(b for _, b in pairs) / n
+    expected = a1 * b1 + (1 - a1) * (1 - b1)
+    return None if expected == 1 else round((observed - expected) / (1 - expected), 3)
+
+
+def agreement(labels: dict[str, dict], verdicts: dict[str, dict]) -> dict:
+    shared = sorted(i for i in labels if i in verdicts)
+    out: dict = {"answers_graded_by_both": len(shared)}
+    for field in ("correct", "supported"):
+        pairs = [(labels[i][field], verdicts[i][field]) for i in shared]
+        if not pairs:
+            continue
+        out[field] = {
+            "agree": sum(a == b for a, b in pairs),
+            "of": len(pairs),
+            "rate": round(sum(a == b for a, b in pairs) / len(pairs), 3),
+            "cohen_kappa": kappa(pairs),
+            "human_1_judge_0": [i for i in shared if labels[i][field] == 1 and verdicts[i][field] == 0],
+            "human_0_judge_1": [i for i in shared if labels[i][field] == 0 and verdicts[i][field] == 1],
+        }
+    return out
+
+
+def rate(items: list[dict], field: str) -> dict:
+    return {"n": len(items), "yes": sum(i[field] for i in items), "rate": round(sum(i[field] for i in items) / len(items), 3)} if items else {"n": 0}
+
+
+def grade_summary(rows: list[dict], grades: dict[str, dict]) -> dict:
+    """Correct and supported rates by kind, for one set of grades (the judge's or yours)."""
+    kinds = {r["id"]: r["kind"].strip().lower() for r in rows}
+    out = {}
+    for label, wanted in (("answerable", lambda k: k != "unanswerable"), ("unanswerable", lambda k: k == "unanswerable")):
+        mine = [g for i, g in grades.items() if i in kinds and wanted(kinds[i])]
+        out[label] = {"correct": rate(mine, "correct"), "supported": rate(mine, "supported")}
+    return out
+
+
+# --------------------------------------------------------------------------
+# 8. Put it together
+# --------------------------------------------------------------------------
+
+def end_to_end_stage(redo: bool) -> None:
+    rows = read_questions()
+    records = answers_stage(rows, redo)
+    if not records:
+        return
+    checks = code_checks(rows, records)
+    write_answers_csv(checks, records, rows)
+    write_label_sheet(rows, records)
+    labels = load_human_labels(set(records))
+    summary: dict = {"model": next(iter(records.values()))["model"], "code_checks": code_summary(checks), "cost": cost_summary(checks),
+                     "human_graded": len(labels)}
+    if labels:
+        summary["human_grades"] = grade_summary(rows, labels)
+
+    if len(labels) < MIN_LABELS:
+        print(f"\nJudge not run yet: eval/human_labels.csv has {len(labels)} usable grades, {MIN_LABELS} are needed first "
+              f"(read eval/label_sheet.md). That way you grade before you see any verdict.")
+    elif not RUBRIC.is_file():
+        print(f"\nJudge not run yet: write your rubric in {RUBRIC.relative_to(ROOT)} first.")
+    else:
+        verdicts = judge_stage(rows, records)
+        summary["judge_model"] = JUDGE_MODEL
+        summary["judge_grades"] = grade_summary(rows, verdicts)
+        summary["judge_vs_human"] = agreement(labels, verdicts)
+    E2E_SUMMARY.write_text(json.dumps(summary, indent=2))
+    print_end_to_end(summary)
+
+
+def print_end_to_end(summary: dict) -> None:
+    code, cost = summary["code_checks"], summary["cost"]
+    a, u = code["answerable"], code["unanswerable"]
+    print(f"\nEnd-to-end ({summary['model']}, {cost['questions']} questions)")
+    print(f"  answerable ({a['questions']}): valid citations only {a['answers_with_a_valid_citation_and_no_invalid_one']}, "
+          f"unverified citation {a['answers_with_an_unverified_citation']}, no citation {a['answers_without_any_citation']}, "
+          f"look like a refusal {a['answers_that_look_like_a_refusal'] or 'none'}")
+    print(f"  what the agent retrieved, answerable: {a['agent_retrieval']}")
+    print(f"  unanswerable ({u['questions']}): refused {u['refused']}, not refused {u['not_refused'] or 'none'}")
+    print(f"  cost per question: {cost['seconds']['median']} s median ({cost['seconds']['p90']} s p90), "
+          f"{cost['input_tokens']['mean']:.0f} tokens in and {cost['output_tokens']['mean']:.0f} out on average, "
+          f"{cost['searches']['mean']} searches")
+    for key, title in (("judge_grades", "judge"), ("human_grades", "you")):
+        if key in summary:
+            g = summary[key]
+            print(f"  {title}: answerable correct {g['answerable']['correct'].get('yes', 0)}/{g['answerable']['correct']['n']}, "
+                  f"unanswerable correct {g['unanswerable']['correct'].get('yes', 0)}/{g['unanswerable']['correct']['n']}, "
+                  f"supported {g['answerable']['supported'].get('yes', 0) + g['unanswerable']['supported'].get('yes', 0)}/"
+                  f"{g['answerable']['supported']['n'] + g['unanswerable']['supported']['n']}")
+    if "judge_vs_human" in summary:
+        for field in ("correct", "supported"):
+            d = summary["judge_vs_human"].get(field)
+            if d:
+                print(f"  judge agrees with you on {field}: {d['agree']}/{d['of']} (kappa {d['cohen_kappa']}); "
+                      f"you 1 / judge 0: {d['human_1_judge_0'] or 'none'}; you 0 / judge 1: {d['human_0_judge_1'] or 'none'}")
+    print(f"\nWrote {ANSWERS.relative_to(ROOT)}, {ANSWERS_CSV.relative_to(ROOT)}, {LABEL_SHEET.relative_to(ROOT)}, "
+          f"{E2E_SUMMARY.relative_to(ROOT)}")
+
 
 def main() -> int:
     retrieval_stage()
-    print("\nEnd-to-end evaluation (agent answers, checks, judge): not written yet.")
+    end_to_end_stage(redo="--redo" in sys.argv)
     return 0
 
 
