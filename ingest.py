@@ -140,10 +140,14 @@ def extract_statute(doc_id: str, xml_path: Path) -> list[dict]:
     head = norms[0].find("metadaten")
     version = "; ".join(" ".join(s.itertext()).strip() for s in head.iter("standkommentar"))
     build = root.get("builddate", "")[:8]
-    units, inside = [], first is None
+    units, inside, heading = [], first is None, ""
     for norm in norms[1:]:
         meta = norm.find("metadaten")
         enbez = (meta.findtext("enbez") or "").strip()
+        outline = meta.find("gliederungseinheit")
+        if outline is not None and not enbez:  # heading entry (Untertitel, Kapitel, Abschnitt …)
+            heading = " ".join(f"{outline.findtext('gliederungsbez') or ''} {outline.findtext('gliederungstitel') or ''}".split())
+            continue
         if enbez == first:
             inside = True
         if inside and enbez.startswith(("§", "Anlage", "Anhang")):
@@ -155,6 +159,7 @@ def extract_statute(doc_id: str, xml_path: Path) -> list[dict]:
                     "doc_type": "statute",
                     "location": f"{enbez} {doc_id}",
                     "title": (meta.findtext("titel") or "").strip(),
+                    "section": heading if enbez.startswith("§") else enbez,
                     "text": body,
                     "version": version,
                     "retrieved": build,
@@ -185,9 +190,14 @@ def download_judgment(file_id: str, folder: Path = RAW / "bgh") -> Path:
     return dest
 
 
-def _rn_blocks(section: ET.Element) -> list[tuple[str | None, str]]:
-    """Split a judgment section into (Randnummer, text). Rn. sit in <dl class="RspDL"><dt>n</dt><dd>…</dd>."""
-    blocks: list[tuple[str | None, str]] = []
+def _rn_blocks(section: ET.Element) -> list[tuple[str | None, str, str]]:
+    """Split a judgment section into (Randnummer, text, part). Rn. sit in <dl class="RspDL"><dt>n</dt><dd>…</dd>.
+
+    `part` is the last Roman heading seen ("I.", "II." …). In BGH Revision judgments,
+    part I of the Entscheidungsgründe summarises the lower court; part II onward is the BGH's own reasoning.
+    """
+    blocks: list[tuple[str | None, str, str]] = []
+    part = ""
     # <dl> nested inside a <dd> (quoted clauses) is already part of its parent's text
     nested = {id(d) for dd in section.iter("dd") for d in dd.iter("dl")}
     for dl in section.iter("dl"):
@@ -200,20 +210,24 @@ def _rn_blocks(section: ET.Element) -> list[tuple[str | None, str]]:
         text = clean(_render(dd))
         if not text:
             continue
+        if not rn and re.fullmatch(r"[IVX]+\.", text):
+            part = text
+            continue
         lines = text.split("\n")
         if not rn and len(text.split()) < 25 and all(len(line.split()) <= 3 for line in lines):
             continue  # judges' signatures
         if not rn and blocks and blocks[-1][0]:
-            blocks[-1] = (blocks[-1][0], blocks[-1][1] + "\n" + text)  # unnumbered paragraph continues the Rn.
+            prev_rn, prev_text, prev_part = blocks[-1]
+            blocks[-1] = (prev_rn, prev_text + "\n" + text, prev_part)  # unnumbered paragraph continues the Rn.
             continue
-        blocks.append((rn or None, text))
+        blocks.append((rn or None, text, part))
     if not blocks:
         text = clean(_render(section))
         if text:
-            blocks.append((None, text))
+            blocks.append((None, text, ""))
     # sections without Rn. (Leitsatz, Tenor) come as several <dl>: keep them as one unit
-    if all(rn is None for rn, _ in blocks) and len(blocks) > 1:
-        blocks = [(None, "\n".join(t for _, t in blocks))]
+    if all(rn is None for rn, _, _ in blocks) and len(blocks) > 1:
+        blocks = [(None, "\n".join(t for _, t, _ in blocks), "")]
     return blocks
 
 
@@ -230,13 +244,15 @@ def extract_judgment(xml_path: Path) -> list[dict]:
         section = root.find(f".//{tag}")
         if section is None or not keep:
             continue
-        for rn, text in _rn_blocks(section):
+        for rn, text, part in _rn_blocks(section):
             units.append({
                 "doc_id": doc_id,
                 "doc_type": "judgment",
                 "location": f"{doc_id}, Rn. {rn}" if rn else f"{doc_id}, {label}",
                 "title": f"{doktyp} vom {date_iso}: {headline}",
                 "section": label,
+                "part": part,
+                "rn": rn or "",
                 "text": text,
                 "decision_date": date_iso,
                 "url": f"https://www.rechtsprechung-im-internet.de/jportal/?quelle=jlink&docid={xml_path.stem.removeprefix('jb-')}&psml=bsjrsprod.psml",
