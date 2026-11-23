@@ -32,12 +32,12 @@ QUERY_CACHE = ix.INDEX_DIR / "query_vectors.json"
 CANDIDATES = 50   # how deep each ranking goes before fusion
 RRF_K = 60        # standard reciprocal-rank-fusion constant
 
-# Words in a question that name a work in the corpus -> its doc_id.
+# Words in a question that name an author or work -> the author (the first word of a chunk's source).
 AUTHOR_WORDS = {
-    "hobbes": "hobbes_leviathan", "leviathan": "hobbes_leviathan",
-    "locke": "locke_second-treatise", "second treatise": "locke_second-treatise",
-    "mill": "mill_on-liberty", "on liberty": "mill_on-liberty",
-    "wollstonecraft": "wollstonecraft_vindication", "vindication": "wollstonecraft_vindication",
+    "hobbes": "hobbes", "leviathan": "hobbes",
+    "locke": "locke", "second treatise": "locke",
+    "mill": "mill", "on liberty": "mill",
+    "wollstonecraft": "wollstonecraft", "vindication": "wollstonecraft",
 }
 
 STOPWORDS = set("""a about above after again against all am an and any are as at be because been before
@@ -68,7 +68,7 @@ class Searcher:
         self.texts = data["documents"]
         self.metas = data["metadatas"]
         self.vectors = np.asarray(data["embeddings"], dtype=np.float32)
-        self.doc_ids = np.array([m["doc_id"] for m in self.metas])
+        self.authors = np.array([m["source"].split(",")[0].lower() for m in self.metas])
         # BM25 over chunk text plus its citation, so author and chapter words count too.
         self.tokens = [tokenize(f"{m['source']} {m['chapter']} {t}") for m, t in zip(self.metas, self.texts)]
         self.lengths = np.array([len(t) for t in self.tokens], dtype=np.float32)
@@ -112,16 +112,16 @@ class Searcher:
         if design.endswith("_filter"):
             named = self.named_docs(query)
             if named:
-                allowed = np.isin(self.doc_ids, list(named))
+                allowed = np.isin(self.authors, list(named))
 
         cosine = self.vector_scores(query)
         named = sorted(self.named_docs(query))
         if design == "per_author" and len(named) >= 2:
-            per_doc = [[i for i in np.argsort(-cosine) if self.doc_ids[i] == doc][:k] for doc in named]
+            per_doc = [[i for i in np.argsort(-cosine) if self.authors[i] == doc][:k] for doc in named]
             interleaved = [i for group in zip(*per_doc) for i in group]
             ranking = interleaved[:k]
         elif design == "per_author":
-            mask = np.isin(self.doc_ids, named) if named else allowed
+            mask = np.isin(self.authors, named) if named else allowed
             ranking = [i for i in np.argsort(-cosine) if mask[i]][:k]
         elif design.startswith("vector"):
             ranking = [i for i in np.argsort(-cosine) if allowed[i]][:k]

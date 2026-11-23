@@ -102,7 +102,43 @@ def download_all() -> dict[str, Path]:
     paths = {}
     for name, work in WORKS.items():
         paths[name] = download(work.get("file", name), work["url"])
+    write_excerpt(paths["wollstonecraft_vindication"], ADDITION["section"], ADDITION["path"], ADDITION["source"])
     return paths
+
+
+# The document added later with add_document, to answer an "unanswerable" question:
+# Wollstonecraft's chapter XII, On National Education, saved as a file of its own.
+ADDITION = {
+    "section": "chapter-12",
+    "path": CORPUS_DIR / "wollstonecraft_ch12.xhtml",
+    "source": WORKS["wollstonecraft_vindication"]["source"],
+}
+
+
+def write_excerpt(book: Path, section_id: str, out: Path, source: str) -> Path:
+    """Save one chapter of a book as a small XHTML file whose <title> is its citation."""
+    if out.exists():
+        return out
+    soup = BeautifulSoup(book.read_bytes(), "html.parser")
+    section = soup.find("section", id=section_id)
+    out.write_text(
+        f'<?xml version="1.0" encoding="utf-8"?>\n<html xmlns="http://www.w3.org/1999/xhtml" '
+        f'xmlns:epub="http://www.idpf.org/2007/ops"><head><title>{source}</title></head>'
+        f"<body>{section}</body></html>\n",
+        encoding="utf-8",
+    )
+    log(f"  excerpt   {out.name} ({section_id} of {book.name})")
+    return out
+
+
+def describe_file(path: Path) -> tuple[str, str, list[str] | None]:
+    """(doc_id, source, chapters) for a file: from WORKS if it is one of ours, else from its <title>."""
+    for name, work in WORKS.items():
+        if path.name == f"{work.get('file', name)}.xhtml" and work["in_main_index"]:
+            return name, work["source"], work["chapters"]
+    soup = BeautifulSoup(path.read_bytes(), "html.parser")
+    title = clean(soup.title.get_text()) if soup.title else path.stem
+    return path.stem, title, None
 
 
 # --------------------------------------------------------------------------- 2. extract
