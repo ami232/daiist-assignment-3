@@ -143,9 +143,13 @@ def heading_of(section: Tag) -> str:
 def block_text(block: Tag) -> str:
     for ref in block.select('a[epub\\:type~="noteref"]'):  # footnote markers like the "2" in "law2"
         ref.decompose()
+    for br in block.find_all("br"):  # line breaks in verse become spaces
+        br.replace_with(" ")
+    # get_text() with no separator: a separator would put a space before punctuation after
+    # italics ("civitas ." instead of "civitas."), which breaks exact-quote checks.
     if block.name in ("ol", "ul"):
-        return " ".join(clean(li.get_text(" ")) for li in block.find_all("li"))
-    return clean(block.get_text(" "))
+        return " ".join(clean(li.get_text()) for li in block.find_all("li"))
+    return clean(block.get_text())
 
 
 def extract(path: Path, doc_id: str, source: str, chapters: list[str] | None = None) -> list[Chapter]:
