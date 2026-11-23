@@ -61,7 +61,52 @@ One search result (from `check.py`, with design A, before I switched to B):
 
 Subagent `.claude/agents/corpus-researcher.md`, with only the search tool (`tools: mcp__corpus__search`). Instructions: always search before answering, run a second search with other wording if needed, answer only from the passages and cite `[source | location]`, say "I don't know" if the corpus does not cover it, 1-4 sentences plus citations.
 
-Transcript: not available. The subagent file is written, but I could not run it from my editor: Claude Code is not installed on my computer and the MCP server did not start from the VS Code Copilot chat, so I have no transcript to paste. The same `search` tool is what the agent in `agent.py` uses in all the results of this report.
+Transcript, from Claude Code in the VS Code terminal. The subagent is `corpus-researcher` (`.claude/agents/corpus-researcher.md`) and its only tool is the corpus MCP `search`. Each search asked me for approval; I approved. Parts I left out are marked with [...].
+
+```
+> Use the corpus-researcher subagent to answer: What does the Eliquis SmPC say about taking
+  apixaban together with strong CYP3A4 and P-gp inhibitors?
+
+● corpus-researcher(Eliquis CYP3A4/P-gp interactions)
+  Backgrounded agent
+
+Tool use · from the corpus-researcher agent
+corpus — Search Tool: (MCP)
+query: apixaban strong inhibitors of both CYP3A4 and P-gp azole antimycotics HIV protease inhibitors not recommended
+Do you want to proceed?  1. Yes
+
+[...]
+query: diltiazem naproxen clarithromycin moderate inhibitors apixaban no dose adjustment
+[...]
+
+● Agent "Eliquis CYP3A4/P-gp interactions" finished · 1m 31s
+
+The Eliquis SmPC says apixaban is not recommended with strong inhibitors of both CYP3A4 and
+P-gp. It does not go as far as a contraindication. Taking them together roughly doubles
+apixaban levels. The subagent ran five corpus searches and quoted the SmPC directly; every
+point below comes from the Eliquis SmPC in the corpus.
+
+[...]
+
+## Drugs that are not strong inhibitors of both pathways (section 4.5, pp. 11-12)
+> "Active substances which are not considered strong inhibitors of both CYP3A4 and P-gp, (e.g.,
+  amiodarone, clarithromycin, diltiazem, fluconazole, naproxen, quinidine, verapamil) are
+  expected to increase apixaban plasma concentration to a lesser extent. No dose adjustment for
+  apixaban is required when coadministered with agents that are not strong inhibitors of both
+  CYP3A4 and P-gp."
+
+| Drug | How it inhibits (SmPC wording) | AUC | Cmax |
+| Diltiazem 360 mg once daily       | Moderate CYP3A4, weak P-gp | x1.4 | x1.3 |
+| Naproxen 500 mg single dose       | P-gp only, not CYP3A4      | x1.5 | x1.6 |
+| Clarithromycin 500 mg twice daily | P-gp + strong CYP3A4       | x1.6 | x1.3 |
+
+## Why these drugs matter (section 5.2, pp. 32-33)
+> "Apixaban is metabolised mainly via CYP3A4/5 with minor contributions from CYP1A2, 2C8, 2C9,
+  2C19, and 2J2 ... Apixaban is a substrate of transport proteins, P-gp and breast cancer
+  resistance protein (BCRP)."
+```
+
+This agrees with the answer of the main agent for q06 (apixaban is not recommended with strong inhibitors of both CYP3A4 and P-gp, about a 2-fold increase in exposure).
 
 ## Adding a document
 
