@@ -13,8 +13,11 @@ resumable: ids already there are skipped. Then code checks on each answer
 (refusal phrase, citations present in that run's search results, expected
 source cited, BOE notice) -> eval/checks.csv.
 
-Stage 3 (not written yet, waits for the student's rubric): LLM judge and
-agreement with eval/human_labels.csv.
+Stage 3, judge: gemini-3.5-flash (stronger than the agent) grades each answer
+with the student's rubric (eval/judge_rubric.md), given the question, its kind,
+the reference answer and the full text of every retrieved fragment ->
+eval/judge.csv (resumable). Then agreement with eval/human_labels.csv (% and
+Cohen's kappa per column) and the totals -> eval/summary.json.
 
 Started from session 10's 07-own-harness/evaluate.py.
 """
@@ -37,6 +40,11 @@ RETRIEVAL_CSV = EVAL_DIR / "retrieval.csv"
 RETRIEVAL_SUMMARY = EVAL_DIR / "retrieval_summary.csv"
 ANSWERS = EVAL_DIR / "answers.jsonl"
 CHECKS_CSV = EVAL_DIR / "checks.csv"
+RUBRIC = EVAL_DIR / "judge_rubric.md"
+JUDGE_CSV = EVAL_DIR / "judge.csv"
+HUMAN_LABELS = EVAL_DIR / "human_labels.csv"
+SUMMARY_JSON = EVAL_DIR / "summary.json"
+JUDGE_MODEL = "gemini-3.5-flash"   # a stronger model than the agent's, so it doesn't share its blind spots
 KS = (1, 3, 5)
 PAUSE = 4            # seconds between questions: stays under the free tier's requests-per-minute
 
@@ -207,6 +215,121 @@ def summarise_checks(rows: list[dict]) -> dict:
     }
 
 
+# --------------------------------------------------------------------------- #
+# Judge                                                                        #
+# --------------------------------------------------------------------------- #
+
+def evidence(answer: dict) -> str:
+    """Every passage the agent's searches returned, once each, labelled [SOURCE, Location]; BOE notice dropped."""
+    passages: dict[str, str] = {}
+    for output in answer["retrieved"]:
+        for block in output.split("\n\n---\n\n"):
+            block = block.strip()
+            if not block.startswith("[") or "Cita: " not in block:
+                continue                            # the BOE notice, or "no results"
+            head, _, rest = block.partition("\n")
+            label = head.split("Cita: ", 1)[1]      # "[LETA, Artículo 1] · Ley 20/2007 … · texto consolidado a …"
+            text = f"{label}\n{rest}"               # whole text as key: parts of one article share label and path
+            passages.setdefault(text, text)
+    return "\n\n---\n\n".join(passages.values()) or "(no fragments were retrieved)"
+
+
+JUDGE_INPUT = """# Inputs
+
+Question id: {id}
+Category: {kind}
+
+Question:
+{question}
+
+Reference answer:
+{reference}
+
+Retrieved fragments (everything the agent's searches returned):
+{evidence}
+
+Agent's answer:
+{answer}"""
+
+
+def judge_answers(questions: list[dict], answers: dict[str, dict]) -> dict[str, dict]:
+    """Grade every answered question not yet in judge.csv. Returns all verdicts, by id."""
+    from langchain_google_genai import ChatGoogleGenerativeAI
+    from pydantic import BaseModel, Field
+
+    from api_key import load_api_key
+
+    class Verdict(BaseModel):
+        # notes first, so the model gives its reasons before the scores
+        id: str = Field(description="The question id.")
+        notes: str = Field(description="The reason: wrong or unsupported claims, missing reference items, "
+                                       "rule 3/4 phrasing problems. One or two sentences.")
+        correct: int = Field(ge=0, le=1, description="1 or 0, per the 'correct' section of the rubric.")
+        supported: int = Field(ge=0, le=1, description="1 or 0, per the 'supported' section of the rubric.")
+
+    done = read_csv(JUDGE_CSV)
+    todo = [q for q in questions if q["id"] in answers and q["id"] not in done]
+    if todo:
+        load_api_key()
+        judge = ChatGoogleGenerativeAI(model=JUDGE_MODEL, temperature=0, max_retries=6).with_structured_output(Verdict)
+        rubric = RUBRIC.read_text(encoding="utf-8")
+        print(f"  {len(done)} already judged, {len(todo)} to go (model {JUDGE_MODEL})")
+        for n, q in enumerate(todo, 1):
+            a = answers[q["id"]]
+            prompt = rubric + "\n\n" + JUDGE_INPUT.format(
+                id=q["id"], kind=q["kind"], question=q["question"], reference=q["reference_answer"],
+                evidence=evidence(a), answer=a["answer"])
+            for attempt in range(1, 4):
+                try:
+                    verdict = judge.invoke(prompt)
+                    break
+                except Exception as error:  # noqa: BLE001 - rate limit, overload or network: wait, else resume later
+                    if attempt < 3:
+                        wait = 65 if any(code in str(error) for code in ("429", "503")) else 10
+                        print(f"  {q['id']}: {type(error).__name__}: {str(error)[:60]}… waiting {wait}s")
+                        time.sleep(wait)
+                        continue
+                    print(f"  {q['id']}: judge stopped ({type(error).__name__}: {str(error)[:200]}). Re-run to resume.")
+                    return done
+            done[q["id"]] = {"id": q["id"], "kind": q["kind"], "correct": str(verdict.correct),
+                             "supported": str(verdict.supported), "notes": verdict.notes}
+            write_csv(JUDGE_CSV, [done[x["id"]] for x in questions if x["id"] in done])
+            print(f"  {q['id']} {q['kind']:<12} correct {verdict.correct}  supported {verdict.supported}")
+            if n < len(todo):
+                time.sleep(PAUSE)
+    return done
+
+
+def cohen_kappa(a: list[int], b: list[int]) -> float | None:
+    """Agreement beyond chance between two raters on the same items (None when chance agreement is total)."""
+    n = len(a)
+    observed = sum(x == y for x, y in zip(a, b)) / n
+    expected = sum((a.count(c) / n) * (b.count(c) / n) for c in set(a) | set(b))
+    return None if expected == 1 else round((observed - expected) / (1 - expected), 3)
+
+
+def agreement(human: dict[str, dict], judge: dict[str, dict]) -> dict:
+    ids = [i for i in human if i in judge]
+    result = {"n": len(ids)}
+    for column in ("correct", "supported"):
+        h = [int(human[i][column]) for i in ids]
+        j = [int(judge[i][column]) for i in ids]
+        result[column] = {
+            "agreement": round(sum(x == y for x, y in zip(h, j)) / len(ids), 3) if ids else None,
+            "kappa": cohen_kappa(h, j) if ids else None,
+            "human_1s": sum(h), "judge_1s": sum(j),
+            "disagree": [f"{i} (human {x}, judge {y})" for i, x, y in zip(ids, h, j) if x != y],
+        }
+    return result
+
+
+def read_csv(path: Path) -> dict[str, dict]:
+    if not path.is_file():
+        return {}
+    with path.open(newline="", encoding="utf-8") as f:
+        return {r["id"]: r for r in csv.DictReader(f) if (r.get("id") or "").strip()}
+
+
 def write_grading_sheet(questions: list[dict], answers: dict[str, dict]) -> None:
     """eval/answers.md: question, reference and answer side by side, for grading by hand (no judge verdicts)."""
     lines = ["# Respuestas del agente, para calificar a mano",
@@ -222,6 +345,19 @@ def write_grading_sheet(questions: list[dict], answers: dict[str, dict]) -> None
                   f"**Fragmentos recuperados:** {', '.join(a['retrieved_citations']) or '(ninguno)'}", "",
                   "**Respuesta:**", "", *[f"> {line}" for line in a["answer"].splitlines()], "", "---", ""]
     (EVAL_DIR / "answers.md").write_text("\n".join(lines), encoding="utf-8")
+
+
+def read_retrieval() -> list[dict]:
+    """eval/retrieval.csv with numbers back as numbers, for summarise()."""
+    with RETRIEVAL_CSV.open(newline="", encoding="utf-8") as f:
+        rows = list(csv.DictReader(f))
+    for r in rows:
+        for key in r:
+            if key.startswith(("hit@", "words@")):
+                r[key] = int(r[key])
+            elif key == "recall@5":
+                r[key] = float(r[key])
+    return rows
 
 
 def write_csv(path: Path, rows: list[dict]) -> None:
@@ -260,7 +396,52 @@ def main() -> None:
     for key, value in summarise_checks(rows).items():
         print(f"  {key:<24} {value}")
     print(f"\nPer answer: {CHECKS_CSV.relative_to(ROOT)}; answers and traces: {ANSWERS.relative_to(ROOT)}")
-    print("\n=== Judge and human agreement ===\n\nNot implemented yet: waits for the rubric (tasks.md 6.3).")
+    checks = summarise_checks(rows)
+
+    print("\n=== Judge ===\n")
+    verdicts = judge_answers(questions, answers)
+    judged = [verdicts[q["id"]] for q in questions if q["id"] in verdicts]
+    human = read_csv(HUMAN_LABELS)
+    agree = agreement(human, verdicts)
+    print(f"\n=== Judge vs your grades ({agree['n']} answers graded by both) ===\n")
+    for column in ("correct", "supported"):
+        a = agree[column]
+        print(f"  {column:<10} agreement {a['agreement']}  kappa {a['kappa']}  "
+              f"(1s: you {a['human_1s']}, judge {a['judge_1s']})")
+        for line in a["disagree"]:
+            print(f"    disagree: {line}")
+
+    by_id = {r["id"]: r for r in rows}
+    summary = {
+        "agent_model": __import__("agent").MODEL,
+        "judge_model": JUDGE_MODEL,
+        "shipped_design": rag.SHIPPED, "k": rag.SHIPPED_K,
+        "retrieval": next((s for s in summarise(read_retrieval()) if s["design"] == rag.SHIPPED), None),
+        "code_checks": checks,
+        "judge": {
+            "judged": len(judged),
+            "correct": sum(v["correct"] == "1" for v in judged),
+            "supported": sum(v["supported"] == "1" for v in judged),
+            "unsupported": sum(v["supported"] == "0" for v in judged),
+            "correct_and_supported": sum(v["correct"] == "1" and v["supported"] == "1" for v in judged),
+            "correct_answerable": sum(v["correct"] == "1" for v in judged if v["kind"] != "unanswerable"),
+            "correct_refusals": sum(by_id[v["id"]]["outcome"] == "correct_refusal" and v["correct"] == "1"
+                                    for v in judged if v["id"] in by_id),
+            "wrong_refusals": sum(by_id[v["id"]]["outcome"] == "wrong_refusal" for v in judged if v["id"] in by_id),
+        },
+        "human": {
+            "graded": len(human),
+            "correct": sum(h["correct"] == "1" for h in human.values()),
+            "supported": sum(h["supported"] == "1" for h in human.values()),
+        },
+        "agreement": agree,
+    }
+    SUMMARY_JSON.write_text(json.dumps(summary, indent=2, ensure_ascii=False), encoding="utf-8")
+    print(f"\n=== Summary ({SUMMARY_JSON.relative_to(ROOT)}) ===\n")
+    for key, value in summary["judge"].items():
+        print(f"  {key:<24} {value}")
+    print(f"  {'mean_tokens':<24} {checks['mean_tokens']}")
+    print(f"  {'median_seconds':<24} {checks['median_seconds']}")
     if missing:
         raise SystemExit(f"\n{missing} questions still unanswered (quota or network). Run `main.py evaluate` again.")
 

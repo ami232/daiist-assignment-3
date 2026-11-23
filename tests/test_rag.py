@@ -253,3 +253,35 @@ def test_valid_answers_and_refusals_pass_untouched():
 
     assert _run_scripted(["Sí [LETA, Artículo 1]."])["citation_guardrail"] is None
     assert _run_scripted([agent.REFUSAL])["citation_guardrail"] is None
+
+
+# --- judge helpers ------------------------------------------------------------ #
+
+def test_cohen_kappa():
+    import evaluate
+
+    assert evaluate.cohen_kappa([1, 1, 0, 0], [1, 1, 0, 0]) == 1.0
+    assert evaluate.cohen_kappa([1, 0, 1, 0], [0, 1, 0, 1]) == -1.0
+    assert evaluate.cohen_kappa([1, 1, 1], [1, 1, 1]) is None          # no variation: kappa undefined
+    assert evaluate.cohen_kappa([1, 1, 1, 0], [1, 1, 0, 0]) == 0.5
+
+
+def test_evidence_dedupes_passages_and_drops_the_notice():
+    import evaluate
+
+    block = "[1] Cita: [LETA, Artículo 1] · Ley · texto consolidado a 2 de septiembre de 2026\nTexto del art. 1\nBOE: u"
+    output = block + "\n\n---\n\n" + rag.BOE_NOTICE
+    text = evaluate.evidence({"retrieved": [output, output.replace("[1]", "[3]")]})
+    assert text.startswith("[LETA, Artículo 1] · Ley") and text.count("Texto del art. 1") == 1
+    assert rag.BOE_NOTICE not in text
+    assert evaluate.evidence({"retrieved": []}) == "(no fragments were retrieved)"
+
+
+def test_evidence_keeps_every_part_of_a_split_article():
+    import evaluate
+
+    path = "Ubicación en la norma: TÍTULO I Obligación de documentar las operaciones > CAPÍTULO II Facturas"
+    parts = [f"[{n}] Cita: [RF, Artículo 6] · RD · texto consolidado a 31 de marzo de 2026\n{path}\nparte {n}/4: texto {n}"
+             for n in range(1, 5)]
+    text = evaluate.evidence({"retrieved": ["\n\n---\n\n".join(parts)]})
+    assert all(f"texto {n}" in text for n in range(1, 5))

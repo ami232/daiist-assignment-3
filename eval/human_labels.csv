@@ -1,1 +1,32 @@
 id,correct,supported,notes
+q01,1,1,"Responde lo de 'ocasional' solo de forma implícita (exige habitualidad). LETA art. 1 no recuperado; no afecta."
+q02,1,1,"Omite derechos generales del art. 4 (no discriminación, formación, cobro puntual), aunque la pregunta acotaba a descanso, conciliación y protección social."
+q03,1,1,
+q04,1,1,"Incompleta: falta que IT y AT/EP son de cobertura obligatoria para el TRADE, incluido el accidente in itinere (LGSS art. 317 no recuperado)."
+q05,1,1,
+q06,1,1,
+q07,0,1,"Omite 3 de 6 bonificaciones de la referencia: conciliación (art. 30), familiares colaboradores (art. 35) y cuidado de menor con cáncer (art. 38 quater), ninguno recuperado. Incluye la prórroga de la tarifa plana, que la pregunta excluía. Verificar el 75 % de Ceuta y Melilla contra el fragmento del art. 36."
+q08,1,1,
+q09,1,1,
+q10,1,1,"Incompleta: no menciona que se puede cambiar la base durante el año."
+q11,1,0,"Atribuye la deducción del 3 % a 'autónomos agrarios'; el art. 308 la limita a socios/administradores (art. 305.2 b y e). También habla de 'ingresos fiscalmente deducibles' en vez de rendimientos netos. Verificar contra el fragmento."
+q12,1,1,
+q13,1,1,
+q14,1,1,"Omite que el primer año no cuenta para las pérdidas del 10 % y no detalla otras causas (violencia de género, divorcio, pérdida de licencia)."
+q15,0,0,"Afirma que hay que emitir factura ordinaria si el cliente es empresario o la pide para un derecho fiscal. El RF permite factura simplificada en esos casos si incluye NIF y domicilio del destinatario (art. 7.2); el art. 4.3 no recoge esa exclusión. Lo de 400 € / 3.000 € es correcto."
+q16,1,1,"Añade la mención VERI*FACTU/QR; válido si figura en el fragmento del art. 6."
+q17,1,1,"No menciona que la obligación depende del desarrollo reglamentario de la Ley 56/2007."
+q18,1,1,
+q19,1,1,"Omite que la rectificativa va en una serie específica."
+q20,1,1,
+q21,1,1,
+q22,1,1,
+q23,1,1,
+q24,1,1,
+q25,0,1,"Rechazo indebido: se recuperó RGAT art. 29 (primer fragmento) y permitía dar el plazo de anotación (3 meses), la conservación en el domicilio fiscal y remitir a la normativa de cada impuesto."
+q26,1,1,
+q27,1,1,
+q28,1,1,
+q29,1,1,
+q30,1,1,
+q31,1,1,"No es un rechazo literal, pero no inventa el tramo y remite a la LPGE y a un profesional. No aclara que facturación no equivale a rendimiento neto."

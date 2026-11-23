@@ -1,0 +1,24 @@
+id,kind,correct,supported,notes
+q01,multi,1,1,The answer accurately reflects all requirements from the reference and correctly addresses the effect of occasional work using the retrieved fragments.
+q02,single,1,1,"The answer accurately addresses rest, work-life balance, and social protection based on the provided LETA fragments."
+q03,single,1,1,The answer accurately covers all basic duties and obligations from the reference and fragments.
+q04,multi,1,1,"The answer correctly addresses the conditions and main changes of being a TRADE based on the retrieved text. It omits mentioning mandatory coverage for temporary incapacity and occupational accidents/diseases, which was not included in the retrieved fragments."
+q05,single,1,1,The answer accurately describes the tarifa plana based on Article 38 ter of LETA and correctly explains that the exact amount is set by the Ley de Presupuestos Generales del Estado.
+q06,single,1,1,"The answer correctly confirms that the flat rate can be extended for 12 more months if earnings are below the SMI. It omits the secondary detail that if the second period spans two calendar years, the requirement must be met in each year."
+q07,multi,0,1,"The answer misses 3 of the 6 bonuses listed in the reference answer (hiring to reconcile family/work life, collaborating family members, and caring for a minor with cancer or serious illness) because those fragments were not retrieved."
+q08,single,1,1,"The answer is accurate, covers all main points from the reference, and is fully supported by the fragments."
+q09,unanswerable,1,1,The question is unanswerable from the provided fragments and the agent correctly issued the required refusal statement.
+q10,single,1,1,"The answer correctly explains how the contribution is calculated based on forecasted net income (general and reduced tables) and subsequent regularization. It omits mentioning that the contribution base can be modified throughout the year, which was not present in the retrieved fragments."
+q11,single,1,1,"The answer accurately explains the regularisation process, deadlines, and absence of surcharges, perfectly matching the reference answer and supported by the retrieved fragments."
+q12,single,1,1,"The answer accurately answers both parts of the question, matching the reference answer completely, and all factual claims are fully supported by the retrieved fragments."
+q13,single,1,1,The answer accurately covers all elements of the reference answer and is fully supported by the retrieved text.
+q14,multi,1,1,"The response accurately answers all parts of the question, matching the reference answer and fully supported by the retrieved fragments."
+q15,multi,1,1,The answer accurately reflects the general obligation to issue an invoice and the limits/conditions for using a simplified invoice (ticket) based on the retrieved fragments and matching the reference answer.
+q17,single,1,1,The answer correctly matches the reference answer and all claims are fully supported by the retrieved fragments.
+q18,single,1,1,"The answer accurately states both deadlines depending on whether the recipient is a particular or a professional, fully matching the reference and supported by Article 11."
+q20,multi,1,1,"The agent correctly answers both parts of the question based on the retrieved fragments, noting that the deadline is established in the General Tax Law."
+q24,single,1,1,"The answer directly answers the question, matching the reference answer, and all claims are fully supported by RGAT Artículo 19."
+q26,unanswerable,1,1,"The question is unanswerable from the provided fragments, and the agent correctly issued the standard refusal response."
+q27,unanswerable,1,1,"The question is unanswerable based on the provided fragments, and the agent correctly issued the standard refusal."
+q29,unanswerable,1,1,The agent correctly refused to answer using the standard refusal phrase for an unanswerable question.
+q30,unanswerable,1,1,The answer correctly uses the standard refusal phrase for an unanswerable question.

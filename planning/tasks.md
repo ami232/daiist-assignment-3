@@ -59,14 +59,14 @@
   - [x] 3.2 **Together**: chunk parameters chosen 2026-11-20: keep B `article` ≤400 words and A `fixed` 200/40. `main.py index` embedded both designs on 2026-11-20 (261 + 382 chunks; per-minute 429s waited out). _REQ-4.3, REQ-5_
   - [x] 3.3 **Claude**: retrieval part of `evaluate.py`: Hit@1/3/5, recall@5 and words-in-prompt per design → `eval/retrieval.csv` + `eval/retrieval_summary.csv`. Designs: A_fixed, B_article, C_article_hybrid. _REQ-6.1–6.2_
   - [ ] 3.4 **You**: shipped design chosen 2026-11-20: **B_article, k=5** (hit@5 1.00 like A, multi recall@5 0.88 vs 0.67; hybrid C worse on every metric). **Still yours:** write the justification in REPORT.md. _REQ-6.4_
-  - [ ] 3.5 **Claude**: confirm `index/` is under 90 MB and commit it. _REQ-5.6_
+  - [x] 3.5 **Claude**: confirm `index/` is under 90 MB and commit it (12.6 MB, commit 89ec7de). _REQ-5.6_
   - _Depends on: Phase 2 (test set frozen)_
 
 - [ ] **4. MCP server and subagent**
   - [x] 4.1 **Claude**: `server.py` `search` (shipped design, formatted citations, BOE notice), with real docstrings. Starts over MCP in ~2.5 s. _REQ-8.1, 8.4, 8.6_
   - [x] 4.2 **You**: already-indexed policy decided 2026-11-20: version-aware (same date → no-op; newer → replace; older → nothing). **Claude**: `add_document` via `index.index_file`, with path validation and error strings. _REQ-8.2–8.5_
   - [ ] 4.3 **Claude**: check the tools from Claude Code (`/mcp`) and confirm `check.py` step 3 passes. `check.py` passes all 4 steps (2026-11-20); `/mcp` check still to do. _REQ-8_
-  - [ ] 4.4 **Together**: write the description and instructions for `.claude/agents/corpus-researcher.md`. **You**: run it from Claude Code on a real question and paste the transcript into REPORT.md. _REQ-9_
+  - [x] 4.4 **Together**: write the description and instructions for `.claude/agents/corpus-researcher.md`. Claude drafted them on 2026-11-23 (Spanish; AGENTS.md rules restated inside, ≤4 searches, hand-back ready to relay). Smoke test the same day on a tarifa plana question: only `search` used, every sentence cited [LETA, Artículo 38 ter], date given, no calculation, BOE notice. Wording reviewed and approved by you on 2026-11-23. You ran it from Claude Code the same day (late *alta* question); the transcript, the 3 searches and the citation check are in REPORT.md › Tools and subagent. _REQ-9_
   - _Depends on: 3.4_
 
 - [ ] **5. Harness (`agent.py`)**
@@ -74,15 +74,15 @@
   - [x] 5.2 **Claude**: human approval middleware for `add_document`, auto-denied when there is no TTY. _REQ-10.2_
   - [x] 5.3 **Claude**: tool-call limit (≤4 searches, ≤8 model calls). _REQ-10.3_
   - [ ] 5.4 **You**: guardrail chosen 2026-11-20: citation validator (repair once, then refuse). **Claude**: implemented (`agent.validate_citations`, tested with a scripted model). **You**: capture one case where it fired. _REQ-10.4_
-  - [ ] 5.5 **Claude**: `check.py` passes fully on Windows. _REQ-13_
+  - [x] 5.5 **Claude**: `check.py` passes fully on Windows (2026-11-20). _REQ-13_
   - _Depends on: Phase 4_
 
 - [ ] **6. End-to-end evaluation**
   - [x] 6.1 **Claude**: resumable run of `answer()` on all questions → `eval/answers.jsonl` (tokens, seconds), plus `eval/answers.md` for hand grading. 31/31 answered on 2026-11-20. _REQ-11.1_
   - [x] 6.2 **Claude**: code checks (refusal phrase, citation validity, expected source cited, BOE notice) → `eval/checks.csv`. _REQ-11.2_
-  - [ ] 6.3 **You**: write the judge rubric 🟨. **Claude**: implement the judge with structured output → `eval/judge.csv`. _REQ-11.3_
-  - [ ] 6.4 **You**: grade at least 20 answers in `eval/human_labels.csv` **before opening `judge.csv`**. _REQ-11.4_
-  - [ ] 6.5 **Claude**: agreement (% and κ) and summary counts; `eval/summary.json`. _REQ-11.4–11.5_
+  - [ ] 6.3 **You**: rubric written (`eval/judge_rubric.md`). **Claude**: judge implemented (gemini-3.5-flash, structured output, resumable) → `eval/judge.csv`. 31/31 judged on 2026-11-23, but `evaluate.evidence()` was deduplicating on label + first 80 chars (the shared hierarchy path), so the judge saw only one part of split articles in 16 answers. Fixed (full-text key, new test); those 16 verdicts dropped (old file kept outside the repo) and re-judged: 8 done on 2026-11-23, **8 left (q16, q19, q21, q22, q23, q25, q28, q31)**; rerun `uv run python evaluate.py` once the 20/day quota resets. _REQ-11.3_
+  - [x] 6.4 **You**: grade at least 20 answers in `eval/human_labels.csv` **before opening `judge.csv`**. 31/31 graded before the judge ran. _REQ-11.4_
+  - [ ] 6.5 **Claude**: agreement (% and κ) and summary counts; `eval/summary.json`. Implemented; final numbers once all 31 are judged. _REQ-11.4–11.5_
   - [ ] 6.6 **Together**: add-document demo. Ask the chosen unanswerable question, add H1/H2 via `add_document` with approval, ask again, and save both answers. Restore or keep the index depending on the duplicate policy. _REQ-11.6_
   - _Depends on: Phase 5_
 
