@@ -1,1 +1,31 @@
 id,correct,supported,notes
+q01,yes,yes,
+q02,yes,yes,
+q03,yes,yes,
+q04,yes,yes,
+q05,yes,yes,"Cites both inv-crypto-assets and inv-common-scams and answers accurately."
+q06,yes,yes,
+q07,yes,yes,
+q08,yes,yes,
+q09,yes,yes,
+q10,yes,yes,"Answers accurately; ends with an uncited corpus-scope sentence treated as supported."
+q11,yes,yes,"Combines both sources on relationship scams and crypto assets."
+q12,yes,yes,
+q13,yes,yes,
+q14,yes,yes,"code_check_passed is False because another valid corpus source answers it; test-spec issue, not an agent failure."
+q15,yes,yes,
+q16,yes,yes,"Expands with Form CRS and working-with-professional; covers all key topics."
+q17,yes,yes,"Covers both style and format combining Form CRS compliance guide and staff statement."
+q18,yes,yes,
+q19,yes,yes,
+q20,yes,no,"Opening claim (eliminate or mitigate instead of only disclosing) is cited to the third-party compensation disclosure section, which does not say it; the idea is in the Eliminating/Mitigating sections. Right fact, wrong citation."
+q21,yes,yes,"Properly refuses the out-of-scope capital gains tax question."
+q22,yes,yes,"Properly refuses the out-of-scope SIPC insurance question."
+q23,yes,yes,"Properly refuses the out-of-scope MiFID II question."
+q24,yes,yes,"Properly refuses the out-of-scope FINRA Series 65 question."
+q25,yes,yes,"Properly refuses the Bitcoin price and investment advice question."
+q26,yes,yes,"code_check_passed is False; answers both parts using another valid corpus source (test-spec issue, not retrieval miss)."
+q27,yes,yes,
+q28,yes,yes,
+q29,yes,yes,"code_check_passed is False; inv-crypto-assets covers both parts, ending with an uncited corpus-scope sentence treated as supported."
+q30,yes,yes,

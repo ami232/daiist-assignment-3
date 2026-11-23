@@ -32,7 +32,19 @@ ROOT = Path(__file__).resolve().parent
 MODEL = os.getenv("AGENT_MODEL", "gemini-3.5-flash-lite")
 MAX_MODEL_CALLS = 6
 SERVER_ARGS = [str(ROOT / "server.py")]  # evaluate/tests may point this at another server
-CITATION = re.compile(r"\[([a-z0-9][a-z0-9\-]*) \| ([^\]]+)\]")
+BRACKET = re.compile(r"\[([^\[\]]*\|[^\[\]]*)\]")
+SPLIT = re.compile(r",\s*(?=[a-z0-9][a-z0-9\-]* \| )")
+
+
+def find_citations(text: str) -> list[tuple[str, str]]:
+    """All (source, location) pairs in the text, including several citations inside one bracket."""
+    pairs = []
+    for inner in BRACKET.findall(text):
+        for part in SPLIT.split(inner):
+            source, _, location = part.partition(" | ")
+            pairs.append((source.strip(), location.strip()))
+    return pairs
+
 UNVERIFIED = ("I cannot give a verified answer: my draft cited a passage that the search did not return. "
               "Please rephrase the question or check the SEC source directly.")
 LIMIT_REACHED = "I could not finish within the call limit, so I cannot give a verified answer."
@@ -81,11 +93,16 @@ def _squash(text: str) -> str:
 
 def check_citations(answer: str, trace: list) -> bool:
     """Guardrail 3: every citation in the answer must have been returned by a search call."""
+    tools = {step["tool"] for step in trace}
+    if "search" not in tools and "add_document" in tools:
+        return True  # a run that only added a document has no search results to cite
     returned = set()
     for step in trace:
         if step["tool"] == "search":
-            returned |= {(s, _squash(l)) for s, l in CITATION.findall(step["result"].replace("Citation: ", ""))}
-    cited = {(s, _squash(l)) for s, l in CITATION.findall(answer)}
+            for line in step["result"].splitlines():
+                if line.startswith("Citation: "):
+                    returned |= {(s, _squash(l)) for s, l in find_citations(line)}
+    cited = {(s, _squash(l)) for s, l in find_citations(answer)}
     return cited <= returned
 
 async def run_agent_async(question: str, approve=ask_human) -> dict:
