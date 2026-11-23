@@ -3,39 +3,39 @@
   {
    "design": "articles",
    "questions": 29,
-   "hit@1": 0.793,
-   "hit@3": 1.0,
+   "hit@1": 0.759,
+   "hit@3": 0.966,
    "hit@5": 1.0,
-   "all_passages@1": 0.586,
-   "all_passages@3": 0.931,
+   "all_passages@1": 0.552,
+   "all_passages@3": 0.897,
    "all_passages@5": 0.931,
    "words_in_prompt@5": 1427
   },
   {
    "design": "fixed200",
    "questions": 29,
-   "hit@1": 0.759,
-   "hit@3": 0.897,
-   "hit@5": 1.0,
-   "all_passages@1": 0.552,
-   "all_passages@3": 0.793,
-   "all_passages@5": 0.862,
-   "words_in_prompt@5": 1074
+   "hit@1": 0.69,
+   "hit@3": 0.828,
+   "hit@5": 0.897,
+   "all_passages@1": 0.483,
+   "all_passages@3": 0.759,
+   "all_passages@5": 0.793,
+   "words_in_prompt@5": 1070
   }
  ],
  "agreement": {
-  "graded": 20,
+  "graded": 19,
   "correct": {
-   "n": 20,
-   "agreement": 0.95,
-   "kappa": 0.643,
+   "n": 19,
+   "agreement": 0.947,
+   "kappa": 0.0,
    "disagreements": [
     "q04"
    ]
   },
   "supported": {
-   "n": 20,
-   "agreement": 0.8,
+   "n": 19,
+   "agreement": 0.789,
    "kappa": 0.0,
    "disagreements": [
     "q04",
@@ -51,13 +51,13 @@
    "q07",
    "q25"
   ],
-  "wrong refusal": [
+  "not judged": [
    "q20"
   ],
   "unsupported claim (answered an unanswerable question)": [
    "q32"
   ]
  },
- "mean_tokens": 6428.885714285714,
- "mean_seconds": 46.534285714285716
+ "mean_tokens": 6427.257142857143,
+ "mean_seconds": 45.15142857142857
 }
