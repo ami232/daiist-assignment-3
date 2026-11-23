@@ -1,0 +1,5 @@
+id,kind,outcome,correct,supported,all_expected_retrieved,suggested_cause,my_cause,notes
+q10,multi,answered,0,1,False,retrieval miss,retrieval miss,"Missed 'withdrawal must be as easy as giving consent'. That rule is only in EDPB 05/2020 para. 113, which was not retrieved (108, 103, 115-120 were)."
+q12,multi,answered,0,1,True,wrong answer from the right passage,judge error,Answer is correct: its last bullet says individuals must be told when there is a likely high risk; the judge missed it. That bullet has no citation.
+q20,unanswerable,missed refusal,0,1,False,missed refusal (answered an unanswerable question),bad test question,Answered from GDPR Art. 26 (definition of joint controllers) instead of saying the specific criteria are not in the corpus. The corpus partly covers the question.
+q22,multi,answered,0,1,True,wrong answer from the right passage,judge error,"Answer is correct: it lists the information to give at collection, including individuals' rights [Art. 13(2)(b)], and the Art. 15 access items; the judge missed it."

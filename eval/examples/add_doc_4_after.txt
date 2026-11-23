@@ -1,0 +1,15 @@
+**No**, using a standard contract that you cannot negotiate does not automatically make the cloud provider a controller. The cloud provider can still be considered a **processor** as long as they do not process the personal data for their own purposes and store the data solely on your behalf and in accordance with your instructions [EDPB 07/2020 | para. 30].
+
+Key details and conditions regarding this situation:
+
+* **Standard terms are allowed:** The fact that a cloud service provider offers a completely standardised service on a "take it or leave it" basis, with terms drawn up unilaterally and little or no ability for you to customise it, does not make them a controller [EDPB 07/2020 | para. 30, 110]. 
+* **Your role as controller:** You are still considered the controller because you made the decision to use that particular cloud service provider to process personal data for your own purposes [EDPB 07/2020 | para. 30].
+* **Contract preparation:** The fact that the contract and its terms of business are prepared by the service provider rather than by you is not in itself problematic or sufficient to turn the provider into a controller [EDPB 07/2020 | para. 110].
+* **Your responsibility:** An imbalance in contractual power does not justify accepting contract terms that fail to comply with data protection law, nor does it discharge you from your GDPR obligations. You must evaluate the terms, and by freely accepting them and using the service, you accept full responsibility for GDPR compliance [EDPB 07/2020 | para. 110].
+
+Citations checked against the retrieved passages:
+  ✓ [EDPB 07/2020 | para. 30]
+  ✓ [EDPB 07/2020 | para. 30, 110]
+  ✓ [EDPB 07/2020 | para. 110]
+
+[gemini-3.5-flash-lite · 2 model calls · 1 searches · 4917 tokens · 3.53 s]

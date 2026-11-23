@@ -1,0 +1,61 @@
+{
+  "GDPR": {
+    "source": "GDPR",
+    "title": "Regulation (EU) 2016/679 (General Data Protection Regulation)",
+    "url": "https://eur-lex.europa.eu/eli/reg/2016/679/oj/eng",
+    "date": "2016-04-27",
+    "licence": "EU legal acts; reuse authorised (Commission Decision 2011/833/EU), source acknowledged",
+    "file": "gdpr.html",
+    "file_hash": "962539af03738bf5",
+    "words": null,
+    "chunks": {
+      "fixed": 170,
+      "structure": 187
+    },
+    "updated": "2026-11-23T11:47:26+00:00"
+  },
+  "EDPB 05/2020": {
+    "source": "EDPB 05/2020",
+    "title": "EDPB Guidelines 05/2020 on consent under Regulation 2016/679 (v1.1)",
+    "url": "https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-052020-consent-under-regulation-2016679_en",
+    "date": "2020-05-04",
+    "licence": "EDPB: reuse authorised for commercial and non-commercial purposes, source acknowledged",
+    "file": "edpb_guidelines_05_2020_consent.pdf",
+    "file_hash": "d45afa0c7f062e9b",
+    "words": null,
+    "chunks": {
+      "fixed": 78,
+      "structure": 80
+    },
+    "updated": "2026-11-23T11:47:28+00:00"
+  },
+  "EDPB 9/2022": {
+    "source": "EDPB 9/2022",
+    "title": "EDPB Guidelines 9/2022 on personal data breach notification under GDPR (v2.0)",
+    "url": "https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-92022-personal-data-breach-notification-under_en",
+    "date": "2023-03-28",
+    "licence": "EDPB: reuse authorised for commercial and non-commercial purposes, source acknowledged",
+    "file": "edpb_guidelines_9_2022_breach.pdf",
+    "file_hash": "063f63d2b78a669b",
+    "words": null,
+    "chunks": {
+      "fixed": 79,
+      "structure": 81
+    },
+    "updated": "2026-11-23T11:47:32+00:00"
+  },
+  "EDPB 07/2020": {
+    "source": "EDPB 07/2020",
+    "title": "EDPB Guidelines 07/2020 on the concepts of controller and processor in the GDPR (v2.1)",
+    "url": "https://www.edpb.europa.eu/our-work-tools/our-documents/guidelines/guidelines-072020-concepts-controller-and-processor-gdpr_en",
+    "date": "2021-07-07",
+    "licence": "EDPB: reuse authorised for commercial and non-commercial purposes, source acknowledged",
+    "file": "edpb_guidelines_07_2020_controller_processor.pdf",
+    "file_hash": "f47d0428ebfab4e4",
+    "words": null,
+    "chunks": {
+      "structure": 120
+    },
+    "updated": "2026-11-23T13:02:20+00:00"
+  }
+}

@@ -12,3 +12,9 @@ corpus/
 
 # Never commit your API key
 .env
+
+# Internal study notes, not part of the submission
+DECISIONS.md
+
+# Personal editor settings
+.vscode/settings.json

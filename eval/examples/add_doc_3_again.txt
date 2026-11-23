@@ -1,0 +1,8 @@
+
+The agent wants to run add_document with {'path': 'corpus/edpb_guidelines_07_2020_controller_processor.pdf'}.
+This adds the file to the index for every later question and spends embedding quota.
+Approve? [y/N] The document `corpus/edpb_guidelines_07_2020_controller_processor.pdf` is already indexed and ready for use.
+
+(Approval: add_document({'path': 'corpus/edpb_guidelines_07_2020_controller_processor.pdf'}) was APPROVED by the human.)
+
+[gemini-3.5-flash-lite · 2 model calls · 0 searches · 2995 tokens · 10.5 s]

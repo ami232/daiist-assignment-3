@@ -1,0 +1,16 @@
+
+The agent wants to run add_document with {'path': 'corpus/edpb_guidelines_07_2020_controller_processor.pdf'}.
+This adds the file to the index for every later question and spends embedding quota.
+Approve? [y/N]   structure: embedded 20/120 new chunks of EDPB 07/2020
+  structure: embedded 40/120 new chunks of EDPB 07/2020
+  structure: embedded 60/120 new chunks of EDPB 07/2020
+  structure: embedded 80/120 new chunks of EDPB 07/2020
+Gemini 429; retrying in 15s
+Gemini 429; retrying in 30s
+  structure: embedded 100/120 new chunks of EDPB 07/2020
+  structure: embedded 120/120 new chunks of EDPB 07/2020
+The document `corpus/edpb_guidelines_07_2020_controller_processor.pdf` has been successfully added to the index and is now ready for searching.
+
+(Approval: add_document({'path': 'corpus/edpb_guidelines_07_2020_controller_processor.pdf'}) was APPROVED by the human.)
+
+[gemini-3.5-flash-lite · 2 model calls · 0 searches · 3011 tokens · 72.63 s]

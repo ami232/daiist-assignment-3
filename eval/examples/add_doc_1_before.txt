@@ -1,0 +1,5 @@
+I can't answer this from the documents I have. 
+
+The retrieved documents do not address whether standard or non-negotiable contracts automatically determine a cloud provider's legal status as a controller or processor. To resolve questions regarding how standard cloud contracts affect the roles of controllers and processors, you should consult your national data protection authority (such as the AEPD) or a data-protection lawyer.
+
+[gemini-3.5-flash-lite · 3 model calls · 2 searches · 8120 tokens · 22.72 s]

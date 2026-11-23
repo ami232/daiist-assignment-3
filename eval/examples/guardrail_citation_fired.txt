@@ -1,0 +1,35 @@
+$ uv run python main.py ask "A laptop with customer data was stolen from my car. Do I have to report it, and by when?"
+(run 23 Nov 2026, before the annex-table fix was re-indexed)
+
+The theft of a laptop containing customer data is a personal data breach [EDPB 9/2022 | para. 13–14]. Whether you must report it depends on the risk to the customers.
+
+### 1. Reporting to the Supervisory Authority
+You must notify the competent supervisory authority unless the breach is "unlikely to result in a risk to the rights and freedoms of natural persons" [GDPR | Art. 33(1)–(4)].
+
+*   **Deadline:** You must notify **without undue delay** and, where feasible, not later than **72 hours** after becoming aware of it [GDPR | Art. 33(1)–(4)].
+*   **Late reports:** If you notify after 72 hours, the notification must include the reasons for the delay [EDPB 9/2022 | para. 62–63].
+*   **Encryption exception:** If the laptop was securely encrypted, the key was not compromised, and you have a backup of the data, the breach is unlikely to result in a risk and does not require notification [EDPB 9/2022 | para. 79]. However, if no backup exists, it is an "availability breach" that may still require notification [EDPB 9/2022 | para. 79].
+
+### 2. Reporting to the Customers
+You must communicate the breach to the affected customers only if it is likely to result in a **"high risk"** to their rights and freedoms [GDPR | Art. 34(1)–(3)].
+
+*   **Deadline:** This must be done **without undue delay** [EDPB 9/2022 | para. 81–83].
+*   **High Risk:** This risk exists if the breach could lead to identity theft, fraud, financial loss, or damage to reputation [EDPB 9/2022 | para. 102].
+*   **Exceptions:** You do not need to notify customers if you had applied technical protections, such as encryption, that made the data unintelligible to the thief [GDPR | Art. 34(1)–(3)].
+
+### 3. Record-Keeping
+Even if you determine the breach does not need to be reported to the authority, you must still maintain appropriate records of the incident [EDPB 9/2022 | Annex ex. i–Annex ex. iii].
+
+Citations checked against the retrieved passages:
+  ✓ [EDPB 9/2022 | para. 13–14]
+  ✓ [GDPR | Art. 33(1)–(4)]
+  ✓ [EDPB 9/2022 | para. 62–63]
+  ✓ [EDPB 9/2022 | para. 79]
+  ✓ [GDPR | Art. 34(1)–(3)]
+  ✓ [EDPB 9/2022 | para. 81–83]
+  ✓ [EDPB 9/2022 | para. 102]
+  ✓ [EDPB 9/2022 | Annex ex. i–Annex ex. iii]
+
+(Citation guardrail fired 1 time(s): these citations do not match any retrieved passage: [GDPR | Art. 33(5)].)
+
+[gemini-3-flash-preview · 5 model calls · 3 searches · 26477 tokens · 20.4 s]

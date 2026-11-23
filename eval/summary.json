@@ -1,0 +1,99 @@
+{
+  "questions": 30,
+  "kinds": {
+    "single": 8,
+    "multi": 12,
+    "unanswerable": 10
+  },
+  "agent_model": "gemini-3.5-flash-lite",
+  "judge_model": "gemini-3.1-flash-lite",
+  "design": "structure + vector",
+  "correct": 26,
+  "graded": 30,
+  "answerable_correct": 17,
+  "answerable": 20,
+  "unsupported_answers": 0,
+  "answers_given": 21,
+  "correct_refusals": 9,
+  "unanswerable": 10,
+  "missed_refusals": 1,
+  "wrong_refusals": 0,
+  "invalid_citation_answers": 0,
+  "guardrail_fired": 0,
+  "errors": 0,
+  "avg_tokens_per_question": 6615,
+  "avg_seconds_per_question": 7.6,
+  "median_seconds_per_question": 3.7,
+  "retrieval": [
+    {
+      "config": "A fixed (vector)",
+      "questions": 20,
+      "hit@1": 0.55,
+      "hit@3": 0.85,
+      "hit@5": 0.9,
+      "multi_all@1": 0.083,
+      "multi_all@3": 0.333,
+      "multi_all@5": 0.5,
+      "mrr@5": 0.688,
+      "avg_words_top5": 1000
+    },
+    {
+      "config": "B structure (vector)",
+      "questions": 20,
+      "hit@1": 0.7,
+      "hit@3": 0.85,
+      "hit@5": 0.85,
+      "multi_all@1": 0.0,
+      "multi_all@3": 0.5,
+      "multi_all@5": 0.583,
+      "mrr@5": 0.767,
+      "avg_words_top5": 906
+    },
+    {
+      "config": "C structure + hybrid",
+      "questions": 20,
+      "hit@1": 0.3,
+      "hit@3": 0.55,
+      "hit@5": 0.65,
+      "multi_all@1": 0.0,
+      "multi_all@3": 0.083,
+      "multi_all@5": 0.417,
+      "mrr@5": 0.433,
+      "avg_words_top5": 921
+    },
+    {
+      "config": "A fixed + hybrid",
+      "questions": 20,
+      "hit@1": 0.3,
+      "hit@3": 0.55,
+      "hit@5": 0.75,
+      "multi_all@1": 0.0,
+      "multi_all@3": 0.167,
+      "multi_all@5": 0.333,
+      "mrr@5": 0.464,
+      "avg_words_top5": 1000
+    }
+  ],
+  "judge_vs_me": {
+    "graded_by_me": 21,
+    "correct": {
+      "n": 21,
+      "agreement": 0.905,
+      "cohen_kappa": 0.618,
+      "me_1_rate": 0.905,
+      "judge_1_rate": 0.81,
+      "disagreements": [
+        "q12",
+        "q22"
+      ]
+    },
+    "supported": {
+      "n": 21,
+      "agreement": 1.0,
+      "cohen_kappa": "undefined (no variation)",
+      "me_1_rate": 1.0,
+      "judge_1_rate": 1.0,
+      "disagreements": []
+    }
+  }
+}

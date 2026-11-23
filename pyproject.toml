@@ -17,6 +17,7 @@ dependencies = [
     "matplotlib>=3.9",
     "nbconvert>=7.16",
     "ipykernel>=6.29",
+    "pdfplumber>=0.11.11",
 ]
 
 [tool.uv]
