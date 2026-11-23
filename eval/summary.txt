@@ -1,0 +1,13 @@
+RETRIEVAL (25 answerable questions; hit = same source, SmPC 1, page overlap; multi = all parts found)
+  fixed400   hit@1 = 0.28  hit@3 = 0.40  hit@5 = 0.44   (476 chunks)
+  section    hit@1 = 0.52  hit@3 = 0.68  hit@5 = 0.80   (137 chunks)
+  best design by hit rate: section   (retrieve.DEFAULT_DESIGN is section)
+
+END-TO-END (model gemini-flash-lite-latest, retrieval design section, 32 questions)
+  code checks pass: 31/32
+  answerable: judge correct 25/25, supported 24/25, wrongly refused 0
+  unanswerable: correctly refused 7/7
+  guardrail triggered: 1
+HUMAN vs JUDGE: 32 graded answers
+  agreement on correct: 97%   on supported: 88%
+COST: 0.00134 USD/question (agent + judge; prices 0.1/0.4 per 1M tokens are an assumption), 12764 tokens/question, median 9.2 s/question

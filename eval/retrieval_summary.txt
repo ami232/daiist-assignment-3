@@ -1,0 +1,4 @@
+RETRIEVAL (25 answerable questions; hit = same source, SmPC 1, page overlap; multi = all parts found)
+  fixed400   hit@1 = 0.28  hit@3 = 0.40  hit@5 = 0.44   (476 chunks)
+  section    hit@1 = 0.52  hit@3 = 0.68  hit@5 = 0.80   (137 chunks)
+  best design by hit rate: section   (retrieve.DEFAULT_DESIGN is section)

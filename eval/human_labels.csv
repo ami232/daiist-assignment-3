@@ -1,1 +1,34 @@
 id,correct,supported,notes
+id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,1,1,
+q04,1,1,omits the detail about low-risk procedures (24 h) but directly answers what was asked
+q05,1,1,
+q06,0,1,
+q07,1,1,
+q08,1,1,omits the 6-hour figure (27%) but directly answers what was asked (2 hours)
+q09,1,1,
+q10,1,0,adds a final note on the 75 mg dose usage without a citation or support in the reference
+q11,1,1,omits the knee replacement duration (10 days) but directly answers what was asked (hip)
+q12,1,1,
+q13,1,1,
+q14,1,1,
+q15,1,1,
+q16,1,1,
+q17,1,1,
+q18,1,1,
+q19,1,1,
+q20,1,1,omits that it is not recommended if CrCl < 15 or on dialysis
+q21,1,1,omits fresh frozen plasma for apixaban and haemodialysis for dabigatran
+q22,1,1,
+q23,1,1,
+q24,1,1,
+q25,1,1,
+q26,1,1,
+q27,1,0,mentions that the corpus includes rivaroxaban without a citation or support in the reference
+q28,1,1,
+q29,1,1,
+q30,1,0,mentions that the corpus includes rivaroxaban without a citation or support in the reference
+q31,1,1,says "I do not know" instead of "I don't know"
+q32,1,1,
