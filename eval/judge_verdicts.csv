@@ -1,0 +1,38 @@
+id,correct,supported,reason
+q01,1,1,The answer accurately reflects the requirements for reporting a personal data breach found in the provided GDPR text.
+q02,1,1,The answer accurately reflects the key requirements of GDPR Article 8 found in the retrieved passages.
+q03,1,1,The answer accurately reflects the requirements regarding withdrawal of consent and is fully supported by the provided text.
+q04,1,1,The answer accurately reflects the requirements for data access requests as outlined in Article 12 of the provided GDPR text.
+q05,1,1,The answer accurately reflects the conditions specified in Article 37 of the GDPR.
+q06,1,1,The answer correctly identifies the maximum fine and correctly cites the source from the provided text.
+q07,1,1,"The answer accurately identifies the general condition for a DPIA and lists the specific cases required by the regulation, all of which are supported by the retrieved passages."
+q08,1,1,The answer accurately reflects the grounds for erasure and the exceptions provided in the retrieved passages.
+q09,1,1,The answer accurately reflects the conditions under which communication to the data subject is required and the exceptions provided in the regulations.
+q10,1,1,The answer accurately reflects the conditions for extraterritorial application of the GDPR as provided in the reference and source texts.
+q11,1,1,The answer accurately reflects the requirements listed in Article 3(2) of the Data Act found in the retrieved passages.
+q12,1,1,The answer accurately identifies the date from which switching charges are prohibited and is fully supported by the provided text.
+q13,0,1,"The answer claims the information is not covered, but the exemption is present in the broader Data Act regulations even if not in the provided excerpts; however, based strictly on the provided passages, the model correctly identified that the information was missing."
+q14,1,1,"The answer accurately states the five-day deadline provided in the retrieved Data Act, Article 18(2)."
+q15,1,1,The answer accurately reflects the conditions and calculation basis for B2B data compensation as defined in Article 9 of the Data Act.
+q16,1,1,The answer accurately reflects the procedural requirements for re-use requests as specified in Article 9(1) of the Data Governance Act.
+q17,1,1,The answer correctly identifies the 12-month limit and the provision regarding contract duration based on the provided text.
+q18,1,1,The answer accurately lists the three categories of data intermediation services requiring notification as specified in the provided regulations.
+q19,0,0,"The documents provide sufficient information to answer the question, so the claim that the indexed documents do not cover it is incorrect."
+q20,1,1,The answer accurately reflects the requirements of Articles 33 and 34 of the GDPR based on the provided text.
+q21,1,1,The answer correctly identifies the maximum fine and the basis for the infringement under the GDPR.
+q22,1,1,The answer accurately addresses both the rights regarding automated decision-making and the specific requirement for a data protection impact assessment as outlined in the provided articles.
+q23,1,1,The answer accurately reflects the conditions and derogations for data transfers under the GDPR as described in the retrieved passages.
+q24,0,1,The answer provides relevant details from the Data Act but fails to address the question's requirement to explain the relationship/connection between the Data Act rights and the GDPR data portability right.
+q25,1,1,"The answer accurately summarizes the penalty framework, including the specific GDPR-based fines for breaches of Chapters II, III, and V as required by the reference."
+q26,0,0,"The answer falsely claims the documents do not cover the question, even though they contain the requested information in Article 21."
+q27,1,1,The answer accurately reflects the requirements of Article 25 and the timeline for switching charges in Article 29 as described in the provided texts.
+q28,1,1,The answer correctly identifies the five-day deadline for public emergencies and the fee exemption for data holders other than micro and small enterprises.
+q29,1,1,The answer accurately reflects the notification requirements and conditions for data intermediation services as specified in Articles 11 and 12 of the Data Governance Act.
+q30,1,1,The answer correctly states that the provided documents do not contain information regarding data localisation requirements for non-personal data.
+q31,1,1,The answer correctly states that the provided documents do not contain information regarding cookie duration or consent renewal.
+q32,1,1,The answer correctly states that the documents do not provide information on high-risk AI system requirements.
+q33,1,1,The answer correctly states that the corpus does not provide the requested information regarding specific enforcement decisions.
+q34,1,1,"The answer correctly states that the documents do not provide the specific German penalties, as the Data Act leaves this to the Member States."
+q35,1,1,The answer correctly states that the documents do not provide the requested information.
+q36,1,1,The answer correctly states that the provided corpus does not cover product cybersecurity requirements.
+q37,1,1,The model correctly identified that the provided documents do not contain the requested information.

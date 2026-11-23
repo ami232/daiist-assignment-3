@@ -1,0 +1,213 @@
+id,kind,question,answer,refused,guardrail,withheld_answer,retrieved,search_queries,tool_calls,input_tokens,output_tokens,seconds,error
+q01,single,How quickly do we have to report a personal data breach to the data protection authority?,"In the case of a personal data breach, the controller shall notify the personal data protection authority without undue delay and, where feasible, not later than 72 hours after having become aware of it, unless the personal data breach is unlikely to result in a risk to the rights and freedoms of natural persons. If the notification is not made within 72 hours, it must be accompanied by reasons for the delay.
+
+(GDPR, Article 33)",0,,,"GDPR, Article 33; GDPR, Article 34; GDPR, Article 66; Data Act, Article 40; GDPR, Article 37",personal data breach notification deadline data protection authority,1,4381,114,5.3,
+q02,single,At what age can a child give valid consent to an online service on their own?,"In relation to the offer of information society services directly to a child, the processing of a child's personal data is lawful where the child is at least 16 years old. If the child is below the age of 16 years, the processing is lawful only if and to the extent that consent is given or authorised by the holder of parental responsibility over the child. 
+
+However, Member States may provide by law for a lower age for those purposes, provided that such lower age is not below 13 years.
+
+(GDPR, Article 8)",0,,,"GDPR, Article 8; GDPR, Article 7; Data Governance Act, Article 25; Data Governance Act, Article 21; Data Governance Act, Article 7",child consent online service age,1,3816,134,5.0,
+q03,single,"Can a user withdraw their consent, and how easy does it have to be?","Yes, a data subject has the right to withdraw their consent at any time. The withdrawal does not affect the lawfulness of processing that was based on consent before its withdrawal. 
+
+Regarding how easy it has to be:
+* It must be as easy to withdraw as to give consent.
+* The data subject must be informed of this right prior to giving consent.
+
+(GDPR, Article 7)",0,,,"GDPR, Article 7; Data Governance Act, Article 25; GDPR, Article 8; GDPR, Article 17; GDPR, Article 13",withdraw consent how easy,1,4135,101,5.4,
+q04,single,How long do we have to answer a customer's request to access their data?,"The controller shall provide information on action taken on a request to access personal data (under Article 15) without undue delay and in any event within one month of receipt of the request. 
+
+That period may be extended by two further months where necessary, taking into account the complexity and number of the requests. The controller shall inform the data subject of any such extension within one month of receipt of the request, together with the reasons for the delay.
+
+(GDPR, Article 12)",0,,,"GDPR, Article 12; GDPR, Article 15; Data Governance Act, Article 9; Data Act, Article 18; GDPR, Article 13",access request time limit data subject rights,1,4582,121,4.9,
+q05,single,When is a company required to appoint a data protection officer?,"A controller or a processor is required to designate a data protection officer in any case where:
+(a) the processing is carried out by a public authority or body, except for courts acting in their judicial capacity;
+(b) the core activities of the controller or the processor consist of processing operations which, by virtue of their nature, their scope and/or their purposes, require regular and systematic monitoring of data subjects on a large scale; or
+(c) the core activities of the controller or the processor consist of processing on a large scale of special categories of data pursuant to Article 9 and personal data relating to criminal convictions and offences referred to in Article 10.
+
+In cases other than these, a controller, processor, or representative associations and other bodies may designate a data protection officer, or are required to do so where mandated by Union or Member State law.
+
+(GDPR, Article 37)",0,,,"GDPR, Article 37; GDPR, Article 39; GDPR, Article 38; GDPR, Article 53; GDPR, Article 54",designation of the data protection officer mandatory requirement,1,3956,209,5.2,
+q06,single,What is the maximum fine for breaching the basic principles of processing or the rules on consent?,"Infringements of the basic principles for processing, including conditions for consent pursuant to Articles 5, 6, 7, and 9, shall be subject to administrative fines up to 20 000 000 EUR, or in the case of an undertaking, up to 4 % of the total worldwide annual turnover of the preceding financial year, whichever is higher.
+
+(GDPR, Article 83(5))",0,,,"GDPR, Article 83; GDPR, Article 84; GDPR, Article 82",maximum fine basic principles processing rules on consent infringement GDPR Article 83,1,4216,119,5.6,
+q07,single,In which cases is a data protection impact assessment mandatory?,"A data protection impact assessment is mandatory prior to processing where a type of processing—in particular using new technologies, and taking into account the nature, scope, context, and purposes of the processing—is likely to result in a high risk to the rights and freedoms of natural persons (GDPR, Article 35(1)). 
+
+Specifically, it is required in the case of:
+(a) a systematic and extensive evaluation of personal aspects relating to natural persons which is based on automated processing, including profiling, and on which decisions are based that produce legal effects concerning the natural person or similarly significantly affect the natural person;
+(b) processing on a large scale of special categories of data referred to in Article 9(1), or of personal data relating to criminal convictions and offences referred to in Article 10; or
+(c) a systematic monitoring of a publicly accessible area on a large scale (GDPR, Article 35(3)).
+
+Supervisory authorities also establish, make public, and communicate lists of the kinds of processing operations that are subject to the requirement for a data protection impact assessment (GDPR, Article 35(4)).",0,,,"GDPR, Article 35; GDPR, Article 36; GDPR, Article 37",data protection impact assessment mandatory,1,4196,255,4.7,
+q08,single,When can a person demand that their personal data be erased?,"A data subject has the right to obtain from the controller the erasure of personal data concerning them without undue delay where one of the following grounds applies:
+
+(a) the personal data are no longer necessary in relation to the purposes for which they were collected or otherwise processed;
+(b) the data subject withdraws consent on which the processing is based according to point (a) of Article 6(1), or point (a) of Article 9(2), and where there is no other legal ground for the processing;
+(c) the data subject objects to the processing pursuant to Article 21(1) and there are no overriding legitimate grounds for the processing, or the data subject objects to the processing pursuant to Article 21(2);
+(d) the personal data have been unlawfully processed;
+(e) the personal data have to be erased for compliance with a legal obligation in Union or Member State law to which the controller is subject;
+(f) the personal data have been collected in relation to the offer of information society services referred to in Article 8(1).
+
+These rights to erasure do not apply to the extent that processing is necessary for exercising freedom of expression and information; for compliance with a legal obligation, public interest tasks, or official authority; for public health reasons in the area of public health; for archiving purposes in the public interest, scientific or historical research, or statistical purposes; or for the establishment, exercise, or defence of legal claims.
+
+(GDPR, Article 17)",0,,,"GDPR, Article 17; GDPR, Article 21; Data Act, Article 19; GDPR, Article 15",right to erasure personal data demand,1,4229,333,5.2,
+q09,single,Do we always have to tell the affected individuals about a data breach?,"No. Communication to the data subject is required when the personal data breach is likely to result in a high risk to the rights and freedoms of natural persons, and it must be done without undue delay. 
+
+However, the communication is not required if any of the following conditions are met:
+(a) the controller has implemented appropriate technical and organisational protection measures, and those measures were applied to the personal data affected by the breach, in particular those that render the personal data unintelligible to any person who is not authorised to access it, such as encryption;
+(b) the controller has taken subsequent measures which ensure that the high risk to the rights and freedoms of data subjects is no longer likely to materialise;
+(c) it would involve disproportionate effort, in which case there shall instead be a public communication or similar measure whereby the data subjects are informed in an equally effective manner.
+
+Additionally, the supervisory authority may require the controller to communicate the breach to the data subject, or decide that one of the above conditions is met, having considered the likelihood of the breach resulting in a high risk.
+
+(GDPR, Article 34)",0,,,"GDPR, Article 34; GDPR, Article 33; GDPR, Article 77; GDPR, Article 82; GDPR, Article 32",communication of a personal data breach to the data subject,1,4051,257,11.2,
+q10,single,Does the GDPR apply to a company based outside the EU?,"Yes, the GDPR applies to a controller or processor not established in the Union with respect to the processing of personal data of data subjects who are in the Union, where the processing activities are related to:
+(a) the offering of goods or services, irrespective of whether a payment of the data subject is required, to such data subjects in the Union; or
+(b) the monitoring of their behaviour as far as their behaviour takes place within the Union.
+
+Additionally, the GDPR applies to the processing of personal data by a controller not established in the Union, but in a place where Member State law applies by virtue of public international law.
+
+(GDPR, Article 3)",0,,,"GDPR, Article 3; GDPR, Article 2; GDPR, Article 27; GDPR, Article 1; Data Act, Article 1",material scope establishment outside Union processing of data of data subjects in the Union,1,3865,165,13.1,
+q11,single,What information must a seller give a customer before they buy a connected product?,"Before concluding a contract for the purchase, rent, or lease of a connected product, the seller, rentor, or lessor must provide at least the following information to the user in a clear and comprehensible manner:
+
+(a) the type, format, and estimated volume of product data the connected product is capable of generating;
+(b) whether the connected product is capable of generating data continuously and in real-time;
+(c) whether the connected product is capable of storing data on-device or on a remote server, including the intended duration of retention, where applicable;
+(d) how the user may access, retrieve, or, where relevant, erase the data, including the technical means to do so, as well as their terms of use and quality of service.
+
+(Data Act, Article 3)",0,,,"Data Act, Article 3; Data Act, Article 4; Data Act, Article 1; Data Act, Article 2",seller information before buy connected product Data Act,1,4626,189,5.0,
+q12,single,From when can cloud providers no longer charge customers for switching to another provider?,"From 12 January 2027, providers of data processing services shall not impose any switching charges on the customer for the switching process.
+
+(Data Act, Article 29)",0,,,"Data Act, Article 29; Data Act, Article 23; Data Act, Article 25; Data Act, Article 30",switching charges cloud provider date application Data Act,1,4391,61,4.5,
+q13,single,Which data processing services are exempt from the Data Act's switching obligations?,The indexed documents do not cover this. I searched for exemptions to the switching obligations for data processing services under the Data Act.,1,,,"Data Act, Article 23; Data Act, Article 25; Data Act, Article 30",data processing services exempt switching obligations,1,4450,44,4.7,
+q14,single,How many working days does a data holder have to decline or modify a public body's data request in a public emergency?,"A data holder has no later than five working days after the receipt of a request to decline or seek the modification of a request for data necessary to respond to a public emergency.
+
+(Data Act, Article 18(2))",0,,,"Data Act, Article 18; Data Act, Article 15; Data Act, Article 17; Data Governance Act, Article 9",public body emergency data request decline modify working days,1,4090,69,4.9,
+q15,single,"Can a data holder charge another business for making data available, and how?","Yes, a data holder can charge another business (a data recipient) for making data available in business-to-business relations, provided that the compensation agreed upon is non-discriminatory and reasonable, and it may include a margin (Data Act, Article 9).
+
+When agreeing on the compensation, the data holder and the data recipient must take into account:
+- Costs incurred in making the data available, specifically including costs for formatting data, dissemination via electronic means, and storage (Data Act, Article 9).
+- Investments in the collection and production of the data, where applicable, taking into account whether other parties contributed to obtaining, generating, or collecting the data (Data Act, Article 9).
+
+Additionally:
+- The compensation may depend on the volume, format, and nature of the data (Data Act, Article 9).
+- If the data recipient is an SME or a not-for-profit research organisation without partner or linked enterprises that do not qualify as SMEs, the compensation must not exceed the costs incurred in making the data available (Data Act, Article 9).
+- The data holder must provide the data recipient with sufficient detail regarding the basis for calculating the compensation so the recipient can assess whether these requirements are met (Data Act, Article 9).",0,,,"Data Act, Article 9; Data Act, Article 20; Data Act, Article 8; Data Act, Article 5; Data Act, Article 4",data holder make data available fee compensation business to business,1,4600,284,5.0,
+q16,single,How long does a public body have to decide on a request to re-use its data?,"A competent public sector body or competent body must adopt a decision on a request for the re-use of certain categories of data within two months of the date of receipt of the request, unless shorter time limits have been established in accordance with national law (Data Governance Act, Article 9(1)). 
+
+For exceptionally extensive and complex requests, that two-month period may be extended by up to 30 days, in which case the body must notify the applicant as soon as possible that more time is needed, along with the reasons for the delay (Data Governance Act, Article 9(1)).
+
+(Data Governance Act, Article 9(1))",0,,,"Data Governance Act, Article 9; Data Act, Article 18; Data Governance Act, Article 5; Data Act, Article 17",request to re-use public body data time limit decide,1,4580,158,4.7,
+q17,single,How long can an exclusive right to re-use public sector data last?,"The duration of an exclusive right to re-use data shall not exceed 12 months, and where a contract is concluded, the duration of the contract shall be the same as the duration of the exclusive right.
+
+(Data Governance Act, Article 4)",0,,,"Data Governance Act, Article 4; Data Governance Act, Article 9; Data Governance Act, Article 5; Data Governance Act, Article 3",exclusive right re-use public sector data duration,1,4429,75,4.8,
+q18,single,Which kinds of data-sharing services have to be notified to an authority?,"Any data intermediation services provider that intends to provide data intermediation services must submit a notification to the competent authority for data intermediation services (Data Governance Act, Article 11).
+
+The services subject to this notification requirement are:
+- Intermediation services between data holders and potential data users, including making available technical or other means to enable such services (such as bilateral or multilateral data exchanges, platforms, databases, or specific infrastructure for interconnecting data holders with data users) (Data Governance Act, Article 10).
+- Intermediation services between data subjects seeking to make their personal data available (or natural persons seeking to make non-personal data available) and potential data users, including enabling the exercise of data subjects' rights under Regulation (EU) 2016/679 (Data Governance Act, Article 10).
+- Services of data cooperatives (Data Governance Act, Article 10).",0,,,"Data Governance Act, Article 11; Data Act, Article 21; Data Governance Act, Article 13; Data Governance Act, Article 10; Data Governance Act, Article 2; Data Governance Act, Article 12",data sharing services notification authority | Article 10 data intermediation services categories,2,9382,228,26.1,
+q19,single,Does the Data Governance Act give a legal basis for processing personal data?,The indexed documents do not cover this. I searched for whether the Data Governance Act provides a legal basis for processing personal data.,1,,,"Data Governance Act, Article 1; GDPR, Article 6; Data Act, Article 14; Data Governance Act, Article 5; Data Governance Act, Article 2",Data Governance Act legal basis for processing personal data | Data Governance Act personal data legal basis re-use,2,9605,70,14.6,
+q20,multi,"What are our deadlines to react to a data breach, both towards the authority and towards the people affected?","**Towards the supervisory authority:**
+The controller must notify the personal data breach to the supervisory authority without undue delay and, where feasible, not later than 72 hours after having become aware of it, unless the breach is unlikely to result in a risk to the rights and freedoms of natural persons. If the notification is not made within 72 hours, it must be accompanied by reasons for the delay (GDPR, Article 33). 
+If you are a processor, you must notify the controller without undue delay after becoming aware of a personal data breach (GDPR, Article 33).
+
+**Towards the people affected (data subjects):**
+When the personal data breach is likely to result in a high risk to the rights and freedoms of natural persons, the controller must communicate the breach to the data subject without undue delay (GDPR, Article 34). This communication is not required if certain conditions are met, such as when the data was rendered unintelligible (e.g., encrypted) through appropriate technical and organisational measures, when subsequent measures ensure the high risk is no longer likely to materialise, or if it would involve disproportionate effort (in which case a public communication or similar measure is used instead) (GDPR, Article 34).",0,,,"GDPR, Article 33; GDPR, Article 34; GDPR, Article 66; GDPR, Article 77; GDPR, Article 32",personal data breach notification deadline authority data subject,1,4056,281,4.9,
+q21,multi,"If we process children's data for an online service without parental consent where it is needed, what is the maximum fine?","Infringements of the obligations of the controller pursuant to Article 8 (which governs conditions applicable to child's consent in relation to information society services) shall be subject to administrative fines up to 10 000 000 EUR, or in the case of an undertaking, up to 2 % of the total worldwide annual turnover of the preceding financial year, whichever is higher, in accordance with the general conditions for imposing administrative fines.
+
+(GDPR, Article 83, paragraph 4(a))",0,,,"GDPR, Article 83; GDPR, Article 8; GDPR, Article 58",children consent online service fine administrative fine article 83,1,4456,132,4.6,
+q22,multi,We want to make fully automated decisions about loan applicants. Which rights of the applicant and which assessment obligation does that trigger?,"The data subject has the right not to be subject to a decision based solely on automated processing, including profiling, which produces legal effects concerning them or similarly significantly affects them, unless the decision is necessary for entering into or performing a contract, is authorised by law, or is based on explicit consent (GDPR, Article 22). 
+
+If such a decision is necessary for entering into or performing a contract, or is based on explicit consent, the data controller must implement suitable measures to safeguard the data subject's rights, freedoms, and legitimate interests, which must include at least:
+* The right to obtain human intervention on the part of the controller;
+* The right to express their point of view; and
+* The right to contest the decision.
+(GDPR, Article 22)
+
+Additionally, where decisions are based on automated processing, including profiling, that produce legal effects or similarly significantly affect the natural person, a systematic and extensive evaluation of personal aspects triggers an assessment obligation: the controller must, prior to the processing, carry out a data protection impact assessment of the impact of the envisaged processing operations on the protection of personal data (GDPR, Article 35).",0,,,"GDPR, Article 22; GDPR, Article 14; GDPR, Article 35; GDPR, Article 13; GDPR, Article 6",automated decision making profiling rights applicant assessment obligation loan,1,4297,264,4.8,
+q23,multi,How can we transfer personal data to a country that has no adequacy decision?,"In the absence of an adequacy decision, a controller or processor may transfer personal data to a third country or international organisation only if they have provided appropriate safeguards, and on condition that enforceable data subject rights and effective legal remedies for data subjects are available (GDPR, Article 46). 
+
+Appropriate safeguards can be provided without requiring specific authorisation from a supervisory authority by:
+* A legally binding and enforceable instrument between public authorities or bodies (GDPR, Article 46);
+* Binding corporate rules in accordance with Article 47 (GDPR, Article 46);
+* Standard data protection clauses adopted by the Commission (GDPR, Article 46);
+* Standard data protection clauses adopted by a supervisory authority and approved by the Commission (GDPR, Article 46);
+* An approved code of conduct pursuant to Article 40 together with binding and enforceable commitments of the controller or processor in the third country to apply the appropriate safeguards (GDPR, Article 46); or
+* An approved certification mechanism pursuant to Article 42 together with binding and enforceable commitments of the controller or processor in the third country to apply the appropriate safeguards (GDPR, Article 46).
+
+Subject to authorisation from the competent supervisory authority, appropriate safeguards may also be provided by:
+* Contractual clauses between the controller or processor and the controller, processor or the recipient of the personal data in the third country or international organisation (GDPR, Article 46); or
+* Provisions to be inserted into administrative arrangements between public authorities or bodies which include enforceable and effective data subject rights (GDPR, Article 46).
+
+In the absence of an adequacy decision or appropriate safeguards, a transfer or set of transfers may take place only under specific derogations, such as explicit consent from the data subject after being informed of the risks, necessity for the performance of a contract, important reasons of public interest, or for the establishment, exercise, or defence of legal claims (GDPR, Article 49).",0,,,"GDPR, Article 45; GDPR, Article 46; GDPR, Article 49",transfer personal data third country adequacy decision appropriate safeguards,1,4212,433,10.5,
+q24,multi,How does a user's right to get their connected-device data passed to another company relate to the GDPR right to data portability?,"Any failure by the data holder and the third party to agree on arrangements for transmitting the data shall not hinder, prevent, or interfere with the exercise of the rights of the data subject under Regulation (EU) 2016/679, and in particular with the right to data portability under Article 20 of that Regulation (Data Act, Article 5).
+
+Furthermore, where the user is not the data subject whose personal data is requested, any personal data generated by the use of a connected product or related service shall only be made available to the third party if there is a valid legal basis for processing under Article 6 of Regulation (EU) 2016/679 and, where relevant, the conditions of Article 9 of that Regulation and Article 5(3) of Directive 2002/58/EC are fulfilled (Data Act, Article 5).",0,,,"Data Act, Article 5; Data Act, Article 6; Data Act, Article 4; Data Act, Article 1; GDPR, Article 20; Data Act, Article 26; Data Act, Article 38",right to data portability connected device third party Data Act GDPR | right to data portability Article 20 GDPR relation Data Act,2,9915,235,12.4,
+q25,multi,What fines can apply if a manufacturer breaches the Data Act's rules on giving users access to their product data?,"Member States are required to lay down rules on penalties for infringements of the Data Act and ensure they are implemented, with such penalties being effective, proportionate, and dissuasive (Data Act, Article 40(1)). 
+
+When imposing penalties, Member States must take into account recommendations of the European Data Innovation Board (EDIB) and non-exhaustive criteria including:
+* the nature, gravity, scale, and duration of the infringement;
+* any action taken by the infringing party to mitigate or remedy the damage caused;
+* any previous infringements by the infringing party;
+* financial benefits gained or losses avoided by the infringing party, where reliably established;
+* any other aggravating or mitigating factors;
+* the infringing party's annual turnover in the preceding financial year in the Union.
+(Data Act, Article 40(3))
+
+Additionally, for infringements of obligations laid down in Chapters II, III, and V of the Data Act, supervisory authorities responsible for monitoring the GDPR (Regulation (EU) 2016/679) may, within their scope of competence, impose administrative fines in accordance with Article 83 of Regulation (EU) 2016/679 and up to the amount referred to in Article 83(5) of that Regulation (Data Act, Article 40(4)). Competent authorities may also impose effective, proportionate, and dissuasive financial penalties, which may include periodic penalties and penalties with retroactive effect, or initiate legal proceedings for fines (Data Act, Article 37(5)).",0,,,"Data Act, Article 40; Data Act, Article 37; Data Act, Article 11; Data Act, Article 4; Data Act, Article 3; Data Governance Act, Article 34",penalties fines infringement breach Data Act product data access user | Chapter II Data Act penalties fines Article 40,2,10003,374,6.7,
+q26,multi,"What must a data altruism organisation provide regarding consent, and how easy must withdrawal be under the GDPR?","The indexed documents do not cover this. What a data altruism organisation must provide regarding consent and withdrawal is governed by the Data Governance Act (Articles 21 and 25), not the GDPR.",1,,,"Data Governance Act, Article 21; Data Governance Act, Article 25; Data Governance Act, Article 18; Data Governance Act, Article 16; Data Governance Act, Article 24",data altruism organisation consent withdrawal,1,3867,60,4.9,
+q27,multi,"What must a cloud provider's contract say about switching, and when do switching charges disappear?","A data processing service provider's written contract must clearly set out the rights of the customer and the obligations of the provider regarding switching, and must include at least the following:
+
+* Clauses allowing the customer, upon request, to switch to another provider or port all exportable data and digital assets to an on-premises ICT infrastructure without undue delay and within a mandatory maximum transitional period of 30 calendar days (initiated after the maximum notice period), during which the service contract remains applicable and the provider must provide reasonable assistance, maintain business continuity, provide clear information on continuity risks, and ensure a high level of security (Data Act, Article 25).
+* An obligation for the provider to support the customer's exit strategy, including by providing all relevant information (Data Act, Article 25).
+* Clauses specifying that the contract is considered terminated either upon the successful completion of the switching process or at the end of the maximum notice period if the customer chooses to erase their data instead (Data Act, Article 25).
+* A maximum notice period for initiating switching that does not exceed two months (Data Act, Article 25).
+* An exhaustive specification of all categories of data and digital assets that can be ported, including at a minimum all exportable data (Data Act, Article 25).
+* An exhaustive specification of categories of internal functioning data exempted from exportable data due to trade secret risks, provided they do not delay or impede switching (Data Act, Article 25).
+* A minimum data retrieval period of at least 30 calendar days starting after the agreed transitional period (Data Act, Article 25).
+* A clause guaranteeing the full erasure of all exportable data and digital assets generated directly by or relating to the customer after the retrieval period (or an agreed later date) once switching is successfully completed (Data Act, Article 25).
+* Switching charges, where applicable in accordance with Article 29 (Data Act, Article 25).
+* Clauses allowing the customer to notify the provider upon termination of the maximum notice period of their decision to switch provider, switch to an on-premises infrastructure, or erase their data (Data Act, Article 25).
+
+Regarding switching charges:
+* From 12 January 2027, providers shall not impose any switching charges on the customer for the switching process (Data Act, Article 29).
+* From 11 January 2024 to 12 January 2027, providers may impose reduced switching charges that do not exceed the costs incurred by the provider that are directly linked to the switching process (Data Act, Article 29).",0,,,"Data Act, Article 25; Data Act, Article 29; Data Act, Article 23",switching charges cloud provider contract | Article 25 contract terms switching Data Act,2,9475,591,7.8,
+q28,multi,"In a public emergency, how fast can a data holder push back on a public body's data request and does it get paid?","A data holder can decline or seek the modification of a request to respond to a public emergency without undue delay and, in any event, no later than five working days after the receipt of the request, based on specific grounds such as not having control over the data, a similar request having been previously submitted, or the request failing to meet certain legal conditions (Data Act, Article 18).
+
+Regarding payment, data holders other than microenterprises and small enterprises must make data available to respond to a public emergency free of charge (Data Act, Article 20). 
+
+(Data Act, Article 15; Data Act, Article 18; Data Act, Article 20)",0,,,"Data Act, Article 20; Data Act, Article 15; Data Act, Article 18; Data Act, Article 14",public emergency data holder request public body deadline compensation Data Act,1,3841,166,5.1,
+q29,multi,"What must a company do before running a data-sharing marketplace, and which conditions apply once it is running?","Before running a data-sharing marketplace (operating as a data intermediation services provider), a company must:
+
+* Submit a notification to the competent authority for data intermediation services regarding its intention to provide such services (Data Governance Act, Article 11).
+* If the provider has establishments in more than one Member State, it is deemed to be under the jurisdiction of the Member State of its main establishment (Data Governance Act, Article 11).
+* If the provider is not established in the Union but offers data intermediation services within the Union, it must designate a legal representative in one of the Member States in which those services are offered (Data Governance Act, Article 11).
+* Include specific information in the notification, such as its name, legal status and ownership structure, address of its main establishment, public website, contact details, a description of the intended service, and the estimated start date (Data Governance Act, Article 11).
+
+Once running, the provider is subject to the following conditions:
+
+* It must not use the data for which it provides intermediation services for other purposes, and it must provide the intermediation services through a separate legal person (Data Governance Act, Article 12).
+* Commercial terms, including pricing, must not depend on whether the data holder or data user uses other services from the provider or a related entity (Data Governance Act, Article 12).
+* Data collected regarding any person's activity for the purpose of providing the service (such as date, time, geolocation, duration, and connections) may only be used to develop the data intermediation service (including fraud detection or cybersecurity) and must be made available to data holders upon request (Data Governance Act, Article 12).
+* It must facilitate data exchange in the format received, converting it only to enhance interoperability, if requested by the user, or as mandated by law, while offering an opt-out to data subjects or holders (Data Governance Act, Article 12).
+* Additional specific tools (such as temporary storage, curation, conversion, anonymisation, and pseudonymisation) may only be offered at the explicit request or approval of the data holder or data subject, and third-party tools cannot be used for other purposes (Data Governance Act, Article 12).
+* Access procedures must be fair, transparent, and non-discriminatory for data subjects, holders, and users (Data Governance Act, Article 12).
+* It must have procedures to prevent fraudulent or abusive practices by parties seeking access (Data Governance Act, Article 12).
+* In the event of insolvency, it must ensure reasonable continuity of services and have mechanisms in place for data holders and users to access, transfer, or retrieve their data, or for data subjects to exercise their rights (Data Governance Act, Article 12).
+* It must take appropriate measures to ensure interoperability with other data intermediation services using commonly used open standards (Data Governance Act, Article 12).
+* It must put in place adequate technical, legal, and organisational measures to prevent unlawful transfer or access to non-personal data under Union or national law (Data Governance Act, Article 12).
+* It must inform data holders without delay in the event of unauthorized transfer, access, or use of shared non-personal data (Data Governance Act, Article 12).
+* It must take necessary measures to ensure an appropriate level of security for non-personal data storage, processing, and transmission, and the highest level of security for competitively sensitive information (Data Governance Act, Article 12).
+* When offering services to data subjects, it must act in their best interest, informing and advising them transparently about intended data uses and standard terms before they give consent (Data Governance Act, Article 12).
+* Where it provides tools for obtaining consent or permissions, it must specify the third-country jurisdiction of intended data use and provide tools to both give and withdraw consent or permissions (Data Governance Act, Article 12).
+* It must maintain a log record of the data intermediation activity (Data Governance Act, Article 12).
+* It must notify the competent authority of any changes to the notification information within 14 days, and notify within 15 days if it ceases its activities (Data Governance Act, Article 11).
+* It must clearly display the common logo for recognised data intermediation services providers on every online and offline publication relating to its activities (Data Governance Act, Article 11).",0,,,"Data Governance Act, Article 11; Data Act, Article 21; Data Governance Act, Article 10; Data Governance Act, Article 12; Data Act, Article 12; Data Governance Act, Article 1",data sharing marketplace provider conditions notification | Data Governance Act Article 12 conditions obligations providers,2,9041,973,8.5,
+q30,unanswerable,Can a Member State require that non-personal business data be stored only on servers in its own territory?,The indexed documents do not cover this. I searched for provisions on whether a Member State can require non-personal business data to be stored only on servers in its own territory.,1,,,"Data Act, Article 28; Data Act, Article 32; Data Governance Act, Article 5; Data Act, Article 1; Data Act, Article 2",non-personal business data stored only on servers in its own territory Member State requirement | storage location requirement non-personal data member state territory data act,2,9068,89,14.2,
+q31,unanswerable,How long can a website keep a tracking cookie before it has to ask for consent again?,The indexed documents do not cover this. I searched for rules on tracking cookie duration and consent renewal.,1,,,"GDPR, Article 7; GDPR, Article 13; GDPR, Article 8; GDPR, Article 42; GDPR, Article 6",tracking cookie consent duration website,1,3973,38,4.5,
+q32,unanswerable,What conformity requirements apply to high-risk AI systems in the EU?,The indexed documents do not cover this. I searched for requirements applicable to high-risk AI systems.,1,,,"Data Act, Article 36; GDPR, Article 35; Data Act, Article 33",high risk AI systems conformity requirements,1,4640,39,13.2,
+q33,unanswerable,What amount did the Spanish data protection authority fine the last company that breached the GDPR?,The indexed documents do not cover this. I searched for information regarding fines issued by the Spanish data protection authority to specific companies.,1,,,"GDPR, Article 83; GDPR, Article 84; GDPR, Article 82",Spanish data protection authority fine GDPR,1,4206,44,12.6,
+q34,unanswerable,What is the penalty in German law for breaching the Data Act?,The indexed documents do not cover this. I searched for rules on penalties in German law for breaching the Data Act.,1,,,"Data Act, Article 40; Data Act, Article 37; Data Governance Act, Article 34",penalties Data Act Member States infringements German law,1,4606,47,12.1,
+q35,unanswerable,For how many years must we keep customer invoices that contain personal data?,The indexed documents do not cover this. I searched for the retention period and number of years for keeping customer invoices containing personal data.,1,,,"GDPR, Article 5; GDPR, Article 30; GDPR, Article 17; GDPR, Article 13",retention period customer invoices personal data years,1,4423,47,4.4,
+q36,unanswerable,What cybersecurity requirements must a connected product meet before it can be sold in the EU?,"The indexed documents do not cover this. I searched for cybersecurity requirements for connected products under the Data Act, GDPR, and Data Governance Act.",1,,,"Data Act, Article 3; Data Act, Article 1; Data Act, Article 6; Data Act, Article 2; Data Act, Article 4",cybersecurity requirements connected product Data Act,1,4453,48,12.7,
+q37,unanswerable,What obligations do very large online platforms have to assess systemic risks?,The indexed documents do not cover this. What obligations do very large online platforms have to assess systemic risks?,1,,,"Data Governance Act, Article 10; Data Act, Article 49; Data Governance Act, Article 11; Data Governance Act, Article 12",very large online platforms systemic risks,1,4440,40,13.6,

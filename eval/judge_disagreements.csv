@@ -1,0 +1,3 @@
+id,field,human,judge,human_notes,judge_reason
+q19,supported,1,0,Wrong refusal: the legal-basis sentence is in Article 1 part 2/2 which was not retrieved (only part 1/2 came back); retrieval miss at chunk level,"The documents provide sufficient information to answer the question, so the claim that the indexed documents do not cover it is incorrect."
+q25,correct,0,1,Gives the Art. 40(4) mechanism but not the amount (EUR 20 million or 4%) because GDPR Art. 83 was never retrieved; GDPR Art. 83 not cited,"The answer accurately summarizes the penalty framework, including the specific GDPR-based fines for breaches of Chapters II, III, and V as required by the reference."

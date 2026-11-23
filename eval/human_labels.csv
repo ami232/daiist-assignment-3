@@ -1,1 +1,38 @@
 id,correct,supported,notes
+q01,1,1,"Wording slip: says 'personal data protection authority' instead of 'supervisory authority'"
+q02,1,1,
+q03,1,1,
+q04,1,1,
+q05,1,1,
+q06,1,1,
+q07,1,1,
+q08,1,1,
+q09,1,1,
+q10,1,1,
+q11,1,1,
+q12,1,1,
+q13,0,1,"Wrong refusal: Article 31 answers it but retrieval never returned it (got Articles 23, 25 and 30) so the agent refused; retrieval miss"
+q14,1,1,
+q15,1,1,
+q16,1,1,
+q17,1,1,
+q18,1,1,
+q19,0,1,"Wrong refusal: the legal-basis sentence is in Article 1 part 2/2 which was not retrieved (only part 1/2 came back); retrieval miss at chunk level"
+q20,1,1,
+q21,1,1,
+q22,1,1,
+q23,1,1,
+q24,0,1,"Only covers Art. 5 safeguards (no hindering of GDPR portability and Art. 6 legal basis); omits the duty to make data available to a third party on the user's request free of charge and what GDPR Art. 20 gives; Art. 20 not cited"
+q25,0,1,"Gives the Art. 40(4) mechanism but not the amount (EUR 20 million or 4%) because GDPR Art. 83 was never retrieved; GDPR Art. 83 not cited"
+q26,0,0,"Wrong refusal: Art. 21(3) with tools for easy withdrawal was retrieved so the DGA half was answerable; GDPR Art. 7 was not retrieved; also says it is governed by the DGA 'not the GDPR' which the passages do not say and Art. 25(3) points to the GDPR"
+q27,1,1,
+q28,1,1,
+q29,1,1,
+q30,1,1,
+q31,1,1,
+q32,1,1,
+q33,1,1,
+q34,1,1,
+q35,1,1,
+q36,1,1,
+q37,1,1,"Refusal is correct but the second sentence repeats the question instead of saying what was searched"
