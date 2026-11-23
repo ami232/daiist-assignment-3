@@ -44,8 +44,18 @@ RETRIEVED = re.compile(r"Source: (\S+) \(.*?\) \| Location: (.+?)(?:, page \d+)?
 REFERENCE = re.compile(r"\b(Article|Recital|Section)\s+((?:[IVX]+|\d+)(?:\.[A-Za-z0-9]+)*)")
 
 
+SOURCE_MARK = re.compile(r"(?:^|[;,]\s*)([a-z][a-z0-9_]*):\s*")
+
+
 def references(location: str) -> list[tuple[str, str]]:
     return REFERENCE.findall(location)
+
+
+def citation_parts(citation: str) -> list[tuple[str, list[tuple[str, str]]]]:
+    """One bracket can cite several sources: [gdpr: Article 33, edpb_breach: Section II.A.1]. Returns one
+    (source, references) pair per source named in it."""
+    pieces = SOURCE_MARK.split(citation[1:-1])        # ['', source, location, source, location, ...]
+    return [(pieces[i], references(pieces[i + 1])) for i in range(1, len(pieces) - 1, 2)]
 
 
 def same_or_nested(a: str, b: str) -> bool:
@@ -53,17 +63,20 @@ def same_or_nested(a: str, b: str) -> bool:
 
 
 def check_citations(answer: str, retrieved: list[tuple[str, str]]) -> tuple[list[str], list[str]]:
-    """Return (valid, invalid) citations of the answer. A citation is valid when every article, recital
-    or section it names was in a retrieved passage of the same source."""
+    """Return (valid, invalid) citations of the answer (each different citation once). A citation is valid
+    when every article, recital or section it names was in a retrieved passage of the same source."""
     have = [(source, kind, ident) for source, location in retrieved for kind, ident in references(location)]
     valid, invalid = [], []
     for match in CITATION.finditer(answer):
-        source, location = match.group(1), match.group(2)
-        refs = references(location)
-        ok = bool(refs) and all(
-            any(s == source and k == kind and same_or_nested(i, ident) for s, k, i in have) for kind, ident in refs
+        text = match.group(0)
+        parts = citation_parts(text)
+        ok = bool(parts) and all(
+            bool(refs) and all(any(s == source and k == kind and same_or_nested(i, ident) for s, k, i in have) for kind, ident in refs)
+            for source, refs in parts
         )
-        (valid if ok else invalid).append(match.group(0))
+        target = valid if ok else invalid
+        if text not in target:
+            target.append(text)
     return valid, invalid
 
 

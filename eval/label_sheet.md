@@ -1,5 +1,6 @@
 # Label sheet
 Grade the answers in this order (it is random) in `eval/human_labels.csv`, one line per answer: `id,correct,supported,notes`. At least 20; more is better. This file shows no judge verdicts.
+Follow your rubric (`eval/judge_rubric.md`). `correct` is 1 only for a fully correct answer: a partial answer is 0, with a note that starts with `partial:`.
 - `correct`: 1 if the answer is right against the reference answer (for an unanswerable question: a proper refusal), else 0.
 - `supported`: 1 if every claim in the answer is in the retrieved passages below, else 0.
 - `notes`: why, for every 0.
@@ -369,6 +370,8 @@ For the purposes of the 72-hour timeframe, a controller is generally considered 
 
 This notification is required unless the personal data breach is unlikely to result in a risk to the rights and freedoms of natural persons [gdpr: Article 33, paragraph 1, edpb_breach: Section II.A.1, paragraph 29]. During the 72-hour window, you are expected to assess the likely risk to individuals to determine if notification is triggered [edpb_breach: Section II.A.2, paragraph 35]. If you cannot notify within 72 hours, you must provide the reasons for the delay along with the notification [gdpr: Article 33, paragraph 1, edpb_breach: Section II.A.1, paragraph 29].
 ```
+
+**Citation check (code):** not found in the retrieved passages: [gdpr: Article 33, paragraph 1, edpb_breach: Section II.A.1, paragraph 29]
 
 <details><summary>Passages the agent retrieved</summary>
 

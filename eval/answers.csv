@@ -1,9 +1,9 @@
-id,kind,question,answer,searches,valid_citations,invalid_citations,refused,agent_retrieval,input_tokens,output_tokens,seconds,flags
+id,kind,question,answer,searches,valid_citations,invalid_citations,fabricated_citations,refused,agent_retrieval,input_tokens,output_tokens,seconds,flags
 q01,single,"Someone stole a laptop with our customer loyalty list on Friday evening, but we only noticed on Monday morning. How long do we have to tell the data protection authority?","You must notify the supervisory authority without undue delay and, where feasible, not later than 72 hours after having become aware of the breach [gdpr: Article 33, paragraph 1, edpb_breach: Section II.A.1, paragraph 29]. 
 
 For the purposes of the 72-hour timeframe, a controller is generally considered to become ""aware"" when they have a reasonable degree of certainty that a security incident has occurred that led to personal data being compromised [edpb_breach: Section II.A.2, paragraph 31]. If you only noticed the theft on Monday morning, the 72-hour countdown typically starts from that point of awareness on Monday, provided you did not have earlier alerts that you failed to act upon in a timely manner [edpb_breach: Section II.A.2, paragraph 40]. 
 
-This notification is required unless the personal data breach is unlikely to result in a risk to the rights and freedoms of natural persons [gdpr: Article 33, paragraph 1, edpb_breach: Section II.A.1, paragraph 29]. During the 72-hour window, you are expected to assess the likely risk to individuals to determine if notification is triggered [edpb_breach: Section II.A.2, paragraph 35]. If you cannot notify within 72 hours, you must provide the reasons for the delay along with the notification [gdpr: Article 33, paragraph 1, edpb_breach: Section II.A.1, paragraph 29].",2,3,3,False,equivalent,7415,389,7.36,"unverified citation: [gdpr: Article 33, paragraph 1, edpb_breach: Section II.A.1, paragraph 29]; [gdpr: Article 33, paragraph 1, edpb_breach: Section II.A.1, paragraph 29]; [gdpr: Article 33, paragraph 1, edpb_breach: Section II.A.1, paragraph 29]"
+This notification is required unless the personal data breach is unlikely to result in a risk to the rights and freedoms of natural persons [gdpr: Article 33, paragraph 1, edpb_breach: Section II.A.1, paragraph 29]. During the 72-hour window, you are expected to assess the likely risk to individuals to determine if notification is triggered [edpb_breach: Section II.A.2, paragraph 35]. If you cannot notify within 72 hours, you must provide the reasons for the delay along with the notification [gdpr: Article 33, paragraph 1, edpb_breach: Section II.A.1, paragraph 29].",2,3,1,,False,equivalent,7415,389,7.36,"unverified citation: [gdpr: Article 33, paragraph 1, edpb_breach: Section II.A.1, paragraph 29]; [gdpr: Article 33, paragraph 1, edpb_breach: Section II.A.1, paragraph 29]; [gdpr: Article 33, paragraph 1, edpb_breach: Section II.A.1, paragraph 29]"
 q02,single,I run a small shop with five staff. I keep a customer mailing list and take card payments. Do I have to appoint a data protection officer?,"You do not automatically have to appoint a data protection officer just because you run a shop, keep a mailing list, and take card payments. 
 
 Under the GDPR, you only have to designate a data protection officer if:
@@ -14,10 +14,10 @@ Under the GDPR, you only have to designate a data protection officer if:
 For a small shop where processing customer mailing lists and card payments are ancillary rather than core activities, and are not on a large scale, a data protection officer is not mandatory under the EU rules. However, you may still choose to voluntarily designate one, or you might be required to do so if specific national laws in your Member State require it for cases outside of these criteria.
 
 [gdpr: Article 37, paragraphs 1 and 4]
-[gdpr: Recital 97]",1,2,0,False,hit,3534,243,3.05,
+[gdpr: Recital 97]",1,2,0,,False,hit,3534,243,3.05,
 q03,single,"Our website hides all its content until visitors click ""Accept cookies"". Is that valid consent?","No, that is not valid consent. 
 
-Access to services and website functionalities must not be made conditional on a user consenting to store or access information on their device—a practice known as a ""cookie wall"". Because visitors are not presented with a genuine choice and cannot access the content without clicking ""Accept cookies"", the consent is not freely given [edpb_consent: Section 3.1.2, paragraphs 39-41].",1,1,0,False,hit,3510,115,2.9,
+Access to services and website functionalities must not be made conditional on a user consenting to store or access information on their device—a practice known as a ""cookie wall"". Because visitors are not presented with a genuine choice and cannot access the content without clicking ""Accept cookies"", the consent is not freely given [edpb_consent: Section 3.1.2, paragraphs 39-41].",1,1,0,,False,hit,3510,115,2.9,
 q04,single,"A staff phone with customer data on it was lost. It was securely encrypted, the key was never on the phone, and everything is backed up. Do we have to report this as a breach?","No, you likely do not have to report this as a breach to the supervisory authority or the individuals. 
 
 According to the guidelines, the loss of a securely encrypted mobile device does not require notification to the supervisory authority, provided that:
@@ -26,31 +26,31 @@ According to the guidelines, the loss of a securely encrypted mobile device does
 
 Because the data is properly encrypted and unintelligible to anyone who finds the phone, and backups exist so that availability is not permanently lost, the incident is considered unlikely to result in a risk to the rights and freedoms of the data subjects [edpb_breach: Section II.D, paragraph 78, 79]. 
 
-However, you must still document the incident internally (such as in an internal breach register), and you must re-evaluate the risk if circumstances change—for example, if the encryption key is ever compromised [edpb_breach: Section II.D, paragraph 78; edpb_breach: Section VII.B, Example i].",1,4,0,True,hit,3903,291,6.14,
+However, you must still document the incident internally (such as in an internal breach register), and you must re-evaluate the risk if circumstances change—for example, if the encryption key is ever compromised [edpb_breach: Section II.D, paragraph 78; edpb_breach: Section VII.B, Example i].",1,3,0,,True,hit,3903,291,6.14,
 q05,unanswerable,I ship products to customers in California. What do I have to do under the CCPA about letting them opt out of the sale of their data?,"The documents do not cover the CCPA (California Consumer Privacy Act) or its requirements regarding opting out of the sale of personal data, as they only cover the EU GDPR and related European data protection guidelines. 
 
 The closest things they cover under EU law are the right to object to the processing of personal data [gdpr: Article 21, paragraphs 1-5, page 45], particularly for direct marketing purposes [gdpr: Recital 70, page 13], and the rules on obtaining consent [edpb_consent: Section 4, paragraph 102, page 22]. 
 
-For obligations under California law, you should consult a lawyer or the relevant guidance from California regulatory authorities.",1,3,0,True,,3254,172,2.82,
+For obligations under California law, you should consult a lawyer or the relevant guidance from California regulatory authorities.",1,3,0,,True,,3254,172,2.82,
 q06,multi,"Customers join our newsletter with one click on the website. To unsubscribe, I tell them to call our shop during opening hours. Is that okay?","No, that is not okay. 
 
-The rules state that withdrawing consent must be as easy as giving consent, and people must be able to do it at any time [gdpr: Article 7, paragraph 3; edpb_consent: Section 5.2, paragraph 113]. If someone joins your newsletter with a single click on your website, you cannot make them call your shop during opening hours to unsubscribe, because a telephone call during business hours is more burdensome than a one-click online sign-up [edpb_consent: Section 5.2, paragraphs 114-115]. When consent is given electronically via a website, users must be able to withdraw it through the same electronic interface [edpb_consent: Section 5.2, paragraph 114].",1,2,1,False,hit,3574,191,2.83,"unverified citation: [gdpr: Article 7, paragraph 3; edpb_consent: Section 5.2, paragraph 113]"
+The rules state that withdrawing consent must be as easy as giving consent, and people must be able to do it at any time [gdpr: Article 7, paragraph 3; edpb_consent: Section 5.2, paragraph 113]. If someone joins your newsletter with a single click on your website, you cannot make them call your shop during opening hours to unsubscribe, because a telephone call during business hours is more burdensome than a one-click online sign-up [edpb_consent: Section 5.2, paragraphs 114-115]. When consent is given electronically via a website, users must be able to withdraw it through the same electronic interface [edpb_consent: Section 5.2, paragraph 114].",1,3,0,,False,hit,3574,191,2.83,"unverified citation: [gdpr: Article 7, paragraph 3; edpb_consent: Section 5.2, paragraph 113]"
 q07,multi,We've had a breach but don't yet know exactly how many customers are affected. Can we wait until we have exact numbers before telling the authority?,"No, you should not wait for exact numbers. 
 
 The GDPR allows you to provide information in phases without undue further delay when it is not possible to provide all details at once [edpb_breach: Section II.B.2, paragraph 56]. Where precise information—such as the exact number of affected data subjects—is not yet available, this should not prevent you from making a timely breach notification; you are permitted to use approximations for the number of individuals and records concerned [edpb_breach: Section II.B.1, paragraph 52]. 
 
-When you make your initial notification within 72 hours, you should inform the authority that you do not yet have all the required information and will provide more details later [edpb_breach: Section II.B.2, paragraph 57]. You should also provide reasons for any delay in supplying full details [edpb_breach: Section II.B.2, paragraph 57].",1,4,0,False,miss,3498,229,7.25,
+When you make your initial notification within 72 hours, you should inform the authority that you do not yet have all the required information and will provide more details later [edpb_breach: Section II.B.2, paragraph 57]. You should also provide reasons for any delay in supplying full details [edpb_breach: Section II.B.2, paragraph 57].",1,3,0,,False,miss,3498,229,7.25,
 q08,multi,We have a data protection officer. What should they be doing when we have a breach?,"When you have a data protection officer (DPO), they should be involved in the following ways during a breach:
 
 * **Promptly informed and involved:** They should be informed about the breach straight away and involved throughout the entire breach management and notification process [edpb_breach: Section V.B, paragraph 133].
 * **Providing advice and cooperation:** They provide data protection advice and information, and they must cooperate with the supervisory authority as well as act as a contact point for both the supervisory authority and data subjects [edpb_breach: Section V.B, paragraph 131].
 * **Assisting with notifications:** Their name and contact details (or another contact point) must be provided to the supervisory authority when you notify them of a breach [edpb_breach: Section V.B, paragraph 131]. They also play a role during any subsequent investigations by the supervisory authority [edpb_breach: Section V.B, paragraph 133].
-* **Documentation:** You may ask for their opinion on the structure, setup, and administration of your breach documentation, or they may be given the task of maintaining those records [edpb_breach: Section V.B, paragraph 132].",1,5,0,False,miss,3447,283,3.08,
+* **Documentation:** You may ask for their opinion on the structure, setup, and administration of your breach documentation, or they may be given the task of maintaining those records [edpb_breach: Section V.B, paragraph 132].",1,3,0,,False,miss,3447,283,3.08,
 q09,multi,"I run an online game app that is popular with teenagers, and I want to ask users for consent to send them marketing. A user says he is 15. Can he consent himself?","Whether a 15-year-old can consent depends on the digital age of consent set by the law of the specific Member State where the user resides. 
 
 Under the GDPR, when offering online services directly to children based on consent, processing is lawful if the child is at least 16 years old. However, individual Member States are allowed by law to lower this age for these purposes, provided that the lower age is not below 13. If a user is below the applicable age of digital consent, processing is lawful only if and to the extent that consent is given or authorised by the holder of parental responsibility over the child [gdpr: Article 8, paragraph 1]. 
 
-Because digital consent rules can vary between countries, you must check the specific national law of the country where the 15-year-old user resides [edpb_consent: Section 7.1.3, paragraphs 131-132]. If that country has set the age of digital consent at 15 or lower (for example, 13, 14, or 15), the user can consent himself. If that country has set the age at 16, a parent or guardian must give or authorise the consent, and you must make reasonable efforts to verify this using available technology [gdpr: Article 8, paragraphs 1-2].",1,3,0,False,hit,3776,307,13.15,
+Because digital consent rules can vary between countries, you must check the specific national law of the country where the 15-year-old user resides [edpb_consent: Section 7.1.3, paragraphs 131-132]. If that country has set the age of digital consent at 15 or lower (for example, 13, 14, or 15), the user can consent himself. If that country has set the age at 16, a parent or guardian must give or authorise the consent, and you must make reasonable efforts to verify this using available technology [gdpr: Article 8, paragraphs 1-2].",1,3,0,,False,hit,3776,307,13.15,
 q10,single,I use an outside company to send my email newsletters. What does the law say I need to have in place with them?,"When you use an outside company to process personal data on your behalf (such as sending newsletters), you must use only processors that provide sufficient guarantees to implement appropriate technical and organisational measures to meet the requirements of the GDPR and protect data subject rights. 
 
 Your relationship with them must be governed by a contract or other legal act in writing (which can be in electronic form) that is binding on the processor. This agreement must set out the subject-matter, duration, nature and purpose of the processing, the type of personal data, categories of data subjects, and your obligations and rights as the controller. 
@@ -66,10 +66,10 @@ Specifically, the contract must stipulate that the processor:
 * Makes available all information necessary to demonstrate compliance and allows for and contributes to audits and inspections conducted by you or another auditor you mandate.
 * Immediately informs you if they believe one of your instructions infringes data protection rules.
 
-[gdpr: Article 28, paragraphs 1-4, 7-10]",1,1,0,False,hit,3471,369,17.09,
+[gdpr: Article 28, paragraphs 1-4, 7-10]",1,1,0,,False,hit,3471,369,17.09,
 q11,single,At checkout we have a box for our newsletter that is already ticked. Customers can untick it. Is that valid consent?,"No, a pre-ticked box is not valid consent. 
 
-Consent requires a clear affirmative act indicating agreement. Silence, inactivity, or pre-ticked boxes do not constitute valid consent, and opt-out constructions that require the customer to intervene to prevent agreement are not allowed [gdpr: Recital 32; edpb_consent: Section 3.4, paragraphs 79-81].",1,0,1,False,hit,3508,107,2.67,"unverified citation: [gdpr: Recital 32; edpb_consent: Section 3.4, paragraphs 79-81]"
+Consent requires a clear affirmative act indicating agreement. Silence, inactivity, or pre-ticked boxes do not constitute valid consent, and opt-out constructions that require the customer to intervene to prevent agreement are not allowed [gdpr: Recital 32; edpb_consent: Section 3.4, paragraphs 79-81].",1,1,0,,False,hit,3508,107,2.67,"unverified citation: [gdpr: Recital 32; edpb_consent: Section 3.4, paragraphs 79-81]"
 q12,single,A customer has asked for a copy of all the data I hold about them. What do I have to give them?,"You must provide the customer with a copy of their personal data that is undergoing processing [gdpr: Article 15, paragraph 3]. 
 
 Along with a copy of the data itself, you must also provide confirmation that you are processing their data and give them the following information:
@@ -87,20 +87,20 @@ Along with a copy of the data itself, you must also provide confirmation that yo
 * **Format:** If the request is made by electronic means, you must provide the information in a commonly used electronic form, unless the customer asks for something else [gdpr: Article 15, paragraph 3]. The information must be provided in clear, plain language [gdpr: Article 12, paragraph 1].
 * **Timing:** You must respond without undue delay and at the latest within one month of the request [gdpr: Recital 59].
 * **Fees:** The first copy must be provided free of charge. If they ask for additional copies, you may charge a reasonable fee based on administrative costs [gdpr: Article 15, paragraph 3].
-* **Limits:** The right to obtain a copy must not adversely affect the rights and freedoms of others [gdpr: Article 15, paragraph 4], such as trade secrets or intellectual property [gdpr: Recital 63].",1,16,0,False,hit,3442,588,6.85,
+* **Limits:** The right to obtain a copy must not adversely affect the rights and freedoms of others [gdpr: Article 15, paragraph 4], such as trade secrets or intellectual property [gdpr: Recital 63].",1,14,0,,False,hit,3442,588,6.85,
 q13,unanswerable,My shop has security cameras. How many days does Spanish law let me keep the footage?,"The provided documents do not specify a fixed number of days set by Spanish law for keeping security camera footage. 
 
 However, the EU General Data Protection Regulation (GDPR) states that personal data should not be kept longer than necessary for the purposes for which they were collected [gdpr: Article 17, paragraph 1(a)]. It requires controllers to establish time limits for erasure or for a periodic review to ensure data are not kept longer than necessary [gdpr: Recital 39]. 
 
-Because national retention periods (such as specific limits set by Spanish law) are outside the scope of these EU-level documents, you may want to consult the Spanish data protection authority (AEPD) or a legal professional for the exact day limits applicable in Spain.",2,2,0,True,,4406,208,7.35,
+Because national retention periods (such as specific limits set by Spanish law) are outside the scope of these EU-level documents, you may want to consult the Spanish data protection authority (AEPD) or a legal professional for the exact day limits applicable in Spain.",2,2,0,,True,,4406,208,7.35,
 q14,unanswerable,"I want to use a US email marketing company. Is there currently an adequacy decision covering transfers to the US, so I can send them customer data without extra safeguards?","The documents do not state whether there is currently an adequacy decision covering the United States, nor do they name specific countries that have been granted adequacy. 
 
 The texts explain that data can be transferred to a third country without specific authorisation if the European Commission has decided that the country, a territory, or a specified sector ensures an adequate level of protection [gdpr: Article 45, paragraph 1]. In the absence of such an adequacy decision, a transfer may only take place if appropriate safeguards are provided—such as standard data protection clauses adopted by the Commission, binding corporate rules, or approved codes of conduct—along with enforceable data subject rights and effective legal remedies [gdpr: Article 46, paragraphs 1-2, recital 108]. 
 
-Because the provided documents do not list current adequacy decisions, you should consult your data protection authority or a lawyer to verify the current status of transfers to the US.",1,2,0,True,,3554,213,3.47,
+Because the provided documents do not list current adequacy decisions, you should consult your data protection authority or a lawyer to verify the current status of transfers to the US.",1,2,0,,True,,3554,213,3.47,
 q15,unanswerable,How long do I have to keep invoices that contain customer names and addresses to satisfy Spanish tax rules?,"The documents do not cover specific retention periods under national tax rules, such as Spanish tax law. The provided documents focus on the EU GDPR and EDPB guidelines, which do not specify time limits for keeping invoices. 
 
-For questions regarding tax obligations and retention periods required by local authorities, you should consult a lawyer or your local data protection authority.",1,0,0,True,,3445,88,3.09,no [source: location] citation in the answer
+For questions regarding tax obligations and retention periods required by local authorities, you should consult a lawyer or your local data protection authority.",1,0,0,,True,,3445,88,3.09,no [source: location] citation in the answer
 q16,single,"Do I always need my customers' consent to use their data, or are there other legal reasons I can rely on?","No, you do not always need consent. Consent is only one of six lawful bases you can rely on to process personal data [gdpr: Article 6, paragraph 1, edpb_consent: Section 6, paragraph 121]. 
 
 Under Article 6 of the GDPR, processing is lawful if it meets at least one of these six grounds:
@@ -111,7 +111,7 @@ Under Article 6 of the GDPR, processing is lawful if it meets at least one of th
 5. **Public interest:** Processing is necessary to perform a task in the public interest or in your official authority [gdpr: Article 6, paragraph 1(e)].
 6. **Legitimate interests:** Processing is necessary for your legitimate interests (or those of a third party), provided those interests are not overridden by the rights and freedoms of the individual [gdpr: Article 6, paragraph 1(f)].
 
-You must choose and establish the applicable lawful basis before you start processing, and you must decide this in advance of collection [edpb_consent: Section 6, paragraphs 121 and 123].",1,7,1,False,hit,3478,383,7.12,"unverified citation: [gdpr: Article 6, paragraph 1, edpb_consent: Section 6, paragraph 121]"
+You must choose and establish the applicable lawful basis before you start processing, and you must decide this in advance of collection [edpb_consent: Section 6, paragraphs 121 and 123].",1,8,0,,False,hit,3478,383,7.12,"unverified citation: [gdpr: Article 6, paragraph 1, edpb_consent: Section 6, paragraph 121]"
 q17,single,"When customers fill in my online order form, what do I have to tell them about how I use their data?","When you collect personal data directly from customers via an online order form, you must provide them with the following information at the time you obtain the data:
 
 * Your identity and contact details (and those of your representative or data protection officer, if applicable) [gdpr: Article 13, paragraph 1].
@@ -124,7 +124,7 @@ q17,single,"When customers fill in my online order form, what do I have to tell 
 * If processing is based on consent, the right to withdraw consent at any time (without affecting the lawfulness of processing done before withdrawal) [gdpr: Article 13, paragraph 2].
 * The right to lodge a complaint with a supervisory authority [gdpr: Article 13, paragraph 2].
 * Whether providing the personal data is a statutory or contractual requirement (or necessary to enter into a contract), whether customers are obliged to provide it, and the possible consequences of not providing it [gdpr: Article 13, paragraph 2].
-* The existence of any automated decision-making, including profiling, along with meaningful information about the logic, significance, and consequences involved [gdpr: Article 13, paragraph 2].",1,11,0,False,hit,3457,435,2.91,
+* The existence of any automated decision-making, including profiling, along with meaningful information about the logic, significance, and consequences involved [gdpr: Article 13, paragraph 2].",1,2,0,,False,hit,3457,435,2.91,
 q18,single,"A customer has asked me to delete all the data I hold on them. Do I have to, or can I refuse?","As a general rule, a customer has the right to obtain the erasure of their personal data without undue delay, and you have the obligation to erase it, if certain grounds apply [gdpr: Article 17, paragraph 1]. 
 
 You must erase the data if one of the following applies:
@@ -143,7 +143,7 @@ You do not have to delete the data if keeping or processing it is necessary for 
 * Archiving in the public interest, scientific/historical research, or statistical purposes, where erasure would likely make achieving those objectives impossible or seriously impair them [gdpr: Article 17, paragraph 3(d)].
 * The establishment, exercise, or defence of legal claims [gdpr: Article 17, paragraph 3(e)].
 
-Whether you must delete the data depends on your specific reasons for holding it and whether any of the exceptions above apply to your situation.",1,13,0,False,hit,3422,513,27.95,
+Whether you must delete the data depends on your specific reasons for holding it and whether any of the exceptions above apply to your situation.",1,13,0,,False,hit,3422,513,27.95,
 q19,single,"I have 8 employees. Do I still have to keep a written record of my processing activities, or are small businesses exempt?","Organizations with fewer than 250 employees are generally exempt from the obligation to maintain a written record of processing activities, but this exemption does not apply if:
 - The processing you carry out is likely to result in a risk to the rights and freedoms of data subjects,
 - The processing is not occasional, or
@@ -151,7 +151,7 @@ q19,single,"I have 8 employees. Do I still have to keep a written record of my p
 
 You will need to assess your specific processing activities against these conditions to determine whether the exemption applies to your business.
 
-[gdpr: Article 30, paragraph 5; gdpr: Recital 13]",1,1,0,False,hit,3426,160,2.57,
+[gdpr: Article 30, paragraph 5; gdpr: Recital 13]",1,1,0,,False,hit,3426,160,2.57,
 q20,single,What security measures does the law require for my customer database? Is there a fixed checklist?,"No, there is no fixed checklist. 
 
 Instead, the law requires you to implement appropriate technical and organisational measures to ensure a level of security appropriate to the risk [gdpr: Article 32, paragraph 1]. To decide what is appropriate, you must take into account:
@@ -166,7 +166,7 @@ Depending on what is appropriate for your specific situation, measures may inclu
 - The ability to restore access to data in a timely manner after a physical or technical incident [gdpr: Article 32, paragraph 1(c)]
 - A process for regularly testing, assessing, and evaluating the effectiveness of your security measures [gdpr: Article 32, paragraph 1(d)]
 
-You can also use approved codes of conduct or certification mechanisms to help demonstrate compliance [gdpr: Article 32, paragraph 3]. Because the law does not provide a one-size-fits-all checklist and requires you to assess the risks yourself, you may want to consult a lawyer or your data protection authority if you are unsure whether your specific setup meets the requirement.",1,7,0,False,hit,3387,354,11.11,
+You can also use approved codes of conduct or certification mechanisms to help demonstrate compliance [gdpr: Article 32, paragraph 3]. Because the law does not provide a one-size-fits-all checklist and requires you to assess the risks yourself, you may want to consult a lawyer or your data protection authority if you are unsure whether your specific setup meets the requirement.",1,6,0,,False,hit,3387,354,11.11,
 q21,single,I'm thinking of installing a new customer-tracking system in my shop. When does the law say I have to do a data protection impact assessment first?,"The law requires you to do a data protection impact assessment prior to processing whenever a type of processing—particularly using new technologies, and considering its nature, scope, context, and purposes—is likely to result in a high risk to the rights and freedoms of individuals [gdpr: Article 35, paragraph 1]. 
 
 Specifically, an assessment is required in cases that involve:
@@ -174,13 +174,13 @@ Specifically, an assessment is required in cases that involve:
 - Large-scale processing of special categories of data (such as health data) or data relating to criminal convictions and offences [gdpr: Article 35, paragraph 3(b)].
 - Systematic monitoring of a publicly accessible area on a large scale [gdpr: Article 35, paragraph 3(c)].
 
-Whether your specific customer-tracking system triggers a ""high risk"" depends on how it operates (for example, whether it uses new technologies, involves profiling, or tracks people systematically on a large scale). If you have a data protection officer, you must seek their advice when carrying out the assessment [gdpr: Article 35, paragraph 2]. If you are unsure whether your setup crosses the threshold into high risk, you should consult your data protection authority or a lawyer.",1,5,0,False,hit,3298,317,3.44,
+Whether your specific customer-tracking system triggers a ""high risk"" depends on how it operates (for example, whether it uses new technologies, involves profiling, or tracks people systematically on a large scale). If you have a data protection officer, you must seek their advice when carrying out the assessment [gdpr: Article 35, paragraph 2]. If you are unsure whether your setup crosses the threshold into high risk, you should consult your data protection authority or a lawyer.",1,5,0,,False,hit,3298,317,3.44,
 q22,single,What is the maximum fine I could face if I get data protection wrong?,"Depending on which part of the rulebook is breached, the maximum fine can fall into one of two tiers:
 
 1. **Lower tier (up to 10,000,000 EUR, or up to 2% of total worldwide annual turnover for an undertaking, whichever is higher):** Applies to infringements of obligations such as data protection by design and by default, security of processing, data protection impact assessments, and the tasks of a data protection officer [gdpr: Article 83, paragraphs 2-4].
 2. **Higher tier (up to 20,000,000 EUR, or up to 4% of total worldwide annual turnover for an undertaking, whichever is higher):** Applies to infringements of the core principles of processing, conditions for consent, data subjects' rights, and international data transfers [gdpr: Article 83, paragraphs 5-6].
 
-Fines are decided on a case-by-case basis by the supervisory authority to be effective, proportionate, and dissuasive, taking into account factors such as the nature, gravity, and duration of the infringement, whether it was intentional or negligent, and any actions taken to mitigate damage [gdpr: Article 83, paragraphs 1-2].",1,3,0,False,hit,3630,289,2.93,
+Fines are decided on a case-by-case basis by the supervisory authority to be effective, proportionate, and dissuasive, taking into account factors such as the nature, gravity, and duration of the infringement, whether it was intentional or negligent, and any actions taken to mitigate damage [gdpr: Article 83, paragraphs 1-2].",1,3,0,,False,hit,3630,289,2.93,
 q23,single,We had a breach and I'd rather not email all our customers about it. Are there cases where I don't have to tell them?,"Yes, you do not have to notify your customers if any of the following conditions are met:
 
 1. **The data was protected so no one could read it:** You applied appropriate technical and organisational measures (such as state-of-the-art encryption or tokenisation) prior to the breach that rendered the affected personal data unintelligible to anyone not authorized to access it [gdpr: Article 34(3)(a); edpb_breach: Section III.D, paragraph 97].
@@ -188,24 +188,24 @@ q23,single,We had a breach and I'd rather not email all our customers about it. 
 3. **It would involve disproportionate effort:** Contacting every customer would require disproportionate effort. In this case, you must instead make a public communication or take a similar measure that informs individuals in an equally effective manner (such as making information available on demand) [gdpr: Article 34(3)(c); edpb_breach: Section III.D, paragraph 97].
 4. **There is no high risk:** You only need to communicate a breach to individuals if the breach is *likely to result in a high risk* to their rights and freedoms [gdpr: Article 34(1)]. 
 
-Additionally, you must be able to demonstrate to your supervisory authority that one of these exemption conditions has been met. Note that even if you decide not to notify your customers, the supervisory authority can still require you to do so if it believes the risk is high [edpb_breach: Section III.D, paragraphs 98-99].",1,2,3,False,hit,3742,423,2.68,"unverified citation: [gdpr: Article 34(3)(a); edpb_breach: Section III.D, paragraph 97]; [gdpr: Article 34(3)(b); edpb_breach: Section III.D, paragraph 97]; [gdpr: Article 34(3)(c); edpb_breach: Section III.D, paragraph 97]"
+Additionally, you must be able to demonstrate to your supervisory authority that one of these exemption conditions has been met. Note that even if you decide not to notify your customers, the supervisory authority can still require you to do so if it believes the risk is high [edpb_breach: Section III.D, paragraphs 98-99].",1,5,0,,False,hit,3742,423,2.68,"unverified citation: [gdpr: Article 34(3)(a); edpb_breach: Section III.D, paragraph 97]; [gdpr: Article 34(3)(b); edpb_breach: Section III.D, paragraph 97]; [gdpr: Article 34(3)(c); edpb_breach: Section III.D, paragraph 97]"
 q24,single,I want to put my staff's photos on the shop's website and I plan to get them to sign a consent form. Is consent a safe legal basis when the person asking is their employer?,"No, consent is generally not a safe or valid legal basis when an employer asks staff for it. 
 
 Because of the dependency in the employer-employee relationship, there is a clear imbalance of power [edpb_consent: Section 3.1.1, paragraphs 21-22]. Employees may fear negative consequences or feel pressured if they refuse, which means consent cannot be freely given [edpb_consent: Section 3.1.1, paragraphs 21-22]. Therefore, it is considered problematic to use consent for employee data processing, and it can only be relied upon in exceptional circumstances where refusal has no adverse consequences at all [edpb_consent: Section 3.1.1, paragraphs 21-22].
 
-The documents do not state which alternative legal basis might apply to publishing staff photos on a website, so you may need to consult a lawyer or your data protection authority.",1,3,0,False,hit,3410,212,6.53,
+The documents do not state which alternative legal basis might apply to publishing staff photos on a website, so you may need to consult a lawyer or your data protection authority.",1,1,0,,False,hit,3410,212,6.53,
 q25,unanswerable,"Which controls do I have to implement to get ISO 27001 certified, and how long does the audit usually take?","The documents do not cover ISO 27001 certification controls or audit durations. 
 
 The corpus only covers data protection certifications and security measures under the GDPR (such as implementing appropriate technical and organisational measures for data security, and general rules for GDPR certification mechanisms) [gdpr: Article 32, paragraphs 1-3, page 51, Article 42, paragraphs 5-8, page 59]. 
 
-For specific standards like ISO 27001, you should consult an accredited certification body, a legal expert, or the relevant standard documentation.",1,1,0,True,,3543,146,2.71,
+For specific standards like ISO 27001, you should consult an accredited certification body, a legal expert, or the relevant standard documentation.",1,1,0,,True,,3543,146,2.71,
 q26,single,"Last month a staff member emailed a customer's order details to the wrong person. We fixed it the same day and decided it was too minor to report to the authority. Do we still have to write anything down about it, and what should the record say?","Yes, you must still document the breach. Even if an incident does not need to be reported to the supervisory authority, you are required to keep a record of all personal data breaches [edpb_breach: Section V.A, paragraphs 121-122]. 
 
 The record should include:
 * The facts relating to the breach, including its causes, what took place, and the personal data that was affected [edpb_breach: Section V.A, paragraphs 121, 123].
 * The effects and consequences of the breach [edpb_breach: Section V.A, paragraphs 121, 123].
 * The remedial action taken (such as fixing the error the same day) [edpb_breach: Section V.A, paragraphs 121, 123].
-* A justification for your decision not to notify the authority, including the reasons why you considered the breach unlikely to result in a risk to the rights and freedoms of individuals [edpb_breach: Section V.A, paragraph 125].",1,5,0,False,hit,3536,255,16.34,
+* A justification for your decision not to notify the authority, including the reasons why you considered the breach unlikely to result in a risk to the rights and freedoms of individuals [edpb_breach: Section V.A, paragraph 125].",1,3,0,,False,hit,3536,255,16.34,
 q27,multi,"I'm writing the consent text for my newsletter sign-up form. What qualities must the consent have, and what is the minimum information I have to give people before they tick the box?","For consent to be valid, it must have four key qualities:
 1. **Freely given**: Individuals must have a genuine choice and control, and cannot be forced or penalized for refusing.
 2. **Specific**: It must be specific to the particular processing purpose and granular (separate consents for separate things).
@@ -223,7 +223,7 @@ Before someone ticks the box, you must at least provide the following minimum in
 Sources:
 - [edpb_consent: Section 3, page 7]
 - [edpb_consent: Section 3.3.1, paragraph 64]
-- [edpb_consent: Section 3.4, paragraphs 79-81]",1,3,0,False,miss,3553,334,7.62,
+- [edpb_consent: Section 3.4, paragraphs 79-81]",1,3,0,,False,miss,3553,334,7.62,
 q28,single,"Our IT contractor thinks someone may have got into our customer database, but they're still checking. When does my 72-hour clock start?","Your 72-hour clock does not necessarily start the exact moment your IT contractor flags a suspicion or an initial alert. You are considered to have become ""aware""—and your 72-hour clock begins—once you have established **with a reasonable degree of certainty** that a security incident has occurred and that personal data has actually been compromised [edpb_breach: Section II.A.2, paragraphs 31, 40].
 
 The guidelines allow for a brief period of investigation after an initial alert so that you can gather evidence, check your systems, and confirm whether a breach has in fact taken place [edpb_breach: Section II.A.2, paragraphs 34, 40]. These preliminary actions and investigations should be completed soon after the initial alert [edpb_breach: Section II.A.2, paragraph 36]. 
@@ -233,12 +233,12 @@ However, you have an obligation to act on initial alerts promptly and ensure you
 ### Sources:
 - [gdpr: Recital 85]
 - [edpb_breach: Section II.A.1, paragraphs 29-30]
-- [edpb_breach: Section II.A.2, paragraphs 31-36, 40-41]",2,8,0,False,hit,7532,397,9.48,
+- [edpb_breach: Section II.A.2, paragraphs 31-36, 40-41]",2,8,0,,False,hit,7532,397,9.48,
 q29,single,On my sign-up page I want one tick box saying 'I agree to receive offers and to let partner shops use my details'. Is a single box okay?,"No, a single tick box is not okay. 
 
 Consent must be granular when there are multiple purposes. If you are asking for consent to send marketing emails *and* to share details with partner shops, these are separate purposes, so you must provide separate, distinct consents for each one rather than bundling them into a single box. 
 
-[edpb_consent: Section 3.1.3, paragraph 45]",1,1,0,False,hit,3492,110,2.75,
+[edpb_consent: Section 3.1.3, paragraph 45]",1,1,0,,False,hit,3492,110,2.75,
 q30,single,"We discovered several similar breaches at once and need more time to investigate. Can we report them together, and what if we go past 72 hours?","Yes, you may submit a ""bundled"" notification for multiple similar breaches—provided they concern the same type of personal data breached in the same way over a relatively short space of time. If they involve different types of data or are breached in different ways, they should be reported individually [edpb_breach: Section II.B.3, paragraphs 64-65].
 
-If your investigation takes you past the 72-hour mark, the notification can be delayed past 72 hours, provided that you accompany the late notification with reasons for the delay. The GDPR also allows you to notify the authority in phases if you do not yet have all the necessary information, as long as you explain why and state that you will provide more details later [edpb_breach: Section II.B.2, paragraph 57, Section II.B.3, paragraph 62].",1,2,0,False,hit,3495,212,2.56,
+If your investigation takes you past the 72-hour mark, the notification can be delayed past 72 hours, provided that you accompany the late notification with reasons for the delay. The GDPR also allows you to notify the authority in phases if you do not yet have all the necessary information, as long as you explain why and state that you will provide more details later [edpb_breach: Section II.B.2, paragraph 57, Section II.B.3, paragraph 62].",1,2,0,,False,hit,3495,212,2.56,

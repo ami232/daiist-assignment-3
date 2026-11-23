@@ -3,8 +3,9 @@
   "code_checks": {
     "answerable": {
       "questions": 25,
-      "answers_with_a_valid_citation_and_no_invalid_one": 20,
-      "answers_with_an_unverified_citation": 5,
+      "answers_with_a_valid_citation_and_no_invalid_one": 24,
+      "answers_with_an_unverified_citation": 1,
+      "answers_with_a_fabricated_citation": [],
       "answers_without_any_citation": 0,
       "answers_that_look_like_a_refusal": [
         "q04"

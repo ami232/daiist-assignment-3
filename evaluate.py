@@ -365,20 +365,52 @@ def seen_chunks(retrieved: list) -> list[dict]:
     return chunks
 
 
-def code_checks(rows: list[dict], records: dict[str, dict]) -> list[dict]:
+def corpus_references() -> set[tuple[str, str, str]]:
+    """(source, kind, identifier) of every passage in the index, e.g. ('gdpr', 'Article', '33')."""
+    designs = indexed_designs() or [index.DEFAULT_DESIGN]
+    have = set()
+    for chunk in load_chunks(designs[0]).values():
+        kind, _, ident = chunk["section"].partition(" ")
+        have.add((chunk["source"], kind, ident))
+    return have
+
+
+def fabricated(citations: list[str], corpus: set[tuple[str, str, str]]) -> list[str]:
+    """Citations that name an article, recital or section that exists nowhere in the corpus."""
+    import agent
+
+    out = []
+    for citation in citations:
+        parts = agent.citation_parts(citation)
+        exists = bool(parts) and all(
+            bool(refs) and all(any(s == source and k == kind and agent.same_or_nested(i, ident) for s, k, i in corpus)
+                               for kind, ident in refs)
+            for source, refs in parts
+        )
+        if not exists:
+            out.append(citation)
+    return out
+
+
+def code_checks(rows: list[dict], records: dict[str, dict], corpus: set[tuple[str, str, str]]) -> list[dict]:
+    import agent
+
     checks = []
     for row in rows:
         record = records.get(row["id"])
         if not record:
             continue
         kind = row["kind"].strip().lower()
-        valid, invalid = record["valid_citations"], record["invalid_citations"]
+        # Recomputed from the saved answer and what was retrieved, so an improved check needs no new model calls.
+        valid, invalid = agent.check_citations(record["raw_answer"], [tuple(x) for x in record["retrieved"]])
         check = {
+            "invalid_list": invalid,
             "id": row["id"],
             "kind": kind,
             "searches": sum(c["tool"] == "search" for c in record["tool_calls"]),
             "valid_citations": len(valid),
             "invalid_citations": len(invalid),
+            "fabricated_citations": "; ".join(fabricated(invalid, corpus)),
             "refused": bool(REFUSAL.search(record["raw_answer"][:REFUSAL_WINDOW])),
             "agent_retrieval": "",
             "input_tokens": record["input_tokens"],
@@ -395,10 +427,10 @@ def code_checks(rows: list[dict], records: dict[str, dict]) -> list[dict]:
 
 def write_answers_csv(checks: list[dict], records: dict[str, dict], rows: list[dict]) -> None:
     questions = {r["id"]: r["question"] for r in rows}
-    fields = ["id", "kind", "question", "answer", "searches", "valid_citations", "invalid_citations", "refused",
-              "agent_retrieval", "input_tokens", "output_tokens", "seconds", "flags"]
+    fields = ["id", "kind", "question", "answer", "searches", "valid_citations", "invalid_citations", "fabricated_citations",
+              "refused", "agent_retrieval", "input_tokens", "output_tokens", "seconds", "flags"]
     with ANSWERS_CSV.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fields)
+        writer = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
         writer.writeheader()
         for check in checks:
             writer.writerow({**check, "question": questions[check["id"]], "answer": records[check["id"]]["raw_answer"]})
@@ -430,6 +462,7 @@ def code_summary(checks: list[dict]) -> dict:
             "questions": len(answerable),
             "answers_with_a_valid_citation_and_no_invalid_one": sum(c["valid_citations"] > 0 and c["invalid_citations"] == 0 for c in answerable),
             "answers_with_an_unverified_citation": sum(c["invalid_citations"] > 0 for c in answerable),
+            "answers_with_a_fabricated_citation": [c["id"] for c in answerable if c["fabricated_citations"]],
             "answers_without_any_citation": sum(c["valid_citations"] + c["invalid_citations"] == 0 for c in answerable),
             "answers_that_look_like_a_refusal": [c["id"] for c in answerable if c["refused"]],
             "agent_retrieval": {k: sum(c["agent_retrieval"] == k for c in answerable) for k in ("hit", "equivalent", "miss")},
@@ -446,13 +479,15 @@ def code_summary(checks: list[dict]) -> dict:
 # 6. Your grades: the sheet you read, the file you fill in
 # --------------------------------------------------------------------------
 
-def write_label_sheet(rows: list[dict], records: dict[str, dict]) -> None:
+def write_label_sheet(rows: list[dict], records: dict[str, dict], checks: dict[str, dict]) -> None:
     order = [r for r in rows if r["id"] in records]
     random.Random(LABEL_SEED).shuffle(order)
     parts = [
         "# Label sheet\n",
         "Grade the answers in this order (it is random) in `eval/human_labels.csv`, one line per answer: "
         "`id,correct,supported,notes`. At least 20; more is better. This file shows no judge verdicts.\n",
+        "Follow your rubric (`eval/judge_rubric.md`). `correct` is 1 only for a fully correct answer: a partial answer "
+        "is 0, with a note that starts with `partial:`.\n",
         "- `correct`: 1 if the answer is right against the reference answer (for an unanswerable question: "
         "a proper refusal), else 0.\n- `supported`: 1 if every claim in the answer is in the retrieved passages "
         "below, else 0.\n- `notes`: why, for every 0.\n",
@@ -461,10 +496,16 @@ def write_label_sheet(rows: list[dict], records: dict[str, dict]) -> None:
         record = records[row["id"]]
         searches = [c for c in record["tool_calls"] if c["tool"] == "search"]
         evidence = "\n\n".join(f"Search: {c['args'].get('query', '')}\n\n{c['result']}" for c in searches) or "(no search)"
+        invalid = checks[row["id"]]["invalid_list"]
+        citation_note = ""
+        if invalid:
+            citation_note = (f"**Citation check (code):** not found in the retrieved passages: {'; '.join(invalid)}"
+                             + (f". Not found anywhere in the corpus: {checks[row['id']]['fabricated_citations']}"
+                                if checks[row["id"]]["fabricated_citations"] else "") + "\n\n")
         parts.append(
             f"\n---\n\n## {n}. {row['id']} ({row['kind'].strip().lower()})\n\n"
             f"**Question:** {row['question']}\n\n**Reference answer:** {row['reference_answer']}\n\n"
-            f"**Agent answer:**\n\n```text\n{record['raw_answer']}\n```\n\n"
+            f"**Agent answer:**\n\n```text\n{record['raw_answer']}\n```\n\n{citation_note}"
             f"<details><summary>Passages the agent retrieved</summary>\n\n```text\n{evidence}\n```\n\n</details>\n"
         )
     LABEL_SHEET.write_text("".join(parts), encoding="utf-8")
@@ -479,7 +520,8 @@ def load_human_labels(known_ids: set[str]) -> dict[str, dict]:
             id_ = (r.get("id") or "").strip()
             correct, supported = (r.get("correct") or "").strip(), (r.get("supported") or "").strip()
             if id_ in known_ids and correct in ("0", "1") and supported in ("0", "1"):
-                labels[id_] = {"correct": int(correct), "supported": int(supported)}
+                labels[id_] = {"correct": int(correct), "supported": int(supported),
+                               "partial": (r.get("notes") or "").strip().lower().startswith("partial")}
     return labels
 
 
@@ -487,24 +529,33 @@ def load_human_labels(known_ids: set[str]) -> dict[str, dict]:
 # 7. The LLM judge and its agreement with you
 # --------------------------------------------------------------------------
 
-def judge_one(judge, rubric: str, row: dict, record: dict) -> dict:
+def judge_one(judge, rubric: str, row: dict, record: dict, check: dict) -> dict:
     searches = [c for c in record["tool_calls"] if c["tool"] == "search"]
     evidence = "\n\n".join(f"Search: {c['args'].get('query', '')}\n{c['result']}" for c in searches) or "(no search)"
     unanswerable = row["kind"].strip().lower() == "unanswerable"
+    citations = (
+        "Citations not found in the retrieved passages: " + ("; ".join(check["invalid_list"]) or "none") + ".\n"
+        "Of these, citations that do not exist anywhere in the corpus (fabricated): " + (check["fabricated_citations"] or "none") + ".\n"
+    )
     prompt = (
         f"{rubric.strip()}\n\n=== CASE ===\n"
         f"Question: {row['question']}\n"
         f"The documents {'do NOT answer this question' if unanswerable else 'answer this question'}.\n"
         f"Reference answer: {row['reference_answer']}\n\n"
         f"Passages the assistant retrieved:\n{evidence}\n\n"
-        f"Assistant's answer:\n{record['raw_answer']}\n\n"
-        "=== END OF CASE ===\nGive a short reason first, then correct and supported."
+        f"Assistant's answer:\n{record['raw_answer']}\n\n{citations}"
+        "=== END OF CASE ===\nGive a short reason first, then the verdict and supported."
     )
-    verdict = judge.invoke(prompt)
-    return {"correct": int(bool(verdict.correct)), "supported": int(bool(verdict.supported)), "reason": verdict.reason}
+    result = judge.invoke(prompt)
+    verdict, reason = result.verdict, result.reason
+    if verdict == "correct" and check["fabricated_citations"]:     # rubric rule 4
+        verdict, reason = "partial", reason + " [downgraded to partial: fabricated citation]"
+    return {"verdict": verdict, "correct": int(verdict == "correct"), "supported": int(bool(result.supported)), "reason": reason}
 
 
-def judge_stage(rows: list[dict], records: dict[str, dict]) -> dict[str, dict]:
+def judge_stage(rows: list[dict], records: dict[str, dict], checks: dict[str, dict]) -> dict[str, dict]:
+    from typing import Literal
+
     from pydantic import BaseModel, Field
 
     from langchain_google_genai import ChatGoogleGenerativeAI
@@ -513,14 +564,16 @@ def judge_stage(rows: list[dict], records: dict[str, dict]) -> dict[str, dict]:
 
     class Verdict(BaseModel):
         reason: str = Field(description="One or two sentences: what decides the two verdicts.")
-        correct: bool = Field(description="Right against the reference answer, or a proper refusal.")
+        verdict: Literal["correct", "partial", "incorrect"] = Field(
+            description="correct, partial or incorrect against the reference answer (a proper refusal is correct).")
         supported: bool = Field(description="Every claim in the answer is in the retrieved passages.")
 
     verdicts: dict[str, dict] = {}
     if VERDICTS.is_file():
         with VERDICTS.open(newline="", encoding="utf-8") as f:
             for r in csv.DictReader(f):
-                verdicts[r["id"]] = {"correct": int(r["correct"]), "supported": int(r["supported"]), "reason": r["reason"]}
+                verdicts[r["id"]] = {"verdict": r["verdict"], "correct": int(r["correct"]), "supported": int(r["supported"]),
+                                     "reason": r["reason"]}
     todo = [r for r in rows if r["id"] in records and r["id"] not in verdicts]
     if todo:
         load_api_key()
@@ -529,12 +582,12 @@ def judge_stage(rows: list[dict], records: dict[str, dict]) -> dict[str, dict]:
         print(f"\nThe judge ({JUDGE_MODEL}) grades {len(todo)} answer(s).", file=sys.stderr)
         for row in todo:
             try:
-                verdicts[row["id"]] = judge_one(judge, rubric, row, records[row["id"]])
+                verdicts[row["id"]] = judge_one(judge, rubric, row, records[row["id"]], checks[row["id"]])
             except Exception as error:
                 print(f"  judge failed on {row['id']}: {type(error).__name__}: {str(error)[:200]}", file=sys.stderr)
                 continue
             with VERDICTS.open("w", newline="", encoding="utf-8") as f:
-                writer = csv.DictWriter(f, fieldnames=["id", "correct", "supported", "reason"])
+                writer = csv.DictWriter(f, fieldnames=["id", "verdict", "correct", "supported", "reason"])
                 writer.writeheader()
                 writer.writerows({"id": i, **v} for i, v in verdicts.items())
             print(f"  judged {row['id']}", file=sys.stderr)
@@ -590,14 +643,15 @@ def end_to_end_stage(redo: bool) -> None:
     records = answers_stage(rows, redo)
     if not records:
         return
-    checks = code_checks(rows, records)
+    checks = code_checks(rows, records, corpus_references())
     write_answers_csv(checks, records, rows)
-    write_label_sheet(rows, records)
+    write_label_sheet(rows, records, {c["id"]: c for c in checks})
     labels = load_human_labels(set(records))
     summary: dict = {"model": next(iter(records.values()))["model"], "code_checks": code_summary(checks), "cost": cost_summary(checks),
                      "human_graded": len(labels)}
     if labels:
         summary["human_grades"] = grade_summary(rows, labels)
+        summary["human_partial"] = [i for i, g in labels.items() if g["partial"]]
 
     if len(labels) < MIN_LABELS:
         print(f"\nJudge not run yet: eval/human_labels.csv has {len(labels)} usable grades, {MIN_LABELS} are needed first "
@@ -605,8 +659,9 @@ def end_to_end_stage(redo: bool) -> None:
     elif not RUBRIC.is_file():
         print(f"\nJudge not run yet: write your rubric in {RUBRIC.relative_to(ROOT)} first.")
     else:
-        verdicts = judge_stage(rows, records)
+        verdicts = judge_stage(rows, records, {c["id"]: c for c in checks})
         summary["judge_model"] = JUDGE_MODEL
+        summary["judge_partial"] = [i for i, v in verdicts.items() if v["verdict"] == "partial"]
         summary["judge_grades"] = grade_summary(rows, verdicts)
         summary["judge_vs_human"] = agreement(labels, verdicts)
     E2E_SUMMARY.write_text(json.dumps(summary, indent=2))
@@ -619,6 +674,7 @@ def print_end_to_end(summary: dict) -> None:
     print(f"\nEnd-to-end ({summary['model']}, {cost['questions']} questions)")
     print(f"  answerable ({a['questions']}): valid citations only {a['answers_with_a_valid_citation_and_no_invalid_one']}, "
           f"unverified citation {a['answers_with_an_unverified_citation']}, no citation {a['answers_without_any_citation']}, "
+          f"fabricated citation {a['answers_with_a_fabricated_citation'] or 'none'}, "
           f"look like a refusal {a['answers_that_look_like_a_refusal'] or 'none'}")
     print(f"  what the agent retrieved, answerable: {a['agent_retrieval']}")
     print(f"  unanswerable ({u['questions']}): refused {u['refused']}, not refused {u['not_refused'] or 'none'}")
@@ -632,6 +688,9 @@ def print_end_to_end(summary: dict) -> None:
                   f"unanswerable correct {g['unanswerable']['correct'].get('yes', 0)}/{g['unanswerable']['correct']['n']}, "
                   f"supported {g['answerable']['supported'].get('yes', 0) + g['unanswerable']['supported'].get('yes', 0)}/"
                   f"{g['answerable']['supported']['n'] + g['unanswerable']['supported']['n']}")
+    for key, title in (("judge_partial", "judge"), ("human_partial", "you")):
+        if key in summary:
+            print(f"  partial answers ({title}): {summary[key] or 'none'}")
     if "judge_vs_human" in summary:
         for field in ("correct", "supported"):
             d = summary["judge_vs_human"].get(field)
