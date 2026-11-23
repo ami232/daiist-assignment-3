@@ -98,13 +98,21 @@ def approval_guardrail(approve: Callable[[dict], bool]):
 GUARDRAIL = "citation_guardrail"                 # name on the messages this guardrail adds, to find them later
 
 
-def citation_problems(answer: str, retrieved: set[tuple[str, str]]) -> list[str]:
-    """What is wrong with the answer's citations, given the (source, location) pairs search returned."""
+def citation_problems(answer: str, retrieved: set[tuple[str, str]], reports_tool_action: bool = False) -> list[str]:
+    """What is wrong with the answer's citations, given the (source, location) pairs search returned.
+
+    `reports_tool_action`: the turn ran add_document, so an answer without citations may just be
+    reporting what that tool did ("Añadido: …"). Citations it does make are still checked.
+    """
     cited = citations_in(answer)
     problems = [f"[{s}, {loc}] no aparece en los resultados de search" for s, loc in cited if (s, loc) not in retrieved]
-    if not cited and REFUSAL not in answer:
+    if not cited and REFUSAL not in answer and not reports_tool_action:
         problems.append("la respuesta no cita ningún fragmento y no es la frase de rechazo")
     return problems
+
+
+def ran_add_document(messages) -> bool:
+    return any(isinstance(m, ToolMessage) and m.name == "add_document" for m in messages)
 
 
 def retrieved_pairs(messages) -> set[tuple[str, str]]:
@@ -122,7 +130,7 @@ def validate_citations(state, runtime):
     last = messages[-1]
     if not isinstance(last, AIMessage) or last.tool_calls:
         return None                              # still searching: nothing to check yet
-    problems = citation_problems(last.text, retrieved_pairs(messages))
+    problems = citation_problems(last.text, retrieved_pairs(messages), ran_add_document(messages))
     if not problems:
         return None
     already_warned = any(isinstance(m, HumanMessage) and m.name == GUARDRAIL for m in messages)

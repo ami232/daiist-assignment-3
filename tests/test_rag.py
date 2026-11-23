@@ -207,7 +207,7 @@ def test_expected_pairs():
 
 # --- citation validator (agent.py guardrail 3), with a scripted fake model --- #
 
-def _run_scripted(replies):
+def _run_scripted(replies, first_tool="search"):
     import asyncio
 
     from langchain.agents import create_agent
@@ -226,10 +226,17 @@ def _run_scripted(replies):
         """Fake search."""
         return "[1] Cita: [LETA, Artículo 1] · Ley · texto consolidado a 2 de septiembre de 2026\ntexto\nBOE: https://www.boe.es/x#a1"
 
+    @tool
+    def add_document(path: str) -> str:
+        """Fake add_document."""
+        return "Añadido: COT2026 (BOE-A-2026-7296, consolidado a 16 de julio de 2026). 8 fragmentos nuevos, 0 omitidos."
+
     usage = {"input_tokens": 10, "output_tokens": 5, "total_tokens": 15}
-    script = [AIMessage("", tool_calls=[{"name": "search", "args": {"query": "q"}, "id": "c1"}], usage_metadata=usage)]
+    args = {"query": "q"} if first_tool == "search" else {"path": "corpus/BOE-A-2026-7296.xml"}
+    script = [AIMessage("", tool_calls=[{"name": first_tool, "args": args, "id": "c1"}], usage_metadata=usage)]
     script += [AIMessage(text, usage_metadata=usage) for text in replies]
-    fake = create_agent(Scripted(messages=iter(script)), tools=[search], middleware=[agent.validate_citations])
+    fake = create_agent(Scripted(messages=iter(script)), tools=[search, add_document],
+                        middleware=[agent.validate_citations])
     return asyncio.run(agent.ask(fake, "¿Quién es autónomo?"))
 
 
@@ -253,6 +260,17 @@ def test_valid_answers_and_refusals_pass_untouched():
 
     assert _run_scripted(["Sí [LETA, Artículo 1]."])["citation_guardrail"] is None
     assert _run_scripted([agent.REFUSAL])["citation_guardrail"] is None
+
+
+def test_add_document_confirmation_needs_no_citation():
+    done = "He añadido COT2026 al índice: 8 fragmentos nuevos."
+    result = _run_scripted([done], first_tool="add_document")
+    assert result["citation_guardrail"] is None and result["answer"] == done
+    # citations it does make are still checked: nothing was retrieved, so this one is invented
+    result = _run_scripted(["Añadido [COT2026, Artículo 18].", done], first_tool="add_document")
+    assert result["citation_guardrail"] == "repaired" and result["answer"] == done
+    # the waiver is only for turns that ran add_document
+    assert _run_scripted(["Sin citas."] * 2)["citation_guardrail"] == "refused"
 
 
 # --- judge helpers ------------------------------------------------------------ #
