@@ -26,6 +26,8 @@ A WRONG ANSWER can mean a fine, a confiscated drone or a drone flown over people
 | Recitals of 2021/664 | https://eur-lex.europa.eu/eli/reg_impl/2021/664/oj/eng | 23.4.2021 | Same | 1,893 |
 | Total | | | | 53,911 |
 
+All six are public EU legislation with no personal data. The PDFs are committed in `corpus/`, because EUR-Lex blocks scripted downloads and its licence allows redistribution with attribution, so `main.py index` runs with no manual steps.
+
 ## Ingestion
 
 *How you extract, clean and chunk; one extraction problem you fixed; chunk metadata; number of chunks.*
