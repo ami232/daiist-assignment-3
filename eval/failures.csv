@@ -1,0 +1,7 @@
+id,category,reason
+q20,wrong refusal,"Found the right article (future text of LAU art. 10) and concluded nothing wrong, but refused a question the corpus answers. Likely did not trust text that only applies from 15 Nov 2026, so it stopped after one search (AGENTS.md rules 4 and 5)."
+q04,unsupported claim,"Right conclusion, but added 'unless the contract includes a compensation clause'. The retrieved LAU art. 11 (current text) says only that leaving early generates no compensation; the clause comes from the old version of art. 11, which the model remembered."
+q25,unsupported claim,"Same invented compensation clause as q04: two failures, one cause, one fix covers both."
+q07,unsupported claim,"Facts are right, but the 'deduct the cost from future rent' step cites Artículo 21.2; that rule is in 21.5 (current BOE text has 5 sections). The citation guard only checks the article number, not the section."
+q32,unsupported claim,"Refusing was correct, but the extra explanation (aid regulated by royal decrees and regional calls) is not in any passage."
+old q34,bad test question,"Labelled unanswerable, but RDL 7/2019 Artículo segundo carries the 2019 wording of LPH art. 17.12, so the agent answered it. The answer was also out of date: LO 1/2025 (in force 3 Apr 2025) added the requirement of express community approval (LPH art. 7.3), which the corpus does not contain. Replaced on 18 Nov."
