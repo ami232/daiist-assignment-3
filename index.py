@@ -227,6 +227,7 @@ PERSONAL_EMAIL = re.compile(r"(?<![\w.-])([a-z]+)\.([a-z]+)@gsa\.gov\b", re.IGNO
 # "Firstname Lastname at someone@..." or "Firstname Lastname (someone@...)",
 # possibly across a line break.
 NAME_BEFORE_EMAIL = re.compile(r"\b([A-Z][a-z]+)\s+([A-Z][a-z]+)(?=\s+(?:at\s+)?\(?[\w.+-]+@)")
+ATTN_NAME = re.compile(r"\b(Attn:?|Attention:)\s*[A-Z][a-z]+\s+[A-Z][a-zA-Z]+")
 NOT_A_SURNAME = {"Team", "Office", "Desk", "Service", "Services", "Group", "Center",
                  "Coordinator", "Specialist", "Support", "Operations", "Ops"}
 
@@ -263,6 +264,10 @@ def redact_personal_data(text: str) -> tuple[str, dict]:
         return "[staff member]"
 
     text = NAME_BEFORE_EMAIL.sub(replace_name, text)
+
+    # A name in a mailing address ("Attn: Jane Doe") is personal data too.
+    text, n = ATTN_NAME.subn(r"\1 [staff member]", text)
+    counts["names"] += n
     return text, counts
 
 

@@ -26,9 +26,9 @@
     },
     "mrr_single": 0.943,
     "words_added": {
-      "@1": 144,
-      "@3": 382,
-      "@5": 616
+      "@1": 151,
+      "@3": 384,
+      "@5": 606
     },
     "top_score_answerable": {
       "mean": 0.809,
@@ -36,9 +36,9 @@
       "max": 0.8965
     },
     "top_score_unanswerable": {
-      "mean": 0.757,
+      "mean": 0.763,
       "min": 0.7219,
-      "max": 0.7932
+      "max": 0.8196
     },
     "misses_at_5": [
       "q24",
@@ -120,9 +120,9 @@
     },
     "mrr_single": 0.943,
     "words_added": {
-      "@1": 144,
-      "@3": 372,
-      "@5": 598
+      "@1": 151,
+      "@3": 374,
+      "@5": 593
     },
     "top_score_answerable": {
       "mean": 0.809,
@@ -130,9 +130,9 @@
       "max": 0.8965
     },
     "top_score_unanswerable": {
-      "mean": 0.757,
+      "mean": 0.763,
       "min": 0.7219,
-      "max": 0.7932
+      "max": 0.8196
     },
     "misses_at_5": [
       "q25",

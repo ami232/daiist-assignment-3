@@ -47,9 +47,9 @@ q15,single,structure-diverse,2,2,2,0.8273,"general-information-and-resources/emp
 q16,single,structure,1,1,1,0.7688,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Compressed schedule",240,527,744
 q16,single,fixed,1,1,1,0.7092,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Standard schedule",200,600,872
 q16,single,structure-diverse,1,1,1,0.7688,"general-information-and-resources/employee-resources-policies/work-schedules › Schedule types and their relationship to overtime, holiday pay, and credit hours › Compressed schedule",240,527,624
-q17,single,structure,4,4,4,0.7918,travel-and-leave/travel-and-leave-policies/travel-guide-faq › Questions about reimbursement › Issues with reimbursement,209,567,1069
+q17,single,structure,4,4,4,0.7886,travel-and-leave/travel-and-leave-policies/travel-guide-3-travel › Don't forget about vouchers!,171,567,1069
 q17,single,fixed,1,1,1,0.7931,travel-and-leave/travel-and-leave-policies/travel-guide-4-reimbursement › Brief overview of vouchers,139,537,937
-q17,single,structure-diverse,4,4,4,0.7918,travel-and-leave/travel-and-leave-policies/travel-guide-faq › Questions about reimbursement › Issues with reimbursement,209,567,962
+q17,single,structure-diverse,4,4,4,0.7886,travel-and-leave/travel-and-leave-policies/travel-guide-3-travel › Don't forget about vouchers!,171,567,962
 q18,single,structure,1,1,1,0.7948,travel-and-leave/travel-and-leave-policies/unofficial-foreign-travel › Reporting Personal Foreign Travel,66,201,417
 q18,single,fixed,1,1,1,0.7977,travel-and-leave/travel-and-leave-policies/unofficial-foreign-travel › Reporting Personal Foreign Travel,132,532,930
 q18,single,structure-diverse,1,1,1,0.7948,travel-and-leave/travel-and-leave-policies/unofficial-foreign-travel › Reporting Personal Foreign Travel,66,201,417
@@ -86,9 +86,9 @@ q28,multi,structure-diverse,1,4,4,0.8225,travel-and-leave/leave › Types of lea
 q29,multi,structure,1,,,0.8504,"travel-and-leave/overtime › Travel comp time, for everyone › Understanding travel comp time",101,245,542
 q29,multi,fixed,1,,,0.832,"travel-and-leave/overtime › Travel comp time, for everyone › Understanding travel comp time",196,596,996
 q29,multi,structure-diverse,1,,,0.8504,"travel-and-leave/overtime › Travel comp time, for everyone › Understanding travel comp time",101,195,501
-q30,unanswerable,structure,,,,0.7656,getting-started/classes/benefits › Transit subsidies,9,279,789
+q30,unanswerable,structure,,,,0.8196,general-information-and-resources/employee-resources-policies/transit-benefit › Enrolling in transit benefit,306,332,422
 q30,unanswerable,fixed,,,,0.6654,getting-started/classes/benefits › Retirement › TSP (Thrift Savings Plan),77,472,872
-q30,unanswerable,structure-diverse,,,,0.7656,getting-started/classes/benefits › Transit subsidies,9,279,789
+q30,unanswerable,structure-diverse,,,,0.8196,general-information-and-resources/employee-resources-policies/transit-benefit › Enrolling in transit benefit,306,332,602
 q31,unanswerable,structure,,,,0.7793,travel-and-leave/leave › Types of leave › Annual leave,124,518,723
 q31,unanswerable,fixed,,,,0.7476,travel-and-leave/leave › Introduction,200,600,1000
 q31,unanswerable,structure-diverse,,,,0.7793,travel-and-leave/leave › Types of leave › Annual leave,124,518,723

@@ -9,17 +9,18 @@
     "answered an unanswerable question": 3
   },
   "judge": {
-    "correct": "20/22",
+    "correct": "34/37",
     "correct_by_kind": {
       "single": "20/22",
-      "multi": "0/0",
-      "unanswerable": "0/0"
+      "multi": "6/7",
+      "unanswerable": "8/8"
     },
-    "supported": "22/22",
+    "supported": "37/37",
     "unsupported_answers": [],
     "incorrect": [
       "q03",
-      "q15"
+      "q15",
+      "q25"
     ]
   },
   "code_checks": {
@@ -33,7 +34,26 @@
     ],
     "guardrail_blocked": []
   },
-  "human_vs_judge": "no human labels yet",
+  "human_vs_judge": {
+    "correct": {
+      "n": 37,
+      "agreement": 0.946,
+      "kappa": 0.479,
+      "disagreements": [
+        "q03",
+        "q15"
+      ]
+    },
+    "supported": {
+      "n": 37,
+      "agreement": 0.946,
+      "kappa": 0.0,
+      "disagreements": [
+        "q15",
+        "q33"
+      ]
+    }
+  },
   "cost_per_question": {
     "model_calls": {
       "mean": 2.2,
@@ -52,12 +72,12 @@
       "median": 5.9
     },
     "judge_input_tokens": {
-      "mean": 1807.6,
-      "median": 1806.5
+      "mean": 2002.4,
+      "median": 1832.0
     },
     "judge_output_tokens": {
-      "mean": 564.4,
-      "median": 443.5
+      "mean": 569.1,
+      "median": 470.0
     }
   },
   "add_document_demo": {

@@ -3,7 +3,7 @@
   "repository": "https://github.com/18F/handbook",
   "commit": "c220f93896b39e9e4ab0f486a1d5bf346ac06e3e",
   "licence": "Public domain (US government work) and CC0 1.0",
-  "built": "2026-11-22",
+  "built": "2026-11-23",
   "embedding_model": "gemini-embedding-2",
   "pages": 62,
   "words_raw": 60269,
@@ -23,6 +23,10 @@
     },
     "hiring-staying-or-changing-jobs/resume": {
       "emails": 2,
+      "names": 1
+    },
+    "travel-and-leave/travel-and-leave-policies/travel-guide-faq": {
+      "emails": 0,
       "names": 1
     }
   },
