@@ -21,6 +21,8 @@ import sys
 import time
 from pathlib import Path
 
+import xml.etree.ElementTree as ET
+
 import chromadb
 from chromadb.config import Settings
 from google import genai
@@ -205,13 +207,29 @@ def chunks_from_units(units: list[dict]) -> list[dict]:
 
 
 def units_from_file(path: str | Path) -> list[dict]:
-    """Units from a judgment XML (rechtsprechung-im-internet.de) or a units .jsonl from corpus/text/."""
+    """Units from a units .jsonl (corpus/text/), a judgment XML (rechtsprechung-im-internet.de) or a
+    statute XML (gesetze-im-internet.de); .zip downloads of either are unpacked first."""
     path = Path(path)
     if path.suffix == ".jsonl":
         return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    if path.suffix == ".zip":
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            xml_path = Path(tmp) / f"{path.stem}.xml"
+            xml_path.write_bytes(ingest.unzip_xml(path.read_bytes()))
+            return units_from_file(xml_path)
     if path.suffix == ".xml":
-        return ingest.extract_judgment(path)
-    raise ValueError(f"Unsupported file type: {path.name} (expected a BGH judgment .xml or a units .jsonl)")
+        root = ET.parse(path).getroot()
+        if root.tag == "dokument":  # rechtsprechung-im-internet.de
+            return ingest.extract_judgment(path)
+        if root.tag == "dokumente":  # gesetze-im-internet.de
+            doc_id = (root.findtext("norm/metadaten/jurabk") or "").strip()
+            if not doc_id:
+                raise ValueError(f"{path.name}: statute XML without <jurabk>")
+            return ingest.extract_statute(doc_id, path)
+        raise ValueError(f"{path.name}: unknown XML (root <{root.tag}>)")
+    raise ValueError(f"Unsupported file type: {path.name} (expected .xml or .zip from rechtsprechung-im-internet.de "
+                     f"or gesetze-im-internet.de)")
 
 
 def chunk_file(path: str | Path) -> list[dict]:
@@ -282,6 +300,24 @@ def sync_metadata(collection, chunks: list[dict], source: str = "base") -> None:
     for i in range(0, len(chunks), 100):
         batch = chunks[i:i + 100]
         collection.update(ids=[c["id"] for c in batch], metadatas=[{**c["metadata"], "source": source} for c in batch])
+
+
+def content_hash(chunk_ids) -> str:
+    """Hash of a document's content as indexed: chunk ids are sha1(location + text), so equal ids mean equal text."""
+    return hashlib.sha256("\n".join(sorted(chunk_ids)).encode()).hexdigest()[:16]
+
+
+def stored_ids(collection, doc_id: str) -> list[str]:
+    return collection.get(where={"doc_id": doc_id}, include=[])["ids"]
+
+
+def delete_document(doc_id: str, collection=None) -> int:
+    """Remove every chunk of one document from the index (used to reset the add-document demo)."""
+    collection = collection or get_collection()
+    ids = stored_ids(collection, doc_id)
+    if ids:
+        collection.delete(ids=ids)
+    return len(ids)
 
 
 def remove_stale(collection, chunks: list[dict]) -> int:

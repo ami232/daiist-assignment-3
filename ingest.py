@@ -134,7 +134,8 @@ def download_statute(doc_id: str) -> Path:
 
 
 def extract_statute(doc_id: str, xml_path: Path) -> list[dict]:
-    _, first, last = STATUTES[doc_id]
+    """Units of one statute XML. Laws not in STATUTES (e.g. added via add_document) are taken whole."""
+    slug, first, last = STATUTES.get(doc_id, ("", None, None))
     root = ET.parse(xml_path).getroot()
     norms = root.findall("norm")
     head = norms[0].find("metadaten")
@@ -163,7 +164,7 @@ def extract_statute(doc_id: str, xml_path: Path) -> list[dict]:
                     "text": body,
                     "version": version,
                     "retrieved": build,
-                    "url": f"https://www.gesetze-im-internet.de/{STATUTES[doc_id][0]}/",
+                    "url": f"https://www.gesetze-im-internet.de/{slug}/" if slug else "https://www.gesetze-im-internet.de/",
                 })
         if enbez == last:
             break
