@@ -12,3 +12,4 @@ corpus/
 
 # Never commit your API key
 .env
+eval/browse.md
