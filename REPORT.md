@@ -86,10 +86,33 @@ The hit rate drastically improves from 1 to 5 but since the agent reads the top 
 The weak spot is the multi questions. For the 7 multi questions, both needed passages were in the top 5 for only 2 of them (29%). A single search usually finds one half of the answer, so the agent may need to search more than once. 
 
 
-
 ## Tools and subagent
 
 *Your tools' descriptions, one search result, the subagent's instructions, one transcript from your editor.*
+
+Use the corpus-researcher subagent to answer: We've been rejected twice already. Is there a limit to how many times we can try again?
+Agent:EIC resubmission limits
+IN
+Answer this user question from the EIC Accelerator documents: "We've been rejected twice already. Is there a limit to how many times we can try again?" Cover resubmission rules after rejection (e.g., limits on resubmitting after failing at short proposal or full proposal/interview stage, any blocking/waiting periods, and whether rejections at different stages count differently). Cite the source documents and quote key passages. Note clearly if the corpus doesn't address something.
+ Finished · type /tasks to see its transcript
+2:51 PM
+I've passed your question to the corpus-researcher agent. It's searching the EIC documents for the rules on resubmitting after a rejection: whether there's a cap, whether there are waiting periods, and whether a rejection counts differently depending on the stage it happened at. I'll give you the answer with citations once it finishes.
+
+
+2:52 PM
+Yes, there's a limit, and you have one try left. After three unsuccessful submissions to the EIC Accelerator, the same legal entity can't apply again for the rest of Horizon Europe.
+
+Every stage counts the same. A rejection at the short proposal or the full proposal stage counts towards the three. The interview is part of the full proposal stage, so a rejection there counts too. It also doesn't matter whether you applied through Open or a Challenge, or for a grant only, blended finance or equity only (EIC Work Programme 2027, p. 88; Guide for Applicants v6.0, p. 49).
+Only rejections since 1 January 2024 count. If either of your two rejections came before that date, you may have more attempts left than you think (WP 2027, p. 88).
+Fast Track and Plug In entries count too (WP 2027, p. 88).
+Withdrawing doesn't count. If you withdraw before you get the evaluation result, that submission isn't counted against the limit (Guide v6.0, p. 45). That could protect your last attempt if you realise mid-process that the proposal isn't ready.
+You're expected to improve the proposal. Reapply only after acting on the evaluators' feedback and making significant improvements (WP 2027, p. 88).
+The documents don't cover a few things:
+
+whether you have to wait a minimum time before resubmitting
+whether a rejection at the full proposal stage means starting again with a new short proposal
+whether the limit resets under the next EU research programme after Horizon Europe
+If you were rejected after the interview, you should also have received a Seal of Excellence (Guide v6.0, p. 55). It can help you seek other funding.
 
 ## Adding a document
 
