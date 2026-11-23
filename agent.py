@@ -24,7 +24,7 @@ from langchain_core.tools import StructuredTool
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.errors import GraphRecursionError
 from mcp import ClientSession, StdioServerParameters
-from mcp.client.stdio import stdio_client
+from mcp.client.stdio import get_default_environment, stdio_client
 
 from api_key import load_api_key
 
@@ -41,7 +41,7 @@ MCP_TIMEOUT = 600       # seconds for one tool call: add_document embeds one req
 
 CITATION = re.compile(r"\[([a-z][a-z0-9_]*):\s*([^\]]+)\]")
 RETRIEVED = re.compile(r"Source: (\S+) \(.*?\) \| Location: (.+?)(?:, page \d+)? \| similarity")
-REFERENCE = re.compile(r"\b(Article|Recital|Section)\s+((?:[IVX]+|\d+)(?:\.[A-Za-z0-9]+)*)")
+REFERENCE = re.compile(r"\b(Article|Recital|Section|Page)\s+((?:[IVX]+|\d+)(?:\.[A-Za-z0-9]+)*)")
 
 
 SOURCE_MARK = re.compile(r"(?:^|[;,]\s*)([a-z][a-z0-9_]*):\s*")
@@ -192,8 +192,9 @@ async def _answer(session, definitions, question: str, approve) -> dict:
     }
 
 
-async def _run(questions: list[str], approve, on_result=None, keep_going: bool = False) -> list[dict]:
-    params = StdioServerParameters(command=sys.executable, args=[str(ROOT / "server.py")], cwd=str(ROOT))
+async def _run(questions: list[str], approve, on_result=None, keep_going: bool = False, env: dict | None = None) -> list[dict]:
+    params = StdioServerParameters(command=sys.executable, args=[str(ROOT / "server.py")], cwd=str(ROOT),
+                                   env={**get_default_environment(), **env} if env else None)
     results = []
     async with stdio_client(params) as (read, write):
         async with ClientSession(read, write) as session:
@@ -220,8 +221,10 @@ async def _run(questions: list[str], approve, on_result=None, keep_going: bool =
     return results
 
 
-def ask_many(questions: list[str], approve=cli_approve, on_result=None, keep_going: bool = False) -> list[dict]:
-    return asyncio.run(_run(questions, approve, on_result, keep_going))
+def ask_many(questions: list[str], approve=cli_approve, on_result=None, keep_going: bool = False,
+             env: dict | None = None) -> list[dict]:
+    """env: extra environment variables for the server process (the evaluation points INDEX_DIR at a copy)."""
+    return asyncio.run(_run(questions, approve, on_result, keep_going, env))
 
 
 def ask(question: str, approve=cli_approve) -> dict:

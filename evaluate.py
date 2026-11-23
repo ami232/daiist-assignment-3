@@ -18,6 +18,9 @@ Designs compared (every design that has an index in index/ is tried):
 
 All tuning constants are set below, before the first run, and are not changed afterwards.
 
+Stage 3: the add-a-document experiment (eval/add_document_experiment.*): the agent adds a PDF that answers one
+unanswerable question, on a COPY of index/ (your committed index is not touched), and the question is asked again.
+
 Writes: eval/retrieval_results.csv (one row per question and design)
         eval/retrieval_summary.json (the table that goes into REPORT.md)
 """
@@ -49,6 +52,11 @@ HUMAN_LABELS = EVAL_DIR / "human_labels.csv"
 RUBRIC = EVAL_DIR / "judge_rubric.md"                # written by you
 VERDICTS = EVAL_DIR / "judge_verdicts.csv"
 E2E_SUMMARY = EVAL_DIR / "end_to_end_summary.json"
+# The add-a-document experiment: one unanswerable question, one PDF that answers it.
+EXPERIMENT_QUESTION = "q14"
+EXPERIMENT_PDF = EVAL_DIR / "added_documents" / "eu_us_dpf_press_release.pdf"
+EXPERIMENT_JSON = EVAL_DIR / "add_document_experiment.json"
+EXPERIMENT_MD = EVAL_DIR / "add_document_experiment.md"
 
 KS = (1, 3, 5)
 POOL = 30                 # candidates taken from each ranking before fusion
@@ -56,7 +64,8 @@ RRF_K = 60                # reciprocal rank fusion constant
 BM25_K1, BM25_B = 1.5, 0.75
 MIN_LABELS = 20
 LABEL_SEED = 7            # fixes the order of the label sheet (a random order, the same on every run)
-JUDGE_MODEL = os.environ.get("JUDGE_MODEL", "gemini-3.5-flash")
+JUDGE_MODEL = os.environ.get("JUDGE_MODEL", "gemini-3.5-flash-lite")
+LEGACY_JUDGE = "gemini-3.5-flash-lite"      # the judge of verdict rows saved before the model was recorded
 # gemini-3.5-flash is limited to 5 requests a minute and 20 a day on the free tier, flash-lite to 15 and 500:
 # pause between judge calls so the per-minute limit is not hit. Verdicts are saved one by one: a run that
 # reaches the daily limit stops, and running again later (after 09:00 Spanish time) continues.
@@ -325,7 +334,7 @@ def load_answers() -> dict[str, dict]:
 
 def answers_stage(rows: list[dict], redo: bool) -> dict[str, dict]:
     if redo:
-        for path in (ANSWERS, VERDICTS):
+        for path in (ANSWERS, VERDICTS, EXPERIMENT_JSON, EXPERIMENT_MD):
             path.unlink(missing_ok=True)
     records = load_answers()
     todo = [r for r in rows if r["id"] not in records or records[r["id"]]["question"] != r["question"]]
@@ -555,7 +564,8 @@ def judge_one(judge, rubric: str, row: dict, record: dict, check: dict) -> dict:
     verdict, reason = result.verdict, result.reason
     if verdict == "correct" and check["fabricated_citations"]:     # rubric rule 4
         verdict, reason = "partial", reason + " [downgraded to partial: fabricated citation]"
-    return {"verdict": verdict, "correct": int(verdict == "correct"), "supported": int(bool(result.supported)), "reason": reason}
+    return {"verdict": verdict, "correct": int(verdict == "correct"), "supported": int(bool(result.supported)), "reason": reason,
+            "judge_model": JUDGE_MODEL}
 
 
 def judge_stage(rows: list[dict], records: dict[str, dict], checks: dict[str, dict]) -> dict[str, dict]:
@@ -578,7 +588,7 @@ def judge_stage(rows: list[dict], records: dict[str, dict], checks: dict[str, di
         with VERDICTS.open(newline="", encoding="utf-8") as f:
             for r in csv.DictReader(f):
                 verdicts[r["id"]] = {"verdict": r["verdict"], "correct": int(r["correct"]), "supported": int(r["supported"]),
-                                     "reason": r["reason"]}
+                                     "reason": r["reason"], "judge_model": r.get("judge_model") or LEGACY_JUDGE}
     todo = [r for r in rows if r["id"] in records and r["id"] not in verdicts]
     if todo:
         load_api_key()
@@ -598,7 +608,7 @@ def judge_stage(rows: list[dict], records: dict[str, dict], checks: dict[str, di
                 continue
             failures = 0
             with VERDICTS.open("w", newline="", encoding="utf-8") as f:
-                writer = csv.DictWriter(f, fieldnames=["id", "verdict", "correct", "supported", "reason"])
+                writer = csv.DictWriter(f, fieldnames=["id", "verdict", "correct", "supported", "reason", "judge_model"])
                 writer.writeheader()
                 writer.writerows({"id": i, **v} for i, v in verdicts.items())
             print(f"  judged {row['id']} ({len(verdicts)}/{len(records)})", file=sys.stderr)
@@ -672,7 +682,7 @@ def end_to_end_stage(redo: bool) -> None:
         print(f"\nJudge not run yet: write your rubric in {RUBRIC.relative_to(ROOT)} first.")
     else:
         verdicts = judge_stage(rows, records, {c["id"]: c for c in checks})
-        summary["judge_model"] = JUDGE_MODEL
+        summary["judge_model"] = ", ".join(sorted({v["judge_model"] for v in verdicts.values()}))
         summary["judge_partial"] = [i for i, v in verdicts.items() if v["verdict"] == "partial"]
         summary["judge_grades"] = grade_summary(rows, verdicts)
         summary["judge_vs_human"] = agreement(labels, verdicts)
@@ -713,9 +723,100 @@ def print_end_to_end(summary: dict) -> None:
           f"{E2E_SUMMARY.relative_to(ROOT)}")
 
 
+# --------------------------------------------------------------------------
+# 9. Add a document: the same question before and after
+# --------------------------------------------------------------------------
+
+def add_document_experiment(rows: list[dict], records: dict[str, dict]) -> dict | None:
+    """The agent is asked to add EXPERIMENT_PDF (through the approval step), then the unanswerable question is
+    asked again, plus the other unanswerable questions as a side-effect check. Runs on a copy of index/."""
+    import shutil
+    import tempfile
+
+    import agent
+
+    if EXPERIMENT_JSON.is_file():
+        return json.loads(EXPERIMENT_JSON.read_text(encoding="utf-8"))
+    if not EXPERIMENT_PDF.is_file():
+        print(f"\nAdd-a-document experiment not run: put the PDF at {EXPERIMENT_PDF.relative_to(ROOT)} first.")
+        return None
+    by_id = {r["id"]: r for r in rows}
+    if EXPERIMENT_QUESTION not in records:
+        return None
+    question = by_id[EXPERIMENT_QUESTION]["question"]
+    others = [r for r in rows if r["kind"].strip().lower() == "unanswerable" and r["id"] != EXPERIMENT_QUESTION]
+    relative = EXPERIMENT_PDF.relative_to(ROOT)
+    source = EXPERIMENT_PDF.stem
+
+    print(f"\nAdd-a-document experiment on a copy of the index: {EXPERIMENT_QUESTION}, document {relative}.\n"
+          "The agent will ask for approval to add the document: answer y.", file=sys.stderr)
+    with tempfile.TemporaryDirectory() as tmp:
+        copy = Path(tmp) / "index"
+        shutil.copytree(index.INDEX_DIR, copy)
+        results = agent.ask_many(
+            [f"Please add the file {relative} to the corpus.", question] + [r["question"] for r in others],
+            approve=agent.cli_approve,
+            env={"INDEX_DIR": str(copy)},
+        )
+    if len(results) < 2:
+        print("The experiment did not finish; run the evaluation again.", file=sys.stderr)
+        return None
+    add, after, rest = results[0], results[1], results[2:]
+    added = next((c["result"] for c in add["tool_calls"] if c["tool"] == "add_document"), "")
+    before = records[EXPERIMENT_QUESTION]
+    experiment = {
+        "question_id": EXPERIMENT_QUESTION,
+        "question": question,
+        "document": str(relative),
+        "source_id": source,
+        "add_document_result": added,
+        "added": added.startswith(f"{source}: added") or added.startswith(f"{source}: replaced"),
+        "before": {"answer": before["raw_answer"], "model": before["model"], "refused": bool(REFUSAL.search(before["raw_answer"][:REFUSAL_WINDOW]))},
+        "after": {
+            "answer": after["raw_answer"],
+            "refused": bool(REFUSAL.search(after["raw_answer"][:REFUSAL_WINDOW])),
+            "cites_new_document": any(c.startswith(f"[{source}:") for c in after["valid_citations"] + after["invalid_citations"]),
+            "retrieved_new_document": any(src == source for src, _ in after["retrieved"]),
+            "valid_citations": after["valid_citations"],
+            "invalid_citations": after["invalid_citations"],
+            "seconds": after["seconds"], "input_tokens": after["input_tokens"], "output_tokens": after["output_tokens"],
+        },
+        "other_unanswerable_after": [
+            {"id": r["id"], "refused": bool(REFUSAL.search(res["raw_answer"][:REFUSAL_WINDOW])), "answer": res["raw_answer"]}
+            for r, res in zip(others, rest)
+        ],
+    }
+    EXPERIMENT_JSON.write_text(json.dumps(experiment, indent=2, ensure_ascii=False), encoding="utf-8")
+    EXPERIMENT_MD.write_text(
+        f"# Add-a-document experiment\n\nQuestion ({EXPERIMENT_QUESTION}): {question}\n\n"
+        f"Document added: `{relative}` (source id `{source}`), on a copy of the index. add_document said: {added}\n\n"
+        f"## Before\n\n```text\n{experiment['before']['answer']}\n```\n\n## After\n\n```text\n{experiment['after']['answer']}\n```\n\n"
+        f"Retrieved the new document: {experiment['after']['retrieved_new_document']}. "
+        f"Cites it: {experiment['after']['cites_new_document']}.\n\n## Other unanswerable questions after the addition\n\n"
+        + "\n".join(f"- {o['id']}: {'refused' if o['refused'] else 'NOT refused'}" for o in experiment["other_unanswerable_after"]) + "\n",
+        encoding="utf-8",
+    )
+    return experiment
+
+
+def print_experiment(e: dict) -> None:
+    print(f"\nAdd-a-document experiment ({e['question_id']}, {e['document']}):")
+    print(f"  add_document: {e['add_document_result']}")
+    print(f"  before: refused={e['before']['refused']}  after: refused={e['after']['refused']}, "
+          f"retrieved the new document={e['after']['retrieved_new_document']}, cites it={e['after']['cites_new_document']}")
+    print(f"  other unanswerable questions after the addition, still refused: "
+          f"{sum(o['refused'] for o in e['other_unanswerable_after'])}/{len(e['other_unanswerable_after'])}")
+    print(f"  full text: {EXPERIMENT_MD.relative_to(ROOT)}")
+
+
 def main() -> int:
     retrieval_stage()
     end_to_end_stage(redo="--redo" in sys.argv)
+    records = load_answers()
+    if records:
+        experiment = add_document_experiment(read_questions(), records)
+        if experiment:
+            print_experiment(experiment)
     return 0
 
 

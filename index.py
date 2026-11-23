@@ -17,6 +17,7 @@ server.py imports chunk_file, embed_and_store, index_file, get_collection and em
 import argparse
 import hashlib
 import json
+import os
 import re
 import sys
 import time
@@ -24,7 +25,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 CORPUS_DIR = ROOT / "corpus"
-INDEX_DIR = ROOT / "index"
+INDEX_DIR = Path(os.environ.get("INDEX_DIR") or ROOT / "index")   # the evaluation tests add_document on a copy
 MANIFEST = INDEX_DIR / "sources.json"
 
 EMBED_MODEL = "gemini-embedding-2"
