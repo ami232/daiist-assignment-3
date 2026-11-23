@@ -46,11 +46,10 @@
     },
     "supported": {
       "n": 37,
-      "agreement": 0.946,
+      "agreement": 0.973,
       "kappa": 0.0,
       "disagreements": [
-        "q15",
-        "q33"
+        "q15"
       ]
     }
   },

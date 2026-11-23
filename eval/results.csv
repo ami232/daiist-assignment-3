@@ -31,7 +31,7 @@ q29,multi,4,True,answered,pass,1,1,1,1,3,7377,220,6.47,3077,380
 q30,unanswerable,1,True,answered an unanswerable question,pass,1,1,1,1,2,4117,102,8.75,2375,568
 q31,unanswerable,2,True,answered an unanswerable question,retried,1,1,1,1,3,5939,235,5.47,1791,412
 q32,unanswerable,1,True,answered an unanswerable question,pass,1,1,1,1,2,4161,116,5.96,2435,490
-q33,unanswerable,0,True,correct refusal,pass,1,1,1,0,2,3630,86,5.44,1877,512
+q33,unanswerable,0,True,correct refusal,pass,1,1,1,1,2,3630,86,5.44,1877,512
 q34,unanswerable,1,True,correct refusal,pass,1,1,1,1,2,3722,132,5.72,2011,1063
 q35,unanswerable,0,True,correct refusal,pass,1,1,1,1,2,3211,88,6.93,1448,309
 q36,unanswerable,0,True,correct refusal,retried,1,1,1,1,3,5791,137,14.84,1618,282
