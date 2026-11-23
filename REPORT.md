@@ -314,4 +314,5 @@ SAFEGUARD: the user opens the cited article before flying, and treats "The docum
 ## AI use
 
 *What you used and how, or "none".*
+
 I looked for relevant corpuses on Google, and then used Claude to write the code, instructing it what to do using the assignment instructions, verifying the results, and ensuring they were what was expected; if not, I prompted Claude to adjust the index, agent, and evaluate files accordingly. I also graded the 23 answers myself, and then wrote the report.
