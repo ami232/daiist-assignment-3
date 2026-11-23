@@ -1,0 +1,7 @@
+design,k,hit_rate,multi_all_passages,avg_words_added,questions
+fixed,1,0.8,0.0,150,30
+fixed,3,0.867,0.333,450,30
+fixed,5,0.967,0.5,750,30
+structure,1,0.7,0.0,207,30
+structure,3,0.933,0.5,584,30
+structure,5,0.967,0.667,930,30

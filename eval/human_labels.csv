@@ -1,1 +1,21 @@
 id,correct,supported,notes
+q31,1,1,
+q32,1,0,"Refusal is right, but it adds that hand-luggage limits are set by each airline, which no retrieved passage says."
+q33,1,1,
+q34,1,1,
+q35,1,1,
+q36,1,1,
+q25,1,1,
+q26,0,0,"Headline amount is EUR 400 (reference: EUR 200, the 50% reduction applies since arrival is under 3 h late). It also says 5 days' notice falls in the 7-14 day window, which contradicts Article 5."
+q27,1,1,
+q28,1,1,
+q29,1,1,
+q30,1,1,
+q01,1,1,
+q05,1,1,
+q08,1,1,
+q13,1,1,
+q16,1,1,
+q20,1,0,"Verdict right (under 250 km), but the topics it gives for the articles that apply are not in the passage, which lists only article numbers; 'accident compensation' is wrong (Article 17 is about mobility equipment)."
+q22,1,1,
+q24,1,1,

@@ -1,0 +1,56 @@
+{
+ "agent_model": "gemini-3.5-flash-lite",
+ "judge_model": "gemini-3.1-flash-lite",
+ "questions": 36,
+ "outcomes": {
+  "correct": 30,
+  "correct refusal": 6
+ },
+ "outcomes_by_kind": {
+  "single": {
+   "correct": 24
+  },
+  "multi": {
+   "correct": 6
+  },
+  "unanswerable": {
+   "correct refusal": 6
+  }
+ },
+ "rates": {
+  "correct_on_answerable": 1.0,
+  "unsupported_on_all": 0.0,
+  "correct_refusals_on_unanswerable": 1.0,
+  "wrong_refusals_on_answerable": 0.0
+ },
+ "code_checks": {
+  "searched": 36,
+  "citations_valid": 36,
+  "answerable_with_citation": 30,
+  "expected_passage_retrieved": 30,
+  "refusal_phrase_agrees_with_judge": 35,
+  "citation_retries": 3
+ },
+ "human_agreement": {
+  "answers": 20,
+  "correct": 0.9,
+  "correct_disagree": [
+   "q32",
+   "q26"
+  ],
+  "supported": 0.9,
+  "supported_disagree": [
+   "q26",
+   "q20"
+  ],
+  "both": 0.85
+ },
+ "cost_per_question": {
+  "agent_model_calls": 2.33,
+  "agent_input_tokens": 5782,
+  "agent_output_tokens": 251,
+  "agent_seconds": 8.5,
+  "judge_input_tokens": 2682,
+  "judge_output_tokens": 92
+ }
+}

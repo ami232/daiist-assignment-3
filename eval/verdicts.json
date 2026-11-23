@@ -1,0 +1,366 @@
+{
+ "version": "2865729e8ca4",
+ "model": "gemini-3.1-flash-lite",
+ "verdicts": {
+  "q01": {
+   "reasoning": "The answer correctly identifies the compensation amount of EUR 250 for flights of 1,500 km or less as specified in Article 7 of Regulation (EC) No 261/2004. It also accurately explains the condition under which this amount could be reduced by 50%. All claims are directly supported by the provided passages.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "8f57e5de09e1",
+   "judge_seconds": 1.8,
+   "judge_input_tokens": 1873,
+   "judge_output_tokens": 106
+  },
+  "q02": {
+   "reasoning": "The answer correctly identifies that the passenger is not entitled to compensation because they were informed more than two weeks before departure. It cites the relevant regulations and guidelines accurately. The answer is fully supported by the provided passages and correctly addresses the user's question.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "87a38a436c9b",
+   "judge_seconds": 1.0,
+   "judge_input_tokens": 2171,
+   "judge_output_tokens": 81
+  },
+  "q03": {
+   "reasoning": "The assistant correctly identifies the 3-hour threshold for a 2,500 km flight based on Article 6(1)(b) of Regulation (EC) No 261/2004. It provides the correct condition and cites the relevant articles. The answer is accurate, supported by the provided passages, and does not refuse the question.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "baa35fcc8b10",
+   "judge_seconds": 1.8,
+   "judge_input_tokens": 2089,
+   "judge_output_tokens": 106
+  },
+  "q04": {
+   "reasoning": "The answer correctly identifies the seven-day reimbursement period required by Regulation (EC) No 261/2004. It provides the correct conditions and payment methods as specified in the retrieved documents. The answer is fully supported by the provided text and cites the correct regulation.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "569bfa34430b",
+   "judge_seconds": 1.0,
+   "judge_input_tokens": 2027,
+   "judge_output_tokens": 88
+  },
+  "q05": {
+   "reasoning": "The assistant correctly identifies that travel vouchers are only permitted with the passenger's signed agreement. It lists the alternative payment methods specified in the regulation. The answer is fully supported by Article 7(3) of Regulation (EC) No 261/2004.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "f47ac53582e1",
+   "judge_seconds": 6.4,
+   "judge_input_tokens": 1914,
+   "judge_output_tokens": 88
+  },
+  "q06": {
+   "reasoning": "The answer correctly identifies that passengers with frequent flyer tickets are covered by the regulation. It cites the relevant article and provides accurate conditions for coverage. The answer is fully supported by the provided documents.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "0f0eb78d1ca1",
+   "judge_seconds": 1.2,
+   "judge_input_tokens": 2620,
+   "judge_output_tokens": 69
+  },
+  "q07": {
+   "reasoning": "The answer correctly identifies that the time of arrival is measured when at least one aircraft door is opened, as stated in the provided documents. It also includes relevant context regarding the scheduled arrival time and diverted flights, which are supported by the cited passage. The answer is accurate, fully supported, and does not refuse the question.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "01438a925e7a",
+   "judge_seconds": 1.4,
+   "judge_input_tokens": 2115,
+   "judge_output_tokens": 95
+  },
+  "q08": {
+   "reasoning": "The answer correctly identifies that a delay of 3 hours or more entitles a passenger to compensation, matching the reference answer. It includes the necessary condition regarding extraordinary circumstances as mentioned in the provided passages. The answer is fully supported by the cited documents.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "0cba7c2eef6c",
+   "judge_seconds": 35.5,
+   "judge_input_tokens": 1806,
+   "judge_output_tokens": 80
+  },
+  "q09": {
+   "reasoning": "The answer correctly identifies that unexpected technical problems are generally not extraordinary circumstances, citing the relevant section of the provided guidelines. It accurately lists the specific exceptions mentioned in the source text, such as hidden manufacturing defects or sabotage. The response is fully supported by the retrieved passages and adheres to the required criteria.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "44fd7465a9be",
+   "judge_seconds": 192.8,
+   "judge_input_tokens": 2432,
+   "judge_output_tokens": 90
+  },
+  "q10": {
+   "reasoning": "The answer correctly identifies that a strike by an airline's own staff over pay is not an extraordinary circumstance and therefore the airline cannot refuse compensation. It cites the correct section of the provided guidelines. The reasoning is accurate and fully supported by the retrieved passages.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "351639335e28",
+   "judge_seconds": 9.4,
+   "judge_input_tokens": 2076,
+   "judge_output_tokens": 82
+  },
+  "q11": {
+   "reasoning": "The answer correctly identifies that a bird strike can be classified as an extraordinary circumstance, which exempts the airline from paying compensation. It cites the correct section of the provided guidelines. The answer is accurate and fully supported by the retrieved documents.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "3d65ae293330",
+   "judge_seconds": 32.1,
+   "judge_input_tokens": 4787,
+   "judge_output_tokens": 78
+  },
+  "q12": {
+   "reasoning": "The assistant correctly identifies that moving a flight forward by more than one hour constitutes a cancellation according to the provided guidelines. It cites the correct section of the Commission Guidelines. The answer is accurate, supported by the text, and does not refuse the question.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "9ec80a36fe5d",
+   "judge_seconds": 1.4,
+   "judge_input_tokens": 2032,
+   "judge_output_tokens": 81
+  },
+  "q13": {
+   "reasoning": "The assistant correctly identifies that the trip is not covered by Regulation 261/2004. It accurately explains the reasoning based on the provided guidelines, noting that the geographical location of the first departure and final destination determines applicability regardless of an EU stopover. The answer is fully supported by the cited passage.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "dadc3bfacf2a",
+   "judge_seconds": 36.6,
+   "judge_input_tokens": 2501,
+   "judge_output_tokens": 95
+  },
+  "q14": {
+   "reasoning": "The answer correctly identifies that Regulation 261/2004 does not set a time limit and that national laws apply. It explicitly mentions that the Montreal Convention's 2-year limit is not applicable, which matches the reference answer. All claims are directly supported by the cited passage.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "94ffd245747b",
+   "judge_seconds": 8.8,
+   "judge_input_tokens": 2494,
+   "judge_output_tokens": 92
+  },
+  "q15": {
+   "reasoning": "The answer correctly identifies the 1,288 SDR limit for lost checked baggage under the Montreal Convention as specified in the provided documents. It accurately notes that this is a maximum liability limit rather than an automatic payout and cites the correct source. The answer is fully supported by the retrieved passages.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "0bb8c02df858",
+   "judge_seconds": 39.6,
+   "judge_input_tokens": 2092,
+   "judge_output_tokens": 90
+  },
+  "q16": {
+   "reasoning": "The answer correctly identifies the 25% compensation rate for a 75-minute delay as specified in Regulation (EU) 2021/782. It includes the necessary conditions and cites the correct article. The information is fully supported by the provided passages.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "43e039ce4490",
+   "judge_seconds": 108.9,
+   "judge_input_tokens": 1800,
+   "judge_output_tokens": 88
+  },
+  "q17": {
+   "reasoning": "The assistant correctly identifies the one-month time limit for compensation and the rules regarding vouchers and monetary payment. It cites the correct regulation (Regulation (EU) 2021/782, Article 19) which covers railway passenger rights. The answer is accurate, supported by the provided passages, and addresses all parts of the user's question.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "0982011da41b",
+   "judge_seconds": 54.4,
+   "judge_input_tokens": 2293,
+   "judge_output_tokens": 106
+  },
+  "q18": {
+   "reasoning": "The answer correctly identifies that railway companies can set a minimum threshold for compensation and specifies the correct limit of EUR 4 per ticket. It cites the relevant regulation and article accurately. The answer is fully supported by the provided documents.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "385ddb5d7f92",
+   "judge_seconds": 18.1,
+   "judge_input_tokens": 2075,
+   "judge_output_tokens": 76
+  },
+  "q19": {
+   "reasoning": "The answer correctly identifies the 100-minute time limit for when a passenger can book their own transport if the railway fails to provide re-routing options. It cites the correct regulation and article. The answer is fully supported by the provided text.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "7da1cf32dee4",
+   "judge_seconds": 50.4,
+   "judge_input_tokens": 1876,
+   "judge_output_tokens": 82
+  },
+  "q20": {
+   "reasoning": "The assistant correctly identifies that the full regulation does not apply to a 180 km service. It accurately cites Article 2 of Regulation (EU) No 181/2011 to support its claim that the 250 km threshold is required for full application. The answer is well-structured and fully supported by the provided documentation.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "bf538217e4a6",
+   "judge_seconds": 16.9,
+   "judge_input_tokens": 2075,
+   "judge_output_tokens": 104
+  },
+  "q21": {
+   "reasoning": "The answer correctly identifies the passenger's right to 50% compensation in addition to reimbursement when a carrier fails to offer re-routing or a refund for a delay exceeding 120 minutes. It accurately cites Article 19 of Regulation (EU) No 181/2011. The answer includes all necessary conditions and the payment timeline specified in the regulation.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "d5af219ad862",
+   "judge_seconds": 11.4,
+   "judge_input_tokens": 2024,
+   "judge_output_tokens": 110
+  },
+  "q22": {
+   "reasoning": "The answer correctly identifies the compensation amount and the applicable conditions based on the provided regulations. It accurately cites the relevant articles and recitals to support its claims. The answer is complete, accurate, and fully supported by the retrieved documents.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "532ebf66e1e0",
+   "judge_seconds": 8.1,
+   "judge_input_tokens": 1861,
+   "judge_output_tokens": 77
+  },
+  "q23": {
+   "reasoning": "The answer correctly identifies that compensation is not provided when delays are caused by weather conditions endangering the safe operation of the ship. It cites the relevant regulations and accurately reflects the burden of proof mentioned in the passages. The response is fully supported by the provided documentation.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "0a982a465a84",
+   "judge_seconds": 6.0,
+   "judge_input_tokens": 1587,
+   "judge_output_tokens": 82
+  },
+  "q24": {
+   "reasoning": "The answer correctly identifies the entitlements for a passenger whose bicycle carriage was refused without justification, citing Article 6 of Regulation (EU) 2021/782. It accurately lists re-routing or reimbursement, compensation, and assistance as specified in the retrieved passage. The conditions mentioned are also directly supported by the text.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "ed715b110691",
+   "judge_seconds": 55.2,
+   "judge_input_tokens": 1724,
+   "judge_output_tokens": 98
+  },
+  "q25": {
+   "reasoning": "The answer correctly identifies that only the train passenger is entitled to compensation for a 70-minute delay, while the flight passenger is not. It provides the correct compensation percentage for the train (25%) and the correct threshold for flight compensation (3 hours). All claims are supported by the provided citations.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "53f7d077b491",
+   "judge_seconds": 11.7,
+   "judge_input_tokens": 3437,
+   "judge_output_tokens": 93
+  },
+  "q26": {
+   "reasoning": "The assistant correctly identifies that compensation is due and provides the correct base amount of EUR 400, noting the potential 50% reduction to EUR 200. It correctly identifies that the notification period (5 days) falls under the 'less than 7 days' rule, though it confusingly references the 7-14 day window in its explanation. Despite this minor confusion in the explanation of the notification window, the core verdict and amounts are accurate and supported by the provided passages.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "a34017bd0305",
+   "judge_seconds": 10.1,
+   "judge_input_tokens": 5406,
+   "judge_output_tokens": 133
+  },
+  "q27": {
+   "reasoning": "The answer correctly identifies the accommodation limits for both coach and ferry passengers as specified in the provided regulations. It accurately cites the relevant articles for both modes of transport. The response addresses all parts of the multi-part question with the correct amounts and time limits.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "e8f567cd78ce",
+   "judge_seconds": 15.4,
+   "judge_input_tokens": 5299,
+   "judge_output_tokens": 82
+  },
+  "q28": {
+   "reasoning": "The answer correctly identifies the rights to reimbursement and a return flight for a delay of at least five hours as specified in Articles 6 and 8 of Regulation (EC) No 261/2004. It also correctly includes the right to care as per Article 6(1)(i). All claims are directly supported by the provided passages.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "5e4be6910e48",
+   "judge_seconds": 15.7,
+   "judge_input_tokens": 3644,
+   "judge_output_tokens": 104
+  },
+  "q29": {
+   "reasoning": "The answer correctly identifies that compensation is not required due to the extreme weather exemption and accurately states the three-night limit for accommodation. It cites the relevant articles from Regulation (EU) 2021/782. All claims are supported by the provided documents.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "341a4acdf472",
+   "judge_seconds": 85.8,
+   "judge_input_tokens": 7334,
+   "judge_output_tokens": 86
+  },
+  "q30": {
+   "reasoning": "The answer correctly identifies that the diversion is treated as a cancellation under the provided guidelines. It accurately states the compensation amount of EUR 250 for a flight of 1,050 km and correctly notes the exceptions regarding extraordinary circumstances and notification timelines. All claims are supported by the provided passages and the answer is complete.",
+   "refused": false,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "48754a838519",
+   "judge_seconds": 275.4,
+   "judge_input_tokens": 3862,
+   "judge_output_tokens": 97
+  },
+  "q31": {
+   "reasoning": "The assistant correctly identified that the provided documents do not contain information regarding post-Brexit UK domestic flight compensation rules. It properly refused to answer the question based on the lack of relevant information in the search results. The response is accurate, supported by the absence of such information in the provided passages, and adheres to the instructions.",
+   "refused": true,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "ade826ca8a64",
+   "judge_seconds": 305.9,
+   "judge_input_tokens": 3574,
+   "judge_output_tokens": 95
+  },
+  "q32": {
+   "reasoning": "The assistant correctly identified that the provided documents do not contain information regarding hand luggage weight limits. It correctly refused to answer the specific question based on the provided text. However, it included external knowledge about airline policies which was not present in the retrieved passages, violating the requirement to answer only from the provided documents.",
+   "refused": true,
+   "correct": false,
+   "supported": false,
+   "answer_hash": "edc992437ab0",
+   "judge_seconds": 1.3,
+   "judge_input_tokens": 2156,
+   "judge_output_tokens": 92
+  },
+  "q33": {
+   "reasoning": "The assistant correctly identifies that the provided documents do not contain specific compensation rules for hotel overbookings. It accurately states that the documents focus on air passenger rights and notes the limitation regarding the Package Travel Directive. The answer follows the instructions to refuse when the information is missing and cites the relevant section of the provided text.",
+   "refused": true,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "577a9aa5ca61",
+   "judge_seconds": 42.7,
+   "judge_input_tokens": 3842,
+   "judge_output_tokens": 93
+  },
+  "q34": {
+   "reasoning": "The assistant correctly identified that the provided documents do not cover US Department of Transportation rules. It properly refused to answer the question based on the lack of information. The answer is accurate, supported by the absence of relevant data in the search results, and follows the instructions.",
+   "refused": true,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "e1ee9eafecbd",
+   "judge_seconds": 54.9,
+   "judge_input_tokens": 1734,
+   "judge_output_tokens": 84
+  },
+  "q35": {
+   "reasoning": "The assistant correctly identified that the provided documents do not cover the specific scenario of taxi transfers. It refused to provide a definitive answer regarding rights against the taxi company, which is appropriate given the scope of the retrieved passages. The answer is accurate, supported by the lack of relevant information in the search results, and follows the instructions.",
+   "refused": true,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "2a0b285cb60a",
+   "judge_seconds": 66.5,
+   "judge_input_tokens": 1757,
+   "judge_output_tokens": 97
+  },
+  "q36": {
+   "reasoning": "The assistant correctly identifies that the provided documents do not contain information regarding specific fine amounts for Spain. It properly refuses to answer the specific question about the maximum fine while providing the relevant context from Article 16 of Regulation (EC) No 261/2004. The answer is accurate, supported by the retrieved passages, and follows the instructions for unanswerable questions.",
+   "refused": true,
+   "correct": true,
+   "supported": true,
+   "answer_hash": "b88de24e6edd",
+   "judge_seconds": 3.4,
+   "judge_input_tokens": 2170,
+   "judge_output_tokens": 109
+  }
+ }
+}

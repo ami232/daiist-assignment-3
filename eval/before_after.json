@@ -1,0 +1,24 @@
+{
+ "version": "532b65919d4d",
+ "id": "q33",
+ "question": "The hotel in a customer's package holiday was overbooked on arrival. How much compensation is she owed for the hotel?",
+ "document": "Directive (EU) 2015-2302 (Package Travel)",
+ "before": {
+  "answer": "The documents I have do not cover specific statutory compensation amounts for hotel overbookings under package holidays. \n\nThe corpus only contains transport passenger rights regulations (such as EU Regulation 261/2004 for air travel, and regulations for rail, bus/coach, and sea) and notes that while Regulation 261/2004 applies to flights within a package tour, it does not apply to package tour cancellations or incidents caused by reasons other than flight disruptions (such as hotel cancellations) [Commission Guidelines on Regulation 261/2004 (2024), Section 2.2.7]. \n\nRules regarding hotel overbookings or price reductions/compensation under the Package Travel Directive (Directive (EU) 2015/2302) are not present in the provided documents.",
+  "citations": [
+   "Commission Guidelines on Regulation 261/2004 (2024), Section 2.2.7"
+  ]
+ },
+ "add_document": "Added 'Directive (EU) 2015-2302 (Package Travel)': 109 chunks, 16618 words. It is now searchable.",
+ "after": {
+  "answer": "Yes, the customer is entitled to an appropriate price reduction for any period of lack of conformity, and appropriate compensation from the organiser for any damage sustained as a result [Directive (EU) 2015-2302 (Package Travel), Article 14]. \n\n**Conditions:**\n* The organiser must offer, at no extra cost, suitable alternative arrangements of equivalent or higher quality where possible, or of lower quality with an appropriate price reduction [Directive (EU) 2015-2302 (Package Travel), Article 13].\n* If the organiser does not remedy the lack of conformity within a reasonable period set by the traveller, the traveller may do so themselves and request reimbursement of necessary expenses [Directive (EU) 2015-2302 (Package Travel), Article 13].\n* The traveller should inform the organiser without undue delay of any lack of conformity perceived during the performance of the travel service [Directive (EU) 2015-2302 (Package Travel), Article 13].\n* The traveller is not entitled to compensation for damages if the organiser proves the lack of conformity is attributable to the traveller, an unforeseeable/unavoidable third party, or unavoidable and extraordinary circumstances [Directive (EU) 2015-2302 (Package Travel), Article 14].\n\n[Directive (EU) 2015-2302 (Package Travel), Article 13], [Directive (EU) 2015-2302 (Package Travel), Article 14]",
+  "citations": [
+   "Directive (EU) 2015-2302 (Package Travel), Article 14",
+   "Directive (EU) 2015-2302 (Package Travel), Article 13"
+  ],
+  "searches": [
+   "call search({'query': 'package holiday hotel overbooked compensation'})",
+   "call search({'query': 'package travel lack of conformity price reduction compensation amount'})"
+  ]
+ }
+}
