@@ -1,0 +1,50 @@
+{
+  "AAR1001": {
+    "doc_id": "AAR1001",
+    "title": "Loss of Control on Approach, Colgan Air Flight 3407, Clarence Center, NY, Feb 12 2009",
+    "file": "AAR1001.pdf",
+    "sha256": "1baff6efee24d19137567af6918f3fa83a6d88f1283623536388c6cbab122cdd",
+    "pages": 299,
+    "words": 85798,
+    "url": "https://www.ntsb.gov/investigations/AccidentReports/Reports/AAR1001.pdf",
+    "date": "2010-02-02",
+    "licence": "Public domain (US government work)",
+    "indexed_at": "2026-11-23T17:37:27+00:00",
+    "complete": {
+      "sections": true
+    },
+    "chunks_sections": 336
+  },
+  "AAR1003": {
+    "doc_id": "AAR1003",
+    "title": "Loss of Thrust in Both Engines After Bird Strikes, US Airways Flight 1549, Hudson River, Jan 15 2009",
+    "file": "AAR1003.pdf",
+    "sha256": "fe9e1733e8400f3ea9ce0832f36d934c829ac369e8a66765dc423d18973640ef",
+    "pages": 213,
+    "words": 58447,
+    "url": "https://www.ntsb.gov/investigations/AccidentReports/Reports/AAR1003.pdf",
+    "date": "2010-05-04",
+    "licence": "Public domain (US government work)",
+    "indexed_at": "2026-11-23T17:41:07+00:00",
+    "complete": {
+      "sections": true
+    },
+    "chunks_sections": 237
+  },
+  "AAR1401": {
+    "doc_id": "AAR1401",
+    "title": "Descent Below Visual Glidepath and Impact With Seawall, Asiana Airlines Flight 214, San Francisco, Jul 6 2013",
+    "file": "AAR1401.pdf",
+    "sha256": "842b2947e957b64d948d6a9d38a4aac3203f11f22946906c8e807a94a9508e6f",
+    "pages": 207,
+    "words": 77593,
+    "url": "https://www.ntsb.gov/investigations/AccidentReports/Reports/AAR1401.pdf",
+    "date": "2014-06-24",
+    "licence": "Public domain (US government work)",
+    "indexed_at": "2026-11-23T17:44:10+00:00",
+    "complete": {
+      "sections": true
+    },
+    "chunks_sections": 312
+  }
+}
