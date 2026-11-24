@@ -682,9 +682,13 @@ def _fixed_chunks(sections: list[dict]) -> list[dict]:
         if start > 0 and len(window) <= FIXED_OVERLAP:
             break  # nothing new: these words are already in the previous window
         touched = [sections[n] for n in dict.fromkeys(n for _, n in window)]
+        counts: dict[str, int] = {}
+        for _, n in window:
+            counts[sections[n]["location"]] = counts.get(sections[n]["location"], 0) + 1
         pieces.append({
             "text": " ".join(word for word, _ in window),
             "sections": touched,
+            "main_location": max(counts, key=counts.get),  # the location with most words here
         })
         start += step
     return pieces
@@ -793,6 +797,8 @@ def chunk_sections(sections: list[dict], design: str, url: str = "", sha: str = 
             "file_sha256": sha,
             "words": words(piece["text"]),
             "design": design,
+            # not stored in the index: recomputed when the strict hit test needs it
+            "main_location": piece.get("main_location", first["location"]),
         })
     return chunks
 

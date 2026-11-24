@@ -1,5 +1,5 @@
-design,mode,questions,hit@1,single_hit@1,multi_all@1,multi_any@1,hit@3,single_hit@3,multi_all@3,multi_any@3,hit@5,single_hit@5,multi_all@5,multi_any@5,mean_words_k5
-fixed,vector,29,0.6897,0.9091,0.0,0.8571,0.8966,1.0,0.5714,1.0,0.9655,1.0,0.8571,1.0,1237
-fixed,hybrid,29,0.5517,0.7273,0.0,0.1429,0.7931,0.8182,0.7143,1.0,0.8966,0.9091,0.8571,1.0,1237
-structure,vector,29,0.5517,0.7273,0.0,0.7143,0.8621,0.9545,0.5714,0.8571,0.9655,1.0,0.8571,1.0,1394
-structure,hybrid,29,0.4828,0.6364,0.0,0.5714,0.6552,0.8636,0.0,1.0,0.7241,0.8636,0.2857,1.0,1452
+design,mode,questions,hit@1,single_hit@1,multi_all@1,multi_any@1,hit@3,single_hit@3,multi_all@3,multi_any@3,hit@5,single_hit@5,multi_all@5,multi_any@5,strict_hit@1,strict_single_hit@1,strict_multi_all@1,strict_multi_any@1,strict_hit@3,strict_single_hit@3,strict_multi_all@3,strict_multi_any@3,strict_hit@5,strict_single_hit@5,strict_multi_all@5,strict_multi_any@5,mean_words_k5
+fixed,vector,29,0.6897,0.9091,0.0,0.8571,0.8966,1.0,0.5714,1.0,0.9655,1.0,0.8571,1.0,0.5172,0.6818,0.0,0.7143,0.7931,0.9091,0.4286,1.0,0.8621,0.9091,0.7143,1.0,1237
+fixed,hybrid,29,0.5517,0.7273,0.0,0.1429,0.7931,0.8182,0.7143,1.0,0.8966,0.9091,0.8571,1.0,0.4138,0.5455,0.0,0.1429,0.6552,0.6818,0.5714,1.0,0.7586,0.7727,0.7143,1.0,1237
+structure,vector,29,0.5517,0.7273,0.0,0.7143,0.8621,0.9545,0.5714,0.8571,0.9655,1.0,0.8571,1.0,0.5517,0.7273,0.0,0.7143,0.8621,0.9545,0.5714,0.8571,0.9655,1.0,0.8571,1.0,1394
+structure,hybrid,29,0.4828,0.6364,0.0,0.5714,0.6552,0.8636,0.0,1.0,0.7241,0.8636,0.2857,1.0,0.4828,0.6364,0.0,0.5714,0.6552,0.8636,0.0,1.0,0.7241,0.8636,0.2857,1.0,1452

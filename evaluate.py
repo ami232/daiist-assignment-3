@@ -120,43 +120,78 @@ def mean(values: list[float]) -> float | None:
 # 1 + 2. Retrieval: hit rates and the choice of design
 # --------------------------------------------------------------------------
 
+def main_locations(design: str) -> dict[str, str]:
+    """chunk_id -> the location with most words in that chunk. Recomputed from
+    the chunking (same ids as the index), so it costs no embeddings."""
+    return {c["chunk_id"]: c["main_location"] for c in index_stage.chunk_corpus(design)}
+
+
+def choose(rows: list[dict], prefix: str = "") -> tuple[dict, str]:
+    """Best hit@5, then best hit@1, then fewer words in the prompt."""
+    h5, h1 = f"{prefix}hit@5", f"{prefix}hit@1"
+    best = sorted(rows, key=lambda r: (-r[h5], -r[h1], r["mean_words_k5"]))[0]
+    ties_5 = [r for r in rows if r[h5] == best[h5]]
+    ties_1 = [r for r in ties_5 if r[h1] == best[h1]]
+    if len(ties_5) == 1:
+        why = f"it has the best hit@5 ({percent(best[h5])})"
+    elif len(ties_1) == 1:
+        why = (f"{len(ties_5)} configurations tie on hit@5 ({percent(best[h5])}) and it has the best "
+               f"hit@1 among them ({percent(best[h1])})")
+    else:
+        why = (f"{len(ties_1)} configurations tie on hit@5 ({percent(best[h5])}) and hit@1 "
+               f"({percent(best[h1])}) and it adds the fewest words to the prompt ({best['mean_words_k5']})")
+    return best, why
+
+
 def stage_retrieval(questions: list[dict]) -> bool:
     answerable = [q for q in questions if q["kind"] != "unanswerable"]
     singles = [q for q in answerable if q["kind"] == "single"]
     multis = [q for q in answerable if q["kind"] == "multi"]
     say(f"\n== Retrieval: {len(answerable)} answerable questions ({len(singles)} single, {len(multis)} multi)")
 
+    # Two hit tests.
+    #   lenient: a retrieved chunk of the expected document whose locations INCLUDE the expected one
+    #   strict:  ... whose MAIN location (most words in the chunk) IS the expected one
+    # They differ only for design A, where a window can span several articles.
+    main_of = {design: main_locations(design) for design in index_stage.DESIGNS}
     summary_rows, detail_rows = [], []
+    kinds = [q["kind"] for q in answerable]
     try:
         for design, mode in CONFIGS:
-            hits = {k: {"all": [], "any": []} for k in KS}
+            hits = {(test, k): {"all": [], "any": []} for test in ("", "strict_") for k in KS}
             words_at_5 = []
             for q in answerable:
                 results = rag.search(q["question"], design=design, k=max(KS), mode=mode)
                 words_at_5.append(sum(int(r["words"]) for r in results[:5]))
-                ranks = []
+                ranks = {"": [], "strict_": []}
                 for source, location in q["expected"]:
-                    rank = next((i for i, r in enumerate(results, start=1)
-                                 if r["doc_id"] == source and location in r["locations"]), 0)
-                    ranks.append(rank)
-                for k in KS:
-                    found = [0 < rank <= k for rank in ranks]
-                    hits[k]["all"].append(all(found))
-                    hits[k]["any"].append(any(found))
+                    ranks[""].append(next((i for i, r in enumerate(results, start=1)
+                                           if r["doc_id"] == source and location in r["locations"]), 0))
+                    ranks["strict_"].append(next((i for i, r in enumerate(results, start=1)
+                                                  if r["doc_id"] == source
+                                                  and main_of[design].get(r["chunk_id"], r["location"]) == location), 0))
+                for test in ("", "strict_"):
+                    for k in KS:
+                        found = [0 < rank <= k for rank in ranks[test]]
+                        hits[(test, k)]["all"].append(all(found))
+                        hits[(test, k)]["any"].append(any(found))
                 detail_rows.append({
                     "design": design, "mode": mode, "id": q["id"], "kind": q["kind"],
                     "expected": ";".join(f"{s} | {l}" for s, l in q["expected"]),
-                    "ranks": ";".join(str(r) if r else "-" for r in ranks),
+                    "ranks": ";".join(str(r) if r else "-" for r in ranks[""]),
+                    "strict_ranks": ";".join(str(r) if r else "-" for r in ranks["strict_"]),
                     "top5": "; ".join(f"{r['doc_id']} | {'+'.join(r['locations'])}" for r in results[:5]),
+                    "top5_main": "; ".join(main_of[design].get(r["chunk_id"], r["location"]) for r in results[:5]),
                 })
-            kinds = [q["kind"] for q in answerable]
             row = {"design": design, "mode": mode, "questions": len(answerable)}
-            for k in KS:
-                all_hits, any_hits = hits[k]["all"], hits[k]["any"]
-                row[f"hit@{k}"] = round(mean(all_hits), 4)  # single: found; multi: all passages found
-                row[f"single_hit@{k}"] = round(mean([h for h, kind in zip(all_hits, kinds) if kind == "single"]), 4)
-                row[f"multi_all@{k}"] = round(mean([h for h, kind in zip(all_hits, kinds) if kind == "multi"]), 4)
-                row[f"multi_any@{k}"] = round(mean([h for h, kind in zip(any_hits, kinds) if kind == "multi"]), 4)
+            for test in ("", "strict_"):
+                for k in KS:
+                    all_hits, any_hits = hits[(test, k)]["all"], hits[(test, k)]["any"]
+                    # single: found; multi: all passages found
+                    row[f"{test}hit@{k}"] = round(mean(all_hits), 4)
+                    row[f"{test}single_hit@{k}"] = round(mean([h for h, kind in zip(all_hits, kinds) if kind == "single"]), 4)
+                    row[f"{test}multi_all@{k}"] = round(mean([h for h, kind in zip(all_hits, kinds) if kind == "multi"]), 4)
+                    row[f"{test}multi_any@{k}"] = round(mean([h for h, kind in zip(any_hits, kinds) if kind == "multi"]), 4)
             row["mean_words_k5"] = round(mean(words_at_5))
             summary_rows.append(row)
     except index_stage.QuotaExceeded as error:
@@ -173,34 +208,38 @@ def stage_retrieval(questions: list[dict]) -> bool:
         writer.writeheader()
         writer.writerows(detail_rows)
 
-    say(f"\n{'design':<13}{'mode':<8}{'hit@1':>7}{'hit@3':>7}{'hit@5':>7}   "
-        f"{'multi all@5':>11}{'multi any@5':>12}{'words@5':>9}")
-    for row in summary_rows:
-        say(f"{DESIGN_LABEL[row['design']]:<13}{row['mode']:<8}{percent(row['hit@1']):>7}{percent(row['hit@3']):>7}"
-            f"{percent(row['hit@5']):>7}   {percent(row['multi_all@5']):>11}{percent(row['multi_any@5']):>12}"
-            f"{row['mean_words_k5']:>9}")
-    say("(hit = a retrieved chunk of the expected document whose locations include the expected one;\n"
-        " for multi questions the main number needs both passages in the top k)")
+    for test, title in (("", "Lenient: expected location is among the chunk's locations"),
+                        ("strict_", "Strict: expected location is the chunk's main location (most words)")):
+        say(f"\n{title}")
+        say(f"{'design':<13}{'mode':<8}{'hit@1':>7}{'hit@3':>7}{'hit@5':>7}   "
+            f"{'multi all@5':>11}{'multi any@5':>12}{'words@5':>9}")
+        for row in summary_rows:
+            say(f"{DESIGN_LABEL[row['design']]:<13}{row['mode']:<8}{percent(row[test + 'hit@1']):>7}"
+                f"{percent(row[test + 'hit@3']):>7}{percent(row[test + 'hit@5']):>7}   "
+                f"{percent(row[test + 'multi_all@5']):>11}{percent(row[test + 'multi_any@5']):>12}"
+                f"{row['mean_words_k5']:>9}")
+    say("(for multi questions the main number needs both passages in the top k)")
 
     plot_retrieval(summary_rows)
 
-    # Choice: best hit@5, then best hit@1, then fewer words in the prompt.
-    best = sorted(summary_rows, key=lambda r: (-r["hit@5"], -r["hit@1"], r["mean_words_k5"]))[0]
-    ties_5 = [r for r in summary_rows if r["hit@5"] == best["hit@5"]]
-    ties_1 = [r for r in ties_5 if r["hit@1"] == best["hit@1"]]
-    if len(ties_5) == 1:
-        why = f"it has the best hit@5 ({percent(best['hit@5'])})"
-    elif len(ties_1) == 1:
-        why = (f"{len(ties_5)} configurations tie on hit@5 ({percent(best['hit@5'])}) and it has the best "
-               f"hit@1 among them ({percent(best['hit@1'])})")
+    best, why = choose(summary_rows)
+    strict_best, strict_why = choose(summary_rows, "strict_")
+    say(f"\nChosen (lenient test): {DESIGN_LABEL[best['design']]} + {best['mode']}, k=5, because {why}.")
+    same = (strict_best["design"], strict_best["mode"]) == (best["design"], best["mode"])
+    if same:
+        say("The strict test picks the same configuration.")
     else:
-        why = (f"{len(ties_1)} configurations tie on hit@5 ({percent(best['hit@5'])}) and hit@1 "
-               f"({percent(best['hit@1'])}) and it adds the fewest words to the prompt ({best['mean_words_k5']})")
+        say(f"NOTE: the strict test would pick {DESIGN_LABEL[strict_best['design']]} + {strict_best['mode']} "
+            f"instead, because {strict_why}.")
     config = {"design": best["design"], "mode": best["mode"], "k": 5}
     path = index_stage.index_dir() / "config.json"
-    path.write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
-    say(f"\nChosen: {DESIGN_LABEL[best['design']]} + {best['mode']}, k=5, because {why}.")
-    say(f"Written to {path.relative_to(ROOT) if path.is_relative_to(ROOT) else path}.")
+    shown = path.relative_to(ROOT) if path.is_relative_to(ROOT) else path
+    current = json.loads(path.read_text(encoding="utf-8")) if path.exists() else None
+    if current == config:
+        say(f"{shown} already holds this choice; not rewritten.")
+    else:
+        path.write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
+        say(f"Written to {shown}.")
     return True
 
 
@@ -212,23 +251,28 @@ def plot_retrieval(rows: list[dict]) -> None:
 
     labels = [f"{DESIGN_LABEL[r['design']]}\n{r['mode']}" for r in rows]
     colors = {1: "#9ecae1", 3: "#4292c6", 5: "#08519c"}
-    fig, ax = plt.subplots(figsize=(8, 4.2))
+    fig, axes = plt.subplots(1, 2, figsize=(12, 4.6), sharey=True)
     width = 0.26
-    for offset, k in enumerate(KS):
-        xs = [i + (offset - 1) * width for i in range(len(rows))]
-        values = [100 * r[f"hit@{k}"] for r in rows]
-        bars = ax.bar(xs, values, width, label=f"hit@{k}", color=colors[k])
-        for bar, value in zip(bars, values):
-            ax.text(bar.get_x() + bar.get_width() / 2, value + 1, f"{value:.0f}", ha="center", fontsize=8)
-    ax.set_xticks(range(len(rows)))
-    ax.set_xticklabels(labels)
-    ax.set_ylim(0, 110)
-    ax.set_ylabel("hit rate (%)")
-    ax.set_title(f"Expected passage(s) in the top k, {rows[0]['questions']} answerable questions", fontsize=11)
-    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.16), ncol=3, frameon=False)
-    for side in ("top", "right"):
-        ax.spines[side].set_visible(False)
-    fig.tight_layout()
+    panels = (("", "Lenient: expected location among the chunk's locations"),
+              ("strict_", "Strict: expected location is the chunk's main location"))
+    for ax, (test, title) in zip(axes, panels):
+        for offset, k in enumerate(KS):
+            xs = [i + (offset - 1) * width for i in range(len(rows))]
+            values = [100 * r[f"{test}hit@{k}"] for r in rows]
+            bars = ax.bar(xs, values, width, label=f"hit@{k}", color=colors[k])
+            for bar, value in zip(bars, values):
+                ax.text(bar.get_x() + bar.get_width() / 2, value + 1, f"{value:.0f}", ha="center", fontsize=8)
+        ax.set_xticks(range(len(rows)))
+        ax.set_xticklabels(labels)
+        ax.set_ylim(0, 110)
+        ax.set_title(title, fontsize=10)
+        for side in ("top", "right"):
+            ax.spines[side].set_visible(False)
+    axes[0].set_ylabel("hit rate (%)")
+    handles, names = axes[0].get_legend_handles_labels()
+    fig.legend(handles, names, loc="lower center", ncol=3, frameon=False)
+    fig.suptitle(f"Expected passage(s) in the top k, {rows[0]['questions']} answerable questions", fontsize=12)
+    fig.tight_layout(rect=(0, 0.06, 1, 0.97))
     fig.savefig(RETRIEVAL_PNG, dpi=150)
     plt.close(fig)
 
