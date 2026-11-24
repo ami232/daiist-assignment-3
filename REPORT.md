@@ -209,6 +209,59 @@ Evidently, the agent successfully communicated with the 'add_document' tool, the
 
 *Your AGENTS.md rules, the approval step, and your extra guardrail with one case where it fired.*
 
+### AGENTS.md rules
+
+`agent.py` sends `AGENTS.md` as the system prompt, and the editor's agent reads the same file. Each rule comes with its reason:
+
+> You help startup founders with questions about applying to the EIC Accelerator. You have a
+> search tool over three official EIC documents: the EIC Work Programme 2027, the EIC Accelerator
+> Guide for Applicants (v6.0) and the EIC Fund Investment Guidelines (August 2026).
+>
+> 1. **Search before answering, every time.** Reason: the rules change every year and you do not
+>    reliably know the 2027 rules, so your memory is not a source.
+> 2. **Answer only from the passages the search returned.** Do not add facts, numbers or dates from
+>    your own knowledge, even if you think they are right. Reason: a founder will act on the answer
+>    (apply, plan a deadline, ask for an amount), and an invented detail can cost them weeks of work.
+> 3. **Cite every claim as (document title, p. N)**, using the exact title and page shown in the search
+>    results, for example (EIC Work Programme 2027, p. 88). Reason: the founder must be able to check
+>    the source before acting on it.
+> 4. **For a question with two parts, search once for each part**, and search again with different
+>    words if the first results do not answer the question. Reason: one search usually finds only one
+>    side of a two-part question.
+> 5. **If the passages do not answer the question, start your reply with exactly:
+>    "The EIC documents I have do not cover this."** Then, in one sentence, say what related
+>    information they do contain, if any. Never guess. Reason: for this use case "I don't know" is
+>    cheap (the founder checks elsewhere) and a wrong answer is expensive.
+> 6. **If the documents only partly answer the question, answer that part with citations and say
+>    clearly which part they do not cover.** Reason: a partial answer is useful, as long as the gap
+>    is visible.
+> 7. **Only use the add-document tool when the user explicitly asks to add a specific file.** Reason:
+>    adding a document changes what every later answer is based on, so it needs the user's approval.
+> 8. **Keep answers short and in plain language**: a few sentences or a short list. Reason: founders
+>    want a clear answer they can act on, not a summary of the documents.
+
+### Approval step
+
+The add_document tool never runs without my approval. In `agent.py`, LangChain's human-in-the-loop middleware pauses the agent right before it calls add_document and asks in the terminal. Only a "y" lets it continue; anything else rejects the call, and the agent is told the user did not approve. During the evaluation nobody can answer, so the answer is always "no". This is the real run from adding the NEOTEC document:
+
+```
+The agent wants to run add_document with {'path': '.../corpus/convocatoria_neotec_2026.pdf'}.
+Approve? [y/N] y
+  embedded and saved 20/111 chunks
+  ...
+  embedded and saved 111/111 chunks
+```
+
+The harness also has call limits: at most 4 tool calls and 6 model calls per question, so a confused agent cannot loop and use up the free quota. If Gemini is overloaded (error 503), the agent waits and retries, and then switches to a backup model. I added this after my first test kept failing with "model overloaded". The main model is `gemini-flash-lite-latest` and the backup is `gemini-flash-latest`.
+
+### Extra guardrail: citation check
+
+The guardrail I chose checks the citations in code after the agent answers and before the user sees it. Every (document, p. N) in the answer must be a page that the search actually returned in that run, and an answer that is not a refusal must have at least one citation. If not, the answer is withheld and replaced with "The EIC documents I have do not cover this.", plus a short note on why. I chose this because in my use case a founder must be able to check every claim against the real page, so an answer citing a page the agent never read should not reach them.
+
+**A case where it fired (q25, the TRL question).** The agent's draft cited "EIC Work Programme 2027, p. 73", but the search had returned p. 72, not p. 73, so the guardrail blocked the answer and the founder got a refusal. The rest of the draft was actually right (TRL 5 must be completed, Guide p. 20). So this case shows the trade-off of the guardrail: it is strict, and it can turn a mostly correct answer into "I don't know". For this use case I think that is the right side to fail on, because a refusal only costs the founder a check elsewhere.
+
+**What I learned from testing it.** At first the guardrail also fired when it should not have: it did not recognise citations whose title had brackets in it ("EIC Fund Investment Guidelines (August 2026)"), it blocked the confirmation message after adding a document (which has no citations), and it did not recognise the title of the added document because it starts with a lowercase letter (`convocatoria_neotec_2026`). I fixed all three. It also has a limit: it checks that each cited page was retrieved, not that each claim is really on that exact page. In the NEOTEC answer, the detail about MIT and GeorgiaTech was cited to p. 7 but is actually on p. 32, and the guardrail did not catch it.
+
 ## Evaluation
 
 *Code checks, the judge's rubric, your agreement with the judge, and results: correct, unsupported, correct refusals, wrong refusals.*
