@@ -1,0 +1,2644 @@
+{
+ "fixed": {
+  "hit_rates": {
+   "1": {
+    "all": {
+     "n": 28,
+     "hits": 19,
+     "rate": 0.6785714285714286
+    },
+    "single": {
+     "n": 22,
+     "hits": 19,
+     "rate": 0.8636363636363636
+    },
+    "multi": {
+     "n": 6,
+     "hits": 0,
+     "rate": 0.0
+    },
+    "multi_coverage": 0.4166666666666667,
+    "words_in_prompt": 145.88235294117646
+   },
+   "3": {
+    "all": {
+     "n": 28,
+     "hits": 22,
+     "rate": 0.7857142857142857
+    },
+    "single": {
+     "n": 22,
+     "hits": 22,
+     "rate": 1.0
+    },
+    "multi": {
+     "n": 6,
+     "hits": 0,
+     "rate": 0.0
+    },
+    "multi_coverage": 0.5,
+    "words_in_prompt": 430.5882352941176
+   },
+   "5": {
+    "all": {
+     "n": 28,
+     "hits": 23,
+     "rate": 0.8214285714285714
+    },
+    "single": {
+     "n": 22,
+     "hits": 22,
+     "rate": 1.0
+    },
+    "multi": {
+     "n": 6,
+     "hits": 1,
+     "rate": 0.16666666666666666
+    },
+    "multi_coverage": 0.5833333333333334,
+    "words_in_prompt": 726.4411764705883
+   }
+  },
+  "top5": {
+   "q01": [
+    {
+     "source": "GDPR",
+     "article": "Article 33",
+     "location": "Article 33(1)-(3)",
+     "words": 150,
+     "distance": 0.43649643659591675
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 33",
+     "location": "Article 33(3)-(5)",
+     "words": 156,
+     "distance": 0.5415465831756592
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 34",
+     "location": "Article 34(1)-(3)",
+     "words": 150,
+     "distance": 0.594796359539032
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 34",
+     "location": "Article 34(3)-(4)",
+     "words": 154,
+     "distance": 0.6170039176940918
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 77",
+     "location": "Article 77(1)-(2)",
+     "words": 100,
+     "distance": 0.6325640678405762
+    }
+   ],
+   "q02": [
+    {
+     "source": "AI Act",
+     "article": "Article 3",
+     "location": "Article 3(3)-(6)",
+     "words": 150,
+     "distance": 0.4042002558708191
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 3",
+     "location": "Article 3(1)-(4)",
+     "words": 150,
+     "distance": 0.4533107280731201
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 3",
+     "location": "Article 3(6)-(11)",
+     "words": 150,
+     "distance": 0.4852885603904724
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 2",
+     "location": "Article 2(1)-(2)",
+     "words": 150,
+     "distance": 0.5082044005393982
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 3",
+     "location": "Article 3(10)-(14)",
+     "words": 150,
+     "distance": 0.5150609016418457
+    }
+   ],
+   "q03": [
+    {
+     "source": "AI Act",
+     "article": "Article 5",
+     "location": "Article 5(1)",
+     "words": 150,
+     "distance": 0.6226645708084106
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 5",
+     "location": "Article 5(5)-(7)",
+     "words": 150,
+     "distance": 0.6919258832931519
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(2)-(4)",
+     "words": 150,
+     "distance": 0.6983354091644287
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 3",
+     "location": "Article 3(36)-(41)",
+     "words": 150,
+     "distance": 0.7104555368423462
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 5",
+     "location": "Article 5(3)-(5)",
+     "words": 150,
+     "distance": 0.7124118804931641
+    }
+   ],
+   "q04": [
+    {
+     "source": "AI Act",
+     "article": "Article 6",
+     "location": "Article 6(3)-(4)",
+     "words": 150,
+     "distance": 0.4302871823310852
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 80",
+     "location": "Article 80(1)-(3)",
+     "words": 150,
+     "distance": 0.46979209780693054
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 6",
+     "location": "Article 6(4)-(6)",
+     "words": 150,
+     "distance": 0.4793914258480072
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 16",
+     "location": "Article 16",
+     "words": 150,
+     "distance": 0.47990840673446655
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 6",
+     "location": "Article 6(1)-(3)",
+     "words": 150,
+     "distance": 0.4799545109272003
+    }
+   ],
+   "q05": [
+    {
+     "source": "AI Act",
+     "article": "Article 10",
+     "location": "Article 10(1)-(2)",
+     "words": 150,
+     "distance": 0.2642021179199219
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 10",
+     "location": "Article 10(3)-(5)",
+     "words": 150,
+     "distance": 0.2842247188091278
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 10",
+     "location": "Article 10(2)-(3)",
+     "words": 150,
+     "distance": 0.3308301568031311
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 10",
+     "location": "Article 10(5)-(6)",
+     "words": 86,
+     "distance": 0.37536734342575073
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 17",
+     "location": "Article 17(1)",
+     "words": 150,
+     "distance": 0.3943578898906708
+    }
+   ],
+   "q06": [
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(4)",
+     "words": 150,
+     "distance": 0.3155035376548767
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(1)-(3)",
+     "words": 150,
+     "distance": 0.3498918414115906
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(3)-(4)",
+     "words": 150,
+     "distance": 0.3692675530910492
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(4)-(5)",
+     "words": 148,
+     "distance": 0.390229731798172
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 26",
+     "location": "Article 26(1)-(5)",
+     "words": 150,
+     "distance": 0.4155365824699402
+    }
+   ],
+   "q07": [
+    {
+     "source": "AI Act",
+     "article": "Article 26",
+     "location": "Article 26(1)-(5)",
+     "words": 150,
+     "distance": 0.4487500488758087
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 26",
+     "location": "Article 26(4)-(5)",
+     "words": 150,
+     "distance": 0.45010316371917725
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 16",
+     "location": "Article 16",
+     "words": 150,
+     "distance": 0.4541822671890259
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 25",
+     "location": "Article 25(3)-(4)",
+     "words": 150,
+     "distance": 0.46805211901664734
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 23",
+     "location": "Article 23(1)-(2)",
+     "words": 150,
+     "distance": 0.4693005084991455
+    }
+   ],
+   "q08": [
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(1)-(2)",
+     "words": 150,
+     "distance": 0.5331677198410034
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(2)-(4)",
+     "words": 150,
+     "distance": 0.6130070686340332
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(2)-(3)",
+     "words": 150,
+     "distance": 0.6282151937484741
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(4)-(7)",
+     "words": 150,
+     "distance": 0.6308573484420776
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(4)",
+     "words": 150,
+     "distance": 0.6389158964157104
+    }
+   ],
+   "q09": [
+    {
+     "source": "AI Act",
+     "article": "Article 99",
+     "location": "Article 99(5)-(7)",
+     "words": 150,
+     "distance": 0.4422924518585205
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 99",
+     "location": "Article 99(2)-(4)",
+     "words": 150,
+     "distance": 0.48145514726638794
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 99",
+     "location": "Article 99(4)-(6)",
+     "words": 150,
+     "distance": 0.4821781516075134
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 101",
+     "location": "Article 101(1)",
+     "words": 150,
+     "distance": 0.5192678570747375
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 99",
+     "location": "Article 99(1)-(3)",
+     "words": 150,
+     "distance": 0.5250308513641357
+    }
+   ],
+   "q10": [
+    {
+     "source": "AI Act",
+     "article": "Article 113",
+     "location": "Article 113",
+     "words": 86,
+     "distance": 0.35735607147216797
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 111",
+     "location": "Article 111(2)-(3)",
+     "words": 136,
+     "distance": 0.46093904972076416
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 2",
+     "location": "Article 2(1)-(2)",
+     "words": 150,
+     "distance": 0.5194358825683594
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 111",
+     "location": "Article 111(1)-(2)",
+     "words": 150,
+     "distance": 0.5263394713401794
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 50",
+     "location": "Article 50",
+     "words": 137,
+     "distance": 0.5361874103546143
+    }
+   ],
+   "q11": [
+    {
+     "source": "GDPR",
+     "article": "Article 4",
+     "location": "Article 4(1)-(3)",
+     "words": 150,
+     "distance": 0.4494280517101288
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 4",
+     "location": "Article 4(13)-(16)",
+     "words": 150,
+     "distance": 0.4975072145462036
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 4",
+     "location": "Article 4(10)-(13)",
+     "words": 150,
+     "distance": 0.5148730278015137
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 4",
+     "location": "Article 4(5)-(9)",
+     "words": 150,
+     "distance": 0.522434413433075
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 5",
+     "location": "Article 5(1)",
+     "words": 150,
+     "distance": 0.5311007499694824
+    }
+   ],
+   "q12": [
+    {
+     "source": "GDPR",
+     "article": "Article 5",
+     "location": "Article 5(1)",
+     "words": 150,
+     "distance": 0.36046236753463745
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 5",
+     "location": "Article 5(1)-(2)",
+     "words": 166,
+     "distance": 0.4187069535255432
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 6",
+     "location": "Article 6(1)",
+     "words": 150,
+     "distance": 0.45788681507110596
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 4",
+     "location": "Article 4(1)-(3)",
+     "words": 150,
+     "distance": 0.5154484510421753
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 6",
+     "location": "Article 6(4)",
+     "words": 150,
+     "distance": 0.5240477323532104
+    }
+   ],
+   "q13": [
+    {
+     "source": "GDPR",
+     "article": "Article 6",
+     "location": "Article 6(1)",
+     "words": 150,
+     "distance": 0.4237189292907715
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 6",
+     "location": "Article 6(1)-(2)",
+     "words": 150,
+     "distance": 0.5400269031524658
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 6",
+     "location": "Article 6(3)-(4)",
+     "words": 150,
+     "distance": 0.5474806427955627
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 5",
+     "location": "Article 5(1)",
+     "words": 150,
+     "distance": 0.5586943626403809
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 6",
+     "location": "Article 6(2)-(3)",
+     "words": 150,
+     "distance": 0.5676009654998779
+    }
+   ],
+   "q14": [
+    {
+     "source": "GDPR",
+     "article": "Article 88",
+     "location": "Article 88(1)-(2)",
+     "words": 150,
+     "distance": 0.5766481161117554
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 9",
+     "location": "Article 9(1)-(2)",
+     "words": 150,
+     "distance": 0.6132950186729431
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 88",
+     "location": "Article 88(2)-(3)",
+     "words": 90,
+     "distance": 0.618402361869812
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 9",
+     "location": "Article 9(2)",
+     "words": 150,
+     "distance": 0.6410617232322693
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 4",
+     "location": "Article 4(13)-(16)",
+     "words": 150,
+     "distance": 0.6720824241638184
+    }
+   ],
+   "q15": [
+    {
+     "source": "GDPR",
+     "article": "Article 17",
+     "location": "Article 17(1)",
+     "words": 150,
+     "distance": 0.4933233857154846
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 17",
+     "location": "Article 17(1)-(3)",
+     "words": 150,
+     "distance": 0.5441782474517822
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 17",
+     "location": "Article 17(2)-(3)",
+     "words": 150,
+     "distance": 0.5628781318664551
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 5",
+     "location": "Article 5(1)-(2)",
+     "words": 166,
+     "distance": 0.5931982398033142
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 25",
+     "location": "Article 25(2)",
+     "words": 150,
+     "distance": 0.6067159175872803
+    }
+   ],
+   "q16": [
+    {
+     "source": "GDPR",
+     "article": "Article 22",
+     "location": "Article 22(1)-(3)",
+     "words": 150,
+     "distance": 0.510007917881012
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 22",
+     "location": "Article 22(3)-(4)",
+     "words": 95,
+     "distance": 0.596424400806427
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 86",
+     "location": "Article 86(1)-(3)",
+     "words": 160,
+     "distance": 0.6875514388084412
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(4)",
+     "words": 150,
+     "distance": 0.7150498628616333
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(1)-(3)",
+     "words": 150,
+     "distance": 0.7274032831192017
+    }
+   ],
+   "q17": [
+    {
+     "source": "GDPR",
+     "article": "Article 35",
+     "location": "Article 35(1)-(3)",
+     "words": 150,
+     "distance": 0.3818654716014862
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 35",
+     "location": "Article 35(3)-(5)",
+     "words": 150,
+     "distance": 0.44672733545303345
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 35",
+     "location": "Article 35(10)-(11)",
+     "words": 100,
+     "distance": 0.47222259640693665
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 35",
+     "location": "Article 35(6)-(8)",
+     "words": 150,
+     "distance": 0.48487886786460876
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 35",
+     "location": "Article 35(8)-(10)",
+     "words": 150,
+     "distance": 0.4897345006465912
+    }
+   ],
+   "q18": [
+    {
+     "source": "Data Act",
+     "article": "Article 3",
+     "location": "Article 3(1)-(2)",
+     "words": 150,
+     "distance": 0.4107188582420349
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 4",
+     "location": "Article 4(1)-(2)",
+     "words": 150,
+     "distance": 0.45974624156951904
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 3",
+     "location": "Article 3(2)-(3)",
+     "words": 150,
+     "distance": 0.4627123475074768
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 4",
+     "location": "Article 4(11)-(13)",
+     "words": 150,
+     "distance": 0.48257872462272644
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 3",
+     "location": "Article 3(3)",
+     "words": 179,
+     "distance": 0.4977506101131439
+    }
+   ],
+   "q19": [
+    {
+     "source": "Data Act",
+     "article": "Article 3",
+     "location": "Article 3(1)-(2)",
+     "words": 150,
+     "distance": 0.41385310888290405
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 4",
+     "location": "Article 4(1)-(2)",
+     "words": 150,
+     "distance": 0.4471462368965149
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 5",
+     "location": "Article 5(1)-(3)",
+     "words": 150,
+     "distance": 0.4653926491737366
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 3",
+     "location": "Article 3(2)-(3)",
+     "words": 150,
+     "distance": 0.48578208684921265
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 4",
+     "location": "Article 4(11)-(13)",
+     "words": 150,
+     "distance": 0.5112775564193726
+    }
+   ],
+   "q20": [
+    {
+     "source": "Data Act",
+     "article": "Article 3",
+     "location": "Article 3(1)-(2)",
+     "words": 150,
+     "distance": 0.4526287913322449
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 4",
+     "location": "Article 4(1)-(2)",
+     "words": 150,
+     "distance": 0.4633636474609375
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 5",
+     "location": "Article 5(1)-(3)",
+     "words": 150,
+     "distance": 0.46744847297668457
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 3",
+     "location": "Article 3(3)",
+     "words": 179,
+     "distance": 0.47397834062576294
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 4",
+     "location": "Article 4(11)-(13)",
+     "words": 150,
+     "distance": 0.48500239849090576
+    }
+   ],
+   "q21": [
+    {
+     "source": "Data Act",
+     "article": "Article 13",
+     "location": "Article 13(1)-(4)",
+     "words": 150,
+     "distance": 0.49783143401145935
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 7",
+     "location": "Article 7(1)-(2)",
+     "words": 72,
+     "distance": 0.514022946357727
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 13",
+     "location": "Article 13(6)-(9)",
+     "words": 126,
+     "distance": 0.514081597328186
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 13",
+     "location": "Article 13(5)",
+     "words": 150,
+     "distance": 0.514432430267334
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 13",
+     "location": "Article 13(5)",
+     "words": 150,
+     "distance": 0.5144327878952026
+    }
+   ],
+   "q22": [
+    {
+     "source": "Data Act",
+     "article": "Article 23",
+     "location": "Article 23",
+     "words": 150,
+     "distance": 0.4879692792892456
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 25",
+     "location": "Article 25(1)-(2)",
+     "words": 150,
+     "distance": 0.5562798380851746
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 30",
+     "location": "Article 30(1)-(2)",
+     "words": 150,
+     "distance": 0.5632150173187256
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 23",
+     "location": "Article 23",
+     "words": 105,
+     "distance": 0.5643062591552734
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 29",
+     "location": "Article 29(1)-(5)",
+     "words": 150,
+     "distance": 0.5823392271995544
+    }
+   ],
+   "q23": [
+    {
+     "source": "AI Act",
+     "article": "Article 27",
+     "location": "Article 27(3)-(5)",
+     "words": 109,
+     "distance": 0.3306172490119934
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 27",
+     "location": "Article 27(1)",
+     "words": 150,
+     "distance": 0.4289565086364746
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 27",
+     "location": "Article 27(1)-(4)",
+     "words": 150,
+     "distance": 0.4579541087150574
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 27",
+     "location": "Article 27(1)-(2)",
+     "words": 150,
+     "distance": 0.4830288589000702
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 77",
+     "location": "Article 77(1)-(2)",
+     "words": 150,
+     "distance": 0.5328470468521118
+    }
+   ],
+   "q24": [
+    {
+     "source": "AI Act",
+     "article": "Article 99",
+     "location": "Article 99(2)-(4)",
+     "words": 150,
+     "distance": 0.45762038230895996
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 100",
+     "location": "Article 100(1)-(4)",
+     "words": 150,
+     "distance": 0.5049360990524292
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 99",
+     "location": "Article 99(4)-(6)",
+     "words": 150,
+     "distance": 0.5056969523429871
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 101",
+     "location": "Article 101(1)",
+     "words": 150,
+     "distance": 0.5161925554275513
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 99",
+     "location": "Article 99(5)-(7)",
+     "words": 150,
+     "distance": 0.522084653377533
+    }
+   ],
+   "q25": [
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(4)",
+     "words": 150,
+     "distance": 0.477926105260849
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(1)-(3)",
+     "words": 150,
+     "distance": 0.4836191236972809
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(3)-(4)",
+     "words": 150,
+     "distance": 0.4918341338634491
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 86",
+     "location": "Article 86(1)-(3)",
+     "words": 160,
+     "distance": 0.5077620148658752
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(4)-(5)",
+     "words": 148,
+     "distance": 0.5106257796287537
+    }
+   ],
+   "q26": [
+    {
+     "source": "AI Act",
+     "article": "Article 10",
+     "location": "Article 10(4)-(5)",
+     "words": 150,
+     "distance": 0.4384409189224243
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 10",
+     "location": "Article 10(5)-(6)",
+     "words": 86,
+     "distance": 0.5015774369239807
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 10",
+     "location": "Article 10(5)",
+     "words": 150,
+     "distance": 0.5027165412902832
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 10",
+     "location": "Article 10(2)-(3)",
+     "words": 150,
+     "distance": 0.5348881483078003
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 9",
+     "location": "Article 9(1)-(2)",
+     "words": 150,
+     "distance": 0.5513327121734619
+    }
+   ],
+   "q27": [
+    {
+     "source": "Data Act",
+     "article": "Article 5",
+     "location": "Article 5(5)-(7)",
+     "words": 150,
+     "distance": 0.4466252326965332
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 5",
+     "location": "Article 5(7)-(9)",
+     "words": 150,
+     "distance": 0.4487975239753723
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 5",
+     "location": "Article 5(9)-(10)",
+     "words": 150,
+     "distance": 0.45613059401512146
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 5",
+     "location": "Article 5(1)-(3)",
+     "words": 150,
+     "distance": 0.46885859966278076
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 4",
+     "location": "Article 4(11)-(13)",
+     "words": 150,
+     "distance": 0.4727773368358612
+    }
+   ],
+   "q28": [
+    {
+     "source": "AI Act",
+     "article": "Article 27",
+     "location": "Article 27(3)-(5)",
+     "words": 109,
+     "distance": 0.42316126823425293
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 26",
+     "location": "Article 26(9)-(10)",
+     "words": 150,
+     "distance": 0.44953078031539917
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 13",
+     "location": "Article 13(3)",
+     "words": 111,
+     "distance": 0.46533218026161194
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 13",
+     "location": "Article 13(1)-(3)",
+     "words": 150,
+     "distance": 0.4668589234352112
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 26",
+     "location": "Article 26(7)-(9)",
+     "words": 150,
+     "distance": 0.4672638475894928
+    }
+   ],
+   "q29": [
+    {
+     "source": "AI Act",
+     "article": "Article 6",
+     "location": "Article 6(3)-(4)",
+     "words": 150,
+     "distance": 0.47317561507225037
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 6",
+     "location": "Article 6(1)-(2)",
+     "words": 150,
+     "distance": 0.4833587408065796
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 6",
+     "location": "Article 6(1)-(3)",
+     "words": 150,
+     "distance": 0.5157649517059326
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 43",
+     "location": "Article 43(1)",
+     "words": 150,
+     "distance": 0.5207819938659668
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 49",
+     "location": "Article 49(1)-(3)",
+     "words": 150,
+     "distance": 0.5285598039627075
+    }
+   ],
+   "q30": [
+    {
+     "source": "GDPR",
+     "article": "Article 7",
+     "location": "Article 7(1)-(3)",
+     "words": 150,
+     "distance": 0.6472629308700562
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 7",
+     "location": "Article 7(3)-(4)",
+     "words": 80,
+     "distance": 0.6519188284873962
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 3",
+     "location": "Article 3(1)-(3)",
+     "words": 150,
+     "distance": 0.681190550327301
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 22",
+     "location": "Article 22(1)-(3)",
+     "words": 150,
+     "distance": 0.6819728016853333
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 6",
+     "location": "Article 6(1)",
+     "words": 150,
+     "distance": 0.6935612559318542
+    }
+   ],
+   "q31": [
+    {
+     "source": "AI Act",
+     "article": "Article 70",
+     "location": "Article 70(6)-(9)",
+     "words": 156,
+     "distance": 0.5147687792778015
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 74",
+     "location": "Article 74(8)-(10)",
+     "words": 150,
+     "distance": 0.5168896317481995
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 70",
+     "location": "Article 70(1)-(2)",
+     "words": 150,
+     "distance": 0.5310763120651245
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 70",
+     "location": "Article 70(2)-(3)",
+     "words": 150,
+     "distance": 0.5398861169815063
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 88",
+     "location": "Article 88(1)-(2)",
+     "words": 99,
+     "distance": 0.5477400422096252
+    }
+   ],
+   "q32": [
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(1)-(2)",
+     "words": 150,
+     "distance": 0.6381467580795288
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 28",
+     "location": "Article 28(1)-(2)",
+     "words": 122,
+     "distance": 0.6663174033164978
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(4)",
+     "words": 150,
+     "distance": 0.6681704521179199
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 10",
+     "location": "Article 10(9)-(13)",
+     "words": 148,
+     "distance": 0.6692388653755188
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(2)-(3)",
+     "words": 150,
+     "distance": 0.6709211468696594
+    }
+   ],
+   "q33": [
+    {
+     "source": "GDPR",
+     "article": "Article 83",
+     "location": "Article 83(5)-(8)",
+     "words": 150,
+     "distance": 0.6847924590110779
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 83",
+     "location": "Article 83(5)-(6)",
+     "words": 150,
+     "distance": 0.7015068531036377
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 40",
+     "location": "Article 40(4)-(5)",
+     "words": 66,
+     "distance": 0.7029190063476562
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 83",
+     "location": "Article 83(3)-(5)",
+     "words": 150,
+     "distance": 0.7224990725517273
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 83",
+     "location": "Article 83(1)-(2)",
+     "words": 150,
+     "distance": 0.7251168489456177
+    }
+   ],
+   "q34": [
+    {
+     "source": "AI Act",
+     "article": "Article 17",
+     "location": "Article 17(1)",
+     "words": 150,
+     "distance": 0.4254252314567566
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 16",
+     "location": "Article 16",
+     "words": 150,
+     "distance": 0.4500717520713806
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 9",
+     "location": "Article 9(7)-(10)",
+     "words": 164,
+     "distance": 0.45846638083457947
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 9",
+     "location": "Article 9(1)-(2)",
+     "words": 150,
+     "distance": 0.4638758897781372
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 17",
+     "location": "Article 17(1)",
+     "words": 150,
+     "distance": 0.46629101037979126
+    }
+   ]
+  }
+ },
+ "structure": {
+  "hit_rates": {
+   "1": {
+    "all": {
+     "n": 28,
+     "hits": 19,
+     "rate": 0.6785714285714286
+    },
+    "single": {
+     "n": 22,
+     "hits": 19,
+     "rate": 0.8636363636363636
+    },
+    "multi": {
+     "n": 6,
+     "hits": 0,
+     "rate": 0.0
+    },
+    "multi_coverage": 0.5,
+    "words_in_prompt": 126.32352941176471
+   },
+   "3": {
+    "all": {
+     "n": 28,
+     "hits": 23,
+     "rate": 0.8214285714285714
+    },
+    "single": {
+     "n": 22,
+     "hits": 22,
+     "rate": 1.0
+    },
+    "multi": {
+     "n": 6,
+     "hits": 1,
+     "rate": 0.16666666666666666
+    },
+    "multi_coverage": 0.5833333333333334,
+    "words_in_prompt": 369.1470588235294
+   },
+   "5": {
+    "all": {
+     "n": 28,
+     "hits": 24,
+     "rate": 0.8571428571428571
+    },
+    "single": {
+     "n": 22,
+     "hits": 22,
+     "rate": 1.0
+    },
+    "multi": {
+     "n": 6,
+     "hits": 2,
+     "rate": 0.3333333333333333
+    },
+    "multi_coverage": 0.6666666666666666,
+    "words_in_prompt": 596.2941176470588
+   }
+  },
+  "top5": {
+   "q01": [
+    {
+     "source": "GDPR",
+     "article": "Article 33",
+     "location": "Article 33(1)",
+     "words": 86,
+     "distance": 0.4115290641784668
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 33",
+     "location": "Article 33(2)-(3)",
+     "words": 122,
+     "distance": 0.5144093632698059
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 33",
+     "location": "Article 33(4)-(5)",
+     "words": 68,
+     "distance": 0.5583359599113464
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 34",
+     "location": "Article 34(1)-(2)",
+     "words": 85,
+     "distance": 0.5915571451187134
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 34",
+     "location": "Article 34(4)",
+     "words": 54,
+     "distance": 0.6181042194366455
+    }
+   ],
+   "q02": [
+    {
+     "source": "AI Act",
+     "article": "Article 3",
+     "location": "Article 3(4)-(5)",
+     "words": 88,
+     "distance": 0.43740934133529663
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 2",
+     "location": "Article 2(1)",
+     "words": 148,
+     "distance": 0.4917804002761841
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 3",
+     "location": "Article 3(2)-(3)",
+     "words": 81,
+     "distance": 0.508582592010498
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 3",
+     "location": "Article 3(6)-(7)",
+     "words": 68,
+     "distance": 0.5106179714202881
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 3",
+     "location": "Article 3(8)-(10)",
+     "words": 78,
+     "distance": 0.5122277736663818
+    }
+   ],
+   "q03": [
+    {
+     "source": "AI Act",
+     "article": "Article 5",
+     "location": "Article 5(1)",
+     "words": 238,
+     "distance": 0.6012002825737
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(3)",
+     "words": 91,
+     "distance": 0.6281330585479736
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 3",
+     "location": "Article 3(39)-(40)",
+     "words": 68,
+     "distance": 0.6360461115837097
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 5",
+     "location": "Article 5(3)-(4)",
+     "words": 113,
+     "distance": 0.6855871677398682
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 26",
+     "location": "Article 26(7)",
+     "words": 69,
+     "distance": 0.6894233822822571
+    }
+   ],
+   "q04": [
+    {
+     "source": "AI Act",
+     "article": "Article 6",
+     "location": "Article 6(4)",
+     "words": 62,
+     "distance": 0.359869122505188
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 52",
+     "location": "Article 52(2)",
+     "words": 64,
+     "distance": 0.45176196098327637
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 80",
+     "location": "Article 80(2)",
+     "words": 67,
+     "distance": 0.46415916085243225
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 80",
+     "location": "Article 80(1)",
+     "words": 65,
+     "distance": 0.46714702248573303
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 16",
+     "location": "Article 16",
+     "words": 234,
+     "distance": 0.4800291955471039
+    }
+   ],
+   "q05": [
+    {
+     "source": "AI Act",
+     "article": "Article 10",
+     "location": "Article 10(1)-(2)",
+     "words": 240,
+     "distance": 0.27579212188720703
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 10",
+     "location": "Article 10(3)",
+     "words": 84,
+     "distance": 0.2912265360355377
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 10",
+     "location": "Article 10(4)",
+     "words": 42,
+     "distance": 0.38628700375556946
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 10",
+     "location": "Article 10(5)-(6)",
+     "words": 78,
+     "distance": 0.4052034020423889
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 10",
+     "location": "Article 10(5)",
+     "words": 242,
+     "distance": 0.4438856244087219
+    }
+   ],
+   "q06": [
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(4)",
+     "words": 202,
+     "distance": 0.3432830274105072
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(1)-(2)",
+     "words": 94,
+     "distance": 0.3510304391384125
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 26",
+     "location": "Article 26(1)-(3)",
+     "words": 105,
+     "distance": 0.39386633038520813
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(3)",
+     "words": 94,
+     "distance": 0.40589186549186707
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(5)",
+     "words": 118,
+     "distance": 0.45800405740737915
+    }
+   ],
+   "q07": [
+    {
+     "source": "AI Act",
+     "article": "Article 26",
+     "location": "Article 26(1)-(3)",
+     "words": 105,
+     "distance": 0.4489176273345947
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 16",
+     "location": "Article 16",
+     "words": 234,
+     "distance": 0.46241050958633423
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 26",
+     "location": "Article 26(4)-(5)",
+     "words": 249,
+     "distance": 0.46497875452041626
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 23",
+     "location": "Article 23(1)",
+     "words": 104,
+     "distance": 0.4748273491859436
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 25",
+     "location": "Article 25(1)",
+     "words": 172,
+     "distance": 0.4791536331176758
+    }
+   ],
+   "q08": [
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(1)",
+     "words": 111,
+     "distance": 0.4923330545425415
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(4)",
+     "words": 190,
+     "distance": 0.6158548593521118
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 26",
+     "location": "Article 26(11)",
+     "words": 65,
+     "distance": 0.6219587922096252
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(5)-(6)",
+     "words": 83,
+     "distance": 0.6273061037063599
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(3)",
+     "words": 91,
+     "distance": 0.6292338967323303
+    }
+   ],
+   "q09": [
+    {
+     "source": "AI Act",
+     "article": "Article 99",
+     "location": "Article 99(5)-(6)",
+     "words": 94,
+     "distance": 0.42313942313194275
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 99",
+     "location": "Article 99(2)-(3)",
+     "words": 100,
+     "distance": 0.4752429723739624
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 99",
+     "location": "Article 99(4)",
+     "words": 131,
+     "distance": 0.5040227770805359
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 101",
+     "location": "Article 101(1)",
+     "words": 179,
+     "distance": 0.5080796480178833
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 100",
+     "location": "Article 100(3)-(4)",
+     "words": 119,
+     "distance": 0.5139645338058472
+    }
+   ],
+   "q10": [
+    {
+     "source": "AI Act",
+     "article": "Article 113",
+     "location": "Article 113",
+     "words": 86,
+     "distance": 0.35735607147216797
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 111",
+     "location": "Article 111(2)",
+     "words": 107,
+     "distance": 0.49478116631507874
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 2",
+     "location": "Article 2(1)",
+     "words": 148,
+     "distance": 0.5200189352035522
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 111",
+     "location": "Article 111(3)",
+     "words": 38,
+     "distance": 0.5272090435028076
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 57",
+     "location": "Article 57(1)",
+     "words": 94,
+     "distance": 0.5401111841201782
+    }
+   ],
+   "q11": [
+    {
+     "source": "GDPR",
+     "article": "Article 4",
+     "location": "Article 4(1)",
+     "words": 76,
+     "distance": 0.3988441824913025
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 4",
+     "location": "Article 4(14)-(15)",
+     "words": 75,
+     "distance": 0.5040972232818604
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 5",
+     "location": "Article 5(1)",
+     "words": 233,
+     "distance": 0.5334214568138123
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 2",
+     "location": "Article 2(1)-(2)",
+     "words": 145,
+     "distance": 0.5358877182006836
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 4",
+     "location": "Article 4(12)-(13)",
+     "words": 81,
+     "distance": 0.5378257036209106
+    }
+   ],
+   "q12": [
+    {
+     "source": "GDPR",
+     "article": "Article 5",
+     "location": "Article 5(1)",
+     "words": 233,
+     "distance": 0.36154699325561523
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 6",
+     "location": "Article 6(1)",
+     "words": 215,
+     "distance": 0.4579774737358093
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 5",
+     "location": "Article 5(1)-(2)",
+     "words": 53,
+     "distance": 0.462846040725708
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 13",
+     "location": "Article 13(1)",
+     "words": 200,
+     "distance": 0.5342817306518555
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 25",
+     "location": "Article 25(2)",
+     "words": 79,
+     "distance": 0.5407170057296753
+    }
+   ],
+   "q13": [
+    {
+     "source": "GDPR",
+     "article": "Article 6",
+     "location": "Article 6(1)",
+     "words": 215,
+     "distance": 0.4151003956794739
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 6",
+     "location": "Article 6(3)",
+     "words": 198,
+     "distance": 0.5385074615478516
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 5",
+     "location": "Article 5(1)",
+     "words": 233,
+     "distance": 0.5584638714790344
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 7",
+     "location": "Article 7(1)-(2)",
+     "words": 95,
+     "distance": 0.5652281045913696
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 29",
+     "location": "Article 29",
+     "words": 44,
+     "distance": 0.5886204242706299
+    }
+   ],
+   "q14": [
+    {
+     "source": "GDPR",
+     "article": "Article 88",
+     "location": "Article 88(1)",
+     "words": 120,
+     "distance": 0.5759900808334351
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 9",
+     "location": "Article 9(1)",
+     "words": 54,
+     "distance": 0.6075523495674133
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 88",
+     "location": "Article 88(2)-(3)",
+     "words": 90,
+     "distance": 0.618402361869812
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 4",
+     "location": "Article 4(14)-(15)",
+     "words": 75,
+     "distance": 0.6692676544189453
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 9",
+     "location": "Article 9(2)",
+     "words": 237,
+     "distance": 0.6703287363052368
+    }
+   ],
+   "q15": [
+    {
+     "source": "GDPR",
+     "article": "Article 17",
+     "location": "Article 17(1)",
+     "words": 192,
+     "distance": 0.4820505976676941
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 17",
+     "location": "Article 17(2)",
+     "words": 73,
+     "distance": 0.5673305988311768
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 17",
+     "location": "Article 17(3)",
+     "words": 158,
+     "distance": 0.5726279616355896
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 6",
+     "location": "Article 6(1)",
+     "words": 82,
+     "distance": 0.5810473561286926
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 5",
+     "location": "Article 5(1)",
+     "words": 233,
+     "distance": 0.6107311248779297
+    }
+   ],
+   "q16": [
+    {
+     "source": "GDPR",
+     "article": "Article 22",
+     "location": "Article 22(1)-(2)",
+     "words": 108,
+     "distance": 0.5054916143417358
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 22",
+     "location": "Article 22(3)-(4)",
+     "words": 107,
+     "distance": 0.5988051891326904
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 86",
+     "location": "Article 86(1)",
+     "words": 100,
+     "distance": 0.6853854656219482
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 4",
+     "location": "Article 4(4)-(5)",
+     "words": 117,
+     "distance": 0.7142655253410339
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(1)-(2)",
+     "words": 94,
+     "distance": 0.7166398763656616
+    }
+   ],
+   "q17": [
+    {
+     "source": "GDPR",
+     "article": "Article 35",
+     "location": "Article 35(1)",
+     "words": 81,
+     "distance": 0.37026089429855347
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 35",
+     "location": "Article 35(2)-(3)",
+     "words": 129,
+     "distance": 0.4150201678276062
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 35",
+     "location": "Article 35(7)",
+     "words": 112,
+     "distance": 0.4712451100349426
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 35",
+     "location": "Article 35(10)",
+     "words": 99,
+     "distance": 0.48497074842453003
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 35",
+     "location": "Article 35(11)",
+     "words": 38,
+     "distance": 0.48972567915916443
+    }
+   ],
+   "q18": [
+    {
+     "source": "Data Act",
+     "article": "Article 3",
+     "location": "Article 3(1)",
+     "words": 66,
+     "distance": 0.41039347648620605
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 3",
+     "location": "Article 3(2)",
+     "words": 128,
+     "distance": 0.4367583394050598
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 4",
+     "location": "Article 4(1)",
+     "words": 96,
+     "distance": 0.45099279284477234
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 3",
+     "location": "Article 3(3)",
+     "words": 103,
+     "distance": 0.49087393283843994
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 4",
+     "location": "Article 4(11)-(12)",
+     "words": 109,
+     "distance": 0.4946179687976837
+    }
+   ],
+   "q19": [
+    {
+     "source": "Data Act",
+     "article": "Article 3",
+     "location": "Article 3(1)",
+     "words": 66,
+     "distance": 0.4128185510635376
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 4",
+     "location": "Article 4(1)",
+     "words": 96,
+     "distance": 0.42858850955963135
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 5",
+     "location": "Article 5(1)",
+     "words": 104,
+     "distance": 0.4512697756290436
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 3",
+     "location": "Article 3(2)",
+     "words": 128,
+     "distance": 0.4656020402908325
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 4",
+     "location": "Article 4(4)",
+     "words": 62,
+     "distance": 0.4865836203098297
+    }
+   ],
+   "q20": [
+    {
+     "source": "Data Act",
+     "article": "Article 3",
+     "location": "Article 3(1)",
+     "words": 66,
+     "distance": 0.43696659803390503
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 5",
+     "location": "Article 5(7)",
+     "words": 77,
+     "distance": 0.44793593883514404
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 4",
+     "location": "Article 4(1)",
+     "words": 96,
+     "distance": 0.46144571900367737
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 5",
+     "location": "Article 5(1)",
+     "words": 104,
+     "distance": 0.46417665481567383
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 4",
+     "location": "Article 4(11)-(12)",
+     "words": 109,
+     "distance": 0.48020637035369873
+    }
+   ],
+   "q21": [
+    {
+     "source": "Data Act",
+     "article": "Article 13",
+     "location": "Article 13(1)-(2)",
+     "words": 84,
+     "distance": 0.4860503375530243
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 13",
+     "location": "Article 13(7)-(9)",
+     "words": 77,
+     "distance": 0.5164657235145569
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 13",
+     "location": "Article 13(3)-(4)",
+     "words": 150,
+     "distance": 0.5189673900604248
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 13",
+     "location": "Article 13(5)",
+     "words": 208,
+     "distance": 0.5209457278251648
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 13",
+     "location": "Article 13(5)",
+     "words": 241,
+     "distance": 0.5222194194793701
+    }
+   ],
+   "q22": [
+    {
+     "source": "Data Act",
+     "article": "Article 23",
+     "location": "Article 23",
+     "words": 225,
+     "distance": 0.48754850029945374
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 25",
+     "location": "Article 25(1)",
+     "words": 74,
+     "distance": 0.5525527596473694
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 30",
+     "location": "Article 30(6)",
+     "words": 58,
+     "distance": 0.558260977268219
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 30",
+     "location": "Article 30(1)",
+     "words": 120,
+     "distance": 0.5614656209945679
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 25",
+     "location": "Article 25(2)",
+     "words": 249,
+     "distance": 0.5630111694335938
+    }
+   ],
+   "q23": [
+    {
+     "source": "AI Act",
+     "article": "Article 27",
+     "location": "Article 27(4)-(5)",
+     "words": 87,
+     "distance": 0.3144524097442627
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 27",
+     "location": "Article 27(1)",
+     "words": 241,
+     "distance": 0.42792636156082153
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 27",
+     "location": "Article 27(2)",
+     "words": 81,
+     "distance": 0.44687291979789734
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 27",
+     "location": "Article 27(3)",
+     "words": 60,
+     "distance": 0.4745560884475708
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 26",
+     "location": "Article 26(9)",
+     "words": 46,
+     "distance": 0.5014097690582275
+    }
+   ],
+   "q24": [
+    {
+     "source": "AI Act",
+     "article": "Article 99",
+     "location": "Article 99(2)-(3)",
+     "words": 100,
+     "distance": 0.46338263154029846
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 99",
+     "location": "Article 99(4)",
+     "words": 131,
+     "distance": 0.5057059526443481
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 101",
+     "location": "Article 101(1)",
+     "words": 179,
+     "distance": 0.5139718055725098
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 100",
+     "location": "Article 100(1)-(2)",
+     "words": 73,
+     "distance": 0.5142300128936768
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 100",
+     "location": "Article 100(3)-(4)",
+     "words": 119,
+     "distance": 0.5155941247940063
+    }
+   ],
+   "q25": [
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(1)-(2)",
+     "words": 94,
+     "distance": 0.47887787222862244
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 14",
+     "location": "Article 14(4)",
+     "words": 202,
+     "distance": 0.4914596676826477
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 86",
+     "location": "Article 86(1)",
+     "words": 100,
+     "distance": 0.5054298639297485
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 22",
+     "location": "Article 22(3)-(4)",
+     "words": 107,
+     "distance": 0.5240821838378906
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 26",
+     "location": "Article 26(11)",
+     "words": 65,
+     "distance": 0.5285540223121643
+    }
+   ],
+   "q26": [
+    {
+     "source": "AI Act",
+     "article": "Article 10",
+     "location": "Article 10(5)",
+     "words": 242,
+     "distance": 0.432756632566452
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 10",
+     "location": "Article 10(5)-(6)",
+     "words": 78,
+     "distance": 0.494168221950531
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 9",
+     "location": "Article 9(1)",
+     "words": 54,
+     "distance": 0.5430462956428528
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 10",
+     "location": "Article 10(1)-(2)",
+     "words": 240,
+     "distance": 0.5454131960868835
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 59",
+     "location": "Article 59(1)",
+     "words": 242,
+     "distance": 0.5662512183189392
+    }
+   ],
+   "q27": [
+    {
+     "source": "Data Act",
+     "article": "Article 5",
+     "location": "Article 5(7)",
+     "words": 77,
+     "distance": 0.39983218908309937
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 4",
+     "location": "Article 4(11)-(12)",
+     "words": 109,
+     "distance": 0.4676588177680969
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 5",
+     "location": "Article 5(4)",
+     "words": 85,
+     "distance": 0.47180384397506714
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 4",
+     "location": "Article 4(14)",
+     "words": 45,
+     "distance": 0.47340747714042664
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 5",
+     "location": "Article 5(1)",
+     "words": 104,
+     "distance": 0.47921156883239746
+    }
+   ],
+   "q28": [
+    {
+     "source": "AI Act",
+     "article": "Article 26",
+     "location": "Article 26(9)",
+     "words": 46,
+     "distance": 0.4025281071662903
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 27",
+     "location": "Article 27(4)-(5)",
+     "words": 87,
+     "distance": 0.4343743920326233
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 11",
+     "location": "Article 11(1)",
+     "words": 183,
+     "distance": 0.4756976366043091
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 13",
+     "location": "Article 13(3)",
+     "words": 129,
+     "distance": 0.4791702926158905
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 21",
+     "location": "Article 21(1)",
+     "words": 71,
+     "distance": 0.48098188638687134
+    }
+   ],
+   "q29": [
+    {
+     "source": "AI Act",
+     "article": "Article 6",
+     "location": "Article 6(1)",
+     "words": 135,
+     "distance": 0.4846976697444916
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 6",
+     "location": "Article 6(2)-(3)",
+     "words": 206,
+     "distance": 0.5224659442901611
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 43",
+     "location": "Article 43(1)",
+     "words": 239,
+     "distance": 0.5239360332489014
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 49",
+     "location": "Article 49(1)-(2)",
+     "words": 107,
+     "distance": 0.5265300273895264
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 6",
+     "location": "Article 6(4)",
+     "words": 62,
+     "distance": 0.5288097858428955
+    }
+   ],
+   "q30": [
+    {
+     "source": "GDPR",
+     "article": "Article 7",
+     "location": "Article 7(3)-(4)",
+     "words": 105,
+     "distance": 0.6530739068984985
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 7",
+     "location": "Article 7(1)-(2)",
+     "words": 95,
+     "distance": 0.6582398414611816
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 83",
+     "location": "Article 83(5)",
+     "words": 149,
+     "distance": 0.687989354133606
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 17",
+     "location": "Article 17(1)",
+     "words": 192,
+     "distance": 0.6879986524581909
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 22",
+     "location": "Article 22(1)-(2)",
+     "words": 108,
+     "distance": 0.6881583333015442
+    }
+   ],
+   "q31": [
+    {
+     "source": "AI Act",
+     "article": "Article 70",
+     "location": "Article 70(9)",
+     "words": 29,
+     "distance": 0.42834722995758057
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 74",
+     "location": "Article 74(9)-(10)",
+     "words": 96,
+     "distance": 0.48932358622550964
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 70",
+     "location": "Article 70(1)",
+     "words": 107,
+     "distance": 0.5255290269851685
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 70",
+     "location": "Article 70(2)",
+     "words": 106,
+     "distance": 0.5384700298309326
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 75",
+     "location": "Article 75(1)",
+     "words": 74,
+     "distance": 0.540946900844574
+    }
+   ],
+   "q32": [
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(4)",
+     "words": 190,
+     "distance": 0.6545994281768799
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 10",
+     "location": "Article 10(9)-(10)",
+     "words": 97,
+     "distance": 0.6576977968215942
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 28",
+     "location": "Article 28(1)",
+     "words": 97,
+     "distance": 0.6584557294845581
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(2)",
+     "words": 137,
+     "distance": 0.6688504219055176
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 50",
+     "location": "Article 50(1)",
+     "words": 111,
+     "distance": 0.6748799085617065
+    }
+   ],
+   "q33": [
+    {
+     "source": "GDPR",
+     "article": "Article 83",
+     "location": "Article 83(5)",
+     "words": 149,
+     "distance": 0.6923699378967285
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 83",
+     "location": "Article 83(6)",
+     "words": 60,
+     "distance": 0.7014353275299072
+    },
+    {
+     "source": "GDPR",
+     "article": "Article 83",
+     "location": "Article 83(3)-(4)",
+     "words": 132,
+     "distance": 0.7139233350753784
+    },
+    {
+     "source": "Data Act",
+     "article": "Article 47",
+     "location": "Article 47",
+     "words": 58,
+     "distance": 0.7273459434509277
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 100",
+     "location": "Article 100(7)",
+     "words": 35,
+     "distance": 0.7292711734771729
+    }
+   ],
+   "q34": [
+    {
+     "source": "AI Act",
+     "article": "Article 17",
+     "location": "Article 17(1)",
+     "words": 197,
+     "distance": 0.43245479464530945
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 9",
+     "location": "Article 9(1)-(2)",
+     "words": 170,
+     "distance": 0.45681071281433105
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 16",
+     "location": "Article 16",
+     "words": 234,
+     "distance": 0.4719545245170593
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 9",
+     "location": "Article 9(8)-(9)",
+     "words": 110,
+     "distance": 0.47371888160705566
+    },
+    {
+     "source": "AI Act",
+     "article": "Article 17",
+     "location": "Article 17(2)-(3)",
+     "words": 92,
+     "distance": 0.47485166788101196
+    }
+   ]
+  }
+ }
+}
