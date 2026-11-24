@@ -1,0 +1,116 @@
+id,correct,supported,notes,kind,question,reference_answer,agent_answer
+q01,1,1,,multi,How long do eggs last in the fridge?,Fresh eggs in the shell: 3-5 weeks in the fridge (FDA storage chart); the FDA egg page says use them within 3 weeks for best quality.,"According to FDA guidance, fresh eggs in the shell should be stored promptly in a clean refrigerator at 40° F or below in their original carton and used within 3 weeks for best quality [fda:what-you-need-know-about-egg-safety | Section: Storing; Preparing]. 
+
+Storage times for other egg products in the refrigerator include:
+* **Fresh, in shell:** 3 - 5 weeks [fda_storage_chart | p. 4].
+* **Raw yolks, whites:** 2 - 4 days [fda_storage_chart | p. 4].
+* **Hard cooked:** 1 week [fda_storage_chart | p. 4].
+* **Liquid pasteurized eggs or egg substitutes:** 3 days if opened, or 10 days if unopened [fda_storage_chart | p. 4].
+* **Leftover cooked egg dishes:** 3 to 4 days [fda:what-you-need-know-about-egg-safety | Section: Storing; Preparing]."
+q02,1,1,,unanswerable,"If I scrape off the moldy part of my jam, can I eat the rest?","The corpus does not cover this; say so and suggest checking a trusted source or, when in doubt, throwing it out.",The FDA documents I have don't cover this.
+q03,1,1,,single,My pesto is past its date but I kept it frozen. Can I still eat it?,"Pesto is not listed, but the chart says food kept frozen at 0°F stays safe indefinitely; freezer times and dates are about quality, not safety.","Yes, you can still eat it. Product date labels (such as ""expires on,"" ""sell by,"" or ""best by"") indicate quality and flavor rather than safety [fda:how-cut-food-waste-and-maintain-food-safety]. Because freezing at 0° F (-18° C) keeps food safe indefinitely, the recommended freezer storage times are for quality only [fda_storage_chart | p. 4 (part 2)]. 
+
+When you are ready to use the pesto, examine it for signs of spoilage and check if it has changed noticeably in color, consistency, or texture [fda:how-cut-food-waste-and-maintain-food-safety]."
+q04,1,1,,single,How long does chicken last if I freeze it?,"Raw chicken: whole 1 year, parts 9 months (quality; frozen food stays safe indefinitely).","According to FDA guidelines, because freezing at 0°F (-18°C) keeps food safe indefinitely, recommended freezer storage times are for quality rather than safety [fda_storage_chart | p. 4 (part 2)]. 
+
+For chicken in the freezer:
+* **Whole chicken or turkey:** 1 year [fda_storage_chart | p. 4 (part 2)]
+* **Chicken or turkey parts:** 9 months [fda_storage_chart | p. 4 (part 2)]
+* **Giblets:** 3–4 months [fda_storage_chart | p. 4 (part 2)]
+* **Fried chicken:** 4 months [fda_storage_chart | p. 4 (part 2)]
+* **Cooked poultry dishes:** 4–6 months [fda_storage_chart | p. 4 (part 2)]
+* **Chicken pieces (plain):** 4 months [fda_storage_chart | p. 4 (part 2)]
+* **Chicken pieces covered with broth or gravy:** 6 months [fda_storage_chart | p. 4 (part 2)]
+* **Chicken nuggets and patties:** 1–3 months [fda_storage_chart | p. 4 (part 2)]
+
+Additionally, if you are freezing meat and poultry in its original package for longer than 2 months, the FDA recommends overwrapping the package with airtight heavy-duty foil, plastic wrap, or freezer paper, or placing it inside a plastic bag [fda_storage_chart | p. 4 (part 2)]."
+q05,1,1,,single,How long does meat last if I freeze it?,"Raw beef/pork: steaks 6-12 months, chops 4-6 months, roasts 4-12 months; hamburger/ground meat 3-4 months.","Because freezing at 0°F (-18°C) keeps food safe indefinitely, the recommended freezer storage times are for quality only [fda_storage_chart | p. 4 (part 2)]. 
+
+According to the FDA's Refrigerator & Freezer Storage Chart, recommended freezer times for quality include:
+
+* **Fresh Meat (Beef, Veal, Lamb, & Pork):**
+  * Steaks: 6–12 months [fda_storage_chart | p. 4]
+  * Chops: 4–6 months [fda_storage_chart | p. 4]
+  * Roasts: 4–12 months [fda_storage_chart | p. 4 (part 2)]
+* **Raw Hamburger, Ground & Stew Meat:**
+  * Hamburger & stew meats: 3–4 months [fda_storage_chart | p. 4]
+  * Ground turkey, veal, pork, lamb: 3–4 months [fda_storage_chart | p. 4]
+* **Fresh Poultry:**
+  * Chicken or turkey, whole: 1 year [fda_storage_chart | p. 4 (part 2)]
+  * Chicken or turkey, parts: 9 months [fda_storage_chart | p. 4 (part 2)]
+  * Giblets: 3–4 months [fda_storage_chart | p. 4 (part 2)]
+* **Bacon & Sausage:**
+  * Bacon: 1 month [fda_storage_chart | p. 4]
+  * Sausage, raw from pork, beef, chicken, or turkey: 1–2 months [fda_storage_chart | p. 4]
+  * Smoked breakfast links, patties: 1–2 months [fda_storage_chart | p. 4]
+* **Meat Leftovers:**
+  * Cooked meat & meat dishes: 2–3 months [fda_storage_chart | p. 4 (part 2)]
+  * Gravy & meat broth: 2–3 months [fda_storage_chart | p. 4 (part 2)]
+
+If you are freezing meat and poultry in its original package for longer than 2 months, overwrap these packages with airtight heavy-duty foil, plastic wrap, or freezer paper; or place the package inside a plastic bag [fda_storage_chart | p. 4 (part 2)]."
+q06,1,1,,single,How long does tuna last if I freeze it?,Tuna is not named; the chart gives fatty fish 2-3 months and lean fish 6-8 months in the freezer.,"According to FDA storage guidelines, tuna is classified as a fatty fish, and raw fatty fish can be kept in the freezer for **2 to 3 months** for best quality [fda_storage_chart | p. 4 (part 2)]. 
+
+Additionally, because freezing at 0°F (-18°C) keeps food safe indefinitely, this recommended storage time is for quality only rather than safety [fda_storage_chart | p. 4 (part 2)]."
+q07,1,1,,single,How long does salmon last if I freeze it?,Salmon is not named; fatty fish keeps 2-3 months in the freezer (lean fish 6-8 months).,"Because salmon is classified as a fatty fish, it will keep in the freezer for **2 to 3 months** for best quality [fda_storage_chart | p. 4 (part 2)]. 
+
+Freezing at 0°F (-18°C) keeps food safe indefinitely, so this recommended time is for maintaining optimal quality [fda_storage_chart | p. 4 (part 2)]."
+q08,1,1,,unanswerable,Do olives need to be kept in the fridge?,"The corpus does not cover this; say so and suggest checking a trusted source or, when in doubt, throwing it out.",The FDA documents I have don't cover this.
+q09,1,1,,unanswerable,"If my mayonnaise has some hardened bits, is it OK to eat the rest?","The corpus does not cover this; say so and suggest checking a trusted source or, when in doubt, throwing it out.",The FDA documents I have don't cover this specific question about mayonnaise with hardened bits.
+q10,1,1,,unanswerable,I left an unopened ketchup out of the fridge. Can I still eat it?,"The corpus does not cover this; say so and suggest checking a trusted source or, when in doubt, throwing it out.","The FDA documents I have don't cover this. 
+
+However, general FDA guidance notes: ""When in doubt, throw it out"" [fda:refrigerator-thermometers-cold-facts-about-food-safety]."
+q11,1,1,,single,How many days does chicken last in the fridge before I have to freeze it?,Raw chicken (whole or parts): 1-2 days in the fridge.,"Fresh chicken (whether whole or in parts) lasts **1 to 2 days** in the refrigerator (at 40° F or below) before you need to freeze it [fda_storage_chart | p. 4 (part 2)]. 
+
+If the chicken is cooked (such as plain pieces or leftover chicken dishes), it can last **3 to 4 days** in the refrigerator [fda_storage_chart | p. 4 (part 2)]."
+q12,1,1,,single,How many days does pork loin last in the fridge before I have to freeze it?,Fresh pork roasts and chops: 3-5 days in the fridge.,"According to FDA storage guidelines, fresh pork roasts can be kept in the refrigerator for **3 to 5 days** before you need to cook or freeze them [fda_storage_chart | p. 4 (part 2)]."
+q13,1,1,,single,How many days does a raw burger last in the fridge before I have to freeze it?,Raw hamburger and ground meat: 1-2 days in the fridge.,A raw hamburger lasts for **1 to 2 days** in the refrigerator before you need to freeze it [fda_storage_chart | p. 4].
+q14,1,1,,multi,How many days does salmon last in the fridge before I have to freeze it?,"1-2 days (fatty fish, storage chart); the seafood page says refrigerate only if used within 2 days, otherwise freeze.","Fresh fatty fish, such as salmon, can be stored in the refrigerator for **1 to 2 days** before you need to cook or freeze it [fda_storage_chart | p. 4 (part 2)]."
+q15,1,1,,multi,How many days does tuna last in the fridge before I have to freeze it?,"1-2 days (fish, storage chart); refrigerate only if used within 2 days, otherwise freeze.","According to FDA storage guidelines, the length of time fresh tuna (classified as a fatty fish) lasts in the refrigerator depends on whether it is fresh or prepared:
+
+* **Fresh fatty fish (like tuna):** 1 to 2 days in the refrigerator before you need to freeze or cook it [fda_storage_chart | p. 4 (part 2)].
+* **Cooked fish:** 3 to 4 days in the refrigerator [fda_storage_chart | p. 4 (part 2)].
+* **Tuna salad (store-prepared or homemade):** 3 to 5 days in the refrigerator (do not freeze) [fda_storage_chart | p. 4].
+* **Opened canned seafood out of the can:** 3 to 4 days in the refrigerator [fda_storage_chart | p. 4 (part 2)]."
+q16,0,1,Agent said it did not know but there was an answer in the docs,single,"How long do cooked, seasoned lentils last in the fridge?",Like soups and stews: 3-4 days in the fridge (2-3 months frozen).,The FDA documents I have don't cover lentils specifically.
+q17,1,1,,single,Do I need to keep my protein in a tupperware in the fridge?,"Yes: store refrigerated foods in covered containers or sealed storage bags, and check leftovers daily for spoilage.","Whether you need to keep your protein in a Tupperware container depends on whether it is raw or cooked:
+
+* **Raw Meat and Poultry:** The FDA recommends keeping fresh meat and poultry in its original package until just before using [fda_storage_chart | p. 4 (part 2)]. 
+* **Cooked Protein / Leftovers:** If you have cooked meat, poultry, or other prepared protein dishes, they should be refrigerated within 2 hours of cooking [fda:refrigerator-thermometers-cold-facts-about-food-safety | Section: Quick Chill; Thaw with Care]. To help hot food cool faster, the FDA recommends dividing leftovers into smaller containers (such as Tupperware) before placing them in the refrigerator [fda:refrigerator-thermometers-cold-facts-about-food-safety | Section: Quick Chill; Thaw with Care]."
+q18,1,1,,unanswerable,Why does my fridge smell bad?,"The corpus does not cover this; say so and suggest checking a trusted source or, when in doubt, throwing it out.","I couldn't produce an answer backed by valid citations from the FDA documents, so I won't guess. When in doubt, throw it out, and check foodsafety.gov or the FDA."
+q19,1,1,,multi,What is botulism?,"A disease caused by a deadly toxin made by the bacterium Clostridium botulinum, characterised by muscle paralysis.","Botulism is a serious, sometimes fatal disease caused by a potent neurotoxin formed during the growth of *Clostridium botulinum* [bad_bug_book | p. 108, Clostridium botulinum > 2. Disease]. The infection results in flaccid paralysis of muscles, including those of the respiratory tract [bad_bug_book | p. 108, Clostridium botulinum > 2. Disease]. 
+
+### Types and Causes
+* **Foodborne Botulism:** A severe type of food poisoning caused by ingesting foods containing the toxin produced by *C. botulinum*, most often developing after consumption of improperly processed and inadequately cooked home-preserved foods [bad_bug_book | p. 108, Clostridium botulinum > 2. Disease (part 2)]. 
+* **Infant Botulism:** A serious illness caused by the ingestion of *C. botulinum* spores that colonize and produce toxin in the intestinal tracts of infants [bad_bug_book | p. 108, Clostridium botulinum > 2. Disease (part 2)]. Honey is a known dietary reservoir of these spores and should never be fed to children under 1 year of age [bad_bug_book | p. 111, Clostridium botulinum > 3. Frequency; 4. Sources; 5. Target Populations; 6. Diagnosis].
+* **Wound Botulism:** The rarest form of botulism, which results when *C. botulinum* colonizes in a wound and produces toxins that reach other parts of the body via the bloodstream; this form is not foodborne [bad_bug_book | p. 108, Clostridium botulinum > 2. Disease (part 2)].
+
+### Symptoms
+* **Adult / Foodborne Symptoms:** Early symptoms typically start 18 to 36 hours after ingesting food containing the toxin (though times can vary from 4 hours to 8 days) and include double or blurred vision, drooping eyelids, slurred speech, difficulty swallowing, dry mouth, and muscle weakness [bad_bug_book | p. 108, Clostridium botulinum > 2. Disease (part 4)]. If left untreated, symptoms may progress to paralysis of the arms, legs, trunk, and respiratory muscles [bad_bug_book | p. 108, Clostridium botulinum > 2. Disease (part 4)].
+* **Infant Symptoms:** Constipation after a period of normal development is often the first sign, followed by a flat facial expression, poor feeding (weak sucking), weak cry, decreased movement, trouble swallowing with excessive drooling, muscle weakness, and breathing problems [bad_bug_book | p. 108, Clostridium botulinum > 2. Disease (part 4)]."
+q20,1,1,,unanswerable,My tomato is a bit wrinkly. How many days does it have left?,"The corpus does not cover this; say so and suggest checking a trusted source or, when in doubt, throwing it out.","The FDA documents I have don't cover the specific storage time left for a wrinkly tomato. 
+
+However, the FDA notes that if products have changed noticeably in consistency or texture (such as becoming wrinkly), you may want to avoid eating them [fda_storage_chart | p. 2]. When in doubt, throw it out. 
+
+For detailed storage times on fresh produce, you can consult the USDA, Cornell University, and Food Marketing Institute's *FoodKeeper* app, which is recommended by the FDA [fda:how-cut-food-waste-and-maintain-food-safety]."
+q21,1,1,,single,What happens if I put hot food in the fridge?,It does not harm the fridge; refrigerate within 2 hours and divide it into smaller containers so it cools faster.,"Putting hot food in the refrigerator does not harm the appliance [fda:refrigerator-thermometers-cold-facts-about-food-safety | Section: Quick Chill; Thaw with Care]. To help hot food cool faster, you can divide leftovers into smaller containers before putting them in the refrigerator [fda:refrigerator-thermometers-cold-facts-about-food-safety | Section: Quick Chill; Thaw with Care]."
+q22,1,1,,multi,"If I thaw chicken, can I freeze it again?",Food that still has ice crystals or is at 40°F or below can be refrozen; food that thawed and was refrozen gives bacteria a chance to grow.,"Whether you can refreeze chicken after thawing depends on how it was thawed and kept:
+
+* If the chicken was thawed **in the refrigerator**, it can be safely refrozen without cooking.
+* If the chicken was thawed **in cold water or in the microwave**, it must be cooked immediately and should not be refrozen raw [fda:refrigerator-thermometers-cold-facts-about-food-safety | Section: Safe Food Handling: Four Simple Steps (part 2)]. 
+* If the chicken was ever left to thaw at room temperature or left unrefrigerated, it is unsafe and should be thrown out [fda:refrigerator-thermometers-cold-facts-about-food-safety | Section: Quick Chill; Thaw with Care]."
+q23,1,1,,multi,"If I thaw pork loin, can I freeze it again?",Same rule: safe to refreeze if it still has ice crystals or is at 40°F or below.,"The FDA documents I have don't explicitly cover whether you can refreeze a pork loin after it has been thawed, except to note that frozen food that still has ice crystals or is at 40 °F or below can be safely refrozen [fda:refrigerator-thermometers-cold-facts-about-food-safety | Section: In Case of Disaster...; How Long Is Too Long?]. 
+
+However, the FDA guidelines state that if you thaw food in cold water or in the microwave, the food should be cooked immediately [fda:refrigerator-thermometers-cold-facts-about-food-safety | Section: Safe Food Handling: Four Simple Steps (part 2)]. 
+
+When in doubt, throw it out."
+q24,0,1,Agent said it did not know but there was an answer in the docs,multi,"If I thaw a burger, can I freeze it again?",Same rule: safe to refreeze if it still has ice crystals or is at 40°F or below.,The FDA documents I have don't cover this.
+q25,0,1,Agent said it did not know but there was an answer in the docs,multi,"If I thaw salmon, can I freeze it again?",Same rule: safe to refreeze if it still has ice crystals or is at 40°F or below.,The FDA documents I have don't cover this specific question regarding whether you can refreeze thawed salmon.
+q26,0,1,Agent said it did not know but there was an answer in the docs,multi,"If I thaw tuna, can I freeze it again?",Same rule: safe to refreeze if it still has ice crystals or is at 40°F or below.,"The FDA documents I have don't cover this specific question regarding whether you can refreeze tuna that has already been thawed. 
+
+However, general FDA guidance notes that frozen food that still contains ice crystals or is at 40 °F or below can be safely refrozen or cooked [fda:refrigerator-thermometers-cold-facts-about-food-safety | Section: In Case of Disaster...; How Long Is Too Long?]. When in doubt, throw it out."
+q27,0,1,Agent said it did not know but there was an answer in the docs,multi,"If I thaw white fish, can I freeze it again?",Same rule: safe to refreeze if it still has ice crystals or is at 40°F or below.,The FDA documents I have don't cover this.
+q28,1,1,,unanswerable,Does cheese last longer if I freeze it?,"The corpus does not cover this; say so and suggest checking a trusted source or, when in doubt, throwing it out.","The FDA documents I have don't cover specific storage times for cheese in the freezer. However, the FDA notes that freezing at 0° F (-18° C) keeps food safe indefinitely [fda_storage_chart | p. 4 (part 2)], and that freezing is a great way to store most foods to keep them from going bad until you are ready to eat them [fda:tips-reduce-food-waste]. 
+
+For specific information on how long different types of cheese can be stored in the freezer while maintaining freshness and quality, the FDA recommends using the **FoodKeeper App** [fda:tips-reduce-food-waste]."
+q29,1,1,,unanswerable,Is it normal for ham to feel slimy?,"The corpus does not cover this; say so and suggest checking a trusted source or, when in doubt, throwing it out.",The FDA documents I have don't cover this.
+q30,1,1,,unanswerable,Does coffee go bad?,"The corpus does not cover this; say so and suggest checking a trusted source or, when in doubt, throwing it out.",The FDA documents I have don't cover this.

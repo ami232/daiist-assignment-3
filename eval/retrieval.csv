@@ -1,0 +1,3 @@
+design,n,hit@1,hit@3,hit@5,all_passages@5,avg_words_in_prompt@5
+dense,21,0.571,0.667,0.905,0.524,1354
+hybrid,21,0.429,0.524,0.571,0.381,1341

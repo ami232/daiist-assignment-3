@@ -1,0 +1,59 @@
+{
+  "questions": 30,
+  "answered": 30,
+  "retrieval": [
+    {
+      "design": "dense",
+      "n": 21,
+      "hit@1": 0.571,
+      "hit@3": 0.667,
+      "hit@5": 0.905,
+      "all_passages@5": 0.524,
+      "avg_words_in_prompt@5": 1354
+    },
+    {
+      "design": "hybrid",
+      "n": 21,
+      "hit@1": 0.429,
+      "hit@3": 0.524,
+      "hit@5": 0.571,
+      "all_passages@5": 0.381,
+      "avg_words_in_prompt@5": 1341
+    }
+  ],
+  "chosen_design": "dense",
+  "end_to_end": {
+    "correct": 0.867,
+    "correct_answerable": 0.81,
+    "supported": 1.0,
+    "unsupported_count": 0,
+    "right_refusals": "9/9",
+    "wrong_refusals": "5/21",
+    "citations_valid": 1.0,
+    "cites_expected_source": 0.714,
+    "guardrail_fired": 5,
+    "withheld": 1
+  },
+  "cost_per_question": {
+    "tokens": 8392.833,
+    "seconds": 9.665,
+    "tool_calls": 1.6
+  },
+  "judge_vs_human": {
+    "n": 30,
+    "correct": {
+      "n": 30,
+      "agreement": 0.967,
+      "cohen_kappa": 0.87,
+      "disagreements": [
+        "q26"
+      ]
+    },
+    "supported": {
+      "n": 30,
+      "agreement": 1.0,
+      "cohen_kappa": 1.0,
+      "disagreements": []
+    }
+  }
+}
