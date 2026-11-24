@@ -1,0 +1,5 @@
+id,my_correct,my_supported,judge_correct,judge_supported,after_review_correct,after_review_supported,review_note
+q04,1,1,0,0,0,0,"agree with judge: the 'unless the contract includes a compensation clause' exception is not in LAU art. 11 (invented, from an older version of the law); it changes what the tenant should do"
+q07,1,1,1,0,1,0,"agree with judge: the facts are in the passages but step 3 cites Artículo 21.2 when the rule is in 21.5"
+q25,1,1,1,0,1,0,"agree with judge: same invented penalty exception as q04"
+q32,1,1,1,0,1,0,"agree with judge: correct refusal, but the explanation about royal decrees and regional calls is not in any passage"

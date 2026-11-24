@@ -6,7 +6,8 @@ __pycache__/
 *.pyc
 
 # Documents downloaded by your index stage. Commit them only if their licence allows it.
-corpus/
+# corpus/ IS committed: BOE texts may be reused freely citing the source, and the snapshot
+# (downloaded 23 Nov 2026) makes main.py index rebuild exactly the evaluated index.
 
 # Your index belongs in index/, committed. Your evaluation results belong in eval/, committed.
 

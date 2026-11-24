@@ -1,0 +1,147 @@
+[
+ {
+  "id": "q01",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q02",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q03",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q04",
+  "design": "fixed200",
+  "first_relevant_rank": null
+ },
+ {
+  "id": "q05",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q06",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q07",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q08",
+  "design": "fixed200",
+  "first_relevant_rank": null
+ },
+ {
+  "id": "q09",
+  "design": "fixed200",
+  "first_relevant_rank": 5
+ },
+ {
+  "id": "q10",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q11",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q12",
+  "design": "fixed200",
+  "first_relevant_rank": 2
+ },
+ {
+  "id": "q13",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q14",
+  "design": "fixed200",
+  "first_relevant_rank": 2
+ },
+ {
+  "id": "q15",
+  "design": "fixed200",
+  "first_relevant_rank": null
+ },
+ {
+  "id": "q16",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q17",
+  "design": "fixed200",
+  "first_relevant_rank": 2
+ },
+ {
+  "id": "q18",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q19",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q20",
+  "design": "fixed200",
+  "first_relevant_rank": 2
+ },
+ {
+  "id": "q21",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q22",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q23",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q24",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q25",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q26",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q27",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q28",
+  "design": "fixed200",
+  "first_relevant_rank": 1
+ },
+ {
+  "id": "q29",
+  "design": "fixed200",
+  "first_relevant_rank": 5
+ }
+]

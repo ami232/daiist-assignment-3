@@ -1,0 +1,60 @@
+{
+ "retrieval": [
+  {
+   "design": "articles",
+   "questions": 29,
+   "hit@1": 0.759,
+   "hit@3": 0.966,
+   "hit@5": 1.0,
+   "all_passages@1": 0.552,
+   "all_passages@3": 0.897,
+   "all_passages@5": 0.931,
+   "words_in_prompt@5": 1427
+  },
+  {
+   "design": "fixed200",
+   "questions": 29,
+   "hit@1": 0.69,
+   "hit@3": 0.828,
+   "hit@5": 0.897,
+   "all_passages@1": 0.483,
+   "all_passages@3": 0.759,
+   "all_passages@5": 0.793,
+   "words_in_prompt@5": 1070
+  }
+ ],
+ "agreement": {
+  "graded": 20,
+  "correct": {
+   "n": 20,
+   "agreement": 0.95,
+   "kappa": 0.0,
+   "disagreements": [
+    "q04"
+   ]
+  },
+  "supported": {
+   "n": 20,
+   "agreement": 0.8,
+   "kappa": 0.0,
+   "disagreements": [
+    "q04",
+    "q07",
+    "q25",
+    "q32"
+   ]
+  }
+ },
+ "failures": {
+  "unsupported claim": [
+   "q04",
+   "q07",
+   "q25"
+  ],
+  "unsupported claim (answered an unanswerable question)": [
+   "q32"
+  ]
+ },
+ "mean_tokens": 6427.257142857143,
+ "mean_seconds": 45.15142857142857
+}
