@@ -118,6 +118,22 @@ If you were rejected after the interview, you should also have received a Seal o
 
 *What happens when a document is already indexed. The unanswerable question, the document you added, the answer before and after.*
 
+To prevent duplicates and wasting embedding quota, when a document is already indexed it can't be added again. The 'add_document' tool responds that the document is already indexed to ensure the proper organization of information.
+
+In order to test out the 'add_document' tool, I chose an unasnwerable question that required extra information that was not originally included, and recorded the answer given by the agent before and after adding extra chunks to the index. The chosen question was Q35: “How much funding does the Spanish CDTI NEOTEC programme give to startups?”. Original documents contained information about the EU's EIC Accelerator, but this question was related to the Spanish CDTI NEOTEC programme which was not covered in the corpus. Due to this, the agent’s answer before adding the document was: "The EIC documents I have do not cover this. They do not contain information about the Spanish CDTI NEOTEC programme." I proceeded to download the NEOTEC official document (the NEOTEC 2026 call, a CDTI resolution of 6 April 2026, 43 pages, in Spanish) and saved it in the corpus folder. Then, a request was sent to the agent in order to index the information and I had to approve this action (human-in-the-loop) before it was embedded and ready to use. The document was added as 111 chunks, which took the index from 631 to 742 chunks. Once the new chunks were added, the same question was asked again and the response is now: 
+
+"Under the CDTI NEOTEC programme, the funding consists of grants with the following limits:
+
+* **General limit:** Up to 70% of the eligible budget can be funded, with a maximum grant amount of **€250,000** per beneficiary entity (convocatoria_neotec_2026, p. 7).
+* **With PhD hire:** If the project includes hiring at least one PhD holder, up to 85% of the eligible budget can be funded, with a maximum grant amount of **€325,000** per beneficiary entity (convocatoria_neotec_2026, p. 7).
+* **Additional training:** An extra amount of up to €18,300 can be added for specific international training activities at institutions like MIT or GeorgiaTech (convocatoria_neotec_2026, p. 7).
+* **Project budget limits:** The minimum eligible project budget is €175,000, and the maximum is €750,000 (excluding the optional training costs) (convocatoria_neotec_2026, p. 7).
+
+Sources:
+- convocatoria_neotec_2026, p. 7"
+
+Evidently, the agent successfully communicated with the 'add_document' tool, the approval step followed as expected, the extra chunks were added, and the answer now responds to the question that was originally unanswerable. Even though the question was in English and the document in Spanish, the search still found the right page. I checked the answer against the PDF: all the numbers are correct and on page 7, but the detail about MIT or GeorgiaTech is actually on page 32, not page 7. The citation guardrail does not catch this, because it only checks that every cited page was retrieved, not that each claim is on that exact page.
+
 ## Harness and guardrails
 
 *Your AGENTS.md rules, the approval step, and your extra guardrail with one case where it fired.*
