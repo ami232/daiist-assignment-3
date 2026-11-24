@@ -176,7 +176,7 @@ Before flying, verify information against current FAA sources or an instructor.
 
 ## AI use
 
-Copilot and Claude Code were used for implementation, indexing, evaluation
-analysis, and drafting this report. The human-label rows were manually
+Copilot and Claude Code were used for implementation, indexing, and evaluation
+analysis. The human-label rows were manually
 reviewed in the assistant session at the user's request; they are not
 LLM-judge outputs or independent student grades.
