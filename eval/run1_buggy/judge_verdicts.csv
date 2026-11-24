@@ -1,0 +1,14 @@
+id,correct,supported,reason
+q01,0,1,The assistant mentions the maximum grant amount but misses the crucial rule that grant-only support can only be received once per company during Horizon Europe.
+q02,1,1,"The assistant correctly states that the grant covers up to 70% and the remaining 30% must be paid by the company, which is fully supported by the provided passages."
+q03,1,1,"The assistant accurately states the minimum and maximum investment amounts and mentions the STEP Scale Up call, fully supported by the provided passages."
+q04,1,1,"The assistant correctly states that small mid-caps are not eligible for grant-only support, which matches the reference answer and is directly supported by the retrieved passages."
+q05,1,1,The assistant accurately answers the question using facts and details directly supported by the retrieved passages.
+q06,1,1,The assistant correctly identifies all components of the short proposal supported by the provided text.
+q07,1,1,"The assistant provides the exact timing for batching matching the reference answer, and every fact is directly supported by the retrieved passages."
+q08,1,1,The assistant accurately answers the question using facts directly supported by the retrieved passages.
+q09,1,1,"The assistant accurately answers that four experts decide and at least three must give a GO, which is fully supported by the retrieved passages."
+q10,1,1,The assistant correctly provided the 2027 cut-off dates which are fully supported by the retrieved document.
+q11,1,1,The assistant correctly states the page limit as 20 pages based directly on the provided EIC Work Programme text.
+q12,1,1,The assistant correctly states the required scores for the interview and every fact is directly supported by the provided text.
+q13,1,1,The assistant's answer correctly identifies the submission limit and is fully backed by the retrieved passages.

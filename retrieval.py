@@ -12,7 +12,9 @@ question twice (or re-running the evaluation) does not spend embedding quota.
 
 import json
 import math
+import os
 import re
+import threading
 from collections import Counter
 from functools import lru_cache
 
@@ -33,15 +35,39 @@ def query_text(question: str) -> str:
     return f"task: search result | query: {question}"
 
 
+_cache_lock = threading.Lock()  # the agent can run two searches at once; only one may touch the cache file
+
+
+def read_cache() -> dict:
+    """Read the query cache. If the file is damaged, keep whatever can still be read."""
+    if not QUERY_CACHE.exists():
+        return {}
+    text = QUERY_CACHE.read_text()
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        try:
+            return json.JSONDecoder().raw_decode(text)[0]  # a damaged tail: keep the first complete object
+        except json.JSONDecodeError:
+            return {}
+
+
 def embed_query(question: str) -> list[float]:
     """Embed a question, using the cache when we have embedded it before."""
-    cache = json.loads(QUERY_CACHE.read_text()) if QUERY_CACHE.exists() else {}
     key = f"{EMBED_MODEL}/{EMBED_DIM}/{question}"
-    if key not in cache:
-        client = genai.Client(api_key=load_api_key())
-        cache[key] = embed_one(client, query_text(question))
-        QUERY_CACHE.write_text(json.dumps(cache))
-    return cache[key]
+    with _cache_lock:
+        cache = read_cache()
+        if key in cache:
+            return cache[key]
+    client = genai.Client(api_key=load_api_key())
+    vector = embed_one(client, query_text(question))
+    with _cache_lock:
+        cache = read_cache()
+        cache[key] = vector
+        tmp = QUERY_CACHE.with_suffix(".tmp")
+        tmp.write_text(json.dumps(cache))
+        os.replace(tmp, QUERY_CACHE)  # atomic: the file is never half-written
+    return vector
 
 
 def vector_search(question: str, k: int) -> list[str]:
@@ -99,7 +125,7 @@ def hybrid_search(question: str, k: int) -> list[str]:
 
 
 DESIGNS = {"vector": vector_search, "hybrid": hybrid_search}
-DEFAULT_DESIGN = "vector"  # chosen by the retrieval comparison (eval/retrieval_summary.csv)
+DEFAULT_DESIGN = "hybrid"  # updated after the retrieval comparison
 
 
 def search(question: str, k: int = 5, design: str = DEFAULT_DESIGN) -> list[dict]:

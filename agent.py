@@ -45,7 +45,7 @@ from api_key import load_api_key
 ROOT = Path(__file__).resolve().parent
 SYSTEM_PROMPT = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
 
-MODEL = "gemini-flash-lite-latest"  # answered fastest in model_check.py; flash-latest kept returning 503
+MODEL = "gemini-flash-lite-latest"  # answered fastest in a quick test; flash-latest kept returning 503 (overloaded)
 FALLBACK_MODEL = "gemini-flash-latest"  # used if the main model is overloaded (503) or rate-limited
 MAX_TOOL_CALLS = 4  # enough for two searches per part of a two-part question
 MAX_MODEL_CALLS = 6
@@ -79,9 +79,11 @@ CITATION = re.compile(r"([A-Z][^;()\n]*?),\s*pp?\.\s*(\d+)")
 
 
 def citations_in(answer: str) -> list[tuple[str, int]]:
-    """(title, page) of every citation inside parentheses, e.g. (EIC Work Programme 2027, p. 88)."""
+    """(title, page) of every citation inside parentheses, e.g. (EIC Work Programme 2027, p. 88).
+    Brackets inside a title, like "(August 2026)", are removed first so the citation is still found."""
     found = []
-    for group in re.findall(r"\(([^()]*\bp\.\s*\d+[^()]*)\)", answer):
+    answer = re.sub(r"\(([^()]*)\)(?=[^()]*,\s*pp?\.\s*\d)", r"\1", answer)  # unwrap "(August 2026)" inside a citation
+    for group in re.findall(r"\(([^()]*\bpp?\.\s*\d+[^()]*)\)", answer):
         found += [(t.strip(), int(p)) for t, p in CITATION.findall(group)]
     return found
 

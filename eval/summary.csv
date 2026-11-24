@@ -1,0 +1,18 @@
+metric,value
+questions,37
+correct (all kinds),36
+correct answers (answerable),30
+answerable questions,31
+unsupported answers (claim not in passages),0
+correct refusals (unanswerable),6
+unanswerable questions,6
+wrong refusals (answerable),1
+guardrail fired,1
+answers citing an expected page,30
+avg searches per question,1.49
+avg input tokens per question,4374
+avg output tokens per question,166
+avg seconds per question,8.8
+human-graded answers,37
+agreement with human: correct,1.0
+agreement with human: supported,1.0
