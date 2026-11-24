@@ -27,7 +27,7 @@ from mcp.client.stdio import stdio_client
 from api_key import load_api_key
 
 ROOT = Path(__file__).resolve().parent
-MODEL = "gemini-3.5-flash"
+MODEL = "gemini-3.5-flash-lite"
 MAX_TOOL_CALLS = 6
 MAX_QUESTION_CHARS = 1500
 REFUSAL = "I don't know: the corpus does not cover this question."
