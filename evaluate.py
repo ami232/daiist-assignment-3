@@ -13,13 +13,15 @@ from google import genai
 from google.genai import types
 from pydantic import BaseModel
 
-from agent import CHAT_MODEL, ID_PATTERN, REFUSAL, answer_question, server_session
+from agent import CHAT_MODEL, REFUSAL, answer_question, citation_ids, server_session
 from api_key import load_api_key
 from corpus_data import ROOT
-from retrieval import DESIGNS, search
+from retrieval import DESIGNS, search, selected_design
 from index import database
 
 EVAL = ROOT / "eval"
+EXPERIMENTS = EVAL / "experiments"
+EXPERIMENT = EXPERIMENTS / "original-first"
 
 
 def read_csv(path):
@@ -91,7 +93,7 @@ Flag ambiguous_question only for an actual defect in the question or the referen
 def check_answer(q, run, verdict):
     answer = run["answer"]
     passages = run["passages"]
-    cited = set(ID_PATTERN.findall(answer))
+    cited = citation_ids(answer)
     refusal = answer == REFUSAL
     valid = bool(cited) and cited <= {r["id"] for r in passages}
     fully_retrieved = expected(q) <= {(r["source"], r["location"]) for r in passages}
@@ -137,14 +139,18 @@ def report_agreement(labels, verdicts):
     return {"graded": len(seen), **{d: matches[d] / len(seen) if seen else None for d in ("correct", "supported")}}
 
 
-async def main():
+async def main(output=EXPERIMENT):
+    output = output.resolve()
+    if output.parent != EXPERIMENTS.resolve():
+        raise SystemExit("Choose a new directory directly under eval/experiments for this run.")
+    output.mkdir(parents=True, exist_ok=True)
     questions = read_csv(EVAL / "questions.csv")
     kinds = Counter(q["kind"] for q in questions)
     if len(questions) < 30 or kinds["multi"] < 5 or kinds["unanswerable"] < 5:
         raise SystemExit("Complete eval/questions.csv before selecting a retrieval design: need 30 questions, including 5 multi and 5 unanswerable.")
     from check import read_questions
     read_questions()
-    # Keep human grades tied to the exact answers in the blind packet, even on reruns.
+    # A run can only resume with the exact same index, questions, models and harness.
     fingerprint = hashlib.sha256()
     for path in [database(), EVAL / "questions.csv", *(ROOT / name for name in
                  ("agent.py", "server.py", "index.py", "retrieval.py", "evaluate.py", "AGENTS.md"))]:
@@ -152,26 +158,24 @@ async def main():
     fingerprint.update(CHAT_MODEL.encode())
     fingerprint.update(os.environ.get("PG_RAG_JUDGE_MODEL", CHAT_MODEL).encode())
     signature = fingerprint.hexdigest()
-    working = EVAL / "run.json"
+    working = output / "run.json"
     if working.exists():
         old = json.loads(working.read_text())
-        if old["signature"] != signature and read_csv(EVAL / "human_labels.csv"):
-            raise SystemExit("The question set, model, code or index changed after human grading. Preserve the old run and its labels before starting a new evaluation.")
+        if old["signature"] != signature:
+            raise SystemExit("Inputs changed. Select a fresh experiment directory with evaluate.py --output.")
     else:
-        old = {}
-    same_run = old.get("signature") == signature
-    if not same_run:
-        for filename in ("answers.json", "judge.json", "retrieval.json", "blind_review.md", "summary.json"):
-            (EVAL / filename).unlink(missing_ok=True)
+        if any(output.iterdir()):
+            raise SystemExit("Existing experiment files have no run signature. Choose an empty directory.")
         save(working, {"signature": signature})
     def previous(filename, default):
-        path = EVAL / filename
+        path = output / filename
         return json.loads(path.read_text()) if path.exists() else default
     lookup = previous("retrieval.json", None)
     if lookup is None:
         lookup = benchmark(questions)
-        save(EVAL / "retrieval.json", lookup)
-    save(ROOT / "index/design.json", {"design": lookup["selected"]})
+        save(output / "retrieval.json", lookup)
+    if selected_design() != lookup["selected"]:
+        raise SystemExit("The saved search design must match the benchmark winner for this experiment.")
     saved = {r["id"]: r for r in previous("answers.json", [])}
     answers = []
     async with server_session() as session:
@@ -179,18 +183,17 @@ async def main():
             key = q["id"]
             if key not in saved:
                 saved[key] = {"id": key, **await answer_question(q["question"], session)}
-                save(EVAL / "answers.json", list(saved.values()))
+                save(output / "answers.json", list(saved.values()))
             answers.append((q, saved[key]))
-    write_blind_packet(EVAL / "blind_review.md", answers)
     verdicts = previous("judge.json", {})
     checks = {}
-    with genai.Client(api_key=load_api_key(), http_options=types.HttpOptions(
+    with genai.Client(api_key=load_api_key(), http_options=types.HttpOptions(timeout=60000,
             retry_options=types.HttpRetryOptions(attempts=5, http_status_codes=[429, 500, 502, 503, 504]))) as client:
         for q, run in answers:
             key = q["id"]
             if key not in verdicts:
                 verdicts[key] = grade(client, q, run)
-                save(EVAL / "judge.json", verdicts)
+                save(output / "judge.json", verdicts)
             checks[key] = check_answer(q, run, verdicts[key])
     failures = Counter(c["failure"] for c in checks.values() if c["failure"])
     totals = {dim: sum(v[dim] for v in verdicts.values()) for dim in ("correct", "supported")}
@@ -200,11 +203,13 @@ async def main():
     costs = {key: statistics.mean(r[key] for _, r in answers) for key in ("input_tokens", "output_tokens", "seconds")}
     summary = {"n": len(answers), "design": lookup["selected"], "agent_model": CHAT_MODEL,
                "judge_model": os.environ.get("PG_RAG_JUDGE_MODEL", CHAT_MODEL), "outcomes": totals,
-               "per_question": checks, "failures": failures, "mean_agent_cost": costs,
-               "human_agreement": report_agreement(read_csv(EVAL / "human_labels.csv"), verdicts)}
-    save(EVAL / "summary.json", summary)
+               "per_question": checks, "failures": failures, "mean_agent_cost": costs}
+    save(output / "summary.json", summary)
     print(json.dumps({k: v for k, v in summary.items() if k != "per_question"}, indent=2))
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    import argparse
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--output", type=Path, default=EXPERIMENT, help="a directory under eval/experiments")
+    asyncio.run(main(parser.parse_args().output))

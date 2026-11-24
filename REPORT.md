@@ -79,11 +79,11 @@ Question q30 asked which lines the Manifest-Checksum covers and which algorithm 
 
 ## Harness and guardrails
 
-LangChain runs Gemini with [AGENTS.md](AGENTS.md) as its system prompt and connects to server.py over stdio. The harness requires a terminal confirmation showing the resolved path before an addition, bounds each run to five model calls and records the evidence supplied by search. Its citation guard converts an answer containing an unknown passage ID into the standard refusal. A controlled check using a fabricated identifier triggered that guard. The live evaluation also revealed a formatting defect. On four answerable questions the model placed several valid IDs inside one pair of brackets, and the guard replaced the answer with a refusal. Every ID in those groups occurred in the corresponding search trace. Checking whether each cited passage supports the attached claim still requires a reader or judge.
+LangChain runs Gemini with [AGENTS.md](AGENTS.md) as its system prompt and connects to server.py over stdio. The harness requires a terminal confirmation showing the resolved path before an addition, bounds each run to five model calls and records the evidence supplied by search. In the original run, the citation guard rejected four answerable responses that grouped valid IDs inside one pair of brackets. It could also overlook an unknown ID in a group if the answer had a separate valid citation. The revised guard checks every comma-separated member against the passages returned for that question. The same parser supplies the command-line source list and the evaluator's citation checks. Whether the passage supports the claim still needs a reader or judge. [Citation regression tests](test_citations.py)
 
 ## End-to-end evaluation
 
-The evaluator checks whether the agent refused and whether the cited passage IDs appeared in its search results. A separate Gemini call judges correctness against the reference answer and support against the cited passages. Both the automated verdicts and the final grades refer to the same saved responses.
+The evaluator checks refusals and passage IDs in code. A separate Gemini call judges correctness against the reference answer and support against the cited passages. The results below describe the original run. My 20 accepted grades apply exclusively to those saved responses.
 
 The Gemini judge rated 25 of 30 answers correct (83.3%). The agent answered 20 questions substantively and refused 10. Of the refusals, six were appropriate and four were on answerable questions. Checking every passage ID in the 20 substantive answers, including IDs appearing in groups, found that all occurred in the respective search traces. [Saved answers](eval/answers.json) · [Evaluation summary](eval/summary.json)
 
@@ -113,13 +113,36 @@ Mean agent usage was 3,801 input tokens and 145 output tokens per question. Mean
 
 The automated classification counted two retrieval misses (q01 and q21) and three unsupported claims (q03, q05 and q07). It assigned zero cases to wrong refusal, wrong answer from the right passage, or bad test question. The classification checks support and retrieval coverage before checking for a wrong refusal. A trace review explains why four refusals on answerable questions produced those counts.
 
-Four of the 24 answerable questions received the standard refusal. The traces show grouped citations triggered the guard on each one (q01, q03, q05 and q07). In q03 the agent had found the correct dump format and cited two retrieved IDs together. The engineer saw only a refusal. The first change to test is parsing each identifier inside a group and verifying it individually, including groups alongside single citations. A fresh question set would be needed to measure the change independently.
+Four of the 24 answerable questions received the standard refusal. Grouped citations triggered the guard on q01, q03, q05 and q07. Replaying the revised parser on the four original raw responses accepted every cited ID. In q03 the agent had identified the correct parallel dump format before the guard discarded the answer. In q01 a tenant-recovery bullet still lacked a citation. Accepting the group resolves the formatting error but leaves that evidence gap.
 
-On q21 the agent explained how to combine incrementals. Its live searches missed the verification manual that calls for a test restore and checking the recovered data. The answer added recovery steps and omitted the data check in the reference. The original question had retrieved both expected sections in the fixed-query benchmark. Reformulated searches during the live run changed the evidence available to the agent. A useful next test is whether searching each part of the question separately recovers both sections.
+On q21 the agent explained how to combine incrementals. Its live searches missed the verification manual that calls for a test restore and checking the recovered data. The answer added recovery steps and omitted the data check in the reference. In the fixed-query benchmark the original wording retrieved both expected sections. This discrepancy motivated using the full user question for the first search.
+
+## Paired experiment on the same 30 questions
+
+I kept the questions, references, index, hybrid top-five search, agent model, judge model and judge rubric fixed. The revised harness sends the exact user question to the MCP search tool before the first model call, supplies those passages to the model and allows focused follow-up searches. It also validates grouped citations. All 30 revised answers were generated afresh and graded by Gemini. My 20 accepted grades remain attached to the original answers at commit `fd3b870`. [Original responses](eval/answers.json) · [Revised responses and traces](eval/experiments/original-first/answers.json) · [Paired results by question](eval/experiments/original-first/comparison.csv)
+
+| Measure | Original | Revised |
+| --- | ---: | ---: |
+| Judge rated correct | 25/30 (83.3%) | 29/30 (96.7%) |
+| Judge rated supported | 27/30 (90.0%) | 30/30 (100%) |
+| First search found all required sections, single-passage questions | 15/18 | 17/18 |
+| First search found both required sections, two-passage questions | 0/6 | 6/6 |
+| All searches together found the required sections, answerable questions | 18/24 | 23/24 |
+| Refusals on answerable questions | 4/24 | 0/24 |
+| Appropriate refusals on unanswerable questions | 6/6 | 6/6 |
+| Substantive answers whose cited IDs all appeared in the trace | 20/20 | 24/24 |
+
+On q21 the first five results included both the combination and verification manuals. The revised answer specified the oldest-to-newest backup order and cited the verification manual for a test restore that checks the database contents. On q03 the revised answer gave the directory format for a parallel dump using two IDs in one bracket. Both IDs resolved, and the answer reached the user. [Revised traces for q03 and q21](eval/experiments/original-first/answers.json)
+
+Five questions gained correctness credit (q01, q03, q05, q07 and q21), and one lost it (q23). The sole revised failure was a wrong answer from the right passage. The response accurately explained the disk-space risk from a disconnected replication client, but confused the default flush timing of `pg_receivewal` with the behavior of `--synchronous`. The original answer correctly identified file closure as the default flush point. The revised answer claimed immediate flushing even though its cited Options passage assigned that behavior to `--synchronous`. The judge flagged the factual error but still awarded support, so the 30/30 support score overstates the evidence. [Revised verdicts](eval/experiments/original-first/judge.json) · [Failure classification](eval/experiments/original-first/summary.json)
+
+Two other cases show the limits of the metrics. On q02 the revised search missed the designated `pg_dump` section, but it found and cited the Backup and Restore chapter's explicit statement that a dump allows other database operations to continue. On q01 all cited IDs resolved and the judge awarded support, although the bullet about capturing global roles and permissions had no citation of its own.
+
+Across 30 completed responses the number of searches went from 39 to 38. Mean input/output tokens went from 3,801/145 to 3,675/131. Median latency fell from 5.26 to 1.99 seconds, and mean latency from 8.90 to 7.72 seconds. The slowest revised response took 67.08 seconds. One interrupted attempt at q10 was restarted from the last checkpoint after roughly 153 seconds. Its elapsed time is outside the completed-response figures. The runs used a local query-embedding cache. Timing varies with API availability, and token totals exclude embeddings and judging.
 
 ## Decision
 
-I would use this assistant to find the right manual sections during a recovery rehearsal. Before acting on the answer, I would check that those sections cover the intended recovery scope and confirm the procedure in an isolated test restore. In this run, the assistant refused four answerable questions and gave an incomplete answer to a two-passage question. Those outcomes matter under time pressure. The answerable questions targeted 13 of the corpus’s 109 indexed sections, and agreement on citation support was 60%. I would want stronger evidence on a fresh set of recovery scenarios before relying on the assistant during a production incident.
+I would use the revised assistant to find manual sections during a recovery rehearsal. The complete first query retrieved both sections on all six two-passage questions, and the revised guard let correctly formatted evidence reach the user. For a production recovery decision, I would verify the cited instructions and rehearse the procedure in an isolated restore. The q23 error shows how a plausible statement about flush timing can be wrong even when the correct passage is on screen. Both changes ran together on questions already used to diagnose the baseline, and the same model generated and judged the answers. The 29/30 result measures the combined change on this set. Performance on fresh scenarios and the contribution of each change to correctness remain open.
 
 ## AI use
 

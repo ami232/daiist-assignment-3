@@ -1,0 +1,182 @@
+{
+  "q01": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer accurately addresses the multi-part question by explaining both cluster-wide physical point-in-time recovery and individual tenant-level logical backups, aligning directly with the reference and documentation."
+  },
+  "q02": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer accurately addresses the user's question, aligns completely with the reference, and is fully supported by the retrieved PostgreSQL documentation indicating that pg_dump takes a consistent backup without blocking read and write operations."
+  },
+  "q03": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer correctly identifies the directory format as the only output format supporting parallel dumps and mentions the worker parameter, perfectly matching the reference and supported by the retrieved passages."
+  },
+  "q04": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer correctly identifies that psql is the client used to read a plain SQL dump back into PostgreSQL, matching the reference and supported by the retrieved text."
+  },
+  "q05": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer provides an accurate and complete guide on how to reorder objects in a custom-format archive using pg_restore and a table of contents list, directly supported by the provided text chunks."
+  },
+  "q06": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer accurately lists database roles, tablespaces, and privilege grants for configuration parameters based on the reference and retrieved texts. It covers all material parts without error and is fully supported."
+  },
+  "q07": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer provides the correct option (--globals-only or -g) for dumping cluster-wide global objects using pg_dumpall, which directly answers the question and is fully supported by the retrieved text."
+  },
+  "q08": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer fully covers the requirements by stating that the roles must already exist in the destination database cluster prior to restoration, explaining why (to prevent failure in recreating ownership and permissions), and offering a practical solution (such as using pg_dumpall --globals-only)."
+  },
+  "q09": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer directly addresses the question, correctly stating that an ordinary file copy on a live data directory cannot be relied upon as a consistent backup because the server must be shut down and standard file tools do not take atomic snapshots. The answer is fully supported by the provided text."
+  },
+  "q10": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer correctly states that WAL cannot be replayed over a logical dump, explains why based on the provided text, and specifies that a physical base backup is required instead. All claims are fully supported by the retrieved context."
+  },
+  "q11": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer correctly and comprehensively states that pg_basebackup can be taken from a standby if properly configured, and that promotion during the backup causes a failure, fully aligning with the reference passages."
+  },
+  "q12": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer correctly states that an incremental base backup cannot be used directly to boot PostgreSQL and explains that pg_combinebackup must be used first, matching the reference and supported by the retrieved passages."
+  },
+  "q13": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer correctly states that backups should be ordered from oldest to newest, starting with the full backup and followed by the three incrementals chronologically, which matches both the reference and the retrieved documentation."
+  },
+  "q14": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer correctly states that the restore rehearsal should not be skipped, explaining that pg_verifybackup cannot perform every check that a running server does, which is fully supported by the reference text PG-94f95c911627cd."
+  },
+  "q15": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer correctly states that pg_verifybackup cannot be pointed directly at a tar-format backup, and that the backup must be in plain format or extracted first, which is fully supported by the retrieved text."
+  },
+  "q16": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer correctly states that pg_receivewal does not wait for segments to complete and streams WAL in real time as generated, which is fully supported by the retrieved context."
+  },
+  "q17": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer accurately explains that recent commits not yet replicated to the asynchronous standby can be lost upon failover, perfectly aligning with the reference and supported by the retrieved context."
+  },
+  "q18": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer accurately addresses the question, matches the reference, and is fully supported by the retrieved PostgreSQL documentation passages (PG-0a7fc574e7b526 and PG-6745d9fe7367f9)."
+  },
+  "q19": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer correctly addresses both parts of the question, stating that asynchronous commit does risk losing recent transactions after a crash, but does not risk database corruption, which is fully supported by the retrieved passages."
+  },
+  "q20": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer accurately identifies the directory format as the required option for parallel logical dumps and pg_dumpall --globals-only for cluster-wide roles, supported by the provided text."
+  },
+  "q21": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer accurately describes how to combine the incremental chain using pg_combinebackup from oldest to newest with the -o option, and correctly states that test restores should follow even if integrity verification passes because verification tools cannot execute every check performed by a running server."
+  },
+  "q22": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer accurately states that a single database logical dump (pg_dump) does not save shared roles and that logical dumps cannot serve as the base for WAL replay, matching the reference and supported by the cited passages."
+  },
+  "q23": {
+    "correct": false,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The reference states that pg_receivewal's normal flush occurs when a WAL file closes, but the answer incorrectly claims it normally forces data to be synchronized and flushed as it is received."
+  },
+  "q24": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The answer accurately states that promotion of the standby causes the backup job to fail, and that a tar backup must be extracted for pg_verifybackup to check it. Both points are correct and fully supported by the retrieved context."
+  },
+  "q25": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The question asks for company-specific policy details about the billing database which are not present in the provided PostgreSQL technical text, making it unanswerable, and the answer correctly identifies this limitation."
+  },
+  "q26": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The question is unanswerable based on the provided corpus, and the answer correctly identifies that the indexed documents do not establish an answer, which is an equivalent and acceptable refusal."
+  },
+  "q27": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The question is unanswerable based on the retrieved documents because the deployment's storage configuration is absent. The answer provided correctly identifies this limitation."
+  },
+  "q28": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The question is unanswerable because pricing and storage volume information are not provided in the text. The answer correctly identifies this and refuses to answer in accordance with the reference."
+  },
+  "q29": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The question is unanswerable because the provided documents do not contain staffing rosters or authorization policies. The model provided a correct refusal."
+  },
+  "q30": {
+    "correct": true,
+    "supported": true,
+    "ambiguous_question": false,
+    "reason": "The question is unanswerable based on the provided corpus because the corpus does not detail the internal format specification (such as the specific lines covered by the Manifest-Checksum field or its hash algorithm), which aligns with the reference stating it is unanswerable on the base corpus."
+  }
+}

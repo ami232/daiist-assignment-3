@@ -10,7 +10,7 @@ from pathlib import Path
 
 from langchain.agents import create_agent
 from langchain.agents.middleware import ModelCallLimitMiddleware, ModelRetryMiddleware
-from langchain_core.messages import AIMessage
+from langchain_core.messages import AIMessage, HumanMessage, ToolMessage
 from langchain_core.tools import StructuredTool
 from langchain_google_genai import ChatGoogleGenerativeAI
 from mcp import ClientSession, StdioServerParameters
@@ -21,7 +21,13 @@ from corpus_data import ROOT
 
 REFUSAL = "The indexed documents do not establish an answer."
 CHAT_MODEL = os.environ.get("PG_RAG_CHAT_MODEL", "gemini-3.5-flash-lite")
-ID_PATTERN = re.compile(r"\[(PG-[^\]\s]+)\]")
+BRACKETS = re.compile(r"\[([^\[\]]*)\]")
+
+
+def citation_ids(answer):
+    # Keep every comma-separated item, including malformed ones, for membership checks.
+    return {item.strip() for group in BRACKETS.findall(answer) if "PG-" in group
+            for item in group.split(",")}
 
 
 @asynccontextmanager
@@ -44,7 +50,7 @@ async def call_mcp(session, name, args):
 def guard_answer(answer, evidence):
     if answer.strip() == REFUSAL:
         return REFUSAL, None
-    cited = set(ID_PATTERN.findall(answer))
+    cited = citation_ids(answer)
     if not cited or not cited.issubset(evidence):
         return REFUSAL, "missing or unknown citation"
     return answer.strip(), None
@@ -86,11 +92,17 @@ async def answer_question(question, session, *, allow_approval=False):
                          middleware=[ModelCallLimitMiddleware(run_limit=5, exit_behavior="end"),
                                      ModelRetryMiddleware(max_retries=4, initial_delay=2, on_failure="error",
                                          retry_on=lambda err: any(x in str(err) for x in ("429", "502", "503", "504")))])
-    run = await agent.ainvoke({"messages": [("user", question)]})
+    first_passages = await search(question)
+    initial_call = {"name": "search", "args": {"query": question}, "id": "initial_search"}
+    run = await agent.ainvoke({"messages": [
+        HumanMessage(content=question),
+        AIMessage(content="", tool_calls=[initial_call]),
+        ToolMessage(content=first_passages, tool_call_id=initial_call["id"], name="search"),
+    ]})
     messages = [m for m in run["messages"] if isinstance(m, AIMessage)]
     raw = messages[-1].text.strip()
     additions = [event for event in trace if event["tool"] == "add_document"]
-    if additions and not passages:
+    if additions and sum(event["tool"] == "search" for event in trace) == 1:
         answer, guard = json.dumps(additions[-1]["result"], ensure_ascii=False), None
     else:
         answer, guard = guard_answer(raw, passages)
@@ -106,7 +118,7 @@ async def main(question):
     async with server_session() as session:
         result = await answer_question(question, session, allow_approval=True)
     print(result["answer"])
-    cited = set(ID_PATTERN.findall(result["answer"]))
+    cited = citation_ids(result["answer"])
     for r in result["passages"]:
         if r["id"] in cited:
             print(f'[{r["id"]}] {r["source"]} · {r["location"]} · {r["url"]}')

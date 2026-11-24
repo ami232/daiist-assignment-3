@@ -34,7 +34,9 @@ The final set in `questions.csv` has 30 entries. The [report](../REPORT.md#ai-us
 
 For a starting point, compare s03 (parallel dump format), s21 (combining and verifying an incremental backup), and s26 (a company's measured restore time). They illustrate a direct lookup, a two-passage decision and an installation-specific question.
 
-For this run, [human_labels.csv](human_labels.csv) contains the 20 final score pairs and reasons Javier approved from the [grading worksheet scores](accepted_review.csv). Codex drafted these grades after the automated verdicts were available. Running `uv run python main.py evaluate` with the same inputs compares these labels with the saved verdicts and writes the result to the `human_agreement` field in [summary.json](summary.json). The [report](../REPORT.md#agreement-on-the-20-graded-answers) explains how to interpret that figure.
+For the original run, [human_labels.csv](human_labels.csv) contains the 20 final score pairs and reasons Javier approved from the [grading worksheet scores](accepted_review.csv). Codex drafted these grades after the automated verdicts were available. The original [summary](summary.json) records agreement with that run's judge. The [report](../REPORT.md#agreement-on-the-20-graded-answers) explains how to interpret it. The baseline code and results are preserved at commit `fd3b870`.
+
+The current `uv run python main.py evaluate` runs or resumes the separate [original-question-first experiment](experiments/original-first/). It reads the same questions and saves new answers, search traces, judge verdicts and summary there. The accepted grades stay attached to the original answers. To generate a fresh run with the current harness, choose an unused directory with `uv run python evaluate.py --output eval/experiments/repeat`. Rebuild the paired results for the reported experiment with `uv run python compare_runs.py`.
 
 ### Graded sample
 
