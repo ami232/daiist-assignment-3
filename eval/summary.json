@@ -40,78 +40,47 @@
   },
   "answered": 41,
   "code_checks": {
-    "refusal_ok": 26,
+    "refusal_ok": 41,
     "citations_ok": 41,
-    "source_ok": 38,
-    "pass": 26
+    "source_ok": 39,
+    "pass": 39
   },
-  "guardrail_fired": [
-    "q02",
-    "q06",
-    "q11",
-    "q12",
-    "q16",
-    "q19",
-    "q20",
-    "q24",
-    "q25",
-    "q27",
-    "q29",
-    "q30",
-    "q31",
-    "q32",
-    "q33"
-  ],
+  "guardrail_fired": [],
   "code_failures": [
-    "q02",
-    "q06",
-    "q11",
-    "q12",
-    "q16",
-    "q19",
-    "q20",
-    "q24",
-    "q25",
-    "q27",
     "q29",
-    "q30",
-    "q31",
-    "q32",
     "q33"
   ],
   "judge": {
     "n": 41,
-    "correct": 26,
+    "correct": 41,
     "supported": 41,
-    "wrong_ids": [
-      "q02",
-      "q06",
-      "q11",
-      "q12",
-      "q16",
-      "q19",
-      "q20",
-      "q24",
-      "q25",
-      "q27",
-      "q29",
-      "q30",
-      "q31",
-      "q32",
-      "q33"
-    ],
+    "wrong_ids": [],
     "unsupported_ids": [],
-    "correct_single": "17/27",
-    "correct_multi": "2/7",
+    "correct_single": "27/27",
+    "correct_multi": "7/7",
     "correct_unanswerable": "7/7"
   },
   "agreement": {
     "n": 31,
     "correct": {
       "n": 31,
-      "agree": 31,
-      "rate": 1.0,
-      "disagree_ids": []
+      "agree": 18,
+      "rate": 0.581,
+      "disagree_ids": [
+        "q02",
+        "q06",
+        "q11",
+        "q12",
+        "q16",
+        "q19",
+        "q20",
+        "q24",
+        "q25",
+        "q27",
+        "q30",
+        "q31",
+        "q32"
+      ]
     },
     "supported": {
       "n": 31,
@@ -123,11 +92,11 @@
     }
   },
   "latency_seconds": {
-    "mean": 35.7,
-    "p95": 123.5
+    "mean": 33.2,
+    "p95": 142.3
   },
   "tokens_per_question": {
-    "input": 3928,
-    "output": 311
+    "input": 4003,
+    "output": 319
   }
 }

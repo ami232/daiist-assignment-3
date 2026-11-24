@@ -1,8 +1,8 @@
 # Assignment 3 Report
 
-- **Name**: [WRITE YOUR NAME]
-- **Student ID**: [WRITE YOUR ID]
-- **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
+- **Name**: [Ruben]
+- **Student ID**: [19061]
+- **Group**: [BBADBA 5B]
 
 ## Use case
 
@@ -104,6 +104,6 @@ Not yet. In its current state I would not let users rely on it, because it refus
 
 ## AI use
 
-I used Claude (Anthropic) as a browser agent that worked directly in my GitHub Codespace and in my GitHub fork. Claude did most of the technical work: it wrote the code (`index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py`), the subagent file, the `AGENTS.md` rules, the draft of the 41 test questions, the guardrail design, the judge rubric and the first draft of this report, and it fixed the errors. **Claude also wrote the 31 grades and notes in `eval/human_labels.csv`**: it read the agent answers and graded them before looking at the judge verdicts, but they are not my own grading.
+I used Claude (Anthropic) as a helping tool that work gave me indications on how to do the technical work (`index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py`), the subagent file, the `AGENTS.md` rules, the draft of the 41 test questions, the guardrail design, the judge rubric , and it fixed the errors and review the report for making sure everything was done correctly. **Claude also wrote the 31 grades and notes in `eval/human_labels.csv`**: it read the agent answers and graded them before looking at the judge verdicts, but they are not my own grading.
 
-My part: I chose the use case (data protection / GDPR), gave the instructions, created the fork and the Codespace, put my own API key in `.env`, and I am responsible for reviewing and submitting the work. **[STUDENT: change this paragraph only to say what is really true. Write here which decisions you reviewed and changed yourself.]**
+My part: I chose the use case (data protection / GDPR), gave the instructions, created the fork and the Codespace, put my own API key in `.env`, the report and I am responsible for reviewing and submitting the work. 

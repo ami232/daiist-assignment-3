@@ -53,20 +53,61 @@ def retrieved_citations(calls: list[dict]) -> list[tuple[str, str]]:
     return found
 
 
-def check_citations(answer: str, calls: list[dict]) -> tuple[list[str], list[str]]:
-    """(cited, invalid): the citations found in the answer and those no search result supports."""
-    allowed = set()
-    for source, location in retrieved_citations(calls):
-        for part in location.split(" to "):
-            allowed.add((source, base_location(part)))
-    cited, invalid = [], []
-    for source, location in CITATION.findall(answer):
-        label = f"[{source.strip()}, {location.strip()}]"
-        cited.append(label)
-        if (source.strip().lower(), base_location(location)) not in allowed:
-            invalid.append(label)
-    return cited, invalid
+def _numbers(text: str) -> list[int]:
+    return [int(n) for n in re.findall(r"\d+", text)]
 
+def _ranges(location: str, word: str) -> list[tuple[int, int]]:
+    """'Recitals 85-86' -> [(85, 86)]; 'Section 2 (p. 11-13)' with word 'p' -> [(11, 13)]."""
+    found = []
+    for first, last in re.findall(word + r"s?\.?\s*(\d+)(?:\s*(?:-|to)\s*(\d+))?", location):
+        found.append((int(first), int(last or first)))
+    return found
+
+def _valid(source: str, location: str, bases: set, pages: dict, recitals: dict) -> bool:
+    """A citation is valid if it names a retrieved location, or a page or recital inside a retrieved one."""
+    if (source, base_location(location)) in bases:
+        return True
+    numbers = _numbers(location)
+    if re.match(r"\s*p\.", location):
+        return bool(numbers) and all(any(a <= n <= b for a, b in pages.get(source, [])) for n in numbers)
+    if re.match(r"\s*recital", location, re.I):
+        return bool(numbers) and all(any(a <= n <= b for a, b in recitals.get(source, [])) for n in numbers)
+    return False
+
+def check_citations(answer: str, calls: list[dict]) -> tuple[list[str], list[str]]:
+    """(cited, invalid): the citations found in the answer and those no search result supports.
+
+    Version 2: a bracket may hold two citations; page and recital citations are accepted when
+    they fall inside a retrieved chunk (version 1 compared the label literally and withdrew
+    15 correct answers).
+    """
+    bases, pages, recitals, names = set(), {}, {}, set()
+    for source, location in retrieved_citations(calls):
+        names.add(re.escape(source))
+        for part in location.split(" to "):
+            bases.add((source, base_location(part)))
+        pages.setdefault(source, []).extend(_ranges(location, r"p"))
+        recitals.setdefault(source, []).extend(_ranges(location, r"Recital"))
+    start = re.compile("(" + "|".join(sorted(names, key=len, reverse=True) + ["GDPR", r"EDPB-[0-9A-Za-z-]+"]) + r")\s*,\s*", re.I)
+    cited, invalid = [], []
+    for inner in re.findall(r"\[([^\[\]\n]+?)\]", answer):
+        marks = list(start.finditer(inner))
+        if not marks and "," in inner:
+            first, rest = inner.split(",", 1)
+            pieces = [(first.strip(), rest.strip(" ,;"))]
+        else:
+            pieces = []
+            for i, mark in enumerate(marks):
+                end = marks[i + 1].start() if i + 1 < len(marks) else len(inner)
+                pieces.append((mark.group(1).strip(), inner[mark.end():end].strip(" ,;")))
+        splitter = r"\s*[,;]\s*(?=(?:Article|Recitals?|Section)\b)"
+        pieces = [(src, part) for src, loc in pieces for part in re.split(splitter, loc, flags=re.I)]
+        for source, location in pieces:
+            label = f"[{source}, {location}]"
+            cited.append(label)
+            if not _valid(source.lower(), location, bases, pages, recitals):
+                invalid.append(label)
+    return cited, invalid
 
 def is_refusal(answer: str) -> bool:
     text = answer.lower()
