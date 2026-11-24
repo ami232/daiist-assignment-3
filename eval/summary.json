@@ -1,0 +1,22 @@
+{
+ "answered": 36,
+ "outcomes": {
+  "correct": 27,
+  "incorrect": 1,
+  "unsupported": 2,
+  "correct refusal": 6,
+  "wrong refusal": 0
+ },
+ "failure_causes": {
+  "retrieval miss": 1,
+  "unsupported claim": 1,
+  "wrong answer from right passage": 1
+ },
+ "avg_tokens": 4807,
+ "avg_seconds": 12.7,
+ "agreement": {
+  "n": 23,
+  "correct": 0.87,
+  "supported": 0.91
+ }
+}

@@ -2,18 +2,24 @@
 
 ## questions.csv
 
-30+ questions written by you from the documents, before tuning anything.
+36 questions written from the documents, before tuning anything. Questions and answers are in Spanish, like the corpus.
+
+| Kind | Count |
+|---|---|
+| `single` | 24 |
+| `multi` | 6 |
+| `unanswerable` | 6 |
 
 | Column | Content |
 |---|---|
-| `id` | `q01`, `q02`… |
+| `id` | `q01` … `q36` |
 | `question` | As a user would ask it. |
-| `kind` | `single`, `multi` (two passages) or `unanswerable` (5+ of each of the last two). |
-| `expected_source` | Document that answers it, as in your chunk metadata; `;` between several. Empty if unanswerable. |
-| `expected_location` | Page, section or article, as in your metadata. Empty if unanswerable. |
+| `kind` | `single`, `multi` (two passages) or `unanswerable`. |
+| `expected_source` | File name of the document that answers it, as in the chunk metadata; `;` between several. Empty if unanswerable. |
+| `expected_location` | Article or provision (e.g. `art. 10.3`, `disposición transitoria segunda.2`); one per passage, `;` between several. Empty if unanswerable. |
 | `reference_answer` | Short correct answer; for unanswerable, what the assistant should say. |
 
-Make unanswerable questions close to the corpus's topic, not obviously off-topic.
+Unanswerable questions stay on the corpus's topic: the current IRAV value, the penalty for usurpación, cutting off utilities to occupants, Barcelona's licence decision for 2028, reference-index prices, and the tourist tax. The correct behaviour is to say the documents don't contain the answer, not to guess.
 
 ## human_labels.csv
 
