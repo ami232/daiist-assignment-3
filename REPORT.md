@@ -44,7 +44,17 @@ Question q21 requires the backup-combination instructions and the verification g
 
 The first design ranks passages by cosine similarity between normalized Gemini embeddings. The second combines this ranking with BM25 using reciprocal rank fusion. Exact tokens such as pg_verifybackup or a configuration parameter can complement a semantic match. Both designs use the same stored vectors.
 
-The evaluator measures the proportion of answerable questions retrieving any required section and all required sections among the first one, three and five results. All required sections matter for a question combining two facts. Section-level matches can overstate useful evidence for a long section such as Options. The evaluator also records the actual number of passage words sent at five results. It selects by all-sections hit rate at five, then at three, then the simpler dense design. Scores and final selection await the student-authored set. The initial assistant uses dense retrieval.
+The evaluator measures the proportion of answerable questions retrieving any required section and all required sections among the first one, three and five results. All required sections matter for a question combining two facts. Section-level matches can overstate useful evidence for a long section such as Options. The evaluator also records the actual number of passage words sent at five results. It selects by all-sections hit rate at five, then at three, then the simpler dense design. The comparison used the frozen question set in local commit `4c69bac`. The predeclared rule selected hybrid retrieval.
+
+
+| Retrieval design | All sections at 1 | All at 3 | All at 5 | Any at 1 | Any at 3 | Any at 5 | Mean passage words at 5 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| Dense | 9/24 | 14/24 | 18/24 | 11/24 | 20/24 | 21/24 | 1,004 |
+| Dense + BM25 | 8/24 | 14/24 | 23/24 | 12/24 | 20/24 | 23/24 | 1,075 |
+
+At five passages, hybrid retrieval found both designated sections for all six two-passage questions. Dense retrieval did so for three. Hybrid also found the designated section for 17 of 18 single-passage questions, compared with 15 for dense retrieval. This improvement used about 72 additional passage words per search. Both methods missed at least one required section on every two-passage question at three results. The search depth matters for this use case. [Per-question retrieval results](eval/retrieval.json)
+
+These 24 answerable questions target 13 of the corpus's 109 sections. The same questions selected the retrieval design, so these figures describe performance on the development set. An agent can reformulate a question or search more than once during answer generation.
 
 ## Tools and subagent
 
@@ -64,17 +74,41 @@ The [corpus-researcher profile](.claude/agents/corpus-researcher.md) grants sear
 
 The MCP add_document tool imports the same chunking, embedding and storage pipeline. An unchanged document is skipped. A changed additional document with the same source name atomically replaces its old passages. Names belonging to the pinned corpus are protected.
 
-Question q30 asked which lines the Manifest-Checksum covers and which algorithm it uses. On a copy of the base index the agent refused. After adding a held-out excerpt from PostgreSQL's backup manifest specification, it identified all preceding lines and SHA256 and cited the new passage PG-02f23d6d53ab0b. The initial addition created one vector. The repeated addition created zero. The production index still contains only the original documents. This demonstration used an AI-suggested question. [Recorded answers and traces](eval/addition_demo.json)
+Question q30 asked which lines the Manifest-Checksum covers and which algorithm it uses. Using the selected hybrid retrieval design on a copy of the base index, the agent refused. After adding a held-out excerpt from PostgreSQL's backup manifest specification, it identified all preceding lines and SHA256 and cited the new passage PG-02f23d6d53ab0b. The initial addition created one vector. The repeated addition created zero. The production index still contains only the original documents. This question and held-out excerpt had already been used in a setup check, so the demonstration illustrates ingestion rather than independent generalization. [Recorded answers and traces](eval/addition_demo.json)
 
 ## Harness and guardrails
 
-LangChain runs Gemini with [AGENTS.md](AGENTS.md) as its system prompt and connects to server.py over stdio. The harness requires a terminal confirmation showing the resolved path before an addition, bounds each run to five model calls and records the evidence supplied by search. Its citation guard converts an answer containing an unknown passage ID into the standard refusal. A controlled check using a fabricated identifier triggered that guard. Checking that a passage supports a particular claim still requires a reader or judge.
+LangChain runs Gemini with [AGENTS.md](AGENTS.md) as its system prompt and connects to server.py over stdio. The harness requires a terminal confirmation showing the resolved path before an addition, bounds each run to five model calls and records the evidence supplied by search. Its citation guard converts an answer containing an unknown passage ID into the standard refusal. A controlled check using a fabricated identifier triggered that guard. The live evaluation also revealed a formatting defect. On four answerable questions the model placed several valid IDs inside one pair of brackets, and the guard replaced the answer with a refusal. Every ID in those groups occurred in the corresponding search trace. Checking whether each cited passage supports the attached claim still requires a reader or judge.
 
-## Evaluation and decision
+## End-to-end evaluation
 
 The evaluator checks refusals and citation membership in code. The Gemini judge uses the reference to assess correctness and the cited evidence to assess support. The blind packet presents answers, reference answers and passages for personal grading. The evaluator reuses the saved answers when calculating human agreement, so the human and the judge assess the same responses.
 
-The full evaluation, failure counts, mean token usage and latency, and agreement with at least 20 personal grades are pending. The live verification question and document-addition experiment establish that these paths run. They provide too little evidence to recommend operational reliance on this assistant.
+The Gemini judge rated 25 of 30 answers correct (83.3%). The agent answered 20 questions substantively and refused 10. Of the refusals, six were appropriate and four were on answerable questions. Checking every passage ID in the 20 substantive answers, including IDs appearing in groups, found that all occurred in the respective search traces. [Saved answers](eval/answers.json) · [Evaluation summary](eval/summary.json)
+
+| Question type | Questions | Judge rated correct | Agent refused |
+| --- | ---: | ---: | ---: |
+| Single passage | 18 | 15 | 3 |
+| Two passages | 6 | 4 | 1 |
+| Unanswerable | 6 | 6 | 6 |
+| **Total** | **30** | **25** | **10** |
+
+The judge rated 27 of 30 answers supported. All three support failures were bare refusals. The rubric gives a bare refusal support credit because it makes no factual claim. The judge applied that rule inconsistently. On q21 it marked the answer supported while its explanation pointed to missing evidence for the rehearsal recommendation. The agent and judge also used the same model, Gemini 3.5 Flash-Lite. Human agreement remains pending until Javier independently grades at least 20 saved answers. The [blind packet](eval/blind_review.md) excludes judge verdicts. The suggested sample in [the evaluation instructions](eval/README.md) covers all three question types.
+
+Mean agent usage was 3,801 input tokens and 145 output tokens per question. Mean latency was 8.90 seconds and median latency was 5.26 seconds. Timing covers answer generation and tool calls after opening the shared MCP session. The token counts exclude embeddings and separate judge calls. These measurements describe one run on this question set.
+
+
+## Failure analysis
+
+The automated classification counted two retrieval misses (q01 and q21) and three unsupported claims (q03, q05 and q07). It assigned zero cases to wrong refusal, wrong answer from the right passage, or bad test question. The classification checks support and retrieval coverage before checking for a wrong refusal. A trace review explains why four refusals on answerable questions produced those counts.
+
+Four of the 24 answerable questions received the standard refusal. The traces show grouped citations triggered the guard on each one (q01, q03, q05 and q07). In q03 the agent had found the correct dump format and cited two retrieved IDs together. The engineer saw only a refusal. The first change to test is parsing each identifier inside a group and verifying it individually, including groups alongside single citations. A fresh question set would be needed to measure the change independently.
+
+On q21 the agent explained how to combine incrementals. Its live searches missed the verification manual that calls for a test restore and checking the recovered data. The answer added recovery steps and omitted the data check in the reference. The original question had retrieved both expected sections in the fixed-query benchmark. Reformulated searches during the live run changed the evidence available to the agent. A useful next test is whether searching each part of the question separately recovers both sections.
+
+## Decision
+
+Use this assistant to locate documentation during a recovery rehearsal. Before acting on a proposed restore, an engineer should read the source sections, confirm that the backup covers the intended recovery scope, and verify the result in an isolated test restore. Four unnecessary refusals and one incomplete two-passage answer matter when an engineer is working under time pressure. The small, concentrated evaluation and outstanding human grading limit what these scores establish about production use.
 
 ## AI use
 

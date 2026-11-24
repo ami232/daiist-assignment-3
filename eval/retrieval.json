@@ -1,0 +1,889 @@
+{
+  "per_question": [
+    {
+      "id": "q01",
+      "design": "dense",
+      "ids": [
+        "PG-4960cb26ff77d8",
+        "PG-2de91bde80ef92",
+        "PG-e47e08cdaceaf9",
+        "PG-c86542e26f3521",
+        "PG-72168fecc3f155"
+      ],
+      "prompt_words": 1172,
+      "all@1": false,
+      "any@1": false,
+      "all@3": false,
+      "any@3": true,
+      "all@5": false,
+      "any@5": true
+    },
+    {
+      "id": "q01",
+      "design": "hybrid",
+      "ids": [
+        "PG-e47e08cdaceaf9",
+        "PG-4960cb26ff77d8",
+        "PG-2de91bde80ef92",
+        "PG-4233e2eff51610",
+        "PG-fc3ca94cf82b3d"
+      ],
+      "prompt_words": 1200,
+      "all@1": false,
+      "any@1": true,
+      "all@3": false,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q02",
+      "design": "dense",
+      "ids": [
+        "PG-0741a5c645eb11",
+        "PG-4233e2eff51610",
+        "PG-7a8970ada00158",
+        "PG-f58df20eb50b00",
+        "PG-a41f69f474bfbf"
+      ],
+      "prompt_words": 846,
+      "all@1": false,
+      "any@1": false,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q02",
+      "design": "hybrid",
+      "ids": [
+        "PG-7a8970ada00158",
+        "PG-8f7477fa54204f",
+        "PG-8e6780d8d440f0",
+        "PG-4585435581ab42",
+        "PG-b63f2ed237fa4f"
+      ],
+      "prompt_words": 1060,
+      "all@1": false,
+      "any@1": false,
+      "all@3": false,
+      "any@3": false,
+      "all@5": false,
+      "any@5": false
+    },
+    {
+      "id": "q03",
+      "design": "dense",
+      "ids": [
+        "PG-a41f69f474bfbf",
+        "PG-8f7477fa54204f",
+        "PG-f58df20eb50b00",
+        "PG-e4fba7530f0957",
+        "PG-e4e7a711e76d9e"
+      ],
+      "prompt_words": 1044,
+      "all@1": false,
+      "any@1": false,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q03",
+      "design": "hybrid",
+      "ids": [
+        "PG-a41f69f474bfbf",
+        "PG-dd0eea7ac9281d",
+        "PG-8f7477fa54204f",
+        "PG-f58df20eb50b00",
+        "PG-0d7b9ae6b8996c"
+      ],
+      "prompt_words": 1044,
+      "all@1": false,
+      "any@1": false,
+      "all@3": false,
+      "any@3": false,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q04",
+      "design": "dense",
+      "ids": [
+        "PG-39a24d13669b4f",
+        "PG-7a8970ada00158",
+        "PG-f58df20eb50b00",
+        "PG-7ecc3f1cd46d09",
+        "PG-4233e2eff51610"
+      ],
+      "prompt_words": 1124,
+      "all@1": false,
+      "any@1": false,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q04",
+      "design": "hybrid",
+      "ids": [
+        "PG-7a8970ada00158",
+        "PG-f58df20eb50b00",
+        "PG-4233e2eff51610",
+        "PG-7ecc3f1cd46d09",
+        "PG-7bb6c09a254b5c"
+      ],
+      "prompt_words": 1124,
+      "all@1": false,
+      "any@1": false,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q05",
+      "design": "dense",
+      "ids": [
+        "PG-e4e7a711e76d9e",
+        "PG-34c331a83e5de5",
+        "PG-156a768f70a65a",
+        "PG-9517e931655bda",
+        "PG-83a92f73765d03"
+      ],
+      "prompt_words": 1100,
+      "all@1": false,
+      "any@1": false,
+      "all@3": false,
+      "any@3": false,
+      "all@5": false,
+      "any@5": false
+    },
+    {
+      "id": "q05",
+      "design": "hybrid",
+      "ids": [
+        "PG-156a768f70a65a",
+        "PG-e4e7a711e76d9e",
+        "PG-9517e931655bda",
+        "PG-f58df20eb50b00",
+        "PG-7ecc3f1cd46d09"
+      ],
+      "prompt_words": 1124,
+      "all@1": false,
+      "any@1": false,
+      "all@3": false,
+      "any@3": false,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q06",
+      "design": "dense",
+      "ids": [
+        "PG-4233e2eff51610",
+        "PG-f58df20eb50b00",
+        "PG-72168fecc3f155",
+        "PG-d64e9940add54a",
+        "PG-4585435581ab42"
+      ],
+      "prompt_words": 1103,
+      "all@1": false,
+      "any@1": false,
+      "all@3": false,
+      "any@3": false,
+      "all@5": false,
+      "any@5": false
+    },
+    {
+      "id": "q06",
+      "design": "hybrid",
+      "ids": [
+        "PG-4233e2eff51610",
+        "PG-e4fba7530f0957",
+        "PG-7bb6c09a254b5c",
+        "PG-d64e9940add54a",
+        "PG-72168fecc3f155"
+      ],
+      "prompt_words": 1179,
+      "all@1": false,
+      "any@1": false,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q07",
+      "design": "dense",
+      "ids": [
+        "PG-fca378cc1f61c5",
+        "PG-d6e16e82b8a414",
+        "PG-7bb6c09a254b5c",
+        "PG-72168fecc3f155",
+        "PG-bf5730532ac3dc"
+      ],
+      "prompt_words": 1179,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q07",
+      "design": "hybrid",
+      "ids": [
+        "PG-72168fecc3f155",
+        "PG-fca378cc1f61c5",
+        "PG-7bb6c09a254b5c",
+        "PG-93b7d06439815f",
+        "PG-946a0d8cf66130"
+      ],
+      "prompt_words": 1179,
+      "all@1": false,
+      "any@1": false,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q08",
+      "design": "dense",
+      "ids": [
+        "PG-93b7d06439815f",
+        "PG-156a768f70a65a",
+        "PG-c47acd8d9449eb",
+        "PG-39a24d13669b4f",
+        "PG-e5c2c166b9a632"
+      ],
+      "prompt_words": 972,
+      "all@1": false,
+      "any@1": false,
+      "all@3": false,
+      "any@3": false,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q08",
+      "design": "hybrid",
+      "ids": [
+        "PG-39a24d13669b4f",
+        "PG-93b7d06439815f",
+        "PG-7eec0ca07a4045",
+        "PG-72168fecc3f155",
+        "PG-4e4b1a8a312230"
+      ],
+      "prompt_words": 1179,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q09",
+      "design": "dense",
+      "ids": [
+        "PG-72047d6515166e",
+        "PG-cd4db4db02e179",
+        "PG-d11fa7b6d9d190",
+        "PG-bd26706c6d781e",
+        "PG-d12ef6a4030dc2"
+      ],
+      "prompt_words": 1042,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q09",
+      "design": "hybrid",
+      "ids": [
+        "PG-72047d6515166e",
+        "PG-bd26706c6d781e",
+        "PG-d11fa7b6d9d190",
+        "PG-bfe0cac12833e2",
+        "PG-d12ef6a4030dc2"
+      ],
+      "prompt_words": 1042,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q10",
+      "design": "dense",
+      "ids": [
+        "PG-e47e08cdaceaf9",
+        "PG-bfe0cac12833e2",
+        "PG-1fc6fc9e0f9e5b",
+        "PG-2de91bde80ef92",
+        "PG-9970d1656093ab"
+      ],
+      "prompt_words": 1027,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q10",
+      "design": "hybrid",
+      "ids": [
+        "PG-e47e08cdaceaf9",
+        "PG-bfe0cac12833e2",
+        "PG-07520b8ab7b6fa",
+        "PG-c3b9d0cf8d16ce",
+        "PG-8538bb7539869d"
+      ],
+      "prompt_words": 1120,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q11",
+      "design": "dense",
+      "ids": [
+        "PG-e332d9c01d68e6",
+        "PG-1a95feea8cd2e2",
+        "PG-7293b6127cb673",
+        "PG-b8678948aa822a",
+        "PG-8e6780d8d440f0"
+      ],
+      "prompt_words": 794,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q11",
+      "design": "hybrid",
+      "ids": [
+        "PG-e332d9c01d68e6",
+        "PG-7293b6127cb673",
+        "PG-1a95feea8cd2e2",
+        "PG-7414d937d83235",
+        "PG-8e6780d8d440f0"
+      ],
+      "prompt_words": 927,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q12",
+      "design": "dense",
+      "ids": [
+        "PG-0f26775c066594",
+        "PG-2692b6cd7cb34f",
+        "PG-4960cb26ff77d8",
+        "PG-b28251b4171a07",
+        "PG-1f8d52953362fa"
+      ],
+      "prompt_words": 1171,
+      "all@1": false,
+      "any@1": false,
+      "all@3": false,
+      "any@3": false,
+      "all@5": false,
+      "any@5": false
+    },
+    {
+      "id": "q12",
+      "design": "hybrid",
+      "ids": [
+        "PG-2692b6cd7cb34f",
+        "PG-4960cb26ff77d8",
+        "PG-0f26775c066594",
+        "PG-7293b6127cb673",
+        "PG-b28251b4171a07"
+      ],
+      "prompt_words": 1171,
+      "all@1": false,
+      "any@1": false,
+      "all@3": false,
+      "any@3": false,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q13",
+      "design": "dense",
+      "ids": [
+        "PG-2c2c9457438140",
+        "PG-1f8d52953362fa",
+        "PG-b28251b4171a07",
+        "PG-0f26775c066594",
+        "PG-b40ad58852e449"
+      ],
+      "prompt_words": 941,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q13",
+      "design": "hybrid",
+      "ids": [
+        "PG-2c2c9457438140",
+        "PG-81084821e95bab",
+        "PG-b28251b4171a07",
+        "PG-f2282e02529ec0",
+        "PG-1f8d52953362fa"
+      ],
+      "prompt_words": 1025,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q14",
+      "design": "dense",
+      "ids": [
+        "PG-0a0cf701b67df1",
+        "PG-94f95c911627cd",
+        "PG-4960cb26ff77d8",
+        "PG-83c1dddaaa5ff4",
+        "PG-05a4c580453a23"
+      ],
+      "prompt_words": 886,
+      "all@1": false,
+      "any@1": false,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q14",
+      "design": "hybrid",
+      "ids": [
+        "PG-0a0cf701b67df1",
+        "PG-83c1dddaaa5ff4",
+        "PG-94f95c911627cd",
+        "PG-e47e08cdaceaf9",
+        "PG-05a4c580453a23"
+      ],
+      "prompt_words": 886,
+      "all@1": false,
+      "any@1": false,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q15",
+      "design": "dense",
+      "ids": [
+        "PG-94f95c911627cd",
+        "PG-0a0cf701b67df1",
+        "PG-f6cce6cc57e9ee",
+        "PG-9d5e02c747a65a",
+        "PG-e31b9416655c64"
+      ],
+      "prompt_words": 819,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q15",
+      "design": "hybrid",
+      "ids": [
+        "PG-94f95c911627cd",
+        "PG-0a0cf701b67df1",
+        "PG-e31b9416655c64",
+        "PG-9d5e02c747a65a",
+        "PG-28bb319cf6a2f8"
+      ],
+      "prompt_words": 1058,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q16",
+      "design": "dense",
+      "ids": [
+        "PG-27180514dfc86d",
+        "PG-2253b0978dec91",
+        "PG-0a7fc574e7b526",
+        "PG-54e56b22d2f92e",
+        "PG-fe6d38eefe0d32"
+      ],
+      "prompt_words": 1057,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q16",
+      "design": "hybrid",
+      "ids": [
+        "PG-2253b0978dec91",
+        "PG-27180514dfc86d",
+        "PG-fe6d38eefe0d32",
+        "PG-0a7fc574e7b526",
+        "PG-54e56b22d2f92e"
+      ],
+      "prompt_words": 1057,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q17",
+      "design": "dense",
+      "ids": [
+        "PG-c5318e70df3683",
+        "PG-9970d1656093ab",
+        "PG-16b2b798767500",
+        "PG-8538bb7539869d",
+        "PG-be6f3fd7fc0f3c"
+      ],
+      "prompt_words": 1161,
+      "all@1": false,
+      "any@1": false,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q17",
+      "design": "hybrid",
+      "ids": [
+        "PG-c3b9d0cf8d16ce",
+        "PG-7bb3b7beac2c8e",
+        "PG-9970d1656093ab",
+        "PG-16b2b798767500",
+        "PG-c86542e26f3521"
+      ],
+      "prompt_words": 1193,
+      "all@1": false,
+      "any@1": false,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q18",
+      "design": "dense",
+      "ids": [
+        "PG-6745d9fe7367f9",
+        "PG-0a7fc574e7b526",
+        "PG-9970d1656093ab",
+        "PG-70e9b819626bec",
+        "PG-ad84ca2383a5db"
+      ],
+      "prompt_words": 723,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q18",
+      "design": "hybrid",
+      "ids": [
+        "PG-0a7fc574e7b526",
+        "PG-6745d9fe7367f9",
+        "PG-64e35e673fc4cb",
+        "PG-9970d1656093ab",
+        "PG-f7a1019777db10"
+      ],
+      "prompt_words": 824,
+      "all@1": false,
+      "any@1": false,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q19",
+      "design": "dense",
+      "ids": [
+        "PG-16b2b798767500",
+        "PG-be6f3fd7fc0f3c",
+        "PG-e5433e2e7cf2f2",
+        "PG-376210f065b58d",
+        "PG-b43f7928c568fa"
+      ],
+      "prompt_words": 1143,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q19",
+      "design": "hybrid",
+      "ids": [
+        "PG-16b2b798767500",
+        "PG-e5433e2e7cf2f2",
+        "PG-be6f3fd7fc0f3c",
+        "PG-b43f7928c568fa",
+        "PG-376210f065b58d"
+      ],
+      "prompt_words": 1143,
+      "all@1": true,
+      "any@1": true,
+      "all@3": true,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q20",
+      "design": "dense",
+      "ids": [
+        "PG-8f7477fa54204f",
+        "PG-fca378cc1f61c5",
+        "PG-a41f69f474bfbf",
+        "PG-72168fecc3f155",
+        "PG-f58df20eb50b00"
+      ],
+      "prompt_words": 1023,
+      "all@1": false,
+      "any@1": false,
+      "all@3": false,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q20",
+      "design": "hybrid",
+      "ids": [
+        "PG-fca378cc1f61c5",
+        "PG-72168fecc3f155",
+        "PG-8f7477fa54204f",
+        "PG-a41f69f474bfbf",
+        "PG-f58df20eb50b00"
+      ],
+      "prompt_words": 1023,
+      "all@1": false,
+      "any@1": true,
+      "all@3": false,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q21",
+      "design": "dense",
+      "ids": [
+        "PG-2c2c9457438140",
+        "PG-1f8d52953362fa",
+        "PG-b28251b4171a07",
+        "PG-81084821e95bab",
+        "PG-2692b6cd7cb34f"
+      ],
+      "prompt_words": 996,
+      "all@1": false,
+      "any@1": true,
+      "all@3": false,
+      "any@3": true,
+      "all@5": false,
+      "any@5": true
+    },
+    {
+      "id": "q21",
+      "design": "hybrid",
+      "ids": [
+        "PG-2c2c9457438140",
+        "PG-2692b6cd7cb34f",
+        "PG-b28251b4171a07",
+        "PG-bfe0cac12833e2",
+        "PG-94f95c911627cd"
+      ],
+      "prompt_words": 1151,
+      "all@1": false,
+      "any@1": true,
+      "all@3": false,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q22",
+      "design": "dense",
+      "ids": [
+        "PG-e47e08cdaceaf9",
+        "PG-72168fecc3f155",
+        "PG-bfe0cac12833e2",
+        "PG-4233e2eff51610",
+        "PG-b63f2ed237fa4f"
+      ],
+      "prompt_words": 1179,
+      "all@1": false,
+      "any@1": true,
+      "all@3": false,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q22",
+      "design": "hybrid",
+      "ids": [
+        "PG-e47e08cdaceaf9",
+        "PG-72168fecc3f155",
+        "PG-7bb6c09a254b5c",
+        "PG-4233e2eff51610",
+        "PG-c63bf3bcfe9184"
+      ],
+      "prompt_words": 1179,
+      "all@1": false,
+      "any@1": true,
+      "all@3": false,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q23",
+      "design": "dense",
+      "ids": [
+        "PG-0a7fc574e7b526",
+        "PG-6745d9fe7367f9",
+        "PG-54e56b22d2f92e",
+        "PG-27180514dfc86d",
+        "PG-2253b0978dec91"
+      ],
+      "prompt_words": 995,
+      "all@1": false,
+      "any@1": false,
+      "all@3": false,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q23",
+      "design": "hybrid",
+      "ids": [
+        "PG-0a7fc574e7b526",
+        "PG-54e56b22d2f92e",
+        "PG-6745d9fe7367f9",
+        "PG-fe6d38eefe0d32",
+        "PG-27180514dfc86d"
+      ],
+      "prompt_words": 995,
+      "all@1": false,
+      "any@1": false,
+      "all@3": false,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    },
+    {
+      "id": "q24",
+      "design": "dense",
+      "ids": [
+        "PG-cffd0912271fef",
+        "PG-1a95feea8cd2e2",
+        "PG-bd26706c6d781e",
+        "PG-91e966e29b000b",
+        "PG-fdcb89a78508f8"
+      ],
+      "prompt_words": 589,
+      "all@1": false,
+      "any@1": false,
+      "all@3": false,
+      "any@3": true,
+      "all@5": false,
+      "any@5": true
+    },
+    {
+      "id": "q24",
+      "design": "hybrid",
+      "ids": [
+        "PG-bd26706c6d781e",
+        "PG-0a0cf701b67df1",
+        "PG-94f95c911627cd",
+        "PG-2baea9c337be8d",
+        "PG-1a95feea8cd2e2"
+      ],
+      "prompt_words": 925,
+      "all@1": false,
+      "any@1": false,
+      "all@3": false,
+      "any@3": true,
+      "all@5": true,
+      "any@5": true
+    }
+  ],
+  "means": {
+    "dense": {
+      "all@1": 0.375,
+      "all@3": 0.5833333333333334,
+      "all@5": 0.75,
+      "any@1": 0.4583333333333333,
+      "any@3": 0.8333333333333334,
+      "any@5": 0.875,
+      "prompt_words": 1003.5833333333334
+    },
+    "hybrid": {
+      "all@1": 0.3333333333333333,
+      "all@3": 0.5833333333333334,
+      "all@5": 0.9583333333333334,
+      "any@1": 0.5,
+      "any@3": 0.8333333333333334,
+      "any@5": 0.9583333333333334,
+      "prompt_words": 1075.3333333333333
+    }
+  },
+  "selected": "hybrid"
+}

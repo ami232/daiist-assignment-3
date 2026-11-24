@@ -35,3 +35,11 @@ The official questions.csv has 30 entries. Javier wrote q01 and adopted 29 sugge
 For a starting point, compare s03 (parallel dump format), s21 (combining and verifying an incremental backup), and s26 (a company's measured restore time). They illustrate a direct lookup, a two-passage decision and an installation-specific question.
 
 Run the evaluation with the approved question set. Grade at least 20 saved answers using blind_review.md before opening judge.json. Enter both grades for each reviewed answer in human_labels.csv. Rerunning the evaluation with the same inputs uses the same saved answers and computes agreement on the graded IDs.
+
+### Suggested blind review sample
+
+These 20 IDs were sampled by question type using a fixed seed, without using the agent answers or judge verdicts. You can also grade all 30.
+
+- Single — q02, q03, q04, q07, q08, q09, q11, q12, q13, q14, q15, q16
+- Multi — q01, q20, q22, q24
+- Unanswerable — q25, q28, q29, q30
