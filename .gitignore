@@ -13,3 +13,6 @@ corpus/
 # Never commit your API key
 .env
 eval/browse.md
+
+# Extra documents for the add-document demo (downloaded, not committed)
+corpus_extra/

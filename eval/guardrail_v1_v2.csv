@@ -1,0 +1,5 @@
+count,v1_exact_match,v2_same_section
+correct refusals,3,3
+wrong refusals,5,0
+answered unanswerable,2,2
+guardrail fired,6,0

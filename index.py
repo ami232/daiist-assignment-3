@@ -37,6 +37,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 CORPUS_DIR = ROOT / "corpus"
+EXTRA_DIR = ROOT / "corpus_extra"  # documents for add_document; git-ignored, never embedded by main.py index
 INDEX_DIR = ROOT / "index"
 SOURCES_FILE = CORPUS_DIR / "sources.json"
 QUERY_CACHE_FILE = INDEX_DIR / "query_cache.json"
@@ -113,7 +114,9 @@ PROBLEM_TEXT = {
     "thousands_separators_kept": ("note", "numbers written with a space as thousands separator ('1 435 mm') kept as printed; they count as two words"),
     "soft_hyphens_removed": ("fixed", "soft hyphens removed"),
     "hyphenated_linebreaks_joined": ("fixed", "words hyphenated across a line break rejoined (PDF/plain-text path only)"),
-    "repeated_page_lines_removed": ("fixed", "running headers/footers repeated on most pages removed (PDF path only)"),
+    "repeated_page_lines_removed": ("fixed", "running headers/footers repeated on most pages removed, up to three lines at each page edge, e.g. 'BOLETÍN OFICIAL DEL ESTADO / LEGISLACIÓN CONSOLIDADA / Página N' (PDF path only)"),
+    "pdf_spanish_headings_found": ("fixed", "Spanish headings recognised in the PDF path ('Artículo N.', 'Disposición adicional ...', 'ANEXO I'): before, only English 'Article N' was, so a Spanish law was chunked by page and a chunk lost its article title"),
+    "pdf_toc_lines_removed": ("fixed", "table-of-contents lines with dot leaders ('TÍTULO I. ... ...... 6') removed (PDF path only)"),
     "heading_only_sections": ("note", "sections that are only a heading (parents of sub-sections): no chunk of their own, the heading is kept in the title of their children"),
     "oversize_blocks_split": ("fixed", "single paragraphs over 400 words split at sentence boundaries"),
 }
@@ -674,6 +677,31 @@ class _OJParser:
 # Extraction and cleaning: PDF, plain text and other HTML (for add_document)
 # ----------------------------------------------------------------------------
 
+SPANISH_HEADING = re.compile(r"^(Artículo \d+(?: (?:bis|ter|quater|quinquies))?|Disposición (?:adicional|transitoria|derogatoria|final) [a-záéíóúñ ]+?)\.(?=\s|$)")
+TOC_LEADER = re.compile(r"\.{5,}\s*\d*$")
+HEADING_MARK = "\x01"
+
+
+def _isolate_spanish_headings(text: str) -> tuple[str, int]:
+    """Give 'Artículo 107.  Infracciones graves.' its own paragraph and mark it as a heading.
+
+    pypdf returns no blank lines, and the title may wrap onto the next line.
+    """
+    lines, out, found, i = text.split("\n"), [], 0, 0
+    while i < len(lines):
+        if SPANISH_HEADING.match(lines[i]):
+            title, extra = lines[i].strip(), 0
+            while not title.endswith(".") and extra < 2 and i + 1 < len(lines):
+                i, extra = i + 1, extra + 1
+                title = f"{title} {lines[i].strip()}"
+            out += ["", HEADING_MARK + title, ""]
+            found += 1
+        else:
+            out.append(lines[i])
+        i += 1
+    return "\n".join(out), found
+
+
 def _plain_blocks(pages: list[str], doc_id: str, problems: Problems, paged: bool) -> list[dict]:
     """Blocks from page texts: strip running headers, rejoin hyphenated words, find Articles."""
     page_lines = [[line.strip() for line in page.splitlines()] for page in pages]
@@ -681,7 +709,7 @@ def _plain_blocks(pages: list[str], doc_id: str, problems: Problems, paged: bool
         edge = Counter()
         for lines in page_lines:
             kept = [line for line in lines if line]
-            for line in set(kept[:2] + kept[-2:]):
+            for line in set(kept[:3] + kept[-3:]):
                 edge[re.sub(r"\d+", "#", line)] += 1
         repeated = {line for line, n in edge.items() if n >= len(pages) / 2}
         for lines in page_lines:
@@ -691,9 +719,15 @@ def _plain_blocks(pages: list[str], doc_id: str, problems: Problems, paged: bool
 
     blocks, section = [], None
     for page_no, lines in enumerate(page_lines, 1):
+        if paged:
+            before = len(lines)
+            lines = [line for line in lines if not TOC_LEADER.search(line)]
+            problems.add(doc_id, "pdf_toc_lines_removed", before - len(lines))
         text = "\n".join(lines)
         text, joined = re.subn(r"(\w)-\n([a-z])", r"\1\2", text)
-        text = re.sub(r"(?m)^(Article \d+[a-z]?|ANNEX(?: [IVXLC]+)?)$", r"\n\1\n", text)  # headings get their own paragraph
+        text = re.sub(r"(?m)^(Article \d+[a-z]?|ANNEX(?: [IVXLC]+)?|ANEXO(?: [IVXLC]+)?)$", r"\n\1\n", text)  # headings get their own paragraph
+        text, spanish = _isolate_spanish_headings(text)
+        problems.add(doc_id, "pdf_spanish_headings_found", spanish)
         problems.add(doc_id, "hyphenated_linebreaks_joined", joined)
         soft = text.count("­")
         problems.add(doc_id, "soft_hyphens_removed", soft)
@@ -702,10 +736,13 @@ def _plain_blocks(pages: list[str], doc_id: str, problems: Problems, paged: bool
             paragraph = re.sub(r"\s+", " ", unicodedata.normalize("NFC", paragraph)).strip()
             if not paragraph:
                 continue
-            article = re.match(r"^(Article \d+[a-z]?|ANNEX(?: [IVXLC]+)?)\b", paragraph)
+            article = re.match(r"^(Article \d+[a-z]?|ANNEX(?: [IVXLC]+)?|ANEXO(?: [IVXLC]+)?)\b", paragraph)
             is_heading = bool(article) and n_words(paragraph) <= 12
             if is_heading:
-                section = article.group(1).replace("ANNEX", "Annex")
+                section = article.group(1).replace("ANNEX", "Annex").replace("ANEXO", "Anexo")
+            if paragraph.startswith(HEADING_MARK):  # "Artículo 107. Infracciones graves." -> section "Artículo 107"
+                paragraph = paragraph[len(HEADING_MARK):]
+                is_heading, section = True, paragraph.split(".")[0]
             here = section or (f"p. {page_no}" if paged else "Text")
             blocks.append({
                 "text": paragraph, "kind": "heading" if is_heading else "text", "words": n_words(paragraph),
@@ -1228,6 +1265,10 @@ def main() -> None:
         print(f"\n{remaining} chunks still need a vector (LIMIT={limit_text}). Rerun without LIMIT to embed them.")
     else:
         print("\nEvery chunk has a stored vector.")
+
+    # Documents kept for add_document (corpus_extra/) are extracted for the problems log only: never embedded here.
+    for path in sorted(EXTRA_DIR.glob("*.*")) if EXTRA_DIR.is_dir() else []:
+        extract_file(path, problems)
 
     INDEX_DIR.mkdir(exist_ok=True)
     PROBLEMS_FILE.write_text(problems.to_markdown(), encoding="utf-8")

@@ -9,7 +9,9 @@ Guardrails:
                     nobody can be asked (no terminal) it is denied.
   (b) call limit    at most MAX_TOOL_CALLS tool calls per question.
   (c) citations     after the answer, code checks that every [doc_id, location]
-                    it cites was returned by a search in this same run. If one
+                    it cites was returned by a search in this same run: the
+                    same passage, or the same section of the same document
+                    ("Article 12(2)" when "Article 12" was returned). If one
                     was not, the answer is replaced with a refusal and logged.
 
     result = run("What is the nominal track gauge?")   # for evaluate.py
@@ -70,6 +72,20 @@ def _key(doc_id: str, location: str) -> tuple[str, str]:
     return doc_id.strip().casefold(), re.sub(r"\s+", " ", location).strip().casefold()
 
 
+def section_of(location: str) -> str:
+    """The section a location belongs to, without paragraph numbers. Also used by evaluate.py.
+
+    'Annex, 4.2.8.6(1)-(2)' -> 'Annex, 4.2.8.6'     'Article 2(13)-(22)' -> 'Article 2'
+    'Article 14(3)(a)' -> 'Article 14'              'Annex, 6.2.5.1(2), (4), (5)' -> 'Annex, 6.2.5.1'
+    'Annex, Appendix S (part 1/5)' -> 'Annex, Appendix S'
+    'Annex I, Appendix, 1.1-1.9' -> 'Annex I, Appendix, 1'   (points 1.1 to 1.9 of section 1)
+    """
+    section = re.sub(r"\s*\(part \d+/\d+\)$", "", location.strip())         # "(part 1/5)"
+    section = re.sub(r"(\s*,?\s*\(\w+\)(-\(\w+\))?)+$", "", section)        # "(2)", "(2)-(4)", "(3)(a)", "(2), (4)"
+    dotted_range = re.fullmatch(r"(.*\d)\.\d+-[\d.]+", section)              # "1.1-1.9"
+    return dotted_range.group(1) if dotted_range else section
+
+
 def parse_search_results(text: str) -> list[dict]:
     """The passages in one search tool result, as dicts."""
     heads = list(RESULT_HEAD.finditer(text))
@@ -107,17 +123,27 @@ def extract_citations(answer: str, known: set[tuple[str, str]] = frozenset()) ->
 
 
 def check_citations(answer: str, retrieved_chunks: list[dict]) -> tuple[list[dict], list[str]]:
-    """Returns (valid citations with their source, invalid citations as written)."""
-    retrieved = {}
+    """Returns (valid citations with their source, invalid citations as written).
+
+    A citation is valid if a retrieved passage has exactly that [doc_id, location], or
+    (version 2) the same doc_id and the same section once paragraph numbers are dropped:
+    "Article 12(2)" is valid when "Article 12" or "Article 12(1)-(4)" was retrieved.
+
+    Limitation: the section rule can accept a paragraph that was NOT in the retrieved
+    text, e.g. "Article 18(9)" when only "Article 18(5)-(6)" was retrieved. It checks
+    that the model looked at the right article, not that it read that paragraph.
+    """
+    exact, same_section = {}, {}
     for chunk in retrieved_chunks:
-        retrieved.setdefault(_key(chunk["doc_id"], chunk["location"]), chunk)
+        exact.setdefault(_key(chunk["doc_id"], chunk["location"]), chunk)
+        same_section.setdefault(_key(chunk["doc_id"], section_of(chunk["location"])), chunk)
     valid, invalid = [], []
-    for doc_id, location in extract_citations(answer, set(retrieved)):
-        chunk = retrieved.get(_key(doc_id, location))
+    for doc_id, location in extract_citations(answer, set(exact)):
+        chunk = exact.get(_key(doc_id, location)) or same_section.get(_key(doc_id, section_of(location)))
         if chunk is None:
             invalid.append(f"[{doc_id}, {location}]")
-        else:
-            valid.append({key: chunk.get(key, "") for key in ("doc_id", "location", "doc_title", "source_url")})
+        else:  # keep the location as the answer wrote it; title and URL come from the retrieved passage
+            valid.append({"doc_id": chunk["doc_id"], "location": location, "doc_title": chunk.get("doc_title", ""), "source_url": chunk.get("source_url", "")})
     return valid, invalid
 
 

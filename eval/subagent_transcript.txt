@@ -1,0 +1,26 @@
+corpus-researcher(ECM return to service duties)
+Backgrounded agent (↓ to manage · ctrl+o to expand)
+
+⏺ Waited for background work
+
+Message from @corpus-researcher (ctrl+o to expand)
+
+Before a vehicle returns to service, two steps must be completed: the workshop's release to service, then the ECM's return to operation notice to the user, which takes the release into account [Reg_2019_779, Article 2].
+
+1. Release to service (maintenance delivery function)
+   - This is the justified and recorded assurance that maintenance was delivered according to the maintenance orders [Reg_2019_779, Article 2].
+   - The function must have procedures to check completed tasks against the orders and to issue the release notice, including all information useful to define restrictions of use [Reg_2019_779, Annex II, IV(6)-(9)].
+   - It must pass on the works performed and any safety fault or defect identified [Reg_2019_779, Annex II, IV(6)-(9)].
+   - For safety-related activities, it must record the works performed, the control measures required by the orders, the release to service, and calibration and verification results [Reg_2019_779, Annex II, IV(10)].
+2. Return to operation (fleet maintenance management function)
+   - This function manages the vehicle's removal for maintenance and its return to operation [Dir_2016_798, Article 14(3)].
+   - It must have procedures to define the necessary verification measures for the maintenance delivered and the release, and to issue the return to operation notice with any restrictions of use needed for safe running [Reg_2019_779, Annex II, III(1)-(8)].
+   - It must inform interested parties of the return and any restrictions relevant to users, and record the maintenance orders and the return with its restrictions [Reg_2019_779, Annex II, III(9)-(10)].
+3. ECM's overall responsibility
+   - The return to operation notice is the ECM's assurance that all appropriate works are complete and the vehicle can be used safely, possibly with restrictions [Reg_2019_779, Article 2].
+   - The ECM must ensure its vehicles are in a safe state of running. Its maintenance system must ensure maintenance follows the maintenance file and requirements in force, and that activities are traceable [Dir_2016_798, Article 14(1)-(2)].
+   - It must perform the management function itself. It may outsource the other functions, but must ensure they all comply with Annex III of the Directive [Dir_2016_798, Article 14(3)].
+
+Not covered by the passages found: the text of Annex III to Directive 2016/798, time limits, notice templates and specific acceptance tests. They also do not spell out whether a contractor may sign the return to operation notice. Check the full acts on EUR-Lex, and the maintenance file and orders for vehicle-specific tests.
+
+Note: based on the acts as originally published (later amendments not included). Not legal advice; for binding decisions check the consolidated text on EUR-Lex.

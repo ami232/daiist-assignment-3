@@ -4,7 +4,8 @@ The citation guardrail of agent.py, tested without any API call.
     uv run python tests/test_citation_guardrail.py
 
 It parses a search result written by hand in server.py's format, then checks
-that an answer citing only retrieved passages passes and that an answer with a
+that an answer citing only retrieved passages passes, that a paragraph of a
+retrieved section passes (version 2 of the check), and that an answer with a
 citation the search never returned is replaced with a refusal.
 """
 
@@ -83,6 +84,23 @@ def main() -> None:
 
     assert extract_citations("see [note 1] and [image not extracted]") == []
     print("\n6. '[note 1]' and '[image not extracted]' are not read as citations")
+
+    # Version 2: a paragraph of a retrieved section is accepted (version 1 blocked it).
+    whole_article = [{"doc_id": "Dir_2016_798", "location": "Article 12", "doc_title": "Directive (EU) 2016/798", "source_url": "u"}]
+    ranged = [{**whole_article[0], "location": "Article 12(1)-(4)"}]
+    paragraph = "A safety authorisation is valid for five years [Dir_2016_798, Article 12(2)]."
+    for retrieved in (whole_article, ranged):
+        result = apply_citation_guardrail(paragraph, retrieved)
+        assert not result["fired"] and result["answer"] == paragraph
+        assert result["citations"][0]["location"] == "Article 12(2)"
+    assert not apply_citation_guardrail("See [Dir_2016_798, Article 12(3)(a)] and [Dir_2016_798, Article 12(2), (4)].", whole_article)["fired"]
+    print("\n7. v2: 'Article 12(2)' passes when 'Article 12' or 'Article 12(1)-(4)' was retrieved")
+
+    other_article = apply_citation_guardrail("It is five years [Dir_2016_798, Article 13(2)].", whole_article)
+    other_document = apply_citation_guardrail("It is five years [Dir_2016_797, Article 12(2)].", whole_article)
+    assert other_article["fired"] and other_document["fired"]
+    assert apply_citation_guardrail(FORGED, chunks)["invalid_citations"] == ["[Dir_2016_798, Article 99(4)]"]
+    print("\n8. v2: another article, another document, and the forged 'Article 99(4)' still fire")
     print("\nAll citation guardrail checks passed.")
 
 
