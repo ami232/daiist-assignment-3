@@ -179,5 +179,4 @@ Before flying, verify information against current FAA sources or an instructor.
 Copilot and Claude Code were used for implementation, indexing, evaluation
 analysis, and drafting this report. The human-label rows were manually
 reviewed in the assistant session at the user's request; they are not
-LLM-judge outputs or independent student grades. The student should review the
-report and complete the personal-information fields before submission.
+LLM-judge outputs or independent student grades.
