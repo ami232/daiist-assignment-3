@@ -1,0 +1,10 @@
+design,k,questions,hit_rate,multi_complete_rate,avg_words_in_prompt
+vector,1,33,0.97,0.0,198
+vector,3,33,1.0,0.333,593
+vector,5,33,1.0,0.667,989
+bm25,1,33,0.697,0.0,199
+bm25,3,33,0.788,0.333,596
+bm25,5,33,0.909,0.333,994
+hybrid,1,33,0.909,0.0,197
+hybrid,3,33,1.0,0.5,592
+hybrid,5,33,1.0,0.833,987
