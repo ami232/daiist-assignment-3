@@ -1,8 +1,12 @@
 """
 Assignment 3: build the index (`main.py index`).
 
-Stage 1 (this file, so far): download the corpus into corpus/ and extract it
-into sections with source and location metadata. No embeddings yet.
+Downloads the corpus into corpus/, extracts it into sections with source and
+location metadata, chunks it in two designs, embeds the chunks with Gemini and
+stores them in index/chroma/ (one ChromaDB collection per design).
+
+    uv run python main.py index          # embed what is missing, B first, then A
+    uv run python index.py --dry-run     # count chunks and missing vectors, no API calls
 
 Corpus: four EU public procurement texts from EUR-Lex.
 Reuse is allowed under Commission Decision 2011/833/EU.
@@ -10,12 +14,19 @@ Reuse is allowed under Commission Decision 2011/833/EU.
 
 Per-file steps are importable functions (server.py's add_document reuses them):
     extract_file(path) -> list of section dicts
+    chunk_file(path, design) -> list of chunk dicts
+    embed_texts(texts, task) -> list of vectors
+    embed_and_store(chunks, design) -> how many were added and how many are left
 """
 
 from __future__ import annotations
 
+import hashlib
+import json
+import os
 import re
 import sys
+import time
 from collections import defaultdict
 from pathlib import Path
 
@@ -33,24 +44,28 @@ DOCS = [
         "doc_id": "dir_2014_24",
         "title": "Directive 2014/24/EU on public procurement",
         "celex": "32014L0024",
+        "short": "Directive 2014/24/EU",
         "eli": "dir/2014/24/oj",
     },
     {
         "doc_id": "reg_2016_7",
         "title": "Implementing Regulation (EU) 2016/7, standard form for the European Single Procurement Document (ESPD)",
         "celex": "32016R0007",
+        "short": "Implementing Regulation (EU) 2016/7 (ESPD)",
         "eli": "reg_impl/2016/7/oj",
     },
     {
         "doc_id": "dir_89_665",
         "title": "Directive 89/665/EEC on review procedures (Remedies Directive), consolidated version of 17.04.2014",
         "celex": "01989L0665-20140417",
+        "short": "Directive 89/665/EEC (Remedies)",
         "eli": "dir/1989/665/2014-04-17",
     },
     {
         "doc_id": "reg_2025_2152",
         "title": "Delegated Regulation (EU) 2025/2152, procurement thresholds for 2026-2027",
         "celex": "32025R2152",
+        "short": "Delegated Regulation (EU) 2025/2152",
         "eli": "reg_del/2025/2152/oj",
     },
 ]
@@ -612,12 +627,376 @@ def load_corpus_sections(verbose: bool = False) -> list[dict]:
     return sections
 
 
-def main() -> None:
-    sections = load_corpus_sections(verbose=True)
-    print("\nWords in the corpus that will be indexed:")
+# --------------------------------------------------------------------------
+# Chunking: two designs
+#   "fixed"      A: windows of ~250 words with 50 words overlap inside a document
+#   "structure"  B: one chunk per article / annex part, long ones split at paragraphs
+# --------------------------------------------------------------------------
+
+DESIGNS = ("structure", "fixed")  # build order: B first, then A
+FIXED_WORDS, FIXED_OVERLAP = 250, 50
+STRUCTURE_MAX_WORDS, STRUCTURE_MIN_WORDS = 400, 40
+
+EMBED_MODEL = "gemini-embedding-2"
+EMBED_BATCH = 100
+DEFAULT_CONFIG = {"design": "structure", "mode": "vector", "k": 5}
+
+
+def index_dir() -> Path:
+    """index/ by default; INDEX_DIR overrides it (the add-document demo uses a copy)."""
+    return Path(os.environ.get("INDEX_DIR") or ROOT / "index").resolve()
+
+
+def file_sha256(path: str | Path) -> str:
+    return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+
+
+def _chunk_id(design: str, doc_id: str, text: str) -> str:
+    return hashlib.sha256(f"{design}\n{doc_id}\n{text}".encode("utf-8")).hexdigest()
+
+
+def _unique(items: list[str]) -> list[str]:
+    return list(dict.fromkeys(i for i in items if i))
+
+
+def _paragraph_label(paragraphs: list[str]) -> str:
+    paragraphs = _unique(paragraphs)
+    if len(paragraphs) <= 1:
+        return paragraphs[0] if paragraphs else ""
+    return f"{paragraphs[0]}-{paragraphs[-1]}"
+
+
+def _fixed_chunks(sections: list[dict]) -> list[dict]:
+    """Design A. The window slides over the document's words and ignores structure."""
+    stream: list[tuple[str, int]] = []  # (word, index of its section)
+    for number, section in enumerate(sections):
+        stream.extend((word, number) for word in section["text"].split())
+    pieces, step, start = [], FIXED_WORDS - FIXED_OVERLAP, 0
+    while start < len(stream):
+        window = stream[start:start + FIXED_WORDS]
+        if start > 0 and len(window) <= FIXED_OVERLAP:
+            break  # nothing new: these words are already in the previous window
+        touched = [sections[n] for n in dict.fromkeys(n for _, n in window)]
+        pieces.append({
+            "text": " ".join(word for word, _ in window),
+            "sections": touched,
+        })
+        start += step
+    return pieces
+
+
+def _split_long(text: str, limit: int) -> list[str]:
+    """Split one long paragraph at line breaks, and a very long line by words."""
+    lines: list[str] = []
+    for line in text.split("\n"):
+        tokens = line.split()
+        if len(tokens) <= limit:
+            lines.append(line)
+        else:
+            lines.extend(" ".join(tokens[i:i + limit]) for i in range(0, len(tokens), limit))
+    parts, current, count = [], [], 0
+    for line in lines:
+        size = words(line)
+        if current and count + size > limit:
+            parts.append("\n".join(current))
+            current, count = [], 0
+        current.append(line)
+        count += size
+    if current:
+        parts.append("\n".join(current))
+    return parts
+
+
+def _structure_chunks(sections: list[dict]) -> list[dict]:
+    """Design B. Sections of one article (or one annex part) stay together when
+    they fit in STRUCTURE_MAX_WORDS; otherwise they are packed paragraph by paragraph."""
+    groups: dict[tuple, list[dict]] = {}
+    for section in sections:
+        key = (section["location"], section["paragraph"] if section["part"] != "article" else "")
+        groups.setdefault(key, []).append(section)
+
+    pieces = []
+    for group in groups.values():
+        units: list[tuple[str, dict]] = []  # (text, section it comes from)
+        for section in group:
+            if section["words"] <= STRUCTURE_MAX_WORDS:
+                units.append((section["text"], section))
+            else:
+                units.extend((part, section) for part in _split_long(section["text"], STRUCTURE_MAX_WORDS))
+        packed: list[list[tuple[str, dict]]] = []
+        count = 0
+        for unit in units:
+            size = words(unit[0])
+            if packed and count + size <= STRUCTURE_MAX_WORDS:
+                packed[-1].append(unit)
+                count += size
+            else:
+                packed.append([unit])
+                count = size
+        # a tiny tail joins its neighbour from the same article
+        if len(packed) > 1 and sum(words(t) for t, _ in packed[-1]) < STRUCTURE_MIN_WORDS:
+            packed[-2].extend(packed.pop())
+        for units_in_chunk in packed:
+            pieces.append({
+                "text": "\n".join(text for text, _ in units_in_chunk),
+                "sections": list({id(s): s for _, s in units_in_chunk}.values()),
+            })
+    return pieces
+
+
+def chunk_sections(sections: list[dict], design: str, url: str = "", sha: str = "") -> list[dict]:
+    """Sections of ONE document -> chunks with metadata, for one design."""
+    if not sections:
+        return []
+    if design == "fixed":
+        pieces = _fixed_chunks(sections)
+    elif design == "structure":
+        pieces = _structure_chunks(sections)
+    else:
+        raise ValueError(f"Unknown design {design!r}; use one of {DESIGNS}")
+    doc_id, doc_title = sections[0]["doc_id"], sections[0]["title"]
+    short = DOCS_BY_ID.get(doc_id, {}).get("short") or doc_title
+    chunks, seen = [], set()
+    for piece in pieces:
+        touched = piece["sections"]
+        first = touched[0]
+        locations = _unique([s["location"] for s in touched])
+        paragraph = _paragraph_label([s["paragraph"] for s in touched if s["location"] == first["location"]])
+        if design == "structure":
+            header = ", ".join(x for x in (
+                short, first["location"], first["heading"],
+                (f"paragraph {paragraph}" if first["part"] == "article" and paragraph else ""),
+            ) if x)
+        else:
+            header = short
+        chunk_id = _chunk_id(design, doc_id, piece["text"])
+        if chunk_id in seen:
+            continue
+        seen.add(chunk_id)
+        chunks.append({
+            "chunk_id": chunk_id,
+            "text": piece["text"],
+            "header": header,
+            "doc_id": doc_id,
+            "doc_title": doc_title,
+            "part": first["part"],
+            "location": first["location"],
+            "locations": ";".join(locations),
+            "heading": first["heading"],
+            "paragraph": paragraph,
+            "url": url,
+            "file_sha256": sha,
+            "words": words(piece["text"]),
+            "design": design,
+        })
+    return chunks
+
+
+def chunk_file(path: str | Path, design: str, doc_id: str | None = None,
+               drop_parts: tuple[str, ...] = ()) -> list[dict]:
+    """One file -> chunks for one design ("fixed" or "structure")."""
+    path = Path(path)
+    sections = [s for s in extract_file(path, doc_id=doc_id) if s["part"] not in drop_parts]
+    doc_id = sections[0]["doc_id"] if sections else (doc_id or doc_id_for(path))
+    url = DOCS_BY_ID.get(doc_id, {}).get("url", "")
+    if not url:
+        try:
+            url = str(path.resolve().relative_to(ROOT))
+        except ValueError:
+            url = path.name
+    return chunk_sections(sections, design, url=url, sha=file_sha256(path))
+
+
+def corpus_drop_parts() -> tuple[str, ...]:
+    """The recital rule, decided from the corpus word counts."""
+    sections = [s for path in corpus_paths() for s in extract_file(path)]
+    body_words = sum(s["words"] for s in sections if s["part"] in ("article", "annex"))
+    return ("recital",) if body_words >= RECITAL_RULE_WORDS else ()
+
+
+def chunk_corpus(design: str) -> list[dict]:
+    drop = corpus_drop_parts()
+    return [chunk for path in corpus_paths() for chunk in chunk_file(path, design, drop_parts=drop)]
+
+
+# --------------------------------------------------------------------------
+# Embedding and storing
+# --------------------------------------------------------------------------
+
+class QuotaExceeded(RuntimeError):
+    """The Gemini quota is used up; what is already stored stays stored."""
+
+
+_client = None
+
+
+def _genai_client():
+    global _client
+    if _client is None:
+        from google import genai
+
+        from api_key import load_api_key
+
+        _client = genai.Client(api_key=load_api_key())
+    return _client
+
+
+def prepare_text(text: str, task: str, title: str | None = None) -> str:
+    """gemini-embedding-2 has no task_type parameter: the task goes in the text."""
+    if task == "query":
+        return f"task: search result | query: {text}"
+    if task == "document":
+        return f"title: {title or 'none'} | text: {text}"
+    raise ValueError("task must be 'document' or 'query'")
+
+
+def _is_quota_error(error: Exception) -> bool:
+    code = getattr(error, "code", None)
+    message = str(error)
+    return code == 429 or "RESOURCE_EXHAUSTED" in message or "429" in message[:20]
+
+
+def _is_daily_quota(error: Exception) -> bool:
+    message = str(error).lower()
+    return "perday" in message or "per day" in message or "daily" in message
+
+
+def embed_texts(texts: list[str], task: str, titles: list[str] | None = None) -> list[list[float]]:
+    """One vector per text. task is "document" or "query".
+
+    Each text goes in its own Content object; a plain list of strings would
+    come back as ONE aggregated vector with this model."""
+    from google.genai import types
+
+    if not texts:
+        return []
+    titles = titles or [None] * len(texts)
+    prepared = [prepare_text(text, task, title) for text, title in zip(texts, titles)]
+    contents = [types.Content(parts=[types.Part.from_text(text=p)]) for p in prepared]
+    waits = [20, 45, 65]  # a per-minute limit clears within about a minute
+    while True:
+        try:
+            result = _genai_client().models.embed_content(model=EMBED_MODEL, contents=contents)
+            break
+        except Exception as error:  # noqa: BLE001 - sorted into quota / other below
+            if not _is_quota_error(error):
+                raise
+            if _is_daily_quota(error) or not waits:
+                raise QuotaExceeded(str(error)[:300]) from error
+            wait = waits.pop(0)
+            log(f"  rate limit (429); waiting {wait}s and trying again")
+            time.sleep(wait)
+    vectors = [list(e.values) for e in result.embeddings]
+    if len(vectors) != len(texts):
+        raise RuntimeError(f"Asked for {len(texts)} embeddings, got {len(vectors)}.")
+    return vectors
+
+
+def open_collection(design: str):
+    import chromadb
+
+    if design not in DESIGNS:
+        raise ValueError(f"Unknown design {design!r}; use one of {DESIGNS}")
+    folder = index_dir() / "chroma"
+    folder.mkdir(parents=True, exist_ok=True)
+    client = chromadb.PersistentClient(path=str(folder))
+    return client.get_or_create_collection(design, metadata={"hnsw:space": "cosine"})
+
+
+def missing_chunks(chunks: list[dict], collection) -> list[dict]:
+    if not chunks:
+        return []
+    stored = set(collection.get(ids=[c["chunk_id"] for c in chunks], include=[])["ids"])
+    return [c for c in chunks if c["chunk_id"] not in stored]
+
+
+_META_KEYS = ("chunk_id", "doc_id", "doc_title", "part", "location", "locations", "heading",
+              "paragraph", "url", "file_sha256", "words", "header", "design")
+
+
+def embed_and_store(chunks: list[dict], design: str, collection=None) -> dict:
+    """Embed the chunks that have no vector yet and save each batch at once.
+
+    Returns {"added": n, "left": m, "quota": True if the quota stopped it}."""
+    collection = collection if collection is not None else open_collection(design)
+    todo = missing_chunks(chunks, collection)
+    added = 0
+    for start in range(0, len(todo), EMBED_BATCH):
+        batch = todo[start:start + EMBED_BATCH]
+        try:
+            vectors = embed_texts([c["text"] for c in batch], "document", [c["header"] for c in batch])
+        except QuotaExceeded as error:
+            log(f"  quota: {error}")
+            return {"added": added, "left": len(todo) - added, "quota": True}
+        collection.upsert(
+            ids=[c["chunk_id"] for c in batch],
+            embeddings=vectors,
+            documents=[c["text"] for c in batch],
+            metadatas=[{k: c[k] for k in _META_KEYS} for c in batch],
+        )
+        added += len(batch)
+        log(f"  {design}: saved {added}/{len(todo)}")
+    return {"added": added, "left": 0, "quota": False}
+
+
+def remove_stale(chunks: list[dict], collection) -> int:
+    """Delete chunks of corpus documents that the current chunking no longer produces."""
+    current = {c["chunk_id"] for c in chunks}
+    stale = []
+    for doc in DOCS:
+        stored = collection.get(where={"doc_id": doc["doc_id"]}, include=[])["ids"]
+        stale.extend(i for i in stored if i not in current)
+    if stale:
+        collection.delete(ids=stale)
+    return len(stale)
+
+
+def ensure_config() -> Path:
+    path = index_dir() / "config.json"
+    if not path.exists():
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_text(json.dumps(DEFAULT_CONFIG, indent=2) + "\n", encoding="utf-8")
+    return path
+
+
+def build_index(dry_run: bool = False) -> None:
+    sections = load_corpus_sections(verbose=False)
+    print("Words in the corpus:")
     print_word_table(sections)
-    print(f"\nSource and licence: {CREDIT} (reuse under Commission Decision 2011/833/EU).")
-    print("Embedding and indexing are not built yet (next step).")
+    print()
+    stopped = False
+    for design in DESIGNS:
+        chunks = chunk_corpus(design)
+        collection = open_collection(design)
+        todo = missing_chunks(chunks, collection)
+        sizes = sorted(c["words"] for c in chunks)
+        print(f"{design:<10} {len(chunks):>4} chunks, median {sizes[len(sizes) // 2]} words, "
+              f"max {sizes[-1]} words; {len(todo)} still missing a vector")
+        if dry_run or stopped:
+            continue
+        removed = remove_stale(chunks, collection)
+        if removed:
+            print(f"{'':<10} removed {removed} outdated chunk(s)")
+        result = embed_and_store(chunks, design, collection)
+        print(f"{'':<10} embedded {result['added']} now, {result['left']} left; "
+              f"collection holds {collection.count()} chunks")
+        if result["quota"]:
+            stopped = True
+    if dry_run:
+        print("\nDry run: no API calls made.")
+        return
+    ensure_config()
+    if stopped:
+        print("\nThe embedding quota is used up. Everything embedded so far is saved.\n"
+              "Run again after 09:00 Madrid: `uv run python main.py index`.")
+    else:
+        print(f"\nIndex complete in {index_dir()}.")
+    print(f"Source and licence: {CREDIT} (reuse under Commission Decision 2011/833/EU).")
+
+
+def main() -> None:
+    build_index(dry_run="--dry-run" in sys.argv[1:])
+    sys.exit(0)
 
 
 if __name__ == "__main__":
