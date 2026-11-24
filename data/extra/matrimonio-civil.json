@@ -1,0 +1,42 @@
+{
+  "slug": "matrimonio-civil",
+  "nombre_oficial": "Solicitud para la Celebración de Matrimonio Civil",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/fe871c4e-f81e-4357-a5b8-94ef42a9da42",
+  "ambito": "la solicitud al Ayuntamiento de Guía para celebrar un matrimonio civil: la fecha y quién lo oficia",
+  "que_es": "Es la solicitud al ayuntamiento para CELEBRAR la boda civil: pedir fecha y que la oficie el alcalde o el concejal en quien delegue. No pide documentos en la sede. OJO, hay dos partes en una boda civil y esta es solo la segunda: antes hay que tramitar el EXPEDIENTE MATRIMONIAL, que comprueba que los dos pueden casarse, y eso lo hace el REGISTRO CIVIL, no el ayuntamiento. Sin ese expediente aprobado, el ayuntamiento no puede celebrar la boda. Lo normal es iniciar el expediente en el Registro Civil y, en paralelo o después, pedir la fecha al ayuntamiento con este trámite; el ayuntamiento contacta para confirmar el día y le pedirá entonces lo que necesite. Esto NO sirve para pedir un certificado de matrimonio (Registro Civil), ni para inscribirse como pareja de hecho (es otro trámite guiable del ayuntamiento), ni para organizar una celebración en un espacio público.",
+  "quien_puede": "Cualquiera de los dos contrayentes, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año). Conviene pedir la fecha con antelación",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "No hace falta aportar ningún documento en la sede. El ayuntamiento puede pedir después la documentación\ndel expediente matrimonial tramitado en el Registro Civil.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Código Civil (artículos 49, 51, 56 a 58, 62 y 66 a 68).",
+    "Ley 20/2011, de 21 de julio, del Registro Civil (artículo 58).",
+    "Reglamento de la Ley del Registro Civil, Decreto de 14 de noviembre de 1958 (artículos 238 a 262)."
+  ],
+  "faq": [
+    {
+      "q": "Queremos casarnos por lo civil en el ayuntamiento, ¿qué hacemos?",
+      "a": "Dos cosas: el expediente matrimonial en el Registro Civil, que comprueba que pueden casarse, y esta solicitud al ayuntamiento para pedir fecha y oficiante. Esta no pide documentos."
+    },
+    {
+      "q": "¿Con esta solicitud ya estamos casados?",
+      "a": "No. Esto solo pide la fecha y quién oficia. La boda se celebra cuando el expediente del Registro Civil está aprobado y el ayuntamiento confirma el día."
+    },
+    {
+      "q": "¿Puede oficiar la boda un concejal en vez del alcalde?",
+      "a": "Sí: el alcalde puede delegar la celebración en un concejal, y este trámite cubre también esa delegación."
+    },
+    {
+      "q": "Necesito el certificado de matrimonio.",
+      "a": "Eso lo expide el Registro Civil, no el ayuntamiento."
+    },
+    {
+      "q": "Queremos hacernos pareja de hecho, ¿es aquí?",
+      "a": "No, es otro trámite del ayuntamiento: el registro de uniones o parejas de hecho, que también se puede hacer por la sede con ayuda."
+    }
+  ],
+  "kb_extra": "\n## Las dos partes de una boda civil\n1. **El expediente matrimonial**, en el **Registro Civil**: comprueba que los dos pueden casarse (estado\n   civil, capacidad, testigos). Sin él no hay boda. No lo tramita el ayuntamiento.\n2. **La celebración**, en el **ayuntamiento**: con este trámite se pide fecha y que la oficie el alcalde o\n   el concejal en quien delegue. El ayuntamiento contacta para confirmar el día.\n\n## Qué NO es este trámite\n- Un **certificado de matrimonio** o inscribir un matrimonio celebrado: Registro Civil.\n- Inscribirse como **pareja de hecho**: es otro trámite del ayuntamiento (registro de uniones o parejas\n  de hecho).\n- Una **celebración** o fiesta en un espacio público: no es este trámite.\n- Casarse **por la iglesia**: no interviene el ayuntamiento."
+}

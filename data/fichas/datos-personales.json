@@ -1,0 +1,49 @@
+{
+  "slug": "datos-personales",
+  "nombre_oficial": "Ejercicio de los derechos de protección de datos personales: acceso; rectificación, supresión, limitación, portabilidad u oposición; y contacto con el delegado de protección de datos",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/fa0b2865-b1ad-4cd2-b998-c63113f1689c (y .../daae6a9b-bb8d-485a-816a-940bc433eb66, .../2b75a7ef-9aeb-4f6e-bd02-936334b22679; cubre 3 trámites del catálogo)",
+  "ambito": "los derechos de protección de datos ante el ayuntamiento de Guía: saber qué datos personales tiene de usted, corregirlos, borrarlos, limitar su uso, llevárselos u oponerse, y consultar al delegado de protección de datos",
+  "que_es": "Son los tres trámites de PROTECCIÓN DE DATOS del ayuntamiento, para lo que la ley llama ejercer sus derechos sobre sus datos personales. El DERECHO DE ACCESO es SABER: pedir al ayuntamiento que le confirme si tiene datos suyos y cuáles son, para qué los usa y de dónde salieron; el ayuntamiento contesta en un mes. El trámite de RECTIFICACIÓN, SUPRESIÓN, LIMITACIÓN, PORTABILIDAD U OPOSICIÓN es ACTUAR sobre esos datos, y un solo formulario sirve para los cinco casos: corregir un dato equivocado, que borren sus datos, que dejen de usarlos mientras se aclara algo, llevárselos a otro sitio en un fichero, u oponerse a que los usen para algo concreto (por ejemplo, que dejen de mandarle comunicaciones). El CONTACTO CON EL DELEGADO DE PROTECCIÓN DE DATOS es hacer una CONSULTA o una queja sobre cómo el ayuntamiento trata sus datos, sin pedir todavía nada concreto. Ninguno de los tres pide documentos. OJO: corregir su nombre, su documento o su nacionalidad en el PADRÓN es otro trámite, el cambio de datos personales en el padrón; y pedir un certificado de empadronamiento es el trámite de certificados de padrón.",
+  "quien_puede": "El propio interesado (la persona de la que son los datos), o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Un mes para contestar en los seis derechos (acceso, rectificación, supresión, limitación, portabilidad y oposición), ampliable dos meses más si la solicitud es compleja (artículo 12 del Reglamento general de protección de datos); la sede solo lo publica en el derecho de acceso. La consulta al delegado no tiene plazo fijado",
+  "silencio_administrativo": "Desestimatorio: si el ayuntamiento no contesta en un mes, se entiende denegado y puede reclamar ante la Agencia Española de Protección de Datos",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Reglamento (UE) 2016/679, de 27 de abril de 2016, general de protección de datos (arts. 15 a 22 y 37 a 39).",
+    "Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (arts. 12 a 18 y 34 y siguientes).",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común (arts. 9 y 66)."
+  ],
+  "faq": [
+    {
+      "q": "Quiero saber qué datos tiene el ayuntamiento sobre mí.",
+      "a": "Eso es el derecho de acceso. No pide documentos; el ayuntamiento tiene un mes para contestarle con qué datos tiene, para qué los usa y de dónde salieron."
+    },
+    {
+      "q": "Tienen mal mi teléfono y me llegan cartas a una dirección antigua.",
+      "a": "Si es en el padrón, es el cambio de datos o de domicilio en el padrón. Si es en otros ficheros del ayuntamiento, se pide con el trámite de rectificación, que corrige el dato equivocado."
+    },
+    {
+      "q": "Quiero que borren mis datos.",
+      "a": "Es la supresión, dentro del trámite de rectificación, supresión, limitación, portabilidad u oposición. El ayuntamiento solo puede negarse si tiene obligación legal de conservarlos, por ejemplo los del padrón o los de un expediente."
+    },
+    {
+      "q": "¿Tengo que decir cuál de los cinco derechos quiero?",
+      "a": "Lo marca en el propio formulario: es uno para los cinco. Basta con explicar qué quiere que hagan con sus datos."
+    },
+    {
+      "q": "¿Cuánto tarda?",
+      "a": "Un mes para cualquiera de los derechos (saber, corregir, borrar, limitar, llevarse u oponerse), ampliable dos meses más si es complejo. Si no contestan, se entiende denegado y puede reclamar ante la Agencia Española de Protección de Datos."
+    },
+    {
+      "q": "¿Es gratuito?",
+      "a": "Sí, ejercer los derechos de protección de datos es gratuito."
+    },
+    {
+      "q": "Quiero cambiar mi nombre en el padrón.",
+      "a": "Eso es el cambio de datos personales en el padrón, que es otro trámite del ayuntamiento."
+    }
+  ],
+  "kb_extra": "\n## Los tres trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| Ejercicio del Derecho de Acceso (Datos de Carácter Personal) | 870115 |\n| Ejercicio de los Derechos de Rectificación, Supresión, Limitación, Portabilidad u Oposición | 870106 |\n| Formulario de Contacto con el Delegado de Protección de Datos | 1194399 |\n\n## Cuál de los tres toca\n- **Derecho de acceso (SABER):** pedir al ayuntamiento que confirme si trata datos suyos y, si es así,\n  cuáles, para qué, de dónde vienen, a quién se los ha cedido y cuánto tiempo los guardará; incluye una\n  copia de los datos. Plazo: un mes (ampliable dos más si es complejo). Es gratuito.\n- **Rectificación, supresión, limitación, portabilidad u oposición (ACTUAR):** un solo formulario para\n  cinco derechos. Rectificación: corregir un dato inexacto o incompleto. Supresión (el derecho al\n  olvido): que borren sus datos cuando ya no hacen falta o se trataron sin base. Limitación: que dejen de\n  usarlos mientras se aclara una reclamación. Portabilidad: recibir sus datos en un fichero para llevárselos\n  a otro sitio. Oposición: que dejen de tratarlos para un fin concreto (por ejemplo, comunicaciones).\n- **Contacto con el delegado de protección de datos (CONSULTAR):** cualquier pregunta, duda o queja sobre\n  cómo el ayuntamiento trata sus datos, sin pedir todavía un derecho concreto. El delegado es la persona\n  del ayuntamiento que vela por la protección de datos.\n\n## Qué NO es este trámite\n- **Corregir datos en el padrón** (nombre, documento, nacionalidad, estudios): el cambio de datos\n  personales en el padrón.\n- **Cambiar de dirección** en el padrón: el cambio de domicilio.\n- **Un certificado o volante de empadronamiento**: el trámite de certificados de padrón.\n- **Un documento o dato del ayuntamiento que no es sobre usted** (un contrato, un gasto, un expediente\n  ajeno): el acceso a la información pública.\n- **Datos que tiene otra administración** (Hacienda, la Seguridad Social, el Cabildo): hay que dirigirse a\n  ella, no al ayuntamiento.\n\n## Si el ayuntamiento no contesta\nEn cualquiera de los derechos, pasado el mes sin respuesta (o los tres meses si avisaron de la ampliación) se entiende denegado y puede reclamar ante la Agencia\nEspañola de Protección de Datos (la AEPD), que es gratuita. Lo mismo si deniegan cualquiera de los otros\nderechos."
+}

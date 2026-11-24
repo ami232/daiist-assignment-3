@@ -1,0 +1,51 @@
+{
+  "slug": "responsabilidad-patrimonial",
+  "nombre_oficial": "Solicitud de Responsabilidad Patrimonial",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/9ef28355-2f43-4c8a-bee7-93c6f39f2a8b",
+  "ambito": "la reclamación de responsabilidad patrimonial al ayuntamiento de Guía: pedir que le indemnicen por un daño causado por un servicio o un bien municipal",
+  "que_es": "Es la reclamación para que el AYUNTAMIENTO LE INDEMNICE por un daño que usted ha sufrido por culpa de un servicio o de un bien municipal: se cayó por una acera rota o un socavón, un bache le rompió el coche, le cayó una rama de un árbol municipal, una tubería o una alcantarilla le inundó la casa, una farola o una señal le dañó el coche, un accidente en una instalación municipal. Es un derecho de la Ley 39/2015: hay que reclamar en el plazo de UN AÑO desde el daño (o desde que se curó, si hubo lesiones), describir qué pasó, cuándo, dónde y por qué es culpa de un servicio municipal, y decir cuánto pide (la valoración del daño) con las pruebas que tenga: fotos del lugar y del daño, el parte médico o de urgencias, el presupuesto o la factura de la reparación, el parte de la Policía Local si lo hubo, testigos. El ayuntamiento tiene SEIS MESES para resolver; si no contesta, se entiende desestimada (silencio desestimatorio) y se puede acudir a los tribunales. Si el daño lo causó una empresa contratista del ayuntamiento (la de las obras, la del agua), se reclama igualmente al ayuntamiento. OJO: AVISAR de que hay un bache o una acera rota SIN pedir dinero es el aviso de incidencia en la vía pública, otro trámite; un daño causado por un VECINO o un particular no es del ayuntamiento (es entre ustedes o con el seguro); y una multa o un impuesto que considera injusto no es esto.",
+  "quien_puede": "La persona que sufrió el daño (o su heredero, o el propietario del bien dañado), o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Un año desde que se produjo el daño o, en caso de lesiones, desde la curación o la determinación de las secuelas (la ficha dice continuo; el plazo real es el de la Ley 39/2015)",
+  "plazo_resolucion": "6 meses",
+  "silencio_administrativo": "Desestimatorio: si el ayuntamiento no resuelve en seis meses, se entiende denegada y se puede acudir a los tribunales",
+  "documentacion_kb": "La sede no exige ningún documento obligatorio, pero la reclamación se apoya en las pruebas: fotos del\nlugar y del daño, parte médico o de urgencias, presupuesto o factura de la reparación, parte de la Policía\nLocal o del seguro, y datos de testigos. Pueden aportarse después si el ayuntamiento los pide.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común (arts. 61, 65, 67, 81, 82, 86, 91 y 96).",
+    "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público (arts. 32 a 37, responsabilidad patrimonial).",
+    "Ley 7/2015, de 1 de abril, de los municipios de Canarias (art. 107).",
+    "Ley Orgánica 3/1980, de 22 de abril, del Consejo de Estado, y Ley 5/2002 del Consejo Consultivo de Canarias."
+  ],
+  "faq": [
+    {
+      "q": "Me caí por una acera rota y me rompí la muñeca, ¿puedo reclamar al ayuntamiento?",
+      "a": "Sí, con la reclamación de responsabilidad patrimonial. Tiene un año desde la curación; reúna fotos de la acera, el parte de urgencias y, si hay, testigos, y diga cuánto pide."
+    },
+    {
+      "q": "Un bache me ha reventado una rueda, ¿me lo pagan?",
+      "a": "Puede reclamarlo con este trámite: fotos del bache y de la rueda, la factura del taller y el lugar exacto. El ayuntamiento tiene seis meses para resolver."
+    },
+    {
+      "q": "¿Cuánto tiempo tengo para reclamar?",
+      "a": "Un año desde el daño; si hubo lesiones, desde que se curó o se determinaron las secuelas."
+    },
+    {
+      "q": "¿Tengo que decir cuánto pido?",
+      "a": "Sí, la ley pide una valoración económica, aunque sea aproximada: la factura de la reparación, el presupuesto o los días de baja."
+    },
+    {
+      "q": "Solo quiero avisar de que hay un bache, no reclamar nada.",
+      "a": "Entonces es el aviso de incidencia en la vía pública, otro trámite más sencillo."
+    },
+    {
+      "q": "El daño me lo causó la empresa que hace las obras del ayuntamiento.",
+      "a": "Se reclama igualmente al ayuntamiento, que después se lo repercute a la empresa contratista."
+    },
+    {
+      "q": "¿Y si no me contestan?",
+      "a": "Pasados seis meses sin resolución se entiende denegada y puede acudir a los tribunales contencioso-administrativos."
+    }
+  ],
+  "kb_extra": "\n## Qué daños se pueden reclamar\nLos causados por el funcionamiento normal o anormal de un servicio público municipal o por un bien\nmunicipal: caídas por aceras, calzadas o escaleras públicas en mal estado; daños al coche por baches,\nsocavones, tapas de alcantarilla o señales; ramas y árboles municipales caídos; inundaciones por la red\nmunicipal de agua o alcantarillado; accidentes en instalaciones municipales (polideportivo, parque,\ncementerio, colegio público en lo que es del ayuntamiento); daños por obras municipales o de sus\ncontratistas (se reclama al ayuntamiento, que repite contra la empresa). El daño tiene que ser efectivo,\nevaluable en dinero e individualizado, y no tener el ciudadano el deber de soportarlo.\n\n## Qué tiene que decir la reclamación (art. 67 de la Ley 39/2015)\n- Qué lesiones o daños se produjeron, y en qué fecha.\n- La relación entre el daño y el funcionamiento del servicio público (por qué es culpa de lo municipal).\n- La valoración económica: cuánto se pide, aunque sea aproximada.\n- Las pruebas: fotos, parte médico, presupuesto o factura, parte policial, testigos.\n\n## Plazos\n- Para reclamar: UN AÑO desde que se produjo el daño; en lesiones, desde la curación o desde que se\n  determinan las secuelas.\n- Para resolver: SEIS MESES; si no hay resolución, se entiende desestimada (silencio desestimatorio) y\n  queda abierta la vía contencioso-administrativa. En reclamaciones de cierto importe hace falta el\n  dictamen del Consejo Consultivo de Canarias.\n\n## Qué NO es este trámite\n- **Avisar** de un desperfecto sin pedir indemnización: el aviso de incidencia en la vía pública.\n- **Daños entre particulares** (un vecino, otro coche, una obra privada): no es del ayuntamiento.\n- **Peligro en curso**: Policía Local o 112.\n- **Multas, impuestos o recibos** injustos: un recurso, no una indemnización.\n- **Daños causados por otra administración** (una carretera del Cabildo o del Gobierno de Canarias, un\n  centro de salud): se reclama a esa administración."
+}

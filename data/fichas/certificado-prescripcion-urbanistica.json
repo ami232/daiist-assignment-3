@@ -1,0 +1,18 @@
+{
+  "slug": "certificado-prescripcion-urbanistica",
+  "nombre_oficial": "CERTIFICADO Prescripción Urbanística (Edificaciones/Instalaciones)",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/5b24f73e-aac4-44dd-9d0f-421f2d88a68a",
+  "ambito": "el certificado de prescripción urbanística de edificaciones e instalaciones",
+  "que_es": "Es pedir un certificado de que la infracción urbanística de una construcción, edificación o instalación YA HA PRESCRITO, a efectos de declararla en situación de fuera de ordenación y consolidar su uso actual. Se pide cuando algo se construyó sin licencia hace años y el ayuntamiento ya no puede actuar contra ello. OJO: es sobre una CONSTRUCCIÓN; si se trata de una división de parcelas, es la prescripción de segregación.",
+  "quien_puede": "El propio interesado, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion": [
+    "Referencia Catastral o Certificación Descriptivo y gráfico.",
+    "Plano Situación sobre base cartográfica del Plan General",
+    "Documentación fotográfica, de las edificaciones o instalaciones y del entorno a color"
+  ],
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel."
+}

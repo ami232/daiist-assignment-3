@@ -1,0 +1,34 @@
+{
+  "slug": "reuniones-entrevistas",
+  "nombre_oficial": "Solicitud de Reuniones y Entrevistas con el Personal de esta Entidad",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/25ddfc96-745e-42d5-80c8-8e82964a68f0",
+  "ambito": "la solicitud de reuniones y entrevistas con el personal del ayuntamiento",
+  "que_es": "Es pedir cita para reunirse o entrevistarse con personal del ayuntamiento: un concejal, el alcalde o alcaldesa, o un técnico municipal. La solicitud entra en la agenda del ayuntamiento, que le confirma día y hora.",
+  "quien_puede": "Cualquier persona, física o jurídica, identificándose con clave o certificado digital. Conviene tener claro con quién quiere reunirse y el asunto a tratar, porque hay que indicarlo en la solicitud.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según la normativa aplicable",
+  "silencio_administrativo": "Según la normativa aplicable",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas."
+  ],
+  "faq": [
+    {
+      "q": "¿Con quién puedo pedir la reunión?",
+      "a": "Con el personal del ayuntamiento: un concejal, el alcalde o alcaldesa, o un técnico municipal. En la solicitud se indica con quién quiere reunirse y el asunto."
+    },
+    {
+      "q": "¿Me dan la cita en el momento?",
+      "a": "No. La solicitud entra en la agenda del ayuntamiento, que le confirma después el día y la hora por el medio de notificación que haya elegido."
+    },
+    {
+      "q": "¿Tengo que aportar algún documento?",
+      "a": "No hace falta ningún documento obligatorio. Si tiene papeles relacionados con el asunto, puede adjuntarlos como documentación adicional."
+    },
+    {
+      "q": "¿Es gratuito?",
+      "a": "Sí, solicitar una reunión o entrevista es gratuito."
+    }
+  ]
+}

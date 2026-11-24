@@ -1,0 +1,42 @@
+{
+  "slug": "licencia-existente",
+  "nombre_oficial": "Prórroga de licencia de obras, modificación o renuncia de una licencia urbanística, y licencia de usos y obras provisionales",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/e519f62f-3ee3-43ab-b4de-fc7fd3dc045e (y .../a3c783fb-bb19-4ea3-b40f-0072d69aebae, .../3022ba3a-feee-4c92-bbc3-d344f46d89c4; cubre 3 trámites del catálogo)",
+  "ambito": "lo que se hace con una licencia de obras ya concedida en Guía (pedir más plazo, cambiarla de titular o de proyecto, renunciar a ella) y las licencias de usos y obras provisionales",
+  "que_es": "Son tres trámites que tienen en común que no se pide una obra nueva. Dos son sobre una licencia de obras que el ciudadano YA TIENE: la PRÓRROGA DE LICENCIA DE OBRAS, para pedir más plazo cuando la obra no va a terminar a tiempo; y la MODIFICACIÓN O RENUNCIA DE UNA LICENCIA URBANÍSTICA, para cambiar la licencia de titular, cambiar el proyecto autorizado o renunciar a ella. El tercero es la LICENCIA DE USOS Y OBRAS PROVISIONALES: una obra o un uso TEMPORAL (una instalación desmontable, una caseta, un uso pasajero de un terreno) que el propio ciudadano se compromete a quitar cuando el ayuntamiento lo pida. OJO: si lo que quiere es hacer una obra nueva y permanente, eso son las obras de edificación, que es otro trámite. Y si su licencia es la de un VADO o una licencia de OCUPACIÓN de la vía pública, eso es el trámite de vados.",
+  "quien_puede": "El titular de la licencia, o su representante, identificándose con clave o certificado digital. En la modificación, quien va a ser el nuevo titular. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año). La prórroga conviene pedirla ANTES de que caduque la licencia",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "Dependen del trámite. La **prórroga** pide el proyecto de la obra; conviene añadir presupuesto actualizado\nde lo que queda, fotografía del estado actual y, si el técnico anterior caducó, el nuevo parte de encargo\nde la dirección de obras. La **modificación o renuncia** no pide ningún documento obligatorio. Los **usos y\nobras provisionales** no piden nada obligatorio, pero la sede ofrece huecos para: compromiso ante notario\nde demoler o desmontar lo autorizado, proyecto y hojas de dirección de técnicos, estudio de seguridad y\nsalud, estudio de gestión de residuos, fotografías si hay edificaciones preexistentes, autorización previa,\nanexo de acometida de saneamiento, documentación de ocupación de la vía o de grúa, y carta de pago de la\nautoliquidación.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 4/2017, de 13 de julio, del Suelo y de los Espacios Naturales Protegidos de Canarias.",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas.",
+    "Reglamento de Intervención y Protección de la Legalidad Urbanística de Canarias."
+  ],
+  "faq": [
+    {
+      "q": "Se me acaba el plazo de la licencia y la obra no está terminada, ¿qué hago?",
+      "a": "Pida la prórroga de la licencia de obras, a ser posible antes de que caduque. Necesitará el proyecto y conviene aportar un presupuesto actualizado de lo que queda y una fotografía del estado actual."
+    },
+    {
+      "q": "He comprado una casa con una obra empezada, ¿cómo pongo la licencia a mi nombre?",
+      "a": "Eso es un cambio de titular, y se hace con el trámite de modificación de una licencia urbanística. No pide ningún documento obligatorio."
+    },
+    {
+      "q": "Ya no voy a hacer la obra, ¿tengo que avisar?",
+      "a": "Sí, con el mismo trámite de modificación o renuncia se comunica la renuncia a la licencia. No pide documentos."
+    },
+    {
+      "q": "Quiero poner una caseta desmontable en mi terreno una temporada, ¿necesito permiso?",
+      "a": "Sí: es la licencia de usos y obras provisionales. Lo propio de este trámite es el compromiso ante notario de quitarla cuando el ayuntamiento lo pida, sin derecho a indemnización."
+    },
+    {
+      "q": "¿Y si quiero cambiar de titular el vado o una licencia de ocupación?",
+      "a": "Eso es otro trámite: el de vados y licencias de ocupación de la vía pública. Este es solo para licencias de obras."
+    }
+  ],
+  "kb_extra": "\n## Los tres trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| SOLICITUD LICENCIA: Solicitud de Prórroga de Licencia de obras | 3249893 |\n| Solicitud de Modificación o Renuncia de una Licencia Urbanística | 2652006 |\n| SOLICITUD LICENCIA de Usos y Obras Provisionales Previstos en la Legislación Urbanística | 3275953 |\n\n## Cuál de los tres toca\n- **Prórroga:** la obra tiene licencia pero no va a terminar en el plazo concedido. Conviene pedirla antes\n  de que caduque. Si el arquitecto que la dirigía ya no sigue, hará falta un nuevo parte de encargo de la\n  dirección de obras.\n- **Modificación o renuncia:** cambiar la licencia de titular (venta, herencia), cambiar el proyecto\n  autorizado, o comunicar que se renuncia a la licencia porque la obra ya no se va a hacer. No pide\n  ningún documento obligatorio.\n- **Usos y obras provisionales:** obras o usos de carácter temporal, en terrenos o edificios, que el\n  titular se compromete a demoler, desmontar o cesar cuando el ayuntamiento lo requiera, sin derecho a\n  indemnización. Ese compromiso se formaliza ante fedatario público (notario).\n\n## Qué NO es este trámite\n- Hacer una obra nueva y permanente (construir, ampliar, reformar): son las obras de edificación.\n- Un vado o una licencia de ocupación de la vía pública (cambiarla de titular, modificarla, renunciar):\n  es el trámite de vados.\n- Pedir que le certifiquen algo de una construcción que ya existe: son los certificados urbanísticos."
+}

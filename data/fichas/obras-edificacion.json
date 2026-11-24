@@ -1,0 +1,46 @@
+{
+  "slug": "obras-edificacion",
+  "nombre_oficial": "Obras de edificación (licencia y comunicación previa, de obra mayor y de obra menor) y licencia de demolición",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/dossier.1 (cubre 5 trámites del catálogo; sus URLs y códigos SIA, en la base de conocimiento)",
+  "ambito": "las obras de edificación en Guía, en sus cuatro vías: licencia y comunicación previa, de obra mayor y de obra menor, más la licencia de demolición",
+  "que_es": "Es el permiso que hay que obtener del ayuntamiento antes de hacer una obra de edificación. Y si lo que se quiere es DERRIBAR entera una casa, una nave o una construcción, hay un quinto trámite, la LICENCIA DE DEMOLICIÓN. Para hacer obra, en la sede hay cuatro trámites distintos según dos cosas: si la obra es MAYOR o MENOR (lo define el artículo 2 de la Ley 4/2017 por la entidad de la obra), y si se tramita por SOLICITUD DE LICENCIA o por COMUNICACIÓN PREVIA. OJO: esto es para HACER una obra. Si lo que se quiere es ACREDITAR algo de una construcción que ya existe (su antigüedad, que la infracción prescribió, que su uso está consolidado, o dónde va la fachada), eso son certificados urbanísticos y son trámites aparte.",
+  "quien_puede": "El propietario o promotor de la obra, o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "Dependen de cuál de los cinco trámites sea. La demolición pide el recibo del IBI o la referencia catastral, documentación fotográfica, proyecto visado en soporte digital y hojas de dirección facultativa. En los cuatro se pide identificar la parcela o el inmueble (último recibo del IBI o referencia catastral). A partir de ahí: la licencia de obra mayor añade el impreso de Estadística de Edificación y Vivienda, que su comunicación previa no pide; y la comunicación previa de obra mayor pide una autorización previa que la licencia no exige. El detalle de los cuatro juegos está en el guion del agente (Paso 3).",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 4/2017, de 13 de julio, del Suelo y de los Espacios Naturales Protegidos de Canarias (artículo 2: definición de obra mayor y obra menor).",
+    "Ley 38/1999, de 5 de noviembre, de Ordenación de la Edificación.",
+    "Reglamento de Intervención y Protección de la Legalidad Urbanística de Canarias."
+  ],
+  "faq": [
+    {
+      "q": "¿Cómo sé si mi obra es mayor o menor?",
+      "a": "Es mayor si altera el volumen del edificio, el uso, el número de viviendas o locales, o si afecta al diseño exterior, la cimentación, la estructura o las condiciones de habitabilidad o seguridad. Si es de técnica sencilla y no toca nada de eso, es menor. Una señal práctica: si necesita un proyecto visado por un arquitecto, es obra mayor."
+    },
+    {
+      "q": "¿Voy por licencia o por comunicación previa?",
+      "a": "La sede publica las dos vías, pero no publica el criterio de cuándo corresponde cada una. Lo confirma su técnico o el propio ayuntamiento; no conviene elegir a ciegas, porque presentarlo por la vía equivocada retrasa la obra."
+    },
+    {
+      "q": "¿Necesito un arquitecto?",
+      "a": "Para la obra mayor sí: se pide proyecto visado por el colegio oficial y hojas de dirección facultativa de arquitecto y arquitecto técnico. Para la obra menor se piden proyectos técnicos, pero sin la dirección facultativa."
+    },
+    {
+      "q": "¿Cómo pago la tasa de una obra menor?",
+      "a": "En la licencia de obra menor la tasa no se puede pagar mediante autoliquidación: hay que contactar con el servicio de Valora."
+    },
+    {
+      "q": "¿Y si la obra ya está hecha?",
+      "a": "Los trámites de obra cubren también la legalización de obra ya ejecutada. Si lo que necesita es acreditar la antigüedad de lo construido o que la infracción ya prescribió, eso son certificados urbanísticos, que son trámites distintos."
+    },
+    {
+      "q": "Quiero tirar una casa vieja que tengo en la finca y hacerla nueva.",
+      "a": "Derribar la casa entera es la licencia de demolición, que pide el recibo del IBI o la referencia catastral, fotografías, proyecto visado y hojas de dirección facultativa. La casa nueva es después una obra mayor, con su propio trámite."
+    }
+  ],
+  "kb_extra": "\n## Los cinco trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| SOLICITUD LICENCIA: OBRA MAYOR de edificación. (Obra nueva/Legalización) | 3249940 |\n| SOLICITUD LICENCIA: OBRA MENOR de edificación. (Obra nueva/Legalización) | 2409770 |\n| COMUNICACIÓN PREVIA. OBRA MAYOR de edificación e instalaciones. | 870095 |\n| COMUNICACIÓN PREVIA. OBRA MENOR de edificación e instalaciones | 3249916 |\n| SOLICITUD LICENCIA: DEMOLICIÓN de las construcciones, edificaciones e instalaciones | 3250108 |\n\n## Obra mayor u obra menor (criterio del artículo 2 de la Ley 4/2017)\n- **Obra mayor:** técnica compleja y cierta entidad constructiva y económica. Altera el volumen, el uso\n  objetivo, el número de viviendas, locales o plazas alojativas turísticas, o afecta al diseño exterior,\n  a la cimentación, a la estructura o a las condiciones de habitabilidad o seguridad.\n- **Obra menor:** técnica sencilla y escasa entidad constructiva y económica, sin tocar nada de lo\n  anterior.\n- En la práctica: si hace falta un proyecto visado y dirección facultativa de arquitecto, es obra mayor.\n\n## Licencia o comunicación previa\nLa sede publica las dos vías para obra mayor y para obra menor, pero **no publica el criterio** de cuándo\ncorresponde cada una. No se debe elegir por el ciudadano: lo confirma su técnico o el propio\nayuntamiento. Presentarlo por la vía que no toca retrasa la obra.\n\n## Aviso sobre el pago de la tasa (obra menor)\nEn la licencia de obra menor, **la tasa no se puede pagar mediante autoliquidación**: hay que contactar\ncon el servicio de Valora. Lo indica la propia ficha del trámite.\n\n## La demolición\nLicencia para la demolición total o parcial de edificios, construcciones e instalaciones, lleven o no\naparejado movimiento de tierras, salvo que vengan amparadas en una orden de ejecución. Es derribar la\nconstrucción como tal; tirar un tabique o una pared interior es una obra dentro del edificio, no una\ndemolición."
+}

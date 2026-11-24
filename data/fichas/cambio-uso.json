@@ -1,0 +1,42 @@
+{
+  "slug": "cambio-uso",
+  "nombre_oficial": "Comunicación previa de cambio de uso de edificios e instalaciones, y autorización de uso de la edificación (Decreto 11/97)",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/a408b68f-a777-4d82-aa40-69c441f2cc7e (y .../395cc9b7-0112-491c-8021-7c76f1635236; cubre 2 trámites del catálogo)",
+  "ambito": "el cambio de uso de un edificio, un local o una instalación en Guía, y la autorización de uso de la edificación del Decreto 11/97",
+  "que_es": "Es el trámite para cambiar A QUÉ SE DEDICA un inmueble: convertir un local en vivienda, una vivienda en local u oficina, un garaje o un almacén en vivienda, una nave en otra cosa. Se hace por COMUNICACIÓN PREVIA DE CAMBIO DE USO, y exige que el inmueble esté en situación legal: por eso pide un certificado de prescripción urbanística o una declaración de obra nueva con más de cuatro años inscrita en el registro. En la sede hay además un segundo trámite, la AUTORIZACIÓN DE USO DE LA EDIFICACIÓN del Decreto 11/97, pensado para edificaciones construidas sin licencia y recogidas en el censo de ese decreto; solo se usa cuando el ayuntamiento o el técnico lo han indicado con ese nombre. OJO: si lo que quiere es SABER si una actividad cabe en un local antes de alquilarlo o abrir, eso es el certificado de compatibilidad de uso; si quiere ACREDITAR que un uso lleva años, es el certificado de uso consolidado; y si quiere ESTRENAR una vivienda recién terminada, es la primera ocupación. Aquí se CAMBIA el uso, no se certifica.",
+  "quien_puede": "El propietario del inmueble, o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "Dependen del trámite. El **cambio de uso** pide certificado de prescripción urbanística o declaración de\nobra nueva con más de cuatro años inscrita en el registro, acreditación de la situación de legalidad del\ninmueble, plano de situación (escala mínima 1:1000), plano del estado actual y reformado (escala mínima\n1:100) y memoria justificativa del nuevo uso; opcionalmente la carta de pago de la autoliquidación. La\n**autorización de uso del Decreto 11/97** pide certificado de idoneidad técnica, acreditación de\nregularización catastral y proyecto; opcionalmente documento de identidad, consulta de datos catastrales y\ndocumentación de vertidos de aguas fecales.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 4/2017, de 13 de julio, del Suelo y de los Espacios Naturales Protegidos de Canarias.",
+    "Decreto 11/1997, de 31 de enero, del Gobierno de Canarias (censo de edificaciones no amparadas por licencia y autorización de uso).",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (artículo 69)."
+  ],
+  "faq": [
+    {
+      "q": "Quiero convertir el local de abajo en una vivienda, ¿qué trámite es?",
+      "a": "La comunicación previa de cambio de uso. Necesita un certificado de prescripción urbanística o la declaración de obra nueva con más de cuatro años inscrita, la acreditación de legalidad, planos de situación y del estado actual y reformado, y una memoria del nuevo uso."
+    },
+    {
+      "q": "No tengo el certificado de prescripción, ¿puedo presentar el cambio de uso igual?",
+      "a": "No, es obligatorio. Es otro trámite de la sede: pídalo primero (certificado de prescripción urbanística de edificaciones) y después presente el cambio de uso."
+    },
+    {
+      "q": "¿Necesito un técnico?",
+      "a": "En la práctica sí: el trámite pide planos del estado actual y reformado y una memoria justificativa del nuevo uso, que normalmente redacta un arquitecto o arquitecto técnico."
+    },
+    {
+      "q": "Solo quiero saber si puedo poner un negocio en mi local, ¿es esto?",
+      "a": "No. Eso es el certificado de compatibilidad de uso, que solo informa; aquí se cambia el uso de verdad."
+    },
+    {
+      "q": "¿Qué es la autorización de uso del Decreto 11/97?",
+      "a": "Es la autorización de uso para edificaciones construidas sin licencia y recogidas en el censo del Decreto 11/1997 de Canarias. Pide certificado de idoneidad técnica, regularización catastral y proyecto. Solo se usa cuando el ayuntamiento o el técnico lo han indicado."
+    }
+  ],
+  "kb_extra": "\n## Los dos trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| COMUNICACIÓN PREVIA. Cambio de uso de edificios e instalaciones | 3250491 |\n| Autorización de Uso de la Edificación Decreto 11/97 de 31 de Enero | 3266520 |\n\n## Cuál de los dos toca\n- **Cambio de uso (lo normal):** cambiar a qué se dedica un inmueble que ya está en situación legal.\n  Exige acreditar esa legalidad con un certificado de prescripción urbanística o una declaración de obra\n  nueva con más de cuatro años inscrita en el registro, más planos del estado actual y reformado y una\n  memoria que justifique el nuevo uso.\n- **Autorización de uso de la edificación (Decreto 11/97):** para edificaciones construidas sin licencia\n  recogidas en el censo del Decreto 11/1997 de Canarias. Pide certificado de idoneidad técnica,\n  acreditación de regularización catastral y proyecto. Solo cuando el ayuntamiento o el técnico lo han\n  indicado con ese nombre.\n\n## El certificado de prescripción es OTRO trámite\nEl primer documento del cambio de uso es un certificado de prescripción urbanística (o la declaración de\nobra nueva inscrita). Si el ciudadano no lo tiene, tiene que pedirlo antes en la sede, en su propio\ntrámite (certificado de prescripción urbanística de edificaciones), y volver luego al cambio de uso.\n\n## Cómo se pide el certificado de prescripción\nEn la sede, trámite \"CERTIFICADO Prescripción Urbanística (Edificaciones/Instalaciones)\" (buscar\n\"prescripción\"). Pide la referencia catastral o certificación catastral descriptiva y gráfica, un plano de\nsituación sobre la cartografía del Plan General y fotografías a color de la edificación y su entorno. Se\npide con clave, igual que este.\n\n## Qué NO es este trámite\n- Saber **si** una actividad se puede ejercer en un local o parcela: certificado de compatibilidad de uso.\n- Acreditar que un uso **lleva años** y queda consolidado: certificado de uso consolidado.\n- **Estrenar** una vivienda o local recién terminados: primera ocupación.\n- Hacer la **obra** de la reforma que acompaña al cambio de uso: obras de edificación, con su propio\n  trámite."
+}

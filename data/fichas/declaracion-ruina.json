@@ -1,0 +1,37 @@
+{
+  "slug": "declaracion-ruina",
+  "nombre_oficial": "Solicitud de Declaración de Ruina",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/e64a8029-2e12-49aa-a002-120e27ca1386",
+  "ambito": "la declaración de ruina de un edificio, una construcción, un nicho o una sepultura en Guía",
+  "que_es": "Es el trámite para pedir al ayuntamiento que declare en estado de RUINA un bien: una casa, un edificio o una construcción que se está deteriorando o amenaza con venirse abajo. La ruina puede ser ordinaria o inminente, y el ayuntamiento puede adoptar medidas cautelares si hay amenaza de derrumbe. El mismo trámite sirve para declarar en ruina NICHOS y SEPULTURAS del cementerio. El expediente puede iniciarlo el ciudadano con esta solicitud, o el propio ayuntamiento de oficio. OJO: si hay PELIGRO INMEDIATO para las personas (algo se está cayendo ahora), lo primero es avisar al 112 o a la Policía Local; el trámite viene después. Y si lo que quiere es DERRIBAR él mismo una construcción, eso no es la ruina: es la licencia de demolición, que es una obra.",
+  "quien_puede": "El propietario del inmueble, del nicho o de la sepultura, o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "No hay documentación obligatoria. Conviene aportar, si se tienen, la titularidad catastral del inmueble y\nla certificación descriptiva y gráfica del catastro.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 4/2017, de 13 de julio, del Suelo y de los Espacios Naturales Protegidos de Canarias (deber de conservación y situación legal de ruina).",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas."
+  ],
+  "faq": [
+    {
+      "q": "La casa se está cayendo y me da miedo que le pase algo a alguien, ¿qué hago?",
+      "a": "Si el peligro es inmediato, llame primero al 112 o a la Policía Local. Después presente la solicitud de declaración de ruina: el ayuntamiento puede ordenar medidas cautelares como apuntalar o vallar."
+    },
+    {
+      "q": "¿Qué documentos necesito?",
+      "a": "Ninguno es obligatorio. Conviene aportar la titularidad catastral y la certificación descriptiva y gráfica del inmueble, si las tiene."
+    },
+    {
+      "q": "¿Sirve para un nicho del cementerio?",
+      "a": "Sí, el mismo trámite cubre la declaración de ruina de nichos y sepulturas."
+    },
+    {
+      "q": "Quiero tirar la casa vieja yo mismo, ¿es este trámite?",
+      "a": "No. Derribar una construcción por decisión propia es la licencia de demolición, que es una obra. La declaración de ruina es cuando el edificio ya no se sostiene y se pide al ayuntamiento que lo declare."
+    }
+  ],
+  "kb_extra": "\n## Ruina ordinaria y ruina inminente\n- **Ordinaria:** el edificio está deteriorado y repararlo no compensa o no es posible; se tramita el\n  expediente con normalidad.\n- **Inminente:** hay amenaza de derrumbe. El ayuntamiento puede adoptar **medidas cautelares** (apuntalar,\n  desalojar, vallar) sin esperar a resolver el expediente. Ante un peligro inmediato para las personas,\n  lo primero es el **112** o la **Policía Local**.\n\n## Nichos y sepulturas\nEl mismo trámite sirve para declarar el estado de ruina de nichos y sepulturas del cementerio municipal.\n\n## De oficio o a instancia de parte\nEl expediente puede iniciarlo el propietario con esta solicitud, o el propio ayuntamiento de oficio (por\nejemplo, tras un aviso de la Policía Local o de un vecino).\n\n## Qué NO es este trámite\n- Querer **derribar** una construcción por decisión propia: es la licencia de demolición (una obra).\n- Denunciar que la casa **del vecino** está en mal estado: se puede comunicar al ayuntamiento, que puede\n  actuar de oficio, pero la solicitud de ruina la presenta el propietario."
+}

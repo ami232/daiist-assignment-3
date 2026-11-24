@@ -1,0 +1,17 @@
+{
+  "slug": "certificado-certificaciones-varias",
+  "nombre_oficial": "CERTIFICADO Certificaciones Varias",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/0014fbdb-0843-43d9-97e0-b9ba33c8958d",
+  "ambito": "las certificaciones urbanísticas que no encajan en ninguno de los tipos concretos",
+  "que_es": "Es el trámite de urbanismo para certificaciones que no encajan en ningún tipo concreto. REGLA DURA: NO es un comodín. Si lo que se pide es una alineación, una antigüedad, una cédula urbanística, una compatibilidad de uso, una prescripción o un uso consolidado, es ESE trámite y no éste. Solo aplica si el ciudadano nombra expresamente \"certificaciones varias\".",
+  "quien_puede": "El propio interesado, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion": [
+    "Referencia Catastral o Plano Situación sobre base cartográfica del Plan General.",
+    "Documentación fotográfica, de las zonas donde se actúa y del entorno."
+  ],
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel."
+}

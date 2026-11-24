@@ -1,0 +1,42 @@
+{
+  "slug": "invernadero-fotovoltaica",
+  "nombre_oficial": "Invernaderos e instalaciones solares: licencia de obra mayor y comunicación previa",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/d6aa3fc8-88d7-45f0-8f58-269b4659e89c (cubre 3 trámites del catálogo; sus URLs y códigos SIA, en la base de conocimiento)",
+  "ambito": "la instalación de invernaderos y de placas solares fotovoltaicas o térmicas en Guía, en sus vías de licencia de obra mayor y de comunicación previa",
+  "que_es": "Es el permiso que hay que pedir al ayuntamiento antes de instalar un invernadero o placas solares. En la sede hay tres trámites: una LICENCIA DE OBRA MAYOR que cubre el invernadero y la instalación fotovoltaica cuando son obra de cierta entidad, una COMUNICACIÓN PREVIA para la instalación de invernadero, y otra COMUNICACIÓN PREVIA para las obras e instalaciones fotovoltaicas de autoconsumo o solares térmicos. OJO: esto es para PONER la instalación. Si lo que va a hacer es una obra de albañilería en el edificio, eso es obra de edificación; y si quiere que le acrediten algo de lo ya construido, eso es un certificado urbanístico. Los dos son trámites aparte.",
+  "quien_puede": "El propietario del inmueble o de la finca, o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "Dependen de cuál de los tres trámites sea. En los tres hay que identificar la parcela o el inmueble (el\núltimo recibo del IBI o la referencia catastral). A partir de ahí: la **comunicación previa de placas**\npide fotografías del estado actual, acreditación de la disponibilidad jurídica del suelo, presupuesto, el\nacuerdo de la comunidad de propietarios si afecta a fachada o zonas comunes, y un documento técnico que\ncambia según la potencia; la **comunicación previa de invernadero** pide proyecto visado, hojas de\ndirección facultativa, anexo de acometida de saneamiento y autorización previa; y la **licencia de obra\nmayor** añade a lo anterior el documento de identidad, la escritura de la propiedad y el impreso de\nEstadística de Edificación y Vivienda. El detalle está en el guion del agente (Paso 3).",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 4/2017, de 13 de julio, del Suelo y de los Espacios Naturales Protegidos de Canarias (artículo 331 para las instalaciones de energía renovable amparadas por autorización sectorial; artículos 332, 349 y 350 para la comunicación previa).",
+    "Ley 12/2012, de 26 de diciembre, de medidas urgentes de liberalización del comercio y de determinados servicios.",
+    "Ley 38/1999, de 5 de noviembre, de Ordenación de la Edificación."
+  ],
+  "faq": [
+    {
+      "q": "Quiero poner placas solares en el tejado de mi casa, ¿qué tengo que hacer?",
+      "a": "Va por comunicación previa de obras e instalaciones fotovoltaicas de autoconsumo o solares térmicos, que es la vía normal para un particular. Le pedirán fotografías del sitio, la referencia catastral, la acreditación de que dispone del inmueble, el presupuesto y un documento técnico que depende de la potencia."
+    },
+    {
+      "q": "¿Qué documento técnico me piden según la potencia?",
+      "a": "De diez kilovatios en adelante, proyecto visado firmado por técnico competente. Entre cinco y diez kilovatios, un documento técnico firmado por técnico competente con memoria de diseño. Por debajo de cinco kilovatios, documentación técnica firmada por el instalador habilitado, también con memoria de diseño."
+    },
+    {
+      "q": "Las placas van en la fachada de un edificio de vecinos.",
+      "a": "Entonces hace falta además el acuerdo de la comunidad de propietarios autorizando la solución propuesta, porque afecta a un elemento común."
+    },
+    {
+      "q": "¿El invernadero va por licencia o por comunicación previa?",
+      "a": "La sede publica las dos vías, pero no publica el criterio de cuándo corresponde cada una. Lo confirma su técnico o el propio ayuntamiento; no conviene elegir a ciegas, porque presentarlo por la vía equivocada retrasa la instalación."
+    },
+    {
+      "q": "¿Necesito un arquitecto?",
+      "a": "Para el invernadero sí, en las dos vías: se piden proyectos técnicos visados por el colegio oficial y hojas de dirección facultativa. Para las placas de autoconsumo no siempre: por debajo de cinco kilovatios basta con la documentación técnica firmada por el instalador habilitado."
+    }
+  ],
+  "kb_extra": "\n## Los tres trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| SOLICITUD LICENCIA: OBRA MAYOR. Instalación de invernadero e instalación fotovoltaica | 3250762 |\n| COMUNICACIÓN PREVIA. Instalación de invernadero | 3250776 |\n| COMUNICACIÓN PREVIA. Obras e instalaciones fotovoltaicas de autoconsumo o solares térmicos | 3250750 |\n\n## Cuál de los tres toca\n- **Placas solares para autoconsumo, o paneles solares térmicos:** comunicación previa de obras e\n  instalaciones fotovoltaicas de autoconsumo o solares térmicos. Es la vía normal de un particular que\n  pone placas en su tejado, su nave o su parcela.\n- **Instalación de producción de energía eléctrica** que cuenta con autorización sectorial en materia de\n  energía: licencia de obra mayor. La propia sede lo apoya en el artículo 331 de la Ley 4/2017, que habla\n  de las instalaciones de producción de energía eléctrica a partir de fuentes renovables amparadas por esa\n  autorización sectorial.\n- **Invernadero:** la sede publica las dos vías, licencia de obra mayor y comunicación previa, pero **no\n  publica el criterio** de cuándo corresponde cada una. No se debe elegir por el ciudadano: lo confirma su\n  técnico o el propio ayuntamiento.\n\n## La potencia manda en el documento técnico (solo en la rama fotovoltaica)\nLa ficha de la comunicación previa de fotovoltaica escalona el documento técnico según la potencia:\n- **10 kW o más:** proyecto visado de acuerdo con la legislación sectorial, firmado por técnico competente.\n- **Entre 5 y 10 kW:** documento técnico firmado por técnico competente, con memoria técnica de diseño.\n- **Menos de 5 kW:** documentación técnica firmada por el responsable habilitado de la obra o instalación,\n  con memoria técnica de diseño.\nEs un dato que el instalador conoce y que suele venir en el presupuesto.\n\n## Qué NO es este trámite\nUna obra de albañilería en el edificio (levantar, ampliar, reformar) es **obra de edificación**; cerrar o\nvallar el terreno es el **vallado**; y que le acrediten algo de lo ya construido es un **certificado\nurbanístico**. Los tres son trámites distintos."
+}

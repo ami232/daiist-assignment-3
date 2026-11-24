@@ -1,0 +1,48 @@
+{
+  "slug": "reclamacion-consumo",
+  "nombre_oficial": "Reclamación en materia de Consumo. OMIC Santa María de Guía",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/ff8e90d7-bc27-4612-9190-67fefbc213b3",
+  "ambito": "la reclamación de consumo ante la OMIC de Guía: reclamar como consumidor contra una empresa, una tienda, una compañía o un profesional",
+  "que_es": "Es la reclamación que un vecino de Guía pone, como CONSUMIDOR, contra una empresa, una tienda, una compañía (de luz, de teléfono, de seguros, un banco, un taller, una tienda online) o un profesional que le ha cobrado de más, no le ha entregado lo comprado, le ha prestado mal un servicio o no le atiende una garantía. La tramita la OMIC, la Oficina Municipal de Información al Consumidor, que hace de MEDIADORA: invita a la empresa a proponer un arreglo y, si hay acuerdo y se cumple, archiva la reclamación. No es un juicio ni una multa a la empresa. Solo pueden presentarla los vecinos EMPADRONADOS en Guía; si no, la OMIC no tiene competencia y hay que acudir a la oficina de consumo del municipio donde esté empadronado o al Cabildo. Un solo documento obligatorio: la identificación. OJO: una queja contra el propio ayuntamiento o uno de sus servicios es el trámite de quejas y sugerencias; denunciar a un vecino o a un local por molestias es la denuncia; y una reclamación como empresario o profesional no es de consumo.",
+  "quien_puede": "Cualquier vecino empadronado en Guía que actúe como consumidor o usuario final (no como empresa ni en su oficio), o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion": [
+    "Datos de identificación (copia del documento de identidad)."
+  ],
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 3/2003, de 12 de febrero, del Estatuto de los Consumidores y Usuarios de la Comunidad Autónoma de Canarias.",
+    "Real Decreto Legislativo 1/2007, de 16 de noviembre, texto refundido de la Ley General para la Defensa de los Consumidores y Usuarios (art. 63).",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común (art. 66 y siguientes)."
+  ],
+  "faq": [
+    {
+      "q": "Me han cobrado de más en la factura de la luz, ¿puedo reclamar aquí?",
+      "a": "Sí, si está empadronado en Guía y reclama como consumidor. La OMIC pedirá a la compañía que proponga un arreglo. Tenga a mano la factura y, si ya reclamó a la compañía, su respuesta."
+    },
+    {
+      "q": "¿Qué documentos necesito?",
+      "a": "Solo su documento de identidad es obligatorio. Conviene adjuntar la factura, el ticket, el contrato o la reclamación previa a la empresa."
+    },
+    {
+      "q": "No estoy empadronado en Guía, vivo en Gáldar.",
+      "a": "Entonces la OMIC de Guía no puede tramitarla: tiene que acudir a la oficina de consumo de su municipio o al Cabildo de Gran Canaria."
+    },
+    {
+      "q": "¿La empresa está obligada a devolverme el dinero?",
+      "a": "La OMIC media: invita a la empresa a proponer un arreglo. Si no acepta, le informará de las otras vías, como el arbitraje de consumo o los tribunales."
+    },
+    {
+      "q": "Quiero quejarme del servicio de basura del ayuntamiento.",
+      "a": "Eso es una queja contra el ayuntamiento, que tiene su propio trámite de quejas y sugerencias, no una reclamación de consumo."
+    },
+    {
+      "q": "¿Cuánto tarda?",
+      "a": "El plazo depende de la respuesta de la empresa. La OMIC le avisará por el medio de notificación que haya elegido."
+    }
+  ],
+  "kb_extra": "\n## Qué puede reclamar\nCualquier problema como consumidor con una empresa o un profesional: un cobro indebido o de más, un\nproducto que no llegó o llegó defectuoso, una garantía que no atienden, un servicio mal prestado, una baja\nque no tramitan, publicidad engañosa, cláusulas abusivas. Compañías de luz, agua, gas, teléfono e internet,\nbancos y seguros, tiendas físicas y online, talleres, viajes, gimnasios, academias.\n\n## Qué NO es este trámite\n- **Una queja contra el ayuntamiento** o uno de sus servicios: el trámite de quejas y sugerencias.\n- **Denunciar a un vecino o a un local** por ruidos o molestias: la denuncia ante el ayuntamiento.\n- **Un conflicto entre empresas o como profesional**: no es consumo.\n- **No estar empadronado en Guía**: la OMIC de Guía no tiene competencia; hay que acudir a la oficina de\n  consumo del municipio de empadronamiento o al Cabildo de Gran Canaria.\n\n## Cómo funciona la mediación\nLa OMIC invita a la empresa reclamada a proponer un arreglo o acuerdo con el consumidor. Si se logra un\nacuerdo satisfactorio para las dos partes y se cumple, la reclamación se archiva. Si la empresa no acepta,\nla OMIC informa de las otras vías: el Sistema Arbitral de Consumo (si la empresa está adherida) o los\ntribunales.\n\n## Consejos para que sirva\nReclamar antes a la empresa y guardar la respuesta (o la falta de ella); tener la factura, el ticket, el\ncontrato o el pedido; describir qué pasó, cuándo y qué se pide (devolución, reparación, cambio, baja)."
+}

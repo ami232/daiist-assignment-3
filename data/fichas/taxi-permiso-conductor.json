@@ -1,0 +1,43 @@
+{
+  "slug": "taxi-permiso-conductor",
+  "nombre_oficial": "Permiso municipal para la conducción de vehículos autotaxi: solicitud y renovación",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/c1440441-52fd-4b89-8642-f62c61279942 (y .../ba94845e-4792-485f-a1af-ecdd1a38711f; cubre 2 trámites del catálogo)",
+  "ambito": "el permiso municipal que necesita una persona para CONDUCIR un taxi en Guía: pedirlo por primera vez o renovarlo cuando caduca",
+  "que_es": "Es el permiso que da el ayuntamiento a una PERSONA para poder conducir un taxi en Guía, la cartilla del taxista. En la sede hay dos trámites: la SOLICITUD, para quien lo pide por primera vez, y la RENOVACIÓN, para quien ya lo tiene y le caduca. Los dos piden el DNI, el permiso de conducir de la clase exigida para llevar viajeros, dos fotos de carnet en color y un certificado médico oficial sellado por el Colegio de Médicos; la renovación pide además el alta en la Seguridad Social, y la solicitud lleva una tasa de derechos de examen de 40 euros que se acredita en diez días. OJO: esto es el permiso del CONDUCTOR. La LICENCIA del taxi (la del coche: comprarla, traspasarla, darla de baja) es otra cosa y la lleva el ayuntamiento por otra vía; para eso, una persona.",
+  "quien_puede": "La persona que va a conducir el taxi (el propio conductor), o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año). La renovación conviene pedirla ANTES de que caduque el permiso",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "Dependen del trámite. La **solicitud** pide el DNI (si no está dado de alta como tercero), la copia del\npermiso de conducir de la clase y condiciones exigidas para conducir turismos de transporte de viajeros\n(expedido por la Jefatura Provincial de Tráfico), dos fotografías tamaño carnet en color y el certificado\nmédico oficial de no padecer enfermedad infecto-contagiosa ni impedimento físico o psíquico para la\nprofesión, sellado por el Colegio Oficial de Médicos; y la tasa por derechos de examen (40 euros), a\npresentar en diez días. La **renovación** pide los mismos cuatro documentos más el documento acreditativo de\nestar dado de alta en el régimen correspondiente de la Seguridad Social.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 13/2007, de 17 de mayo, de Ordenación del Transporte por Carretera de Canarias (artículos 80 a 87).",
+    "Decreto 74/2012, de 2 de agosto, por el que se aprueba el Reglamento del Servicio de Taxi (Canarias).",
+    "Reglamento municipal del servicio del taxi de Santa María de Guía.",
+    "Ordenanza fiscal reguladora de la tasa por licencias y autorizaciones de taxis (BOP de Las Palmas n.º 157, 18 de diciembre de 2015)."
+  ],
+  "faq": [
+    {
+      "q": "Quiero trabajar de taxista, ¿qué tengo que pedir?",
+      "a": "El permiso municipal de conductor de autotaxi (la solicitud). Hacen falta el DNI, el permiso de conducir de la clase exigida, dos fotos de carnet y un certificado médico sellado por el Colegio de Médicos. Lleva una tasa de derechos de examen de 40 euros."
+    },
+    {
+      "q": "Se me caduca la cartilla, ¿es el mismo trámite?",
+      "a": "No, es la renovación del permiso: pide los mismos documentos que la solicitud más el alta en la Seguridad Social, y no lleva la tasa de examen. Conviene pedirla antes de que caduque."
+    },
+    {
+      "q": "¿Dónde me hago el certificado médico?",
+      "a": "Es un certificado médico oficial, y tiene que ir sellado por el Colegio Oficial de Médicos. Cualquier médico colegiado puede expedirlo en el impreso oficial."
+    },
+    {
+      "q": "Quiero comprar una licencia de taxi, ¿es aquí?",
+      "a": "No. Esto es el permiso de la persona que conduce; la licencia del taxi (la del vehículo) se gestiona por otra vía. Para eso, mejor hablar con una persona del ayuntamiento."
+    },
+    {
+      "q": "¿Cuándo pago los 40 euros?",
+      "a": "La tasa de derechos de examen se acredita en un plazo de diez días. Se presenta la solicitud y el ayuntamiento indica cómo hacer el pago."
+    }
+  ],
+  "kb_extra": "\n## Los dos trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| Licencias de Auto-Taxi SOLICITUD DEL PERMISO MUNICIPAL PARA LA CONDUCCIÓN DE VEHÍCULOS AUTOTAXIS | 2447726 |\n| Licencias de Auto-Taxi RENOVACIÓN DEL PERMISO MUNICIPAL PARA LA CONDUCCIÓN DE VEHÍCULOS AUTOTAXIS | 2447755 |\n\n## Cuál de los dos toca\n- **Solicitud:** quien pide el permiso de conductor por primera vez. Pide DNI, permiso de conducir de la\n  clase exigida, dos fotos de carnet en color y certificado médico oficial sellado por el Colegio de\n  Médicos. Lleva una tasa de derechos de examen de 40 euros (Ordenanza fiscal de la tasa por licencias y\n  autorizaciones de taxis), que se acredita en diez días.\n- **Renovación:** quien ya tiene el permiso y le caduca. Pide los mismos cuatro documentos más el\n  documento de alta en la Seguridad Social. Conviene pedirla antes de que caduque.\n\n## Permiso del conductor y licencia del taxi no son lo mismo\nEl permiso municipal de conductor es de la PERSONA que conduce. La licencia del taxi es del VEHÍCULO (la\nautorización para explotar un taxi): comprarla, traspasarla, darla de baja o cambiar el coche se gestiona\ncon el ayuntamiento por otra vía, no con estos dos trámites.\n\n## Qué NO es este trámite\n- **La licencia del taxi** (comprar, traspasar, dar de baja, cambiar el vehículo, segundo conductor).\n- **Quejarse de un taxista**: es la denuncia ante el ayuntamiento.\n- **El carnet de conducir**: lo expide la Jefatura de Tráfico, y hace falta tenerlo antes."
+}

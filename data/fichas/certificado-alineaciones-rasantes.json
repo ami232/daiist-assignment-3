@@ -1,0 +1,17 @@
+{
+  "slug": "certificado-alineaciones-rasantes",
+  "nombre_oficial": "CERTIFICADO Alineaciones y Rasantes",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/9c5bbeab-c007-4396-80d6-af75ff5ef14e",
+  "ambito": "el certificado de alineaciones y rasantes, que fija dónde puede ir la fachada y a qué altura respecto a la calle",
+  "que_es": "Es pedir al ayuntamiento un certificado que fija la ALINEACIÓN (la línea donde puede situarse la fachada respecto a la calle) y la RASANTE (la cota o altura del terreno que sirve de referencia) de una parcela. Se pide antes de proyectar una obra, para saber dónde y a qué altura se puede construir. OJO: no dice QUÉ se puede construir en la parcela; eso es la cédula urbanística.",
+  "quien_puede": "El propio interesado, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion": [
+    "Referencia Catastral o Plano Situación sobre base cartográfica del Plan General, con delimitación de la parcela.",
+    "Levantamiento topográfico en formato digital, en coordenadas UTM."
+  ],
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel."
+}

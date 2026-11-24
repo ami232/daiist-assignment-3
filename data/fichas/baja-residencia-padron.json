@@ -1,0 +1,31 @@
+{
+  "slug": "baja-residencia-padron",
+  "nombre_oficial": "Solicitud de Baja en el Padrón Municipal de Habitantes por Cambio de Residencia",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/c871cc86-6e9f-4d53-a376-11cf035a1a6c",
+  "ambito": "la baja en el padrón por cambio de residencia",
+  "que_es": "Es dar de baja en el Padrón de Guía a quien deja de vivir en el municipio porque se ha empadronado en otro. Normalmente la baja se produce sola cuando la persona se empadrona en el nuevo municipio; este trámite sirve para gestionarla cuando hace falta pedirla expresamente. No es un cambio de domicilio dentro de Guía.",
+  "quien_puede": "El propio interesado que se ha mudado a otro municipio (o su representante), identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según la normativa aplicable",
+  "silencio_administrativo": "Según la normativa aplicable",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Reglamento de Población y Demarcación de las Entidades Locales, Real Decreto 1690/1986, de 11 de julio.",
+    "Resolución de 17 de febrero de 2020, del INE, sobre la gestión del Padrón municipal."
+  ],
+  "faq": [
+    {
+      "q": "¿Tengo que darme de baja en Guía si me mudo a otro pueblo?",
+      "a": "Normalmente no hace falta: al empadronarse en el nuevo municipio, la baja en Guía se produce automáticamente. Este trámite es para gestionarla cuando hay que pedirla expresamente."
+    },
+    {
+      "q": "¿Esto es lo mismo que un cambio de domicilio?",
+      "a": "No. El cambio de domicilio es para quien sigue viviendo en Guía y solo cambia de vivienda dentro del municipio. La baja por cambio de residencia es para quien deja de vivir en Guía."
+    },
+    {
+      "q": "¿Es gratuito?",
+      "a": "Sí, la baja en el padrón es gratuita."
+    }
+  ]
+}

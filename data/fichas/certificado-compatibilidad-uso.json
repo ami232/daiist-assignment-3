@@ -1,0 +1,16 @@
+{
+  "slug": "certificado-compatibilidad-uso",
+  "nombre_oficial": "CERTIFICADO Compatibilidad de Uso",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/d9c3be8c-6b7c-4ae7-82cc-cea9c539a032",
+  "ambito": "el certificado de compatibilidad de uso de un local o una parcela",
+  "que_es": "Es pedir al ayuntamiento un certificado que dice si una actividad concreta PUEDE EJERCERSE en un local o en una parcela determinada, según el planeamiento. Se pide típicamente antes de abrir un negocio o de alquilar un local, para saber si el uso previsto está permitido allí.",
+  "quien_puede": "El propio interesado, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion": [
+    "Referencia Catastral o Plano Situación sobre base cartográfica del Plan General."
+  ],
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel."
+}

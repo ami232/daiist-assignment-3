@@ -1,0 +1,55 @@
+design,id,first_hit_rank,top1
+fixed,q01,2,vados · palabras 400-600
+fixed,q02,2,vados · palabras 400-600
+fixed,q03,1,empadronamiento · palabras 0-200
+fixed,q04,,empadronamiento · palabras 400-542
+fixed,q05,1,certificado-empadronamiento · palabras 200-400
+fixed,q06,1,certificado-empadronamiento · palabras 200-400
+fixed,q07,2,tarjeta-armas · palabras 0-200
+fixed,q08,2,tarjeta-armas · palabras 400-583
+fixed,q09,2,responsabilidad-patrimonial · palabras 600-800
+fixed,q10,1,responsabilidad-patrimonial · palabras 400-600
+fixed,q11,2,terraza · palabras 600-800
+fixed,q12,1,terraza · palabras 600-800
+fixed,q13,1,padron-extranjeros · palabras 200-362
+fixed,q14,2,alta-nacimiento-padron · palabras 200-321
+fixed,q15,1,informacion-publica · palabras 200-400
+fixed,q16,4,datos-personales · palabras 600-800
+fixed,q17,3,corte-via · palabras 400-600
+fixed,q18,1,animales · palabras 400-600
+fixed,q19,1,reclamacion-consumo · palabras 400-600
+fixed,q20,1,vados · palabras 400-600
+fixed,q21,1,tarjetas-aparcamiento · palabras 400-600
+fixed,q22,1,tarjeta-armas · palabras 0-200
+fixed,q23,2,vados · palabras 400-600
+fixed,q24,1,terraza · palabras 600-800
+fixed,q25,3,cementerio · palabras 600-800
+fixed,q26,2,tarjeta-armas · palabras 0-200
+fixed,q27,,datos-personales · palabras 1000-1089
+sections,q01,3,vados · faq
+sections,q02,3,vados · faq
+sections,q03,,empadronamiento · faq
+sections,q04,1,empadronamiento · quien_puede+identificacion+plazo_presentacion+plazo_resolucion+silencio_administrativo
+sections,q05,1,certificado-empadronamiento · faq
+sections,q06,2,certificado-empadronamiento · kb_extra
+sections,q07,4,tarjeta-armas · normativa
+sections,q08,1,tarjeta-armas · plazo_presentacion+plazo_resolucion+silencio_administrativo+documentacion+notificacion
+sections,q09,,responsabilidad-patrimonial · faq
+sections,q10,1,responsabilidad-patrimonial · plazo_resolucion+silencio_administrativo+documentacion_kb
+sections,q11,1,terraza · plazo_resolucion+silencio_administrativo+documentacion_kb
+sections,q12,1,terraza · faq
+sections,q13,1,padron-extranjeros · faq
+sections,q14,2,alta-nacimiento-padron · faq
+sections,q15,1,informacion-publica · quien_puede+identificacion
+sections,q16,,datos-personales · faq
+sections,q17,4,corte-via · faq
+sections,q18,1,animales · faq
+sections,q19,1,reclamacion-consumo · faq
+sections,q20,1,vados · faq
+sections,q21,1,tarjetas-aparcamiento · faq
+sections,q22,4,tarjeta-armas · faq
+sections,q23,3,vados · faq
+sections,q24,1,terraza · faq
+sections,q25,3,cementerio · faq
+sections,q26,1,tarjeta-armas · faq
+sections,q27,4,datos-personales · kb_extra

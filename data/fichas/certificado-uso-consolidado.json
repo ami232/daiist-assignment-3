@@ -1,0 +1,18 @@
+{
+  "slug": "certificado-uso-consolidado",
+  "nombre_oficial": "CERTIFICADO Uso Consolidado",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/fbbfbccf-41b5-4268-9b67-52049e16653a",
+  "ambito": "el certificado de uso consolidado",
+  "que_es": "Es pedir un certificado de que un USO lleva ejerciéndose el tiempo suficiente como para quedar consolidado, aunque hoy no se ajuste al planeamiento vigente. OJO: certifica el uso, no la construcción. Si lo que se quiere acreditar es desde cuándo existe una edificación, eso es el certificado de antigüedad.",
+  "quien_puede": "El propio interesado, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion": [
+    "Referencia Catastral o Certificación Descriptivo y gráfico.",
+    "Plano Situación sobre base cartográfica del Plan General, con delimitación de la parcela.",
+    "Documento acreditativo de la antigüedad del uso"
+  ],
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel."
+}

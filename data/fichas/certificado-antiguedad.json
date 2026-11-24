@@ -1,0 +1,17 @@
+{
+  "slug": "certificado-antiguedad",
+  "nombre_oficial": "CERTIFICADO Antigüedad (Edificaciones/Instalaciones)",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/eadd358c-c12a-43d7-8d1c-dd89addc9bd2",
+  "ambito": "el certificado de antigüedad de edificaciones e instalaciones",
+  "que_es": "Es pedir al ayuntamiento un certificado que acredita DESDE CUÁNDO existe una edificación o una instalación. Se usa para escrituras, para el registro de la propiedad o para acreditar que algo lleva años construido. Solo certifica la antigüedad: no legaliza la obra ni dice si en su día fue legal.",
+  "quien_puede": "El propio interesado, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion": [
+    "Referencia Catastral o Plano de Situación sobre base cartográfica del Plan General",
+    "Documentación fotográfica, fachada principal y laterales a color."
+  ],
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel."
+}

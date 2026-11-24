@@ -1,0 +1,44 @@
+{
+  "slug": "tarjetas-aparcamiento",
+  "nombre_oficial": "Tarjeta de aparcamiento para personas con discapacidad (tarjeta, duplicado y reserva de plaza) y tarjeta de aparcamiento para residentes",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/b439034b-8550-4b62-9f31-172f5792bae9 (y .../abf6fdef-9e43-4ede-aa2b-e95db9d07f13; cubre 2 trámites del catálogo)",
+  "ambito": "las tarjetas de aparcamiento de Guía: la de personas con discapacidad (tarjeta nueva, duplicado, y la reserva de una plaza de aparcamiento) y la de residentes en zonas de estacionamiento limitado",
+  "que_es": "Son dos trámites sobre tarjetas de aparcamiento. La TARJETA DE APARCAMIENTO PARA PERSONAS CON DISCAPACIDAD es la tarjeta azul que permite aparcar en las plazas reservadas; el mismo trámite sirve para pedirla por primera vez, para pedir un DUPLICADO si se ha perdido o estropeado, y para pedir, renovar o dar de baja una PLAZA RESERVADA de aparcamiento cerca del domicilio. Hace falta tener reconocida oficialmente la discapacidad. La TARJETA DE APARCAMIENTO PARA RESIDENTES es para aparcar en zonas de estacionamiento limitado, donde el ayuntamiento las tenga reguladas. OJO: la tarjeta de discapacidad la pide la propia persona con discapacidad (o quien la represente), y sirve para el vehículo en el que viaje, sea o no suyo. Y el reconocimiento del grado de discapacidad no lo hace el ayuntamiento: lo hace el Gobierno de Canarias; aquí solo se acredita.",
+  "quien_puede": "La persona con discapacidad, o su representante (un familiar, un tutor), identificándose con clave o certificado digital. En la tarjeta de residentes, el residente. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "La **tarjeta de discapacidad** pide acreditar el reconocimiento oficial de la discapacidad (resolución o\ncertificado del Gobierno de Canarias); para un duplicado o una reserva de plaza conviene tener los datos de\nla tarjeta que ya se tiene. La **tarjeta de residentes** no pide ningún documento.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Real Decreto 1056/2014, de 12 de diciembre, por el que se regulan las condiciones básicas de emisión y uso de la tarjeta de estacionamiento para personas con discapacidad.",
+    "Real Decreto Legislativo 1/2013, de 29 de noviembre, Texto Refundido de la Ley General de derechos de las personas con discapacidad y de su inclusión social (artículos 4.2 y 30).",
+    "Ley 8/1995, de 6 de abril, de accesibilidad y supresión de barreras físicas y de la comunicación (Canarias).",
+    "Real Decreto 888/2022, de 18 de octubre, de procedimiento para el reconocimiento, declaración y calificación del grado de discapacidad.",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas."
+  ],
+  "faq": [
+    {
+      "q": "Mi madre tiene discapacidad, ¿puedo pedir yo la tarjeta por ella?",
+      "a": "Sí, como representante. En la sede, al identificarse, elija que actúa en representación de otra persona. Necesitará acreditar el reconocimiento de la discapacidad de su madre."
+    },
+    {
+      "q": "He perdido la tarjeta, ¿qué hago?",
+      "a": "Pida un duplicado con el mismo trámite de la tarjeta de aparcamiento para personas con discapacidad."
+    },
+    {
+      "q": "¿Puedo pedir una plaza reservada delante de mi casa?",
+      "a": "Sí: la reserva de plaza (concesión, renovación o baja) se pide con el mismo trámite de la tarjeta de discapacidad."
+    },
+    {
+      "q": "¿La tarjeta es para mi coche o para mí?",
+      "a": "Para usted. Va con la persona y sirve en cualquier vehículo en el que viaje."
+    },
+    {
+      "q": "Todavía no tengo reconocida la discapacidad, ¿puedo pedir la tarjeta?",
+      "a": "No. Primero hace falta el reconocimiento oficial, que lo hace el Gobierno de Canarias. Servicios Sociales del ayuntamiento puede orientarle sobre cómo pedirlo."
+    }
+  ],
+  "kb_extra": "\n## Los dos trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| Solicitud para la gestión de la Tarjeta de Aparcamiento para Personas en Situación de Discapacidad | 870144 |\n| Solicitud de la Tarjeta de Aparcamiento para Residentes en zonas de Estacionamiento Limitado | 1322141 |\n\n## La tarjeta de discapacidad: tres cosas en un trámite\n- **Tarjeta nueva:** para quien tiene reconocida oficialmente la discapacidad. Es personal: va con la\n  persona, no con el vehículo, y sirve en cualquier coche en el que viaje.\n- **Duplicado:** si se ha perdido, robado o estropeado.\n- **Reserva de plaza:** concesión, renovación o baja de una plaza de aparcamiento reservada cerca del\n  domicilio.\n\n## El reconocimiento de la discapacidad lo hace el Gobierno de Canarias\nEl ayuntamiento expide la tarjeta a quien ya tiene la discapacidad reconocida; el grado y la movilidad\nreducida los valora el Gobierno de Canarias. Sin ese reconocimiento no se puede pedir la tarjeta. Para\norientarse sobre cómo obtenerlo, Servicios Sociales del ayuntamiento ayuda.\n\n## La tarjeta de residentes\nSolo aplica donde el ayuntamiento tenga reguladas zonas de estacionamiento limitado. No pide documentos.\n\n## Qué NO es este trámite\n- El **reconocimiento del grado de discapacidad**: Gobierno de Canarias.\n- Una **ayuda o prestación** social: Servicios Sociales.\n- Un **vado** para la entrada del garaje: trámite de vados.\n- Una **multa** de aparcamiento: Policía Local o Recaudación."
+}

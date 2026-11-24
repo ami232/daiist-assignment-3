@@ -1,0 +1,51 @@
+{
+  "slug": "registros-pareja-asociacion",
+  "nombre_oficial": "Ejercicio de derechos en relación con el Registro de Uniones o Parejas de Hecho, y ante el Registro de Asociaciones",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/a8bdd0e8-3a1a-49b2-a8a6-ce0401f2006b (y .../d66b3878-d39e-4e7e-bc85-bc37e27852ec; cubre 2 trámites del catálogo)",
+  "ambito": "los dos registros municipales: el de uniones o parejas de hecho (inscripción o baja) y el de asociaciones (alta, baja, renovación o modificación de datos)",
+  "que_es": "Son dos trámites de REGISTRO del ayuntamiento. El REGISTRO DE UNIONES O PAREJAS DE HECHO es donde una pareja que convive sin casarse se INSCRIBE como pareja de hecho (para que conste oficialmente y tener los derechos que da la ley canaria: permisos, pensión de viudedad, herencia según el caso) o se da de BAJA cuando la pareja se rompe. La sede no lista documentos, pero la ley exige acreditar la identidad de los dos, el estado civil (que ninguno está casado) y la convivencia (el empadronamiento en el mismo domicilio), así que puede que se los pidan. El REGISTRO DE ASOCIACIONES es el registro municipal de entidades ciudadanas: dar de ALTA una asociación (vecinal, cultural, deportiva, de mayores, una peña), RENOVAR la inscripción, MODIFICAR sus datos (la junta, la sede, los estatutos) o darla de BAJA; lo pide quien la representa, y lo normal es que pidan los estatutos, el acta y el número de identificación fiscal. Ninguno de los dos pide documentos en la sede. OJO: CASARSE por lo civil es otro trámite del ayuntamiento (la solicitud de matrimonio civil); un certificado de pareja de hecho o de matrimonio para presentarlo en otro sitio es el trámite de certificados e informes; y la inscripción de una asociación en el registro del Gobierno de Canarias (el que le da personalidad jurídica) no es del ayuntamiento.",
+  "quien_puede": "En la pareja de hecho, cualquiera de los dos miembros (mayores de edad, no casados ni inscritos con otra persona), o su representante; en la asociación, su presidente o representante legal. En los dos casos, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "La sede no exige ningún documento obligatorio en ninguno de los dos registros. En la **pareja de hecho**,\nla ley canaria exige acreditar identidad, estado civil y convivencia, así que puede que pidan el documento\nde identidad de los dos, el certificado de estado civil o fe de vida y estado, y el empadronamiento en el\nmismo domicilio. En la **asociación**, puede que pidan los estatutos, el acta y el número de identificación\nfiscal. Pueden adjuntarse como documentación adicional o aportarse después si el ayuntamiento los pide.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 5/2003, de 6 de marzo, para la regulación de las Parejas de Hecho en la Comunidad Autónoma de Canarias.",
+    "Ley Orgánica 1/2002, de 22 de marzo, reguladora del Derecho de Asociación.",
+    "Real Decreto 2568/1986, de 28 de noviembre, Reglamento de Organización, Funcionamiento y Régimen Jurídico de las Entidades Locales (art. 236, registro municipal de asociaciones).",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común (arts. 9 y 66)."
+  ],
+  "faq": [
+    {
+      "q": "Queremos hacernos pareja de hecho, ¿qué necesitamos?",
+      "a": "Ser los dos mayores de edad, no estar casados ni inscritos con otra persona, y convivir. La sede no pide documentos al presentar la solicitud; puede que después pidan el documento de identidad de los dos, el certificado de estado civil y el empadronamiento en el mismo domicilio."
+    },
+    {
+      "q": "¿Tenemos que estar empadronados los dos en Guía?",
+      "a": "Lo normal es que se pida el empadronamiento en el mismo domicilio para acreditar la convivencia. Si tiene dudas sobre su caso, el ayuntamiento se lo confirma."
+    },
+    {
+      "q": "Nos hemos separado, ¿cómo damos de baja la pareja de hecho?",
+      "a": "Con el mismo trámite del registro de parejas de hecho, pidiendo la baja. Puede pedirla cualquiera de los dos."
+    },
+    {
+      "q": "¿Es lo mismo que casarse?",
+      "a": "No. La pareja de hecho es una inscripción en un registro con los efectos que reconoce la ley canaria. Casarse por lo civil es otro trámite: la solicitud de matrimonio civil al ayuntamiento, con el expediente previo del Registro Civil."
+    },
+    {
+      "q": "Quiero inscribir la asociación de vecinos en el ayuntamiento.",
+      "a": "Es el alta en el registro municipal de asociaciones. Lo pide el presidente o representante; puede que pidan los estatutos, el acta y el número de identificación fiscal."
+    },
+    {
+      "q": "Ha cambiado la junta directiva de la asociación, ¿hay que comunicarlo?",
+      "a": "Sí, con la modificación de datos en el registro de asociaciones, adjuntando el acta de la asamblea si la tiene."
+    },
+    {
+      "q": "¿Es gratuito?",
+      "a": "Sí, la inscripción en los dos registros es gratuita."
+    }
+  ],
+  "kb_extra": "\n## Los dos trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| Ejercicio de Derechos en Relación con el Registro de Uniones o Parejas de Hecho | 870011 |\n| Ejercicio de Derechos ante el Registro de Asociaciones | 870020 |\n\n## Cuál de los dos toca\n- **Registro de uniones o parejas de hecho:** inscribirse como pareja de hecho (los dos mayores de edad,\n  ninguno casado ni inscrito con otra persona, con convivencia estable) o darse de baja (por ruptura, por\n  matrimonio o por fallecimiento). La sede no lista documentos; la Ley 5/2003 de parejas de hecho de\n  Canarias exige acreditar la identidad, el estado civil y la convivencia, así que puede que pidan el\n  documento de identidad de los dos, el certificado de estado civil o fe de vida y estado, y el\n  empadronamiento en el mismo domicilio. La inscripción da a la pareja los efectos que reconoce la ley\n  canaria.\n- **Registro de asociaciones:** el registro municipal de entidades ciudadanas de Guía. Alta (inscribir una\n  asociación ya constituida), baja, renovación de la inscripción o modificación de datos (junta directiva,\n  domicilio, estatutos, número de socios). Lo pide el presidente o representante. Puede que pidan los\n  estatutos, el acta fundacional o de la última asamblea, el número de identificación fiscal y la\n  inscripción en el registro de asociaciones del Gobierno de Canarias.\n\n## Qué NO es este trámite\n- **Casarse por lo civil** en el ayuntamiento: la solicitud de celebración de matrimonio civil.\n- **Un certificado** de pareja de hecho o de matrimonio: el trámite de certificados e informes (o el\n  Registro Civil en el caso del matrimonio).\n- **Constituir la asociación** (redactar estatutos y obtener personalidad jurídica): el Registro de\n  Asociaciones del Gobierno de Canarias; el municipal viene después.\n- **Subvenciones** para la asociación: tienen sus propios trámites."
+}

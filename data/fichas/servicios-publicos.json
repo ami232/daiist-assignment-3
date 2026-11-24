@@ -1,0 +1,42 @@
+{
+  "slug": "servicios-publicos",
+  "nombre_oficial": "Servicios Públicos (Alta, Baja o Modificación)",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/5c2a56b7-1cc7-4f53-ad58-766047e3a07a",
+  "ambito": "el alta, la baja o la modificación en los servicios municipales de Guía: guardería o escuela infantil, gimnasio, escuela de música, biblioteca, ludoteca, centro de mayores, recogida de residuos y otros servicios del ayuntamiento",
+  "que_es": "Es el trámite para APUNTARSE (alta), DARSE DE BAJA o CAMBIAR los datos en cualquier servicio que presta el ayuntamiento: la admisión en la escuela infantil o guardería municipal, el gimnasio, la escuela de música, el servicio de biblioteca, la ludoteca, el centro de mayores, la recogida de residuos, y otros parecidos. Es un único formulario donde se indica qué servicio es y qué se quiere (alta, baja o modificación). No pide documentos, aunque algunos servicios tienen sus propios requisitos o plazos de inscripción (por ejemplo, la guardería) y el ayuntamiento puede pedirlos después. OJO: si lo que quiere es una AYUDA o una PRESTACIÓN (ayuda a domicilio, teleasistencia, una ayuda económica), eso es Servicios Sociales y tiene sus propios trámites. Y el alta del AGUA o de la LUZ de una vivienda no es un servicio municipal de este tipo: es con la compañía o con el servicio de agua.",
+  "quien_puede": "El propio interesado, o el padre, la madre o el tutor cuando es para un menor, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año). Algunos servicios (la guardería, la escuela de música) tienen su propio periodo de inscripción",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "No hace falta aportar ningún documento. Algunos servicios (guardería, escuela de música) tienen requisitos\npropios que el ayuntamiento puede pedir después; si se tiene algo ya preparado, puede adjuntarse como\ndocumentación adicional.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local.",
+    "Ley Orgánica 2/2006, de 3 de mayo, de Educación.",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (artículo 41)."
+  ],
+  "faq": [
+    {
+      "q": "Quiero apuntar a mi hijo a la escuela de música, ¿cómo lo hago?",
+      "a": "Con este trámite: indique que es un alta en la escuela de música y para quién es. Se identifica usted como padre o madre. No pide documentos, aunque la escuela puede tener su propio periodo de inscripción."
+    },
+    {
+      "q": "Quiero darme de baja del gimnasio municipal.",
+      "a": "Con este mismo trámite, indicando que es una baja en el gimnasio. No pide documentos."
+    },
+    {
+      "q": "¿Sirve para pedir plaza en la guardería?",
+      "a": "Sí, la admisión en la escuela infantil municipal se pide con este trámite. La guardería tiene sus propios requisitos y plazos, que el ayuntamiento le pedirá o le indicará después."
+    },
+    {
+      "q": "Necesito ayuda a domicilio para mi madre, ¿es aquí?",
+      "a": "No. Eso es una prestación de Servicios Sociales, que tiene su propio trámite."
+    },
+    {
+      "q": "Quiero dar de alta la basura de mi casa nueva.",
+      "a": "Sí, el alta en la recogida de residuos se puede pedir con este trámite."
+    }
+  ],
+  "kb_extra": "\n## Servicios que cubre (los que cita la propia sede)\n- Escuela infantil o guardería municipal (admisión).\n- Gimnasio municipal.\n- Escuela de música.\n- Servicio de biblioteca.\n- Ludoteca.\n- Centro de mayores.\n- Recogida de residuos sólidos.\n- Y, en general, cualquier otro servicio que preste el ayuntamiento.\n\n## Alta, baja o modificación\nEl mismo formulario sirve para las tres cosas: se indica el servicio y lo que se quiere. Para un menor, se\nidentifica el padre, la madre o el tutor y se indica para quién es.\n\n## Qué NO es este trámite\n- Una **ayuda o prestación social** (ayuda a domicilio, teleasistencia, ayuda económica, ingreso en un\n  centro): Servicios Sociales, con sus propios trámites.\n- El **alta del agua o de la luz** de una vivienda: con la compañía o con el servicio de agua.\n- La **matrícula en un colegio o instituto público**: es de la Consejería de Educación del Gobierno de\n  Canarias, no del ayuntamiento.\n- Una **actividad puntual** (un curso, un taller, una excursión) que el ayuntamiento organice con su propia\n  inscripción: se hace por donde el ayuntamiento lo anuncie."
+}

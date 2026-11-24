@@ -1,0 +1,46 @@
+{
+  "questions": 33,
+  "retrieval": {
+    "fixed": {
+      "hit@1": 0.481,
+      "hit@3": 0.889,
+      "hit@5": 0.926,
+      "avg_words_added_k5": 968
+    },
+    "sections": {
+      "hit@1": 0.519,
+      "hit@3": 0.741,
+      "hit@5": 0.889,
+      "avg_words_added_k5": 724
+    },
+    "best_design_by_hit@3": "fixed",
+    "design_used_by_server": "fixed"
+  },
+  "judge_correct": 0.758,
+  "judge_supported": 0.909,
+  "correct_refusals": "5/6",
+  "wrong_refusals": "7/27",
+  "citations_valid": 0.758,
+  "answerable_with_citation": "22/27",
+  "guardrail_fired": 3,
+  "failure_hints": {
+    "retrieval miss": 4,
+    "unsupported claim": 1,
+    "wrong refusal": 3
+  },
+  "avg_tokens_per_question": 4520,
+  "avg_seconds_per_question": 33.1,
+  "human_vs_judge": {
+    "graded_by_human": 20,
+    "agreement_correct": 1.0,
+    "agreement_supported": 0.9,
+    "disagreements": []
+  },
+  "add_document_demo": {
+    "question": "¿Qué tengo que hacer para casarme por lo civil en el Ayuntamiento de Guía?",
+    "before": "Esa información no consta en la ficha del trámite; puede consultarla en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/a8bdd0e8-3a1a-49b2-a8a6-ce0401f2006b [registros-pareja-asociacion · sede]",
+    "add_document": "Added: 'matrimonio-civil' (4 chunks).",
+    "add_document_again": "Skipped: 'matrimonio-civil' is already indexed and the file has not changed.",
+    "after": "Para casarse por lo civil en el Ayuntamiento de Guía hay que realizar dos partes [matrimonio-civil · que_es]:\n\n1. **Expediente matrimonial:** Debe tramitarse previamente en el **Registro Civil** para comprobar que ambos pueden contraer matrimonio [matrimonio-civil · que_es].\n2. **Solicitud de fecha y oficiante:** Una vez iniciado el expediente, cualquiera de los dos contrayentes puede presentar la solicitud en el ayuntamiento para fijar el día de la boda y quién la oficia (el alcalde o un concejal delegado) [matrimonio-civil · que_es, quien_puede].\n\n**Plazo y documentación:** El plazo es continuo (todo el año) [matrimonio-civil · plazo_presentacion]. No es necesario aportar documentos en la sede al hacer la solicitud inicial, aunque el ayuntamiento podrá pedirle después la documentación del expediente del Registro Civil [matrimonio-civil · que_es, documentacion_kb]. Se requiere identificación mediante Cl@ve o certificado digital [matrimonio-civil · quien_puede].\n\nMás información en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/fe871c4e-f81e-4357-a5b8-94ef42a9da42"
+  }
+}

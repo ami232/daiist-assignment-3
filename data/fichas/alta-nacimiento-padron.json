@@ -1,0 +1,35 @@
+{
+  "slug": "alta-nacimiento-padron",
+  "nombre_oficial": "Solicitud de Alta en el Padrón Municipal de Habitantes por Nacimiento",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/b788a3b9-6c34-4df1-bff0-2a6382672310",
+  "ambito": "el alta en el padrón de un recién nacido",
+  "que_es": "Es dar de alta en el Padrón Municipal a un bebé recién nacido, a solicitud de sus padres (o de quien tenga su guarda o custodia), para que conste empadronado en el domicilio familiar de Guía. No es empadronar a alguien que llega de fuera del municipio: eso es un alta por cambio de residencia.",
+  "quien_puede": "Los padres del recién nacido, o quien tenga su guarda o custodia, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "3 meses",
+  "silencio_administrativo": "Estimatorio",
+  "documentacion": [
+    "El certificado de nacimiento del bebé o el libro de familia donde conste el nacimiento (siempre)",
+    "Si hace falta acreditarlo, un documento de identidad de la madre y del padre del recién nacido (según el caso)"
+  ],
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Reglamento de Población y Demarcación de las Entidades Locales, Real Decreto 1690/1986, de 11 de julio (arts. 53-74).",
+    "Resolución de 17 de febrero de 2020, del INE, sobre la gestión del Padrón municipal."
+  ],
+  "faq": [
+    {
+      "q": "¿Esto es lo mismo que empadronarme?",
+      "a": "No. El alta por nacimiento es para inscribir a un bebé recién nacido a solicitud de sus padres. Quien llega de otro municipio o del extranjero hace un alta por cambio de residencia, que es un trámite distinto."
+    },
+    {
+      "q": "¿Qué documento del bebé necesito?",
+      "a": "El certificado de nacimiento o el libro de familia donde conste el nacimiento. Puede aportarlo en copia, hecha una foto o escaneada."
+    },
+    {
+      "q": "¿Es gratuito?",
+      "a": "Sí, el alta en el padrón por nacimiento es gratuita."
+    }
+  ]
+}

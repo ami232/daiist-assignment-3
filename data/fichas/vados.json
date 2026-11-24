@@ -1,0 +1,42 @@
+{
+  "slug": "vados",
+  "nombre_oficial": "Licencia de vado (solicitud, modificación y baja) y cambio de titular de la licencia de ocupación",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/4429600f-873d-4f6c-878b-a0b48f4541c2 (y .../a7e311fe-df7a-4b5d-863b-3f1c4b8ca71f; cubre 2 trámites del catálogo)",
+  "ambito": "los vados en Guía: pedir uno nuevo, modificarlo, darlo de baja o cambiarlo de titular",
+  "que_es": "El vado es la licencia que reserva la entrada de un garaje o un local para que nadie aparque delante. En la sede hay dos trámites: la LICENCIA DE VADO, que sirve para pedir un vado nuevo, modificar sus características (ampliarlo, moverlo) o darlo de baja; y la MODIFICACIÓN, REVOCACIÓN O RENUNCIA DE LA LICENCIA DE OCUPACIÓN, que es la que se usa, por ejemplo, para cambiar el vado de titular cuando el garaje cambia de dueño. OJO: si lo que quiere es denunciar que alguien ha aparcado en su vado, eso no es un trámite de la sede: es la Policía Local.",
+  "quien_puede": "El titular del garaje o local, o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "1 mes",
+  "silencio_administrativo": "Desestimatorio: si en el plazo de resolución no hay respuesta, se entiende denegado",
+  "documentacion_kb": "Dependen de lo que quiera hacer. La **licencia de vado** pide el último recibo del IBI o la referencia\ncatastral y fotografías de la fachada, la entrada y el entorno; para un vado nuevo o una modificación\nconviene aportar además el croquis en planta con las dimensiones del vado y la primera ocupación o licencia\nde apertura del garaje o local, y para una baja, los datos del vado (número y licencia). El **cambio de\ntitular** por la licencia de ocupación no pide ningún documento.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (artículos 9 y 66).",
+    "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local.",
+    "Ley 17/2009, de 23 de noviembre, sobre el libre acceso a las actividades de servicios y su ejercicio."
+  ],
+  "faq": [
+    {
+      "q": "Quiero un vado para la entrada de mi garaje, ¿qué hago?",
+      "a": "Se pide con la licencia de vado. Necesitará el último recibo del IBI o la referencia catastral, fotografías de la entrada y el entorno, y conviene aportar un croquis con las dimensiones del vado y la primera ocupación o licencia de apertura del garaje."
+    },
+    {
+      "q": "He comprado una casa con vado, ¿cómo lo pongo a mi nombre?",
+      "a": "Eso es un cambio de titular, y se hace con el trámite de modificación de la licencia de ocupación. No pide ningún documento."
+    },
+    {
+      "q": "¿Cuánto tardan en contestar?",
+      "a": "El plazo para resolver es de un mes. Si pasa el mes sin respuesta, el silencio se entiende como denegación, así que conviene llamar al ayuntamiento a preguntar por el expediente."
+    },
+    {
+      "q": "Alguien ha aparcado en mi vado, ¿qué trámite hago?",
+      "a": "Eso no es un trámite de la sede: hay que avisar a la Policía Local."
+    },
+    {
+      "q": "¿Necesito hacer obra para el vado?",
+      "a": "El vado es solo la licencia. Si además tiene que rebajar el bordillo o abrir el hueco del garaje, eso es una obra y va por los trámites de obra de edificación."
+    }
+  ],
+  "kb_extra": "\n## Los dos trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| SOLICITUD LICENCIA DE VADO: Solicitud, modificación de características y baja | 3250172 |\n| Modificación, Revocación o Renuncia de la Licencia de Ocupación | 2730214 |\n\n## Cuál de los dos toca\n- **Licencia de vado:** pedir un vado nuevo, modificar sus características (ampliarlo, moverlo, cambiar\n  la placa) o darlo de baja. La propia ficha de la sede etiqueta los documentos por rama: \"vado nuevo o\n  modificación\" y \"vado baja\".\n- **Modificación de la licencia de ocupación:** cambiar el vado de titular. La sede pone literalmente el\n  vado como ejemplo de este trámite. Es el trámite genérico para modificar o renunciar a una licencia de\n  ocupación de un bien de dominio público.\n\n## Plazo y silencio: aquí SÍ importan\nEs de los pocos trámites del catálogo con plazo propio: **un mes** para resolver, y el silencio es\n**desestimatorio**: si pasa el mes sin respuesta, se entiende denegado. Conviene preguntar por el\nexpediente si no hay noticias.\n\n## Qué NO es este trámite\n- Que alguien aparque en su vado o le tape la entrada: es la **Policía Local**, no un trámite de la sede.\n- Rebajar el bordillo o abrir el hueco del garaje: es **obra de edificación**."
+}

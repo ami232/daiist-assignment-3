@@ -1,0 +1,47 @@
+{
+  "slug": "subvenciones",
+  "nombre_oficial": "Justificación de subvención concedida y solicitud de certificado de una subvención concedida",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/6f0f91f4-6c6c-4a6f-b1c9-6aea9b293f58 (y .../2fb6a1c3-4040-4c1b-84bc-c6b127fac3cb certificado; cubre 2 trámites del catálogo)",
+  "ambito": "las gestiones de una subvención YA CONCEDIDA por el ayuntamiento: su justificación (la cuenta justificativa) y el certificado de la concesión",
+  "que_es": "Son dos trámites para una subvención que el ayuntamiento YA LE HA CONCEDIDO (a una asociación, un club, una peña, un comercio o un vecino con una ayuda). La JUSTIFICACIÓN es presentar la CUENTA JUSTIFICATIVA: la memoria de lo que se hizo con el dinero y las facturas y justificantes de pago de los gastos; se presenta UNA cuenta por cada proyecto o actividad subvencionada, nunca agrupando varios, y en el plazo que fije la convocatoria o la resolución (si no se justifica, hay que devolver la subvención). El CERTIFICADO DE SUBVENCIÓN CONCEDIDA es pedir un papel que acredite que el ayuntamiento le concedió esa subvención, su importe y su estado, para presentarlo en Hacienda, en otra administración o para otra ayuda. Ninguno de los dos pide documentos en la sede, pero en la justificación los documentos SON el trámite. OJO: para COBRAR una subvención hace falta tener dada de alta la FICHA DE TERCERO (la cuenta bancaria) en el ayuntamiento, que es otro trámite; PEDIR una subvención nueva se hace en el plazo de su convocatoria y no se guía por aquí; y una AYUDA social (una ayuda de emergencia, de alquiler, de dependencia) es Servicios Sociales.",
+  "quien_puede": "El beneficiario de la subvención (la persona o el representante de la asociación, club o empresa que la recibió), identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave. Si es una entidad, se actúa en su representación.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "La justificación, en el plazo que fije la convocatoria o la resolución de concesión (la ficha dice continuo; el plazo real lo marca cada subvención); el certificado, todo el año",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "Dependen del trámite. En la **justificación**, la cuenta justificativa: memoria de actuación, relación de\ngastos, facturas y justificantes de pago (y el modelo de la convocatoria, si lo hay), una por proyecto. En\nel **certificado**, ningún documento obligatorio.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 38/2003, de 17 de noviembre, General de Subvenciones (arts. 30, 34 y 37).",
+    "Real Decreto 887/2006, de 21 de julio, Reglamento de la Ley General de Subvenciones (arts. 69 a 75).",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común (arts. 9 y 66).",
+    "Ordenanza general de subvenciones del Ayuntamiento de Santa María de Guía y las bases de cada convocatoria."
+  ],
+  "faq": [
+    {
+      "q": "Nos dieron una subvención para las fiestas del barrio y tengo que justificarla, ¿qué presento?",
+      "a": "La cuenta justificativa: una memoria de lo que se hizo y las facturas con sus justificantes de pago, todo del mismo proyecto. El plazo lo marca la convocatoria."
+    },
+    {
+      "q": "Tenemos dos actividades subvencionadas, ¿puedo justificarlas juntas?",
+      "a": "No. Hay que presentar una cuenta justificativa por cada proyecto o actividad, sin agrupar los justificantes."
+    },
+    {
+      "q": "Necesito un certificado de la subvención para Hacienda.",
+      "a": "Es el certificado de subvención concedida. No pide documentos; indique qué subvención y de qué año."
+    },
+    {
+      "q": "Me concedieron la subvención pero no me han pagado.",
+      "a": "Lo habitual es que falte la ficha de tercero, que es el alta de su cuenta bancaria en el ayuntamiento: se presenta con el certificado de titularidad de la cuenta que le da el banco. Es otro trámite de la sede."
+    },
+    {
+      "q": "Quiero pedir la subvención de este año para la asociación.",
+      "a": "Pedir una subvención nueva se hace en el plazo de su convocatoria y con su propio formulario; no se guía por aquí. Le paso con una persona que le orienta."
+    },
+    {
+      "q": "¿Qué pasa si no justifico a tiempo?",
+      "a": "El ayuntamiento le requerirá y, si no justifica, tendrá que devolver la subvención con intereses. Conviene presentar dentro del plazo de la convocatoria."
+    }
+  ],
+  "kb_extra": "\n## Los dos trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| Justificación de Subvención Concedida | 2797198 |\n| Solicitud de Certificado de una Subvención Concedida | 870057 |\n\n## Cuál de los dos toca\n- **Justificación de subvención concedida:** artículo 30 de la Ley General de Subvenciones y artículos\n  69 a 75 de su Reglamento. Se presenta la cuenta justificativa: una memoria de actuación (qué se hizo,\n  objetivos cumplidos) y una memoria económica (relación de gastos, facturas y justificantes de pago, y en\n  su caso los ingresos o subvenciones de otros que financiaron lo mismo). UNA cuenta por cada proyecto o\n  actividad subvencionada, sin agrupar los justificantes de varios. El plazo lo fija cada convocatoria o la\n  resolución de concesión; si no se justifica en plazo, el ayuntamiento requiere y, si no, exige el\n  reintegro. El ayuntamiento puede pedir justificantes adicionales al revisar la cuenta.\n- **Certificado de subvención concedida:** un certificado o informe de Intervención sobre la subvención\n  (que se concedió, su importe, si está pagada o pendiente), para Hacienda, para otra administración que\n  lo pida o para acreditar la compatibilidad con otra ayuda.\n\n## Qué NO es este trámite\n- **Pedir una subvención nueva**: se hace en el plazo de su convocatoria, con el formulario de esa\n  convocatoria; no se guía por aquí.\n- **Una ayuda social** (emergencia, alquiler, dependencia): Servicios Sociales.\n- **Cobrar**: si no le han pagado, lo habitual es que falte la **ficha de tercero** (el alta de su cuenta\n  bancaria en el ayuntamiento): es otro trámite de la sede, \"Solicitud de Apertura / Modificación de Ficha\n  de Tercero\", que se presenta con el certificado de titularidad de la cuenta que emite el banco.\n- **Subvenciones directas o nominativas**: son las que el ayuntamiento concede sin convocatoria a una\n  entidad concreta y las gestiona con ella directamente.\n\n## Consejos para que sirva\nTener las facturas a nombre del beneficiario y los justificantes de pago (transferencia, recibo); no\nmezclar proyectos; presentar dentro del plazo de la convocatoria; guardar los originales por si los piden."
+}

@@ -1,0 +1,41 @@
+{
+  "slug": "aportacion-documentos",
+  "nombre_oficial": "Aportación de Documentos",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/3a04a0b4-b6ff-4fb0-97f3-9f1fdd2c97ab",
+  "ambito": "la aportación de documentos a un expediente ya abierto en el ayuntamiento",
+  "que_es": "Es enviar al ayuntamiento documentación adicional de un expediente que YA está abierto: normalmente porque el ayuntamiento le ha pedido que subsane o complete algo, o porque quiere añadir un papel a una solicitud que ya presentó. No sirve para iniciar un trámite nuevo: para eso está la instancia general.",
+  "quien_puede": "Cualquier persona que ya tenga un expediente abierto en el ayuntamiento (o su representante), identificándose con clave o certificado digital. Conviene tener a mano el número de expediente, que aparece en el escrito o en el justificante que recibió del ayuntamiento.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año). Si el ayuntamiento le ha dado un plazo para subsanar, hay que respetarlo.",
+  "plazo_resolucion": "Según la normativa aplicable",
+  "silencio_administrativo": "Según la normativa aplicable",
+  "documentacion": [
+    "Los documentos que el ayuntamiento le ha pedido, o los que quiera añadir al expediente"
+  ],
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas.",
+    "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público.",
+    "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local (art. 18.1.e).",
+    "Real Decreto 2568/1986, de 28 de noviembre, Reglamento de Organización, Funcionamiento y Régimen Jurídico de las Entidades Locales."
+  ],
+  "faq": [
+    {
+      "q": "¿Necesito el número de expediente?",
+      "a": "Es lo más cómodo, porque así el ayuntamiento sabe a qué solicitud pertenecen los documentos. Lo encontrará en el escrito o el justificante que recibió. Si no lo tiene, se puede explicar en el texto de qué solicitud se trata, con la fecha y el asunto."
+    },
+    {
+      "q": "¿Esto sirve para empezar un trámite nuevo?",
+      "a": "No. Esto es solo para añadir documentación a un expediente que ya está abierto. Para presentar algo nuevo al ayuntamiento se usa la instancia general."
+    },
+    {
+      "q": "¿Puedo subir varios documentos?",
+      "a": "Sí, se suben de uno en uno en la pantalla de documentos, y no hay problema en aportar varios en la misma solicitud."
+    },
+    {
+      "q": "¿Es gratuito?",
+      "a": "Sí, aportar documentos a un expediente es gratuito."
+    }
+  ]
+}

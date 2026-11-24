@@ -1,0 +1,29 @@
+{
+  "slug": "declaracion-responsable-urbanistica",
+  "nombre_oficial": "Declaración Responsable o Comunicación en Materia Urbanística",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/5d383e20-32a5-4fcf-8725-e51c51e83e6a",
+  "ambito": "la declaración responsable o comunicación genérica en materia urbanística, cuando el ciudadano la pide expresamente con ese nombre",
+  "que_es": "Es el trámite genérico de urbanismo para presentar una declaración responsable o una comunicación que no encaja en ninguno de los trámites concretos de la sede. REGLA DURA: NO es un comodín. Si lo que quiere hacer es una obra, un vallado, un invernadero, un cambio de uso, una primera ocupación, una acometida, una división de fincas, una tala o una limpieza de terreno, es ESE trámite y no este: cada uno tiene su comunicación previa o su licencia propia. Solo aplica si el ciudadano pide expresamente presentar una \"declaración responsable\" o una \"comunicación en materia urbanística\", normalmente porque se lo ha indicado el ayuntamiento o su técnico.",
+  "quien_puede": "El propio interesado, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "No hay documentación obligatoria. La sede ofrece un hueco opcional para la certificación descriptiva y\ngráfica del inmueble; lo demás depende de lo que el ayuntamiento haya indicado en cada caso.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 4/2017, de 13 de julio, del Suelo y de los Espacios Naturales Protegidos de Canarias.",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (artículo 69: declaración responsable y comunicación)."
+  ],
+  "faq": [
+    {
+      "q": "Mi arquitecto me ha dicho que presente una declaración responsable en urbanismo, ¿es aquí?",
+      "a": "Si le ha indicado la declaración responsable genérica, sí. Pero si es para una obra, un vallado, un invernadero o un cambio de uso, cada uno tiene su propio trámite de comunicación previa en la sede, y es ese el que conviene usar."
+    },
+    {
+      "q": "¿Qué documentos necesito?",
+      "a": "Ninguno es obligatorio. Adjunte lo que el ayuntamiento o su técnico le hayan indicado; la sede ofrece un hueco para la certificación descriptiva y gráfica del inmueble."
+    }
+  ],
+  "kb_extra": "\n## Cuándo es este trámite y cuándo no\nEste es el trámite **genérico**. Casi todo lo que un vecino quiere hacer en urbanismo tiene su trámite\npropio en la sede, y ese es el que toca:\n- Obras en una vivienda o local → obras de edificación (licencia o comunicación previa).\n- Vallar una finca, poner un invernadero o placas solares, talar, limpiar o acondicionar un terreno,\n  poner un cobertizo o un aljibe → cada uno tiene su comunicación previa o su licencia.\n- Cambiar el uso de un inmueble, estrenar una vivienda terminada, conectar al alcantarillado, dividir una\n  finca, un vado → trámites propios.\nSolo se usa este cuando el ayuntamiento o el técnico han indicado presentar una declaración responsable o\nuna comunicación **genérica** en materia urbanística."
+}

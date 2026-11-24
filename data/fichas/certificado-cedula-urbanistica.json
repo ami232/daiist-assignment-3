@@ -1,0 +1,16 @@
+{
+  "slug": "certificado-cedula-urbanistica",
+  "nombre_oficial": "CERTIFICADO Cédula Urbanística (solares/parcelas)",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/c179a805-028b-4fc1-903b-217b4e6855b8",
+  "ambito": "la cédula urbanística de solares y parcelas",
+  "que_es": "Es pedir la cédula urbanística de un solar o una parcela: la ficha oficial que resume qué dice el planeamiento sobre ese terreno concreto y QUÉ SE PUEDE CONSTRUIR en él. Se pide antes de comprar un solar o de encargar un proyecto. OJO: no fija la línea de fachada ni la altura del terreno; eso es el certificado de alineaciones y rasantes.",
+  "quien_puede": "El propio interesado, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion": [
+    "Referencia Catastral o Plano Situación sobre base cartográfica del Plan General, con delimitación de la parcela."
+  ],
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel."
+}

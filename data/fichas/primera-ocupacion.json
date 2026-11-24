@@ -1,0 +1,42 @@
+{
+  "slug": "primera-ocupacion",
+  "nombre_oficial": "Comunicación previa de primera ocupación o utilización de una edificación (con licencia y sin licencia)",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/6e6b396c-aeea-4e83-a85c-5d5e6ed5eb65 (y .../0f9805d5-dd5a-42b2-ae79-25a449733333; cubre 2 trámites del catálogo)",
+  "ambito": "la comunicación previa de primera ocupación o utilización de edificaciones e instalaciones en Guía, tanto si la obra se hizo con licencia como si no",
+  "que_es": "Es el trámite que hay que hacer cuando una edificación está terminada y se va a ocupar o utilizar por primera vez: es lo que permite estrenar la vivienda o el local, y lo que suelen pedir para dar de alta la luz y el agua o para escriturar. En la sede hay dos trámites según una única cosa: si la obra se hizo CON licencia urbanística o SIN ella (en cuyo caso se tramita como fuera de ordenación). OJO: esto es para ESTRENAR lo que ya está terminado. Si todavía va a hacer la obra, eso son los trámites de obra; y si lo que quiere es que le CERTIFIQUEN algo de una construcción que ya existe —su antigüedad, que la infracción prescribió, que el uso está consolidado—, eso son certificados urbanísticos, que son trámites aparte.",
+  "quien_puede": "El propietario o promotor de la edificación, o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "Dependen de si la obra se hizo con licencia o sin ella. En los dos casos se pide el último recibo del IBI o\nla acreditación de la regularización catastral. La vía **con licencia** añade los certificados originales\nde finalización de obra y un reportaje fotográfico de la edificación terminada y de su entorno urbanizado\n(cubierta, patios, jardines, fachadas y medianeras). La vía **sin licencia**, de fuera de ordenación, pide\nen su lugar el informe municipal sobre el uso y la antigüedad de la edificación, los certificados firmados\npor personal técnico competente, y una descripción detallada del inmueble indicando todas las unidades\nsusceptibles de aprovechamiento independiente.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 4/2017, de 13 de julio, del Suelo y de los Espacios Naturales Protegidos de Canarias (artículos 332, 349 y 350).",
+    "Ley 12/2012, de 26 de diciembre, de medidas urgentes de liberalización del comercio y de determinados servicios.",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas."
+  ],
+  "faq": [
+    {
+      "q": "He terminado la casa y quiero mudarme, ¿qué tengo que hacer?",
+      "a": "Hay que comunicar la primera ocupación de la edificación. Es lo que suelen pedirle para dar de alta la luz y el agua o para escriturar. Hay dos versiones del trámite, según si la obra se hizo con licencia del ayuntamiento o sin ella."
+    },
+    {
+      "q": "No sé si la obra tenía licencia; la hizo mi padre hace años.",
+      "a": "Es lo más habitual en casas antiguas. En el ayuntamiento pueden comprobar el expediente en un momento, así que lo mejor es hablar con el departamento antes de presentar nada."
+    },
+    {
+      "q": "¿Qué es eso de fuera de ordenación?",
+      "a": "Es la vía que corresponde cuando la edificación se hizo sin licencia. Tiene su propio trámite en la sede y pide más documentación técnica, incluido un informe municipal sobre el uso y la antigüedad de la edificación."
+    },
+    {
+      "q": "¿Qué es el informe municipal de uso y antigüedad y de dónde lo saco?",
+      "a": "Lo emite el propio ayuntamiento y se pide aparte, en el trámite de certificado de antigüedad de edificaciones e instalaciones. Solo hace falta en la vía sin licencia."
+    },
+    {
+      "q": "¿Esto es lo mismo que la cédula de habitabilidad?",
+      "a": "Es el trámite municipal que permite ocupar por primera vez la edificación terminada, que es lo que suelen pedir para los suministros y para escriturar. Si le han pedido un documento concreto con otro nombre, lo mejor es confirmarlo con el departamento."
+    }
+  ],
+  "kb_extra": "\n## Los dos trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| COMUNICACIÓN PREVIA. Primera ocupación/utilización de edificación e instalaciones CON LICENCIA | 3250493 |\n| COMUNICACIÓN PREVIA. Primera ocupación/utilización de edificación e instalaciones SIN LICENCIA (Fuera de Ordenación) | 3250021 |\n\n## Qué los separa\nUna sola cosa: si la obra se hizo **con licencia** urbanística del ayuntamiento o **sin ella**. Las dos\nsituaciones tienen su trámite; la de sin licencia se tramita como fuera de ordenación y pide bastante más\ndocumentación técnica.\n\n## El informe municipal de uso y antigüedad (solo en la vía sin licencia)\nLa primera ocupación sin licencia exige aportar el **informe municipal sobre el uso y la antigüedad de la\nedificación**. Ese informe **lo emite el propio ayuntamiento** y se pide en un trámite aparte del\ncatálogo, el certificado de antigüedad de edificaciones e instalaciones. Si el ciudadano no lo tiene, no\npuede completar esta comunicación previa todavía: primero necesita ese informe.\n\n## Qué NO es este trámite\nSi todavía va a **hacer** la obra, son los trámites de obra de edificación. Y si lo que quiere es que le\n**certifiquen** algo de una construcción que ya existe —desde cuándo está hecha, que la infracción\nprescribió, que el uso está consolidado—, son certificados urbanísticos. Aquí solo se comunica que una\nedificación terminada se va a ocupar por primera vez."
+}
