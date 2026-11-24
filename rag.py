@@ -179,6 +179,71 @@ def search(query: str, design: str | None = None, k: int | None = None, mode: st
     return [dict(rows[i], score=round(fused[i], 4)) for i in order]
 
 
+def format_results(hits: list[dict]) -> str:
+    if not hits:
+        return "No results. The index is empty."
+    blocks = [
+        f"{len(hits)} results, best first. Cite facts with the tag in square brackets, "
+        f"exactly as written, e.g. [{hits[0]['doc_id']} | {hits[0]['location']}]."
+    ]
+    for number, hit in enumerate(hits, start=1):
+        lines = [f"--- Result {number}  [{hit['doc_id']} | {hit['location']}]  score {hit['score']}"]
+        others = [loc for loc in hit["locations"] if loc != hit["location"]]
+        if others:
+            lines.append("also contains text of: " + ", ".join(f"[{hit['doc_id']} | {loc}]" for loc in others))
+        lines.append(f"chunk_id: {hit['chunk_id']}")
+        lines.append(f"document: {hit['doc_title']}")
+        heading = hit["heading"]
+        if hit["paragraph"]:
+            label = "paragraph" if hit["part"] == "article" else "part"
+            heading = f"{heading} ({label} {hit['paragraph'].replace('Part ', '')})".strip()
+        if heading:
+            lines.append(f"heading: {heading}")
+        lines.append("text:")
+        lines.append(hit["text"])
+        blocks.append("\n".join(lines))
+    return "\n\n".join(blocks)
+
+
+_RESULT = re.compile(r"^--- Result \d+  \[([^|\]]+) \| ([^\]]+)\]  score (\S+)$", re.M)
+_TAG = re.compile(r"\[\s*([A-Za-z0-9_.\-]+)\s*\|\s*([^\[\]|]+?)\s*\]")
+
+
+def parse_results(output: str) -> list[dict]:
+    """The search tool's text output -> chunk dicts (the inverse of format_results)."""
+    chunks = []
+    matches = list(_RESULT.finditer(output))
+    for number, match in enumerate(matches):
+        end = matches[number + 1].start() if number + 1 < len(matches) else len(output)
+        block = output[match.end():end]
+        head, _, text = block.partition("\ntext:\n")
+        locations = [match.group(2).strip()]
+        for line in head.splitlines():
+            if line.startswith("also contains text of:"):
+                locations += [loc.strip() for _, loc in _TAG.findall(line)]
+        chunk_id = re.search(r"^chunk_id: (\S+)$", head, re.M)
+        title = re.search(r"^document: (.+)$", head, re.M)
+        try:
+            score = float(match.group(3))
+        except ValueError:
+            score = 0.0
+        chunks.append({
+            "chunk_id": chunk_id.group(1) if chunk_id else "",
+            "doc_id": match.group(1).strip(),
+            "doc_title": title.group(1).strip() if title else "",
+            "location": locations[0],
+            "locations": list(dict.fromkeys(locations)),
+            "score": score,
+            "text": text.strip(),
+        })
+    return chunks
+
+
+def parse_citations(answer: str) -> list[tuple[str, str]]:
+    """Every [doc_id | location] tag in an answer, in order, without repeats."""
+    return list(dict.fromkeys((doc.strip(), loc.strip()) for doc, loc in _TAG.findall(answer or "")))
+
+
 if __name__ == "__main__":
     import sys
 

@@ -36,32 +36,6 @@ print(
 mcp = MCPServer("corpus", log_level="WARNING")
 
 
-def format_results(hits: list[dict]) -> str:
-    if not hits:
-        return "No results. The index is empty."
-    blocks = [
-        f"{len(hits)} results, best first. Cite facts with the tag in square brackets, "
-        f"exactly as written, e.g. [{hits[0]['doc_id']} | {hits[0]['location']}]."
-    ]
-    for number, hit in enumerate(hits, start=1):
-        lines = [f"--- Result {number}  [{hit['doc_id']} | {hit['location']}]  score {hit['score']}"]
-        others = [loc for loc in hit["locations"] if loc != hit["location"]]
-        if others:
-            lines.append("also contains text of: " + ", ".join(f"[{hit['doc_id']} | {loc}]" for loc in others))
-        lines.append(f"chunk_id: {hit['chunk_id']}")
-        lines.append(f"document: {hit['doc_title']}")
-        heading = hit["heading"]
-        if hit["paragraph"]:
-            label = "paragraph" if hit["part"] == "article" else "part"
-            heading = f"{heading} ({label} {hit['paragraph'].replace('Part ', '')})".strip()
-        if heading:
-            lines.append(f"heading: {heading}")
-        lines.append("text:")
-        lines.append(hit["text"])
-        blocks.append("\n".join(lines))
-    return "\n\n".join(blocks)
-
-
 @mcp.tool()
 def search(query: str) -> str:
     """Search a corpus of EU public procurement law and return the best-matching passages.
@@ -94,7 +68,7 @@ def search(query: str) -> str:
     if not query:
         return "Empty query. Give a short description of the rule you are looking for."
     hits = rag.search(query, design=CONFIG["design"], k=CONFIG["k"], mode=CONFIG["mode"])
-    return format_results(hits)
+    return rag.format_results(hits)
 
 
 def _resolve_inside_repo(path: str) -> Path:

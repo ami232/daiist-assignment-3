@@ -1,0 +1,3 @@
+Test note for the add-document tool.
+
+This file is only used to show the approval step. It contains no procurement rules.
