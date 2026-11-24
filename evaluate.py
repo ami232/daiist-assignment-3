@@ -355,7 +355,7 @@ class DailyQuota(RuntimeError):
 
 def _rate_limited(error: Exception) -> tuple[bool, bool]:
     text = f"{type(error).__name__} {error}"
-    limited = any(s in text for s in ("429", "RESOURCE_EXHAUSTED", "ResourceExhausted", "503", "UNAVAILABLE", "overloaded"))
+    limited = any(s in text for s in ("429", "RESOURCE_EXHAUSTED", "ResourceExhausted", "503", "UNAVAILABLE", "overloaded", "Timeout", "timed out"))
     daily = limited and any(s in text for s in ("PerDay", "per day", "PerDayPer"))
     return limited, daily
 
@@ -427,7 +427,7 @@ async def judge_answers(questions: list[dict], answers: dict, lookup: dict) -> d
         if (hit := cache.get(key)) is None:
             if judge is None:
                 load_api_key()
-                judge = ChatGoogleGenerativeAI(model=JUDGE_MODEL, temperature=0).with_structured_output(_grade_model())
+                judge = ChatGoogleGenerativeAI(model=JUDGE_MODEL, temperature=0, timeout=300).with_structured_output(_grade_model())
             prompt = JUDGE_PROMPT.format(kind=q["kind"], question=q["question"], reference=q["reference_answer"],
                                          passages=passages, answer=rec["answer"])
             for attempt in range(6):
@@ -637,7 +637,17 @@ ANY_SOURCE = re.compile(r"§\s*\d|\bBGH\b|\b[IVX]+ ZR \d+/\d+|Bundesgerichtshof|
 CASE_NO = re.compile(r"\b[IVX]+ ZR \d+/\d+")
 
 
-async def run_baseline(questions: list[dict]) -> dict:
+BASELINE_CONTEXT_SUFFIX = " (Germany, residential lease)"
+CASE_CHECK = ROOT / "eval" / "baseline_case_check.json"  # cited cases outside the corpus, checked against the portal TOC
+
+
+def _baseline_key(question: str, suffix: str) -> str:
+    import agent as ag
+    return _sha("baseline", question + suffix, ag.MODEL)  # suffix "" keeps the first baseline's cache keys
+
+
+async def run_baseline(questions: list[dict], suffix: str = "") -> dict:
+    """Ask the agent's model the bare question (plus an optional suffix): no tools, no retrieval, no AGENTS.md."""
     import asyncio
     import time
     import agent as ag
@@ -648,16 +658,16 @@ async def run_baseline(questions: list[dict]) -> dict:
     cache = retrieval.JsonCache(BASELINE_CACHE)
     model = None
     for q in questions:
-        key = _sha("baseline", q["question"], ag.MODEL)
+        key = _baseline_key(q["question"], suffix)
         if cache.get(key) is not None:
             continue
         if model is None:
             load_api_key()
-            model = ChatGoogleGenerativeAI(model=ag.MODEL)
+            model = ChatGoogleGenerativeAI(model=ag.MODEL, timeout=120)  # a hung request (e.g. after sleep) gets retried
         for attempt in range(6):
             try:
                 started = time.time()
-                reply = await model.ainvoke(q["question"])
+                reply = await model.ainvoke(q["question"] + suffix)
                 break
             except Exception as error:  # noqa: BLE001
                 limited, daily = _rate_limited(error)
@@ -667,112 +677,149 @@ async def run_baseline(questions: list[dict]) -> dict:
                     raise
                 await asyncio.sleep(30 * (attempt + 1))
         u = reply.usage_metadata or {}
-        cache.put(key, {"question": q["question"], "answer": reply.text, "trace": [], "model": ag.MODEL,
+        cache.put(key, {"question": q["question"] + suffix, "answer": reply.text, "trace": [], "model": ag.MODEL,
                         "stats": {"input_tokens": u.get("input_tokens", 0), "output_tokens": u.get("output_tokens", 0),
                                   "seconds": round(time.time() - started, 1)}})
-        print(f"  baseline {q['id']}", flush=True)
-    return {q["id"]: {**cache.get(_sha("baseline", q["question"], ag.MODEL)), "passages": BASELINE_PASSAGES}
+        print(f"  baseline{suffix} {q['id']}", flush=True)
+    return {q["id"]: {**cache.get(_baseline_key(q["question"], suffix)), "passages": BASELINE_PASSAGES}
             for q in questions}
 
 
-def baseline_report(questions: list[dict], base: dict, base_verdicts: dict, agent_rows: dict, human: dict) -> str:
-    kinds = ["single", "multi", "unanswerable"]
-    by_kind = {k: [q["id"] for q in questions if q["kind"] == k] for k in kinds + ["all"]}
-    by_kind["all"] = [q["id"] for q in questions]
+NO_GERMAN = re.compile(r"German|BGB|BetrKV|Betriebskosten", re.I)
+NO_PASSAGE_REASON = re.compile(r"no retrieved passages|passages are empty|unanswerable|documents do not cover", re.I)
 
-    def frac(ids, ok):
-        return f"{sum(1 for i in ids if ok(i))}/{len(ids)}"
+
+def baseline_report(questions: list[dict], variants: dict, agent_rows: dict, human: dict) -> str:
+    """variants: label -> (answers, verdicts), in display order."""
+    kinds = ["single", "multi", "unanswerable"]
+    by_kind = {k: [q["id"] for q in questions if q["kind"] == k] for k in kinds}
+    by_kind["all"] = [q["id"] for q in questions]
+    ids = by_kind["all"]
+
+    def frac(ids_, ok):
+        return f"{sum(1 for i in ids_ if ok(i))}/{len(ids_)}"
 
     def row(label, ok, kinds_=kinds + ["all"]):
         return f"| {label} | " + " | ".join(frac(by_kind[k], ok) if k in kinds_ else "–" for k in kinds + ["all"]) + " |"
 
-    has_human = all(i in human and human[i].get("correct", "").strip() in ("0", "1") for i in by_kind["all"])
+    has_human = all(i in human and human[i].get("correct", "").strip() in ("0", "1") for i in ids)
     un = ["unanswerable"]
+    model = next(iter(variants.values()))[0][ids[0]]["model"]
     lines = [
-        "# Baseline: plain gemini-3.8-flash compared with the agent",
+        f"# Baseline: plain {model} compared with the agent",
         "",
-        f"The baseline is the agent's model ({base[by_kind['all'][0]]['model']}) given only the question: no tools, no retrieval "
-        f"and no AGENTS.md. It stands for \"asking a general AI\". The same judge ({JUDGE_MODEL}) and the same JUDGE_PROMPT "
-        "grade both. The baseline's passages are given to the judge as none. \"Supported\" doesn't apply to the "
-        "baseline, so only \"correct\" is compared. The agent is shown with the judge's grades and with the human "
-        "labels; the baseline has no human labels.",
+        f"Both baselines use the agent's model ({model}) with no tools, no retrieval and no AGENTS.md. They stand for "
+        "\"asking a general AI\".",
+        "- **baseline:** gets only the question.",
+        f"- **baseline with context:** gets the question with \"{BASELINE_CONTEXT_SUFFIX.strip()}\" appended.",
+        "",
+        f"The same judge ({JUDGE_MODEL}) and the same JUDGE_PROMPT grade all three, and the judge sees the original "
+        "question. The baselines' passages are given to the judge as none, so \"supported\" doesn't apply to them and "
+        "only \"correct\" is compared. The agent is shown with the judge's grades and with the human labels; the "
+        "baselines have no human labels.",
         "",
         "| | single | multi | unanswerable | all |",
         "|---|---|---|---|---|",
-        row("**Correct**, baseline (judge)", lambda i: base_verdicts[i]["correct"]),
-        row("**Correct**, agent (judge)", lambda i: agent_rows[i]["judge"]["correct"]),
     ]
+    lines += [row(f"**Correct**, {label} (judge)", lambda i, v=v: v[i]["correct"]) for label, (_, v) in variants.items()]
+    lines.append(row("**Correct**, agent (judge)", lambda i: agent_rows[i]["judge"]["correct"]))
     if has_human:
         lines.append(row("**Correct**, agent (human labels)", lambda i: human[i]["correct"].strip() == "1"))
-    lines += [
-        row("Unanswerable refused, baseline (code: says it can't answer / not covered)",
-            lambda i: refusal(base[i]["answer"])["anywhere"], un),
-        row("Unanswerable refused, agent (code)", lambda i: agent_rows[i]["checks"]["refusal"]["anywhere"], un),
-        row("Cites any § or BGH case, baseline (code)", lambda i: bool(ANY_SOURCE.search(base[i]["answer"]))),
-        row("Cites any § or BGH case, agent (code)", lambda i: bool(ANY_SOURCE.search(agent_rows[i]["answer"]))),
-    ]
+    lines += [row(f"Unanswerable refused, {label} (code)", lambda i, a=a: refusal(a[i]["answer"])["anywhere"], un)
+              for label, (a, _) in variants.items()]
+    lines.append(row("Unanswerable refused, agent (code)", lambda i: agent_rows[i]["checks"]["refusal"]["anywhere"], un))
+    lines += [row(f"Cites any § or BGH case, {label} (code)", lambda i, a=a: bool(ANY_SOURCE.search(a[i]["answer"])))
+              for label, (a, _) in variants.items()]
+    lines.append(row("Cites any § or BGH case, agent (code)", lambda i: bool(ANY_SOURCE.search(agent_rows[i]["answer"]))))
 
-    corpus_cases = {c for r in agent_rows.values() for c in CASE_NO.findall(" ".join(r["trace"]))}
-    cases = {i: sorted(set(CASE_NO.findall(base[i]["answer"]))) for i in by_kind["all"]}
-    cited = sorted({c for cs in cases.values() for c in cs})
-    tok = [base[i]["stats"]["input_tokens"] + base[i]["stats"]["output_tokens"] for i in by_kind["all"]]
-    sec = [base[i]["stats"]["seconds"] for i in by_kind["all"]]
-    no_german = [i for i in by_kind["all"] if not re.search(r"German|BGB|BetrKV|Betriebskosten", base[i]["answer"], re.I)]
-    no_passage_fails = [q["id"] for q in questions if q["kind"] != "unanswerable" and not base_verdicts[q["id"]]["correct"]
-                        and re.search(r"no retrieved passages|passages are empty|unanswerable|documents do not cover",
-                                      base_verdicts[q["id"]]["correct_reasoning"], re.I)]
+    lines.append("")
+    for label, (a, _) in variants.items():
+        tok = [a[i]["stats"]["input_tokens"] + a[i]["stats"]["output_tokens"] for i in ids]
+        sec = [a[i]["stats"]["seconds"] for i in ids]
+        lines.append(f"- Cost per question, {label}: {sum(tok) / len(tok):,.0f} tokens, {sum(sec) / len(sec):.1f} s on average.")
+    lines.append(f"- Cost per question, agent: "
+                 f"{sum(r['stats']['input_tokens'] + r['stats']['output_tokens'] for r in agent_rows.values()) / len(ids):,.0f} "
+                 f"tokens, {sum(r['stats']['seconds'] for r in agent_rows.values()) / len(ids):.1f} s on average.")
+
+    # Cited BGH case numbers: one of the indexed judgments, or checked by hand (eval/baseline_case_check.json).
+    corpus_cases = {c["doc_id"].removeprefix("BGH ") for c in load_chunks()
+                    if c["doc_type"] == "judgment"}  # the indexed judgments, not cases they cite
+    where = {}
+    for label, (a, _) in variants.items():
+        for i in ids:
+            for c in dict.fromkeys(CASE_NO.findall(a[i]["answer"])):
+                where.setdefault(c, []).append(f"{i} ({label})")
+    check = json.loads(CASE_CHECK.read_text(encoding="utf-8")) if CASE_CHECK.is_file() else {}
+    lines += ["", "## BGH case numbers the baselines cite", "",
+              "\"In corpus\" means one of the 17 indexed judgments. The others were checked by hand against the portal's table of "
+              "contents, rechtsprechung-im-internet.de's rii-toc.xml with 35,815 BGH decisions dated 2010-01-05 to "
+              "2026-11-17 (eval/baseline_case_check.json). A case missing from the table is not proof it doesn't exist: "
+              "the portal starts in 2010 and doesn't publish every decision.", "",
+              "| case | cited in | in corpus | on the portal | decided | what the baseline claims | actual topic | matches |",
+              "|---|---|---|---|---|---|---|---|"]
+    for c in sorted(where):
+        k = check.get(c, {})
+        lines.append(f"| {c} | {', '.join(where[c])} | {'yes' if c in corpus_cases else 'no'} | "
+                     f"{k.get('on_portal', '–' if c in corpus_cases else 'not checked')} | {k.get('decided', '–')} | "
+                     f"{k.get('claimed', '–')} | {k.get('actual', '–')} | {k.get('matches', '–')} |")
+    if check.get("_summary"):
+        lines += ["", check["_summary"]]
+
+    lines += ["", "## Caveats", ""]
+    for label, (a, v) in variants.items():
+        no_german = [i for i in ids if not NO_GERMAN.search(a[i]["answer"])]
+        fails = [q["id"] for q in questions if q["kind"] != "unanswerable" and not v[q["id"]]["correct"]
+                 and NO_PASSAGE_REASON.search(v[q["id"]]["correct_reasoning"])]
+        correct = sum(bool(v[i]["correct"]) for i in ids)
+        lines += [
+            f"- **{label}, jurisdiction:** {len(no_german)} of 39 answers never mention German law (no German, BGB, "
+            f"BetrKV or Betriebskosten){': ' + ', '.join(no_german) if no_german else ''}.",
+            f"- **{label}, judge bias:** on {len(fails)} answerable question(s) ({', '.join(fails) or 'none'}) the judge "
+            "failed the answer partly because no passages were retrieved, as if it had to refuse. Even if all of these "
+            f"flipped to correct, it would be at {correct + len(fails)}/39.",
+        ]
     lines += [
-        "",
-        f"Baseline cost per question: {sum(tok) / len(tok):,.0f} tokens and {sum(sec) / len(sec):.1f} s on average "
-        f"(the agent: {sum(r['stats']['input_tokens'] + r['stats']['output_tokens'] for r in agent_rows.values()) / len(agent_rows):,.0f} "
-        f"tokens, {sum(r['stats']['seconds'] for r in agent_rows.values()) / len(agent_rows):.1f} s).",
-        "",
-        f"BGH case numbers the baseline cites: {len(cited)} distinct"
-        + (f", of which {sum(c in corpus_cases for c in cited)} appear in the agent's retrieved passages. Cases outside "
-           "the corpus can't be checked here, so they are listed, not judged: " if cited else ".")
-        + ", ".join(f"{c}{'' if c in corpus_cases else ' (not in corpus)'}" for c in cited),
-        "",
-        "## Caveats",
-        "",
-        f"- **Jurisdiction:** the questions don't say \"Germany\", and {len(no_german)} of 39 baseline answers never "
-        f"mention German law (no German, BGB, BetrKV or Betriebskosten): {', '.join(no_german)}. Many answer under UK or "
-        "US law instead. Part of the gap therefore measures missing context, not missing knowledge. A user who adds "
-        "\"in Germany\" would do better than this baseline.",
-        f"- **Judge bias against the baseline:** on {len(no_passage_fails)} answerable question(s) "
-        f"({', '.join(no_passage_fails) or 'none'}) the judge failed the baseline partly because no passages were "
-        "retrieved, treating it as if it had to refuse. Even if all of these flipped to correct, the baseline would "
-        f"be at {sum(bool(base_verdicts[i]['correct']) for i in by_kind['all']) + len(no_passage_fails)}/39.",
+        "- **Missing context in the plain baseline:** the questions don't say \"Germany\", so the plain baseline often "
+        "answers under UK or US law. The baseline with context removes that excuse, so the gap between it and the "
+        "agent is the fairer measure of what retrieval adds.",
         "- **Unanswerable questions:** JUDGE_PROMPT passes them only if the answer says the documents don't cover the "
-        "question. The baseline has no documents, so it could pass only by declining. It never did (0/7 by the code "
-        "check as well).",
+        "question. A baseline has no documents, so it can pass only by declining to answer.",
         "",
-        "## Per question (baseline, judge's correct verdict)",
+        "## Per question (judge's correct verdict)",
         "",
-        "| id | kind | baseline correct | agent correct (judge) | baseline cites § / BGH | baseline judge reasoning |",
-        "|---|---|---|---|---|---|",
+        "| id | kind | " + " | ".join(variants) + " | agent | " + " | ".join(f"{l} cites § / BGH" for l in variants) + " |",
+        "|---|---|" + "---|" * (2 * len(variants) + 1),
     ]
     for q in questions:
         i = q["id"]
-        reason = " ".join(base_verdicts[i]["correct_reasoning"].split()).replace("|", "/")
-        lines.append(f"| {i} | {q['kind']} | {int(base_verdicts[i]['correct'])} | {int(agent_rows[i]['judge']['correct'])} | "
-                     f"{'yes' if ANY_SOURCE.search(base[i]['answer']) else 'no'} | {reason} |")
-    lines += ["", "Baseline answers: eval/baseline_answers.jsonl"]
+        lines.append(f"| {i} | {q['kind']} | " + " | ".join(str(int(v[i]["correct"])) for _, v in variants.values())
+                     + f" | {int(agent_rows[i]['judge']['correct'])} | "
+                     + " | ".join("yes" if ANY_SOURCE.search(a[i]["answer"]) else "no" for a, _ in variants.values()) + " |")
+    lines += ["", "Answers and the judge's reasoning: eval/baseline_answers.jsonl, eval/baseline_context_answers.jsonl"]
     return "\n".join(lines) + "\n"
 
 
-def evaluate_baseline(questions: list[dict], agent_rows: dict, lookup: dict) -> str:
-    import asyncio
-    base = asyncio.run(run_baseline(questions))
-    verdicts = asyncio.run(judge_answers(questions, base, lookup))
-    with (ROOT / "eval" / "baseline_answers.jsonl").open("w", encoding="utf-8") as f:
+def _write_baseline_jsonl(path: Path, questions: list[dict], base: dict, verdicts: dict) -> None:
+    with path.open("w", encoding="utf-8") as f:
         for q in questions:
             b, v = base[q["id"]], verdicts[q["id"]]
-            f.write(json.dumps({"id": q["id"], "kind": q["kind"], "question": q["question"], "answer": b["answer"],
+            f.write(json.dumps({"id": q["id"], "kind": q["kind"], "question": b["question"], "answer": b["answer"],
                                 "model": b["model"], "stats": b["stats"], "correct": int(v["correct"]),
                                 "correct_reasoning": v["correct_reasoning"], "judge_model": JUDGE_MODEL,
                                 "cites_source": bool(ANY_SOURCE.search(b["answer"])),
                                 "refusal": refusal(b["answer"])}, ensure_ascii=False) + "\n")
-    report = baseline_report(questions, base, verdicts, agent_rows, read_human_labels())
+
+
+def evaluate_baseline(questions: list[dict], agent_rows: dict, lookup: dict) -> str:
+    import asyncio
+    variants = {}
+    for label, suffix, out in [("baseline", "", "baseline_answers.jsonl"),
+                               ("baseline with context", BASELINE_CONTEXT_SUFFIX, "baseline_context_answers.jsonl")]:
+        base = asyncio.run(run_baseline(questions, suffix))
+        verdicts = asyncio.run(judge_answers(questions, base, lookup))  # judge sees the original question
+        _write_baseline_jsonl(ROOT / "eval" / out, questions, base, verdicts)
+        variants[label] = (base, verdicts)
+    report = baseline_report(questions, variants, agent_rows, read_human_labels())
     BASELINE_MD.write_text(report, encoding="utf-8")
     return report
 
