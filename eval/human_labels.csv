@@ -1,1 +1,22 @@
 id,correct,supported,notes
+q01,1,1,
+q03,1,1,
+q05,1,1,
+q07,1,1,
+q09,1,1,"Leaves out the 'not finalized' limit (relevant) and the 24-version cap, both in the retrieved article."
+q11,1,1,Leaves out the IBAN requirement; minor.
+q13,1,1,Should mention that a finalized estimate can't be moved (in the retrieved article).
+q15,1,1,
+q17,0,1,Answers the change part only: misses that the counter restarts each year and cannot be reset by hand.
+q19,1,1,"Both key facts; line exchange rate only as a side note, auto-fill not mentioned."
+q21,1,1,
+q23,1,1,
+q25,0,1,Misses the main point (add accountant free via Settings > Team) and the Premium requirement; only found the export article.
+q27,0,1,Misses the Wrap Report (the retrieved article points to it) and Target/Blended margin; one cited URL is wrong.
+q29,1,1,Core steps match; omits the Billed status (minor).
+q31,1,1,"Reference is wrong: the help centre explains the default date range (from 1 January this year), so this is not really unanswerable."
+q32,1,1,
+q33,0,0,Should have referred to support; invents that the discount is not carried over (the merge article says discounts are carried over).
+q34,1,1,
+q35,1,1,
+q36,0,0,"Should have referred to support; its main claim (empty means no team members) is inferred, not in the help centre. Happens to be right (checked in the app code) but unsupported."
