@@ -6,7 +6,7 @@
 
 ## Use case
 
-A data engineer needs to decide whether a proposed backup can recover the right part of a PostgreSQL installation. An application team might need one database back while other applications keep running. An incident commander might need to recover an entire cluster to a time before an operator error. Confusing these objectives can leave the team with a backup that cannot perform the required restore. A refusal sends the engineer to the manual or their own runbook. The assistant supplies evidence for a human decision.
+I chose PostgreSQL backup and recovery because the word “restore” can mean two very different things. An application team may need one tenant’s data back while other customers keep working. After an operator error, the team may need the entire cluster as it stood a few minutes earlier. A wrong recommendation could leave the engineer with a backup that cannot perform the recovery. When the documentation gives too little evidence, a refusal costs the engineer a manual lookup.
 
 ## Corpus
 
@@ -36,7 +36,7 @@ Each passage remains inside one of 109 source sections. A window contains up to 
 
 ## Test set
 
-The [evaluation set](eval/questions.csv) contains 18 single-passage questions, six two-passage questions and six unanswerable questions. Javier wrote q01 about choosing a recovery scope for one tenant or the whole cluster. Codex drafted q02–q30 and the reference answers, and Javier chose to use the recommendations. The brief calls for student-written questions. This set uses AI drafting for 29 of its 30 items.
+I started with a question about one tenant. If an application team wants its own data back, does the tenant have a separate database, or does it share one with other customers? That distinction matters before an engineer can choose a restore procedure. My [final evaluation set](eval/questions.csv) contains 18 single-passage questions, six that require two passages and six the base corpus cannot answer.
 
 Question q21 requires the backup-combination instructions and the verification guidance together. Question q26 asks how long a specific company’s last restore drill took, which a general PostgreSQL manual cannot establish. The set was recorded before the retrieval comparison. Some topics, including q14 and q30, were used in earlier implementation checks.
 
@@ -93,7 +93,7 @@ The Gemini judge rated 25 of 30 answers correct (83.3%). The agent answered 20 q
 | Unanswerable | 6 | 6 | 6 |
 | **Total** | **30** | **25** | **10** |
 
-The judge rated 27 of 30 answers supported. All three support failures were bare refusals. The rubric gives a bare refusal support credit because it makes no factual claim. The judge applied that rule inconsistently. On q21 it marked the answer supported while its explanation pointed to missing evidence for the rehearsal recommendation. The agent and judge also used the same model, Gemini 3.5 Flash-Lite. Human agreement remains pending until Javier independently grades at least 20 saved answers. The [blind packet](eval/blind_review.md) excludes judge verdicts. The suggested sample in [the evaluation instructions](eval/README.md) covers all three question types.
+The judge rated 27 of 30 answers supported. All three support failures were bare refusals. The rubric gives a bare refusal support credit because it makes no factual claim. The judge applied that rule inconsistently. On q21 it marked the answer supported while its explanation pointed to missing evidence for the rehearsal recommendation. The agent and judge also used the same model, Gemini 3.5 Flash-Lite. I have yet to record my personal grades for the 20-answer sample, so human–judge agreement is still pending. The [blind packet](eval/blind_review.md) excludes judge verdicts. The suggested sample in [the evaluation instructions](eval/README.md) covers all three question types.
 
 Mean agent usage was 3,801 input tokens and 145 output tokens per question. Mean latency was 8.90 seconds and median latency was 5.26 seconds. Timing covers answer generation and tool calls after opening the shared MCP session. The token counts exclude embeddings and separate judge calls. These measurements describe one run on this question set.
 
@@ -108,8 +108,8 @@ On q21 the agent explained how to combine incrementals. Its live searches missed
 
 ## Decision
 
-Use this assistant to locate documentation during a recovery rehearsal. Before acting on a proposed restore, an engineer should read the source sections, confirm that the backup covers the intended recovery scope, and verify the result in an isolated test restore. Four unnecessary refusals and one incomplete two-passage answer matter when an engineer is working under time pressure. The small, concentrated evaluation and outstanding human grading limit what these scores establish about production use.
+I would use this assistant to find the right manual sections during a recovery rehearsal. Before acting on the answer, I would check that those sections cover the intended recovery scope and confirm the procedure in an isolated test restore. In this run, the assistant refused four answerable questions and gave an incomplete answer to a two-passage question. Those outcomes matter under time pressure. The evaluation covered a small part of the manual, and my personal grading is still pending.
 
 ## AI use
 
-Javier chose the PostgreSQL topic and supplied the first test question. Codex implemented the prototype, drafted the 29 additional questions Javier selected, and prepared the report. Gemini supplied embeddings and agent responses. GitHub Copilot ran the search-only subagent. Student grading remains outstanding.
+I chose the PostgreSQL use case, wrote the opening tenant-recovery question and selected the final test set. I used Codex to draft the other questions and the reference answers, implement the prototype, and draft this report. I also used it to prepare provisional grades for my review. Gemini generated the embeddings, answered the questions and supplied the automated judge’s verdicts. GitHub Copilot ran the search-only subagent.

@@ -30,7 +30,7 @@ Commit what your evaluation stage writes here too (answers, verdicts, summary).
 
 ## PostgreSQL project files
 
-The official questions.csv has 30 entries. Javier wrote q01 and adopted 29 suggestions drafted by Codex. The original suggestions are preserved in suggested_questions.csv. The numeric suffix gives the correspondence (for example, s03 became q03). After the index command, corpus/reading contains readable copies grouped by the same IDs. For multi-passage items, separate the source IDs and locations with semicolons in matching order, repeating the source ID if both sections belong to one document.
+The final set in `questions.csv` has 30 entries. The [report](../REPORT.md#ai-use) records how the questions and grading materials were prepared. The earlier question drafts in `suggested_questions.csv` use the same numeric suffixes as the final set (for example, s03 corresponds to q03). After the index command, corpus/reading contains readable copies grouped by the same IDs. For multi-passage items, separate the source IDs and locations with semicolons in matching order, repeating the source ID if both sections belong to one document.
 
 For a starting point, compare s03 (parallel dump format), s21 (combining and verifying an incremental backup), and s26 (a company's measured restore time). They illustrate a direct lookup, a two-passage decision and an installation-specific question.
 
