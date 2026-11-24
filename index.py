@@ -47,7 +47,7 @@ FIXED_WINDOW = 200
 FIXED_OVERLAP = 40
 
 DESIGNS = ["structure", "fixed"]
-CHOSEN_DESIGN = "structure"   # TODO: set from the hit-rate numbers in evaluate.py
+CHOSEN_DESIGN = "structure"   # chosen from eval/summary.md: higher hit rate at k = 1, 3, 5
 
 EURLEX = "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:{}"
 
@@ -220,7 +220,8 @@ def windows(words: list[str], size: int, overlap: int) -> list[tuple[int, int]]:
     return spans
 
 
-def make_chunk(doc: dict, design: str, location: str, heading: str, text: str, part: int | None) -> dict:
+def make_chunk(doc: dict, design: str, location: str, heading: str, text: str, part: int | None,
+               covers: list[str] | None = None) -> dict:
     loc = location if part is None else f"{location} (part {part})"
     header = f"{doc['source']}, {loc}" + (f": {heading}" if heading else "")
     chunk_id = hashlib.sha1(f"{design}|{doc['source']}|{loc}|{text}".encode()).hexdigest()[:20]
@@ -230,6 +231,9 @@ def make_chunk(doc: dict, design: str, location: str, heading: str, text: str, p
         "metadata": {
             "source": doc["source"], "title": doc["title"], "url": doc.get("url", ""),
             "location": loc, "heading": heading, "design": design, "words": len(text.split()),
+            # every section the chunk's words come from; a fixed window labelled
+            # "Article 20 to Article 22" also covers Article 21. Not part of the id.
+            "covers": "|".join(covers or [location]),
         },
     }
 
@@ -254,7 +258,8 @@ def chunk_sections(doc: dict, sections: list[dict], design: str) -> list[dict]:
         for a, b in windows(words, FIXED_WINDOW, FIXED_OVERLAP):
             first, last = owner[a], owner[b - 1]
             location = first if first == last else f"{first} to {last}"
-            chunks.append(make_chunk(doc, design, location, "", " ".join(words[a:b]), None))
+            covers = list(dict.fromkeys(owner[a:b]))
+            chunks.append(make_chunk(doc, design, location, "", " ".join(words[a:b]), None, covers))
     else:
         raise ValueError(f"unknown design {design!r}")
     return chunks
@@ -343,6 +348,14 @@ def embed_query(query: str) -> list[float]:
     return _embed([f"task: search result | query: {query}"])[0]
 
 
+def embed_queries(queries: list[str]) -> list[list[float]]:
+    """Many queries, BATCH_SIZE per request (each still counts against the daily quota)."""
+    vectors = []
+    for start in range(0, len(queries), BATCH_SIZE):
+        vectors += _embed([f"task: search result | query: {q}" for q in queries[start:start + BATCH_SIZE]])
+    return vectors
+
+
 def embed_documents(chunks: list[dict]) -> list[list[float]]:
     texts = [f"title: {c['metadata']['source']} {c['metadata']['location']} | text: {c['text']}" for c in chunks]
     return _embed(texts)
@@ -368,6 +381,15 @@ def embed_and_store(chunks: list[dict], design: str = CHOSEN_DESIGN) -> int:
                 documents=[c["text"] for c in batch], metadatas=[c["metadata"] for c in batch])
         log(f"  saved {min(start + BATCH_SIZE, len(todo))}/{len(todo)} new vectors")
     return len(todo)
+
+
+def refresh_metadata(chunks: list[dict], design: str) -> None:
+    """Rewrite the metadata of chunks already stored (e.g. a new field). No embedding."""
+    col = collection(design)
+    stored = set(col.get(ids=[c["id"] for c in chunks], include=[])["ids"])
+    keep = [c for c in chunks if c["id"] in stored]
+    if keep:
+        col.update(ids=[c["id"] for c in keep], metadatas=[c["metadata"] for c in keep])
 
 
 def remove_stale(source: str, keep_ids: set[str], design: str) -> int:
@@ -414,6 +436,7 @@ def build(designs: list[str], embed: bool = True) -> None:
                 if removed:
                     log(f"  {design}: removed {removed} outdated chunks")
                 new = embed_and_store(chunks, design)
+                refresh_metadata(chunks, design)
                 log(f"  {design}: {new} newly embedded, {len(chunks) - new} already saved")
     log(f"\nCorpus total: {total_words:,} words")
 

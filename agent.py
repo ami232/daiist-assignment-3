@@ -84,9 +84,19 @@ BRACKET_RE = re.compile(r"\[([^\[\]]+)\]")
 CITATION_RE = re.compile(r"^\s*([A-Z][A-Z0-9_]+),\s*(.+?)\s*$")
 
 
+# The citable unit at the start of a location: the model often cites a paragraph or point
+# inside a retrieved article, e.g. "Article 13(2)" or "Annex VIII, point 1(a)".
+UNIT_RE = re.compile(r"^(Article \d+[a-z]?|Annex [IVXLC]+\b|Annex|Section \d+(?:\.\d+)*|Preamble|Page \d+)")
+
+
 def base_location(location: str) -> str:
-    """'Section 3.1 (part 2)' -> 'Section 3.1': long sections are split into parts."""
-    return location.split(" (part")[0].strip()
+    """The unit a location belongs to: 'Section 3.1 (part 2)' -> 'Section 3.1',
+    'Article 13(2)' -> 'Article 13', 'Recital 47' -> 'Preamble'."""
+    location = location.split(" (part")[0].strip()
+    if re.match(r"Recitals?\b", location):
+        return "Preamble"
+    m = UNIT_RE.match(location)
+    return m.group(1) if m else location
 
 
 def citations_in(text: str) -> list[tuple[str, str]]:
@@ -117,9 +127,20 @@ def terminal_approval(name: str, args: dict) -> bool:
     return reply.strip().lower() in {"y", "yes", "s", "si", "sí"}
 
 
+# A sentence that mentions the sources and says something is missing from them, e.g. "it is
+# not included in the text of the corpus" or "cannot be answered from the search results".
+SOURCES_RE = re.compile(r"\b(corpus|search results?|documents?|sources?|passages?|provided (text|material))\b", re.I)
+MISSING_RE = re.compile(r"\b(not|n['’]t|cannot|unable to)\b(\W+\w+){0,3}?\W+(cover\w*|contain\w*|includ\w*|"
+                        r"address\w*|answer\w*|specif\w*|establish\w*|provid\w*|mention\w*|determin\w*|"
+                        r"confirm\w*|f[oi]und?\w*|availab\w*|verif\w*)", re.I)
+
+
 def is_refusal(answer: str) -> bool:
     """Does the answer say the corpus does not cover the question (fully or in part)?"""
-    return bool(REFUSAL_RE.search(answer))
+    text = answer.replace("*", "")
+    if REFUSAL_RE.search(text):
+        return True
+    return any(SOURCES_RE.search(s) and MISSING_RE.search(s) for s in re.split(r"(?<=[.!?])\s+|\n+", text))
 
 
 def retrieved_labels(trace: list[dict]) -> set[tuple[str, str]]:

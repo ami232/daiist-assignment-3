@@ -22,7 +22,7 @@ from mcp.server.mcpserver import MCPServer
 import index
 
 ROOT = Path(__file__).resolve().parent
-TOP_K = 5  # chunks returned per search; set from the hit-rate results
+TOP_K = 5  # chunks returned per search; chosen from eval/summary.md (hit@5 vs hit@3, multi questions)
 
 mcp = MCPServer("corpus", log_level="WARNING")
 
