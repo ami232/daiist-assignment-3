@@ -1,8 +1,8 @@
 # Assignment 3 Report
 
-- **Name**:
-- **Student ID**:
-- **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
+- **Name**: Louis de Perier
+- **Student ID**: 20159
+- **Group**: BBADBA 5B
 
 ## Use case
 
