@@ -1,6 +1,6 @@
 # Extraction problems log
 
-Written by index.py on 2026-11-23. Counts are per document.
+Written by index.py on 2026-11-24. Counts are per document.
 
 | Problem | Status | Dir_2016_797 | Dir_2016_798 | Reg_1299_2014 | Reg_2019_779 |
 |---|---|---|---|---|---|
