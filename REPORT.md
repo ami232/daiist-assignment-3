@@ -1,8 +1,8 @@
 # Assignment 3 Report
 
-- **Name**: [fill in]
-- **Student ID**: [fill in]
-- **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
+- **Name**: Emanuel Cohen-Henriquez
+- **Student ID**: 18761
+- **Group**: BBADBA 5B
 
 ## Use case
 
