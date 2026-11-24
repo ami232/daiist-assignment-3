@@ -1,0 +1,105 @@
+{
+  "generated": "2026-11-24 20:33:22",
+  "config": {
+    "design": "fixed",
+    "mode": "vector",
+    "k": 5,
+    "agent_model": "gemini-3.5-flash-lite",
+    "agents_md": "ec7a0dba0c12"
+  },
+  "judge_model": "gemini-3.1-flash-lite",
+  "judge_same_as_agent": false,
+  "stages_run": [
+    "retrieval"
+  ],
+  "complete": {
+    "retrieval": true
+  },
+  "questions": {
+    "total": 36,
+    "answered": 0,
+    "judged": 0
+  },
+  "retrieval": [
+    {
+      "design": "fixed",
+      "mode": "vector",
+      "questions": "29",
+      "hit@1": "0.6897",
+      "single_hit@1": "0.9091",
+      "multi_all@1": "0.0",
+      "multi_any@1": "0.8571",
+      "hit@3": "0.8966",
+      "single_hit@3": "1.0",
+      "multi_all@3": "0.5714",
+      "multi_any@3": "1.0",
+      "hit@5": "0.9655",
+      "single_hit@5": "1.0",
+      "multi_all@5": "0.8571",
+      "multi_any@5": "1.0",
+      "mean_words_k5": "1237"
+    },
+    {
+      "design": "fixed",
+      "mode": "hybrid",
+      "questions": "29",
+      "hit@1": "0.5517",
+      "single_hit@1": "0.7273",
+      "multi_all@1": "0.0",
+      "multi_any@1": "0.1429",
+      "hit@3": "0.7931",
+      "single_hit@3": "0.8182",
+      "multi_all@3": "0.7143",
+      "multi_any@3": "1.0",
+      "hit@5": "0.8966",
+      "single_hit@5": "0.9091",
+      "multi_all@5": "0.8571",
+      "multi_any@5": "1.0",
+      "mean_words_k5": "1237"
+    },
+    {
+      "design": "structure",
+      "mode": "vector",
+      "questions": "29",
+      "hit@1": "0.5517",
+      "single_hit@1": "0.7273",
+      "multi_all@1": "0.0",
+      "multi_any@1": "0.7143",
+      "hit@3": "0.8621",
+      "single_hit@3": "0.9545",
+      "multi_all@3": "0.5714",
+      "multi_any@3": "0.8571",
+      "hit@5": "0.9655",
+      "single_hit@5": "1.0",
+      "multi_all@5": "0.8571",
+      "multi_any@5": "1.0",
+      "mean_words_k5": "1394"
+    },
+    {
+      "design": "structure",
+      "mode": "hybrid",
+      "questions": "29",
+      "hit@1": "0.4828",
+      "single_hit@1": "0.6364",
+      "multi_all@1": "0.0",
+      "multi_any@1": "0.5714",
+      "hit@3": "0.6552",
+      "single_hit@3": "0.8636",
+      "multi_all@3": "0.0",
+      "multi_any@3": "1.0",
+      "hit@5": "0.7241",
+      "single_hit@5": "0.8636",
+      "multi_all@5": "0.2857",
+      "multi_any@5": "1.0",
+      "mean_words_k5": "1452"
+    }
+  ],
+  "end_to_end": null,
+  "agreement": {
+    "human_labels": 0,
+    "compared": 0
+  },
+  "failures_by_suggested_cause": {},
+  "cost": null,
+  "add_document_demo": null
+}

@@ -113,30 +113,35 @@ def _looks_like_document(suffix: str, content: bytes) -> bool:
     return len(content) > 8_000 and b"Article" in content
 
 
+def download_document(doc: dict, folder: Path) -> Path | None:
+    """Fetch one EUR-Lex document (dict with doc_id, celex, eli) into `folder`
+    if it is not there yet. Returns its path, or None if every address failed."""
+    folder.mkdir(parents=True, exist_ok=True)
+    for suffix in (".html", ".pdf"):
+        if (folder / f"{doc['doc_id']}{suffix}").exists():
+            return folder / f"{doc['doc_id']}{suffix}"
+    with httpx.Client(follow_redirects=True, timeout=120, headers={"User-Agent": BROWSER_UA}) as client:
+        for suffix, url, headers in _candidate_urls(doc):
+            try:
+                response = client.get(url, headers=headers)
+            except httpx.HTTPError as error:
+                log(f"  {doc['doc_id']}: {url} failed ({type(error).__name__})")
+                continue
+            if response.status_code == 200 and _looks_like_document(suffix, response.content):
+                saved = folder / f"{doc['doc_id']}{suffix}"
+                saved.write_bytes(response.content)
+                log(f"  {doc['doc_id']}: saved {saved.name} ({len(response.content) / 1e6:.2f} MB) from {url}")
+                return saved
+            log(f"  {doc['doc_id']}: {url} gave HTTP {response.status_code}, "
+                f"{len(response.content)} bytes (bot check or not a document)")
+    return None
+
+
 def download_corpus() -> list[Path]:
     """Fetch each corpus document into corpus/ if it is not there yet."""
-    CORPUS_DIR.mkdir(exist_ok=True)
     paths, failed = [], []
     for doc in DOCS:
-        existing = [p for p in (CORPUS_DIR / f"{doc['doc_id']}{s}" for s in (".html", ".pdf")) if p.exists()]
-        if existing:
-            paths.append(existing[0])
-            continue
-        saved = None
-        with httpx.Client(follow_redirects=True, timeout=120, headers={"User-Agent": BROWSER_UA}) as client:
-            for suffix, url, headers in _candidate_urls(doc):
-                try:
-                    response = client.get(url, headers=headers)
-                except httpx.HTTPError as error:
-                    log(f"  {doc['doc_id']}: {url} failed ({type(error).__name__})")
-                    continue
-                if response.status_code == 200 and _looks_like_document(suffix, response.content):
-                    saved = CORPUS_DIR / f"{doc['doc_id']}{suffix}"
-                    saved.write_bytes(response.content)
-                    log(f"  {doc['doc_id']}: saved {saved.name} ({len(response.content) / 1e6:.2f} MB) from {url}")
-                    break
-                log(f"  {doc['doc_id']}: {url} gave HTTP {response.status_code}, "
-                    f"{len(response.content)} bytes (bot check or not a document)")
+        saved = download_document(doc, CORPUS_DIR)
         if saved:
             paths.append(saved)
         else:

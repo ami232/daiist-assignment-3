@@ -23,8 +23,8 @@ from __future__ import annotations
 
 import asyncio
 import os
-import warnings
 import re
+import warnings
 import sys
 import time
 import uuid
@@ -75,8 +75,26 @@ def log(*args) -> None:
 # --------------------------------------------------------------------------
 
 _models: dict[str, ChatGoogleGenerativeAI] = {}
-_active_model = 0  # index in MODELS; moves forward when a daily quota is used up
-_used_models: list[str] = []  # the model behind each successful call
+
+
+class DailyQuotaExhausted(RuntimeError):
+    """Every model this agent may use has no daily quota left."""
+
+
+class ModelChain:
+    """The models an agent may use, in order. With one model it is pinned:
+    a used-up daily quota raises DailyQuotaExhausted instead of switching."""
+
+    def __init__(self, models: list[str]) -> None:
+        self.models = list(models)
+        self.active = 0             # moves forward when a daily quota is used up
+        self.used: list[str] = []   # the model behind each successful call
+
+    def name(self, detour: int = 0) -> str:
+        return self.models[min(self.active + detour, len(self.models) - 1)]
+
+
+DEFAULT_CHAIN = ModelChain(MODELS)  # for `main.py ask` and check.py
 
 
 def chat_model(name: str) -> ChatGoogleGenerativeAI:
@@ -88,7 +106,7 @@ def chat_model(name: str) -> ChatGoogleGenerativeAI:
 
 
 def current_model_name() -> str:
-    return MODELS[min(_active_model, len(MODELS) - 1)]
+    return DEFAULT_CHAIN.name()
 
 
 def _is_rate_limit(error: Exception) -> bool:
@@ -113,36 +131,41 @@ def _retry_delay(error: Exception, attempt: int) -> float:
 
 
 class QuotaAwareModel(AgentMiddleware):
-    """Wait and retry on per-minute 429s and 503s; switch model on a daily 429."""
+    """Wait and retry on per-minute 429s and 503s; on a daily 429 move to the
+    next model of the chain, or stop if there is none."""
+
+    def __init__(self, chain: ModelChain) -> None:
+        super().__init__()
+        self.chain = chain
 
     async def awrap_model_call(self, request, handler):
-        global _active_model
+        chain = self.chain
         waits = overloads = 0
         detour = 0  # for this call only: step past a model that is overloaded right now
         while True:
-            name = MODELS[min(_active_model + detour, len(MODELS) - 1)]
+            name = chain.name(detour)
             try:
                 response = await handler(request.override(model=chat_model(name)))
-                _used_models.append(name)
+                chain.used.append(name)
                 return response
             except Exception as error:  # noqa: BLE001 - sorted below
                 if _is_rate_limit(error) and _is_daily(error):
-                    if _active_model + 1 >= len(MODELS):
-                        raise RuntimeError(
-                            f"The daily Gemini quota is used up for all of: {', '.join(MODELS)}. "
+                    if chain.active + 1 >= len(chain.models):
+                        raise DailyQuotaExhausted(
+                            f"The daily Gemini quota is used up for: {', '.join(chain.models)}. "
                             "Try again after 09:00 Madrid."
                         ) from error
-                    _active_model += 1
+                    chain.active += 1
                     detour = 0
-                    log(f"  daily quota used up for {name}; switching to {current_model_name()}")
+                    log(f"  daily quota used up for {name}; switching to {chain.name()}")
                     continue
-                if _is_overloaded(error) and overloads < 6:
+                if _is_overloaded(error) and overloads < 8:
                     overloads += 1
-                    if overloads % 2 == 0 and _active_model + detour + 1 < len(MODELS):
+                    if overloads % 2 == 0 and chain.active + detour + 1 < len(chain.models):
                         detour += 1
-                        log(f"  {name} is overloaded (503); using {MODELS[_active_model + detour]} for this call")
+                        log(f"  {name} is overloaded (503); using {chain.name(detour)} for this call")
                     else:
-                        await asyncio.sleep(3 * overloads)
+                        await asyncio.sleep(min(3 * overloads, 20))
                     continue
                 if _is_rate_limit(error) and waits < RATE_LIMIT_RETRIES:
                     wait = _retry_delay(error, waits)
@@ -210,8 +233,10 @@ def _message_text(message) -> str:
 class Agent:
     """Keeps one MCP session to server.py open and answers questions with it."""
 
-    def __init__(self, interactive: bool = False) -> None:
+    def __init__(self, interactive: bool = False, model: str | None = None) -> None:
+        """`model` pins one model (evaluation); without it the fallback chain is used."""
         self.interactive = interactive
+        self.chain = ModelChain([model]) if model else DEFAULT_CHAIN
         self._stack = None
         self._session: ClientSession | None = None
         self._graph = None
@@ -237,7 +262,7 @@ class Agent:
             if name in listed
         ]
         self._graph = create_agent(
-            chat_model(current_model_name()),
+            chat_model(self.chain.name()),
             tools,
             system_prompt=(ROOT / "AGENTS.md").read_text(encoding="utf-8"),
             middleware=[
@@ -247,7 +272,7 @@ class Agent:
                     interrupt_on={"add_document": {"allowed_decisions": ["approve", "reject"]}},
                     description_prefix="add_document changes the index and needs approval",
                 ),
-                QuotaAwareModel(),
+                QuotaAwareModel(self.chain),
             ],
             checkpointer=InMemorySaver(),
         )
@@ -303,7 +328,7 @@ class Agent:
         interactive = self.interactive if interactive is None else interactive
         started = time.time()
         self._trace = []
-        first_call = len(_used_models)
+        first_call = len(self.chain.used)
         config = {"configurable": {"thread_id": uuid.uuid4().hex}, "recursion_limit": 40}
 
         state = await self._run({"messages": [HumanMessage(question)]}, config, interactive)
@@ -361,7 +386,7 @@ class Agent:
                  **({"output": c["output"]} if c["name"] != "search" else {})}
                 for c in self._trace
             ],
-            "model": ",".join(dict.fromkeys(_used_models[first_call:])) or current_model_name(),
+            "model": ",".join(dict.fromkeys(self.chain.used[first_call:])) or self.chain.name(),
             "model_calls": model_calls,
             "input_tokens": usage_in,
             "output_tokens": usage_out,
