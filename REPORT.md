@@ -62,9 +62,15 @@ The subagent is in `.claude/agents/corpus-researcher.md`. It can only use `mcp__
 
 ## Adding a document
 
-When a document with the same name is already indexed, `add_document` changes nothing and returns a message saying it is already indexed (`index.py` skips names that exist), so no quota is spent.
+If a document with the same name is already indexed, `add_document` changes nothing and says it is already indexed (`index.py` skips existing names), so no embedding quota is spent.
 
-**TO DO: unanswerable question, document added, answer before and after.** Planned test: question `q38` or `q36` (an unanswerable one), add a short text file that contains the missing information (for example about CCTV retention), and show the agent refusing before and answering with a citation after. This was not run yet because the free embedding quota was used up on the full evaluation.
+Demo (script `demo_add_document.py`, full transcript in `eval/add_document_demo.txt`). Unanswerable question `q36`: "What is the age of digital consent that Spain has set under Article 8 of the GDPR?"
+
+- **Before:** the agent answers "I don't know: the corpus does not cover this question" and adds that Article 8 sets 16 by default and allows 13 as the minimum, but the corpus does not say which age Spain chose.
+- **Document added:** `demo/spain-digital-consent-age.txt`, a short note about Article 7 of the Spanish Organic Law 3/2018 (age 14). It is a short note written for this demo from public knowledge, not an official text. In the demo the approval callback answers "yes" on purpose to simulate the human approval.
+- **After:** the agent answers that Spain set the age at 14 years, citing `[spain-digital-consent-age, Part 1]`.
+
+After the demo I restored the original index files, because `q36` must stay unanswerable for the evaluation to be reproducible.
 
 ## Harness and guardrails
 
@@ -72,38 +78,55 @@ When a document with the same name is already indexed, `add_document` changes no
 
 Approval step: `add_document` only runs if a human approves it in the terminal (a callback in `agent.py`). Without a terminal the answer is "no". Other limits: at most 6 tool calls per question and a question length limit of 1,500 characters.
 
-My extra guardrail is a **citation check**: every `[source, location]` in the answer must come from a chunk that the search tool really returned; if not, the answer is withdrawn and replaced by a refusal. It fired 15 times in the evaluation, and **all 15 were false alarms** (see Failures). Example: for `q02` (age of consent) the agent had found Article 8, but it wrote a combined or page-style citation that did not match the stored location label, so a correct answer was withdrawn. So the guardrail protects against invented citations, but as written it is too strict.
+My extra guardrail is a **citation check**: every `[source, location]` in the answer must come from a chunk that the search tool really returned; if not, the answer is withdrawn and replaced by a refusal.
+
+- **Version 1** compared the citation label literally. It fired 15 times in the first evaluation run and **all 15 were false alarms**: for example in `q02` (age of consent) the agent had found Article 8 and answered correctly, but it wrote a page-style or combined citation, and a correct answer was withdrawn.
+- **Version 2** accepts a bracket with two citations, a page citation that falls inside a retrieved chunk (for example `p. 12` inside `Section 2 (p. 11-13)`) and a recital number inside a retrieved recital range. In the second run it fired 0 times on real answers. A direct test shows that it still catches invented citations: with Article 33 retrieved, `[GDPR, Article 99]` and `[FAKE, Article 1]` are flagged as invalid and `[GDPR, Article 33, Recitals 85-86]` is accepted.
 
 ## Evaluation
 
-**Code checks** (in `evaluate.py`): (a) refusal check: unanswerable questions must be refused and answerable ones must not; (b) every answer needs citations and none can be invalid; (c) the expected source must be cited. Results over 41 questions: refusal check 26/41, citations 41/41, expected source cited 38/41, all checks passed 26/41.
+I ran the full evaluation twice. Run 1 used guardrail version 1. Then I fixed the guardrail and re-ran only the 15 answers that it had withdrawn (the other 26 answers were kept). Files: `eval/answers_v1.jsonl`, `eval/judge_v1.jsonl`, `eval/summary_v1.json` (run 1) and `eval/answers.jsonl`, `eval/judge.jsonl`, `eval/summary.json` (run 2).
 
-**LLM judge** (Gemini 3.5 Flash Lite, temperature 0). The rubric gives the judge the question, the reference answer, the retrieved text and the answer, and asks for two 0/1 grades: *correct* (agrees with the reference; for unanswerable questions only a refusal is correct) and *supported* (every claim is in the retrieved text; a refusal is always supported). Results: correct 26/41 (single 17/27, multi 2/7, unanswerable 7/7), supported 41/41.
+**Code checks** (in `evaluate.py`): (a) refusal check: unanswerable questions must be refused and answerable ones must not; (b) every answer needs citations and none can be invalid; (c) the expected source must be cited.
 
-**Agreement with the human labels** (31 labelled answers in `eval/human_labels.csv`): on *correct* the judge agrees in 31/31 cases; on *supported* in 30/31. The only disagreement is `q41`: the answer refuses correctly but adds a claim about "state of the art" algorithms with page citations that are not valid retrieved locations; the label says "not supported" and the judge said "supported". Important: these labels were written by the AI assistant, not by me (see AI use), and the judge is also an AI model, so this agreement is not an independent human check.
+**LLM judge** (Gemini 3.5 Flash Lite, temperature 0). The rubric gives the judge the question, the reference answer, the retrieved text and the answer, and asks for two 0/1 grades: *correct* (agrees with the reference; for unanswerable questions only a refusal is correct) and *supported* (every claim is in the retrieved text; a refusal is always supported).
 
-Results summary: correct answers 26; unsupported answers 0 (judge); correct refusals 7/7 on unanswerable questions; wrong refusals 15 (answerable questions that were refused by the guardrail).
+| Result (41 questions) | Run 1 (guardrail v1) | Run 2 (guardrail v2) |
+|---|---|---|
+| Refusal check | 26/41 | 41/41 |
+| Valid citations | 41/41 | 41/41 |
+| Expected source cited | 38/41 | 39/41 |
+| All code checks | 26/41 | 39/41 |
+| Judge: correct | 26/41 (single 17/27, multi 2/7, unanswerable 7/7) | 41/41 (single 27/27, multi 7/7, unanswerable 7/7) |
+| Judge: supported | 41/41 | 41/41 |
+| Wrong refusals | 15 | 0 |
+| Correct refusals | 7/7 | 7/7 |
+
+**Agreement with the human labels** (`eval/human_labels.csv`, 33 labelled answers for run 2; the 31 labels of run 1 are in `eval/human_labels_v1.csv`): in run 1 the judge agreed on *correct* in 31/31 cases and on *supported* in 30/31. In run 2 it agrees in 33/33 on *correct* and in 32/33 on *supported*. The only disagreement is `q41`: the answer refuses correctly but adds a claim about "state of the art" algorithms with page citations that are not valid retrieved locations; the label says "not supported" and the judge said "supported". Important: the labels were written by the AI assistant, not by me (see AI use), and the judge is an AI model of the same family as the agent, so this agreement is not an independent human check. A judge result of 41/41 is also probably too generous.
 
 ## Failures
 
-15 of 41 questions failed (all the same type), plus a few smaller problems:
+Run 1: 15 of 41 failed, all with the same cause: guardrail false alarm (`q02, q06, q11, q12, q16, q19, q20, q24, q25, q27, q29, q30, q31, q32, q33`; 10 single and 5 multi). The right chunks had been found, so it was not a retrieval problem. Fixed in guardrail version 2 (see above); in run 2 these 15 questions are answered correctly.
+
+Failures and weak points that remain in run 2:
 
 | Cause | Count | Questions |
 |---|---|---|
-| Guardrail false alarm: correct answer withdrawn because the citation label did not match exactly (page-style, combined or recital-range citations) | 15 | q02, q06, q11, q12, q16, q19, q20, q24, q25, q27, q29, q30, q31, q32, q33 |
-| Refusal sentence followed by extra content (rule 4 not followed exactly) | 4 | q36, q37, q38, q41 |
-| Retrieval miss for the second passage of a multi-passage question | see hit rate | multi questions |
+| Expected source not cited (the answer uses the GDPR text but cites only the EDPB page) | 2 | q29, q33 |
+| Refusal sentence followed by extra content, so rule 4 is not followed exactly | 4 | q36, q37, q38, q41 |
+| Claim not traceable to a retrieved chunk (human label) | 1 | q41 |
+| Retrieval of the second passage in multi questions (hit rate 0.29 at k=5), although the agent still answered them by searching more than once | 7 multi questions | |
 
-The 15 failures are 10 single and 5 multi questions, so the wrong refusals are not a retrieval problem: the right chunks were found. **What to fix first:** make the citation check less literal (accept a citation when its source matches and its page or article is inside a retrieved chunk, accept recital ranges, and split brackets that contain two sources), or tell the model in the prompt to copy the citation label exactly. With this fix the expected correct answers would rise from 26/41 to about 41/41 if the withdrawn answers were right (not yet tested). Second: retrieval for multi-passage questions (search twice, once for each part of the question).
+**What to fix first:** (1) the citation behaviour: tell the agent to cite every document it used, and make the guardrail fail only on citations that really do not exist; (2) the refusal format: when refusing, give only the fixed sentence; (3) a better test: more multi questions and a judge from another model family.
 
 ## Decision
 
-Not yet. In its current state I would not let users rely on it, because it refuses a third of the answerable questions (it is safe but not useful). The good news is that it never gave an unsupported answer in the evaluation and it refused all 7 unanswerable questions. After the guardrail fix and a new evaluation, I would let compliance staff use it as a **finding aid** (find the article or guideline paragraph and read it), never as legal advice, with the safeguard that the user must open the cited source before acting and that the assistant never decides on a specific case.
+With guardrail version 2 the assistant answered all 41 test questions correctly according to the judge and my labels, never gave an unsupported answer and refused all 7 unanswerable questions. But the test set is small, it was written from the same documents, and the judge and the labels are not independent. So my decision is: yes for use as a **finding aid** by compliance staff (find the article or guideline passage and read it), no for legal advice or automatic decisions. Safeguards: the answer always shows its citations and the user must open the cited source before acting; the assistant never decides on a specific case; and the corpus must be updated when the law or the guidelines change.
 
-**Cost and latency per question:** about 3,900 input tokens and 310 output tokens on average (one or two search calls plus the answer), which is free on the Gemini free tier here. Mean latency was 36 s and the 95th percentile 124 s, but this was mostly waiting for rate limits on the free tier; a question without waiting takes about 5 to 15 s.
+**Cost and latency per question:** about 4,000 input tokens and 320 output tokens on average (one or two search calls plus the answer), which is free on the Gemini free tier used here. Mean latency was 33 s and the 95th percentile 142 s, but this was mostly waiting for free-tier rate limits and retries; a question without waiting takes about 5 to 15 s.
 
 ## AI use
 
-I used Claude (Anthropic) as a helping tool that work gave me indications on how to do the technical work (`index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py`), the subagent file, the `AGENTS.md` rules, the draft of the 41 test questions, the guardrail design, the judge rubric , and it fixed the errors and review the report for making sure everything was done correctly. **Claude also wrote the 31 grades and notes in `eval/human_labels.csv`**: it read the agent answers and graded them before looking at the judge verdicts, but they are not my own grading.
+I used Claude (Anthropic) as a browser agent that worked directly in my GitHub Codespace and in my GitHub fork. Claude did most of the technical work: it wrote the code (`index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py`, the demo script), the subagent file, the `AGENTS.md` rules, the draft of the 41 test questions, the guardrail design and its fix, the judge rubric, the demo document and the first draft of this report, and it fixed the errors. **Claude also wrote the grades and notes in `eval/human_labels.csv` and `eval/human_labels_v1.csv`**: it read the agent answers and graded them (for run 1 before looking at the judge verdicts), but they are not my own grading.
 
-My part: I chose the use case (data protection / GDPR), gave the instructions, created the fork and the Codespace, put my own API key in `.env`, the report and I am responsible for reviewing and submitting the work. 
+My part: I chose the use case (data protection / GDPR), gave the instructions, created the fork and the Codespace, put my own API keys in `.env`, and I am responsible for reviewing and submitting the work. **[STUDENT: change this paragraph only to say what is really true. Write here which decisions you reviewed and changed yourself.]**

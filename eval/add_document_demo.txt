@@ -1,0 +1,30 @@
+  embedded 1/1
+
+===== BEFORE (document not indexed) =====
+I don't know: the corpus does not cover this question. 
+
+While Article 8 of the GDPR sets the default age of digital consent at 16 and allows Member States to lower it to not below 13 [GDPR, Article 8], the provided corpus does not contain the specific national law or age chosen by Spain. 
+
+*Sources:*
+- [GDPR, Article 8]
+- [EDPB-05-2020-consent, Section 7.1 (p. 25-26) (part 1/2)]
+- [EDPB-05-2020-consent, Section 7.1 (p. 25-26) (part 2/2)]
+- [EDPB-05-2020-consent, Section 7.1.2 (p. 27)]
+- [EDPB-05-2020-consent, Section 7.1.3 (p. 27-28) (part 1/2)]
+[tool calls: ['search']]
+
+===== ADD =====
+I don't know: the corpus does not cover this question. (My answer was withdrawn because its citations could not be verified.)
+[tool calls: ['add_document']]
+
+===== AFTER (document indexed) =====
+Under Article 8 of the GDPR, the default age of digital consent for information society services is 16 years, but Member States are permitted to lower this age by law down to 13 years [GDPR, Article 8]. 
+
+Spain has set its age of digital consent at **14 years** pursuant to Article 7 of Organic Law 3/2018 (LOPDGDD) [spain-digital-consent-age, Part 1]. Under this age, the processing of a minor's personal data is lawful only if consent is given or authorized by the holder of parental authority or guardianship [spain-digital-consent-age, Part 1].
+
+*Note: This explanation is for informational purposes based on the provided text. For specific compliance decisions, please consult a qualified legal professional or the relevant data protection authority.*
+
+Sources:
+- [spain-digital-consent-age, Part 1]
+- [GDPR, Article 8]
+[tool calls: ['search']]
