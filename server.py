@@ -11,20 +11,33 @@ descriptions the model reads.
 """
 
 from mcp.server.mcpserver import MCPServer
+from retrieval import search as search_chunks
+from ingest_document import index_document
 
 mcp = MCPServer("corpus", log_level="WARNING")
 
 
 @mcp.tool()
 def search(query: str) -> str:
-    """TODO: what the corpus is, when to use this tool, what it returns."""
-    raise NotImplementedError
+    """Search the warehouse safety guides for evidence relevant to a question.
+    Returns the five highest-ranked passages with guide, printed page and chunk ID.
+    """
+    hits = search_chunks(query, k=5)
+
+    passages = []
+    for rank, hit in enumerate(hits, start=1):
+        citation = f"[{hit['source']}, p. {hit['page']}]"
+        passages.append(f"{rank}. {citation} ({hit['id']})\n{hit['text']}")
+
+    return "\n\n".join(passages)
 
 
 @mcp.tool()
 def add_document(path: str) -> str:
-    """TODO: what this tool adds to the index and what it returns."""
-    raise NotImplementedError
+    """Add a local text-based PDF to the warehouse guidance index.
+    Returns its source ID and chunk count, or reports that it is already indexed.
+    """
+    return index_document(path)
 
 
 if __name__ == "__main__":
