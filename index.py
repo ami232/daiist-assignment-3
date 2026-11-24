@@ -257,7 +257,7 @@ def chunk_html(path: Path, max_words: int = MAX_WORDS, url: str = "") -> list[Ch
         sections[-1][1].append(("• " + text) if el.name == "li" else text)
     sections = [(loc, ps) for loc, ps in sections if ps]
 
-    source = "fda:" + path.stem.removeprefix("fda_")
+    source = "fda:" + path.stem.removeprefix("fda_") if path.stem.startswith("fda_") else path.stem
     return _sections_to_chunks(sections, source, title, url, max_words)
 
 

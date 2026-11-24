@@ -29,11 +29,12 @@ from typing import Callable
 from pydantic import BaseModel, Field
 
 ROOT = Path(__file__).resolve().parent
-MODEL = "gemini-3.5-flash"
+MODEL = "gemini-3.5-flash-lite"
 MAX_TOOL_CALLS = 6
 MAX_MODEL_CALLS = 8
 
 CITATION = re.compile(r"\[([^\[\]|]+?)\s*\|\s*([^\[\]]+?)\]")
+PART = re.compile(r"\s*\(part \d+\)")
 RESULT_HEADER = re.compile(r"^### Result \d+\s+\[([^\[\]|]+?)\s*\|\s*([^\[\]]+?)\]", re.M)
 REFUSAL = re.compile(r"(don'?t|do not|does not|doesn'?t) cover|not covered|no information|"
                      r"couldn'?t find|could not find|not in the (fda )?documents", re.I)
@@ -63,9 +64,11 @@ def ask_terminal(path: str) -> bool:
 
 def check_citations(answer: str, allowed: set[tuple[str, str]]) -> list[str]:
     """Problems with the answer's citations; empty list = passes the guardrail."""
+    base = lambda loc: PART.sub("", loc).strip()  # noqa: E731 - "p. 2 (part 2)" -> "p. 2"
+    allowed_base = {(s, base(l)) for s, l in allowed}
     cited = [(s.strip(), l.strip()) for s, l in CITATION.findall(answer)]
-    problems = [f"[{s} | {l}] is not one of the passages returned by search"
-                for s, l in cited if (s, l) not in allowed]
+    problems = sorted({f"[{s} | {l}] is not one of the passages returned by search"
+                       for s, l in cited if (s, base(l)) not in allowed_base})
     if not cited and not REFUSAL.search(answer):
         problems.append("the answer makes claims without any citation")
     return problems
@@ -153,7 +156,10 @@ class CorpusAgent:
                        for s, l in RESULT_HEADER.findall(text_of(m))}
             final = next((m for m in reversed(messages) if isinstance(m, AIMessage) and not m.tool_calls), None)
             answer = text_of(final).strip() if final else ""
-            problems = check_citations(answer, allowed)
+            searched = any(c["name"] == "search" for m in messages if isinstance(m, AIMessage) for c in m.tool_calls)
+            added = any(c["name"] == "add_document" for m in messages if isinstance(m, AIMessage) for c in m.tool_calls)
+            # A pure "add this document" turn has nothing to cite: skip the citation check there.
+            problems = [] if (added and not searched) else check_citations(answer, allowed)
             if not problems:
                 break
             guardrail.update(fired=True, problems=guardrail["problems"] + problems)

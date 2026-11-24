@@ -13,3 +13,4 @@ corpus/
 
 # Never commit your API key
 .env
+eval/run.log
