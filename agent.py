@@ -75,7 +75,7 @@ def make_tool(session: ClientSession, tool, trace: list) -> StructuredTool:
 
 # ---------- guardrail: citations must point to retrieved pages ----------
 
-CITATION = re.compile(r"([A-Z][^;()\n]*?),\s*pp?\.\s*(\d+)")
+CITATION = re.compile(r"([^\W_][^;()\n]*?),\s*pp?\.\s*(\d+)")  # a title (any letter or digit first), then ", p. N"
 
 
 def citations_in(answer: str) -> list[tuple[str, int]]:
@@ -99,6 +99,9 @@ def check_citations(answer: str, trace: list) -> tuple[str, str]:
     """Return (answer to show, guardrail note). The note is empty when the answer passes."""
     if answer.strip().startswith(REFUSAL):
         return answer, ""
+    searched = any(call["tool"] == "search" for call in trace)
+    if not searched and any(call["tool"] == "add_document" for call in trace):
+        return answer, ""  # a confirmation that a document was added, not an answer from the documents
     retrieved = {p for call in trace if call["tool"] == "search" for p in call["passages"]}
     cited = citations_in(answer)
     if not cited:
@@ -200,6 +203,7 @@ def main() -> None:
             print(f"- {title}, p. {page}")
     if result["guardrail"]:
         print(f"\n[guardrail] {result['guardrail']}", file=sys.stderr)
+        print(f"[guardrail] withheld draft:\n{result['draft_answer']}", file=sys.stderr)
 
 
 if __name__ == "__main__":
