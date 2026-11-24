@@ -192,7 +192,6 @@ if __name__ == "__main__":
         raise SystemExit('usage: python agent.py "your question"')
     r = answer(" ".join(sys.argv[1:]))
     print(r["answer"])
-    sources = sorted({f"{h['source']}, {h['location']}" for h in r["hits"]})
     if r["valid_citations"]:
         print("\nCitations:")
         for c in dict.fromkeys(r["valid_citations"]):

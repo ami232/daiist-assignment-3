@@ -1,20 +1,9 @@
 # Answers to grade by hand
 
-Grade at least 20 of these **before** opening `eval/judge.jsonl` or `eval/results.csv`, so the judge's verdicts don't influence you.
-For each one, add a row to `eval/human_labels.csv`: `id,correct,supported,notes` (1 = yes, 0 = no).
+Same answers as `eval/answers.jsonl` (final run). I graded 20 of them on a grading page with the same two rules; my grades are in `eval/human_labels.csv`.
 
-## The two rules (the same ones the LLM judge uses)
-
-**correct**
-- 1 = the answer's main conclusion agrees with the reference and nothing in it contradicts the reference. Missing a minor detail is fine; missing a condition that changes the outcome for the user is not.
-- 1 = for an *unanswerable* question: it says the corpus does not cover it and does not answer anyway.
-- 0 = wrong conclusion, a refusal when the reference has an answer, or an answer when the reference says the corpus cannot answer.
-
-**supported**
-- 1 = every legal fact in the answer (numbers, deadlines, conditions, articles) appears in the passages the agent retrieved (open *Show passages*). Paraphrasing is fine. A plain refusal counts as supported. "Consult a lawyer" is advice, not a claim.
-- 0 = at least one fact is not in the passages.
-
-Judge only against the reference answer and the passages, never against what you think the law says.
+- **correct**: the main conclusion agrees with the reference and nothing contradicts it (for an unanswerable question: it says the corpus does not cover it).
+- **supported**: every legal fact in the answer appears in the retrieved passages.
 
 ---
 
@@ -34,9 +23,7 @@ Judge only against the reference answer and the passages, never against what you
 > 
 > *Confirme los detalles particulares de su contrato con un abogado o con el organismo de vivienda de su comunidad autónoma.*
 
-*Searches: ['fianza vivienda mensualidades arrendamiento articulo']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 36. Fianza | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7855
@@ -79,9 +66,7 @@ LAU (Ley 29/1994) — Disposición adicional tercera. Depósito de fianzas (TÍT
 > 
 > *Confirme los detalles de su contrato con un abogado o con el servicio de vivienda de su comunidad autónoma.*
 
-*Searches: ['garantia adicional arrendamiento vivienda maximo LAU articulo 36']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 36. Fianza | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.8259
@@ -125,9 +110,7 @@ LAU (Ley 29/1994) — Disposición adicional tercera. Depósito de fianzas (TÍT
 > 
 > *Nota: Esta respuesta se basa en la normativa general de alquiler de vivienda habitual; se recomienda confirmar el caso particular con un abogado o con el organismo de vivienda de su comunidad autónoma.*
 
-*Searches: ['duracion contrato arrendamiento vivienda persona fisica plazo minimo lau']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 9. Plazo mínimo | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7703
@@ -173,9 +156,7 @@ Si la duración pactada fuera superior a cinco años, o superior a siete años s
 > 
 > *Nota: Para casos particulares o disputas sobre penalizaciones, se recomienda confirmar el asunto con un abogado o con el organismo de vivienda de tu comunidad autónoma.*
 
-*Searches: ['arrendatario desistimiento contrato plazo preaviso LAU']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 11. Desistimiento del contrato | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.8095
@@ -219,9 +200,7 @@ Cuando la ejecución en la vivienda arrendada de obras de conservación o de obr
 > 
 > *Confirm this with a lawyer or your regional housing office if you are facing a dispute.*
 
-*Searches: ['gastos de gestión inmobiliaria y de formalización del contrato arrendador arrendatario LAU']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 20. Gastos generales y de servicios individuales | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.8191
@@ -262,9 +241,7 @@ Con efectos para los contratos de arrendamiento de vivienda celebrados a partir 
 > 
 > *Nota: Para casos particulares o disputas, se recomienda confirmarlo con un abogado o con el servicio de vivienda de su comunidad autónoma.*
 
-*Searches: ['reparaciones desgaste pequeño conservación vivienda arrendatario arrendador']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 21 bis. Conservación de la vivienda temporal | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7798
@@ -310,9 +287,7 @@ LAU (Ley 29/1994) — Artículo 23. Obras del arrendatario (TÍTULO II De los ar
 > 
 > *Nota: Se recomienda confirmar los pasos y la documentación con un abogado o con el servicio de vivienda de tu comunidad autónoma ante cualquier disputa.*
 
-*Searches: ['conservación reparaciones vivienda arrendatario obras']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 21 bis. Conservación de la vivienda temporal | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7744
@@ -357,9 +332,7 @@ LAU (Ley 29/1994) — Artículo 23. Obras del arrendatario (TÍTULO II De los ar
 > 
 > *Confirma este caso particular con un abogado o con el servicio de vivienda de tu comunidad autónoma.*
 
-*Searches: ['actualizacion renta contrato pacto expreso LAU']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 18. Actualización de la renta | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.8226
@@ -404,9 +377,7 @@ LAU (Ley 29/1994) — Artículo 17. Determinación de la renta (TÍTULO II De lo
 > 
 > *Confirme los detalles particulares de su contrato con un abogado especialista o con el servicio de vivienda de su comunidad autónoma.*
 
-*Searches: ['fianza mensualidades pago anticipado alquiler ley 29/1994']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 36. Fianza | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7907
@@ -451,9 +422,7 @@ LAU (Ley 29/1994) — Artículo 36. Fianza (TÍTULO IV Disposiciones comunes)
 > 
 > *Para un caso concreto, te sugerimos confirmarlo con un abogado o con el organismo de vivienda de tu comunidad autónoma.*
 
-*Searches: ['subarriendo parcial vivienda LAU']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 8. Cesión del contrato y subarriendo | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.8121
@@ -505,9 +474,7 @@ El adquirente de una vivienda arrendada quedará subrogado en los derechos y obl
 > 
 > *Se recomienda confirmar los detalles del caso con un abogado o con el servicio de vivienda de la comunidad autónoma.*
 
-*Searches: [None, 'subrogacion por fallecimiento del arrendatario LAU articulo 16']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 Error invoking tool &#x27;search&#x27; with kwargs {&#x27;queries&#x27;: [&#x27;inquilino fallece subrogacion arrendamiento vivienda LAU&#x27;, &#x27;fallecimiento arrendatario quien puede subrogarse LAU&#x27;]} with error:
@@ -556,9 +523,7 @@ No obstante, si el subrogado fuese el cónyuge y al tiempo de su fallecimiento h
 > 
 > *Para un caso concreto, se recomienda confirmarlo con un abogado o con el servicio de vivienda de su comunidad autónoma.*
 
-*Searches: ['obras mejora antelacion notificacion arrendatario']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 22. Obras de mejora | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7565
@@ -604,9 +569,7 @@ RDL 7/2019 — Artículo primero. Modificación de la Ley 29/1994, de 24 de novi
 > 
 > *Para un caso concreto, se recomienda confirmarlo con un abogado o con el organismo de vivienda de tu comunidad autónoma.*
 
-*Searches: ['obras tabique arrendatario consentimiento propietario LAU']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 23. Obras del arrendatario | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7815
@@ -651,9 +614,7 @@ LAU (Ley 29/1994) — Artículo 21. Conservación de la vivienda (TÍTULO II De 
 > 
 > *Para una consulta o conflicto concreto, se recomienda confirmar el caso con un abogado o con el servicio de vivienda de su comunidad autónoma.*
 
-*Searches: [None, 'arrendamiento para uso distinto del de vivienda temporal duracion maximo']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 Error invoking tool &#x27;search&#x27; with kwargs {&#x27;queries&#x27;: [&#x27;arrendamiento para uso distinto del de vivienda temporal duracion maximo&#x27;, &#x27;vivienda temporal duracion ley arrendamientos urbanos&#x27;]} with error:
@@ -703,9 +664,7 @@ En el plazo de seis meses desde la entrada en vigor de la ley se constituirá un
 > 
 > *Para un caso concreto o disputa, se recomienda confirmarlo con un abogado o con el organismo de vivienda de tu comunidad autónoma.*
 
-*Searches: ['contrato verbal arrendamiento vivienda valido LAU']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 37. Formalización del arrendamiento | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7862
@@ -755,9 +714,7 @@ LAU (Ley 29/1994) — Artículo 7. Condición de arrendamiento de vivienda habit
 > 
 > Para un caso concreto, confirme siempre su situación con un abogado o con el servicio de vivienda de su comunidad autónoma.
 
-*Searches: ['resolución de pleno derecho arrendador arrendatario LAU']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 13. Resolución del derecho del arrendador | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7899
@@ -803,9 +760,7 @@ LAU (Ley 29/1994) — Artículo 9. Plazo mínimo (TÍTULO II De los arrendamient
 > 
 > *For a concrete dispute or legal assessment, confirm with a lawyer or your regional housing office.*
 
-*Searches: ['gran tenedor definicion ley vivienda articulo']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: Ley 12/2023 de vivienda | LOCATION: Preámbulo (part 14) | URL: https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203 | score 0.7934
@@ -846,9 +801,7 @@ Esta insuficiencia de los parques públicos de vivienda explica, en buena medida
 > 
 > *Para cualquier duda concreta sobre su caso, consulte con un abogado o con el servicio de vivienda de su comunidad autónoma.*
 
-*Searches: ['zona de mercado residencial tensionado duracion vigencia prorroga Ley 12 2023']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: Ley 12/2023 de vivienda | LOCATION: Artículo 18. Declaración de zonas de mercado residencial tensionado (part 2) | URL: https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203 | score 0.8168
@@ -892,9 +845,7 @@ d) Cuando el contrato de arrendamiento se firme por un periodo de diez o más a�
 > 
 > *Nota: Para casos particulares o disputas concretas, se recomienda contrastar la situación con un abogado o con el servicio de vivienda de su comunidad autónoma.*
 
-*Searches: ['zona tensionada informacion contrato arrendamiento renta anterior ley vivienda', 'información que debe suministrarse arrendatario zona tensionada alquiler ley vivienda transparencia']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: Ley 12/2023 de vivienda | LOCATION: Disposición final segunda. Incentivos fiscales aplicables en el Impuesto sobre la Renta de las Personas Físicas a los arrendamientos de inmuebles destinados a vivienda (part 3) | URL: https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203 | score 0.7432
@@ -943,42 +894,43 @@ Ley 12/2023 de vivienda — Disposición final primera. Medidas de contención d
 
 ## q20 (single)
 
-**Question:** ¿Qué cambia en la prórroga de los contratos de alquiler a partir del 15 de noviembre de 2026?
+**Question:** Se acaban los cinco años de mi contrato de alquiler y ni el casero ni yo hemos dicho nada. ¿Qué pasa ahora?
 
 **Expected:** LAU (Ley 29/1994) · Artículo 10
 
-**Reference answer:** Según la redacción futura (RDL 28/2026), a falta de preaviso el contrato se prorroga tácita y obligatoriamente por plazos de cinco años (siete si el arrendador es persona jurídica), y si el arrendador no prorroga debe indemnizar al inquilino salvo excepciones.
+**Reference answer:** El contrato se prorroga obligatoriamente por plazos anuales hasta un máximo de tres años más, salvo que el inquilino comunique con un mes de antelación al final de cualquiera de esas anualidades que no quiere renovar. Para evitar la prórroga, el arrendador debía avisar con al menos cuatro meses de antelación y el inquilino con dos.
 
 **Agent answer:**
 
-> El corpus no cubre esta pregunta de manera detallada respecto a la norma de esa fecha concreta (ya que los extractos disponibles de la redacción futura del artículo 10 de la LAU mencionan efectos a partir del 15 de noviembre de 2026, pero el corpus no detalla todos los cambios introducidos por dicho Real Decreto-ley más allá de la prórroga tácita y las indemnizaciones).
+> El contrato se prorroga obligatoriamente por plazos anuales hasta un máximo de **tres años más** [LAU (Ley 29/1994), Artículo 10. Prórroga del contrato].
 > 
-> *Consulte con un abogado o con el servicio de vivienda de su comunidad autónoma para verificar el texto exacto aplicable.*
+> * **Condiciones:** Se mantiene en las mismas condiciones y se aplica la prórroga tácita, dado que ninguna de las partes notificó a la otra su voluntad de no renovarlo en los plazos legales (al menos con cuatro meses de antelación por parte del casero, o dos meses por parte del inquilino) [LAU (Ley 29/1994), Artículo 10. Prórroga del contrato].
+> * **Excepción para el inquilino:** Durante esta prórroga, puedes decidir no renovar el contrato para cada nueva anualidad comunicándoselo al casero con al menos **un mes de antelación** a la fecha de terminación de dicha anualidad [LAU (Ley 29/1994), Artículo 10. Prórroga del contrato].
+> 
+> *Confirma los detalles específicos de tu caso con un abogado o en tu servicio de vivienda autonómico.*
 
-*Searches: ['prórroga noviembre 2026 arrendamientos urbanos vivienda']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
-[1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 10. Prórroga del contrato [redacción futura, en vigor desde el 15 de noviembre de 2026] | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7744
-LAU (Ley 29/1994) — Artículo 10. Prórroga del contrato [redacción futura, en vigor desde el 15 de noviembre de 2026] (TÍTULO II De los arrendamientos de vivienda / CAPÍTULO II De la duración del contrato)
-Téngase en cuenta que, con efectos de 15 de noviembre de 2026, se modifica por el art. único del Real Decreto-ley 28/2026, de 6 de octubre, Ref. BOE-A-2026-20822#au, con la siguiente redacción: «1. Si llegada la fecha de vencimiento del contrato de arrendamiento de vivienda habitual, o de cualquiera de sus prórrogas, incluidas las voluntarias y las reguladas por ley, una vez transcurridos como mínimo cinco años de duración de aquel, o siete años si el arrendador fuese persona jurídica, ninguna de las partes hubiese notificado a la otra, al menos con seis meses de antelación a aquella fecha en el caso del arrendador y al menos con dos meses de antelación en el caso del arrendatario, su voluntad de no prorrogarlo, el contrato se prorrogará tácita y obligatoriamente por plazos sucesivos de cinco años, o siete años si el arrendador fuese persona jurídica. En los casos en que el arrendador comunique válidamente la voluntad de no prorrogar el contrato conforme al párrafo anterior, vendrá obligado a indemnizar al arrendatario con una cantidad equivalente al mayor de los siguientes importes: doce mensualidades calculadas conforme al valor superior del rango individualizado que corresponda a la vivienda arrendada en el sistema estatal de referencia de precios de alquiler de vivienda; o una mensualidad calculada conforme al mismo valor por cada año que el arrendatario haya residido en la vivienda, prorrateándose por meses los períodos inferiores al año y por días los inferiores al mes. Cuando no pueda obtenerse un valor individualizado de la vivienda en el sistema estatal de referencia de precios de alquiler de vivienda, los importes previstos en el párrafo anterior se calcularán tomando como referencia la renta mensual vigente del contrato en la fecha de la comunicación de no prórroga. La indemnización se abonará en el momento de la entrega de la vivienda, salvo en el supuesto previsto en la letra a) del apartado segundo.
+[1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 10. Prórroga del contrato | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.8174
+LAU (Ley 29/1994) — Artículo 10. Prórroga del contrato (TÍTULO II De los arrendamientos de vivienda / CAPÍTULO II De la duración del contrato)
+1. Si llegada la fecha de vencimiento del contrato de arrendamiento de vivienda habitual, o de cualquiera de sus prórrogas, una vez transcurridos como mínimo cinco años de duración de aquel, o siete años si el arrendador fuese persona jurídica, ninguna de las partes hubiese notificado a la otra, al menos con cuatro meses de antelación a aquella fecha en el caso del arrendador y al menos con dos meses de antelación en el caso del arrendatario, su voluntad de no renovarlo, el contrato se prorrogará obligatoriamente por plazos anuales hasta un máximo de tres años más, salvo que el arrendatario manifieste al arrendador con un mes de antelación a la fecha de terminación de cualquiera de las anualidades, su voluntad de no renovar el contrato. 2. En los contratos de arrendamiento de vivienda habitual sujetos a la presente ley en los que finalice el periodo de prórroga obligatoria previsto en el artículo 9.1, o el periodo de prórroga tácita previsto en el artículo 10.1, podrá aplicarse, previa solicitud del arrendatario, una prórroga extraordinaria del plazo del contrato de arrendamiento por un periodo máximo de un año, durante el cual se seguirá aplicando los términos y condiciones establecidos para el contrato en vigor. Esta solicitud de prórroga extraordinaria requerirá la acreditación por parte del arrendatario de una situación de vulnerabilidad social y económica sobre la base de un informe o certificado emitido en el último año por los servicios sociales de ámbito municipal o autonómico y deberá ser aceptada obligatoriamente por el arrendador cuando este sea un gran tenedor de vivienda de acuerdo con la definición establecida en la Ley 12/2023, de 24 de mayo, por el derecho a la vivienda, salvo que se hubiese suscrito entre las partes un nuevo contrato de arrendamiento.
 
-[2] SOURCE: Ley 12/2023 de vivienda | LOCATION: Disposición final primera. Medidas de contención de precios en la regulación de los contratos de arrendamiento de vivienda | URL: https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203 | score 0.7687
+[2] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 10. Prórroga del contrato (part 2) | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.8071
+LAU (Ley 29/1994) — Artículo 10. Prórroga del contrato (TÍTULO II De los arrendamientos de vivienda / CAPÍTULO II De la duración del contrato)
+3. En los contratos de arrendamiento de vivienda habitual sujetos a la presente ley, en los que el inmueble se ubique en una zona de mercado residencial tensionado y dentro del periodo de vigencia de la declaración de la referida zona en los términos dispuestos en la legislación estatal en materia de vivienda, finalice el periodo de prórroga obligatoria previsto en el artículo 9.1 de esta ley o el periodo de prórroga tácita previsto en el apartado anterior, previa solicitud del arrendatario, podrá prorrogarse de manera extraordinaria el contrato de arrendamiento por plazos anuales, por un periodo máximo de tres años, durante los cuales se seguirán aplicando los términos y condiciones establecidos para el contrato en vigor. Esta solicitud de prórroga extraordinaria deberá ser aceptada obligatoriamente por el arrendador, salvo que se hayan fijado otros términos o condiciones por acuerdo entre las partes, se haya suscrito un nuevo contrato de arrendamiento con las limitaciones en la renta que en su caso procedan por aplicación de lo dispuesto en los apartados 6 y 7 del artículo 17 de esta ley, o en el caso de que el arrendador haya comunicado en los plazos y condiciones establecidos en el artículo 9.3 de esta ley, la necesidad de ocupar la vivienda arrendada para destinarla a vivienda permanente para sí o sus familiares en primer grado de consanguinidad o por adopción o para su cónyuge en los supuestos de sentencia firme de separación, divorcio o nulidad matrimonial. 4. Al contrato prorrogado, le seguirá siendo de aplicación el régimen legal y convencional al que estuviera sometido.
+
+[3] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 9. Plazo mínimo | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7931
+LAU (Ley 29/1994) — Artículo 9. Plazo mínimo (TÍTULO II De los arrendamientos de vivienda / CAPÍTULO II De la duración del contrato)
+1. La duración del arrendamiento será libremente pactada por las partes. Si esta fuera inferior a cinco años, o inferior a siete años si el arrendador fuese persona jurídica, llegado el día del vencimiento del contrato, este se prorrogará obligatoriamente por plazos anuales hasta que el arrendamiento alcance una duración mínima de cinco años, o de siete años si el arrendador fuese persona jurídica, salvo que el arrendatario manifieste al arrendador, con treinta días de antelación como mínimo a la fecha de terminación del contrato o de cualquiera de las prórrogas, su voluntad de no renovarlo. El plazo comenzará a contarse desde la fecha del contrato o desde la puesta del inmueble a disposición del arrendatario si esta fuere posterior. Corresponderá al arrendatario la prueba de la fecha de la puesta a disposición. 2. Se entenderán celebrados por un año los arrendamientos para los que no se haya estipulado plazo de duración o este sea indeterminado, sin perjuicio del derecho de prórroga anual para el arrendatario, en los términos resultantes del apartado anterior. 3. Una vez transcurrido el primer año de duración del contrato y siempre que el arrendador sea persona física, no procederá la prórroga obligatoria del contrato cuando, al tiempo de su celebración, se hubiese hecho constar en el mismo, de forma expresa, la necesidad para el arrendador de ocupar la vivienda arrendada antes del transcurso de cinco años para destinarla a vivienda permanente para sí o sus familiares en primer grado de consanguinidad o por adopción o para su cónyuge en los supuestos de sentencia firme de separación, divorcio o nulidad matrimonial. Para ejercer esta potestad de recuperar la vivienda, el arrendador deberá comunicar al arrendatario que tiene necesidad de la vivienda arrendada, especificando la causa o causas entre las previstas en el párrafo anterior, al menos con dos meses de antelación a la fecha en la que la vivienda se vaya a necesitar y el arrendatario estará obligado a entregar la finca arrendada en dicho plazo si las partes no llegan a un acuerdo distinto.
+
+[4] SOURCE: Ley 12/2023 de vivienda | LOCATION: Disposición final primera. Medidas de contención de precios en la regulación de los contratos de arrendamiento de vivienda | URL: https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203 | score 0.7875
 Ley 12/2023 de vivienda — Disposición final primera. Medidas de contención de precios en la regulación de los contratos de arrendamiento de vivienda (TÍTULO IV Medidas de protección y transparencia en las operaciones de compra y arrendamiento de vivienda / CAPÍTULO II Información y transparencia en materia de vivienda y suelo)
 La Ley 29/1994, de 24 de noviembre, de Arrendamientos Urbanos, queda modificada como sigue: Uno. El artículo 10 queda redactado en los siguientes términos: «Artículo 10. Prórroga del contrato. 1. Si llegada la fecha de vencimiento del contrato, o de cualquiera de sus prórrogas, una vez transcurridos como mínimo cinco años de duración de aquel, o siete años si el arrendador fuese persona jurídica, ninguna de las partes hubiese notificado a la otra, al menos con cuatro meses de antelación a aquella fecha en el caso del arrendador y al menos con dos meses de antelación en el caso del arrendatario, su voluntad de no renovarlo, el contrato se prorrogará obligatoriamente por plazos anuales hasta un máximo de tres años más, salvo que el arrendatario manifieste al arrendador con un mes de antelación a la fecha de terminación de cualquiera de las anualidades, su voluntad de no renovar el contrato. 2. En los contratos de arrendamiento de vivienda habitual sujetos a la presente ley en los que finalice el periodo de prórroga obligatoria previsto en el artículo 9.1, o el periodo de prórroga tácita previsto en el artículo 10.1, podrá aplicarse, previa solicitud del arrendatario, una prórroga extraordinaria del plazo del contrato de arrendamiento por un periodo máximo de un año, durante el cual se seguirá aplicando los términos y condiciones establecidos para el contrato en vigor. Esta solicitud de prórroga extraordinaria requerirá la acreditación por parte del arrendatario de una situación de vulnerabilidad social y económica sobre la base de un informe o certificado emitido en el último año por los servicios sociales de ámbito municipal o autonómico y deberá ser aceptada obligatoriamente por el arrendador cuando este sea un gran tenedor de vivienda de acuerdo con la definición establecida en la Ley 12/2023, de 24 de mayo, por el derecho a la vivienda, salvo que se hubiese suscrito entre las partes un nuevo contrato de arrendamiento.
 
-[3] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 10. Prórroga del contrato [redacción futura, en vigor desde el 15 de noviembre de 2026] (part 5) | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7681
-LAU (Ley 29/1994) — Artículo 10. Prórroga del contrato [redacción futura, en vigor desde el 15 de noviembre de 2026] (TÍTULO II De los arrendamientos de vivienda / CAPÍTULO II De la duración del contrato)
-6. En los contratos de arrendamiento de vivienda habitual sujetos a la presente ley, en los que el inmueble se ubique en una zona de mercado residencial tensionado y dentro del periodo de vigencia de la declaración de la referida zona en los términos dispuestos en la legislación estatal en materia de vivienda, finalice el periodo de prórroga obligatoria previsto en el artículo 9.1 de esta ley o el de cualquiera de las prórrogas previstas en el apartado 1, y siempre que el contrato hubiera de extinguirse por haber comunicado válidamente el arrendador su voluntad de no prorrogarlo, previa solicitud del arrendatario, podrá prorrogarse de manera extraordinaria el contrato de arrendamiento por plazos anuales, por un periodo máximo de tres años, durante los cuales se seguirán aplicando los términos y condiciones establecidos para el contrato en vigor. Esta solicitud de prórroga extraordinaria deberá ser aceptada obligatoriamente por el arrendador, salvo que se hayan fijado otros términos o condiciones por acuerdo entre las partes, se haya suscrito un nuevo contrato de arrendamiento con las limitaciones en la renta que en su caso procedan por aplicación de lo dispuesto en los apartados sexto y séptimo del artículo 17 de esta ley, o en el caso de que el arrendador haya comunicado en los plazos y condiciones establecidos en el artículo 9.3 de esta ley, la necesidad de ocupar la vivienda arrendada para destinarla a vivienda permanente para sí o sus familiares en primer grado de consanguinidad o por adopción o para su cónyuge en los supuestos de sentencia firme de separación, divorcio o nulidad matrimonial. Esta prórroga es incompatible con otras prórrogas extraordinarias establecidas por norma con rango de ley y se aplicará con carácter preferente. A la finalización de esta prórroga extraordinaria, el contrato se extinguirá conforme a la comunicación de no prórroga que dio lugar a su aplicación, sin necesidad de una nueva comunicación, salvo que las partes acuerden su prórroga o suscriban un nuevo contrato de arrendamiento. En ese momento será exigible, en su caso, la indemnización prevista en el apartado 1, de conformidad con lo dispuesto en dicho apartado y en el apartado 2.»
-
-[4] SOURCE: LAU (Ley 29/1994) | LOCATION: Disposición adicional undécima. Índice de referencia para la actualización anual de los contratos de arrendamiento de vivienda | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.763
-LAU (Ley 29/1994) — Disposición adicional undécima. Índice de referencia para la actualización anual de los contratos de arrendamiento de vivienda (TÍTULO V Régimen sancionador aplicable a los efectos de la Ventanilla Única Digital de Arrendamientos y el Reglamento (UE) 2024/1028 del Parlamento Europeo y del Consejo, de 11 de abril de 2024, sobre la recogida y el intercambio de datos relativos a los servicios de alquiler de alojamientos de corta duración y por el que se modifica el Reglamento (UE) 2018/1724)
-El Instituto Nacional de Estadística definirá, antes del 31 de diciembre de 2024, un índice de referencia para la actualización anual de los contratos de arrendamiento de vivienda que se fijará como límite de referencia a los efectos del artículo 18 de esta ley, con el objeto de evitar incrementos desproporcionados en la renta de los contratos de arrendamiento.
-
-[5] SOURCE: Ley 12/2023 de vivienda | LOCATION: Disposición transitoria cuarta. Régimen de los contratos de arrendamiento celebrados con anterioridad a la entrada en vigor de esta ley | URL: https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203 | score 0.7579
-Ley 12/2023 de vivienda — Disposición transitoria cuarta. Régimen de los contratos de arrendamiento celebrados con anterioridad a la entrada en vigor de esta ley (TÍTULO IV Medidas de protección y transparencia en las operaciones de compra y arrendamiento de vivienda / CAPÍTULO II Información y transparencia en materia de vivienda y suelo)
-1. Los contratos de arrendamientos sometidos a la Ley 29/1994, de 24 de noviembre, de Arrendamientos Urbanos, celebrados con anterioridad a la entrada en vigor de esta ley, serán susceptibles de prórroga de conformidad con lo dispuesto en el artículo 10 de dicha ley, en la redacción introducida por la presente ley, y se actualizarán con el límite máximo aplicable de acuerdo con la disposición adicional undécima introducida por esta ley, y la redacción dada al artículo 18.1 de la Ley 29/1994, de 24 de noviembre, en la redacción dada por el Real Decreto-ley 29/2026, de 6 de octubre, por el que se adoptan medidas urgentes para la protección de la función social de la vivienda y la ampliación de la oferta de vivienda asequible, por el que se adoptan medidas urgentes en materia de vivienda para dar respuesta a la emergencia habitacional. En todo lo demás, el régimen jurídico de estos contratos será el que estuviese vigente en el momento de su celebración. 2. Sin perjuicio de lo dispuesto en el apartado anterior, cuando las partes lo acuerden y no resulte contrario a las previsiones legales, los contratos preexistentes podrán adaptarse al régimen jurídico establecido en esta ley. 3. Con independencia de lo previsto en los apartados anteriores, la regulación introducida en esta ley no afectará a las diferentes medidas de aplicación extraordinaria a los contratos vigentes de arrendamiento de vivienda y, en particular, la recogida en el artículo 46 del Real Decreto-ley 6/2022, de 29 de marzo, por el que se adoptan medidas urgentes en el marco del Plan Nacional de respuesta a las consecuencias económicas y sociales de la guerra en Ucrania, que resultarán de aplicación en los términos en los que se encuentren reguladas.
+[5] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 9 bis. Plazo en los arrendamientos de vivienda temporal | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.777
+LAU (Ley 29/1994) — Artículo 9 bis. Plazo en los arrendamientos de vivienda temporal (TÍTULO II De los arrendamientos de vivienda / CAPÍTULO II De la duración del contrato)
+1. En los contratos de arrendamiento de vivienda temporal la duración del arrendamiento será libremente pactada por las partes, debiendo ser superior a treinta y un días, y no exceder como regla general de doce meses, en atención a las causas que lo motiven. En caso de que el contrato se hubiera concertado por una duración inferior a la máxima establecida y, llegada su fecha de finalización, siguiera existiendo el motivo que causó la temporalidad, aquél podrá prorrogarse mediante acuerdo expreso de las partes, sin superar nunca como regla general la duración máxima de doce meses en conjunto, salvo que la causa de temporalidad subsista posteriormente. 2. Siempre que la duración del arrendamiento de vivienda temporal exceda de doce meses sin justificación en la causa de temporalidad o se noven o sucedan más de dos contratos de arrendamiento de vivienda temporal de forma consecutiva, entre las mismas partes y sobre la misma vivienda, el primero se entenderá celebrado como un contrato de arrendamiento de vivienda habitual, y le serán de aplicación todos los preceptos previstos para dichos contratos, incluido el plazo mínimo y el régimen de prórrogas previstas en los artículos 9 y 10.
 </pre>
 </details>
 
@@ -1002,9 +954,7 @@ Ley 12/2023 de vivienda — Disposición transitoria cuarta. Régimen de los con
 > 
 > *Confirme los detalles particulares de su contrato con un abogado o con el servicio de vivienda de su comunidad autónoma.*
 
-*Searches: ['actualizacion renta 2024 limite porcentaje 2 por ciento 3 por ciento indice lau vivienda']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Disposición adicional undécima. Índice de referencia para la actualización anual de los contratos de arrendamiento de vivienda | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.8022
@@ -1050,9 +1000,7 @@ En caso de pacto expreso entre las partes sobre algún mecanismo de actualizaci�
 > 
 > *Nota: Se recomienda confirmar los detalles específicos en la normativa propia de la universidad correspondiente o con un servicio especializado en vivienda.*
 
-*Searches: ['residencia universitaria exclusion LAU arrendamientos urbanos']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 5. Arrendamientos excluidos | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7905
@@ -1096,9 +1044,7 @@ LAU (Ley 29/1994) — Disposición adicional duodécima. Respecto a la legislaci
 > 
 > *Confirme los detalles particulares de su contrato con un abogado especializado o con el servicio de vivienda de su comunidad autónoma.*
 
-*Searches: ['plazo minimo contrato arrendamiento persona juridica LAU duracion', 'actualizacion fianza LAU articulo 36 fianza alquiler vivienda']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 9. Plazo mínimo | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7932
@@ -1166,9 +1112,7 @@ En caso de pacto expreso entre las partes sobre algún mecanismo de actualizaci�
 > 
 > *Confirme los detalles particulares de su contrato y zona con un abogado o con el servicio de vivienda de su comunidad autónoma.*
 
-*Searches: ['gran tenedor zona tensionada renta contrato alquiler Ley 12 2023', 'gran tenedor definicion articulo 3 Ley 12 2023']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: Ley 12/2023 de vivienda | LOCATION: Disposición final primera. Medidas de contención de precios en la regulación de los contratos de arrendamiento de vivienda (part 4) | URL: https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203 | score 0.7977
@@ -1231,9 +1175,7 @@ El Real Decreto-ley 6/2022, de 29 de marzo, por el que se adoptan medidas urgent
 > 
 > *Nota: Para un conflicto concreto, confirma los detalles de tu contrato con un abogado o con el servicio de vivienda de tu comunidad autónoma.*
 
-*Searches: ['arrendatario desistimiento plazo preaviso meses LAU', 'fianza intereses devolucion plazo LAU Artículo 36']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 11. Desistimiento del contrato | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.8208
@@ -1301,9 +1243,7 @@ En el caso del arrendamiento de vivienda, en contratos de hasta cinco años de d
 > 
 > *Confirme siempre su caso particular con un abogado o con el servicio de vivienda de su comunidad autónoma.*
 
-*Searches: ['declaracion zona tensionada duracion prorroga extraordinaria inquilino']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: Ley 12/2023 de vivienda | LOCATION: Artículo 18. Declaración de zonas de mercado residencial tensionado (part 2) | URL: https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203 | score 0.75
@@ -1355,9 +1295,7 @@ Téngase en cuenta que, con efectos de 15 de noviembre de 2026, se modifica por 
 > 
 > *Confirme los detalles particulares de su situación con un abogado o con el servicio de vivienda de su comunidad autónoma.*
 
-*Searches: ['venta de vivienda arrendada comprador derecho adquisicion preferente LAU']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 25. Derecho de adquisición preferente | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7902
@@ -1401,9 +1339,7 @@ LAU (Ley 29/1994) — Artículo 13. Resolución del derecho del arrendador (TÍT
 > 
 > *Para conflictos concretos, se recomienda confirmarlo con un abogado o con el servicio de vivienda de su comunidad autónoma.*
 
-*Searches: ['reparacion caldera conservacion vivienda arrendamiento', 'honorarios inmobiliaria gastos gestion inmobiliaria arrendador arrendatario ley vivienda']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 21 bis. Conservación de la vivienda temporal | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7404
@@ -1466,9 +1402,7 @@ Las zonas de mercado residencial tensionado a las que podrá resultar de aplicac
 > 
 > *Nota: Para casos particulares o conflictos sobre la aplicación de estos límites, se recomienda confirmar la situación con un abogado o con el servicio de vivienda de la comunidad autónoma.*
 
-*Searches: ['RDL 7 2019 sistema precio alquiler referencia indice', 'Ley 12 2023 renta grandes tenedores zonas tensionadas indice referencia']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: RDL 7/2019 | LOCATION: Disposición adicional segunda. Sistema de índices de referencia del precio del alquiler de vivienda | URL: https://www.boe.es/buscar/act.php?id=BOE-A-2019-3108 | score 0.8563
@@ -1531,9 +1465,7 @@ Las zonas de mercado residencial tensionado a las que podrá resultar de aplicac
 > 
 > *Para un caso concreto, se recomienda consultar directamente con el Instituto Nacional de Estadística (INE), un abogado especialista o la oficina de vivienda de su comunidad autónoma.*
 
-*Searches: ['IRAV octubre 2026']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Artículo 18. Actualización de la renta | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.5772
@@ -1574,9 +1506,7 @@ LAU (Ley 29/1994) — Artículo 10. Prórroga del contrato [redacción futura, e
 > 
 > *Para un caso concreto, se recomienda consultar con un abogado o con la oficina de vivienda de la administración autonómica o local.*
 
-*Searches: ['zona de mercado residencial tensionado Barcelona barrios']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: Ley 12/2023 de vivienda | LOCATION: Artículo 18. Declaración de zonas de mercado residencial tensionado (part 2) | URL: https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203 | score 0.747
@@ -1617,9 +1547,7 @@ Se incluye también dentro del título II la declaración de zonas de mercado re
 > 
 > Para confirmar los importes y requisitos exactos aplicables en su comunidad autónoma, se recomienda consultarlo directamente con el organismo de vivienda de la región o con un profesional especializado.
 
-*Searches: ['Bono Alquiler Joven cuantia requisitos', '"Bono Alquiler Joven"']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: Ley 12/2023 de vivienda | LOCATION: Disposición final segunda. Incentivos fiscales aplicables en el Impuesto sobre la Renta de las Personas Físicas a los arrendamientos de inmuebles destinados a vivienda | URL: https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203 | score 0.6682
@@ -1682,9 +1610,7 @@ Las zonas de mercado residencial tensionado a las que podrá resultar de aplicac
 > 
 > *Confirme los plazos estimados actuales con un abogado o con los servicios de información de la vivienda de la Comunidad de Madrid.*
 
-*Searches: ['juicio de desahucio por impago plazo duración Madrid', 'duración media juicio desahucio Madrid LEC']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: RDL 7/2019 | LOCATION: Artículo tercero. Modificación de la Ley 1/2000, de 7 de enero, de Enjuiciamiento Civil | URL: https://www.boe.es/buscar/act.php?id=BOE-A-2019-3108 | score 0.6778
@@ -1745,9 +1671,7 @@ Ley 12/2023 de vivienda — Disposición final quinta. Modificación de la Ley 1
 > 
 > *Confirme este extremo con un abogado o con la normativa aplicable en materia de propiedad horizontal.*
 
-*Searches: ['propietario deudas voto junta de propietarios', 'derecho a voto propietarios morosos ley propiedad horizontal asistencia voto cuotas']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: RDL 7/2019 | LOCATION: Artículo segundo. Modificación de la Ley 49/1960, de 21 de julio, sobre propiedad horizontal (part 2) | URL: https://www.boe.es/buscar/act.php?id=BOE-A-2019-3108 | score 0.6854
@@ -1806,9 +1730,7 @@ LAU (Ley 29/1994) — Artículo 20. Gastos generales y de servicios individuales
 
 > El corpus no cubre esta pregunta. Las leyes de arrendamientos urbanos (como la LAU o la Ley 12/2023) solo mencionan que el interés legal del dinero se aplica a la devolución de la fianza si transcurre más de un mes desde la entrega de llaves sin haberse restituido [LAU (Ley 29/1994), Artículo 36. Fianza], pero no recogen la cifra concreta del tipo de interés legal del dinero para cada año.
 
-*Searches: ['interes legal del dinero 2026']*
-
-<details><summary>Show passages the agent retrieved</summary>
+<details><summary>Passages the agent retrieved</summary>
 
 <pre>
 [1] SOURCE: LAU (Ley 29/1994) | LOCATION: Disposición adicional undécima. Índice de referencia para la actualización anual de los contratos de arrendamiento de vivienda | URL: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | score 0.7157

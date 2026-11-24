@@ -15,7 +15,7 @@
 
 So the system must prefer refusing over guessing, and every claim must be checkable through a citation to the exact article.
 
-I picked Spanish rental law partly because of my own experience renting a flat, where many situations came up in which an assistant like this would have helped me understand my rights and handle things better. It's also a good test case because the law has been reformed several times in a few years (RDL 7/2019, Ley 12/2023, and a change to LAU art. 10 announced for November 2026 that was repealed before it took effect), and many tenants rely on websites that fall behind the official text: while grading, I found two legal websites still describing old versions of LAU articles 11 and 21. The assistant is for a tenant with a concrete problem, such as an ignored repair, a deposit or leaving early, who wants to know which article applies before going to a lawyer or the housing office. A wrong answer is much worse than "I don't know": in q04 the agent said a tenant could leave early "unless the contract has a compensation clause", but the current art. 11.3 says leaving gives the landlord no right to compensation, so a tenant could stay in a flat they could leave for free, or pay money they don't owe, while "I don't know" only sends them to ask someone else.
+I picked Spanish rental law partly because of my own experience renting a flat, where many situations came up in which an assistant like this would have helped me understand my rights and handle things better. It's also a good test case because the law has been reformed several times in a few years (RDL 7/2019, Ley 12/2023, and a change to LAU art. 10 announced for November 2026 that was repealed before it took effect), and many tenants rely on websites that fall behind the official text: while grading, I found two legal websites still describing old versions of LAU articles 11 and 21. The assistant is for a tenant with a concrete problem, such as an ignored repair, a deposit or leaving early, who wants to know which article applies before going to a lawyer or the housing office. A wrong answer is much worse than "I don't know": in q04 the agent said leaving early gives the landlord no right to compensation "salvo que el propio contrato incluya alguna previsión al respecto" (unless the contract itself provides for it), but the current art. 11.3 says leaving gives the landlord no right to compensation, so a tenant could stay in a flat they could leave for free, or pay money they don't owe, while "I don't know" only sends them to ask someone else.
 
 ## Corpus
 
@@ -46,6 +46,8 @@ The LAU (Ley 29/1994) is the base law for renting a home and covers deposits, du
 - **Embed and store:** `gemini-embedding-2` (768 dimensions, RETRIEVAL_DOCUMENT / RETRIEVAL_QUERY) into ChromaDB in `index/` (cosine). A chunk is embedded only if its id and hash are not already stored; query embeddings are cached in `index/query_cache.json`.
 - **Number of chunks:** 267 in the chosen design (LAU 112, Ley 12/2023 118, RDL 7/2019 37), plus 54 for the LPH after the demo.
 
+**Known issue (not fixed):** the *Disposiciones* at the end of each law (83 chunks: 38 in the LAU, 37 in Ley 12/2023, 8 in RDL 7/2019) carry the last TÍTULO of their law as their heading, because the heading path is not reset when the articles end. Their `location`, which citations and the hit rates use, is correct. Fixing it changes those chunks' text, so it would mean re-embedding them and re-running the agent and the judge; it is listed as a fix for the next version.
+
 **Extraction problems fixed:**
 1. *All historical versions:* each article in the XML holds every past version; keeping them all tripled the word count and mixed old rules with current ones. Only the latest version is kept.
 2. *Future text mixed into current text:* the BOE puts amendments that are not yet in force inside the current article, after "Téngase en cuenta que, con efectos de…". In the 12 November download, LAU art. 10 contained such an amendment (RDL 28/2026, due 15 November 2026). The pipeline splits that text into its own chunk labelled `[redacción futura, en vigor desde el …]`, and AGENTS.md tells the agent to give the date. RDL 28/2026 was then repealed before taking effect (see Corpus), so the current corpus has no future text; the split stays in the pipeline for the next amendment.
@@ -75,10 +77,23 @@ I chose one chunk per article because it put the right article in the top 3 for 
 
 ## Tools and subagent
 
-**`search(query)`**, description given to the model:
-> Search Spanish residential rental law (official consolidated BOE texts, in Spanish): the LAU, Ley 12/2023 and RDL 7/2019, plus any document added later with add_document. Use it for any question about renting a home in Spain… Write the query in Spanish legal terms for best results. Call it again with different words if the results do not cover the question. Returns the 5 most relevant passages, each headed with SOURCE, LOCATION and URL. Cite answers as [SOURCE, LOCATION].
+Descriptions given to the model (docstrings in `server.py`):
 
-**`add_document(path)`**: takes a BOE `.xml`, `.pdf`, `.txt` or `.md`; runs it through `index.index_file` (imported, not rewritten); returns the number of chunks and how many were newly embedded.
+**`search(query)`**
+> Search Spanish residential rental law (official consolidated BOE texts, in Spanish): the LAU (Ley 29/1994 de Arrendamientos Urbanos), Ley 12/2023 por el derecho a la vivienda and RDL 7/2019 de medidas urgentes en materia de vivienda y alquiler, plus any document added later with add_document.
+>
+> Use it for any question about renting a home in Spain: contract duration and extensions, rent and rent updates, deposits (fianza) and guarantees, who pays repairs, expenses and agency fees, ending the contract, eviction protections, stressed-market areas. Write the query in Spanish legal terms for best results (e.g. "fianza vivienda mensualidades"). Call it again with different words if the results do not cover the question.
+>
+> Returns the 5 most relevant passages, each headed with SOURCE (law), LOCATION (article or preamble) and URL. Cite answers as [SOURCE, LOCATION]. If no passage covers the question, the corpus does not answer it.
+
+**`add_document(path)`**
+> Add a legal document to the rental-law corpus so search can find it.
+>
+> `path` is a local file: a BOE consolidated-text .xml (from the BOE open-data API), or a .pdf, .txt or .md. The file is cleaned, split by article, embedded with Gemini and stored in the index.
+>
+> If the same file is already indexed and unchanged, nothing is embedded and it says so. If it was indexed before but its text changed, the old chunks are replaced. Returns how many chunks the document has and how many were newly embedded.
+
+It imports `index.index_file` (the same pipeline as `main.py index`, not rewritten).
 
 **One search result** ("¿Cuántos meses de fianza me pueden exigir al alquilar un piso como vivienda?"):
 ```
@@ -93,17 +108,22 @@ LAU (Ley 29/1994) — Artículo 36. Fianza (TÍTULO IV Disposiciones comunes)
 
 > **User:** Mi casero quiere subirme el alquiler este año aunque el contrato no dice nada de actualizaciones. ¿Puede hacerlo? Responde citando los artículos.
 >
-> **corpus-researcher:** No. Si el contrato no incluye ninguna cláusula de actualización, el casero no puede subir la renta cada año.
-> - **No hay subida sin un pacto expreso.** … "En defecto de pacto expreso, no se aplicará actualización de rentas a los contratos" [LAU (Ley 29/1994), Artículo 18.1]. Esta regla viene de la reforma del RDL 7/2019 [RDL 7/2019, Artículo primero, apartado Nueve].
-> - **Si hubiera pacto, la subida tiene un tope.** … la subida anual nunca puede superar la variación del IRAV [LAU (Ley 29/1994), Artículo 18.1; Disposición adicional undécima].
-> - **Hace falta avisar por escrito.** … [LAU (Ley 29/1994), Artículo 18.2].
-> - **Hay una excepción: las obras de mejora.** … máximo del 20 % de la renta vigente … [RDL 7/2019, Artículo primero, apartado Diez, que da nueva redacción al art. 19 LAU].
+> **corpus-researcher:**
+>
+> No. Si el contrato no incluye ninguna cláusula de actualización, el casero no puede subir la renta cada año.
+>
+> - **No hay subida sin un pacto expreso.** Durante el contrato, la renta solo puede actualizarse en la fecha en que se cumple cada año de vigencia, y "en los términos pactados por las partes". La ley dice: "En defecto de pacto expreso, no se aplicará actualización de rentas a los contratos" [LAU (Ley 29/1994), Artículo 18.1]. Esta regla viene de la reforma del RDL 7/2019 [RDL 7/2019, Artículo primero, apartado Nueve].
+> - **Si hubiera pacto, la subida tiene un tope.** Cuando la cláusula no indica qué índice se usa, se aplica el IRAV. Aunque lo indique, la subida anual nunca puede superar la variación del IRAV [LAU (Ley 29/1994), Artículo 18.1; Disposición adicional undécima].
+> - **Hace falta avisar por escrito.** La renta actualizada solo se puede cobrar a partir del mes siguiente a que una parte se lo notifique a la otra por escrito, indicando el porcentaje aplicado. Basta una nota en el recibo del mes anterior [LAU (Ley 29/1994), Artículo 18.2].
+> - **Hay una excepción: las obras de mejora.** Si el casero hace obras de mejora después de los primeros cinco años de contrato (siete si el casero es una empresa o persona jurídica), puede subir la renta, salvo que el contrato diga lo contrario. La subida se calcula con el interés legal del dinero más tres puntos sobre lo invertido. Tiene un máximo del 20 % de la renta vigente y debe notificarse por escrito con el desglose de costes [RDL 7/2019, Artículo primero, apartado Diez, que da nueva redacción al art. 19 LAU]. Este texto procede de la versión del RDL que modifica la LAU; no he recuperado el artículo 19 en la versión consolidada.
+>
+> URLs: https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 ; https://www.boe.es/buscar/act.php?id=BOE-A-2019-3108
 
-(Full transcript: `eval/subagent_transcript.md`.) For the last point it cited the amending decree instead of the consolidated LAU art. 19: the duplicate-text risk described under Corpus.
+(Also in `eval/subagent_transcript.md`.) For the last point it cited the amending decree instead of the consolidated LAU art. 19: the duplicate-text risk described under Corpus.
 
 ## Adding a document
 
-**If the document is already indexed:** each chunk has an id and a content hash. Unchanged → nothing is embedded and the tool says so. Changed → new chunks are embedded and outdated ones removed. In the demo, adding the LPH a second time embedded **0** chunks.
+**If the document is already indexed:** each chunk has an id and a content hash. Unchanged → nothing is embedded and the tool says so. Changed → new chunks are embedded and outdated ones removed. In the demo, adding the LPH a second time embedded **0** chunks. Calling the real tool over MCP on the same file (24 Nov 2026) returns: *"'LPH (Ley 49/1960)' is already indexed and unchanged (54 chunks). Nothing was embedded."*
 
 **Unanswerable question (q34):** "¿Puede votar en la junta de propietarios un propietario que debe cuotas de comunidad?"
 **Document added:** LPH (Ley 49/1960), BOE-A-1960-10906, 54 chunks.
@@ -120,7 +140,7 @@ LAU (Ley 29/1994) — Artículo 36. Fianza (TÍTULO IV Disposiciones comunes)
 
 ## Harness and guardrails
 
-`agent.py`: LangChain `create_agent` on `gemini-3.5-flash-lite`, tools from `server.py` over MCP, `AGENTS.md` as the system prompt.
+`agent.py`: LangChain `create_agent` on `gemini-3.5-flash-lite`, tools from `server.py` over MCP, `AGENTS.md` as the system prompt. The agent first ran on `gemini-3.5-flash`, whose free tier allows 20 requests a day; that ran out after 10 questions (those answers are kept in `eval/answers_gemini-3.5-flash_first10.jsonl`), so all 35 were answered with `gemini-3.5-flash-lite`. Flash-lite ignores `temperature=0` (fixed sampling), so a re-run can word answers slightly differently; the saved answers in `eval/answers.jsonl` are the ones evaluated.
 
 **AGENTS.md rules** (each has its reason in the file):
 1. Search before answering and answer only from the search results.
