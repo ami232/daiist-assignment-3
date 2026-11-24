@@ -1,0 +1,18 @@
+
+The agent wants to add 'docs_to_add/SCC_2021_915.pdf' to the index (this embeds it and changes later answers).
+Approve? [yes/no] yes
+The document `docs_to_add/SCC_2021_915.pdf` has already been indexed as "SCC 2021/915" and is available in the corpus.
+
+Sources searched:
+
+(guardrail: not applicable (add_document request, no facts from the corpus); 1 tool calls; 2130+79 tokens; 19.2s)
+
+---------
+
+The agent wants to add 'docs_to_add/SCC_2021_915.pdf' to the index (this embeds it and changes later answers).
+Approve? [yes/no] no
+The user did not approve adding this document. Nothing was added.
+
+Sources searched:
+
+(guardrail: not applicable (add_document request, no facts from the corpus); 1 tool calls; 2109+46 tokens; 17.0s)
