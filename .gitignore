@@ -6,8 +6,11 @@ __pycache__/
 *.pyc
 
 # Documents downloaded by your index stage. Commit them only if their licence allows it.
-corpus/
+# EUR-Lex texts may be reused with source acknowledged (see corpus/README.md), so corpus/raw/ is committed.
 
+# Personal study notes (not part of the submission)
+ESTUDIO.md
+AI_USE.md
 # Your index belongs in index/, committed. Your evaluation results belong in eval/, committed.
 
 # Never commit your API key

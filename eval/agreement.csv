@@ -1,0 +1,3 @@
+criterion,n,agreement,kappa,human_rate,judge_rate
+correct,35,0.971,0.873,0.857,0.886
+supported,35,0.914,-0.04,0.943,0.971

@@ -1,0 +1,244 @@
+design,method,id,kind,ranks,retrieved,hit@1,any@1,words@1,hit@3,any@3,words@3,hit@5,any@5,words@5
+fixed,vector,q01,single,1,GDPR Article 33(3) | GDPR Article 32(4) | GDPR Article 33(4) | GDPR Article 34(2) | GDPR Article 32(2),1,1,150,1,1,450,1,1,750
+fixed,vector,q02,single,1,GDPR Article 83(4) | GDPR Article 83(3) | GDPR Article 83(5) | GDPR Article 83(2) | AI Act Article 99(5),1,1,150,1,1,450,1,1,750
+fixed,vector,q03,single,1,GDPR Article 37(1) | GDPR Article 36(4) | GDPR Article 37(3) | GDPR Article 35(1) | GDPR Article 3(2),1,1,150,1,1,450,1,1,750
+fixed,vector,q04,single,1,GDPR Article 12(1) | GDPR Article 15(1) | GDPR Article 15(3) | GDPR Article 12(3) | Data Act Article 17(5),1,1,150,1,1,450,1,1,750
+fixed,vector,q05,single,1,"GDPR Article 7(3) | GDPR Article 8(1) | GDPR Article 7(1) | GDPR Article 4, point (10) | GDPR Article 3(2)",1,1,150,1,1,450,1,1,750
+fixed,vector,q06,single,1,GDPR Article 17(1) | GDPR Article 17(1) | GDPR Article 28(3) | Data Act Article 4(5) | GDPR Article 5(1),1,1,150,1,1,450,1,1,750
+fixed,vector,q07,single,3,Data Act Article 25(2) | Data Act Article 25(1) | GDPR Article 28(2) | GDPR Article 28(3) | GDPR Article 32(1),0,0,150,1,1,450,1,1,750
+fixed,vector,q08,single,1,"AI Act Article 5(1) | AI Act Annex III, point (7) | AI Act Article 5(1) | GDPR Article 88(1) | AI Act Article 5(3)",1,1,150,1,1,450,1,1,750
+fixed,vector,q09,single,1,AI Act Article 99(2) | AI Act Article 99(5) | AI Act Article 100(1) | AI Act Article 5(1) | AI Act Article 5(1),1,1,150,1,1,450,1,1,750
+fixed,vector,q10,single,1,AI Act Article 49(5) | AI Act Article 50(2) | AI Act Article 50(4) | AI Act Article 50(4) | AI Act Article 50(2),1,1,150,1,1,450,1,1,750
+fixed,vector,q11,single,1,AI Act Article 50(2) | AI Act Article 50(4) | AI Act Article 49(5) | AI Act Article 50(4) | AI Act Article 60(7),1,1,150,1,1,450,1,1,750
+fixed,vector,q12,single,5,"AI Act Article 9(5) | AI Act Article 9(10) | AI Act Annex IV, point (2) | AI Act Article 14(4) | AI Act Article 3, point (67)",0,0,150,0,0,450,1,1,750
+fixed,vector,q13,single,1,"AI Act Article 51(1) | AI Act Annex XIII | AI Act Annex XIII | AI Act Article 51(3) | AI Act Article 3, point (62)",1,1,150,1,1,347,1,1,647
+fixed,vector,q14,single,2,AI Act Article 18(3) | AI Act Article 26(5) | AI Act Article 12(2) | AI Act Article 19(2) | AI Act Article 11(3),0,0,150,1,1,450,1,1,750
+fixed,vector,q15,single,3,Data Act Article 3(1) | Data Act Article 1(1) | Data Act Article 4(14) | Data Act Article 3(3) | Data Act Article 27,0,0,150,1,1,450,1,1,750
+fixed,vector,q16,single,2,Data Act Article 23 | Data Act Article 25(2) | Data Act Article 23 | Data Act Article 25(2) | Data Act Article 27,0,0,150,1,1,450,1,1,750
+fixed,vector,q17,single,1,Data Act Article 13(5) | Data Act Article 13(5) | Data Act Article 13(4) | Data Act Article 13(5) | Data Act Article 13(6),1,1,150,1,1,450,1,1,750
+fixed,vector,q18,multi,-;1,Data Act Article 15(1) | Data Act Article 19(3) | Data Act Article 15(1) | Data Act Article 18(2) | GDPR Article 48,0,1,150,0,1,450,0,1,750
+fixed,vector,q19,multi,-;1,"AI Act Annex III, point (3) | AI Act Annex III, point (7) | AI Act Article 5(1) | AI Act Article 5(3) | AI Act Article 6(2)",0,1,150,0,1,450,0,1,750
+fixed,vector,q20,multi,1;2,"GDPR Article 35(1) | AI Act Article 27(1) | AI Act Annex III, point (5) | AI Act Article 27(1) | AI Act Article 27(3)",0,1,150,1,1,450,1,1,750
+fixed,vector,q21,multi,4;-,Data Act Article 5(7) | Data Act Article 3(1) | Data Act Article 5(4) | Data Act Article 4(5) | Data Act Article 4(10),0,0,150,0,0,450,0,1,750
+fixed,vector,q22,multi,5;-,GDPR Article 7(1) | Data Act Article 6(1) | AI Act Article 10(5) | GDPR Article 25(1) | GDPR Article 6(4),0,0,150,0,0,450,0,1,750
+fixed,vector,q23,multi,1;3,GDPR Article 33(3) | GDPR Article 32(4) | GDPR Article 34(2) | GDPR Article 33(4) | Data Act Article 19(3),0,1,150,1,1,450,1,1,750
+fixed,vector,q24,multi,2;-,GDPR Article 48 | GDPR Article 45(1) | GDPR Article 3(2) | Data Act Article 32(3) | Data Act Article 32(1),0,0,150,0,1,450,0,1,750
+fixed,vector,q25,multi,3;1,"AI Act Annex III, point (3) | AI Act Annex III, point (1) | AI Act Article 6(2) | AI Act Annex III, point (7) | AI Act Annex III, point (5)",0,1,150,1,1,450,1,1,750
+fixed,vector,q26,multi,2;3,"AI Act Annex VIII, point (1) | AI Act Article 6(3) | AI Act Article 49(2) | AI Act Article 48(5) | AI Act Article 6(2)",0,0,150,1,1,450,1,1,750
+fixed,vector,q27,multi,2;2,Data Act Article 6(2) | Data Act Article 5(1) | Data Act Article 1(1) | Data Act Article 27 | Data Act Article 6(1),0,0,150,1,1,450,1,1,750
+fixed,filter,q01,single,1,GDPR Article 33(3) | GDPR Article 32(4) | GDPR Article 33(4) | GDPR Article 34(2) | GDPR Article 32(2),1,1,150,1,1,450,1,1,750
+fixed,filter,q02,single,1,GDPR Article 83(4) | GDPR Article 83(3) | GDPR Article 83(5) | GDPR Article 83(2) | GDPR Article 83(2),1,1,150,1,1,450,1,1,750
+fixed,filter,q03,single,1,GDPR Article 37(1) | GDPR Article 36(4) | GDPR Article 37(3) | GDPR Article 35(1) | GDPR Article 3(2),1,1,150,1,1,450,1,1,750
+fixed,filter,q04,single,1,GDPR Article 12(1) | GDPR Article 15(1) | GDPR Article 15(3) | GDPR Article 12(3) | Data Act Article 17(5),1,1,150,1,1,450,1,1,750
+fixed,filter,q05,single,1,"GDPR Article 7(3) | GDPR Article 8(1) | GDPR Article 7(1) | GDPR Article 4, point (10) | GDPR Article 3(2)",1,1,150,1,1,450,1,1,750
+fixed,filter,q06,single,1,GDPR Article 17(1) | GDPR Article 17(1) | GDPR Article 28(3) | Data Act Article 4(5) | GDPR Article 5(1),1,1,150,1,1,450,1,1,750
+fixed,filter,q07,single,-,Data Act Article 25(2) | Data Act Article 25(1) | Data Act Article 27 | Data Act Article 36(1) | Data Act Article 23,0,0,150,0,0,450,0,0,750
+fixed,filter,q08,single,1,"AI Act Article 5(1) | AI Act Annex III, point (7) | AI Act Article 5(1) | GDPR Article 88(1) | AI Act Article 5(3)",1,1,150,1,1,450,1,1,750
+fixed,filter,q09,single,1,AI Act Article 99(2) | AI Act Article 99(5) | AI Act Article 100(1) | AI Act Article 5(1) | AI Act Article 5(1),1,1,150,1,1,450,1,1,750
+fixed,filter,q10,single,1,AI Act Article 49(5) | AI Act Article 50(2) | AI Act Article 50(4) | AI Act Article 50(4) | AI Act Article 50(2),1,1,150,1,1,450,1,1,750
+fixed,filter,q11,single,1,AI Act Article 50(2) | AI Act Article 50(4) | AI Act Article 49(5) | AI Act Article 50(4) | AI Act Article 60(7),1,1,150,1,1,450,1,1,750
+fixed,filter,q12,single,5,"AI Act Article 9(5) | AI Act Article 9(10) | AI Act Annex IV, point (2) | AI Act Article 14(4) | AI Act Article 3, point (67)",0,0,150,0,0,450,1,1,750
+fixed,filter,q13,single,1,"AI Act Article 51(1) | AI Act Annex XIII | AI Act Annex XIII | AI Act Article 51(3) | AI Act Article 3, point (62)",1,1,150,1,1,347,1,1,647
+fixed,filter,q14,single,2,AI Act Article 18(3) | AI Act Article 26(5) | AI Act Article 12(2) | AI Act Article 19(2) | AI Act Article 11(3),0,0,150,1,1,450,1,1,750
+fixed,filter,q15,single,3,Data Act Article 3(1) | Data Act Article 1(1) | Data Act Article 4(14) | Data Act Article 3(3) | Data Act Article 27,0,0,150,1,1,450,1,1,750
+fixed,filter,q16,single,2,Data Act Article 23 | Data Act Article 25(2) | Data Act Article 23 | Data Act Article 25(2) | Data Act Article 27,0,0,150,1,1,450,1,1,750
+fixed,filter,q17,single,1,Data Act Article 13(5) | Data Act Article 13(5) | Data Act Article 13(4) | Data Act Article 13(5) | Data Act Article 13(6),1,1,150,1,1,450,1,1,750
+fixed,filter,q18,multi,-;1,Data Act Article 15(1) | Data Act Article 19(3) | Data Act Article 15(1) | Data Act Article 18(2) | GDPR Article 48,0,1,150,0,1,450,0,1,750
+fixed,filter,q19,multi,-;1,"AI Act Annex III, point (3) | AI Act Annex III, point (7) | AI Act Article 5(1) | AI Act Article 5(3) | AI Act Article 6(2)",0,1,150,0,1,450,0,1,750
+fixed,filter,q20,multi,1;2,"GDPR Article 35(1) | AI Act Article 27(1) | AI Act Annex III, point (5) | AI Act Article 27(1) | AI Act Article 27(3)",0,1,150,1,1,450,1,1,750
+fixed,filter,q21,multi,4;-,Data Act Article 5(7) | Data Act Article 3(1) | Data Act Article 5(4) | Data Act Article 4(5) | Data Act Article 4(10),0,0,150,0,0,450,0,1,750
+fixed,filter,q22,multi,5;-,GDPR Article 7(1) | Data Act Article 6(1) | AI Act Article 10(5) | GDPR Article 25(1) | GDPR Article 6(4),0,0,150,0,0,450,0,1,750
+fixed,filter,q23,multi,1;3,GDPR Article 33(3) | GDPR Article 32(4) | GDPR Article 34(2) | GDPR Article 33(4) | Data Act Article 19(3),0,1,150,1,1,450,1,1,750
+fixed,filter,q24,multi,2;-,GDPR Article 48 | GDPR Article 45(1) | GDPR Article 3(2) | Data Act Article 32(3) | Data Act Article 32(1),0,0,150,0,1,450,0,1,750
+fixed,filter,q25,multi,3;1,"AI Act Annex III, point (3) | AI Act Annex III, point (1) | AI Act Article 6(2) | AI Act Annex III, point (7) | AI Act Annex III, point (5)",0,1,150,1,1,450,1,1,750
+fixed,filter,q26,multi,2;3,"AI Act Annex VIII, point (1) | AI Act Article 6(3) | AI Act Article 49(2) | AI Act Article 48(5) | AI Act Article 6(2)",0,0,150,1,1,450,1,1,750
+fixed,filter,q27,multi,2;2,Data Act Article 6(2) | Data Act Article 5(1) | Data Act Article 1(1) | Data Act Article 27 | Data Act Article 6(1),0,0,150,1,1,450,1,1,750
+fixed,hybrid,q01,single,3,GDPR Article 58(1) | GDPR Article 58(2) | GDPR Article 33(3) | Data Act Article 10(3) | GDPR Article 32(4),0,0,150,1,1,450,1,1,750
+fixed,hybrid,q02,single,1,GDPR Article 83(4) | AI Act Article 99(5) | GDPR Article 82(6) | GDPR Article 83(3) | AI Act Article 99(11),1,1,150,1,1,450,1,1,750
+fixed,hybrid,q03,single,1,GDPR Article 37(1) | GDPR Article 37(3) | GDPR Article 38(3) | GDPR Article 37(6) | GDPR Article 39(1),1,1,150,1,1,450,1,1,750
+fixed,hybrid,q04,single,-,GDPR Article 15(3) | GDPR Article 13(1) | GDPR Article 17(1) | Data Act Article 25(4) | Data Act Article 25(1),0,0,150,0,0,450,0,0,750
+fixed,hybrid,q05,single,1,GDPR Article 7(3) | GDPR Article 8(1) | GDPR Article 7(1) | GDPR Article 6(4) | GDPR Article 13(2),1,1,150,1,1,450,1,1,750
+fixed,hybrid,q06,single,-,Data Act Article 4(5) | Data Act Article 5(3) | Data Act Article 27 | GDPR Article 28(3) | Data Act Article 6(1),0,0,150,0,0,450,0,0,750
+fixed,hybrid,q07,single,-,Data Act Article 25(1) | Data Act Article 25(2) | Data Act Article 28(2) | Data Act Article 25(2) | Data Act Article 25(2),0,0,150,0,0,450,0,0,750
+fixed,hybrid,q08,single,1,"AI Act Article 5(1) | AI Act Article 3, point (37) | AI Act Article 5(1) | AI Act Article 14(5) | AI Act Annex IV, point (1)",1,1,150,1,1,450,1,1,750
+fixed,hybrid,q09,single,-,AI Act Article 5(1) | AI Act Article 5(1) | AI Act Article 101(1) | AI Act Article 5(6) | AI Act Article 5(1),0,0,150,0,0,450,0,0,750
+fixed,hybrid,q10,single,1,AI Act Article 49(5) | AI Act Article 13(3) | AI Act Article 14(1) | Data Act Article 28(2) | AI Act Article 71(4),1,1,150,1,1,450,1,1,750
+fixed,hybrid,q11,single,-,AI Act Article 4 | AI Act Article 60(4) | AI Act Article 91(4) | AI Act Article 1(2) | AI Act Article 19(2),0,0,150,0,0,450,0,0,750
+fixed,hybrid,q12,single,5,"AI Act Article 14(4) | AI Act Annex XI, point (2) | AI Act Annex VII, point (4) | AI Act Article 14(1) | AI Act Article 3, point (67)",0,0,150,0,0,450,1,1,750
+fixed,hybrid,q13,single,1,"AI Act Article 51(1) | AI Act Annex XI, point (2) | AI Act Annex XIII | AI Act Article 52(3) | AI Act Article 52(1)",1,1,150,1,1,450,1,1,750
+fixed,hybrid,q14,single,2,AI Act Article 18(3) | AI Act Article 26(5) | AI Act Article 19(2) | AI Act Article 15(5) | AI Act Article 11(3),0,0,150,1,1,450,1,1,750
+fixed,hybrid,q15,single,2,"Data Act Article 3(1) | Data Act Article 4(14) | Data Act Article 3(3) | Data Act Article 2, point (40) | Data Act Article 30(4)",0,0,150,1,1,450,1,1,750
+fixed,hybrid,q16,single,4,Data Act Article 23 | Data Act Article 27 | Data Act Article 28(2) | Data Act Article 25(2) | Data Act Article 25(4),0,0,150,0,0,450,1,1,750
+fixed,hybrid,q17,single,-,Data Act Article 4(9) | Data Act Article 3(1) | Data Act Article 4(8) | Data Act Article 4(14) | Data Act Article 3(3),0,0,150,0,0,450,0,0,750
+fixed,hybrid,q18,multi,-;1,"Data Act Article 15(1) | Data Act Article 18(2) | Data Act Article 2, point (28) | Data Act Article 15(1) | Data Act Article 19(3)",0,1,150,0,1,450,0,1,750
+fixed,hybrid,q19,multi,-;1,"AI Act Annex III, point (3) | AI Act Article 6(2) | AI Act Article 5(1) | AI Act Article 6(3) | AI Act Article 26(5)",0,1,150,0,1,450,0,1,750
+fixed,hybrid,q20,multi,-;1,"AI Act Article 27(1) | AI Act Annex III, point (5) | AI Act Article 27(1) | AI Act Article 5(1) | AI Act Article 27(2)",0,1,150,0,1,450,0,1,750
+fixed,hybrid,q21,multi,4;-,Data Act Article 27 | Data Act Article 1(3) | Data Act Article 36(1) | Data Act Article 4(7) | Data Act Article 5(10),0,0,150,0,0,450,0,1,750
+fixed,hybrid,q22,multi,-;1,GDPR Article 9(2) | GDPR Article 88(1) | Data Act Article 17(2) | GDPR Article 3(2) | Data Act Article 17(2),0,1,150,0,1,450,0,1,750
+fixed,hybrid,q23,multi,-;-,Data Act Article 25(4) | Data Act Article 28(2) | Data Act Article 4(7) | Data Act Article 25(2) | Data Act Article 25(2),0,0,150,0,0,450,0,0,750
+fixed,hybrid,q24,multi,4;-,Data Act Article 5(7) | GDPR Article 48 | Data Act Article 36(1) | GDPR Article 45(1) | Data Act Article 1(6),0,0,150,0,0,450,0,1,750
+fixed,hybrid,q25,multi,1;3,"AI Act Article 6(2) | AI Act Article 6(1) | AI Act Annex III, point (3) | AI Act Annex III, point (2) | AI Act Article 6(3)",0,1,150,1,1,450,1,1,750
+fixed,hybrid,q26,multi,-;1,"AI Act Article 48(5) | AI Act Article 49(2) | AI Act Article 27(1) | AI Act Annex III, point (1) | AI Act Article 9(2)",0,1,150,0,1,450,0,1,750
+fixed,hybrid,q27,multi,1;1,Data Act Article 5(1) | Data Act Article 6(2) | Data Act Article 30(4) | Data Act Article 30(6) | Data Act Article 27,1,1,150,1,1,450,1,1,750
+article,vector,q01,single,1,GDPR Article 33 | GDPR Article 34 | GDPR Article 32 | GDPR Article 83 | Data Act Article 40,1,1,276,1,1,836,1,1,2011
+article,vector,q02,single,1,GDPR Article 83 | Data Act Article 40 | AI Act Article 99 | GDPR Article 84 | AI Act Article 101,1,1,869,1,1,2028,1,1,2436
+article,vector,q03,single,1,"GDPR Article 37 | GDPR Article 39 | GDPR Article 35 | GDPR Article 3 | GDPR Article 4, points intro to (23)",1,1,317,1,1,1213,1,1,2552
+article,vector,q04,single,5,GDPR Article 15 | GDPR Article 17 | GDPR Article 13 | GDPR Article 5 | GDPR Article 12,0,0,336,0,0,1278,1,1,2133
+article,vector,q05,single,1,"GDPR Article 8 | GDPR Article 7 | GDPR Article 4, points intro to (23) | GDPR Article 6 | GDPR Article 13",1,1,164,1,1,1552,1,1,2737
+article,vector,q06,single,1,GDPR Article 17 | GDPR Article 5 | GDPR Article 6 | GDPR Article 30 | GDPR Article 32,1,1,423,1,1,1375,1,1,2098
+article,vector,q07,single,1,GDPR Article 28 | Data Act Article 28 | GDPR Article 32 | Data Act Article 25 | Data Act Article 26,1,1,875,1,1,1283,1,1,2224
+article,vector,q08,single,2,GDPR Article 88 | AI Act Article 5(1)-(2) | AI Act Annex III | GDPR Article 6 | GDPR Article 22,0,0,210,1,1,2420,1,1,3301
+article,vector,q09,single,1,AI Act Article 99 | AI Act Article 5(1)-(2) | AI Act Article 5(3)-(8) | AI Act Article 100 | AI Act Article 83,1,1,853,1,1,2609,1,1,3316
+article,vector,q10,single,1,AI Act Article 50 | GDPR Article 22 | AI Act Article 61 | AI Act Article 13 | AI Act Article 86,1,1,707,1,1,1142,1,1,1773
+article,vector,q11,single,1,AI Act Article 50 | AI Act Article 61 | AI Act Article 60(9) | AI Act Article 113 | AI Act Article 48,1,1,707,1,1,957,1,1,1269
+article,vector,q12,single,1,AI Act Article 4 | AI Act Article 10 | AI Act Article 15 | AI Act Article 9 | AI Act Article 17,1,1,77,1,1,1115,1,1,2305
+article,vector,q13,single,1,"AI Act Article 51 | AI Act Annex XIII | AI Act Article 3, points (63) to (68) | AI Act Article 52 | AI Act Article 55",1,1,184,1,1,695,1,1,1433
+article,vector,q14,single,-,AI Act Article 19 | AI Act Article 12 | AI Act Article 18 | AI Act Article 16 | AI Act Annex VIII,0,0,127,0,0,515,0,0,1420
+article,vector,q15,single,2,Data Act Article 3 | Data Act Article 4 | Data Act Article 1 | Data Act Article 9 | Data Act Article 7,0,0,539,1,1,2690,1,1,3152
+article,vector,q16,single,1,Data Act Article 25 | Data Act Article 23 | Data Act Article 29 | Data Act Article 30 | Data Act Article 26,1,1,839,1,1,1354,1,1,1918
+article,vector,q17,single,1,Data Act Article 13 | Data Act Article 7 | Data Act Article 25 | Data Act Article 41 | Data Act Article 11,1,1,846,1,1,1877,1,1,2493
+article,vector,q18,multi,2;1,Data Act Article 15 | Data Act Article 14 | Data Act Article 19 | Data Act Article 18 | Data Act Article 20,0,1,302,1,1,768,1,1,1473
+article,vector,q19,multi,3;1,AI Act Annex III | AI Act Article 2 | GDPR Article 22 | AI Act Article 113 | AI Act Article 5(1)-(2),0,1,1167,1,1,2145,1,1,3273
+article,vector,q20,multi,1;2,GDPR Article 35 | AI Act Article 27 | AI Act Annex III | AI Act Article 5(1)-(2) | AI Act Article 10,0,1,700,1,1,2336,1,1,4065
+article,vector,q21,multi,1;-,Data Act Article 4 | Data Act Article 3 | Data Act Article 5 | Data Act Article 6 | Data Act Article 1,0,1,1184,0,1,2832,0,1,4202
+article,vector,q22,multi,3;1,"GDPR Article 9 | GDPR Article 4, points intro to (23) | GDPR Article 6 | GDPR Article 7 | GDPR Article 24",0,1,705,1,1,2560,1,1,2891
+article,vector,q23,multi,1;2,GDPR Article 33 | GDPR Article 34 | GDPR Article 32 | Data Act Article 14 | GDPR Article 14,0,1,276,1,1,836,1,1,1644
+article,vector,q24,multi,-;-,Data Act Article 32 | Data Act Article 28 | GDPR Article 49 | GDPR Article 3 | GDPR Article 48,0,0,719,0,0,1508,0,0,1734
+article,vector,q25,multi,2;1,AI Act Annex III | AI Act Article 6 | AI Act Article 9 | AI Act Article 27 | AI Act Article 51,0,1,1167,1,1,2470,1,1,3123
+article,vector,q26,multi,2;1,AI Act Article 49 | AI Act Article 6 | AI Act Annex VIII | AI Act Article 9 | AI Act Article 12,0,1,344,1,1,1654,1,1,2496
+article,vector,q27,multi,2;2,Data Act Article 1 | Data Act Article 5 | Data Act Article 6 | Data Act Article 7 | Data Act Article 50,0,0,967,1,1,2479,1,1,2807
+article,filter,q01,single,1,GDPR Article 33 | GDPR Article 34 | GDPR Article 32 | GDPR Article 83 | Data Act Article 40,1,1,276,1,1,836,1,1,2011
+article,filter,q02,single,1,GDPR Article 83 | GDPR Article 84 | GDPR Article 58 | GDPR Article 77 | GDPR Article 5,1,1,869,1,1,1685,1,1,2071
+article,filter,q03,single,1,"GDPR Article 37 | GDPR Article 39 | GDPR Article 35 | GDPR Article 3 | GDPR Article 4, points intro to (23)",1,1,317,1,1,1213,1,1,2552
+article,filter,q04,single,5,GDPR Article 15 | GDPR Article 17 | GDPR Article 13 | GDPR Article 5 | GDPR Article 12,0,0,336,0,0,1278,1,1,2133
+article,filter,q05,single,1,"GDPR Article 8 | GDPR Article 7 | GDPR Article 4, points intro to (23) | GDPR Article 6 | GDPR Article 13",1,1,164,1,1,1552,1,1,2737
+article,filter,q06,single,1,GDPR Article 17 | GDPR Article 5 | GDPR Article 6 | GDPR Article 30 | GDPR Article 32,1,1,423,1,1,1375,1,1,2098
+article,filter,q07,single,-,Data Act Article 28 | Data Act Article 25 | Data Act Article 26 | Data Act Article 32 | Data Act Article 24,0,0,122,0,0,1063,0,0,1819
+article,filter,q08,single,2,GDPR Article 88 | AI Act Article 5(1)-(2) | AI Act Annex III | GDPR Article 6 | GDPR Article 22,0,0,210,1,1,2420,1,1,3301
+article,filter,q09,single,1,AI Act Article 99 | AI Act Article 5(1)-(2) | AI Act Article 5(3)-(8) | AI Act Article 100 | AI Act Article 83,1,1,853,1,1,2609,1,1,3316
+article,filter,q10,single,1,AI Act Article 50 | AI Act Article 61 | AI Act Article 13 | AI Act Article 86 | AI Act Article 14,1,1,707,1,1,1398,1,1,2066
+article,filter,q11,single,1,AI Act Article 50 | AI Act Article 61 | AI Act Article 60(9) | AI Act Article 113 | AI Act Article 48,1,1,707,1,1,957,1,1,1269
+article,filter,q12,single,1,AI Act Article 4 | AI Act Article 10 | AI Act Article 15 | AI Act Article 9 | AI Act Article 17,1,1,77,1,1,1115,1,1,2305
+article,filter,q13,single,1,"AI Act Article 51 | AI Act Annex XIII | AI Act Article 3, points (63) to (68) | AI Act Article 52 | AI Act Article 55",1,1,184,1,1,695,1,1,1433
+article,filter,q14,single,-,AI Act Article 19 | AI Act Article 12 | AI Act Article 18 | AI Act Article 16 | AI Act Annex VIII,0,0,127,0,0,515,0,0,1420
+article,filter,q15,single,2,Data Act Article 3 | Data Act Article 4 | Data Act Article 1 | Data Act Article 9 | Data Act Article 7,0,0,539,1,1,2690,1,1,3152
+article,filter,q16,single,1,Data Act Article 25 | Data Act Article 23 | Data Act Article 29 | Data Act Article 30 | Data Act Article 26,1,1,839,1,1,1354,1,1,1918
+article,filter,q17,single,1,Data Act Article 13 | Data Act Article 7 | Data Act Article 25 | Data Act Article 41 | Data Act Article 11,1,1,846,1,1,1877,1,1,2493
+article,filter,q18,multi,2;1,Data Act Article 15 | Data Act Article 14 | Data Act Article 19 | Data Act Article 18 | Data Act Article 20,0,1,302,1,1,768,1,1,1473
+article,filter,q19,multi,-;1,AI Act Annex III | AI Act Article 2 | AI Act Article 113 | AI Act Article 5(1)-(2) | AI Act Article 26,0,1,1167,0,1,2015,0,1,4208
+article,filter,q20,multi,1;2,GDPR Article 35 | AI Act Article 27 | AI Act Annex III | AI Act Article 5(1)-(2) | AI Act Article 10,0,1,700,1,1,2336,1,1,4065
+article,filter,q21,multi,1;-,Data Act Article 4 | Data Act Article 3 | Data Act Article 5 | Data Act Article 6 | Data Act Article 1,0,1,1184,0,1,2832,0,1,4202
+article,filter,q22,multi,3;1,"GDPR Article 9 | GDPR Article 4, points intro to (23) | GDPR Article 6 | GDPR Article 7 | GDPR Article 24",0,1,705,1,1,2560,1,1,2891
+article,filter,q23,multi,1;2,GDPR Article 33 | GDPR Article 34 | GDPR Article 32 | Data Act Article 14 | GDPR Article 14,0,1,276,1,1,836,1,1,1644
+article,filter,q24,multi,-;-,Data Act Article 32 | Data Act Article 28 | GDPR Article 49 | GDPR Article 3 | GDPR Article 48,0,0,719,0,0,1508,0,0,1734
+article,filter,q25,multi,2;1,AI Act Annex III | AI Act Article 6 | AI Act Article 9 | AI Act Article 27 | AI Act Article 51,0,1,1167,1,1,2470,1,1,3123
+article,filter,q26,multi,2;1,AI Act Article 49 | AI Act Article 6 | AI Act Annex VIII | AI Act Article 9 | AI Act Article 12,0,1,344,1,1,1654,1,1,2496
+article,filter,q27,multi,2;2,Data Act Article 1 | Data Act Article 5 | Data Act Article 6 | Data Act Article 7 | Data Act Article 50,0,0,967,1,1,2479,1,1,2807
+article,hybrid,q01,single,-,Data Act Article 32 | GDPR Article 58 | Data Act Article 3 | GDPR Article 83 | GDPR Article 17,0,0,719,0,0,1989,0,0,3281
+article,hybrid,q02,single,1,GDPR Article 83 | AI Act Article 101 | AI Act Article 100 | GDPR Article 25 | AI Act Article 99,1,1,869,1,1,1725,1,1,2803
+article,hybrid,q03,single,1,"GDPR Article 37 | GDPR Article 39 | GDPR Article 38 | GDPR Article 30 | GDPR Article 4, points intro to (23)",1,1,317,1,1,740,1,1,2366
+article,hybrid,q04,single,-,GDPR Article 15 | GDPR Article 13 | GDPR Article 17 | GDPR Article 14 | Data Act Article 25,0,0,336,0,0,1278,0,0,2851
+article,hybrid,q05,single,1,GDPR Article 8 | GDPR Article 7 | GDPR Article 13 | GDPR Article 6 | GDPR Article 18,1,1,164,1,1,882,1,1,1772
+article,hybrid,q06,single,-,GDPR Article 18 | Data Act Article 30 | Data Act Article 6 | Data Act Article 4 | Data Act Article 5,0,0,224,0,0,1089,0,0,3382
+article,hybrid,q07,single,5,Data Act Article 25 | Data Act Article 41 | Data Act Article 31 | Data Act Article 23 | GDPR Article 28,0,0,839,0,0,1050,1,1,2150
+article,hybrid,q08,single,1,AI Act Article 5(1)-(2) | GDPR Article 88 | AI Act Annex III | AI Act Annex IV | AI Act Article 26,1,1,1043,1,1,2420,1,1,4467
+article,hybrid,q09,single,-,AI Act Article 5(1)-(2) | AI Act Article 101 | AI Act Article 5(3)-(8) | AI Act Article 50 | AI Act Annex III,0,0,1043,0,0,2079,0,0,3953
+article,hybrid,q10,single,3,AI Act Article 14 | Data Act Article 26 | AI Act Article 50 | AI Act Article 86 | AI Act Article 48,0,0,508,1,1,1317,1,1,1704
+article,hybrid,q11,single,-,AI Act Article 2 | AI Act Article 5(1)-(2) | AI Act Article 57(1)-(15) | AI Act Article 86 | AI Act Article 99,0,0,763,0,0,2934,0,0,3947
+article,hybrid,q12,single,1,AI Act Article 4 | AI Act Article 17 | AI Act Article 14 | AI Act Annex XI | AI Act Annex III,1,1,77,1,1,1131,1,1,2742
+article,hybrid,q13,single,1,AI Act Article 51 | AI Act Annex XIII | AI Act Article 52 | AI Act Annex XI | AI Act Article 93,1,1,184,1,1,873,1,1,1462
+article,hybrid,q14,single,4,AI Act Article 19 | AI Act Article 16 | AI Act Article 12 | AI Act Article 26 | AI Act Article 21,0,0,127,0,0,579,1,1,1870
+article,hybrid,q15,single,2,"Data Act Article 3 | Data Act Article 4 | Data Act Article 2, points intro to (32) | Data Act Article 5 | Data Act Article 7",0,0,539,1,1,2892,1,1,4193
+article,hybrid,q16,single,3,Data Act Article 29 | Data Act Article 23 | Data Act Article 25 | Data Act Article 30 | Data Act Article 31,0,0,290,1,1,1354,1,1,1971
+article,hybrid,q17,single,-,Data Act Article 4 | Data Act Article 3 | Data Act Article 25 | Data Act Article 11 | Data Act Article 5,0,0,1184,0,0,2562,0,0,4231
+article,hybrid,q18,multi,-;1,"Data Act Article 15 | Data Act Article 18 | Data Act Article 20 | Data Act Article 32 | Data Act Article 2, points intro to (32)",0,1,302,0,1,1007,0,1,2895
+article,hybrid,q19,multi,-;2,AI Act Article 26 | AI Act Annex III | AI Act Article 14 | AI Act Article 6 | AI Act Article 27,0,0,1150,0,1,2825,0,1,3953
+article,hybrid,q20,multi,-;1,AI Act Article 27 | AI Act Article 5(1)-(2) | AI Act Annex III | AI Act Article 10 | AI Act Article 9,0,1,469,0,1,2679,0,1,4009
+article,hybrid,q21,multi,2;-,Data Act Article 1 | Data Act Article 4 | Data Act Article 5 | Data Act Article 11 | Data Act Article 25,0,0,967,0,1,3260,0,1,4659
+article,hybrid,q22,multi,-;3,"GDPR Article 4, points intro to (23) | Data Act Article 1 | GDPR Article 9 | GDPR Article 88 | Data Act Article 14",0,0,1189,0,1,2861,0,1,3145
+article,hybrid,q23,multi,-;4,Data Act Article 26 | Data Act Article 25 | Data Act Article 29 | GDPR Article 34 | GDPR Article 32,0,0,102,0,0,1231,0,1,1791
+article,hybrid,q24,multi,-;-,Data Act Article 1 | Data Act Article 23 | Data Act Article 21 | Data Act Article 6 | Data Act Article 32,0,0,967,0,0,1548,0,0,2670
+article,hybrid,q25,multi,1;3,AI Act Article 6 | AI Act Article 27 | AI Act Annex III | AI Act Article 9 | AI Act Annex VIII,0,1,659,1,1,2295,1,1,3590
+article,hybrid,q26,multi,5;1,AI Act Article 49 | AI Act Article 27 | AI Act Article 9 | AI Act Article 42 | AI Act Article 6,0,1,344,0,1,1457,1,1,2236
+article,hybrid,q27,multi,1;1,Data Act Article 5 | Data Act Article 30 | Data Act Article 6 | Data Act Article 26 | Data Act Article 25,1,1,1109,1,1,1974,1,1,2915
+paragraph,vector,q01,single,1,GDPR Article 33(1)-(2) | GDPR Article 33(3) | GDPR Article 34(1)-(3) | GDPR Article 33(4)-(5) | GDPR Article 32(1),1,1,104,1,1,428,1,1,636
+paragraph,vector,q02,single,1,GDPR Article 83(5) | GDPR Article 83(3)-(4) | GDPR Article 83(6)-(7) | GDPR Article 83(1)-(2) | GDPR Article 58(2),1,1,149,1,1,384,1,1,1000
+paragraph,vector,q03,single,1,GDPR Article 37(1) | GDPR Article 37(5)-(7) | GDPR Article 37(2)-(4) | GDPR Article 35(3) | GDPR Article 39,1,1,114,1,1,317,1,1,620
+paragraph,vector,q04,single,1,GDPR Article 12(2)-(3) | GDPR Article 15(1) | GDPR Article 12(4)-(5) | GDPR Article 30(1) | GDPR Article 5,1,1,176,1,1,548,1,1,1009
+paragraph,vector,q05,single,1,"GDPR Article 8(1) | GDPR Article 8(2)-(3) | GDPR Article 7(1)-(3) | GDPR Article 7(4) | GDPR Article 4, points (11) to (13)",1,1,101,1,1,315,1,1,491
+paragraph,vector,q06,single,1,GDPR Article 17(1) | GDPR Article 17(2)-(3) | GDPR Article 5 | GDPR Article 6(1) | Data Act Article 5(4)-(5),1,1,192,1,1,709,1,1,1043
+paragraph,vector,q07,single,1,GDPR Article 28(3) | Data Act Article 28 | GDPR Article 28(1)-(2) | Data Act Article 31(3) | Data Act Article 25(1)-(2),1,1,395,1,1,624,1,1,1304
+paragraph,vector,q08,single,3,"GDPR Article 88(1) | AI Act Annex III, points intro to (1) | AI Act Article 5(1) | AI Act Annex III, points (4) to (5) | AI Act Article 3, points (38) to (41)",0,0,120,1,1,1001,1,1,1395
+paragraph,vector,q09,single,1,AI Act Article 99(3)-(4) | AI Act Article 5(1) | AI Act Article 99(5)-(7) | AI Act Article 100(2)-(4) | AI Act Article 5(4)-(5),1,1,183,1,1,1333,1,1,1724
+paragraph,vector,q10,single,1,AI Act Article 50(1) | AI Act Article 50(3)-(4) | AI Act Article 50(5)-(7) | AI Act Article 26(11)-(12) | AI Act Article 50(2),1,1,111,1,1,570,1,1,800
+paragraph,vector,q11,single,1,AI Act Article 50(2) | AI Act Article 50(3)-(4) | AI Act Article 50(5)-(7) | AI Act Article 50(1) | AI Act Article 48(1)-(3),1,1,137,1,1,596,1,1,816
+paragraph,vector,q12,single,1,AI Act Article 4 | AI Act Article 10(1)-(2) | AI Act Article 9(3)-(5) | AI Act Article 26(1)-(3) | AI Act Article 26(7)-(8),1,1,77,1,1,572,1,1,814
+paragraph,vector,q13,single,1,"AI Act Article 51(1)-(2) | AI Act Annex XIII | AI Act Article 3, points (64) to (66) | AI Act Article 52(1)-(2) | AI Act Article 51(3)",1,1,125,1,1,470,1,1,687
+paragraph,vector,q14,single,1,AI Act Article 26(6) | AI Act Article 19 | AI Act Article 12(1)-(2) | AI Act Article 18 | AI Act Article 12(3),1,1,102,1,1,335,1,1,617
+paragraph,vector,q15,single,2,Data Act Article 3(1)-(2) | Data Act Article 4(1)-(2) | Data Act Article 4(12)-(13) | Data Act Article 7 | Data Act Article 1(3),0,0,194,1,1,525,1,1,909
+paragraph,vector,q16,single,1,Data Act Article 25(3)-(4) | Data Act Article 23 | Data Act Article 25(1)-(2) | Data Act Article 29(1)-(4) | Data Act Article 30(2)-(3),1,1,160,1,1,1023,1,1,1325
+paragraph,vector,q17,single,2,Data Act Article 7 | Data Act Article 13(6)-(7) | Data Act Article 13(1)-(3) | Data Act Article 13(5) | Data Act Article 13(4),0,0,192,1,1,417,1,1,982
+paragraph,vector,q18,multi,1;2,Data Act Article 14 | Data Act Article 15(1) | Data Act Article 32(4)-(5) | Data Act Article 18(1)-(2) | Data Act Article 19(1),0,1,74,1,1,422,1,1,790
+paragraph,vector,q19,multi,4;1,"AI Act Annex III, points (4) to (5) | AI Act Article 26(7)-(8) | AI Act Article 2(1) | GDPR Article 22(1)-(2) | AI Act Article 86(2)-(3)",0,1,255,0,1,540,1,1,708
+paragraph,vector,q20,multi,1;3,"GDPR Article 35(3) | GDPR Article 35(1)-(2) | AI Act Article 27(1) | AI Act Article 27(4)-(5) | AI Act Annex III, points (4) to (5)",0,1,107,1,1,451,1,1,793
+paragraph,vector,q21,multi,3;-,Data Act Article 5(6)-(7) | Data Act Article 3(1)-(2) | Data Act Article 4(12)-(13) | Data Act Article 6 | Data Act Article 4(5)-(6),0,0,154,0,1,496,0,1,1090
+paragraph,vector,q22,multi,-;1,"GDPR Article 9(1)-(2) | GDPR Article 25(1) | GDPR Article 7(1)-(3) | GDPR Article 4, points intro to (2) | GDPR Article 24",0,1,601,0,1,867,0,1,1130
+paragraph,vector,q23,multi,1;3,GDPR Article 33(3) | GDPR Article 33(1)-(2) | GDPR Article 34(1)-(3) | GDPR Article 33(4)-(5) | Data Act Article 32(4)-(5),0,1,104,1,1,428,1,1,609
+paragraph,vector,q24,multi,5;-,GDPR Article 49(1) | Data Act Article 28 | Data Act Article 32(1)-(2) | GDPR Article 3 | GDPR Article 45(1)-(2),0,0,445,0,0,721,0,1,1165
+paragraph,vector,q25,multi,2;1,"AI Act Annex III, points (2) to (3) | AI Act Article 6(2)-(3) | AI Act Article 6(1) | AI Act Annex III, points (4) to (5) | AI Act Article 9(1)-(2)",0,1,171,1,1,512,1,1,937
+paragraph,vector,q26,multi,1;2,"AI Act Article 6(4)-(5) | AI Act Article 49(1)-(2) | AI Act Article 49(3)-(5) | AI Act Annex VIII, points (1) to (7) | AI Act Annex VIII, points (3) to (5)",0,1,116,1,1,460,1,1,654
+paragraph,vector,q27,multi,1;1,Data Act Article 5(2)-(3) | Data Act Article 1(3) | Data Act Article 6 | Data Act Article 7 | Data Act Article 3(1)-(2),1,1,155,1,1,750,1,1,1136
+paragraph,filter,q01,single,1,GDPR Article 33(1)-(2) | GDPR Article 33(3) | GDPR Article 34(1)-(3) | GDPR Article 33(4)-(5) | GDPR Article 32(1),1,1,104,1,1,428,1,1,636
+paragraph,filter,q02,single,1,GDPR Article 83(5) | GDPR Article 83(3)-(4) | GDPR Article 83(6)-(7) | GDPR Article 83(1)-(2) | GDPR Article 58(2),1,1,149,1,1,384,1,1,1000
+paragraph,filter,q03,single,1,GDPR Article 37(1) | GDPR Article 37(5)-(7) | GDPR Article 37(2)-(4) | GDPR Article 35(3) | GDPR Article 39,1,1,114,1,1,317,1,1,620
+paragraph,filter,q04,single,1,GDPR Article 12(2)-(3) | GDPR Article 15(1) | GDPR Article 12(4)-(5) | GDPR Article 30(1) | GDPR Article 5,1,1,176,1,1,548,1,1,1009
+paragraph,filter,q05,single,1,"GDPR Article 8(1) | GDPR Article 8(2)-(3) | GDPR Article 7(1)-(3) | GDPR Article 7(4) | GDPR Article 4, points (11) to (13)",1,1,101,1,1,315,1,1,491
+paragraph,filter,q06,single,1,GDPR Article 17(1) | GDPR Article 17(2)-(3) | GDPR Article 5 | GDPR Article 6(1) | Data Act Article 5(4)-(5),1,1,192,1,1,709,1,1,1043
+paragraph,filter,q07,single,-,Data Act Article 28 | Data Act Article 31(3) | Data Act Article 25(1)-(2) | Data Act Article 26 | Data Act Article 30(6),0,0,122,0,0,802,0,0,962
+paragraph,filter,q08,single,3,"GDPR Article 88(1) | AI Act Annex III, points intro to (1) | AI Act Article 5(1) | AI Act Annex III, points (4) to (5) | AI Act Article 3, points (38) to (41)",0,0,120,1,1,1001,1,1,1395
+paragraph,filter,q09,single,1,AI Act Article 99(3)-(4) | AI Act Article 5(1) | AI Act Article 99(5)-(7) | AI Act Article 100(2)-(4) | AI Act Article 5(4)-(5),1,1,183,1,1,1333,1,1,1724
+paragraph,filter,q10,single,1,AI Act Article 50(1) | AI Act Article 50(3)-(4) | AI Act Article 50(5)-(7) | AI Act Article 26(11)-(12) | AI Act Article 50(2),1,1,111,1,1,570,1,1,800
+paragraph,filter,q11,single,1,AI Act Article 50(2) | AI Act Article 50(3)-(4) | AI Act Article 50(5)-(7) | AI Act Article 50(1) | AI Act Article 48(1)-(3),1,1,137,1,1,596,1,1,816
+paragraph,filter,q12,single,1,AI Act Article 4 | AI Act Article 10(1)-(2) | AI Act Article 9(3)-(5) | AI Act Article 26(1)-(3) | AI Act Article 26(7)-(8),1,1,77,1,1,572,1,1,814
+paragraph,filter,q13,single,1,"AI Act Article 51(1)-(2) | AI Act Annex XIII | AI Act Article 3, points (64) to (66) | AI Act Article 52(1)-(2) | AI Act Article 51(3)",1,1,125,1,1,470,1,1,687
+paragraph,filter,q14,single,1,AI Act Article 26(6) | AI Act Article 19 | AI Act Article 12(1)-(2) | AI Act Article 18 | AI Act Article 12(3),1,1,102,1,1,335,1,1,617
+paragraph,filter,q15,single,2,Data Act Article 3(1)-(2) | Data Act Article 4(1)-(2) | Data Act Article 4(12)-(13) | Data Act Article 7 | Data Act Article 1(3),0,0,194,1,1,525,1,1,909
+paragraph,filter,q16,single,1,Data Act Article 25(3)-(4) | Data Act Article 23 | Data Act Article 25(1)-(2) | Data Act Article 29(1)-(4) | Data Act Article 30(2)-(3),1,1,160,1,1,1023,1,1,1325
+paragraph,filter,q17,single,2,Data Act Article 7 | Data Act Article 13(6)-(7) | Data Act Article 13(1)-(3) | Data Act Article 13(5) | Data Act Article 13(4),0,0,192,1,1,417,1,1,982
+paragraph,filter,q18,multi,1;2,Data Act Article 14 | Data Act Article 15(1) | Data Act Article 32(4)-(5) | Data Act Article 18(1)-(2) | Data Act Article 19(1),0,1,74,1,1,422,1,1,790
+paragraph,filter,q19,multi,-;1,"AI Act Annex III, points (4) to (5) | AI Act Article 26(7)-(8) | AI Act Article 2(1) | AI Act Article 86(2)-(3) | AI Act Article 113",0,1,255,0,1,540,0,1,685
+paragraph,filter,q20,multi,1;3,"GDPR Article 35(3) | GDPR Article 35(1)-(2) | AI Act Article 27(1) | AI Act Article 27(4)-(5) | AI Act Annex III, points (4) to (5)",0,1,107,1,1,451,1,1,793
+paragraph,filter,q21,multi,3;-,Data Act Article 5(6)-(7) | Data Act Article 3(1)-(2) | Data Act Article 4(12)-(13) | Data Act Article 6 | Data Act Article 4(5)-(6),0,0,154,0,1,496,0,1,1090
+paragraph,filter,q22,multi,-;1,"GDPR Article 9(1)-(2) | GDPR Article 25(1) | GDPR Article 7(1)-(3) | GDPR Article 4, points intro to (2) | GDPR Article 24",0,1,601,0,1,867,0,1,1130
+paragraph,filter,q23,multi,1;3,GDPR Article 33(3) | GDPR Article 33(1)-(2) | GDPR Article 34(1)-(3) | GDPR Article 33(4)-(5) | Data Act Article 32(4)-(5),0,1,104,1,1,428,1,1,609
+paragraph,filter,q24,multi,5;-,GDPR Article 49(1) | Data Act Article 28 | Data Act Article 32(1)-(2) | GDPR Article 3 | GDPR Article 45(1)-(2),0,0,445,0,0,721,0,1,1165
+paragraph,filter,q25,multi,2;1,"AI Act Annex III, points (2) to (3) | AI Act Article 6(2)-(3) | AI Act Article 6(1) | AI Act Annex III, points (4) to (5) | AI Act Article 9(1)-(2)",0,1,171,1,1,512,1,1,937
+paragraph,filter,q26,multi,1;2,"AI Act Article 6(4)-(5) | AI Act Article 49(1)-(2) | AI Act Article 49(3)-(5) | AI Act Annex VIII, points (1) to (7) | AI Act Annex VIII, points (3) to (5)",0,1,116,1,1,460,1,1,654
+paragraph,filter,q27,multi,1;1,Data Act Article 5(2)-(3) | Data Act Article 1(3) | Data Act Article 6 | Data Act Article 7 | Data Act Article 3(1)-(2),1,1,155,1,1,750,1,1,1136
+paragraph,hybrid,q01,single,5,Data Act Article 32(4)-(5) | GDPR Article 58(2) | GDPR Article 83(1)-(2) | GDPR Article 99 | GDPR Article 33(1)-(2),0,0,113,0,0,729,1,1,865
+paragraph,hybrid,q02,single,1,GDPR Article 83(5) | GDPR Article 83(1)-(2) | GDPR Article 25(1) | GDPR Article 58(2) | AI Act Article 100(1),1,1,149,1,1,606,1,1,1147
+paragraph,hybrid,q03,single,1,GDPR Article 37(2)-(4) | GDPR Article 37(5)-(7) | GDPR Article 37(1) | GDPR Article 38(1)-(3) | GDPR Article 39,1,1,117,1,1,317,1,1,650
+paragraph,hybrid,q04,single,-,GDPR Article 13(1) | GDPR Article 15(2)-(4) | Data Act Article 32(4)-(5) | GDPR Article 14(1) | Data Act Article 26,0,0,200,0,0,434,0,0,705
+paragraph,hybrid,q05,single,1,GDPR Article 8(1) | GDPR Article 7(1)-(3) | GDPR Article 7(4) | GDPR Article 8(2)-(3) | GDPR Article 83(5),1,1,101,1,1,300,1,1,512
+paragraph,hybrid,q06,single,-,Data Act Article 4(5)-(6) | Data Act Article 5(4)-(5) | GDPR Article 18(1) | GDPR Article 58(1) | GDPR Article 3,0,0,191,0,0,443,0,0,729
+paragraph,hybrid,q07,single,-,Data Act Article 25(1)-(2) | Data Act Article 31(3) | Data Act Article 25(3)-(4) | Data Act Article 41 | Data Act Article 25(5),0,0,638,0,0,840,0,0,937
+paragraph,hybrid,q08,single,3,"GDPR Article 88(1) | AI Act Article 3, points (38) to (41) | AI Act Article 5(1) | GDPR Article 6(1) | AI Act Article 15(1)-(3)",0,0,120,1,1,1029,1,1,1356
+paragraph,hybrid,q09,single,-,AI Act Article 5(1) | AI Act Article 5(7)-(8) | AI Act Article 101(1) | AI Act Article 5(4)-(5) | AI Act Article 5(2),0,0,770,0,0,1025,0,0,1543
+paragraph,hybrid,q10,single,3,AI Act Article 14(1)-(3) | AI Act Article 86(1) | AI Act Article 50(2) | AI Act Article 48(1)-(3) | Data Act Article 31(3),0,0,188,1,1,425,1,1,576
+paragraph,hybrid,q11,single,-,AI Act Article 2(1) | AI Act Article 57(13)-(15) | AI Act Article 91(4)-(5) | AI Act Article 86(1) | AI Act Article 76(1)-(2),0,0,148,0,0,388,0,0,591
+paragraph,hybrid,q12,single,1,AI Act Article 4 | AI Act Article 14(1)-(3) | AI Act Article 14(4) | AI Act Article 17(1) | AI Act Article 25(4)-(5),1,1,77,1,1,467,1,1,1051
+paragraph,hybrid,q13,single,1,"AI Act Article 51(1)-(2) | AI Act Article 52(1)-(2) | AI Act Annex XI, point (2) | AI Act Article 55(1) | AI Act Annex XIII",1,1,125,1,1,516,1,1,886
+paragraph,hybrid,q14,single,1,AI Act Article 26(6) | AI Act Article 19 | AI Act Article 12(1)-(2) | AI Act Article 16 | AI Act Article 23(4)-(6),1,1,102,1,1,335,1,1,747
+paragraph,hybrid,q15,single,2,"Data Act Article 3(1)-(2) | Data Act Article 4(1)-(2) | Data Act Article 7 | Data Act Article 2, points (30) to (32) | Data Act Article 1(3)",0,0,194,1,1,569,1,1,871
+paragraph,hybrid,q16,single,3,Data Act Article 29(1)-(4) | Data Act Article 23 | Data Act Article 25(3)-(4) | Data Act Article 25(1)-(2) | Data Act Article 30(6),0,0,136,1,1,521,1,1,1217
+paragraph,hybrid,q17,single,-,Data Act Article 3(1)-(2) | Data Act Article 4(14) | Data Act Article 4(1)-(2) | Data Act Article 4(9) | Data Act Article 11(3),0,0,194,0,0,422,0,0,644
+paragraph,hybrid,q18,multi,-;1,"Data Act Article 15(1) | Data Act Article 18(1)-(2) | Data Act Article 2, points (28) to (29) | Data Act Article 20(1)-(2) | AI Act Article 46(2)",0,1,235,0,1,593,0,1,854
+paragraph,hybrid,q19,multi,-;1,"AI Act Annex III, points (4) to (5) | AI Act Article 6(2)-(3) | AI Act Article 14(4) | AI Act Article 26(1)-(3) | AI Act Article 14(1)-(3)",0,1,255,0,1,663,0,1,956
+paragraph,hybrid,q20,multi,-;2,"AI Act Annex III, points (4) to (5) | AI Act Article 27(1) | AI Act Article 27(2)-(3) | AI Act Article 5(1) | AI Act Article 26(9)-(10)",0,0,255,0,1,637,0,1,1872
+paragraph,hybrid,q21,multi,5;-,Data Act Article 1(3) | Data Act Article 36(1) | Data Act Article 28 | Data Act Article 30(6) | Data Act Article 4(7),0,0,192,0,0,545,0,1,725
+paragraph,hybrid,q22,multi,-;2,"GDPR Article 4, points (14) to (16) | GDPR Article 9(1)-(2) | GDPR Article 3 | Data Act Article 4(12)-(13) | Data Act Article 1(3)",0,0,230,0,1,981,0,1,1321
+paragraph,hybrid,q23,multi,-;-,Data Act Article 25(3)-(4) | Data Act Article 32(4)-(5) | Data Act Article 26 | GDPR Article 82(1)-(3) | Data Act Article 29(1)-(4),0,0,160,0,0,375,0,0,637
+paragraph,hybrid,q24,multi,-;-,Data Act Article 21(1)-(2) | Data Act Article 23 | GDPR Article 49(1) | Data Act Article 36(2)-(3) | Data Act Article 28,0,0,121,0,0,791,0,0,1052
+paragraph,hybrid,q25,multi,1;2,"AI Act Article 6(2)-(3) | AI Act Annex III, points (2) to (3) | AI Act Article 6(1) | AI Act Article 9(1)-(2) | AI Act Article 6(4)-(5)",0,1,206,1,1,512,1,1,798
+paragraph,hybrid,q26,multi,-;1,AI Act Article 49(1)-(2) | AI Act Article 49(3)-(5) | AI Act Article 42 | AI Act Article 9(1)-(2) | AI Act Article 27(4)-(5),0,1,107,0,1,464,0,1,721
+paragraph,hybrid,q27,multi,1;1,Data Act Article 5(2)-(3) | Data Act Article 30(6) | Data Act Article 3(1)-(2) | Data Act Article 30(4)-(5) | Data Act Article 26,1,1,155,1,1,407,1,1,627

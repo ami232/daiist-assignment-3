@@ -1,0 +1,36 @@
+id,kind,outcome,n_citations,citations_in_index,citations_retrieved,expected_retrieved,expected_cited,guardrail_fired,withheld,tool_calls,searches,input_tokens,output_tokens,total_tokens,seconds
+q01,single,answered,1,1,1,1.0,1.0,0,0,1,1,3272,268,3540,4.33
+q02,single,answered,2,1,1,1.0,1.0,0,0,1,1,4261,300,4561,4.3
+q03,single,answered,1,1,1,1.0,1.0,0,0,1,1,3488,195,3683,2.11
+q04,single,answered,1,1,1,1.0,1.0,0,0,1,1,3844,214,4058,2.43
+q05,single,answered,1,1,1,1.0,1.0,0,0,1,1,3373,180,3553,2.31
+q06,single,answered,2,1,1,1.0,1.0,0,0,1,1,4176,134,4310,2.47
+q07,single,answered,2,1,1,1.0,1.0,0,0,2,2,5136,309,5445,2.77
+q08,single,answered,2,1,1,1.0,1.0,0,0,1,1,4606,202,4808,11.72
+q09,single,answered,1,1,1,1.0,1.0,0,0,1,1,4717,141,4858,36.9
+q10,single,answered,1,1,1,1.0,1.0,0,0,1,1,4173,164,4337,2.29
+q11,single,answered,1,1,1,1.0,1.0,0,0,1,1,3939,188,4127,2.23
+q12,single,answered,2,1,1,1.0,1.0,0,0,1,1,3642,213,3855,3.28
+q13,single,answered,1,1,1,1.0,1.0,0,0,1,1,3900,145,4045,2.34
+q14,single,answered,1,1,1,1.0,1.0,0,0,1,1,3516,161,3677,1.94
+q15,single,answered,3,1,1,1.0,1.0,0,0,3,3,12653,280,12933,8.99
+q16,single,answered,1,1,1,1.0,1.0,0,0,1,1,4383,149,4532,39.65
+q17,single,answered,1,1,1,1.0,1.0,0,0,1,1,3848,329,4177,2.98
+q18,multi,answered,5,1,1,1.0,1.0,0,0,2,2,4795,312,5107,3.59
+q19,multi,answered,3,1,1,1.0,1.0,1,0,2,2,13767,567,14334,5.23
+q20,multi,answered,2,1,1,1.0,0.5,0,0,2,2,7644,321,7965,4.18
+q21,multi,wrong refusal,2,1,1,1.0,0.5,0,0,2,2,5434,239,5673,2.67
+q22,multi,answered,3,1,1,1.0,1.0,0,0,1,1,4052,308,4360,4.93
+q23,multi,answered,2,1,1,1.0,1.0,0,0,1,1,3420,336,3756,38.09
+q24,multi,answered,4,1,1,1.0,1.0,0,0,2,2,8357,339,8696,5.32
+q25,multi,answered,2,1,1,1.0,1.0,1,0,1,1,6899,364,7263,4.88
+q26,multi,answered,2,1,1,0.0,0.5,0,0,1,1,3537,251,3788,2.42
+q27,multi,answered,1,1,1,1.0,1.0,0,0,1,1,3983,190,4173,3.32
+q28,unanswerable,correct refusal,0,1,1,,,1,0,2,2,7979,143,8122,4.33
+q29,unanswerable,correct refusal,0,1,1,,,0,0,1,1,3416,72,3488,6.82
+q30,unanswerable,correct refusal,0,1,1,,,0,0,2,2,3513,98,3611,8.84
+q31,unanswerable,correct refusal,0,1,1,,,0,0,1,1,3880,72,3952,2.16
+q32,unanswerable,correct refusal,0,1,1,,,0,0,1,1,3364,89,3453,2.73
+q33,unanswerable,correct refusal,0,1,1,,,1,0,1,1,6210,157,6367,5.56
+q34,unanswerable,answered unanswerable,3,1,1,,,0,0,1,1,3925,255,4180,3.23
+q35,unanswerable,correct refusal,0,1,1,,,0,0,1,1,3502,77,3579,2.44

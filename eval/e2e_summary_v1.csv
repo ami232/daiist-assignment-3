@@ -1,0 +1,17 @@
+metric,value
+questions,35
+correct (judge),35/35
+correct answerable,27/27
+unsupported (judge),0/35
+correct refusals,7/8
+wrong refusals,1/27
+answered unanswerable,1/8
+citations not retrieved,0
+citations not in index,0
+citation guardrail fired,4
+answers withheld,0
+mean tokens / question,5210
+median tokens / question,4180
+mean seconds / question,7.0
+median seconds / question,3.3
+mean searches / question,1.29
