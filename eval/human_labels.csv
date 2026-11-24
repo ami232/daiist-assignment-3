@@ -1,1 +1,31 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,1,0,The answer applies advice about chains and tape at mezzanine transfer points to loading bay edges without support for that extension.
+q04,1,1,
+q05,1,1,"Both requested measures match the reference. HSG136 p. 28 supports the additional measures in paragraph 134 and the explanation of driveaway and creep in paragraph 133."
+q06,1,1,"HSG136 p. 29 explains why weight and friction are insufficient. HSG76 p. 87 supports the examples of loads shifting during braking and cornering."
+q07,1,1,"The answer covers pallet condition and load rating, goods secured to the pallet, and the pallet secured to the vehicle. HSG136 p. 30 paragraph 145 supports all three checks and both examples."
+q08,1,1,"HSG76 pp. 38-39 supports immediate action on the spill. The answer correctly limits spot cleaning to non-hazardous liquids and cites the guidance on drying the floor and reporting leaks."
+q09,1,0,"Marking the hazard pending repair matches the reference. The retrieved p. 37 passage calls for prompt clearance of fallen materials but does not specify that deadline for pothole repairs."
+q10,1,1,"HSG76 pp. 54-55 supports the examples of bulky, slippery, sharp or unstable loads."
+q11,0,1,"The risk factors and assessment tools are supported. The answer omits observing the work, talking to employees and reviewing injury records."
+q12,1,1,"HSG76 p. 101 identifies the floor-level tier as the one to secure against movement."
+q13,1,1,"HSG76 p. 102 explains how the small wheels on the forks can damage and separate the bottom deck."
+q14,1,0,"The inspection frequency and withdrawal decision are correct. HSG76 p. 105 says pallets should be inspected and damaged pallets should be removed. The answer presents both as mandatory."
+q15,1,1,"L117 p. 11 supports restricting access to the instructor and trainees while training is in progress."
+q16,1,1,"L117 pp. 12 and 14 support continuous assessment and practical and theoretical testing. Appendix 2 supports the test examples."
+q17,1,0,"The competence checks match the reference. The blanket claim about authorisation omits the explicit exception for a trainee under close supervision."
+q18,1,1,"L117 p. 17 gives an example refresher interval and lists circumstances that can justify earlier training or retesting."
+q19,1,0,"The clearance and passing checks are correct. L117 p. 25 specifies clearly marked barriers for unavoidable obstructions. The answer says only to mark the obstructions."
+q20,1,1,"L117 p. 26 supports the explanation about stability and the need for approval from the manufacturer or an authorised supplier."
+q21,0,0,"The answer omits assessment and any necessary training and reassessment when competence is doubtful. It also treats the high-visibility clothing rule on an example sign as universal."
+q22,0,1,"The advice on withdrawing the damaged pallet and using an inverter is supported. The answer omits checking the replacement pallet's rating and its attachment to the vehicle."
+q23,1,1,"The passages support temporary barriers or markings and prompt repair. They also explain how entering a pothole can tilt the truck sideways."
+q24,1,0,"The access and record details match the reference. L117 pp. 11 and 15 use should for restricted access and written authorisation, while the answer uses must."
+q25,1,0,"Both requested checks are correct. HSG76 p. 103 recommends an established loading pattern using should, while the answer uses must."
+q26,1,1,"The answer declines to invent a gate number and cites the instruction to report to the site operator."
+q27,1,1,"The answer declines to invent a posted speed limit. HSG136 pp. 14-15 supports the general advice about site conditions."
+q28,1,1,"The answer declines to invent a capacity for FL-07 and directs the reader to the rating for the specific truck and attachment combination."
+q29,1,0,"The answer correctly declines to invent a training date. The guidance recommends keeping records, but the retrieved passages cannot establish that this employer holds the record."
+q30,1,1,"The answer declines to invent a radio channel. HSG76 p. 80 supports the advice about communication and agreed signals."
