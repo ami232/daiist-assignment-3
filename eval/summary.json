@@ -1,23 +1,23 @@
 {
-  "generated": "2026-11-24 21:09:59",
+  "generated": "2026-11-24 21:24:26",
   "config": {
-    "design": "fixed",
+    "design": "structure",
     "mode": "vector",
     "k": 5,
     "agent_model": "gemini-3.5-flash-lite",
     "agents_md": "ec7a0dba0c12"
   },
-  "judge_model": "gemini-3.1-flash-lite",
+  "judge_model": "gemini-3.8-flash",
   "judge_same_as_agent": false,
   "stages_run": [
-    "retrieval"
+    "demo"
   ],
   "complete": {
-    "retrieval": true
+    "demo": true
   },
   "questions": {
     "total": 36,
-    "answered": 0,
+    "answered": 36,
     "judged": 0
   },
   "retrieval": [
@@ -142,12 +142,102 @@
       "mean_words_k5": "1452"
     }
   ],
-  "end_to_end": null,
+  "end_to_end": {
+    "correct": 0,
+    "correct_rate": null,
+    "unsupported": 0,
+    "unsupported_rate": null,
+    "correct_answerable_rate": null,
+    "correct_refusals": 7,
+    "unanswerable": 7,
+    "wrong_refusals": 0,
+    "answerable": 29,
+    "invalid_citations": 0,
+    "no_citation_and_no_refusal": 0,
+    "expected_passage_retrieved_by_agent": 28,
+    "guardrail_fired": 6,
+    "failures": 0
+  },
   "agreement": {
     "human_labels": 0,
     "compared": 0
   },
   "failures_by_suggested_cause": {},
-  "cost": null,
-  "add_document_demo": null
+  "cost": {
+    "model": "gemini-3.5-flash-lite",
+    "models_seen": [
+      "gemini-3.5-flash-lite"
+    ],
+    "input_tokens": {
+      "mean": 8116,
+      "p90": 12983
+    },
+    "output_tokens": {
+      "mean": 275,
+      "p90": 421
+    },
+    "seconds": {
+      "mean": 2.4,
+      "p90": 3.6
+    },
+    "model_calls_mean": 2.39,
+    "price_usd_per_million_tokens": {
+      "input": 0.3,
+      "output": 2.5
+    },
+    "usd_per_question": 0.003122,
+    "usd_per_1000_questions": 3.12,
+    "note": "seconds include waits on free-tier rate limits; prices are the paid standard tier"
+  },
+  "add_document_demo": {
+    "key": "dcc20e4b57ea",
+    "config": {
+      "design": "structure",
+      "mode": "vector",
+      "k": 5,
+      "agent_model": "gemini-3.5-flash-lite",
+      "agents_md": "ec7a0dba0c12"
+    },
+    "question": "What is the EU threshold for concession contracts from 2026?",
+    "add_document": "doc_id reg_2025_2151: added 6 chunks to the 'structure' collection.",
+    "add_document_again": "already indexed, nothing changed (doc_id reg_2025_2151, 6 chunks).",
+    "before": {
+      "answer": "The corpus does not cover this. \n\nConcession contracts are governed by Directive 2014/23/EU, which is not part of the corpus. Please consult Directive 2014/23/EU or the applicable national procurement law to check the threshold for concession contracts.",
+      "raw_answer": "The corpus does not cover this. \n\nConcession contracts are governed by Directive 2014/23/EU, which is not part of the corpus. Please consult Directive 2014/23/EU or the applicable national procurement law to check the threshold for concession contracts.",
+      "refused": true,
+      "citations": [],
+      "guardrail_events": [],
+      "searches": [
+        "concession contracts threshold 2026"
+      ],
+      "retrieved": [
+        "[dir_2014_24 | Article 4]",
+        "[reg_2025_2152 | Article 1]",
+        "[dir_2014_24 | Article 92]",
+        "[dir_2014_24 | Article 6]",
+        "[dir_2014_24 | Article 13]"
+      ],
+      "model": "gemini-3.5-flash-lite"
+    },
+    "after": {
+      "answer": "The corpus does not cover concession contracts in detail, as Directive 2014/23/EU on concessions is outside the main directives indexed here. However, the search index contains Delegated Regulation (EU) 2025/2151, which amends Directive 2014/23/EU regarding thresholds for the years 2026–2027 [reg_2025_2151 | Article 1]:\n\nThe threshold for concession contracts is **EUR 5,404,000**, applying from **1 January 2026** (replacing the previous amount of EUR 5,538,000) [reg_2025_2151 | Article 1, reg_2025_2151 | Article 2].\n\nFor specific rules on concession procedures, please consult Directive 2014/23/EU and national procurement law.",
+      "raw_answer": "The corpus does not cover concession contracts in detail, as Directive 2014/23/EU on concessions is outside the main directives indexed here. However, the search index contains Delegated Regulation (EU) 2025/2151, which amends Directive 2014/23/EU regarding thresholds for the years 2026–2027 [reg_2025_2151 | Article 1]:\n\nThe threshold for concession contracts is **EUR 5,404,000**, applying from **1 January 2026** (replacing the previous amount of EUR 5,538,000) [reg_2025_2151 | Article 1, reg_2025_2151 | Article 2].\n\nFor specific rules on concession procedures, please consult Directive 2014/23/EU and national procurement law.",
+      "refused": false,
+      "citations": [
+        "[reg_2025_2151 | Article 1]"
+      ],
+      "guardrail_events": [],
+      "searches": [
+        "threshold concession contracts 2026"
+      ],
+      "retrieved": [
+        "[reg_2025_2151 | Article 1]",
+        "[reg_2025_2151 | Recital 3]",
+        "[reg_2025_2151 | Article 2]",
+        "[reg_2025_2151 | Recital 2]",
+        "[reg_2025_2151 | Recital 1]"
+      ],
+      "model": "gemini-3.5-flash-lite"
+    }
+  }
 }

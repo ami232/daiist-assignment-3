@@ -1,0 +1,51 @@
+{
+  "key": "dcc20e4b57ea",
+  "config": {
+    "design": "structure",
+    "mode": "vector",
+    "k": 5,
+    "agent_model": "gemini-3.5-flash-lite",
+    "agents_md": "ec7a0dba0c12"
+  },
+  "question": "What is the EU threshold for concession contracts from 2026?",
+  "add_document": "doc_id reg_2025_2151: added 6 chunks to the 'structure' collection.",
+  "add_document_again": "already indexed, nothing changed (doc_id reg_2025_2151, 6 chunks).",
+  "before": {
+    "answer": "The corpus does not cover this. \n\nConcession contracts are governed by Directive 2014/23/EU, which is not part of the corpus. Please consult Directive 2014/23/EU or the applicable national procurement law to check the threshold for concession contracts.",
+    "raw_answer": "The corpus does not cover this. \n\nConcession contracts are governed by Directive 2014/23/EU, which is not part of the corpus. Please consult Directive 2014/23/EU or the applicable national procurement law to check the threshold for concession contracts.",
+    "refused": true,
+    "citations": [],
+    "guardrail_events": [],
+    "searches": [
+      "concession contracts threshold 2026"
+    ],
+    "retrieved": [
+      "[dir_2014_24 | Article 4]",
+      "[reg_2025_2152 | Article 1]",
+      "[dir_2014_24 | Article 92]",
+      "[dir_2014_24 | Article 6]",
+      "[dir_2014_24 | Article 13]"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  },
+  "after": {
+    "answer": "The corpus does not cover concession contracts in detail, as Directive 2014/23/EU on concessions is outside the main directives indexed here. However, the search index contains Delegated Regulation (EU) 2025/2151, which amends Directive 2014/23/EU regarding thresholds for the years 2026–2027 [reg_2025_2151 | Article 1]:\n\nThe threshold for concession contracts is **EUR 5,404,000**, applying from **1 January 2026** (replacing the previous amount of EUR 5,538,000) [reg_2025_2151 | Article 1, reg_2025_2151 | Article 2].\n\nFor specific rules on concession procedures, please consult Directive 2014/23/EU and national procurement law.",
+    "raw_answer": "The corpus does not cover concession contracts in detail, as Directive 2014/23/EU on concessions is outside the main directives indexed here. However, the search index contains Delegated Regulation (EU) 2025/2151, which amends Directive 2014/23/EU regarding thresholds for the years 2026–2027 [reg_2025_2151 | Article 1]:\n\nThe threshold for concession contracts is **EUR 5,404,000**, applying from **1 January 2026** (replacing the previous amount of EUR 5,538,000) [reg_2025_2151 | Article 1, reg_2025_2151 | Article 2].\n\nFor specific rules on concession procedures, please consult Directive 2014/23/EU and national procurement law.",
+    "refused": false,
+    "citations": [
+      "[reg_2025_2151 | Article 1]"
+    ],
+    "guardrail_events": [],
+    "searches": [
+      "threshold concession contracts 2026"
+    ],
+    "retrieved": [
+      "[reg_2025_2151 | Article 1]",
+      "[reg_2025_2151 | Recital 3]",
+      "[reg_2025_2151 | Article 2]",
+      "[reg_2025_2151 | Recital 2]",
+      "[reg_2025_2151 | Recital 1]"
+    ],
+    "model": "gemini-3.5-flash-lite"
+  }
+}

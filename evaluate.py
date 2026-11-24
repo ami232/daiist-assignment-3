@@ -4,8 +4,9 @@ Assignment 3: evaluation (`main.py evaluate`). Everything is saved in eval/.
 Stages (all run by default; EVAL_STAGES=retrieval,answers,judge,demo picks some):
 
   retrieval  hit rate at k=1,3,5 for the two chunking designs x vector/hybrid,
-             eval/retrieval.csv + retrieval.png, and the choice of design
-             written to index/config.json
+             with a lenient and a strict hit test, eval/retrieval.csv +
+             retrieval.png, and the choice of design (by the strict test:
+             best hit@5, then hit@1, then fewer words) written to index/config.json
   answers    the agent on every question with the chosen design, cached in
              eval/answers.jsonl, plus code checks (citations, refusals)
   judge      LLM judge with eval/judge_rubric.md, cached in eval/judge.csv
@@ -21,7 +22,7 @@ Environment:
   EVAL_STAGES        comma list of stages, default all
   EVAL_FRESH=1       ignore the answer / judge / demo caches
   EVAL_AGENT_MODEL   default gemini-3.5-flash-lite
-  EVAL_JUDGE_MODEL   default gemini-3.1-flash-lite
+  EVAL_JUDGE_MODEL   default gemini-3.8-flash
 """
 
 from __future__ import annotations
@@ -66,7 +67,7 @@ STAGES = tuple(
 )
 FRESH = os.environ.get("EVAL_FRESH", "") not in ("", "0")
 AGENT_MODEL = os.environ.get("EVAL_AGENT_MODEL", "gemini-3.5-flash-lite")
-JUDGE_MODEL = os.environ.get("EVAL_JUDGE_MODEL", "gemini-3.1-flash-lite")
+JUDGE_MODEL = os.environ.get("EVAL_JUDGE_MODEL", "gemini-3.8-flash")
 
 KS = (1, 3, 5)
 CONFIGS = [("fixed", "vector"), ("fixed", "hybrid"), ("structure", "vector"), ("structure", "hybrid")]
@@ -222,15 +223,17 @@ def stage_retrieval(questions: list[dict]) -> bool:
 
     plot_retrieval(summary_rows)
 
-    best, why = choose(summary_rows)
-    strict_best, strict_why = choose(summary_rows, "strict_")
-    say(f"\nChosen (lenient test): {DESIGN_LABEL[best['design']]} + {best['mode']}, k=5, because {why}.")
-    same = (strict_best["design"], strict_best["mode"]) == (best["design"], best["mode"])
-    if same:
-        say("The strict test picks the same configuration.")
+    # The design is chosen on the STRICT test. The lenient test favours design A:
+    # its windows span several articles, and a chunk counts as a hit for an
+    # article even when that article is only a small part of the chunk.
+    best, why = choose(summary_rows, "strict_")
+    lenient_best, lenient_why = choose(summary_rows)
+    say(f"\nChosen (strict test): {DESIGN_LABEL[best['design']]} + {best['mode']}, k=5, because {why}.")
+    if (lenient_best["design"], lenient_best["mode"]) == (best["design"], best["mode"]):
+        say("The lenient test picks the same configuration.")
     else:
-        say(f"NOTE: the strict test would pick {DESIGN_LABEL[strict_best['design']]} + {strict_best['mode']} "
-            f"instead, because {strict_why}.")
+        say(f"NOTE: the lenient test would pick {DESIGN_LABEL[lenient_best['design']]} + {lenient_best['mode']} "
+            f"instead, because {lenient_why}.")
     config = {"design": best["design"], "mode": best["mode"], "k": 5}
     path = index_stage.index_dir() / "config.json"
     shown = path.relative_to(ROOT) if path.is_relative_to(ROOT) else path
@@ -668,8 +671,20 @@ async def stage_demo() -> bool:
     def block(result: dict) -> str:
         sources = ", ".join(result["citations"]) or "none"
         top = ", ".join(f"[{c['doc_id']} | {c['location']}]" for c in result["retrieved"][:5]) or "none"
+        searches = "; ".join(f"`{c['args'].get('query', '')}`" for c in result["tool_calls"] if c["name"] == "search")
+        guard = "; ".join(f"{e['reason']} -> {e['action']}" for e in result["guardrail_events"]) or "did not fire"
         return (f"> {result['answer'].strip().replace(chr(10), chr(10) + '> ')}\n\n"
-                f"- Citations: {sources}\n- Retrieved: {top}\n- Refused: {result['refused']}")
+                f"- Searches: {searches or 'none'}\n- Retrieved: {top}\n- Citations: {sources}\n"
+                f"- Refused: {result['refused']}\n- Citation guardrail: {guard}")
+
+    def record(result: dict) -> dict:
+        return {
+            "answer": result["answer"], "raw_answer": result["raw_answer"], "refused": result["refused"],
+            "citations": result["citations"], "guardrail_events": result["guardrail_events"],
+            "searches": [c["args"].get("query", "") for c in result["tool_calls"] if c["name"] == "search"],
+            "retrieved": [f"[{c['doc_id']} | {c['location']}]" for c in result["retrieved"]],
+            "model": result["model"],
+        }
 
     text = (
         "# Add-document demo\n\n"
@@ -687,8 +702,8 @@ async def stage_demo() -> bool:
     DEMO_JSON.write_text(json.dumps({
         "key": demo_key, "config": config, "question": DEMO_QUESTION, "add_document": added_text,
         "add_document_again": again_text,
-        "before": {k: before[k] for k in ("answer", "refused", "citations")},
-        "after": {k: after[k] for k in ("answer", "refused", "citations")},
+        "before": record(before),
+        "after": record(after),
     }, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     say(f"   before: refused={before['refused']}   add: {added_text}   after: refused={after['refused']}, "
         f"citations {', '.join(after['citations']) or 'none'}")
@@ -762,7 +777,9 @@ def print_summary(summary: dict) -> None:
     say(f"Questions: {q['total']} total, {q['answered']} answered, {q['judged']} judged")
     for row in summary["retrieval"]:
         say(f"  retrieval {row['design']:<10}{row['mode']:<7} hit@1 {percent(float(row['hit@1']))}  "
-            f"hit@3 {percent(float(row['hit@3']))}  hit@5 {percent(float(row['hit@5']))}  words@5 {row['mean_words_k5']}")
+            f"hit@3 {percent(float(row['hit@3']))}  hit@5 {percent(float(row['hit@5']))}  | strict "
+            f"{percent(float(row['strict_hit@1']))} / {percent(float(row['strict_hit@3']))} / "
+            f"{percent(float(row['strict_hit@5']))}  words@5 {row['mean_words_k5']}")
     e = summary["end_to_end"]
     if e:
         say(f"Correct (judge): {e['correct']}/{q['judged']} ({percent(e['correct_rate'])})   "
