@@ -1,0 +1,63 @@
+{
+  "documents": {
+    "reg_ue_2019_33": {
+      "title": "Reglamento Delegado (UE) 2019/33 (consolidado 18-01-2025)",
+      "pages": 43,
+      "words_raw": 15158,
+      "words_clean": 14681,
+      "url": "https://eur-lex.europa.eu/eli/reg_del/2019/33/2025-01-18/spa/pdf",
+      "date": "2025-01-18 (consolidated version)",
+      "licence": "CC BY 4.0 (Commission Decision 2011/833/EU). © European Union, https://eur-lex.europa.eu"
+    },
+    "pliego_doca_rioja": {
+      "title": "Pliego de condiciones de la DOCa Rioja",
+      "pages": 34,
+      "words_raw": 12748,
+      "words_clean": 12714,
+      "url": "https://www.mapa.gob.es/es/alimentacion/temas/calidad-diferenciada/pliegodecondicionesdocariojamodificado_tcm30-680343.pdf",
+      "date": "2023-06-07 (amendment AM10)",
+      "licence": "Official act, not subject to copyright (Ley de Propiedad Intelectual art. 13); MAPA allows reuse citing the source"
+    },
+    "ley_24_2003_vina_vino": {
+      "title": "Ley 24/2003 de la Viña y del Vino (consolidada)",
+      "pages": 19,
+      "words_raw": 9151,
+      "words_clean": 8545,
+      "url": "https://www.boe.es/buscar/pdf/2003/BOE-A-2003-13864-consolidado.pdf",
+      "date": "2025-04-02 (last consolidation)",
+      "licence": "Fuente de los datos: Agencia Estatal Boletín Oficial del Estado (BOE reuse conditions); LPI art. 13"
+    },
+    "ley_6_2015_dop_igp": {
+      "title": "Ley 6/2015 de Denominaciones de Origen e IGP supraautonómicas (consolidada)",
+      "pages": 30,
+      "words_raw": 16277,
+      "words_clean": 15400,
+      "url": "https://www.boe.es/buscar/pdf/2015/BOE-A-2015-5288-consolidado.pdf",
+      "date": "2022-12-24 (last consolidation)",
+      "licence": "Fuente de los datos: Agencia Estatal Boletín Oficial del Estado (BOE reuse conditions); LPI art. 13"
+    },
+    "rd_1363_2011_etiquetado": {
+      "title": "Real Decreto 1363/2011 de etiquetado de productos vitivinícolas (consolidado)",
+      "pages": 13,
+      "words_raw": 5957,
+      "words_clean": 5212,
+      "url": "https://www.boe.es/buscar/pdf/2011/BOE-A-2011-17174-consolidado.pdf",
+      "date": "2026-03-13 (last consolidation)",
+      "licence": "Fuente de los datos: Agencia Estatal Boletín Oficial del Estado (BOE reuse conditions); LPI art. 13"
+    }
+  },
+  "designs": {
+    "fixed": {
+      "chunks": 313,
+      "mean_words": 218.0,
+      "max_words": 220,
+      "min_words": 42
+    },
+    "structure": {
+      "chunks": 312,
+      "mean_words": 191.8,
+      "max_words": 420,
+      "min_words": 16
+    }
+  }
+}

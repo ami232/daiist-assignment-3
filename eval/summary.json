@@ -1,0 +1,136 @@
+{
+  "models": {
+    "embedding": "gemini-embedding-2",
+    "agent": "gemini-3.5-flash-lite",
+    "judge": "gemini-3.1-flash-lite",
+    "verdicts by judge model": {
+      "gemini-3.1-flash-lite": 8,
+      "gemini-3.5-flash-lite": 28,
+      "gemini-3.1-flash-lite-preview": 2
+    }
+  },
+  "retrieval_design": "structure / vector, k=5",
+  "questions_answered": 38,
+  "answerable": 32,
+  "correct (judge)": 26,
+  "unsupported answers (judge, non-refusals)": 1,
+  "correct refusals": 6,
+  "unanswerable answered anyway": 0,
+  "wrong refusals": 4,
+  "answers with invalid citations (code)": 0,
+  "answerable answers without citation (code)": 0,
+  "guardrail fired": 1,
+  "by kind": {
+    "single": {
+      "n": 26,
+      "correct": 24
+    },
+    "multi": {
+      "n": 6,
+      "correct": 2
+    },
+    "unanswerable": {
+      "n": 6,
+      "correct": 6
+    }
+  },
+  "failures by cause": {
+    "wrong answer from the right passage": 3,
+    "retrieval miss": 2,
+    "unsupported claim": 1
+  },
+  "cost per question": {
+    "mean total tokens": 6786,
+    "mean input tokens": 6660,
+    "mean output tokens": 126,
+    "mean seconds": 20.7,
+    "max seconds": 155.0,
+    "mean model calls": 2.34,
+    "mean searches": 1.37
+  },
+  "judge agreement with human labels": {
+    "n": 24,
+    "correct agreement": 0.917,
+    "correct kappa": 0.8,
+    "supported agreement": 0.667,
+    "supported kappa": -0.143,
+    "both agree": 0.625,
+    "disagreements": [
+      "q02",
+      "q04",
+      "q06",
+      "q08",
+      "q10",
+      "q28",
+      "q29",
+      "q30",
+      "q32"
+    ]
+  },
+  "retrieval": [
+    {
+      "design": "fixed",
+      "method": "vector",
+      "chunks": 313,
+      "hit@1": 0.656,
+      "hit@3": 0.688,
+      "hit@5": 0.75,
+      "single hit@1": 0.808,
+      "single hit@3": 0.846,
+      "single hit@5": 0.885,
+      "multi both@5": 0.167,
+      "multi any@5": 0.5,
+      "words added @1": 220,
+      "words added @3": 660,
+      "words added @5": 1100
+    },
+    {
+      "design": "fixed",
+      "method": "hybrid",
+      "chunks": 313,
+      "hit@1": 0.625,
+      "hit@3": 0.688,
+      "hit@5": 0.719,
+      "single hit@1": 0.769,
+      "single hit@3": 0.808,
+      "single hit@5": 0.846,
+      "multi both@5": 0.167,
+      "multi any@5": 0.833,
+      "words added @1": 220,
+      "words added @3": 660,
+      "words added @5": 1097
+    },
+    {
+      "design": "structure",
+      "method": "vector",
+      "chunks": 312,
+      "hit@1": 0.625,
+      "hit@3": 0.781,
+      "hit@5": 0.812,
+      "single hit@1": 0.769,
+      "single hit@3": 0.923,
+      "single hit@5": 0.923,
+      "multi both@5": 0.333,
+      "multi any@5": 0.833,
+      "words added @1": 229,
+      "words added @3": 661,
+      "words added @5": 1081
+    },
+    {
+      "design": "structure",
+      "method": "hybrid",
+      "chunks": 312,
+      "hit@1": 0.531,
+      "hit@3": 0.75,
+      "hit@5": 0.75,
+      "single hit@1": 0.654,
+      "single hit@3": 0.885,
+      "single hit@5": 0.885,
+      "multi both@5": 0.167,
+      "multi any@5": 0.833,
+      "words added @1": 233,
+      "words added @3": 679,
+      "words added @5": 1165
+    }
+  ]
+}

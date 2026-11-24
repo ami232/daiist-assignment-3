@@ -1,1 +1,25 @@
 id,correct,supported,notes
+q01,1,1,
+q02,0,1,"falta el 10,5 % de blancos y rosados"
+q03,1,1,
+q04,0,0,falta el rendimiento de blancas; límites adicionales sin verificar
+q05,1,1,
+q06,1,0,justificación del riesgo para la calidad sin verificar
+q07,0,1,faltan marca comercial y nombre o razón social de bodega inscrita
+q08,0,0,omite excepción del 15 % y 10 años; negativa absoluta no respaldada
+q09,1,1,
+q10,1,0,límites de viñedo singular y excepciones sin verificar
+q11,1,1,
+q12,1,1,
+q27,0,1,no responde a requisitos ni multa
+q28,0,1,no menciona expresamente Crianza y Gran Reserva
+q29,0,0,"aplica 0,8 % sin acreditar más de tres años en botella; omite 0,5 % general"
+q30,0,1,falta el mínimo del 85 %
+q31,1,1,
+q32,1,0,inicio del plazo desde la comisión sin verificar
+q33,1,1,
+q34,1,1,
+q35,1,1,
+q36,1,1,
+q37,1,1,
+q38,1,1,
