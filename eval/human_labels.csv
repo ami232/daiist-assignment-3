@@ -1,1 +1,23 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q04,1,1,
+q05,1,1,
+q06,1,1,
+q07,1,1,
+q08,1,1,
+q10,1,1,
+q11,1,1,
+q12,1,1,
+q13,1,1,
+q14,1,1,
+q15,1,1,
+q18,0,1,"La respuesta enumera riesgos de producción y suministro respaldados por los pasajes, pero no identifica la dependencia de un número limitado de proveedores cualificados de celdas de baterías de ion-litio, que es el factor específico esperado."
+q20,1,1,
+q21,0,0,"La conclusión de que GM tuvo una mayor carga neta no está justificada: compara los 3.100 millones de impacto en EBIT ajustado de GM con los 2.000 millones de impacto neto en EBIT de Ford, que son métricas distintas. Además, no puede establecerse una comparación homogénea con las cifras presentadas."
+q22,1,1,
+q23,0,1,"Presenta correctamente las cuotas de GM (17,2 %) y Ford (13,2 %), pero no calcula ni menciona la ventaja de 4 puntos porcentuales de GM."
+q24,0,0,"Los dos volúmenes están respaldados por los pasajes, pero afirma que los informes no indican la diferencia sin calcularla. La diferencia puede obtenerse de las cifras recuperadas: aproximadamente 596.000 vehículos."
+q25,1,1,
+q26,1,1,
+q32,1,0,"La negativa a recomendar la compra es correcta, pero añade afirmaciones sobre la ausencia de precios actuales y valoraciones completas sin haber recuperado ningún pasaje que las respalde."

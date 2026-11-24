@@ -1,1 +1,33 @@
 id,question,kind,expected_source,expected_location,reference_answer
+q01,How many people did Ford employ worldwide at the end of 2025?,single,ford_10k_fy2025,"Item 1, p. 1","Approximately 169,000 employees"
+q02,How many vehicles did Ford distribute to dealers and other wholesale customers globally in 2025?,single,ford_10k_fy2025,"Item 1, p. 2",Approximately 4.395 million vehicles
+q03,What share of the U.S. automotive market did Ford capture in 2025?,single,ford_10k_fy2025,"Item 1, p. 5",13.2%
+q04,What is the primary business activity of Ford Credit?,single,ford_10k_fy2025,"Item 1, p. 6",Vehicle-related financing and leasing
+q05,What structural market factors could slow down Ford's electric vehicle business in the U.S.?,single,ford_10k_fy2025,"Item 1A, p. 27","Slower-than-expected EV adoption driven by consumer sentiment, competition and regulatory changes"
+q06,How much did Ford estimate its gross tariff costs and resulting net EBIT impact to be in 2025?,single,ford_10k_fy2025,"Item 7, p. 43",Approximately $3 billion gross costs and $2 billion net EBIT impact
+q07,"How much did Ford's adjusted EBIT decline to in 2025, compared with the previous year?",single,ford_10k_fy2025,"Item 7, p. 48","$6.78 billion, down from $10.21 billion"
+q08,How many manufacturing and parts facilities did GM operate across the United States in 2025?,single,gm_10k_fy2025,"Item 1, p. 1","50 facilities, including 11 vehicle assembly plants"
+q09,In how many global markets was GM's OnStar service available?,single,gm_10k_fy2025,"Item 1, p. 2",More than 20 markets
+q10,How many authorized dealerships and similar sales outlets did GM have worldwide at the end of 2025?,single,gm_10k_fy2025,"Item 1, p. 4","10,842 in total: 4,566 in GMNA and 6,276 in GMI at December 31, 2025"
+q11,What consumer demand challenge did GM identify as a key obstacle to its long-term EV strategy?,single,gm_10k_fy2025,"Item 1A, p. 13",Slower-than-expected consumer adoption of electric vehicles
+q12,How could supplier disruptions affect GM's automotive operations?,single,gm_10k_fy2025,"Item 1A, p. 18",They could interrupt production schedules due to shortages of essential components and materials
+q13,What were GM's consolidated net sales and revenue in fiscal year 2025?,single,gm_10k_fy2025,"Item 7, p. 30",$185.019 billion
+q14,What were the two major cost pressures that contributed to GMNA's lower adjusted EBIT in 2025?,single,gm_10k_fy2025,"Item 7, p. 32",$3.1 billion in tariff-related costs and $1.3 billion in increased warranty-related costs and campaigns
+q15,"How many reportable business segments does Tesla operate, and what are they?",single,tesla_10k_fy2025,"Item 1, p. 2",Two: automotive and energy generation and storage
+q16,Which five consumer vehicle models were included in Tesla's manufacturing lineup in 2025?,single,tesla_10k_fy2025,"Item 1, p. 2","Model 3, Model Y, Model S, Model X and Cybertruck"
+q17,How large was Tesla's global employee base at the end of 2025?,single,tesla_10k_fy2025,"Item 1, p. 11","134,785 employees"
+q18,Why could Tesla face difficulties increasing production of its vehicles and energy storage products?,single,tesla_10k_fy2025,"Item 1A, p. 14",Its dependence on a limited number of qualified lithium-ion battery cell suppliers
+q19,What cybersecurity-related threats did Tesla identify as potentially damaging to its operations?,single,tesla_10k_fy2025,"Item 1A, p. 19","Cyberattacks and security incidents that could compromise data, systems and intellectual property"
+q20,How many consumer vehicles did Tesla deliver and how much energy storage capacity did it deploy in 2025?,single,tesla_10k_fy2025,"Item 7, p. 31",Approximately 1.64 million vehicles and 46.7 GWh of energy storage
+q21,"Which company reported the larger tariff-related cost burden in 2025, Ford or GM, and how do their disclosures differ?",multi,ford_10k_fy2025;gm_10k_fy2025,"Item 7, p. 43;Item 7, p. 32",GM reported $3.1 billion in tariff-related costs. Ford reported approximately $3 billion in gross tariff costs and a $2 billion net EBIT impact after offsets.
+q22,"Which company had the larger global workforce at the end of 2025, Ford or Tesla, and by how much?",multi,ford_10k_fy2025;tesla_10k_fy2025,"Item 1, p. 1;Item 1, p. 11","Ford: approximately 169,000; Tesla: 134,785. Ford had approximately 34,215 more employees."
+q23,How did Ford and GM compare in terms of U.S. market share in 2025?,multi,ford_10k_fy2025;gm_10k_fy2025,"Item 1, p. 5;Item 1, p. 3",GM: 17.2%; Ford: 13.2%. GM led by 4 percentage points.
+q24,"Which company recorded higher global wholesale vehicle volumes in 2025, Ford or GM, and what was the difference?",multi,ford_10k_fy2025;gm_10k_fy2025,"Item 1, p. 2;Item 1, p. 2","Ford: 4.395 million; GM: 3.799 million. Ford sold approximately 596,000 more wholesale units."
+q25,How did Ford's and GM's reported GAAP net income compare in 2025?,multi,ford_10k_fy2025;gm_10k_fy2025,"Item 7, p. 48;Item 7, p. 44","Ford reported a net loss of $8.182 billion, while GM reported net income of $2.697 billion."
+q26,"Did growth in Tesla's energy generation and storage revenue offset the decline in its automotive & services segment revenue in 2025, and what drove the energy revenue increase?",multi,tesla_10k_fy2025;tesla_10k_fy2025,"Item 7, p. 37;Item 7, p. 38","No. Automotive & services and other segment revenue fell $5.548 billion (-6%) while energy generation and storage revenue rose $2.685 billion (+27%), mainly due to higher Megapack and Powerwall deployments, partially offset by a lower Megapack average selling price."
+q27,"How many vehicles did Rivian deliver worldwide in fiscal year 2025, and what was its year-over-year delivery growth?",unanswerable,,,The corpus does not cover this company.
+q28,What was Lucid's gross profit margin in fiscal year 2025?,unanswerable,,,The corpus does not cover this company.
+q29,What was Stellantis' market share in the North American automotive market in 2025?,unanswerable,,,The corpus does not cover this company.
+q30,What were Ford's actual consolidated revenues and adjusted EBIT in the first quarter of 2026?,unanswerable,,,"The corpus contains fiscal year 2025 information, not actual Q1 2026 results."
+q31,"What was the total compensation awarded to Tesla's CEO for fiscal year 2025, including stock awards and other benefits?",unanswerable,,,"The reports mention the 2025 CEO Performance Award but do not disclose total CEO compensation for fiscal year 2025; that is in the proxy statement, which is not in the corpus."
+q32,"Based solely on these reports, should an investor buy Tesla stock at its current market price?",unanswerable,,,The corpus does not provide an investment recommendation or a current stock valuation.

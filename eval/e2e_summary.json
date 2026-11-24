@@ -1,0 +1,28 @@
+{
+  "answered": 32,
+  "judge_correct": 0.969,
+  "judge_supported": 1,
+  "correct_refusals": "6/6",
+  "wrong_refusals": "0/26",
+  "citations_valid": 0.969,
+  "expected_sources_cited": 0.923,
+  "figure_check_fired": 2,
+  "mean_tokens": 6454,
+  "mean_seconds": 77.6,
+  "median_seconds": 12.0,
+  "agreement_with_human": {
+    "n": 22,
+    "correct": 0.864,
+    "correct_disagreements": [
+      "q18",
+      "q21",
+      "q23"
+    ],
+    "supported": 0.864,
+    "supported_disagreements": [
+      "q21",
+      "q24",
+      "q32"
+    ]
+  }
+}
