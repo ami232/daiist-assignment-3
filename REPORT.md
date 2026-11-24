@@ -6,11 +6,11 @@
 
 ## Use case
 
-**Who asks.** Financial analysts and investors who read companies' annual reports. The system answers only from the annual reports indexed in it: Apple, NVIDIA and Tesla to start with. An analyst can add any other company's annual report with the add-document tool, and a question about a company that is not indexed gets "I don't know".
+**Who asks:** Financial analysts and investors who read companies' annual reports. The system answers only from the annual reports indexed in it: Apple, NVIDIA and Tesla to start with. An analyst can add any other company's annual report with the add-document tool, and a question about a company that is not indexed gets "I don't know".
 
-**What they do with the answer.** They ask about a company's business, its financial performance and its risk disclosures, and use the answers in their notes and investment decisions.
+**What they do with the answer:** They ask about a company's business, its financial performance and its risk disclosures, and use the answers in their notes and investment decisions.
 
-**What a wrong answer costs compared with "I don't know".** An "I don't know" costs the reader about 10 minutes of looking the answer up in the filing, roughly $12 at an assumed $75 an hour. A wrong answer that is caught later costs about 2 hours of rework, roughly $150. A wrong answer that is not caught can lead to a poor investment decision. A guess is only worth giving if it is right more than about 92% of the time, so when the filings do not contain the answer, the assistant should say which information is missing instead of estimating or inventing a figure.
+**What a wrong answer costs compared with "I don't know":** An "I don't know" costs the reader about 10 minutes of looking the answer up in the filing, roughly $12 at an assumed $75 an hour. A wrong answer that is caught later costs about 2 hours of rework, roughly $150. A wrong answer that is not caught can lead to a poor investment decision. A guess is only worth giving if it is right more than about 92% of the time, so when the filings do not contain the answer, the assistant should say which information is missing instead of estimating or inventing a figure.
 
 ## Corpus
 
@@ -25,51 +25,51 @@ Words are counted from the indexed chunks. Microsoft's 10-K was used only for th
 
 ## Ingestion
 
-**Extract and clean.** Each 10-K is parsed with BeautifulSoup. Scripts, styles and the hidden XBRL header are removed. Blank lines, bare page numbers and the repeated "Table of Contents" header are dropped.
+**Extract and clean:** Each 10-K is parsed with BeautifulSoup. Scripts, styles and the hidden XBRL header are removed. Blank lines, bare page numbers and the repeated "Table of Contents" header are dropped.
 
-**Sections.** The text is split on the "Item N" headings, and only Item 1 (Business), Item 1A (Risk Factors) and Item 7 (MD&A) are kept. Sections under 50 words, such as table-of-contents rows, are dropped.
+**Sections:** The text is split on the "Item N" headings, and only Item 1 (Business), Item 1A (Risk Factors) and Item 7 (MD&A) are kept. Sections under 50 words, such as table-of-contents rows, are dropped.
 
-**One extraction problem I fixed.** HTML tables put a label and its number in separate cells, so after plain text extraction the numbers ended up far from their labels. Each table row is now joined onto one line ("Net sales | 478.8 | ..."), so a figure stays next to what it describes.
+**One extraction problem I fixed:** HTML tables put a label and its number in separate cells, so after plain text extraction the numbers ended up far from their labels. Each table row is now joined onto one line ("Net sales | 478.8 | ..."), so a figure stays next to what it describes.
 
-**Chunking, two designs.** Fixed: windows of 150 words with 30 words overlap over the whole document. Sections: chunks of up to 300 words with 30 words overlap that never cross a section boundary.
+**Chunking, two designs:** Fixed windows of 150 words with 30 words of overlap over the whole document, and section chunks of up to 300 words with 30 words of overlap that never cross a section boundary.
 
-**Chunk metadata.** Each chunk stores id (a hash of its content), source (for example apple-10k-2026), company, location (for example "Item 1A. Risk Factors"), design and text.
+**Chunk metadata:** Each chunk stores an id (a hash of its content), the source (for example apple-10k-2026), the company, the location (for example "Item 1A. Risk Factors"), the design and the text.
 
-**Number of chunks.** 289 chunks for the sections design and 632 for the fixed design, embedded with gemini-embedding-2.
+**Number of chunks:** 289 chunks for the sections design and 632 for the fixed design, embedded with gemini-embedding-2.
 
-**Known limit.** Item 8 (the financial statements) is not indexed, so detailed statement figures are answered from the MD&A only.
+**Known limit:** Item 8 (the financial statements) is not indexed, so detailed statement figures are answered from the MD&A only.
 
 ## Test set
 
-**How it was written.** I wrote the questions from the topics of the Business, Risk Factors and MD&A sections of the three reports, before evaluating the system. Claude suggested candidate questions, and I chose which ones to keep and which to change. The reference answers were written from the passages the search tool returns for each question, so each one can be checked in the reports.
+**How it was written:** I wrote the questions from the topics of the Business, Risk Factors and MD&A sections of the three reports, before evaluating the system. Claude suggested candidate questions, and I chose which ones to keep and which to change. The reference answers were written from the passages the search tool returns for each question, so each one can be checked in the reports.
 
-**Counts.** 36 questions: 20 single (one passage answers them), 8 multi (they need two passages, for example a comparison between two companies) and 8 unanswerable (the reports do not contain the answer). The unanswerable questions are close to the topic of the corpus and not obviously off-topic.
+**Counts:** 36 questions: 20 single (one passage answers them), 8 multi (they need two passages, for example a comparison between two companies) and 8 unanswerable (the reports do not contain the answer). The unanswerable questions are close to the topic of the corpus and not obviously off-topic.
 
-**Two examples.**
+**Two examples:**
 
 - **Multi (q21):** "Compare how Apple and NVIDIA describe the risk of depending on third-party manufacturers." It needs the risk section of both reports.
 - **Unanswerable (q29):** "What was Microsoft's cloud revenue last year?" The expected answer is "The indexed reports do not cover this."
 
 ## Retrieval
 
-I compared two ways of cutting the reports into chunks, using 28 answerable questions. A hit means the right source and section are in the top k results.
+I compared two ways of cutting the reports into chunks, using the 28 answerable questions. A hit means the right source and section are in the top k results.
 
 | Design | k=1 | k=3 | k=5 |
 |---|---|---|---|
 | Fixed (150-word windows) | 0.68 | 0.82 | 0.86 |
 | Sections (up to 300 words, never crossing a section) | 0.71 | 0.89 | 0.89 |
 
-**Words added to the prompt.** A search returns 5 passages. With the sections design this is about 1,000 to 1,500 words per search. The fixed design would add about half as many.
+**Words added to the prompt:** A search returns 5 passages. With the sections design this is about 1,000 to 1,500 words per search. The fixed design would add about half as many.
 
-**Design chosen: sections.** It finds the right passage more often, and a chunk never crosses a section, so its citation (for example "Item 1A") is reliable. This matters because analysts need to check each claim in the original report. It also keeps each topic together and needs fewer chunks (289 instead of 632). The difference is small, only 1 or 2 questions, and the designs differ in both chunk size and structure, so I see it as a hint and not as proof. The cost is more words in each prompt.
+**Design chosen:** Sections. It finds the right passage more often, and a chunk never crosses a section, so its citation (for example "Item 1A") is reliable. This matters because analysts need to check each claim in the original report. It also keeps each topic together and needs fewer chunks (289 instead of 632). The difference is small, only 1 or 2 questions, and the designs differ in both chunk size and structure, so I see it as a hint and not as proof. The cost is more words in each prompt.
 
 ## Tools and subagent
 
-**search(query, company=None, k=5).** Description: "Search the indexed company annual reports (Business, Risk Factors and Management's Discussion and Analysis of each report) and return the most relevant passages with citations. Use it for any question about a company's business, financial performance, risks or outlook. Pass `company` to search only that company's report; leave it empty to search all of them. `k` is the number of passages to return (1 to 10, default 5). [...] If no passage answers the question, the answer is not in the indexed reports: say so, do not guess. If the company asked about is not indexed, the tool says which companies are."
+**search(query, company=None, k=5):** Description: "Search the indexed company annual reports (Business, Risk Factors and Management's Discussion and Analysis of each report) and return the most relevant passages with citations. Use it for any question about a company's business, financial performance, risks or outlook. Pass `company` to search only that company's report; leave it empty to search all of them. `k` is the number of passages to return (1 to 10, default 5). [...] If no passage answers the question, the answer is not in the indexed reports: say so, do not guess. If the company asked about is not indexed, the tool says which companies are."
 
-**add_document(path, company=None).** Description: "Add one document to the index so that `search` can find it. Use it only when the user asks to add a company's annual report (a 10-K or 20-F saved as .htm or .html) or a plain text (.txt, .md) file. [...] The file goes through the same pipeline as the starter corpus: extract, clean, chunk, embed, store. If the same document is already indexed (identical text), nothing is embedded. If a document with the same file name is indexed but its text changed, its old passages are replaced by the new ones."
+**add_document(path, company=None):** Description: "Add one document to the index so that `search` can find it. Use it only when the user asks to add a company's annual report (a 10-K or 20-F saved as .htm or .html) or a plain text (.txt, .md) file. [...] The file goes through the same pipeline as the starter corpus: extract, clean, chunk, embed, store. If the same document is already indexed (identical text), nothing is embedded. If a document with the same file name is indexed but its text changed, its old passages are replaced by the new ones."
 
-**One search result.** Query: "What product categories does Apple list in its Business section?"
+**One search result:** Query: "What product categories does Apple list in its Business section?"
 
 ```
 [1] Apple | apple-10k-2026 | Item 1. Business | similarity 0.76
@@ -87,9 +87,9 @@ You answer questions about company annual reports using only the `search` tool.
 - Keep the answer short, with the numbers first.
 ```
 
-**Why the subagent only has `search`.** The subagent only needs to read the reports, so I gave it only the `search` tool. `add_document` changes the index, so leaving it out means the subagent cannot alter the index even if it makes a mistake. The main agent can use `add_document`, but it has an approval step and a path check to control it. This follows the idea of giving each agent only the tools it needs.
+**Why the subagent only has `search`:** The subagent only needs to read the reports, so I gave it only the `search` tool. The `add_document` tool changes the index, so leaving it out means the subagent cannot alter the index even if it makes a mistake. The main agent can use `add_document`, but it has an approval step and a path check to control it. This follows the idea of giving each agent only the tools it needs.
 
-**Transcript from my editor** (Claude Code in the terminal, shortened with [...]).
+**Transcript from my editor** (Claude Code in the terminal, shortened with [...]):
 
 ```
 > Use the corpus-researcher subagent to answer: What does NVIDIA say about export controls on its products?
@@ -128,42 +128,61 @@ The subagent searched only the indexed reports, and every claim carries a (sourc
 
 ## Adding a document
 
-**If the document is already indexed.** The add-document tool runs the same pipeline as the starter corpus. If the same document is already indexed, nothing is embedded again. If a file with the same name changed, its old passages are replaced by the new ones.
+**If the document is already indexed:** The add-document tool runs the same pipeline as the starter corpus. If the same document is already indexed, nothing is embedded again. If a file with the same name changed, its old passages are replaced by the new ones.
 
-**Demo.** I used the unanswerable question "What was Microsoft's cloud revenue last year?" and added Microsoft's 10-K through the agent, which asked for my approval first.
+**Demo:** I used the unanswerable question "What was Microsoft's cloud revenue last year?" and added Microsoft's 10-K for the year ended June 30, 2026 through the agent, which asked for my approval first.
 
-- **Before:** the agent said the indexed reports do not cover Microsoft.
-- **After:** the agent answered that Microsoft Cloud revenue was $214.4 billion in fiscal year 2026, citing the Microsoft 10-K (Item 7).
+- **Before:** The agent said the indexed reports do not cover Microsoft.
+- **After:** The agent answered that Microsoft Cloud revenue was $214.4 billion in fiscal year 2026, citing the Microsoft 10-K (Item 7).
 
 Afterwards I restored the original index so that the evaluation still treats this question as unanswerable.
 
 ## Harness and guardrails
 
-**A case where it fired.** I tested the guardrail on three paths. A path outside the project folder and a file type that is not allowed are both blocked, and a file inside the project is allowed:
+**Agent rules (AGENTS.md):** The agent follows a short set of rules:
+
+- Answer only from what the search tool returns.
+- Cite every claim with its source and section.
+- If the passages do not answer the question, say "The indexed reports do not cover this."
+- For comparisons, search each company separately.
+- Never mix up companies or years.
+- Use `add_document` only when the user asks for it and gives the file path.
+- Keep answers short, with the numbers first.
+- Write citations in a strict format: the source id and the item, for example (apple-10k-2026, Item 1A).
+
+**Approval step:** Before `add_document` runs, the agent shows the call and asks "Approve? [y/N]". If nobody can answer, for example during the evaluation, the call is denied automatically.
+
+**Extra guardrails:** The agent can only add .htm, .html, .txt and .md files that are inside the project folder, so it cannot read other files on the computer. It is also limited to 8 model calls and 6 tool calls per question, so one question cannot loop and use up the quota.
+
+**A case where it fired:** I tested the path guardrail on three paths. A path outside the project folder and a file type that is not allowed are both blocked, and a file inside the project is allowed:
 
 - `/etc/passwd` -> "Blocked: '/etc/passwd' is outside the project folder. Only files inside it can be added."
 - `notes.pdf` -> "Blocked: only .htm, .html, .txt, .md files can be added."
 - `corpus/apple-10k-2026.htm` -> allowed (no message)
 
-I ran this by calling the check directly, because the full agent run with the same request failed twice with a temporary Google "503 high demand" error. When the check blocks a path, the agent never asks for approval and never calls `add_document`.
+I first tested the path check by calling it directly on the three paths above. I did this because my first two full agent runs with `/etc/passwd` failed with a temporary Google "503 high demand" error. On a later run the agent refused the request on its own without using any tool, because its instructions say to add only company reports. When the check blocks a path, the agent never asks for approval and never calls `add_document`. So the agent has two layers of protection: its instructions and the path check in the code.
 
 ## Evaluation
 
-**Code checks.** The code checks two things: that every citation matches a passage the agent really retrieved, and that unanswerable questions are refused. At first only half of the answers passed, because the model cited the company name instead of the source id. After I made the citation rule stricter in AGENTS.md, all 36 pass.
+**Code checks:** The code checks two things: that every citation matches a passage the agent really retrieved, and that unanswerable questions are refused. At first only half of the answers passed (18 of 36), because the model cited the company name instead of the source id. After I made the citation rule stricter in AGENTS.md, all 36 pass.
 
-**Judge rubric.** An LLM judge grades each answer with two rules. **Correct:** it gives the same facts as the reference answer (or refuses when the question is unanswerable). **Supported:** every claim appears in the retrieved passages, even a true claim counts as unsupported if it is not there.
+**Judge rubric:** An LLM judge grades each answer with two rules.
 
-**Agreement with the judge.** I graded 32 answers myself before looking at the judge. We agreed on about 94% of "correct" grades and 97% of "supported" grades. The judge was stricter than me on two answers and more lenient on one. Comparing our grades also helped me find a bug in the judge (it could not see all the passages for questions about two companies), which I fixed.
+- **Correct:** The answer gives the same facts as the reference answer, or it refuses when the question is unanswerable.
+- **Supported:** Every claim appears in the retrieved passages. A claim that is true but not in the passages counts as unsupported.
 
-**Results.**
+**Agreement with the judge:** I graded 32 answers myself before looking at the judge. We agreed on about 94% of the "correct" grades and 97% of the "supported" grades. The judge was stricter than me on two answers and more lenient on one. Comparing our grades also helped me find a bug in the judge: it could not see all the passages for questions about two companies. I fixed it.
+
+**Results:**
 
 | | Judge | My grades |
 |---|---|---|
 | Correct | 33 of 36 | 31 of 32 |
 | Supported | 36 of 36 | 31 of 32 |
 
-- **Correct refusals:** all 8 unanswerable questions were refused.
-- **Wrong refusals:** none.
+- **Correct refusals:** All 8 unanswerable questions were refused.
+- **Wrong refusals:** None.
+- **Unsupported answers:** 0 of 36 according to the judge, and 1 of 32 according to my grades (q33, which added a remark that is not in the passages).
 
 ## Failures
 
@@ -175,20 +194,25 @@ I ran this by calling the check directly, because the full agent run with the sa
 | Wrong refusal | 0 | none | No answerable question was refused. |
 | Bad test question | 1 | q18 | The reference answer had more facts than the question asked for. |
 
-The hit rate measures a single search, but the agent searches once per company or topic. So the retrieval misses did not stop it from answering well, for example q22 and q24 were graded correct.
+The hit rate measures a single search, but the agent searches once per company or topic. So the retrieval misses did not stop it from answering well. For example, q22 and q24 were graded correct.
 
-**What to fix first.** First, the unsupported claim (q33): I would add a rule in AGENTS.md that the assistant must not add anything that is not in the retrieved passages, because an unsupported claim that nobody catches costs far more than an honest "I don't know". Second, the missing
+**What to fix first:** First, the unsupported claim (q33). I would add a rule to AGENTS.md that the assistant must not add anything that is not in the retrieved passages, because an unsupported claim that nobody catches costs far more than an honest "I don't know". Second, the missing figures (q04). I would add a rule to give the main figures first, because a correct source with missing numbers is still a weak answer for an analyst.
 
 ## Decision
 
-**Would users rely on it?** Yes, but as a first quick lookup and not as a final source. An analyst can use it to get a fast, cited answer, and then check the original report before using the result in an investment decision.
+**Would users rely on it?:** Yes, but as a first quick lookup and not as a final source. An analyst can use it to get a fast, cited answer, and then check the original report before using the result in an investment decision.
 
-**For what.** It works best for simple questions, such as what a company does or which risks it describes. For figures and for comparisons between companies, the analyst should confirm the number in the original report.
+**For what:** It works best for simple questions, such as what a company does or which risks it describes. For figures and for comparisons between companies, the analyst should confirm the number in the original report.
 
-**Why.** On my 32 graded answers it was right about 97% of the time, above the 92% I calculated in my use case as the level where a guess is worth giving. But the sample is small and mostly about one company, and the mistakes I found were a missing figure and a claim that was not in the reports.
+**Why:** On my 32 graded answers it was right about 97% of the time, above the 92% I calculated in my use case as the level where a guess is worth giving. But the sample is small and mostly about one company, and the mistakes I found were a missing figure and a claim that was not in the reports.
 
-**Safeguards.**
-- Every claim shows its source, so it can
+**Safeguards:**
+
+- Every claim shows its source, so the analyst can check it in the original report.
+- The assistant refuses when the reports do not contain the answer, instead of guessing.
+- Adding a document needs the user's approval and only accepts files inside the project folder.
+
+**Cost and latency:** Over the 36 questions the median latency was about 3.7 seconds. A question used about 4,500 input tokens and 365 output tokens, which costs about $0.002 at the paid price of gemini-3.1-flash-lite ($0.25 per million input tokens and $1.50 per million output tokens). I used the free tier, so the real cost was $0. This is far below the $12 to $150 cost of a missed or wrong answer in my use case.
 
 ## AI use
 
