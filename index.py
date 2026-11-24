@@ -470,6 +470,9 @@ def lines_to_sections(lines: list[tuple[str, str]], doc_id: str, title: str) -> 
                     continue
             expect = ""
 
+        if re.match(r"^(ELI: |ISSN \d)", text):
+            continue  # OJ page footer
+
         if mode == "preamble":
             if text.rstrip(":").strip().lower() == "whereas":
                 mode = "recitals"
