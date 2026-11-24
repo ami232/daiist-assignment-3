@@ -1,0 +1,147 @@
+id,question,answer
+q01,What do I need to be allowed to fly a drone at night under Part 107?,"Under Part
+ 107, to operate a small unmanned aircraft system at night, you must meet the following requirements:
+
+1. **Pilot Training / Knowledge Requirements:** The remote pilot in command must have completed an initial knowledge test or training (as applicable under § 107.65) that covers night operations [FAA:operations-over-people-final-rule|PDF page 267]. Specifically, a certificated remote pilot receives night operations privileges after completing either a knowledge test containing questions on night physiology and night visual illusions, or through completion of recurrent training covering those topics [FAA:ac-107-2a|PDF page 22].
+2. **Anti-Collision Lighting:** The small unmanned aircraft must be equipped with lighted anti-collision lighting that is visible for at least 3 statute miles and has a flash rate sufficient to avoid a collision [FAA:operations-over-people-final-rule|PDF page 267]. The remote pilot in command may reduce the intensity of the anti-collision lighting if operating conditions make it in the interest of safety to do so, but may not extinguish it [FAA:operations-over-people-final-rule|PDF page 267].
+
+[FAA:ac-107-2a|PDF page 22], [FAA:operations-over-people-final-rule|PDF page 159], [FAA:operations-over-people-final-rule|PDF page 160], [FAA:operations-over-people-final-rule|PDF page 162], [FAA:operations-over-people-final-rule|PDF page 267]"
+q02,How bright do the anti-collision lights need to be for a night flight?,"For night flights (and operations during periods of civil twilight), the small unmanned aircraft must be equipped with lighted anti-collision lighting that is visible for at least 3 statute miles and has a flash rate sufficient to avoid a collision [FAA:operations-over-people-final-rule|PDF page 267]. 
+
+The remote pilot in command may reduce the intensity of the anti-collision lighting if they determine that operating conditions make it in the interest of safety to do so, but the lights may not be extinguished [FAA:operations-over-people-final-rule|PDF page 267]."
+q03,Can I lower the brightness of the anti-collision lights if they are distracting me?,"Yes. The remote pilot in command (PIC) may reduce the intensity of the anti-collision lights if they determine it is in the interest of safety to do so—for example, if a bright light or strobe in very close proximity causes the remote pilot to lose the ability to accurately observe the small unmanned aircraft's location, speed, attitude, or altitude [FAA:ac-107-2a|PDF page 23], [FAA:operations-over-people-final-rule|PDF page 178]. The remote pilot maintains the discretion to reduce the intensity of the anti-collision lighting when determined to be in the best interest of safety, provided the lights are not extinguished [FAA:operations-over-people-final-rule|PDF page 178], [FAA:ac-107-2a|PDF page 23].
+
+Sources:
+- [FAA:ac-107-2a|PDF page 23]
+- [FAA:operations-over-people-final-rule|PDF page 178]"
+q04,What is the maximum altitude I can normally fly under Part 107?,"Under Part 107, a small unmanned aircraft cannot normally be flown higher than **400 feet above ground level (AGL)** [FAA:ac-107-2a|PDF page 29]. 
+
+An exception is allowed if the small UAS is flown within a 400-foot radius of a structure, in which case it cannot be flown higher than 400 feet above the structure’s immediate uppermost limit [FAA:ac-107-2a|PDF page 29].
+
+Sources:
+- [FAA:ac-107-2a|PDF page 29]"
+q05,Can I fly higher than 400 feet if I am flying next to a tall building or structure?,"Yes. Under Part 107, a small unmanned aircraft cannot be flown higher than 400 feet above ground level (AGL), **unless** it is flown within a 400-foot radius of a structure and does not fly higher than 400 feet above the structure’s immediate uppermost limit.
+
+Citations:
+- [FAA:ac-107-2a|PDF page 29]"
+q06,What is the maximum speed allowed for a small drone under Part 107?,"Under Part 107, a small unmanned aircraft cannot be flown faster than a groundspeed of 87 knots (100 miles per hour) [FAA:ac-107-2a|PDF page 29].
+
+Sources:
+- [FAA:ac-107-2a|PDF page 29]"
+q07,Do I always need to keep the drone in visual line of sight?,"Yes, under Part 107 operations, the small unmanned aircraft must always be kept within visual line of sight (VLOS) of the remote pilot in command and/or the person manipulating the controls (or a visual observer, if used) [FAA:operations-over-people-final-rule|PDF page 40]. 
+
+However, guidance notes that the person maintaining VLOS may have brief, momentary interruptions in which they are not looking directly at the aircraft—such as checking the control station display for battery life or operational awareness—provided they still retain the capability to see the aircraft or quickly maneuver it back into VLOS [FAA:ac-107-2a|PDF page 23]. There is no specific time interval defined for a permissible interruption of VLOS, and if VLOS cannot be regained, the remote pilot must follow pre-determined emergency procedures (such as landing immediately or returning to home) [FAA:ac-107-2a|PDF page 24]."
+q08,What is the point of having a visual observer during a flight?,"According
+ to FAA guidance, using a visual observer (VO) is optional, but a remote Pilot in Command (PIC) may use one to supplement situational awareness and visual line of sight (VLOS) [FAA:ac-107-2a|PDF page 24]. 
+
+Specifically, a VO helps:
+* **Supplement situational awareness and conduct mission-critical duties:** A VO allows the remote PIC and the person manipulating the controls to perform other necessary duties—such as checking displays—while ensuring continued situational awareness of the small unmanned aircraft [FAA:ac-107-2a|PDF page 24].
+* **Scan airspace and maintain visual awareness:** The remote PIC and VO coordinate to scan the operating airspace for potential collision hazards and maintain direct visual awareness of the aircraft's position [FAA:ac-107-2a|PDF page 24].
+* **Communicate critical safety information:** The VO must be able to effectively communicate regarding the small unmanned aircraft's location, attitude, altitude, and direction of flight; the position of other aircraft or hazards in the airspace; and any determination that the aircraft may endanger the life or property of another (§ 107.33) [FAA:ac-107-2a|PDF page 24]."
+q09,How much flight visibility do I need before I can fly?,"Under Part 107, minimum flight visibility—as observed from the location of the control station—must be at least **3 statute miles** [FAA:ac-107-2a|PDF page 29].
+
+Citations:
+- [FAA:ac-107-2a|PDF page 29]"
+q10,How far does the drone need to stay from clouds?,"Under 14 CFR § 107.51, a small unmanned aircraft must maintain a minimum distance from clouds of:
+* **No less than 500 feet below** a cloud, and
+* **No less than 2,000 feet horizontally** from the cloud.
+
+[FAA:ac-107-2a|PDF page 29]"
+q11,"Do I need FAA permission before flying in Class B, C or D airspace?","Yes. Under Part 107, a remote pilot must receive authorization from Air Traffic Control (ATC) before operating in Class B, Class C, or Class D airspace [FAA:remote-pilot-study-guide|PDF page 13, 14].
+
+Sources:
+- [FAA:remote-pilot-study-guide|PDF page 13]
+- [FAA:remote-pilot-study-guide|PDF page 14]"
+q12,"Who is actually responsible for the safety of the flight, the pilot or the company?","Under 14 CFR Part 107, the **remote pilot in command (PIC)** is directly responsible for and is the final authority for the safe operation of the small unmanned aircraft [FAA:ac-107-2a|PDF page 19]. 
+
+[FAA:ac-107-2a|PDF page 19]"
+q13,What does the remote pilot need to check before starting a flight?,"Prior to beginning flight operations, the remote pilot in command (PIC) must complete a preflight familiarization, inspection, and other actions (such as crewmember briefings) to ensure the small UAS is in a condition for safe operation [FAA:ac-107-2a|PDF page 27]. 
+
+According to FAA guidance, the preflight assessment and inspection should include:
+
+1. **Assessment of the Operating Environment:**
+   * Local weather conditions [FAA:ac-107-2a|PDF page 101].
+   * Local airspace, Air Traffic Control (ATC) coordination/communication requirements, and any flight restrictions [FAA:ac-107-2a|PDF page 101].
+   * The location of persons, property on the surface, and moving vehicles not directly participating in the operation [FAA:ac-107-2a|PDF page 101, FAA:ac-107-2a|PDF page 27].
+   * Eligibility for operations over people or moving vehicles (if applicable), along with potential entry of persons/vehicles into the operational area and whether the operation will occur over an open-air assembly of persons [FAA:ac-107-2a|PDF page 27].
+   * Other ground hazards [FAA:ac-107-2a|PDF page 101].
+
+2. **Crew Briefings:**
+   * Operating conditions, operating procedures, and the purpose of the flight [FAA:ac-107-2a|PDF page 101, FAA:ac-107-2a|PDF page 27].
+   * Potential hazards and risk mitigations [FAA:ac-107-2a|PDF page 101].
+   * Emergency and contingency procedures [FAA:ac-107-2a|PDF page 101].
+   * Crewmember roles and responsibilities [FAA:ac-107-2a|PDF page 101].
+   * Human factors using I.M.S.A.F.E [FAA:ac-107-2a|PDF page 101].
+
+3. **Documentation and Compliance:**
+   * Ensure all required documentation is available for inspection [FAA:ac-107-2a|PDF page 101].
+   * Review remote pilot operating instructions and any applicable Certificate of Waiver (CoW) reviews and risk mitigations [FAA:ac-107-2a|PDF page 101].
+
+4. **Aircraft and Equipment Inspection (Visual and Functional Checks):**
+   * Verify all manufacturer-required components are present and operating as designed [FAA:ac-107-2a|PDF page 101].
+   * Conduct a visual condition inspection of the small UAS components, airframe structure, undercarriage, and flight control surfaces/linkages [FAA:ac-107-2a|PDF page 43].
+   * Check proper display and legibility of registration markings [FAA:ac-107-2a|PDF page 43].
+   * Check moveable control surfaces, attachment points, and servo motors [FAA:ac-107-2a|PDF page 43].
+   * Check the propulsion system (powerplants, propellers, rotors, ducted fans, etc.) and check fuel or battery levels (for both aircraft and control station) for correct type, quantity, and adequate power supply [FAA:ac-107-2a|PDF page 43].
+   * Verify that equipment such as cameras is securely attached [FAA:ac-107-2a|PDF page 43].
+   * Establish control link connectivity and verify communication between the control station and the small unmanned aircraft [FAA:ac-107-2a|PDF page 43].
+   * Verify that the small UAS has acquired GPS location from the manufacturer's specified minimum number of satellites [FAA:ac-107-2a|PDF page 43].
+   * Verify correct indications from avionics, display panels, and ground support equipment (including takeoff/landing systems) [FAA:ac-107-2a|PDF page 43].
+   * Check correct movement of control surfaces using the control station and verify controller operation for heading and altitude [FAA:ac-107-2a|PDF page 43].
+   * Check flight termination and anti-collision lights (if operating during civil twilight or night) [FAA:ac-107-2a|PDF page 43, FAA:ac-107-2a|PDF page 103].
+   * Calibrate the compass prior to flight, if required [FAA:ac-107-2a|PDF page 43].
+   * Start propellers to inspect for imbalance or irregular operation, and test controls/stability at a controlled low altitude [FAA:ac-107-2a|PDF page 43].
+
+5. **Site Suitability:**
+   * Verify that the control station location, takeoff/landing site, and emergency/alternate landing areas are suitable [FAA:ac-107-2a|PDF page 101]."
+q14,Can one person control two drones at the same time under Part 107?,"Under 14 CFR § 107.35, no person may manipulate flight controls or act as a remote pilot in command or visual observer in the operation of more than one small unmanned aircraft at the same time [FAA:operations-over-people-final-rule|PDF page 268]. 
+
+However, this prohibition is subject to a waiver under § 107.205 [FAA:operations-over-people-final-rule|PDF page 198].
+
+Citations:
+- [FAA:ac-107-2a|PDF page 19]
+- [FAA:operations-over-people-final-rule|PDF page 198]
+- [FAA:operations-over-people-final-rule|PDF page 268]"
+q15,Who has right of way if my drone gets close to a manned aircraft?,"A small unmanned aircraft must always yield the right-of-way to all other users of the National Airspace System, including all manned aircraft [FAA:ac-107-2a|PDF page 26], [FAA:operations-over-people-final-rule|PDF page 213]. The remote pilot in command is required to initiate an avoidance maneuver to avoid a collision with any other aircraft and must ensure the operation is not conducted so close to another aircraft as to create a collision hazard [FAA:operations-over-people-final-rule|PDF page 213].
+
+[FAA:ac-107-2a|PDF page 26], [FAA:operations-over-people-final-rule|PDF page 213]"
+q16,Can I fly a drone from a moving car?,"Yes, operating a small UAS from a moving vehicle is permitted under Part 107, but with specific conditions and restrictions:
+
+* **Sparsely-Populated Areas / Waivers:** Under standard rules, operations from a moving vehicle may only be conducted over a sparsely-populated area [FAA:ac-107-2a|PDF page 30]. However, this provision can be waived under §§ 107.200 and 107.205 [FAA:ac-107-2a|PDF page 30].
+* **Visual Line of Sight (VLOS):** The remote pilot in command (PIC) operating from a moving vehicle is still required to maintain VLOS [FAA:ac-107-2a|PDF page 30]. 
+* **Risk and Control:** The remote PIC must ensure that no person is subject to undue risk due to a loss of control of the aircraft [FAA:ac-107-2a|PDF page 30]. If a visual observer (VO) is not in the same vehicle, effective communication must still be maintained between the remote PIC and the VO [FAA:ac-107-2a|PDF page 30].
+* **Other Applicable Laws:** Operating a drone from a moving vehicle is also subject to other applicable laws, such as state and local traffic laws that may apply to the driver [FAA:ac-107-2a|PDF page 30].
+
+Citations:
+* [FAA:ac-107-2a|PDF page 30]"
+q17,Can the pilot break a Part 107 rule during an emergency?,"Yes. In the case of an in-flight emergency, the remote pilot in command (PIC) is permitted to deviate from any rule of Part 107 to the extent necessary to respond to that emergency [FAA:ac-107-2a|PDF page 33]. 
+
+Advisory guidance notes that a remote PIC who exercises this emergency power is required, upon the FAA’s request, to send a written report explaining the deviation [FAA:ac-107-2a|PDF page 33]. Emergency actions should also be taken in a way that minimizes injury or damage to property [FAA:ac-107-2a|PDF page 33].
+
+Sources:
+- FAA AC 107-2A [FAA:ac-107-2a|PDF page 33]
+- FAA Remote Pilot Small Unmanned Aircraft Systems Study Guide [FAA:remote-pilot-study-guide|PDF page 43]"
+q18,What happens if the drone has something wrong with it during the preflight check?,"If something is found to be wrong with the small UAS during the preflight check, the remote Pilot in Command (PIC) must determine whether the aircraft is in a condition for safe operation [FAA:ac-107-2a|PDF page 93]. 
+
+According to FAA guidance:
+* Further inspection is necessary to identify the scope of damage and the extent of any required repairs before conducting the flight [FAA:ac-107-2a|PDF page 93]. 
+* All required maintenance must be completed before each flight, preferably following the manufacturer’s instructions or known industry best practices [FAA:ac-107-2a|PDF page 42].
+* If the operator or maintenance personnel are unable to repair, modify, or overhaul the small UAS or component back to a safe operational specification, the component or entire aircraft must be replaced with one that is in a condition for safe operation [FAA:ac-107-2a|PDF page 42].
+
+[FAA:ac-107-2a|PDF page 42, FAA:ac-107-2a|PDF page 93]"
+q19,What do I need to do to keep my remote pilot certificate current?,"To maintain aeronautical knowledge recency and continue exercising the privileges of a remote pilot certificate with a small UAS rating, you must accomplish one of the following within the previous 24 calendar months:
+
+1. **Pass an initial aeronautical knowledge test** covering the areas of knowledge specified in § 107.73 [FAA:
+operations-over-people-final-rule|PDF page 271].
+2. **Complete recurrent training** covering the areas of knowledge specified in § 107.73 [FAA:operations-over-people-final-rule|PDF page 271], which can be completed online [FAA:operations-over-people-final-rule|PDF page 182].
+3. **If you hold a pilot certificate** (other than a student pilot certificate) issued under part 61 and meet the flight review requirements specified in § 61.56, **complete training** covering the areas of knowledge specified in § 107.74 [FAA:operations-over-people-final-rule|PDF page 271]."
+q20,Can someone fly under Part 107 if they have been drinking alcohol?,"No, a person cannot serve as a remote pilot in command (PIC), a person manipulating the controls, a visual observer (VO), or any other crewmember under Part 107 if they:
+
+* Have consumed any alcoholic beverage within the preceding 8 hours
+* Are under the influence of alcohol
+* Have a blood alcohol concentration (BAC) of .04 percent or greater
+* Are using a drug that affects the person's mental or physical capabilities [FAA:remote-pilot-study-guide|PDF page 53]
+
+Additionally, the remote PIC is responsible for ensuring that no crewmembers participate in the operation while impaired [FAA:remote-pilot-study-guide|PDF page 53].
+
+[FAA:remote-pilot-study-guide|PDF page 53]"

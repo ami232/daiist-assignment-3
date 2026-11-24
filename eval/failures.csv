@@ -1,0 +1,36 @@
+id,kind,retrieval_hit_at_5,failure_class,judge_correct,judge_supported,refusal,valid_citations
+q01,single,1,pass,1,1,0,1
+q02,single,1,pass,1,1,0,1
+q03,single,1,pass,1,1,0,1
+q04,single,1,pass,1,1,0,1
+q05,single,1,pass,1,1,0,1
+q06,single,1,pass,1,1,0,1
+q07,single,1,unsupported claim,1,1,0,0
+q08,single,1,pass,1,1,0,1
+q09,single,1,pass,1,1,0,1
+q10,single,1,pass,1,1,0,1
+q11,single,1,unsupported claim,1,1,0,0
+q12,single,1,pass,1,1,0,1
+q13,single,1,unsupported claim,1,1,0,0
+q14,single,1,pass,1,1,0,1
+q15,single,1,pass,1,1,0,1
+q16,single,1,unsupported claim,1,1,0,0
+q17,single,1,pass,1,1,0,1
+q18,single,1,unsupported claim,1,1,0,0
+q19,single,1,unsupported claim,1,1,0,0
+q20,single,1,pass,1,1,0,1
+q21,single,1,unsupported claim,1,1,0,0
+q22,single,1,unsupported claim,1,1,0,0
+q23,single,1,pass,1,1,0,1
+q24,single,1,pass,1,1,0,1
+q25,multi,0,retrieval miss,1,1,0,0
+q26,multi,1,wrong refusal,0,0,1,1
+q27,multi,1,pass,1,1,0,1
+q28,multi,1,pass,1,1,0,1
+q29,multi,0,retrieval miss,1,1,0,1
+q30,multi,1,unsupported claim,1,1,0,0
+q31,unanswerable,0,pass,1,1,0,1
+q32,unanswerable,0,pass,1,1,1,1
+q33,unanswerable,0,pass,1,1,1,1
+q34,unanswerable,0,pass,1,1,0,1
+q35,unanswerable,0,pass,1,1,1,1
