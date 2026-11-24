@@ -15,7 +15,7 @@
 
 So the system must prefer refusing over guessing, and every claim must be checkable through a citation to the exact article.
 
-I picked Spanish rental law partly because of my own experience renting a flat, where many situations came up in which an assistant like this would have helped me understand my rights and handle things better. It's also a good test case because the law has been reformed several times in a few years (RDL 7/2019, Ley 12/2023 and a change to LAU art. 10 in force from November 2026), and many tenants rely on websites that fall behind the official text: while grading, I found two legal websites still describing old versions of LAU articles 11 and 21. The assistant is for a tenant with a concrete problem, such as an ignored repair, a deposit or leaving early, who wants to know which article applies before going to a lawyer or the housing office. A wrong answer is much worse than "I don't know": in q04 the agent said a tenant could leave early "unless the contract has a compensation clause", but the current art. 11.3 says leaving gives the landlord no right to compensation, so a tenant could stay in a flat they could leave for free, or pay money they don't owe, while "I don't know" only sends them to ask someone else.
+I picked Spanish rental law partly because of my own experience renting a flat, where many situations came up in which an assistant like this would have helped me understand my rights and handle things better. It's also a good test case because the law has been reformed several times in a few years (RDL 7/2019, Ley 12/2023, and a change to LAU art. 10 announced for November 2026 that was repealed before it took effect), and many tenants rely on websites that fall behind the official text: while grading, I found two legal websites still describing old versions of LAU articles 11 and 21. The assistant is for a tenant with a concrete problem, such as an ignored repair, a deposit or leaving early, who wants to know which article applies before going to a lawyer or the housing office. A wrong answer is much worse than "I don't know": in q04 the agent said a tenant could leave early "unless the contract has a compensation clause", but the current art. 11.3 says leaving gives the landlord no right to compensation, so a tenant could stay in a flat they could leave for free, or pay money they don't owe, while "I don't know" only sends them to ask someone else.
 
 ## Corpus
 
@@ -35,7 +35,7 @@ Downloaded on 23 November 2026. The four XML files are committed in `corpus/` as
 
 **Limitation found during evaluation:** RDL 7/2019 is an *amending* law. It carries the 2019 wording of the articles it changed in other laws. For example, it carries the 2019 tourist-flat rule of the LPH, but not the express-approval requirement added by LO 1/2025 (in force 3 April 2025), so an answer built from it can be out of date.
 
-The LAU (Ley 29/1994) is the base law for renting a home and covers deposits, duration, repairs and leaving early, while RDL 7/2019 and Ley 12/2023 are the two recent reforms that changed it (contract length, stressed zones, large landlords, rent limits). Together they come to about 68,400 words, and I kept only the current version of each article, labelling the LAU art. 10 change that applies from 15 November 2026 as future text.
+The LAU (Ley 29/1994) is the base law for renting a home and covers deposits, duration, repairs and leaving early, while RDL 7/2019 and Ley 12/2023 are the two recent reforms that changed it (contract length, stressed zones, large landlords, rent limits). Together they come to about 65,000 words, and I kept only the current version of each article, labelling text that is not yet in force as future text (as happened with an LAU art. 10 change announced for 15 November 2026, which was later repealed).
 
 ## Ingestion
 
@@ -58,7 +58,7 @@ Examples:
 - *multi:* "Si el arrendador es una empresa, ¿cuánto dura como mínimo el contrato y durante cuánto tiempo no se actualiza la fianza?" → LAU Art. 9 + Art. 36: seven years in both cases.
 - *unanswerable:* "¿Cuál es el valor del IRAV publicado para octubre de 2026?" → the corpus only says the rent update cannot exceed the IRAV; it gives no published values.
 
-The 35 questions (22 single-article, 7 multi-article, 6 unanswerable) were first drafted by Claude from the article texts, and I reviewed all of them before running the test. We found that q34 ("can the building ban tourist flats?") was marked unanswerable although RDL 7/2019 answers it, so I replaced it with "can an owner who owes community fees vote?" after checking that none of the three laws covers it; I didn't change any other question. Because the questions were written from the articles themselves, they are probably easier to search for than real tenant questions, which is a limitation of this test.
+The 35 questions (22 single-article, 7 multi-article, 6 unanswerable) were first drafted by Claude from the article texts, and I reviewed all of them before running the test. We found that q34 ("can the building ban tourist flats?") was marked unanswerable although RDL 7/2019 answers it, so I replaced it with "can an owner who owes community fees vote?" after checking that none of the three laws covers it. I also replaced q20, which asked about an LAU art. 10 change that was repealed before it took effect, with a question on the current art. 10; I didn't change any other question. Because the questions were written from the articles themselves, they are probably easier to search for than real tenant questions, which is a limitation of this test.
 
 ## Retrieval
 
@@ -71,7 +71,7 @@ Hit = a retrieved chunk has the expected law and article. Measured on the 29 ans
 
 (Over all 29 answerable questions, "every expected article in the top 5" is 0.931 for articles and 0.793 for fixed200. On the 12 November corpus, before the repealed text was removed and q20 replaced, the figures were 0.793 / 1.000 / 1.000 for articles and 0.759 / 0.897 / 1.000 for fixed200, with both articles for 5/7 and 3/7 two-article questions: articles was the better design in both versions.)
 
-I chose one chunk per article because it put the right article in the top 3 for every question (100% against 90% for 200-word pieces) and, for the 7 two-article questions, delivered both articles in 5 of them (against 3). With fixed pieces, 4 of the 7 two-article questions would reach the agent missing one of the articles it needs, which means at best an incomplete answer or a wrong "I don't know" and at worst an answer from memory, so about 350 extra words per question (a fraction of a cent) is a cheap price, and it also matches how lawyers cite: by article.
+I chose one chunk per article because it put the right article in the top 3 for 28 of 29 questions (97% against 83% for 200-word pieces) and in the top 5 for all of them, and, for the 7 two-article questions, delivered both articles in 5 of them (against 4). With fixed pieces, 3 of 29 questions would reach the agent without the article they need, even in the top 5, which means at best an incomplete answer or a wrong "I don't know" and at worst an answer from memory, so about 350 extra words per question (a fraction of a cent) is a cheap price, and it also matches how lawyers cite: by article.
 
 ## Tools and subagent
 
@@ -193,11 +193,11 @@ The AI judge was better than me at spotting invented details: it found 4 that I 
 | Retrieval miss | 0 | — |
 | Wrong answer from the right passage | 0 | — |
 | Unsupported claim | 4 | q04, q25, q07, q32 |
-| Wrong refusal | 1 | q20 |
+| Wrong refusal | 1 | original q20 (replaced) |
 | Bad test question | 1 | original q34 (replaced) |
 
 My reasons (from `eval/failures.csv`):
-- **q20 → wrong refusal.** *"It found the right article and didn't conclude anything wrong. It just refused a question the corpus answers. The likely cause is that it didn't trust text that only applies from 15 Nov 2026, so it stopped after one search."*
+- **Original q20 → wrong refusal.** *"It found the right article and didn't conclude anything wrong. It just refused a question the corpus answers. The likely cause is that it didn't trust text that only applies from 15 Nov 2026, so it stopped after one search."* The question was later replaced because the law change it asked about was repealed; it stays here because the failure (refusing after one search, against AGENTS.md rule 4) happened, and it is the evidence for safeguard 5. The new q20 was answered correctly.
 - **q04 → unsupported claim.** *"The conclusion is right, but it added a condition the passage doesn't contain."* Checked against the corpus: the current LAU art. 11 only says leaving early generates no compensation; the "unless the contract includes a compensation clause" exception comes from the **old** version of art. 11, which the model remembered.
 - **q25 → unsupported claim.** *"It's the same invented condition as q04. That's two failures with one cause, so one fix covers both."*
 - **q07 → unsupported claim.** *"The facts are right, but the citation points to a paragraph that doesn't say that."* It cites 21.2 for deducting repair costs from rent; the current text puts that in 21.5.

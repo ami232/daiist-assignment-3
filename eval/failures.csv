@@ -1,5 +1,5 @@
 id,category,reason
-q20,wrong refusal,"Found the right article (future text of LAU art. 10) and concluded nothing wrong, but refused a question the corpus answers. Likely did not trust text that only applies from 15 Nov 2026, so it stopped after one search (AGENTS.md rules 4 and 5)."
+original q20 (replaced 23 Nov),wrong refusal,"Found the right article (future text of LAU art. 10) and concluded nothing wrong, but refused a question the corpus answers. Likely did not trust text that only applies from 15 Nov 2026, so it stopped after one search (AGENTS.md rules 4 and 5)."
 q04,unsupported claim,"Right conclusion, but added 'unless the contract includes a compensation clause'. The retrieved LAU art. 11 (current text) says only that leaving early generates no compensation; the clause comes from the old version of art. 11, which the model remembered."
 q25,unsupported claim,"Same invented compensation clause as q04: two failures, one cause, one fix covers both."
 q07,unsupported claim,"Facts are right, but the 'deduct the cost from future rent' step cites Artículo 21.2; that rule is in 21.5 (current BOE text has 5 sections). The citation guard only checks the article number, not the section."
