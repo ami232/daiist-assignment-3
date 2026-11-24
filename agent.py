@@ -34,6 +34,7 @@ from langchain.agents import create_agent
 from langchain.agents.middleware import (AgentMiddleware, ModelCallLimitMiddleware,
                                          ToolCallLimitMiddleware)
 from langchain_core.messages import AIMessage, HumanMessage, ToolMessage
+from langchain_core.rate_limiters import InMemoryRateLimiter
 from langchain_core.tools import StructuredTool
 from langchain_google_genai import ChatGoogleGenerativeAI
 from mcp import ClientSession, StdioServerParameters
@@ -42,15 +43,24 @@ from mcp.client.stdio import stdio_client
 from api_key import load_api_key
 
 ROOT = Path(__file__).resolve().parent
-MODEL = "gemini-3.5-flash"
+MODEL = "gemini-3.5-flash-lite"
 MAX_SEARCHES = 3
 MAX_MODEL_CALLS = 6
-REFUSAL = "The corpus does not cover this"
+REFUSAL = "The corpus does not cover this"   # the phrase AGENTS.md asks for
+# what counts as a refusal: the model also writes "The corpus does not state / cover which ..."
+REFUSAL_START = "the corpus does not"
+# The free tier allows 15 requests a minute for gemini-3.5-flash-lite; stay under it. One limiter
+# for the whole process, shared by every agent (evaluate.py runs several) and the judge.
+RATE_LIMITER = InMemoryRateLimiter(requests_per_second=12 / 60, check_every_n_seconds=0.1, max_bucket_size=1)
 
 # "Source: GEVO2026, pp. 18-19 | ..." in the search tool's output
 _SOURCE_RE = re.compile(r"Source: ([A-Za-z0-9]+), pp?\. (\d+)(?:-(\d+))?")
-# "(GEVO2026, p. 18)", "(GEVO2025, p. 17; GEVO2026, p. 21)", "GEVO2026, pp. 18-19"
-_CITE_RE = re.compile(r"\b([A-Z][A-Za-z0-9]*\d{4}[A-Za-z0-9]*|[A-Z]{3,}[A-Za-z0-9]*),\s*pp?\.\s*(\d+)(?:\s*[-–]\s*(\d+))?")
+# "(GEVO2026, p. 18)", "(GEVO2025, p. 17; GEVO2026, p. 21)", "GEVO2026, pp. 18-19",
+# and several pages of one document: "(GEVO2026, p. 21, pp. 65-66)"
+_PAGES = r"pp?\.\s*\d+(?:\s*[-–]\s*\d+)?"
+_CITE_RE = re.compile(r"\b([A-Z][A-Za-z0-9]*\d{4}[A-Za-z0-9]*|[A-Z]{3,}[A-Za-z0-9]*),\s*"
+                      rf"({_PAGES}(?:\s*(?:,|;|and)\s*{_PAGES})*)")
+_PAGE_RE = re.compile(r"pp?\.\s*(\d+)")
 # a figure: a number that is not a year (e.g. 44, 28%, 1.2, 4.2 million)
 _FIGURE_RE = re.compile(r"(?<![\w.])(?!(?:19|20)\d\d\b)\d+(?:[.,]\d+)?\s*(?:%|percent|million|billion|TWh|GWh)?")
 
@@ -75,7 +85,7 @@ class AgentResult:
 
     @property
     def refused(self) -> bool:
-        return REFUSAL.lower() in self.answer.lower()
+        return self.answer.strip().lower().startswith(REFUSAL_START)
 
 
 # ---------------------------------------------------------------------------
@@ -83,7 +93,7 @@ class AgentResult:
 # ---------------------------------------------------------------------------
 def parse_citations(text: str) -> list[tuple[str, int]]:
     """(doc_id, page) for every citation in `text`; a page range gives its first page."""
-    return [(m.group(1), int(m.group(2))) for m in _CITE_RE.finditer(text)]
+    return [(m.group(1), int(p)) for m in _CITE_RE.finditer(text) for p in _PAGE_RE.findall(m.group(2))]
 
 
 def retrieved_pages(trace: list[dict]) -> list[tuple[str, int, int]]:
@@ -103,8 +113,7 @@ def check_citations(answer: str, trace: list[dict]) -> list[str]:
     for doc, page in parse_citations(answer):
         if not any(d == doc and p <= page <= e for d, p, e in pages):
             problems.append(f"({doc}, p. {page}) was not returned by any search for this question")
-    body = answer.split(REFUSAL)[0] if REFUSAL in answer else answer
-    if not parse_citations(answer) and _FIGURE_RE.search(body) and REFUSAL not in answer:
+    if not parse_citations(answer) and _FIGURE_RE.search(answer) and REFUSAL_START not in answer.lower():
         problems.append("the answer gives figures but cites no source")
     return problems
 
@@ -178,7 +187,8 @@ class CorpusAgent:
         await self.session.initialize()
         mcp_tools = (await self.session.list_tools()).tools
         tools = [self._wrap(t) for t in mcp_tools]
-        model = ChatGoogleGenerativeAI(model=self.model_name, google_api_key=load_api_key(), max_retries=6)
+        model = ChatGoogleGenerativeAI(model=self.model_name, google_api_key=load_api_key(), max_retries=6,
+                                       rate_limiter=RATE_LIMITER)
         self.graph = create_agent(
             model,
             tools,
