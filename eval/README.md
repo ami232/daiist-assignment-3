@@ -36,6 +36,8 @@ For a starting point, compare s03 (parallel dump format), s21 (combining and ver
 
 Run the evaluation with the approved question set. Grade at least 20 saved answers using blind_review.md before opening judge.json. Enter both grades for each reviewed answer in human_labels.csv. Rerunning the evaluation with the same inputs uses the same saved answers and computes agreement on the graded IDs.
 
+The [accepted review](accepted_review.csv) contains the 20 proposed score pairs that Javier approved. The report compares those scores with the saved judge verdicts. The evaluator reads independent personal grades from `human_labels.csv`.
+
 ### Suggested blind review sample
 
 These 20 IDs were sampled by question type using a fixed seed, without using the agent answers or judge verdicts. You can also grade all 30.

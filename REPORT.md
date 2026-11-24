@@ -93,7 +93,9 @@ The Gemini judge rated 25 of 30 answers correct (83.3%). The agent answered 20 q
 | Unanswerable | 6 | 6 | 6 |
 | **Total** | **30** | **25** | **10** |
 
-The judge rated 27 of 30 answers supported. All three support failures were bare refusals. The rubric gives a bare refusal support credit because it makes no factual claim. The judge applied that rule inconsistently. On q21 it marked the answer supported while its explanation pointed to missing evidence for the rehearsal recommendation. The agent and judge also used the same model, Gemini 3.5 Flash-Lite. I have yet to record my personal grades for the 20-answer sample, so human–judge agreement is still pending. The [blind packet](eval/blind_review.md) excludes judge verdicts. The suggested sample in [the evaluation instructions](eval/README.md) covers all three question types.
+The judge rated 27 of 30 answers supported. All three support failures were bare refusals. The rubric gives a bare refusal support credit because it makes no factual claim. The judge applied that rule inconsistently. On q21 it marked the answer supported while its explanation pointed to missing evidence for the rehearsal recommendation. The agent and judge also used the same model, Gemini 3.5 Flash-Lite. The [blind packet](eval/blind_review.md) contains the material for personal grading.
+
+I accepted the proposed grades for the 20 sampled answers. They give correctness credit to 15 answers and support credit to 14. Across those same 20 answers, the accepted grades and the Gemini judge agree on correctness for 18 (90%) and on support for 12 (60%). Codex prepared the proposed grades after the judge’s results were available. The assignment’s separate measure of agreement with independent human grading is still pending. [Accepted scores and reasons](eval/accepted_review.csv)
 
 Mean agent usage was 3,801 input tokens and 145 output tokens per question. Mean latency was 8.90 seconds and median latency was 5.26 seconds. Timing covers answer generation and tool calls after opening the shared MCP session. The token counts exclude embeddings and separate judge calls. These measurements describe one run on this question set.
 
@@ -112,4 +114,4 @@ I would use this assistant to find the right manual sections during a recovery r
 
 ## AI use
 
-I chose the PostgreSQL use case, wrote the opening tenant-recovery question and selected the final test set. I used Codex to draft the other questions and the reference answers, implement the prototype, and draft this report. I also used it to prepare provisional grades for my review. Gemini generated the embeddings, answered the questions and supplied the automated judge’s verdicts. GitHub Copilot ran the search-only subagent.
+I chose the PostgreSQL use case, wrote the opening tenant-recovery question and selected the final test set. I used Codex to draft the other questions and the reference answers, implement the prototype, and draft this report. Codex proposed the sample grades and gave a reason for each score. I accepted those grades. Gemini generated the embeddings, answered the questions and supplied the automated judge’s verdicts. GitHub Copilot ran the search-only subagent.
