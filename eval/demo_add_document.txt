@@ -1,0 +1,40 @@
+Demo of add_document (2026-11-24). Run with main.py ask in a terminal. The approval answer 'y' was typed on the student's instruction.
+
+=================== 1. BEFORE: q23 ===================
+$ uv run python main.py ask "What is the exact maximum gluten concentration in mg/kg allowed for a product to be labelled "gluten-free"?"
+Based on the provided search results, the corpus does not contain the exact numeric threshold (in mg/kg) for the "gluten-free" claim set out in Commission Implementing Regulation (EU) No 828/2014, although the guidance mentions that products must meet the requirements of that Regulation to use the statement "gluten-free" or "very low gluten" [ALLERGEN_NOTICE_2017, Section 3.1 (part 1)]. 
+
+The corpus does not cover the specific maximum concentration value in mg/kg.
+
+Citations:
+  [ALLERGEN_NOTICE_2017, Section 3.1]
+
+(2 searches: ['gluten-free maximum gluten concentration mg kg', 'Commission Implementing Regulation EU No 828 2014 gluten free mg kg']; 3 model calls on gemini-3.5-flash-lite; 10119+170 tokens; 4.2 s)
+
+=================== 2. ADD THE DOCUMENT (approval asked) ===================
+$ uv run python main.py ask "Please add the document new_documents/REG_828_2014.html to the corpus."
+y
+
+The agent wants to run add_document with {'path': 'new_documents/REG_828_2014.html'}.
+Allow it? [y/N]   saved 10/10 new vectors
+The document `new_documents/REG_828_2014.html` has been successfully added to the corpus (10 new chunks embedded). You can now search or ask questions regarding its contents.
+
+(0 searches: []; 2 model calls on gemini-3.5-flash-lite; 2241+76 tokens; 3.0 s)
+
+=================== 3. AFTER: q23 ===================
+$ uv run python main.py ask "What is the exact maximum gluten concentration in mg/kg allowed for a product to be labelled "gluten-free"?"
+The statement “gluten-free” may only be made where the food as sold to the final consumer contains no more than **20 mg/kg** of gluten [REG_828_2014, Annex].
+
+Citations:
+  [REG_828_2014, Annex]
+
+(1 searches: ['gluten-free maximum gluten concentration mg kg']; 2 model calls on gemini-3.5-flash-lite; 3790+68 tokens; 2.9 s)
+
+=================== 4. SAME DOCUMENT AGAIN (already indexed) ===================
+$ uv run python main.py ask "Please add the document new_documents/REG_828_2014.html to the corpus."
+y
+
+The agent wants to run add_document with {'path': 'new_documents/REG_828_2014.html'}.
+Allow it? [y/N] The document `new_documents/REG_828_2014.html` has been checked. It is already indexed in the corpus with the same content (10 chunks), so no new embedding was necessary [REG_828_2014].
+
+(0 searches: []; 2 model calls on gemini-3.5-flash-lite; 2182+90 tokens; 2.5 s)
