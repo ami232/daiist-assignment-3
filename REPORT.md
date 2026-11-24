@@ -4,7 +4,7 @@
 - **Student ID**:
 - **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
 
-> **Note for the author (delete before submitting).** Sections marked ✏️ hold decisions or analysis the brief says must be yours. They contain a draft built from the numbers; rewrite them in your own words. Two items are still open: the 20+ human grades and the add-document run (the daily embedding quota ran out; run it after 09:00 Spain time). Each open item says how to finish it.
+> **Note for the author (delete before submitting).** Sections marked ✏️ hold decisions or analysis the brief says must be yours. They contain a draft built from the numbers; rewrite them in your own words. One item is still open: the add-document run (the daily embedding quota ran out; run it after 09:00 Spain time).
 
 The corpus and the test questions are in Spanish because the users (Spanish HR staff) and the laws are Spanish. Code, prompts and this report are in English.
 
@@ -163,22 +163,26 @@ The judge model was `gemini-3.5-flash`, falling back to flash-lite models during
 
 By kind, correct: single 1.00, multi 0.67, unanswerable 0.83.
 
-**Agreement with my grades:** ⏳ *TO DO: grade at least 20 answers in `eval/human_labels.csv` using `eval/grading_sheet.md` (it does not show the judge's verdicts; grade before opening `eval/judge.jsonl`). Then run `uv run python main.py evaluate` again: it reuses all answers and verdicts and only fills in `judge_vs_human` (agreement and Cohen's κ per column) in `eval/summary.json`. Report those numbers here.*
+**Agreement with the grades in `eval/human_labels.csv`:** all 36 answers graded. Agreement with the judge is 100 % on `correct` and 100 % on `supported` (Cohen's κ = 1.0 on both).
+
+**Caveat on these grades.** At the student's request, and with the permission the instructor gave in class, the grades in `eval/human_labels.csv` were assigned by Claude (Claude Code), not by a person. Each claim was checked against the retrieved article text. The number therefore measures agreement between two AI graders, not between a human and the judge. It is also not fully blind: the judge's verdicts on the four failing answers had already been seen. The grades still add information the judge missed: the real cause of m05 (a retrieval miss, see Failures) and a broken citation format in m04 that the citation check let through. ✏️ *For a real human-vs-judge figure, regrade a sample of about 20 yourself from `eval/grading_sheet.md`.*
 
 ## Failures ✏️
 
 | Question | Cause | Detail |
 |---|---|---|
-| m05 | wrong answer from the right passage | Both passages were retrieved (LPRL art. 21 and LISOS art. 13), but the answer covered only the first part (the worker may leave) and left out that impeding it is a very serious infringement. |
+| m05 | retrieval miss | The agent's searches returned LPRL art. 21 but not LISOS art. 13, so the answer covers only the first part (the worker may stop work and leave). It does not mention that impeding this is a very serious infringement, and it does not say that this part is not covered, as rule 4 requires. |
 | m06 | wrong answer from the right passage | Classed the infringement as serious (art. 22.2) but left out the fine amounts (art. 40.1.e: €3,750–12,000) the question asked for. |
 | u02 | unsupported claim | A correct refusal, plus an invented obligation cited to an unrelated article (art. 37). The citation check passed because art. 37 *had* been retrieved: it checks that a citation is real, not that it supports the sentence. |
 | q01 | unsupported claim | The core answer is right (30 days, not exchangeable for money), but it adds "salvo en los supuestos de extinción del contrato". That exception is true in practice but does not appear in art. 38: it comes from the model's own knowledge, in an uncited sentence. The guardrail let it through because it only requires at least one citation per answer, not one per claim. |
 
-By cause: wrong answer from the right passage 2, unsupported claim 2, retrieval miss 0, wrong refusal 0, bad test question 0.
+| m04 | (correct, but formatting) | The content is right, but the citations copy the whole `CITE AS: [...] \| en vigor desde ... \| url` header inside the brackets. The citation check accepted them because its regex finds the inner `[law, article]`. |
+
+By cause: retrieval miss 1, wrong answer from the right passage 1, unsupported claim 2, wrong refusal 0, bad test question 0.
 
 **What to fix first:**
 
-1. **Multi-part questions are the weak spot** (correct on 4 of 6). Add a rule to AGENTS.md, or a check in the harness, requiring the answer to address every part of the question, or to search once per part.
+1. **Multi-part questions are the weak spot** (correct on 4 of 6). Make the agent search once per part of the question (m05 missed the second law because it searched only once), and require it to say which part is not covered instead of skipping it.
 2. **Support check per sentence:** the citation guardrail proves that citations are real, not that every sentence has one or that it supports the sentence (q01, u02). A cheap LLM check of "does passage X support sentence Y" would catch it.
 3. **Relax the citation matcher** to accept an apartado that falls inside a retrieved range. That would remove most of the 9 retries, which add latency without catching errors.
 
@@ -200,4 +204,4 @@ By cause: wrong answer from the right passage 2, unsupported claim 2, retrieval 
 
 ## AI use
 
-I used Claude Code (Anthropic) to write the code (`index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py`, `demo_add_document.py`), to draft AGENTS.md, the subagent, the test questions and this report from the evaluation output, and to propose candidate use cases. I chose the use case and corpus, reviewed and edited the questions against the BOE text, graded the answers myself, and wrote the decisions and analysis. ✏️ *Adjust this to what you actually did.*
+I used Claude Code (Anthropic) to write the code (`index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py`, `demo_add_document.py`), to draft AGENTS.md, the subagent, the test questions and this report from the evaluation output, and to propose candidate use cases. With the permission the instructor gave in class, Claude also assigned the grades in `eval/human_labels.csv` (see Evaluation). I chose the use case and corpus, reviewed the questions against the BOE text, and wrote the decisions and analysis. ✏️ *Adjust this to what you actually did.*

@@ -92,6 +92,16 @@
     ]
   },
   "judge_vs_human": {
-    "n": 0
+    "n": 36,
+    "correct": {
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "disagreements": []
+    },
+    "supported": {
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "disagreements": []
+    }
   }
 }
