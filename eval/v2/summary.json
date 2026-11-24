@@ -1,0 +1,158 @@
+{
+  "questions": 32,
+  "outcomes": {
+    "correct": 26,
+    "wrong": 0,
+    "unsupported": 0,
+    "wrong refusal": 0,
+    "correct refusal": 6,
+    "answered unanswerable": 0
+  },
+  "citations_valid": 1.0,
+  "guardrail_fired": 0,
+  "avg_tokens": 3534,
+  "avg_seconds": 107.1,
+  "judge_vs_me": {
+    "graded_by_me": 0
+  },
+  "judge_stability": {
+    "rejudged": 0
+  },
+  "analysis": {
+    "outcomes_by_kind": {
+      "single": {
+        "correct": 20
+      },
+      "multi": {
+        "correct": 6
+      },
+      "unanswerable": {
+        "correct refusal": 6
+      }
+    },
+    "rates_wilson95": {
+      "handled_correctly": {
+        "k": 32,
+        "n": 32,
+        "rate": 1.0,
+        "ci": [
+          0.893,
+          1.0
+        ]
+      },
+      "correct_of_answerable": {
+        "k": 26,
+        "n": 26,
+        "rate": 1.0,
+        "ci": [
+          0.871,
+          1.0
+        ]
+      },
+      "unsupported_of_answerable": {
+        "k": 0,
+        "n": 26,
+        "rate": 0.0,
+        "ci": [
+          0.0,
+          0.129
+        ]
+      },
+      "refused_of_unanswerable": {
+        "k": 6,
+        "n": 6,
+        "rate": 1.0,
+        "ci": [
+          0.61,
+          1.0
+        ]
+      },
+      "citations_valid": {
+        "k": 32,
+        "n": 32,
+        "rate": 1.0,
+        "ci": [
+          0.893,
+          1.0
+        ]
+      }
+    },
+    "refusals": {
+      "exact_prefix": [
+        "q27",
+        "q28",
+        "q29",
+        "q30",
+        "q31",
+        "q32"
+      ],
+      "refusal_in_other_words": [],
+      "partly_refused_answers": []
+    },
+    "version_note": {
+      "answers": 28,
+      "of": 32,
+      "judged_with_note": 26,
+      "judged": 26,
+      "judged_with_note_unsupported": []
+    },
+    "guardrail": {
+      "fired": 0,
+      "patterns": {},
+      "by_question": {}
+    },
+    "searches": {
+      "requested": 35,
+      "blocked": 0,
+      "executed": 35
+    },
+    "tokens": {
+      "mean": 3534,
+      "median": 3345.0,
+      "mean_input": 3296,
+      "mean_output": 237
+    },
+    "seconds": {
+      "mean": 107.1,
+      "median": 45.4,
+      "mean_without_runs_over_100s": 41.2,
+      "runs_over": [
+        "q01",
+        "q02",
+        "q03",
+        "q19",
+        "q20",
+        "q23",
+        "q29",
+        "q30",
+        "q31"
+      ]
+    },
+    "cost_paid_tier": {
+      "usd_per_question_agent": 0.00118,
+      "usd_per_question_query_embeddings_max": 3e-06,
+      "eur_per_question": 0.001077,
+      "eur_per_1000_questions": 1.08,
+      "usd_per_eur": 1.099
+    },
+    "agent_retrieval": {
+      "answerable": 26,
+      "any_expected": 25,
+      "all_expected": 24,
+      "multi_with_all_expected": [
+        "q21",
+        "q22",
+        "q24",
+        "q25",
+        "q26"
+      ],
+      "missed_an_expected_passage": [
+        "q04",
+        "q23"
+      ],
+      "missed_every_expected_passage": [
+        "q04"
+      ]
+    }
+  }
+}

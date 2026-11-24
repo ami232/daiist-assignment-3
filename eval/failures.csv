@@ -1,0 +1,7 @@
+id,kind,outcome,retrieved_expected,reason,cause
+q07,single,unsupported,True,The assistant included external information about the specific year of the regulation and guidance that was not present in the provided retrieved passages.,unsupported claim
+q08,single,unsupported,True,The assistant included information about the 2020 and 2019 regulations that was not present in the provided retrieved passages.,unsupported claim
+q10,single,unsupported,True,"The answer is correct, but it includes a claim about the '2020 consolidated Regulation' which is not present in the provided passages.",unsupported claim
+q21,multi,unsupported,True,"The answer is correct, but it is not fully supported because it cites regulations (2019/947 and 2019/945) that were not provided in the retrieved passages.",unsupported claim
+q26,multi,wrong,True,"The assistant failed to answer the second part of the question regarding requirements for people taking part, which is a standard requirement in A2 operations (informed consent).",retrieval miss
+q32,unanswerable,answered unanswerable,True,graded in code,bad test question

@@ -1,0 +1,215 @@
+{
+  "questions": 32,
+  "outcomes": {
+    "correct": 21,
+    "wrong": 1,
+    "unsupported": 4,
+    "wrong refusal": 0,
+    "correct refusal": 5,
+    "answered unanswerable": 1
+  },
+  "citations_valid": 1.0,
+  "guardrail_fired": 10,
+  "avg_tokens": 4367,
+  "avg_seconds": 55.6,
+  "judge_vs_me": {
+    "graded_by_me": 20,
+    "agree_correct": 1.0,
+    "kappa_correct": null,
+    "agree_supported": 0.85,
+    "kappa_supported": 0.0,
+    "disagreements": [
+      "q07",
+      "q08",
+      "q10"
+    ]
+  },
+  "judge_stability": {
+    "rejudged": 26,
+    "flips_correct": [],
+    "flips_supported": [],
+    "flip_rate": 0.0
+  },
+  "analysis": {
+    "outcomes_by_kind": {
+      "single": {
+        "correct": 17,
+        "unsupported": 3
+      },
+      "multi": {
+        "unsupported": 1,
+        "correct": 4,
+        "wrong": 1
+      },
+      "unanswerable": {
+        "correct refusal": 5,
+        "answered unanswerable": 1
+      }
+    },
+    "rates_wilson95": {
+      "handled_correctly": {
+        "k": 26,
+        "n": 32,
+        "rate": 0.812,
+        "ci": [
+          0.647,
+          0.911
+        ]
+      },
+      "correct_of_answerable": {
+        "k": 21,
+        "n": 26,
+        "rate": 0.808,
+        "ci": [
+          0.621,
+          0.915
+        ]
+      },
+      "unsupported_of_answerable": {
+        "k": 4,
+        "n": 26,
+        "rate": 0.154,
+        "ci": [
+          0.061,
+          0.335
+        ]
+      },
+      "refused_of_unanswerable": {
+        "k": 5,
+        "n": 6,
+        "rate": 0.833,
+        "ci": [
+          0.436,
+          0.97
+        ]
+      },
+      "citations_valid": {
+        "k": 32,
+        "n": 32,
+        "rate": 1.0,
+        "ci": [
+          0.893,
+          1.0
+        ]
+      }
+    },
+    "refusals": {
+      "exact_prefix": [
+        "q27",
+        "q28",
+        "q29",
+        "q30",
+        "q31"
+      ],
+      "refusal_in_other_words": [
+        "q32"
+      ],
+      "partly_refused_answers": [
+        "q23",
+        "q26"
+      ]
+    },
+    "version_note": {
+      "answers": 27,
+      "of": 32,
+      "judged_with_note": 25,
+      "judged": 26,
+      "judged_with_note_unsupported": [
+        "q07",
+        "q08",
+        "q10",
+        "q21"
+      ]
+    },
+    "guardrail": {
+      "fired": 10,
+      "patterns": {
+        "two citations in one bracket": 3,
+        "passage number as source": 3,
+        "location finer than the stored one": 2,
+        "two locations after one source": 1,
+        "no citations (refusal without the exact phrase)": 2
+      },
+      "by_question": {
+        "q01": [
+          "two citations in one bracket"
+        ],
+        "q04": [
+          "passage number as source"
+        ],
+        "q05": [
+          "two citations in one bracket"
+        ],
+        "q14": [
+          "passage number as source"
+        ],
+        "q17": [
+          "location finer than the stored one",
+          "two citations in one bracket"
+        ],
+        "q21": [
+          "passage number as source"
+        ],
+        "q25": [
+          "location finer than the stored one"
+        ],
+        "q28": [
+          "two locations after one source"
+        ],
+        "q29": [
+          "no citations (refusal without the exact phrase)"
+        ],
+        "q31": [
+          "no citations (refusal without the exact phrase)"
+        ]
+      }
+    },
+    "searches": {
+      "requested": 38,
+      "blocked": 1,
+      "executed": 37
+    },
+    "tokens": {
+      "mean": 4367,
+      "median": 3294.0,
+      "mean_input": 4057,
+      "mean_output": 310
+    },
+    "seconds": {
+      "mean": 55.6,
+      "median": 15.3,
+      "mean_without_runs_over_100s": 21.9,
+      "runs_over": [
+        "q03",
+        "q04",
+        "q10"
+      ]
+    },
+    "cost_paid_tier": {
+      "usd_per_question_agent": 0.001479,
+      "usd_per_question_query_embeddings_max": 3.3e-06,
+      "eur_per_question": 0.001348,
+      "eur_per_1000_questions": 1.35,
+      "usd_per_eur": 1.099
+    },
+    "agent_retrieval": {
+      "answerable": 26,
+      "any_expected": 25,
+      "all_expected": 22,
+      "multi_with_all_expected": [
+        "q22",
+        "q24",
+        "q25"
+      ],
+      "missed_an_expected_passage": [
+        "q04",
+        "q21",
+        "q23",
+        "q26"
+      ],
+      "missed_every_expected_passage": [
+        "q04"
+      ]
+    }
+  }
+}

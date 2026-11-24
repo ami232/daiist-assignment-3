@@ -1,0 +1,26 @@
+{"id": "q01", "correct": 1, "supported": 1, "reason": "The assistant correctly identified the general rule and the specific exceptions provided in the reference passages, and all claims are supported by the provided text."}
+{"id": "q02", "correct": 1, "supported": 1, "reason": "The assistant accurately reflects the reference answer and all claims are fully supported by the provided passages."}
+{"id": "q03", "correct": 1, "supported": 1, "reason": "The assistant accurately reflects the registration requirements and location rules found in the provided passages."}
+{"id": "q04", "correct": 1, "supported": 1, "reason": "The assistant accurately reflects the rules provided in the reference answer and supports all claims with the provided passages."}
+{"id": "q05", "correct": 1, "supported": 1, "reason": "The assistant correctly identifies the 150-metre distance requirement and provides accurate citations from the provided passages."}
+{"id": "q06", "correct": 1, "supported": 1, "reason": "The assistant correctly identifies the five-year validity period and provides a citation that supports this claim."}
+{"id": "q07", "correct": 1, "supported": 1, "reason": "The assistant correctly identified the number of questions and the passing score, and all claims are directly supported by the provided passages."}
+{"id": "q08", "correct": 1, "supported": 1, "reason": "The assistant correctly identifies the requirement for a green flashing light and cites the regulation provided in the passages."}
+{"id": "q09", "correct": 1, "supported": 1, "reason": "The assistant correctly identified the mass and speed limits for a C0 drone based on the provided passages."}
+{"id": "q10", "correct": 1, "supported": 1, "reason": "The assistant correctly identified the MTOM limit and provided a citation that is present in the retrieved passages."}
+{"id": "q11", "correct": 1, "supported": 1, "reason": "The assistant accurately lists all required data points as specified in the provided passages and correctly cites the source."}
+{"id": "q12", "correct": 1, "supported": 1, "reason": "The assistant correctly identified the 10-year retention period and provided a citation that directly supports this claim."}
+{"id": "q13", "correct": 1, "supported": 1, "reason": "The assistant correctly identified the 2-year duration and accurately summarized the conditions for invalidity based on the provided passages."}
+{"id": "q14", "correct": 1, "supported": 1, "reason": "The assistant correctly identifies the core privilege and provides additional, accurate details supported by the provided passages."}
+{"id": "q15", "correct": 1, "supported": 1, "reason": "The assistant correctly identifies the conditions for flying drones without a class label based on the provided passages and accurately cites the source for each claim."}
+{"id": "q16", "correct": 1, "supported": 1, "reason": "The assistant correctly identified the ground speed limit and provided a citation that is present in the retrieved passages."}
+{"id": "q17", "correct": 1, "supported": 1, "reason": "The assistant accurately explains the reasoning for the derogation and the associated safety measures, with all claims directly supported by the provided passages."}
+{"id": "q18", "correct": 1, "supported": 1, "reason": "The assistant accurately reflects the rules regarding C0 drones in subcategory A1 and correctly cites the provided passages for every claim made."}
+{"id": "q19", "correct": 1, "supported": 1, "reason": "The assistant accurately describes the format of the proof of completion and the QR code requirement, with all information directly supported by the provided passages."}
+{"id": "q20", "correct": 1, "supported": 1, "reason": "The assistant correctly answers the question and provides additional relevant details that are all directly supported by the provided passages."}
+{"id": "q21", "correct": 1, "supported": 1, "reason": "The assistant correctly identifies the distance and speed requirements and ensures all claims are supported by the provided passages."}
+{"id": "q22", "correct": 1, "supported": 1, "reason": "The assistant accurately identified the training, examination, equipment, and validity requirements based on the provided passages."}
+{"id": "q23", "correct": 1, "supported": 1, "reason": "The assistant correctly identified the C5 class requirement and the speed limitation based on the provided passages."}
+{"id": "q24", "correct": 1, "supported": 1, "reason": "The assistant accurately outlines the certification steps and practical skills required, with all information directly supported by the provided passages."}
+{"id": "q25", "correct": 1, "supported": 1, "reason": "The assistant correctly identifies the registration requirement and the criteria for C1 classification while accurately citing the provided passages."}
+{"id": "q26", "correct": 1, "supported": 1, "reason": "The assistant accurately provided the distance requirements and operator responsibilities as specified in the reference answer and supported by the provided passages."}
