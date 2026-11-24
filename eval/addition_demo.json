@@ -1,0 +1,200 @@
+{
+  "question": "Which lines of the PostgreSQL backup manifest are covered by its Manifest-Checksum field, and which hash algorithm does that field use?",
+  "before": {
+    "question": "Which lines of the PostgreSQL backup manifest are covered by its Manifest-Checksum field, and which hash algorithm does that field use?",
+    "answer": "The indexed documents do not establish an answer.",
+    "raw_answer": "Model call limits exceeded: run limit (5/5)",
+    "trace": [
+      {
+        "tool": "search",
+        "query": "backup manifest Manifest-Checksum algorithm lines",
+        "ids": [
+          "PG-ca8e95032f4b1d",
+          "PG-a223e5375e4ffd",
+          "PG-1b42e4613d2606",
+          "PG-4e4b30fb820879",
+          "PG-de06b4e623f795"
+        ]
+      },
+      {
+        "tool": "search",
+        "query": "backup manifest Manifest-Checksum format description",
+        "ids": [
+          "PG-ca8e95032f4b1d",
+          "PG-a223e5375e4ffd",
+          "PG-4e4b30fb820879",
+          "PG-94f95c911627cd",
+          "PG-de06b4e623f795"
+        ]
+      },
+      {
+        "tool": "search",
+        "query": "backup_manifest \"Manifest-Checksum\" line contents",
+        "ids": [
+          "PG-4e4b30fb820879",
+          "PG-ca8e95032f4b1d",
+          "PG-a223e5375e4ffd",
+          "PG-30768147871551",
+          "PG-0a0cf701b67df1"
+        ]
+      },
+      {
+        "tool": "search",
+        "query": "backup_manifest file format section backup manifest contents",
+        "ids": [
+          "PG-a223e5375e4ffd",
+          "PG-4e4b30fb820879",
+          "PG-ca8e95032f4b1d",
+          "PG-de06b4e623f795",
+          "PG-94f95c911627cd"
+        ]
+      },
+      {
+        "tool": "search",
+        "query": "\"Manifest-Checksum\" backup_manifest",
+        "ids": [
+          "PG-ca8e95032f4b1d",
+          "PG-4e4b30fb820879",
+          "PG-0a0cf701b67df1",
+          "PG-a223e5375e4ffd",
+          "PG-94f95c911627cd"
+        ]
+      }
+    ],
+    "passages": [
+      {
+        "id": "PG-ca8e95032f4b1d",
+        "source": "pg_basebackup",
+        "location": "Options",
+        "url": "https://github.com/postgres/postgres/blob/REL_17_12/doc/src/sgml/ref/pg_basebackup.sgml#L132",
+        "text": "the checksum algorithm that should be applied to each file included in the backup manifest. Currently, the available algorithms are NONE, CRC32C, SHA224, SHA256, SHA384, and SHA512. The default is CRC32C. If NONE is selected, the backup manifest will not contain any checksums. Otherwise, it will contain a checksum of each file in the backup using the specified algorithm. In addition, the manifest will always contain a SHA256 checksum of its own contents. The SHA algorithms are significantly more CPU-intensive than CRC32C, so selecting one of them may increase the time required to complete the backup. Using a SHA hash function provides a cryptographically secure digest of each file for users who wish to verify that the backup has not been tampered with, while the CRC32C algorithm provides a checksum that is much faster to calculate; it is good at catching errors due to accidental changes but is not resistant to malicious modifications. Note that, to be useful against an adversary who has access to the backup, the backup manifest would need to be stored securely elsewhere or otherwise verified not to have been modified since the backup was taken. pg_verifybackup can be used to check the integrity of a backup against the backup manifest. --manifest-force-encode Forces all filenames in the backup manifest to be hex-encoded. If this option is not specified, only non-UTF8 filenames are hex-encoded. This option is mostly intended to test that tools which read a backup"
+      },
+      {
+        "id": "PG-a223e5375e4ffd",
+        "source": "pg_combinebackup",
+        "location": "Options",
+        "url": "https://github.com/postgres/postgres/blob/REL_17_12/doc/src/sgml/ref/pg_combinebackup.sgml#L69",
+        "text": "calculation. --manifest-checksums=algorithm Like pg_basebackup, pg_combinebackup writes a backup manifest in the output directory. This option specifies the checksum algorithm that should be applied to each file included in the backup manifest. Currently, the available algorithms are NONE, CRC32C, SHA224, SHA256, SHA384, and SHA512. The default is CRC32C. --no-manifest Disables generation of a backup manifest. If this option is not specified, a backup manifest for the reconstructed backup will be written to the output directory. --sync-method=method When set to fsync, which is the default, pg_combinebackup will recursively open and synchronize all files in the backup directory. When the plain format is used, the search for files will follow symbolic links for the WAL directory and each configured tablespace. On Linux, syncfs may be used instead to ask the operating system to synchronize the whole file system that contains the backup directory. When the plain format is used, pg_combinebackup will also synchronize the file systems that contain the WAL files and each tablespace. See recovery_init_sync_method for information about the caveats to be aware of when using syncfs. This option has no effect when --no-sync is used. -V --version Prints the pg_combinebackup version and exits. -? --help Shows help about pg_combinebackup command line arguments, and exits."
+      },
+      {
+        "id": "PG-1b42e4613d2606",
+        "source": "pg_basebackup",
+        "location": "Options",
+        "url": "https://github.com/postgres/postgres/blob/REL_17_12/doc/src/sgml/ref/pg_basebackup.sgml#L132",
+        "text": "time between the end of the base backup and the start of streaming replication on the new standby. The specified replication slot has to exist unless the option -C is also used. If this option is not specified and the server supports temporary replication slots (version 10 and later), then a temporary replication slot is automatically used for WAL streaming. --sync-method=method When set to fsync, which is the default, pg_basebackup will recursively open and synchronize all files in the backup directory. When the plain format is used, the search for files will follow symbolic links for the WAL directory and each configured tablespace. On Linux, syncfs may be used instead to ask the operating system to synchronize the whole file system that contains the backup directory. When the plain format is used, pg_basebackup will also synchronize the file systems that contain the WAL files and each tablespace. See recovery_init_sync_method for information about the caveats to be aware of when using syncfs. This option has no effect when --no-sync is used. -v --verbose Enables verbose mode. Will output some extra steps during startup and shutdown, as well as show the exact file name that is currently being processed if progress reporting is also enabled. --manifest-checksums=algorithm Specifies the checksum algorithm that should be applied to each file included in the backup manifest. Currently, the available algorithms are NONE, CRC32C, SHA224, SHA256, SHA384, and SHA512. The default is CRC32C. If NONE is selected,"
+      },
+      {
+        "id": "PG-4e4b30fb820879",
+        "source": "pg_verifybackup",
+        "location": "Description",
+        "url": "https://github.com/postgres/postgres/blob/REL_17_12/doc/src/sgml/ref/pg_verifybackup.sgml#L30",
+        "text": "to send, with some exceptions that are described below. Extra and missing files will be detected, with a few exceptions. This step will ignore the presence or absence of, or any modifications to, postgresql.auto.conf, standby.signal, and recovery.signal, because it is expected that these files may have been created or modified as part of the process of taking the backup. It also won't complain about a backup_manifest file in the target directory or about anything inside pg_wal, even though these files won't be listed in the backup manifest. Only files are checked; the presence or absence of directories is not verified, except indirectly: if a directory is missing, any files it should have contained will necessarily also be missing. Next, pg_verifybackup will checksum all the files, compare the checksums against the values in the manifest, and emit errors for any files for which the computed checksum does not match the checksum stored in the manifest. This step is not performed for any files which produced errors in the previous step, since they are already known to have problems. Files which were ignored in the previous step are also ignored in this step. Finally, pg_verifybackup will use the manifest to verify that the write-ahead log records which will be needed to recover the backup are present and that they can be read and parsed. The backup_manifest contains information about which write-ahead log records will be needed, and pg_verifybackup will use that information"
+      },
+      {
+        "id": "PG-de06b4e623f795",
+        "source": "pg_basebackup",
+        "location": "Options",
+        "url": "https://github.com/postgres/postgres/blob/REL_17_12/doc/src/sgml/ref/pg_basebackup.sgml#L132",
+        "text": "--manifest-force-encode Forces all filenames in the backup manifest to be hex-encoded. If this option is not specified, only non-UTF8 filenames are hex-encoded. This option is mostly intended to test that tools which read a backup manifest file properly handle this case. --no-estimate-size Prevents the server from estimating the total amount of backup data that will be streamed, resulting in the backup_total column in the pg_stat_progress_basebackup view always being NULL. Without this option, the backup will start by estimating the total amount of data that will be streamed, and then go back and send the actual contents. This may make the backup take slightly longer, and in particular it will take longer before the first data is sent. This option is useful to avoid such estimation time if it's too long. This option is not allowed when using --progress. --no-manifest Disables generation of a backup manifest. If this option is not specified, the server will generate and send a backup manifest which can be verified using pg_verifybackup. The manifest is a list of every file present in the backup with the exception of any WAL files that may be included. It also stores the size, last modification time, and an optional checksum for each file. --no-slot Prevents the creation of a temporary replication slot for the backup. By default, if log streaming is selected but no slot name is given with the -S option, then a temporary replication slot is created"
+      },
+      {
+        "id": "PG-94f95c911627cd",
+        "source": "pg_verifybackup",
+        "location": "Description",
+        "url": "https://github.com/postgres/postgres/blob/REL_17_12/doc/src/sgml/ref/pg_verifybackup.sgml#L30",
+        "text": "pg_verifybackup is used to check the integrity of a database cluster backup taken using pg_basebackup against a backup_manifest generated by the server at the time of the backup. The backup must be stored in the \"plain\" format; a \"tar\" format backup can be checked after extracting it. It is important to note that the validation which is performed by pg_verifybackup does not and cannot include every check which will be performed by a running server when attempting to make use of the backup. Even if you use this tool, you should still perform test restores and verify that the resulting databases work as expected and that they appear to contain the correct data. However, pg_verifybackup can detect many problems that commonly occur due to storage problems or user error. Backup verification proceeds in four stages. First, pg_verifybackup reads the backup_manifest file. If that file does not exist, cannot be read, is malformed, fails to match the system identifier with pg_control of the backup directory or fails verification against its own internal checksum, pg_verifybackup will terminate with a fatal error. Second, pg_verifybackup will attempt to verify that the data files currently stored on disk are exactly the same as the data files which the server intended to send, with some exceptions that are described below. Extra and missing files will be detected, with a few exceptions. This step will ignore the presence or absence of, or any modifications to, postgresql.auto.conf, standby.signal,"
+      },
+      {
+        "id": "PG-30768147871551",
+        "source": "pg_verifybackup",
+        "location": "Options",
+        "url": "https://github.com/postgres/postgres/blob/REL_17_12/doc/src/sgml/ref/pg_verifybackup.sgml#L121",
+        "text": "pg_verifybackup accepts the following command-line arguments: -e --exit-on-error Exit as soon as a problem with the backup is detected. If this option is not specified, pg_verifybackup will continue checking the backup even after a problem has been detected, and will report all problems detected as errors. -i path --ignore=path Ignore the specified file or directory, which should be expressed as a relative path name, when comparing the list of data files actually present in the backup to those listed in the backup_manifest file. If a directory is specified, this option affects the entire subtree rooted at that location. Complaints about extra files, missing files, file size differences, or checksum mismatches will be suppressed if the relative path name matches the specified path name. This option can be specified multiple times. -m path --manifest-path=path Use the manifest file at the specified path, rather than one located in the root of the backup directory. -n --no-parse-wal Don't attempt to parse write-ahead log data that will be needed to recover from this backup. -P --progress Enable progress reporting. Turning this on will deliver a progress report while verifying checksums. This option cannot be used together with the option --quiet. -q --quiet Don't print anything when a backup is successfully verified. -s --skip-checksums Do not verify data file checksums. The presence or absence of files and the sizes of those files will still be checked. This is much faster, because the files themselves do"
+      },
+      {
+        "id": "PG-0a0cf701b67df1",
+        "source": "pg_verifybackup",
+        "location": "Examples",
+        "url": "https://github.com/postgres/postgres/blob/REL_17_12/doc/src/sgml/ref/pg_verifybackup.sgml#L263",
+        "text": "To create a base backup of the server at mydbserver and verify the integrity of the backup: $ pg_basebackup -h mydbserver -D /usr/local/pgsql/data $ pg_verifybackup /usr/local/pgsql/data To create a base backup of the server at mydbserver, move the manifest somewhere outside the backup directory, and verify the backup: $ pg_basebackup -h mydbserver -D /usr/local/pgsql/backup1234 $ mv /usr/local/pgsql/backup1234/backup_manifest /my/secure/location/backup_manifest.1234 $ pg_verifybackup -m /my/secure/location/backup_manifest.1234 /usr/local/pgsql/backup1234 To verify a backup while ignoring a file that was added manually to the backup directory, and also skipping checksum verification: $ pg_basebackup -h mydbserver -D /usr/local/pgsql/data $ edit /usr/local/pgsql/data/note.to.self $ pg_verifybackup --ignore=note.to.self --skip-checksums /usr/local/pgsql/data"
+      }
+    ],
+    "guardrail": "missing or unknown citation",
+    "model": "gemini-3.5-flash-lite",
+    "input_tokens": 21530,
+    "output_tokens": 107,
+    "seconds": 6.749
+  },
+  "addition": {
+    "source": "backup-manifest-format",
+    "status": "indexed",
+    "chunks": 1,
+    "new_vectors": 1
+  },
+  "repeat": {
+    "source": "backup-manifest-format",
+    "status": "already indexed",
+    "chunks": 1,
+    "new_vectors": 0
+  },
+  "after": {
+    "question": "Which lines of the PostgreSQL backup manifest are covered by its Manifest-Checksum field, and which hash algorithm does that field use?",
+    "answer": "The `Manifest-Checksum` field is located on the last line of the backup manifest file and covers all of the preceding lines [PG-02f23d6d53ab0b]. It uses the SHA256 hash algorithm [PG-02f23d6d53ab0b].",
+    "raw_answer": "The `Manifest-Checksum` field is located on the last line of the backup manifest file and covers all of the preceding lines [PG-02f23d6d53ab0b]. It uses the SHA256 hash algorithm [PG-02f23d6d53ab0b].",
+    "trace": [
+      {
+        "tool": "search",
+        "query": "backup manifest Manifest-Checksum hash algorithm lines",
+        "ids": [
+          "PG-02f23d6d53ab0b",
+          "PG-ca8e95032f4b1d",
+          "PG-a223e5375e4ffd",
+          "PG-de06b4e623f795",
+          "PG-1b42e4613d2606"
+        ]
+      }
+    ],
+    "passages": [
+      {
+        "id": "PG-02f23d6d53ab0b",
+        "source": "backup-manifest-format",
+        "location": "Manifest-Checksum",
+        "url": "backup-manifest-format.md",
+        "text": "This key is always present on the last line of the backup manifest file. The associated value is a SHA256 checksum of all the preceding lines. We use a fixed checksum method here to make it possible for clients to do incremental parsing of the manifest. While a SHA256 checksum is significantly more expensive than a CRC32C checksum, the manifest should normally be small enough that the extra computation won't matter very much. PostgreSQL 17.12, Backup Manifest Format. https://github.com/postgres/postgres/blob/REL_17_12/doc/src/sgml/backup-manifest.sgml#L86 Distributed under POSTGRESQL-LICENSE.txt."
+      },
+      {
+        "id": "PG-ca8e95032f4b1d",
+        "source": "pg_basebackup",
+        "location": "Options",
+        "url": "https://github.com/postgres/postgres/blob/REL_17_12/doc/src/sgml/ref/pg_basebackup.sgml#L132",
+        "text": "the checksum algorithm that should be applied to each file included in the backup manifest. Currently, the available algorithms are NONE, CRC32C, SHA224, SHA256, SHA384, and SHA512. The default is CRC32C. If NONE is selected, the backup manifest will not contain any checksums. Otherwise, it will contain a checksum of each file in the backup using the specified algorithm. In addition, the manifest will always contain a SHA256 checksum of its own contents. The SHA algorithms are significantly more CPU-intensive than CRC32C, so selecting one of them may increase the time required to complete the backup. Using a SHA hash function provides a cryptographically secure digest of each file for users who wish to verify that the backup has not been tampered with, while the CRC32C algorithm provides a checksum that is much faster to calculate; it is good at catching errors due to accidental changes but is not resistant to malicious modifications. Note that, to be useful against an adversary who has access to the backup, the backup manifest would need to be stored securely elsewhere or otherwise verified not to have been modified since the backup was taken. pg_verifybackup can be used to check the integrity of a backup against the backup manifest. --manifest-force-encode Forces all filenames in the backup manifest to be hex-encoded. If this option is not specified, only non-UTF8 filenames are hex-encoded. This option is mostly intended to test that tools which read a backup"
+      },
+      {
+        "id": "PG-a223e5375e4ffd",
+        "source": "pg_combinebackup",
+        "location": "Options",
+        "url": "https://github.com/postgres/postgres/blob/REL_17_12/doc/src/sgml/ref/pg_combinebackup.sgml#L69",
+        "text": "calculation. --manifest-checksums=algorithm Like pg_basebackup, pg_combinebackup writes a backup manifest in the output directory. This option specifies the checksum algorithm that should be applied to each file included in the backup manifest. Currently, the available algorithms are NONE, CRC32C, SHA224, SHA256, SHA384, and SHA512. The default is CRC32C. --no-manifest Disables generation of a backup manifest. If this option is not specified, a backup manifest for the reconstructed backup will be written to the output directory. --sync-method=method When set to fsync, which is the default, pg_combinebackup will recursively open and synchronize all files in the backup directory. When the plain format is used, the search for files will follow symbolic links for the WAL directory and each configured tablespace. On Linux, syncfs may be used instead to ask the operating system to synchronize the whole file system that contains the backup directory. When the plain format is used, pg_combinebackup will also synchronize the file systems that contain the WAL files and each tablespace. See recovery_init_sync_method for information about the caveats to be aware of when using syncfs. This option has no effect when --no-sync is used. -V --version Prints the pg_combinebackup version and exits. -? --help Shows help about pg_combinebackup command line arguments, and exits."
+      },
+      {
+        "id": "PG-de06b4e623f795",
+        "source": "pg_basebackup",
+        "location": "Options",
+        "url": "https://github.com/postgres/postgres/blob/REL_17_12/doc/src/sgml/ref/pg_basebackup.sgml#L132",
+        "text": "--manifest-force-encode Forces all filenames in the backup manifest to be hex-encoded. If this option is not specified, only non-UTF8 filenames are hex-encoded. This option is mostly intended to test that tools which read a backup manifest file properly handle this case. --no-estimate-size Prevents the server from estimating the total amount of backup data that will be streamed, resulting in the backup_total column in the pg_stat_progress_basebackup view always being NULL. Without this option, the backup will start by estimating the total amount of data that will be streamed, and then go back and send the actual contents. This may make the backup take slightly longer, and in particular it will take longer before the first data is sent. This option is useful to avoid such estimation time if it's too long. This option is not allowed when using --progress. --no-manifest Disables generation of a backup manifest. If this option is not specified, the server will generate and send a backup manifest which can be verified using pg_verifybackup. The manifest is a list of every file present in the backup with the exception of any WAL files that may be included. It also stores the size, last modification time, and an optional checksum for each file. --no-slot Prevents the creation of a temporary replication slot for the backup. By default, if log streaming is selected but no slot name is given with the -S option, then a temporary replication slot is created"
+      },
+      {
+        "id": "PG-1b42e4613d2606",
+        "source": "pg_basebackup",
+        "location": "Options",
+        "url": "https://github.com/postgres/postgres/blob/REL_17_12/doc/src/sgml/ref/pg_basebackup.sgml#L132",
+        "text": "time between the end of the base backup and the start of streaming replication on the new standby. The specified replication slot has to exist unless the option -C is also used. If this option is not specified and the server supports temporary replication slots (version 10 and later), then a temporary replication slot is automatically used for WAL streaming. --sync-method=method When set to fsync, which is the default, pg_basebackup will recursively open and synchronize all files in the backup directory. When the plain format is used, the search for files will follow symbolic links for the WAL directory and each configured tablespace. On Linux, syncfs may be used instead to ask the operating system to synchronize the whole file system that contains the backup directory. When the plain format is used, pg_basebackup will also synchronize the file systems that contain the WAL files and each tablespace. See recovery_init_sync_method for information about the caveats to be aware of when using syncfs. This option has no effect when --no-sync is used. -v --verbose Enables verbose mode. Will output some extra steps during startup and shutdown, as well as show the exact file name that is currently being processed if progress reporting is also enabled. --manifest-checksums=algorithm Specifies the checksum algorithm that should be applied to each file included in the backup manifest. Currently, the available algorithms are NONE, CRC32C, SHA224, SHA256, SHA384, and SHA512. The default is CRC32C. If NONE is selected,"
+      }
+    ],
+    "guardrail": null,
+    "model": "gemini-3.5-flash-lite",
+    "input_tokens": 2512,
+    "output_tokens": 89,
+    "seconds": 2.261
+  }
+}

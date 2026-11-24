@@ -1,0 +1,203 @@
+{
+  "n": 30,
+  "design": "hybrid",
+  "agent_model": "gemini-3.5-flash-lite",
+  "judge_model": "gemini-3.5-flash-lite",
+  "outcomes": {
+    "correct": 29,
+    "supported": 30,
+    "unsupported": 0,
+    "correct_refusals": 6,
+    "wrong_refusals": 0
+  },
+  "per_question": {
+    "q01": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q02": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": false,
+      "failure": null
+    },
+    "q03": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q04": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q05": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q06": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q07": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q08": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q09": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q10": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q11": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q12": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q13": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q14": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q15": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q16": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q17": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q18": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q19": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q20": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q21": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q22": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q23": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": "wrong answer from the right passage"
+    },
+    "q24": {
+      "refusal": false,
+      "valid_citations": true,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q25": {
+      "refusal": true,
+      "valid_citations": null,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q26": {
+      "refusal": true,
+      "valid_citations": null,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q27": {
+      "refusal": true,
+      "valid_citations": null,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q28": {
+      "refusal": true,
+      "valid_citations": null,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q29": {
+      "refusal": true,
+      "valid_citations": null,
+      "required_sections_found": true,
+      "failure": null
+    },
+    "q30": {
+      "refusal": true,
+      "valid_citations": null,
+      "required_sections_found": true,
+      "failure": null
+    }
+  },
+  "failures": {
+    "wrong answer from the right passage": 1
+  },
+  "mean_agent_cost": {
+    "input_tokens": 3675.4,
+    "output_tokens": 130.8,
+    "seconds": 7.723466666666666
+  }
+}

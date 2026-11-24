@@ -16,8 +16,6 @@ jobs:
   verify:
     runs-on: ubuntu-latest
     timeout-minutes: 20
-    env:
-      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
     steps:
       - name: Check out repo
         uses: actions/checkout@v4
@@ -31,4 +29,11 @@ jobs:
         run: uv sync
 
       - name: Run the submission self-check
-        run: uv run python check.py
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          # The checker's MCP subprocess reads .env because stdio filters its environment.
+          umask 077
+          trap 'rm -f -- .env' EXIT
+          printf 'GEMINI_API_KEY=%s\n' "$GEMINI_API_KEY" > .env
+          uv run python check.py

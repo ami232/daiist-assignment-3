@@ -1,0 +1,21 @@
+id,correct,supported,notes
+q01,0,1,"The refusal leaves the recovery decision unexplained. The team must supply its scope, but the manual can explain a single-database dump, cluster-wide roles and physical recovery with archived WAL. A bare refusal makes no technical claim to support."
+q02,1,1,"The cited passage describes a consistent snapshot at dump start, continued access and the exception for operations requiring an exclusive lock. That answers the question about customer reads and writes."
+q03,0,1,The delivered answer refuses. A retrieved passage explicitly identifies directory format as the only format for parallel dump creation. The refusal makes no technical claim.
+q04,1,1,The answer names psql and correctly specifies its default settings. Both points appear in the cited restore instructions.
+q07,0,1,The delivered answer refuses even though two retrieved passages identify pg_dumpall --globals-only. One also gives the short form -g. The refusal makes no technical claim.
+q08,1,0,Creating the required roles before restoring is correct. The citations cover the prerequisite and pg_dumpall --globals-only. The passage attached to the manual-script alternative does not identify the specific CREATE ROLE command.
+q09,1,0,The shutdown requirement for ordinary copying and the consistent-snapshot exception both match the source. The added claim about how pg_basebackup manages consistency and WAL has no supporting citation in the answer.
+q11,1,1,The first citation lists the standby settings and the primary’s full_page_writes requirement. The second explicitly says promotion during the backup makes it fail.
+q12,0,0,Using pg_combinebackup with the required earlier backups is correct. The answer misdescribes the backup’s contents as exclusively changed blocks. Its own citation limits that description to some files. Another retrieved passage explains that non-relation files are copied in full.
+q13,1,1,"The cited utility guide specifies oldest to newest, beginning with the full backup and ending with the desired incremental. The answer applies that ordering to the three incrementals in the question."
+q14,1,1,The passage explains why integrity verification has limits and recommends a test restore that checks database behavior and contents. The answer covers both parts.
+q15,1,1,The cited passage requires plain format for verification and explicitly permits checking a tar backup after extraction.
+q16,1,1,The citation confirms that receiving begins as WAL is generated. The question asks when receiving starts. The reference’s additional detail about flushing to disk is optional for that question.
+q20,1,0,Directory format and pg_dumpall --globals-only are correct. The first citation establishes the format but omits the specific -j flag. Another passage in the same search demonstrates -j and could support that instruction.
+q22,0,0,The two recovery decisions are correct. The explanation incorrectly says logical dumps are text-based SQL scripts. pg_dump also produces archive formats. The cited WAL passage explains the lack of physical recovery information and gives no basis for the text-only claim.
+q24,1,0,"The answer correctly says promotion fails the backup and a tar backup needs extraction. Its added instruction about relative layouts is too broad. The cited passages require the correct tablespace locations, which can be separate absolute paths."
+q25,1,1,"The approved data-loss target is a company policy. The retrieved passages cover replication and durability, and provide no billing-specific target. Refusal is appropriate."
+q28,1,1,A euro estimate needs the applicable price and projected WAL volume. Neither figure is supplied for this provider and deployment. The agent appropriately declines to invent an amount.
+q29,1,1,The manual covers failover mechanics. Naming an authorized engineer would require the company’s roster and approval policy. The refusal matches that gap.
+q30,1,1,Grade the original base index. The retrieved passages describe per-file checksums or manifest validation. They do not establish both the line coverage and the algorithm of the Manifest-Checksum field. The refusal is appropriate.

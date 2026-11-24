@@ -12,3 +12,6 @@ corpus/
 
 # Never commit your API key
 .env
+
+# Regenerable Gemini query embeddings and local experimentation
+.cache/
