@@ -223,9 +223,9 @@ def plot_retrieval(rows: list[dict]) -> None:
     ax.set_xticks(range(len(rows)))
     ax.set_xticklabels(labels)
     ax.set_ylim(0, 110)
-    ax.set_ylabel("answerable questions with the expected passage(s) in the top k (%)")
-    ax.set_title(f"Retrieval hit rate by chunking design and search mode (n={rows[0]['questions']})")
-    ax.legend(loc="lower right", frameon=False)
+    ax.set_ylabel("hit rate (%)")
+    ax.set_title(f"Expected passage(s) in the top k, {rows[0]['questions']} answerable questions", fontsize=11)
+    ax.legend(loc="upper center", bbox_to_anchor=(0.5, -0.16), ncol=3, frameon=False)
     for side in ("top", "right"):
         ax.spines[side].set_visible(False)
     fig.tight_layout()
