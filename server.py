@@ -34,6 +34,7 @@ def format_results(results: list[dict]) -> str:
         m = r["metadata"]
         blocks.append(
             f"[{n}] source_id: {m['doc_id']} | location: {m['location']} | similarity: {r['score']:.3f}\n"
+            f"sections: {m['locations']}\n"
             f"document: {m['source']}\n"
             f"url: {m['url']}\n"
             f"{r['text']}"
