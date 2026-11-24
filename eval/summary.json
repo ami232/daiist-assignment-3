@@ -67,17 +67,22 @@
     "q20": "cited but not retrieved: [ALLERGEN_NOTICE_2017, Section 3.6]",
     "q31": "the answer cites no source"
   },
-  "judged": 0,
-  "judge_correct": 0,
-  "judge_supported": 0,
-  "human_graded": 0,
-  "agree_correct": 0,
-  "kappa_correct": null,
-  "agree_supported": 0,
-  "kappa_supported": null,
-  "supported_graded": 0,
-  "disagreements": [],
+  "judged": 40,
+  "judge_correct": 37,
+  "judge_supported": 40,
+  "human_graded": 20,
+  "agree_correct": 20,
+  "kappa_correct": 1.0,
+  "agree_supported": 19,
+  "kappa_supported": 0.0,
+  "supported_graded": 20,
+  "disagreements": [
+    "q14"
+  ],
   "failures": {
+    "unsupported claim (answered an unanswerable question)": [
+      "q26"
+    ],
     "wrong refusal (guardrail blocked)": [
       "q20",
       "q31"

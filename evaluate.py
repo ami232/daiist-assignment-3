@@ -119,7 +119,10 @@ def evaluate_retrieval(questions: list[dict]) -> tuple[list[dict], dict]:
     for design in DESIGNS:
         col = index.collection(design)
         for q in answerable:
-            res = col.query(query_embeddings=[vectors[q["question"]]], n_results=max(KS), include=["metadatas"])
+            # Only the original corpus: a document added later with add_document goes into one
+            # design's collection only, which would make the comparison unfair.
+            res = col.query(query_embeddings=[vectors[q["question"]]], n_results=max(KS), include=["metadatas"],
+                            where={"source": {"$in": [d["source"] for d in index.DOCUMENTS]}})
             metas = res["metadatas"][0]
             row = {"id": q["id"], "kind": q["kind"], "design": design,
                    "expected": "; ".join(f"[{s}, {l}]" for s, l in q["expected"]),

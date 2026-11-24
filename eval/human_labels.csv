@@ -1,1 +1,21 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,1,1,
+q05,1,1,
+q06,1,1,
+q07,1,1,
+q08,1,1,
+q10,1,1,
+q12,1,1,
+q14,1,0,mentions spanish legislation outside the corpus
+q15,1,1,
+q16,1,1,
+q20,0,1,guardrail blocked a correct answer
+q23,1,1,
+q26,0,1,does not clarify that current authorization is unknown
+q29,1,1,
+q30,1,1,
+q31,0,1,"the model answered only ""5"" with no source; the guardrail blocked it"
+q33,1,1,
+q36,1,1,

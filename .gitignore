@@ -5,8 +5,9 @@ __pycache__/
 .ipynb_checkpoints/
 *.pyc
 
-# Documents downloaded by your index stage. Commit them only if their licence allows it.
-corpus/
+# Documents downloaded by your index stage are committed in corpus/: EUR-Lex allows reuse
+# with acknowledgement of the source, and EUR-Lex often blocks automated downloads, so a
+# fresh clone must not depend on downloading them.
 
 # Your index belongs in index/, committed. Your evaluation results belong in eval/, committed.
 

@@ -21,9 +21,12 @@ Hit = an expected passage is among the top k (for multi: at least one). Precise 
 - Citations valid (code check, model's own answer): 98% (39/40)
 - Answers that cite an expected passage: 97% (31/32)
 - Guardrail fired: 2 {'q20': 'cited but not retrieved: [ALLERGEN_NOTICE_2017, Section 3.6]', 'q31': 'the answer cites no source'}
+- Judge: correct 92% (37/40), supported 100% (40/40)
+- Agreement with your grades: correct 100% (20/20) (kappa 1.00), supported 95% (19/20) (kappa 0.00); disagreements: ['q14']
 
 ## Failures (automatic first guess; review them and spot bad test questions)
 
+- unsupported claim (answered an unanswerable question): 1 ['q26']
 - wrong refusal (guardrail blocked): 2 ['q20', 'q31']
 
 ## Cost and latency per question
