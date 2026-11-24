@@ -90,6 +90,77 @@ The weak spot is the multi questions. For the 7 multi questions, both needed pas
 
 *Your tools' descriptions, one search result, the subagent's instructions, one transcript from your editor.*
 
+### Tool descriptions
+
+These are the docstrings in `server.py`, which is the exact text the model reads when it decides which tool to use.
+
+**search(query)**
+
+```
+Search the official EIC Accelerator documents: the EIC Work Programme 2027,
+the EIC Accelerator Guide for Applicants and the EIC Fund Investment Guidelines.
+Use it for any question about EIC Accelerator funding: eligibility, grant and
+investment amounts, deadlines and cut-off dates, the application steps, evaluation
+and interviews, and how the EIC Fund invests.
+
+Returns the 5 most relevant passages, each with its document title and page number.
+Answer only from these passages and cite them as (document title, p. N). If none of
+them answers the question, search again with different words or say the documents
+do not cover it. For a question with two parts, search once for each part.
+```
+
+**add_document(path)**
+
+```
+Add a new PDF document to the searchable collection. Give the full path to a
+PDF file on this computer. The file is extracted, cleaned, cut into chunks, embedded
+and stored, so the search tool can find it straight away.
+
+If the document is already in the index (same file name, or one of the corpus
+documents), nothing is added: no duplicates and no embedding cost. Returns how many
+chunks were added.
+```
+
+I wrote the search description so the model knows what the documents cover, when to use the tool, and how to cite the results (document title and page). It also tells the model to search once for each part of a two-part question, because the retrieval comparison showed that one search usually only finds one half of a multi question. The add_document description says what the tool does and that a document already in the index is not added again, so there are no duplicates and no wasted embedding quota.
+
+### One search result
+
+Query (q13): "We've been rejected twice already. Is there a limit to how many times we can try again?" (texts shortened)
+
+```
+[1] EIC Work Programme 2027, p. 112 – ...Investment leverage: Does the proposal provide a convincing and real...
+[2] EIC Work Programme 2027, p. 82 – ...the EIC Fund will re-examine the due diligence once the defined milestone has been achieved...
+[3] EIC Work Programme 2027, p. 112 – ...an applicant may not apply again to the EIC STEP Scale Up or STEP Defence call under the Horizon Europe Framework Programme...
+[4] EIC Accelerator Guide for Applicants v6.0, p. 49 – ...Submission limits: After three unsuccessful submissions to the EIC Accelerator, which can be at any stage...
+[5] EIC Work Programme 2027, p. 31 – ...You will be informed about the outcome of the Stage 1 evaluation within 3 months...
+```
+
+The passage that answers the question (Guide p. 49) is in the results, but only at rank 4. Rank 3 is a very similar rule for a different call (STEP Scale Up), so the agent has to read carefully to pick the right one. This matches the retrieval numbers: the right page is usually somewhere in the top 5 (hit@5 = 0.97) but often not first (hit@1 = 0.55).
+
+### Subagent instructions
+
+The subagent is in `.claude/agents/corpus-researcher.md`. Its `tools:` line is `mcp__corpus__search`, so it can only use the search tool and cannot add documents. Its instructions:
+
+```
+You answer questions from startup founders about the EIC Accelerator, using only the
+official EIC documents in the corpus (EIC Work Programme 2027, EIC Accelerator Guide
+for Applicants, EIC Fund Investment Guidelines).
+
+How to work:
+1. Search the corpus with the search tool. Use only the search tool.
+2. If the question has two parts (for example a rule and an amount), search once for each part.
+3. If the first results do not answer the question, search once more with different words.
+4. Answer only from the passages the search returned. Do not use your own knowledge.
+
+How to reply:
+- A short, direct answer (a few sentences at most).
+- Cite every claim as (document title, p. N), using the title and page shown in the search results.
+- If the passages do not answer the question, reply: "The EIC documents I have do not cover this." Then say briefly what they do cover, if anything related. Never guess numbers, dates or rules.
+```
+
+### Transcript from my editor (Claude Code in VS Code)
+
+
 Use the corpus-researcher subagent to answer: We've been rejected twice already. Is there a limit to how many times we can try again?
 Agent:EIC resubmission limits
 IN
@@ -120,7 +191,7 @@ If you were rejected after the interview, you should also have received a Seal o
 
 To prevent duplicates and wasting embedding quota, when a document is already indexed it can't be added again. The 'add_document' tool responds that the document is already indexed to ensure the proper organization of information.
 
-In order to test out the 'add_document' tool, I chose an unasnwerable question that required extra information that was not originally included, and recorded the answer given by the agent before and after adding extra chunks to the index. The chosen question was Q35: “How much funding does the Spanish CDTI NEOTEC programme give to startups?”. Original documents contained information about the EU's EIC Accelerator, but this question was related to the Spanish CDTI NEOTEC programme which was not covered in the corpus. Due to this, the agent’s answer before adding the document was: "The EIC documents I have do not cover this. They do not contain information about the Spanish CDTI NEOTEC programme." I proceeded to download the NEOTEC official document (the NEOTEC 2026 call, a CDTI resolution of 6 April 2026, 43 pages, in Spanish) and saved it in the corpus folder. Then, a request was sent to the agent in order to index the information and I had to approve this action (human-in-the-loop) before it was embedded and ready to use. The document was added as 111 chunks, which took the index from 631 to 742 chunks. Once the new chunks were added, the same question was asked again and the response is now: 
+In order to test out the 'add_document' tool, I chose an unanswerable question that required extra information that was not originally included, and recorded the answer given by the agent before and after adding extra chunks to the index. The chosen question was Q35: “How much funding does the Spanish CDTI NEOTEC programme give to startups?”. Original documents contained information about the EU's EIC Accelerator, but this question was related to the Spanish CDTI NEOTEC programme which was not covered in the corpus. Due to this, the agent’s answer before adding the document was: "The EIC documents I have do not cover this. They do not contain information about the Spanish CDTI NEOTEC programme." I proceeded to download the NEOTEC official document (the NEOTEC 2026 call, a CDTI resolution of 6 April 2026, 43 pages, in Spanish) and saved it in the corpus folder. Then, a request was sent to the agent in order to index the information and I had to approve this action (human-in-the-loop) before it was embedded and ready to use. The document was added as 111 chunks, which took the index from 631 to 742 chunks. Once the new chunks were added, the same question was asked again and the response is now: 
 
 "Under the CDTI NEOTEC programme, the funding consists of grants with the following limits:
 
