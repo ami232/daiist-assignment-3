@@ -1,0 +1,29 @@
+{
+  "documents": {
+    "BOE-A-2015-11430": {
+      "title": "Estatuto de los Trabajadores (RDL 2/2015)",
+      "articles": 135,
+      "words": 54532
+    },
+    "BOE-A-1995-24292": {
+      "title": "Ley de Prevención de Riesgos Laborales (Ley 31/1995)",
+      "articles": 70,
+      "words": 19492
+    },
+    "BOE-A-2000-15060": {
+      "title": "Ley sobre Infracciones y Sanciones en el Orden Social (RDL 5/2000)",
+      "articles": 67,
+      "words": 24730
+    }
+  },
+  "designs": {
+    "article": {
+      "chunks": 429,
+      "stored": 429
+    },
+    "fixed": {
+      "chunks": 450,
+      "stored": 450
+    }
+  }
+}
