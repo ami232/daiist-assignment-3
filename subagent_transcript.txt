@@ -1,0 +1,106 @@
+ ▐▛███▛█   Claude Code v2.1.330
+▝▜██████▀  Opus 5.5 · Claude Enterprise
+ ▝▝   ▝▝   ~\Documents\Assigment_1_AI\daiist-assignment-3
+
+
+● Your organization may apply global configuration to Claude Code. These
+  settings are centrally managed by your IT administrator.
+
+> Use the corpus-researcher subagent to answer: Which company had the larger    
+  global workforce at the end of 2025, Ford or Tesla?                           
+
+● Please run /login · API Error: 401 OAuth access token is invalid.
+
+> /login 
+  ⎿  Login successful
+
+● corpus-researcher(Compare Ford vs Tesla workforce)
+  ⎿  Backgrounded agent (↓ to manage · ctrl+o to expand)
+
+● The corpus-researcher subagent is searching the Ford and Tesla 10-Ks now. I'll
+  post its answer, with citations, when it finishes.
+
+✻ Brewed for 1m 33s · done 18:14
+
+› Message from corpus-researcher
+  Ford had the larger workforce at the end of 2025. Ford reported about 169
+  thousand employees and Tesla reported 134,785. The two figures are counted
+  differently, so the comparison is approximate (see the scope notes below).
+
+  - **Ford:** "The approximate number of individuals employed by us and entities
+  that we consolidated as of December 31" is 169 thousand in total for 2025,
+  down from 171 thousand in 2024 [ford_10k_fy2025, Item 1, p. 17]. The 2025
+  total is made up of:
+    - United States: 87 thousand
+    - Rest of World: 76 thousand
+    - Ford Credit: 6 thousand
+    - Company excluding Ford Credit: 163 thousand [ford_10k_fy2025, Item 1, p.
+  17].
+  - **Tesla:** "As of December 31, 2025, our employee headcount worldwide was
+  134,785" [tesla_10k_fy2025, Item 1, p. 11].
+
+  **Scope notes:**
+  - **Ford:** the figure is approximate and rounded to thousands. It covers Ford
+  and the entities it consolidates, including Ford Credit. Joint ventures that
+  Ford does not consolidate are not included. The report does not say whether
+  the count is full-time only [ford_10k_fy2025, Item 1, p. 17].
+  - **Tesla:** the figure is an exact "employee headcount worldwide". The
+  passage does not say whether it is full-time only or how subsidiaries are
+  treated [tesla_10k_fy2025, Item 1, p. 11].
+  - **Both:** the as-of date is December 31, 2025 for both companies.
+
+  **Difference:** about 169,000 − 134,785 = about 34,215 more employees at Ford.
+  Using Ford excluding Ford Credit, the gap is about 163,000 − 134,785 = about
+  28,215 (own calculation from the cited figures). Because Ford's figure is
+  rounded, read these differences as approximate, to the nearest thousand.
+
+  Not asked, but the same search also returned GM: about 155 thousand worldwide
+  at December 31, 2025 [gm_10k_fy2025, Item 1, p. 7].
+
+● Ford had the larger workforce at the end of 2025: about 169 thousand
+  employees, against Tesla's 134,785.
+
+  ┌─────────────────────────┬────────────────────┬─────────────────────────┐
+  │                         │ Employees at Dec   │         Source          │
+  │                         │      31, 2025      │                         │
+  ├─────────────────────────┼────────────────────┼─────────────────────────┤
+  │ Ford (with the entities │ ~169 thousand      │ [ford_10k_fy2025, Item  │
+  │  it consolidates)       │ (2024: ~171        │ 1, p. 17]               │
+  │                         │ thousand)          │                         │
+  ├─────────────────────────┼────────────────────┼─────────────────────────┤
+  │ – United States         │ ~87 thousand       │ [ford_10k_fy2025, Item  │
+  │                         │                    │ 1, p. 17]               │
+  ├─────────────────────────┼────────────────────┼─────────────────────────┤
+  │ – Rest of World         │ ~76 thousand       │ [ford_10k_fy2025, Item  │
+  │                         │                    │ 1, p. 17]               │
+  ├─────────────────────────┼────────────────────┼─────────────────────────┤
+  │ – Ford Credit           │ ~6 thousand        │ [ford_10k_fy2025, Item  │
+  │                         │                    │ 1, p. 17]               │
+  ├─────────────────────────┼────────────────────┼─────────────────────────┤
+  │ – Ford excluding Ford   │ ~163 thousand      │ [ford_10k_fy2025, Item  │
+  │ Credit                  │                    │ 1, p. 17]               │
+  ├─────────────────────────┼────────────────────┼─────────────────────────┤
+  │ Tesla (worldwide        │ 134,785            │ [tesla_10k_fy2025, Item │
+  │ employee headcount)     │                    │  1, p. 11]              │
+  └─────────────────────────┴────────────────────┴─────────────────────────┘
+
+  How big the gap is: Ford had about 34,215 more people (169,000 − 134,785).
+  Leaving out Ford Credit, the gap is about 28,215 (163,000 − 134,785) (own
+  calculation from the cited figures). Ford rounds its figure to the nearest
+  thousand, so both gaps are only good to about ±1,000.
+
+  The two counts aren't measured the same way:
+  - Ford gives an approximate number of "individuals employed by us and entities
+    that we consolidated." It includes Ford Credit and leaves out joint
+    ventures Ford doesn't consolidate. It doesn't say whether the count is
+    full-time only.
+  - Tesla gives an exact "employee headcount worldwide." It doesn't say whether
+    the count is full-time only or how subsidiaries are treated.
+  - Neither difference is large enough to change which company is bigger.
+
+  The same search also returned General Motors: about 155 thousand employees
+  worldwide at December 31, 2025 [gm_10k_fy2025, Item 1, p. 7].
+
+✻ Crunched for 7s · done 18:14
+
+● Agent "Compare Ford vs Tesla workforce" finished · 14s

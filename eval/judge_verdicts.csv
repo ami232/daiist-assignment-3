@@ -1,0 +1,33 @@
+id,rubric,correct,supported,reason
+q01,6ebd9145,1,1,"The assistant correctly states that Ford employed approximately 169,000 people worldwide at the end of 2025, matching the reference answer and fully supported by the retrieved passages."
+q02,6ebd9145,1,1,"The assistant correctly provided the total global wholesale vehicle volume for Ford in 2025, supported by the retrieved passages, and appropriately included relevant regional breakdown details."
+q03,6ebd9145,1,1,The assistant correctly states that Ford captured 13.2% of the U.S. automotive market in 2025 and provides fully supported details from the retrieved passages.
+q04,6ebd9145,1,1,"The assistant correctly identifies Ford Credit's primary business activity as vehicle-related financing and leasing, matching the reference answer and fully supported by the retrieved passages."
+q05,6ebd9145,1,1,"The assistant accurately identifies the structural market and regulatory factors slowing down Ford's EV business based on the text, and every point is directly supported by the retrieved passages."
+q06,6ebd9145,1,1,"The assistant correctly states that Ford's gross tariff costs were about $3 billion and the net EBIT impact was about $2 billion, which matches both the reference answer and the retrieved passages."
+q07,6ebd9145,1,1,The assistant correctly states Ford's adjusted EBIT for 2025 and 2024 using figures directly supported by the retrieved passages.
+q08,6ebd9145,1,1,"The assistant accurately provides the exact number of manufacturing and parts facilities operated by GM in 2025, matching the reference answer and supported entirely by the retrieved evidence."
+q09,6ebd9145,1,1,"The assistant correctly stated that GM's OnStar service was available in more than 20 markets globally, matching the reference answer and supported by the retrieved passages."
+q10,6ebd9145,1,1,"The assistant correctly identifies the number of authorized dealerships and sales outlets for GM in 2025 by region and totals them correctly, matching the reference answer and supported by the retrieved passages."
+q11,6ebd9145,1,1,"The assistant correctly identified slower-than-anticipated consumer adoption of EVs as the key obstacle, and every statement is fully supported by the retrieved passages."
+q12,6ebd9145,1,1,"The assistant accurately and thoroughly answers how supplier disruptions could affect GM's automotive operations, and every statement is directly supported by the retrieved passages."
+q13,6ebd9145,1,1,"The assistant correctly provided GM's total net sales and revenue for fiscal year 2025 in millions and billions, matching the reference answer and supported by the retrieved passages."
+q14,6ebd9145,1,1,"The assistant correctly identified the two major cost pressures contributing to GMNA's lower adjusted EBIT in 2025, matching the reference answer, and every statement is fully supported by the retrieved passages."
+q15,6ebd9145,1,1,"The assistant accurately identifies Tesla's two reportable segments and provides the correct details for each, fully matching the reference answer and supported by the retrieved passages."
+q16,6ebd9145,1,1,"The assistant correctly identifies all five consumer vehicle models in Tesla's 2025 lineup, matching the reference answer, and every statement is fully supported by the provided text."
+q17,6ebd9145,1,1,"The assistant correctly provided Tesla's global employee count as of December 31, 2025, which matches the reference answer and is fully supported by the retrieved passages."
+q18,6ebd9145,1,1,"The assistant provides a thorough, accurate, and well-supported summary of the various factors and risks that could impede Tesla's vehicle and energy product production, directly matching the evidence in the retrieved passages."
+q19,6ebd9145,1,1,The assistant accurately details the cybersecurity threats identified by Tesla and fully matches the reference answer while being completely supported by the retrieved passages.
+q20,6ebd9145,1,1,"The assistant correctly answered both parts of the question with the exact figures from the reference answer, which are fully supported by the retrieved passages."
+q21,6ebd9145,1,1,The assistant correctly compares the tariff-related costs for both companies using precise figures from the text and accurately details the differences in their disclosures.
+q22,6ebd9145,1,1,"The assistant correctly identified that Ford had the larger workforce, provided the exact figures for both companies, and accurately calculated the difference based on the retrieved passages."
+q23,6ebd9145,1,1,"The assistant correctly provided the 2025 U.S. market shares for both GM and Ford along with the underlying figures from the retrieved passages, matching the reference answer."
+q24,6ebd9145,0,1,"The assistant failed to answer the second part of the question regarding the difference between the two companies' wholesale volumes, stating incorrectly that the corpus does not provide it when simple subtraction yields the figure."
+q25,6ebd9145,1,1,"The assistant correctly compares Ford's net loss of $8,182 million with GM's net income of $2,697 million for fiscal year 2025, and all figures are fully supported by the retrieved passages."
+q26,6ebd9145,1,1,"The assistant correctly answered that energy revenue growth did not offset the automotive and services decline, providing exact figures and drivers supported by the retrieved passages."
+q27,6ebd9145,1,1,The assistant correctly identified that Rivian is not covered in the provided corpus of reports and refrained from inventing an answer.
+q28,6ebd9145,1,1,"The assistant correctly identified that the provided corpus does not contain information on Lucid, matching the reference answer."
+q29,6ebd9145,1,1,"The assistant correctly identifies that the corpus does not cover Stellantis, matching the reference answer."
+q30,6ebd9145,1,1,"The assistant correctly identifies that the corpus contains FY 2025 data and 2026 guidance rather than actual Q1 2026 results, and supports this with a correct citation."
+q31,6ebd9145,1,1,The assistant correctly identifies that the Form 10-K does not disclose total CEO compensation for fiscal year 2025 and appropriately mentions the references to the CEO Performance Award found in the corpus.
+q32,6ebd9145,1,1,"The question is unanswerable from the corpus, and the assistant correctly recognizes this without inventing an answer."
