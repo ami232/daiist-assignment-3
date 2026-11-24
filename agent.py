@@ -9,7 +9,8 @@ AGENTS.md as system prompt. Guardrails (decisions in DECISIONS.md, section 12):
 2. Call limits: at most 3 searches and 6 model calls per question.
 3. Citation check: every (doc_id, p. N) in the answer must point to a page that
    a search returned for this question, and an answer with figures must cite
-   them. If not, the agent is asked once to fix its answer; if it still fails,
+   them (unless no search was made: then the answer reports an action, such as
+   add_document's result, not figures from the corpus). If not, the agent is asked once to fix its answer; if it still fails,
    the answer is blocked.
 
 For evaluate.py:
@@ -113,7 +114,10 @@ def check_citations(answer: str, trace: list[dict]) -> list[str]:
     for doc, page in parse_citations(answer):
         if not any(d == doc and p <= page <= e for d, p, e in pages):
             problems.append(f"({doc}, p. {page}) was not returned by any search for this question")
-    if not parse_citations(answer) and _FIGURE_RE.search(answer) and REFUSAL_START not in answer.lower():
+    searched = any(call["tool"] == "search" for call in trace)
+    # with no search, the answer reports an action (e.g. add_document's result), not corpus figures
+    if searched and not parse_citations(answer) and _FIGURE_RE.search(answer) \
+            and REFUSAL_START not in answer.lower():
         problems.append("the answer gives figures but cites no source")
     return problems
 

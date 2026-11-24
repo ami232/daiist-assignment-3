@@ -7,7 +7,7 @@ Hit = a top-k chunk from the expected document whose pages include the expected 
 | Design | n | hit@1 | hit@3 | hit@5 | words@1 | words@3 | words@5 |
 |---|---|---|---|---|---|---|---|
 | fixed | 26 | 58% | 69% | 81% | 150 | 450 | 750 |
-| structured | 26 | 77% | 88% | 100% | 196 | 585 | 984 |
+| structured | 26 | 77% | 88% | 100% | 196 | 584 | 984 |
 
 ## By question kind
 

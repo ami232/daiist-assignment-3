@@ -34,5 +34,16 @@
     "publisher": "IEA",
     "licence": "CC BY 4.0",
     "sha256": "722c7333e2100b2404f9fb9b25f693ec1670a6cbd54961a0ee45541cecc43db0"
+  },
+  "ECMU2026": {
+    "chunks": {
+      "structured": 44
+    },
+    "title": "Electric Car Markets in a Time of Uncertainty",
+    "year": 2026,
+    "file": "ElectricCarMarketsinaTimeofUncertainty.pdf",
+    "publisher": "IEA",
+    "licence": "CC BY 4.0",
+    "sha256": "4e7388e4d5e846fe5aceaee8f8650200dba702ad003ade48685849b75092f0ac"
   }
 }
