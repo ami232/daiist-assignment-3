@@ -1,0 +1,100 @@
+design,id,first_hit_rank,expected,top5
+vector,q01,1,1926-subpart-m|1926.501,1926-subpart-m|1926.501;1926-subpart-m|1926.501;1926-subpart-m|1926.501;1926-subpart-m|1926.502;1926-subpart-m|1926.501
+vector,q02,1,1926-subpart-m|1926.500,1926-subpart-m|1926.500;1926-subpart-m|1926.501;1926-subpart-m|1926.500;1926-subpart-m|1926.500;1926-subpart-m|appendix a to subpart m
+vector,q03,1,1926-subpart-m|1926.502,1926-subpart-m|1926.502;1926-subpart-l|1926.451;1926-subpart-m|1926.502;1926-subpart-m|appendix b to subpart m;1926-subpart-m|1926.502
+vector,q04,1,1926-subpart-m|1926.502,1926-subpart-m|1926.502;1926-subpart-m|appendix c to subpart m;1926-subpart-m|appendix c to subpart m;1926-subpart-m|1926.502;1926-subpart-m|1926.502
+vector,q05,1,1926-subpart-m|1926.502,1926-subpart-m|1926.502;1926-subpart-e|1926.105;1926-subpart-m|1926.502;1926-subpart-m|1926.502;1926-subpart-m|1926.502
+vector,q06,1,1926-subpart-m|1926.502,1926-subpart-m|1926.502;1926-subpart-e|1926.104;1926-subpart-m|appendix c to subpart m;1926-subpart-m|1926.502;1926-subpart-m|1926.502
+vector,q07,1,1926-subpart-m|1926.503,1926-subpart-m|1926.503;1926-subpart-m|1926.503;1926-subpart-m|1926.502;1926-subpart-m|1926.503;1926-subpart-m|1926.502
+vector,q08,1,1926-subpart-p|1926.651,1926-subpart-p|1926.651;1926-subpart-p|1926.651;1926-subpart-p|1926.651;1926-subpart-x|1926.1050;1926-subpart-p|1926.652
+vector,q09,1,1926-subpart-p|1926.651,1926-subpart-p|1926.651;1926-subpart-p|1926.651;1926-subpart-p|1926.651;1926-subpart-p|1926.651;1926-subpart-p|1926.651
+vector,q10,1,1926-subpart-p|1926.652,1926-subpart-p|1926.652;1926-subpart-p|1926.651;1926-subpart-p|1926.652;1926-subpart-p|1926.652;1926-subpart-p|1926.652
+vector,q11,1,1926-subpart-p|appendix b to subpart p,1926-subpart-p|appendix b to subpart p;1926-subpart-p|appendix b to subpart p;1926-subpart-p|1926.652;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix b to subpart p
+vector,q12,1,1926-subpart-p|appendix a to subpart p,1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p
+vector,q13,1,1926-subpart-l|1926.451,1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-l|(non-mandatory) appendix a to subpart l of part 1926—scaffol;1926-subpart-l|1926.451;1926-subpart-l|(non-mandatory) appendix a to subpart l of part 1926—scaffol
+vector,q14,1,1926-subpart-l|1926.451,1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-m|1926.501
+vector,q15,1,1926-subpart-l|1926.451,1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-l|(non-mandatory) appendix a to subpart l of part 1926—scaffol;1926-subpart-l|1926.451;1926-subpart-l|1926.451
+vector,q16,1,1926-subpart-l|1926.451,1926-subpart-l|1926.451;1926-subpart-l|1926.454;1926-subpart-l|1926.454;1926-subpart-l|(non-mandatory) appendix a to subpart l of part 1926—scaffol;1926-subpart-l|(non-mandatory) appendix a to subpart l of part 1926—scaffol
+vector,q17,1,1926-subpart-l|1926.451,1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-k|1926.403;1926-subpart-l|1926.451
+vector,q18,1,1926-subpart-x|1926.1053,1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-x|1926.1053
+vector,q19,1,1926-subpart-x|1926.1051,1926-subpart-x|1926.1051;1926-subpart-x|1926.1052;1926-subpart-x|1926.1052;1926-subpart-x|1926.1050;1926-subpart-x|1926.1050
+vector,q20,1,1926-subpart-x|1926.1053,1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-x|1926.1053
+vector,q21,1,1926-subpart-e|1926.100,1926-subpart-e|1926.100;1926-subpart-m|1926.501;1926-subpart-l|1926.451;1926-subpart-e|1926.95;1926-subpart-m|1926.502
+vector,q22,1,1926-subpart-q|1926.703,1926-subpart-q|1926.703;1926-subpart-q|1926.703;1926-subpart-q|1926.703;1926-subpart-q|1926.703;1926-subpart-q|1926.703
+vector,q23,1,1926-subpart-q|1926.706,1926-subpart-q|1926.706;1926-subpart-q|1926.700;1926-subpart-m|1926.502;1926-subpart-m|appendix e to subpart m;1926-subpart-m|1926.502
+vector,q24,2,1926-subpart-q|1926.701,1926-subpart-m|1926.501;1926-subpart-q|1926.701;1926-subpart-q|1926.703;1926-subpart-m|1926.502;1926-subpart-x|1926.1052
+vector,q25,1,1926-subpart-p|1926.651,1926-subpart-p|1926.651;1926-subpart-p|1926.652;1926-subpart-p|1926.651;1926-subpart-p|1926.651;1926-subpart-p|1926.650
+vector,q26,1,1926-subpart-k|1926.404,1926-subpart-k|1926.404;1926-subpart-k|1926.405;1926-subpart-k|1926.405;1926-subpart-k|1926.404;1926-subpart-k|1926.404
+vector,q27,1,1926-subpart-k|1926.416,1926-subpart-k|1926.416;1926-subpart-l|1926.451;1926-subpart-k|1926.403;1926-subpart-k|1926.403;1926-subpart-k|1926.403
+vector,q28,1,1926-subpart-m|1926.501;1926-subpart-m|1926.502,1926-subpart-m|1926.502;1926-subpart-m|1926.501;1926-subpart-m|1926.502;1926-subpart-m|1926.502;1926-subpart-m|appendix a to subpart m
+vector,q29,1,1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix b to subpart p,1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix b to subpart p
+vector,q30,1,1926-subpart-l|1926.451;1926-subpart-l|1926.454,1926-subpart-l|1926.454;1926-subpart-l|1926.454;1926-subpart-l|1926.451;1926-subpart-m|1926.503;1926-subpart-l|1926.451
+vector,q31,1,1926-subpart-m|1926.501;1926-subpart-x|1926.1053,1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-x|1926.1053
+vector,q32,1,1926-subpart-l|1926.451;1926-subpart-m|1926.502,1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-m|1926.502;1926-subpart-l|(non-mandatory) appendix a to subpart l of part 1926—scaffol
+vector,q33,1,1926-subpart-m|1926.501;1926-subpart-p|1926.651,1926-subpart-p|1926.651;1926-subpart-p|1926.651;1926-subpart-p|1926.651;1926-subpart-p|1926.651;1926-subpart-p|1926.651
+bm25,q01,1,1926-subpart-m|1926.501,1926-subpart-m|1926.501;1926-subpart-m|1926.501;1926-subpart-m|appendix e to subpart m;1926-subpart-m|appendix e to subpart m;1926-subpart-m|1926.500
+bm25,q02,3,1926-subpart-m|1926.500,1926-subpart-m|1926.501;1926-subpart-p|appendix b to subpart p;1926-subpart-m|1926.500;1926-subpart-p|appendix a to subpart p;1926-subpart-k|1926.404
+bm25,q03,1,1926-subpart-m|1926.502,1926-subpart-m|1926.502;1926-subpart-m|1926.502;1926-subpart-m|1926.502;1926-subpart-m|1926.501;1926-subpart-m|1926.500
+bm25,q04,3,1926-subpart-m|1926.502,1926-subpart-m|1926.500;1926-subpart-m|appendix c to subpart m;1926-subpart-m|1926.502;1926-subpart-m|appendix c to subpart m;1926-subpart-m|appendix e to subpart m
+bm25,q05,1,1926-subpart-m|1926.502,1926-subpart-m|1926.502;1926-subpart-e|1926.105;1926-subpart-m|1926.501;1926-subpart-m|appendix e to subpart m;1926-subpart-m|1926.501
+bm25,q06,4,1926-subpart-m|1926.502,1926-subpart-m|appendix c to subpart m;1926-subpart-m|appendix c to subpart m;1926-subpart-m|appendix c to subpart m;1926-subpart-m|1926.502;1926-subpart-m|appendix c to subpart m
+bm25,q07,1,1926-subpart-m|1926.503,1926-subpart-m|1926.503;1926-subpart-m|appendix e to subpart m;1926-subpart-m|1926.502;1926-subpart-m|1926.502;1926-subpart-m|appendix e to subpart m
+bm25,q08,4,1926-subpart-p|1926.651,1926-subpart-x|1926.1051;1926-subpart-p|appendix d to subpart p;1926-subpart-p|appendix c to subpart p;1926-subpart-p|1926.651;1926-subpart-x|1926.1050
+bm25,q09,,1926-subpart-p|1926.651,1926-subpart-p|appendix d to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix d to subpart p;1926-subpart-p|appendix b to subpart p
+bm25,q10,2,1926-subpart-p|1926.652,1926-subpart-p|1926.650;1926-subpart-p|1926.652;1926-subpart-p|1926.650;1926-subpart-p|appendix b to subpart p;1926-subpart-p|1926.650
+bm25,q11,1,1926-subpart-p|appendix b to subpart p,1926-subpart-p|appendix b to subpart p;1926-subpart-p|appendix b to subpart p;1926-subpart-p|appendix b to subpart p;1926-subpart-p|appendix b to subpart p;1926-subpart-p|1926.652
+bm25,q12,1,1926-subpart-p|appendix a to subpart p,1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p
+bm25,q13,1,1926-subpart-l|1926.451,1926-subpart-l|1926.451;1926-subpart-q|1926.703;1926-subpart-p|1926.652;1926-subpart-m|appendix c to subpart m;1926-subpart-m|appendix d to subpart m
+bm25,q14,4,1926-subpart-l|1926.451,1926-subpart-m|1926.501;1926-subpart-m|1926.501;1926-subpart-m|1926.501;1926-subpart-l|1926.451;1926-subpart-m|1926.501
+bm25,q15,1,1926-subpart-l|1926.451,1926-subpart-l|1926.451;1926-subpart-m|1926.500;1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-l|(non-mandatory) appendix a to subpart l of part 1926—scaffol
+bm25,q16,1,1926-subpart-l|1926.451,1926-subpart-l|1926.451;1926-subpart-m|appendix e to subpart m;1926-subpart-q|1926.703;1926-subpart-l|1926.452;1926-subpart-l|1926.451
+bm25,q17,1,1926-subpart-l|1926.451,1926-subpart-l|1926.451;1926-subpart-k|1926.404;1926-subpart-k|1926.404;1926-subpart-k|1926.404;1926-subpart-k|1926.449
+bm25,q18,1,1926-subpart-x|1926.1053,1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-x|1926.1050;1926-subpart-x|1926.1050;1926-subpart-l|1926.451
+bm25,q19,1,1926-subpart-x|1926.1051,1926-subpart-x|1926.1051;1926-subpart-x|1926.1050;1926-subpart-l|1926.451;1926-subpart-x|1926.1050;1926-subpart-x|1926.1050
+bm25,q20,1,1926-subpart-x|1926.1053,1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-m|appendix c to subpart m;1926-subpart-x|1926.1050
+bm25,q21,1,1926-subpart-e|1926.100,1926-subpart-e|1926.100;1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-m|1926.501;1926-subpart-l|1926.454
+bm25,q22,1,1926-subpart-q|1926.703,1926-subpart-q|1926.703;1926-subpart-q|1926.700;1926-subpart-q|1926.703;1926-subpart-q|1926.703;1926-subpart-q|1926.703
+bm25,q23,1,1926-subpart-q|1926.706,1926-subpart-q|1926.706;1926-subpart-q|1926.700;1926-subpart-m|appendix e to subpart m;1926-subpart-m|appendix e to subpart m;1926-subpart-m|appendix e to subpart m
+bm25,q24,1,1926-subpart-q|1926.701,1926-subpart-q|1926.701;1926-subpart-m|1926.501;1926-subpart-m|appendix e to subpart m;1926-subpart-m|appendix e to subpart m;1926-subpart-m|appendix e to subpart m
+bm25,q25,1,1926-subpart-p|1926.651,1926-subpart-p|1926.651;1926-subpart-p|1926.651;1926-subpart-p|1926.651;1926-subpart-p|1926.650;1926-subpart-p|1926.651
+bm25,q26,1,1926-subpart-k|1926.404,1926-subpart-k|1926.404;1926-subpart-k|1926.449;1926-subpart-k|1926.449;1926-subpart-k|1926.405;1926-subpart-k|1926.405
+bm25,q27,1,1926-subpart-k|1926.416,1926-subpart-k|1926.416;1926-subpart-k|1926.405;1926-subpart-k|1926.449;1926-subpart-m|appendix e to subpart m;1926-subpart-k|1926.449
+bm25,q28,1,1926-subpart-m|1926.501;1926-subpart-m|1926.502,1926-subpart-m|1926.501;1926-subpart-m|1926.502;1926-subpart-m|1926.502;1926-subpart-m|1926.502;1926-subpart-m|1926.500
+bm25,q29,1,1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix b to subpart p,1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix d to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p
+bm25,q30,,1926-subpart-l|1926.451;1926-subpart-l|1926.454,1926-subpart-m|appendix e to subpart m;1926-subpart-m|appendix e to subpart m;1926-subpart-m|appendix e to subpart m;1926-subpart-m|appendix e to subpart m;1926-subpart-k|1926.404
+bm25,q31,5,1926-subpart-m|1926.501;1926-subpart-x|1926.1053,1926-subpart-m|appendix e to subpart m;1926-subpart-k|1926.404;1926-subpart-m|appendix e to subpart m;1926-subpart-m|appendix e to subpart m;1926-subpart-m|1926.501
+bm25,q32,1,1926-subpart-l|1926.451;1926-subpart-m|1926.502,1926-subpart-m|1926.502;1926-subpart-l|1926.451;1926-subpart-m|1926.502;1926-subpart-l|1926.451;1926-subpart-m|1926.502
+bm25,q33,,1926-subpart-m|1926.501;1926-subpart-p|1926.651,1926-subpart-p|appendix d to subpart p;1926-subpart-p|appendix d to subpart p;1926-subpart-p|appendix c to subpart p;1926-subpart-p|appendix c to subpart p;1926-subpart-p|appendix c to subpart p
+hybrid,q01,1,1926-subpart-m|1926.501,1926-subpart-m|1926.501;1926-subpart-m|1926.501;1926-subpart-m|1926.501;1926-subpart-m|1926.501;1926-subpart-m|1926.502
+hybrid,q02,2,1926-subpart-m|1926.500,1926-subpart-m|1926.501;1926-subpart-m|1926.500;1926-subpart-p|appendix b to subpart p;1926-subpart-m|1926.500;1926-subpart-k|1926.404
+hybrid,q03,1,1926-subpart-m|1926.502,1926-subpart-m|1926.502;1926-subpart-m|1926.502;1926-subpart-m|1926.502;1926-subpart-l|1926.451;1926-subpart-l|1926.451
+hybrid,q04,1,1926-subpart-m|1926.502,1926-subpart-m|1926.502;1926-subpart-m|appendix c to subpart m;1926-subpart-m|appendix c to subpart m;1926-subpart-m|1926.500;1926-subpart-m|appendix c to subpart m
+hybrid,q05,1,1926-subpart-m|1926.502,1926-subpart-m|1926.502;1926-subpart-e|1926.105;1926-subpart-m|1926.502;1926-subpart-m|appendix e to subpart m;1926-subpart-m|1926.502
+hybrid,q06,1,1926-subpart-m|1926.502,1926-subpart-m|1926.502;1926-subpart-m|appendix c to subpart m;1926-subpart-m|1926.502;1926-subpart-m|1926.502;1926-subpart-m|appendix c to subpart m
+hybrid,q07,1,1926-subpart-m|1926.503,1926-subpart-m|1926.503;1926-subpart-m|1926.502;1926-subpart-m|1926.503;1926-subpart-m|1926.502;1926-subpart-m|1926.503
+hybrid,q08,1,1926-subpart-p|1926.651,1926-subpart-p|1926.651;1926-subpart-x|1926.1051;1926-subpart-x|1926.1050;1926-subpart-x|1926.1050;1926-subpart-l|1926.451
+hybrid,q09,2,1926-subpart-p|1926.651,1926-subpart-p|appendix b to subpart p;1926-subpart-p|1926.651;1926-subpart-p|1926.651;1926-subpart-p|1926.651;1926-subpart-p|appendix b to subpart p
+hybrid,q10,1,1926-subpart-p|1926.652,1926-subpart-p|1926.652;1926-subpart-p|appendix b to subpart p;1926-subpart-p|1926.652;1926-subpart-p|1926.650;1926-subpart-p|1926.650
+hybrid,q11,1,1926-subpart-p|appendix b to subpart p,1926-subpart-p|appendix b to subpart p;1926-subpart-p|appendix b to subpart p;1926-subpart-p|1926.652;1926-subpart-p|appendix b to subpart p;1926-subpart-p|appendix b to subpart p
+hybrid,q12,1,1926-subpart-p|appendix a to subpart p,1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p
+hybrid,q13,1,1926-subpart-l|1926.451,1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-l|1926.451
+hybrid,q14,1,1926-subpart-l|1926.451,1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-m|1926.501;1926-subpart-m|1926.501;1926-subpart-m|1926.501
+hybrid,q15,1,1926-subpart-l|1926.451,1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-l|1926.452;1926-subpart-l|(non-mandatory) appendix a to subpart l of part 1926—scaffol
+hybrid,q16,1,1926-subpart-l|1926.451,1926-subpart-l|1926.451;1926-subpart-l|1926.454;1926-subpart-l|1926.452;1926-subpart-l|1926.451;1926-subpart-l|1926.451
+hybrid,q17,1,1926-subpart-l|1926.451,1926-subpart-l|1926.451;1926-subpart-l|1926.451;1926-subpart-k|1926.404;1926-subpart-k|1926.416;1926-subpart-k|1926.403
+hybrid,q18,1,1926-subpart-x|1926.1053,1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-x|1926.1050;1926-subpart-x|1926.1053;1926-subpart-x|1926.1053
+hybrid,q19,1,1926-subpart-x|1926.1051,1926-subpart-x|1926.1051;1926-subpart-x|1926.1050;1926-subpart-x|1926.1050;1926-subpart-l|1926.451;1926-subpart-x|1926.1050
+hybrid,q20,1,1926-subpart-x|1926.1053,1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-x|appendix a to subpart x;1926-subpart-x|1926.1050
+hybrid,q21,1,1926-subpart-e|1926.100,1926-subpart-e|1926.100;1926-subpart-l|1926.451;1926-subpart-m|1926.501;1926-subpart-m|1926.502;1926-subpart-m|1926.502
+hybrid,q22,1,1926-subpart-q|1926.703,1926-subpart-q|1926.703;1926-subpart-q|1926.703;1926-subpart-q|1926.703;1926-subpart-q|1926.700;1926-subpart-q|1926.703
+hybrid,q23,1,1926-subpart-q|1926.706,1926-subpart-q|1926.706;1926-subpart-q|1926.700;1926-subpart-m|appendix e to subpart m;1926-subpart-m|1926.502;1926-subpart-m|appendix e to subpart m
+hybrid,q24,2,1926-subpart-q|1926.701,1926-subpart-m|1926.501;1926-subpart-q|1926.701;1926-subpart-q|1926.703;1926-subpart-m|appendix e to subpart m;1926-subpart-m|appendix e to subpart m
+hybrid,q25,1,1926-subpart-p|1926.651,1926-subpart-p|1926.651;1926-subpart-p|1926.651;1926-subpart-p|1926.652;1926-subpart-p|1926.651;1926-subpart-p|1926.650
+hybrid,q26,1,1926-subpart-k|1926.404,1926-subpart-k|1926.404;1926-subpart-k|1926.405;1926-subpart-k|1926.405;1926-subpart-k|1926.449;1926-subpart-k|1926.404
+hybrid,q27,1,1926-subpart-k|1926.416,1926-subpart-k|1926.416;1926-subpart-k|1926.417;1926-subpart-k|1926.408;1926-subpart-k|1926.408;1926-subpart-k|1926.400
+hybrid,q28,1,1926-subpart-m|1926.501;1926-subpart-m|1926.502,1926-subpart-m|1926.501;1926-subpart-m|1926.502;1926-subpart-m|1926.502;1926-subpart-m|1926.502;1926-subpart-m|1926.500
+hybrid,q29,1,1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix b to subpart p,1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix a to subpart p;1926-subpart-p|appendix d to subpart p
+hybrid,q30,1,1926-subpart-l|1926.451;1926-subpart-l|1926.454,1926-subpart-l|1926.454;1926-subpart-m|appendix e to subpart m;1926-subpart-l|(non-mandatory) appendix d to subpart l of part 1926—list of;1926-subpart-l|1926.451;1926-subpart-m|1926.501
+hybrid,q31,1,1926-subpart-m|1926.501;1926-subpart-x|1926.1053,1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-x|1926.1053;1926-subpart-m|1926.501;1926-subpart-l|1926.451
+hybrid,q32,1,1926-subpart-l|1926.451;1926-subpart-m|1926.502,1926-subpart-l|1926.451;1926-subpart-m|1926.502;1926-subpart-l|1926.451;1926-subpart-m|1926.502;1926-subpart-m|appendix b to subpart m
+hybrid,q33,1,1926-subpart-m|1926.501;1926-subpart-p|1926.651,1926-subpart-p|1926.651;1926-subpart-p|1926.651;1926-subpart-m|1926.501;1926-subpart-p|1926.650;1926-subpart-p|1926.651

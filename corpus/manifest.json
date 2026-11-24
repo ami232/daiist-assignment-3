@@ -1,0 +1,65 @@
+[
+  {
+    "file": "1926-subpart-E.xml",
+    "subpart": "E",
+    "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-11-10/title-29.xml?part=1926&subpart=E",
+    "snapshot": "2026-11-10",
+    "sha256": "ea42a4f19b60b0bb7fa1ec2333cb2351709006097944bcafe522b2f3f8f37eee",
+    "words": 5232,
+    "chunks": 30
+  },
+  {
+    "file": "1926-subpart-K.xml",
+    "subpart": "K",
+    "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-11-10/title-29.xml?part=1926&subpart=K",
+    "snapshot": "2026-11-10",
+    "sha256": "27e37a5d88c5c48bcb8af6ada499d53621a44b7c2c8a60298f31dd12101b4375",
+    "words": 18731,
+    "chunks": 97
+  },
+  {
+    "file": "1926-subpart-L.xml",
+    "subpart": "L",
+    "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-11-10/title-29.xml?part=1926&subpart=L",
+    "snapshot": "2026-11-10",
+    "sha256": "e8f3caef0a4b7d0d83f5859040259e2d766e7ba7ce2bb63ee92ddf02a86573da",
+    "words": 20507,
+    "chunks": 107
+  },
+  {
+    "file": "1926-subpart-M.xml",
+    "subpart": "M",
+    "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-11-10/title-29.xml?part=1926&subpart=M",
+    "snapshot": "2026-11-10",
+    "sha256": "ecf2a15b4e302ba669e0bce8811bdb2612258386003b757858c08afd9f6aa831",
+    "words": 25706,
+    "chunks": 132
+  },
+  {
+    "file": "1926-subpart-P.xml",
+    "subpart": "P",
+    "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-11-10/title-29.xml?part=1926&subpart=P",
+    "snapshot": "2026-11-10",
+    "sha256": "0c2dfa30e0eb09a1822a59fbded5dfb51f543e09112101d2c7cce3cc3ef6a06a",
+    "words": 11395,
+    "chunks": 59
+  },
+  {
+    "file": "1926-subpart-Q.xml",
+    "subpart": "Q",
+    "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-11-10/title-29.xml?part=1926&subpart=Q",
+    "snapshot": "2026-11-10",
+    "sha256": "e57ef170de5e37f596bf9937499eac16bdf449129fec0c127ecc6e4ab741082e",
+    "words": 3625,
+    "chunks": 21
+  },
+  {
+    "file": "1926-subpart-X.xml",
+    "subpart": "X",
+    "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-11-10/title-29.xml?part=1926&subpart=X",
+    "snapshot": "2026-11-10",
+    "sha256": "efd422657f1a82cf96c62563b8b4c60db950bf16a046046376a2bc389ecffa9b",
+    "words": 5399,
+    "chunks": 28
+  }
+]

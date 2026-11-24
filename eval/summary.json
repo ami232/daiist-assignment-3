@@ -1,0 +1,47 @@
+{
+  "questions": 40,
+  "judged": 40,
+  "correct": 39,
+  "unsupported": 1,
+  "answerable_correct": 33,
+  "answerable": 33,
+  "correct_refusals": 7,
+  "unanswerable": 7,
+  "wrong_refusals": 0,
+  "answered_unanswerable": 0,
+  "invalid_citation_answers": 0,
+  "answers_with_numbers_not_in_evidence": 5,
+  "guardrail_fired": 2,
+  "expected_passage_retrieved": 33,
+  "avg_seconds": 26.8,
+  "avg_input_tokens": 6144,
+  "avg_output_tokens": 131,
+  "failure_causes": {
+    "refused, but added a detail from outside the evidence": 1
+  },
+  "human_agreement": {
+    "graded": 24,
+    "disagreements": [
+      {
+        "id": "q34",
+        "field": "correct",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "The answer is not supported because it cites section numbers and subparts that do not appear in the evidence.",
+        "human_note": "right to refuse but names 1926.760 from the model's own knowledge and not from retrieved text"
+      },
+      {
+        "id": "q35",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "The answer correctly identifies that the information is missing from the corpus and properly explains that the noise exposure table is in Subpart D, which is outside the provided text.",
+        "human_note": "right to refuse but names Table D-2 and 1926.52 from the model's own knowledge"
+      }
+    ],
+    "correct_agreement": 0.958,
+    "correct_kappa": 0.0,
+    "supported_agreement": 0.958,
+    "supported_kappa": 0.647
+  }
+}

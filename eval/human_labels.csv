@@ -1,1 +1,25 @@
 id,correct,supported,notes
+q01,1,1,
+q03,1,1,gives 42 in plus or minus 3 as in the reference
+q06,1,1,
+q11,1,1,1.5:1 for type C
+q15,1,1,"first answer said 9 inches, which was wrong. Fixed an indexing bug that split fractions, new answer says 9 1/2."
+q18,1,1,
+q20,1,1,extra one eighth rule for job made ladders is in the text
+q21,1,1,first draft cited labels not retrieved; the guardrail made it fix that
+q22,1,1,
+q25,1,1,
+q26,1,1,
+q28,1,1,
+q29,1,1,
+q30,1,1,
+q31,1,1,
+q32,1,1,
+q33,1,1,
+q34,1,0,right to refuse but names 1926.760 from the model's own knowledge and not from retrieved text
+q35,1,0,right to refuse but names Table D-2 and 1926.52 from the model's own knowledge
+q36,1,1,
+q37,1,1,
+q38,1,1,
+q39,1,1,
+q40,1,1,
