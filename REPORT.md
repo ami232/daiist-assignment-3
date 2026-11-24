@@ -65,7 +65,66 @@ I compared two ways of cutting the reports into chunks, using 28 answerable ques
 
 ## Tools and subagent
 
-*Your tools' descriptions, one search result, the subagent's instructions, one transcript from your editor.*
+**search(query, company=None, k=5).** Description: "Search the indexed company annual reports (Business, Risk Factors and Management's Discussion and Analysis of each report) and return the most relevant passages with citations. Use it for any question about a company's business, financial performance, risks or outlook. Pass `company` to search only that company's report; leave it empty to search all of them. `k` is the number of passages to return (1 to 10, default 5). [...] If no passage answers the question, the answer is not in the indexed reports: say so, do not guess. If the company asked about is not indexed, the tool says which companies are."
+
+**add_document(path, company=None).** Description: "Add one document to the index so that `search` can find it. Use it only when the user asks to add a company's annual report (a 10-K or 20-F saved as .htm or .html) or a plain text (.txt, .md) file. [...] The file goes through the same pipeline as the starter corpus: extract, clean, chunk, embed, store. If the same document is already indexed (identical text), nothing is embedded. If a document with the same file name is indexed but its text changed, its old passages are replaced by the new ones."
+
+**One search result.** Query: "What product categories does Apple list in its Business section?"
+
+```
+[1] Apple | apple-10k-2026 | Item 1. Business | similarity 0.76
+Company Background The Company designs, manufactures and markets smartphones, personal computers, tablets, wearables and accessories, and sells a variety of related services. [...]
+```
+
+**Subagent** (`.claude/agents/corpus-researcher.md`, tools: `mcp__corpus__search` only):
+
+```
+You answer questions about company annual reports using only the `search` tool.
+
+- Search before answering. For comparisons, search each company separately with the `company` filter.
+- Use only what the passages say. Cite each claim as (source, location).
+- If the passages do not answer the question, say "The indexed reports do not cover this." Do not guess.
+- Keep the answer short, with the numbers first.
+```
+
+**Why the subagent only has `search`.** The subagent only needs to read the reports, so I gave it only the `search` tool. `add_document` changes the index, so leaving it out means the subagent cannot alter the index even if it makes a mistake. The main agent can use `add_document`, but it has an approval step and a path check to control it. This follows the idea of giving each agent only the tools it needs.
+
+**Transcript from my editor** (Claude Code in the terminal, shortened with [...]).
+
+```
+> Use the corpus-researcher subagent to answer: What does NVIDIA say about export controls on its products?
+
+corpus-researcher (NVIDIA export controls research)
+  Backgrounded agent
+
+I've started the corpus-researcher subagent on the question. It's searching NVIDIA's
+indexed reports for passages on export controls, and I'll pass on its cited answer
+when it finishes.
+
+NVIDIA's FY2026 10-K says export controls have cost it billions and largely shut it
+out of China's data center market.
+
+Numbers
+- $4.5 billion charge in Q1 FY2026 for excess H20 inventory and purchase obligations.
+  It followed an April 2025 U.S. government rule requiring a license to export H20 to
+  China (including Hong Kong and Macau) and D:5 countries (nvidia-10k-2026, Item 1)
+  (nvidia-10k-2026, Item 7).
+- About $60 million in H20 revenue came from licenses granted in August 2025 for
+  certain China-based customers (nvidia-10k-2026, Item 1) (nvidia-10k-2026, Item 7).
+[...]
+
+Impact and risks
+- At the end of fiscal 2026, NVIDIA says it was "effectively foreclosed" from China's
+  data center compute market (nvidia-10k-2026, Item 1A).
+[...]
+
+These citations come from the corpus-researcher subagent's searches. I did not run
+the searches again myself.
+
+Agent "NVIDIA export controls research" finished (19s)
+```
+
+The subagent searched only the indexed reports, and every claim carries a (source, item) citation, as its instructions require.
 
 ## Adding a document
 
@@ -80,7 +139,13 @@ Afterwards I restored the original index so that the evaluation still treats thi
 
 ## Harness and guardrails
 
-*Your AGENTS.md rules, the approval step, and your extra guardrail with one case where it fired.*
+**A case where it fired.** I tested the guardrail on three paths. A path outside the project folder and a file type that is not allowed are both blocked, and a file inside the project is allowed:
+
+- `/etc/passwd` -> "Blocked: '/etc/passwd' is outside the project folder. Only files inside it can be added."
+- `notes.pdf` -> "Blocked: only .htm, .html, .txt, .md files can be added."
+- `corpus/apple-10k-2026.htm` -> allowed (no message)
+
+I ran this by calling the check directly, because the full agent run with the same request failed twice with a temporary Google "503 high demand" error. When the check blocks a path, the agent never asks for approval and never calls `add_document`.
 
 ## Evaluation
 
