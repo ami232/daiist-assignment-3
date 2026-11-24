@@ -1,0 +1,25 @@
+{
+  "questions": 30,
+  "answered": 30,
+  "outcomes": {
+    "correct": 23,
+    "incorrect": 1,
+    "correct refusal": 6
+  },
+  "guardrail_fired": [
+    "q28"
+  ],
+  "invalid_citations": [],
+  "agreement_with_you": {
+    "graded_by_you": 0,
+    "disagreements": []
+  },
+  "cost_per_question": {
+    "mean_tokens": 8729,
+    "mean_seconds": 176.2,
+    "mean_tool_calls": 1.77,
+    "judge_tokens_mean": 2929
+  },
+  "design": "section/vector",
+  "model": "gemini-flash-latest"
+}

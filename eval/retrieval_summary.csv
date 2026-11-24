@@ -1,0 +1,5 @@
+chunking,method,questions,hit@1,hit@3,hit@5,all_passages@1,all_passages@3,all_passages@5,words_in_prompt@1,words_in_prompt@3,words_in_prompt@5
+fixed,vector,24,0.625,0.833,0.917,0.542,0.792,0.833,200,599,999
+fixed,hybrid,24,0.708,0.875,0.917,0.625,0.833,0.833,199,599,999
+section,vector,24,0.833,0.875,0.958,0.708,0.833,0.875,224,615,968
+section,hybrid,24,0.75,0.875,0.958,0.667,0.833,0.875,232,687,1083
