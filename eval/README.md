@@ -30,8 +30,8 @@ Commit what your evaluation stage writes here too (answers, verdicts, summary).
 
 ## PostgreSQL project files
 
-Javier's first question is in questions.csv. The separate suggested_questions.csv contains 29 AI-written practice ideas. Each answerable suggestion includes source IDs and section names that match the index. After the index command, corpus/reading contains readable copies grouped by the same IDs. For multi-passage items, separate the source IDs and locations with semicolons in matching order, repeating the source ID if both sections belong to one document.
+The official questions.csv has 30 entries. Javier wrote q01 and adopted 29 suggestions drafted by Codex. The original suggestions are preserved in suggested_questions.csv. The numeric suffix gives the correspondence (for example, s03 became q03). After the index command, corpus/reading contains readable copies grouped by the same IDs. For multi-passage items, separate the source IDs and locations with semicolons in matching order, repeating the source ID if both sections belong to one document.
 
 For a starting point, compare s03 (parallel dump format), s21 (combining and verifying an incremental backup), and s26 (a company's measured restore time). They illustrate a direct lookup, a two-passage decision and an installation-specific question.
 
-After the student questions are ready, run the evaluation. Grade at least 20 saved answers using blind_review.md before opening judge.json. Enter both grades for each reviewed answer in human_labels.csv. Rerunning the evaluation with the same inputs uses the same saved answers and computes agreement on the graded IDs.
+Run the evaluation with the approved question set. Grade at least 20 saved answers using blind_review.md before opening judge.json. Enter both grades for each reviewed answer in human_labels.csv. Rerunning the evaluation with the same inputs uses the same saved answers and computes agreement on the graded IDs.

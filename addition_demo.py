@@ -13,7 +13,7 @@ from index import database
 
 
 async def main():
-    question = next(q["question"] for q in read_csv(EVAL / "suggested_questions.csv") if q["id"] == "s30")
+    question = next(q["question"] for q in read_csv(EVAL / "questions.csv") if q["id"] == "q30")
     held_out = EVAL / "held_out/backup-manifest-format.md"
     with tempfile.TemporaryDirectory() as folder:
         copied = Path(folder) / "experiment.db"

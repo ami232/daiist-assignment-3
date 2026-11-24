@@ -36,7 +36,9 @@ Each passage remains inside one of 109 source sections. A window contains up to 
 
 ## Test set
 
-Javier wrote the first two-passage question, about recovering one application or tenant versus recovering an entire cluster to a point in time. Its reference asks how the application is isolated and explains both recovery paths. The official [question file](eval/questions.csv) currently has one row. The [practice sheet](eval/suggested_questions.csv) contains 29 AI suggestions with source locations or a reason for refusal. The student-authored set is pending.
+The [evaluation set](eval/questions.csv) contains 18 single-passage questions, six two-passage questions and six unanswerable questions. Javier wrote q01 about choosing a recovery scope for one tenant or the whole cluster. Codex drafted q02–q30 and the reference answers, and Javier chose to use the recommendations. The brief calls for student-written questions. This set uses AI drafting for 29 of its 30 items.
+
+Question q21 requires the backup-combination instructions and the verification guidance together. Question q26 asks how long a specific company’s last restore drill took, which a general PostgreSQL manual cannot establish. The set was recorded before the retrieval comparison. Some topics, including q14 and q30, were used in earlier implementation checks.
 
 ## Retrieval
 
@@ -62,7 +64,7 @@ The [corpus-researcher profile](.claude/agents/corpus-researcher.md) grants sear
 
 The MCP add_document tool imports the same chunking, embedding and storage pipeline. An unchanged document is skipped. A changed additional document with the same source name atomically replaces its old passages. Names belonging to the pinned corpus are protected.
 
-The practice question asked which lines the Manifest-Checksum covers and which algorithm it uses. On a copy of the base index the agent refused. After adding a held-out excerpt from PostgreSQL's backup manifest specification, it identified all preceding lines and SHA256 and cited the new passage PG-02f23d6d53ab0b. The initial addition created one vector. The repeated addition created zero. The production index still contains only the original documents. This demonstration used an AI-suggested question. [Recorded answers and traces](eval/addition_demo.json)
+Question q30 asked which lines the Manifest-Checksum covers and which algorithm it uses. On a copy of the base index the agent refused. After adding a held-out excerpt from PostgreSQL's backup manifest specification, it identified all preceding lines and SHA256 and cited the new passage PG-02f23d6d53ab0b. The initial addition created one vector. The repeated addition created zero. The production index still contains only the original documents. This demonstration used an AI-suggested question. [Recorded answers and traces](eval/addition_demo.json)
 
 ## Harness and guardrails
 
@@ -76,4 +78,4 @@ The full evaluation, failure counts, mean token usage and latency, and agreement
 
 ## AI use
 
-Javier chose the PostgreSQL topic and supplied the first test question. Codex implemented the prototype, proposed the separate practice questions and prepared this report. Gemini supplied embeddings and agent responses. GitHub Copilot ran the search-only subagent. Student grading remains outstanding.
+Javier chose the PostgreSQL topic and supplied the first test question. Codex implemented the prototype, drafted the 29 additional questions Javier selected, and prepared the report. Gemini supplied embeddings and agent responses. GitHub Copilot ran the search-only subagent. Student grading remains outstanding.
