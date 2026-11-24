@@ -1,1 +1,21 @@
 id,correct,supported,notes
+q01,1,1,
+q04,1,1,
+q13,1,1,
+q14,1,1,
+q17,0,1,"Says 25% but the delay (2.5 h) is more than double the 1-hour threshold, so Article 19 gives 50%. The 25% is in the text, so it is supported but wrong."
+q18,1,1,
+q20,1,1,
+q22,1,1,
+q24,1,1,
+q25,0,0,"Says EUR 125, reference is EUR 250. Article 7(2) allows the 50% cut on flights of 1500 km or less only if the re-routed flight arrives at most 2 hours late; the claim 'between 2 and 4 hours' is not in the text for this distance."
+q26,1,1,
+q28,1,1,
+q29,1,1,
+q30,1,1,
+q31,1,1,
+q32,1,1,
+q02,1,1,
+q08,1,1,
+q11,1,1,
+q37,1,1,

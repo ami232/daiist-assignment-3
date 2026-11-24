@@ -1,0 +1,13 @@
+{
+  "question": "An airline lost my checked suitcase on a flight. What is the maximum compensation the airline must pay?",
+  "before": "The corpus does not cover this. The corpus covers rail passenger rights, including luggage rules under train regulations, but does not contain provisions for lost luggage on flights.",
+  "add_document_first_call": "Added 'air-liability-889-2002': 9 chunks embedded and stored. It can now be searched.",
+  "add_document_second_call": "'air-liability-889-2002' is already indexed (9 chunks). Nothing was changed.",
+  "after": "The air carrier is liable for the destruction, loss, or damage to baggage up to a limit of 1,000 SDRs (Special Drawing Rights) [air-liability-889-2002, Article 1]. Passengers can benefit from a higher liability limit by making a special declaration at the latest at check-in and by paying a supplementary fee [air-liability-889-2002, Article 1].",
+  "after_citations": [
+    [
+      "air-liability-889-2002",
+      "Article 1"
+    ]
+  ]
+}
