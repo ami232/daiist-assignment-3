@@ -1,0 +1,41 @@
+{"id": "q01", "correct": 1, "supported": 1, "reason": "The answer accurately provides the 72-hour deadline and conditions based on the retrieved text."}
+{"id": "q02", "correct": 0, "supported": 1, "reason": "The corpus directly covers the question in Article 8, making the assistant's refusal incorrect."}
+{"id": "q03", "correct": 1, "supported": 1, "reason": "The answer accurately lists all six legal bases for data processing as found in Article 6 of the GDPR."}
+{"id": "q04", "correct": 1, "supported": 1, "reason": "The answer accurately and comprehensively lists the elements of the right of access as stated in the retrieved text."}
+{"id": "q05", "correct": 1, "supported": 1, "reason": "The answer accurately matches the reference and is fully supported by the retrieved text."}
+{"id": "q06", "correct": 0, "supported": 1, "reason": "The corpus clearly covers the question in Article 37, so the refusal is incorrect."}
+{"id": "q07", "correct": 1, "supported": 1, "reason": "The answer accurately states the requirements of a data protection impact assessment as found in the retrieved text."}
+{"id": "q08", "correct": 1, "supported": 1, "reason": "The answer accurately explains the storage limitation principle based entirely on the provided text."}
+{"id": "q09", "correct": 1, "supported": 1, "reason": "The answer accurately and comprehensively states when a controller must communicate a data breach to data subjects and the exceptions, all fully supported by the retrieved text."}
+{"id": "q10", "correct": 1, "supported": 1, "reason": "The answer accurately and comprehensively lists the grounds for erasure and exceptions based on the retrieved text."}
+{"id": "q11", "correct": 0, "supported": 1, "reason": "The answer gives a refusal, but the retrieved text does contain the answer to the question under Article 45."}
+{"id": "q12", "correct": 0, "supported": 1, "reason": "The answer incorrectly claims the corpus does not cover the question, whereas Article 26 of the retrieved text explicitly answers it."}
+{"id": "q13", "correct": 1, "supported": 1, "reason": "The answer is fully correct and supported by the retrieved text."}
+{"id": "q14", "correct": 1, "supported": 1, "reason": "The answer accurately states the timeframes for answering a data subject request based on the provided GDPR text."}
+{"id": "q15", "correct": 1, "supported": 1, "reason": "The answer correctly defines personal data according to GDPR Article 4 and all claims are fully supported by the retrieved text."}
+{"id": "q16", "correct": 0, "supported": 1, "reason": "The retrieved text actually contains the answer in Section 3.3.2 (Doc 3), so the assistant incorrectly claimed the corpus does not cover it."}
+{"id": "q17", "correct": 1, "supported": 1, "reason": "The answer accurately states that data subjects can object to direct marketing at any time and that the data shall no longer be processed for such purposes, fully supported by the retrieved text."}
+{"id": "q20", "correct": 0, "supported": 1, "reason": "The corpus clearly covers bundling of consent and its problems, so the assistant's refusal is incorrect."}
+{"id": "q22", "correct": 1, "supported": 1, "reason": "The answer accurately states the EDPB's recommendation on refreshing consent and is fully supported by the retrieved text."}
+{"id": "q23", "correct": 1, "supported": 1, "reason": "The answer accurately and comprehensively explains when a controller becomes aware of a breach according to the EDPB, fully supported by the retrieved text."}
+{"id": "q24", "correct": 0, "supported": 1, "reason": "The corpus clearly covers the three types of personal data breaches (confidentiality, integrity, availability), so the assistant's refusal was incorrect."}
+{"id": "q25", "correct": 0, "supported": 1, "reason": "The provided text clearly states what a processor must do, so the question is answerable, making the refusal incorrect."}
+{"id": "q26", "correct": 1, "supported": 1, "reason": "The answer correctly addresses the question and is fully supported by the retrieved text."}
+{"id": "q27", "correct": 0, "supported": 1, "reason": "The corpus explicitly states that missing the deadline requires accompanying the notification with reasons for the delay, making the question answerable."}
+{"id": "q28", "correct": 1, "supported": 1, "reason": "The answer accurately identifies both entities to notify and the respective timelines based on the retrieved text."}
+{"id": "q30", "correct": 0, "supported": 1, "reason": "The corpus actually contains relevant information about children's consent and parental authorisation, so the refusal is incorrect."}
+{"id": "q31", "correct": 0, "supported": 1, "reason": "The answer gives a refusal, but the corpus actually contains the required information to answer the question."}
+{"id": "q32", "correct": 0, "supported": 1, "reason": "The corpus actually covers processor duties in detail in Section 4, so the assistant's refusal was incorrect."}
+{"id": "q35", "correct": 1, "supported": 1, "reason": "The assistant correctly recognized that the corpus does not contain the answer and refused accordingly."}
+{"id": "q36", "correct": 1, "supported": 1, "reason": "The assistant correctly stated that the corpus does not contain Spain's specific age of digital consent and properly refused."}
+{"id": "q37", "correct": 1, "supported": 1, "reason": "The assistant correctly refused to answer because the retrieved text does not contain step-by-step instructions for the Spanish AEPD."}
+{"id": "q38", "correct": 1, "supported": 1, "reason": "The assistant correctly identified that the corpus does not set a fixed period and provided supported context."}
+{"id": "q39", "correct": 1, "supported": 1, "reason": "The assistant correctly recognized that the corpus does not cover the EU AI Act and issued a proper refusal."}
+{"id": "q40", "correct": 1, "supported": 1, "reason": "The assistant correctly recognized that the corpus does not cover the question and issued a proper refusal."}
+{"id": "q41", "correct": 1, "supported": 1, "reason": "The assistant correctly identified that specific algorithms and key lengths are not in the corpus while accurately citing the general mentions."}
+{"id": "q19", "correct": 0, "supported": 1, "reason": "The corpus clearly covers the question, but the assistant incorrectly refused to answer."}
+{"id": "q21", "correct": 1, "supported": 1, "reason": "The answer accurately lists all minimum information requirements based directly on the retrieved text."}
+{"id": "q33", "correct": 0, "supported": 1, "reason": "The answer falsely claims the corpus does not cover the question, whereas the retrieved text contains all the required information."}
+{"id": "q34", "correct": 1, "supported": 1, "reason": "The answer accurately addresses how consent can be withdrawn and the consequences for past processing, fully aligned with the reference and supported by the retrieved text."}
+{"id": "q29", "correct": 0, "supported": 1, "reason": "The corpus clearly covers the question regarding the EDPB's interpretation of consent and contracts, making the refusal incorrect."}
+{"id": "q18", "correct": 1, "supported": 1, "reason": "The answer provides a complete and accurate breakdown of the information required in processing records for both controllers and processors based on Article 30."}

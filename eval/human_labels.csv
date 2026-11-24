@@ -1,1 +1,32 @@
 id,correct,supported,notes
+q01,1,1,
+q02,0,1,"Wrong refusal. The agent found Article 8 but the guardrail withdrew the answer because it cited a combined or page-style label that did not match a retrieved location."
+q05,1,1,
+q06,0,1,"Wrong refusal. Article 37 was retrieved but the guardrail withdrew the answer because of a combined citation [GDPR Article 37 plus EDPB p. 17-32]."
+q08,1,1,
+q11,0,1,"Wrong refusal. Article 45 was found but the guardrail rejected the citation Recital 103 (the retrieved label was a recital range)."
+q12,0,1,"Wrong refusal. Article 26 was found but the guardrail rejected the citation Recital 79 (the retrieved label was a recital range)."
+q13,1,1,
+q14,1,1,
+q15,1,1,
+q16,0,1,"Wrong refusal. The guardrail rejected page-style EDPB citations (p. 16-18) that do not match the section label."
+q17,1,1,
+q19,0,1,"Wrong refusal. The right EDPB section was retrieved but all citations were written as page numbers and the guardrail only accepts the section label."
+q20,0,1,"Wrong refusal. Same cause as q19: page-style citations were rejected."
+q22,1,1,
+q23,1,1,
+q24,0,1,"Wrong refusal. Page-style citations (p. 8) rejected by the guardrail."
+q25,0,1,"Wrong refusal. Combined and page-style citations rejected by the guardrail."
+q26,1,1,
+q27,0,1,"Wrong refusal. Combined citation [GDPR Article 33 and Recitals 85-86] rejected by the guardrail."
+q28,1,1,
+q30,0,1,"Wrong refusal. Page-style EDPB citations rejected by the guardrail."
+q31,0,1,"Wrong refusal. Page-style EDPB citations rejected by the guardrail."
+q32,0,1,"Wrong refusal. Page-style EDPB citations rejected by the guardrail."
+q35,1,1,
+q36,1,1,
+q37,1,1,
+q38,1,1,
+q39,1,1,
+q40,1,1,
+q41,1,0,"The refusal is right but the extra claim about state of the art algorithms cites p. 19 and p. 30 which are not valid retrieved locations, so it cannot be traced to a retrieved chunk."
