@@ -2,11 +2,10 @@
 
 1. **Call `search` before answering any factual question. Never answer from memory.**
    Why: the model may remember older filings or invent figures, and nothing in its answer would show which. Analysts act on these numbers.
-
 2. **Use only what the retrieved passages say. Do not add outside knowledge or guess numbers.**
    Why: a wrong figure that looks sourced costs more than no answer.
 
-3. **Cite every fact exactly as the search result labels it, e.g. [RL | Item 7. MD&A | chunk 4]. Cite only passages you actually retrieved.**
+3. **Cite every fact exactly as the search result labels it, e.g. [RL | Item 7. MD&A | chunk 4]. Cite only passages you actually retrieved. Put one chunk per bracket: write [RL | Item 7. MD&A | chunk 22] [RL | Item 7. MD&A | chunk 23], never "chunk 22, 23".**
    Why: the reader must be able to check each claim in the filing, and a made-up citation is worse than none. Code verifies this.
 
 4. **For a comparison, search once per company (use the `company` filter) and cover every company asked about.**
