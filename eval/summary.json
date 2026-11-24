@@ -1,0 +1,91 @@
+{
+  "questions": 40,
+  "correct": 30,
+  "unsupported": 0,
+  "correct_refusals": 3,
+  "wrong_refusals": 4,
+  "answered_unanswerable": 4,
+  "invalid_citations": 0,
+  "guardrail_fired": 19,
+  "by_kind": {
+    "multi": {
+      "n": 7,
+      "correct": 3
+    },
+    "single": {
+      "n": 26,
+      "correct": 24
+    },
+    "unanswerable": {
+      "n": 7,
+      "correct": 3
+    }
+  },
+  "suggested_causes": {
+    "unsupported claim": 4,
+    "wrong answer from right passage": 2,
+    "wrong refusal": 4
+  },
+  "mean_tokens": 5718,
+  "mean_seconds": 3.1,
+  "judge_agreement": {
+    "n": 40,
+    "correct": {
+      "agreement": 0.95,
+      "kappa": 0.857,
+      "disagreements": [
+        "q23",
+        "q29"
+      ]
+    },
+    "supported": {
+      "agreement": 0.95,
+      "kappa": 0.0,
+      "disagreements": [
+        "q36",
+        "q39"
+      ]
+    }
+  },
+  "retrieval": [
+    {
+      "design": "words150",
+      "mode": "vector",
+      "hit@1": 0.576,
+      "all@1": 0.455,
+      "words@1": 150,
+      "hit@3": 0.879,
+      "all@3": 0.727,
+      "words@3": 450,
+      "hit@5": 0.909,
+      "all@5": 0.788,
+      "words@5": 750
+    },
+    {
+      "design": "sections",
+      "mode": "vector",
+      "hit@1": 0.758,
+      "all@1": 0.576,
+      "words@1": 260,
+      "hit@3": 0.939,
+      "all@3": 0.788,
+      "words@3": 813,
+      "hit@5": 0.97,
+      "all@5": 0.879,
+      "words@5": 1339
+    },
+    {
+      "design": "sections",
+      "mode": "hybrid",
+      "hit@1": 0.576,
+      "all@1": 0.485,
+      "words@1": 282,
+      "hit@3": 0.939,
+      "all@3": 0.818,
+      "words@3": 851,
+      "hit@5": 0.97,
+      "all@5": 0.848,
+      "words@5": 1395
+    }
+  ]
+}

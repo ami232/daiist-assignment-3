@@ -1,0 +1,162 @@
+ ▐▛███▛█   Claude Code v2.1.330
+▝▜██████▀  Opus 5.5 · Claude Pro
+ ▝▝   ▝▝   /workspaces/daiist-assignment-3-EB
+
+▎ [✻] [✻] [✻] · Share Claude Code and earn $10 in usage credits · /passes
+
+❯ /mcp 
+  ⎿  MCP dialog dismissed
+
+❯ /agents                                                                       
+  ⎿  The /agents wizard has been removed.
+
+     Ask Claude to create or update subagents for you (e.g. "create a code-reviewer subagent that ..."),
+     or edit the files directly:
+       • .claude/agents/       (this project)
+       • ~/.claude/agents/     (all projects)
+
+     Docs: https://code.claude.com/docs/en/sub-agents
+
+❯ Which subagents are available in this project?                                
+
+  Read 1 file, listed 1 directory · 1 failed (ctrl+o to expand)
+
+● This project defines one subagent of its own, in
+  .claude/agents/corpus-researcher.md:
+
+  - corpus-researcher: answers questions about EU investment-services rules
+    using the indexed legal texts: MiFID II (Directive 2014/65/EU), the MiFID II
+    Delegated Regulation (EU) 2017/565, MiFIR (Regulation 600/2014) and the
+    PRIIPs Regulation (1286/2014).
+    - Tools: only mcp__corpus__search.
+    - Rules: it answers only from the search results and cites every claim with
+      the exact passage tag. If the corpus doesn't have the answer, it replies
+      The corpus does not cover this question. It also labels partial answers
+      and keeps replies short.
+    - What it doesn't cover: it notes that national law, supervisors' practice,
+      later amendments and other regulations (e.g. MiCA or the PRIIPs technical
+      standards) usually aren't in the corpus.
+
+  You have no user-level subagents in ~/.claude/agents/.
+
+  Claude Code also comes with these general agents: general-purpose, Explore,
+  Plan, claude-code-guide, statusline-setup, and a catch-all claude agent.
+
+✻ Baked for 8s · done 6:17 PM
+
+❯ Use the corpus-researcher subagent to answer: When must a suitability         
+  statement be given to a retail client?                                        
+
+● corpus-researcher(Suitability statement timing question)
+  ⎿  Backgrounded agent (↓ to manage · ctrl+o to expand)
+
+● The corpus-researcher subagent is now searching the corpus for this question.
+  I'll share its answer, with citations, as soon as it finishes.
+
+✻ Cooked for 5s · done 6:18 PM
+
+› Message from corpus-researcher
+  **Answer**
+
+  **Timing.** When a firm gives investment advice, it must give the client a
+  statement on suitability in a durable medium before the transaction is made.
+  The statement must set out the advice given and how that advice meets the
+  retail client's preferences, objectives and other characteristics [MiFID II |
+  Article 25 (Assessment of suitability and appropriateness and reporting to
+  clients), p. 62]. The Delegated Regulation also says the firm must give the
+  retail client a report outlining the advice and explaining how the
+  recommendation suits the client. That explanation covers the investment term
+  required, the client's knowledge and experience, the client's attitude to risk
+  and capacity for loss, and whether the client is likely to need a periodic
+  review [MiFID II Delegated Regulation | Article 54 (Assessment of suitability
+  and suitability reports), pp. 51-52]. Recital 83 asks firms to judge "in good
+  time" by the client's need for enough time to read and understand information
+  before deciding to invest [MiFID II | Recitals, p. 15].
+
+  **Distance communication exception.** Sometimes the agreement to buy or sell
+  is concluded by a means of distance communication that prevents giving the
+  statement beforehand. In that case the firm may give the written statement in
+  a durable medium immediately after the client is bound by any agreement, but
+  only if both of these conditions are met:
+  - (a) the client has agreed to receive the statement without undue delay after
+  the transaction is concluded; and
+  - (b) the firm has offered the client the option of delaying the transaction
+  to receive the statement in advance.
+
+  [MiFID II | Article 25 (Assessment of suitability and appropriateness and
+  reporting to clients), pp. 62-63]
+
+  **Periodic suitability.**
+  - Where a firm provides portfolio management, or has told the client it will
+  carry out a periodic suitability assessment, the periodic report must contain
+  an updated statement of how the investment meets the client's preferences,
+  objectives and other characteristics [MiFID II | Article 25 (Assessment of
+  suitability and appropriateness and reporting to clients), pp. 62-63].
+  - After the first report, later reports may cover only changes in the services
+  or instruments and/or in the client's circumstances [MiFID II Delegated
+  Regulation | Article 54 (Assessment of suitability and suitability reports),
+  pp. 51-52].
+  - Firms that provide a periodic suitability assessment must review the
+  suitability of their recommendations at least once a year, and more often
+  depending on the client's risk profile and the type of instruments [MiFID II
+  Delegated Regulation | Article 54 (Assessment of suitability and suitability
+  reports), p. 52].
+  - Those firms must also disclose three things: how often and how far the
+  assessment goes (including what triggers it), how far information already
+  collected will be reassessed, and how an updated recommendation will be
+  communicated [MiFID II Delegated Regulation | Article 52 (Information about
+  investment advice), p. 49].
+
+  The search results give no fixed deadline (number of days) for "without undue
+  delay". They also say nothing about national rules or later amendments to
+  these provisions.
+
+  **Sources cited**
+  - [MiFID II | Article 25 (Assessment of suitability and appropriateness and
+  reporting to clients), p. 62]
+  - [MiFID II | Article 25 (Assessment of suitability and appropriateness and
+  reporting to clients), pp. 62-63]
+  - [MiFID II Delegated Regulation | Article 54 (Assessment of suitability and
+  suitability reports), pp. 51-52]
+  - [MiFID II Delegated Regulation | Article 54 (Assessment of suitability and
+  suitability reports), p. 52]
+  - [MiFID II Delegated Regulation | Article 52 (Information about investment
+  advice), p. 49]
+  - [MiFID II | Recitals, p. 15]
+
+● A suitability statement must be given before the transaction is made. When a
+  firm gives investment advice, it must provide the statement in a durable
+  medium. The statement sets out the advice and how it meets the retail client's
+  preferences, objectives and other characteristics [MiFID II | Article 25
+  (Assessment of suitability and appropriateness and reporting to clients), p.
+  62]. The report must also explain how the recommendation suits the client,
+  including the client's attitude to risk and capacity for loss [MiFID II
+  Delegated Regulation | Article 54 (Assessment of suitability and suitability
+  reports), pp. 51-52].
+
+  Exception for distance communication: sometimes the agreement is concluded by
+  a means of distance communication that prevents giving the statement
+  beforehand. The firm may then give it immediately after the client is bound,
+  but only if both of these are true:
+  - the client agreed to receive it without undue delay after the transaction;
+  - the firm offered the client the option of delaying the transaction to get
+    the statement first.
+
+  [MiFID II | Article 25 (Assessment of suitability and appropriateness and
+  reporting to clients), pp. 62-63]
+
+  Ongoing advice: this applies where the firm provides portfolio management or
+  has promised a periodic suitability assessment.
+  - Each periodic report must contain an updated suitability statement [MiFID II
+    | Article 25 (Assessment of suitability and appropriateness and reporting
+    to clients), pp. 62-63].
+  - Suitability must be reviewed at least once a year [MiFID II Delegated
+    Regulation | Article 54 (Assessment of suitability and suitability reports),
+    p. 52].
+
+  Not covered by the corpus: a fixed deadline in days for "without undue delay",
+  national rules and later amendments.
+
+✻ Cooked for 5s · done 6:18 PM
+
+● Agent "Suitability statement timing question" finished · 22s

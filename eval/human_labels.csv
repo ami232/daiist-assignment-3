@@ -1,1 +1,41 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,1,1,
+q04,1,1,
+q05,1,1,
+q06,1,1,
+q07,1,1,
+q08,1,1,
+q09,1,1,
+q10,0,1,Wrong refusal: PRIIPs Article 7 was retrieved at rank 1 and states the language rule; answer withheld by citation check
+q11,1,1,
+q12,1,1,
+q13,1,1,
+q14,0,1,"Wrong refusal: MiFID II Article 25(4) conditions (non-complex instruments, client initiative, warning, Article 23) were retrieved; answer withheld by citation check"
+q15,1,1,
+q16,1,1,
+q17,1,1,
+q18,1,1,
+q19,1,1,
+q20,1,1,
+q21,1,1,
+q22,1,1,
+q23,0,1,Does not answer the question: never says the firm may assume a professional client has the knowledge (Delegated Reg Article 56 not retrieved); talks about Annex II classification instead
+q24,1,1,
+q25,1,1,
+q26,1,1,
+q27,1,1,
+q28,0,1,Wrong refusal: both MiFID II Article 70 (EUR 5m / 10%) and PRIIPs Article 24 (EUR 5m / 3%) were retrieved; answer withheld by citation check
+q29,0,1,"Half answer: EIOPA correct, but says the corpus does not name who bans financial instruments; MiFIR Article 40 (ESMA) not retrieved"
+q30,1,1,
+q31,0,1,Only covers the KID; misses the suitability statement before the transaction (MiFID II Article 25(6) not retrieved)
+q32,0,1,"PRIIPs scope part correct, but says execution-only is not covered; MiFID II Article 25(4)(a)(v) not retrieved"
+q33,0,1,Wrong refusal: Delegated Reg Article 50(1) and MiFID II Article 24(4) were both retrieved; answer withheld by citation check
+q34,1,1,
+q35,1,1,
+q36,0,0,Should refuse: presents EU minimum fines from PRIIPs Article 24 as if they were CNMV's; nothing in the passages mentions the CNMV or Spanish law
+q37,1,1,
+q38,1,1,
+q39,0,0,"Should refuse: claims what the 2021 quick-fix did using a 2017 recital; the 2021 amendments are not in the corpus, so the claim is unsupported and misattributed"
+q40,1,1,

@@ -1,0 +1,52 @@
+{
+  "embed_model": "gemini-embedding-2",
+  "dim": 768,
+  "default_design": "sections",
+  "documents": [
+    {
+      "source": "MiFID II",
+      "file": "CELEX_32014L0065_EN_TXT.pdf",
+      "words": 75950,
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32014L0065",
+      "licence": "EUR-Lex, reuse authorised (Decision 2011/833/EU)"
+    },
+    {
+      "source": "MiFIR",
+      "file": "CELEX_32014R0600_EN_TXT.pdf",
+      "words": 36478,
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32014R0600",
+      "licence": "EUR-Lex, reuse authorised (Decision 2011/833/EU)"
+    },
+    {
+      "source": "PRIIPs",
+      "file": "CELEX_32014R1286_EN_TXT.pdf",
+      "words": 13891,
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32014R1286",
+      "licence": "EUR-Lex, reuse authorised (Decision 2011/833/EU)"
+    },
+    {
+      "source": "MiFID II Delegated Regulation",
+      "file": "CELEX_32017R0565_EN_TXT.pdf",
+      "words": 47080,
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32017R0565",
+      "licence": "EUR-Lex, reuse authorised (Decision 2011/833/EU)"
+    }
+  ],
+  "designs": {
+    "sections": {
+      "chunks": 692,
+      "method": "section",
+      "max_words": 350,
+      "prefix": true,
+      "mean_words": 251
+    },
+    "words150": {
+      "chunks": 1446,
+      "method": "fixed",
+      "size": 150,
+      "overlap": 30,
+      "prefix": false,
+      "mean_words": 150
+    }
+  }
+}
