@@ -1,1 +1,21 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,0,1,"Omits the requirement that the pilot must have completed the initial knowledge test or training after April 6, 2021"
+q04,1,1,
+q05,1,0,"Adds detailed Category 1–4 requirements that are not included in the retrieved passages"
+q06,1,1,
+q07,1,1,
+q08,1,1,
+q09,1,1,
+q10,1,1,
+q11,0,1,"Omits the restriction during the first 1,000 feet of ascent over congested areas or open-air assemblies"
+q12,1,1,
+q13,1,1,
+q14,1,0,"Adds special issuance eligibility under §§ 67.115 and 67.401, which is not fully covered by the retrieved passages"
+q15,1,1,
+q16,1,0,"Includes powered parachute and weight-shift aircraft exceptions not established in the retrieved passage"
+q17,1,1,
+q18,0,1,"Does not begin with the required exact refusal phrase: The corpus does not cover this"
+q20,1,1,
+q21,1,1,
