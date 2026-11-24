@@ -202,8 +202,8 @@
     "seconds": 8.9004
   },
   "human_agreement": {
-    "graded": 0,
-    "correct": null,
-    "supported": null
+    "graded": 20,
+    "correct": 0.9,
+    "supported": 0.6
   }
 }

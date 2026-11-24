@@ -2,7 +2,9 @@
 
 **Author** Javier Sánchez Esquivel
 
-**Student ID and group** Pending
+**Student ID** 19731
+
+**Group** BBADBA 5B
 
 ## Use case
 
@@ -46,7 +48,6 @@ The first design ranks passages by cosine similarity between normalized Gemini e
 
 The evaluator measures the proportion of answerable questions retrieving any required section and all required sections among the first one, three and five results. All required sections matter for a question combining two facts. Section-level matches can overstate useful evidence for a long section such as Options. The evaluator also records the actual number of passage words sent at five results. It selects by all-sections hit rate at five, then at three, then the simpler dense design. The comparison used the frozen question set in local commit `4c69bac`. The predeclared rule selected hybrid retrieval.
 
-
 | Retrieval design | All sections at 1 | All at 3 | All at 5 | Any at 1 | Any at 3 | Any at 5 | Mean passage words at 5 |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
 | Dense | 9/24 | 14/24 | 18/24 | 11/24 | 20/24 | 21/24 | 1,004 |
@@ -82,7 +83,7 @@ LangChain runs Gemini with [AGENTS.md](AGENTS.md) as its system prompt and conne
 
 ## End-to-end evaluation
 
-The evaluator checks refusals and citation membership in code. The Gemini judge uses the reference to assess correctness and the cited evidence to assess support. The blind packet presents answers, reference answers and passages for personal grading. The evaluator reuses the saved answers when calculating human agreement, so the human and the judge assess the same responses.
+The evaluator checks whether the agent refused and whether the cited passage IDs appeared in its search results. A separate Gemini call judges correctness against the reference answer and support against the cited passages. Both the automated verdicts and the final grades refer to the same saved responses.
 
 The Gemini judge rated 25 of 30 answers correct (83.3%). The agent answered 20 questions substantively and refused 10. Of the refusals, six were appropriate and four were on answerable questions. Checking every passage ID in the 20 substantive answers, including IDs appearing in groups, found that all occurred in the respective search traces. [Saved answers](eval/answers.json) · [Evaluation summary](eval/summary.json)
 
@@ -93,12 +94,20 @@ The Gemini judge rated 25 of 30 answers correct (83.3%). The agent answered 20 q
 | Unanswerable | 6 | 6 | 6 |
 | **Total** | **30** | **25** | **10** |
 
-The judge rated 27 of 30 answers supported. All three support failures were bare refusals. The rubric gives a bare refusal support credit because it makes no factual claim. The judge applied that rule inconsistently. On q21 it marked the answer supported while its explanation pointed to missing evidence for the rehearsal recommendation. The agent and judge also used the same model, Gemini 3.5 Flash-Lite. The [blind packet](eval/blind_review.md) contains the material for personal grading.
+The judge rated 27 of 30 answers supported. All three support failures were bare refusals. The rubric gives a bare refusal support credit because it makes no factual claim. The judge applied that rule inconsistently. On q21 it marked the answer supported while its explanation pointed to missing evidence for the rehearsal recommendation. The agent and judge also used the same model, Gemini 3.5 Flash-Lite. The [review packet](eval/blind_review.md) contains the questions, responses, references and retrieved passages.
 
-I accepted the proposed grades for the 20 sampled answers. They give correctness credit to 15 answers and support credit to 14. Across those same 20 answers, the accepted grades and the Gemini judge agree on correctness for 18 (90%) and on support for 12 (60%). Codex prepared the proposed grades after the judge’s results were available. The assignment’s separate measure of agreement with independent human grading is still pending. [Accepted scores and reasons](eval/accepted_review.csv)
+### Agreement on the 20 graded answers
+
+I accepted the scores in the grading worksheet as my final labels. The sample covered 12 single-passage, four two-passage and four unanswerable questions. Codex proposed the scores and reasons after the automated verdicts were available. That process limits what the comparison can establish about independent human judgment. [Final labels and reasons](eval/human_labels.csv)
+
+| Measure | Final grades awarding credit | Final grade matched the judge |
+| --- | ---: | ---: |
+| Correctness | 15 of 20 | 18 of 20 (90%) |
+| Support from cited passages | 14 of 20 | 12 of 20 (60%) |
+
+The two correctness disagreements involved explanations that gave the right recovery decision but added a factual error. In q12, the response said an incremental backup contains only changed blocks, although some files are copied in full. In q22, it described logical dumps as text scripts, overlooking archive formats. Support was a separate issue. For example, q20 correctly identified the directory format for a parallel dump. The passage cited for that instruction omitted the specific jobs flag the answer recommended. The final grade therefore gave q20 credit for correctness only.
 
 Mean agent usage was 3,801 input tokens and 145 output tokens per question. Mean latency was 8.90 seconds and median latency was 5.26 seconds. Timing covers answer generation and tool calls after opening the shared MCP session. The token counts exclude embeddings and separate judge calls. These measurements describe one run on this question set.
-
 
 ## Failure analysis
 
@@ -110,7 +119,7 @@ On q21 the agent explained how to combine incrementals. Its live searches missed
 
 ## Decision
 
-I would use this assistant to find the right manual sections during a recovery rehearsal. Before acting on the answer, I would check that those sections cover the intended recovery scope and confirm the procedure in an isolated test restore. In this run, the assistant refused four answerable questions and gave an incomplete answer to a two-passage question. Those outcomes matter under time pressure. The evaluation covered a small part of the manual, and my personal grading is still pending.
+I would use this assistant to find the right manual sections during a recovery rehearsal. Before acting on the answer, I would check that those sections cover the intended recovery scope and confirm the procedure in an isolated test restore. In this run, the assistant refused four answerable questions and gave an incomplete answer to a two-passage question. Those outcomes matter under time pressure. The answerable questions targeted 13 of the corpus’s 109 indexed sections, and agreement on citation support was 60%. I would want stronger evidence on a fresh set of recovery scenarios before relying on the assistant during a production incident.
 
 ## AI use
 

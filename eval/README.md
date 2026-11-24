@@ -34,13 +34,11 @@ The final set in `questions.csv` has 30 entries. The [report](../REPORT.md#ai-us
 
 For a starting point, compare s03 (parallel dump format), s21 (combining and verifying an incremental backup), and s26 (a company's measured restore time). They illustrate a direct lookup, a two-passage decision and an installation-specific question.
 
-Run the evaluation with the approved question set. Grade at least 20 saved answers using blind_review.md before opening judge.json. Enter both grades for each reviewed answer in human_labels.csv. Rerunning the evaluation with the same inputs uses the same saved answers and computes agreement on the graded IDs.
+For this run, [human_labels.csv](human_labels.csv) contains the 20 final score pairs and reasons Javier approved from the [grading worksheet scores](accepted_review.csv). Codex drafted these grades after the automated verdicts were available. Running `uv run python main.py evaluate` with the same inputs compares these labels with the saved verdicts and writes the result to the `human_agreement` field in [summary.json](summary.json). The [report](../REPORT.md#agreement-on-the-20-graded-answers) explains how to interpret that figure.
 
-The [accepted review](accepted_review.csv) contains the 20 proposed score pairs that Javier approved. The report compares those scores with the saved judge verdicts. The evaluator reads independent personal grades from `human_labels.csv`.
+### Graded sample
 
-### Suggested blind review sample
-
-These 20 IDs were sampled by question type using a fixed seed, without using the agent answers or judge verdicts. You can also grade all 30.
+These 20 IDs were sampled by question type using a fixed seed, without using the agent answers or judge verdicts.
 
 - Single — q02, q03, q04, q07, q08, q09, q11, q12, q13, q14, q15, q16
 - Multi — q01, q20, q22, q24
