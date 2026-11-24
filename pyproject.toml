@@ -17,6 +17,9 @@ dependencies = [
     "matplotlib>=3.9",
     "nbconvert>=7.16",
     "ipykernel>=6.29",
+    "requests>=2.34.2",
+    "markdownify>=1.2.4",
+    "truststore>=0.10.5",
 ]
 
 [tool.uv]

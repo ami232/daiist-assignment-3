@@ -1,0 +1,51 @@
+design,id,kind,worst_rank,top1
+fixed150,q01,single,,inv-working-with-professional | Check out your Investment Professional
+fixed150,q02,single,1,inv-five-questions | Question 2: Is the offer and sale of the security registered?
+fixed150,q03,single,,inv-crypto-assets | Tokenized Securities
+fixed150,q04,single,,inv-crypto-assets | Tokenized Securities
+fixed150,q05,single,1,inv-crypto-assets | Scams Involving Crypto Assets
+fixed150,q06,single,,inv-working-with-professional | Tricky Titles
+fixed150,q07,single,2,inv-working-with-professional | Read the Firm’s Relationship Summary
+fixed150,q08,single,1,inv-understanding-fees | Understanding Fees
+fixed150,q09,single,1,inv-common-scams | Common Scams
+fixed150,q10,single,1,inv-common-scams | Common Scams
+fixed150,q11,single,2,inv-crypto-assets | Exchange-Traded Products
+fixed150,q12,single,1,reg-bi-compliance-guide | 1. Introduction
+fixed150,q13,single,1,reg-bi-compliance-guide | 1. Introduction
+fixed150,q14,single,2,reg-bi-compliance-guide | 6. What does the Conflict of Interest Obligation require?
+fixed150,q15,single,1,reg-bi-faq | Retail Customer
+fixed150,q16,single,,form-crs-compliance-guide | Introduction
+fixed150,q17,single,2,form-crs-compliance-guide | 4. What topics do I have to include in my relationship summary?
+fixed150,q18,single,2,staff-bulletin-care-obligations | Considering Reasonably Available Alternatives
+fixed150,q19,single,1,staff-bulletin-care-obligations | Special Considerations: Complex or Risky Products
+fixed150,q20,single,2,staff-bulletin-conflicts-of-interest | Eliminating Conflicts of Interest
+fixed150,q26,multi,,staff-statement-form-crs-disclosures | Staff Statement Regarding Form CRS Disclosures
+fixed150,q27,multi,,inv-working-with-professional | Check out your Investment Professional
+fixed150,q28,multi,,staff-bulletin-account-recommendations | Questions:
+fixed150,q29,multi,3,inv-crypto-assets | Scams Involving Crypto Assets
+fixed150,q30,multi,,inv-working-with-professional | Read the Firm’s Relationship Summary
+section300,q01,single,1,inv-five-questions | Question 1: Is the seller licensed?
+section300,q02,single,1,inv-five-questions | Question 2: Is the offer and sale of the security registered?
+section300,q03,single,1,inv-crypto-assets | Custody
+section300,q04,single,1,inv-crypto-assets | Crypto Asset-Related Investments
+section300,q05,single,1,inv-crypto-assets | Scams Involving Crypto Assets
+section300,q06,single,1,inv-working-with-professional | Must Read Tip
+section300,q07,single,1,inv-working-with-professional | Tricky Titles
+section300,q08,single,1,inv-understanding-fees | Understanding Fees
+section300,q09,single,1,inv-common-scams | Common Scams
+section300,q10,single,1,inv-common-scams | Common Scams
+section300,q11,single,2,inv-crypto-assets | Scams Involving Crypto Assets
+section300,q12,single,1,reg-bi-compliance-guide | 1. Introduction
+section300,q13,single,1,reg-bi-compliance-guide | 1. Introduction
+section300,q14,single,,reg-bi-compliance-guide | 6. What does the Conflict of Interest Obligation require?
+section300,q15,single,1,reg-bi-faq | Retail Customer
+section300,q16,single,2,form-crs-compliance-guide | 1. Who must file and deliver a relationship summary?
+section300,q17,single,1,form-crs-compliance-guide | 5. Do I have to follow certain formatting requirements?
+section300,q18,single,1,staff-bulletin-care-obligations | Understanding the Investment or Investment Strategy
+section300,q19,single,1,staff-bulletin-care-obligations | Special Considerations: Complex or Risky Products
+section300,q20,single,4,staff-bulletin-conflicts-of-interest | Mitigating Conflicts of Interest
+section300,q26,multi,,staff-statement-form-crs-disclosures | Staff Statement Regarding Form CRS Disclosures
+section300,q27,multi,3,inv-working-with-professional | Read the Firm’s Relationship Summary
+section300,q28,multi,,staff-bulletin-account-recommendations | Questions:
+section300,q29,multi,2,inv-crypto-assets | Scams Involving Crypto Assets
+section300,q30,multi,3,inv-working-with-professional | Tricky Titles

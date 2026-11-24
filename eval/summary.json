@@ -1,0 +1,13 @@
+{
+  "questions": 30,
+  "code_checks_passed": 27,
+  "avg_input_tokens": 3781,
+  "avg_output_tokens": 145,
+  "avg_seconds": 8.6,
+  "agent_cost_per_question_usd": 0.0015,
+  "judge_correct": "30/30",
+  "judge_supported": "30/30",
+  "judge_tokens_per_question": 2013,
+  "agreement_correct": "30/30",
+  "agreement_supported": "29/30"
+}

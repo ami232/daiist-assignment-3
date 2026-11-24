@@ -1,0 +1,31 @@
+id,kind,correct,supported,reason
+q01,single,yes,yes,The answer accurately captures the main point of the reference answer using information directly from the cited passage.
+q02,single,yes,yes,The answer accurately states both methods from the reference answer and correctly cites the supporting passage.
+q03,single,yes,yes,The answer accurately captures what a crypto wallet does and stores based on the cited custody section.
+q04,single,yes,yes,The answer accurately states the main points from the reference and is fully supported by the cited passage.
+q05,single,yes,yes,The answer accurately captures the main advice regarding false SEC registration and is fully supported by the cited passages.
+q06,single,yes,yes,The answer accurately conveys the main point of the reference and is fully supported by the cited passage.
+q07,single,yes,yes,The answer correctly and comprehensively explains why an investor should check titles using information fully supported by the cited passage.
+q08,single,yes,yes,The answer accurately compares the values of the investment for both fees as stated in the reference text and cites the correct passages.
+q09,single,yes,yes,The answer accurately captures all reporting options listed in the reference and is fully supported by the cited passage.
+q10,single,yes,yes,The answer accurately captures the main point of advance fee fraud according to the text and is fully supported by the cited passages.
+q11,single,yes,yes,"The answer accurately explains what a relationship investment scam is and how victims are reached, and all claims are supported by the cited passages."
+q12,single,yes,yes,The answer accurately states the overarching standard of conduct under Regulation Best Interest and correctly cites the supporting passages.
+q13,single,yes,yes,The answer correctly identifies the four component obligations of Regulation Best Interest and every claim is supported by the cited passages.
+q14,single,yes,yes,The answer accurately identifies the compensation-based incentives that must be eliminated and is fully supported by the cited passage.
+q15,single,yes,yes,The answer accurately captures the three criteria for when a retail customer 'uses' a recommendation according to the provided passages and cites them correctly.
+q16,single,yes,yes,The answer accurately captures the topics required in Form CRS and correctly cites the supporting passages.
+q17,single,yes,yes,The answer accurately captures the style and format requirements and is fully supported by the cited passages.
+q18,single,yes,yes,"The answer accurately captures the SEC staff's view that financial professionals cannot rely solely on an approved list and remain personally responsible for understanding investments, and every claim is supported by the cited passage."
+q19,single,yes,yes,The answer accurately states that firms and financial professionals should apply heightened scrutiny to complex or risky products and is fully supported by the cited passages.
+q20,single,yes,yes,The answer accurately captures the main point of the reference answer and is fully supported by the cited passages.
+q21,unanswerable,yes,yes,"The question is unanswerable from the corpus, and the assistant correctly refuses to answer while noting what the corpus actually covers."
+q22,unanswerable,yes,yes,The answer correctly identifies that the corpus does not cover the question and refuses to answer.
+q23,unanswerable,yes,yes,The answer correctly identifies that the corpus does not cover MiFID II and properly refuses to answer.
+q24,unanswerable,yes,yes,The answer correctly identifies that the corpus does not cover the question and refuses to answer.
+q25,unanswerable,yes,yes,The answer correctly identifies that the corpus does not cover the question and refuses to answer while mentioning related passages.
+q26,multi,yes,yes,"The answer accurately addresses how relationship summaries describe fees and conflicts and how SEC staff handles conflicts of interest, fully supported by the cited passages."
+q27,multi,yes,yes,"The answer correctly explains how to check a seller's license and lists the key topics required in a firm's relationship summary, with every claim supported by the cited passages."
+q28,multi,yes,yes,The answer accurately addresses both parts of the question using the provided source passages and citations.
+q29,multi,yes,yes,The answer accurately addresses both parts of the question and every claim is directly supported by the cited passages.
+q30,multi,yes,yes,The answer accurately addresses both parts of the question using valid details and proper citations from the provided text.

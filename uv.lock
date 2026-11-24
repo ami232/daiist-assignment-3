@@ -458,12 +458,15 @@ dependencies = [
     { name = "ipykernel" },
     { name = "langchain" },
     { name = "langchain-google-genai" },
+    { name = "markdownify" },
     { name = "matplotlib" },
     { name = "mcp", extra = ["cli"] },
     { name = "nbconvert" },
     { name = "numpy" },
     { name = "pandas" },
     { name = "pypdf" },
+    { name = "requests" },
+    { name = "truststore" },
 ]
 
 [package.metadata]
@@ -475,12 +478,15 @@ requires-dist = [
     { name = "ipykernel", specifier = ">=6.29" },
     { name = "langchain", specifier = ">=1.4.7" },
     { name = "langchain-google-genai", specifier = ">=4.4.2" },
+    { name = "markdownify", specifier = ">=1.2.4" },
     { name = "matplotlib", specifier = ">=3.9" },
     { name = "mcp", extras = ["cli"], specifier = ">=2.3.0" },
     { name = "nbconvert", specifier = ">=7.16" },
     { name = "numpy", specifier = ">=2.0" },
     { name = "pandas", specifier = ">=2.2" },
     { name = "pypdf", specifier = ">=6.0" },
+    { name = "requests", specifier = ">=2.34.2" },
+    { name = "truststore", specifier = ">=0.10.5" },
 ]
 
 [[package]]
@@ -1215,6 +1221,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/06/ff/7841249c247aa650a76b9ee4bbaeae59370dc8bfd2f6c01f3630c35eb134/markdown_it_py-4.2.0.tar.gz", hash = "sha256:04a21681d6fbb623de53f6f364d352309d4094dd4194040a10fd51833e418d49", size = 82454, upload-time = "2026-05-07T12:08:28.36Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/b3/81/4da04ced5a082363ecfa159c010d200ecbd959ae410c10c0264a38cac0f5/markdown_it_py-4.2.0-py3-none-any.whl", hash = "sha256:9f7ebbcd14fe59494226453aed97c1070d83f8d24b6fc3a3bcf9a38092641c4a", size = 91687, upload-time = "2026-05-07T12:08:27.182Z" },
+]
+
+[[package]]
+name = "markdownify"
+version = "1.2.4"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "beautifulsoup4" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/98/29/5e46d8d7aa6c66c73809c0018a435b3271d01fa0f54f8215d634a6a92051/markdownify-1.2.4.tar.gz", hash = "sha256:3837f5eb4caa627473451f9ebb91e00d0f12120fc64d64246bea23934244bd01", size = 19301, upload-time = "2026-11-18T18:17:09.378Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/df/37/9905803c2df99e10c69df1b0ecaad16a559d51cec20e2929006975d1bedc/markdownify-1.2.4-py3-none-any.whl", hash = "sha256:e0375484fdd2bb007e86779fe34c59673d0011b14f8299953aaf0bf092269220", size = 15852, upload-time = "2026-11-18T18:17:08.216Z" },
 ]
 
 [[package]]
