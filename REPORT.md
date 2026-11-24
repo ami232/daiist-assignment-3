@@ -4,7 +4,7 @@
 - **Student ID**:
 - **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
 
-> **Note for the author (delete before submitting).** Sections marked ✏️ hold decisions or analysis the brief says must be yours. They contain a draft built from the numbers; rewrite them in your own words. Three items are still open: the editor transcript, the 20+ human grades and the add-document run (the daily embedding quota ran out; run it after 09:00 Spain time). Each open item says how to finish it.
+> **Note for the author (delete before submitting).** Sections marked ✏️ hold decisions or analysis the brief says must be yours. They contain a draft built from the numbers; rewrite them in your own words. Two items are still open: the 20+ human grades and the add-document run (the daily embedding quota ran out; run it after 09:00 Spain time). Each open item says how to finish it.
 
 The corpus and the test questions are in Spanish because the users (Spanish HR staff) and the laws are Spanish. Code, prompts and this report are in English.
 
@@ -88,7 +88,24 @@ De 50 a 100 trabajadores: 2 Delegados de Prevención.
 
 **Subagent** (`.claude/agents/corpus-researcher.md`, tools: `mcp__corpus__search` only). It searches in Spanish up to 4 times, answers only from the passages, cites each claim with the `CITE AS` text, starts with `El corpus no cubre esta pregunta.` when the passages do not answer, and gives no advice on a specific case.
 
-**Transcript from the editor:** ⏳ *TO DO: open the repo in Claude Code, run `/mcp` to check that `corpus` is connected, ask "Usa el subagente corpus-researcher: ¿cuántas horas extra puede hacer un trabajador al año?" and paste the transcript here.*
+**Transcript from the editor** (Claude Code, subagent `corpus-researcher`, one call to `mcp__corpus__search` with query "horas extraordinarias máximo al año"):
+
+> **User:** ¿Cuántas horas extra puede hacer un trabajador al año y es obligatorio hacerlas?
+>
+> **corpus-researcher** → `search("horas extraordinarias máximo al año")` → 5 passages (ET arts. 35 apdos. 1-4, 35 apdo. 5, 34 apdos. 1-3, 36 apdos. 1-3, 34 apdo. 9)
+>
+> **corpus-researcher:** Como máximo se pueden hacer 80 horas extraordinarias al año. Hacerlas es voluntario, salvo que se hayan pactado en convenio colectivo o en el contrato individual de trabajo, y aun así dentro de ese límite [Estatuto de los Trabajadores (RDL 2/2015), Artículo 35, apdos. 1-4].
+>
+> - Se consideran horas extraordinarias las que se trabajan por encima de la jornada ordinaria máxima, que es de 40 horas semanales de promedio en cómputo anual [Estatuto de los Trabajadores (RDL 2/2015), Artículo 34, apdos. 1-3].
+> - No cuentan para el límite las compensadas con descanso en los cuatro meses siguientes, ni las trabajadas para prevenir o reparar siniestros urgentes [Estatuto de los Trabajadores (RDL 2/2015), Artículo 35, apdos. 1-4].
+> - Si la jornada anual del trabajador es inferior a la general de la empresa, el máximo se reduce en la misma proporción [Estatuto de los Trabajadores (RDL 2/2015), Artículo 35, apdos. 1-4].
+> - Los trabajadores nocturnos no pueden hacer horas extraordinarias [Estatuto de los Trabajadores (RDL 2/2015), Artículo 36, apdos. 1-3].
+> - Se pagan (nunca por debajo de la hora ordinaria) o se compensan con descanso, según convenio o contrato; si no se ha pactado nada, se compensan con descanso en los cuatro meses siguientes [Estatuto de los Trabajadores (RDL 2/2015), Artículo 35, apdos. 1-4].
+> - La jornada se registra día a día y el trabajador recibe con la nómina una copia del resumen [Estatuto de los Trabajadores (RDL 2/2015), Artículo 35, apdo. 5].
+>
+> Para saber si las horas extra son obligatorias en su empresa y cómo se pagan, revise el convenio colectivo aplicable y los contratos.
+
+Every claim is in the retrieved passages, and the subagent searched once because the first results covered both parts of the question.
 
 ## Adding a document
 
