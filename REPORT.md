@@ -98,7 +98,7 @@ The judge rated 27 of 30 answers supported. All three support failures were bare
 
 ### Agreement on the 20 graded answers
 
-I accepted the scores in the grading worksheet as my final labels. The sample covered 12 single-passage, four two-passage and four unanswerable questions. Codex proposed the scores and reasons after the automated verdicts were available. That process limits what the comparison can establish about independent human judgment. [Final labels and reasons](eval/human_labels.csv)
+I finalized the grades for 20 original answers by accepting the scores and reasons in the grading worksheet. The sample covered 12 single-passage, four two-passage and four unanswerable questions. Codex proposed those scores after the automated verdicts were available, which limits what the agreement figures can establish about independent human judgment. [Final labels and reasons](eval/human_labels.csv)
 
 | Measure | Final grades awarding credit | Final grade matched the judge |
 | --- | ---: | ---: |
@@ -146,4 +146,4 @@ I would use the revised assistant to find manual sections during a recovery rehe
 
 ## AI use
 
-I chose the PostgreSQL use case, wrote the opening tenant-recovery question and selected the final test set. I used Codex to draft the other questions and the reference answers, implement the prototype, and draft this report. Codex proposed the sample grades and gave a reason for each score. I accepted those grades. Gemini generated the embeddings, answered the questions and supplied the automated judge’s verdicts. GitHub Copilot ran the search-only subagent.
+I chose PostgreSQL backup and recovery, wrote the opening tenant-recovery question and selected the 30 questions used in both runs. I used Codex to brainstorm recovery scenarios and draft the remaining questions and reference answers. Codex also helped with the code by implementing the prototype and testing the citation guard, and helped draft this report. I made the final grading decision on the 20 original answers by accepting the scores Codex proposed. Gemini generated the embeddings, answered the questions and supplied the automated verdicts. GitHub Copilot ran the search-only subagent.
