@@ -1,0 +1,68 @@
+{
+  "built_at_utc": "2026-11-24T10:25:52.600237+00:00",
+  "embedding_model": "gemini-embedding-2",
+  "embedding_dimensions": 768,
+  "total_word_count": 149461,
+  "corpus": [
+    {
+      "doc_id": "ac-107-2a",
+      "title": "FAA AC 107-2A - Small Unmanned Aircraft System (Small UAS)",
+      "url": "https://www.faa.gov/documentlibrary/media/advisory_circular/ac_107-2a.pdf",
+      "date": "2021-02-01",
+      "filename": "ac_107-2a.pdf",
+      "license": "FAA advisory circular; FAA states advisory circulars may be reproduced in whole or in part without FAA permission.",
+      "license_url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_00.2-15.pdf",
+      "words": 39210,
+      "pages_extracted": 104,
+      "sha256": "9787897fb128e26a737b2d429cca57b83a81cfe2f0019a852f72111ee0b559d5"
+    },
+    {
+      "doc_id": "remote-pilot-study-guide",
+      "title": "FAA Remote Pilot - Small Unmanned Aircraft Systems Study Guide (FAA-G-8082-22)",
+      "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/remote_pilot_study_guide.pdf",
+      "date": "2016-08",
+      "filename": "remote_pilot_study_guide.pdf",
+      "license": "Official U.S. federal government publication. U.S. Government works are generally not protected by U.S. copyright under 17 U.S.C. 105; source attribution is retained and third-party material, if any, is not separately reproduced.",
+      "license_url": "https://www.copyright.gov/title17/92chap1.html#105",
+      "words": 24636,
+      "pages_extracted": 87,
+      "sha256": "55d0e7772ecd16dc201f21b0286f9d7777f67e894a97a9b074fa27464903e05f"
+    },
+    {
+      "doc_id": "remote-pilot-acs-10b",
+      "title": "FAA Remote Pilot - Small Unmanned Aircraft Systems Airman Certification Standards (FAA-S-ACS-10B)",
+      "url": "https://www.faa.gov/training_testing/testing/acs/uas_acs.pdf",
+      "date": "2021-04",
+      "filename": "uas_acs.pdf",
+      "license": "Official U.S. federal government publication. U.S. Government works are generally not protected by U.S. copyright under 17 U.S.C. 105; source attribution is retained and third-party material, if any, is not separately reproduced.",
+      "license_url": "https://www.copyright.gov/title17/92chap1.html#105",
+      "words": 5954,
+      "pages_extracted": 35,
+      "sha256": "9ee24463b40f023a3140d0c8a4d14ab295ede7a869fbacb7b7cd5ceb4caef431"
+    },
+    {
+      "doc_id": "operations-over-people-final-rule",
+      "title": "FAA Final Rule - Operation of Small Unmanned Aircraft Systems Over People",
+      "url": "https://www.faa.gov/sites/faa.gov/files/2021-08/OOP_Final%20Rule.pdf",
+      "date": "2021-01-15",
+      "filename": "OOP_Final_Rule.pdf",
+      "license": "U.S. federal agency rulemaking document; U.S. Government works are generally not protected by U.S. copyright under 17 U.S.C. 105.",
+      "license_url": "https://www.copyright.gov/title17/92chap1.html#105",
+      "words": 79661,
+      "pages_extracted": 292,
+      "sha256": "c6dfe3671a7ceee4bdce0d21d2c63d8e5723125c81aa25bfe5e3bee9aca144fa"
+    }
+  ],
+  "chunking": {
+    "name": "page_500",
+    "target_words": 500,
+    "overlap_words": 80,
+    "chunks": 535
+  },
+  "retrieval_designs": [
+    "dense",
+    "hybrid"
+  ],
+  "default_design": "dense",
+  "added_documents": []
+}

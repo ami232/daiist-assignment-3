@@ -1,0 +1,36 @@
+id,correct,supported,refusal,notes
+q01,1,1,0,The assistant correctly identifies both requirements (pilot training/knowledge test and anti-collision lighting with 3-mile visibility and appropriate flash rate) and accurately supports them with the retrieved evidence.
+q02,1,1,0,"The assistant correctly states the visibility and flash rate requirements for night flight anti-collision lights, fully supported by the reference text."
+q03,1,1,0,The assistant correctly answers that the remote PIC may reduce the light intensity in the interest of safety and properly cites the retrieved evidence.
+q04,1,1,0,The assistant correctly identifies the 400 feet AGL limit and accurately includes the structure exception directly supported by the retrieved evidence.
+q05,1,1,0,The assistant correctly answered the question using the exact conditions from the reference evidence regarding flying higher than 400 feet near a structure.
+q06,1,1,0,The assistant correctly states the maximum speed allowed under Part 107 (87 knots or 100 mph) and accurately cites the retrieved evidence.
+q07,1,1,0,"The assistant correctly answers that VLOS must be maintained while acknowledging permissible brief moments of looking away (such as at the controller), which matches the reference answer and is fully supported by the text."
+q08,1,1,0,The assistant accurately and thoroughly explains the purpose of a visual observer using directly supported evidence from the provided AC 107-2A text.
+q09,1,1,0,"The assistant correctly states that a minimum of 3 statute miles of visibility is required from the control station, supported directly by AC 107-2A."
+q10,1,1,0,The assistant answer correctly provides the cloud clearance requirements based on the retrieved evidence and includes the appropriate citation.
+q11,1,1,0,"The assistant correctly states that ATC authorization is required for Class B, C, and D airspace, directly supported by the retrieved study guide pages."
+q12,1,1,0,"The assistant correctly identifies that the remote pilot in command is directly responsible for the safe operation of the small UAS, fully supported by the reference and evidence."
+q13,1,1,0,The assistant correctly and comprehensively lists the preflight requirements using the provided FAA advisory circular excerpts.
+q14,1,1,0,"The assistant correctly states that a person cannot control multiple drones at once under Part 107, citing 14 CFR 107.35, which is fully supported by the retrieved evidence."
+q15,1,1,0,"The assistant answer correctly identifies that the manned aircraft has the right-of-way and that the small UAS must yield and initiate avoidance maneuvers, fully supported by the retrieved evidence."
+q16,1,1,0,"The assistant correctly addresses operating a drone from a moving vehicle as well as flying over moving vehicles, fully backed by the retrieved evidence and matching the reference answer."
+q17,1,1,0,"The assistant correctly answers that the pilot can deviate from Part 107 rules during an emergency, citing the appropriate AC 107-2A source text accurately."
+q18,1,1,0,"The assistant correctly details the required actions when a preflight check reveals an issue, fully supported by the provided evidence."
+q19,1,1,0,"The assistant answer correctly and comprehensively states the options to maintain remote pilot recency based on the provided evidence, closely aligning with the reference answer while offering additional accurate details from the text."
+q20,1,1,0,The assistant correctly answered the question using the retrieved evidence and accurately cited the relevant regulations regarding alcohol and drug consumption under Part 107.
+q21,1,1,0,"The assistant correctly explains that flights over people are permitted under Part 107 subject to specific categories and conditions, supported by the retrieved evidence."
+q22,1,1,0,The assistant correctly identifies the four categories of operations over people under Part 107 with accurate details directly supported by the retrieved evidence.
+q23,1,1,0,"The assistant answer is completely correct, well-structured, and fully supported by the retrieved evidence."
+q24,1,1,0,"The assistant correctly answers that brief losses of VLOS are permitted if regained as soon as practicable, with no fixed time interval, matching the reference and fully supported by the retrieved evidence."
+q25,1,1,0,"The assistant correctly identified the training, anti-collision lighting, controlled airspace ATC authorization, and VLOS considerations required for night flight."
+q26,0,0,1,The assistant incorrectly refused to answer even though the retrieved evidence contains all necessary details about night operations and operations over people.
+q27,1,1,0,The assistant correctly identifies both the structure altitude exception height rules and the requirement for controlled airspace authorization using the retrieved evidence.
+q28,1,1,0,The assistant accurately answers both parts of the question using the provided evidence and matches the reference answer.
+q29,1,1,0,The assistant correctly answered all parts of the multi-part question using details directly supported by the retrieved evidence.
+q30,1,1,0,"The assistant correctly identifies the preflight requirements for night operations and operations over people, accurately citing the retrieved evidence."
+q31,1,1,0,"The assistant correctly answered the question using the retrieved evidence, noting that Part 107 does not require liability insurance and no coverage amount is mandated."
+q32,1,1,1,"The assistant correctly recognizes the question is unanswerable from the corpus regarding the exact fine amount, properly refuses, and accurately cites the available evidence about civil penalties without fabricating specific fine values."
+q33,1,1,1,The assistant correctly recognized that the indexed corpus does not contain information about national park regulations and provided a supported refusal.
+q34,1,1,0,"The assistant answered the question correctly using the retrieved evidence, noting that Part 107/FAA does not regulate privacy, while correctly citing relevant state/local and advisory information."
+q35,1,1,1,The assistant correctly recognized that the question is unanswerable from the provided corpus and refused appropriately without inventing information.

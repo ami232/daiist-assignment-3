@@ -1,0 +1,24 @@
+{
+  "active_retrieval_design": "dense",
+  "questions": 35,
+  "judge_correct_rate": 0.9714285714285714,
+  "judge_supported_rate": 0.9714285714285714,
+  "correct_refusal_rate": 0.6,
+  "wrong_refusal_rate": 0.03333333333333333,
+  "valid_citation_rate": 0.7142857142857143,
+  "guardrail_fire_rate": 0.02857142857142857,
+  "mean_agent_seconds": 19.00609118285356,
+  "mean_agent_total_tokens": 6027.142857142857,
+  "human_labels_used": 20,
+  "human_judge_correct_agreement": 1.0,
+  "human_judge_supported_agreement": 1.0,
+  "human_judge_joint_agreement": 1.0,
+  "failure_counts": {
+    "pass": 23,
+    "unsupported claim": 9,
+    "retrieval miss": 2,
+    "wrong refusal": 1
+  },
+  "judge_model": "gemini-3.5-flash-lite",
+  "judge_rubric": "You are grading a RAG assistant for FAA small-UAS compliance.\nUse ONLY the reference answer and retrieved evidence supplied below. Do not use\noutside knowledge.\n\nReturn JSON with these fields:\n- correct: 1 if the final answer is materially correct against the reference answer; otherwise 0.\n  For an unanswerable question, a clear corpus-limited refusal is correct.\n- supported: 1 only if every substantive factual claim in the final answer is supported by the\n  retrieved evidence. A refusal is supported when it does not invent factual claims.\n- refusal: 1 if the answer meaningfully refuses because the indexed corpus does not support the\n  requested claim; otherwise 0.\n- notes: one short explanation identifying the decisive issue.\n\nBe strict: a plausible unsupported statement is not supported. A correct fact with a fabricated or\nirrelevant citation is not supported. Do not penalize concise wording that preserves the meaning.\n"
+}

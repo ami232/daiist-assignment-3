@@ -1,0 +1,38 @@
+[
+  {
+    "doc_id": "ac-107-2a",
+    "title": "FAA AC 107-2A - Small Unmanned Aircraft System (Small UAS)",
+    "url": "https://www.faa.gov/documentlibrary/media/advisory_circular/ac_107-2a.pdf",
+    "date": "2021-02-01",
+    "filename": "ac_107-2a.pdf",
+    "license": "FAA advisory circular; FAA states advisory circulars may be reproduced in whole or in part without FAA permission.",
+    "license_url": "https://www.faa.gov/documentLibrary/media/Advisory_Circular/AC_00.2-15.pdf"
+  },
+  {
+    "doc_id": "remote-pilot-study-guide",
+    "title": "FAA Remote Pilot - Small Unmanned Aircraft Systems Study Guide (FAA-G-8082-22)",
+    "url": "https://www.faa.gov/sites/faa.gov/files/regulations_policies/handbooks_manuals/aviation/remote_pilot_study_guide.pdf",
+    "date": "2016-08",
+    "filename": "remote_pilot_study_guide.pdf",
+    "license": "Official U.S. federal government publication. U.S. Government works are generally not protected by U.S. copyright under 17 U.S.C. 105; source attribution is retained and third-party material, if any, is not separately reproduced.",
+    "license_url": "https://www.copyright.gov/title17/92chap1.html#105"
+  },
+  {
+    "doc_id": "remote-pilot-acs-10b",
+    "title": "FAA Remote Pilot - Small Unmanned Aircraft Systems Airman Certification Standards (FAA-S-ACS-10B)",
+    "url": "https://www.faa.gov/training_testing/testing/acs/uas_acs.pdf",
+    "date": "2021-04",
+    "filename": "uas_acs.pdf",
+    "license": "Official U.S. federal government publication. U.S. Government works are generally not protected by U.S. copyright under 17 U.S.C. 105; source attribution is retained and third-party material, if any, is not separately reproduced.",
+    "license_url": "https://www.copyright.gov/title17/92chap1.html#105"
+  },
+  {
+    "doc_id": "operations-over-people-final-rule",
+    "title": "FAA Final Rule - Operation of Small Unmanned Aircraft Systems Over People",
+    "url": "https://www.faa.gov/sites/faa.gov/files/2021-08/OOP_Final%20Rule.pdf",
+    "date": "2021-01-15",
+    "filename": "OOP_Final_Rule.pdf",
+    "license": "U.S. federal agency rulemaking document; U.S. Government works are generally not protected by U.S. copyright under 17 U.S.C. 105.",
+    "license_url": "https://www.copyright.gov/title17/92chap1.html#105"
+  }
+]
