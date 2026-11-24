@@ -470,6 +470,16 @@ def embed_query(query: str) -> list[float]:
     return cache[key]
 
 
+def search(query: str, design: str = "a", k: int = 5) -> list[dict]:
+    """Return the k chunks of a design closest to the query, best first:
+    [{"id", "text", "metadata", "score"}], score = cosine similarity."""
+    store = collection(design)
+    res = store.query(query_embeddings=[embed_query(query)], n_results=k,
+                      include=["documents", "metadatas", "distances"])
+    return [{"id": i, "text": t, "metadata": m, "score": round(1 - d, 4)}
+            for i, t, m, d in zip(res["ids"][0], res["documents"][0], res["metadatas"][0], res["distances"][0])]
+
+
 # --------------------------------------------------------------------------- main
 
 def remove_stale(design: str, chunks: list[dict]) -> None:

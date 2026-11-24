@@ -1,0 +1,30 @@
+{
+  "a": {
+    "name": "structure",
+    "hit@1": 0.607,
+    "hit@3": 0.964,
+    "hit@5": 0.964,
+    "all_locations@1": 0.5,
+    "all_locations@3": 0.786,
+    "all_locations@5": 0.857,
+    "sections_per_hit_chunk": 1.15,
+    "top_score_answerable_median": 0.762,
+    "top_score_unanswerable_median": 0.703,
+    "top_score_unanswerable_max": 0.721,
+    "top_score_answerable_min": 0.713
+  },
+  "b": {
+    "name": "fixed",
+    "hit@1": 0.607,
+    "hit@3": 0.857,
+    "hit@5": 0.893,
+    "all_locations@1": 0.429,
+    "all_locations@3": 0.643,
+    "all_locations@5": 0.786,
+    "sections_per_hit_chunk": 2.16,
+    "top_score_answerable_median": 0.733,
+    "top_score_unanswerable_median": 0.668,
+    "top_score_unanswerable_max": 0.715,
+    "top_score_answerable_min": 0.673
+  }
+}
