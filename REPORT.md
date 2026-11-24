@@ -266,6 +266,45 @@ The guardrail I chose checks the citations in code after the agent answers and b
 
 *Code checks, the judge's rubric, your agreement with the judge, and results: correct, unsupported, correct refusals, wrong refusals.*
 
+I ran the agent on all 37 questions with `uv run python main.py evaluate`. Each answer is saved in `eval/answers.csv`, the judge's verdicts in `eval/judge_verdicts.csv`, my grades in `eval/human_labels.csv`, and the totals in `eval/summary.csv`.
+
+### Code checks
+
+Some things can be checked in code, without an LLM:
+
+- **Refusal:** does the answer start with "The EIC documents I have do not cover this."? For unanswerable questions a refusal is correct; for answerable ones it is a wrong refusal. Refusals are graded only in code, because they make no claims.
+- **Valid citations:** the citation guardrail checks that every cited page was returned by the search in that run.
+- **Cites an expected page:** does the answer cite at least one of the pages listed for that question in `questions.csv`?
+
+### The judge's rubric
+
+The answers that are not refusals (30 of them) were graded by a separate Gemini call. The judge gets the question, my reference answer, the passages the agent retrieved, and the agent's answer, and gives two grades:
+
+1. **correct (1/0):** the answer gives the same key facts as the reference (numbers, dates, conditions) and nothing contradicts it. Extra correct detail is fine; a wrong number, a missing main point or a contradiction is 0.
+2. **supported (1/0):** every factual claim in the answer is stated in the retrieved passages. A claim that is not in the passages is 0, even if it is true.
+
+It replies in JSON with both grades and a one-sentence reason. I asked for `gemini-flash-latest` as the judge, but its daily free quota ran out, so most verdicts came from `gemini-flash-lite-latest`, the same model the agent uses.
+
+### Agreement with the judge
+
+I graded all 37 answers myself in `eval/human_labels.csv` (correct, supported, and a note for every 0) before looking at the judge's verdicts. I agreed with the judge on 100% of them, both for correct and for supported. This looks very good, but I don't think it proves much about the judge. Almost every answer was clearly right, so there were very few hard cases where we could disagree, and the judge never had to mark a wrong answer. It is also mostly the same model as the agent, so it may share the same blind spots. A fairer test would need more questions, including some deliberately wrong answers.
+
+### Results
+
+| Result | Count |
+|---|---|
+| Correct, all questions | 36 / 37 (97%) |
+| Correct answers (answerable questions) | 30 / 31 |
+| Unsupported answers (a claim not in the passages) | 0 |
+| Correct refusals (unanswerable questions) | 6 / 6 |
+| Wrong refusals (answerable questions) | 1 / 31 (q25, blocked by the guardrail) |
+| Answers citing an expected page | 30 / 31 |
+| Guardrail fired | 1 |
+
+Cost per question, on average: 1.5 searches, about 4,400 input tokens and 170 output tokens, and 8.8 seconds.
+
+The evaluation also found two bugs in my own system on the first run (kept in `eval/run1_buggy/`). The agent sometimes ran two searches at the same time and both wrote to the question-embedding cache, which damaged the file, so from question 31 every search failed and the "refusals" for q33–q37 only happened because search was broken. Also, the guardrail wrongly blocked four correct answers because one document title has brackets in it ("(August 2026)"). I fixed both and ran the whole evaluation again; the results above are from the second run.
+
 ## Failures
 
 *Failed questions by cause, with counts, and what to fix first.*
