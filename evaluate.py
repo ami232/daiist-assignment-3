@@ -46,8 +46,11 @@ correct:
 supported:
 - 1 only if EVERY claim in the answer is stated in the retrieved passages. One claim that is
   not in the passages makes it 0.
-- Pointing to where to look (EUR-Lex, an authority) and the closing note about original
-  texts and legal advice are not claims. A refusal that states no rule is supported (1).
+- Naming a law, an authority or a document that is NOT in the retrieved passages is an
+  unsupported claim (0), even when it is only offered as a pointer to where to look.
+- Only two things are not claims: the closing note about original texts and legal advice,
+  and a generic "check the consolidated text on EUR-Lex".
+- A refusal that states no rule and names nothing outside the passages is supported (1).
 
 Reply with JSON only: {"correct": 0 or 1, "supported": 0 or 1, "reason": "one or two sentences"}"""
 
@@ -380,6 +383,8 @@ def stage_4_judge() -> bool:
             "correct": int(verdict["correct"]),
             "supported": int(verdict["supported"]),
             "reason": verdict.get("reason", ""),
+            "input_tokens": response.usage_metadata.prompt_token_count,
+            "output_tokens": response.usage_metadata.total_token_count - response.usage_metadata.prompt_token_count,
         })
         write_csv(path, verdicts)  # saved after every verdict
         print(f"{question['id']}: correct={verdict['correct']} supported={verdict['supported']}")
@@ -415,7 +420,9 @@ def stage_5_agreement() -> None:
         print(f"Stage 5: judge and human agree on `{field}` for {agreed} of {len(rows)} answers ({percent(agreed, len(rows))}).")
         for row in rows:
             if not row[f"agree_{field}"]:
-                print(f"  {row['id']} {field}: human {row[f'human_{field}']}, judge {row[f'judge_{field}']}. Judge: {row['judge_reason']}")
+                print(f"  {row['id']} {field}: human {row[f'human_{field}']}, judge {row[f'judge_{field}']}.")
+                print(f"      human note:   {row['human_notes'] or '(none)'}")
+                print(f"      judge reason: {row['judge_reason']}")
 
 
 # ----------------------------------------------------------------------------
@@ -449,6 +456,7 @@ def stage_6_summary() -> None:
         f"- Unsupported answers (judge, supported = 0): {unsupported} of {n} ({percent(unsupported, n)})",
         f"- Correct refusals (unanswerable and refused): {count(checks, 'correct_refusal')} of {len(unanswerable)}",
         f"- Wrong refusals (answerable but refused): {count(checks, 'wrong_refusal')} of {len(answerable)}",
+        f"- Answered an unanswerable question: {count(checks, 'answered_unanswerable')} of {len(unanswerable)}",
         f"- Answers with a citation that was not retrieved (before the guardrail): {n - count(checks, 'citations_valid')}",
         f"- Mean tokens per question: {sum(answers[i]['input_tokens'] for i in ids) / n:,.0f} input, {sum(answers[i]['output_tokens'] for i in ids) / n:,.0f} output",
         f"- Mean seconds per question: {sum(answers[i]['seconds'] for i in ids) / n:.1f}",
@@ -478,7 +486,7 @@ def stage_6_summary() -> None:
         reason = judge[i]["reason"].replace("|", "/").replace("\n", " ")
         lines.append(f"| {i} | {answers[i]['kind']} | {judge[i]['correct']} | {judge[i]['supported']} | {'; '.join(flags)} | {hit} | {reason} |")
     (EVAL / "summary.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
-    print("\n".join(lines[4:14]))
+    print("\n".join(lines[4:15]))
     print("Stage 6: eval/summary.md written.")
 
 
