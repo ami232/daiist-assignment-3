@@ -23,13 +23,15 @@ Official consolidated texts of the BOE (Spain's official gazette), downloaded as
 
 | Document | URL | Version (latest change in force) | Licence | Words (current text) |
 |---|---|---|---|---|
-| Ley 29/1994 de Arrendamientos Urbanos (LAU) | https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | 8 Oct 2026 | BOE open data: free reuse citing the source (Ley 37/2007, BOE legal notice) | ~25,900 |
-| Ley 12/2023 por el derecho a la vivienda | https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203 | 8 Oct 2026 | same | ~32,500 |
-| Real Decreto-ley 7/2019 de medidas urgentes en materia de vivienda y alquiler | https://www.boe.es/buscar/act.php?id=BOE-A-2019-3108 | 29 Feb 2020 | same | ~10,000 |
-| **Total (initial corpus)** | | | | **~68,400** |
-| *Ley 49/1960 de Propiedad Horizontal (LPH), added later with add_document* | https://www.boe.es/buscar/act.php?id=BOE-A-1960-10906 | 23 Oct 2026 | same | ~12,000 |
+| Ley 29/1994 de Arrendamientos Urbanos (LAU) | https://www.boe.es/buscar/act.php?id=BOE-A-1994-26003 | 13 Nov 2026 | BOE open data: free reuse citing the source (Ley 37/2007, BOE legal notice) | ~23,600 |
+| Ley 12/2023 por el derecho a la vivienda | https://www.boe.es/buscar/act.php?id=BOE-A-2023-12203 | 8 Oct 2026 | same | ~31,600 |
+| Real Decreto-ley 7/2019 de medidas urgentes en materia de vivienda y alquiler | https://www.boe.es/buscar/act.php?id=BOE-A-2019-3108 | 29 Feb 2020 | same | ~9,800 |
+| **Total (initial corpus)** | | | | **~65,000** |
+| *Ley 49/1960 de Propiedad Horizontal (LPH), added later with add_document* | https://www.boe.es/buscar/act.php?id=BOE-A-1960-10906 | 23 Oct 2026 | same | ~11,900 |
 
-Downloaded in November 2026. Laws contain no personal data.
+Downloaded on 23 November 2026. The four XML files are committed in `corpus/` as a dated snapshot, so `main.py index` rebuilds exactly the evaluated index (without them it would download whatever the BOE publishes on the day). Laws contain no personal data.
+
+**The law changed during the project.** The first download (12 November) contained a change to LAU art. 10 due on 15 November 2026 (RDL 28/2026). On 12 November the Congreso de los Diputados repealed RDL 28/2026 before it took effect, and the BOE removed that text on 13 November. On 23 November the corpus was downloaded again, the index rebuilt (5 chunks of the repealed text removed, nothing else changed in the article chunks), the test question that depended on the repealed text (q20) replaced, and retrieval, the agent and the judge re-run for it. All figures in this report are for the 23 November corpus. The original q20 and its results are kept in `eval/old_q20_repealed.jsonl`.
 
 **Limitation found during evaluation:** RDL 7/2019 is an *amending* law. It carries the 2019 wording of the articles it changed in other laws. For example, it carries the 2019 tourist-flat rule of the LPH, but not the express-approval requirement added by LO 1/2025 (in force 3 April 2025), so an answer built from it can be out of date.
 
@@ -42,11 +44,11 @@ The LAU (Ley 29/1994) is the base law for renting a home and covers deposits, du
 - **Chunk:** one chunk per article; articles over 400 words are split on paragraph boundaries into numbered parts.
 - **Metadata on every chunk:** `source` (law), `location` (article and title), `heading`, `part`, `doc_id`, `url` (BOE link), `words`, `hash`, `design`. The chunk text starts with "SOURCE — LOCATION (heading)".
 - **Embed and store:** `gemini-embedding-2` (768 dimensions, RETRIEVAL_DOCUMENT / RETRIEVAL_QUERY) into ChromaDB in `index/` (cosine). A chunk is embedded only if its id and hash are not already stored; query embeddings are cached in `index/query_cache.json`.
-- **Number of chunks:** 272 in the chosen design (LAU 117, Ley 12/2023 118, RDL 7/2019 37), plus 54 for the LPH after the demo.
+- **Number of chunks:** 267 in the chosen design (LAU 112, Ley 12/2023 118, RDL 7/2019 37), plus 54 for the LPH after the demo.
 
 **Extraction problems fixed:**
 1. *All historical versions:* each article in the XML holds every past version; keeping them all tripled the word count and mixed old rules with current ones. Only the latest version is kept.
-2. *Future text mixed into current text:* LAU Article 10 contains an amendment that only applies from 15 November 2026 (RDL 28/2026), introduced by "Téngase en cuenta que, con efectos de…". It is split into its own chunk labelled `[redacción futura, en vigor desde el 15 de noviembre de 2026]`, and AGENTS.md tells the agent to give that date.
+2. *Future text mixed into current text:* the BOE puts amendments that are not yet in force inside the current article, after "Téngase en cuenta que, con efectos de…". In the 12 November download, LAU art. 10 contained such an amendment (RDL 28/2026, due 15 November 2026). The pipeline splits that text into its own chunk labelled `[redacción futura, en vigor desde el …]`, and AGENTS.md tells the agent to give the date. RDL 28/2026 was then repealed before taking effect (see Corpus), so the current corpus has no future text; the split stays in the pipeline for the next amendment.
 
 ## Test set
 
@@ -60,14 +62,14 @@ The 35 questions (22 single-article, 7 multi-article, 6 unanswerable) were first
 
 ## Retrieval
 
-Hit = a retrieved chunk has the expected law and article. Measured on the 29 answerable questions, initial corpus only.
+Hit = a retrieved chunk has the expected law and article. Measured on the 29 answerable questions, initial corpus only (23 November version).
 
 | Design | hit@1 | hit@3 | hit@5 | two-article questions with both articles @5 | words added to prompt @5 |
 |---|---|---|---|---|---|
-| **articles** (one chunk per article) | 0.793 | **1.000** | 1.000 | **5/7** | 1,427 |
-| fixed200 (200 words, 50 overlap) | 0.759 | 0.897 | 1.000 | 3/7 | 1,074 |
+| **articles** (one chunk per article) | **0.759** | **0.966** | **1.000** | **5/7** | 1,427 |
+| fixed200 (200 words, 50 overlap) | 0.690 | 0.828 | 0.897 | 4/7 | 1,070 |
 
-(Over all 29 answerable questions, "every expected article in the top 5" is 0.931 for articles and 0.862 for fixed200; single-article questions always succeed at @5, so the whole difference comes from the 7 two-article questions.)
+(Over all 29 answerable questions, "every expected article in the top 5" is 0.931 for articles and 0.793 for fixed200. On the 12 November corpus, before the repealed text was removed and q20 replaced, the figures were 0.793 / 1.000 / 1.000 for articles and 0.759 / 0.897 / 1.000 for fixed200, with both articles for 5/7 and 3/7 two-article questions: articles was the better design in both versions.)
 
 I chose one chunk per article because it put the right article in the top 3 for every question (100% against 90% for 200-word pieces) and, for the 7 two-article questions, delivered both articles in 5 of them (against 3). With fixed pieces, 4 of the 7 two-article questions would reach the agent missing one of the articles it needs, which means at best an incomplete answer or a wrong "I don't know" and at worst an answer from memory, so about 350 extra words per question (a fraction of a cent) is a cheap price, and it also matches how lawyers cite: by article.
 
@@ -147,10 +149,10 @@ LAU (Ley 29/1994) — Artículo 36. Fianza (TÍTULO IV Disposiciones comunes)
 |---|---|
 | Citations valid (match a retrieved passage) | 35/35 |
 | Expected passage retrieved by the agent | 29/29 |
-| Expected passage cited | 28/29 |
+| Expected passage cited | 29/29 |
 | Correct refusals (unanswerable) | 6/6 |
 | Answered an unanswerable question | 0/6 |
-| Wrong refusals (answerable) | 1/29 (q20) |
+| Wrong refusals (answerable) | 0/29 |
 
 **LLM judge rubric** (`RUBRIC` in `evaluate.py`; the judge gets the question, the reference answer, the agent's answer and the retrieved passages, and must not use its own knowledge):
 - **correct (1/0):** the main conclusion agrees with the reference and nothing contradicts it; missing a minor detail is fine, missing a condition that changes the outcome is not. For unanswerable questions: it says the corpus doesn't cover it and doesn't answer anyway.
@@ -162,19 +164,21 @@ Judge models: `gemini-3-flash-preview` (31 answers), with fallbacks `gemini-3.8-
 
 | | Result |
 |---|---|
-| Correct | **33/35** (wrong: q04, q20) |
+| Correct | **34/35** (wrong: q04) |
 | Unsupported (something made up) | **4/35** (q04, q07, q25, q32) |
 | Correct refusals | **6/6** |
-| Wrong refusals | **1/29** (q20) |
+| Wrong refusals | **0/29** |
+
+On the original q20 (the repealed art. 10 change), the agent had refused although the corpus then contained the text: 33/35 correct and 1/29 wrong refusals on the 12 November corpus.
 
 **My agreement with the judge** (20 answers I graded myself, before seeing the judge's grades):
 
 | | Agreement | Cohen's κ | Disagreements |
 |---|---|---|---|
-| correct | 95% (19/20) | 0.64 | q04 |
+| correct | 95% (19/20) | 0.00 | q04 |
 | supported | 80% (16/20) | 0.00 | q04, q07, q25, q32 |
 
-κ is 0 for *supported* because I marked all 20 as supported. When one grader gives the same grade every time, any agreement could be luck, so κ = 0 even at 80% agreement.
+κ is 0 for both because I gave all 20 answers the same grade in each column (all correct, all supported). When one grader gives the same grade every time, any agreement could be luck, so κ = 0 even at 95% agreement. (With the original q20, which I graded as not correct, κ for *correct* was 0.64; the new q20 was graded on 24 November, before the judge ran on it, and we agreed.)
 
 After reviewing the 4 disagreements against the passages, I agreed with the judge on all of them (`eval/human_review.csv`): it caught invented details I had missed. In q04 I had even praised the answer as "more complete", and the extra detail was the invented part. The judge was not fully consistent, though: it marked q04 incorrect but q25 correct for the same invented clause.
 
@@ -224,7 +228,7 @@ My reasons (from `eval/failures.csv`):
 |---|---|
 | Tokens | ~6,430 (6,150 input + 280 output), 1.3 searches on average |
 | Cost | $0 on the free tier; ≈ $0.0025 at standard `gemini-3.5-flash-lite` prices ($0.30 / $2.50 per 1M input / output tokens), i.e. ~$2.50 per 1,000 questions |
-| Latency | median 38.6 s, mean 46.5 s in the evaluation run (free-tier rate limits caused 31 retries); about 4–6 s per question without throttling |
+| Latency | median 36.8 s, mean 45.2 s in the evaluation run (free-tier rate limits caused many retries); about 4–6 s per question without throttling |
 
 ## AI use
 

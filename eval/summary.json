@@ -24,18 +24,18 @@
   }
  ],
  "agreement": {
-  "graded": 19,
+  "graded": 20,
   "correct": {
-   "n": 19,
-   "agreement": 0.947,
+   "n": 20,
+   "agreement": 0.95,
    "kappa": 0.0,
    "disagreements": [
     "q04"
    ]
   },
   "supported": {
-   "n": 19,
-   "agreement": 0.789,
+   "n": 20,
+   "agreement": 0.8,
    "kappa": 0.0,
    "disagreements": [
     "q04",
@@ -50,9 +50,6 @@
    "q04",
    "q07",
    "q25"
-  ],
-  "not judged": [
-   "q20"
   ],
   "unsupported claim (answered an unanswerable question)": [
    "q32"

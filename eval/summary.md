@@ -13,8 +13,8 @@ Agent model: `gemini-3.5-flash-lite` · judge: `gemini-3-flash-preview, gemini-3
 
 | metric | value |
 |---|---|
-| judged correct | 33/34 |
-| judged supported | 30/34 |
+| judged correct | 34/35 |
+| judged supported | 31/35 |
 | correct refusals (code) | 6/6 |
 | answered an unanswerable question (code) | 0/6 |
 | wrong refusals (code) | 0/29 |
@@ -27,11 +27,10 @@ Agent model: `gemini-3.5-flash-lite` · judge: `gemini-3-flash-preview, gemini-3
 
 ## Suggested failure causes (check each by hand)
 
-- **not judged** (1): q20
 - **unsupported claim** (3): q04, q07, q25
 - **unsupported claim (answered an unanswerable question)** (1): q32
 
 ## Judge vs human
 
-- **correct**: 95% agreement on 19 answers (Cohen's κ = 0.0); disagreements: q04
-- **supported**: 79% agreement on 19 answers (Cohen's κ = 0.0); disagreements: q04, q07, q25, q32
+- **correct**: 95% agreement on 20 answers (Cohen's κ = 0.0); disagreements: q04
+- **supported**: 80% agreement on 20 answers (Cohen's κ = 0.0); disagreements: q04, q07, q25, q32
