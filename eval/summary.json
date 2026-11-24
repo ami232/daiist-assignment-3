@@ -1,0 +1,122 @@
+{
+  "agent_model": "gemini-3.5-flash-lite",
+  "design": "structure",
+  "n_questions": 38,
+  "retrieval": [
+    {
+      "design": "fixed",
+      "kind": "all",
+      "n": 30,
+      "hit@1": 0.5,
+      "hit@3": 0.6,
+      "hit@5": 0.733
+    },
+    {
+      "design": "fixed",
+      "kind": "single",
+      "n": 21,
+      "hit@1": 0.714,
+      "hit@3": 0.857,
+      "hit@5": 0.952
+    },
+    {
+      "design": "fixed",
+      "kind": "multi",
+      "n": 9,
+      "hit@1": 0.0,
+      "hit@3": 0.0,
+      "hit@5": 0.222
+    },
+    {
+      "design": "structure",
+      "kind": "all",
+      "n": 30,
+      "hit@1": 0.5,
+      "hit@3": 0.7,
+      "hit@5": 0.767
+    },
+    {
+      "design": "structure",
+      "kind": "single",
+      "n": 21,
+      "hit@1": 0.714,
+      "hit@3": 0.905,
+      "hit@5": 0.952
+    },
+    {
+      "design": "structure",
+      "kind": "multi",
+      "n": 9,
+      "hit@1": 0.0,
+      "hit@3": 0.222,
+      "hit@5": 0.333
+    }
+  ],
+  "judge": {
+    "all": {
+      "n": 38,
+      "correct": 0.947,
+      "supported": 0.974
+    },
+    "single": {
+      "n": 21,
+      "correct": 1.0,
+      "supported": 1.0
+    },
+    "multi": {
+      "n": 9,
+      "correct": 1.0,
+      "supported": 1.0
+    },
+    "unanswerable": {
+      "n": 8,
+      "correct": 0.75,
+      "supported": 0.875
+    }
+  },
+  "code_checks": {
+    "searched": 1.0,
+    "citations_valid": 1.0,
+    "refusal_ok": 1.0,
+    "has_citation_ok": 1.0
+  },
+  "guardrail_outcomes": {
+    "ok": 36,
+    "repaired_citations": 2
+  },
+  "cost_per_question": {
+    "tokens_mean": 6475,
+    "tokens_median": 4698,
+    "seconds_mean": 8.4,
+    "seconds_median": 5.5,
+    "tool_calls_mean": 1.37,
+    "total_tokens": 246061
+  },
+  "agreement_with_human": {
+    "n": 38,
+    "correct": {
+      "n": 38,
+      "agreement": 0.947,
+      "cohen_kappa": 0.0,
+      "disagreements": [
+        "q31",
+        "q37"
+      ]
+    },
+    "supported": {
+      "n": 38,
+      "agreement": 0.947,
+      "cohen_kappa": -0.027,
+      "disagreements": [
+        "q02",
+        "q31"
+      ]
+    }
+  },
+  "failures": {
+    "count": 2,
+    "by_category": {
+      "check_judge_or_test_question": 2
+    }
+  }
+}

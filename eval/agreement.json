@@ -1,0 +1,21 @@
+{
+  "n": 38,
+  "correct": {
+    "n": 38,
+    "agreement": 0.947,
+    "cohen_kappa": 0.0,
+    "disagreements": [
+      "q31",
+      "q37"
+    ]
+  },
+  "supported": {
+    "n": 38,
+    "agreement": 0.947,
+    "cohen_kappa": -0.027,
+    "disagreements": [
+      "q02",
+      "q31"
+    ]
+  }
+}

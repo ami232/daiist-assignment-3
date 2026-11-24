@@ -1,0 +1,42 @@
+{
+  "note": "Credits and reuse conditions for every document in corpus/ and holdout/. All documents are public EU legal texts or Commission guidance; none contains personal data. Text was extracted from the PDFs, cleaned (page headers, footnotes, hyphenation removed) and split into chunks; no wording was changed.",
+  "downloaded": "2026-11-18",
+  "documents": [
+    {
+      "file": "corpus/ai_act_consolidated_2026-07-27.pdf",
+      "short_title": "EU AI Act (consolidated 2026-07-27)",
+      "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act), consolidated version of 27 July 2026, incorporating Regulation (EU) 2026/1744",
+      "publisher": "European Union (European Parliament and Council; consolidated text by the Publications Office)",
+      "url": "https://eur-lex.europa.eu/eli/reg/2024/1689/2026-07-27/eng/pdf",
+      "licence": "EUR-Lex reuse notice: reuse authorised, commercial or non-commercial, provided the source is acknowledged (© European Union, https://eur-lex.europa.eu). To be re-checked against the current EUR-Lex legal notice.",
+      "status": "indexed"
+    },
+    {
+      "file": "corpus/guidelines_prohibited_practices_C2025-5052.pdf",
+      "short_title": "Commission Guidelines on prohibited AI practices",
+      "title": "Commission Guidelines on prohibited artificial intelligence practices established by Regulation (EU) 2024/1689 (AI Act), C(2025) 5052",
+      "publisher": "European Commission",
+      "url": "https://ec.europa.eu/newsroom/dae/redirection/document/112367",
+      "licence": "CC BY 4.0 (Commission Decision 2011/833/EU and the Commission legal notice, https://commission.europa.eu/legal-notice_en): reuse allowed with credit and indication of changes.",
+      "status": "indexed"
+    },
+    {
+      "file": "corpus/guidelines_ai_system_definition_C2025-5053.pdf",
+      "short_title": "Commission Guidelines on the AI system definition",
+      "title": "Commission Guidelines on the definition of an artificial intelligence system established by Regulation (EU) 2024/1689 (AI Act), C(2025) 5053",
+      "publisher": "European Commission",
+      "url": "https://ec.europa.eu/newsroom/dae/redirection/document/112455",
+      "licence": "CC BY 4.0 (Commission Decision 2011/833/EU and the Commission legal notice): reuse allowed with credit and indication of changes.",
+      "status": "indexed"
+    },
+    {
+      "file": "holdout/guidelines_gpai_C2025-7719.pdf",
+      "short_title": "Commission Guidelines on GPAI model obligations",
+      "title": "Commission Guidelines on the scope of the obligations for providers of general-purpose AI models established by Regulation (EU) 2024/1689 (AI Act), C(2025) 7719",
+      "publisher": "European Commission",
+      "url": "https://ec.europa.eu/newsroom/dae/redirection/document/118340",
+      "licence": "CC BY 4.0 (Commission Decision 2011/833/EU and the Commission legal notice): reuse allowed with credit and indication of changes.",
+      "status": "holdout: not indexed; added later with add_document for the before/after experiment"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+id,correct,supported,reason,judge_model
+q01,1,1,The assistant correctly identifies the maximum fine for Article 5 infringements and includes additional relevant context from the provided evidence.,gemini-3.1-flash-lite
+q02,1,1,"The assistant correctly identifies that fines for SMEs are capped at the lower amount of the standard fine or the proportionate limit, which is supported by Article 99(6) in the evidence.",gemini-3.1-flash-lite
+q03,1,1,"The assistant accurately captures the core obligation and the limitation regarding individual literacy levels, while correctly citing the provided evidence.",gemini-3.1-flash-lite
+q04,1,1,"The assistant correctly identifies the prohibition and its exceptions, while providing accurate supporting details from the provided evidence.",gemini-3.1-flash-lite
+q05,1,1,The assistant accurately identifies the three objectives and includes relevant context from the provided evidence.,gemini-3.1-flash-lite
+q06,1,1,The assistant correctly identifies the threshold of 10^25 FLOPs as stated in the provided evidence.,gemini-3.1-flash-lite
+q07,1,1,The assistant accurately and comprehensively lists all employment-related high-risk AI uses as defined in the provided evidence.,gemini-3.1-flash-lite
+q08,1,1,The assistant correctly identifies the deployers required to perform a FRIA under Article 27 and includes the additional requirement for real-time RBI systems as supported by the provided guidelines.,gemini-3.1-flash-lite
+q09,1,1,The assistant accurately defines the term using the provided evidence.,gemini-3.1-flash-lite
+q10,1,1,The assistant correctly identifies the transparency obligation and the specific exception mentioned in the evidence.,gemini-3.1-flash-lite
+q11,1,1,"The assistant correctly identifies the general application date and the specific exceptions mentioned in the reference answer, while providing additional accurate details supported by the evidence.",gemini-3.1-flash-lite
+q12,1,1,The assistant correctly identifies the general 15-day deadline and provides additional accurate context regarding specific incident types found in the evidence.,gemini-3.1-flash-lite
+q13,1,1,The assistant correctly identifies the requirement for informing users about AI interaction and includes the relevant exceptions and timing details found in the provided evidence.,gemini-3.1-flash-lite
+q14,1,1,The assistant correctly identifies that adaptiveness is not a required element and explains the significance of the term 'may' using the provided evidence.,gemini-3.1-flash-lite
+q15,1,1,The assistant accurately lists all seven elements of the AI system definition as provided in the evidence.,gemini-3.1-flash-lite
+q16,1,1,The assistant accurately reflects the guidelines provided in the evidence regarding the classification of linear and logistic regression systems.,gemini-3.1-flash-lite
+q17,1,1,"The assistant accurately identifies the prohibited practice and includes all key facts from the reference answer, supported by the provided evidence.",gemini-3.1-flash-lite
+q18,1,1,The assistant accurately reports the fine amounts for both general undertakings and EU institutions as specified in the evidence.,gemini-3.1-flash-lite
+q19,1,1,The assistant accurately identifies all the interests mentioned in the reference answer and supports them with the provided evidence.,gemini-3.1-flash-lite
+q20,1,1,The assistant correctly identifies the prohibition and exceptions while providing comprehensive details supported by the provided evidence.,gemini-3.1-flash-lite
+q21,1,1,The assistant correctly identifies the fine amount and turnover percentage specified in Article 99(4) and includes the relevant context regarding SMEs and SMCs found in the evidence.,gemini-3.1-flash-lite
+q22,1,1,The assistant correctly identifies that social scoring is prohibited under Article 5(1)(c) and accurately states the maximum fines as defined in Article 99(3).,gemini-3.1-flash-lite
+q23,1,1,The assistant correctly provides the definition of an AI system from Article 3 and accurately explains that adaptiveness is not a required condition based on the provided evidence.,gemini-3.1-flash-lite
+q24,1,1,"The assistant accurately identifies the prohibition in workplace and education settings, the medical/safety exception, and the transparency requirement for permitted use.",gemini-3.1-flash-lite
+q25,1,1,"The assistant accurately identifies the fines for prohibited practices for both standard operators and EU institutions, citing the correct evidence.",gemini-3.1-flash-lite
+q26,1,1,"The assistant accurately identifies the prohibitions under Article 5(1)(ba) and (bb), correctly cites the application date of 2 December 2026, and provides relevant supporting details from the provided evidence.",gemini-3.1-flash-lite
+q27,1,1,The assistant correctly identifies the criteria (Annex II offences and the four-year sentence threshold) and lists the specific offences provided in the evidence.,gemini-3.1-flash-lite
+q28,1,1,"The assistant correctly identifies that Annex III systems are high-risk by default, while accurately detailing the specific derogations and the profiling exception provided in the evidence.",gemini-3.1-flash-lite
+q29,1,1,The assistant correctly identifies the Commission's designation power under Article 51(1)(b) and provides additional accurate context regarding the notification and rebuttal process supported by the evidence.,gemini-3.1-flash-lite
+q30,1,1,The assistant correctly identifies that linear regression falls outside the AI system definition based on the provided guidelines.,gemini-3.1-flash-lite
+q31,0,0,"The question is unanswerable based on the provided documents, but the assistant incorrectly attempted to answer it by citing a different threshold (10^25 FLOPs) found in the evidence.",gemini-3.1-flash-lite
+q32,1,1,The assistant correctly identified that the provided documents do not contain the specific information requested and provided relevant context from the evidence.,gemini-3.1-flash-lite
+q33,1,1,The assistant correctly identified that the provided documents do not contain the requested information.,gemini-3.1-flash-lite
+q34,1,1,The assistant correctly identified that the provided documents do not contain specific examples of how to label deep fakes as required by the question.,gemini-3.1-flash-lite
+q35,1,1,The assistant correctly identified that the provided documents do not contain information regarding GDPR fines for unlawful biometric processing.,gemini-3.1-flash-lite
+q36,1,1,The assistant correctly identified that the provided documents do not contain information about the fines imposed by the Digital Services Act.,gemini-3.1-flash-lite
+q37,0,1,"The assistant answered the question instead of stating that the documents do not cover it, which is required for an unanswerable question.",gemini-3.1-flash-lite
+q38,1,1,The assistant correctly identified that the documents do not contain the answer and provided relevant context from the evidence without inventing information.,gemini-3.1-flash-lite
