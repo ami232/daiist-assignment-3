@@ -43,6 +43,9 @@ SHORT_NAMES = {
     "BOE-A-2008-3657": ("Llei 18/2007", "Ley 18/2007, de 28 de diciembre, del derecho a la vivienda (Cataluña)"),
     "BOE-A-2024-281": ("Decret-llei 3/2023", "Decreto-ley 3/2023, de 7 de noviembre, de medidas urgentes sobre "
                        "el régimen urbanístico de las viviendas de uso turístico (Cataluña)"),
+    # added in step 8 to answer q36 (tourist tax)
+    "BOE-A-2026-6642": ("Llei 2/2026", "Ley 2/2026, de 6 de marzo, de modificación del impuesto sobre las "
+                        "estancias en establecimientos turísticos (Cataluña)"),
 }
 
 
