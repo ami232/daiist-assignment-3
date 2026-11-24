@@ -1,0 +1,19 @@
+{
+  "slug": "certificado-prescripcion-segregacion",
+  "nombre_oficial": "CERTIFICADO Prescripción Urbanísticas de Segregación de Parcelas/Terrenos (Innecesariedad de licencia)",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/e34d3f1b-f5df-4d45-a185-6094f9e74009",
+  "ambito": "el certificado de prescripción de segregaciones de parcelas o terrenos (innecesariedad de licencia)",
+  "que_es": "Es pedir un certificado de que la división o segregación de una parcela YA HA PRESCRITO y por tanto no hace falta licencia para ella (innecesariedad de licencia). Se pide cuando una finca se dividió hace años sin licencia y hoy hay que acreditarlo, normalmente ante notario o en el registro de la propiedad. OJO: no sirve para segregar AHORA; eso es una licencia de parcelación.",
+  "quien_puede": "El propio interesado, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion": [
+    "Fotocopia del Título de dominio sobre las fincas afectadas. Nota simple registral de la escritura de la finca matriz o copia de las escrituras",
+    "Referencia Catastral o Plano Situación sobre plano de clasificación del Plan General, con delimitación de la parcela.",
+    "Proyecto Técnico Topográfico en soporte digital",
+    "Documentación fotográfica, de las zonas donde se actúa y del entorno."
+  ],
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel."
+}

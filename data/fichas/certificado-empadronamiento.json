@@ -1,0 +1,43 @@
+{
+  "slug": "certificado-empadronamiento",
+  "nombre_oficial": "Solicitud de Certificado o Volante de Empadronamiento",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/1c74bc66-8b69-4f3c-8183-d3591f0504ed",
+  "ambito": "los certificados y volantes de padrón",
+  "que_es": "Es la solicitud, por internet en la sede electrónica del ayuntamiento, de un certificado o volante del Padrón Municipal de Habitantes. Un mismo trámite cubre varios tipos de documento, que se eligen en un desplegable “Tipo”.",
+  "quien_puede": "El propio interesado, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Consultar en la ficha del trámite",
+  "silencio_administrativo": "Consultar en la ficha del trámite",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común (art. 66).",
+    "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local (art. 21.1 s).",
+    "Real Decreto 1690/1986, de 11 de julio, Reglamento de Población y Demarcación (arts. 53 y 61).",
+    "Real Decreto 2568/1986, de 28 de noviembre, ROF (arts. 204-205).",
+    "Resolución del INE de 17 de febrero de 2020, sobre gestión del Padrón municipal."
+  ],
+  "faq": [
+    {
+      "q": "¿Es gratuito?",
+      "a": "Sí, la expedición de certificados y volantes de empadronamiento es gratuita."
+    },
+    {
+      "q": "¿Cuál pido, certificado o volante?",
+      "a": "Si quien se lo pide exige un documento oficial, un certificado; si es para un trámite informal, basta un volante."
+    },
+    {
+      "q": "¿Sirve para viajar con descuento de residente?",
+      "a": "Para eso existe el tipo «Certificado de Residencia para Viajar»."
+    },
+    {
+      "q": "¿Puedo pedir el de otra persona?",
+      "a": "En general cada persona solicita el suyo; para terceros pueden exigirse autorización y documentación adicional."
+    },
+    {
+      "q": "¿Cuándo lo recibo?",
+      "a": "El documento se emite y se recibe según el medio de notificación que haya elegido en la solicitud."
+    }
+  ],
+  "kb_extra": "\n## Certificado vs. volante (diferencia clave)\n- **Certificado:** documento **oficial y firmado** por el ayuntamiento. Tiene validez para gestiones que\n  exigen prueba oficial (juzgados, notarías, extranjería, bancos, becas, herencias…).\n- **Volante:** documento **informativo**, sin firma oficial. Vale para trámites sencillos donde solo hay\n  que demostrar dónde se vive.\n\n## Tipos disponibles (desplegable \"Tipo\")\n- **Certificado / Volante de Empadronamiento:** acredita que la persona está empadronada y en qué\n  domicilio.\n- **Certificado / Volante de Convivencia:** acredita **quiénes conviven** en el mismo domicilio (todas las\n  personas empadronadas en esa vivienda). Útil para ayudas, familia numerosa, reagrupación, etc.\n- **Certificado de Empadronamiento Histórico:** recoge los **empadronamientos anteriores** de la persona\n  (domicilios y fechas pasadas).\n- **Certificado de Residencia para Viajar:** acredita la residencia para **viajar** (por ejemplo, para el\n  descuento de residente canario).\n- **Fe de Vida:** acredita que la persona **está viva**. Suelen pedirla organismos de pensiones,\n  especialmente del extranjero."
+}

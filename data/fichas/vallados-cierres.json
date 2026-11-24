@@ -1,0 +1,42 @@
+{
+  "slug": "vallados-cierres",
+  "nombre_oficial": "Vallado de obras, fincas y solares: licencia de obra mayor y comunicación previa",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/1745fecf-066e-45fc-9275-41fa7b61b0f6 (y .../377de045-fe11-445e-89f5-9510105b522c; cubre 2 trámites del catálogo)",
+  "ambito": "los vallados y cierres de fincas, solares y obras en Guía, en sus dos vías: licencia de obra mayor y comunicación previa",
+  "que_es": "Es el permiso que hay que pedir al ayuntamiento antes de cerrar o vallar una finca, un solar o una obra. En la sede hay dos trámites según la entidad del cierre: si necesita cimentación de cincuenta centímetros o más, muros de contención o estructuras especiales, va por LICENCIA DE OBRA MAYOR; si es un cierre sencillo que no requiere cimentación compleja —o se trata de reparar o mantener uno que ya existe—, va por COMUNICACIÓN PREVIA. OJO: esto es para el CIERRE del terreno. Si lo que va a hacer es una obra en la vivienda o el local (levantar, reformar, ampliar, cerrar un porche), eso es obra de edificación y es un trámite aparte.",
+  "quien_puede": "El propietario del terreno o el promotor de la obra, o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "Dependen de cuál de los dos trámites sea, y la diferencia es grande. La **licencia de obra mayor** pide\ncinco documentos: documento de identidad, último recibo del IBI, escritura de la propiedad preexistente,\nproyecto o proyectos técnicos visados por el colegio oficial en soporte digital, y hojas de dirección\nfacultativa de los técnicos (arquitecto y arquitecto técnico). La **comunicación previa** pide uno solo:\nel último recibo del IBI o la referencia catastral. Todo lo demás que aparezca en su pantalla (proyecto,\nplanos, fotografías, memoria, presupuesto, informe de técnico competente, autorización previa) es\nopcional, salvo la documentación fotográfica cuando el terreno está en el Casco Histórico.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 4/2017, de 13 de julio, del Suelo y de los Espacios Naturales Protegidos de Canarias (artículos 332, 349 y 350 para la comunicación previa).",
+    "Ley 38/1999, de 5 de noviembre, de Ordenación de la Edificación.",
+    "Ley 12/2012, de 26 de diciembre, de medidas urgentes de liberalización del comercio y de determinados servicios."
+  ],
+  "faq": [
+    {
+      "q": "¿Necesito licencia para poner una alambrada en mi finca?",
+      "a": "Si es un cierre sencillo, sin cimentación compleja, va por comunicación previa, que es más ágil que la licencia. Solo hace falta licencia de obra mayor cuando el vallado necesita cimentación de cincuenta centímetros o más, muros de contención o estructuras especiales."
+    },
+    {
+      "q": "Voy a levantar un muro para aguantar la tierra de un desnivel, ¿qué es eso?",
+      "a": "Un muro de contención es licencia de obra mayor de vallado, con o sin movimiento de tierras. Le pedirán proyecto técnico visado y hojas de dirección facultativa."
+    },
+    {
+      "q": "Solo quiero reparar el muro que ya tengo, que se ha caído un trozo.",
+      "a": "La reparación y el mantenimiento de un vallado que ya existe van siempre por comunicación previa."
+    },
+    {
+      "q": "¿Necesito un arquitecto?",
+      "a": "Para la licencia de obra mayor de vallado sí: se piden proyectos técnicos visados por el colegio oficial y hojas de dirección facultativa de arquitecto y arquitecto técnico. Para la comunicación previa no es obligatorio."
+    },
+    {
+      "q": "¿Y si lo que quiero es cerrar el porche de mi casa?",
+      "a": "Eso no es un vallado, es obra de edificación, y se tramita por los trámites de obra, que son distintos."
+    }
+  ],
+  "kb_extra": "\n## Los dos trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| SOLICITUD LICENCIA: OBRA MAYOR de Vallado (Obra nueva/Legalización) que requieran cimentación (50 cm o más) o estructuras de contenciones | 3250120 |\n| COMUNICACIÓN PREVIA. Vallado de obras, fincas y solares que no requieran cimentación compleja. Reparación y mantenimiento | 3250230 |\n\n## Cuál de los dos toca\n- **Licencia de obra mayor:** el vallado necesita cimentación de cincuenta centímetros o más, muros de\n  contención o estructuras especiales. La propia sede lo explica así: su condición de obra mayor se la\n  otorga la necesidad de utilizar estructuras de cimentación, muros o estructuras especiales. Entran aquí\n  también los muros de contención, con o sin movimiento de tierras, para acondicionar una finca.\n- **Comunicación previa:** el cierre no requiere cimentación compleja. Y siempre que se trate de\n  **reparar o mantener** un vallado que ya existe.\n\n## Si el terreno está en el Casco Histórico\nEn la comunicación previa, cuando el terreno está incluido en el Casco Histórico delimitado por el Plan\nGeneral, se pide además documentación fotográfica. No es obligatoria en el resto de los casos.\n\n## Qué NO es este trámite\nCerrar un porche, levantar una pared dentro de la vivienda o cualquier obra en el edificio es **obra de\nedificación**, que tiene sus propios trámites. Aquí solo se tramita el cierre o vallado del terreno."
+}

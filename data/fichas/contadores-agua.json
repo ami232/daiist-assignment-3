@@ -1,0 +1,43 @@
+{
+  "slug": "contadores-agua",
+  "nombre_oficial": "Verificación, Lectura o Cambio de Ubicación de Contadores de Aguas",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/8c02079a-91f2-4c82-87a4-963a73ebd40d",
+  "ambito": "los contadores del agua municipal de Guía: verificación, lectura, cambio de ubicación y sustitución de contadores averiados o parados",
+  "que_es": "Es el trámite del servicio municipal de agua para todo lo que tiene que ver con el CONTADOR: pedir que lo VERIFIQUEN si cree que marca de más, pedir una LECTURA, pedir CAMBIARLO DE SITIO (por ejemplo, sacarlo a la fachada o a la vía pública para que se pueda leer desde fuera) o comunicar que está AVERIADO o PARADO para que lo sustituyan. No pide documentos. OJO: si no tiene agua, hay una fuga o un problema con el suministro o con la factura, eso no es este trámite: es hablar con el servicio de Agua y Electrificación. Y si lo que quiere es ENGANCHAR una casa nueva al alcantarillado o traer agua a una finca, eso es la acometida, que es otro trámite. Este trámite puede llevar una tasa según la ordenanza municipal.",
+  "quien_puede": "El titular del contrato de agua, o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Desestimatorio: si en el plazo de resolución no hay respuesta, se entiende denegado",
+  "documentacion_kb": "No hace falta aportar ningún documento. Conviene tener a mano la dirección del suministro y, si se sabe,\nel número o la lectura del contador; una foto del contador puede adjuntarse como documentación adicional.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local.",
+    "Ley 8/1989, de 13 de abril, de Tasas y Precios Públicos.",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (artículos 9 y 66).",
+    "Ordenanza municipal reguladora del servicio de abastecimiento de agua de Santa María de Guía."
+  ],
+  "faq": [
+    {
+      "q": "Me ha llegado una factura altísima y creo que el contador marca de más, ¿qué hago?",
+      "a": "Pida la verificación del contador con este trámite. No necesita documentos; indique la dirección del suministro y, si puede, la lectura actual. Puede llevar una tasa según la ordenanza."
+    },
+    {
+      "q": "Quiero sacar el contador a la fachada para que lo lean desde fuera.",
+      "a": "Es el cambio de ubicación, con este mismo trámite. No pide documentos."
+    },
+    {
+      "q": "El contador está parado, no se mueve.",
+      "a": "Comuníquelo con este trámite para que lo revisen y lo sustituyan."
+    },
+    {
+      "q": "No tengo agua desde esta mañana, ¿es aquí?",
+      "a": "No. Una avería o un corte del suministro se comunica directamente al servicio de Agua y Electrificación; este trámite es solo para el contador."
+    },
+    {
+      "q": "¿Cuánto tardan en contestar?",
+      "a": "El plazo depende de la normativa aplicable, y el silencio es desestimatorio: si pasa el plazo sin respuesta, se entiende denegado. Conviene llamar y preguntar si no hay noticias."
+    }
+  ],
+  "kb_extra": "\n## Las cuatro cosas que cubre\n- **Verificación:** cree que el contador marca de más o mal; se pide que lo comprueben.\n- **Lectura:** pedir una lectura del contador.\n- **Cambio de ubicación:** mover el contador, normalmente a la fachada o a la vía pública para que pueda\n  leerse desde fuera.\n- **Contador averiado o parado:** comunicarlo para que lo detecten y lo sustituyan.\n\n## Tasa\nLa ficha del trámite cita la Ley de Tasas y Precios Públicos: la verificación o el cambio de ubicación\npueden llevar una tasa según la ordenanza municipal. El importe, en el ayuntamiento.\n\n## Silencio administrativo\nEs desestimatorio: si pasa el plazo sin respuesta, se entiende denegado. Conviene preguntar por la solicitud\nsi no hay noticias.\n\n## Qué NO es este trámite\n- **No tener agua, una fuga, una avería en la red o un problema con la factura:** servicio de Agua y\n  Electrificación, hablando con una persona.\n- **Dar de alta o de baja el suministro de agua** de una vivienda: con el servicio de agua, no con este\n  trámite.\n- **Enganchar** una casa al alcantarillado o traer agua o luz a una finca: trámite de acometidas."
+}

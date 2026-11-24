@@ -1,0 +1,42 @@
+{
+  "slug": "instancia-general",
+  "nombre_oficial": "Instancia General",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/5161fa8d-970e-4b48-a506-b2ac34ceafe5",
+  "ambito": "la presentación de una instancia general por el registro del ayuntamiento",
+  "que_es": "Es el escrito genérico para dirigirse al ayuntamiento cuando lo que se quiere pedir o comunicar no tiene un trámite propio. Se explica en un texto libre qué expone y qué solicita, y queda registrado oficialmente con fecha. Si lo que necesita SÍ tiene su propio trámite (por ejemplo padrón, una licencia de obra o una queja), es mejor usar ese trámite, porque va directo al departamento que lo resuelve.",
+  "quien_puede": "Cualquier persona, física o jurídica, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según la normativa aplicable",
+  "silencio_administrativo": "Según la normativa aplicable",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (arts. 5-6, 13.d, 14, 21.4, 22, 24, 40, 53.1.a, 82, 94 y 109-110).",
+    "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público (art. 23).",
+    "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local (art. 21.1.s).",
+    "Real Decreto 2568/1986, de 28 de noviembre, Reglamento de Organización, Funcionamiento y Régimen Jurídico de las Entidades Locales (art. 165.1.b)."
+  ],
+  "faq": [
+    {
+      "q": "¿Qué escribo en la instancia?",
+      "a": "Hay dos partes: en «expone» se cuenta la situación con sus datos y fechas, y en «solicita» se pide de forma concreta lo que se quiere del ayuntamiento. Cuanto más claro y concreto, mejor."
+    },
+    {
+      "q": "¿Sirve para presentar una factura?",
+      "a": "No. Las facturas se presentan en la sede electrónica del Estado, en el punto general de entrada de facturas electrónicas, no como instancia general. El ayuntamiento tiene la información en su web."
+    },
+    {
+      "q": "¿Y si lo que quiero tiene su propio trámite?",
+      "a": "Entonces es mejor usar ese trámite: llega directo al departamento que lo resuelve y suele ir más rápido. La instancia general es para lo que no encaja en ningún trámite concreto."
+    },
+    {
+      "q": "¿Tengo que adjuntar documentos?",
+      "a": "No es obligatorio. Si tiene papeles que apoyen lo que solicita, puede adjuntarlos como documentación adicional."
+    },
+    {
+      "q": "¿Es gratuito?",
+      "a": "Sí, presentar una instancia general es gratuito."
+    }
+  ]
+}

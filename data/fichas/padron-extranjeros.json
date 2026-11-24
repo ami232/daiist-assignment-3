@@ -1,0 +1,32 @@
+{
+  "slug": "padron-extranjeros",
+  "nombre_oficial": "Renovación o Confirmación de la Inscripción Padronal de Personas Extranjeras",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/e487bf24-1af2-4e8d-8cc0-3c605b57b372",
+  "ambito": "la renovación o confirmación en el padrón de las personas extranjeras",
+  "que_es": "Es el trámite periódico del padrón para las personas extranjeras, con dos casos. Uno: los extranjeros no comunitarios sin autorización de residencia permanente (ENCSARP) tienen que RENOVAR su inscripción en el padrón cada dos años. Dos: el resto de personas extranjeras, no obligadas a renovar (NO_ENCSARP), solo tienen que CONFIRMAR que siguen residiendo cuando el ayuntamiento se lo pide. Es la misma gestión del padrón; se pregunta el caso y se guía en el que corresponda.",
+  "quien_puede": "La persona extranjera empadronada en Guía (o su representante), identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Sujeto a la notificación del ayuntamiento y a los plazos aplicables",
+  "plazo_resolucion": "Según la normativa aplicable",
+  "silencio_administrativo": "Según la normativa aplicable",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 7/1985, de 2 de abril, Reguladora de las Bases del Régimen Local (arts. 15-18).",
+    "Reglamento de Población y Demarcación de las Entidades Locales, Real Decreto 1690/1986, de 11 de julio (arts. 53-74).",
+    "Resolución de 17 de febrero de 2020, del INE, sobre la gestión del Padrón municipal."
+  ],
+  "faq": [
+    {
+      "q": "¿Cada cuánto tengo que renovar?",
+      "a": "Si es extranjero no comunitario sin residencia permanente, cada dos años. Si no está obligado a renovar, solo tiene que confirmar su residencia cuando el ayuntamiento se lo pida."
+    },
+    {
+      "q": "¿Cómo sé si me toca renovar o confirmar?",
+      "a": "Depende de su tipo de residencia. Si tiene autorización de residencia permanente o es de la Unión Europea, normalmente solo confirma; si no la tiene, renueva cada dos años. Si no está seguro, el ayuntamiento se lo indica en la notificación que le envía."
+    },
+    {
+      "q": "¿Qué pasa si no renuevo a tiempo?",
+      "a": "Si no renueva en plazo, puede causar baja en el padrón por caducidad. Por eso conviene hacerlo cuando reciba el aviso del ayuntamiento."
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "slug": "deudas-tributarias",
+  "nombre_oficial": "Solicitud de certificado de deuda a mi favor, compensación de deudas tributarias y declaración de nulidad de pleno derecho de actos de naturaleza tributaria",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/f6d7d008-0ad3-4bfa-be5b-0f3302d888dc (y .../f7a523be-6085-41da-a981-48452bab781e compensación, .../c0314398-fd54-4586-91e6-570fbbf6fb1e nulidad; cubre 3 trámites del catálogo)",
+  "ambito": "las tres solicitudes tributarias de vecino: el certificado de una deuda del ayuntamiento a su favor, la compensación de esa deuda con lo que usted debe, y la nulidad de pleno derecho de un acto tributario firme",
+  "que_es": "Son tres trámites TRIBUTARIOS que puede pedir un vecino. El CERTIFICADO DE DEUDA A MI FAVOR es un papel que certifica que el AYUNTAMIENTO LE DEBE dinero a usted (una factura pendiente, una devolución reconocida, una fianza o aval que le tienen que devolver), para presentarlo donde se lo pidan. La COMPENSACIÓN DE DEUDAS TRIBUTARIAS es pedir que lo que el ayuntamiento le debe se DESCUENTE de lo que usted le debe (un impuesto, una tasa, una multa): sirve tanto en periodo voluntario como en ejecutivo, pero el crédito a su favor tiene que estar RECONOCIDO por un acto del ayuntamiento; si no lo está, primero hay que pedir ese reconocimiento. La NULIDAD DE PLENO DERECHO es la vía EXTRAORDINARIA para ANULAR una liquidación o un acto tributario que ya es FIRME (ya no se puede recurrir porque pasó el plazo) por un vicio grave de los que lista el artículo 217 de la Ley General Tributaria (se dictó sin competencia, sin el procedimiento debido, lesiona derechos fundamentales, es de contenido imposible); el ayuntamiento tiene un año para resolver y el silencio es desestimatorio. Ninguno de los tres pide documentos en la sede, aunque conviene adjuntar el recibo o la liquidación y el documento que reconoce el crédito. OJO: PAGAR un recibo, pedir FRACCIONAR o aplazar un pago, RECURRIR un recibo que aún está en plazo, una BONIFICACIÓN o exención del IBI o de otra tasa, y un certificado de estar al corriente de pago son asuntos de Recaudación y Tesorería que no se hacen por esta vía: para eso hay que hablar con una persona.",
+  "quien_puede": "El obligado tributario o el acreedor del ayuntamiento (la persona a la que el ayuntamiento debe), o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año); la nulidad de pleno derecho, en cualquier momento, sin plazo",
+  "plazo_resolucion": "Un año en la nulidad de pleno derecho; según normativa aplicable en el certificado de deuda y en la compensación (seis meses en la compensación, según la Ley General Tributaria)",
+  "silencio_administrativo": "Desestimatorio en la nulidad de pleno derecho (un año); según normativa aplicable en el certificado y en la compensación (la compensación a instancia de parte se entiende desestimada si no resuelven en seis meses, según la Ley General Tributaria)",
+  "documentacion_kb": "La sede no exige ningún documento obligatorio en ninguno de los tres. Conviene adjuntar, según el caso, la\nfactura o la resolución que reconoce lo que el ayuntamiento le debe, el recibo o la liquidación que quiere\ncompensar o anular, y cualquier prueba del vicio en la nulidad. Pueden aportarse después si el ayuntamiento\nlos pide.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 58/2003, de 17 de diciembre, General Tributaria (arts. 71 a 73, compensación; art. 217, nulidad de pleno derecho).",
+    "Real Decreto 939/2005, de 29 de julio, Reglamento General de Recaudación (arts. 55 a 59, compensación).",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común (arts. 47 y 106).",
+    "Real Decreto Legislativo 2/2004, de 5 de marzo, texto refundido de la Ley Reguladora de las Haciendas Locales."
+  ],
+  "faq": [
+    {
+      "q": "El ayuntamiento me debe una factura y quiero un papel que lo diga.",
+      "a": "Es el certificado de deuda a su favor. No pide documentos, pero conviene adjuntar la factura o la resolución que reconoce lo que le deben."
+    },
+    {
+      "q": "Me tienen que devolver dinero y a la vez me ha llegado el IBI, ¿puedo compensar?",
+      "a": "Sí, con la compensación de deudas tributarias, siempre que lo que le deben esté reconocido por el ayuntamiento. Se resuelve en seis meses; mientras tanto, si el IBI está en voluntaria, no se le cobra por apremio."
+    },
+    {
+      "q": "¿Qué pasa si lo que me deben todavía no está reconocido?",
+      "a": "Entonces primero hay que pedir ese reconocimiento (por ejemplo, la devolución de ingresos indebidos). La compensación solo funciona con créditos ya reconocidos."
+    },
+    {
+      "q": "Me cobraron un impuesto que no me tocaba, pero ya pasó el plazo de recurrir.",
+      "a": "Si el acto es firme, la única vía es la nulidad de pleno derecho, y solo por las causas graves del artículo 217 de la Ley General Tributaria. El ayuntamiento tiene un año; si no contesta, se entiende denegada."
+    },
+    {
+      "q": "Me acaba de llegar un recibo y no estoy de acuerdo.",
+      "a": "Si todavía está en plazo, lo que toca es el recurso de reposición, no la nulidad. Eso no se guía por aquí: hable con una persona del ayuntamiento."
+    },
+    {
+      "q": "Quiero fraccionar el pago del IBI.",
+      "a": "Eso es Recaudación y no se hace con estos trámites. Le paso con una persona que le orienta."
+    },
+    {
+      "q": "¿Es gratuito?",
+      "a": "Sí, los tres son gratuitos."
+    }
+  ],
+  "kb_extra": "\n## Los tres trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| Solicitud de Certificado de Deuda a mi Favor | 869982 |\n| Compensación de Deudas Tributarias | 2701789 |\n| Solicitud de Declaración de Nulidad de Pleno Derecho de Actos Administrativos de Naturaleza Tributaria | 1968299 |\n\n## Cuál de los tres toca\n- **Certificado de deuda a mi favor:** el ayuntamiento le debe dinero (una factura aprobada y no pagada,\n  una devolución de ingresos indebidos ya reconocida, una fianza o garantía que le tienen que devolver) y\n  quiere un certificado que lo acredite (para un banco, para otra administración, para una compensación).\n- **Compensación de deudas tributarias:** artículos 71 a 73 de la Ley General Tributaria. Lo que el\n  ayuntamiento le debe (un crédito RECONOCIDO por acto administrativo) se descuenta de lo que usted le debe\n  (impuestos, tasas, sanciones), en periodo voluntario o ejecutivo. Si el crédito no está reconocido, hay\n  que pedir antes su reconocimiento. Se resuelve en seis meses; si no, se entiende desestimada. Mientras se\n  tramita, la deuda en voluntaria no se cobra por la vía de apremio.\n- **Nulidad de pleno derecho:** artículo 217 de la Ley General Tributaria. Solo para actos FIRMES (que ya\n  no admiten recurso) y solo por causas graves: dictados por órgano incompetente, prescindiendo totalmente\n  del procedimiento, que lesionen derechos fundamentales, de contenido imposible, constitutivos de delito,\n  o que otorguen facultades sin los requisitos esenciales. Se puede pedir en cualquier momento; el\n  ayuntamiento resuelve en un año (silencio desestimatorio) previo dictamen del Consejo Consultivo.\n\n## Qué NO es este trámite (y va a una persona)\n- **Pagar, fraccionar o aplazar** un recibo, domiciliarlo, un recargo o un embargo: Recaudación.\n- **Recurrir** un recibo o una multa que aún está en plazo (recurso de reposición, un mes): es el recurso\n  ordinario, no la nulidad.\n- **Bonificaciones y exenciones** (IBI, basura, vehículos, plusvalía): tienen su propia solicitud.\n- **Certificado de estar al corriente de pago** o certificados tributarios en general.\n- **Devolución de ingresos indebidos** (le cobraron dos veces): se pide aparte; una vez reconocida, sí\n  puede pedir el certificado o la compensación.\n\n## Consejos para que sirva\nTener a mano el recibo o la liquidación (número, concepto, importe, fecha), el documento que reconoce lo\nque le deben, y explicar con claridad qué pide."
+}

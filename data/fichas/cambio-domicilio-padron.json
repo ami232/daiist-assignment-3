@@ -1,0 +1,35 @@
+{
+  "slug": "cambio-domicilio-padron",
+  "nombre_oficial": "Solicitud de Cambio de Domicilio en el Padrón Municipal de Habitantes",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/abef374e-e43d-4700-baeb-9f9e574abcf8",
+  "ambito": "el cambio de domicilio dentro del padrón municipal",
+  "que_es": "Es actualizar en el Padrón Municipal la dirección en la que está empadronado, cuando ya vive en Guía y se muda a otra vivienda dentro del mismo municipio. No es un alta nueva: es cambiar el domicilio de quien ya consta empadronado en Guía.",
+  "quien_puede": "El vecino que ya está empadronado en Guía y se muda a otro domicilio dentro del municipio (o su representante), identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "3 meses",
+  "silencio_administrativo": "Estimatorio",
+  "documentacion": [
+    "Su documento de identidad (siempre)",
+    "Según cómo acredite la nueva vivienda (solo uno): título de propiedad —escritura, contrato de compraventa o nota del registro— si es el propietario; contrato de alquiler o un recibo de un servicio si vive de alquiler; una autorización de empadronamiento firmada si se muda a un domicilio donde ya hay otras personas empadronadas; o una autorización de la dirección del centro si es una vivienda colectiva (residencia o similar)"
+  ],
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Reglamento de Población y Demarcación de las Entidades Locales, Real Decreto 1690/1986, de 11 de julio (art. 59).",
+    "Resolución de 17 de febrero de 2020, del INE, sobre la gestión del Padrón municipal."
+  ],
+  "faq": [
+    {
+      "q": "¿Esto es lo mismo que empadronarme?",
+      "a": "No. El cambio de domicilio es para quien YA está empadronado en Guía y se muda a otra vivienda dentro del municipio. Quien llega de otro municipio o del extranjero hace un alta (empadronamiento), que es un trámite distinto."
+    },
+    {
+      "q": "¿Es gratuito?",
+      "a": "Sí, el cambio de domicilio en el padrón es gratuito."
+    },
+    {
+      "q": "¿Tengo que ir en persona?",
+      "a": "No, si dispone de clave o certificado digital puede hacerlo por internet. Sin ninguno de los dos, puede hacerlo de forma presencial en el ayuntamiento."
+    }
+  ]
+}

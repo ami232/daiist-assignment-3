@@ -1,0 +1,43 @@
+{
+  "slug": "acometidas",
+  "nombre_oficial": "Acometida de alcantarillado (y conexión a la red de saneamiento) y acometida de agua o luz para uso agrícola",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/679d75bb-238b-4637-af28-16b3582825cf (y .../16e24586-3b21-4ff7-9cc6-fa9342747af4, .../7fe0dd64-fbee-4bc0-95b2-167a349b87f4; cubre 3 trámites del catálogo)",
+  "ambito": "las acometidas en Guía: conectar un inmueble a la red de alcantarillado o saneamiento, y traer agua o luz a una finca o explotación agrícola",
+  "que_es": "Es el permiso del ayuntamiento para CONECTAR un inmueble a un servicio que pasa por la vía pública. Hay dos caminos. El primero es la ACOMETIDA DE ALCANTARILLADO: la obra de conexión de las aguas residuales de una casa, un local o una actividad a la red de alcantarillado, en el tramo que va por la calle; la ejecuta el propio titular una vez tiene la autorización municipal, y puede ir dentro de la licencia de edificación de una obra o pedirse aparte. (La sede tiene también una licencia de conexión a la red de saneamiento; el trámite completo, con la obra en la calle, es la acometida de alcantarillado.) El segundo es la ACOMETIDA DE AGUA O LUZ PARA USO AGRÍCOLA, que va por comunicación previa: traer el suministro de agua o de electricidad hasta una finca o explotación agrícola o ganadera. OJO: el permiso municipal es una cosa y el contrato de suministro con la compañía de agua o de luz es otra; aquí solo se tramita el permiso del ayuntamiento.",
+  "quien_puede": "El propietario del inmueble o de la finca, o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "Dependen del trámite. La **acometida de alcantarillado** pide el último recibo del IBI o la referencia\ncatastral y el proyecto; opcionalmente plano de situación, esquema de la acometida con trazado y arquetas,\nfotografía exterior del inmueble, carta de pago, certificado de prescripción urbanística si el edificio\npreexistente no tenía licencia, certificado de estar al corriente de pagos, certificado de seguridad y\nsolidez y título de propiedad. La **acometida de agua o luz para uso agrícola** pide copia de la escritura\nde propiedad, plano de situación y acreditación de la existencia de explotación agrícola o ganadera;\nopcionalmente la carta de pago.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 4/2017, de 13 de julio, del Suelo y de los Espacios Naturales Protegidos de Canarias.",
+    "Ley 38/1999, de 5 de noviembre, de Ordenación de la Edificación.",
+    "Ley 19/1995, de 4 de julio, de Modernización de las Explotaciones Agrarias.",
+    "Ordenanzas municipales de urbanización y reglamento regulador del uso y vertidos a la red municipal de alcantarillado."
+  ],
+  "faq": [
+    {
+      "q": "Quiero enganchar mi casa al alcantarillado, ¿qué necesito?",
+      "a": "La acometida de alcantarillado. Pide el último recibo del IBI o la referencia catastral y el proyecto de la acometida; conviene añadir un plano y un esquema de la conexión y una fotografía exterior."
+    },
+    {
+      "q": "Estoy construyendo la casa, ¿tengo que pedir la acometida aparte?",
+      "a": "Normalmente no: puede ir dentro de la licencia de edificación, como anexo del proyecto. Si su técnico le indica presentarla aparte, se hace con la acometida de alcantarillado."
+    },
+    {
+      "q": "Necesito luz y agua en la finca para el riego y los animales.",
+      "a": "Es la acometida de agua o luz para uso agrícola, por comunicación previa. Pide la escritura, un plano de situación y la acreditación de que existe la explotación."
+    },
+    {
+      "q": "¿Con esto ya tengo el agua o la luz?",
+      "a": "No. Esto es el permiso del ayuntamiento; el alta del suministro se contrata después con la compañía de agua o de electricidad."
+    },
+    {
+      "q": "Quiero dar de alta la luz en mi vivienda.",
+      "a": "Eso no es un trámite de urbanismo: se hace directamente con la compañía suministradora."
+    }
+  ],
+  "kb_extra": "\n## Los trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| SOLICITUD LICENCIA: Acometidas de Alcantarillado | 3250124 |\n| Solicitud de Licencia de Conexión a la Red de Saneamiento de Aguas | 1194400 |\n| COMUNICACIÓN PREVIA. Acometida de Agua y/o Luz para Uso Agrícola | 3250728 |\n\n## Cuál toca\n- **Acometida de alcantarillado:** conectar las aguas residuales de un edificio o una actividad a la red\n  de alcantarillado en el tramo de la vía pública. La obra la ejecuta el titular una vez autorizada, según\n  las ordenanzas municipales de urbanización y el reglamento de uso y vertidos a la red de alcantarillado.\n  Puede constituirse como parte de la licencia de edificación (documentación anexa al proyecto) o\n  independientemente de ella. La sede publica además una licencia de conexión a la red de saneamiento sin\n  documentación; el trámite completo es la acometida.\n- **Acometida de agua o luz para uso agrícola:** traer el suministro hasta una explotación agrícola o\n  ganadera. Hay que acreditar que la explotación existe.\n\n## El permiso municipal no es el contrato de suministro\nEl ayuntamiento autoriza la conexión o la instalación; el alta del servicio se contrata después con la\ncompañía de agua o de electricidad. El agua o la luz de una **vivienda** no se tramitan aquí: es un alta\ncon la compañía.\n\n## Qué NO es este trámite\n- Un aljibe, un depósito de riego o una instalación **dentro** de la finca que no se conecta a ninguna red:\n  son las instalaciones agrarias (trámite de terrenos).\n- Placas solares para autoconsumo: tienen su propio trámite.\n- Una obra de edificación que incluye la acometida: va dentro de su licencia."
+}

@@ -1,0 +1,47 @@
+{
+  "slug": "quejas-sugerencias",
+  "nombre_oficial": "Quejas y Sugerencias",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/ae05799c-df61-43d1-be43-31943561cea9",
+  "ambito": "la presentación de quejas y sugerencias al ayuntamiento",
+  "que_es": "Es el trámite para hacerle llegar al ayuntamiento una queja sobre un servicio municipal o una sugerencia para mejorarlo. Queda registrado oficialmente, con fecha, y el ayuntamiento le responde. OJO: una reclamación contra una empresa o un comercio como cliente (le cobraron de más, una garantía) no es una queja: es la reclamación de consumo ante la OMIC, que tiene su propio trámite.",
+  "quien_puede": "Cualquier persona, física o jurídica, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según la normativa aplicable",
+  "silencio_administrativo": "Según la normativa aplicable",
+  "documentacion": [
+    "Una copia de su documento de identidad (el formulario la pide como documentación obligatoria)"
+  ],
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley Orgánica 4/2001, de 12 de noviembre, reguladora del Derecho de Petición (arts. 7-12).",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (arts. 9, 66 y 94).",
+    "Real Decreto 951/2005, de 29 de julio, por el que se establece el marco general para la mejora de la calidad en la Administración General del Estado."
+  ],
+  "faq": [
+    {
+      "q": "¿Es lo mismo una queja que una denuncia?",
+      "a": "No. La queja es una manifestación de insatisfacción con un servicio municipal y busca que se mejore. La denuncia es poner en conocimiento del ayuntamiento un hecho que puede ser una infracción, y tiene su propio trámite."
+    },
+    {
+      "q": "¿Tengo que aportar algún documento?",
+      "a": "El formulario puede pedirle una copia de su documento de identidad. Además, si tiene fotos o papeles que respalden la queja, puede adjuntarlos, aunque no es obligatorio."
+    },
+    {
+      "q": "¿Me van a contestar?",
+      "a": "Sí. La queja o sugerencia queda registrada oficialmente y el ayuntamiento le responde por el medio de notificación que haya elegido."
+    },
+    {
+      "q": "¿Es gratuito?",
+      "a": "Sí, presentar una queja o una sugerencia es gratuito."
+    },
+    {
+      "q": "Me han cobrado de más en una tienda, ¿pongo una queja?",
+      "a": "No, eso es una reclamación de consumo contra la empresa, que tramita la OMIC con su propio trámite. La queja es contra el ayuntamiento o uno de sus servicios."
+    },
+    {
+      "q": "No puedo leer la web del ayuntamiento con mi lector de pantalla, ¿pongo una queja?",
+      "a": "Para eso hay un trámite propio de accesibilidad de la web y las apps, con veinte días hábiles de respuesta. La queja general es para la atención o los servicios."
+    }
+  ]
+}

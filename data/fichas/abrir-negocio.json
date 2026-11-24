@@ -1,0 +1,56 @@
+{
+  "slug": "abrir-negocio",
+  "nombre_oficial": "Comunicación previa de actividad inocua o de actividad clasificada (apertura de un negocio)",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/5d27a1b6-8450-4cca-8d9b-1daa90909bca (y .../7976b67d-60af-458e-944f-81d3a44900dd; cubre 2 trámites del catálogo)",
+  "ambito": "la apertura de un negocio o una actividad en un local de Guía: comercio y servicios sin impacto (actividad inocua) y actividades con impacto como bares, restaurantes, talleres o garajes (actividad clasificada)",
+  "que_es": "Es la comunicación al ayuntamiento para ABRIR un negocio en un local. En la sede hay dos trámites según lo que se va a poner. La ACTIVIDAD INOCUA es para comercio y servicios sin impacto: una tienda, una peluquería, una oficina, una academia, una inmobiliaria, un pequeño local sin cocina ni máquinas. La ACTIVIDAD CLASIFICADA es para negocios con impacto: un bar, una cafetería, un restaurante, un taller, un garaje, un gimnasio, una discoteca, cualquier cosa con cocina, humos, ruido, música, público, maquinaria o riesgo. En los dos casos hace falta un técnico (un proyecto y un certificado técnico) y se paga una tasa que depende de la superficie del local, que se acredita en diez días con cita previa en Valora Gestión Tributaria. OJO: quedarse con un negocio que ya funciona (un traspaso), cambiar o cerrar una licencia que ya se tiene, y poner una terraza son otros trámites; y saber si en ese local SE PUEDE poner el negocio, sin abrirlo todavía, es el certificado de compatibilidad de uso.",
+  "quien_puede": "Quien va a abrir el negocio (el titular o la empresa), o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año). Se presenta antes de empezar la actividad",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "Dependen del trámite. La **actividad inocua** pide el DNI (o CIF y estatutos de la empresa), fotografías a\ncolor de la fachada, el proyecto técnico en formato digital sin visar y un certificado técnico de que el\nlocal cumple y está en condiciones de abrir; y, si aplican, las autorizaciones sectoriales previas y una\ncertificación de seguridad estructural si el local se construyó sin licencia. La **actividad clasificada**\npide el proyecto técnico, las autorizaciones sectoriales previas preceptivas, el informe de compatibilidad\nurbanística favorable (o copia de su solicitud), la primera ocupación del edificio (o la licencia de obra,\no un documento de seguridad estructural si el edificio no tiene licencia) y la declaración responsable del\npromotor con certificación técnica (visada en actividades insalubres o peligrosas). En los dos casos se\nacredita además el pago de la tasa en diez días.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 12/2012, de 26 de diciembre, de medidas urgentes de liberalización del comercio y de determinados servicios (anexo I: actividades inocuas).",
+    "Ley 7/2011, de 5 de abril, de actividades clasificadas y espectáculos públicos y otras medidas administrativas complementarias (Canarias).",
+    "Decreto 52/2012, de 7 de junio, por el que se establece la relación de actividades clasificadas (Canarias).",
+    "Decreto 86/2013, de 1 de agosto, Reglamento de actividades clasificadas y espectáculos públicos.",
+    "Ordenanza Fiscal reguladora de la tasa por intervención en actividades (artículo 8)."
+  ],
+  "faq": [
+    {
+      "q": "Quiero abrir una tienda de ropa, ¿qué necesito?",
+      "a": "Es una actividad inocua. Hace falta el DNI, fotos de la fachada, un proyecto técnico sin visar y un certificado técnico de que el local cumple. La tasa depende de la superficie: 100 euros hasta 50 metros cuadrados."
+    },
+    {
+      "q": "Voy a abrir un bar, ¿es el mismo trámite que una tienda?",
+      "a": "No: un bar es una actividad clasificada. Pide proyecto técnico, autorizaciones sectoriales, el informe de compatibilidad urbanística, la primera ocupación del edificio y una declaración responsable con certificación técnica. La tasa es de 175 euros hasta 50 metros cuadrados."
+    },
+    {
+      "q": "No tengo el informe de compatibilidad urbanística, ¿puedo presentar la actividad clasificada igual?",
+      "a": "No, es obligatorio (o al menos la copia de haberlo pedido, si no se lo han contestado en plazo). Es otro trámite de la sede: pídalo primero con el certificado de compatibilidad de uso, y después presente la actividad."
+    },
+    {
+      "q": "¿Cómo se paga la tasa?",
+      "a": "Fuera de la sede: en diez días, con cita previa en Valora Gestión Tributaria (teléfono 928 342 900 o cita por internet). Se calcula por la superficie del local, por eso hay que indicarla en el formulario."
+    },
+    {
+      "q": "¿Necesito un técnico para abrir una peluquería?",
+      "a": "Sí: la actividad inocua pide un proyecto técnico (sin visar) y un certificado técnico firmado por técnico competente. Es más sencillo y barato que en una actividad clasificada, pero hace falta."
+    },
+    {
+      "q": "Me quedo con un bar que ya está abierto, ¿es este trámite?",
+      "a": "No, eso es un traspaso: el cambio de titularidad de la actividad, que es otro trámite y pide otros documentos (los DNI de los dos, la licencia de apertura, el contrato del traspaso y un anexo firmado por ambos)."
+    },
+    {
+      "q": "También tengo que reformar el local, ¿lo pido aquí?",
+      "a": "No, la obra tiene su propio trámite (licencia o comunicación previa de obras). Este es solo el del negocio; son dos trámites distintos."
+    },
+    {
+      "q": "¿Cómo pido el informe de compatibilidad urbanística?",
+      "a": "En la sede, con el trámite Certificado de Compatibilidad de Uso: se busca por \"compatibilidad de uso\" y solo pide la referencia catastral del local o un plano de situación. Cuando lo tenga, o la copia de haberlo pedido, vuelve a presentar la actividad clasificada."
+    }
+  ],
+  "kb_extra": "\n## Los dos trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| Comunicación previa con declaración responsable de actividades sujetas al anexo I del RLD 19/2012 (…). Actividad inocua | 2447536 |\n| Comunicación previa de ACTIVIDAD CLASIFICADA | 2447479 |\n\n## Cuál de los dos toca\n- **Actividad inocua:** comercio minorista y servicios sin impacto, del anexo I de la Ley 12/2012: tiendas,\n  peluquerías, oficinas, academias, inmobiliarias, pequeños locales sin cocina ni maquinaria. Pide un\n  proyecto técnico en formato digital (sin visar) y un certificado técnico de que el local cumple.\n- **Actividad clasificada:** actividades con impacto, del anexo del Decreto 52/2012 de Canarias: bares,\n  cafeterías, restaurantes, talleres, garajes, gimnasios, discotecas, industrias, y en general todo lo que\n  tenga cocina, humos, ruido, música, público, maquinaria o riesgo. Pide proyecto técnico, autorizaciones\n  sectoriales, informe de compatibilidad urbanística, primera ocupación (o licencia de obra) y una\n  declaración responsable con certificación técnica.\n\n## La tasa se paga fuera de la sede\nLa tasa depende de la superficie del local, que es obligatorio indicar. Actividad inocua: 100 euros hasta\n50 metros cuadrados; a partir de 51, 2 euros por metro cuadrado. Actividad clasificada: 175 euros hasta 50\nmetros cuadrados; a partir de 51, 3,50 euros por metro cuadrado. El pago **se acredita en diez días**, con\n**cita previa en Valora Gestión Tributaria** (teléfono 928 342 900, o cita por internet). Es un paso más del\ntrámite, no un requisito para presentar la comunicación.\n\n## El informe de compatibilidad y la primera ocupación son OTROS trámites\nLa actividad clasificada pide un informe de compatibilidad urbanística favorable (o la copia de la\nsolicitud, si no se ha expedido en plazo). Ese informe se pide en la sede en su propio trámite, el\ncertificado de compatibilidad de uso. Y pide además la primera ocupación del edificio (si ya está\nconstruido) o la licencia de obra (si está por construir), que también son trámites propios. Si el\nciudadano no los tiene, tiene que pedirlos antes y volver luego a la actividad.\n\n## Cómo se pide el certificado de compatibilidad de uso\nEn la sede, trámite \"CERTIFICADO Compatibilidad de Uso\" (buscar \"compatibilidad de uso\"). Un solo\ndocumento: la referencia catastral del local o un plano de situación sobre la cartografía del Plan\nGeneral. Se pide con clave, igual que este. Con el certificado favorable, o con la copia de la solicitud si\nno lo han expedido en plazo, ya se puede presentar la actividad clasificada.\n\n## Qué NO es este trámite\n- **Quedarse con un negocio que ya funciona** (traspaso), **cambiar** una licencia que ya se tiene o\n  **cerrar** el negocio: es el trámite de negocio existente (cambio de titularidad, modificación o\n  renuncia).\n- **Poner mesas o una terraza** en la calle: es la solicitud de terraza.\n- **Saber si** en un local o parcela se puede poner el negocio, sin abrirlo: es el certificado de\n  compatibilidad de uso.\n- **La obra o reforma del local**: son las obras de edificación, con su propio trámite.\n- **Convertir una vivienda en local** (o al revés): es el cambio de uso."
+}

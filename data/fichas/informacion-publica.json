@@ -1,0 +1,51 @@
+{
+  "slug": "informacion-publica",
+  "nombre_oficial": "Solicitud de acceso a la información pública, consulta de fondos del archivo y participación en la elaboración de normativa",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/cb08f2a7-e5f7-42eb-bbfa-13a2b485e606 (y .../bd174f80-074a-4f6f-a2e8-12c9b0ece1c8 duplicada, .../2e66d84c-8d27-411f-a711-9a345c14be70 archivo, .../eec1d111-c724-4967-b122-077375011648 normativa; cubre 3 trámites del catálogo)",
+  "ambito": "la transparencia y la participación en Guía: el acceso a la información pública del ayuntamiento, la consulta del archivo municipal y la participación ciudadana en la elaboración de ordenanzas y reglamentos",
+  "que_es": "Son los tres trámites de TRANSPARENCIA Y PARTICIPACIÓN del ayuntamiento. El ACCESO A LA INFORMACIÓN PÚBLICA es pedir un documento o un dato que tiene el ayuntamiento y que no es sobre uno mismo: un contrato, una factura o un gasto, un informe técnico, un acta, un expediente de una obra o de una licencia ajena, cuánto cobra un cargo, un convenio. Es un derecho de la ley de transparencia; el ayuntamiento contesta en un mes (silencio desestimatorio), y si deniega o no contesta se puede reclamar ante el Comisionado de Transparencia de Canarias. Solo puede negarse por causas tasadas (datos personales de terceros, seguridad, investigaciones en curso). La CONSULTA DE FONDOS DEL ARCHIVO es pedir ver o una copia de un documento ANTIGUO que custodia el archivo municipal: un plano viejo, una licencia de hace décadas, un padrón histórico para genealogía, actas antiguas; el ayuntamiento contesta en tres meses (silencio desestimatorio) y suele citar para la consulta presencial. La PARTICIPACIÓN EN LA ELABORACIÓN DE NORMATIVA es OPINAR, antes de que se apruebe, sobre una ordenanza o un reglamento que el ayuntamiento está preparando (la consulta pública previa del artículo 133 de la Ley 39/2015): tiene sentido cuando hay una consulta abierta en el portal de transparencia. Ninguno de los tres pide documentos. OJO: un certificado o informe SOBRE UNO MISMO (que acredite algo que consta sobre usted) es el trámite de certificados e informes; SUS datos personales son el trámite de protección de datos; un certificado de empadronamiento es el de certificados de padrón; y ver el estado de UN EXPEDIENTE SUYO se hace en Mi carpeta de la sede o con el departamento.",
+  "quien_puede": "Cualquier persona, sin tener que justificar para qué lo quiere ni estar empadronada en Guía (la ley de transparencia no lo exige), identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año); la participación en normativa, mientras esté abierta la consulta pública de cada norma",
+  "plazo_resolucion": "Un mes en el acceso a la información pública (ampliable otro mes si el volumen o la complejidad lo exigen); tres meses en la consulta del archivo; la participación en normativa no tiene plazo de respuesta, las aportaciones se tienen en cuenta al redactar la norma",
+  "silencio_administrativo": "Desestimatorio en el acceso a la información pública (un mes) y en la consulta del archivo (tres meses): si no contestan, se entiende denegado y se puede reclamar ante el Comisionado de Transparencia de Canarias; según normativa aplicable en la participación en normativa",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 19/2013, de 9 de diciembre, de transparencia, acceso a la información pública y buen gobierno (arts. 12 a 24).",
+    "Ley 12/2014, de 26 de diciembre, de transparencia y de acceso a la información pública (Canarias).",
+    "Constitución Española (art. 105.b).",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común (art. 133, consulta pública previa).",
+    "Ley 16/1985, de 25 de junio, del Patrimonio Histórico Español (archivos)."
+  ],
+  "faq": [
+    {
+      "q": "Quiero ver el contrato que tiene el ayuntamiento con la empresa de la limpieza.",
+      "a": "Es el acceso a la información pública. No hace falta decir para qué lo quiere; describa bien qué contrato y de qué año. El ayuntamiento tiene un mes para contestar."
+    },
+    {
+      "q": "¿Tengo que explicar para qué lo quiero?",
+      "a": "No. La ley de transparencia no exige justificar la solicitud. Basta con identificar bien el documento o el dato."
+    },
+    {
+      "q": "¿Me lo pueden negar?",
+      "a": "Solo por causas tasadas, como datos personales de otras personas, seguridad o investigaciones en curso, y pueden darle una copia con esas partes tachadas. Si lo deniegan o no contestan en un mes, puede reclamar gratis ante el Comisionado de Transparencia de Canarias."
+    },
+    {
+      "q": "Busco el plano original de mi casa, de los años sesenta.",
+      "a": "Eso es la consulta de fondos del archivo municipal. Indique la dirección y los años aproximados; el ayuntamiento contesta en tres meses y suele citarle para verlo en persona."
+    },
+    {
+      "q": "Quiero opinar sobre la nueva ordenanza que están preparando.",
+      "a": "Es la participación en la elaboración de normativa: se presenta mientras la consulta pública de esa norma esté abierta en el portal del ayuntamiento, y sus propuestas se tienen en cuenta al redactarla."
+    },
+    {
+      "q": "¿Sirve para saber cómo va mi licencia?",
+      "a": "No. El estado de un expediente suyo se ve en Mi carpeta de la sede o se lo dice el departamento. Este trámite es para documentos del ayuntamiento que no son sobre usted."
+    },
+    {
+      "q": "¿Es gratuito?",
+      "a": "Pedir la información sí. Las copias en papel o certificadas pueden tener una tasa, que le indicarían antes."
+    }
+  ],
+  "kb_extra": "\n## Los tres trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| Solicitud de Acceso a la Información Pública por los Ciudadanos (aparece dos veces en el catálogo) | 870017 y 3109713 |\n| Solicitud de Consulta de Fondos del Archivo | 870055 |\n| Participación en la Elaboración de Normativa | 870027 |\n\n## Cuál de los tres toca\n- **Acceso a la información pública:** cualquier documento o dato que tenga el ayuntamiento y no sea sobre\n  uno mismo: contratos, facturas y gastos, subvenciones concedidas, informes técnicos, actas, expedientes de\n  obras o licencias de terceros, retribuciones de cargos, convenios, presupuestos. No hace falta justificar\n  para qué se pide ni estar empadronado. Plazo: un mes, ampliable otro si el volumen o la complejidad lo\n  exigen. Si lo deniegan o no contestan (silencio desestimatorio), reclamación gratuita ante el Comisionado\n  de Transparencia y Acceso a la Información Pública de Canarias, en el plazo de un mes. Solo pueden\n  negarse por causas tasadas: datos personales de terceros, seguridad, investigaciones en curso, secretos\n  protegidos; y pueden dar acceso parcial tachando lo protegido. Mucha información ya está publicada en el\n  portal de transparencia del ayuntamiento sin pedirla.\n- **Consulta de fondos del archivo:** documentos antiguos que custodia el archivo municipal: planos y\n  licencias antiguas, padrones históricos (genealogía), actas de plenos antiguas, fotografías, expedientes\n  cerrados hace años. El ayuntamiento contesta en tres meses (silencio desestimatorio) y suele citar para la\n  consulta presencial; las copias pueden tener tasa. Los documentos con datos personales de terceros tienen\n  límites de acceso según su antigüedad.\n- **Participación en la elaboración de normativa:** la consulta pública previa de una ordenanza o un\n  reglamento (artículo 133 de la Ley 39/2015): el ayuntamiento publica en su portal qué norma va a preparar\n  y recoge opiniones, propuestas y problemas que debería resolver, antes de redactarla. Se presenta mientras\n  la consulta esté abierta. No es un recurso ni una alegación contra una norma ya aprobada.\n\n## Qué NO es este trámite\n- **Un certificado o informe sobre uno mismo**: el trámite de certificados e informes.\n- **Un certificado o volante de empadronamiento**: el trámite de certificados de padrón.\n- **Sus propios datos personales** (saber cuáles tienen, corregirlos, borrarlos): el trámite de\n  protección de datos.\n- **El estado de un expediente propio**: \"Mi carpeta\" en la sede, o el departamento.\n- **Recurrir o alegar contra una norma ya aprobada**: es un recurso, no esta participación."
+}

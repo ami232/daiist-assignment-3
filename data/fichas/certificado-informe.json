@@ -1,0 +1,42 @@
+{
+  "slug": "certificado-informe",
+  "nombre_oficial": "Solicitud de Certificado o Informe",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/f422cab6-2a5e-4a75-b9c7-2531bfa239c7",
+  "ambito": "la solicitud de certificados e informes generales del ayuntamiento, que NO son los del padrón ni los urbanísticos",
+  "que_es": "Es pedir al ayuntamiento un certificado o un informe de carácter general: un documento oficial que acredita un hecho, un dato o una situación que consta en el ayuntamiento. OJO, no es para los certificados del padrón (empadronamiento, convivencia, residencia para viajar, fe de vida), que tienen su propio trámite, ni para los certificados urbanísticos, que también van por separado. Y tampoco es para pedir un documento o un dato del ayuntamiento que no es sobre uno mismo (un contrato, un gasto, el expediente de una obra ajena, un documento antiguo del archivo): eso es el acceso a la información pública, que tiene su propio trámite. Tampoco es para un certificado de una deuda del ayuntamiento a su favor ni de una subvención concedida, que tienen sus propios trámites.",
+  "quien_puede": "La persona interesada o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave. Conviene tener claro qué certificado necesita y para qué se lo piden, porque hay que explicarlo en la solicitud.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según la normativa aplicable",
+  "silencio_administrativo": "Según la normativa aplicable",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (arts. 9, 21-25 y 66).",
+    "Ley 40/2015, de 1 de octubre, de Régimen Jurídico del Sector Público (art. 30).",
+    "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local (art. 21.1.q).",
+    "Real Decreto 128/2018, de 16 de marzo, por el que se regula el régimen jurídico de los funcionarios de Administración Local con habilitación de carácter nacional."
+  ],
+  "faq": [
+    {
+      "q": "¿Sirve para el certificado de empadronamiento?",
+      "a": "No. Los certificados y volantes del padrón (empadronamiento, convivencia, histórico, residencia para viajar, fe de vida) tienen su propio trámite. Este es para certificados e informes generales del ayuntamiento."
+    },
+    {
+      "q": "¿Qué tengo que explicar en la solicitud?",
+      "a": "Qué certificado o informe necesita y para qué se lo piden. Cuanto más concreto sea, más fácil le resulta al ayuntamiento emitirlo correctamente."
+    },
+    {
+      "q": "¿Tengo que aportar algún documento?",
+      "a": "Este trámite no exige documentación obligatoria. Si tiene algún papel que ayude a identificar lo que pide, puede adjuntarlo como documentación adicional."
+    },
+    {
+      "q": "¿Cuánto tarda?",
+      "a": "El plazo de resolución es el que marque la normativa aplicable en cada caso. Recibirá la respuesta por el medio de notificación que haya elegido."
+    },
+    {
+      "q": "Quiero ver el contrato del ayuntamiento con una empresa, ¿es aquí?",
+      "a": "No. Un documento del ayuntamiento que no es sobre usted se pide con el acceso a la información pública, que es otro trámite. Este es para certificados e informes sobre su propia situación."
+    }
+  ]
+}

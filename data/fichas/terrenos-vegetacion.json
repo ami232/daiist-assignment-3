@@ -1,0 +1,42 @@
+{
+  "slug": "terrenos-vegetacion",
+  "nombre_oficial": "Actuaciones sobre terrenos: tala de árboles, limpieza de terrenos, acondicionamiento de espacios libres e instalaciones agrarias",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/9ca41790-faef-4000-a6c5-7a7d11350ea7 (cubre 4 trámites del catálogo; sus URLs y códigos SIA, en la base de conocimiento)",
+  "ambito": "las actuaciones sobre terrenos sin edificar en Guía: talar árboles, limpiar terrenos, acondicionarlos e instalar elementos agrarios que no son edificios",
+  "que_es": "Son los permisos que hay que pedir al ayuntamiento para actuar sobre un terreno sin construir un edificio. En la sede hay cuatro trámites según lo que se va a hacer: TALA DE ÁRBOLES (cortar árboles o palmeras, incluidas las afectadas por el picudo rojo), LIMPIEZA DE TERRENOS (desbrozar, retirar maleza o escombros de un solar o una finca), ACONDICIONAMIENTO DE ESPACIOS LIBRES de parcelas (mover tierra, nivelar, aterrazar, fuera de áreas protegidas) e INSTALACIONES AGRARIAS que no son obras de edificación (un cobertizo para la maquinaria, un aljibe o depósito de riego, un cortavientos, un corral o cerramiento para el ganado). OJO: un invernadero o placas solares tienen su trámite propio; vallar el perímetro de la finca o levantar un muro de contención es el vallado; y construir o reformar un edificio son las obras de edificación.",
+  "quien_puede": "El propietario del terreno o de la explotación, o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "Dependen de cuál de los cuatro trámites sea. En todos se identifica la parcela con el último recibo del\nIBI o la referencia catastral, y casi todos piden un plano de situación sobre el Plan General y fotografías.\nA partir de ahí: la **tala** añade una autorización previa; la **limpieza** un presupuesto y una memoria\ncon medidas de seguridad; el **acondicionamiento** un proyecto firmado por técnico, un plano topográfico\ncon secciones antes y después, y un estudio básico de seguridad y salud; y las **instalaciones agrarias**,\nla lista más larga, un proyecto firmado por técnico, planos de planta y alzado, memoria, presupuesto por\ncapítulos y estudio básico de seguridad y salud. El detalle de los cuatro juegos está en el guion del\nagente (Paso 3).",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 4/2017, de 13 de julio, del Suelo y de los Espacios Naturales Protegidos de Canarias (artículo 332 para las comunicaciones previas; artículos 330 y 339 a 348 para las licencias).",
+    "Orden de 29 de octubre de 2007 del Gobierno de Canarias, sobre las plagas del picudo rojo (Rhynchophorus ferrugineus) y Diocalandra frumenti en palmeras.",
+    "Ley 19/1995, de 4 de julio, de Modernización de las Explotaciones Agrarias."
+  ],
+  "faq": [
+    {
+      "q": "Tengo una palmera con picudo y quiero cortarla, ¿qué hago?",
+      "a": "Es la licencia de tala de árboles: la sede incluye expresamente las palmeras afectadas por el picudo rojo. Necesitará el recibo del IBI o la referencia catastral, un plano de situación, fotografías y la autorización previa que corresponda."
+    },
+    {
+      "q": "El ayuntamiento me pide que limpie un solar que tengo lleno de maleza.",
+      "a": "Va por la comunicación previa de limpieza de terrenos. Le pedirán el recibo del IBI o la referencia catastral, un presupuesto, un plano de situación, una memoria de los trabajos con medidas de seguridad y fotografías."
+    },
+    {
+      "q": "Quiero nivelar un trozo de la finca para hacer una era.",
+      "a": "Si es mover tierra sin levantar muros, es la licencia de acondicionamiento de espacios libres. Pide proyecto y plano topográfico firmados por técnico, con secciones del terreno antes y después. Si necesita un muro de contención, eso ya es el trámite de vallado."
+    },
+    {
+      "q": "Voy a poner un cobertizo para guardar el tractor, ¿es una obra?",
+      "a": "Si no constituye un edificio, es la licencia de instalaciones agrarias, que cubre cobertizos para maquinaria, aljibes, cortavientos y cerramientos para ganado. Pide proyecto firmado por técnico, planos, memoria, presupuesto y estudio básico de seguridad y salud."
+    },
+    {
+      "q": "¿Y un invernadero?",
+      "a": "El invernadero tiene su trámite propio, aparte de las instalaciones agrarias. Lo mismo las placas solares."
+    }
+  ],
+  "kb_extra": "\n## Los cuatro trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| SOLICITUD LICENCIA: Tala de Árboles | 3250183 |\n| COMUNICACIÓN PREVIA. Limpieza de Terrenos | 3250238 |\n| SOLICITUD LICENCIA Acondicionamiento de Espacios Libres de parcelas fuera de áreas o elementos protegidos | 3250234 |\n| SOLICITUD LICENCIA. Instalaciones Agrarias que no constituyan obras de edificación | 3251164 |\n\n## Cuál de los cuatro toca\n- **Tala de árboles:** cortar árboles o vegetación arbustiva. La sede incluye tres casos: la tala de\n  palmeras canarias, datileras o washingtonias por la plaga del picudo rojo (Orden de 29 de octubre de\n  2007 del Gobierno de Canarias), la tala de masas arbóreas en terrenos privados, y la tala en terrenos\n  incorporados a procesos de transformación urbanística. Pide una **autorización previa**.\n- **Limpieza de terrenos:** desbrozar o limpiar un solar o una finca. Va por comunicación previa.\n- **Acondicionamiento de espacios libres:** mover tierra, nivelar o aterrazar una parcela fuera de áreas o\n  elementos protegidos. Pide un plano topográfico con secciones del terreno antes y después.\n- **Instalaciones agrarias:** cortavientos, cerramientos para ganado, aljibe o depósito de riego bajo\n  rasante y de pequeña entidad, cobertizo para maquinaria agrícola, áreas de tratamiento de residuos\n  agrícolas o ganaderos, e instalaciones de abastecimiento de energía dentro de la parcela agrícola.\n\n## Qué NO es este trámite\n- Un **invernadero** o **placas solares**, aunque estén en la finca: tienen su trámite propio.\n- **Vallar** el perímetro de la finca o levantar un **muro de contención**: es el vallado.\n- **Construir o reformar** un edificio, incluida una casa de aperos con entidad de edificación: son las\n  obras de edificación."
+}

@@ -1,0 +1,110 @@
+id,kind,answer,judge_correct,judge_supported,judge_reason,failure_hint
+q01,single,"El plazo de resolución para la licencia de vado es de **1 mes**. Si transcurrido ese plazo no hay respuesta, el silencio administrativo es **desestimatorio** (se entiende denegado) [vados · sección].
+
+Puede consultarlo en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/4429600f-873d-4f6c-878b-a0b48f4541c2 [vados · sección]",1,1,The assistant correctly states the resolution period of 1 month and provides full support from the retrieved passages.,
+q02,single,Esa información no consta en la ficha del trámite; puede consultarla en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/e1589c6a-9246-45f5-9132-fa5dd98ba76a [corte-via · sección],0,1,The assistant wrongly claimed the information was missing instead of answering that the silence is negative.,retrieval miss
+q03,single,"Para empadronarse en Guía viviendo de alquiler, necesita:
+
+- Su documento de identidad [empadronamiento · documentacion].
+- El contrato de alquiler [empadronamiento · documentacion].
+
+[empadronamiento · sede]",1,1,"La respuesta proporciona correctamente los documentos necesarios para empadronarse viviendo de alquiler, basándose en los pasajes recuperados.",
+q04,single,"En el alta en el padrón municipal por cambio de residencia, el silencio administrativo es **estimatorio**: si el Ayuntamiento no le contesta en el plazo de 3 meses, la solicitud se entiende concedida [empadronamiento · palabras 0-200].
+
+Puede consultar más detalles en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/073b778e-bb91-4ef4-b7cb-31a39be0e95f",1,1,"The assistant correctly states that the silence is estimatory and the deadline is 3 months, which is fully supported by the retrieved passages.",
+q05,single,"El empadronamiento y sus trámites asociados son gratuitos [empadronamiento · palabras 400-542].
+
+[empadronamiento · palabras 400-542]",1,1,"The assistant correctly states that the procedure is free, matching both the reference and the retrieved text.",
+q06,single,Esa información no consta en la ficha del trámite; puede consultarla en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/073b778e-bb91-4ef4-b7cb-31a39be0e95f,0,1,"The reference answers the question about certificates vs. volantes, but the assistant incorrectly stated the information was missing.",retrieval miss
+q07,single,"Para solicitar la tarjeta municipal de armas de cuarta categoría solo se pide un documento: el **certificado de antecedentes penales**, ya que el Reglamento de Armas exige no tenerlos [tarjeta-armas · palabras 0-200].
+
+Puede consultarlo en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/8ab9325a-e61c-41b5-8a49-b353f382579a",1,1,"The assistant correctly identifies the certificate of antecedentes penales as the required document, and this is fully supported by the retrieved passages.",
+q08,single,"Si transcurre el plazo de un mes sin que el ayuntamiento contesta a la solicitud de la tarjeta de armas, se aplica el silencio administrativo estimatorio, lo que significa que la tarjeta se entiende concedida [tarjeta-armas · palabras 0-200].
+
+Puede consultar más detalles en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/8ab9325a-e61c-41b5-8a49-b353f382579a",1,1,"The assistant correctly states that the silence is administrative and the card is considered granted after one month, matching the reference and the retrieved passages.",
+q09,single,"Tiene **un año** desde que se produjo el daño [responsabilidad-patrimonial · palabras 600-800]. Si hubo lesiones, el plazo cuenta desde la curación o desde que se determinaron las secuelas [responsabilidad-patrimonial · palabras 600-800]. 
+
+Puede tramitarlo a través de la solicitud de responsabilidad patrimonial [responsabilidad-patrimonial · palabras 0-200].
+
+https://santamariadeguia.sedelectronica.es/catalog/t/9ef28355-2f43-4c8a-bee7-93c6f39f2a8b",1,1,The assistant provides the correct deadline of one year and details about injuries as stated in the reference and retrieved passages.,
+q10,single,"En una reclamación de responsabilidad patrimonial conviene aportar las siguientes pruebas:
+
+* Fotografías del lugar y de los daños [responsabilidad-patrimonial · palabras 0-200].
+* Parte médico o de urgencias (en caso de lesiones) [responsabilidad-patrimonial · palabras 0-200].
+* Presupuesto o factura de la reparación [responsabilidad-patrimonial · palabras 0-200].
+* Parte de la Policía Local o del seguro (si lo hubo) [responsabilidad-patrimonial · palabras 400-600].
+* Datos de testigos [responsabilidad-patrimonial · palabras 400-600].
+
+Puede consultarlo en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/9ef28355-2f43-4c8a-bee7-93c6f39f2a8b",1,1,"The assistant correctly lists all key pieces of evidence mentioned in the reference answer, and every claim is supported by the retrieved passages.",
+q11,single,Esa información no consta en la ficha del trámite; puede consultarla en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/0f5a72f4-9c71-429d-a6a4-d1781a7dd287,0,0,"The assistant incorrectly refused to answer by stating the information was missing, even though the retrieved passages contained the exact documents needed.",wrong refusal
+q12,single,"Poner una terraza cuesta **30 euros** de tasa de tramitación, más la tasa de ocupación anual de la vía pública [terraza · faq]. 
+
+Hasta 20 metros cuadrados no se paga; a partir de esa superficie, la tasa es de **3 euros por metro cuadrado y mes** [terraza · faq]. El pago debe acreditarse en diez días mediante cita previa en Valora Gestión Tributaria [terraza · faq].
+
+https://santamariadeguia.sedelectronica.es/catalog/t/0f5a72f4-9c71-429d-a6a4-d1781a7dd287",1,1,The assistant provides all key cost details accurately and supports every claim with the retrieved passages.,
+q13,single,"Como extranjero no comunitario sin autorización de residencia permanente, tiene que renovar su inscripción en el padrón **cada dos años** [padron-extranjeros · qué_es].
+
+Puede consultar los detalles en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/e487bf24-1af2-4e8d-8cc0-3c605b57b372",1,1,"The assistant correctly states that foreigners without permanent residence must renew every two years, which is directly supported by the retrieved passages.",
+q14,single,"Para empadronar a un bebé recién nacido necesita [alta-nacimiento-padron · que_es]:
+
+- El certificado de nacimiento del bebé o el libro de familia donde conste el nacimiento [alta-nacimiento-padron · documentacion].
+- Un documento de identidad de la madre y del padre, según el caso [alta-nacimiento-padron · documentacion].
+
+Puede consultarlo en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/b788a3b9-6c34-4df1-bff0-2a6382672310",1,1,La respuesta proporciona exactamente los documentos necesarios según la referencia y todo está respaldado por los pasajes recuperados.,
+q15,single,Esa información no consta en la ficha del trámite; puede consultarla en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/073b778e-bb91-4ef4-b7cb-31a39be0e95f,0,0,"The question is answerable (public information requests do not require being registered), but the assistant incorrectly stated the information was missing and provided an irrelevant link about a padrón procedure.",retrieval miss
+q16,single,"El Ayuntamiento debe contestarle en el plazo de **un mes** a partir de la recepción de su solicitud de acceso a los datos personales [datos-personales · palabras 0-200].
+
+Puede consultarlo en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/fa0b2865-b1ad-4cd2-b998-c63113f1689c",1,1,"The assistant correctly states the one-month deadline, which matches both the reference answer and the retrieved passages.",
+q17,single,"No hace falta aportar ningún documento para solicitar el corte de la vía pública por mudanza. En la solicitud solo debe indicar la calle y el tramo, la fecha, la hora de inicio y fin, y el motivo; opcionalmente puede adjuntar un croquis del tramo [corte-via · documentacion_kb].
+
+Puede consultarlo en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/e1589c6a-9246-45f5-9132-fa5dd98ba76a [corte-via · section]",1,1,"The assistant correctly states that no documents are required and provides all key facts and the correct URL, fully supported by the passages.",
+q18,single,"Para tener un pitbull necesita la **licencia para la tenencia de animales potencialmente peligrosos**, que es personal para el dueño [animales · palabras 0-200]. 
+
+En la sede electrónica se le pedirá el certificado de antecedentes penales y la autorización para comprobar su identidad [animales · palabras 0-200]. La normativa también exige un certificado de capacidad física y aptitud psicológica y un seguro de responsabilidad civil [animales · palabras 800-1000]. 
+
+Una vez le concedan la licencia, deberá inscribir al animal en el registro municipal [animales · palabras 0-200].
+
+Más información en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/59c69b20-7983-4af6-86ca-1bf3aab049da",1,1,"The assistant's answer covers the necessary license, required documents, subsequent registration, and all claims are supported by the retrieved passages.",
+q19,single,"No, si vive en Gáldar la OMIC de Guía no tiene competencia. Solo pueden presentarla los vecinos empadronados en Guía [reclamacion-consumo · palabras 0-200]. Al vivir en Gáldar, tiene que acudir a la oficina de consumo de su municipio o al Cabildo de Gran Canaria [reclamacion-consumo · palabras 400-600].
+
+https://santamariadeguia.sedelectronica.es/catalog/t/ff8e90d7-bc27-4612-9190-67fefbc213b3",1,1,"The assistant correctly answers that residents of Gáldar cannot use the OMIC of Guía and must go to their municipality or the Cabildo, supported by the retrieved text.",
+q20,single,Esa información no consta en la ficha del trámite; puede consultarla en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/d643e8cf-0824-4617-a997-c523799b4a93 [avisos-denuncias · sección],0,1,"El asistente afirma que la información no consta, pero la respuesta correcta indica que hay que avisar a la Policía Local.",retrieval miss
+q21,single,"Para solicitar un duplicado por pérdida, puede realizarlo mediante el trámite de la **tarjeta de aparcamiento para personas con discapacidad**, que sirve también para duplicados y reservas de plaza [tarjetas-aparcamiento · que_es, faq]. 
+
+Lo puede solicitar la propia persona interesada o su representante, identificándose con Cl@ve o certificado digital [tarjetas-aparcamiento · quien_puede, palabras 200-400]. Para la solicitud es necesario acreditar el reconocimiento oficial de la discapacidad y conviene aportar los datos de la tarjeta anterior [tarjetas-aparcamiento · documentacion_kb]. El plazo de presentación es continuo durante todo el año [tarjetas-aparcamiento · palabras 200-400].
+
+https://santamariadeguia.sedelectronica.es/catalog/t/b439034b-8550-4b62-9f31-172f5792bae9",1,1,"The assistant correctly explains how to get a duplicate for a lost disability parking card, matching the reference and retrieving all facts accurately.",
+q22,multi,"Se resuelve antes la **tarjeta de armas**, ya que su plazo de resolución es de **un mes** (y si no se contesta en ese plazo, se entiende concedida por silencio administrativo) [tarjeta-armas · palabras 0-200]. 
+
+En cambio, para el **empadronamiento**, la resolución puede tardar hasta **3 meses** [empadronamiento · palabras 400-542].
+
+Puede consultar los detalles en la sede electrónica:
+* Tarjeta de armas: https://santamariadeguia.sedelectronica.es/catalog/t/8ab9325a-e61c-41b5-8a49-b353f382579a [tarjeta-armas · palabras 0-200]
+* Empadronamiento: https://santamariadeguia.sedelectronica.es/catalog/t/073b778e-bb91-4ef4-b7cb-31a39be0e95f [empadronamiento · palabras 400-542]",1,1,"The assistant correctly states that the tarjeta de armas takes 1 month and empadronamiento takes up to 3 months, matching both reference and retrieved passages.",
+q23,multi,Esa información no consta en la ficha del trámite; puede consultarla en la sede electrónica: https://santamariadeguia.sedelectronica.es/dossier.1,0,1,"El asistente indicó que la información no consta, pero el texto sí contenía datos sobre el silencio administrativo del empadronamiento.",wrong refusal
+q24,multi,Esa información no consta en la ficha del trámite; puede consultarla en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/0f5a72f4-9c71-429d-a6a4-d1781a7dd287,0,1,The assistant incorrectly claims the information is missing when it is fully present in the retrieved passages.,wrong refusal
+q25,multi,"Para la inhumación (entierro), se pide el certificado de defunción (copia simple) y el DNI o datos de identificación del solicitante [cementerio · que_es, documentacion_kb]. 
+
+Si el ayuntamiento no contesta (silencio administrativo), el efecto es **desestimatorio** (se entiende denegado) tanto en la inhumación como en la exhumación [cementerio · silencio_administrativo].
+
+Puede consultarlo en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/aaed5975-46b8-48d5-a2ed-7aa729ab0574",1,1,"The assistant provides the correct documents (death certificate copy and DNI) and silence effect (desestimatorio), both matching the reference and fully supported by the retrieved passages.",
+q26,multi,"Para ambos trámites se pide el **certificado de antecedentes penales** [animales · palabras 200-400, tarjeta-armas · palabras 200-400]. 
+
+En la licencia de animales potencialmente peligrosos también se requiere la autorización para verificar la identidad [animales · palabras 200-400].
+
+Puede consultarlos en las sedes electrónicas:
+- Licencia de animales potencialmente peligrosos: https://santamariadeguia.sedelectronica.es/catalog/t/59c69b20-7983-4af6-86ca-1bf3aab049da [animales · palabras 0-200]
+- Tarjeta de armas: https://santamariadeguia.sedelectronica.es/catalog/t/8ab9325a-e61c-41b5-8a49-b353f382579a [tarjeta-armas · palabras 0-200]",1,1,The assistant correctly identifies the certificate of criminal records for both procedures and is fully supported by the passages.,
+q27,multi,"Para ambas solicitudes, el plazo que tiene el ayuntamiento para contestar es de **un mes** [informacion-publica · palabras 0-200], [datos-personales · palabras 0-200]. 
+
+Puede consultar los detalles en la sede electrónica:
+- Acceso a la información pública: https://santamariadeguia.sedelectronica.es/catalog/t/cb08f2a7-e5f7-42eb-bbfa-13a2b485e606 [informacion-publica · palabras 0-200]
+- Protección de datos personales: https://santamariadeguia.sedelectronica.es/catalog/t/fa0b2865-b1ad-4cd2-b998-c63113f1689c [datos-personales · palabras 0-200]",1,1,"El asistente responde correctamente que el plazo es de un mes en ambos casos, basándose en los pasajes recuperados.",
+q28,unanswerable,Esa información no consta en la ficha del trámite; puede consultarla en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/073b778e-bb91-4ef4-b7cb-31a39be0e95f,1,1,El asistente indicó correctamente que la información no consta en la ficha y proporcionó el enlace a la sede electrónica.,
+q29,unanswerable,Esa información no consta en la ficha del trámite; puede consultarla en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/9ef28355-2f43-4c8a-bee7-93c6f39f2a8b,1,1,"La pregunta es inanalizable según la base de conocimiento y el asistente respondió correctamente que no consta, indicando la sede electrónica.",
+q30,unanswerable,Esa información no consta en la ficha del trámite; puede consultarla en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/8ab9325a-e61c-41b5-8a49-b353f382579a [tarjeta-armas · palabras 0-200],1,1,The assistant correctly states that the information is not in the file and provides the official link.,
+q31,unanswerable,Esa información no consta en la ficha del trámite; puede consultarla en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/0f5a72f4-9c71-429d-a6a4-d1781a7dd287 [terraza · palabras 0-200],1,1,El asistente responde correctamente que la información no consta en la ficha y proporciona el enlace a la sede electrónica.,
+q32,unanswerable,Esa información no consta en la ficha del trámite; puede consultarla en la sede electrónica: https://santamariadeguia.sedelectronica.es/catalog/t/ff8e90d7-bc27-4612-9190-67fefbc213b3,1,1,El asistente indica correctamente que la información no consta y proporciona un enlace relacionado de la sede electrónica.,
+q33,unanswerable,"El bono de alquiler joven es una ayuda que gestiona el Gobierno de Canarias (comunidad autónoma), no el Ayuntamiento. Los ayuntamientos no tramitan esta ayuda. 
+
+Puede consultar los plazos, requisitos y cómo solicitarlo directamente en la sede electrónica del Gobierno de Canarias o en su área de vivienda.",0,0,"The question is unanswerable based on the references, but the assistant answered with external facts instead of stating that the information does not exist ('no consta').",unsupported claim

@@ -1,0 +1,42 @@
+{
+  "slug": "division-fincas",
+  "nombre_oficial": "Licencia de parcelación, segregación y agregación, y de constitución o modificación de complejo inmobiliario",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/05778030-643b-4f93-98f0-af22a999d4ac (y .../f3c8458b-5dbf-4aa8-80e7-17793bc2d68a; cubre 2 trámites del catálogo)",
+  "ambito": "la división y agrupación de fincas y la división de edificios en unidades independientes en Guía",
+  "que_es": "Es la licencia que hay que pedir al ayuntamiento antes de dividir o juntar una propiedad. En la sede hay dos trámites según qué se divide: si es TERRENO —parcelar, segregar o partir una finca, o agrupar dos en una—, es la LICENCIA DE PARCELACIÓN, SEGREGACIÓN Y/O AGREGACIÓN; si es un EDIFICIO que se divide en pisos, viviendas o locales independientes (lo que se llama división horizontal), es la LICENCIA DE CONSTITUCIÓN O MODIFICACIÓN DE COMPLEJO INMOBILIARIO. OJO: esto es para dividir AHORA. Si la finca se dividió hace años sin licencia y lo que quiere es que le certifiquen que ya prescribió y no hace falta licencia, eso es el certificado de prescripción de segregación, que es un trámite aparte.",
+  "quien_puede": "El propietario de la finca o del edificio, o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "Dependen de lo que se divide. **Terreno** (parcelación, segregación o agregación): copia del título de\ndominio de las fincas afectadas, plano de situación sobre el plano de clasificación del planeamiento\nvigente, proyecto técnico topográfico en soporte digital y documentación fotográfica. **Edificio** (complejo\ninmobiliario): memoria o borrador de la escritura, nota simple registral actualizada, escritura de la\npropiedad preexistente, planos de emplazamiento, planta, alzado y sección con el estado actual y el\npropuesto, certificado técnico de cumplimiento de la normativa urbanística, la licencia de obras si hacen\nfalta obras para materializar la división, la licencia o declaración responsable de primera ocupación, y\nun plano de situación a escala mínima uno a mil sobre el planeamiento municipal. La declaración de\nprescripción urbanística es opcional.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 4/2017, de 13 de julio, del Suelo y de los Espacios Naturales Protegidos de Canarias (artículo 330 y artículos 339 a 348).",
+    "Texto Refundido de la Ley del Suelo y Rehabilitación Urbana, aprobado por Real Decreto Legislativo 7/2015, de 30 de octubre.",
+    "Ley 19/1995, de 4 de julio, de Modernización de las Explotaciones Agrarias, y Orden de 27 de mayo de 1958 sobre la unidad mínima de cultivo."
+  ],
+  "faq": [
+    {
+      "q": "Quiero segregar un trozo de mi finca para dárselo a mi hijo, ¿qué necesito?",
+      "a": "Es la licencia de parcelación, segregación y agregación. Le pedirán el título de dominio de la finca, un plano de situación sobre el planeamiento, un proyecto técnico topográfico en soporte digital y fotografías."
+    },
+    {
+      "q": "Quiero dividir mi casa en dos viviendas con escritura cada una.",
+      "a": "Eso es una división horizontal, y va por la licencia de constitución o modificación de complejo inmobiliario. Pide ocho documentos, entre ellos la escritura, una nota simple actualizada, planos del estado actual y del propuesto, un certificado técnico de cumplimiento urbanístico y la primera ocupación."
+    },
+    {
+      "q": "La finca la partió mi padre hace treinta años sin licencia, ¿qué hago?",
+      "a": "Entonces no es una licencia de segregación: lo que necesita es el certificado de prescripción urbanística de segregación, que acredita que ya prescribió y que no hace falta licencia. Es un trámite aparte."
+    },
+    {
+      "q": "¿Necesito un técnico?",
+      "a": "Sí, en los dos casos. Para el terreno se pide un proyecto técnico topográfico; para el edificio, planos y un certificado técnico de cumplimiento de la normativa urbanística."
+    },
+    {
+      "q": "¿Con la licencia ya queda todo hecho?",
+      "a": "No del todo: la propia sede avisa de que la licencia de división horizontal no exime de comunicar la división al Catastro ni de las obligaciones tributarias que correspondan."
+    }
+  ],
+  "kb_extra": "\n## Los dos trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| SOLICITUD LICENCIA: Parcelación, segregación y/o agregación | 2930361 |\n| SOLICITUD LICENCIA: Constitución y modificación de complejo inmobiliario, salvo en los casos en que se declare la innecesariedad y en este caso, declaración de innecesariedad | 3250090 |\n\n## Cuál de los dos toca\n- **Parcelación, segregación y agregación:** se divide o se agrupa **terreno**: parcelaciones,\n  segregaciones y otros actos de división de fincas en cualquier clase de suelo, cuando no forman parte de\n  un proyecto de reparcelación. La sede advierte de que en suelo urbanizable y urbano no consolidado la\n  segregación se hace a través del instrumento de reparcelación de la unidad de actuación; si el\n  propietario quiere anticiparla, necesita esta licencia.\n- **Complejo inmobiliario:** se divide un **edificio** en unidades independientes (división horizontal),\n  o se modifica un complejo ya constituido, cuando la ley exige título autorizatorio. Si se cumplen las\n  condiciones de exención, lo que se pide es la declaración de innecesariedad, por el mismo trámite.\n\n## Aviso de la sede sobre el Catastro\nLa autorización de división horizontal, o la declaración de su innecesariedad, **no exime** de comunicar la\ndivisión al Catastro ni de las obligaciones tributarias que correspondan.\n\n## Qué NO es este trámite\nSi la finca **ya se dividió hace años** sin licencia y lo que quiere es acreditar que la infracción\nprescribió y que no hace falta licencia (innecesariedad), es el **certificado de prescripción urbanística\nde segregación**, un trámite aparte. Y si va a hacer obra en el edificio, son los trámites de obra."
+}

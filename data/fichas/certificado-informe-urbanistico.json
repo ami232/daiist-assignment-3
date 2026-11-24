@@ -1,0 +1,13 @@
+{
+  "slug": "certificado-informe-urbanistico",
+  "nombre_oficial": "Solicitud de Certificado o Informe Urbanístico",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/e247f7c3-b1ff-42ef-8b7d-5195c14e9bbf",
+  "ambito": "los certificados e informes generales en materia de urbanismo",
+  "que_es": "Es pedir al ayuntamiento un certificado o un informe general EN MATERIA DE URBANISMO, cuando no se corresponde con ninguno de los tipos concretos. OJO: no es el certificado o informe general del ayuntamiento (que no es de urbanismo), ni ninguno de los certificados del padrón.",
+  "quien_puede": "El propio interesado, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel."
+}

@@ -1,0 +1,44 @@
+{
+  "slug": "tarjeta-armas",
+  "nombre_oficial": "Solicitud de Tarjeta de Armas",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/8ab9325a-e61c-41b5-8a49-b353f382579a",
+  "ambito": "la tarjeta municipal de armas de cuarta categoría que expide el alcalde de Guía: carabinas y pistolas de aire comprimido, airsoft y paintball",
+  "que_es": "Es la tarjeta que expide el ayuntamiento (la firma el alcalde) para poder tener y usar un arma de CUARTA CATEGORÍA: carabinas y pistolas de aire comprimido, de balines, de airsoft o de paintball. Solo pide un documento: el certificado de antecedentes penales, porque el Reglamento de Armas exige no tenerlos. El ayuntamiento tiene un mes para contestar y, si no contesta, la tarjeta se entiende concedida (silencio estimatorio). OJO: las armas de FUEGO (escopetas, rifles, pistolas de verdad), la licencia de armas, la licencia de caza y el permiso de tiro NO son del ayuntamiento: son de la Guardia Civil, en la Intervención de Armas.",
+  "quien_puede": "La persona que va a tener el arma (mayor de edad; los menores, a través de sus padres o tutores), o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "1 mes",
+  "silencio_administrativo": "Estimatorio: si el ayuntamiento no contesta en un mes, la tarjeta se entiende concedida",
+  "documentacion": [
+    "Certificado de antecedentes penales (el Reglamento de Armas exige no tenerlos)"
+  ],
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Reglamento de Armas, aprobado por Real Decreto 137/1993, de 29 de enero (artículo 105).",
+    "Orden INT/2860/2012, de 27 de diciembre, por la que se determina el régimen aplicable a ciertas armas utilizables en las actividades lúdico-deportivas de airsoft y paintball.",
+    "Ley 1/1970, de 4 de abril, de Caza (artículos 5 y 52)."
+  ],
+  "faq": [
+    {
+      "q": "Me he comprado una carabina de aire comprimido, ¿necesito algún papel?",
+      "a": "Sí, la tarjeta de armas de cuarta categoría, que la expide el ayuntamiento. Solo pide el certificado de antecedentes penales."
+    },
+    {
+      "q": "¿Dónde saco el certificado de antecedentes penales?",
+      "a": "Lo expide el Ministerio de Justicia; se puede pedir por internet con certificado digital o clave, o en sus oficinas."
+    },
+    {
+      "q": "Quiero la licencia de caza, ¿es aquí?",
+      "a": "No: la licencia de caza y las armas de fuego son de la Guardia Civil (Intervención de Armas), no del ayuntamiento. Este trámite es solo para armas de aire comprimido, airsoft y paintball."
+    },
+    {
+      "q": "¿Cuánto tardan?",
+      "a": "El ayuntamiento tiene un mes para resolver. Si en ese plazo no contesta, la tarjeta se entiende concedida."
+    },
+    {
+      "q": "Es para mi hijo de 15 años, ¿puede pedirla él?",
+      "a": "La pide el padre, la madre o el tutor en su nombre. El certificado de antecedentes penales es el del solicitante."
+    }
+  ],
+  "kb_extra": "\n## Para qué sirve\nTener y usar un arma de cuarta categoría (artículo 105 del Reglamento de Armas): carabinas y pistolas de\naire comprimido o de balines, y las armas de airsoft y paintball. La tarjeta la expide el alcalde del\nmunicipio de residencia. Plazo de resolución: un mes; si no hay respuesta, se entiende concedida.\n\n## Qué NO es este trámite\n- **Armas de fuego** (escopetas, rifles, pistolas), **licencia de armas**, **licencia de caza** y\n  **permiso de tiro**: los expide la Guardia Civil (Intervención de Armas), no el ayuntamiento.\n- **Denunciar** a alguien que va armado o dispara: si es ahora, 112 o Policía Local; si ya pasó, la\n  denuncia ante el ayuntamiento."
+}

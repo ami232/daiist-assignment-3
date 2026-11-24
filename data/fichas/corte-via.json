@@ -1,0 +1,42 @@
+{
+  "slug": "corte-via",
+  "nombre_oficial": "Corte de la Vía Pública",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/e1589c6a-9246-45f5-9132-fa5dd98ba76a",
+  "ambito": "el corte de una vía pública de Guía durante un periodo determinado: mudanzas, grúas, descargas, hormigoneras, eventos vecinales u obras que ocupan la calzada",
+  "que_es": "Es el permiso del ayuntamiento para CORTAR una calle, entera o en parte, durante un periodo concreto: para una mudanza, para meter una grúa o un camión de descarga, una hormigonera, un evento del barrio, o una obra que necesita ocupar la calzada unas horas o unos días. En la solicitud se indica la calle y el tramo, la fecha, la hora de inicio y de fin, y el motivo; el periodo tiene que quedar concretado. No pide documentos. Conviene pedirlo con antelación. OJO: esto es un corte TEMPORAL. Reservar de forma permanente la entrada de un garaje es el VADO, que es otro trámite; el permiso de la OBRA en sí (la licencia o la comunicación previa) también es otro trámite, y este solo cubre el corte de la calle; y poner mesas de un bar en la calle es la TERRAZA, que tampoco es esto.",
+  "quien_puede": "La persona o empresa que necesita el corte (el vecino que se muda, el promotor de la obra, la asociación que organiza el evento), o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año). Conviene pedirlo con antelación a la fecha del corte",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "No hace falta aportar ningún documento. En la solicitud se concretan la calle y el tramo, la fecha, la\nhora de inicio y de fin, y el motivo del corte. Un croquis del tramo puede adjuntarse como documentación\nadicional.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (artículos 9 y 66).",
+    "Ley 7/1985, de 2 de abril, reguladora de las Bases del Régimen Local.",
+    "Ordenanzas municipales de Santa María de Guía sobre uso de la vía pública."
+  ],
+  "faq": [
+    {
+      "q": "Me mudo el sábado y el camión no cabe si hay coches aparcados, ¿qué pido?",
+      "a": "El corte de la vía pública, indicando la calle y el tramo, el día y las horas. No pide documentos; conviene pedirlo con antelación."
+    },
+    {
+      "q": "Tengo que meter una grúa para la obra, ¿es este trámite?",
+      "a": "Sí, para cortar la calle mientras está la grúa. El permiso de la obra en sí es otro trámite distinto."
+    },
+    {
+      "q": "Queremos hacer una fiesta en la calle del barrio.",
+      "a": "El corte de la calle se pide con este trámite. Si la fiesta necesita además otros permisos (escenario, música), el ayuntamiento se lo indicará."
+    },
+    {
+      "q": "Quiero que no aparquen delante de mi garaje.",
+      "a": "Eso es un vado, que es un trámite distinto: reserva la entrada de forma permanente."
+    },
+    {
+      "q": "¿Cuánto antes tengo que pedirlo?",
+      "a": "La ficha no fija un plazo, pero el corte no está autorizado hasta que el ayuntamiento conteste, así que conviene pedirlo con antelación suficiente."
+    }
+  ],
+  "kb_extra": "\n## Para qué sirve\nCortar una calle, entera o en parte, durante un periodo concreto: mudanzas, grúas, camiones de descarga,\nhormigoneras, eventos vecinales, obras que ocupan la calzada unas horas o unos días. El periodo tiene que\nquedar concretado en la solicitud: calle y tramo, fecha, hora de inicio y de fin, y motivo.\n\n## Qué NO es este trámite\n- **Reservar permanentemente la entrada de un garaje**: es el vado.\n- **El permiso de la obra** (licencia o comunicación previa): es el trámite de obras. Este solo cubre el\n  corte de la calle.\n- **Poner una terraza** (mesas de un bar en la calle): es el trámite de terraza.\n- **Avisar de un desperfecto** en la calle: es el aviso de incidencia en la vía pública."
+}

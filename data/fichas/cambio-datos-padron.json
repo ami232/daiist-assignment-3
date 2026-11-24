@@ -1,0 +1,39 @@
+{
+  "slug": "cambio-datos-padron",
+  "nombre_oficial": "Solicitud de Cambio de Datos Personales en el Padrón Municipal de Habitantes",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/80c9d55b-fad5-42f5-9064-6f4128ae30a2",
+  "ambito": "el cambio de datos personales en el padrón",
+  "que_es": "Es corregir o actualizar en el Padrón Municipal los datos personales de quien ya está empadronado en Guía: nombre y apellidos, documento de identidad, nacionalidad, nivel de estudios u otros datos personales. No cambia la dirección (eso es un cambio de domicilio) ni el hecho de estar empadronado. Tampoco es para los derechos de protección de datos (saber qué datos tiene el ayuntamiento de usted, o que los borren): eso es el trámite de datos personales.",
+  "quien_puede": "El propio interesado que ya está empadronado en Guía (o su representante), identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según la normativa aplicable",
+  "silencio_administrativo": "Según la normativa aplicable",
+  "documentacion": [
+    "Un documento que acredite el dato que quiere cambiar y su identidad: documento de identidad, tarjeta de residencia, NIE o pasaporte, según el caso"
+  ],
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales.",
+    "Reglamento de Población y Demarcación de las Entidades Locales, Real Decreto 1690/1986, de 11 de julio (art. 59).",
+    "Resolución de 17 de febrero de 2020, del INE, sobre la gestión del Padrón municipal."
+  ],
+  "faq": [
+    {
+      "q": "¿Esto sirve para cambiar mi dirección?",
+      "a": "No. Para cambiar de vivienda dentro de Guía es el cambio de domicilio. Este trámite es para corregir datos personales como el nombre, el documento de identidad o la nacionalidad."
+    },
+    {
+      "q": "¿Qué documento tengo que aportar?",
+      "a": "Uno que acredite el dato que quiere cambiar y su identidad: documento de identidad, tarjeta de residencia, NIE o pasaporte, según el caso."
+    },
+    {
+      "q": "¿Es gratuito?",
+      "a": "Sí, el cambio de datos personales en el padrón es gratuito."
+    },
+    {
+      "q": "Quiero saber qué datos tiene el ayuntamiento sobre mí, o que los borren.",
+      "a": "Eso no es el padrón: es el trámite de datos personales (protección de datos), que tiene su propio formulario."
+    }
+  ]
+}

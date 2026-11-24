@@ -1,0 +1,45 @@
+{
+  "slug": "accesibilidad",
+  "nombre_oficial": "Solicitudes de información accesible y quejas, comunicaciones sobre requisitos de accesibilidad, y reclamación contra la solicitud de información accesible y queja",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/bfdcf208-2d99-46f6-b78f-116f61936045 (y .../34801c79-0732-49f0-830d-b52652a01e80 comunicaciones, .../daf77f45-60d1-47f8-9fcb-ca9ea7c88b32 reclamación; cubre 3 trámites del catálogo)",
+  "ambito": "la accesibilidad de la página web y las aplicaciones móviles del ayuntamiento de Guía: pedir contenidos accesibles, quejas y avisos por fallos de accesibilidad, y la reclamación posterior",
+  "que_es": "Son los tres trámites de ACCESIBILIDAD DE LA WEB Y LAS APLICACIONES del ayuntamiento, para personas con discapacidad o mayores que no pueden usar algo de la página o de la app (no lo lee el lector de pantalla, no se puede ampliar, un documento en imagen, un vídeo sin subtítulos, un formulario que no funciona con el teclado). Los fija el Real Decreto 1112/2018. La SOLICITUD DE INFORMACIÓN ACCESIBLE Y QUEJA es la vía FORMAL: pedir que le den un contenido en un formato que pueda usar, o quejarse de que la web o la app no cumplen; el ayuntamiento contesta en veinte días hábiles (silencio desestimatorio). La COMUNICACIÓN SOBRE REQUISITOS DE ACCESIBILIDAD es el AVISO informal: informar de un fallo de accesibilidad, de una dificultad de acceso o hacer una sugerencia, sin pedir nada para uno mismo y sin plazo de respuesta. La RECLAMACIÓN es el SEGUNDO PASO: solo si ya hizo antes una solicitud o queja y no le contestaron en veinte días hábiles, se la denegaron o no está de acuerdo con la respuesta; el ayuntamiento resuelve en dos meses (silencio desestimatorio). Ninguno de los tres pide documentos. OJO: una barrera FÍSICA (una rampa, una acera, un edificio sin ascensor, un paso de peatones) no es esto, es el aviso de incidencia en la vía pública; una queja por cómo le atendieron es el trámite de quejas y sugerencias; y no poder entrar en la sede porque no tiene clave no es un problema de accesibilidad.",
+  "quien_puede": "Cualquier persona, física o jurídica, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave. Si por su discapacidad no puede usar la sede, puede pedirlo también en persona o por teléfono al ayuntamiento.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Veinte días hábiles para la solicitud de información accesible o queja; dos meses para la reclamación; la comunicación no tiene plazo",
+  "silencio_administrativo": "Desestimatorio en la solicitud o queja (veinte días hábiles) y en la reclamación (dos meses): si no contestan, se entiende denegado; la comunicación no tiene respuesta obligatoria",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Real Decreto 1112/2018, de 7 de septiembre, sobre accesibilidad de los sitios web y aplicaciones para dispositivos móviles del sector público (arts. 10 a 13).",
+    "Directiva (UE) 2016/2102, de 26 de octubre de 2016, sobre la accesibilidad de los sitios web y aplicaciones para dispositivos móviles de los organismos del sector público.",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común (arts. 9 y 66)."
+  ],
+  "faq": [
+    {
+      "q": "El lector de pantalla no me lee un documento de la web del ayuntamiento, ¿qué hago?",
+      "a": "Puede pedir con la solicitud de información accesible que se lo faciliten en un formato que pueda usar. Indique qué documento y en qué página está. El ayuntamiento tiene veinte días hábiles para contestar."
+    },
+    {
+      "q": "Solo quiero avisar de que un botón de la app no funciona con el teclado.",
+      "a": "Eso es la comunicación sobre requisitos de accesibilidad: un aviso sin plazo de respuesta. Si además quiere que se lo resuelvan a usted, use la solicitud."
+    },
+    {
+      "q": "Pedí un documento accesible hace un mes y no me han contestado.",
+      "a": "Si pasaron veinte días hábiles sin respuesta, puede presentar la reclamación, que es otro trámite de la sede. El ayuntamiento la resuelve en dos meses."
+    },
+    {
+      "q": "¿Puedo reclamar sin haber pedido nada antes?",
+      "a": "No. La reclamación es el segundo paso: primero hay que presentar la solicitud de información accesible o la queja."
+    },
+    {
+      "q": "Hay una rampa rota en la entrada del centro de salud.",
+      "a": "Eso es una barrera física, no de la web: se comunica con el aviso de incidencia en la vía pública."
+    },
+    {
+      "q": "¿Es gratuito?",
+      "a": "Sí, los tres trámites son gratuitos."
+    }
+  ],
+  "kb_extra": "\n## Los tres trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| Solicitudes de Información Accesible y Quejas | 1847380 |\n| Comunicaciones sobre Requisitos de Accesibilidad | 1847381 |\n| Reclamación contra la Solicitud de Información Accesible y Queja | 1847379 |\n\n## Cuál de los tres toca\n- **Solicitud de información accesible y queja (la formal):** pedir que un contenido de la web o la app\n  se le facilite en un formato accesible (por ejemplo, un documento escaneado como imagen en texto, un\n  vídeo con subtítulos), o quejarse de que la web o la app incumplen los requisitos de accesibilidad.\n  Respuesta en veinte días hábiles; silencio desestimatorio.\n- **Comunicación sobre requisitos de accesibilidad (el aviso):** informar de un posible incumplimiento,\n  de una dificultad de acceso o hacer una sugerencia de mejora, sin pedir nada para uno mismo. No tiene\n  plazo de respuesta.\n- **Reclamación (el segundo paso):** solo tras una solicitud o queja: si pasaron veinte días hábiles sin\n  respuesta, si la desestimaron o si la respuesta no cumple lo que exige la norma. Se resuelve en dos meses;\n  silencio desestimatorio.\n\n## Qué es la accesibilidad web\nEl Real Decreto 1112/2018 obliga a las webs y apps públicas a cumplir la norma UNE-EN 301549 (las pautas\nWCAG): que se puedan usar con lector de pantalla, con teclado, ampliando el texto, con contraste\nsuficiente, con subtítulos en los vídeos, con formularios etiquetados. Cada web pública tiene una\n\"declaración de accesibilidad\" que dice qué cumple y qué no.\n\n## Qué NO es este trámite\n- **Barreras físicas** (rampas, aceras, edificios, pasos de peatones): el aviso de incidencia en la vía\n  pública.\n- **Una queja por la atención o un servicio**: el trámite de quejas y sugerencias.\n- **No tener clave o no saber usar la sede**: no es accesibilidad; el ayuntamiento atiende en persona.\n- **La accesibilidad de una web privada** (un banco, una tienda): no es del ayuntamiento."
+}

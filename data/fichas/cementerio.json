@@ -1,0 +1,48 @@
+{
+  "slug": "cementerio",
+  "nombre_oficial": "Inhumación en los cementerios municipales, exhumación y cambio de titularidad de derecho funerario",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/aaed5975-46b8-48d5-a2ed-7aa729ab0574 (y .../429370fc-157c-44d1-a8cf-0ae460b810db, .../967cce52-b589-482d-8d55-0f017b55348b; cubre 3 trámites del catálogo)",
+  "ambito": "los trámites del cementerio municipal de Guía: enterrar a una persona fallecida (inhumación, en nicho nuevo u ocupado), sacar o trasladar restos (exhumación) y heredar o cambiar de titular un nicho, panteón o columbario",
+  "que_es": "Son los tres trámites del cementerio municipal. La INHUMACIÓN es el entierro: pedir un nicho nuevo (la concesión de uso funerario) o enterrar en uno que la familia ya tiene; pide el certificado de defunción y el DNI. La EXHUMACIÓN es sacar los restos de un nicho para trasladarlos a otro, a otro cementerio o a incinerar (reinhumación); no pide documentos en la sede. El CAMBIO DE TITULARIDAD del derecho funerario es poner el nicho, el panteón o el columbario a nombre de otra persona, normalmente porque el titular ha fallecido y lo hereda un familiar, o regularizar uno que sigue a nombre de un fallecido; tampoco pide documentos en la sede. OJO: dar de baja del padrón a la persona fallecida es otro trámite (el padrón); el certificado de defunción lo expide el Registro Civil, no el ayuntamiento; y un nicho que se está cayendo es la declaración de ruina.",
+  "quien_puede": "Un familiar de la persona fallecida o el titular del nicho, o su representante (la funeraria, si actúa por la familia), identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Desestimatorio en la inhumación y la exhumación (si el ayuntamiento no contesta, se entiende denegado); según normativa en el cambio de titularidad",
+  "documentacion_kb": "Dependen del trámite. La **inhumación** pide el certificado de defunción (copia simple, art. 81 de la Ley\ndel Registro Civil) y los datos de identificación del solicitante (DNI). La **exhumación** y el **cambio de\ntitularidad** no piden ningún documento obligatorio en la sede; en el cambio de titularidad conviene tener\nel título del nicho y la documentación de la herencia por si el ayuntamiento los pide.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Decreto 132/2014, de 29 de diciembre, de Sanidad Mortuoria (Canarias).",
+    "Reglamento de Policía Sanitaria Mortuoria, aprobado por Decreto 2263/1974, de 20 de julio.",
+    "Ley 33/2003, de 3 de noviembre, del Patrimonio de las Administraciones Públicas (artículo 93).",
+    "Reglamento de Bienes de las Entidades Locales, Real Decreto 1372/1986 (artículos 75, 78 y 79).",
+    "Ley de 8 de junio de 1957 sobre el Registro Civil (artículos 81 y 83)."
+  ],
+  "faq": [
+    {
+      "q": "Ha fallecido mi padre y el entierro es mañana, ¿qué tengo que pedir?",
+      "a": "La solicitud de inhumación en los cementerios municipales: sirve para pedir un nicho nuevo o para enterrar en uno que ya tiene la familia. Hace falta el certificado de defunción (la funeraria suele tenerlo) y el DNI."
+    },
+    {
+      "q": "¿Puedo enterrarlo en el nicho donde está mi madre?",
+      "a": "Sí, la inhumación en nicho ocupado se pide con el mismo trámite. El ayuntamiento comprueba que el nicho está a nombre de la familia y que hay sitio."
+    },
+    {
+      "q": "Queremos llevar los restos de mi abuelo a otro cementerio.",
+      "a": "Eso es una exhumación. No pide documentos en la sede; el ayuntamiento aplica los plazos mínimos que fija la sanidad mortuoria desde el entierro."
+    },
+    {
+      "q": "El nicho está a nombre de mi padre, que ya murió. ¿Cómo lo pongo a mi nombre?",
+      "a": "Con el cambio de titularidad del derecho funerario. No pide documentos en la sede, pero conviene tener el título del nicho y la documentación de la herencia por si los piden."
+    },
+    {
+      "q": "¿Dónde saco el certificado de defunción?",
+      "a": "Lo expide el Registro Civil, no el ayuntamiento. La funeraria suele gestionarlo."
+    },
+    {
+      "q": "¿Y hay que dar de baja del padrón a mi madre?",
+      "a": "Eso es otro trámite, la baja del padrón por defunción; suele hacerse de oficio desde el Registro Civil, pero se puede pedir. La operadora puede guiarle."
+    }
+  ],
+  "kb_extra": "\n## Los tres trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| CEM01 - Solicitud de inhumación en Cementerios Municipales de Santa María de Guía | 2511076 |\n| Exhumación en Nichos, Panteones, Columbarios... | 2762043 |\n| Solicitud de Cambio de Titularidad de Derecho Funerario: Nichos, Panteones, Columbarios,... | 869962 |\n\n## Cuál de los tres toca\n- **Inhumación (el entierro):** pedir un nicho nuevo (concesión administrativa de uso funerario, que da al\n  titular el derecho a conservar allí los restos de sus familiares por tiempo determinado) o enterrar en\n  un nicho que la familia ya tiene. Pide el certificado de defunción y el DNI. Silencio desestimatorio.\n- **Exhumación:** sacar los restos de un nicho, panteón o columbario para reinhumarlos en otro, llevarlos\n  a otro cementerio o incinerarlos. No pide documentos en la sede. La sanidad mortuoria fija plazos\n  mínimos desde el entierro; los aplica el ayuntamiento. Silencio desestimatorio.\n- **Cambio de titularidad del derecho funerario:** transmitir el nicho, panteón o columbario a otra\n  persona (normalmente por herencia, cuando el titular fallece) o regularizar uno que sigue a nombre de un\n  fallecido. No pide documentos en la sede; el ayuntamiento puede pedir después el título del nicho y la\n  documentación de la herencia.\n\n## Qué NO es este trámite\n- **Dar de baja del padrón** a la persona fallecida: es el trámite de baja por defunción del padrón.\n- **El certificado de defunción**: lo expide el Registro Civil, no el ayuntamiento.\n- **Un nicho o panteón que se está cayendo**: es la declaración de ruina.\n- **La pensión de viudedad, la herencia o el testamento**: no son del ayuntamiento."
+}

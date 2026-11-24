@@ -1,0 +1,48 @@
+{
+  "slug": "negocio-existente",
+  "nombre_oficial": "Comunicación de cambio de titularidad de una actividad (clasificada o inocua) y modificación o renuncia de la licencia de actividad",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/ab22b8cb-d13e-4f5a-af0a-0a57406b0e4c (y .../6a5af5af-b462-4ca9-8062-5ba4c95a4241; cubre 2 trámites del catálogo)",
+  "ambito": "lo que se hace con un negocio de Guía que YA tiene licencia de actividad: traspasarlo a otro titular, modificar la licencia o renunciar a ella (cerrar)",
+  "que_es": "Son dos trámites que tienen en común que el negocio YA FUNCIONA y tiene licencia. El CAMBIO DE TITULARIDAD es el traspaso: cuando alguien se queda con un bar, una tienda o cualquier negocio que ya está abierto y hay que poner la licencia a su nombre; lo firman las dos partes, la que deja el negocio y la que se lo queda, y lleva una tasa de 30 euros que se acredita en diez días con cita previa en Valora Gestión Tributaria. La MODIFICACIÓN O RENUNCIA de la licencia de actividad es para cambiar algo de la licencia que ya se tiene (ampliar la actividad o el local, cambiar horario o aforo) o para renunciar a ella porque el negocio cierra; no pide ningún documento. OJO: si lo que quiere es ABRIR un negocio nuevo, eso es la comunicación previa de actividad, que es otro trámite; y poner una terraza es otro trámite más.",
+  "quien_puede": "En el traspaso, quien se queda con el negocio (el nuevo titular), con la firma de quien lo deja; en la modificación o renuncia, el titular de la licencia. En los dos casos, o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año). El traspaso se comunica antes de que el nuevo titular empiece a explotar el negocio",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "Dependen del trámite. El **cambio de titularidad** pide el DNI del anterior titular y el del nuevo, la\nlicencia de apertura de la actividad (o el acuerdo de la Junta de Gobierno Local que tomó conocimiento de\nla actividad, si fue por comunicación previa), el contrato del traspaso o documento acreditativo de la\ntransmisión, y el anexo de la sede firmado por las dos partes (hay modelo descargable); si actúa un\nrepresentante, su DNI y la autorización del titular. Se acredita además el pago de la tasa de 30 euros en\ndiez días. La **modificación o renuncia** no pide ningún documento obligatorio.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 7/2011, de 5 de abril, de actividades clasificadas y espectáculos públicos y otras medidas administrativas complementarias (Canarias).",
+    "Decreto 52/2012, de 7 de junio, por el que se establece la relación de actividades clasificadas (Canarias).",
+    "Decreto 86/2013, de 1 de agosto, Reglamento de actividades clasificadas y espectáculos públicos.",
+    "Ley 39/2015, de 1 de octubre, del Procedimiento Administrativo Común de las Administraciones Públicas (artículo 69).",
+    "Ordenanza Fiscal reguladora de la tasa por intervención en actividades (artículo 8.5)."
+  ],
+  "faq": [
+    {
+      "q": "Me quedo con un bar que ya está abierto, ¿qué tengo que hacer?",
+      "a": "Comunicar el cambio de titularidad: hacen falta los DNI de los dos, la licencia de apertura del bar, el contrato del traspaso y un anexo firmado por las dos partes. Lleva una tasa de 30 euros."
+    },
+    {
+      "q": "¿El anexo lo tenemos que firmar los dos?",
+      "a": "Sí: quien deja el negocio y quien se lo queda. El modelo se descarga en la propia sede."
+    },
+    {
+      "q": "Voy a cerrar mi tienda, ¿tengo que avisar?",
+      "a": "Sí, con el trámite de modificación o renuncia de la licencia de actividad se comunica la renuncia. No pide documentos."
+    },
+    {
+      "q": "Quiero ampliar el local de mi negocio a la tienda de al lado.",
+      "a": "Eso es una modificación de la licencia de actividad. No pide documentos obligatorios en la sede. Si además hay obra, la obra tiene su propio trámite."
+    },
+    {
+      "q": "¿Cómo pago la tasa del traspaso?",
+      "a": "Fuera de la sede: 30 euros, en diez días, con cita previa en Valora Gestión Tributaria (teléfono 928 342 900 o cita por internet)."
+    },
+    {
+      "q": "Quiero abrir un negocio nuevo en un local vacío, ¿es este trámite?",
+      "a": "No: si el local no tiene licencia de actividad, es la comunicación previa de actividad (inocua o clasificada), que es otro trámite."
+    }
+  ],
+  "kb_extra": "\n## Los dos trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| Comunicación de CAMBIO DE TITULARIDAD. Actividad Clasificada o Inocua | 2447528 |\n| Licencia de Actividad (Modificación o Renuncia) | 2662904 |\n\n## Cuál de los dos toca\n- **Cambio de titularidad (el traspaso):** alguien se queda con un negocio que ya funciona y hay que\n  poner la licencia a su nombre. Lo comunican las dos partes: pide los DNI de los dos, la licencia de\n  apertura (o el acuerdo de la Junta de Gobierno Local que tomó conocimiento de la actividad, si se abrió\n  por comunicación previa), el contrato del traspaso y un anexo firmado por ambos, con modelo descargable\n  en la sede. Tasa de 30 euros.\n- **Modificación o renuncia:** cambiar algo de la licencia que ya se tiene (ampliar la actividad o el\n  local, cambiar horario o aforo, cambiar el nombre comercial) o renunciar a ella porque el negocio\n  cierra. No pide ningún documento obligatorio.\n\n## La tasa del traspaso se paga fuera de la sede\nEl cambio de titularidad lleva una tasa de 30 euros (artículo 8.5 de la Ordenanza Fiscal). El pago **se\nacredita en diez días**, con **cita previa en Valora Gestión Tributaria** (teléfono 928 342 900, o cita\npor internet). La modificación o renuncia no lleva tasa en la ficha.\n\n## Qué NO es este trámite\n- **Abrir un negocio nuevo** en un local sin licencia de actividad: es la comunicación previa de actividad\n  (inocua o clasificada).\n- **Poner mesas o una terraza** en la calle: es la solicitud de terraza.\n- **Cambiar de titular una licencia de obras** (una obra empezada): es la modificación de una licencia\n  urbanística. Y el **vado** tiene su propio trámite.\n- **La obra o reforma del local**: son las obras de edificación."
+}

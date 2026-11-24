@@ -1,0 +1,34 @@
+{
+  "slug": "baja-defuncion-padron",
+  "nombre_oficial": "Solicitud de Baja en el Padrón Municipal de Habitantes por Defunción",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/7a8f6d21-6ef8-43c0-84f9-5a1c2b260bb2",
+  "ambito": "la baja en el padrón por defunción",
+  "que_es": "Es dar de baja en el Padrón Municipal de Guía a una persona que ha fallecido. Habitualmente lo solicita un familiar. Suele gestionarse de oficio a partir de los datos del Registro Civil, pero este trámite permite pedirlo cuando hace falta.",
+  "quien_puede": "Normalmente un familiar de la persona fallecida (o su representante), identificándose con clave o certificado digital.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "3 meses",
+  "silencio_administrativo": "Estimatorio",
+  "documentacion": [
+    "El certificado de defunción, o el libro de familia si ya recoge la defunción"
+  ],
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Reglamento de Población y Demarcación de las Entidades Locales, Real Decreto 1690/1986, de 11 de julio.",
+    "Resolución de 17 de febrero de 2020, del INE, sobre la gestión del Padrón municipal."
+  ],
+  "faq": [
+    {
+      "q": "¿Quién puede pedir la baja de una persona fallecida?",
+      "a": "Habitualmente un familiar. Suele hacerse de oficio a partir del Registro Civil, pero se puede solicitar cuando haga falta."
+    },
+    {
+      "q": "¿Qué documento necesito?",
+      "a": "El certificado de defunción, o el libro de familia si ya recoge la defunción. Puede aportarlo en copia."
+    },
+    {
+      "q": "¿Es gratuito?",
+      "a": "Sí, la baja en el padrón por defunción es gratuita."
+    }
+  ]
+}

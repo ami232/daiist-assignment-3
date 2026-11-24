@@ -1,0 +1,51 @@
+{
+  "slug": "animales",
+  "nombre_oficial": "Licencia para la tenencia de animales potencialmente peligrosos, registro censal de animales, y recogida, recuperación y acogida de animales de compañía",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/59c69b20-7983-4af6-86ca-1bf3aab049da (y .../30e885b0-2005-4c8e-aa16-79e63140e436, .../f6c1d941-a7c2-4323-a7f5-05d1368b108f; cubre 3 trámites del catálogo)",
+  "ambito": "los trámites de animales de compañía en Guía: la licencia del dueño de un animal potencialmente peligroso, el alta, baja o cambio de datos en el registro censal de animales, y la recogida de animales abandonados o perdidos, su recuperación y su acogida",
+  "que_es": "Son los tres trámites de animales del ayuntamiento. La LICENCIA DE ANIMALES POTENCIALMENTE PELIGROSOS es la que necesita la PERSONA que tiene o maneja un perro de raza potencialmente peligrosa (pitbull, rottweiler, dogo y similares) o cualquier animal con capacidad de causar lesiones; pide el certificado de antecedentes penales y la autorización para que el ayuntamiento compruebe la identidad, y es el primer paso: después hay que inscribir a cada animal en el registro. El REGISTRO CENSAL DE ANIMALES es censar a la mascota (alta), darla de baja (ha muerto, se ha regalado, se ha ido del municipio) o cambiar sus datos; no pide documentos en la sede. La RECOGIDA, RECUPERACIÓN Y ACOGIDA es pedir que recojan un animal abandonado o perdido que hay en la calle, recuperar el suyo si se le perdió y lo tiene el ayuntamiento, o acoger uno (adoptarlo); tampoco pide documentos. OJO: un perro suelto que MOLESTA o un vecino que maltrata a un animal es una denuncia; un perro peligroso suelto AHORA o una mordedura es la Policía Local o el 112; y la licencia de caza es de la Guardia Civil.",
+  "quien_puede": "El dueño o la persona que tiene a su cargo el animal (mayor de edad en la licencia de potencialmente peligrosos), o su representante, identificándose con clave o certificado digital. Los datos personales se rellenan solos desde clave. La recogida de un animal abandonado la puede pedir cualquier vecino.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "Según normativa aplicable",
+  "silencio_administrativo": "Según normativa aplicable",
+  "documentacion_kb": "Dependen del trámite. La **licencia de animales potencialmente peligrosos** pide el certificado de\nantecedentes penales (original o copia auténtica) y la autorización para que el ayuntamiento consulte y\nverifique los datos de identidad del solicitante. El **registro censal** y la **recogida, recuperación y\nacogida** no piden ningún documento obligatorio; la cartilla del animal, el documento del chip o una foto\npueden adjuntarse como documentación adicional.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Ley 50/1999, de 23 de diciembre, sobre el Régimen Jurídico de la Tenencia de Animales Potencialmente Peligrosos.",
+    "Real Decreto 287/2002, de 22 de marzo, por el que se desarrolla la Ley 50/1999.",
+    "Ley 7/2023, de 28 de marzo, de protección de los derechos y el bienestar de los animales.",
+    "Ordenanza para la protección y tenencia de animales en el municipio de Santa María de Guía."
+  ],
+  "faq": [
+    {
+      "q": "Tengo un pitbull, ¿qué necesito?",
+      "a": "La licencia de animales potencialmente peligrosos, que es del dueño. La sede pide el certificado de antecedentes penales y la autorización para comprobar su identidad. Cuando se la concedan, tendrá que inscribir al perro en el registro del ayuntamiento."
+    },
+    {
+      "q": "¿Qué razas son potencialmente peligrosas?",
+      "a": "Las del Real Decreto 287/2002: pitbull terrier, staffordshire bull terrier, american staffordshire terrier, rottweiler, dogo argentino, fila brasileiro, tosa inu, akita inu y sus cruces; y en general cualquier animal con capacidad de causar la muerte o lesiones."
+    },
+    {
+      "q": "Quiero censar a mi perro, ¿es aquí?",
+      "a": "Sí, con el alta en el registro censal de animales. No pide documentos en la sede; conviene tener el número del chip a mano."
+    },
+    {
+      "q": "Mi perro murió, ¿tengo que avisar?",
+      "a": "Sí, con la baja en el registro censal de animales. No pide documentos."
+    },
+    {
+      "q": "Hay un perro abandonado en mi calle desde hace días.",
+      "a": "Puede pedir su recogida con el trámite de recogida, recuperación y acogida de animales. No pide documentos; indique dónde está y cómo es el animal. Si el animal es agresivo o hay peligro ahora mismo, llame a la Policía Local."
+    },
+    {
+      "q": "Se me ha perdido el perro, ¿lo pueden tener ustedes?",
+      "a": "Con el mismo trámite de recogida y recuperación puede pedir que se lo devuelvan si el ayuntamiento lo ha recogido. Indique cómo es y el número del chip."
+    },
+    {
+      "q": "¿Me van a pedir el seguro y el certificado psicológico?",
+      "a": "La sede solo lista el certificado de antecedentes penales, pero la Ley 50/1999 exige también un certificado de capacidad física y aptitud psicológica y un seguro de responsabilidad civil, así que puede que se los pidan después."
+    }
+  ],
+  "kb_extra": "\n## Los tres trámites que cubre\n| Trámite en la sede | Código SIA |\n|---|---|\n| APP02 Solicitud de Licencia para la Tenencia de Animales Potencialmente Peligrosos | 2328672 |\n| Alta, Baja o Modificación de Datos en el Registro de Animales | 2687109 |\n| Recogida, Recuperación y Acogida de Animales de Compañía Abandonados, Perdidos o Confiscados | 3057205 |\n\n## Cuál de los tres toca\n- **Licencia de animales potencialmente peligrosos:** la necesita la persona (mayor de edad) que tiene o\n  maneja un animal potencialmente peligroso: los perros de las razas que fija el Real Decreto 287/2002\n  (pitbull terrier, staffordshire bull terrier, american staffordshire terrier, rottweiler, dogo\n  argentino, fila brasileiro, tosa inu, akita inu y sus cruces) y, en general, cualquier animal con\n  capacidad de causar la muerte o lesiones. La sede pide el certificado de antecedentes penales y la\n  autorización para que el ayuntamiento compruebe la identidad; la Ley 50/1999 exige además certificado de\n  capacidad física y aptitud psicológica y seguro de responsabilidad civil, que pueden pedirse después. Es\n  el PRIMER PASO: con la licencia concedida hay que inscribir a cada animal en el Registro de Animales\n  Potencialmente Peligrosos del ayuntamiento.\n- **Registro censal de animales:** alta (censar a la mascota), baja (ha muerto, se ha regalado, se ha ido\n  del municipio) o modificación de datos (dirección, dueño, chip). No pide documentos en la sede.\n  También es donde se inscribe a un animal potencialmente peligroso después de la licencia.\n- **Recogida, recuperación y acogida:** pedir que recojan un animal de compañía abandonado o perdido,\n  recuperar el propio animal si lo tiene el ayuntamiento, o acogerlo (adopción). No pide documentos.\n  Unidad responsable: Servicios Generales.\n\n## Qué NO es este trámite\n- **Un perro peligroso suelto ahora mismo, una mordedura, un animal agresivo**: Policía Local o 112.\n- **Denunciar** al vecino por su perro (ladridos, molestias, maltrato): la denuncia ante el ayuntamiento.\n- **La licencia de caza** y las armas: Guardia Civil.\n- **El chip y la cartilla sanitaria** del animal: los pone el veterinario, no el ayuntamiento."
+}

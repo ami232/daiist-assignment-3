@@ -1,0 +1,48 @@
+{
+  "slug": "empadronamiento",
+  "nombre_oficial": "Solicitud de Alta en el Padrón Municipal de Habitantes por Cambio de Residencia",
+  "sede_url": "https://santamariadeguia.sedelectronica.es/catalog/t/073b778e-bb91-4ef4-b7cb-31a39be0e95f",
+  "ambito": "el alta en el padrón por cambio de residencia, es decir, empadronarse en Guía",
+  "que_es": "Es dar de alta la residencia en el Padrón de Habitantes del municipio de Guía cuando la persona se muda a vivir allí (alta por cambio de residencia). Sirve para constar oficialmente como vecino del municipio.",
+  "quien_puede": "La persona que se empadrona, o un representante suyo. Se identifica con clave o certificado digital; los datos personales se rellenan solos desde clave.",
+  "identificacion": "Clave o certificado digital",
+  "plazo_presentacion": "Continuo (todo el año)",
+  "plazo_resolucion": "3 meses",
+  "silencio_administrativo": "Estimatorio (si no contestan en plazo, se entiende concedido)",
+  "documentacion": [
+    "Documento de identidad.",
+    "Un documento que acredite el uso de la vivienda, según el caso: título de propiedad, contrato de alquiler, autorización de una persona mayor de edad ya empadronada más su documento de identidad, autorización del titular de la vivienda más su documento, o autorización de la dirección del centro si es vivienda colectiva."
+  ],
+  "documentacion_kb": "Siempre:\n- Documento de identidad.\n\nY, además, un documento que acredite el uso de la vivienda, **según el caso** (solo uno):\n- **Si es propietario:** título de propiedad (escritura, nota simple o recibo del IBI).\n- **Si vive de alquiler:** contrato de alquiler en vigor.\n- **Si le autoriza una persona mayor de edad ya empadronada en esa vivienda:** su autorización firmada\n  y una copia de su documento de identidad.\n- **Si le autoriza el titular de la vivienda (otra autorización):** la autorización firmada y el\n  documento del titular.\n- **Si es una vivienda colectiva** (residencia, centro, hotel…): autorización de la dirección del centro.",
+  "notificacion": "Se elige el medio de notificación (Electrónica o Papel) y se indican correo y móvil. Para recoger una notificación electrónica hace falta certificado digital; si no se maneja con soltura, es más cómodo elegir Papel.",
+  "normativa": [
+    "Real Decreto 1690/1986, de 11 de julio, Reglamento de Población y Demarcación Territorial de las Entidades Locales.",
+    "Resolución del INE de 17 de febrero de 2020, sobre gestión del Padrón municipal."
+  ],
+  "faq": [
+    {
+      "q": "¿Qué documento necesito si vivo de alquiler?",
+      "a": "El contrato de alquiler en vigor, además de su documento de identidad."
+    },
+    {
+      "q": "¿Y si la casa es de un familiar o de otra persona?",
+      "a": "Necesita que esa persona firme una autorización de empadronamiento y aporte una copia de su documento de identidad. Si es el titular o propietario quien autoriza, sirve igualmente su autorización y su documento."
+    },
+    {
+      "q": "¿Qué elijo en «causa del alta»?",
+      "a": "Si viene de otro municipio de España, «vengo de otro municipio»; si viene de otro país, «vengo del extranjero»; y si ya vive en Guía pero no estaba empadronado en ningún sitio, la opción correspondiente."
+    },
+    {
+      "q": "¿Tengo que elegir notificación en papel o electrónica?",
+      "a": "Para recoger la notificación electrónica hace falta certificado digital. Si no lo maneja con soltura, es más cómodo elegir «Papel», para no tener problemas al recogerla después."
+    },
+    {
+      "q": "¿Cuánto cuesta?",
+      "a": "El empadronamiento es un trámite gratuito."
+    },
+    {
+      "q": "¿Qué pasa después de presentarlo?",
+      "a": "Queda registrado con un número de justificante. La resolución puede tardar hasta 3 meses, aunque el alta suele constar antes. Conviene guardar el justificante con el número de registro."
+    }
+  ]
+}
