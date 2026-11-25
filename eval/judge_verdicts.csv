@@ -1,0 +1,33 @@
+id,correct,supported,reason
+q01,1,1,The assistant correctly states the 8-week timeframe and references the appropriate regulations supported by the evidence.
+q02,1,1,The assistant accurately answers the question using only facts supported by the provided evidence.
+q03,1,1,The assistant accurately answers the question and every claim is fully supported by the provided evidence from regulation 83.
+q04,1,1,The assistant correctly answered the question and every claim is supported by the evidence.
+q06,1,1,The assistant answer correctly matches the reference and is fully supported by the evidence.
+q07,1,1,The assistant correctly identifies all conditions for charging a fee and every claim is supported by the provided evidence.
+q08,1,1,The assistant answer accurately reflects the regulations provided in the evidence.
+q09,1,1,The assistant answer accurately lists all categories required by the reference and every claim is directly supported by the provided evidence.
+q10,1,1,The assistant answer fully matches the reference and is completely supported by the provided evidence.
+q11,1,1,The assistant correctly identified the £5 million net asset requirement from the provided evidence regulations.
+q12,1,1,The assistant correctly identified the requirement for an annual audit opinion which is fully supported by the evidence.
+q13,1,1,The assistant answer accurately lists all required risk factors and additional contextual details that are fully supported by the provided evidence.
+q14,1,1,The assistant answer correctly and accurately reflects the reference and is fully supported by the provided regulation.
+q15,1,1,The assistant answer correctly states that offences committed outside the UK can be prosecuted and cites the relevant regulation accurately.
+q16,1,1,The assistant accurately answers the question based on the provided evidence.
+q17,1,1,The assistant answer accurately reflects the reference and is fully supported by regulation 84(10).
+q18,1,1,The assistant accurately answers the question and every claim is fully supported by the provided evidence.
+q19,1,1,The assistant answer correctly addresses the question and is fully supported by the provided regulations.
+q20,1,1,The assistant accurately answers the timeframe and requirements based entirely on the provided regulations.
+q21,1,1,The assistant answer correctly and completely addresses both parts of the question using exact details from the provided evidence.
+q22,1,1,"The assistant answer correctly details the required risk profiles and what a firm must provide to its supervisor on request, and every claim is fully supported by the provided regulations."
+q23,1,1,The assistant accurately answers both parts of the question based entirely on the provided evidence.
+q24,1,1,The assistant correctly identifies the supervisory authority and accurately describes what the register covers based on the evidence.
+q25,1,1,"The assistant accurately answers the question based on regulations 33 and 36, and all claims are fully supported by the provided evidence."
+q26,1,1,The assistant correctly identified that the corpus does not cover the question and made no unsupported claims.
+q27,1,1,The assistant correctly stated that the corpus does not cover the fee and explained what the evidence actually discusses.
+q28,1,1,The assistant correctly stated that the corpus does not cover the compensation limit.
+q29,1,1,The assistant correctly stated that the corpus does not cover the EU's sixth Anti-Money Laundering Directive.
+q30,1,1,The assistant correctly stated that the corpus does not cover the question.
+q31,1,1,The assistant correctly identified that the corpus does not cover Basel III capital requirements.
+q32,1,1,The assistant correctly identified that the corpus does not cover consent dashboards.
+q05,1,1,The assistant accurately answers the question based on the provided text and all claims are fully supported by the evidence.

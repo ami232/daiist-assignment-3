@@ -1,9 +1,0 @@
-{
-  "servers": {
-    "corpus": {
-      "type": "stdio",
-      "command": "uv",
-      "args": ["run", "--directory", "${workspaceFolder}", "server.py"]
-    }
-  }
-}
