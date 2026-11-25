@@ -22,7 +22,9 @@ EVAL_DIR = ROOT / "eval"                 # test set + evaluation results
 DRUGS = {
     "ELIQUIS": 'openfda.brand_name:"ELIQUIS"',        # apixaban
     "XARELTO": 'openfda.brand_name:"XARELTO"',        # rivaroxaban
-    "PRADAXA": 'openfda.brand_name:"PRADAXA"',        # dabigatran
+    # dabigatran: the CAPSULES label (adults). A plain brand search returns the newer
+    # "Oral Pellets" label, which only covers children aged 3 months to 12 years.
+    "PRADAXA": 'openfda.brand_name:"PRADAXA" AND dosage_forms_and_strengths:"150 mg capsules"',
     "WARFARIN": 'openfda.generic_name:"WARFARIN SODIUM"',  # warfarin (generic label)
     "LOVENOX": 'openfda.brand_name:"LOVENOX"',        # enoxaparin
 }
