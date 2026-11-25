@@ -20,7 +20,7 @@ import time
 import pandas as pd
 from google.genai import types
 
-from agent import answer_question, check_citations, is_refusal
+from agent import answer_question, apply_guardrail, check_citations, is_refusal
 from config import CHAT_MODEL, CHOSEN_DESIGN, DESIGNS, EVAL_DIR
 from index import embed_queries, get_client
 from retrieve import search
@@ -129,6 +129,9 @@ def evaluate_retrieval(questions: pd.DataFrame, vectors: dict) -> pd.DataFrame:
 
 def run_agent_on_all(questions: pd.DataFrame) -> dict:
     answers = load_jsonl(ANSWERS)
+    # The guardrail is plain code, so re-apply the CURRENT version to saved answers (free, no API call).
+    for a in answers.values():
+        a["answer"], a["guardrail_fired"], a["guardrail_reason"] = apply_guardrail(a["raw_answer"], a["retrieved_text"])
     for _, q in questions.iterrows():
         if q["id"] in answers:                          # already answered in an earlier run
             continue
@@ -197,12 +200,15 @@ def grade_all(questions: pd.DataFrame, answers: dict) -> dict:
                                  f"WHAT 'supported' MEANS FOR THIS QUESTION: {c['groundedness_criterion']}\n\n")
     verdicts = load_jsonl(VERDICTS)
     for _, q in questions.iterrows():
-        if q["id"] not in answers or q["id"] in verdicts:
+        if q["id"] not in answers:
             continue
+        old = verdicts.get(q["id"])
+        if old and old.get("answer", answers[q["id"]]["answer"]) == answers[q["id"]]["answer"]:
+            continue                       # already graded, and the answer has not changed since
         a = answers[q["id"]]
         refused = is_refusal(a["answer"])
         citations_ok, _ = check_citations(a["raw_answer"], a["retrieved_text"])
-        record = {"id": q["id"], "refused": refused, "citations_valid": citations_ok}
+        record = {"id": q["id"], "refused": refused, "citations_valid": citations_ok, "answer": a["answer"]}
 
         # 3. CODE CHECKS decide the clear cases without calling the judge:
         if refused:

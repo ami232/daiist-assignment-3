@@ -37,7 +37,9 @@ from config import CHAT_MODEL, ROOT
 
 REFUSAL = "The corpus does not cover this."
 # A citation looks like [ELIQUIS §2.2]  or  [XARELTO §2.1;2.2]
-CITATION = re.compile(r"\[([A-Z0-9_-]+) §([^\]]+)\]")
+# A citation is any [...] containing "§": [ELIQUIS §2.2], [XARELTO §2.1;2.2],
+# or several in one bracket: [PRADAXA §2.5, PRADAXA §12.3] or [PRADAXA §1.2, §14.2].
+CITATION = re.compile(r"\[([^\[\]]*§[^\[\]]*)\]")
 
 
 # =============================================================================
@@ -45,12 +47,36 @@ CITATION = re.compile(r"\[([A-Z0-9_-]+) §([^\]]+)\]")
 # =============================================================================
 
 def citations_in(text: str) -> set[tuple[str, str]]:
-    """All (source, location) pairs in a text. "[X §2.1;2.2]" gives (X, 2.1) and (X, 2.2)."""
+    """All (source, location) pairs in a text.
+
+    "[X §2.1;2.2]"         -> (X, 2.1), (X, 2.2)
+    "[X §2.5, X §12.3]"    -> (X, 2.5), (X, 12.3)
+    "[X §1.2, §14.2]"      -> (X, 1.2), (X, 14.2)   a part without a name keeps the previous one
+    """
     pairs = set()
-    for source, locations in CITATION.findall(text):
-        for location in re.split(r"[;,]\s*", locations):
-            pairs.add((source, location.strip()))
+    for inside in CITATION.findall(text):
+        source = None
+        for part in re.split(r"[;,]", inside):
+            part = part.strip()
+            match = re.match(r"(?:([A-Z][A-Z0-9_-]*)\s*)?§\s*(.+)", part)
+            if match:                               # "PRADAXA §2.5" or "§14.2"
+                source = match.group(1) or source
+                location = match.group(2).strip()
+            else:                                   # "2.2" after "XARELTO §2.1;"
+                location = part
+            if source and location:
+                pairs.add((source, location))
     return pairs
+
+
+def apply_guardrail(raw_answer: str, retrieved_text: str) -> tuple[str, bool, str]:
+    """The citation guardrail: returns (final answer, fired?, reason)."""
+    ok, reason = check_citations(raw_answer, retrieved_text)
+    if ok:
+        return raw_answer, False, reason
+    final = (f"{REFUSAL} (Guardrail: the draft answer {reason}, so it was withheld. "
+             "Please check the full prescribing information.)")
+    return final, True, reason
 
 
 def is_refusal(answer: str) -> bool:
@@ -155,17 +181,13 @@ async def answer_question(question: str, approve=ask_human) -> dict:
     retrieved_text = "\n\n".join(retrieved)
 
     # c. The citation guardrail.
-    ok, reason = check_citations(raw_answer, retrieved_text)
-    final = raw_answer if ok else (
-        f"{REFUSAL} (Guardrail: the draft answer {reason}, so it was withheld. "
-        "Please check the full prescribing information.)"
-    )
+    final, fired, reason = apply_guardrail(raw_answer, retrieved_text)
 
     return {
         "question": question,
         "answer": final,
         "raw_answer": raw_answer,
-        "guardrail_fired": not ok,
+        "guardrail_fired": fired,
         "guardrail_reason": reason,
         "trace": trace,
         "retrieved_text": retrieved_text,
