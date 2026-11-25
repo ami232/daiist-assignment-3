@@ -1,0 +1,16 @@
+{
+  "questions_graded": 30,
+  "answerable_correct": 20,
+  "answerable_total": 25,
+  "unsupported_answers": 0,
+  "correct_refusals": 5,
+  "unanswerable_total": 5,
+  "wrong_refusals": 5,
+  "guardrail_fired": 5,
+  "avg_tokens_per_question": 4004,
+  "avg_seconds_per_question": 6.1,
+  "questions_in_test_set": 30,
+  "abstention_accuracy_unanswerable": 1.0,
+  "labels_valid": 0,
+  "labels_compared_with_judge": 0
+}
