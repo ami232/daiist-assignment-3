@@ -1,0 +1,26 @@
+{
+  "food-code-2026": {
+    "title": "FDA Food Code 2026",
+    "file": "fda-food-code-2026.pdf",
+    "sha256": "a608605db1a44d07fc9255db281175a933b4290597b4dc4cf58e035158fc8e06",
+    "chunks": 648
+  },
+  "haccp-operators-manual": {
+    "title": "Managing Food Safety: HACCP Manual for Operators (FDA, 2006)",
+    "file": "haccp-operators-manual.pdf",
+    "sha256": "17473220ad0da800c7b84341eade7a74af8142184643a6253f11a4f07dc792a5",
+    "chunks": 72
+  },
+  "haccp-regulators-manual": {
+    "title": "Managing Food Safety: HACCP Manual for Regulators (FDA, 2006)",
+    "file": "haccp-regulators-manual.pdf",
+    "sha256": "2482c02bc8f38231c0c22d690c17165c39a05f87af2bee11c4731168a81aa6e1",
+    "chunks": 70
+  },
+  "bad-bug-book-2nd-edition-pdf": {
+    "title": "Bad Bug Book",
+    "file": "Bad-Bug-Book-2nd-Edition-(PDF).pdf",
+    "sha256": "b76d65edc9cce029a8e864f51eee8f7ae124157d55532019c6ea9de529ff21d7",
+    "chunks": 384
+  }
+}

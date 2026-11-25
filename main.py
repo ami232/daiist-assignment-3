@@ -1,11 +1,3 @@
-"""
-Assignment 3 entry point. Don't rename it or its commands.
-
-    uv run python main.py index                 # index.py or index.ipynb
-    uv run python main.py ask "your question"   # agent.py
-    uv run python main.py evaluate              # evaluate.py or evaluate.ipynb
-"""
-
 import argparse
 import subprocess
 import sys

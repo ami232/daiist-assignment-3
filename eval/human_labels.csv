@@ -1,1 +1,40 @@
 id,correct,supported,notes
+q01, 1, 1, 
+q02, 1, 1, matches ref (Food Code 3-401.11 p91: 155F/17s + chart). HACCP ops manual p40 says 15s but the code has 17s so ok
+q03, 1, 1, 
+q04, 1, 1,
+q05, 1, 1, 
+q06, 1, 1, 
+q07, 1, 1, 
+q08, 1, 1, matches ref 3-501.19(B) p102 4h rule. extra 6h option is in (C) p103 so ok
+q09, 1, 1, 
+q10, 1, 1, 
+q11, 1, 1, 
+q12, 0, 1, WRONG - says refused but it is in 3-301.11(B) p80: no bare hands on RTE food use utensils/gloves
+q13, 1, 1,
+q14, 1, 1,
+q15, 1, 0, correct (5°C / 7°C eggs 3-202.11 p76). unsupported: "Grade A milk standards" not in the text it only says "laws governing milk"
+q16, 1, 1, 
+q17, 1, 1, 
+q18, 1, 1, 
+q19, 1, 1, 
+q20, 1, 1, 
+q21, 1, 1, 
+q22, 1, 1, 
+q23, 1, 1, 
+q24, 1, 1, 
+q25, 1, 1, 
+q26, 1, 1, 
+q27, 1, 1, 
+q28, 1, 1, 
+q29, 1, 1, 
+q30, 1, 1, properly refused
+q31, 1, 1, properly refused
+q32, 1, 1, properly refused
+q33, 1, 1, properly refused
+q34, 1, 1, properly refused
+q35, 1, 1,properly refused
+q36, 1, 1,properly refused
+
+
+

@@ -1,12 +1,3 @@
-"""
-Assignment 3: submission check. `uv run python check.py [--evaluate]`
-
-Checks the API key, the committed index and test set, that server.py lists a
-search tool (`query`) and an add-document tool (`path`) and that search answers
-your first test question, and that `main.py ask` answers it. It never rebuilds
-the index or calls add-document. Don't edit this file to make it pass.
-"""
-
 import argparse
 import asyncio
 import csv
@@ -123,10 +114,7 @@ def tool_with_argument(tools: list, argument: str):
 
 
 async def call_search_tool(question: str) -> tuple[str | None, str]:
-    """Start server.py over stdio, as an editor would, find the search tool and call it once.
-
-    Returns (tool name, its result), or (None, what went wrong).
-    """
+    """Start server.py over stdio, as an editor would, find the search tool and call it once."""
     from mcp import ClientSession, StdioServerParameters
     from mcp.client.stdio import stdio_client
 
