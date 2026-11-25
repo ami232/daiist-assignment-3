@@ -38,7 +38,9 @@ Chat model `gemini-3.5-flash-lite`, embeddings `gemini-embedding-2` (768 d), act
 
 ## Judge vs human
 
-Not computed yet: fill in eval/human_labels.csv.
+32 answers graded by both. Agreement: correct 1.0, supported 0.969.
+
+- q27 supported: human 0, judge 1 - The question is unanswerable because the documents cover EU rules rather than UK261, but the assistant attempted to answer the question using the document details.
 
 ## Failures (eval/failures.csv)
 
