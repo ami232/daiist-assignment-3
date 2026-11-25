@@ -1,0 +1,925 @@
+{
+  "designs": {
+    "dense": {
+      "hit@1": 0.48,
+      "all@1": 0.44,
+      "hit@3": 0.72,
+      "all@3": 0.6,
+      "hit@5": 0.8,
+      "all@5": 0.68,
+      "multi_all@5": 0.4
+    },
+    "hybrid": {
+      "hit@1": 0.68,
+      "all@1": 0.56,
+      "hit@3": 0.88,
+      "all@3": 0.72,
+      "hit@5": 0.92,
+      "all@5": 0.8,
+      "multi_all@5": 0.4
+    }
+  },
+  "selected": "hybrid",
+  "per_question": [
+    {
+      "id": "q01",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "bagehot|Chapter VII|014",
+        "bagehot|Chapter VII|001",
+        "bagehot|Chapter II|002",
+        "bagehot|Chapter III|014",
+        "bagehot|Chapter IV|006"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q02",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "bagehot|Chapter II|013",
+        "bagehot|Chapter II|006",
+        "bagehot|Chapter II|029",
+        "bagehot|Chapter II|003",
+        "bagehot|Chapter II|001"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 0,
+      "all@3": 0,
+      "hit@5": 0,
+      "all@5": 0
+    },
+    {
+      "id": "q03",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "bagehot|Chapter IX|012",
+        "bagehot|Chapter III|008",
+        "bagehot|Chapter III|001",
+        "bagehot|Chapter II|001",
+        "bagehot|Chapter IX|013"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 0,
+      "all@3": 0,
+      "hit@5": 0,
+      "all@5": 0
+    },
+    {
+      "id": "q04",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "bagehot|Chapter VII|004",
+        "bagehot|Chapter VII|003",
+        "bagehot|Chapter VII|002",
+        "bagehot|Chapter II|005",
+        "bagehot|Chapter VII|014"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q05",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "bagehot|Chapter XIII|015",
+        "bagehot|Chapter VII|003",
+        "bagehot|Chapter VII|005",
+        "bagehot|Chapter VII|002",
+        "bagehot|Chapter VII|025"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q06",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "bagehot|Chapter XIII|021",
+        "bagehot|Chapter VII|006",
+        "bagehot|Chapter VII|005",
+        "bagehot|Chapter II|009",
+        "bagehot|Chapter VII|003"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q07",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "peace|Chapter II|001",
+        "peace|Chapter II|009",
+        "peace|Chapter II|005",
+        "peace|Chapter II|002",
+        "peace|Chapter II|008"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 0,
+      "all@3": 0,
+      "hit@5": 0,
+      "all@5": 0
+    },
+    {
+      "id": "q08",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "peace|Chapter VI|001",
+        "peace|Chapter II|010",
+        "peace|Chapter VI|002",
+        "peace|Chapter II|009",
+        "peace|Chapter VI|003"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q09",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "peace|Chapter II|003",
+        "peace|Chapter II|004",
+        "peace|Chapter VI|002",
+        "peace|Chapter II|005",
+        "peace|Chapter VI|005"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q10",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "peace|Chapter IV|007",
+        "peace|Chapter IV|008",
+        "peace|Chapter IV|013",
+        "peace|Chapter IV|006",
+        "peace|Chapter IV|009"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 0,
+      "all@3": 0,
+      "hit@5": 0,
+      "all@5": 0
+    },
+    {
+      "id": "q11",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "peace|Chapter VI|001",
+        "peace|Chapter VI|004",
+        "peace|Chapter II|010",
+        "peace|Chapter VI|005",
+        "peace|Chapter I|001"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q12",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "peace|Chapter VI|005",
+        "peace|Chapter II|001",
+        "peace|Chapter II|007",
+        "peace|Chapter I|001",
+        "peace|Chapter VI|001"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 0,
+      "all@3": 0,
+      "hit@5": 0,
+      "all@5": 0
+    },
+    {
+      "id": "q13",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "peace|Chapter VII|020",
+        "peace|Chapter VI|001",
+        "peace|Chapter VII|010",
+        "peace|Chapter VII|006",
+        "peace|Chapter V|018"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q14",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "tract|Chapter III|002",
+        "tract|Chapter III|003",
+        "tract|Chapter III|004",
+        "tract|Chapter II|001",
+        "tract|Chapter III|008"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 0,
+      "all@3": 0,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q15",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "tract|Chapter II|002",
+        "tract|Chapter II|001",
+        "tract|Chapter III|002",
+        "tract|Chapter III|003",
+        "tract|Chapter III|001"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q16",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "tract|Chapter II|003",
+        "tract|Chapter II|006",
+        "tract|Chapter II|001",
+        "tract|Chapter II|004",
+        "tract|Chapter II|015"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q17",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "tract|Chapter III|004",
+        "tract|Chapter III|002",
+        "tract|Chapter III|003",
+        "tract|Chapter V|002",
+        "tract|Chapter III|001"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q18",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "tract|Chapter III|003",
+        "tract|Chapter III|002",
+        "tract|Chapter III|006",
+        "tract|Chapter III|005",
+        "tract|Chapter V|003"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q19",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "tract|Chapter IV|002",
+        "tract|Chapter IV|008",
+        "tract|Chapter IV|003",
+        "tract|Chapter I|025",
+        "tract|Chapter IV|007"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q20",
+      "kind": "single",
+      "design": "dense",
+      "ids": [
+        "tract|Chapter IV|003",
+        "tract|Chapter I|025",
+        "tract|Chapter IV|007",
+        "tract|Chapter I|003",
+        "tract|Chapter I|011"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q21",
+      "kind": "multi",
+      "design": "dense",
+      "ids": [
+        "bagehot|Chapter II|006",
+        "bagehot|Chapter II|013",
+        "bagehot|Chapter II|003",
+        "bagehot|Chapter VII|007",
+        "bagehot|Chapter XII|009"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 0,
+      "all@3": 0,
+      "hit@5": 1,
+      "all@5": 0
+    },
+    {
+      "id": "q22",
+      "kind": "multi",
+      "design": "dense",
+      "ids": [
+        "peace|Chapter II|009",
+        "peace|Chapter II|001",
+        "peace|Chapter VI|005",
+        "peace|Chapter II|010",
+        "peace|Chapter VI|002"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 1,
+      "all@3": 0,
+      "hit@5": 1,
+      "all@5": 0
+    },
+    {
+      "id": "q23",
+      "kind": "multi",
+      "design": "dense",
+      "ids": [
+        "tract|Chapter I|025",
+        "tract|Chapter II|006",
+        "tract|Chapter II|015",
+        "tract|Chapter II|001",
+        "tract|Chapter IV|007"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 1,
+      "all@3": 0,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q24",
+      "kind": "multi",
+      "design": "dense",
+      "ids": [
+        "tract|Chapter II|004",
+        "tract|Chapter II|005",
+        "tract|Chapter III|006",
+        "tract|Chapter II|003",
+        "tract|Chapter III|002"
+      ],
+      "hit@1": 1,
+      "all@1": 0,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q25",
+      "kind": "multi",
+      "design": "dense",
+      "ids": [
+        "tract|Chapter I|023",
+        "tract|Chapter IV|004",
+        "tract|Chapter IV|007",
+        "tract|Chapter IV|003",
+        "tract|Chapter I|025"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 1,
+      "all@3": 0,
+      "hit@5": 1,
+      "all@5": 0
+    },
+    {
+      "id": "q01",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "bagehot|Chapter VII|001",
+        "bagehot|Chapter VII|026",
+        "bagehot|Chapter IV|006",
+        "bagehot|Chapter II|002",
+        "bagehot|Chapter I|002"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q02",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "bagehot|Chapter VII|012",
+        "bagehot|Chapter II|001",
+        "bagehot|Chapter II|029",
+        "tract|Chapter III|006",
+        "bagehot|Chapter XIII|004"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q03",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "bagehot|Chapter III|001",
+        "bagehot|Chapter II|028",
+        "bagehot|Chapter II|001",
+        "bagehot|Chapter VI|021",
+        "bagehot|Chapter III|002"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 0,
+      "all@3": 0,
+      "hit@5": 0,
+      "all@5": 0
+    },
+    {
+      "id": "q04",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "bagehot|Chapter VII|004",
+        "bagehot|Chapter II|004",
+        "bagehot|Chapter VII|001",
+        "bagehot|Chapter VII|003",
+        "bagehot|Chapter VII|014"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q05",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "bagehot|Chapter VII|005",
+        "bagehot|Chapter II|004",
+        "bagehot|Chapter VII|008",
+        "bagehot|Chapter VII|003",
+        "bagehot|Chapter VII|013"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q06",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "bagehot|Chapter XIII|021",
+        "bagehot|Chapter VII|005",
+        "bagehot|Chapter VIII|019",
+        "bagehot|Chapter VIII|015",
+        "bagehot|Chapter VII|002"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q07",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "peace|Chapter II|001",
+        "peace|Chapter II|005",
+        "peace|Chapter II|003",
+        "peace|Chapter IV|020",
+        "peace|Chapter VI|005"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 0,
+      "all@3": 0,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q08",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "peace|Chapter VI|001",
+        "peace|Chapter VI|003",
+        "peace|Chapter VI|014",
+        "peace|Chapter VII|012",
+        "peace|Chapter VII|003"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q09",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "peace|Chapter VI|003",
+        "peace|Chapter II|003",
+        "peace|Chapter II|001",
+        "peace|Chapter VI|005",
+        "peace|Chapter II|005"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q10",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "peace|Chapter IV|009",
+        "peace|Chapter IV|008",
+        "peace|Chapter IV|006",
+        "peace|Chapter V|032",
+        "peace|Chapter IV|007"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 0,
+      "all@3": 0,
+      "hit@5": 0,
+      "all@5": 0
+    },
+    {
+      "id": "q11",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "peace|Chapter VI|001",
+        "peace|Chapter V|017",
+        "peace|Chapter VI|004",
+        "peace|Chapter VI|005",
+        "peace|Chapter VII|001"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q12",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "peace|Chapter II|001",
+        "peace|Chapter VII|001",
+        "peace|Chapter II|005",
+        "peace|Chapter VI|005",
+        "peace|Chapter V|010"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q13",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "peace|Chapter VII|019",
+        "peace|Chapter VII|003",
+        "peace|Chapter V|017",
+        "peace|Chapter VII|012",
+        "peace|Chapter VI|001"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q14",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "tract|Chapter III|002",
+        "tract|Chapter II|001",
+        "bagehot|Chapter VI|002",
+        "tract|Chapter III|001",
+        "tract|Chapter III|004"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q15",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "tract|Chapter II|001",
+        "tract|Chapter III|002",
+        "tract|Chapter II|002",
+        "tract|Chapter II|011",
+        "tract|Chapter II|005"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q16",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "tract|Chapter II|001",
+        "tract|Chapter II|014",
+        "tract|Chapter II|004",
+        "tract|Chapter II|007",
+        "tract|Chapter II|006"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q17",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "tract|Chapter III|002",
+        "tract|Chapter V|002",
+        "tract|Chapter III|004",
+        "bagehot|Chapter III|002",
+        "tract|Chapter I|013"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q18",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "tract|Chapter III|005",
+        "tract|Chapter III|002",
+        "tract|Chapter III|006",
+        "tract|Chapter III|003",
+        "tract|Chapter III|001"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q19",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "tract|Chapter IV|008",
+        "tract|Chapter IV|002",
+        "tract|Chapter IV|007",
+        "tract|Chapter IV|003",
+        "tract|Chapter IV|001"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q20",
+      "kind": "single",
+      "design": "hybrid",
+      "ids": [
+        "tract|Chapter IV|003",
+        "tract|Chapter I|015",
+        "tract|Chapter IV|007",
+        "tract|Chapter I|025",
+        "tract|Chapter III|007"
+      ],
+      "hit@1": 1,
+      "all@1": 1,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q21",
+      "kind": "multi",
+      "design": "hybrid",
+      "ids": [
+        "bagehot|Chapter II|006",
+        "bagehot|Chapter VII|007",
+        "bagehot|Chapter XIII|002",
+        "bagehot|Chapter II|027",
+        "bagehot|Chapter XIII|003"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 1,
+      "all@3": 0,
+      "hit@5": 1,
+      "all@5": 0
+    },
+    {
+      "id": "q22",
+      "kind": "multi",
+      "design": "hybrid",
+      "ids": [
+        "peace|Chapter VI|005",
+        "peace|Chapter VI|006",
+        "peace|Chapter II|009",
+        "peace|Chapter II|010",
+        "peace|Chapter VI|014"
+      ],
+      "hit@1": 1,
+      "all@1": 0,
+      "hit@3": 1,
+      "all@3": 0,
+      "hit@5": 1,
+      "all@5": 0
+    },
+    {
+      "id": "q23",
+      "kind": "multi",
+      "design": "hybrid",
+      "ids": [
+        "tract|Chapter I|025",
+        "tract|Chapter II|006",
+        "tract|Chapter I|003",
+        "tract|Chapter IV|003",
+        "tract|Chapter IV|007"
+      ],
+      "hit@1": 0,
+      "all@1": 0,
+      "hit@3": 1,
+      "all@3": 0,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q24",
+      "kind": "multi",
+      "design": "hybrid",
+      "ids": [
+        "tract|Chapter II|005",
+        "tract|Chapter III|007",
+        "tract|Chapter III|006",
+        "tract|Chapter I|020",
+        "tract|Chapter II|003"
+      ],
+      "hit@1": 1,
+      "all@1": 0,
+      "hit@3": 1,
+      "all@3": 1,
+      "hit@5": 1,
+      "all@5": 1
+    },
+    {
+      "id": "q25",
+      "kind": "multi",
+      "design": "hybrid",
+      "ids": [
+        "tract|Chapter IV|007",
+        "tract|Chapter IV|003",
+        "tract|Chapter I|025",
+        "tract|Chapter III|008",
+        "tract|Chapter IV|004"
+      ],
+      "hit@1": 1,
+      "all@1": 0,
+      "hit@3": 1,
+      "all@3": 0,
+      "hit@5": 1,
+      "all@5": 0
+    }
+  ]
+}

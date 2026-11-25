@@ -1,1 +1,31 @@
 id,question,kind,expected_source,expected_location,reference_answer
+q01,How did the role of the Bank of England change after the Act of 1844?,single,bagehot,Chapter VII,Currency management became automatic.
+q02,What is the difference between banking reserves and currency reserves?,single,bagehot,Chapter VII,Banking reserves cover deposits while currency reserves cover banknotes.
+q03,Why is trust so important in banking?,single,bagehot,Chapter VII,Banks depend on credit and a loss of confidence can seriously damage their business.
+q04,How much of its reserves did the Bank of England use before getting government approval in 1866?,single,bagehot,Chapter VII,Half of its reserves.
+q05,How much money did the Bank of England lend during the three months of the 1866 crisis?,single,bagehot,Chapter VII,45 million pounds.
+q06,Why did some directors disagree with the Governor's statements about the role of the Bank?,single,bagehot,Chapter VII,His statements were not authorised by the Court of Directors and could not bind the Bank.
+q07,What was the European economy mainly dependent on before WWI?,single,peace,Chapter VI,"Coal, iron, transport and imports of food and raw materials."
+q08,Why couldn't Europeans simply emigrate to escape the economic crisis after the war?,single,peace,Chapter VI,Emigration would take years and countries willing to receive them could not readily be found.
+q09,How did industrialisation help Germany sustain a much larger population?,single,peace,Chapter VI,It increased the population Germany could support from 40 to 67 million.
+q10,Why was losing its colonies and foreign assets so damaging for Germany?,single,peace,Chapter VI,It reduced its ability to import raw materials and sustain industrial production.
+q11,What were the biggest economic problems Europe faced after WWI according to Keynes?,single,peace,Chapter VI,"Lower productivity, disrupted transport and exchange, and inability to purchase overseas supplies."
+q12,Was Britain actually poorer in 1919 than in 1900 according to Keynes?,single,peace,Chapter VII,No. Keynes estimated its real wealth was at least equal to its 1900 level.
+q13,What did Keynes propose to help Europe recover after the war?,single,peace,Chapter VII,"Treaty revision, settlement of inter-Allied debts, an international loan and currency reform, and relations with Russia."
+q14,If prices and wages double but the economy produces and consumes the same amount of goods how much cash would people need?,single,tract,Chapter II,Twice as much assuming monetary and banking habits remain unchanged.
+q15,How much real purchasing power does the government gain in Keynes's example of printing three million extra notes?,single,tract,Chapter II,Nine million gold dollars.
+q16,How can people avoid losing purchasing power from inflationary taxation?,single,tract,Chapter II,By holding less cash and exchanging money for durable goods.
+q17,What determines how much money people want to keep in cash in real terms?,single,tract,Chapter III,Their wealth and monetary habits.
+q18,How does the Quantity Theory of Money change when we include banks and their reserves?,single,tract,Chapter III,The equation becomes n = p(k + rk').
+q19,How does Keynes explain the difference between devaluation and deflation?,single,tract,Chapter IV,Devaluation stabilises currency near its current value while deflation increases its value.
+q20,Who gains and who loses when there is deflation?,single,tract,Chapter IV,Lenders gain while borrowers lose.
+q21,How do Bagehot and Keynes explain bank reserves and their role in the monetary system?,multi,bagehot;tract,Chapter VII;Chapter III,Bagehot distinguishes reserves against deposits from reserves against notes. Keynes incorporates the bank reserve ratio into his monetary equation.
+q22,Why was Europe so dependent on imports before the war and why were rising food prices especially problematic for Britain?,multi,peace;peace,Chapter VI;Chapter VII,Europe depended on imported food and raw materials. Britain was highly industrialised and dependent on imported food.
+q23,How does the government benefit from inflation and why does deflation benefit lenders instead of borrowers?,multi,tract;tract,Chapter II;Chapter IV,Inflation transfers purchasing power from money holders to the government. Deflation increases the real value of debts.
+q24,How do people change their behaviour during inflation and how does this affect the relationship between money supply and prices?,multi,tract;tract,Chapter II;Chapter III,People reduce cash holdings and hold money for shorter periods. Changes in desired real balances affect the relationship between money supply and prices.
+q25,Why is confidence important for banks and why can expecting deflation be so damaging for businesses?,multi,bagehot;tract,Chapter VII;Chapter IV,Banks depend on credit and confidence. Expected deflation discourages business activity and spending.
+q26,What were the three parts of the 1921 London reparations settlement according to A Revision of the Treaty?,unanswerable,,,INSUFFICIENT EVIDENCE
+q27,How did the Fed respond to the 2008 financial crisis?,unanswerable,,,INSUFFICIENT EVIDENCE
+q28,What inflation target did the ECB establish in 2021?,unanswerable,,,INSUFFICIENT EVIDENCE
+q29,What was the purpose of the Bretton Woods Agreement of 1944?,unanswerable,,,INSUFFICIENT EVIDENCE
+q30,What capital requirements did Basel III introduce for banks?,unanswerable,,,INSUFFICIENT EVIDENCE

@@ -1,0 +1,152 @@
+{
+  "q01": {
+    "correct": 0,
+    "supported": 1,
+    "reason": "The agent correctly identified that there is insufficient evidence in the provided text to answer the question about how the role of the Bank of England changed after the Act of 1844 (the text mentions currency management became automatic, but does not explicitly detail the change in the Bank's overarching role beyond stating it no longer manages the currency)."
+  },
+  "q02": {
+    "correct": 0,
+    "supported": 1,
+    "reason": "The reference answer explains the difference between banking reserves and currency reserves, whereas the agent incorrectly answered 'INSUFFICIENT EVIDENCE', making the correctness score 0. Since the agent gave a refusal, it has no unsupported claims, making the supportedness score 1."
+  },
+  "q03": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer correctly explains the importance of trust in banking using the provided evidence, noting that credit rests on promises to pay and confidence, and that deposit banking requires a large number of people to trust a few individuals or institutions."
+  },
+  "q04": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer is completely correct and directly supported by the retrieved evidence (Chapter VII, paragraph 3/4), which states that the Bank of England had advanced one-half of its reserves before receiving power/approval or before the Chancellor of the Exchequer was out of bed."
+  },
+  "q05": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer correctly states that the Bank of England advanced 45,000,000 pounds during the three months of the 1866 crisis, which is fully supported by the provided text from Bagehot."
+  },
+  "q06": {
+    "correct": 0,
+    "supported": 1,
+    "reason": "The question is answerable from the text, as shown in the provided evidence regarding the meeting and the Governor's statements, so the agent's refusal ('INSUFFICIENT EVIDENCE') makes the answer incorrect. However, the refusal has no unsupported claims, making supportedness 1."
+  },
+  "q07": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately reflects the text regarding the European economy's dependence on factors like cheap American food and returns from foreign investments, and is fully supported by the retrieved evidence."
+  },
+  "q08": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The agent's answer accurately captures the reasons stated in the text (it takes years to transport them overseas and important countries would oppose immigration) and correctly grounds every point with the provided evidence citations."
+  },
+  "q09": {
+    "correct": 0,
+    "supported": 1,
+    "reason": "The question is answerable using the retrieved evidence (which states industrialization allowed Germany to support 67 million people instead of 40 million as an agricultural state), but the agent incorrectly responded with 'INSUFFICIENT EVIDENCE'."
+  },
+  "q10": {
+    "correct": 0,
+    "supported": 1,
+    "reason": "The agent gave an 'INSUFFICIENT EVIDENCE' refusal, but the provided text contains relevant information about the expropriation of German colonies and assets, making the question answerable (or at least partially addressable), so the refusal is incorrect."
+  },
+  "q11": {
+    "correct": 0,
+    "supported": 1,
+    "reason": "The agent gave an 'INSUFFICIENT EVIDENCE' refusal, but the requested information is clearly present in the retrieved evidence (Chapter VI, section 004 lists the three heads of economic problems). Therefore, the refusal is incorrect, though technically supported as a refusal."
+  },
+  "q12": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer accurately reflects Keynes's statement that Britain was not seriously impoverished and that its real wealth in 1919 was at least equal to its 1900 level, which is fully supported by the retrieved evidence."
+  },
+  "q13": {
+    "correct": 0,
+    "supported": 1,
+    "reason": "The agent provided a refusal ('INSUFFICIENT EVIDENCE'), but the question is fully answerable based on the provided text (Chapter VII of 'peace', which outlines treaty revision, inter-Ally debt settlement, an international loan/currency reform, and relations with Russia). Therefore, the refusal makes the answer incorrect."
+  },
+  "q14": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer correctly states that twice as much cash would be required, matching the reference answer and fully supported by the provided text in tract|Chapter II|001."
+  },
+  "q15": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The agent's answer accurately states that the 3,000,000 newly issued notes are worth $9,000,000 in real purchasing power, matching the reference answer and fully supported by the retrieved text in tract|Chapter II|002."
+  },
+  "q16": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The agent's answer accurately captures the methods mentioned in the text (keeping reserves in durable objects, reducing till-money and pocket-money, and employing foreign money) and correctly cites the evidence."
+  },
+  "q17": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The answer is materially correct and complete regarding the factors determining real cash balances (wealth and habits), and every claim is directly supported by the retrieved evidence from Chapter III."
+  },
+  "q18": {
+    "correct": 0,
+    "supported": 1,
+    "reason": "The agent incorrectly answered 'INSUFFICIENT EVIDENCE', whereas the retrieved evidence explicitly contains the answer to the question in Chapter III."
+  },
+  "q19": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The agent accurately explains the distinction between deflation and devaluation according to Keynes, using the provided text and correct citations."
+  },
+  "q20": {
+    "correct": 0,
+    "supported": 1,
+    "reason": "The question is answerable using the retrieved text (which states that deflation transfers wealth to lenders/rentiers and from borrowers), so the agent's refusal ('INSUFFICIENT EVIDENCE') is incorrect."
+  },
+  "q21": {
+    "correct": 0,
+    "supported": 1,
+    "reason": "The agent gave an 'INSUFFICIENT EVIDENCE' refusal, but the prompt's question is answerable using the provided evidence regarding Bagehot's views on the one-reserve system and bank reserves. Therefore, correctness is 0. Since it is a pure refusal, supportedness is 1."
+  },
+  "q22": {
+    "correct": 0,
+    "supported": 1,
+    "reason": "The agent provided a refusal ('INSUFFICIENT EVIDENCE'), but the question is answerable using the provided text (specifically regarding Europe's excessive population dependent on imports and the growth of population overseas/diminishing returns). Therefore, the correctness is 0, but supportedness is 1 because the refusal contains no unsupported claims."
+  },
+  "q23": {
+    "correct": 0,
+    "supported": 1,
+    "reason": "The agent provided a refusal ('INSUFFICIENT EVIDENCE'), but the text contains evidence regarding deflation transferring wealth to lenders and inflation easing the national debt (benefiting the government). Therefore, the question is answerable from the text, making the refusal incorrect."
+  },
+  "q24": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The agent accurately answers how people change behavior during inflation (reducing cash holdings and the minimum currency required) and how this affects prices and money supply (altering velocity, causing prices to fall in value more than in proportion to their increased volume). All claims are fully supported by the provided text."
+  },
+  "q25": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The agent's answer accurately addresses both parts of the question, providing detailed, well-structured explanations backed by the retrieved evidence from both Bagehot and Tract texts."
+  },
+  "q26": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The question asks about the 1921 London reparations settlement, which is not mentioned in the text (the text is about the Treaty of Versailles written earlier). Therefore, the question is unanswerable from the text, and the agent correctly answered 'INSUFFICIENT EVIDENCE'."
+  },
+  "q27": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The question asks about the Fed's response to the 2008 financial crisis. The provided evidence is completely unrelated (discussing historical texts from 1917, 1857, 1866, etc.), making the question unanswerable based on the evidence. The agent correctly answered 'INSUFFICIENT EVIDENCE'."
+  },
+  "q28": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The question is unanswerable based on the provided text (which discusses economic tracts from the 1920s rather than the modern ECB), and both the reference and agent correctly identified it as insufficient evidence."
+  },
+  "q29": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The question asks about the Bretton Woods Agreement of 1944, which is not mentioned in the provided text. The agent correctly gave a refusal (\"INSUFFICIENT EVIDENCE\"), matching the reference answer."
+  },
+  "q30": {
+    "correct": 1,
+    "supported": 1,
+    "reason": "The question asks about Basel III capital requirements, which are not mentioned in the provided text. The agent correctly refused to answer by stating insufficient evidence."
+  }
+}
