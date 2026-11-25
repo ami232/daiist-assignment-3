@@ -52,7 +52,7 @@ DESIGNS = {
     "fixed": {"size": 200, "overlap": 40},  # overlap = one fifth, as in the class notebook
     "section": {"max_words": 450, "overlap": 90},
 }
-ACTIVE_DESIGN = "fixed"  # the design server.py searches: set it after comparing hit rates
+ACTIVE_DESIGN = "section"  # the design server.py searches: set it after comparing hit rates
 
 EMBEDDING_MODEL = "gemini-embedding-2"
 BATCH_SIZE = 100

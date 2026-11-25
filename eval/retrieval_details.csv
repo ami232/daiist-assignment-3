@@ -1,0 +1,49 @@
+design,id,kind,expected,first_hit_rank,top1
+fixed,q01,single,§ 825.302,1,§ 825.302
+fixed,q02,single,§ 825.303,3,§ 825.302
+fixed,q03,single,§ 825.214,1,§ 825.213 to § 825.215
+fixed,q04,single,§ 785.11,1,§ 785.9 to § 785.11
+fixed,q05,single,§ 785.19,1,§ 785.19
+fixed,q06,single,§ 785.35,1,§ 785.34 to § 785.35
+fixed,q07,single,§ 531.34,1,§ 531.34
+fixed,q08,single,§ 531.30,1,§ 531.30 to § 531.31
+fixed,q09,single,§ 531.38,1,§ 531.38 to § 531.39
+fixed,q10,single,§ 531.50,5,§ 531.54
+fixed,q11,single,§ 825.200,1,§ 825.127 to § 825.200
+fixed,q12,single,§ 825.209,1,§ 825.209
+fixed,q13,single,§ 825.305,2,§ 825.313
+fixed,q14,single,§ 825.205,1,§ 825.205
+fixed,q15,single,§ 785.18,1,§ 785.18 to § 785.19
+fixed,q16,single,§ 785.27,1,§ 785.27 to § 785.29
+fixed,q17,single,§ 531.54,1,§ 531.54
+fixed,q18,multi,§ 825.104;§ 825.110,3,§ 825.105 to § 825.106
+fixed,q19,multi,§ 785.11;§ 825.110,1,§ 825.110
+fixed,q20,multi,§ 785.11;§ 825.205,1,§ 825.205
+fixed,q21,multi,§ 785.38;§ 785.49,1,§ 785.37 to § 785.38
+fixed,q22,multi,§ 785.27;§ 785.28,1,§ 785.27 to § 785.29
+fixed,q23,multi,§ 531.36;§ 785.18,1,§ 531.36
+fixed,q24,multi,§ 531.30;§ 531.36,1,§ 531.36
+section,q01,single,§ 825.302,1,§ 825.302
+section,q02,single,§ 825.303,1,§ 825.303
+section,q03,single,§ 825.214,1,§ 825.214
+section,q04,single,§ 785.11,1,§ 785.11
+section,q05,single,§ 785.19,1,§ 785.19
+section,q06,single,§ 785.35,1,§ 785.35
+section,q07,single,§ 531.34,1,§ 531.34
+section,q08,single,§ 531.30,1,§ 531.30
+section,q09,single,§ 531.38,1,§ 531.38
+section,q10,single,§ 531.50,4,§ 531.52
+section,q11,single,§ 825.200,1,§ 825.200
+section,q12,single,§ 825.209,1,§ 825.209
+section,q13,single,§ 825.305,1,§ 825.305
+section,q14,single,§ 825.205,1,§ 825.205
+section,q15,single,§ 785.18,1,§ 785.18
+section,q16,single,§ 785.27,1,§ 785.27
+section,q17,single,§ 531.54,1,§ 531.54
+section,q18,multi,§ 825.104;§ 825.110,1,§ 825.104
+section,q19,multi,§ 785.11;§ 825.110,1,§ 825.110
+section,q20,multi,§ 785.11;§ 825.205,1,§ 825.205
+section,q21,multi,§ 785.38;§ 785.49,1,§ 785.38
+section,q22,multi,§ 785.27;§ 785.28,1,§ 785.27
+section,q23,multi,§ 531.36;§ 785.18,1,§ 531.36
+section,q24,multi,§ 531.30;§ 531.36,1,§ 531.36
