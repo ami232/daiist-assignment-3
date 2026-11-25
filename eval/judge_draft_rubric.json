@@ -1,0 +1,152 @@
+{
+  "q01": {
+    "reasoning": "The answer misses key elements of the reference answer, specifically that Old Dominion's edge is providing consistent, high-quality service at a fair price. Additionally, the claim that growth occurred 'rather than acquisitions' is not stated in the retrieved passages.",
+    "correct": false,
+    "supported": false
+  },
+  "q02": {
+    "reasoning": "The answer correctly states that Saia operated 213 owned and leased terminals as of December 31, 2025, matching the figure and information in the reference answer and question. Every claim is fully supported by the retrieved passages with accurate citations.",
+    "correct": true,
+    "supported": true
+  },
+  "q03": {
+    "reasoning": "The answer accurately lists all five business segments requested by the question and present in the reference answer. All details and citations are directly supported by the retrieved passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q04": {
+    "reasoning": "The answer covers all key points from the reference answer, detailing the 1989 BNSF partnership, use of major railroads for linehaul movement, and use of company-owned tractors for pickups/deliveries. All claims are fully supported by the cited passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q05": {
+    "reasoning": "The answer correctly identifies the four reportable segments (Truckload, LTL, Logistics, and Intermodal) matching the reference answer, along with accurate extra details. All information and citations are supported by the retrieved text.",
+    "correct": true,
+    "supported": true
+  },
+  "q06": {
+    "reasoning": "The answer accurately captures all aspects of the reference answer, including competition for drivers, compensation impact on profitability, and fleet growth, along with accurate extra details from the text. Every statement is fully supported by the cited 10-K passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q07": {
+    "reasoning": "The answer completely matches the reference answer, highlighting ransomware, AI-powered phishing, data breaches, system disruptions, and operational impacts. All claims and facts are directly supported by the provided text.",
+    "correct": true,
+    "supported": true
+  },
+  "q08": {
+    "reasoning": "The answer correctly details the risks associated with Saia's expansion plans, including high outlay costs, delayed profitability, operational/service disruptions, and management distraction. All points are accurately cited and supported by the retrieved passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q09": {
+    "reasoning": "The answer accurately addresses the driver retention risks mentioned by Knight-Swift, covering driver shortages, compensation pressures, impact on profitability and fleet growth, and reliance on independent contractors. All claims are supported by the cited passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q10": {
+    "reasoning": "The answer agrees with the reference answer on all points, noting that diesel is a major expense, fuel surcharges help mitigate costs, Saia does not hedge fuel prices, and unrecovered costs affect profitability. Every point and figure is fully supported by the citations.",
+    "correct": true,
+    "supported": true
+  },
+  "q11": {
+    "reasoning": "The answer accurately states Old Dominion's 2025 revenue ($5,496,389 thousand) and the 5.5% decrease compared to 2024, matching the reference answer. All information is supported by the retrieved passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q12": {
+    "reasoning": "The answer covers all key points from the reference answer including 2025 vs 2024 intermodal revenue, load volume change, revenue per load change, and operating income change. Every claim is directly supported by the retrieved text.",
+    "correct": true,
+    "supported": true
+  },
+  "q13": {
+    "reasoning": "The answer correctly provides the net capital expenditure figure of $544.1 million, which matches the reference answer's approximately $544 million. All figures and supplemental details are fully supported by the retrieved passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q14": {
+    "reasoning": "The answer correctly states Knight-Swift's 2025 operating income of $216.1 million and the 11.2% decrease from 2024. All claims are supported by the retrieved passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q15": {
+    "reasoning": "The answer includes the two required points from the reference answer (LTL revenue excluding fuel surcharges rising 20.6% and GAAP operating ratio of 97.4%) alongside supported extra details. All statements are fully backed by the provided passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q16": {
+    "reasoning": "The answer correctly identifies that Old Dominion operated 260 service centers and Saia operated 213 owned and leased terminals at the end of 2025. All details and citations accurately reflect the provided passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q17": {
+    "reasoning": "The answer accurately confirms that both companies list driver shortages as a risk and includes the supporting details mentioned in the reference answer. Both statements are directly supported by the cited passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q18": {
+    "reasoning": "The answer refuses to answer the question, whereas the reference answer provides a clear comparison based on the filings. Therefore, it is incorrect. The refusal itself is considered supported.",
+    "correct": false,
+    "supported": true
+  },
+  "q19": {
+    "reasoning": "The answer refuses to provide the cash figures, whereas the question can be answered from the retrieved passages and reference answer. Therefore, it is incorrect. The refusal itself is considered supported.",
+    "correct": false,
+    "supported": true
+  },
+  "q20": {
+    "reasoning": "The answer correctly confirms that both J.B. Hunt and Knight-Swift mention cyberattacks as a risk factor, matching the key points in the reference answer. All claims are fully supported by the cited passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q21": {
+    "reasoning": "The answer misses a key point present in the reference answer: both companies warn that unionization could increase operating costs. Therefore, it is incorrect despite providing supported details for the other parts.",
+    "correct": false,
+    "supported": true
+  },
+  "q22": {
+    "reasoning": "The answer correctly identifies all drivers of increased insurance costs for both J.B. Hunt and Saia in 2025, matching all figures and details in the reference answer. Every statement is fully supported by citations to the retrieved passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q23": {
+    "reasoning": "The answer correctly states that the SEC filings do not cover this topic, matching the reference answer refusal. The refusal statement is fully supported by the retrieved passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q24": {
+    "reasoning": "The answer correctly states that the filings do not contain service center-level driver turnover data, agreeing with the reference answer. The additional context provided regarding overall company-wide driver turnover is supported by the cited passage.",
+    "correct": true,
+    "supported": true
+  },
+  "q25": {
+    "reasoning": "The answer correctly states that the filings do not cover how much J.B. Hunt pays BNSF per load, matching the reference answer refusal. All statements are fully supported by the retrieved text.",
+    "correct": true,
+    "supported": true
+  },
+  "q26": {
+    "reasoning": "The reference answer states that the filings do not cover the question. The assistant correctly identifies that the filings do not cover customer-specific late delivery data, matching the reference answer. All statements made are valid refusals/explanations of non-coverage.",
+    "correct": true,
+    "supported": true
+  },
+  "q27": {
+    "reasoning": "The reference answer indicates that the filings do not cover the question. The assistant correctly states that the filings do not specify a cybersecurity vendor, and its summary of the retrieved passages regarding third-party technology and cybersecurity risks is fully supported by the text.",
+    "correct": true,
+    "supported": true
+  },
+  "q28": {
+    "reasoning": "The reference answer states that the filings do not cover the question. The assistant correctly states that the filings do not contain information on how long new terminals take to break even, matching the reference.",
+    "correct": true,
+    "supported": true
+  },
+  "q29": {
+    "reasoning": "The reference answer states that the filings do not cover the question. The assistant accurately states that the filings do not include daily stock prices, aligning with the reference answer.",
+    "correct": true,
+    "supported": true
+  },
+  "q30": {
+    "reasoning": "The reference answer states that the filings do not cover the question. The assistant correctly points out that the 2025 10-K does not contain Q3 2026 results, matching the reference answer.",
+    "correct": true,
+    "supported": true
+  }
+}

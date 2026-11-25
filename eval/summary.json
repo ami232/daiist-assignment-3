@@ -1,0 +1,74 @@
+{
+  "questions": 30,
+  "judged": 30,
+  "correct (judge)": 22,
+  "answerable correct (judge)": 14,
+  "unsupported (judge)": 0,
+  "correct refusals": 8,
+  "answered an unanswerable question": 0,
+  "wrong refusals": 0,
+  "withheld by numbers guardrail": 2,
+  "code checks passed": 26,
+  "invalid citations": 2,
+  "mean seconds per question": 10.6,
+  "mean tokens per question": 4093,
+  "coverage (answerable answered, not refused or withheld)": "20/22",
+  "accuracy on covered (judge)": "14/20",
+  "judge_agreement": {
+    "graded": 30,
+    "agreement_correct": 0.967,
+    "disagree_correct": [
+      "q08"
+    ],
+    "agreement_supported": 1.0,
+    "disagree_supported": []
+  },
+  "noise_95ci": {
+    "judge_correct_rate": 0.733,
+    "judge_correct_ci": [
+      0.567,
+      0.9
+    ],
+    "human_correct_rate": 0.7,
+    "human_correct_ci": [
+      0.533,
+      0.867
+    ],
+    "hit@1_dense+filter_ci": [
+      0.545,
+      0.909
+    ],
+    "hit@3_dense+filter_ci": [
+      1.0,
+      1.0
+    ],
+    "hit@5_dense+filter_ci": [
+      1.0,
+      1.0
+    ],
+    "hit@3 dense+filter minus dense": [
+      0.0,
+      0.0
+    ],
+    "hit@3 dense+filter minus hybrid": [
+      0.045,
+      0.409
+    ],
+    "hit@3 dense+filter minus hybrid+filter": [
+      0.045,
+      0.364
+    ]
+  },
+  "versions": {
+    "prompt_version": "not recorded (answers from before tracking)",
+    "agent_model": "gemini-3.5-flash-lite",
+    "judge_model": "gemini-3.5-flash",
+    "rubric_version": "6a697306",
+    "embedding_model": "gemini-embedding-2",
+    "retrieval_design": "dense+filter",
+    "top_k": 5,
+    "chunk_words": 150,
+    "index_chunks": 701,
+    "test_set_version": "99a183c9"
+  }
+}

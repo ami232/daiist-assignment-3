@@ -1,0 +1,50 @@
+{
+  "documents": [
+    {
+      "source": "ODFL 10-K 2025",
+      "file": "ODFL_10-K_2025-12-31.htm",
+      "chunks": 144,
+      "words": 17901,
+      "words_by_item": {
+        "Item 1": 3585,
+        "Item 1A": 9009,
+        "Item 7": 5307
+      }
+    },
+    {
+      "source": "JBHT 10-K 2025",
+      "file": "JBHT_10-K_2025-12-31.htm",
+      "chunks": 94,
+      "words": 10747,
+      "words_by_item": {
+        "Item 1": 3283,
+        "Item 1A": 3170,
+        "Item 7": 4294
+      }
+    },
+    {
+      "source": "SAIA 10-K 2025",
+      "file": "SAIA_10-K_2025-12-31.htm",
+      "chunks": 169,
+      "words": 21579,
+      "words_by_item": {
+        "Item 1": 5454,
+        "Item 1A": 10413,
+        "Item 7": 5712
+      }
+    },
+    {
+      "source": "KNX 10-K 2025",
+      "file": "KNX_10-K_2025-12-31.htm",
+      "chunks": 294,
+      "words": 35547,
+      "words_by_item": {
+        "Item 1": 12568,
+        "Item 1A": 9523,
+        "Item 7": 13456
+      }
+    }
+  ],
+  "chunks": 701,
+  "words": 85774
+}

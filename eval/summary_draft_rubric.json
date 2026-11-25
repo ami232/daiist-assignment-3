@@ -1,0 +1,29 @@
+{
+  "questions": 30,
+  "judged": 30,
+  "correct (judge)": 26,
+  "answerable correct (judge)": 18,
+  "unsupported (judge)": 1,
+  "correct refusals": 8,
+  "answered an unanswerable question": 0,
+  "wrong refusals": 0,
+  "withheld by numbers guardrail": 2,
+  "code checks passed": 26,
+  "invalid citations": 2,
+  "mean seconds per question": 10.6,
+  "mean tokens per question": 4093,
+  "judge_agreement": {
+    "graded": 30,
+    "agreement_correct": 0.867,
+    "disagree_correct": [
+      "q02",
+      "q06",
+      "q08",
+      "q20"
+    ],
+    "agreement_supported": 0.967,
+    "disagree_supported": [
+      "q01"
+    ]
+  }
+}

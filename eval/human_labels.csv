@@ -1,1 +1,31 @@
 id,correct,supported,notes
+q01,0,1,wrong answer from right passage: misses fair pricing and how its systems help control costs
+q02,0,1,"bad test question: reference expects offices and warehouse, but question only asks for terminals"
+q03,1,1,
+q04,1,1,
+q05,1,1,
+q06,0,1,wrong answer from right passage: leaves out the effect of higher pay on profits and fleet growth
+q07,1,1,
+q08,0,1,wrong answer from right passage: misses the risk that expansion may never pay off
+q09,0,1,wrong answer from right passage: misses outside carriers
+q10,1,1,
+q11,1,1,
+q12,1,1,
+q13,1,1,
+q14,1,1,
+q15,1,1,
+q16,1,1,
+q17,1,1,
+q18,0,1,withheld by guardrail
+q19,0,1,withheld by guardrail
+q20,0,1,"bad test question: reference includes third-party cyber risk, but question only asks if both flag cyberattacks"
+q21,0,1,"bad test question: reference adds unionization cost risks, but question only asks who is unionized"
+q22,1,1,
+q23,1,1,
+q24,1,1,
+q25,1,1,
+q26,1,1,
+q27,1,1,
+q28,1,1,
+q29,1,1,
+q30,1,1,

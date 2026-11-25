@@ -1,0 +1,152 @@
+{
+  "q01": {
+    "reasoning": "The assistant misses the key points from the reference answer regarding consistent, high-quality service at a fair price and how its integrated network and systems help keep costs down. Although the provided points are supported by the text, missing key elements from the reference answer results in an incorrect verdict.",
+    "correct": false,
+    "supported": true
+  },
+  "q02": {
+    "reasoning": "The assistant omits the detail that Saia also had three general offices and one warehouse alongside its 213 terminals. Because a point from the reference answer was missed, it is incorrect. However, the stated fact is accurately supported by the passage.",
+    "correct": false,
+    "supported": true
+  },
+  "q03": {
+    "reasoning": "The assistant correctly identifies all five business segments (Intermodal, Dedicated Contract Services, Integrated Capacity Solutions, Final Mile Services, and Truckload) with their abbreviations. All information is directly supported by the retrieved passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q04": {
+    "reasoning": "The assistant fails to mention that J.B. Hunt has worked with BNSF since 1989, missing a point specified in the reference answer. However, all claims made by the assistant are supported by the provided text.",
+    "correct": false,
+    "supported": true
+  },
+  "q05": {
+    "reasoning": "The assistant correctly names the four reportable business segments (Truckload, LTL, Logistics, Intermodal) as requested. The extra revenue and operating income statistics provided are accurate and supported by the filing text.",
+    "correct": true,
+    "supported": true
+  },
+  "q06": {
+    "reasoning": "The assistant failed to state the key point from the reference answer that higher pay and benefits used to hire and keep drivers could hurt profits and slow fleet growth. However, all information provided in the assistant's response is fully supported by the retrieved filings.",
+    "correct": false,
+    "supported": true
+  },
+  "q07": {
+    "reasoning": "The assistant accurately included all points from the reference answer, including ransomware, AI-powered phishing, data breaches, system interruptions, and the disruption of operations or freight delays. Every statement made is completely supported by the retrieved 10-K text.",
+    "correct": true,
+    "supported": true
+  },
+  "q08": {
+    "reasoning": "The response covers all elements from the reference answer, including capital costs/expenditures, potential lack of profitability or delays in return, service disruptions, and management distraction. All facts and points presented are supported by the provided text.",
+    "correct": true,
+    "supported": true
+  },
+  "q09": {
+    "reasoning": "The assistant missed the reference point specifying that Knight-Swift also needs outside carriers alongside independent contractors. However, all the facts provided in the response are supported by the retrieved passages.",
+    "correct": false,
+    "supported": true
+  },
+  "q10": {
+    "reasoning": "The response correctly captures all elements of the reference answer: diesel being a major cost, fuel surcharges and pricing helping cover increases, the lack of fuel hedging, and the risk of not fully recovering extra costs. All facts are supported by the retrieved filings.",
+    "correct": true,
+    "supported": true
+  },
+  "q11": {
+    "reasoning": "The answer correctly provides Old Dominion's 2025 revenue figure, but omits the point from the reference answer that revenue was down 5.5% from 2024. All facts reported are fully supported by the retrieved passages.",
+    "correct": false,
+    "supported": true
+  },
+  "q12": {
+    "reasoning": "The answer includes all required information from the reference answer, including segment revenue, volume changes, revenue per load changes, and operating income. All facts and citations are directly supported by the retrieved text.",
+    "correct": true,
+    "supported": true
+  },
+  "q13": {
+    "reasoning": "The answer includes the net capital expenditure figure matching the reference answer. All additional details and category breakdowns provided are fully supported by the retrieved passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q14": {
+    "reasoning": "The answer provides the correct consolidated operating income figure, but omits the detail that operating income decreased by 11.2% from 2024. The reported information is accurate and supported by the filings.",
+    "correct": false,
+    "supported": true
+  },
+  "q15": {
+    "reasoning": "The answer provides the correct 97.4% operating ratio, but fails to mention that LTL revenue excluding fuel surcharges rose 20.6% in 2025 as required by the reference answer. All provided statements are fully supported by the retrieved passages.",
+    "correct": false,
+    "supported": true
+  },
+  "q16": {
+    "reasoning": "The assistant correctly states that Old Dominion operated 260 service center locations and Saia operated 213 owned and leased terminals at the end of 2025. All figures and statements match the reference answer and are fully supported by the retrieved passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q17": {
+    "reasoning": "The assistant accurately answers that both companies list driver shortages as a risk and includes all points from the reference answer (declining driver pool, competitive hiring/attraction challenges, turnover). All facts are fully supported by the retrieved filings.",
+    "correct": true,
+    "supported": true
+  },
+  "q18": {
+    "reasoning": "The assistant withheld the answer despite the reference answer and retrieved filings containing the exact revenue figures for both companies ($12.00 billion for J.B. Hunt and $7.5 billion for Knight-Swift). Per the grading instructions, withholding an answer when the reference provides one results in incorrect. However, since no unsupported statements were made, it receives a 1 for supported.",
+    "correct": false,
+    "supported": true
+  },
+  "q19": {
+    "reasoning": "The assistant accurately states that Old Dominion used $366,411 thousand and J.B. Hunt used $575 million for investing activities in 2025. All details match the reference answer and are directly supported by the retrieved passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q20": {
+    "reasoning": "The assistant confirms both companies mention cyberattacks as a risk and includes the specific details requested (ransomware and AI-powered phishing for J.B. Hunt, and system failures/interruptions for Knight-Swift). Everything stated is accurate according to the reference answer and supported by the passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q21": {
+    "reasoning": "The assistant missed the reference point stating that both companies warn that increased unionization could raise costs. While all facts provided were accurate and fully supported by the retrieved passages, missing a key reference point requires a score of 0 for correctness.",
+    "correct": false,
+    "supported": true
+  },
+  "q22": {
+    "reasoning": "The assistant accurately included all details from the reference answer regarding J.B. Hunt's 6.7% increase (due to higher cost per claim, higher policy premiums, and the absence of the 2024 settlement benefit) and Saia's $15.1 million increase (due to open cases and higher cost per claim). All facts and citations are fully supported by the text.",
+    "correct": true,
+    "supported": true
+  },
+  "q23": {
+    "reasoning": "The assistant correctly stated that the filings do not cover this information, matching the reference answer. A refusal is automatically supported.",
+    "correct": true,
+    "supported": true
+  },
+  "q24": {
+    "reasoning": "The assistant correctly stated that the filings do not cover driver turnover by individual service center, matching the reference answer. A refusal is automatically supported.",
+    "correct": true,
+    "supported": true
+  },
+  "q25": {
+    "reasoning": "The assistant correctly stated that the filings do not cover the per-load payment rates to BNSF, matching the reference answer. A refusal is automatically supported.",
+    "correct": true,
+    "supported": true
+  },
+  "q26": {
+    "reasoning": "The reference states that the filings do not cover this information. The assistant correctly states that the filings do not cover this, matching the reference verdict. Since it is a refusal, it is also supported.",
+    "correct": true,
+    "supported": true
+  },
+  "q27": {
+    "reasoning": "The reference states that the filings do not cover this information. The assistant correctly refuses to answer, matching the reference verdict. The refusal is supported.",
+    "correct": true,
+    "supported": true
+  },
+  "q28": {
+    "reasoning": "The reference answer notes that the information is not covered in the filings. The assistant correctly refuses to answer, which matches the reference answer and is supported.",
+    "correct": true,
+    "supported": true
+  },
+  "q29": {
+    "reasoning": "The reference answer indicates that the information is not covered in the filings. The assistant correctly states that the filings do not cover this, matching the reference. The statement is supported.",
+    "correct": true,
+    "supported": true
+  },
+  "q30": {
+    "reasoning": "The reference answer states that the information is not covered. The assistant accurately states that the filings do not cover this information, fulfilling the criteria for correctness and support.",
+    "correct": true,
+    "supported": true
+  }
+}

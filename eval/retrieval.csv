@@ -1,0 +1,5 @@
+design,hit@1,all_passages@1,words@1,hit@3,all_passages@3,words@3,hit@5,all_passages@5,words@5
+dense,0.727,0.0,134,1.0,0.857,385,1.0,1.0,648
+dense+filter,0.727,0.0,134,1.0,0.857,385,1.0,1.0,648
+hybrid,0.591,0.0,131,0.773,0.429,379,0.864,0.571,614
+hybrid+filter,0.591,0.0,131,0.818,0.429,377,0.909,0.714,604

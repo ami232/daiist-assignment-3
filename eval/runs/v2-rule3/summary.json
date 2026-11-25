@@ -1,0 +1,59 @@
+{
+  "questions": 30,
+  "judged": 30,
+  "correct (judge)": 20,
+  "answerable correct (judge)": 12,
+  "unsupported (judge)": 0,
+  "correct refusals": 8,
+  "answered an unanswerable question": 0,
+  "wrong refusals": 0,
+  "withheld by numbers guardrail": 1,
+  "code checks passed": 28,
+  "invalid citations": 1,
+  "mean seconds per question": 27.7,
+  "mean tokens per question": 4512,
+  "coverage (answerable answered, not refused or withheld)": "21/22",
+  "accuracy on covered (judge)": "12/21",
+  "judge_agreement": {},
+  "noise_95ci": {
+    "judge_correct_rate": 0.667,
+    "judge_correct_ci": [
+      0.5,
+      0.833
+    ],
+    "human_correct_rate": null,
+    "human_correct_ci": null
+  },
+  "versions": {
+    "prompt_version": "c6755045",
+    "agent_model": "gemini-3.5-flash-lite",
+    "judge_model": "gemini-3.5-flash",
+    "rubric_version": "6a697306",
+    "embedding_model": "gemini-embedding-2",
+    "retrieval_design": "dense+filter",
+    "top_k": 5,
+    "chunk_words": 150,
+    "index_chunks": 701,
+    "test_set_version": "99a183c9"
+  },
+  "compared_with_main_run": {
+    "questions_compared": 30,
+    "main_correct": 22,
+    "this_run_correct": 20,
+    "difference_ci": [
+      -0.233,
+      0.1
+    ],
+    "fixed": [
+      "q19",
+      "q20"
+    ],
+    "broken": [
+      "q04",
+      "q11",
+      "q14",
+      "q15"
+    ],
+    "verdict": "within the noise: cannot tell"
+  }
+}

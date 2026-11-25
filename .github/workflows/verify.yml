@@ -30,5 +30,8 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      - name: Give server.py the key through .env (MCP does not pass environment variables to it)
+        run: printf 'GEMINI_API_KEY=%s\n' "$GEMINI_API_KEY" > .env
+
       - name: Run the submission self-check
         run: uv run python check.py
