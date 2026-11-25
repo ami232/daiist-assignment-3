@@ -26,9 +26,9 @@ from index import embed_queries, get_client
 from retrieve import search
 
 QUESTIONS = EVAL_DIR / "questions.csv"
-VECTORS = EVAL_DIR / "query_vectors.json"      # cache: question -> embedding
-ANSWERS = EVAL_DIR / "answers.jsonl"           # cache: one agent answer per line
-VERDICTS = EVAL_DIR / "judge.jsonl"            # cache: one judge verdict per line
+VECTORS = EVAL_DIR / "question_embeddings_cache.json"      # cache: question -> embedding
+ANSWERS = EVAL_DIR / "agent_answers.jsonl"           # cache: one agent answer per line
+VERDICTS = EVAL_DIR / "judge_verdicts.jsonl"            # cache: one judge verdict per line
 HUMAN = EVAL_DIR / "human_labels.csv"
 CRITERIA = EVAL_DIR / "grading_criteria.csv"   # my per-question criteria, given to the judge
 
@@ -83,7 +83,7 @@ def all_found(expected: list, chunks: list[dict]) -> bool:
 # =============================================================================
 
 def question_vectors(questions: pd.DataFrame) -> dict:
-    """Embed every question once and keep the vectors in eval/query_vectors.json."""
+    """Embed every question once and keep the vectors in eval/question_embeddings_cache.json."""
     cache = json.loads(VECTORS.read_text()) if VECTORS.exists() else {}
     missing = [q for q in questions["question"] if q not in cache]
     for i in range(0, len(missing), 10):
@@ -117,9 +117,9 @@ def evaluate_retrieval(questions: pd.DataFrame, vectors: dict) -> pd.DataFrame:
                      "hit@5": round(sum(hits[5]) / len(hits[5]), 3),
                      "multi_both_found@5": round(sum(multi_all) / len(multi_all), 3) if multi_all else None,
                      "words_in_prompt_top5": round(sum(prompt_words) / len(prompt_words))})
-    pd.DataFrame(per_question).to_csv(EVAL_DIR / "retrieval_per_question.csv", index=False)
+    pd.DataFrame(per_question).to_csv(EVAL_DIR / "retrieval_hits_per_question.csv", index=False)
     table = pd.DataFrame(rows)
-    table.to_csv(EVAL_DIR / "retrieval_results.csv", index=False)
+    table.to_csv(EVAL_DIR / "retrieval_hit_rates_by_design.csv", index=False)
     return table
 
 
@@ -302,8 +302,8 @@ def main() -> None:
     print("\n3-4. Code checks and LLM judge")
     verdicts = grade_all(questions, answers)
 
-    # One table with everything per question -> eval/results.csv
-    hits = pd.read_csv(EVAL_DIR / "retrieval_per_question.csv")
+    # One table with everything per question -> eval/results_per_question.csv
+    hits = pd.read_csv(EVAL_DIR / "retrieval_hits_per_question.csv")
     hits = hits[hits["design"] == CHOSEN_DESIGN].set_index("id")["hit@5"].to_dict()
     rows = []
     for _, q in questions.iterrows():
@@ -323,10 +323,10 @@ def main() -> None:
     if results.empty:
         print("No graded answers yet.")
         return
-    results.to_csv(EVAL_DIR / "results.csv", index=False)
-    # The same answers WITHOUT the judge's verdicts: grade these yourself, before looking at results.csv.
+    results.to_csv(EVAL_DIR / "results_per_question.csv", index=False)
+    # The same answers WITHOUT the judge's verdicts: grade these yourself, before looking at results_per_question.csv.
     results[["id", "kind", "question", "reference_answer", "answer"]].to_csv(
-        EVAL_DIR / "answers_for_grading.csv", index=False)
+        EVAL_DIR / "answers_for_blind_grading.csv", index=False)
 
     answerable = results[results["kind"] != "unanswerable"]
     unanswerable = results[results["kind"] == "unanswerable"]
@@ -347,7 +347,7 @@ def main() -> None:
     summary["abstention_accuracy_unanswerable"] = (
         round(unanswerable["refused"].mean(), 3) if len(unanswerable) else None)
 
-    # Results per question type (single / multi / unanswerable) -> eval/results_by_kind.csv
+    # Results per question type (single / multi / unanswerable) -> eval/results_by_question_type.csv
     by_kind = results.groupby("kind").agg(
         questions=("id", "count"),
         correct_rate=("judge_correct", "mean"),
@@ -356,7 +356,7 @@ def main() -> None:
     ).round(3)
     by_kind.loc["ALL"] = [len(results), round(results["judge_correct"].mean(), 3),
                           round(results["judge_supported"].mean(), 3), int(results["refused"].sum())]
-    by_kind.to_csv(EVAL_DIR / "results_by_kind.csv")
+    by_kind.to_csv(EVAL_DIR / "results_by_question_type.csv")
 
     # 5. Agreement between the judge and the labels in eval/human_labels.csv,
     #    computed ONLY on questions that have both a judge verdict and a valid label.
@@ -373,14 +373,14 @@ def main() -> None:
             disagree = both[(both["correct"] != both["judge_correct"]) |
                             (both["supported"] != both["judge_supported"])]
             disagree[["id", "kind", "correct", "judge_correct", "supported", "judge_supported",
-                      "notes", "judge_reason"]].to_csv(EVAL_DIR / "disagreements.csv", index=False)
-            print(f"   {len(disagree)} disagreement(s) written to eval/disagreements.csv")
+                      "notes", "judge_reason"]].to_csv(EVAL_DIR / "judge_vs_labels_disagreements.csv", index=False)
+            print(f"   {len(disagree)} disagreement(s) written to eval/judge_vs_labels_disagreements.csv")
 
-    (EVAL_DIR / "summary.json").write_text(json.dumps(summary, indent=2))
-    print("\n6. Summary (also in eval/summary.json)")
+    (EVAL_DIR / "evaluation_summary.json").write_text(json.dumps(summary, indent=2))
+    print("\n6. Summary (also in eval/evaluation_summary.json)")
     for key, value in summary.items():
         print(f"   {key:34} {value}")
-    print("\nBy question type (also in eval/results_by_kind.csv):")
+    print("\nBy question type (also in eval/results_by_question_type.csv):")
     print(by_kind.to_string())
     print("\nFailures with a first-guess cause:")
     print(results[results["failure_hint"] != ""][["id", "kind", "failure_hint"]].to_string(index=False))
