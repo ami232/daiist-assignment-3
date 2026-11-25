@@ -1,0 +1,145 @@
+design,id,kind,rank,top_similarity,words@3,words@5,top_chunks
+paragraph,q01,single,1.0,0.807,860,1112,mill-on-liberty-p9 | mill-on-liberty-p10 | mill-on-liberty-p12 | mill-on-liberty-p13 | mill-on-liberty-p1
+paragraph,q02,single,1.0,0.758,860,1213,mill-on-liberty-p10 | mill-on-liberty-p9 | mill-on-liberty-p12 | mill-on-liberty-p11-1 | mill-on-liberty-p13
+paragraph,q03,single,1.0,0.798,443,737,mill-on-liberty-p17-2 | mill-on-liberty-p56 | mill-on-liberty-p22 | mill-on-liberty-p18 | mill-on-liberty-p47
+paragraph,q04,single,1.0,0.825,390,732,mill-on-liberty-p37 | mill-on-liberty-p59 | mill-on-liberty-p42 | mill-on-liberty-p47 | mill-on-liberty-p38
+paragraph,q05,single,3.0,0.718,607,986,smith-wealth-b4c2-p9 | smith-wealth-b4c2-p4 | smith-wealth-b1c2-p1-1 | smith-wealth-b4c2-p7 | smith-wealth-b1c2-p1-3
+paragraph,q06,single,1.0,0.823,687,1163,smith-wealth-b1c2-p1-1 | smith-wealth-b1c2-p3-1 | smith-wealth-b1c2-p5 | smith-wealth-b1c2-p4 | smith-wealth-b1c2-p1-2
+paragraph,q07,single,1.0,0.754,480,861,smith-wealth-b4c2-p9 | smith-wealth-b4c2-p4 | smith-wealth-b4c2-p10 | smith-wealth-b4c2-p7 | smith-wealth-b1c2-p1-1
+paragraph,q08,single,1.0,0.783,605,1075,smith-wealth-b4c2-p9 | smith-wealth-b1c2-p1-3 | smith-wealth-b4c2-p4 | smith-wealth-b1c2-p1-2 | smith-wealth-b4c2-p16
+paragraph,q09,single,,0.771,488,852,smith-wealth-b4c2-p38-1 | smith-wealth-b4c2-p37 | smith-wealth-b4c2-p11 | smith-wealth-b4c2-p1 | smith-wealth-b4c2-p22
+paragraph,q10,single,1.0,0.867,362,819,smith-wealth-b4c2-p10 | smith-wealth-b4c2-p4 | smith-wealth-b4c2-p7 | smith-wealth-b4c2-p9 | smith-wealth-b4c2-p11
+paragraph,q11,single,3.0,0.828,374,577,bastiat-seen-unseen-p10 | bastiat-seen-unseen-p8 | bastiat-seen-unseen-p6 | bastiat-seen-unseen-p13 | bastiat-seen-unseen-p5
+paragraph,q12,single,1.0,0.825,514,754,bastiat-seen-unseen-p1 | bastiat-seen-unseen-p3 | bastiat-seen-unseen-p196 | bastiat-seen-unseen-p10 | bastiat-seen-unseen-p34
+paragraph,q13,single,1.0,0.823,441,863,bastiat-seen-unseen-p129 | bastiat-seen-unseen-p159 | bastiat-seen-unseen-p154 | bastiat-seen-unseen-p165 | bastiat-seen-unseen-p144
+paragraph,q14,single,3.0,0.785,362,685,bastiat-seen-unseen-p75 | bastiat-seen-unseen-p70 | bastiat-seen-unseen-p80 | bastiat-seen-unseen-p74 | bastiat-seen-unseen-p200
+paragraph,q15,single,1.0,0.822,316,480,marx-engels-manifesto-p7 | marx-engels-manifesto-p119 | marx-engels-manifesto-p52 | marx-engels-manifesto-p10 | marx-engels-manifesto-p51
+paragraph,q16,single,1.0,0.795,432,652,marx-engels-manifesto-p128 | marx-engels-manifesto-p69 | marx-engels-manifesto-p135 | marx-engels-manifesto-p83 | marx-engels-manifesto-p203
+paragraph,q17,single,1.0,0.798,393,597,marx-engels-manifesto-p87 | marx-engels-manifesto-p69 | marx-engels-manifesto-p74 | marx-engels-manifesto-p83 | marx-engels-manifesto-p78
+paragraph,q18,single,1.0,0.833,383,662,paine-agrarian-justice-p33 | paine-agrarian-justice-p60 | paine-agrarian-justice-p59 | paine-agrarian-justice-p63 | paine-agrarian-justice-p37
+paragraph,q19,single,4.0,0.798,373,737,paine-agrarian-justice-p58 | paine-agrarian-justice-p33 | paine-agrarian-justice-p63 | paine-agrarian-justice-p54 | paine-agrarian-justice-p61
+paragraph,q20,single,,0.805,370,627,paine-agrarian-justice-p25 | paine-agrarian-justice-p33 | paine-agrarian-justice-p35 | paine-agrarian-justice-p37 | paine-agrarian-justice-p60
+paragraph,q21,multi,,0.736,305,652,marx-engels-manifesto-p81 | smith-wealth-b4c2-p37 | marx-engels-manifesto-p18 | bastiat-seen-unseen-p117 | smith-wealth-b1c2-p1-1
+paragraph,q22,multi,2.0,0.737,481,736,marx-engels-manifesto-p18 | smith-wealth-b1c2-p1-3 | marx-engels-manifesto-p56 | marx-engels-manifesto-p78 | smith-wealth-b1c2-p3-1
+paragraph,q23,multi,,0.748,391,660,paine-agrarian-justice-p25 | marx-engels-manifesto-p83 | marx-engels-manifesto-p69 | paine-agrarian-justice-p29 | paine-agrarian-justice-p35
+paragraph,q24,multi,,0.758,453,835,bastiat-seen-unseen-p129 | bastiat-seen-unseen-p154 | bastiat-seen-unseen-p156 | bastiat-seen-unseen-p159 | bastiat-seen-unseen-p165
+paragraph,q25,multi,3.0,0.72,451,640,marx-engels-manifesto-p117 | marx-engels-manifesto-p112 | mill-on-liberty-p6-3 | marx-engels-manifesto-p115 | marx-engels-manifesto-p92
+paragraph,q26,multi,,0.726,368,763,bastiat-seen-unseen-p41 | bastiat-seen-unseen-p199-1 | bastiat-seen-unseen-p37 | paine-agrarian-justice-p25 | paine-agrarian-justice-p63
+paragraph,q27,multi,2.0,0.743,500,768,mill-on-liberty-p9 | smith-wealth-b4c2-p10 | mill-on-liberty-p13 | mill-on-liberty-p15 | bastiat-seen-unseen-p55
+paragraph,q28,multi,,0.728,353,668,bastiat-seen-unseen-p235 | bastiat-seen-unseen-p70 | bastiat-seen-unseen-p80 | bastiat-seen-unseen-p58 | bastiat-seen-unseen-p75
+paragraph,q29,unanswerable,,0.694,532,881,smith-wealth-b1c2-p3-1 | smith-wealth-b1c2-p1-1 | smith-wealth-b4c2-p7 | smith-wealth-b1c2-p4 | smith-wealth-b4c2-p10
+paragraph,q30,unanswerable,,0.747,550,937,mill-on-liberty-p1 | mill-on-liberty-p13 | mill-on-liberty-p12 | mill-on-liberty-p9 | mill-on-liberty-p56
+paragraph,q31,unanswerable,,0.695,393,580,bastiat-seen-unseen-p83 | bastiat-seen-unseen-p41 | bastiat-seen-unseen-p56 | bastiat-seen-unseen-p69 | bastiat-seen-unseen-p70
+paragraph,q32,unanswerable,,0.643,367,646,bastiat-seen-unseen-p231 | bastiat-seen-unseen-p1 | bastiat-seen-unseen-p5 | mill-on-liberty-p37 | paine-agrarian-justice-p44
+paragraph,q33,unanswerable,,0.626,320,624,smith-wealth-b4c2-p10 | bastiat-seen-unseen-p55 | marx-engels-manifesto-p128 | marx-engels-manifesto-p81 | smith-wealth-b4c2-p11
+paragraph,q34,unanswerable,,0.669,386,694,marx-engels-manifesto-p78 | marx-engels-manifesto-p35 | marx-engels-manifesto-p87 | marx-engels-manifesto-p74 | marx-engels-manifesto-p71
+paragraph,q35,unanswerable,,0.743,383,667,paine-agrarian-justice-p33 | paine-agrarian-justice-p60 | paine-agrarian-justice-p59 | paine-agrarian-justice-p25 | paine-agrarian-justice-p37
+paragraph,q36,unanswerable,,0.706,511,997,marx-engels-manifesto-p81 | bastiat-seen-unseen-p92 | smith-wealth-b4c2-p38-1 | smith-wealth-b4c2-p15 | smith-wealth-b4c2-p16
+fixed,q01,single,1.0,0.771,450,750,mill-on-liberty-p9-w3450 | mill-on-liberty-p8-w3300 | mill-on-liberty-p9-w3600 | mill-on-liberty-p10-w3900 | mill-on-liberty-p12-w4650
+fixed,q02,single,1.0,0.733,450,750,mill-on-liberty-p9-w3600 | mill-on-liberty-p9-w3450 | mill-on-liberty-p12-w4500 | mill-on-liberty-p10-w3900 | mill-on-liberty-p8-w3300
+fixed,q03,single,1.0,0.807,450,750,mill-on-liberty-p17-w300 | mill-on-liberty-p52-w13050 | mill-on-liberty-p17-w150 | mill-on-liberty-p56-w15000 | mill-on-liberty-p17-w450
+fixed,q04,single,1.0,0.78,450,750,mill-on-liberty-p37-w7650 | mill-on-liberty-p46-w11100 | mill-on-liberty-p38-w7800 | mill-on-liberty-p56-w15000 | mill-on-liberty-p59-w15150
+fixed,q05,single,1.0,0.694,450,668,smith-wealth-b1c2-p2-w450 | smith-wealth-b1c2-p1-w0 | smith-wealth-b4c2-p9-w1350 | smith-wealth-b4c2-p9-w1500 | smith-wealth-b4c2-p45-w8250
+fixed,q06,single,1.0,0.811,363,663,smith-wealth-b1c2-p1-w0 | smith-wealth-b1c2-p2-w750 | smith-wealth-b1c2-p5-w1500 | smith-wealth-b1c2-p2-w450 | smith-wealth-b1c2-p4-w1200
+fixed,q07,single,1.0,0.729,450,668,smith-wealth-b4c2-p9-w1350 | smith-wealth-b4c2-p9-w1500 | smith-wealth-b4c2-p4-w450 | smith-wealth-b1c2-p2-w450 | smith-wealth-b4c2-p45-w8250
+fixed,q08,single,1.0,0.766,450,668,smith-wealth-b4c2-p9-w1500 | smith-wealth-b1c2-p2-w450 | smith-wealth-b4c2-p9-w1350 | smith-wealth-b4c2-p45-w8250 | smith-wealth-b1c2-p2-w600
+fixed,q09,single,5.0,0.775,368,668,smith-wealth-b4c2-p45-w8250 | smith-wealth-b4c2-p21-w4050 | smith-wealth-b4c2-p1-w0 | smith-wealth-b4c2-p31-w5250 | smith-wealth-b4c2-p30-w4800
+fixed,q10,single,1.0,0.83,450,750,smith-wealth-b4c2-p9-w1500 | smith-wealth-b4c2-p9-w1350 | smith-wealth-b4c2-p3-w300 | smith-wealth-b4c2-p4-w450 | smith-wealth-b4c2-p6-w1050
+fixed,q11,single,1.0,0.801,450,771,bastiat-seen-unseen-p7-w150 | bastiat-seen-unseen-p5-w0 | bastiat-seen-unseen-p9-w300 | bastiat-seen-unseen-p12-w450 | bastiat-seen-unseen-p19-w750
+fixed,q12,single,1.0,0.789,450,698,bastiat-seen-unseen-p2-w150 | bastiat-seen-unseen-p1-w0 | bastiat-seen-unseen-p9-w300 | bastiat-seen-unseen-p88-w300 | bastiat-seen-unseen-p4-w300
+fixed,q13,single,1.0,0.816,450,750,bastiat-seen-unseen-p129-w0 | bastiat-seen-unseen-p146-w750 | bastiat-seen-unseen-p135-w300 | bastiat-seen-unseen-p5-w0 | bastiat-seen-unseen-p166-w1650
+fixed,q14,single,3.0,0.772,450,797,bastiat-seen-unseen-p70-w0 | bastiat-seen-unseen-p74-w300 | bastiat-seen-unseen-p78-w600 | bastiat-seen-unseen-p68-w1800 | bastiat-seen-unseen-p5-w0
+fixed,q15,single,1.0,0.806,469,781,marx-engels-manifesto-p7-w0 | marx-engels-manifesto-p10-w150 | marx-engels-manifesto-p1-w0 | marx-engels-manifesto-p51-w3900 | marx-engels-manifesto-p202-w300
+fixed,q16,single,2.0,0.741,450,786,marx-engels-manifesto-p130-w2850 | marx-engels-manifesto-p124-w2700 | marx-engels-manifesto-p57-w0 | marx-engels-manifesto-p137-w3000 | marx-engels-manifesto-p1-w0
+fixed,q17,single,1.0,0.755,450,750,marx-engels-manifesto-p83-w1050 | marx-engels-manifesto-p77-w750 | marx-engels-manifesto-p87-w1200 | marx-engels-manifesto-p73-w600 | marx-engels-manifesto-p64-w300
+fixed,q18,single,1.0,0.776,419,719,paine-agrarian-justice-p31-w1650 | paine-agrarian-justice-p63-w2850 | paine-agrarian-justice-p52-w1800 | paine-agrarian-justice-p62-w2700 | paine-agrarian-justice-p58-w2250
+fixed,q19,single,5.0,0.773,419,719,paine-agrarian-justice-p31-w1650 | paine-agrarian-justice-p63-w2850 | paine-agrarian-justice-p58-w2250 | paine-agrarian-justice-p62-w2700 | paine-agrarian-justice-p52-w1800
+fixed,q20,single,2.0,0.757,450,719,paine-agrarian-justice-p38-w300 | paine-agrarian-justice-p29-w1350 | paine-agrarian-justice-p36-w150 | paine-agrarian-justice-p35-w0 | paine-agrarian-justice-p31-w1650
+fixed,q21,multi,,0.694,368,668,smith-wealth-b4c2-p45-w8250 | bastiat-seen-unseen-p88-w300 | bastiat-seen-unseen-p91-w450 | smith-wealth-b1c2-p1-w0 | smith-wealth-b1c2-p2-w450
+fixed,q22,multi,,0.734,473,686,smith-wealth-b1c2-p2-w450 | smith-wealth-b1c2-p2-w600 | marx-engels-manifesto-p55-w4200 | smith-wealth-b1c2-p5-w1500 | marx-engels-manifesto-p77-w750
+fixed,q23,multi,4.0,0.703,450,750,marx-engels-manifesto-p130-w2850 | paine-agrarian-justice-p29-w1350 | marx-engels-manifesto-p64-w300 | paine-agrarian-justice-p24-w750 | marx-engels-manifesto-p124-w2700
+fixed,q24,multi,,0.75,450,750,bastiat-seen-unseen-p129-w0 | bastiat-seen-unseen-p163-w1500 | bastiat-seen-unseen-p146-w750 | bastiat-seen-unseen-p157-w1200 | bastiat-seen-unseen-p135-w300
+fixed,q25,multi,5.0,0.71,450,750,mill-on-liberty-p6-w2100 | mill-on-liberty-p6-w2400 | mill-on-liberty-p6-w2250 | marx-engels-manifesto-p116-w2400 | marx-engels-manifesto-p112-w2250
+fixed,q26,multi,,0.703,450,764,bastiat-seen-unseen-p198-w900 | bastiat-seen-unseen-p193-w150 | bastiat-seen-unseen-p56-w600 | bastiat-seen-unseen-p30-w900 | bastiat-seen-unseen-p70-w0
+fixed,q27,multi,,0.716,450,750,mill-on-liberty-p9-w3450 | mill-on-liberty-p12-w4650 | mill-on-liberty-p13-w4800 | mill-on-liberty-p9-w3600 | mill-on-liberty-p1-w0
+fixed,q28,multi,,0.728,440,740,bastiat-seen-unseen-p70-w0 | bastiat-seen-unseen-p235-w0 | bastiat-seen-unseen-p103-w1800 | bastiat-seen-unseen-p74-w300 | bastiat-seen-unseen-p78-w600
+fixed,q29,unanswerable,,0.684,450,750,smith-wealth-b1c2-p3-w1050 | smith-wealth-b1c2-p1-w0 | smith-wealth-b4c2-p11-w1800 | smith-wealth-b1c2-p2-w750 | smith-wealth-b4c2-p3-w300
+fixed,q30,unanswerable,,0.739,450,750,mill-on-liberty-p1-w0 | mill-on-liberty-p12-w4500 | mill-on-liberty-p36-w7050 | mill-on-liberty-p46-w10950 | mill-on-liberty-p12-w4650
+fixed,q31,unanswerable,,0.679,450,750,bastiat-seen-unseen-p5-w0 | bastiat-seen-unseen-p40-w450 | bastiat-seen-unseen-p83-w0 | bastiat-seen-unseen-p63-w1350 | bastiat-seen-unseen-p45-w750
+fixed,q32,unanswerable,,0.617,407,707,bastiat-seen-unseen-p1-w0 | bastiat-seen-unseen-p5-w0 | bastiat-seen-unseen-p233-w1950 | bastiat-seen-unseen-p2-w150 | bastiat-seen-unseen-p207-w150
+fixed,q33,unanswerable,,0.61,440,699,smith-wealth-b4c2-p10-w1650 | bastiat-seen-unseen-p103-w1800 | mill-on-liberty-p36-w7200 | paine-agrarian-justice-p70-w3900 | marx-engels-manifesto-p130-w2850
+fixed,q34,unanswerable,,0.648,450,750,marx-engels-manifesto-p77-w750 | marx-engels-manifesto-p70-w450 | marx-engels-manifesto-p31-w1950 | bastiat-seen-unseen-p207-w150 | marx-engels-manifesto-p57-w0
+fixed,q35,unanswerable,,0.707,378,678,paine-agrarian-justice-p70-w3900 | paine-agrarian-justice-p31-w1650 | paine-agrarian-justice-p67-w3600 | paine-agrarian-justice-p60-w2550 | paine-agrarian-justice-p58-w2250
+fixed,q36,unanswerable,,0.679,368,658,smith-wealth-b4c2-p45-w8250 | bastiat-seen-unseen-p88-w300 | smith-wealth-b1c2-p1-w0 | bastiat-seen-unseen-p103-w1800 | bastiat-seen-unseen-p91-w450
+paragraph + hybrid,q01,single,1.0,0.807,860,1318,mill-on-liberty-p9 | mill-on-liberty-p12 | mill-on-liberty-p10 | mill-on-liberty-p15 | mill-on-liberty-p6-1
+paragraph + hybrid,q02,single,3.0,0.714,860,1302,mill-on-liberty-p12 | mill-on-liberty-p9 | mill-on-liberty-p10 | mill-on-liberty-p8-2 | mill-on-liberty-p2-1
+paragraph + hybrid,q03,single,1.0,0.798,671,1187,mill-on-liberty-p17-2 | mill-on-liberty-p18 | mill-on-liberty-p23-1 | mill-on-liberty-p52-2 | mill-on-liberty-p10
+paragraph + hybrid,q04,single,1.0,0.825,462,824,mill-on-liberty-p37 | mill-on-liberty-p56 | mill-on-liberty-p50-1 | mill-on-liberty-p38 | mill-on-liberty-p18
+paragraph + hybrid,q05,single,,0.651,539,723,bastiat-seen-unseen-p211 | bastiat-seen-unseen-p1 | smith-wealth-b4c2-p9 | bastiat-seen-unseen-p16 | bastiat-seen-unseen-p5
+paragraph + hybrid,q06,single,1.0,0.823,627,943,smith-wealth-b1c2-p1-1 | smith-wealth-b1c2-p3-1 | smith-wealth-b1c2-p4 | smith-wealth-b1c2-p3-2 | marx-engels-manifesto-p35
+paragraph + hybrid,q07,single,1.0,0.754,511,877,smith-wealth-b4c2-p9 | smith-wealth-b1c2-p3-2 | bastiat-seen-unseen-p159 | smith-wealth-b4c2-p11 | bastiat-seen-unseen-p64
+paragraph + hybrid,q08,single,1.0,0.783,632,1050,smith-wealth-b4c2-p9 | smith-wealth-b4c2-p16 | smith-wealth-b4c2-p21-2 | bastiat-seen-unseen-p100 | smith-wealth-b1c2-p1-2
+paragraph + hybrid,q09,single,5.0,0.744,660,1203,smith-wealth-b4c2-p22 | smith-wealth-b4c2-p32 | smith-wealth-b4c2-p43 | smith-wealth-b4c2-p44 | smith-wealth-b4c2-p30
+paragraph + hybrid,q10,single,1.0,0.867,556,971,smith-wealth-b4c2-p10 | smith-wealth-b4c2-p6-3 | smith-wealth-b4c2-p2 | smith-wealth-b4c2-p7 | smith-wealth-b4c2-p12
+paragraph + hybrid,q11,single,3.0,0.828,347,726,bastiat-seen-unseen-p10 | bastiat-seen-unseen-p13 | bastiat-seen-unseen-p6 | bastiat-seen-unseen-p18 | bastiat-seen-unseen-p118
+paragraph + hybrid,q12,single,1.0,0.825,399,776,bastiat-seen-unseen-p1 | bastiat-seen-unseen-p182 | bastiat-seen-unseen-p230 | bastiat-seen-unseen-p88 | bastiat-seen-unseen-p165
+paragraph + hybrid,q13,single,1.0,0.823,379,541,bastiat-seen-unseen-p129 | bastiat-seen-unseen-p244 | bastiat-seen-unseen-p70 | bastiat-seen-unseen-p135 | bastiat-seen-unseen-p242
+paragraph + hybrid,q14,single,2.0,0.785,353,644,bastiat-seen-unseen-p75 | bastiat-seen-unseen-p80 | bastiat-seen-unseen-p69 | bastiat-seen-unseen-p198 | bastiat-seen-unseen-p147
+paragraph + hybrid,q15,single,1.0,0.822,480,700,marx-engels-manifesto-p7 | marx-engels-manifesto-p119 | marx-engels-manifesto-p54 | marx-engels-manifesto-p203 | marx-engels-manifesto-p83
+paragraph + hybrid,q16,single,1.0,0.795,332,535,marx-engels-manifesto-p128 | marx-engels-manifesto-p3 | marx-engels-manifesto-p192 | marx-engels-manifesto-p62 | marx-engels-manifesto-p78
+paragraph + hybrid,q17,single,1.0,0.798,306,478,marx-engels-manifesto-p87 | marx-engels-manifesto-p66 | marx-engels-manifesto-p97 | marx-engels-manifesto-p90 | marx-engels-manifesto-p3
+paragraph + hybrid,q18,single,1.0,0.833,453,724,paine-agrarian-justice-p33 | paine-agrarian-justice-p60 | paine-agrarian-justice-p63 | paine-agrarian-justice-p51 | paine-agrarian-justice-p79
+paragraph + hybrid,q19,single,3.0,0.798,458,678,paine-agrarian-justice-p58 | paine-agrarian-justice-p60 | paine-agrarian-justice-p54 | paine-agrarian-justice-p57 | paine-agrarian-justice-p79
+paragraph + hybrid,q20,single,5.0,0.762,464,798,paine-agrarian-justice-p64-1 | paine-agrarian-justice-p28 | paine-agrarian-justice-p59 | paine-agrarian-justice-p27 | paine-agrarian-justice-p29
+paragraph + hybrid,q21,multi,,0.736,305,744,marx-engels-manifesto-p81 | smith-wealth-b4c2-p37 | marx-engels-manifesto-p18 | bastiat-seen-unseen-p92 | smith-wealth-b4c2-p16
+paragraph + hybrid,q22,multi,2.0,0.726,467,869,smith-wealth-b1c2-p1-3 | marx-engels-manifesto-p18 | marx-engels-manifesto-p69 | smith-wealth-b1c2-p1-2 | smith-wealth-b1c2-p3-2
+paragraph + hybrid,q23,multi,,0.745,277,533,marx-engels-manifesto-p83 | marx-engels-manifesto-p66 | marx-engels-manifesto-p69 | marx-engels-manifesto-p71 | marx-engels-manifesto-p192
+paragraph + hybrid,q24,multi,,0.751,469,687,bastiat-seen-unseen-p154 | marx-engels-manifesto-p42 | marx-engels-manifesto-p35 | bastiat-seen-unseen-p162 | marx-engels-manifesto-p78
+paragraph + hybrid,q25,multi,2.0,0.705,451,820,marx-engels-manifesto-p112 | mill-on-liberty-p6-3 | marx-engels-manifesto-p117 | marx-engels-manifesto-p115 | mill-on-liberty-p7-1
+paragraph + hybrid,q26,multi,,0.702,371,707,bastiat-seen-unseen-p77 | bastiat-seen-unseen-p56 | paine-agrarian-justice-p79 | paine-agrarian-justice-p63 | bastiat-seen-unseen-p193
+paragraph + hybrid,q27,multi,,0.719,743,1099,mill-on-liberty-p5 | mill-on-liberty-p15 | mill-on-liberty-p12 | mill-on-liberty-p11-1 | bastiat-seen-unseen-p83
+paragraph + hybrid,q28,multi,,0.716,329,629,bastiat-seen-unseen-p75 | bastiat-seen-unseen-p70 | marx-engels-manifesto-p78 | bastiat-seen-unseen-p100 | marx-engels-manifesto-p192
+paragraph + hybrid,q29,unanswerable,,0.669,661,1121,smith-wealth-b1c2-p3-2 | smith-wealth-b4c2-p12 | smith-wealth-b1c2-p4 | smith-wealth-b4c2-p11 | smith-wealth-b1c2-p1-1
+paragraph + hybrid,q30,unanswerable,,0.696,598,1062,mill-on-liberty-p2-1 | mill-on-liberty-p37 | mill-on-liberty-p46 | mill-on-liberty-p12 | mill-on-liberty-p42
+paragraph + hybrid,q31,unanswerable,,0.682,366,603,bastiat-seen-unseen-p5 | bastiat-seen-unseen-p58 | bastiat-seen-unseen-p244 | bastiat-seen-unseen-p196 | bastiat-seen-unseen-p34
+paragraph + hybrid,q32,unanswerable,,0.63,540,1035,mill-on-liberty-p37 | bastiat-seen-unseen-p165 | bastiat-seen-unseen-p56 | bastiat-seen-unseen-p3 | mill-on-liberty-p44-1
+paragraph + hybrid,q33,unanswerable,,0.597,388,765,marx-engels-manifesto-p81 | bastiat-seen-unseen-p182 | smith-wealth-b4c2-p11 | smith-wealth-b4c2-p10 | mill-on-liberty-p46
+paragraph + hybrid,q34,unanswerable,,0.66,463,677,marx-engels-manifesto-p74 | smith-wealth-b1c2-p3-2 | marx-engels-manifesto-p18 | marx-engels-manifesto-p112 | marx-engels-manifesto-p87
+paragraph + hybrid,q35,unanswerable,,0.704,440,704,paine-agrarian-justice-p10 | paine-agrarian-justice-p79 | paine-agrarian-justice-p63 | paine-agrarian-justice-p49 | paine-agrarian-justice-p43
+paragraph + hybrid,q36,unanswerable,,0.706,441,871,marx-engels-manifesto-p81 | marx-engels-manifesto-p18 | smith-wealth-b4c2-p16 | smith-wealth-b4c2-p15 | smith-wealth-b4c2-p17-1
+fixed + hybrid,q01,single,1.0,0.753,450,750,mill-on-liberty-p8-w3300 | mill-on-liberty-p9-w3600 | mill-on-liberty-p10-w3900 | mill-on-liberty-p11-w4200 | mill-on-liberty-p14-w5100
+fixed + hybrid,q02,single,2.0,0.709,450,750,mill-on-liberty-p8-w3300 | mill-on-liberty-p9-w3600 | mill-on-liberty-p8-w3150 | mill-on-liberty-p12-w4650 | mill-on-liberty-p9-w3450
+fixed + hybrid,q03,single,1.0,0.807,450,750,mill-on-liberty-p17-w300 | mill-on-liberty-p17-w450 | mill-on-liberty-p52-w13200 | mill-on-liberty-p23-w1650 | mill-on-liberty-p26-w2550
+fixed + hybrid,q04,single,1.0,0.78,450,750,mill-on-liberty-p37-w7650 | mill-on-liberty-p56-w15000 | mill-on-liberty-p46-w11100 | mill-on-liberty-p17-w450 | mill-on-liberty-p50-w12150
+fixed + hybrid,q05,single,4.0,0.631,450,750,bastiat-seen-unseen-p5-w0 | bastiat-seen-unseen-p7-w150 | bastiat-seen-unseen-p211-w450 | smith-wealth-b1c2-p2-w450 | bastiat-seen-unseen-p1-w0
+fixed + hybrid,q06,single,1.0,0.811,450,750,smith-wealth-b1c2-p1-w0 | smith-wealth-b1c2-p2-w750 | smith-wealth-b1c2-p3-w1050 | smith-wealth-b1c2-p3-w900 | smith-wealth-b1c2-p4-w1200
+fixed + hybrid,q07,single,1.0,0.729,450,750,smith-wealth-b4c2-p9-w1350 | bastiat-seen-unseen-p201-w0 | bastiat-seen-unseen-p88-w300 | smith-wealth-b1c2-p3-w900 | bastiat-seen-unseen-p211-w450
+fixed + hybrid,q08,single,1.0,0.766,450,750,smith-wealth-b4c2-p9-w1500 | smith-wealth-b4c2-p42-w7650 | smith-wealth-b1c2-p2-w450 | bastiat-seen-unseen-p211-w450 | bastiat-seen-unseen-p88-w300
+fixed + hybrid,q09,single,4.0,0.733,368,668,smith-wealth-b4c2-p21-w4050 | smith-wealth-b4c2-p31-w5250 | smith-wealth-b4c2-p45-w8250 | smith-wealth-b4c2-p30-w4800 | smith-wealth-b4c2-p30-w4950
+fixed + hybrid,q10,single,1.0,0.83,450,750,smith-wealth-b4c2-p9-w1500 | smith-wealth-b4c2-p6-w1050 | smith-wealth-b4c2-p3-w300 | smith-wealth-b4c2-p7-w1200 | smith-wealth-b4c2-p39-w6450
+fixed + hybrid,q11,single,2.0,0.783,450,771,bastiat-seen-unseen-p9-w300 | bastiat-seen-unseen-p5-w0 | bastiat-seen-unseen-p12-w450 | bastiat-seen-unseen-p19-w750 | bastiat-seen-unseen-p117-w1200
+fixed + hybrid,q12,single,1.0,0.767,450,750,bastiat-seen-unseen-p1-w0 | bastiat-seen-unseen-p2-w150 | bastiat-seen-unseen-p211-w450 | bastiat-seen-unseen-p229-w1650 | bastiat-seen-unseen-p88-w300
+fixed + hybrid,q13,single,1.0,0.816,450,750,bastiat-seen-unseen-p129-w0 | bastiat-seen-unseen-p135-w300 | bastiat-seen-unseen-p74-w300 | bastiat-seen-unseen-p70-w0 | bastiat-seen-unseen-p240-w150
+fixed + hybrid,q14,single,3.0,0.752,450,797,bastiat-seen-unseen-p74-w300 | bastiat-seen-unseen-p146-w750 | bastiat-seen-unseen-p78-w600 | bastiat-seen-unseen-p68-w1800 | bastiat-seen-unseen-p197-w750
+fixed + hybrid,q15,single,1.0,0.806,450,750,marx-engels-manifesto-p7-w0 | marx-engels-manifesto-p51-w3900 | marx-engels-manifesto-p29-w1650 | marx-engels-manifesto-p116-w2400 | marx-engels-manifesto-p62-w150
+fixed + hybrid,q16,single,2.0,0.687,469,769,marx-engels-manifesto-p1-w0 | marx-engels-manifesto-p124-w2700 | marx-engels-manifesto-p189-w450 | marx-engels-manifesto-p77-w750 | marx-engels-manifesto-p182-w0
+fixed + hybrid,q17,single,1.0,0.755,450,769,marx-engels-manifesto-p83-w1050 | marx-engels-manifesto-p87-w1200 | marx-engels-manifesto-p64-w300 | marx-engels-manifesto-p97-w1650 | marx-engels-manifesto-p1-w0
+fixed + hybrid,q18,single,1.0,0.776,419,719,paine-agrarian-justice-p31-w1650 | paine-agrarian-justice-p59-w2400 | paine-agrarian-justice-p67-w3600 | paine-agrarian-justice-p74-w150 | paine-agrarian-justice-p63-w2850
+fixed + hybrid,q19,single,2.0,0.762,450,750,paine-agrarian-justice-p56-w2100 | paine-agrarian-justice-p52-w1800 | paine-agrarian-justice-p36-w150 | paine-agrarian-justice-p60-w2550 | paine-agrarian-justice-p63-w2850
+fixed + hybrid,q20,single,1.0,0.757,450,750,paine-agrarian-justice-p29-w1350 | paine-agrarian-justice-p64-w3000 | paine-agrarian-justice-p27-w1050 | paine-agrarian-justice-p59-w2400 | paine-agrarian-justice-p28-w1200
+fixed + hybrid,q21,multi,,0.649,399,716,marx-engels-manifesto-p80-w900 | marx-engels-manifesto-p178-w300 | smith-wealth-b4c2-p37-w6000 | bastiat-seen-unseen-p91-w450 | marx-engels-manifesto-p137-w3000
+fixed + hybrid,q22,multi,2.0,0.734,450,750,smith-wealth-b1c2-p2-w450 | marx-engels-manifesto-p17-w600 | marx-engels-manifesto-p70-w450 | marx-engels-manifesto-p77-w750 | smith-wealth-b1c2-p3-w900
+fixed + hybrid,q23,multi,3.0,0.699,450,769,marx-engels-manifesto-p64-w300 | marx-engels-manifesto-p70-w450 | paine-agrarian-justice-p24-w750 | marx-engels-manifesto-p77-w750 | marx-engels-manifesto-p1-w0
+fixed + hybrid,q24,multi,,0.685,450,750,marx-engels-manifesto-p42-w3000 | bastiat-seen-unseen-p207-w150 | bastiat-seen-unseen-p160-w1350 | bastiat-seen-unseen-p163-w1500 | marx-engels-manifesto-p35-w2250
+fixed + hybrid,q25,multi,3.0,0.666,450,750,marx-engels-manifesto-p112-w2250 | marx-engels-manifesto-p116-w2400 | mill-on-liberty-p6-w2250 | mill-on-liberty-p51-w12750 | mill-on-liberty-p6-w2400
+fixed + hybrid,q26,multi,,0.69,450,750,bastiat-seen-unseen-p193-w150 | bastiat-seen-unseen-p56-w600 | bastiat-seen-unseen-p25-w450 | bastiat-seen-unseen-p78-w600 | bastiat-seen-unseen-p201-w0
+fixed + hybrid,q27,multi,,0.711,450,750,mill-on-liberty-p12-w4650 | mill-on-liberty-p9-w3600 | mill-on-liberty-p4-w1350 | mill-on-liberty-p5-w1500 | mill-on-liberty-p10-w3900
+fixed + hybrid,q28,multi,,0.728,450,750,bastiat-seen-unseen-p70-w0 | bastiat-seen-unseen-p74-w300 | bastiat-seen-unseen-p88-w300 | marx-engels-manifesto-p189-w450 | bastiat-seen-unseen-p129-w0
+fixed + hybrid,q29,unanswerable,,0.661,450,750,smith-wealth-b1c2-p3-w900 | smith-wealth-b4c2-p11-w1800 | smith-wealth-b1c2-p3-w1050 | bastiat-seen-unseen-p163-w1500 | smith-wealth-b4c2-p9-w1350
+fixed + hybrid,q30,unanswerable,,0.689,450,750,mill-on-liberty-p49-w11550 | mill-on-liberty-p51-w12600 | mill-on-liberty-p43-w10050 | mill-on-liberty-p48-w11400 | mill-on-liberty-p2-w150
+fixed + hybrid,q31,unanswerable,,0.679,450,750,bastiat-seen-unseen-p5-w0 | bastiat-seen-unseen-p244-w300 | bastiat-seen-unseen-p62-w1200 | bastiat-seen-unseen-p32-w0 | bastiat-seen-unseen-p100-w1350
+fixed + hybrid,q32,unanswerable,,0.614,450,764,bastiat-seen-unseen-p2-w150 | bastiat-seen-unseen-p214-w600 | bastiat-seen-unseen-p56-w600 | bastiat-seen-unseen-p30-w900 | bastiat-seen-unseen-p163-w1500
+fixed + hybrid,q33,unanswerable,,0.562,450,750,bastiat-seen-unseen-p70-w0 | mill-on-liberty-p23-w1800 | mill-on-liberty-p46-w11100 | smith-wealth-b4c2-p10-w1650 | mill-on-liberty-p3-w900
+fixed + hybrid,q34,unanswerable,,0.648,450,750,marx-engels-manifesto-p77-w750 | marx-engels-manifesto-p31-w1950 | bastiat-seen-unseen-p66-w1650 | smith-wealth-b4c2-p7-w1200 | bastiat-seen-unseen-p207-w150
+fixed + hybrid,q35,unanswerable,,0.687,402,702,paine-agrarian-justice-p10-w900 | paine-agrarian-justice-p78-w450 | paine-agrarian-justice-p63-w2850 | paine-agrarian-justice-p42-w750 | paine-agrarian-justice-p50-w1500
+fixed + hybrid,q36,unanswerable,,0.648,450,750,smith-wealth-b4c2-p17-w3150 | smith-wealth-b4c2-p42-w7650 | smith-wealth-b4c2-p37-w6000 | bastiat-seen-unseen-p113-w900 | marx-engels-manifesto-p80-w900

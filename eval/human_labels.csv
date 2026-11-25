@@ -1,1 +1,24 @@
 id,correct,supported,notes
+q02,1,1,"The harm principle states that society, through the law or public pressure, may force you to do or not do something only to stop you from harming other people. In the citation, Mill emphasises that it does not apply to children, who must be protected since they have not reached the ‘maturity of their faculties’. In other words, they cannot yet take care of themselves, and thus need to be protected against their own actions. Here, the retriever used the right chunk, and the agent correctly says that the principle does not cover children."
+q03,1,1,"In this example, the question asks almost the exact opposite of the citation. The retriever fetched the right chunk. Mill argues that silencing a different opinion is like robbing the human race: if the opinion is right, we lose the truth, and if it is wrong, we lose a clearer view of the truth that comes from arguing against it. The agent correctly replied."
+q04,1,1,A dead dogma (not the most common term) is a belief that people hold true without understanding why it is true. An example would be a child understanding that if he drops a glass it will break despite never hearing about gravity law.  The answer is perfect.
+q05,1,1,"This question used a word (greed) that is not mentioned in the corpus, but the agent correctly understood the real meaning behind the question. Did Smith say that self-interest is a good thing? Adam Smith uses an example to show that, to get what we need, we rely on other people’s self-interest rather than their benevolence. He describes how exchange works, but he never says that greed is good. The agent is right."
+q06,1,1,
+q07,1,1,
+q08,1,1,On the dot
+q09,1,1,
+q10,1,1,
+q11,1,1,
+q12,1,1,
+q13,1,1,
+q14,1,1,
+q15,1,1,
+q16,1,1,
+q17,1,1,
+q18,1,1,
+q19,1,1,
+q20,1,0,"Paine named his text Agrarian Justice to set it apart from Agrarian Law, which meant sharing land equally among all citizens. The chunk is right, the quote is exact and the verdict is correct. However, the answer adds a fund “derived from ground-rent”, and “ground-rent” is not in any of the 5 retrieved passages. The payment at twenty-one does appear in another retrieved chunk, but the agent did not cite it. Paine does say this elsewhere in the text, but the agent added it from outside what it retrieved, so the answer is not fully supported."
+q21,1,1,
+q23,1,1,
+q25,0,0,"Both authors say a society’s moral ideas come from the ruling class. Mill’s passage is in chapter I of On Liberty, which is in the corpus, but the retriever missed it. The agent had found the Marx and Engels part, yet answered “not in these texts” and the guardrail removed everything. It should have given a partial answer."
+q26,0,1,"Bastiat says that when the State spends tax money, we see the jobs it pays for, but we do not see what the taxpayers would have bought with that same money. Paine wants to take his fund when property passes from a dead person to their heir, so that nobody feels the loss: the one who dies gives nothing and the heir pays nothing. The question does not make a claim, so “said something different” is the wrong verdict. The quotes are exact and support the answer, but they are not the best ones. The retriever fetched the Taxes chunk, which states Bastiat’s point directly, yet the agent used the Algeria chunk. For Paine, the right chunk was used, but the agent quoted a side remark and missed the main point."

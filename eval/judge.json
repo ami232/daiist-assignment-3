@@ -1,0 +1,254 @@
+{
+ "q01": {
+  "answer": "- **Verdict:** said it\n- **Answer:** Mill states that society may only use compulsion against an individual to prevent harm to others.\n- **Source:** John Stuart Mill, On Liberty (1859), CHAPTER I. INTRODUCTORY, ¶9 [mill-on-liberty-p9-w3450]\n- **Quote:** \"the only purpose for which power can be rightfully exercised over any member of a civilised community, against his will, is to prevent harm to others.\" [mill-on-liberty-p9-w3450]\n- **Why this verdict:** The cited passage directly states the principle that self-protection and preventing harm to others are the sole justifications for societal compulsion.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies that Mill said this principle, matching the reference answer's verdict and main claim. All claims made in the response, including quotes and explanation, are directly supported by the retrieved passages from On Liberty.",
+  "correct": true,
+  "supported": true
+ },
+ "q02": {
+  "answer": "- **Verdict:** said something different\n- **Answer:** Mill explicitly states that his doctrine of liberty does not apply to children, who must be protected against their own actions.\n- **Source:** John Stuart Mill, On Liberty (1859), CHAPTER I. INTRODUCTORY, ¶9-10 [mill-on-liberty-p9-w3600]\n- **Quote:** \"It is, perhaps, hardly necessary to say that this doctrine is meant to apply only to human beings in the maturity of their faculties. We are not speaking of children\" [mill-on-liberty-p9-w3600]\n- **Why this verdict:** While children are discussed, Mill explicitly excludes them from the scope of his liberty principle rather than protecting them through it.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies that Mill said something different, explaining that his doctrine of liberty excludes children, who must be protected against their own actions. All statements and quotes in the answer are directly supported by passage [mill-on-liberty-p9-w3600].",
+  "correct": true,
+  "supported": true
+ },
+ "q03": {
+  "answer": "- **Verdict:** said something different\n- **Answer:** Mill argues the exact opposite, maintaining that even if all mankind minus one were of one opinion, they would not be justified in silencing that single person.\n- **Source:** John Stuart Mill, On Liberty (1859), CHAPTER II. OF THE LIBERTY OF THOUGHT AND DISCUSSION, ¶17 [mill-on-liberty-p17-w300]\n- **Quote:** \"mankind would be no more justified in silencing that one person, than he... would be justified in silencing mankind.\" [mill-on-liberty-p17-w300]\n- **Why this verdict:** While the claim states that the majority would be justified in silencing the lone dissenter, Mill explicitly denies that they have any such justification.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies the verdict as 'said something different' and explains Mill's actual position accurately per the reference answer. Every statement and quote provided in the answer is directly supported by the retrieved text from On Liberty chapter II.",
+  "correct": true,
+  "supported": true
+ },
+ "q04": {
+  "answer": "- **Verdict:** said it\n- **Answer:** Mill states that if a true opinion is not fully and fearlessly discussed, it will be held merely as a dead dogma rather than a living truth.\n- **Source:** John Stuart Mill, On Liberty (1859), CHAPTER II. OF THE LIBERTY OF THOUGHT AND DISCUSSION, ¶37-38 [mill-on-liberty-p37-w7650]\n- **Quote:** \"if it is not fully, frequently, and fearlessly discussed, it will be held as a dead dogma, not a living truth.\" [mill-on-liberty-p37-w7650]\n- **Why this verdict:** The passage directly addresses the outcome of a true opinion lacking free and open discussion, matching the claim.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies that Mill said it and provides the exact claim from the reference answer (that it will be held as a dead dogma, not a living truth). Furthermore, every claim and quote in the response is directly supported by passage [mill-on-liberty-p37-w7650].",
+  "correct": true,
+  "supported": true
+ },
+ "q05": {
+  "answer": "- **Verdict:** said something different\n- **Answer:** Smith did not say greed is good, but rather that we rely on people's self-love and regard to their own interest rather than their benevolence.\n- **Source:** Adam Smith, The Wealth of Nations (1776), Book I, Chapter II, ¶2 [smith-wealth-b1c2-p2-w450]\n- **Quote:** \"It is not from the benevolence of the butcher, the brewer, or the baker that we expect our dinner, but from their regard to their own interest.\" [smith-wealth-b1c2-p2-w450]\n- **Why this verdict:** The text discusses self-interest in commerce rather than moralising about greed as being good.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies the verdict as 'said something different' and matches the main claim of the reference answer regarding Smith's focus on self-interest/self-love rather than calling greed good. All claims made in the answer, including the quote and explanation, are directly supported by the retrieved passage from Book I, Chapter II of Wealth of Nations.",
+  "correct": true,
+  "supported": true
+ },
+ "q06": {
+  "answer": "- **Verdict:** said it\n- **Answer:** Smith states that the division of labour arises from the human propensity to truck, barter, and exchange one thing for another.\n- **Source:** Adam Smith, The Wealth of Nations (1776), Book I, Chapter II, ¶1-2 [smith-wealth-b1c2-p1-w0]\n- **Quote:** \"the propensity to truck, barter, and exchange one thing for another.\" [smith-wealth-b1c2-p1-w0]\n- **Why this verdict:** The passage explicitly identifies this specific human propensity as the origin of the division of labour.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The response correctly identifies that Adam Smith attributed the division of labour to the propensity to truck, barter, and exchange. Its verdict and main claim match the reference answer. Furthermore, all statements made in the answer are directly supported by the retrieved passage from Book I, Chapter II of Wealth of Nations.",
+  "correct": true,
+  "supported": true
+ },
+ "q07": {
+  "answer": "- **Verdict:** said it\n- **Answer:** Smith uses the phrase when explaining how an individual, intending only their own security and gain, is led to promote domestic industry and the public interest.\n- **Source:** Adam Smith, The Wealth of Nations (1776), Book IV, Chapter II, ¶9 [smith-wealth-b4c2-p9-w1350]\n- **Quote:** \"...he is in this, as in many other cases, led by an invisible hand to promote an end which was no part of his intention.\" [smith-wealth-b4c2-p9-w1350]\n- **Why this verdict:** The passage explicitly demonstrates the context in which Smith employs the term regarding self-interest and domestic industry.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies the verdict ('said it') and accurately summarizes the context in which Adam Smith uses the phrase 'invisible hand' matching the reference answer. All claims made in the response are directly supported by the retrieved passage from Book IV, Chapter II, ¶9 of The Wealth of Nations.",
+  "correct": true,
+  "supported": true
+ },
+ "q08": {
+  "answer": "- **Verdict:** said something different\n- **Answer:** Adam Smith stated that he had never known much good done by those who affected to trade for the public good.\n- **Source:** Adam Smith, The Wealth of Nations (1776), Book IV, Chapter II, ¶9-10 [smith-wealth-b4c2-p9-w1500]\n- **Quote:** \"I have never known much good done by those who affected to trade for the public good.\" [smith-wealth-b4c2-p9-w1500]\n- **Why this verdict:** The text directly contradicts the idea that merchants who set out to trade for the public good do a lot of good.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies the verdict as 'said something different' and matches the reference answer by citing Smith's statement that he has never known much good done by those who affected to trade for the public good. All claims made in the answer are directly supported by text in passage [smith-wealth-b4c2-p9-w1500].",
+  "correct": true,
+  "supported": true
+ },
+ "q09": {
+  "answer": "- **Verdict:** said something different\n- **Answer:** Adam Smith acknowledged exceptions where burdens on foreign trade are advantageous, such as when a domestic industry is necessary for national defense.\n- **Source:** Adam Smith, The Wealth of Nations (1776), Book IV, Chapter II, ¶22-25 [smith-wealth-b4c2-p22-w4200]\n- **Quote:** \"There seem, however, to be two cases, in which it will generally be advantageous to lay some burden upon foreign, for the encouragement of domestic industry. The first is, when some particular sort of industry is necessary for the defence of the country.\" [smith-wealth-b4c2-p22-w4200]\n- **Why this verdict:** While Smith generally advocated for the freedom of trade, he explicitly allowed for certain exceptions, contradicting the claim that he opposed every restriction.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer provides the correct verdict ('said something different') and accurately identifies Smith's exception for national defense, matching the reference answer. All claims, quotes, and reasoning in the answer are directly supported by the retrieved passages, specifically paragraph 22-25 of Book IV, Chapter II.",
+  "correct": true,
+  "supported": true
+ },
+ "q10": {
+  "answer": "- **Verdict:** said it\n- **Answer:** Smith states that every individual can judge much better in their local situation than any statesman or lawgiver how their capital should be employed.\n- **Source:** Adam Smith, The Wealth of Nations (1776), Book IV, Chapter II, ¶9-10 [smith-wealth-b4c2-p9-w1500]\n- **Quote:** \"every individual, it is evident, can in his local situation judge much better than any statesman or lawgiver can do for him.\" [smith-wealth-b4c2-p9-w1500]\n- **Why this verdict:** The passage explicitly compares the individual and the statesman, concluding that the individual is far better suited to judge the employment of capital.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies that Smith said the individual can judge much better than any statesman or lawgiver. This matches the reference answer's verdict and main claim. Every claim made is fully supported by text in the retrieved passage [smith-wealth-b4c2-p9-w1500].",
+  "correct": true,
+  "supported": true
+ },
+ "q11": {
+  "answer": "- **Verdict:** said it\n- **Answer:** The repair costs six francs, and the glazier's trade is encouraged.\n- **Source:** Frédéric Bastiat, That Which Is Seen, and That Which Is Not Seen (1850), I.--The Broken Window, ¶5-7 [bastiat-seen-unseen-p5-w0]\n- **Quote:** \"Suppose it cost six francs to repair the damage\" [bastiat-seen-unseen-p5-w0]\n- **Source:** Frédéric Bastiat, That Which Is Seen, and That Which Is Not Seen (1850), I.--The Broken Window, ¶9-12 [bastiat-seen-unseen-p9-w300]\n- **Quote:** \"the glazier's trade is encouraged to the amount of six francs\" [bastiat-seen-unseen-p9-w300]\n- **Why this verdict:** The text explicitly states both the six-franc cost and that the glazier's trade is encouraged by that amount.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies the verdict as 'said it' and provides the cost (six francs) and the trade encouraged (the glazier's trade), matching the reference answer. All details provided in the answer and quotes are directly supported by the retrieved passages from Bastiat's text.",
+  "correct": true,
+  "supported": true
+ },
+ "q12": {
+  "answer": "- **Verdict:** said it\n- **Answer:** Bastiat states that a good economist looks at both the visible effects and those that must be foreseen, whereas a bad economist considers only the immediate, visible effect.\n- **Source:** Frédéric Bastiat, That Which Is Seen, and That Which Is Not Seen (1850), Introduction, ¶1-2 [bastiat-seen-unseen-p1-w0]\n- **Quote:** \"Between a good and a bad economist this constitutes the whole difference--the one takes account of the visible effect; the other takes account both of the effects which are seen and also of those which it is necessary to foresee.\" [bastiat-seen-unseen-p1-w0]\n- **Why this verdict:** The passage explicitly defines the entire difference between the two types of economists using the exact distinction asked about.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies the verdict as 'said it' and accurately states the difference between a good and bad economist as presented by Bastiat. All claims, including quotes and explanations, are fully supported by the provided text [bastiat-seen-unseen-p1-w0].",
+  "correct": true,
+  "supported": true
+ },
+ "q13": {
+  "answer": "- **Verdict:** said something different\n- **Answer:** Bastiat cites that curse as a vulgar prejudice held by others, which he then proceeds to refute.\n- **Source:** Frédéric Bastiat, That Which Is Seen, and That Which Is Not Seen (1850), VIII.--Machinery, ¶129-133 [bastiat-seen-unseen-p129-w0]\n- **Quote:** \"\\\"A curse on machines! Every year, their increasing power devotes millions of workmen to pauperism...\\\" This is the cry which is raised by vulgar prejudice\" [bastiat-seen-unseen-p129-w0]\n- **Why this verdict:** Bastiat quotes this exact sentiment, but attributes it to popular prejudice rather than his own view.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The verdict matches 'said something different' and the main claim correctly identifies that Bastiat quotes the curse on machines as a vulgar prejudice rather than endorsing it. All statements in the answer are directly supported by the provided text from Bastiat's 'Machinery' section.",
+  "correct": true,
+  "supported": true
+ },
+ "q14": {
+  "answer": "- **Verdict:** said something different\n- **Answer:** Bastiat writes that public works to employ the unemployed can be useful as a temporary measure during an emergency, though they do not increase total labour or wages.\n- **Source:** Frédéric Bastiat, That Which Is Seen, and That Which Is Not Seen (1850), V.--Public Works, ¶78-81 [bastiat-seen-unseen-p78-w600]\n- **Quote:** \"As a temporary measure, on any emergency, during a hard winter, this interference with the tax-payers may have its use.\" [bastiat-seen-unseen-p78-w600]\n- **Why this verdict:** While Bastiat generally criticizes the justification of public works merely to give work, he explicitly allows that they may have their use as a temporary emergency measure.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies that Bastiat said something different, noting that he allows public works to employ the unemployed as a temporary measure during an emergency. All claims made in the answer, including the quote and reasoning, are fully supported by the retrieved passages (specifically passage [bastiat-seen-unseen-p78-w600]).",
+  "correct": true,
+  "supported": true
+ },
+ "q15": {
+  "answer": "- **Verdict:** said it\n- **Answer:** Marx and Engels state that the history of all hitherto existing society is the history of class struggles.\n- **Source:** Karl Marx and Friedrich Engels, Manifesto of the Communist Party (1848), I. BOURGEOIS AND PROLETARIANS, ¶7-10 [marx-engels-manifesto-p7-w0]\n- **Quote:** \"The history of all hitherto existing societies is the history of class struggles.\" [marx-engels-manifesto-p7-w0]\n- **Why this verdict:** The passage explicitly matches the claim about the history of all hitherto existing society.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer provides the correct verdict ('said it') and accurately states that Marx and Engels describe the history of all hitherto existing society as the history of class struggles. Every claim and citation in the answer is directly supported by passage [marx-engels-manifesto-p7-w0].",
+  "correct": true,
+  "supported": true
+ },
+ "q18": {
+  "answer": "- **Verdict:** said it\n- **Answer:** Thomas Paine proposed paying fifteen pounds sterling to every person at age twenty-one as a partial compensation for the loss of natural inheritance caused by landed property.\n- **Source:** Thomas Paine, Agrarian Justice (1797), AUTHOR'S ENGLISH PREFACE, ¶31-34 [paine-agrarian-justice-p31-w1650]\n- **Quote:** \"paid to every person, when arrived at the age of twenty-one years, the sum of fifteen pounds sterling, as a compensation in part, for the loss of his or her natural inheritance\" [paine-agrarian-justice-p31-w1650]\n- **Why this verdict:** The passage explicitly states the exact sum of fifteen pounds and the reason that it serves as compensation for the loss of natural inheritance due to the landed property system.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies that Paine said it, specifying fifteen pounds sterling as partial compensation for the loss of natural inheritance due to the landed property system. Every claim made in the answer, quote, and reasoning is directly supported by the retrieved text from Agrarian Justice.",
+  "correct": true,
+  "supported": true
+ },
+ "q16": {
+  "answer": "- **Verdict:** said something different\n- **Answer:** The text proposes a heavy progressive or graduated income tax instead of a flat one.\n- **Source:** Karl Marx and Friedrich Engels, Manifesto of the Communist Party (1848), II. PROLETARIANS AND COMMUNISTS, ¶124-129 [marx-engels-manifesto-p124-w2700]\n- **Quote:** \"A heavy progressive or graduated income tax.\" [marx-engels-manifesto-p124-w2700]\n- **Why this verdict:** The text explicitly calls for a progressive or graduated tax rather than a flat income tax.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correct identifies that the Communist Manifesto said something different, specifically calling for a heavy progressive or graduated income tax instead of a flat income tax. This verdict and main claim match the reference answer perfectly. All claims made in the answer are directly supported by retrieved passage [marx-engels-manifesto-p124-w2700].",
+  "correct": true,
+  "supported": true
+ },
+ "q17": {
+  "answer": "- **Verdict:** said something different\n- **Answer:** Marx and Engels explicitly stated that communism does not deprive people of the power to appropriate the products of their work.\n- **Source:** Karl Marx and Friedrich Engels, Manifesto of the Communist Party (1848), II. PROLETARIANS AND COMMUNISTS, ¶83-87 [marx-engels-manifesto-p83-w1050]\n- **Quote:** \"Communism deprives no man of the power to appropriate the products\" [marx-engels-manifesto-p83-w1050]\n- **Why this verdict:** The claim says communism would stop people from owning their work's products, whereas the authors explicitly deny this.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies the verdict as 'said something different' and explains that Marx and Engels explicitly state communism does not deprive anyone of the power to appropriate the products of society. All claims made in the answer are directly supported by the retrieved passages from the Communist Manifesto.",
+  "correct": true,
+  "supported": true
+ },
+ "q19": {
+  "answer": "- **Verdict:** said something different\n- **Answer:** Paine explicitly stated that his plan was founded on rights and justice rather than charity.\n- **Source:** Thomas Paine, Agrarian Justice (1797), MEANS BY WHICH THE FUND IS TO BE CREATED, ¶56-58 [paine-agrarian-justice-p56-w2100]\n- **Quote:** \"It is justice, and not charity, that is the principle of the plan.\" [paine-agrarian-justice-p56-w2100]\n- **Why this verdict:** While the plan aids the poor, Paine distinguishes his proposal by rejecting charity as its foundation.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies that Paine said something different, stating that his plan was based on justice and rights rather than charity. All claims made in the response are directly supported by the retrieved passages, specifically the quote from ¶56-58 of Agrarian Justice.",
+  "correct": true,
+  "supported": true
+ },
+ "q21": {
+  "answer": "- **Verdict:** said it\n- **Answer:** Smith views free trade as a way to maximize national commercial interest and buy and sell advantageously, while Marx and Engels describe it as a single unconscionable bourgeois freedom replacing chartered freedoms with naked exploitation.\n- **Source:** Adam Smith, The Wealth of Nations (1776), Book IV, Chapter II, ¶30 [smith-wealth-b4c2-p30-w4800]\n- **Quote:** \"It will be most likely to buy cheap, when, by the most perfect freedom of trade, it encourages all nations\" [smith-wealth-b4c2-p30-w4800]\n- **Source:** Karl Marx and Friedrich Engels, Manifesto of the Communist Party (1848), I. BOURGEOIS AND PROLETARIANS, ¶19-22 [marx-engels-manifesto-p19-w750]\n- **Quote:** \"has set up that single, unconscionable freedom—Free Trade.\" [marx-engels-manifesto-p19-w750]\n- **Why this verdict:** The passages directly describe each author's view of free trade, with Smith emphasizing commercial advantage and Marx and Engels framing it as a bourgeois instrument of exploitation.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer accurately describes how both Smith and Marx & Engels characterize free trade, matching the core claims of the reference answer. Furthermore, every claim made in the response is directly supported by text found within the retrieved passages from Wealth of Nations and the Communist Manifesto.",
+  "correct": true,
+  "supported": true
+ },
+ "q20": {
+  "answer": "- **Verdict:** said something different\n- **Answer:** Paine explicitly rejected dividing cultivated land equally, instead proposing a national fund derived from ground-rent to pay every citizen a cash inheritance at age twenty-one.\n- **Source:** Thomas Paine, Agrarian Justice (1797), AUTHOR'S ENGLISH PREFACE, ¶29 [paine-agrarian-justice-p29-w1350]\n- **Quote:** \"Nothing could be more unjust than Agrarian Law in a country improved by cultivation\" [paine-agrarian-justice-p29-w1350]\n- **Why this verdict:** While Paine believed the earth in its natural state belonged to everyone, he argued against dividing cultivated property and instead defended the rights of landowners.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The candidate answer correctly identifies the verdict ('said something different') and main claim regarding Paine's opposition to Agrarian Law and dividing cultivated land. However, it fails the support criterion because it claims the national fund was derived from 'ground-rent', a term and detail that does not appear anywhere in the retrieved passages.",
+  "correct": true,
+  "supported": false
+ },
+ "q23": {
+  "answer": "- **Verdict:** said it\n- **Answer:** Paine defends landed property while compensating the dispossessed, whereas the Manifesto calls for the complete abolition of bourgeois private property.\n- **Source:** Thomas Paine, Agrarian Justice (1797), AUTHOR'S ENGLISH PREFACE, ¶29 [paine-agrarian-justice-p29-w1350]\n- **Quote:** \"Whilst, therefore, I advocate the right... of all those who have been thrown out of their natural inheritance... I equally defend the right of the possessor\" [paine-agrarian-justice-p29-w1350]\n- **Source:** Karl Marx and Friedrich Engels, Manifesto of the Communist Party (1848), II. PROLETARIANS AND COMMUNISTS, ¶64-70 [marx-engels-manifesto-p64-w300]\n- **Quote:** \"In this sense, the theory of the Communists may be summed up in the single sentence: Abolition of private property.\" [marx-engels-manifesto-p64-w300]\n- **Why this verdict:** Paine defends the rights of property possessors while seeking to indemnify those left landless, whereas the Manifesto advocates for the total abolition of bourgeois private property.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly contrasts Paine's defense of landed property (with compensation for the dispossessed) with the Communist Manifesto's call for the abolition of bourgeois private property, matching the core points of the reference answer. All claims made about both texts are directly supported by quotes found in the retrieved passages.",
+  "correct": true,
+  "supported": true
+ },
+ "q24": {
+  "answer": "- **Verdict:** said something different\n- **Answer:** Bastiat argues machinery ultimately benefits mankind and preserves the fund of wages, whereas Marx and Engels argue machinery makes the worker's livelihood precarious and turns the worker into an appendage of the machine.\n- **Source:** Frédéric Bastiat, That Which Is Seen, and That Which Is Not Seen (1850), VIII.--Machinery, ¶160-163 [bastiat-seen-unseen-p160-w1350]\n- **Quote:** \"The reduction of the profit causes an increase of consumption, which necessitates an increase of production; and, finally, the introduction of as many workmen, or more, after the invention as were necessary before it.\" [bastiat-seen-unseen-p163-w1500]\n- **Source:** Karl Marx and Friedrich Engels, Manifesto of the Communist Party (1848), I. BOURGEOIS AND PROLETARIANS, ¶35-36 [marx-engels-manifesto-p35-w2250]\n- **Quote:** \"He becomes an appendage of the machine, and it is only the most simple, most monotonous, and most easily acquired knack, that is required of him.\" [marx-engels-manifesto-p35-w2250]\n- **Why this verdict:** Bastiat sees machinery as creating savings and expanding general production for mankind, while the Communist Manifesto views it as degrading the worker and increasing toil and insecurity.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer accurately contrasts Bastiat's view that machinery ultimately benefits mankind with Marx and Engels' view that it degrades the worker into an appendage of the machine and makes their livelihood precarious. Every claim made in the answer, quotes, and reasoning is directly supported by the retrieved passages from both authors.",
+  "correct": true,
+  "supported": true
+ },
+ "q22": {
+  "answer": "- **Verdict:** said it\n- **Answer:** Marx and Engels state that self-interest has dissolved traditional social bonds and left only cash payment between people.\n- **Source:** Karl Marx and Friedrich Engels, Manifesto of the Communist Party (1848), I. BOURGEOIS AND PROLETARIANS, ¶17-19 [marx-engels-manifesto-p17-w600]\n- **Quote:** \"left remaining no other nexus between man and man than naked self-interest, than callous “cash payment.”\" [marx-engels-manifesto-p17-w600]\n- **Why this verdict:** The passage directly asserts that bourgeois society has destroyed feudal ties, leaving only naked self-interest and cash payment as the connection between people.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer accurately answers the question asked about Marx and Engels' view on self-interest and human bonds, matching the reference verdict and core claim. All statements made by the answer are directly quoted and supported by the retrieved passage from the Communist Manifesto.",
+  "correct": true,
+  "supported": true
+ },
+ "q27": {
+  "answer": "- **Verdict:** said it\n- **Answer:** Mill examines the legitimate limits of social and governmental power over the individual, while Smith argues that statesmen should not direct how individuals employ their capital.\n- **Source:** John Stuart Mill, On Liberty (1859), CHAPTER I. INTRODUCTORY, ¶1-2 [mill-on-liberty-p1-w0]\n- **Quote:** \"The struggle between Liberty and Authority is the most conspicuous feature in\" [mill-on-liberty-p1-w0]\n- **Source:** Adam Smith, The Wealth of Nations (1776), Book IV, Chapter II, ¶9-10 [smith-wealth-b4c2-p9-w1500]\n- **Quote:** \"The statesman, who should attempt to direct private people in what manner they ought to employ their capitals, would not only load himself with a most unnecessary attention, but assume an authority which could safely be trusted, not only to no single person, but to no council or senate whatever\" [smith-wealth-b4c2-p9-w1500]\n- **Why this verdict:** Both authors explicitly address the danger of authorities overriding individual freedom and economic or personal choices.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies what Mill and Smith say regarding authorities overriding individual choices based on the retrieved texts, matching the reference answer verdict and main points. Furthermore, all statements made in the answer and the rationale are directly supported by text present in the retrieved passages.",
+  "correct": true,
+  "supported": true
+ },
+ "q28": {
+  "answer": "- **Verdict:** said it\n- **Answer:** The Communist Manifesto advocates for state-organized industrial armies and labor, whereas Bastiat argues that state-created public works merely displace private employment rather than increasing total labor.\n- **Source:** Karl Marx and Friedrich Engels, Manifesto of the Communist Party (1848), II. PROLETARIANS AND COMMUNISTS, ¶130-137 [marx-engels-manifesto-p130-w2850]\n- **Quote:** \"Equal liability of all to labour. Establishment of industrial armies, especially for agriculture.\" [marx-engels-manifesto-p130-w2850]\n- **Source:** Frédéric Bastiat, That Which Is Seen, and That Which Is Not Seen (1850), V.--Public Works, ¶70-73 [bastiat-seen-unseen-p70-w0]\n- **Quote:** \"The State opens a road, builds a palace... and so gives work to certain workmen--this is what is seen: but it deprives certain other workmen of work\" [bastiat-seen-unseen-p70-w0]\n- **Why this verdict:** Both texts directly address the state organizing or providing work, with Marx and Engels proposing it as a central policy and Bastiat critiquing it as an economic illusion.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies the positions of both texts regarding state-organized work, matching the reference answer. All statements made about the Communist Manifesto and Bastiat are fully supported by the retrieved passages.",
+  "correct": true,
+  "supported": true
+ },
+ "q25": {
+  "answer": "- **Verdict:** not in these texts\n- **Answer:** No passage in the corpus addresses this. The corpus covers only Mill, On Liberty ch. I-II; Marx and Engels, Communist Manifesto; Paine, Agrarian Justice; Bastiat, That Which Is Seen, and That Which Is Not Seen; Smith, Wealth of Nations Book I ch. II and Book IV ch. II.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The candidate answer incorrectly gives a verdict of 'not in these texts', whereas the reference answer provides the specific positions of both thinkers. Additionally, the claim that no passage addresses the question is unsupported and directly contradicted by the retrieved text for Marx & Engels, which explicitly states that 'The ruling ideas of each age have ever been the ideas of its ruling class.'",
+  "correct": false,
+  "supported": false
+ },
+ "q29": {
+  "answer": "- **Verdict:** not in these texts\n- **Answer:** No passage in the corpus addresses this. The corpus covers only Mill, On Liberty ch. I-II; Marx and Engels, Communist Manifesto; Paine, Agrarian Justice; Bastiat, That Which Is Seen, and That Which Is Not Seen; Smith, Wealth of Nations Book I ch. II and Book IV ch. II.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies that the information is not in the provided texts. Furthermore, all statements made in the answer, including the statement about what the corpus contains, are explicitly supported per the grading instructions.",
+  "correct": true,
+  "supported": true
+ },
+ "q31": {
+  "answer": "- **Verdict:** not in these texts\n- **Answer:** No passage in the corpus addresses this. The corpus covers only Mill, On Liberty ch. I-II; Marx and Engels, Communist Manifesto; Paine, Agrarian Justice; Bastiat, That Which Is Seen, and That Which Is Not Seen; Smith, Wealth of Nations Book I ch. II and Book IV ch. II.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies that the quote/concept is 'not in these texts', matching the reference answer. All claims made about the contents of the corpus and the absence of the passage are fully supported by the prompt rules and retrieved passages.",
+  "correct": true,
+  "supported": true
+ },
+ "q30": {
+  "answer": "- **Verdict:** not in these texts\n- **Answer:** No passage in the corpus addresses this. The corpus covers only Mill, On Liberty ch. I-II; Marx and Engels, Communist Manifesto; Paine, Agrarian Justice; Bastiat, That Which Is Seen, and That Which Is Not Seen; Smith, Wealth of Nations Book I ch. II and Book IV ch. II.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies that the concept of 'experiments of living' is not discussed in the provided texts, matching the reference answer verdict. Furthermore, all statements made in the answer are supported by the provided text and the rule regarding corpus contents.",
+  "correct": true,
+  "supported": true
+ },
+ "q32": {
+  "answer": "- **Verdict:** not in these texts\n- **Answer:** No passage in the corpus addresses this. The corpus covers only Mill, On Liberty ch. I-II; Marx and Engels, Communist Manifesto; Paine, Agrarian Justice; Bastiat, That Which Is Seen, and That Which Is Not Seen; Smith, Wealth of Nations Book I ch. II and Book IV ch. II.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies that the topic/quote is not present in the retrieved texts, matching the reference verdict and reasoning. All claims made in the answer, including the statement about the exact contents of the corpus, are explicitly supported according to the instructions.",
+  "correct": true,
+  "supported": true
+ },
+ "q33": {
+  "answer": "- **Verdict:** not in these texts\n- **Answer:** No passage in the corpus addresses this. The corpus covers only Mill, On Liberty ch. I-II; Marx and Engels, Communist Manifesto; Paine, Agrarian Justice; Bastiat, That Which Is Seen, and That Which Is Not Seen; Smith, Wealth of Nations Book I ch. II and Book IV ch. II.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies that Hayek's argument is not in the provided texts, matching the reference verdict. All claims about what the corpus contains are explicitly permitted and supported according to the grading instructions.",
+  "correct": true,
+  "supported": true
+ },
+ "q26": {
+  "answer": "- **Verdict:** said something different\n- **Answer:** Bastiat argues that drawing money from citizens through taxes can paralyze overall labor and inflict a loss upon the nation, whereas Paine discusses government revenue collection separately from the creation of a special fund from inherited property to compensate individuals for lost natural inheritance.\n- **Source:** Frédéric Bastiat, That Which Is Seen, and That Which Is Not Seen (1850), X.--Algeria, ¶200 [bastiat-seen-unseen-p200-w1350]\n- **Quote:** \"If the State, by drawing off these 60,000,000 francs from the citizens, accumulates them, and expends them on some given point...\" [bastiat-seen-unseen-p200-w1350]\n- **Source:** Thomas Paine, Agrarian Justice (1797), MEANS BY WHICH THE FUND IS TO BE CREATED, ¶38-39 [paine-agrarian-justice-p38-w300]\n- **Quote:** \"without interfering with the collection of taxes or emprunts necessary for the purposes of government...\" [paine-agrarian-justice-p38-w300]\n- **Why this verdict:** Bastiat focuses on the economic injury and unseen losses caused by state taxation and spending, while Paine distinguishes general government taxes from a specific subtraction on inherited property to fund citizens' natural rights.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer's verdict is incorrect ('said something different' does not match the reference answer, which directly answers the prompt). Additionally, the main claims miss Bastiat's key 'seen vs. unseen' framework and Paine's detail about the bequeather giving nothing and receiver paying nothing. However, all claims made in the answer are directly supported by the retrieved passages.",
+  "correct": false,
+  "supported": true
+ },
+ "q34": {
+  "answer": "- **Verdict:** not in these texts\n- **Answer:** No passage in the corpus addresses this. The corpus covers only Mill, On Liberty ch. I-II; Marx and Engels, Communist Manifesto; Paine, Agrarian Justice; Bastiat, That Which Is Seen, and That Which Is Not Seen; Smith, Wealth of Nations Book I ch. II and Book IV ch. II.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly gives the verdict 'not in these texts', matching the reference answer. All statements about what the corpus contains are explicitly permitted and considered supported according to Criterion 2.",
+  "correct": true,
+  "supported": true
+ },
+ "q35": {
+  "answer": "- **Verdict:** not in these texts\n- **Answer:** No passage in the corpus addresses this. The corpus covers only Mill, On Liberty ch. I-II; Marx and Engels, Communist Manifesto; Paine, Agrarian Justice; Bastiat, That Which Is Seen, and That Which Is Not Seen; Smith, Wealth of Nations Book I ch. II and Book IV ch. II.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies that the topic is not in these texts, matching the reference verdict. All claims made about what is missing and what the corpus contains are fully supported, as statements about the corpus contents are explicitly allowed by the instructions.",
+  "correct": true,
+  "supported": true
+ },
+ "q36": {
+  "answer": "- **Verdict:** not in these texts\n- **Answer:** No passage in the corpus addresses this. The corpus covers only Mill, On Liberty ch. I-II; Marx and Engels, Communist Manifesto; Paine, Agrarian Justice; Bastiat, That Which Is Seen, and That Which Is Not Seen; Smith, Wealth of Nations Book I ch. II and Book IV ch. II.",
+  "judge": "gemini-3.5-flash, thinking default",
+  "reasoning": "The answer correctly identifies that the verdict is 'not in these texts' as specified in the reference answer rule. Furthermore, its statement listing the contents of the corpus is explicitly defined as supported by the evaluation prompt.",
+  "correct": true,
+  "supported": true
+ }
+}
