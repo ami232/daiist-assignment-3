@@ -6,7 +6,8 @@ __pycache__/
 *.pyc
 
 # Documents downloaded by your index stage. Commit them only if their licence allows it.
-corpus/
+# We COMMIT corpus/: openFDA labels are public domain, and a fixed copy means a fresh clone
+# never re-downloads a newer label version (which would force re-embedding).
 
 # Your index belongs in index/, committed. Your evaluation results belong in eval/, committed.
 

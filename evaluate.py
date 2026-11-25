@@ -1,11 +1,314 @@
 """
-Assignment 3: evaluation (`main.py evaluate`). May be evaluate.ipynb instead.
+Assignment 3: evaluation (`uv run python main.py evaluate`).
 
-Hit rate at 1/3/5 per retrieval design; agent answers on every question;
-code checks; an LLM judge with a rubric and the retrieved text as evidence;
-agreement with eval/human_labels.csv. Save results in eval/.
+Steps:
+  1. RETRIEVAL: hit rate at k = 1, 3, 5 for each design (fixed, sections, sections_hybrid).
+  2. ANSWERS:   run the agent on every question in eval/questions.csv.
+  3. CODE CHECKS: refusal? citations valid? (no LLM needed for these)
+  4. LLM JUDGE: grades correctness and support, with a rubric and the retrieved text.
+  5. AGREEMENT: compare the judge with your own grades in eval/human_labels.csv.
+  6. SUMMARY:   counts, failure hints, cost (tokens, seconds) -> files in eval/.
 
-Start from session 10's 07-own-harness/evaluate.py.
+Everything expensive is SAVED AS WE GO (question vectors, answers, verdicts), so
+re-running only does the missing work. To redo a step, delete its file in eval/.
 """
 
-raise NotImplementedError("Write your evaluation stage.")
+import asyncio
+import json
+import time
+
+import pandas as pd
+from google.genai import types
+
+from agent import answer_question, check_citations, is_refusal
+from config import CHAT_MODEL, CHOSEN_DESIGN, DESIGNS, EVAL_DIR
+from index import embed_queries, get_client
+from retrieve import search
+
+QUESTIONS = EVAL_DIR / "questions.csv"
+VECTORS = EVAL_DIR / "query_vectors.json"      # cache: question -> embedding
+ANSWERS = EVAL_DIR / "answers.jsonl"           # cache: one agent answer per line
+VERDICTS = EVAL_DIR / "judge.jsonl"            # cache: one judge verdict per line
+HUMAN = EVAL_DIR / "human_labels.csv"
+
+
+# =============================================================================
+# Small helpers
+# =============================================================================
+
+def load_jsonl(path) -> dict:
+    """Read a .jsonl cache into {question id: record}."""
+    if not path.exists():
+        return {}
+    records = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    return {r["id"]: r for r in records}
+
+
+def append_jsonl(path, record: dict) -> None:
+    """Add one record to a .jsonl cache immediately (so a crash loses nothing)."""
+    with path.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(record) + "\n")
+
+
+def expected_passages(row) -> list[tuple[str, str]]:
+    """'ELIQUIS;XARELTO' + '2.4;2.5' -> [('ELIQUIS','2.4'), ('XARELTO','2.5')].
+    One source with several locations -> that source for each location."""
+    sources = [s.strip() for s in row["expected_source"].split(";") if s.strip()]
+    locations = [l.strip() for l in row["expected_location"].split(";") if l.strip()]
+    if len(sources) == 1:
+        sources = sources * len(locations)
+    return list(zip(sources, locations))
+
+
+def chunk_matches(chunk: dict, source: str, location: str) -> bool:
+    """Does this chunk hold the expected passage? "8" matches 8, 8.1, 8.6...; "8.6" matches only 8.6."""
+    if chunk["source"] != source:
+        return False
+    return any(loc == location or loc.startswith(location + ".") for loc in chunk["location"].split(";"))
+
+
+def is_hit(expected: list, chunks: list[dict]) -> bool:
+    """Hit rate as in class: at least one of the chunks covers a correct passage."""
+    return any(chunk_matches(c, s, l) for c in chunks for s, l in expected)
+
+
+def all_found(expected: list, chunks: list[dict]) -> bool:
+    """Stricter, for 'multi' questions: EVERY expected passage is among the chunks."""
+    return all(any(chunk_matches(c, s, l) for c in chunks) for s, l in expected)
+
+
+# =============================================================================
+# 1. RETRIEVAL
+# =============================================================================
+
+def question_vectors(questions: pd.DataFrame) -> dict:
+    """Embed every question once and keep the vectors in eval/query_vectors.json."""
+    cache = json.loads(VECTORS.read_text()) if VECTORS.exists() else {}
+    missing = [q for q in questions["question"] if q not in cache]
+    for i in range(0, len(missing), 10):
+        batch = missing[i:i + 10]
+        for q, v in zip(batch, embed_queries(batch)):
+            cache[q] = v
+        VECTORS.write_text(json.dumps(cache))           # save after every batch
+    return cache
+
+
+def evaluate_retrieval(questions: pd.DataFrame, vectors: dict) -> pd.DataFrame:
+    answerable = questions[questions["kind"] != "unanswerable"]
+    rows, per_question = [], []
+    for design in DESIGNS:
+        hits = {1: [], 3: [], 5: []}
+        multi_all = []          # multi questions: were BOTH passages in the top 5?
+        prompt_words = []
+        for _, q in answerable.iterrows():
+            top5 = search(q["question"], design=design, k=5, query_vector=vectors[q["question"]])
+            expected = expected_passages(q)
+            for k in hits:
+                hits[k].append(is_hit(expected, top5[:k]))
+            if q["kind"] == "multi":
+                multi_all.append(all_found(expected, top5))
+            prompt_words.append(sum(len(c["text"].split()) for c in top5))
+            per_question.append({"id": q["id"], "design": design, "hit@5": is_hit(expected, top5),
+                                 "retrieved": " | ".join(f"{c['source']} §{c['location']}" for c in top5)})
+        rows.append({"design": design,
+                     "hit@1": round(sum(hits[1]) / len(hits[1]), 3),
+                     "hit@3": round(sum(hits[3]) / len(hits[3]), 3),
+                     "hit@5": round(sum(hits[5]) / len(hits[5]), 3),
+                     "multi_both_found@5": round(sum(multi_all) / len(multi_all), 3) if multi_all else None,
+                     "words_in_prompt_top5": round(sum(prompt_words) / len(prompt_words))})
+    pd.DataFrame(per_question).to_csv(EVAL_DIR / "retrieval_per_question.csv", index=False)
+    table = pd.DataFrame(rows)
+    table.to_csv(EVAL_DIR / "retrieval_results.csv", index=False)
+    return table
+
+
+# =============================================================================
+# 2. ANSWERS (agent on every question)
+# =============================================================================
+
+def run_agent_on_all(questions: pd.DataFrame) -> dict:
+    answers = load_jsonl(ANSWERS)
+    for _, q in questions.iterrows():
+        if q["id"] in answers:                          # already answered in an earlier run
+            continue
+        print(f"  asking {q['id']}: {q['question'][:70]}")
+        try:
+            # approve=lambda ...: False -> the agent may never add documents during evaluation
+            result = asyncio.run(answer_question(q["question"], approve=lambda action: False))
+        except Exception as error:
+            print(f"  stopped at {q['id']}: {str(error)[:200]}\n  (probably the rate limit: run evaluate again later)")
+            break
+        result["id"] = q["id"]
+        append_jsonl(ANSWERS, result)
+        answers[q["id"]] = result
+        time.sleep(5)                                   # be gentle with the free tier
+    return answers
+
+
+# =============================================================================
+# 4. LLM JUDGE
+# =============================================================================
+
+# DRAFT RUBRIC - rewrite it in your own words: the judge rubric must be your decision.
+RUBRIC = """You grade an assistant that answers clinicians' questions from FDA drug labels.
+
+You get: the QUESTION, a REFERENCE answer written by a human, the EVIDENCE (label passages
+the assistant retrieved) and the ANSWER.
+
+correct = 1 if the ANSWER gives the same key facts as the REFERENCE: same drug, same
+numbers with the same units and conditions (doses, CrCl thresholds, hours). Extra true
+detail is fine. A missing key condition, a wrong number, or the wrong drug = 0.
+If the REFERENCE says the corpus does not cover the question, correct = 1 only if the
+ANSWER says it does not cover it.
+
+supported = 1 if EVERY factual claim in the ANSWER can be found in the EVIDENCE
+(paraphrase is fine). Any claim not in the EVIDENCE = 0. A pure refusal = 1.
+
+Reply with JSON only: {"correct": 0 or 1, "supported": 0 or 1, "reason": "one sentence"}"""
+
+
+def judge(client, question: str, reference: str, evidence: str, answer: str) -> dict:
+    prompt = (f"QUESTION: {question}\n\nREFERENCE: {reference}\n\n"
+              f"EVIDENCE:\n{evidence or '(nothing retrieved)'}\n\nANSWER: {answer}")
+    response = client.models.generate_content(
+        model=CHAT_MODEL,
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            system_instruction=RUBRIC,
+            temperature=0,
+            response_mime_type="application/json",               # forces a JSON reply
+            thinking_config=types.ThinkingConfig(thinking_level="low"),
+        ),
+    )
+    return json.loads(response.text)
+
+
+def grade_all(questions: pd.DataFrame, answers: dict) -> dict:
+    """Code checks for what code can check, the judge for the rest."""
+    client = get_client()          # the same client (with retries) as index.py
+    verdicts = load_jsonl(VERDICTS)
+    for _, q in questions.iterrows():
+        if q["id"] not in answers or q["id"] in verdicts:
+            continue
+        a = answers[q["id"]]
+        refused = is_refusal(a["answer"])
+        citations_ok, _ = check_citations(a["raw_answer"], a["retrieved_text"])
+        record = {"id": q["id"], "refused": refused, "citations_valid": citations_ok}
+
+        # 3. CODE CHECKS decide the clear cases without calling the judge:
+        if refused:
+            # A refusal is correct only for unanswerable questions; it claims nothing.
+            record.update(correct=int(q["kind"] == "unanswerable"), supported=1, graded_by="code",
+                          reason="refused")
+        else:
+            try:
+                verdict = judge(client, q["question"], q["reference_answer"], a["retrieved_text"], a["answer"])
+            except Exception as error:
+                print(f"  judge stopped at {q['id']}: {str(error)[:200]}")
+                break
+            record.update(correct=int(verdict["correct"]), supported=int(verdict["supported"]),
+                          graded_by="judge", reason=verdict.get("reason", ""))
+            if q["kind"] == "unanswerable":   # answering an unanswerable question is wrong, by code
+                record["correct"] = 0
+            if not citations_ok:              # an invented citation is never "supported", by code
+                record["supported"] = 0
+        append_jsonl(VERDICTS, record)
+        verdicts[q["id"]] = record
+        time.sleep(3)
+    return verdicts
+
+
+# =============================================================================
+# 5 + 6. AGREEMENT AND SUMMARY
+# =============================================================================
+
+def failure_hint(q, v, hit) -> str:
+    """A first guess at the failure cause. YOU confirm or change it in the report."""
+    if v["correct"] == 1 and v["supported"] == 1:
+        return ""
+    if q["kind"] == "unanswerable":
+        return "unsupported claim (answered an unanswerable question)"
+    if v["refused"]:
+        return "wrong refusal" if hit else "retrieval miss"
+    if v["supported"] == 0:
+        return "unsupported claim"
+    return "wrong answer from the right passage" if hit else "retrieval miss"
+
+
+def main() -> None:
+    questions = pd.read_csv(QUESTIONS, dtype=str).fillna("")
+
+    print("\n1. Retrieval")
+    vectors = question_vectors(questions)
+    retrieval = evaluate_retrieval(questions, vectors)
+    print(retrieval.to_string(index=False))
+    print(f"   (the server uses CHOSEN_DESIGN = '{CHOSEN_DESIGN}' from config.py)")
+
+    print("\n2. Agent answers")
+    answers = run_agent_on_all(questions)
+
+    print("\n3-4. Code checks and LLM judge")
+    verdicts = grade_all(questions, answers)
+
+    # One table with everything per question -> eval/results.csv
+    hits = pd.read_csv(EVAL_DIR / "retrieval_per_question.csv")
+    hits = hits[hits["design"] == CHOSEN_DESIGN].set_index("id")["hit@5"].to_dict()
+    rows = []
+    for _, q in questions.iterrows():
+        if q["id"] not in verdicts:
+            continue
+        a, v = answers[q["id"]], verdicts[q["id"]]
+        hit = bool(hits.get(q["id"], False))
+        rows.append({"id": q["id"], "kind": q["kind"], "question": q["question"],
+                     "reference_answer": q["reference_answer"], "answer": a["answer"],
+                     "refused": v["refused"], "citations_valid": v["citations_valid"],
+                     "guardrail_fired": a["guardrail_fired"], "retrieval_hit@5": hit,
+                     "judge_correct": v["correct"], "judge_supported": v["supported"],
+                     "graded_by": v["graded_by"], "judge_reason": v["reason"],
+                     "failure_hint": failure_hint(q, v, hit), "failure_cause": "",
+                     "tokens": a["tokens"]["total"], "seconds": a["seconds"]})
+    results = pd.DataFrame(rows)
+    if results.empty:
+        print("No graded answers yet.")
+        return
+    results.to_csv(EVAL_DIR / "results.csv", index=False)
+    # The same answers WITHOUT the judge's verdicts: grade these yourself, before looking at results.csv.
+    results[["id", "kind", "question", "reference_answer", "answer"]].to_csv(
+        EVAL_DIR / "answers_for_grading.csv", index=False)
+
+    answerable = results[results["kind"] != "unanswerable"]
+    unanswerable = results[results["kind"] == "unanswerable"]
+    summary = {
+        "questions_graded": len(results),
+        "answerable_correct": int(answerable["judge_correct"].sum()),
+        "answerable_total": len(answerable),
+        "unsupported_answers": int((results["judge_supported"] == 0).sum()),
+        "correct_refusals": int(unanswerable["refused"].sum()),
+        "unanswerable_total": len(unanswerable),
+        "wrong_refusals": int(answerable["refused"].sum()),
+        "guardrail_fired": int(results["guardrail_fired"].sum()),
+        "avg_tokens_per_question": round(results["tokens"].mean()),
+        "avg_seconds_per_question": round(results["seconds"].mean(), 1),
+    }
+
+    # 5. Agreement with your own grades.
+    if HUMAN.exists():
+        human = pd.read_csv(HUMAN, dtype={"id": str})
+        both = human.merge(results, on="id")
+        if len(both):
+            summary["human_graded"] = len(both)
+            summary["agreement_correct"] = round((both["correct"] == both["judge_correct"]).mean(), 3)
+            summary["agreement_supported"] = round((both["supported"] == both["judge_supported"]).mean(), 3)
+            both[both["correct"] != both["judge_correct"]][["id", "correct", "judge_correct", "notes", "judge_reason"]] \
+                .to_csv(EVAL_DIR / "disagreements.csv", index=False)
+
+    (EVAL_DIR / "summary.json").write_text(json.dumps(summary, indent=2))
+    print("\n5-6. Summary (also in eval/summary.json)")
+    for key, value in summary.items():
+        print(f"   {key:28} {value}")
+    print("\nFailures with a first-guess cause:")
+    print(results[results["failure_hint"] != ""][["id", "kind", "failure_hint"]].to_string(index=False))
+
+
+if __name__ == "__main__":
+    main()
