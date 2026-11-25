@@ -146,4 +146,4 @@ Yes, but only for limited use. I'd let emergency managers rely on it to explain 
 
 ## AI use
 
-I used Claude (Claude Code) to write the code (index, search, MCP server, agent and evaluation), run the indexing and the evaluation, draft the test questions from the topics I chose and draft the report text from my decisions (the use case, vector search, what to fix first and the decision to allow limited use). I graded the 20 answers in `eval/human_labels.csv` myself before seeing the judge's verdicts. The agent and the judge use Gemini 3.5 Flash-Lite and Gemini 3.5 Flash.
+I used Claude (Claude Code) to write the code (index, search, MCP server, agent and evaluation), run the indexing and the evaluation, draft the test questions in good English from the topics I chose and draft the report text from my decisions (the use case, vector search, what to fix first and the decision to allow limited use). I graded the 20 answers in `eval/human_labels.csv` myself before seeing the judge's verdicts. The agent and the judge use Gemini 3.5 Flash-Lite and Gemini 3.5 Flash.
