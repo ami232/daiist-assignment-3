@@ -1,0 +1,38 @@
+id,kind,correct,supported,auditor,notes
+q01,single,1,1,"AI (Claude), not human",
+q03,single,1,1,"AI (Claude), not human",
+q04,single,1,1,"AI (Claude), not human",
+q05,single,1,1,"AI (Claude), not human",
+q06,single,1,1,"AI (Claude), not human",
+q07,single,1,1,"AI (Claude), not human",
+q09,single,1,1,"AI (Claude), not human","All 4 Art 10 items, plus correct Art 7 extras."
+q10,single,1,1,"AI (Claude), not human",
+q11,single,1,1,"AI (Claude), not human",
+q12,single,1,1,"AI (Claude), not human",
+q13,single,1,1,"AI (Claude), not human",
+q14,single,1,1,"AI (Claude), not human","Also adds the 10%/25% exceptions for reduced, which are in the passage."
+q15,single,1,1,"AI (Claude), not human",Also gives the second vitamin C exercise claim; it is in the passage.
+q16,single,1,1,"AI (Claude), not human",
+q17,single,1,1,"AI (Claude), not human",
+q18,single,1,1,"AI (Claude), not human",
+q19,single,1,1,"AI (Claude), not human","Cited label is shortened (""Annex (Monascus purpureus (red yeast rice))"") but content matches the passage."
+q20,single,1,1,"AI (Claude), not human",
+q21,single,1,1,"AI (Claude), not human",
+q22,single,1,1,"AI (Claude), not human",
+q23,single,1,1,"AI (Claude), not human",
+q24,single,1,1,"AI (Claude), not human",
+q25,single,0,1,"AI (Claude), not human","Wrong refusal: ""nine months"" was in the retrieved Art 11 passage; the citation check rejected ""Article 11(1)"" style labels."
+q26,single,1,1,"AI (Claude), not human",
+q27,single,1,1,"AI (Claude), not human",
+m01,multi,1,1,"AI (Claude), not human",
+m02,multi,1,0,"AI (Claude), not human","Right conclusion. But says 15% NRV ""per portion"" is a significant amount: the passage says per 100 g/100 ml, per portion only for single-portion packs. (The reference has the same simplification.)"
+m03,multi,1,1,"AI (Claude), not human",Gives wording and the varied-diet statement; does not mention quantity/pattern of consumption.
+m04,multi,1,1,"AI (Claude), not human",
+m05,multi,1,1,"AI (Claude), not human",Covers both checks; adds the medicinal-product point from recitals.
+m06,multi,1,1,"AI (Claude), not human",
+u01,unanswerable,1,1,"AI (Claude), not human",
+u02,unanswerable,1,1,"AI (Claude), not human","Correct refusal; adds ""not adopted yet"", a small inference from ""shall be set""."
+u03,unanswerable,1,1,"AI (Claude), not human",
+u04,unanswerable,1,1,"AI (Claude), not human",
+u05,unanswerable,1,1,"AI (Claude), not human",
+u06,unanswerable,1,1,"AI (Claude), not human",

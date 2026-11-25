@@ -1,0 +1,20 @@
+{
+  "question": "What is the maximum amount of monacolins from red yeast rice allowed per daily portion of a food supplement?",
+  "document": "Commission Regulation (EU) 2022/860 (monacolins from red yeast rice)",
+  "before": "The corpus does not cover this. The search results do not state a maximum amount of monacolins from red yeast rice, and a regulatory consultant or national authority would need to be consulted for specific limits.",
+  "before_citations": [],
+  "add_step": "The corpus does not cover this. The question about adding a document is an operational task handled via the `add_document` tool rather than a query about EU food-supplement law answerable from the legal corpus, and a regulatory consultant or national authority could provide further guidance on broader administrative procedures.",
+  "add_trace": [
+    {
+      "tool": "add_document",
+      "args": {
+        "path": "/Users/marcelatorrelledo/Desktop/IE/QUINTO/daiist-assignment-3/corpus/extra/32022R0860.html"
+      },
+      "output": "{\"status\": \"added\", \"source\": \"Reg 2022/860\", \"chunks\": 15, \"embedded\": 15, \"removed_old\": 0}"
+    }
+  ],
+  "after": "The individual portion of a food supplement for daily consumption must provide **less than 3 mg** of monacolins from red yeast rice [Reg 2022/860, Article 1].",
+  "after_citations": [
+    "Reg 2022/860, Article 1"
+  ]
+}
