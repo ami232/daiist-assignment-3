@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-25 10:35:42",
+  "generated": "2026-11-25 10:47:21",
   "config": {
     "design": "structure",
     "mode": "vector",
@@ -165,8 +165,8 @@
     "failures": 5
   },
   "agreement": {
-    "human_labels": 19,
-    "compared": 19,
+    "human_labels": 20,
+    "compared": 20,
     "disagreements": [
       {
         "id": "q15",
@@ -294,8 +294,8 @@
       "kappa": 1.0
     },
     "supported": {
-      "agreement": 0.2105,
-      "kappa": 0.0273
+      "agreement": 0.25,
+      "kappa": 0.0385
     }
   },
   "failures_by_suggested_cause": {

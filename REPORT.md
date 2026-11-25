@@ -185,19 +185,19 @@ Agent model `gemini-3.5-flash-lite`, judge model `gemini-3.8-flash`, both pinned
 | Expected passage retrieved by the agent | 28 of 29 |
 | Citation guardrail fired | 6 |
 
-**My agreement with the judge.** I graded 19 answers in `eval/human_labels.csv` before seeing the judge's verdicts. The brief asks for at least 20.
+**My agreement with the judge.** I graded 20 answers in `eval/human_labels.csv` without looking at the judge's verdicts.
 
 | Grade | Agreement | Cohen's kappa |
 |---|---|---|
-| correct | 19 of 19 (100%) | 1.0 |
-| supported | 4 of 19 (21%) | 0.03 |
+| correct | 20 of 20 (100%) | 1.0 |
+| supported | 5 of 20 (25%) | 0.04 |
 
 All 15 disagreements go the same way: I gave supported = 0 and the judge gave 1.
 
-- **14 of the 15 come from the grading tool, not from the answers.** `grade.py` showed me only the first 70 words of each retrieved passage. The judge saw the full passages. My notes say so, for example for q04: "The Article 33 excerpt cuts off before the four-year limit". So on these 14 answers my grade measures the excerpt, not the evidence. `grade.py` now shows the cited passages in full.
+- **14 of the 15 come from the grading tool, not from the answers.** For my first 19 grades `grade.py` showed me only the first 70 words of each retrieved passage. The judge saw the full passages. My notes say so, for example for q04: "The Article 33 excerpt cuts off before the four-year limit". So on these 14 answers my grade measures the excerpt, not the evidence. `grade.py` now shows the cited passages in full; I graded the 20th answer (q33) that way and agreed with the judge. I kept my original 19 labels as they were.
 - **1 is a real disagreement (q30).** The answer refuses and adds that Directive 2014/23/EU governs concessions. I counted that as a claim that is not in the passages. The judge counted it as a pointer to where to look, which the rubric allows.
 
-So the agreement on "supported" does not tell me yet whether the judge can be trusted on that grade. On "correct" we agree on all 19, including the one wrong answer (q11).
+So the agreement on "supported" does not tell me yet whether the judge can be trusted on that grade. On "correct" we agree on all 20, including the one wrong answer (q11).
 
 ## Failures
 

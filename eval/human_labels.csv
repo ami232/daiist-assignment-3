@@ -18,3 +18,4 @@ q05,1,0,The visible Article 55 excerpt cuts off before the 15-day deadline for r
 q13,1,0,"The €750,000 threshold matches the reference. Article 74 points to Article 4(d), but the displayed Article 4 excerpt cuts off before that provision."
 q32,1,1,"The agent correctly declines to give a threshold. Article 7 points to Directive 2014/25/EU, and the retrieved passages give no utilities threshold."
 q28,1,0,"The answer matches the reference, but the visible excerpts cut off before the twice-contract-value cap and the three-financial-year limit for turnover evidence."
+q33,1,0,"The agent correctly says the corpus does not cover the German procedure, but the retrieved passages do not substantiate the references to specific German procurement rules or the 1 January 2026 application date."
