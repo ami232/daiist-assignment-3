@@ -1,0 +1,31 @@
+id,kind,outcome,cause,refused,citations_valid,cites_expected,guardrail_fired,judge_correct,judge_supported,tokens,seconds
+q01,single,correct,,0,1,1,0,1,1,3702,5.5
+q02,single,correct,,0,1,1,0,1,1,4170,85.7
+q03,single,correct,,0,1,1,0,1,1,3517,6.3
+q04,single,correct,,0,1,1,0,1,1,3740,4.8
+q05,single,correct,,0,1,1,0,1,1,3716,5.5
+q06,single,correct,,0,1,1,0,1,1,3818,8.0
+q07,single,correct,,0,1,1,0,1,1,3873,17.5
+q08,single,correct,,0,1,1,0,1,1,3515,5.4
+q09,single,correct,,0,1,1,0,1,1,3733,25.3
+q10,single,correct,,0,1,1,0,1,1,3686,9.0
+q11,single,correct,,0,1,1,0,1,1,3670,16.2
+q12,single,correct,,0,1,1,0,1,1,3375,26.7
+q13,single,correct,,0,1,1,0,1,1,4021,4.4
+q14,single,correct,,0,1,1,0,1,1,3970,6.4
+q15,single,correct,,0,1,1,0,1,1,3649,4.9
+q16,single,correct,,0,1,1,0,1,1,3858,23.9
+q17,single,correct,,0,1,1,0,1,1,3560,28.3
+q18,single,wrong refusal,wrong refusal,1,1,0,1,0,0,3865,45.1
+q19,single,correct,,0,1,1,0,1,1,3701,67.6
+q20,single,wrong refusal,retrieval miss,1,1,0,1,0,0,3977,14.6
+q21,multi,correct,,0,1,1,0,1,1,3691,16.8
+q22,multi,correct,,0,1,1,0,1,1,4214,9.3
+q23,multi,wrong refusal,wrong refusal,1,1,0,1,0,0,4301,26.3
+q24,multi,correct,,0,1,1,0,1,1,3808,33.0
+q25,multi,correct,,0,1,1,0,1,1,3751,10.2
+q26,unanswerable,correct refusal,,1,1,0,1,1,1,3533,10.4
+q27,unanswerable,correct refusal,,1,1,0,0,1,1,4153,16.9
+q28,unanswerable,correct refusal,,1,1,0,0,1,1,3476,15.3
+q29,unanswerable,correct refusal,,1,1,0,0,1,1,4100,9.6
+q30,unanswerable,correct refusal,,1,1,0,1,1,1,3777,15.9
