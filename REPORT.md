@@ -1,8 +1,8 @@
 # Assignment 3 Report
 
-- **Name**:
-- **Student ID**:
-- **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
+- **Name**: Niccolò Pragliola
+- **Student ID**: 19873
+- **Group**: BBADBA 5A
 
 ## Use case
 
@@ -52,7 +52,7 @@ Six official US National Weather Service documents, 70,154 words after cleaning.
 
 Measured on the 27 answerable questions (a multi question counts as a hit only when both expected passages are in the top k). Words added to the prompt at k=1/3/5: vector 170 / 528 / 854, hybrid 219 / 610 / 1,048.
 
-✍️ *The design you chose and why, by the numbers.*
+**Chosen: A, vector search** (set in `index/config.json`). ✍️ *Why, by the numbers.*
 
 ## Tools and subagent
 
