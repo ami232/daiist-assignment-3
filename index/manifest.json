@@ -1,0 +1,26 @@
+{
+  "corpus": "https://www.thefinals.wiki",
+  "license": "CC BY-SA 4.0, THE FINALS Community Wiki contributors",
+  "snapshot": "2026-11-25",
+  "pages": 109,
+  "words": 82127,
+  "words_per_group": {
+    "hub": 1346,
+    "specialization": 7782,
+    "gadget": 27065,
+    "weapon": 34027,
+    "game_mode": 6305,
+    "arena": 5602
+  },
+  "chunks": {
+    "section": 456
+  },
+  "stored": {
+    "section": 456
+  },
+  "holdout": [
+    "Point_Break"
+  ],
+  "embed_model": "gemini-embedding-2",
+  "complete": true
+}
