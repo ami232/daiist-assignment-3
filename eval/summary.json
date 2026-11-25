@@ -54,7 +54,7 @@
     "mean_seconds": 8.7,
     "mean_tool_calls": 1.22
   },
-  "evaluation_seconds": 83,
+  "evaluation_seconds": 1,
   "answered": 32,
   "incomplete": []
 }
