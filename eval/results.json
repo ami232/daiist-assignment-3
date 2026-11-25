@@ -1,7 +1,7 @@
 {
   "retrieval": {
     "250": {
-      "chunks": 553,
+      "chunks": 554,
       "questions": 25,
       "hit_rate": {
         "1": 0.64,
@@ -30,6 +30,26 @@
         "q22"
       ]
     }
+  },
+  "summary": {
+    "questions": 31,
+    "code_ok": 29,
+    "judge_passed": 29,
+    "correct": 23,
+    "answerable": 25,
+    "unsupported": 1,
+    "correct_refusals": 5,
+    "unanswerable": 6,
+    "wrong_refusals": 0,
+    "avg_seconds": 3.9,
+    "avg_tokens": 7324
+  },
+  "agreement": {
+    "compared": 31,
+    "disagreements": [],
+    "agreement_correct": 1.0,
+    "agreement_supported": 0.968,
+    "agreement_passed": 1.0
   },
   "results": [
     {
@@ -585,7 +605,12 @@
       "n_citations": 2,
       "searched": true,
       "code_ok": true,
-      "retrieved_expected": true
+      "retrieved_expected": true,
+      "reasoning": "The assistant's response directly answers both parts of the question using facts and figures found in the retrieved text. PVH uses approximately 1,000 factories across approximately 30 countries, while Ralph Lauren's largest sourcing countries are Vietnam (approx. 21%), Cambodia (approx. 16%), and India (approx. 11%).",
+      "grounded": true,
+      "correct": true,
+      "passed": true,
+      "suggested_cause": null
     },
     {
       "id": "q21",
@@ -611,7 +636,12 @@
       "n_citations": 4,
       "searched": true,
       "code_ok": true,
-      "retrieved_expected": true
+      "retrieved_expected": true,
+      "reasoning": "The assistant correctly identifies the growth rates for all three companies in their latest fiscal years (Ralph Lauren +14.6%, Tapestry +14.2%, PVH +3%) and accurately concludes that Ralph Lauren grew revenue the most. Every fact, date, and figure reported in the response is directly supported by the retrieved passages in the tool trace.",
+      "grounded": true,
+      "correct": true,
+      "passed": true,
+      "suggested_cause": null
     },
     {
       "id": "q22",
@@ -635,7 +665,12 @@
       "n_citations": 9,
       "searched": true,
       "code_ok": true,
-      "retrieved_expected": false
+      "retrieved_expected": false,
+      "reasoning": "The assistant's answer is fully grounded in the provided context trace, accurately reflecting the risk factor descriptions of tariffs for both Ralph Lauren and PVH. However, it fails correctness because it omits key facts and numbers specified in the reference answer (such as Ralph Lauren noting that about 96% of its products are produced outside the U.S.).",
+      "grounded": true,
+      "correct": false,
+      "passed": false,
+      "suggested_cause": "retrieval miss"
     },
     {
       "id": "q23",
@@ -659,7 +694,12 @@
       "n_citations": 2,
       "searched": true,
       "code_ok": true,
-      "retrieved_expected": true
+      "retrieved_expected": true,
+      "reasoning": "The assistant correctly states that PVH has more employees than Tapestry and provides the exact numbers and dates for both companies (PVH with ~26,000 associates as of February 1, 2026 and Tapestry with ~20,600 employees as of June 27, 2026). All facts and figures are directly supported by the retrieved passages.",
+      "grounded": true,
+      "correct": true,
+      "passed": true,
+      "suggested_cause": null
     },
     {
       "id": "q24",
@@ -683,7 +723,12 @@
       "n_citations": 9,
       "searched": true,
       "code_ok": true,
-      "retrieved_expected": true
+      "retrieved_expected": true,
+      "reasoning": "The assistant's response accurately describes the translational and transactional foreign exchange risks for both PVH and Ralph Lauren, including the impact of a strengthening U.S. dollar and the limitations of hedging strategies. All facts and statements in the response are directly supported by the retrieved text passages.",
+      "grounded": true,
+      "correct": true,
+      "passed": true,
+      "suggested_cause": null
     },
     {
       "id": "q25",
@@ -707,7 +752,12 @@
       "n_citations": 4,
       "searched": true,
       "code_ok": true,
-      "retrieved_expected": true
+      "retrieved_expected": true,
+      "reasoning": "The assistant correctly states that Ralph Lauren had higher employee numbers than Tapestry, citing approximately 23,600 employees for Ralph Lauren (as of March 28, 2026) and approximately 20,600 for Tapestry (as of June 27, 2026). All dates and figures match the retrieved passages in the trace exactly.",
+      "grounded": true,
+      "correct": true,
+      "passed": true,
+      "suggested_cause": null
     },
     {
       "id": "q26",
@@ -731,7 +781,12 @@
       "n_citations": 0,
       "searched": true,
       "code_ok": true,
-      "retrieved_expected": null
+      "retrieved_expected": null,
+      "reasoning": "The question is unanswerable based on the retrieved text, as the balance sheet containing total assets is in Item 8, which is not present in the indexed sections. The assistant correctly states that the corpus does not cover this information.",
+      "grounded": true,
+      "correct": true,
+      "passed": true,
+      "suggested_cause": null
     },
     {
       "id": "q27",
@@ -753,7 +808,12 @@
       "n_citations": 0,
       "searched": true,
       "code_ok": true,
-      "retrieved_expected": null
+      "retrieved_expected": null,
+      "reasoning": "The question asks for a future revenue forecast (fiscal 2030) that is not present in the provided 10-K filings. The assistant correctly identifies that the corpus does not cover this information.",
+      "grounded": true,
+      "correct": true,
+      "passed": true,
+      "suggested_cause": null
     },
     {
       "id": "q28",
@@ -775,7 +835,12 @@
       "n_citations": 0,
       "searched": true,
       "code_ok": true,
-      "retrieved_expected": null
+      "retrieved_expected": null,
+      "reasoning": "The assistant correctly identified that the question is unanswerable because Nike is not covered by the corpus of filings (which only contains Ralph Lauren, PVH, and Tapestry). The response is fully grounded and correct.",
+      "grounded": true,
+      "correct": true,
+      "passed": true,
+      "suggested_cause": null
     },
     {
       "id": "q29",
@@ -801,7 +866,12 @@
       "n_citations": 0,
       "searched": true,
       "code_ok": false,
-      "retrieved_expected": null
+      "retrieved_expected": null,
+      "reasoning": "The assistant correctly identifies that the corpus does not cover whether Ralph Lauren is undervalued compared to PVH and Tapestry. This matches the reference answer for an unanswerable question and is grounded.",
+      "grounded": true,
+      "correct": true,
+      "passed": true,
+      "suggested_cause": "unsupported claim (answered an unanswerable question)"
     },
     {
       "id": "q30",
@@ -825,7 +895,12 @@
       "n_citations": 1,
       "searched": true,
       "code_ok": true,
-      "retrieved_expected": null
+      "retrieved_expected": null,
+      "reasoning": "The assistant correctly states that the corpus does not cover the number of employees Tapestry has in Brazil. It supports this by noting that Tapestry only discloses its total global employee count of approximately 20,600 (which is directly present in chunk 24 of Item 1). All facts provided match the retrieved trace.",
+      "grounded": true,
+      "correct": true,
+      "passed": true,
+      "suggested_cause": null
     },
     {
       "id": "q31",
@@ -849,7 +924,12 @@
       "n_citations": 1,
       "searched": true,
       "code_ok": true,
-      "retrieved_expected": null
+      "retrieved_expected": null,
+      "reasoning": "The question asks for an unanswerable piece of information (PVH's closing share price on the last day of its fiscal year). The assistant correctly states that the corpus does not cover this figure, identifies the last day of the fiscal year as February 1, 2026 (supported by chunk 0), and does not guess or provide false numbers.",
+      "grounded": true,
+      "correct": true,
+      "passed": true,
+      "suggested_cause": null
     }
   ]
 }
