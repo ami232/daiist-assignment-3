@@ -1,0 +1,5 @@
+design,method,questions,hit@1,hit@3,hit@5,all@1,all@3,all@5,words_in_prompt@5
+structural,dense,27,0.741,0.963,1.0,0.519,0.926,0.963,1365
+structural,hybrid,27,0.407,0.704,0.926,0.37,0.556,0.778,1511
+fixed,dense,27,0.519,0.852,0.852,0.444,0.667,0.741,1500
+fixed,hybrid,27,0.407,0.63,0.704,0.37,0.556,0.556,1500
