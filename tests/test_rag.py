@@ -303,3 +303,18 @@ def test_evidence_keeps_every_part_of_a_split_article():
              for n in range(1, 5)]
     text = evaluate.evidence({"retrieved": ["\n\n---\n\n".join(parts)]})
     assert all(f"texto {n}" in text for n in range(1, 5))
+
+
+def test_failure_reasons():
+    import evaluate
+
+    ok = {"kind": "single", "outcome": "answered", "citations_valid": 1, "any_expected_cited": 1, "expected_cited": 1.0}
+    assert evaluate.failure_reasons(ok, {"correct": "1", "supported": "1"}, {"correct": "1", "supported": "1"}) == []
+    assert evaluate.failure_reasons({**ok, "outcome": "wrong_refusal"}, None, None) == ["rechazo de una pregunta con respuesta"]
+    # values read back from checks.csv are strings; values straight from code_checks() are numbers
+    assert evaluate.failure_reasons({**ok, "citations_valid": "0"}, None, None) == ["cita no recuperada"]
+    assert evaluate.failure_reasons({**ok, "kind": "multi", "expected_cited": "0.5"}, None, None) == ["cita 50% de lo esperado"]
+    assert evaluate.failure_reasons(ok, {"correct": "1", "supported": "1"}, {"correct": "0", "supported": "1"}) == ["tú: incorrecta"]
+    refusal = {"kind": "unanswerable", "outcome": "correct_refusal", "citations_valid": 1,
+               "any_expected_cited": "", "expected_cited": ""}
+    assert evaluate.failure_reasons(refusal, None, None) == []

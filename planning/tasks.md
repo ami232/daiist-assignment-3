@@ -87,7 +87,7 @@
   - _Depends on: Phase 5_
 
 - [ ] **7. Failure analysis and decision (yours)**
-  - [ ] 7.1 **Claude**: export the failed questions with retrieved chunks, answer, checks and verdicts into a review table.
+  - [x] 7.1 **Claude**: export the failed questions with retrieved chunks, answer, checks and verdicts into a review table. Done 2026-11-25: stage 4 of `evaluate.py` (`write_failure_review`, new test) → `eval/failures.csv` (empty `cause`/`fix` columns for 7.2) and `eval/failures.md` (reasons, expected vs retrieved by the agent, searches, answer, both grades with notes, fragments). 7 questions: q07 and q25 (graded 0 by you and the judge), q11 and q15 (only you), q31 (no refusal phrase), q01 and q04 (multi citing 50 % / 75 % of what was expected).
   - [ ] 7.2 **You**: classify each failure (retrieval miss / wrong answer from the right passage / unsupported claim / wrong refusal / bad test question), count by cause, and say what to fix first. _REQ-12.1–12.2_
   - [ ] 7.3 **You**: the ship decision: whether users may rely on it, for what, and with which safeguard, using the cost per question in tokens and seconds. _REQ-12.3_
 

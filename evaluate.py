@@ -19,6 +19,11 @@ the reference answer and the full text of every retrieved fragment ->
 eval/judge.csv (resumable). Then agreement with eval/human_labels.csv (% and
 Cohen's kappa per column) and the totals -> eval/summary.json.
 
+Stage 4, failure review: every question that failed a code check, or that you or
+the judge graded 0, plus multi questions citing only part of what was expected
+-> eval/failures.csv (with an empty `cause` column to fill in) and
+eval/failures.md (answer, grades, notes and the retrieved fragments).
+
 Started from session 10's 07-own-harness/evaluate.py.
 """
 
@@ -44,6 +49,10 @@ RUBRIC = EVAL_DIR / "judge_rubric.md"
 JUDGE_CSV = EVAL_DIR / "judge.csv"
 HUMAN_LABELS = EVAL_DIR / "human_labels.csv"
 SUMMARY_JSON = EVAL_DIR / "summary.json"
+FAILURES_CSV = EVAL_DIR / "failures.csv"
+FAILURES_MD = EVAL_DIR / "failures.md"
+CAUSES = ("fallo de recuperación", "respuesta errónea con el pasaje correcto", "afirmación sin respaldo",
+          "rechazo indebido", "pregunta de prueba mal planteada", "no es un fallo")
 JUDGE_MODEL = "gemini-3.5-flash"   # a stronger model than the agent's, so it doesn't share its blind spots
 KS = (1, 3, 5)
 PAUSE = 4            # seconds between questions: stays under the free tier's requests-per-minute
@@ -324,6 +333,96 @@ def agreement(human: dict[str, dict], judge: dict[str, dict]) -> dict:
     return result
 
 
+# --------------------------------------------------------------------------- #
+# Failure review                                                               #
+# --------------------------------------------------------------------------- #
+
+def failure_reasons(check: dict, judge: dict | None, human: dict | None) -> list[str]:
+    """Why one answer goes into the failure review (empty list: it doesn't)."""
+    reasons = []
+    if check["outcome"] == "wrong_refusal":
+        reasons.append("rechazo de una pregunta con respuesta")
+    if check["outcome"] == "answered_unanswerable":
+        reasons.append("pregunta sin respuesta contestada sin la frase de rechazo")
+    if str(check["citations_valid"]) == "0":
+        reasons.append("cita no recuperada")
+    if check.get("stopped"):
+        reasons.append(f"detenido ({check['stopped']})")
+    if check.get("guardrail"):
+        reasons.append(f"guardrail ({check['guardrail']})")
+    if check["outcome"] == "answered" and str(check.get("any_expected_cited")) == "0":
+        reasons.append("no cita ninguna fuente esperada")
+    elif (check["outcome"] == "answered" and check["kind"] == "multi"
+          and check.get("expected_cited") not in ("", None) and float(check["expected_cited"]) < 1):
+        reasons.append(f"cita {float(check['expected_cited']):.0%} de lo esperado")
+    for who, grades in (("tú", human), ("juez", judge)):
+        for column, label in (("correct", "incorrecta"), ("supported", "sin respaldo")):
+            if grades and grades.get(column) == "0":
+                reasons.append(f"{who}: {label}")
+    return reasons
+
+
+def write_failure_review(questions: list[dict], answers: dict[str, dict], checks: list[dict],
+                         verdicts: dict[str, dict], human: dict[str, dict]) -> list[dict]:
+    """eval/failures.csv (one row per failure, `cause` left for you) and eval/failures.md (the evidence)."""
+    by_id = {c["id"]: c for c in checks}
+    rows, details = [], []
+    for q in questions:
+        if q["id"] not in by_id:
+            continue
+        a, c = answers[q["id"]], by_id[q["id"]]
+        reasons = failure_reasons(c, verdicts.get(q["id"]), human.get(q["id"]))
+        if not reasons:
+            continue
+        expected = [f"[{s}, {loc}]" for s, loc in expected_pairs(q)] if q["kind"] != "unanswerable" else []
+        retrieved = set(a["retrieved_citations"])
+        h, j = human.get(q["id"], {}), verdicts.get(q["id"], {})
+        rows.append({
+            "id": q["id"], "kind": q["kind"], "reasons": "; ".join(reasons),
+            "human_correct": h.get("correct", ""), "human_supported": h.get("supported", ""),
+            "judge_correct": j.get("correct", ""), "judge_supported": j.get("supported", ""),
+            "outcome": c["outcome"],
+            "expected": "; ".join(expected),
+            "expected_retrieved": "; ".join(e for e in expected if e in retrieved),
+            "expected_not_retrieved": "; ".join(e for e in expected if e not in retrieved),
+            "cited": "; ".join(a["citations"]),
+            "searches": c["searches"], "cause": "", "fix": "",
+        })
+        r = rows[-1]
+        details += [
+            f'<a id="{q["id"]}"></a>', "", f"## {q['id']} ({q['kind']}): {q['question']}", "",
+            f"**Motivos:** {r['reasons']}", "",
+            f"**Esperado:** {r['expected'] or '(sin respuesta en el corpus)'}  ",
+            f"**Recuperado por el agente ({c['searches']} búsquedas):** {', '.join(a['retrieved_citations']) or '(nada)'}  ",
+            f"**Esperado y no recuperado:** {r['expected_not_retrieved'] or '(nada)'}  ",
+            f"**Citado:** {r['cited'] or '(nada)'}", "",
+            f"**Búsquedas:** " + "; ".join(f"`{s['args'].get('query', '')}`" for s in a["trace"]
+                                          if s.get("call") == "search"), "",
+            f"**Referencia:** {q['reference_answer']}", "",
+            "**Respuesta:**", "", *[f"> {line}" for line in a["answer"].splitlines()], "",
+            "| | correcta | respaldada | notas |", "|---|---|---|---|",
+            f"| Tú | {h.get('correct', '')} | {h.get('supported', '')} | {h.get('notes', '').replace('|', '/')} |",
+            f"| Juez | {j.get('correct', '')} | {j.get('supported', '')} | {j.get('notes', '').replace('|', '/')} |", "",
+            "<details><summary>Fragmentos recuperados</summary>", "", "```text", evidence(a), "```", "",
+            "</details>", "", "---", ""]
+    if not rows:
+        return rows
+    write_csv(FAILURES_CSV, rows)
+    table = ["| id | tipo | motivos | esperado no recuperado | causa |", "|---|---|---|---|---|",
+             *[f"| [{r['id']}](#{r['id']}) | {r['kind']} | {r['reasons']} | {r['expected_not_retrieved'] or '—'} | |"
+               for r in rows]]
+    head = ["# Revisión de fallos", "",
+            f"Generado por `evaluate.py` a partir de `checks.csv`, `judge.csv` y `human_labels.csv`: {len(rows)} "
+            "preguntas. Entra toda pregunta que falla una comprobación por código o que tú o el juez calificasteis "
+            "con 0, y las `multi` que citan solo parte de lo esperado.", "",
+            "Rellena `cause` (y `fix` si procede) en `eval/failures.csv` con una de: "
+            + ", ".join(f"*{c}*" for c in CAUSES) + ".", "",
+            "\"Recuperado por el agente\" son las citas que devolvieron sus propias búsquedas en esa ejecución, "
+            "no las de `retrieval.csv` (que busca con el texto literal de la pregunta).", ""]
+    FAILURES_MD.write_text("\n".join(head + table + ["", "---", ""] + details), encoding="utf-8")
+    return rows
+
+
 def read_csv(path: Path) -> dict[str, dict]:
     if not path.is_file():
         return {}
@@ -443,6 +542,11 @@ def main() -> None:
         print(f"  {key:<24} {value}")
     print(f"  {'mean_tokens':<24} {checks['mean_tokens']}")
     print(f"  {'median_seconds':<24} {checks['median_seconds']}")
+
+    failures = write_failure_review(questions, answers, rows, verdicts, human)
+    print(f"\n=== Failure review ({FAILURES_MD.relative_to(ROOT)}, {FAILURES_CSV.relative_to(ROOT)}) ===\n")
+    for r in failures:
+        print(f"  {r['id']} {r['kind']:<12} {r['reasons']}")
     if missing:
         raise SystemExit(f"\n{missing} questions still unanswered (quota or network). Run `main.py evaluate` again.")
 
