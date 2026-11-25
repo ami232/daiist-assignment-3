@@ -92,10 +92,11 @@ def is_refusal(answer: str) -> bool:
 
 
 def citations(answer: str) -> list[str]:
-    """Every citation in square brackets; one bracket may hold several, separated by ';'."""
+    """Every citation in square brackets; one bracket may hold several, separated by ';' or ','."""
     found = []
     for bracket in re.findall(r"\[([^\[\]]+)\]", answer):
-        found += [part.strip() for part in bracket.split(";") if CITATION.match(part.strip())]
+        parts = re.split(r";\s*|(?<=p\. \d),\s*|(?<=p\. \d\d),\s*|(?<=p\. \d\d\d),\s*|(?<=\d-\d),\s*|(?<=\d-\d\d),\s*", bracket)
+        found += [part.strip() for part in parts if CITATION.match(part.strip())]
     return found
 
 
