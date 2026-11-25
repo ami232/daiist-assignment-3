@@ -41,7 +41,8 @@ ANSWERS = EVAL / "answers.jsonl"
 VERDICTS = EVAL / "verdicts.jsonl"
 KS = [1, 3, 5]
 MODES = ["vector", "hybrid"]
-JUDGE_MODEL = "gemini-3.5-flash"  # a stronger model than the agent grades the answers
+JUDGE_MODELS = ["gemini-3.5-flash", "gemini-3.8-flash", "gemini-3.7-flash"]  # stronger than the agent; next one when a daily free quota runs out
+JUDGE_PAUSE = 13  # seconds between judge calls: the free tier allows 5 requests a minute
 
 RUBRIC = """You grade answers from an assistant for school-district and county emergency
 managers. The assistant must answer only from official NWS winter weather documents.
@@ -149,12 +150,31 @@ def code_checks(q: dict, a: dict) -> dict:
     }
 
 
-def judge(q: dict, a: dict, model) -> dict:
+def judge(q: dict, a: dict, models: list[str]) -> dict:
+    """Grade one answer. Waits on per-minute limits, moves to the next model when one
+    is out of daily quota or overloaded, and records which model gave the verdict."""
     prompt = (f"{RUBRIC}\n\nQUESTION: {q['question']}\n\nREFERENCE ANSWER: {q['reference_answer']}\n\n"
               f"ASSISTANT ANSWER: {a['answer']}\n\nRETRIEVED PASSAGES:\n{a['retrieved_text'][:30000]}")
-    reply = model.invoke(prompt).text
-    verdict = json.loads(re.search(r"\{.*\}", reply, flags=re.S).group(0))
-    return {"correct": int(verdict["correct"]), "supported": int(verdict["supported"]), "reason": verdict.get("reason", "")}
+    while models:
+        model = models[0]
+        for attempt in range(4):
+            try:
+                time.sleep(JUDGE_PAUSE)
+                reply = ChatGoogleGenerativeAI(model=model, temperature=0, max_retries=0).invoke(prompt).text
+                verdict = json.loads(re.search(r"\{.*\}", reply, flags=re.S).group(0))
+                return {"correct": int(verdict["correct"]), "supported": int(verdict["supported"]),
+                        "reason": verdict.get("reason", ""), "judge_model": model}
+            except Exception as error:  # noqa: BLE001
+                text = str(error)
+                if out_of_quota(error) or "NOT_FOUND" in text:
+                    break                      # this model is done for today: try the next one
+                if "RESOURCE_EXHAUSTED" in text or "UNAVAILABLE" in text or "503" in text:
+                    time.sleep(30 * (attempt + 1))
+                    continue
+                raise
+        print(f"  judge model {model} unavailable, moving on", file=sys.stderr, flush=True)
+        models.pop(0)
+    raise RuntimeError("RESOURCE_EXHAUSTED: every judge model is out of daily quota (PerDay)")
 
 
 def outcome(q: dict, checks: dict, verdict: dict | None) -> str:
@@ -196,7 +216,7 @@ def evaluate_answers(questions: list[dict]) -> tuple[list[dict], list[str]]:
             append_jsonl(ANSWERS, a)
             answers[q["id"]] = a
 
-    model = ChatGoogleGenerativeAI(model=JUDGE_MODEL, temperature=0, max_retries=2)
+    judge_models = list(JUDGE_MODELS)
     judge_open = True
     rows = []
     for q in questions:
@@ -209,7 +229,7 @@ def evaluate_answers(questions: list[dict]) -> tuple[list[dict], list[str]]:
             v = verdicts.get(q["id"])
             if (v is None or v.get("answer") != a["answer"] or v.get("rubric") != RUBRIC) and judge_open:
                 try:
-                    v = {"id": q["id"], "answer": a["answer"], "rubric": RUBRIC, **judge(q, a, model)}
+                    v = {"id": q["id"], "answer": a["answer"], "rubric": RUBRIC, **judge(q, a, judge_models)}
                     append_jsonl(VERDICTS, v)
                     verdicts[q["id"]] = v
                 except Exception as error:  # noqa: BLE001
