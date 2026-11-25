@@ -16,6 +16,6 @@ q14,1,0,"Adds special issuance eligibility under §§ 67.115 and 67.401, which i
 q15,1,1,
 q16,1,0,"Includes powered parachute and weight-shift aircraft exceptions not established in the retrieved passage"
 q17,1,1,
-q18,0,1,"Does not begin with the required exact refusal phrase: The corpus does not cover this"
+q18,0,1,"Refuses an answerable question; the § 91.155 table was dropped at ingestion, so the passage lacks the Class E row"
 q20,1,1,
 q21,1,1,
