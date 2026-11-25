@@ -1,0 +1,38 @@
+{
+  "id": "q29",
+  "question": "Our deal is a joint venture with no activities in the EEA. Does it qualify for the simplified procedure and a short-form CO filing?",
+  "document": "Commission Notice on a simplified treatment for certain concentrations",
+  "add_result": {
+    "status": "added",
+    "source": "SIMPLIFIED_NOTICE",
+    "chunks": 20
+  },
+  "before": "The corpus does not cover this question (it does not contain the rules on the simplified procedure or the short-form CO filing). \n\nThe search results only cover the jurisdictional concepts of joint ventures, joint control, and full-functionality under the Jurisdictional Notice.",
+  "after": "Yes, a joint venture with no activities in the EEA qualifies for the simplified procedure [SIMPLIFIED_NOTICE, para 5(a)]. \n\n* **Qualification for the simplified procedure:** The Commission will in principle apply the simplified procedure to joint ventures where two or more undertakings acquire joint control, provided that the joint venture has no current or expected turnover within the territory of the EEA, and the undertakings concerned have not planned to transfer any assets within the EEA to the joint venture at the time of notification [SIMPLIFIED_NOTICE, para 5(a)].\n* **Short-form filing / decision:** Eligible concentrations of this type are notified by completing the relevant sections of the Short Form CO [SIMPLIFIED_NOTICE, para 26]. If satisfied that the criteria are fulfilled, the Commission will usually issue a short-form decision declaring the concentration compatible with the internal market within 25 working days from notification [SIMPLIFIED_NOTICE, para 30]. Furthermore, concentrations falling under this category (point 5(a)) may be reviewed under a streamlined \"super-simplified\" procedure, allowing the parties to notify directly without pre-notification contacts [SIMPLIFIED_NOTICE, para 26].\n* **Procedural requirement:** Before formally submitting a notification under the simplified procedure, the notifying parties must submit a case team allocation request indicating the type of concentration, the relevant point of the Notice, and the expected date of notification [SIMPLIFIED_NOTICE, para 29].",
+  "after_citations": [
+    [
+      "SIMPLIFIED_NOTICE",
+      "para 5(a)"
+    ],
+    [
+      "SIMPLIFIED_NOTICE",
+      "para 5(a)"
+    ],
+    [
+      "SIMPLIFIED_NOTICE",
+      "para 26"
+    ],
+    [
+      "SIMPLIFIED_NOTICE",
+      "para 30"
+    ],
+    [
+      "SIMPLIFIED_NOTICE",
+      "para 26"
+    ],
+    [
+      "SIMPLIFIED_NOTICE",
+      "para 29"
+    ]
+  ]
+}

@@ -1,0 +1,4 @@
+design,questions,hit@1,hit@3,hit@5,any@1,any@3,any@5,words_in_prompt@5,chunks
+fixed,28,0.464,0.679,0.821,0.571,0.821,0.857,1247,286
+structure,28,0.393,0.786,0.857,0.571,0.893,0.964,1162,286
+structure_hybrid,28,0.321,0.643,0.714,0.429,0.714,0.821,1206,286
