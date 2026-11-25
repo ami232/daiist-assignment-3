@@ -1,0 +1,28 @@
+{
+  "counts": {
+    "answerable": 22,
+    "correct_and_supported": 18,
+    "wrong_refusals": 3,
+    "unsupported_claims": 0,
+    "wrong_answers": 1,
+    "unanswerable": 8,
+    "correct_refusals": 8,
+    "made_up_answers": 0
+  },
+  "cost": {
+    "avg_input_tokens": 5406,
+    "avg_output_tokens": 105,
+    "median_seconds": 7.2,
+    "mean_seconds": 19.7,
+    "max_seconds": 76.4,
+    "models": {
+      "gemini-3.5-flash-lite": 30
+    }
+  },
+  "agreement_with_human": {
+    "answers_compared": 30,
+    "correct_agree": 29,
+    "supported_agree": 28,
+    "both_agree": 27
+  }
+}

@@ -1,1 +1,31 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,1,1,
+q04,0,1,Omits the required total 6-hour cooling period to 41°F.
+q05,1,1,
+q06,1,1,
+q07,1,1,
+q08,1,0,Adds medical advice to contact a doctor which the passages do not state.
+q09,0,1,Honey/infant botulism is covered in the passage so refusal is incorrect.
+q10,1,0,The shown passages do not state the 160°F ground-meat temperature.
+q11,0,1,The reference answer is available; refusing omits both requested facts.
+q12,1,1,
+q13,0,1,Does not affirm that Listeria can still grow at refrigeration temperature.
+q14,1,1,
+q15,1,1,
+q16,1,1,
+q17,1,1,
+q18,1,1,
+q19,1,1,
+q20,1,1,
+q21,1,1,
+q22,1,1,
+q23,1,1,
+q24,1,1,
+q25,1,1,
+q26,1,1,
+q27,1,1,
+q28,0,1,Bacillus cereus spores and toxin formation are described in the shown passages; refusal is incorrect.
+q29,1,1,
+q30,1,1,
