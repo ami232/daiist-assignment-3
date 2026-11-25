@@ -15,7 +15,7 @@
     {
       "design": "article/hybrid",
       "questions": 30,
-      "words_in_prompt@5": 1520,
+      "words_in_prompt@5": 1514,
       "hit@1": 0.9,
       "hit@3": 0.967,
       "hit@5": 0.967,
@@ -92,16 +92,19 @@
     ]
   },
   "judge_vs_human": {
-    "n": 36,
+    "n": 20,
     "correct": {
       "agreement": 1.0,
       "kappa": 1.0,
       "disagreements": []
     },
     "supported": {
-      "agreement": 1.0,
-      "kappa": 1.0,
-      "disagreements": []
+      "agreement": 0.9,
+      "kappa": 0.615,
+      "disagreements": [
+        "q05",
+        "m01"
+      ]
     }
   }
 }

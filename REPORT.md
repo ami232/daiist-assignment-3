@@ -182,9 +182,15 @@ The judge model was `gemini-3.5-flash`, falling back to flash-lite models during
 
 By kind, correct: single 1.00, multi 0.67, unanswerable 0.83.
 
-**Agreement with the grades in `eval/human_labels.csv`:** all 36 answers graded. Agreement with the judge is 100 % on `correct` and 100 % on `supported` (Cohen's κ = 1.0 on both).
+**Agreement with my grades:** I graded 20 answers by hand (q01–q10, m01–m06, u01–u04) in `eval/human_labels.csv`, without seeing the judge's verdicts, checking each claim against the article text.
 
-**Caveat on these grades.** At the student's request, and with the permission the instructor gave in class, the grades in `eval/human_labels.csv` were assigned by Claude (Claude Code), not by a person. Each claim was checked against the retrieved article text. The number therefore measures agreement between two AI graders, not between a human and the judge. It is also not fully blind: the judge's verdicts on the four failing answers had already been seen. The grades still add information the judge missed: the real cause of m05 (a retrieval miss, see Failures) and a broken citation format in m04 that the citation check let through. ✏️ *For a real human-vs-judge figure, regrade a sample of about 20 yourself from `eval/grading_sheet.md`.*
+| | Agreement | Cohen's κ |
+|---|---|---|
+| correct | 100 % (20/20) | 1.00 |
+| supported | 90 % (18/20) | 0.62 |
+
+Both disagreements (q05, m01) go the same way: I marked them unsupported and the judge did not. In both answers the agent widens an exception beyond the text. In q05 it limits the copy of the notice to the workers' representatives to "economic causes", while art. 52.c covers economic, technical, organisational and production causes. In m01 it says the severance need not be paid at once "for economic causes", while the text allows it only when the economic situation *prevents* paying it. The judge catches invented facts (q01, u02) but misses subtle distortions of a rule's scope, so its `supported` count is an upper bound.
+
 
 ## Failures ✏️
 
@@ -196,13 +202,14 @@ By kind, correct: single 1.00, multi 0.67, unanswerable 0.83.
 | q01 | unsupported claim | The core answer is right (30 days, not exchangeable for money), but it adds "salvo en los supuestos de extinción del contrato". That exception is true in practice but does not appear in art. 38: it comes from the model's own knowledge, in an uncited sentence. The guardrail let it through because it only requires at least one citation per answer, not one per claim. |
 
 | m04 | (correct, but formatting) | The content is right, but the citations copy the whole `CITE AS: [...] \| en vigor desde ... \| url` header inside the brackets. The citation check accepted them because its regex finds the inner `[law, article]`. |
+| q05, m01 | unsupported claim (found by my grading, not by the judge) | The agent widens an exception beyond the text (see Evaluation). These are subtle scope errors, but for an HR user they change who the rule applies to. |
 
-By cause: retrieval miss 1, wrong answer from the right passage 1, unsupported claim 2, wrong refusal 0, bad test question 0.
+By cause: retrieval miss 1, wrong answer from the right passage 1, unsupported claim 4 (2 found by the judge, 2 more by my grading), wrong refusal 0, bad test question 0.
 
 **What to fix first:**
 
 1. **Multi-part questions are the weak spot** (correct on 4 of 6). Make the agent search once per part of the question (m05 missed the second law because it searched only once), and require it to say which part is not covered instead of skipping it.
-2. **Support check per sentence:** the citation guardrail proves that citations are real, not that every sentence has one or that it supports the sentence (q01, u02). A cheap LLM check of "does passage X support sentence Y" would catch it.
+2. **Support check per sentence:** the citation guardrail proves that citations are real, not that every sentence has one or that it says what the passage says (q01, u02, and the scope errors in q05 and m01). A cheap LLM check of "does passage X support sentence Y, with the same scope" would catch them.
 3. **Relax the citation matcher** to accept an apartado that falls inside a retrieved range. That would remove most of the 9 retries, which add latency without catching errors.
 
 ## Decision ✏️
@@ -223,4 +230,4 @@ By cause: retrieval miss 1, wrong answer from the right passage 1, unsupported c
 
 ## AI use
 
-I used Claude Code (Anthropic) to write the code (`index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py`, `demo_add_document.py`), to draft AGENTS.md, the subagent, the test questions and this report from the evaluation output, and to propose candidate use cases. With the permission the instructor gave in class, Claude also assigned the grades in `eval/human_labels.csv` (see Evaluation). I chose the use case and corpus, reviewed the questions against the BOE text, and wrote the decisions and analysis. ✏️ *Adjust this to what you actually did.*
+I used Claude Code (Anthropic) to write the code (`index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py`, `demo_add_document.py`), to draft AGENTS.md, the subagent, the test questions and this report from the evaluation output, and to propose candidate use cases. I chose the use case and corpus, reviewed the questions against the BOE text, graded 20 answers by hand, and wrote the decisions and analysis. ✏️ *Adjust this to what you actually did.*
