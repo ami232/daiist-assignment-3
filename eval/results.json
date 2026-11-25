@@ -1,0 +1,1087 @@
+{
+  "answered": 46,
+  "code_checks": {
+    "no_search": 0,
+    "answerable_without_citation": 0,
+    "answers_with_invalid_citation": 1,
+    "answerable_citing_expected_source": 39,
+    "correct_refusals": 7,
+    "missed_refusals": 0,
+    "wrong_refusals": 0
+  },
+  "judge": {
+    "graded": 46,
+    "correct": 45,
+    "unsupported": 1,
+    "correct_refusals": 7,
+    "wrong_refusals": 0,
+    "by_kind": {
+      "single": {
+        "n": 31,
+        "correct": 31,
+        "unsupported": 1
+      },
+      "multi": {
+        "n": 8,
+        "correct": 7,
+        "unsupported": 0
+      },
+      "unanswerable": {
+        "n": 7,
+        "correct": 7,
+        "unsupported": 0
+      }
+    },
+    "by_model": {
+      "gemini-3.8-flash": {
+        "n": 22,
+        "correct": 22,
+        "unsupported": 0
+      },
+      "gemini-3.5-flash": {
+        "n": 10,
+        "correct": 10,
+        "unsupported": 1
+      },
+      "gemini-3.5-flash-lite": {
+        "n": 14,
+        "correct": 13,
+        "unsupported": 0
+      }
+    },
+    "failures": [
+      {
+        "id": "q29",
+        "kind": "single",
+        "model": "gemini-3.5-flash",
+        "correct": "1",
+        "supported": "0",
+        "notes": "Says the 1,250 mg daily cap applies to gout, but in the passage that cap belongs to section 2.4 (pain/dysmenorrhea), not 2.5 Acute Gout",
+        "first_hit_rank_vector": 1
+      },
+      {
+        "id": "q34",
+        "kind": "multi",
+        "model": "gemini-3.5-flash-lite",
+        "correct": "0",
+        "supported": "1",
+        "notes": "Does not report what the Advil label says (stomach bleeding warning with anticoagulants, ask a doctor); answers the Advil half from the Jantoven label instead",
+        "first_hit_rank_vector": 1
+      }
+    ]
+  },
+  "agreement_with_human": {
+    "graded_by_both": 30,
+    "correct": {
+      "n": 30,
+      "agreement": 1.0,
+      "cohen_kappa": null,
+      "disagreements": []
+    },
+    "supported": {
+      "n": 30,
+      "agreement": 0.967,
+      "cohen_kappa": 0.0,
+      "disagreements": [
+        "q29"
+      ]
+    }
+  },
+  "cost": {
+    "gemini-3.8-flash": {
+      "n": 22,
+      "mean_tokens": 2961,
+      "mean_seconds": 151.0,
+      "median_seconds": 21.9
+    },
+    "gemini-3.5-flash": {
+      "n": 10,
+      "mean_tokens": 4061,
+      "mean_seconds": 58.2,
+      "median_seconds": 46.9
+    },
+    "gemini-3.5-flash-lite": {
+      "n": 14,
+      "mean_tokens": 3352,
+      "mean_seconds": 4.1,
+      "median_seconds": 2.8
+    },
+    "all": {
+      "n": 46,
+      "mean_tokens": 3319,
+      "mean_seconds": 86.1,
+      "median_seconds": 16.6
+    }
+  },
+  "retrieval": {
+    "questions": 39,
+    "designs": {
+      "vector": {
+        "hit_rate": {
+          "1": 0.769,
+          "3": 0.974,
+          "5": 0.974
+        },
+        "all_found_rate": {
+          "1": 0.59,
+          "3": 0.846,
+          "5": 0.872
+        },
+        "hit_rate_by_kind": {
+          "single": {
+            "1": 0.742,
+            "3": 0.968,
+            "5": 0.968
+          },
+          "multi": {
+            "1": 0.875,
+            "3": 1.0,
+            "5": 1.0
+          }
+        },
+        "mean_words_top5": 581
+      },
+      "hybrid": {
+        "hit_rate": {
+          "1": 0.641,
+          "3": 0.846,
+          "5": 0.897
+        },
+        "all_found_rate": {
+          "1": 0.513,
+          "3": 0.744,
+          "5": 0.795
+        },
+        "hit_rate_by_kind": {
+          "single": {
+            "1": 0.645,
+            "3": 0.903,
+            "5": 0.935
+          },
+          "multi": {
+            "1": 0.625,
+            "3": 0.625,
+            "5": 0.75
+          }
+        },
+        "mean_words_top5": 581
+      },
+      "filter": {
+        "hit_rate": {
+          "1": 0.769,
+          "3": 0.974,
+          "5": 0.974
+        },
+        "all_found_rate": {
+          "1": 0.59,
+          "3": 0.846,
+          "5": 0.872
+        },
+        "hit_rate_by_kind": {
+          "single": {
+            "1": 0.742,
+            "3": 0.968,
+            "5": 0.968
+          },
+          "multi": {
+            "1": 0.875,
+            "3": 1.0,
+            "5": 1.0
+          }
+        },
+        "mean_words_top5": 575
+      }
+    },
+    "first_hit_rank": {
+      "q01": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q02": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q03": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q04": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q05": {
+        "vector": 2,
+        "hybrid": 2,
+        "filter": 2
+      },
+      "q06": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q07": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q08": {
+        "vector": 1,
+        "hybrid": null,
+        "filter": 1
+      },
+      "q09": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q10": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q11": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q12": {
+        "vector": 1,
+        "hybrid": null,
+        "filter": 1
+      },
+      "q13": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q14": {
+        "vector": 2,
+        "hybrid": 2,
+        "filter": 2
+      },
+      "q15": {
+        "vector": 1,
+        "hybrid": 3,
+        "filter": 1
+      },
+      "q16": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q17": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q18": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q19": {
+        "vector": 2,
+        "hybrid": 2,
+        "filter": 2
+      },
+      "q20": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q21": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q22": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q23": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q24": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q25": {
+        "vector": 2,
+        "hybrid": 2,
+        "filter": 2
+      },
+      "q26": {
+        "vector": 3,
+        "hybrid": 2,
+        "filter": 3
+      },
+      "q27": {
+        "vector": 2,
+        "hybrid": 2,
+        "filter": 2
+      },
+      "q28": {
+        "vector": 2,
+        "hybrid": 3,
+        "filter": 2
+      },
+      "q29": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q30": {
+        "vector": null,
+        "hybrid": 4,
+        "filter": null
+      },
+      "q31": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q32": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q33": {
+        "vector": 1,
+        "hybrid": null,
+        "filter": 1
+      },
+      "q34": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q35": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q36": {
+        "vector": 1,
+        "hybrid": 4,
+        "filter": 1
+      },
+      "q37": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q38": {
+        "vector": 1,
+        "hybrid": 1,
+        "filter": 1
+      },
+      "q39": {
+        "vector": 2,
+        "hybrid": null,
+        "filter": 2
+      }
+    }
+  },
+  "per_question": [
+    {
+      "id": "q01",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 1,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2034,
+      "seconds": 13.94
+    },
+    {
+      "id": "q02",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 2,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 5252,
+      "seconds": 30.6
+    },
+    {
+      "id": "q03",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 6,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2284,
+      "seconds": 8.11
+    },
+    {
+      "id": "q04",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 4,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2147,
+      "seconds": 17.32
+    },
+    {
+      "id": "q05",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 4,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2092,
+      "seconds": 50.74
+    },
+    {
+      "id": "q06",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 2,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2647,
+      "seconds": 24.68
+    },
+    {
+      "id": "q07",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 2,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2528,
+      "seconds": 18.65
+    },
+    {
+      "id": "q08",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 2,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2702,
+      "seconds": 15.8
+    },
+    {
+      "id": "q09",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 2,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 3037,
+      "seconds": 13.16
+    },
+    {
+      "id": "q10",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 3,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2972,
+      "seconds": 8.17
+    },
+    {
+      "id": "q11",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 2,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2935,
+      "seconds": 26.62
+    },
+    {
+      "id": "q12",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 9,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2840,
+      "seconds": 10.01
+    },
+    {
+      "id": "q13",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 4,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 3083,
+      "seconds": 13.06
+    },
+    {
+      "id": "q14",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 6,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2699,
+      "seconds": 39.16
+    },
+    {
+      "id": "q15",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 3,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2654,
+      "seconds": 19.04
+    },
+    {
+      "id": "q16",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 4,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2930,
+      "seconds": 15.34
+    },
+    {
+      "id": "q17",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 3,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2816,
+      "seconds": 505.3
+    },
+    {
+      "id": "q18",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 1,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2654,
+      "seconds": 464.82
+    },
+    {
+      "id": "q19",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 3,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2648,
+      "seconds": 890.89
+    },
+    {
+      "id": "q20",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 13,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 6430,
+      "seconds": 637.06
+    },
+    {
+      "id": "q21",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 3,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2527,
+      "seconds": 283.44
+    },
+    {
+      "id": "q22",
+      "kind": "single",
+      "model": "gemini-3.8-flash",
+      "searched": true,
+      "citations": 4,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 3227,
+      "seconds": 217.18
+    },
+    {
+      "id": "q23",
+      "kind": "single",
+      "model": "gemini-3.5-flash",
+      "searched": true,
+      "citations": 1,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2974,
+      "seconds": 10.47
+    },
+    {
+      "id": "q24",
+      "kind": "single",
+      "model": "gemini-3.5-flash",
+      "searched": true,
+      "citations": 4,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 3206,
+      "seconds": 39.54
+    },
+    {
+      "id": "q25",
+      "kind": "single",
+      "model": "gemini-3.5-flash",
+      "searched": true,
+      "citations": 8,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 3607,
+      "seconds": 20.64
+    },
+    {
+      "id": "q26",
+      "kind": "single",
+      "model": "gemini-3.5-flash",
+      "searched": true,
+      "citations": 7,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 3204,
+      "seconds": 45.32
+    },
+    {
+      "id": "q27",
+      "kind": "single",
+      "model": "gemini-3.5-flash",
+      "searched": true,
+      "citations": 2,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 6205,
+      "seconds": 60.33
+    },
+    {
+      "id": "q28",
+      "kind": "single",
+      "model": "gemini-3.5-flash",
+      "searched": true,
+      "citations": 6,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 3245,
+      "seconds": 25.98
+    },
+    {
+      "id": "q29",
+      "kind": "single",
+      "model": "gemini-3.5-flash",
+      "searched": true,
+      "citations": 3,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "0",
+      "judge_notes": "Says the 1,250 mg daily cap applies to gout, but in the passage that cap belongs to section 2.4 (pain/dysmenorrhea), not 2.5 Acute Gout",
+      "tokens": 2857,
+      "seconds": 49.74
+    },
+    {
+      "id": "q30",
+      "kind": "single",
+      "model": "gemini-3.5-flash",
+      "searched": true,
+      "citations": 3,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 5307,
+      "seconds": 134.97
+    },
+    {
+      "id": "q31",
+      "kind": "single",
+      "model": "gemini-3.5-flash",
+      "searched": true,
+      "citations": 3,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 3373,
+      "seconds": 146.22
+    },
+    {
+      "id": "q32",
+      "kind": "multi",
+      "model": "gemini-3.5-flash",
+      "searched": true,
+      "citations": 12,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 6636,
+      "seconds": 48.52
+    },
+    {
+      "id": "q33",
+      "kind": "multi",
+      "model": "gemini-3.5-flash-lite",
+      "searched": true,
+      "citations": 3,
+      "invalid_citations": [
+        "[bactrim, Contraindications, celebrex, Contraindications]"
+      ],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 3904,
+      "seconds": 2.59
+    },
+    {
+      "id": "q34",
+      "kind": "multi",
+      "model": "gemini-3.5-flash-lite",
+      "searched": true,
+      "citations": 2,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "0",
+      "judge_supported": "1",
+      "judge_notes": "Does not report what the Advil label says (stomach bleeding warning with anticoagulants, ask a doctor); answers the Advil half from the Jantoven label instead",
+      "tokens": 3899,
+      "seconds": 4.2
+    },
+    {
+      "id": "q35",
+      "kind": "multi",
+      "model": "gemini-3.5-flash-lite",
+      "searched": true,
+      "citations": 3,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2680,
+      "seconds": 2.55
+    },
+    {
+      "id": "q36",
+      "kind": "multi",
+      "model": "gemini-3.5-flash-lite",
+      "searched": true,
+      "citations": 2,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2549,
+      "seconds": 2.53
+    },
+    {
+      "id": "q37",
+      "kind": "multi",
+      "model": "gemini-3.5-flash-lite",
+      "searched": true,
+      "citations": 2,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2346,
+      "seconds": 2.82
+    },
+    {
+      "id": "q38",
+      "kind": "multi",
+      "model": "gemini-3.5-flash-lite",
+      "searched": true,
+      "citations": 2,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 5302,
+      "seconds": 3.44
+    },
+    {
+      "id": "q39",
+      "kind": "multi",
+      "model": "gemini-3.5-flash-lite",
+      "searched": true,
+      "citations": 5,
+      "invalid_citations": [],
+      "cites_expected_source": true,
+      "refused": false,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 5441,
+      "seconds": 3.38
+    },
+    {
+      "id": "q40",
+      "kind": "unanswerable",
+      "model": "gemini-3.5-flash-lite",
+      "searched": true,
+      "citations": 0,
+      "invalid_citations": [],
+      "cites_expected_source": false,
+      "refused": true,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2612,
+      "seconds": 11.08
+    },
+    {
+      "id": "q41",
+      "kind": "unanswerable",
+      "model": "gemini-3.5-flash-lite",
+      "searched": true,
+      "citations": 0,
+      "invalid_citations": [],
+      "cites_expected_source": false,
+      "refused": true,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2328,
+      "seconds": 11.64
+    },
+    {
+      "id": "q42",
+      "kind": "unanswerable",
+      "model": "gemini-3.5-flash-lite",
+      "searched": true,
+      "citations": 0,
+      "invalid_citations": [],
+      "cites_expected_source": false,
+      "refused": true,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2780,
+      "seconds": 1.74
+    },
+    {
+      "id": "q43",
+      "kind": "unanswerable",
+      "model": "gemini-3.5-flash-lite",
+      "searched": true,
+      "citations": 0,
+      "invalid_citations": [],
+      "cites_expected_source": false,
+      "refused": true,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2752,
+      "seconds": 2.45
+    },
+    {
+      "id": "q44",
+      "kind": "unanswerable",
+      "model": "gemini-3.5-flash-lite",
+      "searched": true,
+      "citations": 2,
+      "invalid_citations": [],
+      "cites_expected_source": false,
+      "refused": true,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 3449,
+      "seconds": 2.87
+    },
+    {
+      "id": "q45",
+      "kind": "unanswerable",
+      "model": "gemini-3.5-flash-lite",
+      "searched": true,
+      "citations": 0,
+      "invalid_citations": [],
+      "cites_expected_source": false,
+      "refused": true,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 2665,
+      "seconds": 2.22
+    },
+    {
+      "id": "q46",
+      "kind": "unanswerable",
+      "model": "gemini-3.5-flash-lite",
+      "searched": true,
+      "citations": 0,
+      "invalid_citations": [],
+      "cites_expected_source": false,
+      "refused": true,
+      "judge_correct": "1",
+      "judge_supported": "1",
+      "judge_notes": "",
+      "tokens": 4227,
+      "seconds": 3.42
+    }
+  ]
+}

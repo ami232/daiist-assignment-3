@@ -1,0 +1,62 @@
+{
+  "document": "corpus/held_back/eliquis.json",
+  "model": "gemini-3.5-flash-lite",
+  "first_add": "Indexed eliquis: 96 chunks (96 embedded, 0 already indexed, 0 removed).",
+  "second_add": "Indexed eliquis: 96 chunks (0 embedded, 96 already indexed, 0 removed).",
+  "questions": {
+    "q40": {
+      "question": "What is the usual Eliquis dose for atrial fibrillation?",
+      "before": {
+        "model": "gemini-3.5-flash-lite",
+        "answer": "The current FDA drug label corpus does not contain the information for Eliquis (apixaban). Therefore, I cannot provide the usual dose for atrial fibrillation from the available labels. Please consult your supervising pharmacist or refer to the official Eliquis prescribing information."
+      },
+      "after": {
+        "model": "gemini-3.5-flash-lite",
+        "answer": "For the reduction of the risk of stroke and systemic embolism in patients with nonvalvular atrial fibrillation, the usual doses of Eliquis (apixaban) are:\n\n* **Recommended dose for most patients:** 5 mg orally twice daily [eliquis, Dosage and Administration].\n* **Reduced dose (2.5 mg orally twice daily):** Indicated for patients who have at least two of the following characteristics [eliquis, Dosage and Administration]:\n  * Age $\\ge$ 80 years [eliquis, Dosage and Administration]\n  * Body weight $\\le$ 60 kg [eliquis, Dosage and Administration]\n  * Serum creatinine $\\ge$ 1.5 mg/dL [eliquis, Dosage and Administration]",
+        "trace": [
+          {
+            "tool": "search",
+            "args": {
+              "query": "Eliquis dose atrial fibrillation"
+            },
+            "output": "[eliquis, Dosage and Administration] ELIQUIS (apixaban)\nELIQUIS (apixaban), Dosage and Administration: 2 DOSAGE AND ADMINISTRATION - Reduction of risk of stroke and systemic embolism in nonvalvular atrial fibrillation: - The recommended dose is 5 mg orally twice daily. (2.1) - In patients with at least 2 of the following characteristics: age greater than or equal to 80 years, body weight less than or equal to 60 kg, or serum creatinine greater than or equal to 1.5 mg/dL, the recommended dose is 2.5 mg orally twice daily. (2.1) - Prophylaxis of DVT following hip or knee replacement surgery: - The recommended dose is 2.5 mg orally twice daily. (2.1) - Treatment of DVT and PE: - The recommended dose is 10 mg taken orally twice daily for 7 days, followed by 5 mg taken orally twice daily. (2.1) - Reduction in the risk of recurrent DVT and PE following initial therapy: - The recommended dose is 2.5 mg taken orally twice daily.\n\n[eliquis, Dosage and Administration] ELIQUIS (apixaban)\nELIQUIS (apixaban), Dosage and Administration: (2.1) - Treatment of VTE and reduction in the risk of recurrent VTE in pediatric patients from birth and older after at least 5 days of initial anticoagulant treatment: - See dosing recommendations in the Full Prescribing Information. (2.2) 2.1 Recommended Dose in Adult Patients Reduction of Risk of Stroke and Systemic Embolism in Patients with Nonvalvular Atrial Fibrillation The recommended dose of ELIQUIS for most patients is 5 mg taken orally twice daily. The recommended dose of ELIQUIS is 2.5 mg twice daily in patients with at least two of the following characteristics: - age greater than or equal to 80 years - body weight less than or equal to 60 kg - serum creatinine greater than or equal to 1.5 mg/dL Prophylaxis of Deep Vein Thrombosis Following Hip or Knee Replacement Surgery The recommended dose of ELIQUIS is 2.5 mg taken orally twice daily.\n\n[eliquis, Use in Specific Populations] ELIQUIS (apixaban)\nELIQUIS (apixaban), Use in Specific Populations: 8.6 Renal Impairment Reduction of Risk of Stroke and Systemic Embolism in Patients with Nonvalvular Atrial Fibrillation The recommended dose is 2.5 mg twice daily in patients with at least two of the following characteristics [see Dosage and Administration (2.1) ] : - age greater than or equal to 80 years - body weight less than or equal to 60 kg - serum creatinine greater than or equal to 1.5 mg/dL Patients with End-Stage Renal Disease on Dialysis Clinical efficacy and safety studies with ELIQUIS did not enroll patients with end-stage renal disease (ESRD) on dialysis. In patients with ESRD maintained on intermittent hemodialysis, administration of ELIQUIS at the usually recommended dose [see Dosage and Administration (2.1) ] will result in concentrations of apixaban and pharmacodynamic activity similar to those observed in the ARISTOTLE study [see Clinical Pharmacology (12.3) ] .\n\n[eliquis, Dosage and Administration] ELIQUIS (apixaban)\nELIQUIS (apixaban), Dosage and Administration: The initial dose should be taken 12 to 24 hours after surgery. - In patients undergoing hip replacement surgery, the recommended duration of treatment is 35 days. - In patients undergoing knee replacement surgery, the recommended duration of treatment is 12 days. Treatment of DVT and PE The recommended dose of ELIQUIS is 10 mg taken orally twice daily for the first 7 days of therapy. After 7 days, the recommended dose is 5 mg taken orally twice daily. Reduction in the Risk of Recurrence of DVT and PE The recommended dose of ELIQUIS is 2.5 mg taken orally twice daily after at least 6 months of treatment for DVT or PE [see Clinical Studies (14.3) ] .\n\n[eliquis, Indications and Usage] ELIQUIS (apixaban)\nELIQUIS (apixaban), Indications and Usage: 1 INDICATIONS AND USAGE ELIQUIS is a factor Xa inhibitor indicated: - to reduce the risk of stroke and systemic embolism in adult patients with nonvalvular atrial fibrillation. (1.1) - for the prophylaxis of deep vein thrombosis (DVT), which may lead to pulmonary embolism (PE), in adult patients who have undergone hip or knee replacement surgery. (1.2) - for the treatment of DVT and PE, and for the reduction in the risk of recurrent DVT and PE in adult patients following initial therapy. (1.3 , 1.4 , 1.5) - Treatment of venous thromboembolism (VTE) and reduction in the risk of recurrent VTE in pediatric patients from birth and older after at least 5 days of initial anticoagulant treatment."
+          }
+        ],
+        "tokens": {
+          "input": 2405,
+          "output": 178,
+          "total": 2583
+        },
+        "seconds": 2.35,
+        "model_calls": 2
+      }
+    },
+    "q41": {
+      "question": "What should a customer do if they miss an Eliquis dose?",
+      "before": {
+        "model": "gemini-3.5-flash-lite",
+        "answer": "The available FDA drug labels in our database do not contain information regarding Eliquis (apixaban) or instructions for a missed dose of Eliquis. \n\nPlease consult the supervising pharmacist for guidance, as the search results only provide information for other medications (such as Jantoven, Prilosec, and Cipro)."
+      },
+      "after": {
+        "model": "gemini-3.5-flash-lite",
+        "answer": "If a dose of Eliquis is not taken at the scheduled time, the customer should take the dose as soon as possible on the same day and then resume twice-daily administration. They should not double the dose to make up for a missed dose [eliquis, Dosage and Administration].",
+        "trace": [
+          {
+            "tool": "search",
+            "args": {
+              "query": "Eliquis miss a dose missed dose"
+            },
+            "output": "[eliquis, Dosage and Administration] ELIQUIS (apixaban)\nELIQUIS (apixaban), Dosage and Administration: mg and 5 mg greater than or equal to 35 10 mg twice daily 5 mg twice daily ELIQUIS is not recommended for use in pediatric patients less than 2.6 kg because ELIQUIS was not studied in these patients. 2.3 Missed Dose If a dose of ELIQUIS is not taken at the scheduled time, the dose should be taken as soon as possible on the same day and twice-daily administration should be resumed. The dose should not be doubled to make up for a missed dose. 2.4 Temporary Interruption for Surgery and Other Interventions ELIQUIS should be discontinued at least 48 hours prior to elective surgery or invasive procedures with a moderate or high risk of unacceptable or clinically significant bleeding [see Warnings and Precautions (5.2) ] .\n\n[eliquis, Patient Counseling Information] ELIQUIS (apixaban)\nELIQUIS (apixaban), Patient Counseling Information: - The importance of keeping scheduled physician's visits. ELIQUIS dose is based on body weight and the dose may need to be adjusted as the child's weight changes. This ensures that the child receives the correct dose of ELIQUIS. The physician may adjust the child's dose when needed. The caregiver should be advised not to adjust the dose themselves. - What to do if the child vomits or spits up. If a child vomits or spits up within 30 minutes after taking ELIQUIS, repeat the dose. If a child vomits or spits up more than 30 minutes after taking ELIQUIS, do not repeat the dose. Continue to give the next ELIQUIS dose at the next scheduled time. The caregiver should contact the physician if the child repeatedly vomits or spits up after taking ELIQUIS.\n\n[eliquis, Dosage and Administration] ELIQUIS (apixaban)\nELIQUIS (apixaban), Dosage and Administration: The initial dose should be taken 12 to 24 hours after surgery. - In patients undergoing hip replacement surgery, the recommended duration of treatment is 35 days. - In patients undergoing knee replacement surgery, the recommended duration of treatment is 12 days. Treatment of DVT and PE The recommended dose of ELIQUIS is 10 mg taken orally twice daily for the first 7 days of therapy. After 7 days, the recommended dose is 5 mg taken orally twice daily. Reduction in the Risk of Recurrence of DVT and PE The recommended dose of ELIQUIS is 2.5 mg taken orally twice daily after at least 6 months of treatment for DVT or PE [see Clinical Studies (14.3) ] .\n\n[eliquis, Patient Counseling Information] ELIQUIS (apixaban)\nELIQUIS (apixaban), Patient Counseling Information: - If the patient is having neuraxial anesthesia or spinal puncture, inform the patient to watch for signs and symptoms of spinal or epidural hematomas [see Warnings and Precautions (5.3) ] . If any of these symptoms occur, advise the patient to seek emergent medical attention. - To tell their physicians if they are pregnant or plan to become pregnant or are breastfeeding or intend to breastfeed during treatment with ELIQUIS [see Use in Specific Populations (8.1 , 8.2) ] . - How to take ELIQUIS if they cannot swallow or require a nasogastric tube [see Dosage and Administration (2.7) ] . - What to do if a dose is missed [see Dosage and Administration (2.2 and 2.3) ] . Pediatric Patients Advise the caregiver or the patient of the following: - To always give this medicine exactly as the child's physician or pharmacist has instructed them.\n\n[eliquis, Instructions for Use] ELIQUIS (apixaban)\nELIQUIS (apixaban), Instructions for Use: - If you have any questions about how to prepare or give a dose of ELIQUIS tablets, talk to the healthcare provider or pharmacist. - Mix ELIQUIS tablets with food or liquid to give medicine. Do not swallow tablets. - If given with liquid, give the medicine right away or within 2 hours of preparation. - If given with food, give the medicine right away after preparation. - If your child vomits or spits up within 30 minutes after taking ELIQUIS, repeat the dose. If your child vomits or spits up more than 30 minutes after taking ELIQUIS, do not repeat the dose. - Contact the doctor if your child repeatedly vomits or spits up after taking ELIQUIS. - For children who have difficulty swallowing, the liquid mixture can be delivered through a gastrostomy tube (G tube) or nasogastric tube (NG tube)."
+          }
+        ],
+        "tokens": {
+          "input": 2337,
+          "output": 78,
+          "total": 2415
+        },
+        "seconds": 2.12,
+        "model_calls": 2
+      }
+    }
+  }
+}
