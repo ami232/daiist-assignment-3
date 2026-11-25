@@ -1,0 +1,14 @@
+{
+  "RL.htm": {
+    "sha256": "3167388840754cea829d77faefbac2bfc06fa92233982b7ffefa8bb0b98fd9fc",
+    "chunks": 208
+  },
+  "PVH.htm": {
+    "sha256": "67fe4b31b294f86bb0c335348a3e27eb2121062a4465befb4998cfc7c4fbbaae",
+    "chunks": 185
+  },
+  "TPR.htm": {
+    "sha256": "260d5cc27f15b28ee3dfe1f368323623d2f25501c9f1b47001efbdfd64bba633",
+    "chunks": 160
+  }
+}
