@@ -1,0 +1,46 @@
+{
+  "documents": {
+    "ai-act": {
+      "chunks": {
+        "article": 223,
+        "fixed": 220
+      },
+      "source": "AI Act",
+      "title": "Regulation (EU) 2024/1689 (Artificial Intelligence Act)",
+      "file": "ai-act.xhtml",
+      "sha256": "8f0b656302f9864cc87e040c371f209a9d65ae1a6cecc25ca5eb737e872d721a",
+      "date": "2024-06-13",
+      "words": 49477,
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689",
+      "licence": "(c) European Union, reuse authorised with acknowledgement of the source (Commission Decision 2011/833/EU; see the EUR-Lex legal notice). No personal data."
+    },
+    "gdpr": {
+      "chunks": {
+        "article": 145,
+        "fixed": 131
+      },
+      "source": "GDPR",
+      "title": "Regulation (EU) 2016/679 (General Data Protection Regulation)",
+      "file": "gdpr.xhtml",
+      "sha256": "962539af03738bf552319ff4ce42d69e5f95a576307c4dfed7bf87e81b646b9d",
+      "date": "2016-04-27",
+      "words": 29438,
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679",
+      "licence": "(c) European Union, reuse authorised with acknowledgement of the source (Commission Decision 2011/833/EU; see the EUR-Lex legal notice). No personal data."
+    },
+    "data-act": {
+      "chunks": {
+        "article": 93,
+        "fixed": 95
+      },
+      "source": "Data Act",
+      "title": "Regulation (EU) 2023/2854 (Data Act)",
+      "file": "data-act.xhtml",
+      "sha256": "1085b7fa3011970b65b1e4d56205202dceb37f72cd22336aa0c78af35ceaea66",
+      "date": "2023-12-13",
+      "words": 21211,
+      "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R2854",
+      "licence": "(c) European Union, reuse authorised with acknowledgement of the source (Commission Decision 2011/833/EU; see the EUR-Lex legal notice). No personal data."
+    }
+  }
+}

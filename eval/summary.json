@@ -1,0 +1,41 @@
+{
+  "questions": 37,
+  "answerable": 30,
+  "unanswerable": 7,
+  "correct_answers": 26,
+  "correct_refusals": 7,
+  "blocked_unanswerable": 0,
+  "unanswerable_answered": 0,
+  "wrong_refusals": 0,
+  "blocked_answerable": 0,
+  "unsupported_answers": 1,
+  "answers_given": 30,
+  "citations_valid": 37,
+  "guardrail_events": {},
+  "cost": {
+    "tokens_mean": 6203,
+    "tokens_p95": 16033,
+    "seconds_mean": 10.7,
+    "seconds_p95": 15.8,
+    "model_calls_mean": 2.3,
+    "agent_model": "gemini-3.5-flash-lite",
+    "judge_model": "gemini-3-flash-preview, gemma-4-31b-it"
+  },
+  "agreement": {
+    "graded": 37,
+    "correct_agreement": 0.946,
+    "correct_kappa": 0.641,
+    "correct_disagreements": [
+      "q20",
+      "q29"
+    ],
+    "supported_agreement": 0.946,
+    "supported_kappa": -0.028,
+    "supported_disagreements": [
+      "q02",
+      "q12"
+    ],
+    "both_agreement": 0.892
+  },
+  "failures": 5
+}

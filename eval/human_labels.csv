@@ -1,1 +1,38 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,"añade 'direct marketing' y 'children', que no están en el texto citado pero sí en los Arts. 21 y 8."
+q03,1,1,
+q04,1,1,
+q05,1,1,
+q06,1,1,
+q07,1,1,
+q08,1,1,
+q09,1,1,
+q10,1,1,
+q11,1,1,
+q12,1,0,"la frase sobre pymes añade 'limits set for SMEs', que no está en el art. 99(6)."
+q13,1,1,
+q14,1,1,
+q15,1,1,
+q16,1,1,
+q17,1,1,la referencia estaba incompleta (faltaba el plazo de 10 días por muerte); la respuesta tiene los tres plazos y es correcta.
+q18,1,1,
+q19,1,1,"no explica qué son los puntos 5(b) y (c), pero identifica correctamente a quién aplica."
+q20,1,1,la referencia es más amplia que la pregunta (incluye el periodo transitorio); la respuesta contesta lo preguntado.
+q21,1,1,dice 'may indicate' donde el texto dice 'shall … indicate' (25(4)); no cambia las cifras.
+q22,1,1,
+q23,1,1,
+q24,1,1,
+q25,1,1,
+q26,1,1,
+q27,0,1,
+q28,0,1,"falta la parte del RGPD Art. 22 (intervención humana, impugnar); solo cita el AI Act Art. 86; mismo patrón que q27."
+q29,1,1,"no cita ni explica el GDPR Art. 20 (solo el Data Act Art. 1(5)), pero la relación preguntada está completa."
+q30,1,1,
+q31,1,1,
+q32,1,1,
+q33,1,1,
+q34,1,1,
+q35,1,1,
+q36,1,1,
+q37,1,1,
