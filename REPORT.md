@@ -1,8 +1,8 @@
 # Assignment 3 Report
 
-- **Name**:
-- **Student ID**:
-- **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
+- **Name**: Hugo Marsiglia
+- **Student ID**: 19610
+- **Group**: BBADBA 5A
 
 ## Use case
 
@@ -109,7 +109,47 @@ The minimum time limit for the receipt of tenders shall be 35 days from the date
 
 **Transcript from my editor.**
 
-> *[PLACEHOLDER: paste one transcript of the corpus-researcher subagent from Claude Code here.]*
+```text
+❯ Use the corpus-researcher subagent: what is the minimum time limit for
+  receiving tenders in an open procedure, and when can it be shortened?
+
+⏺ corpus-researcher(Minimum tender time limit open procedure)
+  ⎿  Done (2 tool uses · 11.0k tokens · 16s)
+
+⏺ Under Directive 2014/24/EU, Article 27, the baseline minimum time limit for
+  receipt of tenders in an open procedure is 35 days from the date the contract
+  notice was sent.
+
+  It can be shortened on these grounds:
+
+  Ground: Prior information notice (PIN)
+  Minimum limit: 15 days
+  Condition: PIN not used as the call for competition; contained the required
+    info (Annex V Part B §I); sent for publication 35 days–12 months before the
+    contract notice
+  ────────────────────────────────────────
+  Ground: Duly substantiated urgency
+  Minimum limit: 15 days
+  Condition: Where the 35-day limit is rendered impracticable by urgency (Art.
+    27(3))
+  ────────────────────────────────────────
+  Ground: Electronic submission of tenders
+  Minimum limit: 30 days (−5 days)
+  Condition: Authority accepts tenders by electronic means per Art. 22
+
+  These are options for the contracting authority. The reductions attach to the
+  35-day baseline, and the PIN/urgency and electronic routes can combine.
+
+  Two related constraints pull the other way:
+  - Article 47 — the authority must account for the complexity of the contract
+  and extend time limits where late additional information or significant
+  document changes require it.
+  - Article 53 — where free electronic access to the procurement documents can't
+  be offered, the limit must be prolonged by 5 days, except in cases of
+  substantiated urgency under Art. 27(3).
+
+  All citations are to Directive 2014/24/EU.
+```
 
 ## Adding a document
 
