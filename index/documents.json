@@ -1,0 +1,35 @@
+{
+  "advisers-act": {
+    "title": "Investment Advisers Act of 1940 (15 U.S.C. 80b-1 to 80b-21)",
+    "code": "IAA",
+    "url": "https://www.govinfo.gov/content/pkg/USCODE-2023-title15/html/USCODE-2023-title15-chap2D-subchapII.htm",
+    "date": "U.S. Code 2023 edition",
+    "path": "corpus/advisers-act.htm",
+    "sha256": "2f87f80cbba60e9bda3ef1a5800fc42ab6c20a2090e4c543f50679863b0bc1c6",
+    "words": 16841,
+    "licence": "U.S. Government work, public domain (17 U.S.C. §105); no personal data",
+    "origin": "corpus"
+  },
+  "rules-275": {
+    "title": "SEC rules under the Investment Advisers Act (17 CFR Part 275)",
+    "code": "R275",
+    "url": "https://www.ecfr.gov/api/versioner/v1/full/2026-11-16/title-17.xml?part=275",
+    "date": "eCFR as of 2026-11-16",
+    "path": "corpus/rules-275.xml",
+    "sha256": "2306692121f2423a5d4645f002f2da417bd7af6cfd9b6b00fd3088e8f7f38b0f",
+    "words": 30243,
+    "licence": "U.S. Government work, public domain (17 U.S.C. §105); no personal data",
+    "origin": "corpus"
+  },
+  "fiduciary-2019": {
+    "title": "SEC Interpretation Regarding Standard of Conduct for Investment Advisers (Release IA-5248, 84 FR 33669)",
+    "code": "FID",
+    "url": "https://www.federalregister.gov/documents/full_text/html/2019/07/12/2019-12208.html",
+    "date": "2019-07-12",
+    "path": "corpus/fiduciary-2019.html",
+    "sha256": "7e92dc917a914ee384e5e16b466f92fa5ca319e66cf01dd375892ab1a87ab02f",
+    "words": 7658,
+    "licence": "U.S. Government work, public domain (17 U.S.C. §105); no personal data",
+    "origin": "corpus"
+  }
+}

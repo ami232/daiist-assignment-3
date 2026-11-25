@@ -1,1 +1,23 @@
 id,correct,supported,notes
+q01,1,1,Answers the assignment question correctly; leaves out the partnership-notice clause but the question did not ask for it
+q02,1,1,All four professions listed; adds brokers/dealers which is also in the text
+q03,1,1,"45 days, 120 days and 90-day extension all right"
+q04,1,1,"Solely qualifying private funds, under $150M; also covers non-US advisers"
+q05,1,1,"Right substance but muddled wording on the $25M/$100M thresholds"
+q06,1,1,"May but need not register between $100M and $110M; leaves out the $90M withdrawal buffer (minor)"
+q07,1,1,90 days after the annual updating amendment
+q08,1,1,Written disclosure of capacity before completion plus client consent
+q09,1,1,Both conditions stated
+q10,1,1,No; may state registration if true and not misrepresented
+q11,1,1,At least quarterly with required contents
+q12,1,1,"All elements right; one claim cites R275:275.204-4#1, which is the wrong passage (the claim is supported by 206(4)-2#4)"
+q20,1,1,Five years / first two in office; extra detail also correct
+q29,0,1,"Says Yes, performance fees are allowed for qualified clients, but never states that §205(a)(1) generally prohibits them: misses the key half of the two-part answer although IAA:80b-5#1 was retrieved"
+q30,1,1,"§204A policies, compliance rule, annual review, CCO"
+q31,1,1,Statute $25M-$100M band and the rule's $100M-$110M buffer
+q32,1,1,Full and fair disclosure + brochure timing
+q33,1,1,Fiduciary duty covers rollover advice; Form CRS on rollover recommendation
+q34,0,1,"Only covers the marketing-rule ban on 'reviewed by the SEC'; never answers 'the SEC approved us' (§208(a)) or that stating registration is allowed. 80b-8 was never retrieved: one search only"
+q35,1,1,Exemption plus VC fund definition (20% non-qualifying etc.)
+q36,1,1,"Not a formal refusal, but correctly says the figure is set by the most recent SEC order, does not invent it, and refers to compliance"
+q39,1,1,Refuses; mentions fees are paid to FINRA without giving an amount (supported)
