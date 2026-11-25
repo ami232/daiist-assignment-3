@@ -229,7 +229,7 @@ def _run_scripted(replies, first_tool="search"):
     @tool
     def add_document(path: str) -> str:
         """Fake add_document."""
-        return "Añadido: COT2026 (BOE-A-2026-7296, consolidado a 16 de julio de 2026). 8 fragmentos nuevos, 0 omitidos."
+        return "Added: COT2026 (BOE-A-2026-7296, consolidated as of 2026-07-16). 8 new fragments, 0 skipped (already there)."
 
     usage = {"input_tokens": 10, "output_tokens": 5, "total_tokens": 15}
     args = {"query": "q"} if first_tool == "search" else {"path": "corpus/BOE-A-2026-7296.xml"}

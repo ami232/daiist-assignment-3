@@ -79,7 +79,7 @@ Three designs were compared on the 23 answerable questions (`eval/retrieval.csv`
 
 ## Tools and subagent
 
-**Tools** (`server.py`, MCP server `corpus`). The docstrings are in Spanish because the agent reads them and answers in Spanish; summarised here:
+**Tools** (`server.py`, MCP server `corpus`). The docstrings are the tool descriptions the agent reads; summarised here:
 
 - `search(query)`: searches the corpus with the shipped design (B_article, k = 5). The description lists the four laws and what each covers, tells the agent to search before answering any question about an autónomo's rights or obligations (more than once with other words if needed), and to write the query in Spanish using the law's own terms. It returns the 5 most relevant fragments, each with a ready-to-copy citation `[FUENTE, Ubicación]`, the law title, the consolidation date, the text and the BOE link, followed by the BOE notice. Errors (empty query, embedding quota) come back as strings starting with "Error:".
 - `add_document(path)`: adds a BOE consolidated-text XML from inside the repository (e.g. `corpus/BOE-A-2026-7296.xml`) through the same pipeline, embedding only new chunks. Duplicate policy: same consolidation date, no change; newer version, it replaces the old one; older version, no change. The description says it changes the index and should be used only when the user asks. It returns a one-line summary or an "Error:" message (paths outside the repository, missing files and non-XML files are rejected).
@@ -98,7 +98,7 @@ BOE: https://www.boe.es/buscar/act.php?id=BOE-A-2007-13409#a3-5
 Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
 ```
 
-**Subagent** (`.claude/agents/corpus-researcher.md`, in Spanish). Its only tool is `mcp__corpus__search`. The description tells Claude Code to delegate any question on an autónomo's rights or obligations that must rest on the text of the law, and says what it is not for: personal calculations, regional rules, VAT or income tax outside the invoicing regulation, and companies. The instructions restate the AGENTS.md rules (only what search returns, a `[FUENTE, Ubicación]` citation for every claim, the fixed refusal phrase, partial answers, no personal calculations, the consolidation date with figures, the BOE notice), allow at most 4 searches, and ask for an answer the calling agent can pass on unchanged.
+**Subagent** (`.claude/agents/corpus-researcher.md`). Its only tool is `mcp__corpus__search`. The description tells Claude Code to delegate any question on an autónomo's rights or obligations that must rest on the text of the law, and says what it is not for: personal calculations, regional rules, VAT or income tax outside the invoicing regulation, and companies. The instructions restate the AGENTS.md rules (only what search returns, a `[FUENTE, Ubicación]` citation for every claim, the fixed refusal phrase, partial answers, no personal calculations, the consolidation date with figures, the BOE notice), allow at most 4 searches, and ask for an answer the calling agent can pass on unchanged.
 
 ### Subagent transcript (Claude Code, 2026-11-23)
 
@@ -107,6 +107,8 @@ The `corpus-researcher` subagent (`.claude/agents/corpus-researcher.md`, tools: 
 **Question passed to the subagent**
 
 > Empecé a operar hace 10 días y todavía no me he dado de alta. Es esto un problema? Me puedo dar de alta de forma retrospectiva?
+
+*(I started trading 10 days ago and still haven't registered. Is this a problem? Can I register retroactively?)*
 
 **Tool calls** (3 searches, under the limit of 4 set in its instructions)
 
@@ -172,9 +174,9 @@ Afterwards the index was restored to the 4-law corpus (261 / 382 chunks), so the
 
 `agent.py` builds a LangChain agent (`create_agent`) with `gemini-3.5-flash-lite`, the two MCP tools from `server.py`, and `AGENTS.md` as the system prompt. `main.py ask "…"` prints the tool calls, the answer, each citation with its BOE link, and the number of searches, tokens and seconds.
 
-**AGENTS.md rules** (written in Spanish, each with its reason):
+**AGENTS.md rules** (each with its reason; the agent is also told to always answer in Spanish and to copy the two fixed Spanish phrases exactly):
 1. Answer only from what `search` returns; search before answering, more than once if needed.
-2. Cite every claim as `[FUENTE, Ubicación]`, copied exactly from the search result.
+2. Cite every claim as `[SOURCE, Location]`, copied exactly from the search result.
 3. If the corpus does not cover the question, answer with the fixed refusal phrase.
 4. If only part is covered, answer that part and refuse the rest with the same phrase.
 5. Do not calculate the user's own contribution, tax or benefit; explain the rule and recommend a professional.
@@ -182,15 +184,17 @@ Afterwards the index was restored to the 4-law corpus (261 / 382 chunks), so the
 7. End every answer that cites the law with the BOE notice.
 
 **Guardrails** (middleware, so the model cannot skip them):
-- **Approval**: any `add_document` call is shown in the terminal ("¿Permitir add_document(…)? Modifica el índice. [s/N]") and runs only after a yes. With no terminal (evaluation, CI) it is denied automatically, and the agent is told the index was not changed.
+- **Approval**: any `add_document` call is shown in the terminal ("Allow add_document(…)? It changes the index. [y/N]") and runs only after a yes. With no terminal (evaluation, CI) it is denied automatically, and the agent is told the index was not changed.
 - **Call limits**: at most 4 `search` calls and 8 model calls per question.
-- **Citation validator** (my extra guardrail): after each model answer, it checks that every `[FUENTE, Ubicación]` cited appeared in that turn's search results, and that any answer other than the refusal cites something. If not, the model gets one chance to repair the answer; a second failure turns the answer into the refusal phrase.
+- **Citation validator** (my extra guardrail): after each model answer, it checks that every `[SOURCE, Location]` cited appeared in that turn's search results, and that any answer other than the refusal cites something. If not, the model gets one chance to repair the answer; a second failure turns the answer into the refusal phrase.
 
 The validator never fired in the 31-question evaluation. Seven probe questions were written to trigger it (`eval/guardrail_cases.md`), and it fired on two: (1) asked to cite each requirement down to its *apartado*, the model cited `[LETA, Artículo 38 ter, apartado 3]`; the validator flagged it, and the model searched again and rewrote the answer with `[LETA, Artículo 38 ter]`; (2) a greeting answered without citations was turned into the refusal phrase, a false positive.
 
 *[TO WRITE: which case you present and what it shows (task 5.4).]*
 
 ## Evaluation
+
+**Prompt language.** The evaluation, the guardrail probes and the add_document demo ran with the Spanish version of the agent's instructions (AGENTS.md, the tool descriptions, the harness messages and the subagent). On 2026-11-25 these were translated into English with the same rules and the same fixed Spanish phrases, and the agent was told explicitly to answer in Spanish. That is why the transcripts in `eval/` show Spanish harness messages. As a smoke test, 5 questions (q05, q07, q15, q21, q25) were re-run with the English instructions. Each answer came back in Spanish with valid citations and the same outcome as in the evaluation: 3 answered, the q21 refusal correct, and q25 still a wrong refusal. The full evaluation was not repeated.
 
 **Code checks** (`eval/checks.csv`, all 31 answers):
 

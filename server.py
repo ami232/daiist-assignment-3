@@ -30,33 +30,33 @@ mcp = MCPServer("corpus", log_level="WARNING")
 
 @mcp.tool()
 def search(query: str) -> str:
-    """Busca en la legislación estatal española para autónomos (texto consolidado del BOE).
+    """Search Spanish state legislation for the self-employed (autónomos), BOE consolidated text.
 
-    El corpus contiene: Estatuto del trabajo autónomo (LETA, Ley 20/2007), Ley General
-    de la Seguridad Social títulos IV y V (LGSS: RETA, cotización, incapacidad temporal,
-    cese de actividad), Reglamento de facturación (RF, RD 1619/2012) y Reglamento de
-    gestión e inspección tributaria, título II (RGAT, RD 1065/2007: alta censal,
-    domicilio fiscal, NIF, libros registro), más los documentos añadidos con add_document.
+    The corpus holds: the Self-Employed Workers' Statute (LETA, Ley 20/2007), the General
+    Social Security Act, titles IV and V (LGSS: RETA, contributions, temporary incapacity,
+    cessation of activity), the Invoicing Regulation (RF, RD 1619/2012) and the Tax
+    Management and Inspection Regulation, title II (RGAT, RD 1065/2007: tax census
+    registration, tax address, NIF, record books), plus any documents added with add_document.
 
-    Úsala antes de responder cualquier pregunta sobre derechos u obligaciones de un
-    autónomo; puedes llamarla varias veces con otras palabras. Escribe la consulta en
-    español y con términos de la norma (p. ej. "reducción de cuotas inicio de actividad").
+    Use it before answering any question about an autónomo's rights or obligations; you
+    can call it several times with other words. Write the query in Spanish, using the
+    law's own terms (e.g. "reducción de cuotas inicio de actividad").
 
-    Devuelve los 5 fragmentos más relevantes. Cada uno lleva su cita lista para copiar
-    con el formato [FUENTE, Ubicación] (p. ej. [LETA, Artículo 38 ter]), el título de la
-    norma, la fecha de consolidación del texto, el texto y el enlace al BOE. Termina con
-    el aviso de que el texto consolidado es informativo.
+    Returns the 5 most relevant fragments, in Spanish. Each one carries a ready-to-copy
+    citation in the format [SOURCE, Location] (e.g. [LETA, Artículo 38 ter]), the law's
+    title, the consolidation date, the text and the BOE link. It ends with the notice that
+    the consolidated text is for information only.
     """
     query = (query or "").strip()
     if not query:
-        return "Error: la consulta está vacía. Escribe qué quieres buscar."
+        return "Error: the query is empty. Write what you want to search for."
     try:
         return rag.format_hits(rag.retrieve(query))
     except ix.QuotaExhausted:
-        return "Error: se ha agotado la cuota de la API de embeddings de Gemini. Inténtalo más tarde."
+        return "Error: the Gemini embeddings API quota is exhausted. Try again later."
     except Exception as error:  # noqa: BLE001 - an MCP tool reports errors, it doesn't raise them
         log.exception("search failed")
-        return f"Error al buscar: {type(error).__name__}: {error}"
+        return f"Error while searching: {type(error).__name__}: {error}"
 
 
 def _resolve(path: str) -> Path:
@@ -64,30 +64,30 @@ def _resolve(path: str) -> Path:
     candidate = Path(path.strip().strip('"'))
     candidate = (candidate if candidate.is_absolute() else ALLOWED_DIR / candidate).resolve()
     if not candidate.is_relative_to(ALLOWED_DIR):
-        raise ValueError(f"solo se pueden añadir ficheros dentro de {ALLOWED_DIR.name}/ (p. ej. corpus/…)")
+        raise ValueError(f"only files inside {ALLOWED_DIR.name}/ can be added (e.g. corpus/…)")
     if not candidate.is_file():
-        raise ValueError(f"no existe el fichero {candidate.relative_to(ALLOWED_DIR)}")
+        raise ValueError(f"the file {candidate.relative_to(ALLOWED_DIR)} does not exist")
     if candidate.suffix.lower() != ".xml" or candidate.name.endswith(".meta.xml"):
-        raise ValueError("solo se admite el XML de texto consolidado del BOE (corpus/<BOE-id>.xml)")
+        raise ValueError("only BOE consolidated-text XML is accepted (corpus/<BOE-id>.xml)")
     return candidate
 
 
 @mcp.tool()
 def add_document(path: str) -> str:
-    """Añade al índice una norma en XML de texto consolidado del BOE y la deja disponible para search.
+    """Add a law in BOE consolidated-text XML to the index and make it available to search.
 
-    `path` es la ruta del fichero dentro del repositorio, p. ej.
-    "corpus/BOE-A-2026-7296.xml" (descargado de la API de datos abiertos del BOE; si
-    hay un .meta.xml al lado, de él se toman el título y la fecha de consolidación).
-    El fichero pasa por el mismo proceso que el resto del corpus (limpieza, troceado
-    por artículos, embeddings) y solo se generan embeddings para los fragmentos nuevos.
+    `path` is the file's path inside the repository, e.g. "corpus/BOE-A-2026-7296.xml"
+    (downloaded from the BOE open-data API; if a .meta.xml sits next to it, the title and
+    consolidation date are taken from it). The file goes through the same pipeline as the
+    rest of the corpus (cleaning, chunking by article, embeddings), and only new fragments
+    are embedded.
 
-    Si la norma ya está indexada con la misma fecha de consolidación no hace nada; si
-    el fichero es una versión más reciente, sustituye la anterior; si es más antigua,
-    no cambia nada. Modifica el índice: úsala solo cuando el usuario lo pida.
+    If the law is already indexed with the same consolidation date, nothing changes; if
+    the file is a newer version, it replaces the old one; if it is older, nothing changes.
+    It modifies the index: use it only when the user asks for it.
 
-    Devuelve un resumen en una línea (norma, fragmentos añadidos y omitidos) o un
-    mensaje que empieza por "Error:".
+    Returns a one-line summary (law, fragments added and skipped) or a message starting
+    with "Error:".
     """
     try:
         file = _resolve(path or "")
@@ -95,21 +95,21 @@ def add_document(path: str) -> str:
     except ValueError as error:
         return f"Error: {error}"
     except ix.QuotaExhausted:
-        return "Error: se ha agotado la cuota de la API de embeddings de Gemini. Inténtalo más tarde."
+        return "Error: the Gemini embeddings API quota is exhausted. Try again later."
     except Exception as error:  # noqa: BLE001 - unparseable XML and the like
         log.exception("add_document failed")
-        return f"Error: no se ha podido indexar {path}: {type(error).__name__}: {error}"
+        return f"Error: could not index {path}: {type(error).__name__}: {error}"
 
-    name = f"{result['source']} ({result['boe_id']}, consolidado a {rag.spanish_date(result['updated'])})"
+    name = f"{result['source']} ({result['boe_id']}, consolidated as of {result['updated']})"
     if result["status"] == "already":
-        return f"{name} ya estaba indexado con esta versión: no se ha añadido nada ({result['chunks']} fragmentos)."
+        return f"{name} was already indexed in this version: nothing added ({result['chunks']} fragments)."
     if result["status"] == "older":
-        return (f"{name} no se ha añadido: el índice ya tiene una versión más reciente "
-                f"(consolidada a {rag.spanish_date(result['stored_updated'])}).")
-    verb = "Sustituido por la versión nueva" if result["status"] == "replaced" else "Añadido"
-    line = f"{verb}: {name}. {result['added']} fragmentos nuevos, {result['skipped']} omitidos (ya estaban)."
+        return (f"{name} not added: the index already has a newer version "
+                f"(consolidated as of {result['stored_updated']}).")
+    verb = "Replaced with the new version" if result["status"] == "replaced" else "Added"
+    line = f"{verb}: {name}. {result['added']} new fragments, {result['skipped']} skipped (already there)."
     if result["pending"]:
-        line += f" Quedan {result['pending']} sin indexar por la cuota de embeddings: vuelve a llamar más tarde."
+        line += f" {result['pending']} still to embed because of the embeddings quota: call again later."
     return line
 
 

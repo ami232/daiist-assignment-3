@@ -86,7 +86,7 @@ All Gemini calls are **quota-aware**: deterministic chunk IDs, write-after-every
 1. Validate the path: it exists, is under the repo or `corpus/`, and is a BOE XML file (or HTML/PDF, 🟨 if needed).
 2. Read `boe_id` and `fecha_actualizacion` from the file, or from its sibling `.meta.xml`.
 3. Apply the duplicate policy 🟨 (proposed: same id + same date → no-op; newer → delete that document's chunks, then add; new → add).
-4. Reuse C3 → C4 (shipped design) → C5. Return `"Añadido LETA2: 12 fragmentos nuevos, 0 omitidos"`.
+4. Reuse C3 → C4 (shipped design) → C5. Return `"Added: LETA2 (…). 12 new fragments, 0 skipped (already there)."`.
 
 ### F4 Ask (`main.py ask`)
 1. `agent.py` starts `server.py` over stdio (`langchain-mcp-adapters` or the `mcp` client) and wraps the tools.

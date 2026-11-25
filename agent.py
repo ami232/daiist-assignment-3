@@ -9,7 +9,7 @@ Guardrails (middleware: the harness runs them, so the model cannot skip them):
      terminal first. With no terminal (evaluation, check.py) it is denied.
   2. call limits: at most MAX_SEARCHES searches and MAX_MODEL_CALLS model calls
      per question, so a confused model cannot loop or burn quota.
-  3. citation validator (the student's choice, tasks.md 5.4): every [FUENTE, Ubicación]
+  3. citation validator (the student's choice, tasks.md 5.4): every [SOURCE, Location]
      in the final answer must be a passage that search returned in this run, and an
      answer that is not the refusal must cite something. If not, the model gets one
      chance to fix it; if it fails again, the answer is replaced by the refusal.
@@ -64,9 +64,9 @@ REFUSAL = ("No se ha encontrado contenido relacionado a tu pregunta en los docum
 def ask_in_terminal(call: dict) -> bool:
     """Ask the person at the keyboard. No terminal (evaluation, CI) means no."""
     if not sys.stdin.isatty():
-        print(f"  [aprobación] {call['name']} denegada: no hay terminal para preguntar.", file=sys.stderr)
+        print(f"  [approval] {call['name']} denied: no terminal to ask.", file=sys.stderr)
         return False
-    reply = input(f"\n  ¿Permitir {call['name']}({call['args']})? Modifica el índice. [s/N] ")
+    reply = input(f"\n  Allow {call['name']}({call['args']})? It changes the index. [y/N] ")
     return reply.strip().lower() in {"s", "si", "sí", "y", "yes"}
 
 
@@ -80,8 +80,8 @@ def approval_guardrail(approve: Callable[[dict], bool]):
         call = request.tool_call
         if call["name"] in NEEDS_APPROVAL and not approve(call):
             return ToolMessage(
-                content="El usuario no ha autorizado esta llamada: el índice no se ha modificado. "
-                        "No intentes conseguir el documento de otra forma; responde con lo que ya tienes.",
+                content="The user did not authorise this call: the index has not been changed. "
+                        "Do not try to get the document another way; answer with what you already have.",
                 tool_call_id=call["id"],
                 name=call["name"],
                 status="error",
@@ -102,12 +102,12 @@ def citation_problems(answer: str, retrieved: set[tuple[str, str]], reports_tool
     """What is wrong with the answer's citations, given the (source, location) pairs search returned.
 
     `reports_tool_action`: the turn ran add_document, so an answer without citations may just be
-    reporting what that tool did ("Añadido: …"). Citations it does make are still checked.
+    reporting what that tool did ("Added: …"). Citations it does make are still checked.
     """
     cited = citations_in(answer)
-    problems = [f"[{s}, {loc}] no aparece en los resultados de search" for s, loc in cited if (s, loc) not in retrieved]
+    problems = [f"[{s}, {loc}] is not in the search results" for s, loc in cited if (s, loc) not in retrieved]
     if not cited and REFUSAL not in answer and not reports_tool_action:
-        problems.append("la respuesta no cita ningún fragmento y no es la frase de rechazo")
+        problems.append("the answer cites no fragment and is not the refusal phrase")
     return problems
 
 
@@ -136,9 +136,9 @@ def validate_citations(state, runtime):
     already_warned = any(isinstance(m, HumanMessage) and m.name == GUARDRAIL for m in messages)
     if already_warned:                           # second failure: refuse instead of showing it
         return {"messages": [AIMessage(content=REFUSAL, name=GUARDRAIL)]}
-    feedback = ("Revisión automática de citas: " + "; ".join(problems) + ". Reescribe la respuesta citando solo "
-                "fragmentos que devolvió search, copiando [FUENTE, Ubicación] tal cual. Quita lo que no puedas "
-                "respaldar; si no queda nada, responde con la frase de rechazo.")
+    feedback = ("Automatic citation check: " + "; ".join(problems) + ". Rewrite the answer in Spanish, citing only "
+                "fragments that search returned and copying [SOURCE, Location] exactly. Remove what you cannot "
+                "support; if nothing is left, reply with the refusal phrase.")
     return {"messages": [HumanMessage(content=feedback, name=GUARDRAIL)], "jump_to": "model"}
 
 
@@ -254,7 +254,7 @@ def main() -> None:
     sys.stderr.reconfigure(encoding="utf-8", errors="replace")
     question = " ".join(sys.argv[1:]).strip()
     if not question:
-        raise SystemExit('Uso: uv run python agent.py "tu pregunta"')
+        raise SystemExit('Usage: uv run python agent.py "your question"')
     result = answer(question)
 
     for step in result["trace"]:
@@ -262,11 +262,11 @@ def main() -> None:
             print(f"  → {step['call']}({step['args']})", file=sys.stderr)
     print(result["answer"])
     if result["citations"]:
-        print("\nCitas:")
+        print("\nCitations:")
         for citation in result["citations"]:
             url = result["sources"].get(citation)
-            print(f"  {citation} {url or '(no aparece en los fragmentos recuperados)'}")
-    print(f"\n({result['searches']} búsquedas, {result['tokens']['total']} tokens, {result['seconds']:.1f} s)")
+            print(f"  {citation} {url or '(not in the retrieved fragments)'}")
+    print(f"\n({result['searches']} searches, {result['tokens']['total']} tokens, {result['seconds']:.1f} s)")
 
 
 if __name__ == "__main__":

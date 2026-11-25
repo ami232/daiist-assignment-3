@@ -3,7 +3,7 @@ document through the agent (you approve it in the terminal), and ask again.
 
     uv run python demo_add_document.py
 
-Run it in a real terminal: add_document is only allowed after you type "s". Results go to
+Run it in a real terminal: add_document is only allowed after you type "y". Results go to
 eval/add_document_demo.json (full answers and traces) and eval/add_document_demo.md (readable).
 """
 import asyncio

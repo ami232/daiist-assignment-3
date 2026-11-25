@@ -2,7 +2,7 @@
 Retrieval over the index built by index.py, shared by server.py and evaluate.py.
 
     retrieve(query, design="B_article", k=5) -> [Hit]
-    format_hits(hits)                        -> text with [FUENTE, Ubicación] citations
+    format_hits(hits)                        -> text with [SOURCE, Location] citations
 
 A retrieval design is a chunking (one Chroma collection) plus a search mode:
 "dense" (cosine on Gemini embeddings) or "hybrid" (dense + BM25 fused by
@@ -220,5 +220,5 @@ CITATION = re.compile(r"\[([A-Z][A-Z0-9]+), ([^\[\]]+?)\]")
 
 
 def citations_in(text: str) -> list[tuple[str, str]]:
-    """Every [FUENTE, Ubicación] in a text, in order, without duplicates."""
+    """Every [SOURCE, Location] in a text, in order, without duplicates."""
     return list(dict.fromkeys((s, loc.strip()) for s, loc in CITATION.findall(text)))
