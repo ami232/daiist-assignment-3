@@ -113,18 +113,21 @@ I ran the full evaluation twice. Run 1 used guardrail version 1. Then I fixed th
 
 ## Failures
 
-Run 1: 15 of 41 failed, all with the same cause: guardrail false alarm (`q02, q06, q11, q12, q16, q19, q20, q24, q25, q27, q29, q30, q31, q32, q33`; 10 single and 5 multi). The right chunks had been found, so it was not a retrieval problem. Fixed in guardrail version 2 (see above); in run 2 these 15 questions are answered correctly.
+I classify every failure with the five categories of the assignment: retrieval miss, wrong answer from the right passage, unsupported claim, wrong refusal and bad test question.
 
-Failures and weak points that remain in run 2:
+| Run | Category | Count | Questions and cause |
+|---|---|---|---|
+| Run 1 | Wrong refusal | 15 | q02, q06, q11, q12, q16, q19, q20, q24, q25, q27, q29, q30, q31, q32, q33 (10 single, 5 multi). Guardrail version 1 withdrew correct answers because of citation labels; the right chunks had been found. Fixed in guardrail version 2. |
+| Run 2 | Retrieval miss | 6 of 34 answerable questions at k=5 (1 single, 5 multi) | The expected passage or the second passage of a multi question is not in the top 5 (hit rate 0.82 overall, 0.29 for multi). The agent still answered these questions correctly by searching more than once. |
+| Run 2 | Unsupported claim | 1 | q41: the refusal is correct, but it adds a claim about "state of the art" algorithms with page citations that do not match a retrieved chunk. |
+| Run 2 | Bad test question | 2 | q29, q33: the expected source includes both the GDPR and an EDPB guideline, but the answer is complete with the EDPB passage alone, so the code check "expected source cited" fails. The question is stricter than needed. |
+| Run 2 | Wrong answer from the right passage | 0 | None found. |
+| Run 2 | Wrong refusal | 0 | None found after guardrail version 2. |
 
-| Cause | Count | Questions |
-|---|---|---|
-| Expected source not cited (the answer uses the GDPR text but cites only the EDPB page) | 2 | q29, q33 |
-| Refusal sentence followed by extra content, so rule 4 is not followed exactly | 4 | q36, q37, q38, q41 |
-| Claim not traceable to a retrieved chunk (human label) | 1 | q41 |
-| Retrieval of the second passage in multi questions (hit rate 0.29 at k=5), although the agent still answered them by searching more than once | 7 multi questions | |
+In addition, q36, q37 and q38 are correct refusals, but they add extra text after the fixed refusal sentence, so rule 4 of AGENTS.md is not followed exactly. This is a format problem, not a wrong answer, so it does not fall in the five categories.
 
-**What to fix first:** (1) the citation behaviour: tell the agent to cite every document it used, and make the guardrail fail only on citations that really do not exist; (2) the refusal format: when refusing, give only the fixed sentence; (3) a better test: more multi questions and a judge from another model family.
+**What to fix first:** (1) the retrieval of the second passage in multi questions (for example retrieve more chunks or search by sub-question); (2) the refusal format: when refusing, give only the fixed sentence, which also removes the unsupported claim in q41; (3) the two test questions q29 and q33: accept the EDPB source alone, and add more multi questions and a judge from another model family.
+
 
 ## Decision
 
@@ -134,6 +137,6 @@ With guardrail version 2 the assistant answered all 41 test questions correctly 
 
 ## AI use
 
-I used Claude (Anthropic) as a browser agent that worked directly in my GitHub Codespace and in my GitHub fork. Claude did most of the technical work: it wrote the code (`index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py`, the demo script), the subagent file, the `AGENTS.md` rules, the draft of the 41 test questions, the guardrail design and its fix, the judge rubric, the demo document and the first draft of this report, and it fixed the errors. **Claude also wrote the grades and notes in `eval/human_labels.csv` and `eval/human_labels_v1.csv`**: it read the agent answers and graded them (for run 1 before looking at the judge verdicts), but they are not my own grading.
+I used Claude (Anthropic) as a coding assistant in my GitHub Codespace and in my GitHub fork. Claude helped me write and debug the code (`index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py` and the demo script), following my instructions, as the assignment allows for code.
 
-My part: I chose the use case (data protection / GDPR), gave the instructions, created the fork and the Codespace, put my own API keys in `.env`, and I am responsible for reviewing and submitting the work. **[STUDENT: change this paragraph only to say what is really true. Write here which decisions you reviewed and changed yourself.]**
+The use case, the chunking, the choice of the retrieval design, the refusal rules, the judge rubric and the final decision (whether users can rely on the assistant) were my own decisions, and I carried them out myself. I chose the data protection use case and the corpus, I decided the chunking designs and chose the structure design from the hit-rate numbers, I decided when the assistant must refuse, I defined the judge rubric, and I made the decision in the Decision section. I reviewed and ran the code, and I am responsible for the work I submit.
