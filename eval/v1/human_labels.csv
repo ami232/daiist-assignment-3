@@ -1,0 +1,33 @@
+id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,1,0,"Closing caveat says Member States can set Article 15 geographical zones; no retrieved passage contains Article 15."
+q04,1,0,"Same uncited Article 15 caveat; retrieved passages are only A2/A3 rules and AMC."
+q05,1,0,"Same uncited Article 15 caveat; no Article 15 text in retrieved passages."
+q06,1,1,
+q07,1,1,
+q08,1,1,
+q09,1,0,"Same uncited Article 15 caveat; no Article 15 text in retrieved passages."
+q10,1,1,
+q11,1,0,"Says Article 15 zones may restrict or prohibit night flights; passages only mention zones in general, nothing about night."
+q12,1,1,
+q13,1,1,
+q14,1,1,
+q15,1,0,"Same uncited Article 15 caveat; no Article 15 text in retrieved passages."
+q16,1,0,"Same uncited Article 15 caveat; no Article 15 text in retrieved passages."
+q17,1,1,
+q18,1,1,
+q19,1,1,
+q20,1,0,"Same uncited Article 15 caveat; no Article 15 text in retrieved passages."
+q21,1,1,
+q22,1,1,
+q23,1,0,"Closing warning about Article 15 zones is not in the retrieved passages."
+q24,1,0,"Claims the national portal is typically run by the national aviation authority and adds an Article 15 caveat; neither is in the retrieved passages."
+q25,0,0,"Adds that a modified C1 could 'potentially' be re-evaluated under other open category rules such as A3; the AMC says it may only be operated in the specific category (the privately-built exception is for C4 only). Misleading and unsupported."
+q26,1,1,
+q27,1,1,
+q28,1,1,
+q29,1,1,
+q30,1,1,
+q31,1,0,"Cites Article 14 for 'not set by EU rules and falls under national law', but Article 14(2)(d) says 'if required by Union or national law'; also adds an uncited Article 15 caveat."
+q32,1,1,
