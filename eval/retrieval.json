@@ -1,0 +1,3470 @@
+{
+  "questions_sha256": "df06fc54563763159c3db1407b3769136f691180eba17f19130085256b49b693",
+  "embedding_model": "gemini-embedding-2",
+  "metric_definitions": {
+    "hit@k": "Share of answerable (single + multi) questions where at least one of the top k chunks comes from an expected document AND covers its expected location (article/section/recital, or PDF page). Unanswerable questions are excluded from the denominator.",
+    "multi_all_evidence@k": "Share of multi questions where every expected passage is covered by some top-k chunk.",
+    "avg_words@k": "Average words in the top k chunks over all questions: what retrieval adds to the prompt.",
+    "mean_top1_score": "Mean cosine similarity of the best chunk, for answerable vs unanswerable questions; shows whether a score threshold could separate them."
+  },
+  "designs": {
+    "A": {
+      "design": "A",
+      "settings": {
+        "kind": "window",
+        "size": 200,
+        "overlap": 40
+      },
+      "chunks": 395,
+      "hit@1": {
+        "hits": 23,
+        "n": 26,
+        "rate": 0.885
+      },
+      "multi_all_evidence@1": {
+        "hits": 1,
+        "n": 7,
+        "rate": 0.143
+      },
+      "avg_words@1": 209.7,
+      "hit@3": {
+        "hits": 25,
+        "n": 26,
+        "rate": 0.962
+      },
+      "multi_all_evidence@3": {
+        "hits": 5,
+        "n": 7,
+        "rate": 0.714
+      },
+      "avg_words@3": 627.0,
+      "hit@5": {
+        "hits": 26,
+        "n": 26,
+        "rate": 1.0
+      },
+      "multi_all_evidence@5": {
+        "hits": 6,
+        "n": 7,
+        "rate": 0.857
+      },
+      "avg_words@5": 1044.8,
+      "mean_top1_score_answerable": 0.7836,
+      "mean_top1_score_unanswerable": 0.7298,
+      "misses@5": []
+    },
+    "B": {
+      "design": "B",
+      "settings": {
+        "kind": "structure",
+        "max_words": 450,
+        "min_words": 25
+      },
+      "chunks": 286,
+      "hit@1": {
+        "hits": 21,
+        "n": 26,
+        "rate": 0.808
+      },
+      "multi_all_evidence@1": {
+        "hits": 0,
+        "n": 7,
+        "rate": 0.0
+      },
+      "avg_words@1": 315.6,
+      "hit@3": {
+        "hits": 26,
+        "n": 26,
+        "rate": 1.0
+      },
+      "multi_all_evidence@3": {
+        "hits": 3,
+        "n": 7,
+        "rate": 0.429
+      },
+      "avg_words@3": 918.8,
+      "hit@5": {
+        "hits": 26,
+        "n": 26,
+        "rate": 1.0
+      },
+      "multi_all_evidence@5": {
+        "hits": 6,
+        "n": 7,
+        "rate": 0.857
+      },
+      "avg_words@5": 1466,
+      "mean_top1_score_answerable": 0.7907,
+      "mean_top1_score_unanswerable": 0.7276,
+      "misses@5": []
+    }
+  },
+  "per_question": {
+    "A": [
+      {
+        "id": "q01",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32004R0261:A:w017:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.7862,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w014:1",
+            "source": "32004R0261",
+            "location": "Article 5",
+            "score": 0.7536,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w016:1",
+            "source": "32004R0261",
+            "location": "Article 6 to Article 7",
+            "score": 0.7426,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w015:1",
+            "source": "32004R0261",
+            "location": "Article 5 to Article 6",
+            "score": 0.7368,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w064:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.4 to Section 4.4.6",
+            "score": 0.7297,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q02",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32004R0261:A:w014:1",
+            "source": "32004R0261",
+            "location": "Article 5",
+            "score": 0.7436,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w016:1",
+            "source": "32004R0261",
+            "location": "Article 6 to Article 7",
+            "score": 0.7348,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w019:1",
+            "source": "32004R0261",
+            "location": "Article 8 to Article 9",
+            "score": 0.7284,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w015:1",
+            "source": "32004R0261",
+            "location": "Article 5 to Article 6",
+            "score": 0.728,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w034:1",
+            "source": "52024XC05687",
+            "location": "Section 3.2.6 to Section 3.3.2",
+            "score": 0.7234,
+            "words": 233
+          }
+        ],
+        "first_match_rank": 2,
+        "evidence_found_at": {
+          "1": [
+            false
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q03",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32004R0261:A:w020:1",
+            "source": "32004R0261",
+            "location": "Article 9 to Article 10",
+            "score": 0.8135,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w055:1",
+            "source": "52024XC05687",
+            "location": "Section 4.3.2",
+            "score": 0.7944,
+            "words": 207
+          },
+          {
+            "id": "32004R0261:A:w019:1",
+            "source": "32004R0261",
+            "location": "Article 8 to Article 9",
+            "score": 0.7827,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w059:1",
+            "source": "52024XC05687",
+            "location": "Section 4.3.2 to Section 4.3.3",
+            "score": 0.7605,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w054:1",
+            "source": "52024XC05687",
+            "location": "Section 4.3.1 to Section 4.3.2",
+            "score": 0.7577,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q04",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32004R0261:A:w021:1",
+            "source": "32004R0261",
+            "location": "Article 10 to Article 11",
+            "score": 0.786,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w038:1",
+            "source": "52024XC05687",
+            "location": "Section 3.4.1 to Section 3.4.2",
+            "score": 0.7541,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w017:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.7537,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w039:1",
+            "source": "52024XC05687",
+            "location": "Section 3.4.2 to Section 4.1.1",
+            "score": 0.7491,
+            "words": 209
+          },
+          {
+            "id": "32004R0261:A:w018:1",
+            "source": "32004R0261",
+            "location": "Article 7 to Article 8",
+            "score": 0.7433,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q05",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "52024XC05687:A:w046:1",
+            "source": "52024XC05687",
+            "location": "Section 4.2",
+            "score": 0.7143,
+            "words": 213
+          },
+          {
+            "id": "52024XC05687:A:w043:1",
+            "source": "52024XC05687",
+            "location": "Section 4.2",
+            "score": 0.7081,
+            "words": 368
+          },
+          {
+            "id": "32004R0261:A:w014:1",
+            "source": "32004R0261",
+            "location": "Article 5",
+            "score": 0.7079,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w018:1",
+            "source": "32004R0261",
+            "location": "Article 7 to Article 8",
+            "score": 0.7073,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w093:1",
+            "source": "52024XC05687",
+            "location": "Section 6.2",
+            "score": 0.6967,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 4,
+        "evidence_found_at": {
+          "1": [
+            false
+          ],
+          "3": [
+            false
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q06",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32004R0261:A:w011:1",
+            "source": "32004R0261",
+            "location": "Article 3",
+            "score": 0.7698,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w012:1",
+            "source": "32004R0261",
+            "location": "Article 3 to Article 4",
+            "score": 0.7676,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w017:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.7499,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w019:1",
+            "source": "32004R0261",
+            "location": "Article 8 to Article 9",
+            "score": 0.7477,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w018:1",
+            "source": "32004R0261",
+            "location": "Article 7 to Article 8",
+            "score": 0.7463,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q07",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "52024XC05687:A:w035:1",
+            "source": "52024XC05687",
+            "location": "Section 3.3.1 to Section 3.3.3",
+            "score": 0.8265,
+            "words": 232
+          },
+          {
+            "id": "52024XC05687:A:w036:1",
+            "source": "52024XC05687",
+            "location": "Section 3.3.3",
+            "score": 0.8054,
+            "words": 224
+          },
+          {
+            "id": "52024XC05687:A:w067:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.7 to Section 4.4.8",
+            "score": 0.7682,
+            "words": 216
+          },
+          {
+            "id": "52024XC05687:A:w066:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.6 to Section 4.4.7",
+            "score": 0.7558,
+            "words": 216
+          },
+          {
+            "id": "52024XC05687:A:w034:1",
+            "source": "52024XC05687",
+            "location": "Section 3.2.6 to Section 3.3.2",
+            "score": 0.7553,
+            "words": 233
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q08",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "52024XC05687:A:w088:1",
+            "source": "52024XC05687",
+            "location": "Section 5.2.3 to Section 5.3",
+            "score": 0.7931,
+            "words": 215
+          },
+          {
+            "id": "52024XC05687:A:w082:1",
+            "source": "52024XC05687",
+            "location": "Section 5.2.2",
+            "score": 0.7922,
+            "words": 223
+          },
+          {
+            "id": "52024XC05687:A:w083:1",
+            "source": "52024XC05687",
+            "location": "Section 5.2.2 to Section 5.2.3",
+            "score": 0.7841,
+            "words": 237
+          },
+          {
+            "id": "52024XC05687:A:w095:1",
+            "source": "52024XC05687",
+            "location": "Section 6.4",
+            "score": 0.7561,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w077:1",
+            "source": "52024XC05687",
+            "location": "Section 5.1",
+            "score": 0.7546,
+            "words": 217
+          }
+        ],
+        "first_match_rank": 2,
+        "evidence_found_at": {
+          "1": [
+            false
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q09",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "52024XC05687:A:w084:1",
+            "source": "52024XC05687",
+            "location": "Section 5.2.2 to Section 5.2.3",
+            "score": 0.7902,
+            "words": 213
+          },
+          {
+            "id": "52024XC05687:A:w085:1",
+            "source": "52024XC05687",
+            "location": "Section 5.2.3",
+            "score": 0.7542,
+            "words": 225
+          },
+          {
+            "id": "52024XC05687:A:w088:1",
+            "source": "52024XC05687",
+            "location": "Section 5.2.3 to Section 5.3",
+            "score": 0.7541,
+            "words": 215
+          },
+          {
+            "id": "52024XC05687:A:w077:1",
+            "source": "52024XC05687",
+            "location": "Section 5.1",
+            "score": 0.7426,
+            "words": 217
+          },
+          {
+            "id": "52024XC05687:A:w082:1",
+            "source": "52024XC05687",
+            "location": "Section 5.2.2",
+            "score": 0.7343,
+            "words": 223
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q10",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "52024XC05687:A:w109:1",
+            "source": "52024XC05687",
+            "location": "Section 9.1 to Section 10",
+            "score": 0.7591,
+            "words": 219
+          },
+          {
+            "id": "52024XC05687:A:w110:1",
+            "source": "52024XC05687",
+            "location": "Section 9.2 to Section 10",
+            "score": 0.7179,
+            "words": 225
+          },
+          {
+            "id": "32004R0261:A:w017:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.7167,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w009:1",
+            "source": "52024XC05687",
+            "location": "Section 2.1.3",
+            "score": 0.7146,
+            "words": 213
+          },
+          {
+            "id": "52024XC05687:A:w106:1",
+            "source": "52024XC05687",
+            "location": "Section 9.1",
+            "score": 0.71,
+            "words": 217
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q11",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "52024XC05687:A:w031:1",
+            "source": "52024XC05687",
+            "location": "Section 3.2.2 to Section 3.2.3",
+            "score": 0.774,
+            "words": 223
+          },
+          {
+            "id": "32004R0261:A:w014:1",
+            "source": "32004R0261",
+            "location": "Article 5",
+            "score": 0.7615,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w074:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.12 to Section 4.4.13",
+            "score": 0.7365,
+            "words": 213
+          },
+          {
+            "id": "32004R0261:A:w015:1",
+            "source": "32004R0261",
+            "location": "Article 5 to Article 6",
+            "score": 0.7254,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w030:1",
+            "source": "52024XC05687",
+            "location": "Section 3.2.1 to Section 3.2.2",
+            "score": 0.7201,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q12",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32021R0782:A:w054:1",
+            "source": "32021R0782",
+            "location": "Article 18 to Article 19",
+            "score": 0.7418,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w055:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.727,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w056:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7166,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w058:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7122,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w057:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.706,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q13",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32021R0782:A:w057:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.778,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w054:1",
+            "source": "32021R0782",
+            "location": "Article 18 to Article 19",
+            "score": 0.764,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w049:1",
+            "source": "32021R0782",
+            "location": "Article 15 to Article 18",
+            "score": 0.7488,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w055:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7358,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w018:1",
+            "source": "32004R0261",
+            "location": "Article 7 to Article 8",
+            "score": 0.7312,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q14",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32021R0782:A:w050:1",
+            "source": "32021R0782",
+            "location": "Article 18",
+            "score": 0.8,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w049:1",
+            "source": "32021R0782",
+            "location": "Article 15 to Article 18",
+            "score": 0.7704,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w060:1",
+            "source": "32021R0782",
+            "location": "Article 20",
+            "score": 0.7606,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w051:1",
+            "source": "32021R0782",
+            "location": "Article 18",
+            "score": 0.753,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w052:1",
+            "source": "32021R0782",
+            "location": "Article 18",
+            "score": 0.7506,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q15",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32021R0782:A:w036:1",
+            "source": "32021R0782",
+            "location": "Article 6",
+            "score": 0.8258,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w035:1",
+            "source": "32021R0782",
+            "location": "Article 5 to Article 6",
+            "score": 0.8202,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w038:1",
+            "source": "32021R0782",
+            "location": "Article 6 to Article 7",
+            "score": 0.8103,
+            "words": 243
+          },
+          {
+            "id": "32021R0782:A:w037:1",
+            "source": "32021R0782",
+            "location": "Article 6",
+            "score": 0.7956,
+            "words": 235
+          },
+          {
+            "id": "32021R0782:A:w009:1",
+            "source": "32021R0782",
+            "location": "Recital (17)",
+            "score": 0.7947,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q16",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32021R0782:A:w059:1",
+            "source": "32021R0782",
+            "location": "Article 19 to Article 20",
+            "score": 0.7494,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w058:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7332,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w020:1",
+            "source": "32021R0782",
+            "location": "Recital (37) to Recital (38)",
+            "score": 0.73,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w054:1",
+            "source": "32021R0782",
+            "location": "Article 18 to Article 19",
+            "score": 0.7125,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w055:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7112,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q17",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32015L2302:A:w059:1",
+            "source": "32015L2302",
+            "location": "Article 12",
+            "score": 0.8052,
+            "words": 200
+          },
+          {
+            "id": "32015L2302:A:w060:1",
+            "source": "32015L2302",
+            "location": "Article 12",
+            "score": 0.7885,
+            "words": 200
+          },
+          {
+            "id": "32015L2302:A:w061:1",
+            "source": "32015L2302",
+            "location": "Article 12 to Article 13",
+            "score": 0.7763,
+            "words": 200
+          },
+          {
+            "id": "32015L2302:A:w084:1",
+            "source": "32015L2302",
+            "location": "Annex I",
+            "score": 0.7723,
+            "words": 200
+          },
+          {
+            "id": "32015L2302:A:w092:1",
+            "source": "32015L2302",
+            "location": "Annex I",
+            "score": 0.7675,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q18",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32015L2302:A:w068:1",
+            "source": "32015L2302",
+            "location": "Article 14 to Article 15",
+            "score": 0.839,
+            "words": 238
+          },
+          {
+            "id": "32015L2302:A:w069:1",
+            "source": "32015L2302",
+            "location": "Article 14 to Article 16",
+            "score": 0.824,
+            "words": 200
+          },
+          {
+            "id": "32015L2302:A:w066:1",
+            "source": "32015L2302",
+            "location": "Article 13 to Article 14",
+            "score": 0.7891,
+            "words": 200
+          },
+          {
+            "id": "32015L2302:A:w067:1",
+            "source": "32015L2302",
+            "location": "Article 14",
+            "score": 0.7881,
+            "words": 200
+          },
+          {
+            "id": "32015L2302:A:w023:1",
+            "source": "32015L2302",
+            "location": "Recital (34) to Recital (35)",
+            "score": 0.7832,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q19",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32015L2302:A:w070:1",
+            "source": "32015L2302",
+            "location": "Article 16 to Article 17",
+            "score": 0.81,
+            "words": 200
+          },
+          {
+            "id": "32015L2302:A:w069:1",
+            "source": "32015L2302",
+            "location": "Article 14 to Article 16",
+            "score": 0.7815,
+            "words": 200
+          },
+          {
+            "id": "32015L2302:A:w093:1",
+            "source": "32015L2302",
+            "location": "Annex I",
+            "score": 0.7786,
+            "words": 200
+          },
+          {
+            "id": "32015L2302:A:w065:1",
+            "source": "32015L2302",
+            "location": "Article 13",
+            "score": 0.7728,
+            "words": 200
+          },
+          {
+            "id": "32015L2302:A:w089:1",
+            "source": "32015L2302",
+            "location": "Annex I",
+            "score": 0.7677,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q20",
+        "kind": "multi",
+        "retrieved": [
+          {
+            "id": "32004R0261:A:w017:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.7753,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w014:1",
+            "source": "32004R0261",
+            "location": "Article 5",
+            "score": 0.7569,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w015:1",
+            "source": "32004R0261",
+            "location": "Article 5 to Article 6",
+            "score": 0.7452,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w016:1",
+            "source": "32004R0261",
+            "location": "Article 6 to Article 7",
+            "score": 0.7428,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w095:1",
+            "source": "52024XC05687",
+            "location": "Section 6.4",
+            "score": 0.7304,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true,
+            false
+          ],
+          "3": [
+            true,
+            false
+          ],
+          "5": [
+            true,
+            false
+          ]
+        }
+      },
+      {
+        "id": "q21",
+        "kind": "multi",
+        "retrieved": [
+          {
+            "id": "32004R0261:A:w017:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.776,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w066:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.6 to Section 4.4.7",
+            "score": 0.7751,
+            "words": 216
+          },
+          {
+            "id": "52024XC05687:A:w034:1",
+            "source": "52024XC05687",
+            "location": "Section 3.2.6 to Section 3.3.2",
+            "score": 0.7683,
+            "words": 233
+          },
+          {
+            "id": "52024XC05687:A:w067:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.7 to Section 4.4.8",
+            "score": 0.7665,
+            "words": 216
+          },
+          {
+            "id": "32004R0261:A:w016:1",
+            "source": "32004R0261",
+            "location": "Article 6 to Article 7",
+            "score": 0.7658,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            false,
+            true
+          ],
+          "3": [
+            true,
+            true
+          ],
+          "5": [
+            true,
+            true
+          ]
+        }
+      },
+      {
+        "id": "q22",
+        "kind": "multi",
+        "retrieved": [
+          {
+            "id": "52024XC05687:A:w059:1",
+            "source": "52024XC05687",
+            "location": "Section 4.3.2 to Section 4.3.3",
+            "score": 0.7851,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w004:1",
+            "source": "32004R0261",
+            "location": "Recital (12) to Recital (16)",
+            "score": 0.7734,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w015:1",
+            "source": "32004R0261",
+            "location": "Article 5 to Article 6",
+            "score": 0.7706,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w095:1",
+            "source": "52024XC05687",
+            "location": "Section 6.4",
+            "score": 0.7644,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w055:1",
+            "source": "52024XC05687",
+            "location": "Section 4.3.2",
+            "score": 0.7608,
+            "words": 207
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            false,
+            true
+          ],
+          "3": [
+            true,
+            true
+          ],
+          "5": [
+            true,
+            true
+          ]
+        }
+      },
+      {
+        "id": "q23",
+        "kind": "multi",
+        "retrieved": [
+          {
+            "id": "32021R0782:A:w050:1",
+            "source": "32021R0782",
+            "location": "Article 18",
+            "score": 0.7494,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w060:1",
+            "source": "32021R0782",
+            "location": "Article 20",
+            "score": 0.7486,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w051:1",
+            "source": "32021R0782",
+            "location": "Article 18",
+            "score": 0.7342,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w019:1",
+            "source": "32004R0261",
+            "location": "Article 8 to Article 9",
+            "score": 0.7307,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w055:1",
+            "source": "52024XC05687",
+            "location": "Section 4.3.2",
+            "score": 0.7279,
+            "words": 207
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true,
+            false
+          ],
+          "3": [
+            true,
+            true
+          ],
+          "5": [
+            true,
+            true
+          ]
+        }
+      },
+      {
+        "id": "q24",
+        "kind": "multi",
+        "retrieved": [
+          {
+            "id": "52024XC05687:A:w021:1",
+            "source": "52024XC05687",
+            "location": "Section 2.2.7",
+            "score": 0.7923,
+            "words": 300
+          },
+          {
+            "id": "52024XC05687:A:w022:1",
+            "source": "52024XC05687",
+            "location": "Section 2.2.7",
+            "score": 0.7726,
+            "words": 229
+          },
+          {
+            "id": "52024XC05687:A:w023:1",
+            "source": "52024XC05687",
+            "location": "Section 2.2.7 to Section 3.1.1",
+            "score": 0.772,
+            "words": 219
+          },
+          {
+            "id": "32015L2302:A:w068:1",
+            "source": "32015L2302",
+            "location": "Article 14 to Article 15",
+            "score": 0.7707,
+            "words": 238
+          },
+          {
+            "id": "32015L2302:A:w025:1",
+            "source": "32015L2302",
+            "location": "Recital (35) to Recital (38)",
+            "score": 0.7636,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            false,
+            true
+          ],
+          "3": [
+            false,
+            true
+          ],
+          "5": [
+            true,
+            true
+          ]
+        }
+      },
+      {
+        "id": "q25",
+        "kind": "multi",
+        "retrieved": [
+          {
+            "id": "32015L2302:A:w054:1",
+            "source": "32015L2302",
+            "location": "Article 10",
+            "score": 0.8292,
+            "words": 200
+          },
+          {
+            "id": "32015L2302:A:w055:1",
+            "source": "32015L2302",
+            "location": "Article 10 to Article 11",
+            "score": 0.8241,
+            "words": 200
+          },
+          {
+            "id": "32015L2302:A:w087:1",
+            "source": "32015L2302",
+            "location": "Annex I",
+            "score": 0.8018,
+            "words": 200
+          },
+          {
+            "id": "32015L2302:A:w056:1",
+            "source": "32015L2302",
+            "location": "Article 11",
+            "score": 0.7971,
+            "words": 200
+          },
+          {
+            "id": "32015L2302:A:w021:1",
+            "source": "32015L2302",
+            "location": "Recital (33)",
+            "score": 0.7943,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true,
+            false
+          ],
+          "3": [
+            true,
+            true
+          ],
+          "5": [
+            true,
+            true
+          ]
+        }
+      },
+      {
+        "id": "q26",
+        "kind": "multi",
+        "retrieved": [
+          {
+            "id": "32021R0782:A:w054:1",
+            "source": "32021R0782",
+            "location": "Article 18 to Article 19",
+            "score": 0.7615,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w050:1",
+            "source": "32021R0782",
+            "location": "Article 18",
+            "score": 0.7469,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w055:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7467,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w058:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7249,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w056:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7226,
+            "words": 200
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true,
+            true
+          ],
+          "3": [
+            true,
+            true
+          ],
+          "5": [
+            true,
+            true
+          ]
+        }
+      },
+      {
+        "id": "q27",
+        "kind": "unanswerable",
+        "retrieved": [
+          {
+            "id": "32004R0261:A:w016:1",
+            "source": "32004R0261",
+            "location": "Article 6 to Article 7",
+            "score": 0.7133,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w017:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.6919,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w055:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.6912,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w054:1",
+            "source": "32021R0782",
+            "location": "Article 18 to Article 19",
+            "score": 0.6877,
+            "words": 200
+          },
+          {
+            "id": "32015L2302:A:w068:1",
+            "source": "32015L2302",
+            "location": "Article 14 to Article 15",
+            "score": 0.6828,
+            "words": 238
+          }
+        ],
+        "first_match_rank": null,
+        "evidence_found_at": {
+          "1": [],
+          "3": [],
+          "5": []
+        }
+      },
+      {
+        "id": "q28",
+        "kind": "unanswerable",
+        "retrieved": [
+          {
+            "id": "32021R0782:A:w050:1",
+            "source": "32021R0782",
+            "location": "Article 18",
+            "score": 0.7152,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w019:1",
+            "source": "32004R0261",
+            "location": "Article 8 to Article 9",
+            "score": 0.7023,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w014:1",
+            "source": "32004R0261",
+            "location": "Article 5",
+            "score": 0.702,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w060:1",
+            "source": "32021R0782",
+            "location": "Article 20",
+            "score": 0.7013,
+            "words": 200
+          },
+          {
+            "id": "32004R0261:A:w013:1",
+            "source": "32004R0261",
+            "location": "Article 4 to Article 5",
+            "score": 0.689,
+            "words": 200
+          }
+        ],
+        "first_match_rank": null,
+        "evidence_found_at": {
+          "1": [],
+          "3": [],
+          "5": []
+        }
+      },
+      {
+        "id": "q29",
+        "kind": "unanswerable",
+        "retrieved": [
+          {
+            "id": "52024XC05687:A:w056:1",
+            "source": "52024XC05687",
+            "location": "Section 4.3.2",
+            "score": 0.7044,
+            "words": 207
+          },
+          {
+            "id": "52024XC05687:A:w055:1",
+            "source": "52024XC05687",
+            "location": "Section 4.3.2",
+            "score": 0.6888,
+            "words": 207
+          },
+          {
+            "id": "32004R0261:A:w019:1",
+            "source": "32004R0261",
+            "location": "Article 8 to Article 9",
+            "score": 0.688,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w045:1",
+            "source": "52024XC05687",
+            "location": "Section 4.2",
+            "score": 0.6819,
+            "words": 213
+          },
+          {
+            "id": "52024XC05687:A:w052:1",
+            "source": "52024XC05687",
+            "location": "Section 4.2",
+            "score": 0.6773,
+            "words": 207
+          }
+        ],
+        "first_match_rank": null,
+        "evidence_found_at": {
+          "1": [],
+          "3": [],
+          "5": []
+        }
+      },
+      {
+        "id": "q30",
+        "kind": "unanswerable",
+        "retrieved": [
+          {
+            "id": "52024XC05687:A:w046:1",
+            "source": "52024XC05687",
+            "location": "Section 4.2",
+            "score": 0.7206,
+            "words": 213
+          },
+          {
+            "id": "52024XC05687:A:w047:1",
+            "source": "52024XC05687",
+            "location": "Section 4.2",
+            "score": 0.7193,
+            "words": 222
+          },
+          {
+            "id": "32004R0261:A:w018:1",
+            "source": "32004R0261",
+            "location": "Article 7 to Article 8",
+            "score": 0.7097,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w043:1",
+            "source": "52024XC05687",
+            "location": "Section 4.2",
+            "score": 0.6971,
+            "words": 368
+          },
+          {
+            "id": "32004R0261:A:w017:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.6933,
+            "words": 200
+          }
+        ],
+        "first_match_rank": null,
+        "evidence_found_at": {
+          "1": [],
+          "3": [],
+          "5": []
+        }
+      },
+      {
+        "id": "q31",
+        "kind": "unanswerable",
+        "retrieved": [
+          {
+            "id": "32004R0261:A:w016:1",
+            "source": "32004R0261",
+            "location": "Article 6 to Article 7",
+            "score": 0.7685,
+            "words": 200
+          },
+          {
+            "id": "52024XC05687:A:w067:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.7 to Section 4.4.8",
+            "score": 0.7647,
+            "words": 216
+          },
+          {
+            "id": "52024XC05687:A:w066:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.6 to Section 4.4.7",
+            "score": 0.7597,
+            "words": 216
+          },
+          {
+            "id": "52024XC05687:A:w071:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.10 to Section 4.4.11",
+            "score": 0.756,
+            "words": 230
+          },
+          {
+            "id": "52024XC05687:A:w034:1",
+            "source": "52024XC05687",
+            "location": "Section 3.2.6 to Section 3.3.2",
+            "score": 0.7558,
+            "words": 233
+          }
+        ],
+        "first_match_rank": null,
+        "evidence_found_at": {
+          "1": [],
+          "3": [],
+          "5": []
+        }
+      },
+      {
+        "id": "q32",
+        "kind": "unanswerable",
+        "retrieved": [
+          {
+            "id": "32021R0782:A:w081:1",
+            "source": "32021R0782",
+            "location": "Article 32 to Article 33",
+            "score": 0.7565,
+            "words": 238
+          },
+          {
+            "id": "32021R0782:A:w082:1",
+            "source": "32021R0782",
+            "location": "Article 33",
+            "score": 0.7482,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w080:1",
+            "source": "32021R0782",
+            "location": "Article 32 to Article 33",
+            "score": 0.742,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w075:1",
+            "source": "32021R0782",
+            "location": "Article 28",
+            "score": 0.741,
+            "words": 200
+          },
+          {
+            "id": "32021R0782:A:w083:1",
+            "source": "32021R0782",
+            "location": "Article 33 to Article 34",
+            "score": 0.7401,
+            "words": 200
+          }
+        ],
+        "first_match_rank": null,
+        "evidence_found_at": {
+          "1": [],
+          "3": [],
+          "5": []
+        }
+      }
+    ],
+    "B": [
+      {
+        "id": "q01",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32004R0261:B:article-7:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.7813,
+            "words": 261
+          },
+          {
+            "id": "32004R0261:B:article-5:1",
+            "source": "32004R0261",
+            "location": "Article 5",
+            "score": 0.7692,
+            "words": 323
+          },
+          {
+            "id": "52024XC05687:B:section-4.4.5:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.5",
+            "score": 0.7409,
+            "words": 67
+          },
+          {
+            "id": "52024XC05687:B:section-4.4.4:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.4",
+            "score": 0.7398,
+            "words": 109
+          },
+          {
+            "id": "52024XC05687:B:section-3.2.6:1",
+            "source": "52024XC05687",
+            "location": "Section 3.2.6",
+            "score": 0.7345,
+            "words": 132
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q02",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32004R0261:B:article-5:1",
+            "source": "32004R0261",
+            "location": "Article 5",
+            "score": 0.7627,
+            "words": 323
+          },
+          {
+            "id": "32004R0261:B:article-6:1",
+            "source": "32004R0261",
+            "location": "Article 6",
+            "score": 0.757,
+            "words": 175
+          },
+          {
+            "id": "32004R0261:B:article-8:1",
+            "source": "32004R0261",
+            "location": "Article 8",
+            "score": 0.7367,
+            "words": 242
+          },
+          {
+            "id": "52024XC05687:B:section-3.3.1:1",
+            "source": "52024XC05687",
+            "location": "Section 3.3 to Section 3.3.1",
+            "score": 0.7327,
+            "words": 129
+          },
+          {
+            "id": "32004R0261:B:article-9:1",
+            "source": "32004R0261",
+            "location": "Article 9",
+            "score": 0.7134,
+            "words": 128
+          }
+        ],
+        "first_match_rank": 2,
+        "evidence_found_at": {
+          "1": [
+            false
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q03",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32004R0261:B:article-9:1",
+            "source": "32004R0261",
+            "location": "Article 9",
+            "score": 0.8322,
+            "words": 128
+          },
+          {
+            "id": "52024XC05687:B:section-4.3.2:1",
+            "source": "52024XC05687",
+            "location": "Section 4.3.2",
+            "score": 0.7826,
+            "words": 419
+          },
+          {
+            "id": "52024XC05687:B:section-4.3.1:1",
+            "source": "52024XC05687",
+            "location": "Section 4.3 to Section 4.3.1",
+            "score": 0.7701,
+            "words": 101
+          },
+          {
+            "id": "32004R0261:B:article-6:1",
+            "source": "32004R0261",
+            "location": "Article 6",
+            "score": 0.7629,
+            "words": 175
+          },
+          {
+            "id": "32021R0782:B:article-20:1",
+            "source": "32021R0782",
+            "location": "Article 20",
+            "score": 0.7625,
+            "words": 413
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q04",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32004R0261:B:article-10:1",
+            "source": "32004R0261",
+            "location": "Article 10",
+            "score": 0.821,
+            "words": 167
+          },
+          {
+            "id": "52024XC05687:B:section-3.4.2:1",
+            "source": "52024XC05687",
+            "location": "Section 3.4.2",
+            "score": 0.7708,
+            "words": 184
+          },
+          {
+            "id": "32004R0261:B:article-7:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.748,
+            "words": 261
+          },
+          {
+            "id": "52024XC05687:B:section-3.4.1:1",
+            "source": "52024XC05687",
+            "location": "Section 3.4 to Section 3.4.1",
+            "score": 0.7303,
+            "words": 191
+          },
+          {
+            "id": "32004R0261:B:article-8:1",
+            "source": "32004R0261",
+            "location": "Article 8",
+            "score": 0.7215,
+            "words": 242
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q05",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32004R0261:B:article-5:1",
+            "source": "32004R0261",
+            "location": "Article 5",
+            "score": 0.7152,
+            "words": 323
+          },
+          {
+            "id": "32004R0261:B:article-8:1",
+            "source": "32004R0261",
+            "location": "Article 8",
+            "score": 0.7147,
+            "words": 242
+          },
+          {
+            "id": "32015L2302:B:article-12:2",
+            "source": "32015L2302",
+            "location": "Article 12",
+            "score": 0.7076,
+            "words": 125
+          },
+          {
+            "id": "52024XC05687:B:section-4.2:1",
+            "source": "52024XC05687",
+            "location": "Section 4.2",
+            "score": 0.7055,
+            "words": 435
+          },
+          {
+            "id": "52024XC05687:B:section-6.2:1",
+            "source": "52024XC05687",
+            "location": "Section 6.2",
+            "score": 0.7048,
+            "words": 221
+          }
+        ],
+        "first_match_rank": 2,
+        "evidence_found_at": {
+          "1": [
+            false
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q06",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32004R0261:B:article-3:1",
+            "source": "32004R0261",
+            "location": "Article 3",
+            "score": 0.7719,
+            "words": 345
+          },
+          {
+            "id": "32004R0261:B:article-7:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.7528,
+            "words": 261
+          },
+          {
+            "id": "32004R0261:B:article-15:1",
+            "source": "32004R0261",
+            "location": "Article 15",
+            "score": 0.7484,
+            "words": 98
+          },
+          {
+            "id": "32004R0261:B:article-4:1",
+            "source": "32004R0261",
+            "location": "Article 4",
+            "score": 0.7431,
+            "words": 132
+          },
+          {
+            "id": "32004R0261:B:article-8:1",
+            "source": "32004R0261",
+            "location": "Article 8",
+            "score": 0.743,
+            "words": 242
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q07",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "52024XC05687:B:section-3.3.3:1",
+            "source": "52024XC05687",
+            "location": "Section 3.3.3",
+            "score": 0.8257,
+            "words": 372
+          },
+          {
+            "id": "52024XC05687:B:section-3.3.2:1",
+            "source": "52024XC05687",
+            "location": "Section 3.3.2",
+            "score": 0.7975,
+            "words": 65
+          },
+          {
+            "id": "52024XC05687:B:section-4.4.7:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.7",
+            "score": 0.791,
+            "words": 241
+          },
+          {
+            "id": "32004R0261:B:article-6:1",
+            "source": "32004R0261",
+            "location": "Article 6",
+            "score": 0.7609,
+            "words": 175
+          },
+          {
+            "id": "52024XC05687:B:section-4.4.13:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.13",
+            "score": 0.7465,
+            "words": 171
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q08",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "52024XC05687:B:section-5.2.2:2",
+            "source": "52024XC05687",
+            "location": "Section 5.2.2",
+            "score": 0.7957,
+            "words": 349
+          },
+          {
+            "id": "52024XC05687:B:section-5.1:1",
+            "source": "52024XC05687",
+            "location": "Section 5 to Section 5.1",
+            "score": 0.7782,
+            "words": 445
+          },
+          {
+            "id": "32004R0261:B:recital-12:1",
+            "source": "32004R0261",
+            "location": "Recital (12) to Recital (21)",
+            "score": 0.7664,
+            "words": 432
+          },
+          {
+            "id": "52024XC05687:B:section-5.2.3:2",
+            "source": "52024XC05687",
+            "location": "Section 5.2.3",
+            "score": 0.7586,
+            "words": 367
+          },
+          {
+            "id": "52024XC05687:B:section-6.4:1",
+            "source": "52024XC05687",
+            "location": "Section 6.4",
+            "score": 0.755,
+            "words": 407
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q09",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "52024XC05687:B:section-5.2.3:1",
+            "source": "52024XC05687",
+            "location": "Section 5.2.3",
+            "score": 0.7806,
+            "words": 453
+          },
+          {
+            "id": "52024XC05687:B:section-5.1:1",
+            "source": "52024XC05687",
+            "location": "Section 5 to Section 5.1",
+            "score": 0.7605,
+            "words": 445
+          },
+          {
+            "id": "32004R0261:B:recital-12:1",
+            "source": "32004R0261",
+            "location": "Recital (12) to Recital (21)",
+            "score": 0.7395,
+            "words": 432
+          },
+          {
+            "id": "52024XC05687:B:section-5.2.2:2",
+            "source": "52024XC05687",
+            "location": "Section 5.2.2",
+            "score": 0.7369,
+            "words": 349
+          },
+          {
+            "id": "52024XC05687:B:section-5.2.3:2",
+            "source": "52024XC05687",
+            "location": "Section 5.2.3",
+            "score": 0.7343,
+            "words": 367
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q10",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "52024XC05687:B:section-9.2:1",
+            "source": "52024XC05687",
+            "location": "Section 9.2",
+            "score": 0.7901,
+            "words": 129
+          },
+          {
+            "id": "52024XC05687:B:section-9.1:1",
+            "source": "52024XC05687",
+            "location": "Section 9 to Section 9.1",
+            "score": 0.7288,
+            "words": 450
+          },
+          {
+            "id": "32004R0261:B:article-7:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.7202,
+            "words": 261
+          },
+          {
+            "id": "52024XC05687:B:section-9.1:2",
+            "source": "52024XC05687",
+            "location": "Section 9.1",
+            "score": 0.7118,
+            "words": 294
+          },
+          {
+            "id": "52024XC05687:B:section-10:4",
+            "source": "52024XC05687",
+            "location": "Section 10",
+            "score": 0.7099,
+            "words": 181
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q11",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "52024XC05687:B:section-3.2.2:1",
+            "source": "52024XC05687",
+            "location": "Section 3.2.2",
+            "score": 0.8079,
+            "words": 235
+          },
+          {
+            "id": "32004R0261:B:article-5:1",
+            "source": "32004R0261",
+            "location": "Article 5",
+            "score": 0.764,
+            "words": 323
+          },
+          {
+            "id": "52024XC05687:B:section-4.4.12:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.12",
+            "score": 0.7437,
+            "words": 137
+          },
+          {
+            "id": "52024XC05687:B:section-3.2.1:1",
+            "source": "52024XC05687",
+            "location": "Section 3.2 to Section 3.2.1",
+            "score": 0.7244,
+            "words": 299
+          },
+          {
+            "id": "52024XC05687:B:section-4.4.4:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.4",
+            "score": 0.7238,
+            "words": 109
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q12",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32021R0782:B:article-19:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7677,
+            "words": 426
+          },
+          {
+            "id": "32021R0782:B:article-19:2",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7322,
+            "words": 434
+          },
+          {
+            "id": "32021R0782:B:article-18:1",
+            "source": "32021R0782",
+            "location": "Article 18",
+            "score": 0.7145,
+            "words": 437
+          },
+          {
+            "id": "32021R0782:B:annex-i-article-44:1",
+            "source": "32021R0782",
+            "location": "Annex I, Article 44",
+            "score": 0.6996,
+            "words": 116
+          },
+          {
+            "id": "32021R0782:B:annex-i-article-43:1",
+            "source": "32021R0782",
+            "location": "Annex I, Article 43",
+            "score": 0.6936,
+            "words": 305
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q13",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32021R0782:B:article-19:2",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7796,
+            "words": 434
+          },
+          {
+            "id": "32021R0782:B:article-19:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7625,
+            "words": 426
+          },
+          {
+            "id": "32021R0782:B:article-18:2",
+            "source": "32021R0782",
+            "location": "Article 18",
+            "score": 0.7415,
+            "words": 311
+          },
+          {
+            "id": "32021R0782:B:article-18:1",
+            "source": "32021R0782",
+            "location": "Article 18",
+            "score": 0.736,
+            "words": 437
+          },
+          {
+            "id": "32021R0782:B:article-20:1",
+            "source": "32021R0782",
+            "location": "Article 20",
+            "score": 0.7209,
+            "words": 413
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q14",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32021R0782:B:article-18:1",
+            "source": "32021R0782",
+            "location": "Article 18",
+            "score": 0.7866,
+            "words": 437
+          },
+          {
+            "id": "32021R0782:B:article-20:1",
+            "source": "32021R0782",
+            "location": "Article 20",
+            "score": 0.7758,
+            "words": 413
+          },
+          {
+            "id": "32021R0782:B:article-19:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.739,
+            "words": 426
+          },
+          {
+            "id": "32021R0782:B:article-12:1",
+            "source": "32021R0782",
+            "location": "Article 12",
+            "score": 0.7356,
+            "words": 413
+          },
+          {
+            "id": "32021R0782:B:article-8:1",
+            "source": "32021R0782",
+            "location": "Article 8",
+            "score": 0.7334,
+            "words": 64
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q15",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32021R0782:B:article-6:1",
+            "source": "32021R0782",
+            "location": "Article 6",
+            "score": 0.848,
+            "words": 452
+          },
+          {
+            "id": "32021R0782:B:recital-15:1",
+            "source": "32021R0782",
+            "location": "Recital (15) to Recital (16)",
+            "score": 0.7862,
+            "words": 275
+          },
+          {
+            "id": "32021R0782:B:recital-17:1",
+            "source": "32021R0782",
+            "location": "Recital (17) to Recital (20)",
+            "score": 0.7835,
+            "words": 403
+          },
+          {
+            "id": "32021R0782:B:article-6:2",
+            "source": "32021R0782",
+            "location": "Article 6",
+            "score": 0.7761,
+            "words": 210
+          },
+          {
+            "id": "32021R0782:B:annex-i-article-12:1",
+            "source": "32021R0782",
+            "location": "Annex I, Article 12",
+            "score": 0.7679,
+            "words": 164
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q16",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32021R0782:B:article-19:2",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7377,
+            "words": 434
+          },
+          {
+            "id": "32021R0782:B:recital-37:1",
+            "source": "32021R0782",
+            "location": "Recital (37) to Recital (41)",
+            "score": 0.73,
+            "words": 438
+          },
+          {
+            "id": "32021R0782:B:article-19:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7293,
+            "words": 426
+          },
+          {
+            "id": "32021R0782:B:article-18:1",
+            "source": "32021R0782",
+            "location": "Article 18",
+            "score": 0.7033,
+            "words": 437
+          },
+          {
+            "id": "52024XC05687:B:section-5.2.2:2",
+            "source": "52024XC05687",
+            "location": "Section 5.2.2",
+            "score": 0.6964,
+            "words": 349
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q17",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32015L2302:B:article-12:1",
+            "source": "32015L2302",
+            "location": "Article 12",
+            "score": 0.8005,
+            "words": 429
+          },
+          {
+            "id": "32015L2302:B:article-12:2",
+            "source": "32015L2302",
+            "location": "Article 12",
+            "score": 0.7651,
+            "words": 125
+          },
+          {
+            "id": "32015L2302:B:recital-30:1",
+            "source": "32015L2302",
+            "location": "Recital (30) to Recital (32)",
+            "score": 0.7623,
+            "words": 267
+          },
+          {
+            "id": "32015L2302:B:annex-i:4",
+            "source": "32015L2302",
+            "location": "Annex I",
+            "score": 0.7476,
+            "words": 456
+          },
+          {
+            "id": "32015L2302:B:annex-i:6",
+            "source": "32015L2302",
+            "location": "Annex I",
+            "score": 0.7306,
+            "words": 449
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q18",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32015L2302:B:article-14:1",
+            "source": "32015L2302",
+            "location": "Article 14",
+            "score": 0.8101,
+            "words": 420
+          },
+          {
+            "id": "32015L2302:B:recital-34:1",
+            "source": "32015L2302",
+            "location": "Recital (34) to Recital (35)",
+            "score": 0.7843,
+            "words": 435
+          },
+          {
+            "id": "32015L2302:B:recital-36:1",
+            "source": "32015L2302",
+            "location": "Recital (36) to Recital (39)",
+            "score": 0.7633,
+            "words": 445
+          },
+          {
+            "id": "32015L2302:B:article-22:1",
+            "source": "32015L2302",
+            "location": "Article 22",
+            "score": 0.7575,
+            "words": 72
+          },
+          {
+            "id": "32015L2302:B:article-13:2",
+            "source": "32015L2302",
+            "location": "Article 13",
+            "score": 0.7568,
+            "words": 346
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q19",
+        "kind": "single",
+        "retrieved": [
+          {
+            "id": "32015L2302:B:article-16:1",
+            "source": "32015L2302",
+            "location": "Article 16",
+            "score": 0.8302,
+            "words": 108
+          },
+          {
+            "id": "32015L2302:B:article-13:2",
+            "source": "32015L2302",
+            "location": "Article 13",
+            "score": 0.7751,
+            "words": 346
+          },
+          {
+            "id": "32015L2302:B:article-13:1",
+            "source": "32015L2302",
+            "location": "Article 13",
+            "score": 0.7659,
+            "words": 422
+          },
+          {
+            "id": "32015L2302:B:recital-36:1",
+            "source": "32015L2302",
+            "location": "Recital (36) to Recital (39)",
+            "score": 0.7647,
+            "words": 445
+          },
+          {
+            "id": "32015L2302:B:annex-i:7",
+            "source": "32015L2302",
+            "location": "Annex I",
+            "score": 0.7627,
+            "words": 96
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true
+          ],
+          "3": [
+            true
+          ],
+          "5": [
+            true
+          ]
+        }
+      },
+      {
+        "id": "q20",
+        "kind": "multi",
+        "retrieved": [
+          {
+            "id": "32004R0261:B:article-5:1",
+            "source": "32004R0261",
+            "location": "Article 5",
+            "score": 0.7702,
+            "words": 323
+          },
+          {
+            "id": "32004R0261:B:article-7:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.7697,
+            "words": 261
+          },
+          {
+            "id": "52024XC05687:B:section-4.4.4:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.4",
+            "score": 0.7409,
+            "words": 109
+          },
+          {
+            "id": "52024XC05687:B:section-3.2.6:1",
+            "source": "52024XC05687",
+            "location": "Section 3.2.6",
+            "score": 0.7359,
+            "words": 132
+          },
+          {
+            "id": "32004R0261:B:recital-12:1",
+            "source": "32004R0261",
+            "location": "Recital (12) to Recital (21)",
+            "score": 0.7294,
+            "words": 432
+          }
+        ],
+        "first_match_rank": 2,
+        "evidence_found_at": {
+          "1": [
+            false,
+            false
+          ],
+          "3": [
+            true,
+            false
+          ],
+          "5": [
+            true,
+            false
+          ]
+        }
+      },
+      {
+        "id": "q21",
+        "kind": "multi",
+        "retrieved": [
+          {
+            "id": "52024XC05687:B:section-3.3.2:1",
+            "source": "52024XC05687",
+            "location": "Section 3.3.2",
+            "score": 0.7962,
+            "words": 65
+          },
+          {
+            "id": "52024XC05687:B:section-4.4.7:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.7",
+            "score": 0.7951,
+            "words": 241
+          },
+          {
+            "id": "32004R0261:B:article-7:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.7748,
+            "words": 261
+          },
+          {
+            "id": "52024XC05687:B:section-4.4.10:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.10",
+            "score": 0.7726,
+            "words": 283
+          },
+          {
+            "id": "52024XC05687:B:section-2.2.7:2",
+            "source": "52024XC05687",
+            "location": "Section 2.2.7",
+            "score": 0.7699,
+            "words": 70
+          }
+        ],
+        "first_match_rank": 2,
+        "evidence_found_at": {
+          "1": [
+            false,
+            false
+          ],
+          "3": [
+            true,
+            true
+          ],
+          "5": [
+            true,
+            true
+          ]
+        }
+      },
+      {
+        "id": "q22",
+        "kind": "multi",
+        "retrieved": [
+          {
+            "id": "32004R0261:B:recital-12:1",
+            "source": "32004R0261",
+            "location": "Recital (12) to Recital (21)",
+            "score": 0.7879,
+            "words": 432
+          },
+          {
+            "id": "52024XC05687:B:section-4.3.3:1",
+            "source": "52024XC05687",
+            "location": "Section 4.3.3",
+            "score": 0.7828,
+            "words": 218
+          },
+          {
+            "id": "32004R0261:B:article-9:1",
+            "source": "32004R0261",
+            "location": "Article 9",
+            "score": 0.7765,
+            "words": 128
+          },
+          {
+            "id": "32004R0261:B:article-5:1",
+            "source": "32004R0261",
+            "location": "Article 5",
+            "score": 0.7732,
+            "words": 323
+          },
+          {
+            "id": "52024XC05687:B:section-6.4:1",
+            "source": "52024XC05687",
+            "location": "Section 6.4",
+            "score": 0.7656,
+            "words": 407
+          }
+        ],
+        "first_match_rank": 2,
+        "evidence_found_at": {
+          "1": [
+            false,
+            false
+          ],
+          "3": [
+            false,
+            true
+          ],
+          "5": [
+            true,
+            true
+          ]
+        }
+      },
+      {
+        "id": "q23",
+        "kind": "multi",
+        "retrieved": [
+          {
+            "id": "32021R0782:B:article-20:1",
+            "source": "32021R0782",
+            "location": "Article 20",
+            "score": 0.7673,
+            "words": 413
+          },
+          {
+            "id": "32021R0782:B:article-18:1",
+            "source": "32021R0782",
+            "location": "Article 18",
+            "score": 0.7632,
+            "words": 437
+          },
+          {
+            "id": "32004R0261:B:article-9:1",
+            "source": "32004R0261",
+            "location": "Article 9",
+            "score": 0.739,
+            "words": 128
+          },
+          {
+            "id": "52024XC05687:B:section-4.3.2:1",
+            "source": "52024XC05687",
+            "location": "Section 4.3.2",
+            "score": 0.7149,
+            "words": 419
+          },
+          {
+            "id": "32004R0261:B:article-8:1",
+            "source": "32004R0261",
+            "location": "Article 8",
+            "score": 0.7086,
+            "words": 242
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            false,
+            true
+          ],
+          "3": [
+            true,
+            true
+          ],
+          "5": [
+            true,
+            true
+          ]
+        }
+      },
+      {
+        "id": "q24",
+        "kind": "multi",
+        "retrieved": [
+          {
+            "id": "52024XC05687:B:section-2.2.7:1",
+            "source": "52024XC05687",
+            "location": "Section 2.2.7",
+            "score": 0.7969,
+            "words": 517
+          },
+          {
+            "id": "32015L2302:B:recital-36:1",
+            "source": "32015L2302",
+            "location": "Recital (36) to Recital (39)",
+            "score": 0.7886,
+            "words": 445
+          },
+          {
+            "id": "52024XC05687:B:section-2.2.7:2",
+            "source": "52024XC05687",
+            "location": "Section 2.2.7",
+            "score": 0.7842,
+            "words": 70
+          },
+          {
+            "id": "32015L2302:B:article-14:1",
+            "source": "32015L2302",
+            "location": "Article 14",
+            "score": 0.7576,
+            "words": 420
+          },
+          {
+            "id": "32015L2302:B:article-22:1",
+            "source": "32015L2302",
+            "location": "Article 22",
+            "score": 0.7434,
+            "words": 72
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            false,
+            true
+          ],
+          "3": [
+            false,
+            true
+          ],
+          "5": [
+            true,
+            true
+          ]
+        }
+      },
+      {
+        "id": "q25",
+        "kind": "multi",
+        "retrieved": [
+          {
+            "id": "32015L2302:B:article-10:1",
+            "source": "32015L2302",
+            "location": "Article 10",
+            "score": 0.8341,
+            "words": 312
+          },
+          {
+            "id": "32015L2302:B:recital-33:1",
+            "source": "32015L2302",
+            "location": "Recital (33)",
+            "score": 0.8029,
+            "words": 222
+          },
+          {
+            "id": "32015L2302:B:annex-i:4",
+            "source": "32015L2302",
+            "location": "Annex I",
+            "score": 0.7928,
+            "words": 456
+          },
+          {
+            "id": "32015L2302:B:article-11:1",
+            "source": "32015L2302",
+            "location": "Article 11",
+            "score": 0.7916,
+            "words": 428
+          },
+          {
+            "id": "32015L2302:B:annex-i:6",
+            "source": "32015L2302",
+            "location": "Annex I",
+            "score": 0.7771,
+            "words": 449
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            true,
+            false
+          ],
+          "3": [
+            true,
+            false
+          ],
+          "5": [
+            true,
+            true
+          ]
+        }
+      },
+      {
+        "id": "q26",
+        "kind": "multi",
+        "retrieved": [
+          {
+            "id": "32021R0782:B:article-19:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7611,
+            "words": 426
+          },
+          {
+            "id": "32021R0782:B:article-18:1",
+            "source": "32021R0782",
+            "location": "Article 18",
+            "score": 0.7482,
+            "words": 437
+          },
+          {
+            "id": "32021R0782:B:article-19:2",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7399,
+            "words": 434
+          },
+          {
+            "id": "32021R0782:B:annex-i-article-44:1",
+            "source": "32021R0782",
+            "location": "Annex I, Article 44",
+            "score": 0.7303,
+            "words": 116
+          },
+          {
+            "id": "32021R0782:B:article-12:1",
+            "source": "32021R0782",
+            "location": "Article 12",
+            "score": 0.7178,
+            "words": 413
+          }
+        ],
+        "first_match_rank": 1,
+        "evidence_found_at": {
+          "1": [
+            false,
+            true
+          ],
+          "3": [
+            true,
+            true
+          ],
+          "5": [
+            true,
+            true
+          ]
+        }
+      },
+      {
+        "id": "q27",
+        "kind": "unanswerable",
+        "retrieved": [
+          {
+            "id": "32004R0261:B:article-6:1",
+            "source": "32004R0261",
+            "location": "Article 6",
+            "score": 0.7115,
+            "words": 175
+          },
+          {
+            "id": "32021R0782:B:article-19:1",
+            "source": "32021R0782",
+            "location": "Article 19",
+            "score": 0.7016,
+            "words": 426
+          },
+          {
+            "id": "52024XC05687:B:section-3.3.2:1",
+            "source": "52024XC05687",
+            "location": "Section 3.3.2",
+            "score": 0.6995,
+            "words": 65
+          },
+          {
+            "id": "32004R0261:B:article-7:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.6973,
+            "words": 261
+          },
+          {
+            "id": "32021R0782:B:article-20:1",
+            "source": "32021R0782",
+            "location": "Article 20",
+            "score": 0.6915,
+            "words": 413
+          }
+        ],
+        "first_match_rank": null,
+        "evidence_found_at": {
+          "1": [],
+          "3": [],
+          "5": []
+        }
+      },
+      {
+        "id": "q28",
+        "kind": "unanswerable",
+        "retrieved": [
+          {
+            "id": "32021R0782:B:article-20:1",
+            "source": "32021R0782",
+            "location": "Article 20",
+            "score": 0.7168,
+            "words": 413
+          },
+          {
+            "id": "32021R0782:B:article-18:1",
+            "source": "32021R0782",
+            "location": "Article 18",
+            "score": 0.7149,
+            "words": 437
+          },
+          {
+            "id": "32004R0261:B:article-5:1",
+            "source": "32004R0261",
+            "location": "Article 5",
+            "score": 0.705,
+            "words": 323
+          },
+          {
+            "id": "32004R0261:B:article-8:1",
+            "source": "32004R0261",
+            "location": "Article 8",
+            "score": 0.6928,
+            "words": 242
+          },
+          {
+            "id": "32004R0261:B:article-9:1",
+            "source": "32004R0261",
+            "location": "Article 9",
+            "score": 0.6915,
+            "words": 128
+          }
+        ],
+        "first_match_rank": null,
+        "evidence_found_at": {
+          "1": [],
+          "3": [],
+          "5": []
+        }
+      },
+      {
+        "id": "q29",
+        "kind": "unanswerable",
+        "retrieved": [
+          {
+            "id": "32004R0261:B:article-5:1",
+            "source": "32004R0261",
+            "location": "Article 5",
+            "score": 0.6959,
+            "words": 323
+          },
+          {
+            "id": "32004R0261:B:article-9:1",
+            "source": "32004R0261",
+            "location": "Article 9",
+            "score": 0.6947,
+            "words": 128
+          },
+          {
+            "id": "52024XC05687:B:section-4.3.2:2",
+            "source": "52024XC05687",
+            "location": "Section 4.3.2",
+            "score": 0.6904,
+            "words": 308
+          },
+          {
+            "id": "32004R0261:B:article-8:1",
+            "source": "32004R0261",
+            "location": "Article 8",
+            "score": 0.6779,
+            "words": 242
+          },
+          {
+            "id": "52024XC05687:B:section-4.3.2:1",
+            "source": "52024XC05687",
+            "location": "Section 4.3.2",
+            "score": 0.6753,
+            "words": 419
+          }
+        ],
+        "first_match_rank": null,
+        "evidence_found_at": {
+          "1": [],
+          "3": [],
+          "5": []
+        }
+      },
+      {
+        "id": "q30",
+        "kind": "unanswerable",
+        "retrieved": [
+          {
+            "id": "32004R0261:B:article-8:1",
+            "source": "32004R0261",
+            "location": "Article 8",
+            "score": 0.7079,
+            "words": 242
+          },
+          {
+            "id": "52024XC05687:B:section-4.2:3",
+            "source": "52024XC05687",
+            "location": "Section 4.2",
+            "score": 0.699,
+            "words": 463
+          },
+          {
+            "id": "32004R0261:B:article-7:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.6902,
+            "words": 261
+          },
+          {
+            "id": "52024XC05687:B:section-6.2:1",
+            "source": "52024XC05687",
+            "location": "Section 6.2",
+            "score": 0.6901,
+            "words": 221
+          },
+          {
+            "id": "52024XC05687:B:section-4.2:2",
+            "source": "52024XC05687",
+            "location": "Section 4.2",
+            "score": 0.6894,
+            "words": 432
+          }
+        ],
+        "first_match_rank": null,
+        "evidence_found_at": {
+          "1": [],
+          "3": [],
+          "5": []
+        }
+      },
+      {
+        "id": "q31",
+        "kind": "unanswerable",
+        "retrieved": [
+          {
+            "id": "52024XC05687:B:section-3.3.2:1",
+            "source": "52024XC05687",
+            "location": "Section 3.3.2",
+            "score": 0.7842,
+            "words": 65
+          },
+          {
+            "id": "52024XC05687:B:section-4.4.7:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.7",
+            "score": 0.7689,
+            "words": 241
+          },
+          {
+            "id": "52024XC05687:B:section-4.4.10:1",
+            "source": "52024XC05687",
+            "location": "Section 4.4.10",
+            "score": 0.7653,
+            "words": 283
+          },
+          {
+            "id": "32004R0261:B:article-6:1",
+            "source": "32004R0261",
+            "location": "Article 6",
+            "score": 0.7578,
+            "words": 175
+          },
+          {
+            "id": "32004R0261:B:article-7:1",
+            "source": "32004R0261",
+            "location": "Article 7",
+            "score": 0.7566,
+            "words": 261
+          }
+        ],
+        "first_match_rank": null,
+        "evidence_found_at": {
+          "1": [],
+          "3": [],
+          "5": []
+        }
+      },
+      {
+        "id": "q32",
+        "kind": "unanswerable",
+        "retrieved": [
+          {
+            "id": "32021R0782:B:article-31:1",
+            "source": "32021R0782",
+            "location": "Article 31",
+            "score": 0.7492,
+            "words": 169
+          },
+          {
+            "id": "32021R0782:B:article-33:1",
+            "source": "32021R0782",
+            "location": "Article 33",
+            "score": 0.7483,
+            "words": 473
+          },
+          {
+            "id": "32021R0782:B:article-28:1",
+            "source": "32021R0782",
+            "location": "Article 28",
+            "score": 0.7422,
+            "words": 289
+          },
+          {
+            "id": "32021R0782:B:article-32:1",
+            "source": "32021R0782",
+            "location": "Article 32",
+            "score": 0.7399,
+            "words": 240
+          },
+          {
+            "id": "32021R0782:B:article-34:1",
+            "source": "32021R0782",
+            "location": "Article 34",
+            "score": 0.7231,
+            "words": 230
+          }
+        ],
+        "first_match_rank": null,
+        "evidence_found_at": {
+          "1": [],
+          "3": [],
+          "5": []
+        }
+      }
+    ]
+  }
+}

@@ -1,1 +1,33 @@
 id,correct,supported,notes
+q01,1,1,EUR 250 correct; conditions (2-week notice / 2h re-routing / extraordinary circumstances) all in the cited passages.
+q02,1,1,Refund within 7 days and the return-flight point both traceable to Art. 6/8 passages.
+q03,0,1,"Graded on the message the user received, like q06: WITHHELD by the citation check (the draft cited 32004R0261:A:w020:2, which search never returned), so the reference content did not reach the user (not correct) and the message makes no factual claims (supported). The draft itself was right on the care list but added unretrieved examples of extraordinary circumstances; analysed under Failures."
+q04,1,1,"50% for intra-Community >1,500 km is Art. 10(2)(b) exactly; the guidance note about ticket-price calculation is in w038/w039."
+q05,1,1,"7-day payment, cash/transfer/cheque or vouchers with signed agreement; all traceable to w017/w018."
+q06,0,1,"Graded on the message the user received, like q03: WITHHELD, so the reference content did not reach the user (not correct) and the message makes no factual claims (supported). The draft was correct and cited two returned passages in one bracket; the first citation parser missed them (harness bug, analysed under Failures and fixed afterwards)."
+q07,1,1,"Arrival = door-opening moment, matches Guidelines section 3.3.3."
+q08,1,1,"Airline staff strike not extraordinary (Guidelines 5.2.2), correctly labelled as guidance and not law."
+q09,1,1,"Bird strike can be extraordinary, damage not required; correctly labelled guidance."
+q10,1,1,"No EU-wide deadline, national rules vary, Montreal 2-year limit does not apply; all in section 9.2."
+q11,1,1,Brought-forward >1h treated as cancellation; correctly labelled as guidance not legislation.
+q12,1,1,75 min -> 25% band correct; exemptions paragraph matches Art. 19(2)/(3)/(10).
+q13,1,1,"One month, vouchers only with flexible terms, passenger may insist on money; all traceable to w057."
+q14,1,0,"Three choices correct. But it says reimbursement can be paid in vouchers ""if you agree"" while passage w052 is truncated at ""provided that the terms""; true but not verifiable from the retrieved text."
+q15,1,1,Bicycle allowed for a reasonable fee with safety/operational restrictions; correctly cited.
+q16,1,1,Rail Art. 19(10)(c) excludes own-staff strikes from the third-party defence; cited accurately.
+q17,1,1,"Terminate any time before start, fee allowed unless unavoidable/extraordinary circumstances, matches Art. 12."
+q18,1,1,"Not less than two years, matches Art. 14(6)."
+q19,1,1,"Package Art. 16 duties (health info, distance comms, alternative travel) and reasonable-fee ceiling, all cited."
+q20,1,0,"Correct (technical defect not extraordinary per Guidelines 5.2.2; EUR 250 for <=1,500 km per Art. 7(1)(a); notice and re-routing conditions noted). Unsupported under the strict rule: care described as ""meals, refreshments, and hotel accommodation"" is not in any retrieved passage (Art. 9 is only referenced by number), and it cites a malformed id 32004R0261:A:w16:1 that search never returned."
+q21,1,1,Arrival >=3h gets Art. 7 compensation per Guidelines 4.4.7; distance bands cited to w016.
+q22,1,1,Extraordinary circumstances remove compensation but not Art. 9 care; matches Guidelines 4.3.3.
+q23,1,1,100-minute self-booking rule and Art. 20 care both correct and cited.
+q24,1,1,"Both routes available; anti-double-dipping deduction from Guidelines 2.2.7 and Dir. Art. 14, cited to w021/w068."
+q25,1,1,"Regraded on the stored answer (delivered, not withheld). Contract reservation, fuel/taxes/exchange-rate causes and 20-day notice match Art. 10(1),(3) in w054/w055; the >8% accept-or-terminate choice and substitute package match Art. 11(2) in w056; 14-day refund matches Art. 11(5) in w058."
+q26,1,1,Refund and delay-comp are alternatives; 120 min -> 50%; cites w050/w054 accurately.
+q27,1,0,"Proper refusal (correct), but unsupported under the strict rule: cites a malformed id [32015R2302] that search never returned, and names Regulation (EU) No 1177/2010, which is in no retrieved passage."
+q28,1,0,"Proper refusal (correct), but unsupported under the strict rule: names Regulation (EU) No 181/2011 as the applicable law, which is in no retrieved passage."
+q29,1,0,"Proper refusal (correct), but unsupported under the strict rule: the parenthetical on the airline's hotel/care duty is an uncited legal claim not backed by a retrieved passage."
+q30,1,0,"Proper refusal (correct), but unsupported under the strict rule: describes what the corpus contains (Reg 261/2004, Reg 2021/782) although search returned no passages."
+q31,1,1,"Proper refusal: corpus holds 2004 text and 2024 guidelines only, no 2025 amendment."
+q32,1,1,"Proper refusal, corpus requires designation but lists no contact details."

@@ -1,0 +1,55 @@
+{
+  "retrieved_on": "2026-11-22",
+  "edition_policy": "Fixed original published editions; not verified as a complete current-law collection.",
+  "documents": [
+    {
+      "celex": "32004R0261",
+      "title": "Air passenger rights (2004 original)",
+      "group": "core",
+      "pages": 7,
+      "words": 4555,
+      "sha256": "0bc674dcda058dfb3bf43bd8374e4e4472b89b2c91fc17a5041e7c00610b20ef",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32004R0261",
+      "download_url": "https://publications.europa.eu/resource/celex/32004R0261"
+    },
+    {
+      "celex": "52024XC05687",
+      "title": "Air passenger interpretative guidelines (2024)",
+      "group": "core",
+      "pages": 36,
+      "words": 28268,
+      "sha256": "1cc359331d537d196ccd490d7172209c7a11b94f3f3c7d86ae803c45abbccec9",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024XC05687",
+      "download_url": "https://publications.europa.eu/resource/celex/52024XC05687"
+    },
+    {
+      "celex": "32021R0782",
+      "title": "Rail passenger rights (2021 original)",
+      "group": "core",
+      "pages": 52,
+      "words": 24642,
+      "sha256": "dc6584d30d913d1d2f506e6d20f33c2b770861c620909b89e673e55f58c058d5",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0782",
+      "download_url": "https://publications.europa.eu/resource/celex/32021R0782"
+    },
+    {
+      "celex": "32015L2302",
+      "title": "Package travel directive (2015 original)",
+      "group": "core",
+      "pages": 33,
+      "words": 18213,
+      "sha256": "452720b7ce31838209e8457cedfc95ecbebcb8dc70320de044a6bfccd233134b",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015L2302",
+      "download_url": "https://publications.europa.eu/resource/celex/32015L2302"
+    },
+    {
+      "celex": "32011R0181",
+      "title": "Bus and coach passenger rights (2011 original)",
+      "group": "holdout",
+      "words": 7522,
+      "sha256": "18ec64f5ab44b1de1cfab41104f00243af9db168d7211a66c93a28057a1869cd",
+      "source_url": "https://eur-lex.europa.eu/eli/reg/2011/181/oj",
+      "download_url": "https://publications.europa.eu/resource/celex/32011R0181"
+    }
+  ]
+}

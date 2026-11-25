@@ -1,0 +1,230 @@
+{
+  "run_at": "2026-11-24T09:01:15+00:00",
+  "question_id": "q28",
+  "baseline_index_before": {
+    "index_dir": "/Users/nicolasloescher-montal/Desktop/IE/YEAR 5/Designing AI/daiist-assignment-3/index",
+    "design": "A",
+    "chunks": 395,
+    "sources": [
+      "32004R0261",
+      "32015L2302",
+      "32021R0782",
+      "52024XC05687"
+    ]
+  },
+  "demo_index_before": {
+    "index_dir": "/Users/nicolasloescher-montal/Desktop/IE/YEAR 5/Designing AI/daiist-assignment-3/demo_index",
+    "design": "A",
+    "chunks": 395,
+    "sources": [
+      "32004R0261",
+      "32015L2302",
+      "32021R0782",
+      "52024XC05687"
+    ]
+  },
+  "before": {
+    "question": "My long-distance coach was cancelled at the bus terminal. What must the bus company offer me?",
+    "answer": "NOT IN CORPUS: The corpus covers EU air passenger rights (Regulation (EC) No 261/2004), rail rights (Regulation (EU) 2021/782), and package travel (Directive (EU) 2015/2302), but it does not contain the rules for bus and coach passenger rights. To find out what a bus company must offer for a cancelled long-distance coach, you would need to consult EU bus and coach passenger rights regulations (such as Regulation (EU) No 181/2011) or national transport law.",
+    "cited_ids": [],
+    "trace": [
+      {
+        "type": "call",
+        "name": "search",
+        "args": {
+          "query": "coach cancelled long-distance bus terminal rights"
+        }
+      },
+      {
+        "type": "result",
+        "name": "search",
+        "status": "success",
+        "text": "[32004R0261:A:w015:1] Regulation (EC) No 261/2004 (air passenger rights) (legislation; Original text, OJ L 46, 17.2.2004 (not consolidated))\nLocation: Article 5 to Article 6, PDF p. 4 | similarity 0.610\nbefore the scheduled time of departure\nand to reach their final destination less than two hours\nafter the scheduled time of arrival.\n2. When passengers are informed of the cancellation, an\nexplanation shall be given concerning possible alternative transport\n.\n3. An operating air carrier shall not be obliged to pay\ncompensation in accordance with Article 7, if it can prove that\nthe cancellation is caused by extraordinary circumstances\nwhich could not have been avoided even if all reasonable\nmeasures had been taken.\n4. The burden of proof concerning the questions as to\nwhether and when the passenger has been informed of the\ncancellation of the flight shall rest with the operating air\ncarrier.\nArticle 6\nDelay\n1. When an operating air carrier reasonably expects a flight\nto be delayed beyond its scheduled time of departure:\n(a) for two hours or more in the case of flights of 1 500 kilometres\nor less; or\n(b) for three hours or more in the case of all intra-Community\nflights of more than 1 500 kilometres and of all other\nflights between 1 500 and 3 500 kilometres; or\n(c) for four hours or more in the case of all flights not falling\n\n---\n\n[32004R0261:A:w019:1] Regulation (EC) No 261/2004 (air passenger rights) (legislation; Original text, OJ L 46, 17.2.2004 (not consolidated))\nLocation: Article 8 to Article 9, PDF p. 5 | similarity 0.610\n— a return flight to the first point of departure, at the\nearliest opportunity;\n(b) re-routing, under comparable transport conditions, to their\nfinal destination at the earliest opportunity; or\n(c) re-routing, under comparable transport conditions, to their\nfinal destination at a later date at the passenger's convenience\n, subject to availability of seats.\n2. Paragraph 1(a) shall also apply to passengers whose\nflights form part of a package, except for the right to reimbursement\nwhere such right arises under Directive 90/314/EEC.\n3. When, in the case where a town, city or region is served\nby several airports, an operating air carrier offers a passenger a\nflight to an airport alternative to that for which the booking\nwas made, the operating air carrier shall bear the cost of transferring\nthe passenger from that alternative airport either to that\nfor which the booking was made, or to another close-by destination\nagreed with the passenger.\nArticle 9\nRight to care\n1. Where reference is made to this Article, passengers shall\nbe offered free of charge:\n(a) meals and refreshments in a reasonable relation to the\nwaiting time;\n(b) hotel accommodation in cases\n— where a stay of one or more nights becomes necessary,\n\n---\n\n[32004R0261:A:w014:1] Regulation (EC) No 261/2004 (air passenger rights) (legislation; Original text, OJ L 46, 17.2.2004 (not consolidated))\nLocation: Article 5, PDF p. 4 | similarity 0.608\nin event of re-routing\nwhen the reasonably expected time of departure of\nthe new flight is at least the day after the departure as it\nwas planned for the cancelled flight, the assistance specified\nin Article 9(1)(b) and 9(1)(c); and\n(c) have the right to compensation by the operating air carrier\nin accordance with Article 7, unless:\n(i) they are informed of the cancellation at least two\nweeks before the scheduled time of departure; or\n(ii) they are informed of the cancellation between two\nweeks and seven days before the scheduled time of\ndeparture and are offered re-routing, allowing them to\ndepart no more than two hours before the scheduled\ntime of departure and to reach their final destination\nless than four hours after the scheduled time of arrival;\nor\n(iii) they are informed of the cancellation less than seven\ndays before the scheduled time of departure and are\noffered re-routing, allowing them to depart no more\nthan one hour before the scheduled time of departure\nand to reach their final destination less than two hours\nafter the scheduled time of arrival.\n2. When passengers are informed of the cancellation, an\nexplanation shall be given concerning possible alternative transport\n.\n\n---\n\n[32021R0782:A:w050:1] Regulation (EU) 2021/782 (rail passenger rights) (legislation; Original text, OJ L 172, 17.5.2021 (not consolidated))\nLocation: Article 18, PDF p. 18 | similarity 0.608\nor more, the\nrailway undertaking operating the delayed or cancelled service shall immediately offer the passenger the choice between\none of the following options, and shall make the necessary arrangements:\n(a) reimbursement of the full cost of the ticket, under the conditions by which it was paid, for the part or parts of his or\nher journey not made and for the part or parts already made if the journey is no longer serving any purpose in\nrelation to the passenger’s original travel plan, together with, when relevant, a return service to the first point of\ndeparture at the earliest opportunity;\n(b) continuation or re-routing, under comparable transport conditions, to the final destination at the earliest opportunity;\n(c) continuation or re-routing, under comparable transport conditions, to the final destination at a later date at the\npassenger’s convenience.\n2. Where, for the purposes of points (b) and (c) of paragraph 1, comparable re-routing is operated by the same railway\nundertaking or another undertaking is commissioned to perform the re-routing, this shall not generate additional costs to\nthe passenger. This requirement also applies where the re-routing involves the use of transport of a higher service class\nand alternative modes of transport. Railway\n\n---\n\n[32004R0261:A:w013:1] Regulation (EC) No 261/2004 (air passenger rights) (legislation; Original text, OJ L 46, 17.2.2004 (not consolidated))\nLocation: Article 4 to Article 5, PDF p. 4 | similarity 0.606\ncall for volunteers to\nsurrender their reservations in exchange for benefits under\nconditions to be agreed between the passenger concerned and\nthe operating air carrier. Volunteers shall be assisted in accordance\nwith Article 8, such assistance being additional to the\nbenefits mentioned in this paragraph.\n2. If an insufficient number of volunteers comes forward to\nallow the remaining passengers with reservations to board the\nflight, the operating air carrier may then deny boarding to\npassengers against their will.\n3. If boarding is denied to passengers against their will, the\noperating air carrier shall immediately compensate them in\naccordance with Article 7 and assist them in accordance with\nArticles 8 and 9.\nArticle 5\nCancellation\n1. In case of cancellation of a flight, the passengers\nconcerned shall:\n(a) be offered assistance by the operating air carrier in accordance\nwith Article 8; and\n(b) be offered assistance by the operating air carrier in accordance\nwith Article 9(1)(a) and 9(2), as well as, in event of re-routing\nwhen the reasonably expected time of departure of\nthe new flight is at least the day after the departure as it\nwas planned for the cancelled flight, the assistance specified\nin Article 9(1)(b) and 9(1)(c); and"
+      }
+    ],
+    "guardrails": {
+      "citation_check": {
+        "passed": true,
+        "reason": "no citations, but a refusal or clarification marker"
+      },
+      "model_call_limit_hit": false,
+      "add_document_denied": false
+    },
+    "latency_s": 2.81,
+    "usage": {
+      "input_tokens": 4667,
+      "output_tokens": 151,
+      "total_tokens": 4818
+    }
+  },
+  "add": {
+    "question": "Please add the document at corpus/holdout/32011R0181.html to the index.",
+    "answer": "WITHHELD: the harness blocked this answer because it makes claims without citing any retrieved passage.",
+    "cited_ids": [],
+    "trace": [
+      {
+        "type": "call",
+        "name": "add_document",
+        "args": {
+          "path": "corpus/holdout/32011R0181.html"
+        }
+      },
+      {
+        "type": "result",
+        "name": "add_document",
+        "status": "success",
+        "text": "Added Regulation (EU) No 181/2011 (bus and coach passenger rights) (32011R0181): 46 chunks, 46 new embeddings, 7243 words, design A."
+      }
+    ],
+    "guardrails": {
+      "citation_check": {
+        "passed": false,
+        "reason": "it makes claims without citing any retrieved passage"
+      },
+      "model_call_limit_hit": false,
+      "add_document_denied": false
+    },
+    "latency_s": 3.94,
+    "usage": {
+      "input_tokens": 2945,
+      "output_tokens": 87,
+      "total_tokens": 3032
+    }
+  },
+  "demo_index_after_add": {
+    "index_dir": "/Users/nicolasloescher-montal/Desktop/IE/YEAR 5/Designing AI/daiist-assignment-3/demo_index",
+    "design": "A",
+    "chunks": 441,
+    "sources": [
+      "32004R0261",
+      "32011R0181",
+      "32015L2302",
+      "32021R0782",
+      "52024XC05687"
+    ]
+  },
+  "after": {
+    "question": "My long-distance coach was cancelled at the bus terminal. What must the bus company offer me?",
+    "answer": "If a bus or coach regular service is cancelled (or expected to be delayed in departure from a terminal for more than 120 minutes), EU rules give you the right to choose between two options [32011R0181:A:w031:1]:\n\n1. **Continuation or re-routing:** Transport to your final destination, at no additional cost and under comparable conditions, at the earliest opportunity [32011R0181:A:w031:1].\n2. **Reimbursement and return:** Reimbursement of the ticket price (covering the parts of the journey not made, and any parts already made if they no longer serve your original travel plan), plus a free return service by bus or coach to your first point of departure at the earliest opportunity, where relevant [32011R0181:A:w032:1, 32011R0181:A:w033:1].\n\n* **Failure to offer a choice:** If the carrier fails to offer you this choice, you are entitled to compensation of **50% of the ticket price** in addition to the ticket reimbursement, payable within 1 month of your request [32011R0181:A:w032:1].\n* **Reimbursement payout:** Cash/money reimbursement must be paid within 14 days of the offer or request, unless you accept another form of reimbursement (such as a voucher) [32011R0181:A:w033:1].\n* **Assistance and Care:** If your scheduled journey is for **more than 3 hours** and the departure from the terminal is delayed for **more than 90 minutes**, the carrier must also offer you free of charge:\n  * Snacks, meals, or refreshments in reasonable relation to the waiting time (if available or reasonably supplied) [32011R0181:A:w035:1].\n  * A hotel room or other accommodation and transport between the terminal and place of accommodation if a stay of 1 or more nights becomes necessary (the carrier may limit accommodation costs to €80 per night for a maximum of 2 nights) [32011R0181:A:w035:1]. (This accommodation assistance does not apply if the cancellation is caused by severe weather conditions or major natural disasters endangering safe operation) [32011R0181:A:w036:1].\n\n*(Note: This information is based on Regulation (EU) No 181/2011 on bus and coach passenger rights [32011R0181:A:w032:1, 32011R0181:A:w035:1].)*",
+    "cited_ids": [
+      "32011R0181:A:w031:1",
+      "32011R0181:A:w032:1",
+      "32011R0181:A:w033:1",
+      "32011R0181:A:w035:1",
+      "32011R0181:A:w036:1"
+    ],
+    "trace": [
+      {
+        "type": "call",
+        "name": "search",
+        "args": {
+          "query": "coach cancelled passenger rights bus terminal"
+        }
+      },
+      {
+        "type": "result",
+        "name": "search",
+        "status": "success",
+        "text": "[32011R0181:A:w032:1] Regulation (EU) No 181/2011 (bus and coach passenger rights) (legislation; Original text, OJ L 55, 28.2.2011 (not consolidated))\nLocation: Article 19 | similarity 0.796\nno additional cost and under comparable conditions, as set out in the transport contract, at the earliest opportunity;\n(b) reimbursement of the ticket price, and, where relevant, a return service by bus or coach free of charge to the first point of departure, as set out in the transport contract, at the earliest opportunity.\n2. If the carrier fails to offer the passenger the choice referred to in paragraph 1, the passenger shall have the right to compensation amounting to 50 % of the ticket price, in addition to the reimbursement referred to in point (b) of paragraph 1. This sum shall be paid by the carrier within 1 month after the submission of the request for compensation.\n3. Where the bus or coach becomes inoperable during the journey, the carrier shall provide either the continuation of the service with another vehicle from the location of the inoperable vehicle, or transport from the location of the inoperable vehicle to a suitable waiting point or terminal from where continuation of the journey becomes possible.\n4. Where a regular service is cancelled or delayed in departure from a bus stop for more than 120 minutes, passengers shall have the right to the\n\n---\n\n[32011R0181:A:w017:1] Regulation (EU) No 181/2011 (bus and coach passenger rights) (legislation; Original text, OJ L 55, 28.2.2011 (not consolidated))\nLocation: Article 3 to Article 4 | similarity 0.796\nwhere according to the specified route a regular service is scheduled to stop for passengers to board or alight, equipped with facilities such as a check-in counter, waiting room or ticket office;\n(n) ‘bus stop’ means any point other than a terminal where according to the specified route a regular service is scheduled to stop for passengers to board or alight;\n(o) ‘terminal managing body’ means an organisational entity in a Member State responsible for the management of a designated terminal;\n(p) ‘cancellation’ means the non-operation of a regular service which was previously scheduled;\n(q) ‘delay’ means a difference between the time the regular service was scheduled to depart in accordance with the published timetable and the time of its actual departure.\nArticle 4\nTickets and non-discriminatory contract conditions\n1. Carriers shall issue a ticket to the passenger, unless other documents give entitlement to transport. A ticket may be issued in an electronic format.\n2. Without prejudice to social tariffs, the contract conditions and tariffs applied by carriers shall be offered to the general public without any direct or indirect discrimination based on the nationality of the final customer or on the place of establishment of the carriers, or ticket\n\n---\n\n[32011R0181:A:w035:1] Regulation (EU) No 181/2011 (bus and coach passenger rights) (legislation; Original text, OJ L 55, 28.2.2011 (not consolidated))\nLocation: Article 20 to Article 21 | similarity 0.793\naccessible formats.\n4. Where feasible, the information required under paragraphs 1 and 2 shall be provided by electronic means to all passengers, including those departing from bus stops, within the time-limit stipulated in paragraph 1, if the passenger has requested this and has provided the necessary contact details to the carrier.\nArticle 21\nAssistance in case of cancelled or delayed departures\nFor a journey of a scheduled duration of more than 3 hours the carrier shall, in case of cancellation or delay in departure from a terminal of more than 90 minutes, offer the passenger free of charge:\n(a) snacks, meals or refreshments in reasonable relation to the waiting time or delay, provided they are available on the bus or in the terminal, or can reasonably be supplied;\n(b) a hotel room or other accommodation as well as assistance to arrange transport between the terminal and the place of accommodation in cases where a stay of 1 or more nights becomes necessary. For each passenger, the carrier may limit the total cost of accommodation, not including transport to and from the terminal and place of accommodation, to EUR 80 per night and for a maximum of 2 nights.\nIn applying\n\n---\n\n[32011R0181:A:w033:1] Regulation (EU) No 181/2011 (bus and coach passenger rights) (legislation; Original text, OJ L 55, 28.2.2011 (not consolidated))\nLocation: Article 19 to Article 20 | similarity 0.784\nsuitable waiting point or terminal from where continuation of the journey becomes possible.\n4. Where a regular service is cancelled or delayed in departure from a bus stop for more than 120 minutes, passengers shall have the right to the continuation or re-routing or reimbursement of the ticket price from the carrier, as referred to in paragraph 1.\n5. The payment of reimbursement provided for in point (b) of paragraph 1 and paragraph 4 shall be made within 14 days after the offer has been made or request has been received. The payment shall cover the full cost of the ticket at the price at which it was purchased, for the part or parts of the journey not made, and for the part or parts already made if the journey no longer serves any purpose in relation to the passenger’s original travel plan. In case of travel passes or season tickets the payment shall be equal to its proportional part of the full cost of the pass or ticket. The reimbursement shall be paid in money, unless the passenger accepts another form of reimbursement.\nArticle 20\nInformation\n1. In the event of cancellation or delay in departure of a regular\n\n---\n\n[32011R0181:A:w036:1] Regulation (EU) No 181/2011 (bus and coach passenger rights) (legislation; Original text, OJ L 55, 28.2.2011 (not consolidated))\nLocation: Article 21 to Article 24 | similarity 0.784\nbecomes necessary. For each passenger, the carrier may limit the total cost of accommodation, not including transport to and from the terminal and place of accommodation, to EUR 80 per night and for a maximum of 2 nights.\nIn applying this Article the carrier shall pay particular attention to the needs of disabled persons and persons with reduced mobility and any accompanying persons.\nArticle 22\nFurther claims\nNothing in this Chapter shall preclude passengers from seeking damages in accordance with national law before national courts in respect of loss resulting from cancellation or delay of regular services.\nArticle 23\nExemptions\n1. Articles 19 and 21 shall not apply to passengers with open tickets as long as the time of departure is not specified, except for passengers holding a travel pass or a season ticket.\n2. Point (b) of Article 21 shall not apply where the carrier proves that the cancellation or delay is caused by severe weather conditions or major natural disasters endangering the safe operation of bus or coach services.\nArticle 24\nRight to travel information\nCarriers and terminal managing bodies shall, within their respective areas of competence, provide passengers with adequate information throughout their travel. Where feasible, this"
+      },
+      {
+        "type": "call",
+        "name": "search",
+        "args": {
+          "query": "Regulation (EU) No 181/2011 Article 19 cancellation terminal departure"
+        }
+      },
+      {
+        "type": "result",
+        "name": "search",
+        "status": "success",
+        "text": "[32011R0181:A:w034:1] Regulation (EU) No 181/2011 (bus and coach passenger rights) (legislation; Original text, OJ L 55, 28.2.2011 (not consolidated))\nLocation: Article 19 to Article 20 | similarity 0.838\nof the full cost of the pass or ticket. The reimbursement shall be paid in money, unless the passenger accepts another form of reimbursement.\nArticle 20\nInformation\n1. In the event of cancellation or delay in departure of a regular service, passengers departing from terminals shall be informed by the carrier or, where appropriate, the terminal managing body, of the situation as soon as possible and in any event no later than 30 minutes after the scheduled departure time, and of the estimated departure time as soon as this information is available.\n2. If passengers miss, according to the timetable, a connecting service due to a cancellation or delay, the carrier or, where appropriate, the terminal managing body, shall make reasonable efforts to inform the passengers concerned of alternative connections.\n3. The carrier or, where appropriate, the terminal managing body, shall ensure that disabled persons and persons with reduced mobility receive the information required under paragraphs 1 and 2 in accessible formats.\n4. Where feasible, the information required under paragraphs 1 and 2 shall be provided by electronic means to all passengers, including those departing from bus stops, within the time-limit stipulated in paragraph 1, if the passenger has requested\n\n---\n\n[32011R0181:A:w032:1] Regulation (EU) No 181/2011 (bus and coach passenger rights) (legislation; Original text, OJ L 55, 28.2.2011 (not consolidated))\nLocation: Article 19 | similarity 0.836\nno additional cost and under comparable conditions, as set out in the transport contract, at the earliest opportunity;\n(b) reimbursement of the ticket price, and, where relevant, a return service by bus or coach free of charge to the first point of departure, as set out in the transport contract, at the earliest opportunity.\n2. If the carrier fails to offer the passenger the choice referred to in paragraph 1, the passenger shall have the right to compensation amounting to 50 % of the ticket price, in addition to the reimbursement referred to in point (b) of paragraph 1. This sum shall be paid by the carrier within 1 month after the submission of the request for compensation.\n3. Where the bus or coach becomes inoperable during the journey, the carrier shall provide either the continuation of the service with another vehicle from the location of the inoperable vehicle, or transport from the location of the inoperable vehicle to a suitable waiting point or terminal from where continuation of the journey becomes possible.\n4. Where a regular service is cancelled or delayed in departure from a bus stop for more than 120 minutes, passengers shall have the right to the\n\n---\n\n[32011R0181:A:w033:1] Regulation (EU) No 181/2011 (bus and coach passenger rights) (legislation; Original text, OJ L 55, 28.2.2011 (not consolidated))\nLocation: Article 19 to Article 20 | similarity 0.833\nsuitable waiting point or terminal from where continuation of the journey becomes possible.\n4. Where a regular service is cancelled or delayed in departure from a bus stop for more than 120 minutes, passengers shall have the right to the continuation or re-routing or reimbursement of the ticket price from the carrier, as referred to in paragraph 1.\n5. The payment of reimbursement provided for in point (b) of paragraph 1 and paragraph 4 shall be made within 14 days after the offer has been made or request has been received. The payment shall cover the full cost of the ticket at the price at which it was purchased, for the part or parts of the journey not made, and for the part or parts already made if the journey no longer serves any purpose in relation to the passenger’s original travel plan. In case of travel passes or season tickets the payment shall be equal to its proportional part of the full cost of the pass or ticket. The reimbursement shall be paid in money, unless the passenger accepts another form of reimbursement.\nArticle 20\nInformation\n1. In the event of cancellation or delay in departure of a regular\n\n---\n\n[32011R0181:A:w017:1] Regulation (EU) No 181/2011 (bus and coach passenger rights) (legislation; Original text, OJ L 55, 28.2.2011 (not consolidated))\nLocation: Article 3 to Article 4 | similarity 0.831\nwhere according to the specified route a regular service is scheduled to stop for passengers to board or alight, equipped with facilities such as a check-in counter, waiting room or ticket office;\n(n) ‘bus stop’ means any point other than a terminal where according to the specified route a regular service is scheduled to stop for passengers to board or alight;\n(o) ‘terminal managing body’ means an organisational entity in a Member State responsible for the management of a designated terminal;\n(p) ‘cancellation’ means the non-operation of a regular service which was previously scheduled;\n(q) ‘delay’ means a difference between the time the regular service was scheduled to depart in accordance with the published timetable and the time of its actual departure.\nArticle 4\nTickets and non-discriminatory contract conditions\n1. Carriers shall issue a ticket to the passenger, unless other documents give entitlement to transport. A ticket may be issued in an electronic format.\n2. Without prejudice to social tariffs, the contract conditions and tariffs applied by carriers shall be offered to the general public without any direct or indirect discrimination based on the nationality of the final customer or on the place of establishment of the carriers, or ticket\n\n---\n\n[32011R0181:A:w035:1] Regulation (EU) No 181/2011 (bus and coach passenger rights) (legislation; Original text, OJ L 55, 28.2.2011 (not consolidated))\nLocation: Article 20 to Article 21 | similarity 0.810\naccessible formats.\n4. Where feasible, the information required under paragraphs 1 and 2 shall be provided by electronic means to all passengers, including those departing from bus stops, within the time-limit stipulated in paragraph 1, if the passenger has requested this and has provided the necessary contact details to the carrier.\nArticle 21\nAssistance in case of cancelled or delayed departures\nFor a journey of a scheduled duration of more than 3 hours the carrier shall, in case of cancellation or delay in departure from a terminal of more than 90 minutes, offer the passenger free of charge:\n(a) snacks, meals or refreshments in reasonable relation to the waiting time or delay, provided they are available on the bus or in the terminal, or can reasonably be supplied;\n(b) a hotel room or other accommodation as well as assistance to arrange transport between the terminal and the place of accommodation in cases where a stay of 1 or more nights becomes necessary. For each passenger, the carrier may limit the total cost of accommodation, not including transport to and from the terminal and place of accommodation, to EUR 80 per night and for a maximum of 2 nights.\nIn applying"
+      },
+      {
+        "type": "call",
+        "name": "search",
+        "args": {
+          "query": "Regulation (EU) No 181/2011 Article 19 paragraph 1 continuation re-routing reimbursement"
+        }
+      },
+      {
+        "type": "result",
+        "name": "search",
+        "status": "success",
+        "text": "[32011R0181:A:w032:1] Regulation (EU) No 181/2011 (bus and coach passenger rights) (legislation; Original text, OJ L 55, 28.2.2011 (not consolidated))\nLocation: Article 19 | similarity 0.870\nno additional cost and under comparable conditions, as set out in the transport contract, at the earliest opportunity;\n(b) reimbursement of the ticket price, and, where relevant, a return service by bus or coach free of charge to the first point of departure, as set out in the transport contract, at the earliest opportunity.\n2. If the carrier fails to offer the passenger the choice referred to in paragraph 1, the passenger shall have the right to compensation amounting to 50 % of the ticket price, in addition to the reimbursement referred to in point (b) of paragraph 1. This sum shall be paid by the carrier within 1 month after the submission of the request for compensation.\n3. Where the bus or coach becomes inoperable during the journey, the carrier shall provide either the continuation of the service with another vehicle from the location of the inoperable vehicle, or transport from the location of the inoperable vehicle to a suitable waiting point or terminal from where continuation of the journey becomes possible.\n4. Where a regular service is cancelled or delayed in departure from a bus stop for more than 120 minutes, passengers shall have the right to the\n\n---\n\n[32011R0181:A:w034:1] Regulation (EU) No 181/2011 (bus and coach passenger rights) (legislation; Original text, OJ L 55, 28.2.2011 (not consolidated))\nLocation: Article 19 to Article 20 | similarity 0.856\nof the full cost of the pass or ticket. The reimbursement shall be paid in money, unless the passenger accepts another form of reimbursement.\nArticle 20\nInformation\n1. In the event of cancellation or delay in departure of a regular service, passengers departing from terminals shall be informed by the carrier or, where appropriate, the terminal managing body, of the situation as soon as possible and in any event no later than 30 minutes after the scheduled departure time, and of the estimated departure time as soon as this information is available.\n2. If passengers miss, according to the timetable, a connecting service due to a cancellation or delay, the carrier or, where appropriate, the terminal managing body, shall make reasonable efforts to inform the passengers concerned of alternative connections.\n3. The carrier or, where appropriate, the terminal managing body, shall ensure that disabled persons and persons with reduced mobility receive the information required under paragraphs 1 and 2 in accessible formats.\n4. Where feasible, the information required under paragraphs 1 and 2 shall be provided by electronic means to all passengers, including those departing from bus stops, within the time-limit stipulated in paragraph 1, if the passenger has requested\n\n---\n\n[32011R0181:A:w033:1] Regulation (EU) No 181/2011 (bus and coach passenger rights) (legislation; Original text, OJ L 55, 28.2.2011 (not consolidated))\nLocation: Article 19 to Article 20 | similarity 0.854\nsuitable waiting point or terminal from where continuation of the journey becomes possible.\n4. Where a regular service is cancelled or delayed in departure from a bus stop for more than 120 minutes, passengers shall have the right to the continuation or re-routing or reimbursement of the ticket price from the carrier, as referred to in paragraph 1.\n5. The payment of reimbursement provided for in point (b) of paragraph 1 and paragraph 4 shall be made within 14 days after the offer has been made or request has been received. The payment shall cover the full cost of the ticket at the price at which it was purchased, for the part or parts of the journey not made, and for the part or parts already made if the journey no longer serves any purpose in relation to the passenger’s original travel plan. In case of travel passes or season tickets the payment shall be equal to its proportional part of the full cost of the pass or ticket. The reimbursement shall be paid in money, unless the passenger accepts another form of reimbursement.\nArticle 20\nInformation\n1. In the event of cancellation or delay in departure of a regular\n\n---\n\n[32011R0181:A:w031:1] Regulation (EU) No 181/2011 (bus and coach passenger rights) (legislation; Original text, OJ L 55, 28.2.2011 (not consolidated))\nLocation: Article 18 to Article 19 | similarity 0.824\nregular services from the application of all or some of the provisions of this Chapter, provided that they ensure that the level of protection of disabled persons and persons with reduced mobility under their national rules is at least the same as under this Regulation.\n2. Member States shall inform the Commission of exemptions granted pursuant to paragraph 1. The Commission shall take appropriate action if such an exemption is deemed not to be in accordance with the provisions of this Article. By 2 March 2018, the Commission shall submit to the European Parliament and the Council a report on exemptions granted pursuant to paragraph 1.\nArticle 19\nContinuation, re-routing and reimbursement\n1. Where a carrier reasonably expects a regular service to be cancelled or delayed in departure from a terminal for more than 120 minutes or in the case of overbooking, the passenger shall immediately be offered the choice between:\n(a) continuation or re-routing to the final destination, at no additional cost and under comparable conditions, as set out in the transport contract, at the earliest opportunity;\n(b) reimbursement of the ticket price, and, where relevant, a return service by bus or coach free of charge to the first\n\n---\n\n[32021R0782:A:w052:1] Regulation (EU) 2021/782 (rail passenger rights) (legislation; Original text, OJ L 172, 17.5.2021 (not consolidated))\nLocation: Article 18, PDF pp. 18-19 | similarity 0.813\ntime of the delayed or cancelled service or the missed connection, the passenger shall be entitled to conclude\nsuch a contract with other providers of public transport services by rail, coach or bus. The railway undertaking shall\nreimburse the passenger for the necessary, appropriate and reasonable costs that he or she incurs.\nThis paragraph shall not affect national laws, regulations or administrative provisions which grant more favourable re-routing\nconditions to passengers.\n4. Re-routing transport service providers shall provide persons with disabilities and persons with reduced mobility with\na comparable level of assistance and accessibility when offering an alternative service. Re-routing transport service\nproviders may provide persons with disabilities and persons with reduced mobility with alternative services which are\nappropriate to their needs and which differ from those offered to other passengers.\n5. The reimbursements referred to in point (a) of paragraph 1 and in paragraph 3 shall be paid within 30 days after\nthe receipt of the request. Member States may require railway undertakings to accept such requests by particular means of\ncommunication, provided that the request does not create discriminatory effects. The reimbursement may take the form\nof vouchers and/or the provision of other services provided that the terms"
+      }
+    ],
+    "guardrails": {
+      "citation_check": {
+        "passed": true,
+        "reason": "every citation is a passage returned in this run"
+      },
+      "model_call_limit_hit": false,
+      "add_document_denied": false
+    },
+    "latency_s": 5.75,
+    "usage": {
+      "input_tokens": 16088,
+      "output_tokens": 719,
+      "total_tokens": 16807
+    }
+  },
+  "add_again": {
+    "question": "Please add the document at corpus/holdout/32011R0181.html to the index.",
+    "answer": "WITHHELD: the harness blocked this answer because it makes claims without citing any retrieved passage.",
+    "cited_ids": [],
+    "trace": [
+      {
+        "type": "call",
+        "name": "add_document",
+        "args": {
+          "path": "corpus/holdout/32011R0181.html"
+        }
+      },
+      {
+        "type": "result",
+        "name": "add_document",
+        "status": "success",
+        "text": "32011R0181 is already indexed with identical content (46 chunks). Nothing was added or embedded."
+      }
+    ],
+    "guardrails": {
+      "citation_check": {
+        "passed": false,
+        "reason": "it makes claims without citing any retrieved passage"
+      },
+      "model_call_limit_hit": false,
+      "add_document_denied": false
+    },
+    "latency_s": 1.75,
+    "usage": {
+      "input_tokens": 2913,
+      "output_tokens": 65,
+      "total_tokens": 2978
+    }
+  },
+  "demo_index_after_second_add": {
+    "index_dir": "/Users/nicolasloescher-montal/Desktop/IE/YEAR 5/Designing AI/daiist-assignment-3/demo_index",
+    "design": "A",
+    "chunks": 441,
+    "sources": [
+      "32004R0261",
+      "32011R0181",
+      "32015L2302",
+      "32021R0782",
+      "52024XC05687"
+    ]
+  },
+  "baseline_index_after": {
+    "index_dir": "/Users/nicolasloescher-montal/Desktop/IE/YEAR 5/Designing AI/daiist-assignment-3/index",
+    "design": "A",
+    "chunks": 395,
+    "sources": [
+      "32004R0261",
+      "32015L2302",
+      "32021R0782",
+      "52024XC05687"
+    ]
+  },
+  "baseline_unchanged": true
+}

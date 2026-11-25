@@ -6,9 +6,15 @@ __pycache__/
 *.pyc
 
 # Documents downloaded by your index stage. Commit them only if their licence allows it.
-corpus/
+
+# Copy of the index made by demo_add_document.py; never the baseline
+demo_index/
 
 # Your index belongs in index/, committed. Your evaluation results belong in eval/, committed.
 
 # Never commit your API key
 .env
+
+# editor-local configs (Codex CLI, VS Code local state, etc.)
+.codex/
+.vscode/settings.json

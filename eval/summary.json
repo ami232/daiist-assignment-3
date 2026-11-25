@@ -1,0 +1,184 @@
+{
+  "generated_at": "2026-11-25T18:13:57+00:00",
+  "questions_sha256": "df06fc54563763159c3db1407b3769136f691180eba17f19130085256b49b693",
+  "questions_frozen": true,
+  "agent": {
+    "model": "gemini-3.5-flash-lite",
+    "agents_md": "f605457ab9882ef429bf9dce6edc57332a642de5caa2a7ae9b40451534a87c01",
+    "design": "A",
+    "model_call_limit": 8,
+    "server": "66b8a58d7a93f73b90befde433078b342b252e8d6666d5cb100333877cf2c6ae"
+  },
+  "judge_model": "gemini-3.5-flash",
+  "rubric_version": "v1",
+  "index_dir": "/Users/nicolasloescher-montal/Desktop/IE/YEAR 5/Designing AI/daiist-assignment-3/index",
+  "search_design": "A",
+  "search_design_provisional": false,
+  "retrieval": {
+    "A": {
+      "design": "A",
+      "settings": {
+        "kind": "window",
+        "size": 200,
+        "overlap": 40
+      },
+      "chunks": 395,
+      "hit@1": {
+        "hits": 23,
+        "n": 26,
+        "rate": 0.885
+      },
+      "multi_all_evidence@1": {
+        "hits": 1,
+        "n": 7,
+        "rate": 0.143
+      },
+      "avg_words@1": 209.7,
+      "hit@3": {
+        "hits": 25,
+        "n": 26,
+        "rate": 0.962
+      },
+      "multi_all_evidence@3": {
+        "hits": 5,
+        "n": 7,
+        "rate": 0.714
+      },
+      "avg_words@3": 627.0,
+      "hit@5": {
+        "hits": 26,
+        "n": 26,
+        "rate": 1.0
+      },
+      "multi_all_evidence@5": {
+        "hits": 6,
+        "n": 7,
+        "rate": 0.857
+      },
+      "avg_words@5": 1044.8,
+      "mean_top1_score_answerable": 0.7836,
+      "mean_top1_score_unanswerable": 0.7298
+    },
+    "B": {
+      "design": "B",
+      "settings": {
+        "kind": "structure",
+        "max_words": 450,
+        "min_words": 25
+      },
+      "chunks": 286,
+      "hit@1": {
+        "hits": 21,
+        "n": 26,
+        "rate": 0.808
+      },
+      "multi_all_evidence@1": {
+        "hits": 0,
+        "n": 7,
+        "rate": 0.0
+      },
+      "avg_words@1": 315.6,
+      "hit@3": {
+        "hits": 26,
+        "n": 26,
+        "rate": 1.0
+      },
+      "multi_all_evidence@3": {
+        "hits": 3,
+        "n": 7,
+        "rate": 0.429
+      },
+      "avg_words@3": 918.8,
+      "hit@5": {
+        "hits": 26,
+        "n": 26,
+        "rate": 1.0
+      },
+      "multi_all_evidence@5": {
+        "hits": 6,
+        "n": 7,
+        "rate": 0.857
+      },
+      "avg_words@5": 1466,
+      "mean_top1_score_answerable": 0.7907,
+      "mean_top1_score_unanswerable": 0.7276
+    }
+  },
+  "answered": 32,
+  "judged": 32,
+  "errors": [],
+  "results": {
+    "answerable_correct": "23/26",
+    "answerable_supported": "25/26",
+    "unsupported_answers": "5/32",
+    "correct_refusals": "6/6",
+    "wrong_refusals": "2/26",
+    "clarifications": 1
+  },
+  "code_checks": {
+    "citations_exist_in_index": "28/32",
+    "citations_returned_to_agent": "28/32",
+    "citation_guardrail_fired": 2,
+    "citation_recheck_would_withhold": [
+      "q03",
+      "q11",
+      "q20",
+      "q27"
+    ],
+    "citation_recheck_changed": [
+      "q06",
+      "q11",
+      "q20",
+      "q27"
+    ],
+    "model_call_limit_hit": 0,
+    "add_document_called": 0,
+    "note": "Citation checks prove a cited id is real and was retrieved, not that it supports the claim."
+  },
+  "failure_classes_provisional": {
+    "unsupported claim": [
+      "q20"
+    ],
+    "wrong answer from the right passage": [
+      "q14"
+    ],
+    "wrong refusal": [
+      "q03",
+      "q06"
+    ]
+  },
+  "agreement_with_human": {
+    "correct": {
+      "n": 32,
+      "agree": 31,
+      "rate": 0.969,
+      "human_yes_judge_no": 1,
+      "human_no_judge_yes": 0
+    },
+    "supported": {
+      "n": 32,
+      "agree": 31,
+      "rate": 0.969,
+      "human_yes_judge_no": 0,
+      "human_no_judge_yes": 1
+    }
+  },
+  "agent_cost": {
+    "available_for": 32,
+    "of": 32,
+    "input_tokens": 198264,
+    "output_tokens": 11360,
+    "total_tokens": 209624,
+    "mean_tokens_per_question": 6550.8,
+    "mean_latency_s": 5.61,
+    "median_latency_s": 2.58
+  },
+  "judge_cost": {
+    "available_for": 32,
+    "of": 32,
+    "input_tokens": 91658,
+    "output_tokens": 24339,
+    "total_tokens": 115997,
+    "mean_tokens_per_question": 3624.9
+  }
+}

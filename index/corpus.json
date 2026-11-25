@@ -1,0 +1,104 @@
+{
+  "embedding_model": "gemini-embedding-2",
+  "embedding_dimensions": 768,
+  "designs": {
+    "A": {
+      "kind": "window",
+      "size": 200,
+      "overlap": 40
+    },
+    "B": {
+      "kind": "structure",
+      "max_words": 450,
+      "min_words": 25
+    }
+  },
+  "search_design": "A",
+  "edition_policy": "Fixed original published editions; not a complete or current-law collection.",
+  "documents": [
+    {
+      "source": "32004R0261",
+      "title": "Regulation (EC) No 261/2004 (air passenger rights)",
+      "doc_type": "legislation",
+      "published": "2004-02-17",
+      "edition": "Original text, OJ L 46, 17.2.2004 (not consolidated)",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32004R0261",
+      "retrieved_on": "2026-11-22",
+      "reuse_terms": "https://eur-lex.europa.eu/content/legal-notice/legal-notice.html?locale=en",
+      "sha256": "0bc674dcda058dfb3bf43bd8374e4e4472b89b2c91fc17a5041e7c00610b20ef",
+      "words": 4365,
+      "footnote_words": 75,
+      "repairs": {
+        "hyphen_breaks_joined": 43,
+        "hyphen_breaks_kept": 2
+      },
+      "chunks": {
+        "A": 28,
+        "B": 23
+      }
+    },
+    {
+      "source": "52024XC05687",
+      "title": "Commission Interpretative Guidelines on Regulation (EC) No 261/2004 (2024)",
+      "doc_type": "guidance",
+      "published": "2024-09-25",
+      "edition": "Commission Notice C/2024/5687, OJ C, 25.9.2024",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:52024XC05687",
+      "retrieved_on": "2026-11-22",
+      "reuse_terms": "https://eur-lex.europa.eu/content/legal-notice/legal-notice.html?locale=en",
+      "sha256": "1cc359331d537d196ccd490d7172209c7a11b94f3f3c7d86ae803c45abbccec9",
+      "words": 19121,
+      "footnote_words": 2784,
+      "repairs": {
+        "hyphen_breaks_joined": 1,
+        "hyphen_breaks_kept": 1
+      },
+      "chunks": {
+        "A": 120,
+        "B": 81
+      }
+    },
+    {
+      "source": "32021R0782",
+      "title": "Regulation (EU) 2021/782 (rail passenger rights)",
+      "doc_type": "legislation",
+      "published": "2021-05-17",
+      "edition": "Original text, OJ L 172, 17.5.2021 (not consolidated)",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32021R0782",
+      "retrieved_on": "2026-11-22",
+      "reuse_terms": "https://eur-lex.europa.eu/content/legal-notice/legal-notice.html?locale=en",
+      "sha256": "dc6584d30d913d1d2f506e6d20f33c2b770861c620909b89e673e55f58c058d5",
+      "words": 23011,
+      "footnote_words": 510,
+      "repairs": {
+        "hyphen_breaks_joined": 19,
+        "hyphen_breaks_kept": 3
+      },
+      "chunks": {
+        "A": 144,
+        "B": 118
+      }
+    },
+    {
+      "source": "32015L2302",
+      "title": "Directive (EU) 2015/2302 (package travel)",
+      "doc_type": "legislation",
+      "published": "2015-12-11",
+      "edition": "Original text, OJ L 326, 11.12.2015 (not consolidated)",
+      "source_url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32015L2302",
+      "retrieved_on": "2026-11-22",
+      "reuse_terms": "https://eur-lex.europa.eu/content/legal-notice/legal-notice.html?locale=en",
+      "sha256": "452720b7ce31838209e8457cedfc95ecbebcb8dc70320de044a6bfccd233134b",
+      "words": 16486,
+      "footnote_words": 186,
+      "repairs": {
+        "hyphen_breaks_joined": 20,
+        "hyphen_breaks_kept": 3
+      },
+      "chunks": {
+        "A": 103,
+        "B": 64
+      }
+    }
+  ]
+}
