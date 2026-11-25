@@ -245,6 +245,42 @@ def failure_hint(q, v, hit) -> str:
     return "wrong answer from the right passage" if hit else "retrieval miss"
 
 
+def load_labels(question_ids: list[str]) -> pd.DataFrame | None:
+    """Read eval/human_labels.csv and keep only VALID rows. Problems are printed, never hidden:
+    a missing or invalid grade is left out of the agreement, not turned into a 0."""
+    if not HUMAN.exists():
+        print("   no eval/human_labels.csv yet: agreement skipped")
+        return None
+    labels = pd.read_csv(HUMAN, dtype=str).fillna("")
+    labels["id"] = labels["id"].str.strip()
+    labels = labels[labels["id"] != ""]
+
+    duplicated = sorted(set(labels.loc[labels["id"].duplicated(), "id"]))
+    unknown = sorted(set(labels["id"]) - set(question_ids))
+    valid_value = labels["correct"].str.strip().isin(["0", "1"]) & labels["supported"].str.strip().isin(["0", "1"])
+    invalid = labels.loc[~valid_value, "id"].tolist()
+    missing = [i for i in question_ids if i not in set(labels["id"])]
+    for name, ids in [("duplicate ids (all copies ignored)", duplicated), ("unknown ids", unknown),
+                      ("grades that are not 0 or 1", invalid), ("questions without a label", missing)]:
+        if ids:
+            print(f"   labels: {name}: {', '.join(ids)}")
+
+    labels = labels[valid_value & ~labels["id"].isin(duplicated) & ~labels["id"].isin(unknown)].copy()
+    labels["correct"] = labels["correct"].astype(int)
+    labels["supported"] = labels["supported"].astype(int)
+    return labels
+
+
+def cohen_kappa(a: pd.Series, b: pd.Series) -> float | None:
+    """Agreement corrected for chance: 1 = perfect, 0 = no better than chance.
+    kappa = (observed agreement - chance agreement) / (1 - chance agreement)."""
+    observed = (a == b).mean()
+    chance = a.mean() * b.mean() + (1 - a.mean()) * (1 - b.mean())   # both say 1, or both say 0, by chance
+    if chance == 1:
+        return None          # both graders gave the same single value to everything: kappa undefined
+    return round((observed - chance) / (1 - chance), 3)
+
+
 def main() -> None:
     questions = pd.read_csv(QUESTIONS, dtype=str).fillna("")
 
@@ -301,21 +337,45 @@ def main() -> None:
         "avg_seconds_per_question": round(results["seconds"].mean(), 1),
     }
 
-    # 5. Agreement with your own grades.
-    if HUMAN.exists():
-        human = pd.read_csv(HUMAN, dtype={"id": str})
-        both = human.merge(results, on="id")
+    summary["questions_in_test_set"] = len(questions)
+    summary["abstention_accuracy_unanswerable"] = (
+        round(unanswerable["refused"].mean(), 3) if len(unanswerable) else None)
+
+    # Results per question type (single / multi / unanswerable) -> eval/results_by_kind.csv
+    by_kind = results.groupby("kind").agg(
+        questions=("id", "count"),
+        correct_rate=("judge_correct", "mean"),
+        supported_rate=("judge_supported", "mean"),
+        refused=("refused", "sum"),
+    ).round(3)
+    by_kind.loc["ALL"] = [len(results), round(results["judge_correct"].mean(), 3),
+                          round(results["judge_supported"].mean(), 3), int(results["refused"].sum())]
+    by_kind.to_csv(EVAL_DIR / "results_by_kind.csv")
+
+    # 5. Agreement between the judge and the labels in eval/human_labels.csv,
+    #    computed ONLY on questions that have both a judge verdict and a valid label.
+    print("\n5. Agreement with eval/human_labels.csv")
+    labels = load_labels(questions["id"].tolist())
+    if labels is not None:
+        both = labels.merge(results, on="id")
+        summary["labels_valid"] = len(labels)
+        summary["labels_compared_with_judge"] = len(both)
         if len(both):
-            summary["human_graded"] = len(both)
-            summary["agreement_correct"] = round((both["correct"] == both["judge_correct"]).mean(), 3)
-            summary["agreement_supported"] = round((both["supported"] == both["judge_supported"]).mean(), 3)
-            both[both["correct"] != both["judge_correct"]][["id", "correct", "judge_correct", "notes", "judge_reason"]] \
-                .to_csv(EVAL_DIR / "disagreements.csv", index=False)
+            for grade in ["correct", "supported"]:
+                summary[f"agreement_{grade}"] = round((both[grade] == both[f"judge_{grade}"]).mean(), 3)
+                summary[f"kappa_{grade}"] = cohen_kappa(both[grade], both[f"judge_{grade}"])
+            disagree = both[(both["correct"] != both["judge_correct"]) |
+                            (both["supported"] != both["judge_supported"])]
+            disagree[["id", "kind", "correct", "judge_correct", "supported", "judge_supported",
+                      "notes", "judge_reason"]].to_csv(EVAL_DIR / "disagreements.csv", index=False)
+            print(f"   {len(disagree)} disagreement(s) written to eval/disagreements.csv")
 
     (EVAL_DIR / "summary.json").write_text(json.dumps(summary, indent=2))
-    print("\n5-6. Summary (also in eval/summary.json)")
+    print("\n6. Summary (also in eval/summary.json)")
     for key, value in summary.items():
-        print(f"   {key:28} {value}")
+        print(f"   {key:34} {value}")
+    print("\nBy question type (also in eval/results_by_kind.csv):")
+    print(by_kind.to_string())
     print("\nFailures with a first-guess cause:")
     print(results[results["failure_hint"] != ""][["id", "kind", "failure_hint"]].to_string(index=False))
 
