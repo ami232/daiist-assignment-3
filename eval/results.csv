@@ -1,0 +1,41 @@
+id,kind,correct,supported,refusal,expected_retrieved,guardrail_triggered,label_source,suggested_category,reason,input_tokens,output_tokens,seconds,tool_calls,model
+q01,single,1,1,0,1,0,judge,,The assistant's answer provides the correct general rule along with all relevant exceptions and conditions supported by the retrieved passages.,29108,556,10.07,5,gemini-3.5-flash-lite
+q02,single,1,1,0,1,0,judge,,The assistant correctly states the 20% limit for deposits with the same body and the information is fully supported by the text.,3871,176,2.71,1,gemini-3.5-flash-lite
+q03,single,1,1,0,1,0,judge,,"The assistant provides the exact limits, conditions, and additional details fully supported by the retrieved passages.",3920,289,7.29,1,gemini-3.5-flash-lite
+q04,single,1,1,0,1,0,judge,,"The answer accurately reflects the 25% limit, the 80% aggregate limit for investments over 5%, and the conditions required, all supported by the provided text.",7835,318,6.73,2,gemini-3.5-flash-lite
+q05,single,1,1,0,1,0,judge,,"The assistant correctly states the 20% limit which can be raised to 35% for index-replicating UCITS, and all facts are supported by the text.",3834,155,24.3,1,gemini-3.1-flash-lite
+q06,single,1,1,0,1,0,judge,,The assistant correctly states the 10% limit on non-voting shares as supported by the retrieved passages.,3866,95,2.42,1,gemini-3.5-flash-lite
+q07,single,1,1,0,1,0,judge,,The assistant's answer accurately matches the reference answer and is fully supported by the retrieved passages.,3882,117,2.02,1,gemini-3.5-flash-lite
+q08,single,1,1,0,1,0,judge,,The assistant provides the exact correct threshold and matches the reference answer while being fully supported by the passages.,3978,199,2.41,1,gemini-3.5-flash-lite
+q09,single,1,1,0,1,0,judge,,The assistant answer correctly and completely details the UCITS borrowing rules and exceptions using facts found in the retrieved passages.,3898,305,3.95,1,gemini-3.5-flash-lite
+q10,single,1,1,0,1,0,judge,,The assistant's answer correctly covers redemption obligations and exceptions with accurate details fully supported by the passages.,3910,266,5.25,1,gemini-3.5-flash-lite
+q11,single,1,1,0,0,0,judge,,The assistant correctly states that uncovered sales are not allowed and provides supporting details directly from the passages.,3926,170,3.5,1,gemini-3.5-flash-lite
+q12,single,1,1,0,1,0,judge,,"The assistant provides the exact rule, thresholds, and conditions matching the reference, and all claims are fully supported by the retrieved passages.",3827,234,2.91,1,gemini-3.5-flash-lite
+q13,single,0,1,1,1,0,code,wrong refusal,refusal,8482,122,6.35,2,gemini-3.5-flash-lite
+q14,single,1,1,0,1,0,judge,,The assistant correctly states the cap on global exposure and fully supports its claims with the retrieved text.,3894,166,61.68,1,gemini-3.1-flash-lite
+q15,single,1,1,0,1,0,judge,,The answer accurately states the 10 working days timeframe from receipt of complete documentation as supported by the passages.,3859,114,21.04,1,gemini-3.1-flash-lite
+q16,single,1,1,0,1,0,judge,,The assistant's answer covers all criteria from the reference answer accurately and is fully supported by the retrieved passages.,4054,341,7.38,1,gemini-3.5-flash-lite
+q17,single,1,1,0,1,0,judge,,The assistant provides the exact criteria matching the reference and passages accurately.,5287,246,3.7,1,gemini-3.5-flash-lite
+q18,single,1,1,0,1,0,judge,,The assistant provides all correct conditions matching the reference answer and supported by the passages.,4007,373,11.92,1,gemini-3.5-flash-lite
+q19,single,1,1,0,1,0,judge,,The assistant correctly states the 5-year retention period and includes relevant nuances found in the provided passages.,3834,227,5.63,1,gemini-3.5-flash-lite
+q20,single,1,1,0,1,0,judge,,"The assistant correctly identifies the independence requirement and the permitted derogation, citing the appropriate retrieved passages.",3863,192,2.1,1,gemini-3.5-flash-lite
+q21,single,0,1,1,1,0,code,wrong refusal,refusal,3858,243,13.34,1,gemini-3.5-flash-lite
+q22,single,1,1,0,1,0,judge,,The assistant correctly states the best execution requirements and all details are fully supported by the retrieved passages.,3845,250,2.21,1,gemini-3.5-flash-lite
+q23,single,1,1,0,1,0,judge,,"The assistant correctly states the rule, conditions, and exceptions based on the retrieved passages.",3909,342,18.91,1,gemini-3.1-flash-lite
+q24,single,1,1,0,0,0,judge,,The assistant correctly states the page limits for both general and structured UCITS based on the retrieved passages.,3830,117,2.16,1,gemini-3.1-flash-lite
+q25,single,1,1,0,1,0,judge,,The assistant correctly states that past performance is presented in a bar chart covering the last 10 years (or 5 years if applicable) and includes all necessary details which are fully supported by the retrieved passages.,3655,395,90.88,1,gemini-3.1-flash-lite
+q26,single,0,1,1,1,1,code,wrong refusal,refusal,7946,310,3.85,2,gemini-3.5-flash-lite
+q27,single,1,1,0,1,0,judge,,"The assistant correctly identifies the table format and its components as required by the reference, and provides accurate supporting details from the retrieved passages.",3840,233,5.93,1,gemini-3.5-flash-lite
+q28,multi,1,1,0,1,0,judge,,The assistant provides a complete and accurate answer fully supported by the retrieved passages.,7957,408,5.62,2,gemini-3.5-flash-lite
+q29,multi,1,1,0,1,0,judge,,"The assistant correctly states that a UCITS cannot buy a security without reliable valuation, which is supported by the retrieved passages.",4011,153,2.62,1,gemini-3.5-flash-lite
+q30,multi,1,1,0,1,0,judge,,"The assistant provides all elements of the reference answer, supported entirely by the retrieved passages.",3901,416,2.68,1,gemini-3.5-flash-lite
+q31,multi,0,1,1,1,1,code,wrong refusal,refusal,7949,512,6.51,2,gemini-3.5-flash-lite
+q32,multi,1,1,0,1,0,judge,,"The assistant correctly concludes 'no', gives the 20% max investment limit, and accurately discusses the target fund rules and 25% holding limit.",8053,321,5.98,2,gemini-3.5-flash-lite
+q33,multi,1,1,0,1,0,judge,,The assistant correctly identifies that exceeding limits due to market moves is governed by Article 57(2) and specifies the required priority objective for sales.,7892,174,6.73,2,gemini-3.5-flash-lite
+q34,multi,1,0,0,1,0,judge,,"The assistant gives the correct conclusion, but the specific details regarding the 10% limit of the debt securities of a single issuer are not found in the retrieved passages.",3832,230,108.81,1,gemini-3.1-flash-lite
+q35,unanswerable,1,1,1,,0,code,,refusal,3887,120,28.26,1,gemini-3.1-flash-lite
+q36,unanswerable,1,1,1,,0,code,,refusal,1192,47,0.78,0,gemini-3.5-flash-lite
+q37,unanswerable,1,1,1,,0,code,,refusal,5382,118,7.44,1,gemini-3.5-flash-lite
+q38,unanswerable,1,1,1,,0,code,,refusal,3908,73,3.08,1,gemini-3.5-flash-lite
+q39,unanswerable,1,1,1,,0,code,,refusal,3823,93,1.62,1,gemini-3.5-flash-lite
+q40,unanswerable,1,1,1,,0,code,,refusal,3857,83,5.49,1,gemini-3.5-flash-lite

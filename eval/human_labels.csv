@@ -1,1 +1,23 @@
 id,correct,supported,notes
+q28,1,1,1
+q29,1,1,matches reference; cites only Art. 2 of 2007/16
+q30,1,1,matches reference; adds correct detail on commitment approach (Art. 42)
+q31,0,1,wrong refusal: answer is in Art. 78 and KIID Art. 6 (likely guardrail replaced the draft)
+q32,0,1,misses 10% limit on target funds' own fund holdings; misapplies 30% rule; cites Art. 54 instead of Art. 55 (fixed chunk spans articles)
+q33,0,0,"misses the 5%/10% issuer limit; ""not an unlawful breach"" is not in the text; remedy part is correct"
+q34,0,0,"misses the 10% cap on one issuer's debt securities (Art. 56); its reasoning contradicts its own ""no""; claim that only the % of fund assets matters is not in the text"
+q35,1,1,proper refusal
+q36,1,1,proper refusal
+q37,1,1,proper refusal
+q38,1,1,proper refusal
+q39,1,1,proper refusal
+q40,1,1,proper refusal
+q01,1,1,"matches reference (5%, 10%, 40%); extra exceptions correct"
+q02,1,1,
+q03,1,1,matches reference (20%)
+q04,1,1,"matches reference (25%, 80%)"
+q05,1,1,"matches reference (20%, 35%)"
+q06,1,1,matches reference (10%)
+q07,1,1,matches reference
+q08,1,1,"85% correct, but cites Art. 57(1) instead of Art. 58(1) (fixed chunk spans articles)"
+q09,1,1,"matches reference (10%, back-to-back loan); cites Art. 82 instead of Art. 83 (fixed chunk spans articles)"

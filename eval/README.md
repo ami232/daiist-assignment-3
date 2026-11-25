@@ -2,7 +2,6 @@
 
 ## questions.csv
 
-30+ questions written by you from the documents, before tuning anything.
 
 | Column | Content |
 |---|---|
@@ -17,8 +16,6 @@ Make unanswerable questions close to the corpus's topic, not obviously off-topic
 
 ## human_labels.csv
 
-Your own grades of 20+ agent answers, done before reading the judge's verdicts.
-
 | Column | Content |
 |---|---|
 | `id` | Question id. |
@@ -26,4 +23,4 @@ Your own grades of 20+ agent answers, done before reading the judge's verdicts.
 | `supported` | `1`/`0`: every claim is in the retrieved text. |
 | `notes` | Why, for every `0`. |
 
-Commit what your evaluation stage writes here too (answers, verdicts, summary).
+

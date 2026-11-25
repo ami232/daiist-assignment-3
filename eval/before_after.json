@@ -1,0 +1,31 @@
+{
+  "id": "q35",
+  "question": "What rules apply to the remuneration policy for staff of a UCITS management company?",
+  "added_document": {
+    "celex": "32014L0091",
+    "file": "corpus/ucits_v_directive.html",
+    "title": "Directive 2014/91/EU (UCITS V)",
+    "min_words": 5000
+  },
+  "before": "I don't know. The indexed documents do not contain specific rules regarding the remuneration policy for staff of a UCITS management company. Please note that the provided corpus consists of the original 2007-2010 texts (Directive 2009/65/EC and Commission Directive 2010/43/EU), and later amendments (such as those introduced by UCITS V regarding remuneration) are not included in the current search index.",
+  "add_document_trace": [
+    {
+      "tool": "add_document",
+      "args": {
+        "path": "corpus/ucits_v_directive.html"
+      },
+      "output": "Indexed ucits_v_directive.html as 'ucits_v_directive': 93 chunks in design 'fixed' (93 newly embedded, 0 outdated chunks removed)."
+    }
+  ],
+  "after": "UCITS management companies must establish and apply remuneration policies and practices that are consistent with and promote sound and effective risk management, align with the business strategy and investors' interests, and include measures to avoid conflicts of interest [ucits_v_directive, Article 14b]. These policies must cover both fixed and variable components of salaries and discretionary pension benefits [ucits_v_directive, Article 1].\n\nThey apply to senior management, risk takers, control functions, and any employee whose professional activities have a material impact on the risk profiles of the management company or the UCITS [ucits_v_directive, Article 1]. The general principles must be adopted and at least annually reviewed by the management body in its supervisory function (composed of non-executive members with risk and remuneration expertise), and implementation is subject to at least an annual independent internal review [ucits_v_directive, Article 14b]. Additionally, significant management companies must establish a remuneration committee [ucits_v_directive, Article 14b].\n\nManagement companies can apply these principles in a proportionate manner depending on their size, internal organisation, and the nature, scope, and complexity of their activities [ucits_v_directive, Article 14b]. \n\n*Note: This answer reflects the indexed rules from the UCITS V directive additions in the corpus.*",
+  "after_citations": [
+    [
+      "ucits_v_directive",
+      "Article 1"
+    ],
+    [
+      "ucits_v_directive",
+      "Article 14b"
+    ]
+  ]
+}

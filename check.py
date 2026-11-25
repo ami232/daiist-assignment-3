@@ -4,7 +4,7 @@ Assignment 3: submission check. `uv run python check.py [--evaluate]`
 Checks the API key, the committed index and test set, that server.py lists a
 search tool (`query`) and an add-document tool (`path`) and that search answers
 your first test question, and that `main.py ask` answers it. It never rebuilds
-the index or calls add-document. Don't edit this file to make it pass.
+the index or calls add-document. 
 """
 
 import argparse

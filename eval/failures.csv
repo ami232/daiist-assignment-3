@@ -1,0 +1,11 @@
+id,kind,question,suggested_category,final_category,reason,answer
+q13,single,Can a UCITS invest in gold or other precious metals?,wrong refusal,,refusal,"I don't know. The indexed documents do not cover all details on precious metals, but they explicitly state: ""A UCITS shall not, however: ... acquire either precious metals or certificates representing them"" [ucits_directive, Article 50(2)]. 
+
+*Note: This answer reflects the indexed texts (Directive 2009/65/EC).*"
+q21,single,Must a management company have a strategy for exercising the voting rights attached to the funds' holdings?,wrong refusal,,refusal,"Yes, a management company must develop adequate and effective strategies for determining when and how voting rights attached to instruments held in managed portfolios are to be exercised, to the exclusive benefit of the UCITS concerned [organisation, Article 20]. 
+
+The strategy must determine measures and procedures for:
+- Monitoring relevant corporate events [organisation, Article 20];
+- Ensuring that the exercise of voting rights accords with the investment objectives and policy of the relevan"
+q26,single,What must the risk and reward section of the key investor information contain?,wrong refusal,,refusal,I don't know. The indexed UCITS documents do not answer this question; please check with the legal or compliance team.
+q31,multi,What must the key investor information include and how long can it be?,wrong refusal,,refusal,I don't know. The indexed UCITS documents do not answer this question; please check with the legal or compliance team.

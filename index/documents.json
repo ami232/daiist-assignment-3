@@ -1,0 +1,55 @@
+{
+  "ucits_directive": {
+    "title": "Directive 2009/65/EC (UCITS Directive)",
+    "sha256": "345b536a2bb2323f0bad22156b1c89880e22d21c3ad00f28248e8dd547293d78",
+    "path": "corpus/ucits_directive.html",
+    "designs": [
+      "article",
+      "fixed"
+    ],
+    "words": 39353,
+    "celex": "32009L0065"
+  },
+  "eligible_assets": {
+    "title": "Commission Directive 2007/16/EC (eligible assets)",
+    "sha256": "d960a0b3676c41b0959c82fa555aabe05dc8e1ec432ea1566cb78fc94205bec8",
+    "path": "corpus/eligible_assets.html",
+    "designs": [
+      "article",
+      "fixed"
+    ],
+    "words": 5340,
+    "celex": "32007L0016"
+  },
+  "organisation": {
+    "title": "Commission Directive 2010/43/EU (organisational requirements, conflicts of interest, risk management)",
+    "sha256": "4956ffb3a03d4c9da2994469c10300c9c3f190349012e3468413dbcec6cfded3",
+    "path": "corpus/organisation.html",
+    "designs": [
+      "article",
+      "fixed"
+    ],
+    "words": 13875,
+    "celex": "32010L0043"
+  },
+  "kiid": {
+    "title": "Commission Regulation (EU) No 583/2010 (key investor information)",
+    "sha256": "35d320358e06f41d2048093c6ece3b814a96985fbcbcd9beef8ae2afd8b0e0ae",
+    "path": "corpus/kiid.html",
+    "designs": [
+      "article",
+      "fixed"
+    ],
+    "words": 8369,
+    "celex": "32010R0583"
+  },
+  "ucits_v_directive": {
+    "title": "ucits v directive",
+    "sha256": "9740d4630b1c7d15c00a57f8fa566ba9629d4f2d1ac0b0828e75f780e4136ed9",
+    "path": "/workspaces/daiist-assignment-3/corpus/ucits_v_directive.html",
+    "designs": [
+      "fixed"
+    ],
+    "chunks": 93
+  }
+}

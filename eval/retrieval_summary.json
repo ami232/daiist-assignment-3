@@ -1,0 +1,32 @@
+{
+  "article": {
+    "questions": 34,
+    "hit@1": 0.882,
+    "hit@3": 1.0,
+    "hit@5": 1.0,
+    "single_hit@1": 0.963,
+    "single_hit@3": 1.0,
+    "single_hit@5": 1.0,
+    "multi_hit@1": 0.571,
+    "multi_hit@3": 1.0,
+    "multi_hit@5": 1.0,
+    "multi_all@1": 0.0,
+    "multi_all@3": 0.429,
+    "multi_all@5": 0.571
+  },
+  "fixed": {
+    "questions": 34,
+    "hit@1": 0.882,
+    "hit@3": 1.0,
+    "hit@5": 1.0,
+    "single_hit@1": 0.926,
+    "single_hit@3": 1.0,
+    "single_hit@5": 1.0,
+    "multi_hit@1": 0.714,
+    "multi_hit@3": 1.0,
+    "multi_hit@5": 1.0,
+    "multi_all@1": 0.0,
+    "multi_all@3": 0.571,
+    "multi_all@5": 0.714
+  }
+}
