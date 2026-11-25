@@ -1,0 +1,158 @@
+id,kind,question,answer,refusal,guardrail_fired,citations_valid,expected_retrieved,tokens,seconds,model_calls,correct,supported,judge,reason,judge_tokens,cause
+q01,single,What iteration count should I use for PBKDF2 with HMAC-SHA256?,"For PBKDF2 with HMAC-SHA256, you should use **600,000 iterations** (recommended) [Password_Storage_Cheat_Sheet:014]. If FIPS-140 compliance is required, set the work factor to 600,000 or more [Password_Storage_Cheat_Sheet:001].",0,0,1,1.0,3395,19.3,2,1,1,llm,"The answer provides the correct iteration count of 600,000 for PBKDF2-HMAC-SHA256 and is fully supported by the retrieved passages.",1653.0,
+q02,single,What maximum password length should I enforce if I hash passwords with bcrypt?,You should enforce a maximum password length of **72 bytes** (or less if the specific bcrypt implementation in use has smaller limits) [Password_Storage_Cheat_Sheet:012].,0,0,1,1.0,3683,15.4,2,0,1,llm,The answer misses the work factor part of the reference answer.,1933.0,wrong answer from right passage
+q03,single,Where should a password pepper be stored?,"A password pepper should **not** be stored along with the generated hash or in the password database [Password_Storage_Cheat_Sheet:005]. 
+
+Instead, it should be stored separately in a secrets vault or a Hardware Security Module (HSM) [Password_Storage_Cheat_Sheet:005].",0,0,1,1.0,3242,12.7,2,1,1,llm,"The answer accurately states that a pepper should not be stored with hashes and should be kept in a secrets vault or HSM, and all claims are fully supported by the retrieved passages.",1508.0,
+q04,single,How much entropy does a session ID need?,"Session IDs must have at least **64 bits** of entropy to prevent brute-force guessing attacks [Session_Management_Cheat_Sheet:005]. 
+
+When creating custom session tokens or identifiers/secret verifiers, use a Cryptographically Secure Pseudorandom Number Generator (CSPRNG) with at least **128 bits** of entropy (and prefer 160 bits or more) [Session_Management_Cheat_Sheet:007, Session_Management_Cheat_Sheet:010].",0,0,1,1.0,3494,14.4,2,1,1,llm,"The answer accurately captures the requirement of at least 64 bits of entropy generated with a CSPRNG from the reference, while also including supported details about custom tokens requiring higher entropy from the retrieved passages.",1775.0,
+q05,single,Which cookie name prefix should I use for the session ID cookie and what does it require?,"It is recommended to use the `__Host-` prefix for session ID cookies [Session_Management_Cheat_Sheet:017]. 
+
+Requirements:
+- The cookie must be set with `Secure` [Session_Management_Cheat_Sheet:017].
+- It must not have a `Domain` attribute [Session_Management_Cheat_Sheet:017].
+- It must use `Path=/` [Session_Management_Cheat_Sheet:017].
+
+If subdomain sharing is required, you can use the `__Secure-` prefix instead, which requires the cookie to be set with `Secure` [Session_Management_Cheat_Sheet:017].",0,0,1,1.0,3018,13.7,2,1,1,llm,The answer accurately identifies the recommended cookie name prefix and its requirements while being fully supported by the retrieved passages.,1267.0,
+q06,single,Which SameSite value should my session cookie use?,"Your session cookie must explicitly set `SameSite=Strict` (preferred) or `SameSite=Lax` [Session_Management_Cheat_Sheet:016]:
+
+* **`SameSite=Strict` (Preferred):** Excludes cross-site requests entirely, preventing the cookie from being sent even when following external links [Session_Management_Cheat_Sheet:016, Cross-Site_Request_Forgery_Prevention_Cheat_Sheet:025]. 
+* **`SameSite=Lax`:** Permits top-level cross-site navigations using safe HTTP methods (such as following a link), balancing security and usability [Session_Management_Cheat_Sheet:016, Cross-Site_Request_Forgery_Prevention_Cheat_Sheet:025].
+
+Do not rely on browser-default values, and never use `SameSite=None` without `Secure` [Session_Management_Cheat_Sheet:016].",0,0,1,1.0,3270,14.3,2,1,1,llm,The answer provides all key facts from the reference and every claim is supported by the retrieved passages.,1533.0,
+q07,single,Can I store a JWT or refresh token in localStorage?,"No, you should not store authentication tokens, session IDs, JWTs, or refresh tokens in `localStorage` or `sessionStorage` [Session_Management_Cheat_Sheet:021]. 
+
+These APIs are accessible to any JavaScript executing in the origin, meaning a single Cross-Site Scripting (XSS) vulnerability will disclose every stored token [Session_Management_Cheat_Sheet:021]. Instead, prefer `HttpOnly; Secure; SameSite=Strict` cookies or a Backend-for-Frontend (BFF) pattern [Session_Management_Cheat_Sheet:021].",0,0,1,1.0,2946,13.5,2,1,1,llm,"The answer correctly states not to store tokens in localStorage, provides the reasons and alternatives from the reference, and all claims are fully supported by the retrieved passages.",1227.0,
+q08,single,Should my forgot-password form tell the user whether the email address has an account?,"No. You should return a consistent, generic message for both existent and non-existent accounts to prevent user enumeration attacks [Forgot_Password_Cheat_Sheet:001, Forgot_Password_Cheat_Sheet:002]. 
+
+A correct response example is: ""If that email address is in our database, we will send you an email to reset your password"" [Authentication_Cheat_Sheet:018].",0,0,1,1.0,3274,13.6,2,1,1,llm,The answer correctly advises against revealing account existence and is fully supported by the retrieved passages.,1522.0,
+q09,single,Which Referrer-Policy should the password reset page set?,"The password reset page should add the Referrer Policy tag with the `no-referrer` value in order to avoid referrer leakage (especially when URL tokens are used) [Forgot_Password_Cheat_Sheet:007].
+
+> `Referrer-Policy: no-referrer`",0,0,1,1.0,3179,9.8,2,1,1,llm,The answer correctly identifies no-referrer as the required policy and every claim is supported by the retrieved passages.,1436.0,
+q10,single,Can I use security questions as the only way for users to reset their password?,"No, security questions should not be used as the sole mechanism for resetting passwords because their answers are frequently easily guessable or obtainable by attackers [Forgot_Password_Cheat_Sheet:010]. They can instead be used as an additional layer of security when combined with other methods [Forgot_Password_Cheat_Sheet:010].",0,0,1,1.0,2822,14.3,2,1,1,llm,The answer correctly captures the key facts from the reference and every claim is explicitly supported by the retrieved passages.,1086.0,
+q11,single,Is it worth hashing one-time passcodes before storing them?,"Yes, hashing server-generated one-time passcodes (OTPs) is still recommended, but keep in mind its limitations:
+
+* **It does not provide strong offline resistance:** Because OTPs have a very small keyspace (e.g., about one million possibilities for a 6-digit code), a database attacker can quickly brute-force any OTP hash [Multifactor_Authentication_Cheat_Sheet:008].
+* **It protects against short-term exposure:** Hashing prevents accidental disclosure through logs, metrics, or debugging tools, reduces the blast radius if the database is briefly exposed during the OTP's validity window, and enforces good secret-handling discipline by avoiding plaintext storage by default [Multifactor_Authentication_Cheat_Sheet:008]. 
+
+The goal of hashing OTPs is short-term exposure protection, not long-term cryptographic secrecy [Multifactor_Authentication_Cheat_Sheet:008].",0,0,1,1.0,3502,13.6,2,1,1,llm,The answer accurately captures all key points from the reference answer and is fully supported by the retrieved passages.,1722.0,
+q12,single,How should I store the TOTP seeds of my users?,"To securely store user TOTP seeds:
+
+* Store TOTP seeds encrypted, ideally using a key managed by a key management service (KMS) or held in a hardware security module (HSM) [Multifactor_Authentication_Cheat_Sheet:009].
+* Decrypt the seed only while verifying a code [Multifactor_Authentication_Cheat_Sheet:009].
+* Never return the seed to the client after initial enrollment [Multifactor_Authentication_Cheat_Sheet:009].",0,0,1,1.0,3173,13.9,2,1,1,llm,The answer completely matches the key facts in the reference answer and is fully supported by the retrieved passages.,1389.0,
+q13,single,Is SMS an acceptable second factor for an online banking app?,"No, SMS is not an acceptable second factor for an online banking app [Multifactor_Authentication_Cheat_Sheet:028]. 
+
+SMS and PSTN-delivered codes are designated as restricted authenticators because they are susceptible to SIM-swapping, number-porting, SS7 interception, and phishing attacks [Multifactor_Authentication_Cheat_Sheet:028, Multifactor_Authentication_Cheat_Sheet:029]. They should not be used to protect applications that involve financial risk or hold Personally Identifiable Information (PII) [Multifactor_Authentication_Cheat_Sheet:028].",0,0,1,1.0,3019,14.2,2,1,1,llm,The answer accurately concludes that SMS is unacceptable for a banking app and correctly cites the reasons and risks found directly in the retrieved passages.,1274.0,
+q14,single,What should my login page say when the username does not exist?,"Your login page should respond with a generic error message, such as ""Login failed; Invalid user ID or password,"" regardless of whether the account exists, the password was incorrect, or the account is locked or disabled [Authentication_Cheat_Sheet:016, Authentication_Cheat_Sheet:018]. This prevents attackers from using user enumeration to discover valid usernames [Authentication_Cheat_Sheet:016].",0,0,1,1.0,3291,18.2,2,1,1,llm,The answer accurately captures all key facts from the reference answer and every claim is fully supported by the provided text.,1543.0,
+q15,single,Should I count failed login attempts per IP address or per account?,You should associate the counter of failed logins with the account itself rather than the source IP address [Authentication_Cheat_Sheet:022]. This prevents an attacker from bypassing the protection by making login attempts from a large number of different IP addresses [Authentication_Cheat_Sheet:022].,0,0,1,1.0,3064,13.7,2,1,1,llm,The answer correctly advises tracking per account rather than per IP address and is fully supported by the retrieved passages.,1299.0,
+q16,single,What file name should I use to store files that users upload?,"You should create a **random string** as a filename, such as generating a UUID/GUID [File_Upload_Cheat_Sheet:007]. Generating the stored filename server-side removes risks associated with user-supplied filenames, including special files creation or overwrite attacks and Windows 8.3 short name collisions [File_Upload_Cheat_Sheet:007, File_Upload_Cheat_Sheet:008].
+
+If business needs require using the user's original filename, implement proper input validation including:
+- A maximum length limit [File_Upload_Cheat_Sheet:007]
+- Restricting characters to an allowed subset specifically (such as alphanumeric characters, hyphen, spaces, and periods) [File_Upload_Cheat_Sheet:007]
+- Restricting leading periods, sequential periods, leading hyphens, and leading spaces [File_Upload_Cheat_Sheet:007]",0,0,1,1.0,3271,10.3,2,1,1,llm,"The answer correctly identifies using a random string like a UUID and validating the original name if needed, and all claims are fully supported by the retrieved passages.",1535.0,
+q17,single,Where should uploaded files be stored?,"Based on security priority, uploaded files should be stored using the following approaches (inclusive):
+
+1. **On a different host**, allowing complete segregation of duties between the application serving the user and the host handling file uploads and storage [File_Upload_Cheat_Sheet:010, File_Upload_Cheat_Sheet:001].
+2. **Outside the webroot**, where only administrative access is allowed [File_Upload_Cheat_Sheet:010].
+3. If stored **inside the webroot**, set them to write permissions only, and apply proper access controls if read access is required [File_Upload_Cheat_Sheet:010].
+
+Additionally, disable per-directory configuration overrides on upload directories at the web server level (such as Apache `AllowOverride None` or locked IIS handler mappings) to prevent attackers from uploading configuration files like `.htaccess` or `web.config` [File_Upload_Cheat_Sheet:010].",0,0,1,1.0,3436,13.8,2,1,1,llm,The answer correctly covers all priority tiers of file storage locations from the reference and is fully supported by the provided text.,1704.0,
+q18,single,Is escaping user input enough to prevent SQL injection?,"No, manually escaping untrusted values to construct SQL queries is strongly discouraged and is not enough to prevent SQL injection [SQL_Injection_Prevention_Cheat_Sheet:008]. 
+
+Manual escaping is error-prone and can fail because:
+- SQL escaping rules are not always straightforward [SQL_Injection_Prevention_Cheat_Sheet:008].
+- Different SQL dialects have different rules [SQL_Injection_Prevention_Cheat_Sheet:008].
+- Database configurations (such as MySQL `NO_BACKSLASH_ESCAPES`) can affect escaping behavior [SQL_Injection_Prevention_Cheat_Sheet:008].
+
+Instead, you should use **parameterized queries** (parameter binding) to separate the SQL structure from its data values [SQL_Injection_Prevention_Cheat_Sheet:001, SQL_Injection_Prevention_Cheat_Sheet:006].",0,0,1,1.0,3289,14.0,2,1,1,llm,"The answer correctly states that escaping is not enough and recommends parameterized queries, with every claim directly supported by the retrieved passages.",1526.0,
+q19,single,How can I safely let users choose which column to sort a SQL query by?,"Because parameter markers cannot represent column names or SQL keywords like `ASC` and `DESC`, you must map user choices to a strict allow-list of fixed, application-owned values rather than appending the supplied text directly [SQL_Injection_Prevention_Cheat_Sheet:007, SQL_Injection_Prevention_Cheat_Sheet:006]. 
+
+Map the user's selection using a switch statement or map to select the allowed column name or sort direction, and reject anything else [SQL_Injection_Prevention_Cheat_Sheet:007]:
+
+```java
+String tableName;
+switch(PARAM) {
+  case ""room"":
+    tableName = ""roomTable"";
+    break;
+  case ""floor"":
+    tableName = ""floorTable"";
+    break;
+  default:
+    throw new InputValidationException(""unexpected table name"");
+}
+```",0,0,1,1.0,3237,13.9,2,1,1,llm,"The answer correctly identifies using an allow-list of application-owned values since column names cannot be parameterized, and every claim is directly supported by the retrieved passages.",1495.0,
+q20,single,What value should I set for the Strict-Transport-Security header?,"Set the `Strict-Transport-Security` header to:
+
+`Strict-Transport-Security: max-age=63072000; includeSubDomains; preload` [HTTP_Headers_Cheat_Sheet:008]
+
+*Note:* Carefully check how HSTS works and review preload requirements before applying it, as misconfiguration or SSL/TLS certificate issues can lock users out of your site for the duration of the `max-age` [HTTP_Headers_Cheat_Sheet:008].",0,0,1,1.0,3198,13.5,2,1,1,llm,The answer provides the exact HSTS header value and warning details matching the reference and supported by the retrieved passages.,1445.0,
+q21,single,Which data should never be written directly to application logs?,"The following should usually not be recorded directly in application logs, and instead should be removed, masked, sanitized, hashed, or encrypted:
+
+- Application source code [Logging_Cheat_Sheet:011]
+- Session identification values (consider replacing with a hashed value if needed to track session-specific events) [Logging_Cheat_Sheet:011]
+- Access tokens [Logging_Cheat_Sheet:011]
+- Sensitive personal data and some forms of personally identifiable information (PII) such as health data, government identifiers, and data concerning vulnerable people [Logging_Cheat_Sheet:011]
+- Authentication passwords [Logging_Cheat_Sheet:011]
+- Database connection strings [Logging_Cheat_Sheet:011]
+- Encryption keys and other primary secrets [Logging_Cheat_Sheet:011]
+- Bank account or payment card holder data [Logging_Cheat_Sheet:011]
+- Data of a higher security classification than the logging system is allowed to store [Logging_Cheat_Sheet:011]
+- Commercially-sensitive information [Logging_Cheat_Sheet:011]
+- Information it is illegal to collect in the relevant jurisdictions [Logging_Cheat_Sheet:011]
+- Information a user has opted out of collecting, or has not consented to (e.g., ""do not track"" preferences or expired consent) [Logging_Cheat_Sheet:011]",0,0,1,1.0,3731,15.5,2,1,1,llm,The answer correctly and comprehensively lists the data that should not be logged directly as specified in the reference and retrieved passages.,1996.0,
+q22,single,Which Fetch Metadata request header is the main signal for CSRF protection?,"The main signal for CSRF protection in Fetch Metadata request headers is **`Sec-Fetch-Site`** [Cross-Site_Request_Forgery_Prevention_Cheat_Sheet:010]. 
+
+It indicates the relationship between the request initiator's origin and the target's origin (`same-origin`, `same-site`, `cross-site`, or `none`), making it the primary and most useful header for blocking untrusted cross-site requests [Cross-Site_Request_Forgery_Prevention_Cheat_Sheet:010, Cross-Site_Request_Forgery_Prevention_Cheat_Sheet:012].",0,0,1,1.0,3946,16.5,2,0,1,llm,The answer misses the crucial second part of the reference answer regarding the mandatory fallback to standard origin verification for legacy browsers.,2135.0,wrong answer from right passage
+q23,multi,"I am replacing old MD5 password hashes: how should I migrate users, and which algorithm and settings should the new hashes use?","### Algorithm and Settings
+Use a strong, slow hashing algorithm with a unique salt [Password_Storage_Cheat_Sheet:001]. Preferred choices and their minimum configurations are:
+* **Argon2id** (recommended): Minimum configuration of 19 MiB of memory, an iteration count of 2, and 1 degree of parallelism [Password_Storage_Cheat_Sheet:001].
+* **scrypt** (if Argon2id is unavailable): Minimum CPU/memory cost parameter of $2^{17}$, block size of 8 (1024 bytes), and parallelization parameter of 1 [Password_Storage_Cheat_Sheet:001].
+* **bcrypt** (for legacy systems): Work factor of 10 or more (with a password limit of 72 bytes) [Password_Storage_Cheat_Sheet:001].
+* **PBKDF2** (if FIPS-140 compliance is required): 600,000 or more iterations using HMAC-SHA-256 [Password_Storage_Cheat_Sheet:001].
+
+Store the algorithm and work factor with the password using a standard format (such as the modular PHC string format) to easily allow a mix of old and new algorithms during the transition [Password_Storage_Cheat_Sheet:017].
+
+---
+
+### Migration Methods
+When users authenticate, re-hash their plaintext password input using the new algorithm and replace the old hash [Password_Storage_Cheat_Sheet:016]. To handle users who have not logged in, choose one of two approaches:
+
+1. **Upgrade Method One:** Expire and delete the password hashes of inactive users, requiring them to reset their passwords upon their next login (more secure, but less user-friendly) [Password_Storage_Cheat_Sheet:016].
+2. **Upgrade Method Two:** Layer the old hash into the new algorithm temporarily (e.g., upgrading `md5($password)` to `bcrypt(md5($password))`), then replace it with a direct hash of the user's password the next time they log in [Password_Storage_Cheat_Sheet:016].",0,0,1,1.0,3665,14.9,2,1,1,llm,"The answer provides all key migration details and correct algorithm settings matching the reference answer, and all claims are fully supported by the retrieved passages.",1951.0,
+q24,multi,"Is the SameSite cookie attribute enough to protect against CSRF, and which value should my session cookie use?","No, the `SameSite` attribute is not enough to protect against CSRF on its own for most applications; it should be treated as defense-in-depth rather than a replacement for a CSRF token [Session_Management_Cheat_Sheet:016, Cross-Site_Request_Forgery_Prevention_Cheat_Sheet:028]. 
+
+Your session cookie should explicitly use **`SameSite=Strict`** (preferred) or **`SameSite=Lax`** [Session_Management_Cheat_Sheet:016]. Do not rely on the browser-default value [Session_Management_Cheat_Sheet:016].",0,0,1,1.0,3464,12.7,2,1,1,llm,The answer accurately addresses all parts of the question in agreement with the reference and is fully supported by the provided text.,1632.0,
+q25,multi,Should I use X-Frame-Options or Content Security Policy to stop my site being framed (clickjacking)?,"You should use the Content Security Policy (CSP) `frame-ancestors` directive if possible, as it obsoletes `X-Frame-Options` for supporting browsers [HTTP_Headers_Cheat_Sheet:001, HTTP_Headers_Cheat_Sheet:002]. 
+
+- Use CSP `frame-ancestors` to prevent framing attacks, for example:
+  - To prevent all framing: `Content-Security-Policy: frame-ancestors 'none';` [Content_Security_Policy_Cheat_Sheet:021]
+  - To allow only the site itself: `Content-Security-Policy: frame-ancestors 'self';` [Content_Security_Policy_Cheat_Sheet:021]
+  - To allow a trusted domain: `Content-Security-Policy: frame-ancestors trusted.com;` [Content_Security_Policy_Cheat_Sheet:021]",0,0,1,1.0,3138,14.9,2,1,1,llm,The answer correctly identifies that CSP frame-ancestors should be used as it obsoletes X-Frame-Options and provides fully supported configuration examples.,1373.0,
+q26,multi,"My health app sends one-time codes by SMS: is SMS acceptable here, and should I hash the codes I store?","**Is SMS acceptable for a health app?**
+No. NIST SP 800-63B-4 designates SMS and PSTN-delivered codes as a restricted authenticator due to SS7 interception, SIM-swap, and number-porting attacks [Multifactor_Authentication_Cheat_Sheet:028]. SMS should not be used to protect applications that hold Personally Identifiable Information (PII) or handle healthcare and banking [Multifactor_Authentication_Cheat_Sheet:028]. Where SMS is the only available factor, you must document risk acceptance, enforce per-account rate limits, monitor for SIM-swap signals, and plan a migration to TOTP, push notifications, or WebAuthn/FIDO2 [Multifactor_Authentication_Cheat_Sheet:028].
+
+**Should you hash stored codes?**
+Yes, you should not store OTPs in long-term plaintext form [Multifactor_Authentication_Cheat_Sheet:007]. While hashing OTPs does not provide strong offline brute-force resistance (due to their small keyspace, like ~1 million possibilities for a 6-digit code), hashing is still recommended to:
+- Prevent accidental disclosure via logs, metrics, or debugging tools [Multifactor_Authentication_Cheat_Sheet:008]
+- Reduce the blast radius if the database is briefly exposed during the OTP's validity window [Multifactor_Authentication_Cheat_Sheet:008]
+- Enforce good secret-handling discipline and avoid plaintext storage by default [Multifactor_Authentication_Cheat_Sheet:008]",0,0,1,1.0,6694,16.3,3,1,1,llm,"The answer accurately addresses both parts of the question, matching the reference key facts and being fully supported by the retrieved passages.",2192.0,
+q27,multi,"For a CV upload form, which file extensions should I allow and what file name should I store each file under?","For a CV upload, allow `docx` and `pdf` extensions [File_Upload_Cheat_Sheet:005]. 
+
+Store each file under a random string generated by the application, such as a UUID/GUID [File_Upload_Cheat_Sheet:007, File_Upload_Cheat_Sheet:001].",0,0,1,1.0,3469,17.9,2,1,1,llm,"The answer correctly identifies the required file extensions and storage naming convention, and all claims are fully supported by the retrieved passages.",1727.0,
+q28,multi,"When a user logs in, what should happen to their session ID, and how long must a hex-encoded session ID be?","When a user logs in:
+* The session ID must be renewed or regenerated by the web application to prevent session fixation attacks [Session_Management_Cheat_Sheet:030].
+* Any previous session IDs must be ignored, the new session ID must be assigned to every new request for protected resources, and the old session ID must be destroyed [Session_Management_Cheat_Sheet:030].
+
+For session ID length:
+* When using hexadecimal encoding, a session ID must be **at least 16 hexadecimal characters** long to achieve the required 64 bits of entropy [Session_Management_Cheat_Sheet:006]. 
+* If you create your own session ID, it is recommended to use a cryptographically secure pseudorandom number generator (CSPRNG) with a size of **at least 128 bits** [Session_Management_Cheat_Sheet:007].",0,0,1,1.0,7681,16.4,3,1,1,llm,The answer correctly and fully addresses both parts of the question while being entirely supported by the retrieved passages.,3136.0,
+q29,unanswerable,How do I implement PKCE in an OAuth 2.0 authorization code flow?,The corpus does not cover this. The OWASP Cheat Sheets currently lack specific implementation details for PKCE in OAuth 2.0.,1,0,1,,6883,24.3,3,1,1,code,correct refusal,,
+q30,unanswerable,Should I sign my JWTs with HS256 or RS256?,"The corpus does not cover this; the available cheat sheets mention JSON Web Tokens and signed ID tokens in OpenID Connect [Authentication_Cheat_Sheet:027], but do not provide guidance comparing HS256 and RS256 for signing JWTs.",1,0,1,,7180,18.1,3,1,1,code,correct refusal,,
+q31,unanswerable,What query depth limit should I set on my GraphQL API?,The corpus does not cover this. What is missing is specific guidance on the exact query depth limit value to set for a GraphQL API.,1,0,1,,2721,15.9,2,1,1,code,correct refusal,,
+q32,unanswerable,How do I protect my Node.js app against prototype pollution?,The corpus does not cover this. The OWASP Cheat Sheets currently do not contain guidance specifically addressing prototype pollution vulnerabilities in Node.js applications.,1,0,1,,3791,10.8,2,1,1,code,correct refusal,,
+q33,unanswerable,Which TLS version and cipher suites should my web server allow?,"The corpus does not cover this. The specific recommendations for allowed TLS versions and cipher suites are contained in the OWASP Transport Layer Security Cheat Sheet, which is referenced in the corpus [Session_Management_Cheat_Sheet:012] but whose contents are not indexed.",1,0,1,,5545,24.7,3,1,1,code,correct refusal,,
+q34,unanswerable,How many requests per minute should I allow per client on a public REST API?,The corpus does not cover this. The OWASP cheat sheets do not specify a concrete number of requests per minute to allow per client on a public REST API.,1,0,1,,2978,10.3,2,1,1,code,correct refusal,,

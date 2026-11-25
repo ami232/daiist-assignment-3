@@ -1,0 +1,26 @@
+{
+  "config": {
+    "design": "sections",
+    "search": "vector",
+    "k": 5
+  },
+  "questions": 34,
+  "correct": 32,
+  "correct_answerable": 26,
+  "answerable": 28,
+  "unsupported_answers": 0,
+  "correct_refusals": 6,
+  "unanswerable": 6,
+  "wrong_refusals": 0,
+  "invalid_citations": 0,
+  "guardrail_fired": 0,
+  "failures_by_cause": {
+    "wrong answer from right passage": 2
+  },
+  "agent_tokens_per_question": 3814,
+  "agent_seconds_per_question": 15.0,
+  "judge_tokens_per_graded_answer": 1643,
+  "agreement_with_me": {
+    "graded_by_me": 0
+  }
+}

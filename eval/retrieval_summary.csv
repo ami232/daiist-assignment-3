@@ -1,0 +1,4 @@
+design,hit@1,hit@3,hit@5,multi_all@5,words_added_k5
+fixed+vector,0.857,1.0,1.0,1.0,1216.786
+sections+vector,0.929,1.0,1.0,0.833,800.893
+sections+hybrid,0.75,0.964,1.0,0.667,839.286
