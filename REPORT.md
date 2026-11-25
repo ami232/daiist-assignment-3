@@ -1,8 +1,8 @@
 # Assignment 3 Report
 
-- **Matias Arevalo**:
-- **19319**:
-- **Group**: [BBADBA 5A]
+- **Name**: Matias Arevalo
+- **Student ID**: 19319
+- **Group**: BBADBA 5A
 
 ## Use case
 
