@@ -1,0 +1,118 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "judge_model": "gemini-3.5-flash",
+  "questions": 34,
+  "retrieval": [
+    {
+      "design": "fixed",
+      "questions": 28,
+      "hit@1": 0.464,
+      "hit@3": 0.679,
+      "hit@5": 0.821,
+      "any@1": 0.571,
+      "any@3": 0.821,
+      "any@5": 0.857,
+      "words_in_prompt@5": 1247,
+      "chunks": 286
+    },
+    {
+      "design": "structure",
+      "questions": 28,
+      "hit@1": 0.393,
+      "hit@3": 0.786,
+      "hit@5": 0.857,
+      "any@1": 0.571,
+      "any@3": 0.893,
+      "any@5": 0.964,
+      "words_in_prompt@5": 1162,
+      "chunks": 286
+    },
+    {
+      "design": "structure_hybrid",
+      "questions": 28,
+      "hit@1": 0.321,
+      "hit@3": 0.643,
+      "hit@5": 0.714,
+      "any@1": 0.429,
+      "any@3": 0.714,
+      "any@5": 0.821,
+      "words_in_prompt@5": 1206,
+      "chunks": 286
+    }
+  ],
+  "answerable": 28,
+  "correct_and_supported": 27,
+  "correct": 27,
+  "unsupported": 0,
+  "wrong_refusals": 0,
+  "unanswerable": 6,
+  "correct_refusals": 6,
+  "answered_unanswerable": 0,
+  "invalid_citation_answers": 3,
+  "guardrail_fired": 6,
+  "failures_by_cause": {
+    "wrong answer from the right passage": 1
+  },
+  "avg_input_tokens": 6719,
+  "avg_output_tokens": 332,
+  "avg_seconds": 8.1,
+  "max_seconds": 22.03,
+  "agreement": {
+    "n_human_labels": 34,
+    "correct": {
+      "n": 34,
+      "agreement": 0.882,
+      "kappa": -0.046,
+      "disagreements": [
+        "q09",
+        "q27",
+        "q31",
+        "q34"
+      ]
+    },
+    "supported": {
+      "n": 34,
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "disagreements": []
+    }
+  },
+  "before_after": {
+    "id": "q29",
+    "question": "Our deal is a joint venture with no activities in the EEA. Does it qualify for the simplified procedure and a short-form CO filing?",
+    "document": "Commission Notice on a simplified treatment for certain concentrations",
+    "add_result": {
+      "status": "added",
+      "source": "SIMPLIFIED_NOTICE",
+      "chunks": 20
+    },
+    "before": "The corpus does not cover this question (it does not contain the rules on the simplified procedure or the short-form CO filing). \n\nThe search results only cover the jurisdictional concepts of joint ventures, joint control, and full-functionality under the Jurisdictional Notice.",
+    "after": "Yes, a joint venture with no activities in the EEA qualifies for the simplified procedure [SIMPLIFIED_NOTICE, para 5(a)]. \n\n* **Qualification for the simplified procedure:** The Commission will in principle apply the simplified procedure to joint ventures where two or more undertakings acquire joint control, provided that the joint venture has no current or expected turnover within the territory of the EEA, and the undertakings concerned have not planned to transfer any assets within the EEA to the joint venture at the time of notification [SIMPLIFIED_NOTICE, para 5(a)].\n* **Short-form filing / decision:** Eligible concentrations of this type are notified by completing the relevant sections of the Short Form CO [SIMPLIFIED_NOTICE, para 26]. If satisfied that the criteria are fulfilled, the Commission will usually issue a short-form decision declaring the concentration compatible with the internal market within 25 working days from notification [SIMPLIFIED_NOTICE, para 30]. Furthermore, concentrations falling under this category (point 5(a)) may be reviewed under a streamlined \"super-simplified\" procedure, allowing the parties to notify directly without pre-notification contacts [SIMPLIFIED_NOTICE, para 26].\n* **Procedural requirement:** Before formally submitting a notification under the simplified procedure, the notifying parties must submit a case team allocation request indicating the type of concentration, the relevant point of the Notice, and the expected date of notification [SIMPLIFIED_NOTICE, para 29].",
+    "after_citations": [
+      [
+        "SIMPLIFIED_NOTICE",
+        "para 5(a)"
+      ],
+      [
+        "SIMPLIFIED_NOTICE",
+        "para 5(a)"
+      ],
+      [
+        "SIMPLIFIED_NOTICE",
+        "para 26"
+      ],
+      [
+        "SIMPLIFIED_NOTICE",
+        "para 30"
+      ],
+      [
+        "SIMPLIFIED_NOTICE",
+        "para 26"
+      ],
+      [
+        "SIMPLIFIED_NOTICE",
+        "para 29"
+      ]
+    ]
+  }
+}

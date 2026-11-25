@@ -1,0 +1,63 @@
+{
+  "EUMR": {
+    "id": "EUMR",
+    "celex": "32004R0139",
+    "date": "2004-01-20",
+    "title": "Council Regulation (EC) No 139/2004 on the control of concentrations between undertakings (EU Merger Regulation)",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32004R0139",
+    "licence": "EUR-Lex, reuse authorised (Commission Decision 2011/833/EU)",
+    "file": "corpus/EUMR.html",
+    "sha256": "78ad7f531aafceb0fd72da42183b1779e7e1612cd7ea01e64b1c4d8626738a35",
+    "words": 14575,
+    "units": 74,
+    "added": false
+  },
+  "JURISDICTIONAL_NOTICE": {
+    "id": "JURISDICTIONAL_NOTICE",
+    "celex": "52008XC0416(08)",
+    "date": "2008-04-16",
+    "title": "Commission Consolidated Jurisdictional Notice under Regulation (EC) No 139/2004",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52008XC0416(08)",
+    "licence": "EUR-Lex, reuse authorised (Commission Decision 2011/833/EU)",
+    "file": "corpus/JURISDICTIONAL_NOTICE.html",
+    "sha256": "347e17e5bf775b7fea1bb83f0ee7cddc894a2e1ade9cfd5450fd424e8f40aee5",
+    "words": 24649,
+    "units": 221,
+    "added": false
+  },
+  "HORIZONTAL_GUIDELINES": {
+    "id": "HORIZONTAL_GUIDELINES",
+    "celex": "52004XC0205(02)",
+    "date": "2004-02-05",
+    "title": "Guidelines on the assessment of horizontal mergers",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52004XC0205(02)",
+    "licence": "EUR-Lex, reuse authorised (Commission Decision 2011/833/EU)",
+    "file": "corpus/HORIZONTAL_GUIDELINES.html",
+    "sha256": "82af9dd632b99f5358c26872dfc5b9fe08f640949825a8aaec93807bb6bdaed6",
+    "words": 8602,
+    "units": 92,
+    "added": false
+  },
+  "NONHORIZONTAL_GUIDELINES": {
+    "id": "NONHORIZONTAL_GUIDELINES",
+    "celex": "52008XC1018(03)",
+    "date": "2008-10-18",
+    "title": "Guidelines on the assessment of non-horizontal mergers",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52008XC1018(03)",
+    "licence": "EUR-Lex, reuse authorised (Commission Decision 2011/833/EU)",
+    "file": "corpus/NONHORIZONTAL_GUIDELINES.html",
+    "sha256": "cba3ac00d644d4c6141b3a5e6ab44634faabea3dd19e23ff844c38c6b90e407b",
+    "words": 9265,
+    "units": 122,
+    "added": false
+  },
+  "SIMPLIFIED_NOTICE": {
+    "title": "SIMPLIFIED_NOTICE",
+    "file": "added_docs/SIMPLIFIED_NOTICE.html",
+    "sha256": "e8d11a9ef89a189d2df759f336bd7d5fd3d2d346c3b9e75989feb86b2b0b1188",
+    "chunks": 20,
+    "words": 4076,
+    "added": true,
+    "design": "structure"
+  }
+}

@@ -1,0 +1,18 @@
+id,kind,question,answer,suggested_cause,judge_reason,cause_confirmed
+q27,multi,"How do the Article 9 and Article 22 referral mechanisms differ, and what deadlines apply to each?","The corpus does not cover the full procedural and substantive differences between Article 9 and Article 22 in detail, but it specifies their core mechanisms and deadlines as follows:
+
+### Article 9 (Referral from the Commission to Member States)
+* **Mechanism:** Applies to concentrations that **have a Community dimension** (notified to the Commission). A Member State may request a referral because a concentration threatens to significantly affect competition in a market within that Member State that presents all the characteristics of a distinct market (or affects competition in a distinct market that does not form a substantial part of the common market) [EUMR, Article 9, paras 1-2]. The Commission may then refer the whole or part of the case to the competent authorities of the Member State [EUMR, Article 9, para 3].
+* **Deadlines:**
+  * **Member State request:** Within **15 working days** of the date of receipt of the copy of the notification [EUMR, Article 9, para 2].
+  * **Commission decision on referral:** 
+    * As a general rule, within the period provided for in Article 10(1), second subparagraph, where proceedings have not been initiated [EUMR, Article 9, para 4(a)]; or
+    * At most within **65 working days** of the notification of the concentration where the Commission has initiated proceedings under Article 6(1)(c) [EUMR, Article 9, para 4(b)].
+  * **National competition authority assessment:** Within **45 working days** after the Commission's referral, the competent authority must inform the undertakings of the result of the preliminary competition assessment (or from receipt of a complete national notification, where required) [EUMR, Article 9, para 6].
+
+### Article 22 (Referral from Member States to the Commission)
+* **Mechanism:** Applies to concentrations that **do not have a Community dimension** but affect trade between Member States and threaten to significantly affect competition within the territory of the requesting Member State(s) [EUMR, Article 22, para 1]. One or more Member States may request the Commission to examine the concentration [EUMR, Article 22, para 1].
+* **Deadlines:**
+  * **Initial Member State request:** At most within **15 working days** of the date on which the concentration was notified, or if no notification is required, otherwise made known to the Member State concerned [EUMR, Article 22, para 1].
+  * **Joining the request:** Any other Member State has the right to join the initial request within **15 working days** of being informed by the Commission of the initial request [EUMR, Article 22, para 2].
+  * **Commission decision to examine:** At the latest **10 working days** after the expiry of the period for other Member States to join the request [EUMR, Article 22, para 3].",wrong answer from the right passage,"The assistant failed to meet the criteria for a correct answer because it did not state the key facts as requested in the reference answer, specifically failing to summarize the core distinction and deadlines as concisely as the reference.",
