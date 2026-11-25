@@ -229,19 +229,25 @@ def get_client():
 
 def embed_texts(texts: list[str]) -> list[list[float]]:
     """Embed already-prefixed texts in ONE call. Returns one vector per text."""
-    try:
-        response = get_client().models.embed_content(
-            model=EMBED_MODEL,
-            # One Content per text: a plain list of strings would be merged into a single vector.
-            contents=[types.Content(parts=[types.Part(text=t)]) for t in texts],
-        )
-    except Exception as error:                         # still failing after 5 attempts
-        raise SystemExit(
-            f"Embedding failed: {error}\n"
-            "If this is the DAILY limit, run the command again after 09:00 (Spain): "
-            "every vector saved so far is kept."
-        )
-    return [embedding.values for embedding in response.embeddings]
+    global _client
+    # One Content per text: a plain list of strings would be merged into a single vector.
+    contents = [types.Content(parts=[types.Part(text=t)]) for t in texts]
+    for attempt in range(2):
+        try:
+            response = get_client().models.embed_content(model=EMBED_MODEL, contents=contents)
+            return [embedding.values for embedding in response.embeddings]
+        except Exception as error:
+            # The connection was closed under us: open a new one and try once more.
+            if "closed" in str(error) and attempt == 0:
+                log("  Gemini connection was closed; reconnecting")
+                _client = None
+                continue
+            # Anything else (e.g. the daily limit) has already been retried 5 times by the client.
+            raise SystemExit(
+                f"Embedding failed: {error}\n"
+                "If this is the DAILY limit, run the command again after 09:00 (Spain): "
+                "every vector saved so far is kept."
+            )
 
 
 def embed_queries(questions: list[str]) -> list[list[float]]:
