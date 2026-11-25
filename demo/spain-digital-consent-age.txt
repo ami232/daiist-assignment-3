@@ -1,0 +1,9 @@
+Spain: age of digital consent (short note written for the add_document demo)
+
+Article 8 of the GDPR sets the age of consent for information society services at 16 years by default, and it allows Member States to lower it by law, but not below 13 years.
+
+Spain used this option in Organic Law 3/2018 of 5 December on the protection of personal data and the guarantee of digital rights (LOPDGDD). Article 7 of this law says that the processing of the personal data of a minor can be based on the consent of the minor only when he or she is over 14 years old. Under the age of 14, the processing is lawful only if the holder of parental authority or guardianship gives consent, and only to the extent that the holder authorises it.
+
+So the age of digital consent in Spain is 14 years.
+
+Source: Organic Law 3/2018 (LOPDGDD), Article 7, published in the Spanish Official State Gazette (BOE).
