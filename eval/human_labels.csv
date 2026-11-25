@@ -1,1 +1,21 @@
 id,correct,supported,notes
+q01,1,0,"states an increase of $4,771 million; that figure is not in either passage (own arithmetic from the table, correct but unsupported)"
+q04,1,1,
+q07,1,1,gives both 29% (segment table) and 29.3% (exec summary); reference value present
+q11,1,1,
+q12,1,1,
+q16,1,1,leads with competitors' use of AI; reference point (bad actors: fraud and cyber attacks) is in the second paragraph
+q17,1,1,
+q19,1,1,
+q21,1,1,
+q22,1,1,both figures right but no explicit ratio (about 3.9x) and no caveat that AUS and AUM are defined differently
+q23,1,1,
+q24,1,1,
+q25,1,1,
+q26,1,1,
+q27,1,1,proper refusal
+q28,1,1,proper refusal; claim that liquidity sections are not indexed is about the corpus and not from the passage
+q29,1,1,proper refusal; adds an unrequested Goldman AWM figure (supported)
+q30,1,1,proper refusal; EMEA $820bn is in the passage
+q31,1,1,proper refusal
+q32,1,1,proper refusal

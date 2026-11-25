@@ -1,0 +1,493 @@
+Introduction
+Morgan Stanley is a global financial services firm that maintains significant market positions in each of its business segments—Institutional Securities, Wealth Management and Investment Management. Morgan Stanley, through its subsidiaries and affiliates, provides a wide variety of products and services to a large and diversified group of clients and customers, including corporations, governments, financial institutions and individuals. We operate as an Integrated Firm whereby we serve clients holistically across our business segments. Unless the context otherwise requires, the terms "Morgan Stanley," "Firm," "us," "we" or "our" mean Morgan Stanley (the "Parent Company") together with its consolidated subsidiaries. See the "Glossary of Common Terms and Acronyms" for the definition of certain terms and acronyms used throughout this Form 10-K. For an analysis of 2024 results compared with 2023 results, see Part II, Item 7, "Management's Discussion and Analysis of Financial Condition and Results of Operations" in the annual report on Form 10-K for the year ended December 31, 2024 filed with the SEC.
+A description of the clients and principal products and services of each of our business segments is below. Through the Integrated Firm some of our clients may use the products and services of more than one of our business segments.
+Institutional Securities provides a variety of products and services to corporations, governments, financial institutions and ultra-high net worth clients. Investment Banking services consist of capital raising and financial advisory services, including the underwriting of debt, equity securities and other products, as well as advice on mergers and acquisitions, restructurings and project finance. Our Markets business, which comprises Equity and Fixed Income, provides sales, financing, prime brokerage, market-making, and Asia wealth management services and holds certain business-related investments. Lending activities include originating corporate loans and commercial real estate loans, providing secured lending facilities, and extending securities-based and other financing to clients. Other activities include research.
+Wealth Management provides a comprehensive array of financial services and solutions to individual investors, including high and ultra-high net worth individuals, and businesses and institutions. Wealth Management supports clients through three channels: Advisor-Led, Self-Directed and Workplace. Wealth Management includes: financial advisor-led brokerage, investment advisory, custody, cash management, and administrative services; self-directed brokerage services; financial and wealth planning services; workplace services, including stock plan administration; securities-based lending, residential and commercial real estate loans and other lending products; banking; and retirement plan services.
+Investment Management provides a broad range of investment strategies and products that span geographies, asset classes, and public and private markets to a diverse group of clients across institutional and intermediary channels. Strategies and products, which are offered through a variety of investment vehicles, include equity, fixed income, alternatives and solutions, and liquidity and overlay services. Institutional clients include defined benefit/defined contribution plans, foundations, endowments, government entities, sovereign wealth funds, insurance companies, third-party fund sponsors and corporations. Individual clients are generally served through intermediaries, including affiliated and non-affiliated distributors.
+Management's Discussion and Analysis includes certain metrics that we believe to be useful to us, investors, analysts and other stakeholders by providing further transparency about, or an additional means of assessing, our financial condition and operating results. Such metrics, when used, are defined and may be different from or inconsistent with metrics used by other companies.
+The results of operations in the past have been, and in the future may continue to be, materially affected by: competition; legislative, legal and regulatory developments; market and economic conditions; and other risk factors. These factors also may have an adverse impact on our ability to achieve our strategic objectives. Additionally, the discussion of our results of operations herein may contain forward-looking statements. These statements, which reflect management's beliefs and expectations, are subject to risks and uncertainties that may cause actual results to differ materially. For a discussion of the risks and uncertainties that may affect our future results, see "Forward-Looking Statements", "Business—Competition", "Business—Supervision and Regulation", "Risk Factors" and "Liquidity and Capital Resources—Regulatory Requirements" herein.
+Executive Summary
+Overview of Financial Results
+Consolidated Results—Full Year Ended December 31, 2025
+•The Firm reported net revenues of $70.6 billion and net income applicable to Morgan Stanley of $16.9 billion reflecting strong results across our business segments and demonstrating the strength of our Integrated Firm.
+•The Firm delivered ROE of 16.6% and ROTCE of 21.6% (see "Selected Non-GAAP Financial Information" herein).
+•The Firm expense efficiency ratio was 68% compared to 71% in the prior year, demonstrating operating leverage while continuing to invest in our businesses.
+•At December 31, 2025, the Firm's Standardized Common Equity Tier 1 capital ratio was 15.0%, and its Supplementary Leverage Ratio was 5.4%.
+•Institutional Securities net revenues of $33.1 billion, primarily reflecting strong performance in Equity on higher client activity and higher underwriting and Advisory revenues within Investment Banking.
+•Wealth Management delivered net revenues of $31.8 billion, primarily reflecting higher Asset management revenues on higher market levels and the cumulative impact of strong fee-based flows. The pre-tax margin was 29.3%. Fee-based asset flows were $160 billion and the business added net new assets of $356 billion.
+•Investment Management reported net revenues of $6.5 billion, primarily reflecting higher asset management fees driven by higher average AUM on higher market levels.
+Net Revenues
+($ in millions)
+Net Income Applicable to Morgan Stanley
+($ in millions)
+Earnings per Diluted Common Share
+2025 Compared with 2024
+•We reported net revenues of $70.6 billion in 2025, which increased by 14% compared with $61.8 billion in 2024. Net income applicable to Morgan Stanley was $16.9 billion in 2025, which increased by 26% compared with $13.4 billion in 2024. Diluted earnings per common share was $10.21 in 2025, which increased by 28% compared with $7.95 in 2024.
+Non-Interest Expenses
+($ in millions)
+•Compensation and benefits expenses of $29,216 million in 2025 increased 12% from the prior year, primarily due to an increase in the formulaic payout to Wealth Management advisors and higher discretionary incentive compensation within Institutional Securities, both on higher revenues, and higher salary expenses.
+In 2025, as a result of a March workforce management action, we recognized severance costs of $144 million, included in Compensation and benefits expense. The workforce management action was related to performance management and the alignment of our workforce to our business needs, rather than a change in strategy or exit of businesses. The workforce management action occurred across our business segments and geographic regions and impacted approximately 2% of our global workforce at that time. We recorded severance costs of $78 million in the Institutional Securities business segment, $50 million in the Wealth Management business segment, and $16 million in the Investment Management business segment. These costs were incurred across all regions, with the majority in the Americas.
+•Non-compensation expenses of $19,126 million in 2025 increased 8% from the prior year, primarily due to higher execution-related expenses and increased technology spend.
+Provision for Credit Losses
+The Provision for credit losses on loans and lending commitments of $349 million in 2025 was primarily related to portfolio growth in corporate loans and secured lending facilities and provisions for certain specific commercial real estate loans. The Provision for credit losses on loans and lending commitments of $264 million in 2024 was primarily related to certain specific commercial real estate loans and growth in the corporate loan portfolio, partially offset by improvements in the macroeconomic outlook.
+For further information on the Provision for credit losses, see "Credit Risk" herein.
+Business Segment Results
+Net Revenues by Segment1
+($ in millions)
+Net Income Applicable to Morgan Stanley by Segment1
+($ in millions)
+1.The amounts in the charts represent the contribution of each business segment to the total of the applicable financial category and may not sum to the total presented on top of the bars due to intersegment eliminations. See Note 22 to the financial statements for details of intersegment eliminations.
+•Institutional Securities net revenues of $33,080 million in 2025 increased 18% from the prior year, primarily reflecting higher results in Equity driven by increased client activity and higher average client balances, and higher underwriting and Advisory revenues within Investment Banking.
+•Wealth Management net revenues of $31,754 million in 2025 increased 12% from the prior year, primarily reflecting higher Asset management revenues on higher market levels and the cumulative impact of positive fee-based flows, and higher Transactional revenues on higher client activity.
+•Investment Management net revenues of $6,525 million in 2025 increased 11% from the prior year, primarily reflecting higher Asset management and related fees driven by higher AUM on higher market levels and higher Performance-based income and other revenues.
+Net Revenues by Region1
+($ in millions)
+1.For a discussion of how the geographic breakdown of net revenues is determined, see Note 22 to the financial statements.
+•Americas net revenues in 2025 increased 13% from the prior year, driven by higher results across all business segments.
+•EMEA net revenues in 2025 increased 16% from the prior year, primarily driven by higher Equity revenues within the Institutional Securities business segment.
+•Asia net revenues in 2025 increased 23% from the prior year, primarily driven by higher results in Equity and Investment Banking within the Institutional Securities business segment.
+Selected Financial Information and Other Statistical Data
+$ in millions, except per share data | 2025 | 2024 | 2023
+Consolidated results
+Net revenues | $70,645 | $61,761 | $54,143
+Earnings applicable to Morgan Stanley common shareholders | $16,249 | $12,800 | $8,530
+Earnings per diluted common share | $10.21 | $7.95 | $5.18
+Consolidated financial measures
+Expense efficiency ratio 1 | 68% | 71% | 77%
+ROE 2 | 16.6% | 14.0% | 9.4%
+ROTCE 2,3 | 21.6% | 18.8% | 12.8%
+Pre-tax margin 4 | 31% | 28% | 22%
+Effective tax rate | 22.5% | 23.1% | 21.9%
+Pre-tax margin by segment 4
+Institutional Securities | 34% | 31% | 19%
+Wealth Management | 29% | 27% | 25%
+Investment Management | 23% | 19% | 16%
+$ in millions, except per share data, worldwide employees and client assets | At December 31, 2025 | At December 31, 2024
+Average liquidity resources for three months ended 5 | $385,884 | $345,440
+Loans 6 | $289,038 | $246,814
+Total assets | $1,420,270 | $1,215,071
+Deposits | $415,523 | $376,007
+Borrowings | $348,935 | $288,819
+Common equity | $101,882 | $94,761
+Tangible common equity 3 | $79,147 | $71,604
+Common shares outstanding | 1,583 | 1,607
+Book value per common share 7 | $64.37 | $58.98
+Tangible book value per common share 3,7 | $50.00 | $44.57
+Worldwide employees (in thousands) | 83 | 80
+Client assets 8 (in billions) | $9,276 | $7,860
+Capital ratios 9
+Common Equity Tier 1 capital—Standardized | 15.0% | 15.9%
+Tier 1 capital—Standardized | 16.8% | 18.0%
+Common Equity Tier 1 capital—Advanced | 16.2% | 15.7%
+Tier 1 capital—Advanced | 18.0% | 17.8%
+Tier 1 leverage | 6.7% | 6.9%
+SLR | 5.4% | 5.6%
+1.The expense efficiency ratio represents total non-interest expenses as a percentage of net revenues.
+2.ROE and ROTCE represent annualized earnings applicable to Morgan Stanley common shareholders as a percentage of average common equity and average tangible common equity, respectively.
+3.Represents a non-GAAP financial measure. See "Selected Non-GAAP Financial Information" herein.
+4.Pre-tax margin represents income before provision for income taxes as a percentage of net revenues.
+5.For a discussion of Liquidity resources, see "Liquidity and Capital Resources— Balance Sheet—Liquidity Risk Management Framework—Liquidity Resources" herein.
+6.Includes loans held for investment, net of ACL, loans held for sale and also includes loans at fair value, which are included in Trading assets in the balance sheet.
+7.Book value per common share and tangible book value per common share equal common equity and tangible common equity, respectively, divided by common shares outstanding.
+8.Client assets represents the sum of Wealth Management client assets and Investment Management AUM. Certain Wealth Management client assets, totaling $350 billion as of December 31, 2025, are invested in Investment Management products and are therefore also included in Investment Management's AUM.
+9.For a discussion of our capital ratios, see "Liquidity and Capital Resources—Regulatory Requirements" herein.
+Economic and Market Conditions
+The economic environment was resilient in 2025, as client and investor confidence and market sentiment improved and markets rebounded from early-year uncertainty. The year was characterized by increased momentum in capital markets activity and lower interest rates. The rate of economic growth, ongoing geopolitical uncertainty, as well as the timing and pace of any further central bank actions have impacted and could continue to impact capital markets and our businesses, as discussed further in "Business Segments" herein.
+For more information on economic and market conditions, and the potential effects of geopolitical events on our future results, refer to "Risk Factors" and "Forward-Looking Statements" herein.
+Selected Non-GAAP Financial Information
+We prepare our financial statements using U.S. GAAP. From time to time, we may disclose certain "non-GAAP financial measures" in this document or in the course of our earnings releases, earnings and other conference calls, financial presentations, definitive proxy statements and other public disclosures. A "non-GAAP financial measure" excludes, or includes, amounts from the most directly comparable measure calculated and presented in accordance with U.S. GAAP. We consider the non-GAAP financial measures we disclose to be useful to us, investors, analysts and other stakeholders by providing further transparency about, or an alternate means of assessing or comparing our financial condition, operating results and capital adequacy.
+These measures are not in accordance with, or a substitute for, U.S. GAAP and may be different from or inconsistent with non-GAAP financial measures used by other companies. Whenever we refer to a non-GAAP financial measure, we will also generally define it or present the most directly comparable financial measure calculated and presented in accordance with U.S. GAAP, along with a reconciliation of the differences between the U.S. GAAP financial measure and the non-GAAP financial measure.
+We present certain non-GAAP financial measures that exclude the impact of mark-to-market gains and losses on DCP investments from net revenues and compensation expenses. The impact of DCP is primarily reflected in our Wealth Management business segment results. These measures allow for better comparability of period-to-period underlying operating performance and revenue trends, especially in our Wealth Management business segment. By excluding the impact of these items, we are better able to describe the business drivers and resulting impact to net revenues and corresponding change to the associated compensation expenses. For additional information on DCP, refer to "Other Matters" herein.
+Tangible common equity is a non-GAAP financial measure that we believe analysts, investors and other stakeholders consider useful to allow for comparability to peers and of the period-to-period use of our equity. The calculation of tangible common equity represents common shareholders' equity less goodwill and intangible assets net of allowable mortgage servicing rights deduction. In addition, we believe that certain ratios that utilize tangible common equity, such as return on average tangible common equity ("ROTCE") and tangible book value per common share, also non-GAAP financial measures, are useful for evaluating the operating performance and capital adequacy of the business period-to-period, respectively. The calculation of ROTCE represents annualized earnings applicable to Morgan Stanley common shareholders as a percentage of average tangible common equity. The calculation of tangible book value per common share represents tangible common equity divided by common shares outstanding.
+The principal non-GAAP financial measures presented in this document are set forth in the following tables.
+Reconciliations from U.S. GAAP to Non-GAAP Consolidated Financial Measures
+$ in millions | 2025 | 2024 | 2023
+Net revenues | $70,645 | $61,761 | $54,143
+Adjustment for mark-to-market losses (gains) on DCP 1 | (471) | (363) | (434)
+Adjusted Net revenues—non-GAAP | $70,174 | $61,398 | $53,709
+Compensation expense | $29,216 | $26,178 | $24,558
+Adjustment for mark-to-market gains (losses) on DCP 1 | (764) | (672) | (668)
+Adjusted Compensation expense—non-GAAP | $28,452 | $25,506 | $23,890
+Wealth Management Net revenues | $31,754 | $28,420 | $26,268
+Adjustment for mark-to-market losses (gains) on DCP 1 | (348) | (239) | (282)
+Adjusted Wealth Management Net revenues—non-GAAP | $31,406 | $28,181 | $25,986
+Wealth Management Compensation expense | $16,950 | $15,207 | $13,972
+Adjustment for mark-to-market gains (losses) on DCP 1 | (535) | (431) | (412)
+Adjusted Wealth Management Compensation expense—non-GAAP | $16,415 | $14,776 | $13,560
+1.Net revenues and compensation expense are adjusted for DCP for both Firm and Wealth Management business segment. See "Other Matters" herein for more information.
+At December 31,
+$ in millions | 2025 | 2024 | 2023
+Tangible equity
+Common equity | $101,882 | $94,761 | $90,288
+Less: Goodwill and net intangible assets | (22,735) | (23,157) | (23,761)
+Tangible common equity—non-GAAP | $79,147 | $71,604 | $66,527
+Average Monthly Balance
+$ in millions | 2025 | 2024 | 2023
+Tangible equity
+Common equity | $98,046 | $91,699 | $90,819
+Less: Goodwill and net intangible assets | (22,922) | (23,482) | (24,013)
+Tangible common equity—non-GAAP | $75,124 | $68,217 | $66,806
+Non-GAAP Financial Measures by Business Segment
+$ in billions | 2025 | 2024 | 2023
+Average common equity 1
+Institutional Securities | $48.4 | $45.0 | $45.6
+Wealth Management | 29.4 | 29.1 | 28.8
+Investment Management | 10.6 | 10.8 | 10.4
+ROE 2
+Institutional Securities | 17% | 14% | 7%
+Wealth Management | 24% | 20% | 17%
+Investment Management | 11% | 8% | 6%
+Average tangible common equity 1
+Institutional Securities | $48.0 | $44.6 | $45.2
+Wealth Management | 16.3 | 15.5 | 14.8
+Investment Management | 1.0 | 1.1 | 0.7
+ROTCE 2
+Institutional Securities | 17% | 14% | 7%
+Wealth Management | 43% | 37% | 33%
+Investment Management | 111% | 76% | 88%
+1.Average common equity and average tangible common equity for each business segment is determined using our Required Capital framework (see "Liquidity and Capital Resources—Regulatory Requirements—Attribution of Average Common Equity According to the Required Capital Framework" herein). The sums of the segments' Average common equity and Average tangible common equity do not equal the Consolidated measures due to Parent Company equity.
+2.The calculation of ROE and ROTCE by segment uses net income applicable to Morgan Stanley by segment less preferred dividends allocated to each segment, annualized as a percentage of average common equity and average tangible common equity, respectively, allocated to each segment.
+Return on Tangible Common Equity Goal
+We have an ROTCE goal of 20%. Our ROTCE goal is a forward-looking statement that is based on a normal market environment and may be materially affected by many factors.
+See "Risk Factors" and "Forward-Looking Statements" herein for further information on market and economic conditions and their potential effects on our future operating results.
+ROTCE represents a non-GAAP financial measure. For further information on non-GAAP measures, see "Selected Non-GAAP Financial Information" herein.
+Business Segments
+Substantially all of our operating revenues and operating expenses are directly attributable to our business segments. Certain revenues and expenses have been allocated to each business segment, generally in proportion to its respective net revenues, non-interest expenses or other relevant measures. See Note 22 to the financial statements for segment net revenues by income statement line item, segment expenses, and information on intersegment transactions.
+Net Revenues
+Investment Banking
+Investment banking revenues are derived from client engagements in which we act as an advisor, underwriter or distributor of capital.
+Within the Institutional Securities business segment, these revenues are primarily composed of fees earned from underwriting equity and fixed income securities, syndicating loans and advisory services in relation to mergers and acquisitions, divestitures and corporate restructurings.
+Within the Wealth Management business segment, these revenues are derived from the distribution of newly issued securities.
+Trading
+Trading revenues include the realized gains and losses from transactions in financial instruments, unrealized gains and losses from ongoing changes in the fair value of our positions, and gains and losses from financial instruments used to economically hedge compensation expense related to DCP.
+Within the Institutional Securities business segment, Trading revenues arise from transactions in cash instruments and derivatives in which we act as a market maker for our clients. In this role, we stand ready to buy, sell or otherwise transact with customers under a variety of market conditions and to provide firm or indicative prices in response to customer
+requests. Our liquidity obligations can be explicit in some cases, and in others, customers expect us to be willing to transact with them. In order to most effectively fulfill our market-making function, we engage in activities across all of our trading businesses that include, but are not limited to:
+•taking positions in anticipation of, and in response to, customer demand to buy or sell and—depending on the liquidity of the relevant market and the size of the position—to hold those positions for a period of time;
+•building, maintaining and rebalancing inventory held to facilitate client activity through trades with other market participants;
+•managing and assuming basis risk (risk associated with imperfect hedging) between risks incurred from the facilitation of client transactions and the standardized products available in the market to hedge those risks;
+•trading in the market to remain current on pricing and trends; and
+•engaging in other activities to provide efficiency and liquidity for markets.
+In many markets, the realized and unrealized gains and losses from purchase and sale transactions will include any spreads between bids and offers. Certain fees received on loans carried at fair value and dividends from equity securities are also recorded in Trading revenues since they relate to positions carried at fair value.
+Within the Wealth Management business segment, Trading revenues primarily include revenues from customers' purchases and sales of fixed income instruments in which we act as principal, as well as gains and losses related to DCP investments.
+Investments
+Investments revenues are composed of realized and unrealized gains and losses derived from investments, including those associated with carried interest arrangements and co-investment plans. Estimates of the fair value of the investments that produce these revenues may involve significant judgment and may fluctuate significantly over time in light of business, market, economic and financial conditions, generally or in relation to specific transactions.
+Within the Institutional Securities segment, gains and losses are primarily from business-related investments. Certain investments are subject to sale restrictions.
+Within the Investment Management business segment, Investments revenues are primarily from performance-based fees in the form of carried interest, a portion of which is subject to risk of reversal, and gains and losses from investments. The business is entitled to receive carried interest when the return in certain funds exceeds specified performance targets. Additionally, we consolidate certain sponsored Investment Management funds where revenues are primarily attributable to holders of noncontrolling interests.
+Commissions and Fees
+Commissions and fees result from arrangements in which the client is charged a fee for executing transactions related to securities, services related to sales and trading activities, and sales of other products.
+Within the Institutional Securities business segment, commissions and fees include fees earned from market-making activities, such as executing and clearing client transactions on major stock and derivative exchanges, as well as from OTC derivatives.
+Within the Wealth Management business segment, commissions and fees arise from client transactions including in equity securities, insurance products, mutual funds, alternative investments, futures and options. Wealth Management also earns revenues from order flow payments for directing customer orders to broker-dealers, exchanges and market centers for execution.
+Asset Management
+Asset management revenues include fees associated with the management and supervision of assets and the distribution of funds and similar products.
+Within the Wealth Management business segment, Asset management revenues are related to advisory services associated with fee-based assets, account service and administration, as well as distribution of products. These revenues are generally based on the net asset value of the account in which a client is invested.
+Within the Investment Management business segment, Asset management revenues are primarily composed of fees received from investment vehicles on the basis of assets under management. Performance-based fees, not in the form of carried interest, are earned on certain products and separately managed accounts as a percentage of appreciation in value and, in certain cases, are based upon the achievement of performance criteria. These performance fees are generally recognized on a quarterly or annual basis.
+Net Interest
+Interest income and Interest expense are functions of the level and mix of total assets and liabilities, including Trading assets and Trading liabilities, Investment securities, Securities borrowed or purchased under agreements to resell, Securities loaned or sold under agreements to repurchase, Loans, Deposits and Borrowings.
+Within the Institutional Securities business segment, Net interest is a function of market-making strategies, client activity, and the prevailing level, term structure and volatility of interest rates. Net interest is impacted by market-making, lending and financing activities. We generally earn interest on securities held by the Firm, Securities borrowed, Securities purchased under agreements to resell, Loans and margin
+loans, while Borrowings, Securities loaned and Securities sold under agreements to repurchase generally incur interest expense.
+Within the Wealth Management business segment, Interest income is driven by assets held including Investment securities, Loans and margin loans. Interest expense is driven by Deposits and other funding.
+Other
+Other revenues for Institutional Securities include revenues and losses from equity method investments, fees earned in association with lending activities, mark-to-market gains and losses on loans and lending commitments held for sale, as well as gains and losses on economic derivative hedges associated with certain held-for-sale and held-for-investment loans and lending commitments.
+Other revenues for Wealth Management include realized gains and losses on AFS securities, account handling fees, referral fees and other miscellaneous revenues.
+Provision for Credit Losses
+The Provision for credit losses includes the provision for credit losses for loans and lending commitments held for investment.
+Institutional Securities—Fixed Income and Equities
+Fixed income and Equities net revenues are composed of Trading revenues, Commissions and fees, Asset management revenues, Net interest, and certain Investments and Other revenues directly attributable to those businesses. These revenues, which can be affected by a variety of interrelated factors, including market volumes, bid-offer spreads and the impact of market conditions on inventory held to facilitate client activity, as well as the effect of hedging activity, are viewed in the aggregate when assessing the performance and profitability of our businesses.
+The following is a description of the revenue-generating activities within our equity and fixed income businesses, as well as how their results impact the income statement line items.
+Equity—Financing. We provide financing, prime brokerage and fund administration services to our clients active in the equity markets through a variety of products, including margin lending, securities lending and swaps. Results from this business are largely driven by the difference between financing income earned and financing and liquidity costs incurred, which are reflected in Net interest for securities lending products, and in Trading revenues for derivative products. Fees for providing fund administration services are reflected in Asset management revenues.
+Equity—Execution services. A significant portion of the results for this business is generated by commissions and fees from executing and clearing client transactions on major stock
+and derivative exchanges, as well as from OTC transactions. We make markets for our clients principally in equity-related securities and derivative products, including those that provide liquidity and are utilized for hedging. Market-making also generates gains and losses on inventory held to facilitate client activity, which are reflected in Trading revenues. Execution services also includes certain Investments and Other revenues.
+Fixed Income—Within fixed income, we make markets in various flow and structured products in order to facilitate client activity as part of the following products and services:
+•Global macro products. We make markets for our clients in interest rate and foreign exchange products across emerging and developed markets, including exchange-traded and OTC securities and derivative instruments. The results of this market-making activity are primarily driven by gains and losses from buying and selling positions to stand ready for and satisfy client demand and are recorded in Trading revenues.
+•Credit products. We make markets in credit-sensitive products, such as corporate bonds and mortgage securities and other securitized products, and related derivative instruments. This market-making activity also generates gains and losses on inventory held to facilitate client activity which are reflected in Trading revenues. We undertake lending activities, which include commercial mortgage lending, secured lending facilities and financing extended to sales and trading customers. Due to the amount and type of the interest-bearing securities and loans making up this business, a significant portion of the results is also reflected in Net interest revenues.
+•Commodities products and Other. We make markets in various commodity products related primarily to electricity, natural gas, oil and metals. These activities are primarily recorded in Trading revenues.
+Fixed income also includes certain Investments and Other revenues.
+Institutional Securities—Other Net Revenues
+Other net revenues include impacts from certain treasury functions, such as liquidity and funding costs and gains and losses on economic hedges related to certain borrowings. Other net revenues also include mark-to-market gains and losses on held-for-sale corporate loans and lending commitments, as well as net interest and gain and losses on economic hedges associated with held-for-sale and held-for-investment corporate loans and lending commitments. Also included are gains and losses from financial instruments used to economically hedge compensation expense related to certain DCP, income and losses from the equity method investment related to our Japanese securities joint venture with MUFG, as well as Investments and Other revenues that are not directly attributable to Fixed income and Equities businesses.
+Compensation Expense
+Compensation and benefits expenses include base salaries and fixed allowances, formulaic programs, discretionary incentive compensation, amortization of deferred cash and equity awards, changes in the fair value of the referenced notional DCP investments, carried interest allocated to employees, severance costs, and other items such as health and welfare benefits. For additional information on DCP, refer to "Other Matters" herein.
+The factors that drive compensation for our employees vary from period to period, from segment to segment and within a segment. For certain revenue-producing employees in the Wealth Management and Investment Management business segments, compensation is largely paid on the basis of formulaic payouts that link employee compensation to revenues. Compensation for other employees, including revenue-producing employees in the Institutional Securities business segment and employees in corporate support functions, include base salary and benefits and may also include incentive compensation that is determined following the assessment of the performance of the Firm, business unit and individual.
+Income Taxes
+The Income tax provision for our business segments is generally determined based on the revenues, expenses and activities directly attributable to each business segment. Certain items have been allocated to each business segment, generally in proportion to its respective net revenues or other relevant measures.
+Institutional Securities
+Income Statement Information
+% Change
+$ in millions | 2025 | 2024 | 2023 | 2025 | 2024
+Revenues
+Advisory | $2,888 | $2,378 | $2,244 | 21% | 6%
+Equity | 1,965 | 1,599 | 889 | 23% | 80%
+Fixed Income | 2,766 | 2,193 | 1,445 | 26% | 52%
+Total Underwriting | 4,731 | 3,792 | 2,334 | 25% | 62%
+Total Investment Banking | 7,619 | 6,170 | 4,578 | 23% | 35%
+Equity | 15,631 | 12,230 | 9,986 | 28% | 22%
+Fixed Income | 8,716 | 8,418 | 7,673 | 4% | 10%
+Other | 1,114 | 1,262 | 823 | (12)% | 53%
+Net revenues | 33,080 | 28,080 | 23,060 | 18% | 22%
+Provision for credit losses | 302 | 202 | 401 | 50% | (50)%
+Compensation and benefits | 9,785 | 8,669 | 8,369 | 13% | 4%
+Non-compensation expenses | 11,756 | 10,460 | 9,814 | 12% | 7%
+Total non-interest expenses | 21,541 | 19,129 | 18,183 | 13% | 5%
+Income before provision for income taxes | 11,237 | 8,749 | 4,476 | 28% | 95%
+Provision for income taxes | 2,430 | 1,947 | 884 | 25% | 120%
+Net income | 8,807 | 6,802 | 3,592 | 29% | 89%
+Net income applicable to noncontrolling interests | 157 | 136 | 139 | 15% | (2)%
+Net income applicable to Morgan Stanley | $8,650 | $6,666 | $3,453 | 30% | 93%
+Investment Banking
+Investment Banking Volumes
+$ in billions | 2025 | 2024 | 2023
+Completed mergers and acquisitions 1 | $756 | $655 | $677
+Equity and equity-related offerings 2, 3 | 79 | 63 | 32
+Fixed Income offerings 2, 4 | 414 | 326 | 236
+Source: LSEG Data & Risk Analytics (formerly known as Refinitiv) as of January 2, 2026. Transaction volumes may not be indicative of net revenues in a given period. In addition, transaction volumes for prior periods may vary from amounts previously reported due to the subsequent withdrawal, change in value or change in timing of certain transactions.
+1.Includes transactions of $100 million or more. Based on full credit to each of the advisors in a transaction.
+2.Based on full credit for single book managers and equal credit for joint book managers.
+3.Includes Rule 144A issuances and registered public offerings of common stock, convertible securities and rights offerings.
+4.Includes Rule 144A and publicly registered issuances, non-convertible preferred stock, mortgage-backed and asset-backed securities, and taxable municipal debt. Excludes leveraged loans and self-led issuances.
+Investment Banking Revenues
+Net revenues of $7,619 million in 2025 increased 23% compared with the prior year, reflecting increases across regions and businesses, particularly in underwriting revenues.
+•Advisory revenues increased primarily reflecting higher completed M&A transactions.
+•Equity underwriting revenues increased primarily reflecting higher convertible issuances and initial public offerings.
+•Fixed income underwriting revenues increased primarily reflecting higher non-investment and investment grade bond and loan issuances, which benefited from higher event-related activity.
+See "Investment Banking Volumes" herein.
+Equity, Fixed Income and Other Net Revenues
+Equity and Fixed Income Net Revenues
+2025
+$ in millions | Trading | Fees 1 | Net Interest 2 | All Other 3 | Total
+Financing | $9,714 | $635 | $(2,543) | $4 | $7,810
+Execution services | 4,790 | 2,992 | (396) | 435 | 7,821
+Total Equity | $14,504 | $3,627 | $(2,939) | $439 | $15,631
+Total Fixed Income | $7,440 | $428 | $494 | $354 | $8,716
+2024
+$ in millions | Trading | Fees 1 | Net Interest 2 | All Other 3 | Total
+Financing | $8,135 | $566 | $(2,840) | $17 | $5,878
+Execution services | 3,702 | 2,591 | (291) | 350 | 6,352
+Total Equity | $11,837 | $3,157 | $(3,131) | $367 | $12,230
+Total Fixed Income | $8,464 | $394 | $(730) | $290 | $8,418
+2023
+$ in millions | Trading | Fees 1 | Net Interest 2 | All Other 3 | Total
+Financing | $7,206 | $524 | $(2,886) | $66 | $4,910
+Execution services | 2,919 | 2,235 | (190) | 112 | 5,076
+Total Equity | $10,125 | $2,759 | $(3,076) | $178 | $9,986
+Total Fixed Income | $7,848 | $375 | $(975) | $425 | $7,673
+1.Includes Commissions and fees and Asset management revenues.
+2.Includes funding costs, which are allocated to the businesses based on funding usage.
+3.Includes Investments and Other revenues.
+Equity
+Net revenues of $15,631 million in 2025 increased 28% compared with the prior year, reflecting an increase in Financing and Execution services.
+•Financing revenues increased primarily due to higher average client balances and increased client activity.
+•Execution services revenues increased primarily due to increased client activity and higher gains on inventory held to facilitate client activity in derivatives and cash equities.
+Fixed Income
+Net revenues of $8,716 million in 2025 increased 4% compared with the prior year, reflecting an increase in Global macro and Credit products, partially offset by a decrease in Commodities.
+•Global macro products revenues increased primarily due to increased client activity in rates and foreign exchange products.
+•Credit products revenues increased due to increased client activity across products, primarily driven by securitization and lending activity, partially offset by lower results on inventory held to facilitate client activity.
+•Commodities products and other fixed income revenues decreased primarily due to lower gains on inventory held to facilitate client activity in power and gas.
+Other Net Revenues
+Other net revenues were $1,114 million in 2025 compared with $1,262 million in the prior year, primarily due to lower net interest income and fees, following the sale of corporate loans held-for-sale in the first quarter of 2025, partially offset by net gains on corporate loans held-for-sale, inclusive of hedges.
+Provision for Credit Losses
+In 2025, the Provision for credit losses on loans and lending commitments of $302 million was primarily related to portfolio growth in corporate loans and secured lending facilities and provisions for certain specific commercial real estate loans. The Provision for credit losses on loans and lending commitments of $202 million in 2024 was primarily related to growth in the corporate loan portfolio and provisions for certain specific commercial real estate loans, partially offset by improvements in the macroeconomic outlook.
+For further information on the Provision for credit losses, see "Credit Risk" herein.
+Non-Interest Expenses
+Non-interest expenses of $21,541 million in 2025 increased 13% compared with the prior year, reflecting higher Non-compensation expenses and Compensation and benefits expenses.
+•Compensation and benefits expenses increased primarily due to higher discretionary incentive compensation on higher revenues, higher expenses related to outstanding deferred compensation and higher salary expenses.
+•Non-compensation expenses increased primarily due to higher execution-related expenses on higher volumes.
+Wealth Management
+Income Statement Information
+% Change
+$ in millions | 2025 | 2024 | 2023 | 2025 | 2024
+Revenues
+Asset management | $18,627 | $16,501 | $14,019 | 13% | 18%
+Transactional 1 | 4,588 | 3,864 | 3,556 | 19% | 9%
+Net interest | 7,911 | 7,313 | 8,118 | 8% | (10)%
+Other 2 | 628 | 742 | 575 | (15)% | 29%
+Net revenues | 31,754 | 28,420 | 26,268 | 12% | 8%
+Provision for credit losses | 47 | 62 | 131 | (24)% | (53)%
+Compensation and benefits | 16,950 | 15,207 | 13,972 | 11% | 9%
+Non-compensation expenses | 5,464 | 5,411 | 5,635 | 1% | (4)%
+Total non-interest expenses | 22,414 | 20,618 | 19,607 | 9% | 5%
+Income before provision for income taxes | 9,293 | 7,740 | 6,530 | 20% | 19%
+Provision for income taxes | 2,163 | 1,852 | 1,508 | 17% | 23%
+Net income applicable to Morgan Stanley | $7,130 | $5,888 | $5,022 | 21% | 17%
+1.Transactional includes Investment banking, Trading, and Commissions and fees revenues.
+2.Other includes Investments and Other revenues.
+Wealth Management Metrics
+$ in billions | At December 31, 2025 | At December 31, 2024
+Total client assets 1 | $7,381 | $6,194
+U.S. Bank Subsidiary loans | $181 | $160
+Margin and other lending 2 | $31 | $28
+Deposits 3 | $408 | $370
+Annualized weighted average cost of deposits 4
+Period end | 2.51% | 2.73%
+Period average | 2.76% | 3.05%
+2025 | 2024 | 2023
+Net new assets | $356.3 | $251.7 | $282.3
+1.Client assets represent those for which Wealth Management is providing services including financial advisor-led brokerage, investment advisory, custody, cash management, and administrative services; self-directed brokerage and investment advisory services; financial and wealth planning services; workplace services, including stock plan administration, and retirement plan services. As part of the Integrated Firm, Wealth Management may provide these services to clients who also use the services of one or more other business segments. See "Advisor-Led Channel" and "Self-Directed Channel" herein for additional information.
+2.Margin and other lending represents margin lending arrangements, which allow customers to borrow against the value of qualifying securities and other lending which includes non‐purpose securities-based lending on non‐bank entities.
+3.Deposits reflect liabilities sourced from Wealth Management clients and other sources of funding on our U.S. Bank Subsidiaries. Deposits include sweep deposit programs, savings and other deposits, and time deposits.
+4.Annualized weighted average represents the total annualized weighted average cost of the various deposit products. Amounts include the effect of related hedging derivatives. The period end cost of deposits is based upon balances and rates as of December 31, 2025 and December 31, 2024. The period average is based on daily balances and rates for the period.
+Net New Assets (NNA)
+NNA represent client asset inflows, including interest, dividends and asset acquisitions, less client asset outflows, and excluding the impact of business combinations/divestitures and the impact of fees and commissions. Any revenues earned by Wealth Management on client assets will vary depending upon the services and products provided. The level of NNA in a given period is influenced by a variety of factors, including macroeconomic factors that impact client investment and spending behaviors, seasonality, our ability to attract and retain financial advisors and clients, capital market
+and corporate activities which may impact the amount of assets in certain client channels, and large idiosyncratic inflows and outflows, including single large client events. These factors have had an impact on our NNA in recent periods. Should these factors continue, the growth rate of our NNA may be impacted.
+Advisor-Led Channel
+$ in billions | At December 31, 2025 | At December 31, 2024
+Advisor-led client assets 1 | $5,715 | $4,758
+Fee-based client assets 2 | $2,753 | $2,347
+Fee-based client assets as a percentage of advisor-led client assets | 48% | 49%
+2025 | 2024 | 2023
+Fee-based asset flows 3 | $160.1 | $123.1 | $109.2
+1.Advisor-led client assets represent client assets in accounts that have a Wealth Management representative assigned.
+2.Fee‐based client assets represent the amount of client assets where the basis of payment for services is a fee calculated on those assets.
+3.Fee-based asset flows include net new fee-based assets (including asset acquisitions), net account transfers, dividends, interest and client fees, and exclude institutional cash management related activity. For a description of the Inflows and Outflows included in Fee-based asset flows, see "Fee-Based Client Assets Rollforwards" herein.
+Self-Directed Channel
+At December 31, 2025 | At December 31, 2024
+Self-directed assets (in billions) 1 | $1,667 | $1,437
+Self-directed households (in millions) 2 | 8.5 | 8.3
+2025 | 2024 | 2023
+Daily average revenue trades ("DARTs") (in thousands) 3 | 1,029 | 837 | 759
+1.Self-directed client assets represent active accounts which are not advisor led. Active accounts are defined as having at least $25 in assets.
+2.Self-directed households represent the total number of households that include at least one active account with self-directed assets. Individual households or participants that are engaged in one or more of our Wealth Management channels are included in each of the respective channel counts.
+3.DARTs represent the total self-directed trades in a period divided by the number of trading days during that period.
+Workplace Channel1
+At December 31, 2025 | At December 31, 2024
+Workplace unvested assets (in billions) 2 | $534 | $475
+Number of participants (in millions) 3, 4 | 6.5 | 6.6
+1.The workplace channel includes equity compensation solutions for companies, their executives and employees.
+2.Stock plan unvested assets represent the market value of public company securities at the end of the period.
+3.Stock plan participants represent total accounts with vested and/or unvested stock plan assets in the workplace channel. Individuals with accounts in multiple plans are counted as participants in each plan.
+4.The number of stock plan participants declined slightly in 2025, primarily as a result of the previously announced disposition of the Firm's EMEA stock plan business.
+Net Revenues
+Asset Management
+Asset management revenues of $18,627 million in 2025 increased 13% compared with the prior year, primarily reflecting higher fee-based assets due to higher market levels and the cumulative impact of positive fee-based flows.
+See "Fee-Based Client Assets Rollforwards" herein.
+Transactional Revenues
+Transactional revenues of $4,588 million in 2025 increased 19% compared with the prior year, primarily driven by higher client activity across products and channels, particularly in equity-related transactions, and higher gains on DCP investments.
+Net Interest
+Net interest revenues of $7,911 million in 2025 increased 8% compared with the prior year, primarily due to the cumulative impact of lending growth and changes in balance sheet mix, partially offset by the net effect of lower interest rates.
+The level and pace of interest rate changes and other macroeconomic factors have impacted client preferences, including cash allocation to other products and client demand for loans. These factors, along with other developments, such as pricing changes to certain deposit types due to various competitive dynamics and central bank actions, have impacted our net interest income. To the extent they persist, or other factors arise, net interest income may be impacted in future periods.
+Provision for Credit Losses
+The Provision for credit losses on loans and lending commitments of $47 million in 2025 was primarily related to certain specific loans in our tailored lending and residential real estate portfolios, as well as portfolio growth in residential real estate loans. The Provision for credit losses on loans and lending commitments of $62 million in 2024 was primarily related to certain specific commercial real estate and securities-based loans, and portfolio growth, partially offset by improvements in the macroeconomic outlook.
+For further information on the Provision for credit losses, see "Credit Risk" herein.
+Non-Interest Expenses
+Non-interest expenses of $22,414 million in 2025 increased 9% compared with the prior year, as a result of higher Compensation and benefits expenses.
+•Compensation and benefits expenses increased, primarily due to an increase in the formulaic payout to Wealth Management advisors driven by higher compensable revenue.
+•Non-compensation expenses were relatively unchanged compared with the prior year as higher marketing and business development costs and increased technology spend were offset by lower amortization of intangible assets.
+Fee-Based Client Assets Rollforwards
+$ in billions | At December 31, 2024 | Inflows 1 | Outflows 2 | Market Impact 3 | At December 31, 2025
+Separately managed 4 | $719 | $91 | $(39) | $62 | $833
+Unified managed | 613 | 145 | (66) | 68 | 760
+Advisor | 207 | 36 | (37) | 23 | 229
+Portfolio manager | 750 | 126 | (95) | 80 | 861
+Subtotal | $2,289 | $398 | $(237) | $233 | $2,683
+Cash management | 58 | 56 | (44) | — | 70
+Total fee-based client assets | $2,347 | $454 | $(281) | $233 | $2,753
+$ in billions | At December 31, 2023 | Inflows 1 | Outflows 2 | Market Impact 3 | At December 31, 2024
+Separately managed 4 | $589 | $69 | $(38) | $99 | $719
+Unified managed | 501 | 120 | (56) | 48 | 613
+Advisor | 188 | 31 | (35) | 23 | 207
+Portfolio manager | 645 | 120 | (88) | 73 | 750
+Subtotal | $1,923 | $340 | $(217) | $243 | $2,289
+Cash management | 60 | 57 | (59) | — | 58
+Total fee-based client assets | $1,983 | $397 | $(276) | $243 | $2,347
+$ in billions | At December 31, 2022 | Inflows 1 | Outflows 2 | Market Impact 3 | At December 31, 2023
+Separately managed 4 | $501 | $70 | $(23) | $41 | $589
+Unified managed | 408 | 96 | (56) | 53 | 501
+Advisor | 167 | 29 | (32) | 24 | 188
+Portfolio manager | 552 | 98 | (73) | 68 | 645
+Subtotal | $1,628 | $293 | $(184) | $186 | $1,923
+Cash management | 50 | 60 | (50) | — | 60
+Total fee-based client assets | $1,678 | $353 | $(234) | $186 | $1,983
+1.Inflows include new accounts, account transfers, deposits, dividends and interest.
+2.Outflows include closed or terminated accounts, account transfers, withdrawals and client fees.
+3.Market impact includes realized and unrealized gains and losses on portfolio investments.
+4.Includes non-custody account values based on asset values reported on a quarter lag by third-party custodians.
+Average Fee Rates1
+Fee rate in bps | 2025 | 2024 | 2023
+Separately managed | 12 | 12 | 12
+Unified managed | 90 | 91 | 92
+Advisor | 78 | 79 | 80
+Portfolio manager | 88 | 89 | 91
+Subtotal | 64 | 65 | 65
+Cash management | 6 | 6 | 6
+Total fee-based client assets | 63 | 63 | 64
+1.Based on Asset management revenues related to advisory services associated with fee-based assets.
+Asset management revenues within the Wealth Management segment are primarily generated from the following types of accounts:
+•Separately managed—accounts by which third party and affiliated asset managers are engaged to manage clients' assets with investment decisions made by the asset manager. Only one third-party asset manager strategy can be held per account.
+•Unified managed—accounts that provide the client with the ability to combine separately managed accounts, mutual funds and exchange-traded funds, all in one aggregate account. Investment decisions and discretionary authority may be exercised by the client, financial advisor or portfolio manager.
+•Advisor—accounts where the investment decisions must be approved by the client, and the financial advisor must obtain approval each time a change is made to the account or its investments.
+•Portfolio manager—accounts where a financial advisor has discretion (contractually approved by the client) to make ongoing investment decisions without the client's approval for each individual change.
+•Cash management—accounts where the financial advisor provides discretionary cash management services to institutional clients, whereby securities or proceeds are invested and reinvested in accordance with the client's investment criteria. Generally, the portfolio will be invested in short-term fixed income and cash equivalent investments.
+Investment Management
+Income Statement Information
+% Change
+$ in millions | 2025 | 2024 | 2023 | 2025 | 2024
+Revenues
+Asset management and related fees | $6,068 | $5,627 | $5,231 | 8% | 8%
+Performance-based income and other 1 | 457 | 234 | 139 | 95% | 68%
+Net revenues | 6,525 | 5,861 | 5,370 | 11% | 9%
+Compensation and benefits | 2,481 | 2,302 | 2,217 | 8% | 4%
+Non-compensation expenses | 2,566 | 2,422 | 2,311 | 6% | 5%
+Total non-interest expenses | 5,047 | 4,724 | 4,528 | 7% | 4%
+Income before provision for income taxes | 1,478 | 1,137 | 842 | 30% | 35%
+Provision for income taxes | 349 | 275 | 199 | 27% | 38%
+Net income | 1,129 | 862 | 643 | 31% | 34%
+Net income applicable to noncontrolling interests | 7 | 3 | 4 | 133% | (25)%
+Net income applicable to Morgan Stanley | $1,122 | $859 | $639 | 31% | 34%
+1.Includes Investments and Trading, Net interest and Other revenues.
+Net Revenues
+Asset Management and Related Fees
+Asset management and related fees of $6,068 million in 2025 increased 8% compared with the prior year, primarily driven by higher average AUM on higher market levels.
+Asset management revenues are influenced by the level, relative mix of AUM and related fee rates. While higher market levels drove increases in average AUM in the current year period, there were continued net outflows in the Equity asset class, which may be influenced by the structure and performance of our investment strategies and products relative to their benchmarks, offset by higher net inflows in the Alternatives and Solutions and Fixed Income asset classes reflecting client preferences. To the extent these conditions continue, we would expect our Asset management revenue to continue to be impacted.
+See "Assets Under Management or Supervision" herein.
+Performance-based Income and Other
+Performance-based income and other revenues increased to $457 million in 2025, from $234 million in the prior year, primarily due to higher accrued carried interest in infrastructure and real estate funds.
+Non-Interest Expenses
+Non-interest expenses of $5,047 million in 2025 increased 7% from the prior year, as a result of higher Compensation and benefits expenses and Non-compensation expenses.
+•Compensation and benefits expenses increased, primarily due to higher compensation associated with carried interest and higher salaries.
+•Non-compensation expenses increased, primarily due to higher distribution expenses on higher AUM and increased technology spend.
+Assets Under Management or Supervision Rollforwards
+$ in billions | At Dec 31, 2024 | Inflows 1 | Outflows 2 | Market Impact 3 | Other 4 | At Dec 31, 2025
+Equity | $312 | $45 | $(67) | $26 | $(2) | $314
+Fixed Income | 192 | 89 | (59) | 12 | — | 234
+Alternatives and Solutions 6 | 593 | 159 | (120) | 76 | (5) | 703
+Long-Term AUM | $1,097 | $293 | $(246) | $114 | $(7) | $1,251
+Liquidity and Overlay Services | 569 | 2,721 | (2,661) | 26 | (11) | 644
+Total | $1,666 | $3,014 | $(2,907) | $140 | $(18) | $1,895
+$ in billions | At Dec 31, 2023 | Inflows 1 | Outflows 2 | Market Impact 3 | Other 4 | At Dec 31, 2024
+Equity | $295 | $44 | $(66) | $49 | $(10) | $312
+Fixed Income | 171 | 69 | (49) | 7 | (6) | 192
+Alternatives and Solutions 6 | 508 | 140 | (108) | 62 | (9) | 593
+Long-Term AUM | $974 | $253 | $(223) | $118 | $(25) | $1,097
+Liquidity and Overlay Services | 485 | 2,349 | (2,268) | 20 | (17) | 569
+Total | $1,459 | $2,602 | $(2,491) | $138 | $(42) | $1,666
+$ in billions | At Dec 31, 2022 | Inflows 1 | Outflows 2 | Market Impact 3 | Other 4,5 | At Dec 31, 2023
+Equity | $259 | $40 | $(57) | $57 | $(4) | $295
+Fixed Income | 173 | 56 | (62) | 11 | (7) | 171
+Alternatives and Solutions 6 | 431 | 108 | (91) | 57 | 3 | 508
+Long-Term AUM | $863 | $204 | $(210) | $125 | $(8) | $974
+Liquidity and Overlay Services | 442 | 2,282 | (2,244) | 20 | (15) | 485
+Total | $1,305 | $2,486 | $(2,454) | $145 | $(23) | $1,459
+1.Inflows represent investments or commitments from new and existing clients in new or existing investment products, including reinvestments of client dividends and increases in invested capital. Inflows exclude the impact of exchanges, whereby a client changes positions within the same asset class.
+2.Outflows represent redemptions from clients' funds, transition of funds from the committed capital period to the invested capital period and decreases in invested capital. Outflows exclude the impact of exchanges, whereby a client changes positions within the same asset class.
+3.Market impact includes realized and unrealized gains and losses on portfolio investments. This excludes any funds where market impact does not impact management fees.
+4.Other contains both distributions to investors and foreign currency impact for all periods. Distributions represent returns of capital or returns on investments. Foreign currency impact reflects foreign currency changes for non-U.S. dollar denominated funds.
+5.In 2023, our Retail Municipal and Corporate Fixed Income business ("FIMS") was combined with our Parametric retail customized solutions business. The impact of the change was a $6 billion movement in AUM from Fixed Income to the Alternatives and Solutions asset class included in Other.
+6.As of December 31, 2025, 2024, and 2023, Alternatives and Solutions includes Parametric Long-Term period-end AUM of $524 billion, $423 billion and $336 billion, respectively. Parametric Long-Term products generally have lower average fee rates than other Alternatives and Solutions products.
+Average AUM
+$ in billions | 2025 | 2024 | 2023
+Equity | $318 | $305 | $279
+Fixed income | 212 | 180 | 170
+Alternatives and Solutions | 640 | 557 | 466
+Long-term AUM subtotal | 1,170 | 1,042 | 915
+Liquidity and Overlay Services | 572 | 498 | 464
+Total | $1,742 | $1,540 | $1,379
+Average Fee Rates1
+Fee rate in bps | 2025 | 2024 | 2023
+Equity | 69 | 71 | 71
+Fixed income | 36 | 36 | 35
+Alternatives and Solutions | 27 | 28 | 32
+Long-term AUM | 40 | 42 | 44
+Liquidity and Overlay Services | 12 | 12 | 13
+Total | 31 | 32 | 34
+1.Based on Asset management revenues, net of waivers, excluding performance-based fees and other non-management fees. For certain non-U.S. funds, it includes the portion of advisory fees that the advisor collects on behalf of third-party distributors. The payment of those fees to the distributor is included in Non-compensation expenses in the income statement.
+Asset management and other related fees within the Investment Management segment are primarily generated from Equity, Fixed Income and the following products:
+Alternatives and Solutions. Includes products in fund of funds, real estate, infrastructure, private equity and credit strategies and multi-asset portfolios, as well as systematic strategies that create custom investment solutions, including those offered by Parametric.
+Liquidity and Overlay Services. Includes liquidity products, as well as overlay services, which represent investment strategies that use passive exposure instruments to obtain, offset or substitute specific portfolio exposures, beyond those provided by the underlying holdings of the fund.
