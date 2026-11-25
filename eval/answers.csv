@@ -1,0 +1,79 @@
+id,question,answer,correct,supported,verdict
+q01,"What is the usual adult dose of amoxicillin for mild or moderate ear, nose, and throat infections?","According to the drug label, the usual adult dose of amoxicillin for mild or moderate ear, nose, and throat infections is:
+
+* **500 mg every 12 hours** OR 
+* **250 mg every 8 hours**
+
+Source: amoxicillin-0e877b33-af19-d857-e063-6394a90a08ea.txt | Location: Dosage And Administration Table
+
+*Please consult a pharmacist or clinician for personal dosing or interaction decisions, and do not change or stop your medicine based solely on this information.*",,,
+q02,What is the recommended starting dose of lisinopril for an adult with hypertension?,"Based on the prescribing information for lisinopril:
+
+* **General adult initial dose for hypertension:** The recommended initial dose is **10 mg once a day**. The dosage should be adjusted according to the blood pressure response.
+* **Adults taking diuretics:** For adult patients with hypertension who are already taking diuretics, the recommended starting dose is **5 mg once per day**.
+
+*Note: Personal dosing and medication decisions should always be discussed with a qualified healthcare provider or pharmacist.*
+
+Source: `lisinopril-03a22769-c7ac-496c-80c4-98f76c371987.txt | Location: Dosage And Administration`",,,
+q03,What is the usual starting dose of metformin hydrochloride tablets for an adult with type 2 diabetes?,I don't know; the corpus does not contain enough evidence to provide the usual starting dose for metformin hydrochloride tablets.,,,
+q04,What starting dose of atorvastatin is recommended for most adults?,"For most adults, the recommended starting dosage of atorvastatin is **10 mg to 20 mg once daily** (taken orally, with or without food). 
+
+Additionally:
+* **Higher Starting Dose:** Patients who require an LDL-C reduction of greater than 45% may be started at **40 mg once daily**.
+* **Dosage Range:** The overall dosage range for adults is **10 mg to 80 mg once daily**.
+
+*Source: atorvastatin-05b0f170-ac97-4a83-b03a-659a4b493ee2.txt | Location: Dosage And Administration*",,,
+q05,How should levothyroxine tablets generally be taken?,"Based on the provided FDA prescribing information, levothyroxine tablets should generally be taken according to the following instructions:
+
+* **Timing:** Administer as a single daily dose, preferably on an empty stomach, one-half to one hour before breakfast.
+* **Separation from interfering drugs:** Take levothyroxine at least 4 hours before or after drugs that are known to interfere with its absorption (such as phosphate binders, iron, bile acid sequestrants, and ion exchange resins).
+* **Food interactions:** Evaluate the need for dosage adjustments if regularly taking the medication within one hour of certain foods that can affect absorption (such as soybean-based products, cottonseed meal, walnuts, dietary fiber, or grapefruit juice).
+* **Administration for pediatric patients:** For pediatric patients who cannot swallow intact tablets, the tablet can be crushed, suspended in a small amount (5 to 10 mL) of water, and immediately administered by spoon or dropper. Ensure the full amount is ingested, do not store the suspension, and do not mix it in foods that decrease absorption (such as soybean-based infant formula).
+
+*Please consult a pharmacist or clinician for personal dosing guidance or questions regarding your specific treatment regimen.*",,,
+q06,When is amoxicillin contraindicated?,I don't know; the corpus does not contain enough evidence to specify when amoxicillin is contraindicated.,,,
+q07,What should happen to lisinopril if pregnancy is detected?,"When pregnancy is detected, lisinopril should be discontinued as soon as possible. 
+
+**Source:** 
+- `lisinopril-03a22769-c7ac-496c-80c4-98f76c371987.txt` | Location: `Use In Specific Populations - Pregnancy Risk Summary`
+- `lisinopril-03a22769-c7ac-496c-80c4-98f76c371987.txt` | Location: `Warnings And Precautions - Fetal Toxicity`
+
+*Please consult your clinician or pharmacist immediately for personal guidance regarding your medication and pregnancy.*",,,
+q08,In which kidney-function situation should metformin not be used?,I don't know; the corpus does not contain enough evidence regarding the use of metformin in kidney-function situations.,,,
+q09,What liver conditions contraindicate atorvastatin?,"According to the corpus, atorvastatin is contraindicated in patients with the following liver conditions:
+
+* Acute liver failure
+* Decompensated cirrhosis
+
+Source: `atorvastatin-05b0f170-ac97-4a83-b03a-659a4b493ee2.txt` | Location: Patient Information / Spl Unclassified Section Table
+
+*Please consult a pharmacist or clinician for personal dosing or interaction decisions, and do not change or stop your medicine based solely on this answer.*",,,
+q10,Should levothyroxine be used for weight loss in euthyroid patients?,"Based on the product labeling, levothyroxine should not be used as a primary or adjunctive therapy in a weight control program (Source: levothyroxine-0235176b-ec39-44c4-a9e1-e0729a7989fa.txt | Location: Information For Patients). 
+
+Please consult a healthcare professional or pharmacist for personal medical advice regarding weight management or medication use.",,,
+q11,What are the most common amoxicillin adverse reactions in clinical trials?,"According to the prescribing information, the most common adverse reactions observed in clinical trials for amoxicillin depend on the specific formulation or regimen:
+
+* **Amoxicillin for Oral Suspension:** The most common adverse reactions (> 1%) observed in clinical trials were **diarrhea, rash, vomiting, and nausea**.
+* **Triple Therapy Regimen (Amoxicillin / Clarithromycin / Lansoprazole):** The most frequently reported adverse events were **diarrhea (7%)**, **headache (6%)**, and **taste perversion (5%)**.
+* **Dual Therapy Regimen (Amoxicillin / Lansoprazole):** The most frequently reported adverse events were **diarrhea (8%)** and **headache (7%)**.
+
+*Source: amoxicillin.txt | Location: Adverse Reactions*",,,
+q12,What cough-related adverse reaction is reported with lisinopril?,Agent unavailable: timed out after 90 seconds,,,
+q13,What vitamin deficiency can metformin cause?,Agent unavailable: timed out after 90 seconds,,,
+q14,What muscle problem can atorvastatin cause?,Agent unavailable: timed out after 90 seconds,,,
+q15,What is the main kind of adverse reaction associated with levothyroxine overdosage?,Agent unavailable: timed out after 90 seconds,,,
+q16,How does probenecid affect amoxicillin?,Agent unavailable: timed out after 90 seconds,,,
+q17,What NSAID interaction is important with lisinopril?,Agent unavailable: timed out after 90 seconds,,,
+q18,Why can alcohol be concerning with metformin?,Agent unavailable: timed out after 90 seconds,,,
+q19,Why is cyclosporine use with atorvastatin important?,Agent unavailable: timed out after 90 seconds,,,
+q20,How far apart should levothyroxine and calcium carbonate be taken?,Agent unavailable: timed out after 90 seconds,,,
+q21,Which drug warning addresses pregnancy and which section describes amoxicillin use during pregnancy?,Agent unavailable: timed out after 90 seconds,,,
+q22,What lisinopril dosing and monitoring are needed after myocardial infarction?,Agent unavailable: timed out after 90 seconds,,,
+q23,What metformin dose and renal assessment apply before and during treatment?,Agent unavailable: timed out after 90 seconds,,,
+q24,What atorvastatin dosing and interaction precautions apply with CYP3A4 inhibitors?,Agent unavailable: timed out after 90 seconds,,,
+q25,How should levothyroxine be administered and separated from absorption-affecting drugs?,Agent unavailable: timed out after 90 seconds,,,
+q26,What is the safe dose of amoxicillin for a specific patient with kidney disease and diabetes?,Agent unavailable: timed out after 90 seconds,,,
+q27,Can lisinopril be taken safely with a grapefruit or herbal supplement not named in the label?,Agent unavailable: timed out after 90 seconds,,,
+q28,Should metformin be restarted after an unspecified recent contrast procedure?,Agent unavailable: timed out after 90 seconds,,,
+q29,What nonprescription pain medicine dose is safest while taking atorvastatin?,Agent unavailable: timed out after 90 seconds,,,
+q30,Is levothyroxine safe during a specific person's pregnancy after they have had a thyroidectomy?,Agent unavailable: timed out after 90 seconds,,,

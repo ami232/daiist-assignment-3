@@ -1,0 +1,33 @@
+{
+  "method": "lexical fallback; Gemini query embedding unavailable due exhausted quota",
+  "answerable_questions": 25,
+  "section": {
+    "1": 0.52,
+    "3": 0.68,
+    "5": 0.8,
+    "miss_ids": [
+      "q03",
+      "q08",
+      "q13",
+      "q18",
+      "q23"
+    ]
+  },
+  "fixed": {
+    "1": 0.56,
+    "3": 0.6,
+    "5": 0.6,
+    "miss_ids": [
+      "q02",
+      "q03",
+      "q07",
+      "q08",
+      "q12",
+      "q13",
+      "q17",
+      "q18",
+      "q22",
+      "q23"
+    ]
+  }
+}
