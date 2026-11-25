@@ -175,7 +175,6 @@ def judge(client, question: str, reference: str, evidence: str, answer: str) -> 
         contents=prompt,
         config=types.GenerateContentConfig(
             system_instruction=RUBRIC,
-            temperature=0,
             response_mime_type="application/json",               # forces a JSON reply
             thinking_config=types.ThinkingConfig(thinking_level="low"),
         ),

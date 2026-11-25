@@ -112,7 +112,7 @@ async def answer_question(question: str, approve=ask_human) -> dict:
 
             # 3. Build the agent.
             agent = create_agent(
-                model=ChatGoogleGenerativeAI(model=CHAT_MODEL, temperature=0),
+                model=ChatGoogleGenerativeAI(model=CHAT_MODEL),   # this model uses fixed sampling settings
                 tools=tools,
                 system_prompt=(ROOT / "AGENTS.md").read_text(encoding="utf-8"),
                 middleware=[
