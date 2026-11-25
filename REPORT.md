@@ -103,20 +103,37 @@ Unanswerable question q28: "How many inches of snow in 12 hours trigger a Winter
 - **Code checks:** refusal or not (the answer starts with "The corpus does not cover this"); every citation valid (it was retrieved in that run); the expected source cited.
 - **Code-check fix:** the first version only recognised refusals starting exactly with "The corpus does not cover this", so q28 ("The corpus does not cover the specific local snow criteria...") counted as an answer to an unanswerable question. It now accepts any answer starting with "The corpus does not cover".
 - **Judge:** Gemini 3.5 Flash with the rubric in `evaluate.py`, grading `correct` and `supported` (0/1) for every non-refusal answer, with the retrieved passages as evidence.
-- ✍️ *Your rubric choices and your agreement with the judge.*
+- ✍️ *Your rubric choices (why "correct" and "supported" are graded separately).*
 
 | Outcome | Count |
 |---|---|
-| Correct | |
-| Wrong (from a retrieved passage) | |
-| Unsupported | |
-| Correct refusals | |
-| Wrong refusals | |
-| Answered an unanswerable question | |
+| Correct | 20 |
+| Wrong (from a retrieved passage) | 1 |
+| Unsupported | 3 |
+| Correct refusals | 4 of 5 unanswerable |
+| Wrong refusals | 3 |
+| Answered an unanswerable question | 1 |
+
+Code checks: every citation in every answer was one the search returned (100% valid); the citation guardrail fired on 6 of 32 questions. All 24 verdicts come from Gemini 3.5 Flash.
+
+**Agreement with my grades (20 answers):** 85% on correct, 90% on supported. We disagreed on 4: q22 (the judge found "imminent or occurring" not in the passages; I accepted it), q24 (the judge marked the answer wrong because it never says "no" and leaves out the typical amounts; I accepted it), and q23 and q30, which the code grades rather than the judge (q23 is a refusal of an answerable question, q30 answers an unanswerable one without the refusal phrase; I graded both as fine).
 
 ## Failures
 
-✍️ *Failed questions by cause (retrieval miss, wrong answer from the right passage, unsupported claim, wrong refusal, bad test question), counts, what to fix first.*
+| Question | Outcome | Cause | Evidence |
+|---|---|---|---|
+| q07 Extreme Cold Warning | wrong refusal | retrieval miss | expected passage (NWSI-10-515 6.2.3) not in the top 5; the answer had no citation and the guardrail turned it into a refusal |
+| q11 Juneau criteria | wrong refusal | wrong refusal | right passage ranked 1st, but the answer had no citation and the retry failed |
+| q23 Blizzard in two documents | wrong refusal | wrong refusal | both passages retrieved, answer had no citation, retry failed |
+| q24 One national snowfall amount? | wrong | retrieval miss | neither expected passage in the top 5; the agent quoted a side detail of App-D instead of answering "no" |
+| q04 Winter Weather Advisory | unsupported | unsupported claim | "significant inconveniences" is not in the passages |
+| q15 WSSI levels | unsupported | unsupported claim | added a note about closing decisions not in the passages |
+| q22 Watch vs Warning | unsupported | unsupported claim | "imminent or occurring" is not in the retrieved passages |
+| q30 School-closing snowfall | answered unanswerable | unsupported claim / bad test question | answered from the WSSI note instead of refusing |
+
+Counts: wrong refusal 2, retrieval miss 2, unsupported claim 4 (counting q30).
+
+✍️ *What to fix first, and why.*
 
 ## Decision
 
