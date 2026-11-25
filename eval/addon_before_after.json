@@ -1,0 +1,24 @@
+[
+  {
+    "id": "q37",
+    "question": "Under the Data Act, what is the maximum notice period a customer may be required to give to initiate switching between data processing services?",
+    "before": "NOT_FOUND: The indexed documents (GDPR, AI Act, ePrivacy Directive) do not contain the Data Act or rules on switching between data processing services.",
+    "after": "Under the Data Act, the maximum notice period for the initiation of the switching process between data processing services shall not exceed two months [data_act:Article 25].",
+    "before_refused": true,
+    "after_refused": false,
+    "after_cited": [
+      "data_act:Article 25"
+    ]
+  },
+  {
+    "id": "q38",
+    "question": "Under the Data Act, what is the mandatory maximum transitional period for switching between data processing service providers?",
+    "before": "NOT_FOUND: The indexed database does not contain the text of the Data Act (Regulation (EU) 2023/2854) or information regarding transitional periods for switching data processing service providers under that act.",
+    "after": "* The mandatory maximum transitional period for switching between data processing service providers is 30 calendar days [data_act:Article 25].\n* If this transitional period is technically unfeasible, the provider must notify the customer within 14 working days and indicate an alternative transitional period not exceeding seven months [data_act:Article 25].",
+    "before_refused": true,
+    "after_refused": false,
+    "after_cited": [
+      "data_act:Article 25"
+    ]
+  }
+]

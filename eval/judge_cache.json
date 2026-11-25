@@ -1,0 +1,157 @@
+{
+ "q01|3f8c7923b0": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately states the 72-hour timeframe and the requirement to provide reasons for any delay, both of which are fully supported by the cited text of Article 33."
+ },
+ "q02|88b46b3810": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately provides the age of 16, explains that Member States can lower it down to 13, and properly cites Article 8 which fully supports these claims."
+ },
+ "q03|178cbbb49b": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant correctly states the maximum fine as EUR 20,000,000 or 4% of total worldwide annual turnover, and this is fully supported by Article 83(5)(a) of the cited text."
+ },
+ "q04|acff469893": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately and completely lists the three mandatory conditions for designating a data protection officer as outlined in Article 37(1) of the GDPR, and all claims are fully supported by the cited text."
+ },
+ "q05|83b39176c5": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately states the one-month deadline, the two-month extension rule, the requirement to notify the data subject within one month, and properly supports all claims with the cited passage."
+ },
+ "q06|d4a63b0f10": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately lists all six lawful bases for processing personal data as outlined in the reference answer and fully supported by the cited Article 6 text."
+ },
+ "q07|0d5cf8d0d1": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately lists all the statutory grounds for the right to erasure found in Article 17(1) of the GDPR, and every claim is directly supported by the cited text."
+ },
+ "q08|a37f75ac8a": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately captures all the key triggers for a DPIA as specified in Article 35 and matches the reference answer completely."
+ },
+ "q09|0f5e3f76eb": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant correctly identifies both appropriate safeguards (Art 46) and specific derogations/conditions (Art 49) under which data can be transferred without an adequacy decision, and all claims are fully supported by the cited text."
+ },
+ "q10|3b08220f8e": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant correctly identifies all conditions for the right to data portability as specified in the reference answer, and every claim is explicitly supported by the cited text of Article 20."
+ },
+ "q11|763c4e1d88": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant correctly states the general rule and exceptions for enterprises under 250 employees, and every claim is directly supported by Article 30(5) in the cited passage."
+ },
+ "q12|9345dc5c17": {
+  "correctness": "incorrect",
+  "supported": true,
+  "reason": "The assistant's cited passage and answer give a fine of up to EUR 1,500,000, which applies to Union institutions, bodies, offices and agencies under Article 100, whereas the correct general fine for non-compliance with prohibitions under Article 99(3) is up to EUR 35,000,000 or 7% of worldwide turnover."
+ },
+ "q13|51cb265039": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant correctly names three prohibited AI practices under Article 5 of the AI Act, and every claim is fully supported by the provided text."
+ },
+ "q14|1036b77882": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant provides an accurate definition of an AI system matching the exact wording and meaning of the law found in the cited passage."
+ },
+ "q15|db8e5cb64b": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately and thoroughly describes the human oversight requirements for high-risk AI systems based on the cited text."
+ },
+ "q16|65119f7ddd": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately captures the transparency obligation for AI systems interacting directly with humans, including the exceptions and timing, based directly on the cited text."
+ },
+ "q17|f4d7ee98d2": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately provides the general 15-day deadline along with the exceptions for critical infrastructure (2 days) and death (10 days), all of which are fully supported by the cited text of Article 73."
+ },
+ "q18|2962cbb471": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately captures the requirements from Article 4 and definition from Article 3, and all claims are fully supported by the cited passages."
+ },
+ "q19|98cbbd7378": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant correctly named at least three high-risk areas under Annex III and accurately cited passages that support every claim made."
+ },
+ "q20|ea82110abe": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately captures the requirements for technical documentation under Article 53 and Annex XI, and all statements are directly supported by the cited text."
+ },
+ "q21|cb54b35c68": {
+  "correctness": "partial",
+  "supported": false,
+  "reason": "The assistant incorrectly identifies points 5(b) and (c) of Annex III as relating to education/students instead of creditworthiness and life/health insurance, and misses the exclusion in the prompt's reference."
+ },
+ "q22|223f7e5ebf": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately states all requirements and exceptions from Article 5(3) of the ePrivacy Directive and supports every claim with the cited text."
+ },
+ "q23|f0b54169e8": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately captures the opt-in rule, the existing customer exception, and the prohibition on concealed identities directly from the cited text of Article 13."
+ },
+ "q24|3291929676": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant correctly identified AI Act Article 14 for human oversight and GDPR Article 22 for automated processing restrictions, with all claims fully supported by the cited passages."
+ },
+ "q25|30c6cde9cd": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately states the maximum fines for both GDPR serious infringements and AI Act prohibited practices, fully supported by the cited text."
+ },
+ "q26|e36f572066": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant correctly states both timeframes (72 hours for authorities and without undue delay for data subjects) matching the reference and fully supported by Articles 33 and 34."
+ },
+ "q27|f5d410ceed": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant correctly states that the FRIA must still be performed and that it complements the GDPR DPIA, supported directly by Article 27(4)."
+ },
+ "q29|43f091e567": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately details the requirements under both Article 13 and Article 15, and every claim is explicitly supported by the provided text."
+ },
+ "q30|94105a52b9": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant correctly identified the relevant ePrivacy and GDPR articles for tracking cookies and direct marketing and cited the exact supporting text."
+ },
+ "q28|85e9dbe99c": {
+  "correctness": "incorrect",
+  "supported": false,
+  "reason": "The assistant failed to provide an answer due to an API error."
+ },
+ "q28|c9de06df27": {
+  "correctness": "correct",
+  "supported": true,
+  "reason": "The assistant accurately captures both the AI Act's and GDPR's stances based on the provided text, and all facts are fully supported by the cited passages."
+ }
+}

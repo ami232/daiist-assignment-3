@@ -1,0 +1,25 @@
+{
+  "n": 38,
+  "answerable": 30,
+  "unanswerable": 8,
+  "correct_rate": 0.933,
+  "correct_or_partial": 0.967,
+  "wrong_refusal_rate": 0.0,
+  "unsupported_rate": 0.033,
+  "correct_refusal_rate": 0.875,
+  "hallucination_rate_on_unanswerable": 0.125,
+  "citations_valid_rate": 1.0,
+  "gold_cited_rate": 0.967,
+  "guardrail_triggered": 0,
+  "mean_seconds": 14.4,
+  "mean_tokens": 5324,
+  "total_tokens": 202304,
+  "human_agreement": {
+    "n": 30,
+    "correctness_agreement": 0.967,
+    "supported_agreement": 0.967,
+    "disagreements": [
+      "q09"
+    ]
+  }
+}
