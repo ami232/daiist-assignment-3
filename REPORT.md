@@ -90,8 +90,6 @@ The multi questions need two passages to be answered and they list both separate
 
 *Hit rate at 1/3/5 per design, words added to the prompt, the design you chose.*
 
-## Retrieval
-
 I chose the structure design with k = 5. To compare the designs, evaluate.py embeds each question once and takes the top 5 chunks from both designs, only from the six original documents, and a question counts as a hit at k when one of its expected passages is in the top k (for fixed windows any section in the covers field counts).
 
 | Design | hit@1 | hit@3 | hit@5 | multi, both passages @1 / @3 / @5 | words added @1 / @3 / @5 |
@@ -113,6 +111,16 @@ I chose k = 5 instead of 3 because every question gets at least one expected pas
 ## Tools and subagent
 
 *Your tools' descriptions, one search result, the subagent's instructions, one transcript from your editor.*
+
+**Tool descriptions.** My MCP server has two tools. The first one, search(query), looks for the 5 passages most similar to the question in the six documents and gives each one a label like [REG_1169_2011, Article 21] and a similarity score, and its description tells the model to cite that label for every claim and to say the corpus does not cover something instead of answering from memory. It also tells the model to search again with other words if the results are not enough, and to do one search for each part of a question. The second one, add_document(path), adds a new file (.html, .pdf, .txt or .md) to the corpus using the same steps as index.py, and its description says to only use it when the user asks for it.
+
+**One search result.** As an example, this is the first passage the search found for q36, which asks what salt content should appear on a food with 0.32 g of sodium per 100 g. I copied it from eval/grading_sheet.md, which only keeps the label and the text, but when the agent gets it from search it also comes with "cite as [QA_NOTICE_2018, Section 3.2.4]", the similarity score and the name of the document.
+
+```
+[QA_NOTICE_2018, Section 3.2.4] Relevant provisions: Annex I, point 11 Yes, the equivalent salt content must always be derived from the total sodium content of the food product by using the formula: salt = sodium × 2,5.
+```
+
+**Subagent instructions.** I also have a subagent called corpus-researcher (in .claude/agents/corpus-researcher.md), which only has the search tool and is used whenever a question is about what an EU food label must, may or may not say. Its instructions have five rules, basically it has to search before answering (at most five times), answer only from the passages and not from memory, and cite every claim with the label. If the corpus only covers part of the question it has to say which part is missing, and the answers should be short, with the yes/no or the rule first and then the conditions.
 
 ### Transcript: Claude Code delegating to the `corpus-researcher` subagent
 
@@ -171,9 +179,27 @@ Por qué la respuesta está construida así: sigue las reglas 3 y 4 de AGENTS.md
 >
 > Why the answer is built this way: it follows rules 3 and 4 in AGENTS.md. It answers the part the corpus supports, with citations, and keeps apart what can't be determined from it. That way the answer doesn't present an exemption from 2014 as still current when it may have changed.
 
+
+
 ## Adding a document
 
 *What happens when a document is already indexed. The unanswerable question, the document you added, the answer before and after.*
+
+If a document is already indexed with the same content, add_document embeds nothing, and if a file with the same name has different content, the old chunks are replaced by the new ones. I also fixed a bug with REG_432_2012, which only has 2 articles, so add_document treated it as a guidance notice and chunked it differently than index.py, and now it uses the same information as index.py for the corpus documents.
+
+For the demo I used q23, about the maximum gluten level for "gluten-free", because the allergen notice refers to Regulation 828/2014 but does not give the number. So I added Commission Implementing Regulation (EU) No 828/2014, which I got from Cellar because EUR-Lex blocked the download, and after I approved add_document it was split into 10 chunks.
+
+Before adding the document, the agent answered:
+
+> Based on the provided search results, the corpus does not contain the exact numeric threshold (in mg/kg) for the "gluten-free" claim set out in Commission Implementing Regulation (EU) No 828/2014, although the guidance mentions that products must meet the requirements of that Regulation to use the statement "gluten-free" or "very low gluten" [ALLERGEN_NOTICE_2017, Section 3.1 (part 1)].
+>
+> The corpus does not cover the specific maximum concentration value in mg/kg.
+
+After adding it, the same question got:
+
+> The statement "gluten-free" may only be made where the food as sold to the final consumer contains no more than **20 mg/kg** of gluten [REG_828_2014, Annex].
+
+The agent went from saying the corpus does not cover it to giving the exact number with a citation to the new document, and when I added the same file again nothing was embedded because it was already indexed.
 
 ## Harness and guardrails
 
