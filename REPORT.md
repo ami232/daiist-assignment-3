@@ -1,16 +1,32 @@
 # Assignment 3 Report
 
-- **Name**:
-- **Student ID**:
-- **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
+- **Name**: Emilia Granja
+- **Student ID**: 18875
+- **Group**: BBADBA 5B 
 
 ## Use case
 
 *Who asks, what they do with the answer, and what a wrong answer costs compared with "I don't know".*
 
+The agent answers questions from the labelling team of a small food company in Spain that sells packaged food in the EU and does not have its own lawyer. Before new labels go to print, or when marketing wants to put a claim on the packing like "source of fibre" or "vitamin C contributes to the normal function of the immune system", the team asks the agent what the label must, may or may not say. They use the response to review the draft label, and the reference to open the article and verify it themselves or forward it to an advisor.
+A wrong answer costs much more than "I don't know". If the agent says an allergen does not need to be emphasised in the list of ingredients, or that a health claim is allowed when it is not, the company can print thousands of labels that break the law, which means relabelling or destroying the stock and possibly a recall with fines from the food safety authorities, and with allergens there is also a real health risk for consumers. "I don't know" only costs time, since the team has to read the regulation themselves or pay someone for an hour of work.
+This is why the agent is built to refuse rather than guess, every answer has to cite a passage that search actually returned (the quotation mark barrier in agent.py), and when the corpus does not cover the question the agent says so and tells the team to check the regulation directly or ask a regulatory expert.
+
+
 ## Corpus
 
 *Table: document, URL, date, licence, words.*
+| Document | URL | Date | Licence | Words |
+|---|---|---|---|---|
+| Regulation (EU) No 1169/2011, food information to consumers (REG_1169_2011) | https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32011R1169 | 25 Oct 2011 | EUR-Lex: reuse allowed with acknowledgement (Decision 2011/833/EU) | 22,521 |
+| Regulation (EC) No 1924/2006, nutrition and health claims (REG_1924_2006) | https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32006R1924 | 20 Dec 2006 | same | 9,456 |
+| Regulation (EU) No 432/2012, permitted health claims (REG_432_2012) | https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32012R0432 | 16 May 2012 | same | 15,190 |
+| Commission Notice, Q&A on Regulation 1169/2011, 2018/C 196/01 (QA_NOTICE_2018) | https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52018XC0608(01) | 8 Jun 2018 | same | 5,491 |
+| Commission Notice on allergen information, 2017/C 428/01 (ALLERGEN_NOTICE_2017) | https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52017XC1213(01) | 13 Dec 2017 | same | 2,326 |
+| Commission Notice on QUID, 2017/C 393/05 (QUID_NOTICE_2017) | https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:52017XC1121(01) | 21 Nov 2017 | same | 4,315 |
+| **Total** | | | | **59,299** |
+
+Added later in the demo: Commission Implementing Regulation (EU) No 828/2014 (gluten-free statements), 30 Jul 2014, from the Publications Office (Cellar), 10 chunks.
 
 ## Ingestion
 
