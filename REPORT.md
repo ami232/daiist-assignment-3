@@ -187,7 +187,7 @@ Fix first: require a citation on every factual sentence (this would catch q42), 
 
 ## Decision
 
-Yes, as a lookup aid for Food Code numbers and procedures, with the citation and passage always shown so the user can check. Not for emergencies, medical questions or anything outside the three documents. Local codes may differ, and the test set is small and AI-written, so the 100% score is optimistic.
+Yes, as a lookup aid for Food Code numbers and procedures, with the citation and passage always shown so the user can check. Not for emergencies, medical questions or anything outside the three documents. Local codes may differ, and the test set is small and written by me from the same documents the agent searches, so the 100% score is optimistic.
 
 Cost per question: about 6,800 tokens (median 4,600), 2.5 model calls, 1.2 searches. Latency: median 5.7 s; slower cases came from free-tier rate-limit waits.
 
