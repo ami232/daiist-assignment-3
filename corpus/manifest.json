@@ -1,0 +1,68 @@
+{
+  "licence_note": "EBA legal notice: \"Reproduction of all EBA material on this site is authorised, provided the source is acknowledged\" (https://www.eba.europa.eu/legal-notice). Source: European Banking Authority, www.eba.europa.eu.",
+  "documents": [
+    {
+      "id": "EBA-GL-2016-07",
+      "reference": "EBA/GL/2016/07",
+      "short_title": "EBA/GL/2016/07 Definition of default (Art. 178 CRR)",
+      "title": "Final Report on Guidelines on the application of the definition of default under Article 178 of Regulation (EU) No 575/2013",
+      "date": "2016-09-28",
+      "url": "https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-application-definition-default",
+      "file_glob": "*2016*07*.pdf",
+      "pages": [
+        3,
+        45
+      ],
+      "why_these_pages": "Executive summary, background and the guidelines. Pages 46+ are impact assessment and consultation feedback tables."
+    },
+    {
+      "id": "EBA-GL-2017-16",
+      "reference": "EBA/GL/2017/16",
+      "short_title": "EBA/GL/2017/16 PD estimation, LGD estimation and defaulted exposures",
+      "title": "Guidelines on PD estimation, LGD estimation and the treatment of defaulted exposures",
+      "date": "2017-11-20",
+      "url": "https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/model-validation/guidelines-pd-estimation-lgd",
+      "file_glob": "*2017*16*.pdf",
+      "pages": [
+        3,
+        102
+      ],
+      "why_these_pages": "Executive summary, background and the guidelines. Pages 103+ are impact assessment and consultation feedback tables.",
+      "skip_heading_pages": [
+        [
+          11,
+          11
+        ]
+      ],
+      "skip_heading_reason": "p.11 is Figure 3 (a flow chart); its text looks like headings but is not."
+    },
+    {
+      "id": "EBA-GL-2020-05",
+      "reference": "EBA/GL/2020/05",
+      "short_title": "EBA/GL/2020/05 Credit risk mitigation for A-IRB institutions",
+      "title": "Final report on Guidelines on credit risk mitigation for institutions applying the IRB approach with own estimates of LGDs",
+      "date": "2020-05-06",
+      "url": "https://www.eba.europa.eu/publications-and-media/press-releases/eba-publishes-final-guidelines-credit-risk-mitigation",
+      "file_glob": "*CRM*A-IRB*.pdf",
+      "pages": [
+        3,
+        50
+      ],
+      "why_these_pages": "Executive summary, background and the guidelines. Pages 51+ are impact assessment and consultation feedback."
+    },
+    {
+      "id": "EBA-GL-2020-06",
+      "reference": "EBA/GL/2020/06",
+      "short_title": "EBA/GL/2020/06 Loan origination and monitoring",
+      "title": "Final Report - Guidelines on loan origination and monitoring",
+      "date": "2020-05-29",
+      "url": "https://www.eba.europa.eu/activities/single-rulebook/regulatory-activities/credit-risk/guidelines-loan-origination-and-monitoring",
+      "file_glob": "*2020*06*.pdf",
+      "pages": [
+        4,
+        76
+      ],
+      "why_these_pages": "Executive summary, background, guidelines and annexes 1-3. Pages 77+ are cost-benefit analysis and consultation feedback."
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+ "embed_model": "gemini-embedding-2",
+ "embed_dim": 768,
+ "serving_design": "structure",
+ "updated": "2026-11-25T12:00:32+00:00",
+ "vectors": 489,
+ "chunks": {
+  "structure": 489,
+  "fixed": 482
+ }
+}
