@@ -1,0 +1,236 @@
+{
+  "q01": {
+    "key": "q01|No, your mother should not take two doses the next morning for a missed evening dose; she should continue to follow the dosing schedule twice daily as recommended on the next day [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 3. How to take Eliquis | p. 143]. \n\nIf you are not sure what to do or have missed more than one dose, ask your doctor, pharmacist or nurse [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 3. How to take Eliquis | p. 143]. Always follow your prescriber's instructions.",
+    "reasoning": "The assistant correctly answers 'No' to the question, advises not to take two doses, and tells the user to continue the twice-daily schedule, matching the reference answer and the provided text. All claims are directly supported by the retrieved passages, including the advice to consult a healthcare provider if unsure.",
+    "correct": true,
+    "supported": true
+  },
+  "q02": {
+    "key": "q02|If your father has difficulty swallowing, Eliquis tablets may be crushed and mixed with water, 5% glucose in water, apple juice, or apple puree immediately before taking it [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 3. How to take Eliquis | p. 141]. \n\nTo do this, crush the tablets with a pestle and mortar, carefully transfer all the powder into a suitable container, and mix it with a little liquid (such as 2 tablespoons or 30 mL) to make a mixture to swallow [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 3. How to take Eliquis | p. 141]. Rinse the pestle, mortar, and container with a little water or the same liquid and swallow the rinse as well [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 3. How to take Eliquis | p. 141]. \n\nPlease talk to your doctor or pharmacist if you are not sure, and always follow your prescriber's instructions [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 3. How to take Eliquis | p. 141].",
+    "reasoning": "The assistant's answer is correct as it confirms the tablets can be crushed and provides the exact mixing and rinsing instructions found in the reference answer and the provided passages. All claims are directly supported by the retrieved Eliquis package leaflet.",
+    "correct": true,
+    "supported": true
+  },
+  "q03": {
+    "key": "q03|If your dad is taking one 20 mg tablet once a day and has missed a dose, he should take it as soon as he remembers [xarelto | Package leaflet | Xarelto 15 mg film-coated tablets | 3. How to take Xarelto | p. 257]. \n\n* He must not take more than one tablet in a single day to make up for a forgotten dose [xarelto | Package leaflet | Xarelto 15 mg film-coated tablets | 3. How to take Xarelto | p. 257].\n* He should take the next tablet on the following day and then carry on taking one tablet once a day [xarelto | Package leaflet | Xarelto 15 mg film-coated tablets | 3. How to take Xarelto | p. 257].\n\nPlease always follow the prescriber's instructions.",
+    "reasoning": "The assistant's answer matches the reference answer exactly on all points: take as soon as remembered, do not take more than one tablet per day, and resume the normal schedule the next day. All information is explicitly stated in the provided retrieved passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q04": {
+    "key": "q04|Yes, Xarelto 20 mg must be taken with food [xarelto | SmPC | Xarelto 15 mg film-coated tablets | 4.2 Posology and method of administration | p. 58], [xarelto | Package leaflet | Xarelto 15 mg film-coated tablets | 3. How to take Xarelto | p. 256]. \n\nPlease always follow your doctor's instructions for taking your medication.",
+    "reasoning": "The assistant correctly answers 'Yes' and confirms that Xarelto 20 mg must be taken with food, which aligns with the reference answer. All claims are supported by the provided passages, specifically those stating that Xarelto (and specifically the 20 mg dose for children/adolescents and general administration) should be taken with food.",
+    "correct": true,
+    "supported": true
+  },
+  "q05": {
+    "key": "q05|No, you should not open the Pradaxa capsule or empty the pellets onto yoghurt [pradaxa | Package leaflet | Pradaxa 75 mg hard capsules | 3. How to take Pradaxa | p. 157]. The product information states that the capsule should be swallowed whole with a glass of water, and that you must not break, chew, or empty the pellets from the capsule because doing so may increase the risk of bleeding [pradaxa | Package leaflet | Pradaxa 75 mg hard capsules | 3. How to take Pradaxa | p. 157]. \n\nAlways follow your doctor's instructions regarding how to take this medicine [pradaxa | Package leaflet | Pradaxa 75 mg hard capsules | 3. How to take Pradaxa | p. 155].",
+    "reasoning": "The assistant correctly answers 'No' and explains that the capsules must be swallowed whole with water, specifically mentioning the risk of bleeding if pellets are emptied. All claims are directly supported by the provided passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q06": {
+    "key": "q06|* A forgotten dose of Pradaxa can still be taken up to 6 hours before the next scheduled dose [pradaxa | Package leaflet | Pradaxa 150 mg hard capsules | 3. How to take Pradaxa | p. 179].\n* If there are fewer than 6 hours remaining before the next due dose, the missed dose should be skipped entirely [pradaxa | Package leaflet | Pradaxa 150 mg hard capsules | 3. How to take Pradaxa | p. 179].\n* Never take a double dose to make up for a forgotten one [pradaxa | Package leaflet | Pradaxa 150 mg hard capsules | 3. How to take Pradaxa | p. 179].\n\nAlways follow your husband's prescriber's instructions when taking Pradaxa.",
+    "reasoning": "The assistant's answer matches the reference answer on all critical points: it specifies the 6-hour window for taking a missed dose, instructs to skip the dose if less than 6 hours remain, and warns against doubling the dose. All these claims are explicitly supported by the provided retrieved passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q07": {
+    "key": "q07|Once a Pradaxa bottle is opened, the medicine must be used within **4 months** [pradaxa | Package leaflet | Pradaxa 75 mg hard capsules | 5. How to store Pradaxa | p. 160]. \n\nBe sure to keep the bottle tightly closed after taking out a capsule to protect the medicine from moisture [pradaxa | Package leaflet | Pradaxa 75 mg hard capsules | 5. How to store Pradaxa | p. 160].\n\nPlease follow your prescriber's instructions when taking this medication.",
+    "reasoning": "The assistant correctly identifies the 4-month usage limit after opening and the requirement to keep the bottle tightly closed to protect it from moisture, matching the reference answer and the provided passages. All factual claims are explicitly supported by the retrieved text.",
+    "correct": true,
+    "supported": true
+  },
+  "q08": {
+    "key": "q08|Seek urgent medical attention if you fall or injure yourself during treatment with Pradaxa, especially if you hit your head, as you may be at increased risk of bleeding and may need to be checked by a doctor [pradaxa | Package leaflet | Pradaxa 75 mg hard capsules | 2. What you need to know before you take Pradaxa | p. 154]. \n\nPlease follow your doctor's or healthcare provider's instructions regarding this situation.",
+    "reasoning": "The assistant's answer matches the reference answer and the retrieved passages perfectly. It correctly advises seeking urgent medical attention due to the risk of bleeding after a head injury while taking Pradaxa, and this is directly supported by the provided text.",
+    "correct": true,
+    "supported": true
+  },
+  "q09": {
+    "key": "q09|Eliquis has not been shown to impair your ability to drive or use machines [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 2. What you need to know before you take Eliquis | p. 141], and it has no or negligible influence on the ability to drive and use machines [eliquis | SmPC | Eliquis 2.5 mg film-coated tablets | 4.7 Effects on ability to drive and use machines | p. 13]. \n\nAlways follow your prescriber's instructions.",
+    "reasoning": "The assistant's answer matches the reference answer and is directly supported by the provided passages. It provides the correct information regarding the ability to drive while taking Eliquis.",
+    "correct": true,
+    "supported": true
+  },
+  "q10": {
+    "key": "q10|Medicines such as acetylsalicylic acid (aspirin) or naproxen can increase the effects of Eliquis and raise the chance of unwanted bleeding [eliquis | Package leaflet | Eliquis 5 mg film-coated tablets | 2. What you need to know before you take Eliquis | p. 152]. Taking aspirin alongside Eliquis carries a particularly increased chance of bleeding if the patient is older than 75 [eliquis | Package leaflet | Eliquis 5 mg film-coated tablets | 2. What you need to know before you take Eliquis | p. 152]. Eliquis should be used with caution when coadministered with NSAIDs or aspirin because these products typically increase the bleeding risk [eliquis | SmPC | Eliquis 2.5 mg film-coated tablets | 4.5 Interaction with other medicinal products and other forms of interaction | p. 12].\n\nAlways follow your doctor's instructions regarding any other medications.",
+    "reasoning": "The assistant correctly identifies that aspirin and naproxen increase the risk of bleeding and notes the specific risk for patients over 75. However, it fails to explicitly state that the user must consult their doctor *before* taking these medications, which is a safety-critical instruction in the reference answer and the retrieved text ('Tell your doctor... Your doctor will decide'). While it adds a general instruction at the end, it doesn't explicitly answer the 'Can she take...' question with the necessary 'Only after telling her doctor' condition.",
+    "correct": false,
+    "supported": true
+  },
+  "q11": {
+    "key": "q11|St John's Wort is a herbal supplement used for depression that can reduce the ability of Eliquis to help prevent blood clots from forming [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 2. What you need to know before you take Eliquis | p. 141]. \n\nUsing St John's Wort with Eliquis may lead to about a 50% reduction in Eliquis levels in the body, which can reduce its effectiveness [eliquis | SmPC | Eliquis 2.5 mg film-coated tablets | 4.4 Special warnings and precautions for use | p. 10]. \n\nPlease follow your prescriber's instructions and talk to your doctor or pharmacist before combining these products.",
+    "reasoning": "The assistant correctly identifies that St John's Wort can reduce the ability of Eliquis to prevent blood clots and provides the approximate 50% reduction in exposure mentioned in the SmPC. It also correctly advises the user to consult a doctor/pharmacist, which aligns with the reference answer. All claims are supported by the provided passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q12": {
+    "key": "q12|For adults with non-valvular atrial fibrillation, the lower dose of 2.5 mg twice daily should be used if you have severely reduced kidney function [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 3. How to take Eliquis | p. 142]. \n\nIt should also be used if at least two of the following characteristics apply to you [eliquis | SmPC | Eliquis 2.5 mg film-coated tablets | 4.2 Posology and method of administration | p. 2]:\n* Your age is 80 years or older [eliquis | SmPC | Eliquis 2.5 mg film-coated tablets | 4.2 Posology and method of administration | p. 2].\n* Your body weight is 60 kg or lower [eliquis | SmPC | Eliquis 2.5 mg film-coated tablets | 4.2 Posology and method of administration | p. 2].\n* Your blood test results show a serum creatinine level of 1.5 mg/dL (133 micromole/L) or greater, suggesting poor kidney function [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 3. How to take Eliquis | p. 142].\n\nAlways follow your doctor's instructions regarding your prescribed dose.",
+    "reasoning": "The assistant's answer matches the reference answer exactly: it mentions the severely reduced kidney function and the three criteria (age >= 80, weight <= 60kg, serum creatinine >= 1.5 mg/dL) where two or more must apply. All claims are directly supported by the provided passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q13": {
+    "key": "q13|For patients aged 80 years or older with abnormal heart beats (atrial fibrillation), the recommended dose of Pradaxa is 220 mg taken as a 110 mg capsule twice a day [pradaxa | Package leaflet | Pradaxa 110 mg hard capsules | 3. How to take Pradaxa | p. 167]. \n\nPlease follow your doctor's specific instructions for dosing [pradaxa | Package leaflet | Pradaxa 110 mg hard capsules | 3. How to take Pradaxa | p. 167].",
+    "reasoning": "The assistant's answer correctly identifies the dose (220 mg) and the frequency (one 110 mg capsule twice a day) for a patient aged 80 or older, which matches the reference answer and the provided passages. The additional instruction to follow the doctor's advice is also supported by the retrieved text.",
+    "correct": true,
+    "supported": true
+  },
+  "q14": {
+    "key": "q14|Crushed Xarelto tablets are stable in apple puree for up to 4 hours [xarelto | Package leaflet | Xarelto 10 mg film-coated tablets | 5. How to store Xarelto | p. 250]. \n\nPlease follow your doctor's or pharmacist's instructions on how to take the medicine.",
+    "reasoning": "The assistant correctly identifies the stability period (4 hours) as specified in the reference answer and the provided passages. All factual claims are directly supported by the retrieved text.",
+    "correct": true,
+    "supported": true
+  },
+  "q15": {
+    "key": "q15|Tell your doctor immediately if your aunt has taken more than the prescribed dose of Eliquis, and take the medicine pack with you, even if there are no tablets left [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 3. How to take Eliquis | p. 143]. \n\nTaking more Eliquis than recommended may increase the risk of bleeding [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 3. How to take Eliquis | p. 143]. \n\nAlways follow your doctor's or prescriber's instructions.",
+    "reasoning": "The assistant's answer matches the reference answer on all critical points: telling the doctor immediately, bringing the medicine pack, and the increased risk of bleeding. Every claim is directly supported by the provided Eliquis package leaflet passage.",
+    "correct": true,
+    "supported": true
+  },
+  "q16": {
+    "key": "q16|If you suspect a serious bleed, stroke, or emergency, seek urgent medical help immediately. \n\nThe signs of bleeding into the brain or inside the skull while taking Xarelto include:\n* Headache [xarelto | Package leaflet | Xarelto 15 mg film-coated tablets | 4. Possible side effects | p. 258]\n* One-sided weakness [xarelto | Package leaflet | Xarelto 15 mg film-coated tablets | 4. Possible side effects | p. 258]\n* Vomiting [xarelto | Package leaflet | Xarelto 15 mg film-coated tablets | 4. Possible side effects | p. 258]\n* Seizures [xarelto | Package leaflet | Xarelto 15 mg film-coated tablets | 4. Possible side effects | p. 258]\n* Decreased level of consciousness [xarelto | Package leaflet | Xarelto 15 mg film-coated tablets | 4. Possible side effects | p. 258]\n* Neck stiffness [xarelto | Package leaflet | Xarelto 15 mg film-coated tablets | 4. Possible side effects | p. 258]\n\nThis is considered a serious medical emergency, and you must seek medical attention immediately [xarelto | Package leaflet | Xarelto 15 mg film-coated tablets | 4. Possible side effects | p. 258]. Always follow your prescriber's instructions.",
+    "reasoning": "The assistant's answer lists all the signs of brain bleeding mentioned in the reference answer and the retrieved passages. It also correctly identifies it as a medical emergency requiring immediate attention, aligning perfectly with the reference answer and the provided text.",
+    "correct": true,
+    "supported": true
+  },
+  "q17": {
+    "key": "q17|Indigestion is listed as a common side effect (may affect up to 1 in 10 people) of Pradaxa hard capsules across its various strengths and uses [pradaxa | Package leaflet | Pradaxa 110 mg hard capsules | 4. Possible side effects | p. 171]. \n\nThe product information does not provide specific instructions on what steps to take for indigestion. Always follow your prescriber's instructions, and if you have concerns about side effects, please consult a doctor or pharmacist.",
+    "reasoning": "The assistant correctly identifies indigestion as a common side effect based on the provided text. It correctly states that the provided passages do not contain specific instructions on what to do (such as contacting a doctor or not stopping the medication), which matches the content of the retrieved documents, even though the reference answer provides general medical advice not found in the snippets. Therefore, it is correct and supported.",
+    "correct": true,
+    "supported": true
+  },
+  "q18": {
+    "key": "q18|The product information I have does not cover this reliably: I could not check my answer against the official documents, so I am not giving it. Please ask a doctor or pharmacist.",
+    "reasoning": "The assistant refused to answer the question, stating the information was not available. However, the retrieved passages explicitly describe the purpose of the patient card (alerting other doctors) and the instructions for use (filling in details and keeping it with them). Therefore, the assistant failed to provide a correct answer.",
+    "correct": false,
+    "supported": true
+  },
+  "q19": {
+    "key": "q19|For elective surgery or invasive procedures with a low risk of bleeding, Eliquis (apixaban) should be stopped at least 24 hours prior to the procedure [eliquis | SmPC | Eliquis 2.5 mg film-coated tablets | 4.4 Special warnings and precautions for use | p. 8]. \n\nFor elective surgery or invasive procedures with a moderate or high risk of bleeding, Eliquis should be discontinued at least 48 hours prior to the procedure [eliquis | SmPC | Eliquis 2.5 mg film-coated tablets | 4.4 Special warnings and precautions for use | p. 8]. \n\nAlways follow your doctor's specific instructions regarding when to stop taking your medicine before an operation.",
+    "reasoning": "The assistant's answer matches the reference answer exactly regarding the timeframes for low risk (24h) and moderate/high risk (48h) procedures. All factual claims are directly supported by the provided SmPC passages for Eliquis.",
+    "correct": true,
+    "supported": true
+  },
+  "q20": {
+    "key": "q20|The product information I have does not cover this reliably: I could not check my answer against the official documents, so I am not giving it. Please ask a doctor or pharmacist.",
+    "reasoning": "The assistant claimed the documents did not cover the question, but the retrieved passages explicitly state multiple times that idarucizumab is the specific reversal agent and that haemodialysis can remove dabigatran. Therefore, the assistant failed to provide a correct answer despite the information being available.",
+    "correct": false,
+    "supported": true
+  },
+  "q21": {
+    "key": "q21|Xarelto must not be taken while breast-feeding [xarelto | Package leaflet | Xarelto 2.5 mg film-coated tablets | 2. What you need to know before you take Xarelto | p. 238]. Safety and efficacy have not been established in breast-feeding women, animal data indicate that rivaroxaban is secreted into milk, and a decision must be made whether to discontinue breast-feeding or to discontinue/abstain from therapy [xarelto | SmPC | Xarelto 10 mg film-coated tablets | 4.6 Fertility, pregnancy and lactation | p. 36]. \n\nAlways follow your prescriber's instructions.",
+    "reasoning": "The assistant correctly states that Xarelto must not be taken while breast-feeding, which aligns with the reference answer. All claims made by the assistant are directly supported by the provided retrieved passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q22": {
+    "key": "q22|Due to its high plasma protein binding, rivaroxaban is not expected to be dialysable [xarelto | SmPC | Xarelto 15 mg film-coated tablets | 4.9 Overdose | p. 69]. \n\nAlways follow your prescriber's instructions and seek urgent medical help if an overdose is suspected.",
+    "reasoning": "The assistant's answer matches the reference answer and the provided text exactly. It correctly identifies that rivaroxaban is not expected to be dialysable and provides the correct reason from the source text.",
+    "correct": true,
+    "supported": true
+  },
+  "q23": {
+    "key": "q23|The product information I have does not cover this reliably: I could not check my answer against the official documents, so I am not giving it. Please ask a doctor or pharmacist.",
+    "reasoning": "The assistant claims the information is not covered, but the retrieved passages explicitly list dronedarone as a contraindication for Pradaxa in multiple sections (SmPC 4.3 and Package Leaflet 2). Therefore, the assistant's refusal is incorrect as the answer was available in the provided text.",
+    "correct": false,
+    "supported": true
+  },
+  "q24": {
+    "key": "q24|The product information I have does not cover this reliably: I could not check my answer against the official documents, so I am not giving it. Please ask a doctor or pharmacist.",
+    "reasoning": "The assistant claimed the documents did not cover the answer, but the provided passages explicitly state that dizziness is a common side effect and that patients should not drive or use machines if affected. Therefore, the answer is incorrect as it failed to provide available information.",
+    "correct": false,
+    "supported": true
+  },
+  "q25": {
+    "key": "q25|Eliquis does not require any special storage conditions [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 5. How to store Eliquis | p. 148]. \n\nKey storage safety points:\n* Keep the medicine out of the sight and reach of children [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 5. How to store Eliquis | p. 148].\n* Do not use the medicine after the expiry date stated on the carton and blister [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 5. How to store Eliquis | p. 148].",
+    "reasoning": "The assistant's answer matches the reference answer exactly in terms of content and is fully supported by the retrieved passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q26": {
+    "key": "q26|**For your mother taking Eliquis (apixaban):**\n* **Missed morning dose:** Take it as soon as you remember, and it may be taken together with the evening dose [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 3. How to take Eliquis | p. 143].\n* **Missed evening dose:** It can only be taken during the same evening. Do not take two doses the next morning; simply continue with the regular twice-daily schedule the next day [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 3. How to take Eliquis | p. 143].\n* **If unsure:** Ask your doctor, pharmacist, or nurse [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 3. How to take Eliquis | p. 143].\n\n**For your father taking Pradaxa (dabigatran) for atrial fibrillation:**\n* **Forgotten dose:** A forgotten dose can still be taken up to 6 hours before the next scheduled dose [pradaxa | Package leaflet | Pradaxa 150 mg hard capsules | 3. How to take Pradaxa | p. 179].\n* **If less than 6 hours remain:** Skip the missed dose and omit it [pradaxa | Package leaflet | Pradaxa 150 mg hard capsules | 3. How to take Pradaxa | p. 179].\n* **Double dose warning:** Never take a double dose to make up for a forgotten dose [pradaxa | Package leaflet | Pradaxa 150 mg hard capsules | 3. How to take Pradaxa | p. 179].\n\nAlways follow the prescribing doctor's instructions regarding medication use.",
+    "reasoning": "The assistant correctly identifies the rules for missed doses for both Eliquis and Pradaxa, matching the reference answer and the provided passages. All claims are supported by the retrieved text.",
+    "correct": true,
+    "supported": true
+  },
+  "q27": {
+    "key": "q27|The product information I have does not cover this reliably: I could not check my answer against the official documents, so I am not giving it. Please ask a doctor or pharmacist.",
+    "reasoning": "The assistant refused to answer the question, stating the information was not covered. However, the provided passages explicitly state that Eliquis can be taken with or without food and that Xarelto (including the 20 mg dose) must be taken with food. Therefore, the assistant's claim that the documents do not cover this is incorrect.",
+    "correct": false,
+    "supported": true
+  },
+  "q28": {
+    "key": "q28|The product information I have does not cover this reliably: I could not check my answer against the official documents, so I am not giving it. Please ask a doctor or pharmacist.",
+    "reasoning": "The assistant refused to answer the question despite the information being clearly present in the retrieved passages for both apixaban (andexanet alfa) and dabigatran (idarucizumab, haemodialysis). Therefore, the answer is incorrect because it failed to provide the information available in the documents.",
+    "correct": false,
+    "supported": true
+  },
+  "q29": {
+    "key": "q29|* **Eliquis (apixaban):** Should be discontinued at least 24 hours prior to elective surgery or invasive procedures with a low risk of bleeding [eliquis | SmPC | Eliquis 2.5 mg film-coated tablets | 4.4 Special warnings and precautions for use | p. 8]. If surgery or invasive procedures cannot be delayed, appropriate caution should be exercised, taking into consideration an increased risk of bleeding [eliquis | SmPC | Eliquis 2.5 mg film-coated tablets | 4.4 Special warnings and precautions for use | p. 8]. Your doctor might ask you to temporarily stop taking this medicine for a short while if you need to have surgery or a procedure which may cause bleeding [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 2. What you need to know before you take Eliquis | p. 140].\n* **Xarelto (rivaroxaban) 20 mg:** If an invasive procedure or surgical intervention is required, Xarelto 20 mg should be stopped at least 24 hours before the intervention, if possible and based on the clinical judgement of the physician [xarelto | SmPC | Xarelto 20 mg film-coated tablets | 4.4 Special warnings and precautions for use | p. 93]. If the procedure cannot be delayed, the increased risk of bleeding should be assessed against the urgency of the intervention [xarelto | SmPC | Xarelto 20 mg film-coated tablets | 4.4 Special warnings and precautions for use | p. 93].\n\nPlease always follow your doctor's specific instructions regarding stopping or starting your medication before surgery.",
+    "reasoning": "The assistant correctly identifies the 24-hour window for low-risk procedures for Eliquis and the 24-hour window for Xarelto 20 mg. However, it fails to mention the 48-hour requirement for moderate/high bleeding risk for Eliquis, which is a safety-critical point in the reference answer. While the information provided is supported by the passages, it is incomplete relative to the reference answer.",
+    "correct": false,
+    "supported": true
+  },
+  "q30": {
+    "key": "q30|No, Pradaxa capsules must not be opened, broken, chewed, or emptied, as this may increase the risk of bleeding `[pradaxa | Package leaflet | Pradaxa 75 mg hard capsules | 3. How to take Pradaxa | p. 157]`. The capsules should always be swallowed whole with a glass of water to ensure proper delivery to the stomach `[pradaxa | Package leaflet | Pradaxa 75 mg hard capsules | 3. How to take Pradaxa | p. 157]`. \n\nPlease contact your father's doctor or pharmacist for advice on how to manage his difficulty swallowing before making any changes to how he takes his medication. Always follow your prescriber's instructions.",
+    "reasoning": "The assistant correctly answers that Pradaxa capsules cannot be opened and provides the safety reason (bleeding risk), aligning with the reference answer. All claims are directly supported by the provided passages. The assistant also adds a helpful recommendation to contact a doctor, which is a safe and appropriate addition.",
+    "correct": true,
+    "supported": true
+  },
+  "q31": {
+    "key": "q31|For atrial fibrillation, the standard recommended dose of Eliquis is 5 mg taken orally twice daily ⁠[eliquis | SmPC | Eliquis 2.5 mg film-coated tablets | 4.2 Posology and method of administration | p. 2]⁠. \n\nHowever, a reduced dose of **2.5 mg twice daily** is required if a patient has **at least two** of the following characteristics:\n* Age 80 years or older ⁠[eliquis | SmPC | Eliquis 2.5 mg film-coated tablets | 4.2 Posology and method of administration | p. 2]⁠\n* Body weight of 60 kg or lower ⁠[eliquis | SmPC | Eliquis 2.5 mg film-coated tablets | 4.2 Posology and method of administration | p. 2]⁠\n* Serum creatinine of 1.5 mg/dL (133 micromole/L) or higher (indicating poor kidney function) ⁠[eliquis | SmPC | Eliquis 2.5 mg film-coated tablets | 4.2 Posology and method of administration | p. 2]⁠, ⁠[eliquis | Package leaflet | Eliquis 5 mg film-coated tablets | 3. How to take Eliquis | p. 154]⁠\n\nBecause your mother is 82 years old (age ≥ 80) and weighs 58 kg (weight ≤ 60 kg), she meets **two** of these criteria, provided her kidney blood test is also assessed by her doctor. If her serum creatinine meets the threshold, the lower 2.5 mg twice daily dose applies [eliquis | Package leaflet | Eliquis 5 mg film-coated tablets | 3. How to take Eliquis | p. 154]. \n\n**Extra Caution:** Increasing age and low body weight both independently increase the risk of bleeding [eliquis | SmPC | Eliquis 2.5 mg film-coated tablets | 4.4 Special warnings and precautions for use | p. 9]. \n\nPlease follow your doctor's exact instructions regarding her specific dose.",
+    "reasoning": "The assistant incorrectly states that the reduced dose only applies if the serum creatinine threshold is also met ('provided her kidney blood test is also assessed by her doctor. If her serum creatinine meets the threshold, the lower 2.5 mg twice daily dose applies'). The reference answer and the provided text clearly state that the reduced dose applies if *at least two* of the three criteria (age, weight, creatinine) are met. Since the mother is 82 and weighs 58 kg, she already meets two criteria and should receive the lower dose regardless of the creatinine level. This is a contradiction of the dosing guidelines.",
+    "correct": false,
+    "supported": true
+  },
+  "q32": {
+    "key": "q32|Yes, the official product information describes them differently regarding driving:\n\n* **Eliquis:** Eliquis has no or negligible influence on the ability to drive and use machines [eliquis | SmPC | Eliquis 2.5 mg film-coated tablets | 4.7 Effects on ability to drive and use machines | p. 13]. It has not been shown to impair your ability to drive or use machines [eliquis | Package leaflet | Eliquis 2.5 mg film-coated tablets | 2. What you need to know before you take Eliquis | p. 141].\n* **Xarelto:** Xarelto has a *minor* influence on the ability to drive and use machines [xarelto | SmPC | Xarelto 2.5 mg film-coated tablets | 4.7 Effects on ability to drive and use machines | p. 10]. Because it can cause dizziness (a common side effect) or fainting (an uncommon side effect), you should not drive, ride a bicycle, or use any tools or machines if you are affected by these symptoms [xarelto | Package leaflet | Xarelto 2.5 mg film-coated tablets | 2. What you need to know before you take Xarelto | p. 238].\n\nPlease follow your prescriber's instructions regarding your activities and medications.",
+    "reasoning": "The assistant's answer accurately reflects the reference answer and the provided passages. It correctly identifies that Eliquis does not impair driving and that Xarelto has a minor influence, specifically noting the side effects (dizziness and fainting) that would prohibit driving.",
+    "correct": true,
+    "supported": true
+  },
+  "q33": {
+    "key": "q33|The product information I have does not cover this, as the package leaflets and summaries of product characteristics for Eliquis do not mention alcohol consumption. Please ask your mother's doctor or pharmacist for guidance.",
+    "reasoning": "The assistant correctly identified that the provided documents do not contain information about alcohol consumption and correctly advised the user to consult a healthcare professional, aligning perfectly with the reference answer.",
+    "correct": true,
+    "supported": true
+  },
+  "q34": {
+    "key": "q34|The product information I have does not cover this. Please check with your doctor or pharmacist. Always follow your prescriber's instructions.",
+    "reasoning": "The assistant correctly identified that the provided documents do not mention grapefruit juice, and it followed the reference answer's guidance to suggest consulting a healthcare professional.",
+    "correct": true,
+    "supported": true
+  },
+  "q35": {
+    "key": "q35|The product information I have does not cover this reliably: I could not check my answer against the official documents, so I am not giving it. Please ask a doctor or pharmacist.",
+    "reasoning": "The assistant correctly identified that the provided documents do not contain information about paracetamol and appropriately referred the user to a doctor or pharmacist, matching the reference answer.",
+    "correct": true,
+    "supported": true
+  },
+  "q36": {
+    "key": "q36|The product information I have does not cover this because Lixiana is not among the blood thinners (Eliquis, Xarelto, and Pradaxa) included in my official EU product information database. Please consult your mother's doctor or pharmacist for guidance on what she should do.",
+    "reasoning": "The assistant correctly identified that the medication mentioned (Lixiana) was not in the provided documents and refused to answer, which aligns with the reference answer and the 'unanswerable' question kind. All claims are supported by the fact that the provided passages only discuss Xarelto.",
+    "correct": true,
+    "supported": true
+  },
+  "q37": {
+    "key": "q37|The product information I have does not cover this. Please check with your doctor, pharmacist, or local health authorities for information regarding the cost and reimbursement of Eliquis in Spain.",
+    "reasoning": "The assistant correctly identifies that the provided documents do not contain information about the cost or reimbursement of Eliquis in Spain and provides a appropriate referral. This aligns perfectly with the reference answer and is fully supported by the absence of such information in the retrieved passages.",
+    "correct": true,
+    "supported": true
+  },
+  "q38": {
+    "key": "q38|The product information I have does not cover this, so please ask a doctor or pharmacist whether it is safe to take turmeric or fish oil supplements with Xarelto.",
+    "reasoning": "The assistant correctly identifies that the provided documents do not contain information about turmeric or fish oil. It follows the reference answer by stating the information is missing and suggesting the user consult a healthcare professional.",
+    "correct": true,
+    "supported": true
+  },
+  "q39": {
+    "key": "q39|The product information I have does not cover this, so please consult your father's doctor or pharmacist for specific advice on adjusting his dose times for time zones. Always follow your prescriber's instructions.",
+    "reasoning": "The assistant correctly identified that the provided documents do not cover time zones or travel and referred the user to a doctor or pharmacist, which aligns perfectly with the reference answer and the criteria for unanswerable questions.",
+    "correct": true,
+    "supported": true
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "id": "q36",
+  "question": "My mother takes Lixiana and forgot her dose this morning. What should she do?",
+  "document": "lixiana.pdf",
+  "add_document_result": "[{'type': 'text', 'text': \"'lixiana' is already indexed with identical content (50 passages). Nothing was changed.\", 'id': 'lc_82705f58-42c5-48da-a146-c856cdc5d0c1'}]",
+  "before": "The product information I have does not cover this because Lixiana is not among the blood thinners (Eliquis, Xarelto, and Pradaxa) included in my official EU product information database. Please consult your mother's doctor or pharmacist for guidance on what she should do.",
+  "after": "If your mother forgets to take Lixiana, she should take the tablet immediately and then continue the following day with the once-daily tablet as usual [lixiana | Package leaflet | Lixiana 15 mg film-coated tablets | 3. How to take Lixiana | p. 63]. She must not take a double dose on the same day to make up for a forgotten dose [lixiana | Package leaflet | Lixiana 15 mg film-coated tablets | 3. How to take Lixiana | p. 63]. \n\nPlease follow your doctor's instructions regarding her prescription.",
+  "after_citations": [
+    "[lixiana | Package leaflet | Lixiana 15 mg film-coated tablets | 3. How to take Lixiana | p. 63]",
+    "[lixiana | Package leaflet | Lixiana 15 mg film-coated tablets | 3. How to take Lixiana | p. 63]"
+  ]
+}

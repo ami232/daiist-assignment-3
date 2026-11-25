@@ -1,0 +1,6 @@
+{
+  "active_design": "section",
+  "embedding_model": "gemini-embedding-2",
+  "dimensions": 768,
+  "method": "dense"
+}

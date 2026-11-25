@@ -1,1 +1,40 @@
 id,correct,supported,notes
+q01,1,1,core rule right; omits that a missed evening dose may still be taken the same evening
+q02,1,1,
+q03,1,1,
+q04,1,1,
+q05,1,1,
+q06,1,1,
+q07,1,1,
+q08,1,1,
+q09,1,1,
+q10,1,1,"does not say to tell the doctor first, only to follow the doctor's instructions"
+q11,1,1,
+q12,1,1,
+q13,1,1,
+q14,1,1,"mentions apple puree only, not water"
+q15,1,1,
+q16,1,1,
+q17,0,1,"says there is no instruction; the reference says to contact the doctor, but that passage was not retrieved"
+q18,0,1,withheld by citation guardrail although the passages had the answer (the card text retrieved was the children's version)
+q19,1,1,
+q20,0,1,withheld by citation guardrail although the passages had the answer
+q21,1,1,
+q22,1,1,
+q23,0,1,withheld by citation guardrail although the passages had the answer
+q24,0,1,withheld by citation guardrail although the passages had the answer
+q25,1,1,
+q26,1,1,
+q27,0,1,withheld by citation guardrail although the passages had the answer
+q28,0,1,withheld by citation guardrail although the passages had the answer
+q29,0,1,Eliquis part misses the 48-hour rule for moderate/high bleeding risk (passage not retrieved); Xarelto part right
+q30,1,1,citations are wrapped in backticks but valid
+q31,0,0,"says the 2.5 mg dose depends on her creatinine, but two criteria (age 80+ and weight 60 kg or less) already apply; the passage does not say that"
+q32,1,1,
+q33,1,1,
+q34,1,1,
+q35,1,1,"refused (withheld message), which is right for this question"
+q36,1,1,correct refusal before Lixiana was added
+q37,1,1,
+q38,1,1,
+q39,1,1,
