@@ -6,9 +6,13 @@ __pycache__/
 *.pyc
 
 # Documents downloaded by your index stage. Commit them only if their licence allows it.
-corpus/
+# corpus/ IS committed: EUR-Lex allows reuse with acknowledgement (Commission Decision 2011/833/EU),
+# and EUR-Lex often blocks scripted downloads (HTTP 202), so a fresh clone could not rebuild the index.
 
 # Your index belongs in index/, committed. Your evaluation results belong in eval/, committed.
 
 # Never commit your API key
 .env
+
+# Evaluation-time flag (see retrieve.py)
+index/.base_only

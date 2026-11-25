@@ -1,0 +1,35 @@
+{
+  "documents": {
+    "EUMR": {
+      "units": 164,
+      "words": 14317
+    },
+    "CJN": {
+      "units": 220,
+      "words": 24059
+    },
+    "FDI": {
+      "units": 103,
+      "words": 6890
+    },
+    "RN": {
+      "units": 130,
+      "words": 15105
+    },
+    "ARN": {
+      "units": 44,
+      "words": 3332
+    }
+  },
+  "total_words": 63703,
+  "designs": {
+    "structure": {
+      "chunks": 584,
+      "avg_words": 110
+    },
+    "fixed": {
+      "chunks": 400,
+      "avg_words": 199
+    }
+  }
+}
