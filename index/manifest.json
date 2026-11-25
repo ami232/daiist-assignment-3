@@ -1,0 +1,106 @@
+{
+  "retrieved": "2026-11-25",
+  "embed_model": "gemini-embedding-2",
+  "documents": [
+    {
+      "name": "Pink Book ch.2 General Best Practice Guidance",
+      "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-2-general-best-practice-guidance.html",
+      "licence": "Public domain (CDC; attribute CDC, no endorsement implied)",
+      "file": "chapter-2-general-best-practice-guidance.html",
+      "words": 5972,
+      "chunks": {
+        "structure": 37,
+        "fixed": 40
+      }
+    },
+    {
+      "name": "Pink Book ch.4 Vaccine Safety",
+      "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-4-vaccine-safety.html",
+      "licence": "Public domain (CDC; attribute CDC, no endorsement implied)",
+      "file": "chapter-4-vaccine-safety.html",
+      "words": 2901,
+      "chunks": {
+        "structure": 16,
+        "fixed": 20
+      }
+    },
+    {
+      "name": "Pink Book ch.10 Hepatitis B",
+      "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-10-hepatitis-b.html",
+      "licence": "Public domain (CDC; attribute CDC, no endorsement implied)",
+      "file": "chapter-10-hepatitis-b.html",
+      "words": 8124,
+      "chunks": {
+        "structure": 43,
+        "fixed": 54
+      }
+    },
+    {
+      "name": "Pink Book ch.13 Measles",
+      "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-13-measles.html",
+      "licence": "Public domain (CDC; attribute CDC, no endorsement implied)",
+      "file": "chapter-13-measles.html",
+      "words": 5271,
+      "chunks": {
+        "structure": 28,
+        "fixed": 35
+      }
+    },
+    {
+      "name": "Pink Book ch.15 Mumps",
+      "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-15-mumps.html",
+      "licence": "Public domain (CDC; attribute CDC, no endorsement implied)",
+      "file": "chapter-15-mumps.html",
+      "words": 5259,
+      "chunks": {
+        "structure": 27,
+        "fixed": 35
+      }
+    },
+    {
+      "name": "Pink Book ch.16 Pertussis",
+      "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-16-pertussis.html",
+      "licence": "Public domain (CDC; attribute CDC, no endorsement implied)",
+      "file": "chapter-16-pertussis.html",
+      "words": 5964,
+      "chunks": {
+        "structure": 30,
+        "fixed": 40
+      }
+    },
+    {
+      "name": "Pink Book ch.20 Rubella",
+      "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-20-rubella.html",
+      "licence": "Public domain (CDC; attribute CDC, no endorsement implied)",
+      "file": "chapter-20-rubella.html",
+      "words": 4979,
+      "chunks": {
+        "structure": 26,
+        "fixed": 33
+      }
+    },
+    {
+      "name": "ECDC Measles threat assessment brief (Feb 2024)",
+      "url": "https://www.ecdc.europa.eu/sites/default/files/documents/measles-eu-threat-assessment-brief-february-2024.pdf",
+      "licence": "CC BY 4.0 (ECDC; attribute ECDC)",
+      "file": "measles-eu-threat-assessment-brief-february-2024.pdf",
+      "words": 3900,
+      "chunks": {
+        "structure": 17,
+        "fixed": 26
+      }
+    },
+    {
+      "name": "ECDC Measles and rubella elimination: communicating the importance of vaccination (2014)",
+      "url": "https://www.ecdc.europa.eu/sites/portal/files/media/en/publications/Publications/Measles-rubella-elimination-communicating-importance-vaccination.pdf",
+      "licence": "CC BY 4.0 (ECDC; attribute ECDC)",
+      "file": "Measles-rubella-elimination-communicating-importance-vaccination.pdf",
+      "words": 11792,
+      "chunks": {
+        "structure": 53,
+        "fixed": 79
+      }
+    }
+  ],
+  "total_words": 54162
+}
