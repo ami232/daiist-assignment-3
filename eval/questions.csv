@@ -1,1 +1,31 @@
 id,question,kind,expected_source,expected_location,reference_answer
+q01,What internal temperature must raw poultry reach when it is cooked?,single,FDA Food Code 2022,§3-401.11,165°F (74°C).
+q02,What is the minimum temperature for holding hot food?,single,FDA Food Code 2022,§3-501.16,135°F (57°C) or above.
+q03,At what temperature must cold food be kept?,single,FDA Food Code 2022,§3-501.16,41°F (5°C) or less.
+q04,How quickly must cooked food be cooled from 135°F to 70°F?,single,FDA Food Code 2022,§3-501.14,Within 2 hours (and down to 41°F within a total of 6 hours).
+q05,How many days can refrigerated ready-to-eat food be kept after it is prepared or opened?,single,FDA Food Code 2022,§3-501.17,A maximum of 7 days at 41°F or below.
+q06,How long must the handwashing procedure last in total?,single,FDA Food Code 2022,§2-301.12,"At least 20 seconds, including cleaning and rinsing."
+q07,Can Listeria monocytogenes grow at refrigerator temperatures?,single,FDA Bad Bug Book (2nd ed.),Listeria monocytogenes,"Yes, it can grow at refrigeration temperatures."
+q08,What symptoms does Salmonella gastroenteritis cause?,single,FDA Bad Bug Book (2nd ed.),Salmonella species,"Nausea, vomiting, diarrhea, cramps and fever."
+q09,Why should infants not be given honey?,single,FDA Bad Bug Book (2nd ed.),Clostridium botulinum,Honey can carry C. botulinum spores that cause infant botulism.
+q10,What is the safe minimum internal temperature for ground meats such as ground beef?,single,USDA FSIS Safe Temperature Chart,Safe Minimum Internal Temperature Chart,160°F (71.1°C).
+q11,"What internal temperature must chicken reach, and which bacterium is the main concern in raw poultry?",multi,FDA Food Code 2022;FDA Bad Bug Book (2nd ed.),§3-401.11;Campylobacter jejuni,165°F (74°C); Campylobacter jejuni is commonly associated with poultry.
+q12,"How long must hands be washed, and why do infected food handlers matter for Shigella?",multi,FDA Food Code 2022;FDA Bad Bug Book (2nd ed.),§2-301.12;Shigella species,At least 20 seconds; Shigella spreads through food contaminated by infected food handlers.
+q13,"At what temperature must cold food be kept, and can Listeria still grow at that temperature?",multi,FDA Food Code 2022;FDA Bad Bug Book (2nd ed.),§3-501.16;Listeria monocytogenes,41°F (5°C) or less; Listeria can still grow at refrigeration temperatures.
+q14,"What is the minimum cooking temperature for eggs, and which bacterium is associated with eggs?",multi,USDA FSIS Safe Temperature Chart;FDA Bad Bug Book (2nd ed.),Safe Minimum Internal Temperature Chart;Salmonella species,160°F (71.1°C) for eggs; Salmonella is associated with eggs.
+q15,"How fast must cooked food be cooled, and which bacterium is known for growing when food cools too slowly?",multi,FDA Food Code 2022;FDA Bad Bug Book (2nd ed.),§3-501.14;Clostridium perfringens,From 135°F to 70°F within 2 hours; Clostridium perfringens grows in food that is cooled too slowly.
+q16,"What internal temperature is required for fish, and which Vibrio species is linked to raw oysters?",multi,USDA FSIS Safe Temperature Chart;FDA Bad Bug Book (2nd ed.),Safe Minimum Internal Temperature Chart;Vibrio vulnificus,145°F (62.8°C) for fish; Vibrio vulnificus is linked to raw oysters.
+q17,"Which symptoms require a food employee to be excluded from work, and what symptoms does Salmonella cause?",multi,FDA Food Code 2022;FDA Bad Bug Book (2nd ed.),§2-201.11;Salmonella species,"Vomiting and diarrhea (among others) require exclusion; Salmonella causes diarrhea, fever, cramps, nausea and vomiting."
+q18,What is the safe minimum internal temperature for venison?,unanswerable,,,Not covered by the corpus. The assistant should say it does not know and that the documents do not cover this.
+q19,What water temperature must a dishwasher's final sanitizing rinse reach?,unanswerable,,,Not covered by the corpus. The assistant should say it does not know and that the documents do not cover this.
+q20,How many footcandles of light are required in a food preparation area?,unanswerable,,,Not covered by the corpus. The assistant should say it does not know and that the documents do not cover this.
+q21,How much does a food establishment permit cost?,unanswerable,,,Not covered by the corpus. The assistant should say it does not know and that the documents do not cover this.
+q22,At what temperature is Trichinella killed in pork?,unanswerable,,,Not covered by the corpus. The assistant should say it does not know and that the documents do not cover this.
+q23,What is the maximum allowed level of aflatoxin in food?,unanswerable,,,Not covered by the corpus. The assistant should say it does not know and that the documents do not cover this.
+q24,How large must each compartment of a three-compartment sink be?,unanswerable,,,Not covered by the corpus. The assistant should say it does not know and that the documents do not cover this.
+q25,What temperature kills Cryptosporidium in drinking water?,unanswerable,,,Not covered by the corpus. The assistant should say it does not know and that the documents do not cover this.
+q26,How may frozen food be thawed safely?,single,FDA Food Code 2022,§3-501.13,"In the refrigerator, under cold running water, in a microwave followed by immediate cooking, or as part of the cooking process."
+q27,What temperature should refrigerated food be at when it is delivered to the kitchen?,single,FDA Food Code 2022,§3-202.11,41°F (5°C) or below (eggs and some other items have their own limits).
+q28,Why can cooked rice left out at room temperature be a risk?,single,FDA Bad Bug Book (2nd ed.),Bacillus cereus and other Bacillus species,"Bacillus cereus spores survive cooking and can grow in rice left warm, producing toxin."
+q29,Why doesn't reheating or cooking remove the danger from Staphylococcus aureus in food?,single,FDA Bad Bug Book (2nd ed.),Staphylococcus aureus,The bacterium produces a heat-stable toxin that survives cooking.
+q30,How should raw animal foods be kept relative to ready-to-eat foods?,single,FDA Food Code 2022,§3-302.11,Kept separate from ready-to-eat food to prevent cross-contamination.

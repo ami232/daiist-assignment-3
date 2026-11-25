@@ -1,0 +1,45 @@
+design,id,kind,expected,top5,hit@1,hit@3,hit@5
+A,q01,single,§3-401.11,Safe Minimum Internal Temperature Chart | Safe Minimum Internal Temperature Chart | Safe Minimum Internal Temperature Chart | Vibrio cholerae Serogroups O1 and O139 | §2-102.11,0,0,0
+A,q02,single,§3-501.16,§3-501.15 | Safe Minimum Internal Temperature Chart | §3-403.11 | Safe Minimum Internal Temperature Chart | Safe Minimum Internal Temperature Chart,0,0,0
+A,q03,single,§3-501.16,§3-501.16 | §3-501.15 | §3-202.11 | §3-501.19 | Safe Minimum Internal Temperature Chart,1,1,1
+A,q04,single,§3-501.14,§3-501.15 | §3-501.14 | Safe Minimum Internal Temperature Chart | §3-401.15 | §3-502.12,0,1,1
+A,q05,single,§3-501.17,§3-501.17 | §3-501.17 | §3-502.12 | §3-501.16 | §3-502.12,1,1,1
+A,q06,single,§2-301.12,§2-301.12 | §2-201.13 | §2-301.14 | §2-301.12 | §2-301.16,1,1,1
+A,q07,single,Listeria monocytogenes,Listeria monocytogenes | Listeria monocytogenes | Listeria monocytogenes | Listeria monocytogenes | Listeria monocytogenes,1,1,1
+A,q08,single,Salmonella species,Salmonella species | FDA Bad Bug Book (2nd ed.) | Salmonella species | Salmonella species | Miscellaneous bacterial enterics,1,1,1
+A,q09,single,Clostridium botulinum,Clostridium botulinum | Clostridium botulinum | Clostridium botulinum | Cronobacter species (formerly Enterobacter sakazakii) | Clostridium botulinum,1,1,1
+A,q10,single,Safe Minimum Internal Temperature Chart,Safe Minimum Internal Temperature Chart | Safe Minimum Internal Temperature Chart | Safe Minimum Internal Temperature Chart | Vibrio cholerae Serogroups O1 and O139 | §3-401.11,1,1,1
+A,q11,multi,§3-401.11;Campylobacter jejuni,Safe Minimum Internal Temperature Chart | Campylobacter jejuni | Safe Minimum Internal Temperature Chart | Safe Minimum Internal Temperature Chart | Vibrio cholerae Serogroups O1 and O139,0,0,0
+A,q12,multi,§2-301.12;Shigella species,Shigella species | Shigella species | Shigella species | Shigella species | Shigella species,0,0,0
+A,q13,multi,§3-501.16;Listeria monocytogenes,Listeria monocytogenes | §3-501.16 | Bacillus cereus and other Bacillus species | Listeria monocytogenes | Listeria monocytogenes,0,1,1
+A,q14,multi,Safe Minimum Internal Temperature Chart;Salmonella species,Safe Minimum Internal Temperature Chart | Safe Minimum Internal Temperature Chart | §3-801.11 | Safe Minimum Internal Temperature Chart | §3-401.11,0,0,0
+A,q15,multi,§3-501.14;Clostridium perfringens,Bacillus cereus and other Bacillus species | Clostridium perfringens | Bacillus cereus and other Bacillus species | Clostridium perfringens | §3-501.15,0,0,0
+A,q16,multi,Safe Minimum Internal Temperature Chart;Vibrio vulnificus,Vibrio cholerae Non-O1 Non-O139 | Vibrio cholerae Serogroups O1 and O139 | Vibrio vulnificus | Vibrio vulnificus | Vibrio parahaemolyticus,0,0,0
+A,q17,multi,§2-201.11;Salmonella species,§2-201.12 | §2-201.12 | §2-201.12 | §2-201.13 | §2-201.13,0,0,0
+A,q26,single,§3-501.13,§3-401.15 | §3-501.13 | §3-501.12 | §3-404.11 | Safe Minimum Internal Temperature Chart,0,1,1
+A,q27,single,§3-202.11,§3-202.11 | §3-501.16 | §3-502.12 | §3-201.17 | Safe Minimum Internal Temperature Chart,1,1,1
+A,q28,single,Bacillus cereus and other Bacillus species,Clostridium perfringens | Bacillus cereus and other Bacillus species | Bacillus cereus and other Bacillus species | Bacillus cereus and other Bacillus species | Staphylococcus aureus,0,1,1
+A,q29,single,Staphylococcus aureus,Staphylococcus aureus | Staphylococcus aureus | Staphylococcus aureus | Staphylococcus aureus | Staphylococcus aureus,1,1,1
+A,q30,single,§3-302.11,§3-302.11 | §3-401.14 | §3-801.11 | §2-102.11 | §3-306.14,1,1,1
+B,q01,single,§3-401.11,Safe Minimum Internal Temperature Chart | Safe Minimum Internal Temperature Chart | §3-401.11 | §3-401.12 | §3-401.11,0,1,1
+B,q02,single,§3-501.16,§3-501.16 | §3-401.13 | §3-403.11 | Safe Minimum Internal Temperature Chart | §3-401.12,1,1,1
+B,q03,single,§3-501.16,§3-501.16 | §3-202.11 | §3-401.13 | §3-501.14 | §3-501.17,1,1,1
+B,q04,single,§3-501.14,§3-501.14 | §3-501.15 | §3-401.13 | §3-501.16 | §3-401.11,1,1,1
+B,q05,single,§3-501.17,§3-501.17 | §3-501.17 | §3-501.18 | §3-501.16 | §3-502.12,1,1,1
+B,q06,single,§2-301.12,§2-301.12 | §2-301.15 | §2-301.11 | §2-301.14 | §2-301.13,1,1,1
+B,q07,single,Listeria monocytogenes,Listeria monocytogenes | Listeria monocytogenes | Listeria monocytogenes | Listeria monocytogenes | Listeria monocytogenes,1,1,1
+B,q08,single,Salmonella species,Salmonella species | Salmonella species | Salmonella species | Salmonella species | Salmonella species,1,1,1
+B,q09,single,Clostridium botulinum,Clostridium botulinum | Clostridium botulinum | Clostridium botulinum | Cronobacter species (formerly Enterobacter sakazakii) | Clostridium botulinum,1,1,1
+B,q10,single,Safe Minimum Internal Temperature Chart,Safe Minimum Internal Temperature Chart | Safe Minimum Internal Temperature Chart | §3-401.11 | §3-401.11 | §3-401.12,1,1,1
+B,q11,multi,§3-401.11;Campylobacter jejuni,Safe Minimum Internal Temperature Chart | §3-401.11 | Safe Minimum Internal Temperature Chart | §3-401.12 | Salmonella species,0,0,0
+B,q12,multi,§2-301.12;Shigella species,Shigella species | Shigella species | Shigella species | Shigella species | Shigella species,0,0,0
+B,q13,multi,§3-501.16;Listeria monocytogenes,Listeria monocytogenes | §3-501.16 | Listeria monocytogenes | §3-202.11 | Listeria monocytogenes,0,1,1
+B,q14,multi,Safe Minimum Internal Temperature Chart;Salmonella species,Safe Minimum Internal Temperature Chart | §3-302.13 | Safe Minimum Internal Temperature Chart | §3-401.11 | Salmonella species,0,0,1
+B,q15,multi,§3-501.14;Clostridium perfringens,Clostridium perfringens | §3-501.14 | Bacillus cereus and other Bacillus species | §3-501.15 | Bacillus cereus and other Bacillus species,0,1,1
+B,q16,multi,Safe Minimum Internal Temperature Chart;Vibrio vulnificus,Vibrio cholerae Non-O1 Non-O139 | Vibrio parahaemolyticus | Vibrio vulnificus | Vibrio cholerae Serogroups O1 and O139 | Vibrio parahaemolyticus,0,0,0
+B,q17,multi,§2-201.11;Salmonella species,§2-201.12 | §2-201.11 | §2-201.11 | §2-201.12 | §2-201.13,0,0,0
+B,q26,single,§3-501.13,§3-501.13 | §3-401.15 | §3-501.12 | §3-501.11 | §3-401.15,1,1,1
+B,q27,single,§3-202.11,§3-202.11 | §3-501.16 | §3-501.14 | §3-401.13 | §3-501.12,1,1,1
+B,q28,single,Bacillus cereus and other Bacillus species,Bacillus cereus and other Bacillus species | Bacillus cereus and other Bacillus species | Clostridium perfringens | Staphylococcus aureus | Bacillus cereus and other Bacillus species,1,1,1
+B,q29,single,Staphylococcus aureus,Staphylococcus aureus | Staphylococcus aureus | Staphylococcus aureus | Staphylococcus aureus | Staphylococcus aureus,1,1,1
+B,q30,single,§3-302.11,§3-302.11 | §3-501.16 | §3-302.11 | §3-401.11 | §3-303.12,1,1,1
