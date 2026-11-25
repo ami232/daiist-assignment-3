@@ -310,11 +310,30 @@ def test_failure_reasons():
 
     ok = {"kind": "single", "outcome": "answered", "citations_valid": 1, "any_expected_cited": 1, "expected_cited": 1.0}
     assert evaluate.failure_reasons(ok, {"correct": "1", "supported": "1"}, {"correct": "1", "supported": "1"}) == []
-    assert evaluate.failure_reasons({**ok, "outcome": "wrong_refusal"}, None, None) == ["rechazo de una pregunta con respuesta"]
+    assert evaluate.failure_reasons({**ok, "outcome": "wrong_refusal"}, None, None) == ["refused an answerable question"]
     # values read back from checks.csv are strings; values straight from code_checks() are numbers
-    assert evaluate.failure_reasons({**ok, "citations_valid": "0"}, None, None) == ["cita no recuperada"]
-    assert evaluate.failure_reasons({**ok, "kind": "multi", "expected_cited": "0.5"}, None, None) == ["cita 50% de lo esperado"]
-    assert evaluate.failure_reasons(ok, {"correct": "1", "supported": "1"}, {"correct": "0", "supported": "1"}) == ["tú: incorrecta"]
+    assert evaluate.failure_reasons({**ok, "citations_valid": "0"}, None, None) == ["cites a passage that was not retrieved"]
+    assert evaluate.failure_reasons({**ok, "kind": "multi", "expected_cited": "0.5"}, None, None) == ["cites 50% of the expected passages"]
+    assert evaluate.failure_reasons(ok, {"correct": "1", "supported": "1"}, {"correct": "0", "supported": "1"}) == ["human: incorrect"]
     refusal = {"kind": "unanswerable", "outcome": "correct_refusal", "citations_valid": 1,
                "any_expected_cited": "", "expected_cited": ""}
     assert evaluate.failure_reasons(refusal, None, None) == []
+
+
+def test_failure_review_keeps_hand_written_causes(tmp_path, monkeypatch):
+    import evaluate
+
+    monkeypatch.setattr(evaluate, "FAILURES_CSV", tmp_path / "failures.csv")
+    monkeypatch.setattr(evaluate, "FAILURES_MD", tmp_path / "failures.md")
+    q = {"id": "q99", "kind": "single", "question": "¿?", "expected_source": "RGAT",
+         "expected_location": "Artículo 29", "reference_answer": "Tres meses."}
+    a = {"answer": "No.", "citations": [],
+         "retrieved_citations": ["[RGAT, Artículo 29]"], "retrieved": [], "trace": []}
+    c = {"id": "q99", "kind": "single", "outcome": "wrong_refusal", "citations_valid": 1,
+         "any_expected_cited": 0, "expected_cited": 0.0, "searches": 1}
+    rows = evaluate.write_failure_review([q], {"q99": a}, [c], {}, {})
+    assert rows[0]["cause"] == "" and rows[0]["expected_not_retrieved"] == ""
+    evaluate.write_csv(evaluate.FAILURES_CSV, [{**rows[0], "cause": "wrong refusal", "why": "art. 29 answers it"}])
+    rows = evaluate.write_failure_review([q], {"q99": a}, [c], {}, {})
+    assert (rows[0]["cause"], rows[0]["why"]) == ("wrong refusal", "art. 29 answers it")
+    assert "| wrong refusal | 1 | q99 |" in evaluate.FAILURES_MD.read_text(encoding="utf-8")

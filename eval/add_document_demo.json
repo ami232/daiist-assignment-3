@@ -1,6 +1,6 @@
 [
   {
-    "label": "1. Antes de añadir el documento",
+    "label": "1. Before adding the document",
     "result": {
       "question": "Actualmente facturo entorno a 600 euros al mes. ¿Qué tramo de cotización me corresponde?",
       "answer": "Las personas trabajadoras autónomas deben cotizar en función de los rendimientos netos anuales obtenidos en el ejercicio de sus actividades económicas, empresariales o profesionales [LGSS, Artículo 308]. Para ello, la Ley de Presupuestos Generales del Estado establece anualmente una tabla general y una tabla reducida de bases de cotización divididas en tramos consecutivos de importes de rendimientos netos mensuales [LGSS, Artículo 308]. Cada trabajador debe elegir la base de cotización mensual que corresponda según su previsión del promedio mensual de sus rendimientos netos anuales [LGSS, Artículo 308].\n\nDado que los documentos consultados no detallan las cuantías específicas de los tramos ni los importes exactos de las bases asignadas a cada nivel de ingresos, no es posible indicar el tramo exacto que le corresponde para su facturación de 600 euros mensuales. Se recomienda confirmar este cálculo y la tabla aplicable con un profesional especialista.\n\nTexto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.",
@@ -46,7 +46,7 @@
     }
   },
   {
-    "label": "2. Petición de añadir el documento",
+    "label": "2. Request to add the document",
     "result": {
       "question": "Añade al índice el documento corpus/BOE-A-2026-7296.xml.",
       "answer": "Se ha añadido correctamente al índice el documento `corpus/BOE-A-2026-7296.xml` (COT2026, consolidado a 16 de julio de 2026).",
@@ -91,7 +91,7 @@
     }
   },
   {
-    "label": "3. Después de añadir el documento",
+    "label": "3. After adding the document",
     "result": {
       "question": "Actualmente facturo entorno a 600 euros al mes. ¿Qué tramo de cotización me corresponde?",
       "answer": "Según el texto consolidado a 16 de julio de 2026 de la norma de cotización, los trabajadores autónomos cotizan en función de sus rendimientos netos mensuales estimados mediante una tabla general y una tabla reducida [COT2026, Artículo 18] [LGSS, Artículo 308]. \n\nPara unos rendimientos netos de 600 euros al mes, el tramo aplicable se encuentra en la **tabla reducida**, concretamente:\n\n* **Tramo 1** (rendimientos iguales o inferiores a 670 euros mensuales): con una base mínima de 653,59 euros y una base máxima de 718,94 euros [COT2026, Artículo 18].\n* **Tramo 2** (rendimientos superiores a 670 euros y hasta 900 euros mensuales): con una base mínima de 718,95 euros y una base máxima de 900,00 euros [COT2026, Artículo 18].\n\nDebe elegir la base de cotización mensual que mejor se ajuste a su previsión dentro del tramo que le corresponda según sus rendimientos netos reales [LGSS, Artículo 308]. Tenga en cuenta que posteriormente la Seguridad Social realiza una regularización anual comparando estos datos con los rendimientos netos fiscales declarados.\n\nSe recomienda confirmar el cálculo y la elección del tramo con un profesional especialista, ya que la cotización depende de la cifra exacta de rendimientos netos y de posibles bonificaciones aplicables.\n\nTexto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.",

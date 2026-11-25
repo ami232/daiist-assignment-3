@@ -21,8 +21,8 @@ Cohen's kappa per column) and the totals -> eval/summary.json.
 
 Stage 4, failure review: every question that failed a code check, or that you or
 the judge graded 0, plus multi questions citing only part of what was expected
--> eval/failures.csv (with an empty `cause` column to fill in) and
-eval/failures.md (answer, grades, notes and the retrieved fragments).
+-> eval/failures.csv (`cause` and `why` filled in by hand, kept on re-runs) and
+eval/failures.md (counts by cause, answer, grades, notes and retrieved fragments).
 
 Started from session 10's 07-own-harness/evaluate.py.
 """
@@ -51,8 +51,8 @@ HUMAN_LABELS = EVAL_DIR / "human_labels.csv"
 SUMMARY_JSON = EVAL_DIR / "summary.json"
 FAILURES_CSV = EVAL_DIR / "failures.csv"
 FAILURES_MD = EVAL_DIR / "failures.md"
-CAUSES = ("fallo de recuperación", "respuesta errónea con el pasaje correcto", "afirmación sin respaldo",
-          "rechazo indebido", "pregunta de prueba mal planteada", "no es un fallo")
+CAUSES = ("retrieval miss", "wrong answer from the right passage", "unsupported claim",
+          "wrong refusal", "bad test question", "not a failure")
 JUDGE_MODEL = "gemini-3.5-flash"   # a stronger model than the agent's, so it doesn't share its blind spots
 KS = (1, 3, 5)
 PAUSE = 4            # seconds between questions: stays under the free tier's requests-per-minute
@@ -341,22 +341,22 @@ def failure_reasons(check: dict, judge: dict | None, human: dict | None) -> list
     """Why one answer goes into the failure review (empty list: it doesn't)."""
     reasons = []
     if check["outcome"] == "wrong_refusal":
-        reasons.append("rechazo de una pregunta con respuesta")
+        reasons.append("refused an answerable question")
     if check["outcome"] == "answered_unanswerable":
-        reasons.append("pregunta sin respuesta contestada sin la frase de rechazo")
+        reasons.append("answered an unanswerable question without the refusal phrase")
     if str(check["citations_valid"]) == "0":
-        reasons.append("cita no recuperada")
+        reasons.append("cites a passage that was not retrieved")
     if check.get("stopped"):
-        reasons.append(f"detenido ({check['stopped']})")
+        reasons.append(f"stopped ({check['stopped']})")
     if check.get("guardrail"):
         reasons.append(f"guardrail ({check['guardrail']})")
     if check["outcome"] == "answered" and str(check.get("any_expected_cited")) == "0":
-        reasons.append("no cita ninguna fuente esperada")
+        reasons.append("cites none of the expected sources")
     elif (check["outcome"] == "answered" and check["kind"] == "multi"
           and check.get("expected_cited") not in ("", None) and float(check["expected_cited"]) < 1):
-        reasons.append(f"cita {float(check['expected_cited']):.0%} de lo esperado")
-    for who, grades in (("tú", human), ("juez", judge)):
-        for column, label in (("correct", "incorrecta"), ("supported", "sin respaldo")):
+        reasons.append(f"cites {float(check['expected_cited']):.0%} of the expected passages")
+    for who, grades in (("human", human), ("judge", judge)):
+        for column, label in (("correct", "incorrect"), ("supported", "unsupported")):
             if grades and grades.get(column) == "0":
                 reasons.append(f"{who}: {label}")
     return reasons
@@ -364,8 +364,12 @@ def failure_reasons(check: dict, judge: dict | None, human: dict | None) -> list
 
 def write_failure_review(questions: list[dict], answers: dict[str, dict], checks: list[dict],
                          verdicts: dict[str, dict], human: dict[str, dict]) -> list[dict]:
-    """eval/failures.csv (one row per failure, `cause` left for you) and eval/failures.md (the evidence)."""
+    """eval/failures.csv (one row per failure) and eval/failures.md (counts by cause, then the evidence).
+
+    The `cause` and `why` columns are filled in by hand; a re-run keeps them for every id still in the review.
+    """
     by_id = {c["id"]: c for c in checks}
+    previous = read_csv(FAILURES_CSV)
     rows, details = [], []
     for q in questions:
         if q["id"] not in by_id:
@@ -376,7 +380,7 @@ def write_failure_review(questions: list[dict], answers: dict[str, dict], checks
             continue
         expected = [f"[{s}, {loc}]" for s, loc in expected_pairs(q)] if q["kind"] != "unanswerable" else []
         retrieved = set(a["retrieved_citations"])
-        h, j = human.get(q["id"], {}), verdicts.get(q["id"], {})
+        h, j, old = human.get(q["id"], {}), verdicts.get(q["id"], {}), previous.get(q["id"], {})
         rows.append({
             "id": q["id"], "kind": q["kind"], "reasons": "; ".join(reasons),
             "human_correct": h.get("correct", ""), "human_supported": h.get("supported", ""),
@@ -386,39 +390,49 @@ def write_failure_review(questions: list[dict], answers: dict[str, dict], checks
             "expected_retrieved": "; ".join(e for e in expected if e in retrieved),
             "expected_not_retrieved": "; ".join(e for e in expected if e not in retrieved),
             "cited": "; ".join(a["citations"]),
-            "searches": c["searches"], "cause": "", "fix": "",
+            "searches": c["searches"], "cause": old.get("cause", ""), "why": old.get("why", ""),
         })
         r = rows[-1]
         details += [
             f'<a id="{q["id"]}"></a>', "", f"## {q['id']} ({q['kind']}): {q['question']}", "",
-            f"**Motivos:** {r['reasons']}", "",
-            f"**Esperado:** {r['expected'] or '(sin respuesta en el corpus)'}  ",
-            f"**Recuperado por el agente ({c['searches']} búsquedas):** {', '.join(a['retrieved_citations']) or '(nada)'}  ",
-            f"**Esperado y no recuperado:** {r['expected_not_retrieved'] or '(nada)'}  ",
-            f"**Citado:** {r['cited'] or '(nada)'}", "",
-            f"**Búsquedas:** " + "; ".join(f"`{s['args'].get('query', '')}`" for s in a["trace"]
-                                          if s.get("call") == "search"), "",
-            f"**Referencia:** {q['reference_answer']}", "",
-            "**Respuesta:**", "", *[f"> {line}" for line in a["answer"].splitlines()], "",
-            "| | correcta | respaldada | notas |", "|---|---|---|---|",
-            f"| Tú | {h.get('correct', '')} | {h.get('supported', '')} | {h.get('notes', '').replace('|', '/')} |",
-            f"| Juez | {j.get('correct', '')} | {j.get('supported', '')} | {j.get('notes', '').replace('|', '/')} |", "",
-            "<details><summary>Fragmentos recuperados</summary>", "", "```text", evidence(a), "```", "",
+            f"**Reasons:** {r['reasons']}  ",
+            f"**Cause:** {r['cause'] or '(to classify)'}  ",
+            f"**Why:** {r['why'] or '—'}", "",
+            f"**Expected:** {r['expected'] or '(no answer in the corpus)'}  ",
+            f"**Retrieved by the agent ({c['searches']} searches):** {', '.join(a['retrieved_citations']) or '(none)'}  ",
+            f"**Expected but not retrieved:** {r['expected_not_retrieved'] or '(none)'}  ",
+            f"**Cited:** {r['cited'] or '(none)'}", "",
+            "**Searches:** " + "; ".join(f"`{s['args'].get('query', '')}`" for s in a["trace"]
+                                         if s.get("call") == "search"), "",
+            f"**Reference answer (Spanish, as in the test set):** {q['reference_answer']}", "",
+            "**Agent's answer (Spanish):**", "", *[f"> {line}" for line in a["answer"].splitlines()], "",
+            "| | correct | supported | notes |", "|---|---|---|---|",
+            f"| Human | {h.get('correct', '')} | {h.get('supported', '')} | {h.get('notes', '').replace('|', '/')} |",
+            f"| Judge | {j.get('correct', '')} | {j.get('supported', '')} | {j.get('notes', '').replace('|', '/')} |", "",
+            "<details><summary>Retrieved fragments</summary>", "", "```text", evidence(a), "```", "",
             "</details>", "", "---", ""]
     if not rows:
         return rows
     write_csv(FAILURES_CSV, rows)
-    table = ["| id | tipo | motivos | esperado no recuperado | causa |", "|---|---|---|---|---|",
-             *[f"| [{r['id']}](#{r['id']}) | {r['kind']} | {r['reasons']} | {r['expected_not_retrieved'] or '—'} | |"
-               for r in rows]]
-    head = ["# Revisión de fallos", "",
-            f"Generado por `evaluate.py` a partir de `checks.csv`, `judge.csv` y `human_labels.csv`: {len(rows)} "
-            "preguntas. Entra toda pregunta que falla una comprobación por código o que tú o el juez calificasteis "
-            "con 0, y las `multi` que citan solo parte de lo esperado.", "",
-            "Rellena `cause` (y `fix` si procede) en `eval/failures.csv` con una de: "
-            + ", ".join(f"*{c}*" for c in CAUSES) + ".", "",
-            "\"Recuperado por el agente\" son las citas que devolvieron sus propias búsquedas en esa ejecución, "
-            "no las de `retrieval.csv` (que busca con el texto literal de la pregunta).", ""]
+    unclassified = [r["id"] for r in rows if r["cause"] not in CAUSES]
+    by_cause = ["| cause | count | ids |", "|---|---|---|",
+                *[f"| {cause} | {sum(r['cause'] == cause for r in rows)} | "
+                  f"{', '.join(r['id'] for r in rows if r['cause'] == cause)} |" for cause in CAUSES]]
+    if unclassified:
+        by_cause.append(f"| (not classified yet) | {len(unclassified)} | {', '.join(unclassified)} |")
+    table = ["| id | kind | reasons | expected but not retrieved | cause |", "|---|---|---|---|---|",
+             *[f"| [{r['id']}](#{r['id']}) | {r['kind']} | {r['reasons']} | {r['expected_not_retrieved'] or '—'} "
+               f"| {r['cause']} |" for r in rows]]
+    head = ["# Failure review", "",
+            f"Generated by `evaluate.py` from `checks.csv`, `judge.csv` and `human_labels.csv`: {len(rows)} "
+            "questions. A question is included if it fails a code check, if the human or the judge graded it 0, "
+            "or if it is a `multi` question that cites only part of the expected passages.", "",
+            "`cause` and `why` are filled in by hand in `eval/failures.csv`, with one of: "
+            + ", ".join(f"*{c}*" for c in CAUSES) + ". A re-run keeps them.", "",
+            "\"Retrieved by the agent\" means the citations its own searches returned in that run, not those in "
+            "`retrieval.csv` (which searches with the literal question text). Questions, reference answers, "
+            "agent answers and the human notes stay in Spanish, the language of the use case.", "",
+            "## Failures by cause", "", *by_cause, "", "## All failures", ""]
     FAILURES_MD.write_text("\n".join(head + table + ["", "---", ""] + details), encoding="utf-8")
     return rows
 
@@ -432,18 +446,19 @@ def read_csv(path: Path) -> dict[str, dict]:
 
 def write_grading_sheet(questions: list[dict], answers: dict[str, dict]) -> None:
     """eval/answers.md: question, reference and answer side by side, for grading by hand (no judge verdicts)."""
-    lines = ["# Respuestas del agente, para calificar a mano",
-             "", "Califica en `eval/human_labels.csv` (id, correct, supported, notes) **antes** de abrir "
-             "`eval/judge.csv`. Generado por `evaluate.py`.", ""]
+    lines = ["# Agent answers, for grading by hand",
+             "", "Grade in `eval/human_labels.csv` (id, correct, supported, notes) **before** opening "
+             "`eval/judge.csv`. Generated by `evaluate.py`. Questions, reference answers and agent answers are in "
+             "Spanish, the language of the use case.", ""]
     for q in questions:
         a = answers.get(q["id"])
         if not a:
             continue
         lines += [f"## {q['id']} ({q['kind']}): {q['question']}", "",
-                  f"**Esperado:** {q['expected_source']} {q['expected_location']}".rstrip(), "",
-                  f"**Referencia:** {q['reference_answer']}", "",
-                  f"**Fragmentos recuperados:** {', '.join(a['retrieved_citations']) or '(ninguno)'}", "",
-                  "**Respuesta:**", "", *[f"> {line}" for line in a["answer"].splitlines()], "", "---", ""]
+                  f"**Expected:** {q['expected_source']} {q['expected_location']}".rstrip(), "",
+                  f"**Reference answer:** {q['reference_answer']}", "",
+                  f"**Retrieved fragments:** {', '.join(a['retrieved_citations']) or '(none)'}", "",
+                  "**Answer:**", "", *[f"> {line}" for line in a["answer"].splitlines()], "", "---", ""]
     (EVAL_DIR / "answers.md").write_text("\n".join(lines), encoding="utf-8")
 
 

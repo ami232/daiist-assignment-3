@@ -1,32 +1,32 @@
 id,correct,supported,notes
-q01,1,1,"Responde lo de 'ocasional' solo de forma implícita (exige habitualidad). LETA art. 1 no recuperado; no afecta."
-q02,1,1,"Omite derechos generales del art. 4 (no discriminación, formación, cobro puntual), aunque la pregunta acotaba a descanso, conciliación y protección social."
+q01,1,1,"Answers the 'occasional work' part only implicitly (it requires habitual activity). LETA art. 1 not retrieved; no effect on the answer."
+q02,1,1,"Leaves out the general rights in art. 4 (non-discrimination, training, timely payment), although the question was limited to rest, work-life balance and social protection."
 q03,1,1,
-q04,1,1,"Incompleta: falta que IT y AT/EP son de cobertura obligatoria para el TRADE, incluido el accidente in itinere (LGSS art. 317 no recuperado)."
+q04,1,1,"Incomplete: does not say that temporary incapacity (IT) and work accidents and occupational diseases (AT/EP) are compulsory cover for a TRADE, including accidents on the way to or from work (in itinere) (LGSS art. 317 not retrieved)."
 q05,1,1,
 q06,1,1,
-q07,0,1,"Omite 3 de 6 bonificaciones de la referencia: conciliación (art. 30), familiares colaboradores (art. 35) y cuidado de menor con cáncer (art. 38 quater), ninguno recuperado. Incluye la prórroga de la tarifa plana, que la pregunta excluía. Verificar el 75 % de Ceuta y Melilla contra el fragmento del art. 36."
+q07,0,1,"Leaves out 3 of the 6 reductions in the reference answer: work-life balance (art. 30), collaborating family members (art. 35) and caring for a child with cancer (art. 38 quater), none of them retrieved. Includes the extension of the flat rate, which the question excluded. Check the 75 % for Ceuta and Melilla against the art. 36 fragment."
 q08,1,1,
 q09,1,1,
-q10,1,1,"Incompleta: no menciona que se puede cambiar la base durante el año."
-q11,1,0,"Atribuye la deducción del 3 % a 'autónomos agrarios'; el art. 308 la limita a socios/administradores (art. 305.2 b y e). También habla de 'ingresos fiscalmente deducibles' en vez de rendimientos netos. Verificar contra el fragmento."
+q10,1,1,"Incomplete: does not mention that the contribution base can be changed during the year."
+q11,1,0,"Attributes the 3 % deduction to 'autónomos agrarios' (agricultural self-employed); art. 308 limits it to partners and directors (art. 305.2 b and e). Also says 'tax-deductible income' instead of net yield. Check against the fragment."
 q12,1,1,
 q13,1,1,
-q14,1,1,"Omite que el primer año no cuenta para las pérdidas del 10 % y no detalla otras causas (violencia de género, divorcio, pérdida de licencia)."
-q15,0,0,"Afirma que hay que emitir factura ordinaria si el cliente es empresario o la pide para un derecho fiscal. El RF permite factura simplificada en esos casos si incluye NIF y domicilio del destinatario (art. 7.2); el art. 4.3 no recoge esa exclusión. Lo de 400 € / 3.000 € es correcto."
-q16,1,1,"Añade la mención VERI*FACTU/QR; válido si figura en el fragmento del art. 6."
-q17,1,1,"No menciona que la obligación depende del desarrollo reglamentario de la Ley 56/2007."
+q14,1,1,"Does not say that the first year does not count towards the 10 % losses, and does not detail other causes (gender violence, divorce, loss of licence)."
+q15,0,0,"Says an ordinary invoice must be issued if the client is a business or asks for it to exercise a tax right. The RF allows a simplified invoice in those cases if it includes the recipient's NIF and address (art. 7.2); art. 4.3 contains no such exclusion. The 400 € / 3,000 € limits are correct."
+q16,1,1,"Adds the VERI*FACTU/QR mention; valid if it appears in the art. 6 fragment."
+q17,1,1,"Does not mention that the obligation depends on the implementing regulations of Ley 56/2007."
 q18,1,1,
-q19,1,1,"Omite que la rectificativa va en una serie específica."
+q19,1,1,"Does not say that corrective invoices go in a separate series."
 q20,1,1,
 q21,1,1,
 q22,1,1,
 q23,1,1,
 q24,1,1,
-q25,0,1,"Rechazo indebido: se recuperó RGAT art. 29 (primer fragmento) y permitía dar el plazo de anotación (3 meses), la conservación en el domicilio fiscal y remitir a la normativa de cada impuesto."
+q25,0,1,"Wrong refusal: RGAT art. 29 was retrieved (first fragment) and was enough to give the recording deadline (3 months), keeping the records at the tax address, and a pointer to each tax's own rules."
 q26,1,1,
 q27,1,1,
 q28,1,1,
 q29,1,1,
 q30,1,1,
-q31,1,1,"No es un rechazo literal, pero no inventa el tramo y remite a la LPGE y a un profesional. No aclara que facturación no equivale a rendimiento neto."
+q31,1,1,"Not a literal refusal, but it does not make up the bracket and points to the Budget Act (LPGE) and to a professional. Does not clarify that invoicing is not the same as net yield."
