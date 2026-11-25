@@ -281,4 +281,4 @@ I would let bid managers use it as a first lookup, not as the final word.
 
 ## AI use
 
-Claude Code wrote the code and drafted the test set and the report under my direction; the human labels in `eval/human_labels.csv` are my own.
+Claude Code wrote the code and drafted the test set; I wrote and edited the report from its first draft; the human labels in eval/human_labels.csv are my own.
