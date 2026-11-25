@@ -92,7 +92,7 @@
   - [ ] 7.3 **You**: the ship decision: whether users may rely on it, for what, and with which safeguard, using the cost per question in tokens and seconds. _REQ-12.3_
 
 - [ ] **8. Report and submission**
-  - [ ] 8.1 **Together**: REPORT.md. Claude fills in the factual tables (corpus, counts, hit rates, costs); you write the analysis, decisions and AI-use disclosure.
+  - [ ] 8.1 **Together**: REPORT.md. Claude fills in the factual tables (corpus, counts, hit rates, costs); you write the analysis, decisions and AI-use disclosure. Factual parts filled in on 2026-11-25 (Corpus, Ingestion, Test set, Retrieval, Tools and subagent, Adding a document, Harness, Evaluation, Failures table, cost and latency). **Still yours** (marked `[TO WRITE]`): extraction problem (1.5), how the questions were written, design justification (3.4), guardrail case (5.4), what to fix first (7.2), decision (7.3), AI use, and name / student ID / group.
   - [ ] 8.2 **Claude**: final `uv run python check.py --evaluate` locally. **You**: run **Verify Assignment 3** on your fork's Actions with the secret set. _REQ-13_
   - [ ] 8.3 **You**: push to the fork, open the PR to `ami232/daiist-assignment-3`, submit the link on Blackboard, upload the zip.
 

@@ -12,23 +12,93 @@ In terms of the correctness of answers, users must know this is a chatbot with a
 
 ## Corpus
 
-*Table: document, URL, date, licence, words.*
+Four Spanish state laws and regulations, downloaded as consolidated text (XML) from the BOE open-data API. Only the parts that concern a self-employed person (*autónomo*) are indexed. "Units" are articles plus additional, transitional and final provisions, as listed in `index/outline.csv`.
+
+| Id | Document | Part indexed | Consolidated as of | Units | Words |
+|---|---|---|---|---|---|
+| LETA | [Ley 20/2007, Estatuto del trabajo autónomo](https://www.boe.es/buscar/act.php?id=BOE-A-2007-13409) | Whole law | 2026-09-02 | 61 | 16,424 |
+| LGSS | [Real Decreto Legislativo 8/2015, Ley General de la Seguridad Social](https://www.boe.es/buscar/act.php?id=BOE-A-2015-11724) | Title IV (RETA) and Title V (cese de actividad) | 2026-11-11 | 47 | 18,173 |
+| RF | [Real Decreto 1619/2012, Reglamento de facturación](https://www.boe.es/buscar/act.php?id=BOE-A-2012-14696) | The regulation only, without the decree that approves it | 2026-03-31 | 36 | 11,852 |
+| RGAT | [Real Decreto 1065/2007, Reglamento de gestión e inspección tributaria](https://www.boe.es/buscar/act.php?id=BOE-A-2007-15984) | Title II: tax censuses, NIF, tax address, record books | 2026-10-28 | 34 | 14,567 |
+| **Total indexed** | | | | **178** | **61,016** |
+| COT2026 (held out) | [Orden PJC/297/2026, cotización 2026](https://www.boe.es/buscar/act.php?id=BOE-A-2026-7296) | Arts. 18–19: 2026 RETA contribution tables | 2026-07-16 | 2 | 2,192 |
+
+COT2026 is downloaded but not indexed; it is added only through `add_document` in the demo (see *Adding a document*).
+
+**Licence.** The BOE reuse conditions (Ley 37/2007 and RD 1495/2011; [aviso legal](https://www.boe.es/informacion/aviso_legal)) allow commercial and non-commercial reuse if the source is cited, the text is not distorted, the update date is kept, and consolidated texts are stated to be informational only. Every search result carries the citation, the consolidation date and the BOE link, and ends with the BOE notice. The corpus contains no personal data.
 
 ## Ingestion
 
-*How you extract, clean and chunk; one extraction problem you fixed; chunk metadata; number of chunks.*
+`index.py` runs the same pipeline for every file (and `add_document` reuses it):
+
+1. **Fetch** the consolidated XML and its metadata (`.meta.xml`: title, consolidation date) into `corpus/` (git-ignored), cached.
+2. **Extract.** Keep only the latest version of each block, strip the editorial notes, drop repeal stubs such as "(Derogado)" or "(Sin contenido)", keep the hierarchy path (Título > Capítulo > Sección) and the BOE anchor of each article, and turn tables into one line per row. Only the ranges in the table above are kept.
+3. **Chunk** with two strategies, with parameters chosen on 2026-11-20:
+   - `article`: one chunk per article; articles over 400 words are split at *apartado* boundaries into parts (e.g. "parte 1/3").
+   - `fixed`: windows of 200 words with a 40-word overlap.
+4. **Embed** with `gemini-embedding-2` (768 dimensions, the task as a text prefix) and store in Chroma (`index/chroma`, cosine distance), saving after each batch so a quota stop can resume. Chunk IDs are deterministic, so a re-run embeds only new chunks.
+
+**Chunk metadata:** `source`, `location` (e.g. "Artículo 38 ter"), `locations`, `law_title`, `boe_id`, `url` (BOE link to the article), `path` (hierarchy), `part`, `n_words`, `updated` (consolidation date), `block_id` and `design`.
+
+| Design | LETA | LGSS | RF | RGAT | Total | Mean words | Max words |
+|---|---|---|---|---|---|---|---|
+| `article` (shipped) | 77 | 75 | 51 | 58 | **261** | 238 | 402 |
+| `fixed` | 103 | 114 | 74 | 91 | **382** | 199 | 200 |
+
+**An extraction problem I fixed.** *[TO WRITE: pick one problem from REQ-3.4 and explain it in your own words (task 1.5).]*
 
 ## Test set
 
-*How you wrote it, counts by kind, two examples.*
+`eval/questions.csv` has 31 questions in Spanish, written before any retrieval tuning. Each has an expected source and location, and a reference answer written by me.
+
+| Kind | Count | Meaning |
+|---|---|---|
+| single | 16 | answered by one passage |
+| multi | 7 | needs two or more passages |
+| unanswerable | 8 | close to the topic but not covered by the corpus; q31 is the one the held-out document answers |
+| **Total** | **31** | 23 answerable questions are used for the retrieval comparison |
+
+Two examples:
+
+- **q05 (single)**: *¿Qué es la tarifa plana y cuánto pagaría durante el primer año?* (What is the flat rate and how much would I pay in the first year?) Expected: [LETA, Artículo 38 ter]. Reference: a reduced Social Security contribution for the first 12 full calendar months after registering, with no contribution for cese de actividad or vocational training. The amount is set every year by the State Budget Act, which is not in the corpus, so no figure can be given.
+- **q21 (unanswerable)**: *¿Qué modelo uso para darme de alta en Hacienda, el 036 o el 037?* (Which form do I use to register with the tax agency, 036 or 037?) The forms are approved by a ministerial order that is not in the corpus, so the reference is the fixed refusal phrase.
+
+*[TO WRITE: how you wrote the questions, in your own words.]*
 
 ## Retrieval
 
-*Hit rate at 1/3/5 per design, words added to the prompt, the design you chose.*
+Three designs were compared on the 23 answerable questions (`eval/retrieval.csv`, `eval/retrieval_summary.csv`). Hit@k: an expected passage is among the top k results. Recall@5: share of the expected passages in the top 5. Words@k: words added to the prompt by the top k results.
+
+| Design | Chunking | Search | Hit@1 | Hit@3 | Hit@5 | Recall@5 | Recall@5 (multi) | Words@1 | Words@3 | Words@5 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| A_fixed | fixed 200/40 | dense | **0.870** | 0.957 | **1.000** | 0.899 | 0.667 | 200 | 599 | 999 |
+| **B_article** | article ≤400 | dense | 0.826 | 0.957 | **1.000** | **0.964** | **0.881** | 317 | 836 | 1,343 |
+| C_article_hybrid | article ≤400 | BM25 + dense (RRF) | 0.652 | 0.870 | 0.913 | 0.790 | 0.595 | 291 | 823 | 1,379 |
+
+**Shipped design: B_article, k = 5.** *[TO WRITE: your justification (task 3.4).]*
 
 ## Tools and subagent
 
-*Your tools' descriptions, one search result, the subagent's instructions, one transcript from your editor.*
+**Tools** (`server.py`, MCP server `corpus`). The docstrings are in Spanish because the agent reads them and answers in Spanish; summarised here:
+
+- `search(query)`: searches the corpus with the shipped design (B_article, k = 5). The description lists the four laws and what each covers, tells the agent to search before answering any question about an autónomo's rights or obligations (more than once with other words if needed), and to write the query in Spanish using the law's own terms. It returns the 5 most relevant fragments, each with a ready-to-copy citation `[FUENTE, Ubicación]`, the law title, the consolidation date, the text and the BOE link, followed by the BOE notice. Errors (empty query, embedding quota) come back as strings starting with "Error:".
+- `add_document(path)`: adds a BOE consolidated-text XML from inside the repository (e.g. `corpus/BOE-A-2026-7296.xml`) through the same pipeline, embedding only new chunks. Duplicate policy: same consolidation date, no change; newer version, it replaces the old one; older version, no change. The description says it changes the index and should be used only when the user asks. It returns a one-line summary or an "Error:" message (paths outside the repository, missing files and non-XML files are rejected).
+
+**One search result** (q05, query `tarifa plana reduccion cuotas inicio actividad autonomos`; first of 5 fragments, text shortened):
+
+```text
+[1] Cita: [LETA, Artículo 38 ter] · Ley 20/2007, de 11 de julio, del Estatuto del trabajo autónomo. · texto consolidado a 2 de septiembre de 2026
+Ubicación en la norma: TÍTULO V Fomento y promoción del trabajo autónomo > CAPÍTULO II Incentivos y medidas de fomento y promoción del Trabajo Autónomo
+Artículo 38 ter. Reducciones en la cotización a la Seguridad Social aplicables por inicio de una actividad por cuenta propia. (parte 1/3)
+La cotización a la Seguridad Social de los trabajadores por cuenta propia o autónomos que causen alta inicial o que no hubieran estado en situación de alta en los dos años inmediatamente anteriores, […]
+BOE: https://www.boe.es/buscar/act.php?id=BOE-A-2007-13409#a3-5
+---
+[…4 more fragments…]
+---
+Texto consolidado del BOE de carácter informativo; no tiene validez jurídica. Para efectos legales, consulte la publicación oficial.
+```
+
+**Subagent** (`.claude/agents/corpus-researcher.md`, in Spanish). Its only tool is `mcp__corpus__search`. The description tells Claude Code to delegate any question on an autónomo's rights or obligations that must rest on the text of the law, and says what it is not for: personal calculations, regional rules, VAT or income tax outside the invoicing regulation, and companies. The instructions restate the AGENTS.md rules (only what search returns, a `[FUENTE, Ubicación]` citation for every claim, the fixed refusal phrase, partial answers, no personal calculations, the consolidation date with figures, the BOE notice), allow at most 4 searches, and ask for an answer the calling agent can pass on unchanged.
 
 ### Subagent transcript (Claude Code, 2026-11-23)
 
@@ -81,23 +151,109 @@ The question was only partly covered, and the subagent applied rule 4. It answer
 
 ## Adding a document
 
-*What happens when a document is already indexed. The unanswerable question, the document you added, the answer before and after.*
+**When a document is already indexed**, the policy is version-aware and is decided by the consolidation date in its metadata: the same date changes nothing (0 new fragments); a newer version replaces the old chunks; an older version changes nothing. Chunk IDs are deterministic, so only chunks without a saved vector are embedded.
+
+**Demo** (2026-11-23, `demo_add_document.py`, one agent session, approval typed in the terminal; full record in `eval/add_document_demo.md` and `.json`):
+
+| Step | Message | Tools | Result |
+|---|---|---|---|
+| 1. Before | q31: *Actualmente facturo entorno a 600 euros al mes. ¿Qué tramo de cotización me corresponde?* (I invoice about 600 € a month; which contribution bracket applies to me?) | 1 search | Explains the rule (contributions follow net yield; the Budget Act sets a general and a reduced table each year) [LGSS, Artículo 308] and says the documents do not give the brackets. It does not use the fixed refusal phrase. |
+| 2. Add | *Añade al índice el documento corpus/BOE-A-2026-7296.xml.* | `add_center` (a tool that does not exist, rejected), then `add_document`, approved | "Añadido: COT2026 (BOE-A-2026-7296, consolidado a 16 de julio de 2026). 8 fragmentos nuevos, 0 omitidos." The agent confirms the addition. |
+| 3. After | the same q31 | 1 search | Cites [COT2026, Artículo 18] and [LGSS, Artículo 308], gives the consolidation date and places 600 € in Tramo 1 of the reduced table (net yield ≤ 670 €/month, bases 653.59–718.94 €), which matches the chunk. |
+
+Issues seen in the demo:
+- Step 3 also lists Tramo 2, although 600 € falls in Tramo 1, and has one uncited sentence on the annual regularisation.
+- Step 3 treats 600 € invoiced as net yield and picks the user's bracket, which goes against rule 5 (no personal calculations).
+- In the first run (`eval/add_document_demo_v1.md`), the citation validator turned the add confirmation into the refusal phrase. That was fixed: in a turn that ran `add_document`, an answer without citations is accepted, and any citation it makes is still checked.
+
+Afterwards the index was restored to the 4-law corpus (261 / 382 chunks), so the evaluation runs without COT2026 and q31 stays unanswerable.
 
 ## Harness and guardrails
 
-*Your AGENTS.md rules, the approval step, and your extra guardrail with one case where it fired.*
+`agent.py` builds a LangChain agent (`create_agent`) with `gemini-3.5-flash-lite`, the two MCP tools from `server.py`, and `AGENTS.md` as the system prompt. `main.py ask "…"` prints the tool calls, the answer, each citation with its BOE link, and the number of searches, tokens and seconds.
+
+**AGENTS.md rules** (written in Spanish, each with its reason):
+1. Answer only from what `search` returns; search before answering, more than once if needed.
+2. Cite every claim as `[FUENTE, Ubicación]`, copied exactly from the search result.
+3. If the corpus does not cover the question, answer with the fixed refusal phrase.
+4. If only part is covered, answer that part and refuse the rest with the same phrase.
+5. Do not calculate the user's own contribution, tax or benefit; explain the rule and recommend a professional.
+6. Give the consolidation date with every amount, percentage or deadline.
+7. End every answer that cites the law with the BOE notice.
+
+**Guardrails** (middleware, so the model cannot skip them):
+- **Approval**: any `add_document` call is shown in the terminal ("¿Permitir add_document(…)? Modifica el índice. [s/N]") and runs only after a yes. With no terminal (evaluation, CI) it is denied automatically, and the agent is told the index was not changed.
+- **Call limits**: at most 4 `search` calls and 8 model calls per question.
+- **Citation validator** (my extra guardrail): after each model answer, it checks that every `[FUENTE, Ubicación]` cited appeared in that turn's search results, and that any answer other than the refusal cites something. If not, the model gets one chance to repair the answer; a second failure turns the answer into the refusal phrase.
+
+The validator never fired in the 31-question evaluation. Seven probe questions were written to trigger it (`eval/guardrail_cases.md`), and it fired on two: (1) asked to cite each requirement down to its *apartado*, the model cited `[LETA, Artículo 38 ter, apartado 3]`; the validator flagged it, and the model searched again and rewrote the answer with `[LETA, Artículo 38 ter]`; (2) a greeting answered without citations was turned into the refusal phrase, a false positive.
+
+*[TO WRITE: which case you present and what it shows (task 5.4).]*
 
 ## Evaluation
 
-*Code checks, the judge's rubric, your agreement with the judge, and results: correct, unsupported, correct refusals, wrong refusals.*
+**Code checks** (`eval/checks.csv`, all 31 answers):
+
+| Check | Result |
+|---|---|
+| Answered / correct refusals / wrong refusals / unanswerable answered | 22 / 7 / 1 (q25) / 1 (q31) |
+| Every citation appears in that run's search results | 31/31 |
+| Answers citing at least one expected source | 100 % |
+| BOE notice present when citing | 100 % |
+| Citation validator fired | 0 |
+
+**Judge.** `gemini-3.5-flash` (a stronger model than the agent's) grades each answer with my rubric (`eval/judge_rubric.md`). For each question it gets the question, its kind, the reference answer, the full text of every retrieved fragment and the agent's answer, and it returns `correct` (1/0), `supported` (1/0) and notes, using only those inputs. The rubric covers refusals (a refusal of an answerable question is 0), partial answers (1 if the covered part is correct and the uncovered part is clearly flagged), and personal calculations.
+
+**Agreement with my grades** (31 answers graded by both; I graded all of them before opening `judge.csv`):
+
+| Column | Agreement | Cohen's κ | 1s (me / judge) | Disagreements |
+|---|---|---|---|---|
+| correct | 96.8 % | 0.78 | 28 / 29 | q15 (I gave 0, the judge 1) |
+| supported | 93.5 % | 0.00 | 29 / 31 | q11, q15 (I gave 0, the judge 1) |
+
+κ is 0 for `supported` because the judge marked all 31 answers supported: with no 0s from the judge, κ has no variation to measure. It missed the two unsupported details I found (the 3 % in q11 and the simplified invoice in q15).
+
+**Results** (judge, `eval/summary.json`):
+
+| | Count |
+|---|---|
+| Correct | 29 / 31 |
+| Supported | 31 / 31 (my grades: 29) |
+| Correct answers to answerable questions | 21 / 23 |
+| Correct refusals | 7 / 8 unanswerable (plus q31, a correct non-refusal) |
+| Wrong refusals | 1 (q25) |
 
 ## Failures
 
-*Failed questions by cause, with counts, and what to fix first.*
+Seven questions were flagged for review (`eval/failures.md`): a failed code check, a 0 from me or the judge, or a `multi` question citing only part of the expected passages. My classification:
+
+| Cause | Count | Questions |
+|---|---|---|
+| Retrieval miss | 2 | q04 (LGSS art. 317 not retrieved), q07 (3 of 6 articles not retrieved) |
+| Wrong answer from the right passage | 1 | q15 (had RF art. 7.2 but said an ordinary invoice is needed) |
+| Unsupported claim | 1 | q11 (attributes the 3 % to "autónomos agrarios") |
+| Wrong refusal | 1 | q25 (RGAT art. 29 retrieved and enough to answer) |
+| Bad test question | 1 | q31 (the answer explains the rule; the reference demands a refusal) |
+| Not a failure | 1 | q01 (complete with LGSS art. 305; LETA art. 1 repeats it) |
+
+*[TO WRITE: what to fix first, and why (task 7.2).]*
 
 ## Decision
 
-*Would you let users rely on it, for what, with which safeguard? Cost and latency per question.*
+**Cost and latency per question** (agent only, `eval/answers.jsonl`, 31 questions, `gemini-3.5-flash-lite`):
+
+| | Mean | Median | p90 | Max |
+|---|---|---|---|---|
+| Tokens (input + output) | 7,385 | 6,683 | 8,647 | 13,483 |
+| Seconds | 8.9 | 3.0 | 5.0 | 174.8 |
+
+- Tokens are almost all input: 7,099 on average, against 286 of output.
+- The mean time is pulled up by one outlier (q24, 175 s), most likely spent waiting out a rate limit. Without it, every answer took under 8 s.
+- 26 questions needed 1 search and 2 model calls; 5 needed 2 searches and 3 model calls. Multi questions cost more (8,505 tokens on average, against 6,883 for single).
+- Each question also embeds its search queries with `gemini-embedding-2` (cached).
+- The judge (`gemini-3.5-flash`) is an evaluation cost only. Its free tier allows about 20 requests a day, so judging all 31 answers took more than one day.
+
+*[TO WRITE: would you let users rely on it, for what, and with which safeguard (task 7.3).]*
 
 ## AI use
 
