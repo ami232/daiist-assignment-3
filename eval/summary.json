@@ -1,0 +1,110 @@
+{
+  "questions": 36,
+  "retrieval": [
+    {
+      "design": "article/dense",
+      "questions": 30,
+      "words_in_prompt@5": 1425,
+      "hit@1": 0.933,
+      "hit@3": 1.0,
+      "hit@5": 1.0,
+      "multi_all@1": 0.0,
+      "multi_all@3": 0.833,
+      "multi_all@5": 0.833
+    },
+    {
+      "design": "article/hybrid",
+      "questions": 30,
+      "words_in_prompt@5": 1514,
+      "hit@1": 0.9,
+      "hit@3": 0.967,
+      "hit@5": 0.967,
+      "multi_all@1": 0.0,
+      "multi_all@3": 0.5,
+      "multi_all@5": 0.833
+    },
+    {
+      "design": "fixed/dense",
+      "questions": 30,
+      "words_in_prompt@5": 1250,
+      "hit@1": 0.9,
+      "hit@3": 1.0,
+      "hit@5": 1.0,
+      "multi_all@1": 0.0,
+      "multi_all@3": 0.5,
+      "multi_all@5": 0.833
+    },
+    {
+      "design": "fixed/hybrid",
+      "questions": 30,
+      "words_in_prompt@5": 1250,
+      "hit@1": 0.9,
+      "hit@3": 0.967,
+      "hit@5": 0.967,
+      "multi_all@1": 0.0,
+      "multi_all@3": 0.5,
+      "multi_all@5": 0.5
+    }
+  ],
+  "end_to_end": {
+    "correct (judge)": 33,
+    "correct answers to answerable": 28,
+    "answerable": 30,
+    "unsupported (judge supported=0)": 2,
+    "correct refusals": 6,
+    "unanswerable": 6,
+    "wrong refusals": 0,
+    "invalid or missing citations (code)": 0,
+    "cited expected article (code)": 30,
+    "guardrail fired": 9,
+    "errors": 0
+  },
+  "by_kind": {
+    "judge_correct": {
+      "multi": 0.667,
+      "single": 1.0,
+      "unanswerable": 0.833
+    },
+    "judge_supported": {
+      "multi": 1.0,
+      "single": 0.958,
+      "unanswerable": 0.833
+    },
+    "refused": {
+      "multi": 0.0,
+      "single": 0.0,
+      "unanswerable": 1.0
+    }
+  },
+  "cost_per_question": {
+    "tokens_in_mean": 7696,
+    "tokens_out_mean": 280,
+    "seconds_mean": 107.7,
+    "seconds_median": 30.2
+  },
+  "failure_hints": {
+    "unsupported claim": [
+      "q01"
+    ],
+    "wrong answer from the right passage": [
+      "m05",
+      "m06"
+    ]
+  },
+  "judge_vs_human": {
+    "n": 20,
+    "correct": {
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "disagreements": []
+    },
+    "supported": {
+      "agreement": 0.9,
+      "kappa": 0.615,
+      "disagreements": [
+        "q05",
+        "m01"
+      ]
+    }
+  }
+}

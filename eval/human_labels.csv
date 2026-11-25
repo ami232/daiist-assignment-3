@@ -1,1 +1,21 @@
 id,correct,supported,notes
+q01,1,0,"Añade la excepción por extinción del contrato, que no aparece en el artículo."
+q02,1,1,
+q03,1,1,
+q04,1,1,
+q05,1,0,"Limita la obligación de entregar copia del preaviso a las causas económicas, cuando también incluye las técnicas, organizativas y de producción."
+q06,1,1,
+q07,1,1,
+q08,1,1,
+q09,1,1,
+q10,1,1,
+m01,1,0,"La excepción de entregar simultáneamente la indemnización no se aplica a cualquier causa económica, sino cuando esta impide ponerla a disposición del trabajador."
+m02,1,1,
+m03,1,1,
+m04,1,1,
+m05,0,1,"No responde a la segunda parte: impedir al trabajador abandonar su puesto constituye una infracción muy grave."
+m06,0,1,"No especifica la cuantía de la multa (de 3.750 a 12.000 €), pese a haber recuperado el artículo correspondiente."
+u01,1,1,
+u02,0,0,"Aunque rechaza inicialmente la pregunta, añade una obligación que no aparece en el artículo citado."
+u03,1,1,
+u04,1,1,

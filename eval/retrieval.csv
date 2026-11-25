@@ -1,0 +1,5 @@
+design,questions,words_in_prompt@5,hit@1,hit@3,hit@5,multi_all@1,multi_all@3,multi_all@5
+article/dense,30,1425,0.933,1.0,1.0,0.0,0.833,0.833
+article/hybrid,30,1514,0.9,0.967,0.967,0.0,0.5,0.833
+fixed/dense,30,1250,0.9,1.0,1.0,0.0,0.5,0.833
+fixed/hybrid,30,1250,0.9,0.967,0.967,0.0,0.5,0.5
