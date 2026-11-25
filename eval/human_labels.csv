@@ -1,1 +1,23 @@
 id,correct,supported,notes
+q39,1,1,
+q12,1,1,
+q40,1,1,
+q01,1,1,
+q24,1,1,
+q21,0,1,"the claims it makes are factual, but it fails to find the relationship between how it appears in GATT vs SPS. it incorrectly states its unanswerable when it is not."
+q15,1,1,
+q08,1,1,
+q19,1,1,
+q22,1,1,
+q13,1,1,very good
+q07,1,1,
+q06,0,1,"it didnt hallucinate the passage, but it badly misinterpreted it. it took the exception of ""services supplied in the exercise of governmental authority"" very literally, meaning government-provided services COULD BE unless they are in this capacity. but realistically they are nearly always in this capacity, and are widely accepted to be not covered in the GATS."
+q02,1,1,
+q29,1,1,
+q16,1,1,
+q11,1,1,
+q41,1,1,
+q28,1,1,
+q35,1,1,
+q30,1,1,
+q42,1,1,

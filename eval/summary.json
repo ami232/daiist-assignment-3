@@ -1,0 +1,45 @@
+{
+  "questions": 43,
+  "model": "gemini-3.5-flash-lite",
+  "judge_model": "gemini-3.1-flash-lite",
+  "outcomes": {
+    "correct": 28,
+    "correct_but_unsupported": 0,
+    "incorrect": 2,
+    "unsupported": 0,
+    "wrong_refusal": 2,
+    "correct_refusal": 11,
+    "answered_unanswerable": 0
+  },
+  "code_checks": {
+    "citations_valid": "43/43",
+    "refusal_correct": "41/43",
+    "cites_expected": "29/32"
+  },
+  "guardrail_fired": {
+    "fixed_on_retry": 2,
+    "blocked": 0
+  },
+  "human_agreement": {
+    "correct": {
+      "n": 22,
+      "agreement": 0.955
+    },
+    "supported": {
+      "n": 22,
+      "agreement": 1.0
+    }
+  },
+  "cost": {
+    "mean_tokens": 5097,
+    "mean_judge_tokens": 1669,
+    "mean_seconds": 7.0,
+    "mean_tool_calls": 1.12
+  },
+  "failures": {
+    "retrieval miss": 0,
+    "wrong answer from the right passage": 2,
+    "unsupported claim": 0,
+    "wrong refusal": 2
+  }
+}
