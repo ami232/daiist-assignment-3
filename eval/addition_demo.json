@@ -1,0 +1,17 @@
+{
+  "question_id": "q34",
+  "question": "In pdb, what exactly does the `until` command do while stepping through code?",
+  "document_added": "pdb_reference.md",
+  "isolated_db": true,
+  "before": {
+    "answer": "I do not know based on the indexed Python 3.13 documentation.",
+    "citations": []
+  },
+  "after": {
+    "answer": "In `pdb`, the `until` (or `unt`) command continues execution until a line with a number greater than the current one is reached, or until the current frame returns [CITE:93e10e46acd8ddfadbdf]. \n\nSpecifically:\n* **Without an argument (`until`):** It continues execution until a line with a line number greater than the current line number is reached within the current function frame [CITE:93e10e46acd8ddfadbdf]. This is frequently used to step over loops or past repetitive statements (such as the end of a `for` or `while` loop body) without having to manually step through every iteration.\n* **With a line number argument (`until lineno`):** It continues execution until the specified line number (or a line greater than it, if the exact line is not hit) is reached within the current frame.",
+    "citations": [
+      "93e10e46acd8ddfadbdf"
+    ]
+  },
+  "tool_reply": "{\"file\": \"pdb_reference.md\", \"chunks\": 11, \"pending\": 11, \"skipped\": false, \"embedding\": {\"embedded\": 11, \"pending_before\": 11, \"model\": \"gemini-embedding-2\", \"batch_size\": 12}}"
+}

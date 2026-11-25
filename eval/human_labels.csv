@@ -1,1 +1,26 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q07,1,1,
+q08,1,1,
+q09,1,1,
+q13,1,1,
+q14,0,1,"It was a perfectly answerable question about yield."
+q15,1,1,
+q20,1,1,
+q23,1,1,
+q25,1,1,
+q26,1,1,
+q29,1,1,
+q30,1,0,"Neither bucket indexing nor the claimed "failed lookup scenario" are stated anywhere in the cited passages."
+q31,0,1,"The raw answer did state the correct rule, but a guardrail was triggered because of an invalid citation formatting, replacing it with a refusal."
+q32,1,0,"Neither saving generator state or resuming immediately after yield are stated in the cited passages as far as I could tell."
+q33,1,1,
+q34,1,1,
+q35,1,1,
+q36,1,1,
+q38,1,1,
+q39,1,1,
+q41,1,1,
+q43,1,0,"Imaginary number literal support is not established by neither the cited integer nor the float passages."
+q46,1,0,"Neither the list-comprehension workaround nor its separate list creation are stated in the cited passage."

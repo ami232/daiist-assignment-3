@@ -1,0 +1,25 @@
+{
+  "design": "hybrid",
+  "criterion": "max hit@5 then hit@3 then hit@1 then fewer context words",
+  "vectors_available": "248/248",
+  "comparisons": {
+    "bm25": {
+      "hit_at_1": 0.439,
+      "hit_at_3": 0.7073,
+      "hit_at_5": 0.7317,
+      "mean_context_words_at_5": 1619.8
+    },
+    "section_bm25": {
+      "hit_at_1": 0.5366,
+      "hit_at_3": 0.7805,
+      "hit_at_5": 0.9268,
+      "mean_context_words_at_5": 1537.8
+    },
+    "hybrid": {
+      "hit_at_1": 0.6341,
+      "hit_at_3": 0.9024,
+      "hit_at_5": 0.9756,
+      "mean_context_words_at_5": 1458.7
+    }
+  }
+}

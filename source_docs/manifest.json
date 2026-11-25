@@ -1,0 +1,169 @@
+[
+  {
+    "source": "data_model",
+    "title": "Python Language Reference: Data Model",
+    "file": "data_model.md",
+    "url": "https://docs.python.org/3.13/reference/datamodel.html",
+    "license": "PSF License 2.0",
+    "version": "3.13",
+    "words": 24001,
+    "topics": [
+      "objects",
+      "types",
+      "specialnames",
+      "customization",
+      "attribute-access",
+      "context-managers",
+      "numeric-types",
+      "sequence-types",
+      "callable-types",
+      "typesfunctions",
+      "typesmethods",
+      "typesmodules",
+      "bltin-code-objects",
+      "bltin-type-objects",
+      "bltin-ellipsis-object",
+      "bltin-null-object",
+      "specialattrs"
+    ]
+  },
+  {
+    "source": "expressions",
+    "title": "Python Language Reference: Expressions",
+    "file": "expressions.md",
+    "url": "https://docs.python.org/3.13/reference/expressions.html",
+    "license": "PSF License 2.0",
+    "version": "3.13",
+    "words": 7212,
+    "topics": [
+      "atom-identifiers",
+      "atom-literals",
+      "attribute-references",
+      "subscriptions",
+      "slicings",
+      "calls",
+      "await",
+      "power",
+      "unary",
+      "binary",
+      "shifting",
+      "bitwise",
+      "comparisons",
+      "booleans",
+      "assignment-expressions",
+      "lambda",
+      "exprlists",
+      "dict",
+      "lists",
+      "in",
+      "conversions",
+      "operator-summary"
+    ]
+  },
+  {
+    "source": "simple_statements",
+    "title": "Python Language Reference: Simple Statements",
+    "file": "simple_statements.md",
+    "url": "https://docs.python.org/3.13/reference/simple_stmts.html",
+    "license": "PSF License 2.0",
+    "version": "3.13",
+    "words": 5077,
+    "topics": [
+      "assignment",
+      "augassign",
+      "assert",
+      "pass",
+      "del",
+      "return",
+      "yield",
+      "raise",
+      "break",
+      "continue",
+      "import",
+      "global",
+      "nonlocal"
+    ]
+  },
+  {
+    "source": "compound_statements",
+    "title": "Python Language Reference: Compound Statements",
+    "file": "compound_statements.md",
+    "url": "https://docs.python.org/3.13/reference/compound_stmts.html",
+    "license": "PSF License 2.0",
+    "version": "3.13",
+    "words": 12519,
+    "topics": [
+      "compound",
+      "if",
+      "else",
+      "while",
+      "for",
+      "try",
+      "with",
+      "function",
+      "class",
+      "async"
+    ]
+  },
+  {
+    "source": "execution_model",
+    "title": "Python Language Reference: Execution Model",
+    "file": "execution_model.md",
+    "url": "https://docs.python.org/3.13/reference/executionmodel.html",
+    "license": "PSF License 2.0",
+    "version": "3.13",
+    "words": 4316,
+    "topics": [
+      "execmodel",
+      "naming",
+      "dynamic-features",
+      "exceptions"
+    ]
+  },
+  {
+    "source": "lexical_analysis",
+    "title": "Python Language Reference: Lexical Analysis",
+    "file": "lexical_analysis.md",
+    "url": "https://docs.python.org/3.13/reference/lexical_analysis.html",
+    "license": "PSF License 2.0",
+    "version": "3.13",
+    "words": 2545,
+    "topics": [
+      "identifiers",
+      "id-classes",
+      "strings",
+      "numbers",
+      "integers",
+      "floating",
+      "imaginary"
+    ]
+  },
+  {
+    "source": "builtin_types",
+    "title": "Python Library Reference: Built-in Types",
+    "file": "builtin_types.md",
+    "url": "https://docs.python.org/3.13/library/stdtypes.html",
+    "license": "PSF License 2.0",
+    "version": "3.13",
+    "words": 9181,
+    "topics": [
+      "truth",
+      "typesseq",
+      "typesseq-mutable",
+      "typesmapping",
+      "string-methods"
+    ]
+  },
+  {
+    "source": "string_formatting",
+    "title": "Python Library Reference: String Formatting",
+    "file": "string_formatting.md",
+    "url": "https://docs.python.org/3.13/library/string.html",
+    "license": "PSF License 2.0",
+    "version": "3.13",
+    "words": 3523,
+    "topics": [
+      "formatstrings"
+    ]
+  }
+]

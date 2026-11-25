@@ -1,0 +1,309 @@
+id,question,reference_answer,agent_answer,citations,correct,supported,notes
+q01,What is the difference between Python identity comparisons (is) and equality comparisons (==)?,is checks object identity; == checks value equality using comparison operations.,"In Python, the difference between identity comparisons (`is`) and equality comparisons (`==`) lies in what they evaluate:
+
+* **Identity comparison (`is`)**: Compares the **identity** of two objects (whether they are the exact same object in memory) [CITE:f87096958498c8a8643d]. It evaluates to `True` if and only if two variables refer to the same object.
+* **Equality comparison (`==`)**: Compares the **value** of two objects (whether they have the same contents or data value) [CITE:f9858c7746d17cb6969a]. 
+
+### Key Details:
+1. **Under the Hood (`==`)**: The equality operator `==` invokes the rich comparison method `__eq__()` on the object [CITE:f9858c7746d17cb6969a]. By default, user-defined classes inherit an `__eq__()` implementation from `object` that falls back to comparing object identity (`is`) [CITE:f9858c7746d17cb6969a], but classes can override this method to define custom value equality. If no appropriate method returns anything other than `NotImplemented`, `==` falls back to `is` [CITE:f9858c7746d17cb6969a].
+2. **Singletons**: For singletons (such as `None`), comparisons should always be performed using `is` or `is not`, rather than equality operators [CITE:c44f6a873f877af666e3].",f87096958498c8a8643d;f9858c7746d17cb6969a;c44f6a873f877af666e3,,,
+q02,How are chained comparisons like x < y <= z evaluated?,"Chained comparisons evaluate each operand once and short-circuit, equivalent to x < y and y <= z except y is evaluated once.","Chained comparisons such as `x < y <= z` are evaluated following these rules:
+
+* **Equivalence to `and`:** A chained comparison expression `a op1 b op2 c ... y opN z` is evaluated equivalently to the conjunction `a op1 b and b op2 c and ... y opN z` [CITE:f4c17c31d7eba85ff9ae]. For example, `x < y <= z` is equivalent to `x < y and y <= z` [CITE:f4c17c31d7eba85ff9ae].
+* **Single evaluation of intermediate expressions:** Each intermediate expression (such as `y`) is evaluated at most once [CITE:f4c17c31d7eba85ff9ae].
+* **Short-circuit evaluation:** Sub-expressions are evaluated from left to right, and evaluation stops as soon as any comparison yields `False`. For instance, if `x < y` evaluates to `False`, then `z` is not evaluated at all [CITE:f4c17c31d7eba85ff9ae].",f4c17c31d7eba85ff9ae,,,
+q03,Do Python and/or expressions always return True or False?,"No; and/or return one of their operand values, and short-circuit.","No. The Boolean operators `and` and `or` do not always return `True` or `False`. Instead, they always return one of their operands [CITE:c0976c774e5be2b4b8dd] [CITE:ec33f2bb546276393e84].
+
+* **`x and y`**: If `x` is false, its value is returned; otherwise, `y` is evaluated and its value is returned [CITE:ec33f2bb546276393e84].
+* **`x or y`**: If `x` is true, its value is returned; otherwise, `y` is evaluated and its value is returned [CITE:ec33f2bb546276393e84].
+
+For example, `[] and ""hello""` evaluates to `[]`, and `""hello"" or ""world""` evaluates to `""hello""`. 
+
+In contrast, the `not` operator always returns a boolean value (`True` or `False`) regardless of the type of its argument [CITE:ec33f2bb546276393e84].",c0976c774e5be2b4b8dd;ec33f2bb546276393e84,,,
+q04,What does a lambda expression create?,"An anonymous function object, with a single expression as its body.",A lambda expression creates an anonymous function (an unnamed function object) [CITE:f83d19c269405674fda4].,f83d19c269405674fda4,,,
+q05,What does the walrus operator := do in an assignment expression?,Assigns an expression value to a name while yielding the value.,"An assignment expression (using the `:=` operator, also known as the ""walrus"" or ""named"" operator) assigns an expression to an identifier while also returning the value of that expression [CITE:c6feeaa27201e948ba52]. 
+
+Syntax-wise, it takes the form:
+```text
+identifier := expression
+```
+
+### Key behaviors and usage:
+* **Value and Assignment:** It performs the assignment of the right-hand side expression to the target identifier on the left, and evaluates to that same assigned value [CITE:c6feeaa27201e948ba52].
+* **Common Use Cases:** It is frequently used within `if` and `while` statements to avoid calling a function or calculating an expression twice (such as when checking a regular expression match or reading chunks from a file stream) [CITE:c6feeaa27201e948ba52]:
+  ```python
+  if matching := pattern.search(data):
+      do_something(matching)
+
+  while chunk := file.read(9000):
+      process(chunk)
+  ```
+* **Parentheses Requirements:** Assignment expressions must be surrounded by parentheses when used as expression statements, or when used as sub-expressions in slicing, conditional, lambda, keyword-argument, and comprehension-if expressions, as well as in `assert`, `with`, and regular assignment statements [CITE:c6feeaa27201e948ba52]. In other contexts (like `if` and `while` clauses), parentheses are optional [CITE:c6feeaa27201e948ba52].",c6feeaa27201e948ba52,,,
+q06,When does a nonlocal declaration apply to a variable?,"It binds names to previously bound variables in an enclosing, non-global scope.","A `nonlocal` declaration applies as follows:
+
+* **Scope:** The `nonlocal` statement applies to the entire scope of a function or class body [CITE:8391533e54871e219652].
+* **Ordering restriction:** A `SyntaxError` is raised if a variable is used or assigned to prior to its `nonlocal` declaration within that scope [CITE:8391533e54871e219652].
+* **Parser directive:** It acts as a directive to the parser and applies only to code parsed along with it [CITE:8391533e54871e219652].
+* **Target binding:** It causes the specified identifiers to refer to names previously bound in nonlocal (enclosing function) scopes, allowing encapsulated code to rebind those variables [CITE:8391533e54871e219652].",8391533e54871e219652,,,
+q07,What is the effect of global on a name inside a function?,"It makes the name refer to the global (module) namespace, rather than creating a local binding.","When a `global` statement is used inside a function, it causes the listed identifiers to be interpreted as globals for the entire scope of that function block [CITE:797ca2f1c72b55866beb] [CITE:3f271757d331c6137475]. 
+
+Specifically, its effects and rules are:
+
+* **Rebinding global variables:** It allows assignments and other name binding operations within the function to modify variables in the module-level (global) namespace rather than creating or modifying a local variable [CITE:797ca2f1c72b55866beb] [CITE:3f271757d331c6137475]. Without a `global` statement, it is otherwise impossible to assign to a global variable inside a function (assignments default to creating local variables) [CITE:797ca2f1c72b55866beb].
+* **Namespace resolution:** All uses of the specified names (both reads and writes) refer to their bindings in the top-level namespace (searching the module's global namespace first, and then the builtins namespace) [CITE:3f271757d331c6137475]. If the name is not found in either, a new variable is created in the global namespace upon assignment [CITE:3f271757d331c6137475].
+* **Syntax requirements:** The `global` statement must precede any use or assignment of the listed names within the function body; otherwise, a `SyntaxError` is raised [CITE:797ca2f1c72b55866beb] [CITE:3f271757d331c6137475].",797ca2f1c72b55866beb;3f271757d331c6137475,,,
+q08,What happens to assert statements when Python is run with optimization?,The assert code generator emits no code when optimization is requested.,"When Python is run with optimization (via the `-O` command-line option):
+
+* The built-in variable `__debug__` is set to `False` (compared to `True` under normal circumstances) [CITE:ae0ba31c5f15261093ff].
+* The current code generator emits no bytecode for `assert` statements at compile time [CITE:ae0ba31c5f15261093ff].",ae0ba31c5f15261093ff,,,
+q09,Does a finally clause run after an exception before it propagates?,"Yes; a finally clause is executed on leaving the try statement, including if an exception was raised.","Yes. If an exception occurs in any of the clauses and is not handled, the exception is temporarily saved while the `finally` clause is executed, and then re-raised at the end of the `finally` clause [CITE:614207696dc646d6276e].",614207696dc646d6276e,,,
+q10,What does the with statement do with the context manager on exit?,"Calls its __exit__ method at exit, including normal and exceptional exit.","When leaving the `with` statement block, Python invokes the context manager's `__exit__()` method [CITE:3617069d2172afe4dc71]. 
+
+Specifically, the following steps occur on exit:
+
+1. **Invocation**: The context manager's `__exit__(exc_type, exc_value, traceback)` method is called [CITE:b5485a42ca5583c298d2] [CITE:3617069d2172afe4dc71].
+   * If the `with` suite exited because of an exception, the exception's type, value, and traceback are passed as arguments [CITE:3617069d2172afe4dc71].
+   * If the suite exited normally without an exception, all three arguments are `None` [CITE:b5485a42ca5583c298d2] [CITE:3617069d2172afe4dc71].
+
+2. **Exception Handling / Suppression**:
+   * **If an exception occurred**: If `__exit__()` returns a true value, the exception is suppressed, and execution continues normally with the statement following the `with` block [CITE:b5485a42ca5583c298d2] [CITE:3617069d2172afe4dc71]. If it returns a false value (or falsy, such as `None`), the exception is reraised [CITE:3617069d2172afe4dc71]. (`__exit__()` methods should not reraise the passed-in exception themselves; letting it propagate or returning false is how propagation is handled [CITE:b5485a42ca5583c298d2].)
+   * **If no exception occurred**: The return value of `__exit__()` is ignored, and execution continues at the normal location for whatever kind of exit took place (e.g., a `return`, `break`, or `continue` statement) [CITE:3617069d2172afe4dc71].",3617069d2172afe4dc71;b5485a42ca5583c298d2,,,
+q11,What kind of objects can be keys in a Python dictionary?,Dictionary keys must be hashable; an object must have a consistent hash and compatible equality semantics.,"Dictionary keys must be **hashable** [CITE:e351ee4103e14812abdd]. 
+
+Specifically:
+* **Hashability:** An object is hashable if it has a hash value which never changes during its lifetime (it needs a `__hash__()` method) and can be compared to other objects (it needs an `__eq__()` method) [CITE:711a523241a191f14914]. Hashable objects which compare equal must have the same hash value [CITE:711a523241a191f14914].
+* **Excluded types:** All mutable types (such as lists, dictionaries, or other mutable types that are compared by value rather than object identity) are unhashable and cannot be used as keys, because the efficient implementation of dictionaries requires a key's hash value to remain constant [CITE:0caab469f7102ee3b612] [CITE:e351ee4103e14812abdd].
+* **Allowed types:** Most immutable built-in types—such as numbers (integers, floats, complex numbers), strings, tuples (if they contain only hashable elements), and frozensets—can be used as keys [CITE:0caab469f7102ee3b612]. 
+* **Numeric values:** Numeric types obey normal comparison rules, so numbers that compare equal (such as `1` and `1.0`) can be used interchangeably to index the same dictionary entry [CITE:0caab469f7102ee3b612].
+* **Custom objects:** User-defined class instances are hashable by default (using their identity), meaning they compare unequal to everything except themselves [CITE:711a523241a191f14914]. If a custom class defines a custom `__eq__()` method, its instances can only be used as keys if a proper `__hash__()` method is also defined [CITE:711a523241a191f14914].",e351ee4103e14812abdd;711a523241a191f14914;0caab469f7102ee3b612,,,
+q12,What is the role of object.__new__ when creating an instance?,It is the static method responsible for creating and returning a new instance; __init__ initializes it.,"The role of `object.__new__(cls[, ...])` (and `__new__` methods in general) during instance creation is to **create and return a new instance of a class** [CITE:c455e71fdf570d284102]. 
+
+Specifically, its key characteristics and behaviors are:
+
+* **Static Method:** `__new__` is implicitly a static method, taking the target class (`cls`) as its first argument, followed by any arguments passed to the class constructor expression [CITE:c455e71fdf570d284102].
+* **Creation vs. Initialization:** While `__new__` is responsible for *creating* the new object instance, `__init__` is subsequently responsible for *initializing* it [CITE:7e57689300a6d5762c8e].
+* **Interaction with `__init__`:** If `__new__` returns an instance of `cls`, the newly created instance's `__init__` method is invoked with `self` (the new instance) and the original constructor arguments [CITE:c455e71fdf570d284102]. If `__new__` does *not* return an instance of `cls`, the `__init__` method is not invoked [CITE:c455e71fdf570d284102].
+* **Common Use Cases:** It is primarily overridden to allow subclasses of immutable types (like `int`, `str`, or `tuple`) to customize instance creation, or to control the instance creation phase in custom metaclasses and singleton patterns [CITE:c455e71fdf570d284102].",c455e71fdf570d284102;7e57689300a6d5762c8e,,,
+q13,When is __getattr__ invoked in Python attribute access?,It is invoked when normal attribute lookup does not find the requested attribute.,"`__getattr__` is invoked when default attribute access fails with an `AttributeError` [CITE:27175b8b89ce70a4b603] [CITE:d959aeb05f1262641e91]. Specifically, it is called when:
+
+1. `__getattribute__()` raises an `AttributeError` because the requested name is neither an instance attribute nor found anywhere in the class tree for `self` [CITE:27175b8b89ce70a4b603].
+2. The `__get__()` method of a descriptor for that name raises an `AttributeError` [CITE:27175b8b89ce70a4b603].
+
+If the attribute is found successfully through the normal lookup mechanism, `__getattr__()` is not called [CITE:27175b8b89ce70a4b603].",27175b8b89ce70a4b603;d959aeb05f1262641e91,,,
+q14,What is the meaning of the return value of yield in a generator?,The yield expression produces a value for the generator caller and suspends generator execution.,I do not know based on the indexed Python 3.13 documentation.,,,,
+q15,How do raw string literals change backslash processing?,Backslashes are generally treated literally rather than interpreting escape sequences; raw strings cannot end in an odd number of backslashes.,"Raw string literals (prefixed with `'r'` or `'R'`) change backslash processing by treating backslashes as literal characters rather than as escape sequence indicators [CITE:a688343f3669d14198a0]. 
+
+Specifically:
+* **No Escape Interpretation:** Standard escape sequences (such as `\n`, `\t`, `\xHH`, `\ooo`, and Unicode escapes like `\u` or `\U`) are not interpreted specially; they remain literal backslashes followed by the character code [CITE:a688343f3669d14198a0].
+* **Quote Escaping:** Quotes can still be escaped using a backslash to embed the enclosing quote type, but the backslash remains part of the resulting string [CITE:af5662b16907dd1b01e9].
+* **Trailing Backslashes:** A raw string literal *cannot* end in a single backslash because the backslash would attempt to escape the closing quote (meaning raw strings cannot end in an odd number of backslashes) [CITE:af5662b16907dd1b01e9].
+* **Newlines:** A single backslash followed by a newline is interpreted literally as those two characters, rather than acting as a line continuation [CITE:af5662b16907dd1b01e9].",a688343f3669d14198a0;af5662b16907dd1b01e9,,,
+q16,What prefix indicates an octal integer literal in Python?,A leading 0o or 0O indicates an octal integer literal.,"An octal integer literal is indicated by the prefix `0o` or `0O` (a zero followed by a lowercase or uppercase letter ""o"") [CITE:b91450458d8f2d227d49].",b91450458d8f2d227d49,,,
+q17,Which special syntax is used for f-string replacement fields?,"An f-string contains replacement fields enclosed in curly braces, evaluated as expressions.","Replacement fields in f-strings (formatted string literals) are surrounded by curly braces (`{` and `}`) [CITE:2f80c385722da5055966] [CITE:76dac0cb6ec5f6fe18bf]. 
+
+The general grammar for a replacement field is:
+```text
+replacement_field ::= ""{"" [field_name] [""!"" conversion] ["":"" format_spec] ""}""
+```
+* **`field_name`**: Specifies the expression or object whose value is to be formatted [CITE:2f80c385722da5055966].
+* **`conversion`**: Optionally preceded by an exclamation point (`!`), such as `!s`, `!r`, or `!a` to force `str()`, `repr()`, or `ascii()` [CITE:91c944854fd7c91bceb3] [CITE:2f80c385722da5055966].
+* **`format_spec`**: Optionally preceded by a colon (`:`), containing format specification details [CITE:91c944854fd7c91bceb3] [CITE:2f80c385722da5055966].",2f80c385722da5055966;76dac0cb6ec5f6fe18bf;91c944854fd7c91bceb3,,,
+q18,What does the format specification mini-language alignment character < mean?,It left-aligns the field within the available width.,"In the format specification mini-language, the alignment character `'<'` forces the field to be left-aligned within the available space [CITE:a8df46ffbc51d1942e11]. This is the default alignment for most objects [CITE:a8df46ffbc51d1942e11].",a8df46ffbc51d1942e11,,,
+q19,What does raising an exception with `raise X from Y` specify?,It sets Y as the explicit cause of exception X for exception chaining.,"In Python, raising an exception with `raise X from Y` specifies **explicit exception chaining** [CITE:eb1e016cd422515183ab]. 
+
+Specifically, the `from` clause behaves as follows based on what `Y` is:
+
+* **Exception Instance or Class (`Y`):** If `Y` is an exception instance, it is attached directly to the newly raised exception `X` as its `__cause__` attribute [CITE:eb1e016cd422515183ab]. If `Y` is an exception class, it is instantiated first and then attached as `__cause__` [CITE:eb1e016cd422515183ab]. When an unhandled exception chain is printed, Python displays `Y` as the direct cause of `X` [CITE:eb1e016cd422515183ab].
+* **`None` (`raise X from None`):** Specifying `None` explicitly suppresses exception chaining [CITE:a5083656afa6beccba53]. It prevents the automatic attachment of an active exception to `X`'s `__context__` attribute, ensuring that only exception `X` is displayed in the traceback [CITE:a5083656afa6beccba53].",eb1e016cd422515183ab;a5083656afa6beccba53,,,
+q20,When does a class definition execute its body?,The class definition body executes when the class statement is executed.,"A class definition is an executable statement [CITE:55ec6bc25d4cae008d69]. Its body executes **immediately when the class definition statement is encountered and run** during execution (unlike a function body, which is only executed when the function is called) [CITE:9ac329f891650c49e1cb]. 
+
+When the class definition is executed:
+1. A new execution frame and local namespace are created (typically initialized via the metaclass's `__prepare__` method) [CITE:55ec6bc25d4cae008d69] [CITE:1441aa877bafeabe99be].
+2. The class body is executed within this frame [CITE:55ec6bc25d4cae008d69].
+3. Once the body finishes execution, the class object is created using the saved local namespace and base classes, and the class name is bound to that object in the original local namespace [CITE:55ec6bc25d4cae008d69].",55ec6bc25d4cae008d69;9ac329f891650c49e1cb;1441aa877bafeabe99be,,,
+q21,When does the else clause on a while loop run?,"It runs if the loop terminates through its condition becoming false, not via break.","The `else` clause on a `while` loop runs when the loop's condition becomes false (which may happen on the very first test if it is initially false) [CITE:2c7eeb4258a1c6ada663]. 
+
+However, it will **not** run if the loop is terminated by a `break` statement [CITE:2c7eeb4258a1c6ada663]. A `continue` statement does not prevent the `else` clause from running [CITE:2c7eeb4258a1c6ada663].",2c7eeb4258a1c6ada663,,,
+q22,Does a del statement always call __del__ on an object?,"No. del x only removes the name and lowers the object's reference count; __del__ is called only when the count reaches zero, and is not guaranteed at interpreter exit.","No, a `del` statement does not always call `__del__` on an object [CITE:a72f88ae1fe90a14fc3e]. 
+
+A `del x` statement merely removes the binding of the name `x` from a namespace and decrements `x`'s reference count by one [CITE:d37a065ba7acfc6d098b] [CITE:a72f88ae1fe90a14fc3e]. The `__del__` method is only called when the object's reference count actually reaches zero [CITE:a72f88ae1fe90a14fc3e]. 
+
+If other references to the object still exist (such as other variables, entries in a list or dictionary, or attributes), executing `del` on a single name will not reduce the reference count to zero, and `__del__` will not be invoked [CITE:a72f88ae1fe90a14fc3e].",a72f88ae1fe90a14fc3e;d37a065ba7acfc6d098b,,,
+q23,What values are false in a Python boolean context?,"False, None, numeric zero and empty containers or objects whose __bool__ or __len__ is false/zero.","In Python, by default, an object is considered true unless its class defines a `__bool__()` method that returns `False` or a `__len__()` method that returns zero [CITE:c0976c774e5be2b4b8dd]. 
+
+The built-in values and objects that are interpreted as false in a Boolean context include:
+
+* **Constants defined to be false:** `None` and `False` [CITE:c0976c774e5be2b4b8dd] [CITE:ec33f2bb546276393e84].
+* **Zero of any numeric type:** `0`, `0.0`, `0j`, `Decimal(0)`, and `Fraction(0, 1)` [CITE:c0976c774e5be2b4b8dd].
+* **Empty sequences and collections:** empty strings (`''`), tuples (`()`), lists (`[]`), dictionaries (`{}`), sets (`set()`), and ranges (`range(0)`) [CITE:c0976c774e5be2b4b8dd].
+
+Additionally, user-defined objects can specify their own truth value by implementing a `__bool__()` or `__len__()` method [CITE:c0976c774e5be2b4b8dd] [CITE:cdd7c65a0c9074ce3bd5].",c0976c774e5be2b4b8dd;ec33f2bb546276393e84;cdd7c65a0c9074ce3bd5,,,
+q24,How does str.split behave when no separator is provided?,Splits at runs of whitespace with special treatment of leading/trailing whitespace.,"When `str.split()` is called with no separator specified (or when `sep` is explicitly `None`), a different splitting algorithm is applied [CITE:8c166ad5da866bfddb9a]:
+
+* **Whitespace handling:** Runs of consecutive whitespace characters are regarded as a single separator [CITE:8c166ad5da866bfddb9a].
+* **Leading and trailing whitespace:** The resulting list contains no empty strings at the start or end if the string has leading or trailing whitespace [CITE:8c166ad5da866bfddb9a].
+* **Empty or whitespace-only strings:** Splitting an empty string (`""""`) or a string consisting solely of whitespace with a `None` separator returns an empty list (`[]`) [CITE:8c166ad5da866bfddb9a].",8c166ad5da866bfddb9a,,,
+q25,What does `for ... else` mean when a loop breaks early?,An else clause runs only when the loop completes without a break.,"When a `for` loop breaks early via a `break` statement, the loop is terminated without executing the `else` clause's suite [CITE:4ade0cf14560fbaf5203] [CITE:fd3b1ca0a3c7a7f9c5af]. 
+
+Normally, the `else` suite runs when the loop finishes by exhausting the iterable [CITE:4ade0cf14560fbaf5203]; however, if a `break` statement is executed inside the loop, the `else` block is skipped entirely [CITE:4ade0cf14560fbaf5203] [CITE:fd3b1ca0a3c7a7f9c5af].",4ade0cf14560fbaf5203;fd3b1ca0a3c7a7f9c5af,,,
+q26,"What is the difference between declaring a name global and nonlocal, and which scopes are affected?","global binds to the module namespace, whereas nonlocal refers to an existing name in an enclosing non-global function scope.","The differences between declaring a name `global` and `nonlocal` involve which scopes are affected and how the names are resolved:
+
+* **`global` statement:** 
+  * **Affected Scopes:** The top-level namespace (the module containing the code block) and, as a fallback, the builtins namespace [CITE:3f271757d331c6137475].
+  * **Behavior:** It causes the listed identifiers to be interpreted as globals within that code block [CITE:797ca2f1c72b55866beb]. This allows assignments and re-bindings within a nested block (like a function or class body) to affect the module-level variable rather than creating a new local variable [CITE:797ca2f1c72b55866beb] [CITE:797ca2f1c72b55866beb]. If a specified global variable does not exist when assigned to, a new variable is created in the global namespace [CITE:3f271757d331c6137475]. The `global` statement must precede all uses of the listed names [CITE:3f271757d331c6137475].
+
+* **`nonlocal` statement:**
+  * **Affected Scopes:** The nearest enclosing function scopes (the local scopes of enclosing functions) [CITE:8391533e54871e219652] [CITE:3f271757d331c6137475].
+  * **Behavior:** It causes the listed identifiers to refer to names previously bound in nonlocal scopes, allowing inner functions to rebind variables in outer (non-global) enclosing functions [CITE:8391533e54871e219652]. If a name is bound in more than one nonlocal scope, the nearest binding is used [CITE:8391533e54871e219652]. Unlike `global`, a `SyntaxError` is raised at compile time if the given name does not already exist in any enclosing function scope, or if there is no nonlocal scope [CITE:8391533e54871e219652] [CITE:3f271757d331c6137475]. Type parameters also cannot be rebounded with `nonlocal` [CITE:3f271757d331c6137475]. Like `global`, it must precede all uses or assignments of the variable within its scope [CITE:8391533e54871e219652].",3f271757d331c6137475;797ca2f1c72b55866beb;8391533e54871e219652,,,
+q27,"If a function returns from inside a try clause, what happens to the finally suite and the return?",The finally suite executes before return completes; a return from finally can override a pending return.,"When a `return` statement is executed inside the `try` suite of a `try`…`finally` statement, the `finally` clause is still executed ""on the way out"" before the function call is truly left [CITE:a3fef9abd1a088b49900] [CITE:d8c047a5ea298a583b1b]. 
+
+Regarding the return value and behavior:
+* If the `finally` suite does **not** execute its own `return` (or raise an exception), the function returns the value specified by the `try` clause's `return` statement after the `finally` suite finishes executing.
+* If the `finally` suite executes its own `return` statement, that return value overrides the original return value, because the `finally` clause's `return` will be the last one executed [CITE:a3fef9abd1a088b49900].",a3fef9abd1a088b49900;d8c047a5ea298a583b1b,,,
+q28,How do short-circuit and/or expressions interact with truth-value testing of empty containers?,Empty containers are false; and/or evaluate only the operands needed and return operands rather than necessarily bool.,"In Python, empty containers (such as empty lists `[]`, tuples `()`, dictionaries `{}`, sets `set()`, and strings `''`) are interpreted as **false** during truth-value testing [CITE:c0976c774e5be2b4b8dd] [CITE:ec33f2bb546276393e84]. When they are used as operands with the short-circuiting operators `and` and `or`, they interact according to the following evaluation rules:
+
+### 1. Short-Circuit Evaluation Rules
+Neither `and` nor `or` restrict their return values to strictly `True` or `False`; instead, they evaluate and return one of their actual operands [CITE:c0976c774e5be2b4b8dd] [CITE:ec33f2bb546276393e84].
+
+* **`x and y`**: Evaluates `x` first [CITE:ec33f2bb546276393e84]. If `x` is false (e.g., an empty container), the expression short-circuits and immediately returns `x` without evaluating `y` [CITE:ec33f2bb546276393e84]. If `x` is true, `y` is evaluated and its resulting value is returned [CITE:ec33f2bb546276393e84].
+* **`x or y`**: Evaluates `x` first [CITE:ec33f2bb546276393e84]. If `x` is true, the expression short-circuits and immediately returns `x` without evaluating `y` [CITE:ec33f2bb546276393e84]. If `x` is false (e.g., an empty container), `y` is evaluated and its resulting value is returned [CITE:ec33f2bb546276393e84].
+
+### 2. Interaction Examples
+
+* **Empty container with `and`:**
+  ```python
+  result = [] and print(""Evaluated"")
+  # Returns [] (the empty list), and ""Evaluated"" is never printed because
+  # the left operand [] is false, triggering a short-circuit.
+  ```
+
+* **Empty container with `or`:**
+  ```python
+  result = [] or [1, 2, 3]
+  # Returns [1, 2, 3]. Because the left operand [] is false, the expression
+  # evaluates and returns the right operand.
+  ```
+
+* **Fallback idiom:**
+  A common idiom relies on this behavior to supply a default value when a container is empty (or otherwise falsy) [CITE:ec33f2bb546276393e84]:
+  ```python
+  user_items = []
+  items = user_items or [""default""]  # Evaluates to [""default""]
+  ```",c0976c774e5be2b4b8dd;ec33f2bb546276393e84,,,
+q29,How can a custom context manager implement cleanup with __enter__/__exit__ and be used in with?,"A context manager implements __enter__ and __exit__; with calls enter at entry and exit when leaving, even on exceptions.","To implement a custom context manager using `__enter__()` and `__exit__()`, a class must define both methods [CITE:b5485a42ca5583c298d2]:
+
+1. **`__enter__(self)`**: Called before the `with` statement's code block is executed [CITE:3617069d2172afe4dc71]. Whatever this method returns is bound to the target variable specified in the `as` clause (if any) [CITE:b5485a42ca5583c298d2].
+2. **`__exit__(self, exc_type, exc_value, traceback)`**: Called after the code block finishes executing, whether it completed successfully or raised an exception [CITE:3617069d2172afe4dc71]. 
+   - If the block exits normally without an exception, all three exception arguments (`exc_type`, `exc_value`, `traceback`) are `None` [CITE:b5485a42ca5583c298d2].
+   - If an exception occurred, they contain the exception details [CITE:3617069d2172afe4dc71]. Returning a true value from `__exit__` suppresses the exception; returning a false (or `None`) value causes the exception to be reraised [CITE:3617069d2172afe4dc71].
+
+### Example Implementation
+
+```python
+class ManagedResource:
+    def __enter__(self):
+        print(""Entering context: acquiring resource..."")
+        # Return the resource (or self) to be bound to the 'as' target
+        return self
+
+    def __exit__(self, exc_type, exc_value, traceback):
+        print(""Exiting context: cleaning up resource..."")
+        if exc_type is not None:
+            print(f""An exception occurred: {exc_value}"")
+        # Return False (or None) to propagate exceptions normally, 
+        # or True to suppress them.
+        return False
+
+    def do_work(self):
+        print(""Doing work inside context."")
+
+# Usage with the 'with' statement:
+with ManagedResource() as resource:
+    resource.do_work()
+```",b5485a42ca5583c298d2;3617069d2172afe4dc71,,,
+q30,Why must a class defining __eq__ consider __hash__ before instances are used as dictionary keys?,Dictionary keys must be hashable; overriding equality may make instances unhashable by setting __hash__ to None unless compatible hash behavior is defined.,"When a class defines `__eq__`, Python's data model rules require that any two objects which compare equal (`x == y`) must produce the same hash value (`hash(x) == hash(y)`) [CITE:5fcf4371ca7dec0730c7]. 
+
+Dictionary keys (and set elements) rely on this invariant for correct and efficient operation [CITE:0caab469f7102ee3b612]:
+1. **Hash buckets and lookups:** Dictionaries use hash values to index into internal buckets [CITE:711a523241a191f14914] to locate keys quickly without having to compare against every existing key in the dictionary. 
+2. **The contract:** If two equivalent instances had different hash values, a dictionary would place them into different buckets. Consequently, a lookup using an equivalent instance would fail to find the original key because it would check the wrong bucket [CITE:711a523241a191f14914].
+
+Because of this fundamental requirement, if a class overrides `__eq__`, Python handles hashing behavior explicitly:
+* If you define `__eq__` but do not define a custom `__hash__`, Python automatically sets `__hash__ = None` [CITE:711a523241a191f14914]. This signals that instances are unhashable, preventing them from being used as dictionary keys and raising a `TypeError` if `hash()` is called on them [CITE:711a523241a191f14914].
+* To use instances of the class as dictionary keys, you must deliberately define a compatible `__hash__` method that guarantees objects comparing equal return identical hash integers [CITE:5fcf4371ca7dec0730c7] [CITE:711a523241a191f14914].",5fcf4371ca7dec0730c7;0caab469f7102ee3b612;711a523241a191f14914,,,
+q31,How does the walrus assignment expression combine with an if statement condition?,An assignment expression binds a name and yields its value; the if then tests that value.,I do not know based on the retrieved corpus: the draft answer used invalid citations.,,,,
+q32,"In a generator function, what do yield and return each do?","Using yield makes a function a generator function; a return in a generator ends it by raising StopIteration, and the returned value becomes StopIteration.value.","In a generator function, `yield` and `return` behave as follows:
+
+* **`yield` (or `yield from`)**: Pauses the generator function's execution, saves its state, and sends a value back to the caller [CITE:d85751f3b11c3e94cca1]. When the caller requests the next value (e.g., via `__next__()`), the generator resumes execution immediately after the `yield` statement [CITE:d85751f3b11c3e94cca1].
+* **`return`**: Indicates that the generator is finished [CITE:d8c047a5ea298a583b1b]. It terminates the generator function, causing a `StopIteration` exception to be raised [CITE:d8c047a5ea298a583b1b]. If an expression list is provided with `return`, that value is used to construct the `StopIteration` exception and becomes its `StopIteration.value` attribute [CITE:d8c047a5ea298a583b1b].",d85751f3b11c3e94cca1;d8c047a5ea298a583b1b,,,
+q33,How do __getattribute__ and class definitions affect ordinary instance attribute lookup?,"A class defines the instance type and attributes; __getattribute__ intercepts attribute lookup, with descriptors and __getattr__ for missing attributes.","The interaction between `__getattribute__`, class definitions, and ordinary instance attribute lookup works as follows:
+
+* **`__getattribute__` Controls All Lookups:** 
+  When an attribute reference is made on an instance (`x.name`), Python unconditionally calls the instance's `__getattribute__(self, name)` method first [CITE:27175b8b89ce70a4b603] [CITE:d959aeb05f1262641e91]. Unless `__getattribute__` is overridden to do something custom, the default behavior (inherited from `object`) implements the standard class-based lookup machinery. If `__getattribute__` raises an `AttributeError`, Python falls back to calling `__getattr__`, if defined [CITE:27175b8b89ce70a4b603] [CITE:d959aeb05f1262641e91].
+
+* **Ordinary Instance Lookup (via the default `__getattribute__` / class definitions):**
+  When using the default attribute lookup mechanism, Python searches for attributes in a specific sequence:
+  1. **Instance Namespace:** The search looks first in the instance’s own dictionary (`__dict__`) [CITE:af88f742da8a91b3958c].
+  2. **Class Tree:** If the attribute is not found in the instance dictionary, the search continues through the base classes using the class's method resolution order (MRO) [CITE:af88f742da8a91b3958c].
+  3. **Descriptors and Wrapping:** If a class attribute is found that implements descriptors (like properties, functions, static methods, or class methods), it may be transformed or handled specially (e.g., functions become bound instance methods) [CITE:af88f742da8a91b3958c].
+  4. **Fallback:** If no class attribute matches, and the class defines `__getattr__`, that is invoked as a last resort [CITE:af88f742da8a91b3958c]. Otherwise, an `AttributeError` is raised [CITE:27175b8b89ce70a4b603].",27175b8b89ce70a4b603;d959aeb05f1262641e91;af88f742da8a91b3958c,,,
+q34,"In pdb, what exactly does the `until` command do while stepping through code?",The initial corpus does not include the pdb command reference; refuse until the holdout pdb document is added.,I do not know based on the indexed Python 3.13 documentation.,,,,
+q35,What __eq__ and __hash__ does the @dataclass decorator generate in Python 3.13?,The indexed Python 3.13 reference does not cover this; the assistant should say it does not know.,I do not know based on the indexed Python 3.13 documentation.,,,,
+q36,Is counter += 1 on a shared variable atomic under the GIL in Python 3.13?,The indexed Python 3.13 reference does not cover this; the assistant should say it does not know.,I do not know based on the indexed Python 3.13 documentation.,,,,
+q37,What happens if I call asyncio.run() inside an already running event loop?,The indexed Python 3.13 reference does not cover this; the assistant should say it does not know.,I do not know based on the indexed Python 3.13 documentation.,,,,
+q38,What is the official end-of-life date for Python 3.13 security support?,This versioned language reference does not provide a release-support timetable.,I do not know based on the indexed Python 3.13 documentation.,,,,
+q39,"In Python 3.13 sqlite3, what is the default value of connect() autocommit?",The selected corpus does not include the sqlite3 module reference.,I do not know based on the indexed Python 3.13 documentation.,,,,
+q40,Has Python 3.14 changed the behavior of list comprehensions from Python 3.13?,This corpus is pinned to Python 3.13 and cannot certify later-version changes.,I do not know based on the indexed Python 3.13 documentation.,,,,
+q41,What does -3 ** 2 evaluate to in Python and why?,"-9. The ** operator binds more tightly than a unary operator on its left, so it is evaluated as -(3 ** 2).","In Python, `-3 ** 2` evaluates to `-9` [CITE:bb5b9007c3b133b93a9f]. 
+
+**Why:**
+According to Python's operator precedence rules, the power operator (`**`) binds more tightly than the unary minus operator (`-`) on its left [CITE:bb5b9007c3b133b93a9f]. Therefore, the expression is evaluated as `-(3 ** 2)` rather than `(-3) ** 2` [CITE:bb5b9007c3b133b93a9f]. First `3 ** 2` is calculated as `9`, and then the unary minus is applied to yield `-9` [CITE:bb5b9007c3b133b93a9f].",bb5b9007c3b133b93a9f,,,
+q42,"Why does 7 / 2 give a float but 7 // 2 give an integer, and how is the // result determined?","Dividing integers with / yields a float, while // on integers yields an integer: the result of mathematical division with the floor function applied.","According to the Python reference:
+
+* The `/` (division) operator yields the quotient of its arguments converted to a common type [CITE:64f95615431b3cd68e92]. Division of integers yields a float (e.g., `7 / 2` gives `3.5`) [CITE:64f95615431b3cd68e92].
+* The `//` (floor division) operator yields the quotient of its arguments, where floor division of integers results in an integer [CITE:64f95615431b3cd68e92]. The result is determined by taking the mathematical division of the arguments and applying the 'floor' function to it (the largest integer less than or equal to that quotient) [CITE:64f95615431b3cd68e92]. For example, `7 // 2` evaluates to `3`.",64f95615431b3cd68e92,,,
+q43,How can I make a long number literal easier to read in source code?,"Group the digits with underscores, e.g. 1_000_000; one underscore may appear between digits (and after a base specifier like 0x).","You can use underscores (`_`) to group digits within numeric literals (such as integers, floating-point numbers, and imaginary numbers) to enhance readability [CITE:b91450458d8f2d227d49] [CITE:3a359519a9b68ccd4f4d]. 
+
+Underscores are completely ignored when determining the numeric value of the literal [CITE:b91450458d8f2d227d49]. They can be placed between digits and after base specifiers (like `0x`), for example [CITE:b91450458d8f2d227d49]:
+
+* **Integers and bases:** `100_000_000_000` or `0b_1110_0101` [CITE:b91450458d8f2d227d49]
+* **Floating-point numbers:** `3.14_15_93` [CITE:3a359519a9b68ccd4f4d]",b91450458d8f2d227d49;3a359519a9b68ccd4f4d,,,
+q44,"If I delete a key from a dictionary and then add it back, where does it appear when I iterate over the dictionary?","At the end: dictionaries preserve insertion order, and keys added after deletion are inserted at the end.","When you delete a key from a dictionary and then re-insert it, it will appear at the **end** of the dictionary rather than keeping its old position [CITE:f57d8465044145282e30].",f57d8465044145282e30,,,
+q45,Why does 'www.example.com'.lstrip('cmowz.') return 'example.com' instead of removing just a prefix?,"The argument is a set of characters, not a prefix; all combinations of those characters are stripped from the left end until a character not in the set ('e') is reached.","The `str.lstrip([chars])` method does not treat its `chars` argument as a prefix string [CITE:653f780e424a62bf0000]. Instead, `chars` specifies a set of characters to be removed, and all combinations of those values appearing at the start of the string are stripped [CITE:653f780e424a62bf0000]. 
+
+In your example, `'www.example.com'.lstrip('cmowz.')` strips any leading characters that belong to the set `{'c', 'm', 'o', 'w', 'z', '.'}` [CITE:653f780e424a62bf0000]. Because `'www.'` consists entirely of characters present in that set, all of them are stripped until the method encounters `'e'`, which is not in the set [CITE:653f780e424a62bf0000].
+
+To remove a specific prefix string rather than a set of characters, use `str.removeprefix()` instead [CITE:653f780e424a62bf0000]:
+
+```python
+>>> 'www.example.com'.removeprefix('www.')
+'example.com'
+```",653f780e424a62bf0000,,,
+q46,"If I build a list with [[]] * 3 and append to the first inner list, why do all three change?","Sequence repetition does not copy the items; the same inner list is referenced multiple times, so all three entries are the same object.","When you create a list using sequence multiplication like `[[]] * 3`, Python does not create three independent lists. Instead, it evaluates the expression `[]` once to create a single inner list object, and then copies references to that *same* single object three times into the outer list [CITE:8b8379227af8f5932e3a]. 
+
+As noted in the documentation for sequence repetition: *""Items in the sequence are not copied; they are referenced multiple times"" [CITE:8b8379227af8f5932e3a].*
+
+Because all three elements in the outer list point to the exact same list object in memory, appending to the first inner list modifies that shared object, which is visible through all three references.
+
+To create a list containing distinct, independent inner lists, you should use a list comprehension instead, which evaluates the `[]` expression separately for each iteration:
+
+```python
+outer_list = [[] for _ in range(3)]
+```",8b8379227af8f5932e3a,,,
+q47,What happens if a call passes a keyword argument and a *-unpacked sequence that both fill the same parameter?,"A TypeError is raised because the function got multiple values for that keyword argument, e.g. f(a=1, *(2,)) when a is the first parameter.","If a call passes a keyword argument and a `*`-unpacked sequence that both fill the same parameter slot, a `TypeError` exception is raised [CITE:9ad4fc8d75f4ebd3da47]. Specifically, the error message indicates that the function got multiple values for the given keyword argument [CITE:9ad4fc8d75f4ebd3da47].
+
+For example:
+```python
+>>> def f(a, b):
+...     print(a, b)
+...
+>>> f(a=1, *(2,))
+Traceback (most recent call last):
+  File ""<stdin>"", line 1, in <module>
+TypeError: f() got multiple values for keyword argument 'a'
+``` [CITE:9ad4fc8d75f4ebd3da47]",9ad4fc8d75f4ebd3da47,,,
+q48,How do I write a complex number literal with a non-zero real part?,"An imaginary literal such as 4j yields a complex number with real part 0.0; add a floating-point number to it, e.g. (3+4j).","There are no direct complex number literals in Python [CITE:5eda43911d4c54f5183f]. Instead, complex numbers with a non-zero real part are formed by adding a real number (integer or floating-point) to an imaginary literal [CITE:5eda43911d4c54f5183f] [CITE:ab44dfeeac1ed47d5dbe].
+
+For example:
+```python
+3 + 4j
+```",5eda43911d4c54f5183f;ab44dfeeac1ed47d5dbe,,,
