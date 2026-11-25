@@ -51,6 +51,7 @@ SECTIONS = [
     "clinical_pharmacology",
     "how_supplied",
     "patient_counseling_information",
+    "clinical_studies",              # trial results; added because the 5 labels were 49,236 words without it
 ]
 
 # --- Models -----------------------------------------------------------------
