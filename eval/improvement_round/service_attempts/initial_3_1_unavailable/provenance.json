@@ -1,0 +1,32 @@
+{
+  "inputs": {
+    "behavior": {
+      "AGENTS.md": "1b570aa0bb78bc5dfd818eadbdd7a662092d1504477640dcf287c6bdb8a4cb50",
+      "agent.py": "89929a7d78c688b4889e7d1344ad5a1fc4c003f98948a5077c7ed0a4cf96d556",
+      "answer_guardrails.py": "19f62630eed9525e5f0dda50fbb48d454ade5a0c0808c95f233f30a99131c1f2",
+      "server.py": "d233777130a33328f11585f388b9a2ff22e182ce80e80054fb7fecb0554a0390",
+      "model_recovery.py": "4a2eb43e66a0f17562dc4cf1c30c9a5f93afa7727cdb1b0ebbb9ce913d458c96",
+      "improvement_round.py": "28346dacae1b81380a87dce05b3af19fbeac44250f57990e85bad40b4d2709d9"
+    },
+    "questions": "edfa0685ca2560d84897f52739ec3f776619a12f5313aa0e417f4a427e15f998",
+    "corpus": "59923422161a5bc7d470439892a50c458edba448d4dfb9682fff533de89513c8",
+    "baseline_answers": "1de9727fbc1b5784aa170f0455476dbb69b74dda6599bc97b2a609792434b57e",
+    "human_labels": "d65fd17240e315d00f096d688f2069c00af1344ea80ab02efabd3ee261da4675",
+    "baseline_human_binding": "44f6696eb924f5b6b9e048690cdfaa0b669ef01baddb094c337c1f4ffc000376",
+    "rubric": "d7912559f21a21e08acda0e01dbe53867cce0210a02a9a536ef48441fcfad0a8"
+  },
+  "created_at": "2026-11-25T16:43:10.998760+01:00",
+  "purpose": "One development round informed by known baseline failures; same 30 questions, not held-out.",
+  "human_review": "Original 20 baseline student grades preserved. No human grades on revised answers; all new reviews are AI-generated.",
+  "changes": [
+    "Mandatory initial dense search with eight rather than five results",
+    "Narrow evidence-gap wording and preservation of book-specific qualifications",
+    "Separate source-support audit before release; one correction then recheck",
+    "Bounded transient-error retry with shared tool budget; no daily-quota retries"
+  ],
+  "models": {
+    "agent": "gemini-3.1-flash-lite",
+    "paired_judge": "gemini-3.5-flash-lite"
+  },
+  "comparison": "Same stricter rubric for baseline and revised answers in paired review; rotating A/B order. Judge never sees human grades or baseline verdicts."
+}

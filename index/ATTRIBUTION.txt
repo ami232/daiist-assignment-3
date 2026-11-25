@@ -1,0 +1,28 @@
+Financial-health reference corpus: source notices
+
+Excerpts were selected and cleaned; navigation was removed, glossary
+definitions separated, and MathML formulas converted to text.
+These transformations were implemented with AI coding assistance.
+
+Accounting in the Finance World
+Anonymous authors, as requested by the original licensor
+https://2012books.lardbucket.org/books/accounting-in-the-finance-world/
+CC BY-NC-SA 3.0
+https://creativecommons.org/licenses/by-nc-sa/3.0/
+
+
+Accounting for Managers
+Anonymous authors, as requested by the original licensor
+https://2012books.lardbucket.org/books/accounting-for-managers/
+CC BY-NC-SA 3.0
+https://creativecommons.org/licenses/by-nc-sa/3.0/
+
+
+Financial Management for Small Businesses, 2nd OER Edition
+Lindon J. Robison, Steven D. Hanson and J. Roy Black; Michigan State University Libraries
+https://openbooks.lib.msu.edu/financialmanagement/
+CC BY 4.0 (downloaded edition)
+https://creativecommons.org/licenses/by/4.0/
+The public 2021 HTML export states CC BY 4.0; the current university catalogue states CC BY-NC 4.0. Keep attribution and use this collection only for the noncommercial coursework project.
+
+Noncommercial coursework collection. Each source retains its stated licence.

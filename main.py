@@ -62,9 +62,13 @@ if __name__ == "__main__":
     parser.add_argument("stage", choices=["index", "ask", "evaluate"])
     parser.add_argument("question", nargs="*", help="the question, for `ask`")
     args = parser.parse_args()
-    if args.stage == "ask":
-        if not args.question:
-            parser.error('ask needs a question: main.py ask "your question"')
-        run_agent(" ".join(args.question))
-    else:
-        run_entrypoint(args.stage)
+    try:
+        if args.stage == "ask":
+            if not args.question:
+                parser.error('ask needs a question: main.py ask "your question"')
+            run_agent(" ".join(args.question))
+        else:
+            run_entrypoint(args.stage)
+    except subprocess.CalledProcessError as error:
+        # The stage already explains its own validation failure.
+        raise SystemExit(error.returncode) from None

@@ -1,0 +1,16 @@
+{
+  "checked_at": "2026-11-25T00:29:17.484670+01:00",
+  "purpose": "Service availability only; no evaluation accuracy measured.",
+  "results": [
+    {
+      "model": "gemini-3.1-flash-lite",
+      "available": true,
+      "response": "OK."
+    },
+    {
+      "model": "gemini-3.5-flash",
+      "available": false,
+      "response": null
+    }
+  ]
+}

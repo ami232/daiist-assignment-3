@@ -1,0 +1,84 @@
+{
+  "run_directory": "eval/runs/f0fa6c5df158007be127",
+  "design": "dense",
+  "questions": 30,
+  "correct": 25,
+  "supported": 29,
+  "unsupported": 1,
+  "correct_refusals": 5,
+  "wrong_refusals": 5,
+  "reliable": 25,
+  "reliable_rate": 0.8333333333333334,
+  "mean_agent_seconds": 7.969046774902381,
+  "generation_usage_complete_answers": 27,
+  "mean_reported_generation_tokens": 7381.444444444444,
+  "usage_limitations": "Embedding-token usage is unavailable. Generation usage after an interrupted primary graph may be incomplete; those answers are excluded from the token mean. Stored first-run answer timings are retained when resuming.",
+  "human_judge_agreement": {
+    "compared_answers": 20,
+    "correct_agreement": 0.9,
+    "correct_confusion": {
+      "human_0_judge_0": 4,
+      "human_0_judge_1": 2,
+      "human_1_judge_0": 0,
+      "human_1_judge_1": 14
+    },
+    "supported_agreement": 0.75,
+    "supported_confusion": {
+      "human_0_judge_0": 0,
+      "human_0_judge_1": 4,
+      "human_1_judge_0": 1,
+      "human_1_judge_1": 15
+    },
+    "both_fields_agreement": 0.7
+  },
+  "retrieval_metrics": [
+    {
+      "design": "dense",
+      "k": 1,
+      "answerable_questions": 25,
+      "hit_any": 0.72,
+      "hit_all": 0.48,
+      "evidence_recall": 0.6
+    },
+    {
+      "design": "dense",
+      "k": 3,
+      "answerable_questions": 25,
+      "hit_any": 0.92,
+      "hit_all": 0.76,
+      "evidence_recall": 0.84
+    },
+    {
+      "design": "dense",
+      "k": 5,
+      "answerable_questions": 25,
+      "hit_any": 0.92,
+      "hit_all": 0.88,
+      "evidence_recall": 0.9
+    },
+    {
+      "design": "hybrid",
+      "k": 1,
+      "answerable_questions": 25,
+      "hit_any": 0.4,
+      "hit_all": 0.24,
+      "evidence_recall": 0.32
+    },
+    {
+      "design": "hybrid",
+      "k": 3,
+      "answerable_questions": 25,
+      "hit_any": 0.84,
+      "hit_all": 0.76,
+      "evidence_recall": 0.8
+    },
+    {
+      "design": "hybrid",
+      "k": 5,
+      "answerable_questions": 25,
+      "hit_any": 0.88,
+      "hit_all": 0.84,
+      "evidence_recall": 0.86
+    }
+  ]
+}

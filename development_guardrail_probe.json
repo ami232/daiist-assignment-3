@@ -1,0 +1,35 @@
+{
+  "scope": "Synthetic invalid-citation development test; not a real model failure or a human grade",
+  "outcome": {
+    "answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "draft": {
+      "status": "supported",
+      "answer_claims": [
+        {
+          "text": "Deliberately injected invalid reference",
+          "citations": [
+            "[invented-book | 99]"
+          ]
+        }
+      ],
+      "missing_information": "",
+      "general_background": []
+    },
+    "guardrail_blocked": true,
+    "guardrail_events": [
+      {
+        "attempt": 0,
+        "issues": [
+          "Citation was not returned by search: [invented-book | 99]"
+        ]
+      },
+      {
+        "attempt": 1,
+        "issues": [
+          "Citation was not returned by search: [invented-book | 99]"
+        ]
+      }
+    ],
+    "correction_attempts": 1
+  }
+}

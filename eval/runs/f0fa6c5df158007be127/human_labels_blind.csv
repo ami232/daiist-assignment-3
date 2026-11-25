@@ -1,0 +1,22 @@
+id,correct,supported,notes
+q01,1,1,
+q02,0,1,"Answerable question; answer declines. The MSU ""Limitations of Ratios"" paragraph (different accounting practices such as depreciation change financial statements and ratios, so understand practices across firms and over time) contains the answer, but it was not among the 5 retrieved passages. Retrieval miss, not a generation error. The abstention is honest given the evidence."
+q03,1,0,"Opening claim is overbroad: says provided documents contain no financial information beyond fiscal 2010, but the retrieved MSU passage (HQN) includes 2018 financial statements. Should have been scoped to Southwest (no data after FY2010). The three Southwest figures are accurately supported by the §12.1 passage; abstention behavior is correct."
+q04,0,1,"Accurate and supported, but incomplete. Never states plainly that the figure is an inexact estimate or that actual collections may differ. Answers ""what do managers base it on"" with calculation methods (% of sales, % of receivables, aging) instead of the evidence base: historical collection experience, overdue share, credit/collection practices, economic/industry conditions, and the reasonable-not-absolute-assurance point. Those details are in §7.1, which was not retrieved."
+q05,1,0,"Opening sentence claims the provided documents contain no financial information for any specific company or reporting period, which the retrieved passages contradict (Coca-Cola current ratio, HQN 2017 current ratio, J&J 2008 balance sheet, Advanced Cell Technology). Unneeded for an answerable general question. Remaining claims (due within weeks/months, credit/bankruptcy risk, current ratio formula and <1.00, quick ratio) are supported by the §13.1, MSU, and §13.3 passages. Borderline."
+q06,1,1,
+q07,0,1,"Answerable question with the answer in the retrieved evidence: the first passage (MSU Profit margin ratio subsection) defines m as EBT ÷ total revenue, the proportion of each dollar of revenue kept after interest but before taxes, with HQN's before-tax margin at 0.425% ($0.00425 per $1) and the after-tax version at 0.255%. The model refused (""couldn't produce an answer with verified citations"") instead of answering. Wrongful abstention; this is a generation/citation-gate failure, not a retrieval miss."
+q08,0,1,"Answerable question; answer is a bare refusal. Retrieval returned 0 passages, so the model had no evidence. The MSU TIE subsection (EBIT ÷ interest; measures solvency/repayment capacity; healthy firms should exceed 1) was not retrieved. Retrieval failure leading to abstention."
+q09,1,0,"Correctly states that the documents contain no current median quick ratio for U.S. grocery retailers and labels the rest as background. Minor support errors in the background: describes 0.43 as a benchmark when it is HQN's own quick ratio (the industry quartiles are 0.5/0.7/1.1), calls the MSU table ""for small businesses,"" and extends the §13.3 list of factors (industry, asset/liability composition, financial condition), which that passage states for the current ratio, to the quick ratio. Core abstention and the grocery-inventory point are supported. Borderline."
+q10,1,1,
+q11,1,1,
+q12,1,1,
+q13,1,1,
+q14,1,1,
+q15,0,0,"Correct: No: ""Answer states ROA measures profit per dollar of assets and that 0.065 means $0.065 of profit per dollar, but omits that this chapter defines ROA as EBIT ÷ assets (before interest and taxes), the formula, and the beginning-of-period assets basis. Without the EBIT qualifier the plain-terms interpretation is imprecise. Borderline.""
+Support: No: ""The retrieved passage says $0.065 of before-tax profit per dollar of assets (EBIT basis); the answer says 'profits' without the qualifier, a looser claim than the source supports. First sentence is supported. Borderline."""
+q16,1,1,
+q17,1,1,
+q18,1,1,
+q19,1,1,
+q20,0,1,"Answerable question with the answer in the first retrieved passage (§12.2): interest paid on long-term debt is included in operating activities, and dividend payments (and principal of long-term debt) are financing activities; Review Problem 12.2 items 5 and 7 confirm dividends = financing and interest paid = operating. The model refused (""couldn't produce an answer with verified citations"") despite retrieving the exact section. Wrongful abstention; generation/citation-gate failure, not a retrieval miss."

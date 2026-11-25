@@ -1,0 +1,14 @@
+{
+  "run_kind": "Live MCP transport check using an existing cached query; not answer grading",
+  "tool_names": [
+    "add_document",
+    "search"
+  ],
+  "query": "quick ratio versus current ratio inventory excluded current assets",
+  "query_embedding_cache_hit": true,
+  "passages": 5,
+  "readable_first_citation": "[financial-management-small-businesses | Chapter 6, learning goals: Quick (QK) ratio]",
+  "structured_evidence_matches_original_export": true,
+  "corpus_unchanged": true,
+  "provider_generation_called": false
+}

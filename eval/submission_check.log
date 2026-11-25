@@ -1,0 +1,39 @@
+
+=== 1/4  Checking your Gemini API key =================================
+
+Found a key in .env: AQ*************************************************Aw
+Key works: key accepted.
+
+=== 2/4  Checking your committed index and test set ===================
+
+index/ holds 3 file(s), 2.6 MB.
+eval/questions.csv has 30 questions: 9 multi, 16 single, 5 unanswerable.
+
+=== 3/4  Starting server.py, checking its tools and calling its search tool 
+
+Tool `search` answered "A company reported strong net income this year, but its cash balance on the balance sheet barely moved. Why can't I just read that from the income statement and balance sheet, and what does the statement of cash flows tell me that they don't?":
+
+Retrieved passages for: A company reported strong net income this year, but its cash balance on the balance sheet barely moved. Why can't I just read that from the income statement and balance sheet, and what does the statement of cash flows tell me that they don't?
+
+Passage 1
+[accounting-for-managers | 12.1]
+Accounting for Managers — 12.1 Purpose of the Statement of Cash Flows
+https://2012books.l...
+
+=== 4/4  Asking your agent (main.py ask) ==============================
+
+The income statement relies on the accrual basis of accounting, which recognizes revenue when earned and expenses when incurred, rather than when cash is exchanged. [accounting-for-managers | 12.3]
+
+Because the income statement and balance sheet are created using the accrual basis of accounting, they do not indicate how much cash was actually received for revenues or paid for expenses. [accounting-for-managers | 12.1] [accounting-for-managers | 12.3]
+
+The balance sheet provides cash balances only at a specific point in time, and it does not explain how that cash was generated or used during the period. [accounting-for-managers | 12.1]
+
+The statement of cash flows is designed to fill this gap by providing a summary of cash receipts and cash payments, categorized by operating, investing, and financing activities. [accounting-for-managers | 12.1]
+
+It reconciles the change in cash from the beginning of the period to the end of the period, revealing how net income was converted to cash and where cash was spent, such as on equipment, debt repayment, or investments. [accounting-for-managers | 12.1]
+
+(answered in 73.6s)
+
+========================================================================
+All checks passed.
+========================================================================

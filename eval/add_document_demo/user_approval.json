@@ -1,0 +1,7 @@
+{
+  "recorded_at": "2026-11-25T13:20:33.959465+01:00",
+  "decision": "Approve the Southwest fact sheet (recommended)",
+  "document": "eval/add_document_demo/candidate/southwest-2025-cash-flow-facts.md",
+  "sha256": "0790a694dd7d83579eb2d633c8c4cfbf6216317bce8482840a81b316b6a08697",
+  "scope": "Add this one document to an isolated demonstration index and ask the existing q03 again. Baseline evaluation preserved."
+}

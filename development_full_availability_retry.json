@@ -1,0 +1,146 @@
+{
+  "question": "Why would I use the quick ratio instead of the current ratio, and which current asset does it leave out?",
+  "design": "dense",
+  "model": "gemini-3.1-flash-lite",
+  "answer": "The quick ratio, also known as the acid-test ratio, is used as a more stringent measure of short-term liquidity compared to the current ratio because it focuses on a company's ability to cover its current liabilities using only its most liquid assets. [accounting-for-managers | 13.3]\n\nThe quick ratio specifically leaves out inventory from the numerator, as inventory is often considered the least liquid of the current assets and its liquidation value can be the most uncertain. [accounting-for-managers | 13.3] [financial-management-small-businesses | Chapter 6, learning goals: Quick (QK) ratio]\n\nWhile inventory is typically excluded, some industries that turn inventory over very quickly, such as grocery stores, may consider including it in the calculation. [accounting-for-managers | 13.3]",
+  "draft": {
+    "status": "supported",
+    "answer_claims": [
+      {
+        "text": "The quick ratio, also known as the acid-test ratio, is used as a more stringent measure of short-term liquidity compared to the current ratio because it focuses on a company's ability to cover its current liabilities using only its most liquid assets.",
+        "citations": [
+          "[accounting-for-managers | 13.3]"
+        ]
+      },
+      {
+        "text": "The quick ratio specifically leaves out inventory from the numerator, as inventory is often considered the least liquid of the current assets and its liquidation value can be the most uncertain.",
+        "citations": [
+          "[accounting-for-managers | 13.3]",
+          "[financial-management-small-businesses | Chapter 6, learning goals: Quick (QK) ratio]"
+        ]
+      },
+      {
+        "text": "While inventory is typically excluded, some industries that turn inventory over very quickly, such as grocery stores, may consider including it in the calculation.",
+        "citations": [
+          "[accounting-for-managers | 13.3]"
+        ]
+      }
+    ],
+    "missing_information": "",
+    "general_background": []
+  },
+  "guardrail_blocked": false,
+  "guardrail_events": [],
+  "correction_attempts": 0,
+  "trace": [
+    {
+      "tool": "search",
+      "arguments": {
+        "query": "what is the difference between current ratio and quick ratio and which asset is excluded"
+      },
+      "status": "success",
+      "result": {
+        "query": "what is the difference between current ratio and quick ratio and which asset is excluded",
+        "design": "dense",
+        "query_embedding_cache_hit": false,
+        "query_embedding_seconds": 0.8434036250691861,
+        "retrieval_seconds": 0.09032266703434289,
+        "seconds": 0.933726292103529,
+        "results": [
+          {
+            "id": "9ecbd1ae9df228611e26422607a2470ab3c852cca2b96dbac8d5521147ca032a",
+            "source": "accounting-for-managers",
+            "location": "13.3",
+            "title": "Accounting for Managers — 13.3 Ratio Analysis of Financial Information",
+            "url": "https://2012books.lardbucket.org/books/accounting-for-managers/s17-03-ratio-analysis-of-financial-in.html",
+            "text": "The current ratio indicates Coca-Cola had $1.17 in current assets for every dollar in current liabilities. This ratio decreased from 2009 to 2010 and is slightly higher than PepsiCo’s 1.11 to 1 ratio. Coca-Cola is close to the industry average of 1.20 to 1. In general, a current ratio above 1 to 1 is preferable, which indicates the company has sufficient current assets to cover current liabilities. However, finding the ideal minimum current ratio is dependent on many factors, such as the industry, the overall financial condition of the company, and the composition of the company’s current assets and current liabilities. Because of variations in these factors from one company to the next, a more stringent measure of short-term liquidity is often used. We present this measure, called the quick ratio, next.\nQuick Ratio\nQuestion: How is the quick ratio calculated, and what does it tell us about Coca-Cola relative to PepsiCo and the industry average?\nAnswer: The quick ratio (Indicates whether a company has enough quick assets to cover current liabilities. Calculated as quick assets divided by current liabilities; also called acid-test ratio.) (also called acid-test ratio) indicates whether a company has sufficient quick, or highly liquid, assets to cover current liabilities. The quick ratio is quick assets divided by current liabilities:\nKey Equation\nQuick ratio=(Cash + Marketable securities+Short-term receivables) / (Current liabilities)\nNotice the numerator excludes current assets that are not easily and quickly converted to cash. Although inventory is typically excluded from the numerator, further analysis is needed to evaluate whether inventory should be included. For example, grocery stores turn inventory over very quickly, typically within a couple of weeks, and should consider including inventory in the quick ratio. Producers of wine, on the other hand, turn inventory over very slowly, and should consider excluding inventory in the numerator of the quick ratio. For the sake of consistency, you should exclude inventory from the numerator in this chapter, unless told otherwise. (Note: Many companies provide two quick ratio calculations, one that includes inventory in the numerator and one that excludes inventory in the numerator. If two ratios are presented, it is important to label each ratio to indicate whether inventory has been included or excluded.)\nIt is helpful when reviewing a company’s balance sheet to remember that current assets are presented in order of liquidity, with the most liquid current asset appearing first and the least liquid",
+            "word_start": 3500,
+            "word_end": 3900,
+            "word_count": 400,
+            "passage_location": "13.3@3500:3900",
+            "citation": "[accounting-for-managers | 13.3]",
+            "score": 0.7828482389450073,
+            "semantic_score": 0.7828482389450073,
+            "keyword_score": 0.0
+          },
+          {
+            "id": "b240db072410e6adc4cf23f4ce3d3988f6e7d6442e8ce2256a8d5d2ecda8656b",
+            "source": "financial-management-small-businesses",
+            "location": "Chapter 6, learning goals: Quick (QK) ratio",
+            "title": "Financial Management for Small Businesses, 2nd OER Edition — Quick (QK) ratio",
+            "url": "https://openbooks.lib.msu.edu/financialmanagement/chapter/financial-ratios/",
+            "text": "Quick (QK) ratio\nThe QK ratio is sometimes called the acid-test ratio. The QK ratio is very similar to the CT ratio, except that inventories (INV), another point-in-time measure obtained from the firm’s balance sheet, are subtracted from CA. The QK ratio is defined as:\n(6.38) [Image: \\begin{equation*} QK = \\dfrac{CA - INV}{CL}\\end{equation*}]\nIn forming the QK ratio, inventories are subtracted because inventories are most often the least liquid of the current assets, and their liquidation value is often the most uncertain. Thus the QK ratio provides a more demanding liquidity measure than the firm’s CT ratio.\nUsing balance sheet data from Table 6.1, we find the beginning 2018 QK ratio for HQN equal to:\n(6.39) [Image: \\begin{equation*} QK = \\dfrac{(\\$6,320 - \\$3,750)}{\\$5,958} = 0.43\\end{equation*}]\nIn other words, liquidating all current assets except inventory will generate enough cash to pay for only 43 percent of HQN’s current liabilities. Once again, there is no right or wrong QK ratio. This partly depends on the form of one’s inventories. Product inventories are liquid. Inventories of inputs are less liquid. Clearly, HQN’s liquidity is much lower if its inventory is not available to meet currently maturing obligations. Nevertheless, similar to the CT ratio, a QK ratio of less than one does not necessarily mean the firm will be unable to meet the maturing obligations.",
+            "word_start": 0,
+            "word_end": 221,
+            "word_count": 221,
+            "passage_location": "Chapter 6, learning goals: Quick (QK) ratio@0:221",
+            "citation": "[financial-management-small-businesses | Chapter 6, learning goals: Quick (QK) ratio]",
+            "score": 0.7728676795959473,
+            "semantic_score": 0.7728676795959473,
+            "keyword_score": 0.0
+          },
+          {
+            "id": "45403b5f3387aa4bab207a89a540da9f2269d68659f2811782bd6f8c12b559f5",
+            "source": "accounting-for-managers",
+            "location": "13.3",
+            "title": "Accounting for Managers — 13.3 Ratio Analysis of Financial Information",
+            "url": "https://2012books.lardbucket.org/books/accounting-for-managers/s17-03-ratio-analysis-of-financial-in.html",
+            "text": "are presented, it is important to label each ratio to indicate whether inventory has been included or excluded.)\nIt is helpful when reviewing a company’s balance sheet to remember that current assets are presented in order of liquidity, with the most liquid current asset appearing first and the least liquid appearing last. This helps in determining whether a particular current asset should be included or excluded in the numerator of the quick ratio. The quick ratio for Coca-Cola for 2010 is calculated as follows, with PepsiCo and industry average information following it:\nQuick ratio=($11,199+$138+$4,430) / ($8,859+$8,100+$1,549)=($15,767) / ($18,508)=0.85 to 1\n| Coca-Cola 2010 | Coca-Cola 2009 | PepsiCo 2010 | Industry Average 2010 |\nQuick ratio | 0.85 to 1 | 0.95 to 1 | 0.80 to 1 | 1.10 to 1 |\nThe quick ratio indicates Coca-Cola had $0.85 in quick assets for every dollar in current liabilities. This ratio decreased from 2009 to 2010 and is slightly higher than PepsiCo’s 0.80 to 1 ratio. Coca-Cola is below the industry average of 1.10 to 1.\nReceivables Turnover Ratio\nQuestion: How is the receivables turnover ratio calculated, and what does it tell us about Coca-Cola relative to PepsiCo and the industry average?\nAnswer: The receivables turnover ratio (Indicates how many times receivables are collected in a given period. Calculated as credit sales divided by average accounts receivable.) indicates how many times receivables are collected in a given period and is found by dividing credit sales by average accounts receivable:\nKey Equation\nReceivables turnover ratio=(Credit sales) / (Average accounts receivable)\nAssume all net sales presented on the income statement are on account, and therefore will be used in the numerator. The average accounts receivable amount in the denominator is found by adding together accounts receivable at the end of the current year and previous year (2010 and 2009 for this example) and dividing by two. The receivables turnover ratio for Coca-Cola for 2010 is calculated as follows, with PepsiCo and industry average information following it:\nReceivables turnover ratio=($35,119) / (($4,430+$3,758)÷2)=($35,119) / ($4,094)=8.58 times\n| Coca-Cola 2010 | Coca-Cola 2009 | PepsiCo 2010 | Industry Average 2010 |\nReceivables turnover ratio | 8.58 times | 9.05 times | 10.57 times | 9.70 times |\nThe receivables turnover ratio indicates Coca-Cola collected receivables 8.58 times during 2010. This ratio decreased from 2009 to 2010 and is lower than PepsiCo’s 10.57 times. Coca-Cola is",
+            "word_start": 3850,
+            "word_end": 4250,
+            "word_count": 400,
+            "passage_location": "13.3@3850:4250",
+            "citation": "[accounting-for-managers | 13.3]",
+            "score": 0.7346299886703491,
+            "semantic_score": 0.7346299886703491,
+            "keyword_score": 0.0
+          },
+          {
+            "id": "993f6c3823d5d74b3674feb7e6757333870f67d27d2d1bb13373ba1dcee794c0",
+            "source": "financial-management-small-businesses",
+            "location": "Chapter 6, learning goals: Current (CT) ratio",
+            "title": "Financial Management for Small Businesses, 2nd OER Edition — Current (CT) ratio",
+            "url": "https://openbooks.lib.msu.edu/financialmanagement/chapter/financial-ratios/",
+            "text": "Current (CT) ratio\nLiquidity ratios measure a firm’s ability to meet its short-term or current financial obligations with short-term or current assets. The CT ratio is the most common liquidity measure. It combines two point-in-time measures from the balance sheet, current assets (CA), and current liabilities (CL). The point-in-time measures of the two numbers must be the same. We write the CT ratio as:\n(6.36) [Image: \\begin{equation*} CT = \\dfrac{CA}{CL}\\end{equation*}]\nIn principle we would like to see the CT ratio exceed one (CT > 1), because it suggests that for every dollar of CL there is more than one dollar of CA sufficient to cover the liquidation of CL if necessary. If the CT ratio is less than one (CT < 1), then liquidating current assets will not generate enough funds to pay for the firm’s maturing current liabilities obligations which may create a significant problem. If the firm’s current liabilities exceed its current assets, the firm may have to liquidate long-term assets to meet it current obligations. But liquidating long-term (usually illiquid) assets is often costly to do because they cannot be easily converted to cash and end up being sold for a price less than their value to the firm.\nThe current ratio is constructed from the firm’s balance sheet (see Table 6.1). The CT ratio for HQN at the beginning of 2018 (the end of 2017) was:\n(6.37) [Image: \\begin{equation*} CT = \\dfrac{\\$6,320}{\\$5,958} = 1.06\\end{equation*}]\nHQN’s beginning 2018 CT ratio value of 1.06, suggests that its current liquid resources were just sufficient to meet its current obligations.\nAs with all the ratios we will consider, there is generally no “correct” CT ratio value. Clearly a firm’s CT ratio can be too low, in which case the firm might have difficulty paying its maturing short-term liabilities. Nevertheless, a CT < 1 does not mean that a firm will not be able to meet its maturing obligations. The firm may have access to other resources that can be used to help meet maturing obligations, such as earnings from operations, long-term assets that could be liquidated, debt which could be restructured, and/or investments in depreciating assets which can be delayed.\nOn the other hand, a firm’s CT ratio can be too high. CA usually earn a low rate of return and holding large levels of current assets may not be profitable to the firm. It may be more efficient to",
+            "word_start": 0,
+            "word_end": 400,
+            "word_count": 400,
+            "passage_location": "Chapter 6, learning goals: Current (CT) ratio@0:400",
+            "citation": "[financial-management-small-businesses | Chapter 6, learning goals: Current (CT) ratio]",
+            "score": 0.6939987540245056,
+            "semantic_score": 0.6939987540245056,
+            "keyword_score": 0.0
+          },
+          {
+            "id": "21547879d09fc990defb7f32ab220b5d0713b5a76c1370d1369908039afc1c6a",
+            "source": "accounting-in-the-finance-world",
+            "location": "3.4",
+            "title": "Accounting in the Finance World — 3.4 Reporting a Balance Sheet and a Statement of Cash Flows",
+            "url": "https://2012books.lardbucket.org/books/accounting-in-the-finance-world/s06-04-reporting-a-balance-sheet-and-.html",
+            "text": "3.4 Reporting a Balance Sheet and a Statement of Cash Flows\nLearning Objectives\nAt the end of this section, students should be able to meet the following objectives:\nList the types of accounts presented on a balance sheet.\nExplain the difference between current assets and liabilities and noncurrent assets and liabilities.\nCalculate working capital and the current ratio.\nProvide the reason for a balance sheet to always balance.\nIdentify the three sections of a statement of cash flows and explain the types of events included in each.\nQuestion: The third financial statement is the balance sheet. If a decision maker studies a company’s balance sheet (on its Web site, for example), what information can be discovered?\nAnswer: The primary purpose of a balance sheet is to report an organization’s assets and liabilities at a particular point in time. The format is quite simple. All assets are listed first—usually in order of liquidityLiquidity refers to the ease with which assets can be converted into cash. Thus, cash is normally reported first followed by investments in stock that are expected to be sold soon, accounts receivable, inventory, and so on.—followed by the liabilities. A picture is provided of each future economic benefit owned or controlled by the company (its assets) as well as its debts (liabilities).\nA typical balance sheet is reported in Figure 3.5 \"Balance Sheet\" for Davidson Groceries. Note that the assets are divided between current (those expected to be used or consumed within the next year) and noncurrent (those expected to remain within the company for longer than a year). Likewise, liabilities are split between current (to be paid during the next year) and noncurrent (not to be paid until after the next year). This labeling aids financial analysis because Davidson Groceries’ current liabilities ($57,000) can be subtracted from its current assets ($161,000) to arrive at a figure often studied by interested parties known as working capital ($104,000 in this example). The current assets can also be divided by current liabilities ($161,000/$57,000) to determine the company’s current ratio (2.82 to 1.00), another figure calculated by many decision makers as a useful measure of short-term operating strength.\nThe balance sheet shows the company’s financial condition on one specific date. All the other financial statements report events occurring over a period of time (often a year or a quarter). The balance sheet discloses assets and liabilities as of the one specified",
+            "word_start": 0,
+            "word_end": 400,
+            "word_count": 400,
+            "passage_location": "3.4@0:400",
+            "citation": "[accounting-in-the-finance-world | 3.4]",
+            "score": 0.6912578344345093,
+            "semantic_score": 0.6912578344345093,
+            "keyword_score": 0.0
+          }
+        ]
+      },
+      "seconds": 0.9417452909983695
+    }
+  ],
+  "usage": {
+    "input_tokens": 6663,
+    "output_tokens": 254,
+    "total_tokens": 6917,
+    "reported_model_calls": 2
+  },
+  "primary_runtime_error": null,
+  "primary_runtime_error_detail": null,
+  "usage_complete": true,
+  "seconds": 8.295537458034232,
+  "usage_note": "Embedding tokens are not reported by the embedding API; these are generation-model usage counts. Failed primary graph calls may have unavailable usage."
+}

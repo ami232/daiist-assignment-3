@@ -1,0 +1,31 @@
+{
+  "purpose": "Request availability only; model not selected by grades or agreement. Human ratings already bound.",
+  "probes": [
+    {
+      "model": "gemini-3.5-flash",
+      "request_succeeded": true,
+      "verdict": {
+        "correct": 1,
+        "supported": 1,
+        "refusal": "correct",
+        "reason": "The displayed agent answer accurately states that the retrieved passages do not contain information regarding how differing depreciation methods (accelerated vs. straight-line) affect the direct comparability of Return on Assets (ROA). This is a correct evidence-gap response.",
+        "unsupported_claims": [],
+        "essential_errors_or_omissions": []
+      }
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "request_succeeded": true,
+      "verdict": {
+        "correct": 0,
+        "supported": 0,
+        "refusal": "wrong",
+        "reason": "The agent wrongly claimed the documents do not address the topic and refused to answer, whereas the reference answer successfully responds using general accounting analysis supported by the task.",
+        "unsupported_claims": [],
+        "essential_errors_or_omissions": [
+          "Failed to answer whether ratios can be compared directly when using different depreciation methods."
+        ]
+      }
+    }
+  ]
+}

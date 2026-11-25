@@ -1,0 +1,5 @@
+{
+  "recorded_at": "2026-11-25T14:06:53.084298+01:00",
+  "failure_grouping_response": "Use this grouping (recommended)",
+  "student_conclusion_verbatim": "I wouldn't let a junior analyst rely on it yet, so I agree with keeping it as a demo: only 11 of 20 answers passed both checks, and the errors (claiming the books say nothing when they do, or dropping a key detail) are the kind a newer analyst would trust and miss. The first fix is to make the assistant only say what the retrieved passages actually show, and to tighten the AI judge, since it passed all four answers I marked unsupported; retrying after errors like Q08's rate limit comes next, so a technical failure no longer looks like a refusal."
+}

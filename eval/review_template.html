@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="review-token" content="__REVIEW_TOKEN__">
+<title>Financial health · Blind review</title>
+<style>
+:root {color-scheme:light dark;--surface:light-dark(#f5f6f8,#202329);--line:light-dark(#d5d9e1,#49505a);--accent:light-dark(#244bb8,#a8beff);--error:light-dark(#a01e29,#ffb3b9)}
+* {box-sizing:border-box}
+body {font:16px/1.55 system-ui,sans-serif;margin:0 auto;padding:28px 20px 60px;max-width:1000px;background:Canvas;color:CanvasText}
+h1 {font-size:24px;font-weight:600;margin:0 0 10px} h2 {font-size:18px;margin:24px 0 8px}
+p {margin:8px 0} button,select,textarea {font:inherit;color:inherit} button,select {padding:10px 14px;min-height:44px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+button {cursor:pointer} button:disabled {cursor:default;opacity:.55} button.primary {background:var(--accent);color:light-dark(white,#111a32);border-color:var(--accent)}
+.row {display:flex;align-items:center;flex-wrap:wrap;gap:12px} .space {justify-content:space-between}
+.content {white-space:pre-wrap;overflow-wrap:anywhere} .answer {padding:18px;background:var(--surface);border-radius:10px}
+details {margin:14px 0} summary {cursor:pointer;padding:6px 0;font-weight:600;overflow-wrap:anywhere}
+.passage {border-top:1px solid var(--line);padding:12px 0}
+.grading {display:grid;grid-template-columns:1fr 1fr;gap:18px}
+fieldset {margin:0;padding:12px 14px;border:1px solid var(--line);border-radius:8px}
+legend {font-weight:600} label.choice {display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-right:18px;cursor:pointer}
+input[type=radio] {width:18px;height:18px;accent-color:var(--accent)}
+textarea {display:block;width:100%;min-height:100px;margin:8px 0 16px;padding:12px;border:1px solid var(--line);border-radius:8px;background:Canvas}
+progress {width:100%;height:10px;accent-color:var(--accent);margin:8px 0 16px}
+#message {min-height:1.6em;margin-top:12px} #message.error {color:var(--error)}
+.secondary {font-size:14px} a {color:var(--accent)}
+@media(max-width:560px) {.grading {grid-template-columns:1fr} body {padding:20px 14px 40px} h1 {font-size:21px}}
+</style>
+</head>
+<body>
+<h1>Financial health · Blind review</h1>
+<p>Read the answer and its evidence, then choose both grades. Grade at least 20 answers before the LLM judge runs. No automated grades are shown here.</p>
+<p class="secondary">Correctness: does it answer the question accurately and adequately? Support: are its substantive claims supported by the retrieved passages? A correct main explanation with an unsupported addition can receive Yes for correctness and No for support. For missing facts, a clear, appropriate refusal can pass.</p>
+<div class="row space"><label for="question-select">Question <select id="question-select" aria-label="Select question"></select></label><span id="progress-text" aria-live="polite">Loading saved answers…</span></div>
+<progress id="progress" max="30" value="0" aria-label="Saved human grades"></progress>
+<main id="review" hidden>
+  <h2 id="question-title"></h2><p id="question" class="content"></p>
+  <h2>Assistant answer</h2><div id="answer" class="content answer"></div>
+  <details><summary>Your reference answer</summary><p id="reference" class="content"></p></details>
+  <details><summary id="evidence-title">Retrieved evidence</summary><div id="evidence"></div></details>
+  <h2>Your grades</h2>
+  <div class="grading">
+    <fieldset><legend>Correct and adequate?</legend><label class="choice"><input type="radio" name="correct" value="1">Yes · 1</label><label class="choice"><input type="radio" name="correct" value="0">No · 0</label></fieldset>
+    <fieldset><legend>Supported by the evidence?</legend><label class="choice"><input type="radio" name="supported" value="1">Yes · 1</label><label class="choice"><input type="radio" name="supported" value="0">No · 0</label></fieldset>
+  </div>
+  <label for="notes">Notes · explain every No grade</label><textarea id="notes" maxlength="4000" placeholder="Which claim is wrong, missing, or unsupported? Optional when both grades are Yes."></textarea>
+  <div class="row space"><div class="row"><button id="previous" type="button">Previous</button><button id="next" type="button">Next</button></div><button class="primary" id="save" type="button">Save this grade</button></div>
+</main>
+<p id="message" role="status" aria-live="polite"></p>
+<script>
+(() => {
+  const el = id => document.getElementById(id);
+  const token = document.querySelector('meta[name="review-token"]').content;
+  let data, index = 0, labels = {}, drafts = {}, busy = false;
+  function message(text, error = false) {el('message').textContent = text;el('message').classList.toggle('error', error);}
+  function remember() {
+    if (!data) return;
+    const q = data.questions[index];
+    drafts[q.id] = {id:q.id, correct:document.querySelector('input[name="correct"]:checked')?.value ?? '', supported:document.querySelector('input[name="supported"]:checked')?.value ?? '',notes:el('notes').value};
+    try {localStorage.setItem('financial-review-'+data.review_hash, JSON.stringify({drafts,index}));} catch (_) {}
+  }
+  function progress() {
+    const count = Object.keys(labels).length;
+    el('progress').max = data.questions.length;el('progress').value = count;
+    el('progress-text').textContent = `${count}/${data.questions.length} saved · ${Math.max(0,data.minimum-count)} more needed`;
+    [...el('question-select').options].forEach((option,i) => {const q=data.questions[i];option.textContent=q.id.toUpperCase()+(labels[q.id]?' · saved':' · ungraded');});
+  }
+  function render() {
+    const q = data.questions[index], grade=drafts[q.id] || labels[q.id] || {};
+    el('question-select').value=String(index);el('question-title').textContent=`${q.id.toUpperCase()} · Question ${index+1} of ${data.questions.length}`;
+    el('question').textContent=q.question;el('answer').textContent=q.agent_answer;el('reference').textContent=q.reference_answer;
+    document.querySelectorAll('input[type="radio"]').forEach(input=>{input.checked=grade[input.name]!==undefined && String(grade[input.name])===input.value;input.disabled=data.locked;});
+    el('notes').value=grade.notes || '';el('notes').disabled=data.locked;el('save').disabled=data.locked || busy;
+    el('previous').disabled=index===0;el('next').disabled=index===data.questions.length-1;
+    el('evidence').replaceChildren();
+    el('evidence-title').textContent=`Retrieved evidence · ${q.retrieved_passages.length} passages`;
+    for (const passage of q.retrieved_passages) {
+      const details=document.createElement('details');details.className='passage';
+      const summary=document.createElement('summary');summary.textContent=passage.citation || `${passage.source} | ${passage.location}`;
+      const text=document.createElement('div');text.className='content';text.textContent=passage.text;
+      details.append(summary,text);el('evidence').append(details);
+    }
+    progress();
+    message(data.locked?'These grades are locked because blind review has been bound or judge results exist.':'Your choices stay ungraded until you enter them. Use Save this grade to record them.');
+  }
+  function move(next) {remember();index=next;render();remember();}
+  el('previous').addEventListener('click',()=>move(Math.max(0,index-1)));
+  el('next').addEventListener('click',()=>move(Math.min(data.questions.length-1,index+1)));
+  el('question-select').addEventListener('change',event=>move(Number(event.target.value)));
+  document.querySelectorAll('input[type="radio"]').forEach(input=>input.addEventListener('change',remember));
+  el('notes').addEventListener('input',remember);
+  el('save').addEventListener('click',async()=>{
+    remember();const q=data.questions[index], draft=drafts[q.id];
+    if (!['0','1'].includes(String(draft.correct)) || !['0','1'].includes(String(draft.supported))) {message('Choose both grades before saving.',true);return;}
+    const grade={id:q.id,correct:Number(draft.correct),supported:Number(draft.supported),notes:draft.notes.trim()};
+    if ((!grade.correct || !grade.supported) && !grade.notes) {message('Please explain every No grade in your notes.',true);return;}
+    busy=true;el('save').disabled=true;
+    try {
+      const proposed={...labels,[q.id]:grade};
+      const response=await fetch('/api/labels',{method:'POST',headers:{'Content-Type':'application/json','X-Review-Token':token},body:JSON.stringify({review_hash:data.review_hash,labels_hash:data.labels_hash,labels:Object.values(proposed)})});
+      const result=await response.json();if (!response.ok) throw new Error(result.error || 'Unable to save.');
+      labels=proposed;data.labels_hash=result.labels_hash;progress();
+      message(result.saved>=data.minimum?`Saved ${q.id.toUpperCase()}. You have ${result.saved} grades; tell Codex “review ready” when finished.`:`Saved ${q.id.toUpperCase()}. ${data.minimum-result.saved} more grades needed.`);
+    } catch(error) {message(error.message,true);} finally {busy=false;el('save').disabled=data.locked;}
+  });
+  fetch('/api/review').then(response=>{if(!response.ok)throw new Error('Saved review is not available.');return response.json();}).then(result=>{
+    data=result;labels=result.labels;
+    try {const cached=JSON.parse(localStorage.getItem('financial-review-'+data.review_hash)||'null');if(cached){drafts=cached.drafts||{};index=Math.min(Math.max(0,cached.index||0),data.questions.length-1);}} catch(_) {}
+    data.questions.forEach((q,i)=>{const option=document.createElement('option');option.value=String(i);el('question-select').append(option);});
+    el('review').hidden=false;render();
+  }).catch(error=>message(error.message,true));
+})();
+</script>
+</body>
+</html>

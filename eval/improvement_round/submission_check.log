@@ -1,0 +1,37 @@
+
+=== 1/4  Checking your Gemini API key =================================
+
+Found a key in .env: AQ*************************************************Aw
+Key works: key accepted.
+
+=== 2/4  Checking your committed index and test set ===================
+
+index/ holds 3 file(s), 2.8 MB.
+eval/questions.csv has 30 questions: 9 multi, 16 single, 5 unanswerable.
+
+=== 3/4  Starting server.py, checking its tools and calling its search tool 
+
+Tool `search` answered "A company reported strong net income this year, but its cash balance on the balance sheet barely moved. Why can't I just read that from the income statement and balance sheet, and what does the statement of cash flows tell me that they don't?":
+
+Retrieved passages for: A company reported strong net income this year, but its cash balance on the balance sheet barely moved. Why can't I just read that from the income statement and balance sheet, and what does the statement of cash flows tell me that they don't?
+
+Passage 1
+[accounting-for-managers | 12.1]
+Accounting for Managers — 12.1 Purpose of the Statement of Cash Flows
+https://2012books.l...
+
+=== 4/4  Asking your agent (main.py ask) ==============================
+
+The income statement shows revenues and expenses using the accrual basis of accounting, meaning it does not indicate how much cash was actually received for revenues or paid for expenses. [accounting-for-managers | 12.1]
+
+The balance sheet shows assets, liabilities, and owners' equity at a specific point in time, but it does not show how much cash was received or paid for these individual items. [accounting-for-managers | 12.1]
+
+The balance sheet and income statement lack detailed cash flow information because they do not disclose cash receipt and cash payment activities over a period of time beyond the net change in cash from the beginning to the end of the period. [accounting-for-managers | 12.1]
+
+The statement of cash flows provides cash receipt and cash payment information, reconciles the change in cash for a period of time, and indicates where cash came from and where cash went by categorizing transactions into operating, investing, or financing activities. [accounting-for-managers | 12.1]
+
+(answered in 31.7s)
+
+========================================================================
+All checks passed.
+========================================================================

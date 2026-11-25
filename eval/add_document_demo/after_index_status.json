@@ -1,0 +1,13 @@
+{
+  "status": {
+    "documents": 4,
+    "chunks": 273,
+    "embedded_chunks": 273,
+    "pending_chunks": 0,
+    "cached_query_vectors": 89,
+    "model": "gemini-embedding-2",
+    "dimensions": 768,
+    "bytes": 2584576
+  },
+  "corpus_sha256": "3928afc10fc84731c6ea42a14053533a6560d31104656a49e1ed20d1e30bde68"
+}
