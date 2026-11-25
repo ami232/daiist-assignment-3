@@ -1,1 +1,40 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,1,1,
+q04,1,0,"says bank statements; 118/19 only says Zahlungsbelege"
+q05,1,1,states the other-costs (Nr. 17) limitation in substance
+q06,1,1,
+q07,0,1,misses the § 242 exception (209/15 Rn. 28)
+q08,1,1,
+q09,1,1,
+q10,1,1,
+q11,1,1,
+q12,1,1,
+q13,1,1,
+q14,1,1,
+q15,1,1,
+q16,1,1,
+q17,1,1,
+q18,1,1,
+q19,1,1,
+q20,1,1,
+q21,1,0,"""e.g. by email"" and ""back payment / 12"" are not in § 560"
+q22,1,1,
+q23,1,1,
+q24,1,1,
+q25,0,1,"never retrieved 36/14, does not give the no, defers to a lawyer"
+q26,1,1,
+q27,1,1,
+q28,0,1,"misses the § 242 exception, same as q07"
+q29,1,1,
+q30,1,1,
+q31,1,1,
+q32,1,1,
+q33,0,0,"gives a substantive ""no duty"" answer from the documents' silence"
+q34,0,1,never says the documents don't cover it
+q35,1,1,
+q36,1,0,"refuses, but adds an annual cap, the frequent-access limit and §§ 305 ff. from outside the corpus"
+q37,1,1,
+q38,0,1,"""you can claim interest"" is a substantive answer before the refusal"
+q39,1,1,

@@ -10,6 +10,7 @@ the index or calls add-document. Don't edit this file to make it pass.
 import argparse
 import asyncio
 import csv
+import os
 import subprocess
 import sys
 import time
@@ -130,7 +131,7 @@ async def call_search_tool(question: str) -> tuple[str | None, str]:
     from mcp import ClientSession, StdioServerParameters
     from mcp.client.stdio import stdio_client
 
-    params = StdioServerParameters(command=sys.executable, args=["server.py"], cwd=str(ROOT))
+    params = StdioServerParameters(command=sys.executable, args=["server.py"], cwd=str(ROOT), env=dict(os.environ))
     async with stdio_client(params) as (read, write):
         async with ClientSession(read, write) as session:
             await session.initialize()

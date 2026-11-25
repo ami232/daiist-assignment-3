@@ -1,0 +1,6247 @@
+{
+ "n": {
+  "answerable": 32,
+  "single": 25,
+  "multi": 7
+ },
+ "summary": {
+  "A": {
+   "words": {
+    "1": 153.125,
+    "3": 682.8125,
+    "5": 1242.3125
+   },
+   "exact": {
+    "overall": {
+     "1": 0.09375,
+     "3": 0.25,
+     "5": 0.40625
+    },
+    "single": {
+     "1": 0.12,
+     "3": 0.32,
+     "5": 0.52
+    },
+    "multi_all": {
+     "1": 0.0,
+     "3": 0.0,
+     "5": 0.0
+    },
+    "multi_any": {
+     "1": 0.0,
+     "3": 0.0,
+     "5": 0.14285714285714285
+    }
+   },
+   "holding": {
+    "overall": {
+     "1": 0.59375,
+     "3": 0.78125,
+     "5": 0.8125
+    },
+    "single": {
+     "1": 0.76,
+     "3": 0.92,
+     "5": 0.96
+    },
+    "multi_all": {
+     "1": 0.0,
+     "3": 0.2857142857142857,
+     "5": 0.2857142857142857
+    },
+    "multi_any": {
+     "1": 0.7142857142857143,
+     "3": 1.0,
+     "5": 1.0
+    }
+   }
+  },
+  "B": {
+   "words": {
+    "1": 165.09375,
+    "3": 745.0625,
+    "5": 1344.125
+   },
+   "exact": {
+    "overall": {
+     "1": 0.0625,
+     "3": 0.375,
+     "5": 0.625
+    },
+    "single": {
+     "1": 0.08,
+     "3": 0.48,
+     "5": 0.8
+    },
+    "multi_all": {
+     "1": 0.0,
+     "3": 0.0,
+     "5": 0.0
+    },
+    "multi_any": {
+     "1": 0.0,
+     "3": 0.2857142857142857,
+     "5": 0.5714285714285714
+    }
+   },
+   "holding": {
+    "overall": {
+     "1": 0.59375,
+     "3": 0.8125,
+     "5": 0.90625
+    },
+    "single": {
+     "1": 0.76,
+     "3": 0.96,
+     "5": 0.96
+    },
+    "multi_all": {
+     "1": 0.0,
+     "3": 0.2857142857142857,
+     "5": 0.7142857142857143
+    },
+    "multi_any": {
+     "1": 0.8571428571428571,
+     "3": 1.0,
+     "5": 1.0
+    }
+   }
+  },
+  "C": {
+   "words": {
+    "1": 259.59375,
+    "3": 881.34375,
+    "5": 1564.40625
+   },
+   "exact": {
+    "overall": {
+     "1": 0.15625,
+     "3": 0.53125,
+     "5": 0.65625
+    },
+    "single": {
+     "1": 0.2,
+     "3": 0.68,
+     "5": 0.84
+    },
+    "multi_all": {
+     "1": 0.0,
+     "3": 0.0,
+     "5": 0.0
+    },
+    "multi_any": {
+     "1": 0.0,
+     "3": 0.42857142857142855,
+     "5": 0.8571428571428571
+    }
+   },
+   "holding": {
+    "overall": {
+     "1": 0.5,
+     "3": 0.65625,
+     "5": 0.71875
+    },
+    "single": {
+     "1": 0.64,
+     "3": 0.84,
+     "5": 0.88
+    },
+    "multi_all": {
+     "1": 0.0,
+     "3": 0.0,
+     "5": 0.14285714285714285
+    },
+    "multi_any": {
+     "1": 0.14285714285714285,
+     "3": 0.8571428571428571,
+     "5": 1.0
+    }
+   }
+  },
+  "D": {
+   "words": {
+    "1": 259.59375,
+    "3": 886.4375,
+    "5": 1521.03125
+   },
+   "exact": {
+    "overall": {
+     "1": 0.15625,
+     "3": 0.4375,
+     "5": 0.4375
+    },
+    "single": {
+     "1": 0.2,
+     "3": 0.56,
+     "5": 0.56
+    },
+    "multi_all": {
+     "1": 0.0,
+     "3": 0.0,
+     "5": 0.0
+    },
+    "multi_any": {
+     "1": 0.0,
+     "3": 0.14285714285714285,
+     "5": 0.5714285714285714
+    }
+   },
+   "holding": {
+    "overall": {
+     "1": 0.5,
+     "3": 0.6875,
+     "5": 0.71875
+    },
+    "single": {
+     "1": 0.64,
+     "3": 0.84,
+     "5": 0.84
+    },
+    "multi_all": {
+     "1": 0.0,
+     "3": 0.14285714285714285,
+     "5": 0.2857142857142857
+    },
+    "multi_any": {
+     "1": 0.14285714285714285,
+     "3": 0.42857142857142855,
+     "5": 0.7142857142857143
+    }
+   }
+  }
+ },
+ "translation": {
+  "model": "gemini-3.8-flash",
+  "questions": 32,
+  "input_tokens_avg": 190.4375,
+  "output_tokens_avg": 79.15625,
+  "seconds_avg": 2.6903125,
+  "seconds_max": 5.34
+ },
+ "per_question": {
+  "A": [
+   {
+    "id": "q01",
+    "kind": "single",
+    "question": "We had to remove a rotten tree from the garden because it was no longer stable. Can I include the cost in the tenants’ service charge statement?",
+    "query": "We had to remove a rotten tree from the garden because it was no longer stable. Can I include the cost in the tenants’ service charge statement?",
+    "expected": "BGH VIII ZR 107/20, Rn. 18",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 44,
+     "3": 620,
+     "5": 1379
+    },
+    "retrieved": [
+     "BGH VIII ZR 107/20, Leitsatz",
+     "BGH VIII ZR 107/20, Rn. 39–40",
+     "BGH VIII ZR 107/20, Rn. 36–38",
+     "BGH VIII ZR 107/20, Rn. 23–25",
+     "BGH VIII ZR 107/20, Rn. 19–22"
+    ]
+   },
+   {
+    "id": "q02",
+    "kind": "single",
+    "question": "The city keeps complaining that our residual waste isn’t sorted properly, so we hired a company to check the bins and re-sort them by hand. Can I pass that cost on to the tenants?",
+    "query": "The city keeps complaining that our residual waste isn’t sorted properly, so we hired a company to check the bins and re-sort them by hand. Can I pass that cost on to the tenants?",
+    "expected": "BGH VIII ZR 117/21, Rn. 32",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 153,
+     "3": 772,
+     "5": 1522
+    },
+    "retrieved": [
+     "BGH VIII ZR 117/21, Leitsatz",
+     "BGH VIII ZR 117/21, Rn. 24–26",
+     "BGH VIII ZR 117/21, Rn. 35–38",
+     "BGH VIII ZR 117/21, Rn. 27–30",
+     "BGH VIII ZR 230/21, Rn. 23–26"
+    ]
+   },
+   {
+    "id": "q03",
+    "kind": "single",
+    "question": "We pay a company to check the smoke detectors in the flats every year. The building code says maintenance is the tenant’s responsibility. Can I still bill the tenants for the inspections?",
+    "query": "We pay a company to check the smoke detectors in the flats every year. The building code says maintenance is the tenant’s responsibility. Can I still bill the tenants for the inspections?",
+    "expected": "BGH VIII ZR 117/21, Rn. 47",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 59,
+     "3": 467,
+     "5": 1177
+    },
+    "retrieved": [
+     "BGH VIII ZR 379/20, Leitsatz",
+     "BGH VIII ZR 117/21, Leitsatz",
+     "BGH VIII ZR 117/21, Rn. 61–63",
+     "BGH VIII ZR 117/21, Rn. 47–49",
+     "BGH VIII ZR 117/21, Rn. 50–52"
+    ]
+   },
+   {
+    "id": "q04",
+    "kind": "single",
+    "question": "A tenant wants to see the bank statements showing we actually paid the invoices, not just the invoices themselves. Do I have to show him those?",
+    "query": "A tenant wants to see the bank statements showing we actually paid the invoices, not just the invoices themselves. Do I have to show him those?",
+    "expected": "BGH VIII ZR 118/19, Rn. 13",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 34,
+     "3": 673,
+     "5": 1211
+    },
+    "retrieved": [
+     "BGH VIII ZR 118/19, Leitsatz",
+     "§ 556 BGB",
+     "BGH VIII ZR 93/15, Rn. 16–18",
+     "BGH VIII ZR 118/19, Rn. 16–19",
+     "§ 1 BetrKV"
+    ]
+   },
+   {
+    "id": "q05",
+    "kind": "single",
+    "question": "Our lease only says the tenant pays “die Betriebskosten”, with no list of costs attached. Is that enough to bill the tenant for service charges?",
+    "query": "Our lease only says the tenant pays “die Betriebskosten”, with no list of costs attached. Is that enough to bill the tenant for service charges?",
+    "expected": "BGH VIII ZR 137/15, Rn. 13",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 90,
+     "3": 576,
+     "5": 998
+    },
+    "retrieved": [
+     "BGH VIII ZR 137/15, Leitsatz",
+     "§ 556 BGB",
+     "§ 1 BetrKV",
+     "§ 2 Nr. 1–5 BetrKV",
+     "BGH VIII ZR 118/19, Leitsatz"
+    ]
+   },
+   {
+    "id": "q06",
+    "kind": "single",
+    "question": "The flats have heat cost allocators and hot water meters, but the central boiler has no heat meter for the hot water. Does our billing still count as consumption-based?",
+    "query": "The flats have heat cost allocators and hot water meters, but the central boiler has no heat meter for the hot water. Does our billing still count as consumption-based?",
+    "expected": "BGH VIII ZR 151/20, Rn. 32",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 72,
+     "3": 769,
+     "5": 1632
+    },
+    "retrieved": [
+     "BGH VIII ZR 151/20, Leitsatz",
+     "BGH VIII ZR 151/20, Rn. 25–27",
+     "§ 6 HeizkostenV",
+     "§§ 7–8 HeizkostenV",
+     "§ 9 Abs. 1–2 HeizkostenV"
+    ]
+   },
+   {
+    "id": "q07",
+    "kind": "single",
+    "question": "A tenant missed the deadline to object to last year’s statement. Now he says some of the costs I billed were never allowed. Can he still challenge them?",
+    "query": "A tenant missed the deadline to object to last year’s statement. Now he says some of the costs I billed were never allowed. Can he still challenge them?",
+    "expected": "BGH VIII ZR 209/15, Rn. 25",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 58,
+     "3": 643,
+     "5": 1319
+    },
+    "retrieved": [
+     "BGH VIII ZR 209/15, Leitsatz",
+     "§ 556 BGB",
+     "BGH VIII ZR 47/25, Rn. 12, 27–30",
+     "BGH VIII ZR 47/25, Rn. 31–32",
+     "BGH VIII ZR 47/25, Rn. 33"
+    ]
+   },
+   {
+    "id": "q08",
+    "kind": "single",
+    "question": "The lease says the flat is 70 m², but when we measured it, it was actually 75 m². Which size do I use to split the service charges?",
+    "query": "The lease says the flat is 70 m², but when we measured it, it was actually 75 m². Which size do I use to split the service charges?",
+    "expected": "BGH VIII ZR 220/17, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 83,
+     "3": 556,
+     "5": 638
+    },
+    "retrieved": [
+     "BGH VIII ZR 220/17, Leitsatz",
+     "BGH VIII ZR 93/15, Leitsatz",
+     "§ 7 CO2KostAufG",
+     "BGH VIII ZR 79/16, Leitsatz",
+     "BGH VIII ZR 62/19, Leitsatz"
+    ]
+   },
+   {
+    "id": "q09",
+    "kind": "single",
+    "question": "We signed an expensive cleaning contract before this tenant moved in. Can the tenant claim I’m breaking the rule to keep costs reasonable?",
+    "query": "We signed an expensive cleaning contract before this tenant moved in. Can the tenant claim I’m breaking the rule to keep costs reasonable?",
+    "expected": "BGH VIII ZR 230/21, Rn. 31",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 200,
+     "3": 635,
+     "5": 981
+    },
+    "retrieved": [
+     "BGH VIII ZR 230/21, Leitsatz",
+     "BGH VIII ZR 230/21, Rn. 31–34",
+     "BGH VIII ZR 254/17, Leitsatz",
+     "BGH VIII ZR 47/25, Leitsatz",
+     "BGH VIII ZR 117/21, Rn. 35–38"
+    ]
+   },
+   {
+    "id": "q10",
+    "kind": "single",
+    "question": "A tenant claims our caretaker service is overpriced. Do I have to prove the price is reasonable, or does the tenant have to prove it isn’t?",
+    "query": "A tenant claims our caretaker service is overpriced. Do I have to prove the price is reasonable, or does the tenant have to prove it isn’t?",
+    "expected": "BGH VIII ZR 230/21, Rn. 40",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 200,
+     "3": 642,
+     "5": 1225
+    },
+    "retrieved": [
+     "BGH VIII ZR 230/21, Leitsatz",
+     "BGH VIII ZR 62/19, Leitsatz",
+     "BGH VIII ZR 230/21, Rn. 40–43",
+     "BGH VIII ZR 117/21, Rn. 35–38",
+     "BGH VIII ZR 62/19, Rn. 17–19"
+    ]
+   },
+   {
+    "id": "q11",
+    "kind": "single",
+    "question": "I rent out a condo, and the owners’ association hasn’t approved its annual statement yet. Can I wait for that before sending the tenant’s statement?",
+    "query": "I rent out a condo, and the owners’ association hasn’t approved its annual statement yet. Can I wait for that before sending the tenant’s statement?",
+    "expected": "BGH VIII ZR 249/15, Rn. 17",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 176,
+     "3": 715,
+     "5": 1384
+    },
+    "retrieved": [
+     "BGH VIII ZR 249/15, Leitsatz",
+     "BGH VIII ZR 249/15, Rn. 34–35",
+     "BGH VIII ZR 249/15, Rn. 20–21",
+     "BGH VIII ZR 249/15, Rn. 24–25",
+     "BGH VIII ZR 249/15, Rn. 15–17"
+    ]
+   },
+   {
+    "id": "q12",
+    "kind": "single",
+    "question": "The WEG property manager sent me the figures late, so I missed the deadline for the tenant’s statement. Can I blame the manager and still claim the back payment?",
+    "query": "The WEG property manager sent me the figures late, so I missed the deadline for the tenant’s statement. Can I blame the manager and still claim the back payment?",
+    "expected": "BGH VIII ZR 249/15, Rn. 41",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 176,
+     "3": 784,
+     "5": 1515
+    },
+    "retrieved": [
+     "BGH VIII ZR 249/15, Leitsatz",
+     "BGH VIII ZR 249/15, Rn. 5, 12–14",
+     "BGH VIII ZR 249/15, Rn. 34–35",
+     "BGH VIII ZR 249/15, Rn. 15–17",
+     "BGH VIII ZR 249/15, Rn. 40–42"
+    ]
+   },
+   {
+    "id": "q13",
+    "kind": "single",
+    "question": "Our standard lease lists a monthly administration fee separately from the rent. Is that allowed?",
+    "query": "Our standard lease lists a monthly administration fee separately from the rent. Is that allowed?",
+    "expected": "BGH VIII ZR 254/17, Rn. 14",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 70,
+     "3": 773,
+     "5": 1546
+    },
+    "retrieved": [
+     "BGH VIII ZR 254/17, Leitsatz",
+     "BGH VIII ZR 254/17, Rn. 4, 10–12",
+     "BGH VIII ZR 254/17, Rn. 13–17",
+     "BGH VIII ZR 254/17, Rn. 18–21",
+     "BGH VIII ZR 254/17, Rn. 22–25"
+    ]
+   },
+   {
+    "id": "q14",
+    "kind": "single",
+    "question": "We rent our smoke detectors instead of buying them. Can I pass the rental fee on to the tenants?",
+    "query": "We rent our smoke detectors instead of buying them. Can I pass the rental fee on to the tenants?",
+    "expected": "BGH VIII ZR 379/20, Rn. 32",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 59,
+     "3": 467,
+     "5": 1211
+    },
+    "retrieved": [
+     "BGH VIII ZR 379/20, Leitsatz",
+     "BGH VIII ZR 117/21, Leitsatz",
+     "BGH VIII ZR 117/21, Rn. 61–63",
+     "BGH VIII ZR 379/20, Rn. 33–35",
+     "BGH VIII ZR 379/20, Rn. 39–42"
+    ]
+   },
+   {
+    "id": "q15",
+    "kind": "single",
+    "question": "The tenants used to heat with their own individual stoves. We switched to a heating contractor who supplies the heat. Can I pass the contractor’s costs on to tenants under § 556c BGB?",
+    "query": "The tenants used to heat with their own individual stoves. We switched to a heating contractor who supplies the heat. Can I pass the contractor’s costs on to tenants under § 556c BGB?",
+    "expected": "BGH VIII ZR 47/25, Rn. 37",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 66,
+     "3": 862,
+     "5": 1600
+    },
+    "retrieved": [
+     "BGH VIII ZR 47/25, Leitsatz",
+     "BGH VIII ZR 47/25, Rn. 46–47",
+     "§§ 556a–556c BGB",
+     "BGH VIII ZR 47/25, Rn. 36–39",
+     "BGH VIII ZR 47/25, Rn. 45"
+    ]
+   },
+   {
+    "id": "q16",
+    "kind": "single",
+    "question": "We pay the caretaker a flat fee to be on call for emergencies at night and on weekends. Can I bill that to the tenants?",
+    "query": "We pay the caretaker a flat fee to be on call for emergencies at night and on weekends. Can I bill that to the tenants?",
+    "expected": "BGH VIII ZR 62/19, Rn. 20",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 303,
+     "3": 522,
+     "5": 1329
+    },
+    "retrieved": [
+     "BGH VIII ZR 62/19, Rn. 17–19",
+     "BGH VIII ZR 62/19, Leitsatz",
+     "BGH VIII ZR 62/19, Rn. 24",
+     "BGH VIII ZR 62/19, Rn. 4, 8–12",
+     "BGH VIII ZR 62/19, Rn. 13–16"
+    ]
+   },
+   {
+    "id": "q17",
+    "kind": "single",
+    "question": "Our building has shops on the ground floor and flats above. Do I have to deduct a share for the shops before splitting the property tax among the tenants?",
+    "query": "Our building has shops on the ground floor and flats above. Do I have to deduct a share for the shops before splitting the property tax among the tenants?",
+    "expected": "BGH VIII ZR 79/16, Rn. 15",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 43,
+     "3": 503,
+     "5": 1336
+    },
+    "retrieved": [
+     "BGH VIII ZR 79/16, Leitsatz",
+     "BGH VIII ZR 79/16, Rn. 20–22",
+     "§ 8 CO2KostAufG",
+     "BGH VIII ZR 79/16, Rn. 23–25",
+     "BGH VIII ZR 79/16, Rn. 8, 14–19"
+    ]
+   },
+   {
+    "id": "q18",
+    "kind": "single",
+    "question": "Before I enter the total costs in the statement, I remove the parts that can’t be passed on. Do I have to show the tenant how I calculated those totals?",
+    "query": "Before I enter the total costs in the statement, I remove the parts that can’t be passed on. Do I have to show the tenant how I calculated those totals?",
+    "expected": "BGH VIII ZR 93/15, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 356,
+     "3": 995,
+     "5": 1263
+    },
+    "retrieved": [
+     "§ 7 CO2KostAufG",
+     "§ 556 BGB",
+     "BGH VIII ZR 93/15, Rn. 16–18",
+     "§ 1 BetrKV",
+     "BGH VIII ZR 93/15, Leitsatz"
+    ]
+   },
+   {
+    "id": "q19",
+    "kind": "single",
+    "question": "Half the building is empty because it’s going to be demolished, and the remaining tenants’ hot water costs have gone up a lot. Can I stop billing hot water by consumption?",
+    "query": "Half the building is empty because it’s going to be demolished, and the remaining tenants’ hot water costs have gone up a lot. Can I stop billing hot water by consumption?",
+    "expected": "BGH VIII ZR 9/14, Rn. 22",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 192,
+     "3": 535,
+     "5": 955
+    },
+    "retrieved": [
+     "BGH VIII ZR 9/14, Leitsatz",
+     "BGH VIII ZR 47/25, Leitsatz",
+     "BGH VIII ZR 9/14, Rn. 29–31",
+     "BGH VIII ZR 151/20, Leitsatz",
+     "§ 6 HeizkostenV"
+    ]
+   },
+   {
+    "id": "q20",
+    "kind": "single",
+    "question": "Can I still pass the cost of the building’s cable TV connection on to the tenants?",
+    "query": "Can I still pass the cost of the building’s cable TV connection on to the tenants?",
+    "expected": "§ 2 Nr. 15 BetrKV",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 335,
+     "3": 739,
+     "5": 1379
+    },
+    "retrieved": [
+     "§ 556 BGB",
+     "§ 2 Nr. 13–17 BetrKV",
+     "BGH VIII ZR 47/25, Leitsatz",
+     "§§ 560–561 BGB",
+     "§ 559 Abs. 1–4 BGB"
+    ]
+   },
+   {
+    "id": "q21",
+    "kind": "single",
+    "question": "The annual statement showed a large back payment. Can I raise the tenant’s monthly advance payments now?",
+    "query": "The annual statement showed a large back payment. Can I raise the tenant’s monthly advance payments now?",
+    "expected": "§ 560 Abs. 4 BGB",
+    "hits": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 247,
+     "3": 897,
+     "5": 1182
+    },
+    "retrieved": [
+     "§§ 560–561 BGB",
+     "§ 556 BGB",
+     "BGH VIII ZR 47/25, Rn. 51–53",
+     "§ 559f BGB",
+     "BGH VIII ZR 118/19, Leitsatz"
+    ]
+   },
+   {
+    "id": "q22",
+    "kind": "single",
+    "question": "How long does a tenant have to object to the service charge statement?",
+    "query": "How long does a tenant have to object to the service charge statement?",
+    "expected": "§ 556 Abs. 3 BGB",
+    "hits": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 335,
+     "3": 1011,
+     "5": 1469
+    },
+    "retrieved": [
+     "§ 556 BGB",
+     "BGH VIII ZR 47/25, Rn. 33",
+     "BGH VIII ZR 47/25, Rn. 31–32",
+     "BGH VIII ZR 209/15, Leitsatz",
+     "BGH VIII ZR 209/15, Rn. 15–17"
+    ]
+   },
+   {
+    "id": "q23",
+    "kind": "single",
+    "question": "Our building emits 30 kg CO2 per m² per year. What share of the CO2 costs can I bill to the tenants?",
+    "query": "Our building emits 30 kg CO2 per m² per year. What share of the CO2 costs can I bill to the tenants?",
+    "expected": "Anlage CO2KostAufG",
+    "hits": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 148,
+     "3": 780,
+     "5": 1154
+    },
+    "retrieved": [
+     "Anlage CO2KostAufG",
+     "§ 5 CO2KostAufG",
+     "§ 7 CO2KostAufG",
+     "§ 8 CO2KostAufG",
+     "§§ 11–12 CO2KostAufG"
+    ]
+   },
+   {
+    "id": "q24",
+    "kind": "single",
+    "question": "What share of the heating costs do I have to bill by actual consumption?",
+    "query": "What share of the heating costs do I have to bill by actual consumption?",
+    "expected": "§ 7 Abs. 1 HeizkostenV",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 348,
+     "3": 999,
+     "5": 1503
+    },
+    "retrieved": [
+     "§ 6 HeizkostenV",
+     "§§ 7–8 HeizkostenV",
+     "§§ 6a–6b HeizkostenV",
+     "§ 7 CO2KostAufG",
+     "Anlage CO2KostAufG"
+    ]
+   },
+   {
+    "id": "q25",
+    "kind": "single",
+    "question": "For years our tenant paid garden maintenance costs that weren’t in the lease, without complaining. Does that mean we have agreed he pays them?",
+    "query": "For years our tenant paid garden maintenance costs that weren’t in the lease, without complaining. Does that mean we have agreed he pays them?",
+    "expected": "BGH VIII ZR 36/14, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "words": {
+     "1": 44,
+     "3": 177,
+     "5": 443
+    },
+    "retrieved": [
+     "BGH VIII ZR 107/20, Leitsatz",
+     "BGH VIII ZR 137/15, Leitsatz",
+     "BGH VIII ZR 79/16, Leitsatz",
+     "BGH VIII ZR 230/21, Leitsatz",
+     "BGH VIII ZR 47/25, Leitsatz"
+    ]
+   },
+   {
+    "id": "q26",
+    "kind": "multi",
+    "question": "We rent our smoke detectors from a company that also inspects them every year, and it’s all on one invoice. Which part can I pass on to the tenants?",
+    "query": "We rent our smoke detectors from a company that also inspects them every year, and it’s all on one invoice. Which part can I pass on to the tenants?",
+    "expected": "BGH VIII ZR 379/20, Rn. 32;BGH VIII ZR 117/21, Rn. 48",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 59,
+     "3": 467,
+     "5": 1138
+    },
+    "retrieved": [
+     "BGH VIII ZR 379/20, Leitsatz",
+     "BGH VIII ZR 117/21, Leitsatz",
+     "BGH VIII ZR 117/21, Rn. 61–63",
+     "BGH VIII ZR 117/21, Rn. 50–52",
+     "BGH VIII ZR 117/21, Rn. 43–46"
+    ]
+   },
+   {
+    "id": "q27",
+    "kind": "multi",
+    "question": "We had a dying tree removed from the garden, and we pay someone to clean the playground and replace the sand in the sandpit. Can I bill the tenants for both?",
+    "query": "We had a dying tree removed from the garden, and we pay someone to clean the playground and replace the sand in the sandpit. Can I bill the tenants for both?",
+    "expected": "BGH VIII ZR 107/20, Rn. 18;§ 2 Nr. 10 BetrKV",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": true
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 44,
+     "3": 620,
+     "5": 1169
+    },
+    "retrieved": [
+     "BGH VIII ZR 107/20, Leitsatz",
+     "BGH VIII ZR 107/20, Rn. 39–40",
+     "BGH VIII ZR 107/20, Rn. 36–38",
+     "BGH VIII ZR 107/20, Rn. 23–25",
+     "§ 1 BetrKV"
+    ]
+   },
+   {
+    "id": "q28",
+    "kind": "multi",
+    "question": "Last year I accidentally billed the caretaker’s on-call fee. The tenant only noticed 14 months after getting the statement. Do I have to refund it?",
+    "query": "Last year I accidentally billed the caretaker’s on-call fee. The tenant only noticed 14 months after getting the statement. Do I have to refund it?",
+    "expected": "BGH VIII ZR 62/19, Rn. 20;BGH VIII ZR 209/15, Rn. 25",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 39,
+     "3": 432,
+     "5": 752
+    },
+    "retrieved": [
+     "BGH VIII ZR 62/19, Leitsatz",
+     "BGH VIII ZR 209/15, Leitsatz",
+     "§ 556 BGB",
+     "BGH VIII ZR 47/25, Rn. 12, 27–30",
+     "BGH VIII ZR 254/17, Leitsatz"
+    ]
+   },
+   {
+    "id": "q29",
+    "kind": "multi",
+    "question": "I rent out a condo and the owners’ association hasn’t approved the annual statement yet. Do I have to wait for it, and when I use its figures, do I need to show how I removed the non-billable parts from the building totals?",
+    "query": "I rent out a condo and the owners’ association hasn’t approved the annual statement yet. Do I have to wait for it, and when I use its figures, do I need to show how I removed the non-billable parts from the building totals?",
+    "expected": "BGH VIII ZR 249/15, Rn. 17;BGH VIII ZR 93/15, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 273,
+     "3": 715,
+     "5": 1136
+    },
+    "retrieved": [
+     "BGH VIII ZR 249/15, Rn. 20–21",
+     "BGH VIII ZR 249/15, Rn. 34–35",
+     "BGH VIII ZR 249/15, Leitsatz",
+     "BGH VIII ZR 249/15, Rn. 15–17",
+     "BGH VIII ZR 79/16, Leitsatz"
+    ]
+   },
+   {
+    "id": "q30",
+    "kind": "multi",
+    "question": "Our building has a shop on the ground floor, and some flats are bigger than the lease says. How should I split the property tax?",
+    "query": "Our building has a shop on the ground floor, and some flats are bigger than the lease says. How should I split the property tax?",
+    "expected": "BGH VIII ZR 79/16, Rn. 15;BGH VIII ZR 220/17, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": true
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 43,
+     "3": 576,
+     "5": 1135
+    },
+    "retrieved": [
+     "BGH VIII ZR 79/16, Leitsatz",
+     "BGH VIII ZR 79/16, Rn. 20–22",
+     "§ 5 CO2KostAufG",
+     "§ 8 CO2KostAufG",
+     "§ 7 CO2KostAufG"
+    ]
+   },
+   {
+    "id": "q31",
+    "kind": "multi",
+    "question": "Our lease only says the tenant pays “die Betriebskosten”. Does that cover the waste-sorting service we hired?",
+    "query": "Our lease only says the tenant pays “die Betriebskosten”. Does that cover the waste-sorting service we hired?",
+    "expected": "BGH VIII ZR 137/15, Rn. 13;BGH VIII ZR 117/21, Rn. 32",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": true
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 153,
+     "3": 873,
+     "5": 1393
+    },
+    "retrieved": [
+     "BGH VIII ZR 117/21, Leitsatz",
+     "BGH VIII ZR 117/21, Rn. 24–26",
+     "BGH VIII ZR 117/21, Rn. 27–30",
+     "§ 1 BetrKV",
+     "BGH VIII ZR 230/21, Rn. 23–26"
+    ]
+   },
+   {
+    "id": "q32",
+    "kind": "multi",
+    "question": "Half our building is empty, and the boiler has no heat meter for the hot water. How should I bill the remaining tenants for hot water?",
+    "query": "Half our building is empty, and the boiler has no heat meter for the hot water. How should I bill the remaining tenants for hot water?",
+    "expected": "BGH VIII ZR 151/20, Rn. 32;BGH VIII ZR 9/14, Rn. 22",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 398,
+     "3": 1055,
+     "5": 1680
+    },
+    "retrieved": [
+     "§ 9 Abs. 1–2 HeizkostenV",
+     "BGH VIII ZR 9/14, Leitsatz",
+     "§§ 7–8 HeizkostenV",
+     "§ 6 HeizkostenV",
+     "BGH VIII ZR 9/14, Rn. 29–31"
+    ]
+   }
+  ],
+  "B": [
+   {
+    "id": "q01",
+    "kind": "single",
+    "question": "We had to remove a rotten tree from the garden because it was no longer stable. Can I include the cost in the tenants’ service charge statement?",
+    "query": "Können die Kosten für die Fällung und Beseitigung eines morschen, nicht mehr standsicheren Baumes im Garten als Betriebskosten im Rahmen der Gartenpflege auf die Mieter umgelegt und in der Betriebskostenabrechnung abgerechnet werden? Handelt es sich bei den Baumfällarbeiten um umlagefähige laufende Betriebskosten oder um nicht umlagefähige Instandhaltungs- bzw. Instandsetzungskosten des Vermieters?",
+    "expected": "BGH VIII ZR 107/20, Rn. 18",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 44,
+     "3": 803,
+     "5": 1379
+    },
+    "retrieved": [
+     "BGH VIII ZR 107/20, Leitsatz",
+     "BGH VIII ZR 107/20, Rn. 23–25",
+     "BGH VIII ZR 107/20, Rn. 19–22",
+     "BGH VIII ZR 107/20, Rn. 39–40",
+     "BGH VIII ZR 107/20, Rn. 36–38"
+    ]
+   },
+   {
+    "id": "q02",
+    "kind": "single",
+    "question": "The city keeps complaining that our residual waste isn’t sorted properly, so we hired a company to check the bins and re-sort them by hand. Can I pass that cost on to the tenants?",
+    "query": "Sind die Kosten für ein beauftragtes Unternehmen, das die Mülltonnen wegen wiederholter Beanstandungen der Stadt kontrolliert und den Restmüll von Hand nachsortiert, als Betriebskosten der Müllbeseitigung auf die Mieter umlagefähig? Handelt es sich bei diesem manuellen Nachsortieren um umlagefähige laufende Betriebskosten oder um nicht umlagefähige Verwaltungskosten beziehungsweise Maßnahmen zur Mängelbeseitigung?",
+    "expected": "BGH VIII ZR 117/21, Rn. 32",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 339,
+     "3": 873,
+     "5": 1652
+    },
+    "retrieved": [
+     "BGH VIII ZR 117/21, Rn. 24–26",
+     "BGH VIII ZR 117/21, Rn. 27–30",
+     "BGH VIII ZR 117/21, Leitsatz",
+     "BGH VIII ZR 117/21, Rn. 10, 18–23",
+     "BGH VIII ZR 230/21, Rn. 23–26"
+    ]
+   },
+   {
+    "id": "q03",
+    "kind": "single",
+    "question": "We pay a company to check the smoke detectors in the flats every year. The building code says maintenance is the tenant’s responsibility. Can I still bill the tenants for the inspections?",
+    "query": "Kann der Vermieter die Kosten für die jährliche Überprüfung und Wartung der Rauchwarnmelder durch eine Fachfirma als Betriebskosten auf die Mieter umlegen, wenn nach der Landesbauordnung die Wartung dem Mieter obliegt?",
+    "expected": "BGH VIII ZR 117/21, Rn. 47",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 153,
+     "3": 467,
+     "5": 1177
+    },
+    "retrieved": [
+     "BGH VIII ZR 117/21, Leitsatz",
+     "BGH VIII ZR 117/21, Rn. 61–63",
+     "BGH VIII ZR 379/20, Leitsatz",
+     "BGH VIII ZR 117/21, Rn. 47–49",
+     "BGH VIII ZR 117/21, Rn. 50–52"
+    ]
+   },
+   {
+    "id": "q04",
+    "kind": "single",
+    "question": "A tenant wants to see the bank statements showing we actually paid the invoices, not just the invoices themselves. Do I have to show him those?",
+    "query": "Umfasst das Recht des Mieters auf Belegeinsicht im Rahmen der Betriebskostenabrechnung neben den Rechnungen auch die Vorlage von Zahlungsnachweisen und Bankauszügen des Vermieters? Ist der Vermieter verpflichtet, dem Mieter Kontoauszüge zum Nachweis der tatsächlichen Begleichung der Rechnungsbeträge vorzulegen?",
+    "expected": "BGH VIII ZR 118/19, Rn. 13",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 34,
+     "3": 833,
+     "5": 1337
+    },
+    "retrieved": [
+     "BGH VIII ZR 118/19, Leitsatz",
+     "BGH VIII ZR 118/19, Rn. 16–19",
+     "BGH VIII ZR 118/19, Rn. 3, 10–15",
+     "BGH VIII ZR 93/15, Rn. 16–18",
+     "BGH VIII ZR 230/21, Leitsatz"
+    ]
+   },
+   {
+    "id": "q05",
+    "kind": "single",
+    "question": "Our lease only says the tenant pays “die Betriebskosten”, with no list of costs attached. Is that enough to bill the tenant for service charges?",
+    "query": "Reicht im Mietvertrag die formularmäßige Vereinbarung, dass der Mieter „die Betriebskosten“ trägt, ohne nähere Konkretisierung oder Beifügung eines Betriebskostenkatalogs für eine wirksame Umlage auf den Mieter aus? Ist der Vermieter bei einer solchen Abrede zur Abrechnung der Betriebskosten berechtigt?",
+    "expected": "BGH VIII ZR 137/15, Rn. 13",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 90,
+     "3": 685,
+     "5": 1344
+    },
+    "retrieved": [
+     "BGH VIII ZR 137/15, Leitsatz",
+     "BGH VIII ZR 137/15, Rn. 19–22",
+     "BGH VIII ZR 137/15, Rn. 16–17",
+     "BGH VIII ZR 137/15, Rn. 5, 10–13",
+     "BGH VIII ZR 137/15, Rn. 14–15"
+    ]
+   },
+   {
+    "id": "q06",
+    "kind": "single",
+    "question": "The flats have heat cost allocators and hot water meters, but the central boiler has no heat meter for the hot water. Does our billing still count as consumption-based?",
+    "query": "Gilt eine Abrechnung der Heiz- und Warmwasserkosten noch als verbrauchsabhängig, wenn in den Wohnungen zwar Heizkostenverteiler und Warmwasserzähler vorhanden sind, die zentrale Heizungsanlage jedoch über keinen Wärmezähler zur Erfassung der auf die Warmwasserbereitung entfallenden Wärmemenge verfügt? Führt das Fehlen eines solchen Wärmemengenzählers an der zentralen Anlage zur Unwirksamkeit der verbrauchsabhängigen Abrechnung oder zu einem Kürzungsrecht des Mieters?",
+    "expected": "BGH VIII ZR 151/20, Rn. 32",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 72,
+     "3": 798,
+     "5": 1548
+    },
+    "retrieved": [
+     "BGH VIII ZR 151/20, Leitsatz",
+     "BGH VIII ZR 151/20, Rn. 25–27",
+     "BGH VIII ZR 151/20, Rn. 28–30",
+     "BGH VIII ZR 151/20, Rn. 10, 21–24",
+     "BGH VIII ZR 151/20, Rn. 31–34"
+    ]
+   },
+   {
+    "id": "q07",
+    "kind": "single",
+    "question": "A tenant missed the deadline to object to last year’s statement. Now he says some of the costs I billed were never allowed. Can he still challenge them?",
+    "query": "Kann der Mieter Einwendungen gegen eine Betriebskostenabrechnung noch geltend machen, wenn die gesetzliche Einwendungsfrist bereits abgelaufen ist und er vorträgt, dass die umgelegten Kosten von vornherein nicht umlagefähig waren? Führt der Ablauf der Ausschlussfrist zur Präklusion von Einwendungen bezüglich nicht vereinbarter oder unzulässiger Kostenpositionen der Betriebskostenabrechnung?",
+    "expected": "BGH VIII ZR 209/15, Rn. 25",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 58,
+     "3": 664,
+     "5": 1476
+    },
+    "retrieved": [
+     "BGH VIII ZR 209/15, Leitsatz",
+     "BGH VIII ZR 209/15, Rn. 22–25",
+     "BGH VIII ZR 47/25, Rn. 33",
+     "BGH VIII ZR 209/15, Rn. 15–17",
+     "BGH VIII ZR 47/25, Rn. 31–32"
+    ]
+   },
+   {
+    "id": "q08",
+    "kind": "single",
+    "question": "The lease says the flat is 70 m², but when we measured it, it was actually 75 m². Which size do I use to split the service charges?",
+    "query": "Ist bei der Betriebskostenabrechnung für die Umlage nach dem Flächenmaßstab die im Mietvertrag vereinbarte Wohnfläche von 70 m² oder die tatsächliche Wohnfläche von 75 m² zugrunde zu legen? Maßgeblichkeit der tatsächlichen Wohnfläche gegenüber der vertraglich vereinbarten Fläche bei der Abrechnung der Betriebskosten durch den Vermieter.",
+    "expected": "BGH VIII ZR 220/17, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 83,
+     "3": 557,
+     "5": 1056
+    },
+    "retrieved": [
+     "BGH VIII ZR 220/17, Leitsatz",
+     "BGH VIII ZR 220/17, Rn. 22–23",
+     "BGH VIII ZR 93/15, Leitsatz",
+     "BGH VIII ZR 220/17, Rn. 18–21",
+     "BGH VIII ZR 137/15, Leitsatz"
+    ]
+   },
+   {
+    "id": "q09",
+    "kind": "single",
+    "question": "We signed an expensive cleaning contract before this tenant moved in. Can the tenant claim I’m breaking the rule to keep costs reasonable?",
+    "query": "Verstößt der Vermieter gegen den Grundsatz der Wirtschaftlichkeit bei der Umlage von Betriebskosten, wenn vor dem Einzug des Mieters ein teurer Vertrag über die Gebäudereinigung abgeschlossen wurde? Kann der Mieter eine Verletzung des Wirtschaftlichkeitsgebots geltend machen, obwohl der Reinigungsvertrag bereits vor Beginn seines Mietverhältnisses bestand?",
+    "expected": "BGH VIII ZR 230/21, Rn. 31",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 200,
+     "3": 892,
+     "5": 1541
+    },
+    "retrieved": [
+     "BGH VIII ZR 230/21, Leitsatz",
+     "BGH VIII ZR 230/21, Rn. 31–34",
+     "BGH VIII ZR 230/21, Rn. 27–30",
+     "BGH VIII ZR 117/21, Rn. 35–38",
+     "BGH VIII ZR 230/21, Rn. 23–26"
+    ]
+   },
+   {
+    "id": "q10",
+    "kind": "single",
+    "question": "A tenant claims our caretaker service is overpriced. Do I have to prove the price is reasonable, or does the tenant have to prove it isn’t?",
+    "query": "Trägt der Mieter oder der Vermieter die Darlegungs- und Beweislast für die Verletzung des Wirtschaftlichkeitsgebots bei der Umlage überhöhter Betriebskosten für den Hauswart? Muss der Vermieter die Angemessenheit und Üblichkeit der Hausmeisterkosten nachweisen, oder obliegt dem Mieter der Nachweis eines Verstoßes gegen das Gebot der Wirtschaftlichkeit?",
+    "expected": "BGH VIII ZR 230/21, Rn. 40",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 200,
+     "3": 892,
+     "5": 1664
+    },
+    "retrieved": [
+     "BGH VIII ZR 230/21, Leitsatz",
+     "BGH VIII ZR 230/21, Rn. 27–30",
+     "BGH VIII ZR 230/21, Rn. 31–34",
+     "BGH VIII ZR 230/21, Rn. 40–43",
+     "BGH VIII ZR 230/21, Rn. 23–26"
+    ]
+   },
+   {
+    "id": "q11",
+    "kind": "single",
+    "question": "I rent out a condo, and the owners’ association hasn’t approved its annual statement yet. Can I wait for that before sending the tenant’s statement?",
+    "query": "Darf der Vermieter einer Eigentumswohnung mit der Erteilung der Betriebskostenabrechnung an den Mieter abwarten, bis die Wohnungseigentümergemeinschaft die Jahresabrechnung beschlossen hat? Ist das Verstreichen der Abrechnungsfrist in diesem Fall vom Vermieter nicht zu vertreten?",
+    "expected": "BGH VIII ZR 249/15, Rn. 17",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 176,
+     "3": 896,
+     "5": 1543
+    },
+    "retrieved": [
+     "BGH VIII ZR 249/15, Leitsatz",
+     "BGH VIII ZR 249/15, Rn. 15–17",
+     "BGH VIII ZR 249/15, Rn. 5, 12–14",
+     "BGH VIII ZR 249/15, Rn. 37–39",
+     "BGH VIII ZR 249/15, Rn. 20–21"
+    ]
+   },
+   {
+    "id": "q12",
+    "kind": "single",
+    "question": "The WEG property manager sent me the figures late, so I missed the deadline for the tenant’s statement. Can I blame the manager and still claim the back payment?",
+    "query": "Kann der Vermieter eine Nachforderung aus der Betriebskostenabrechnung trotz Versäumung der Abrechnungsfrist noch geltend machen, wenn die Verspätung auf der verspäteten Abrechnung oder Datenübermittlung durch den WEG-Verwalter beruht? Ist das Verschulden des Verwalters dem Vermieter zuzurechnen oder hat der Vermieter die verspätete Geltendmachung nicht zu vertreten?",
+    "expected": "BGH VIII ZR 249/15, Rn. 41",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 342,
+     "3": 871,
+     "5": 1646
+    },
+    "retrieved": [
+     "BGH VIII ZR 249/15, Rn. 5, 12–14",
+     "BGH VIII ZR 249/15, Leitsatz",
+     "BGH VIII ZR 249/15, Rn. 40–42",
+     "BGH VIII ZR 249/15, Rn. 15–17",
+     "BGH VIII ZR 249/15, Rn. 46–48"
+    ]
+   },
+   {
+    "id": "q13",
+    "kind": "single",
+    "question": "Our standard lease lists a monthly administration fee separately from the rent. Is that allowed?",
+    "query": "Ist die gesonderte Ausweisung und Umlage einer monatlichen Verwaltungspauschale oder von Verwaltungskosten neben der Miete in einem Formularmietvertrag über Wohnraum zulässig? Handelt es sich bei Verwaltungskosten um umlagefähige Betriebskosten im Rahmen einer solchen Vereinbarung?",
+    "expected": "BGH VIII ZR 254/17, Rn. 14",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 70,
+     "3": 741,
+     "5": 1546
+    },
+    "retrieved": [
+     "BGH VIII ZR 254/17, Leitsatz",
+     "BGH VIII ZR 254/17, Rn. 4, 10–12",
+     "BGH VIII ZR 254/17, Rn. 18–21",
+     "BGH VIII ZR 254/17, Rn. 13–17",
+     "BGH VIII ZR 254/17, Rn. 22–25"
+    ]
+   },
+   {
+    "id": "q14",
+    "kind": "single",
+    "question": "We rent our smoke detectors instead of buying them. Can I pass the rental fee on to the tenants?",
+    "query": "Sind die Mietkosten für angemietete Rauchwarnmelder als Betriebskosten auf den Mieter umlagefähig? Gehören die Aufwendungen des Vermieters für die Miete oder das Leasing von Rauchmeldern zu den umlagefähigen Betriebskosten im Rahmen der Nebenkostenabrechnung?",
+    "expected": "BGH VIII ZR 379/20, Rn. 32",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 59,
+     "3": 467,
+     "5": 1192
+    },
+    "retrieved": [
+     "BGH VIII ZR 379/20, Leitsatz",
+     "BGH VIII ZR 117/21, Leitsatz",
+     "BGH VIII ZR 117/21, Rn. 61–63",
+     "BGH VIII ZR 379/20, Rn. 30–32",
+     "BGH VIII ZR 379/20, Rn. 33–35"
+    ]
+   },
+   {
+    "id": "q15",
+    "kind": "single",
+    "question": "The tenants used to heat with their own individual stoves. We switched to a heating contractor who supplies the heat. Can I pass the contractor’s costs on to tenants under § 556c BGB?",
+    "query": "Ist die Umlage der Kosten für die gewerbliche Wärmelieferung durch einen Contractor gemäß § 556c BGB auf den Mieter als Betriebskosten zulässig, wenn die Beheizung der Mietwohnung zuvor durch eigene Einzelöfen der Mieter erfolgte und auf die Belieferung durch den Wärmelieferanten umgestellt wurde?",
+    "expected": "BGH VIII ZR 47/25, Rn. 37",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 66,
+     "3": 736,
+     "5": 1395
+    },
+    "retrieved": [
+     "BGH VIII ZR 47/25, Leitsatz",
+     "BGH VIII ZR 47/25, Rn. 46–47",
+     "BGH VIII ZR 47/25, Rn. 45",
+     "BGH VIII ZR 47/25, Rn. 36–39",
+     "BGH VIII ZR 47/25, Rn. 12, 27–30"
+    ]
+   },
+   {
+    "id": "q16",
+    "kind": "single",
+    "question": "We pay the caretaker a flat fee to be on call for emergencies at night and on weekends. Can I bill that to the tenants?",
+    "query": "Ist eine pauschale Vergütung für die Notfall-Rufbereitschaft des Hauswarts in den Nachtstunden und am Wochenende als Betriebskosten auf die Mieter umlagefähig? Gehören die Kosten einer solchen Rufbereitschaftspauschale zu den umlagefähigen Hauswartkosten im Rahmen der Betriebskostenabrechnung?",
+    "expected": "BGH VIII ZR 62/19, Rn. 20",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 39,
+     "3": 736,
+     "5": 1329
+    },
+    "retrieved": [
+     "BGH VIII ZR 62/19, Leitsatz",
+     "BGH VIII ZR 62/19, Rn. 17–19",
+     "BGH VIII ZR 62/19, Rn. 13–16",
+     "BGH VIII ZR 62/19, Rn. 24",
+     "BGH VIII ZR 62/19, Rn. 4, 8–12"
+    ]
+   },
+   {
+    "id": "q17",
+    "kind": "single",
+    "question": "Our building has shops on the ground floor and flats above. Do I have to deduct a share for the shops before splitting the property tax among the tenants?",
+    "query": "Muss der Vermieter bei einer gemischt genutzten Immobilie mit Gewerbe im Erdgeschoss und Wohnungen in den oberen Geschossen vor der Umlage der Grundsteuer auf die Wohnraummieter einen Vorwegabzug für die Gewerbeeinheiten vornehmen? Führt die Abrechnung der Betriebskosten ohne Trennung der Gewerbe- und Wohnflächen zu einer unzulässigen Mehrbelastung der Mieter?",
+    "expected": "BGH VIII ZR 79/16, Rn. 15",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 43,
+     "3": 700,
+     "5": 1216
+    },
+    "retrieved": [
+     "BGH VIII ZR 79/16, Leitsatz",
+     "BGH VIII ZR 79/16, Rn. 20–22",
+     "BGH VIII ZR 79/16, Rn. 8, 14–19",
+     "BGH VIII ZR 79/16, Rn. 23–25",
+     "BGH VIII ZR 220/17, Leitsatz"
+    ]
+   },
+   {
+    "id": "q18",
+    "kind": "single",
+    "question": "Before I enter the total costs in the statement, I remove the parts that can’t be passed on. Do I have to show the tenant how I calculated those totals?",
+    "query": "Muss der Vermieter in der Betriebskostenabrechnung die Berechnung und den Abzug der nicht umlagefähigen Kostenanteile offenlegen und erläutern, wenn vor dem Ansatz der Gesamtkosten ein Vorwegabzug vorgenommen wurde? Reicht die Angabe der um die nicht umlagefähigen Anteile bereinigten Gesamtkosten aus oder erfordert eine ordnungsgemäße Abrechnung die Angabe und Erläuterung des Rechenwegs gegenüber dem Mieter?",
+    "expected": "BGH VIII ZR 93/15, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 117,
+     "3": 722,
+     "5": 1311
+    },
+    "retrieved": [
+     "BGH VIII ZR 93/15, Leitsatz",
+     "BGH VIII ZR 93/15, Rn. 11–12",
+     "BGH VIII ZR 93/15, Rn. 16–18",
+     "BGH VIII ZR 93/15, Rn. 13–15",
+     "BGH VIII ZR 230/21, Leitsatz"
+    ]
+   },
+   {
+    "id": "q19",
+    "kind": "single",
+    "question": "Half the building is empty because it’s going to be demolished, and the remaining tenants’ hot water costs have gone up a lot. Can I stop billing hot water by consumption?",
+    "query": "Darf der Vermieter bei einem halben Wohnungsleerstand infolge einer beabsichtigten Gebäudeabreißung von der verbrauchsabhängigen Abrechnung der Warmwasserkosten abweichen, wenn sich die Warmwasserkosten für die verbleibenden Mieter erheblich erhöht haben? Entfällt die Verpflichtung zur verbrauchsabhängigen Kostenverteilung bei Leerstand vor einem bevorstehenden Abriss?",
+    "expected": "BGH VIII ZR 9/14, Rn. 22",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 192,
+     "3": 795,
+     "5": 1216
+    },
+    "retrieved": [
+     "BGH VIII ZR 9/14, Leitsatz",
+     "BGH VIII ZR 9/14, Rn. 29–31",
+     "BGH VIII ZR 9/14, Rn. 20–23",
+     "BGH VIII ZR 151/20, Leitsatz",
+     "BGH VIII ZR 151/20, Rn. 25–27"
+    ]
+   },
+   {
+    "id": "q20",
+    "kind": "single",
+    "question": "Can I still pass the cost of the building’s cable TV connection on to the tenants?",
+    "query": "Ist der Vermieter weiterhin berechtigt, die Kosten des Kabelanschlusses für das Gebäude als Betriebskosten auf die Mieter umzulegen?",
+    "expected": "§ 2 Nr. 15 BetrKV",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 335,
+     "3": 826,
+     "5": 1043
+    },
+    "retrieved": [
+     "§ 556 BGB",
+     "§ 2 Nr. 13–17 BetrKV",
+     "BGH VIII ZR 117/21, Leitsatz",
+     "BGH VIII ZR 47/25, Leitsatz",
+     "§ 1 BetrKV"
+    ]
+   },
+   {
+    "id": "q21",
+    "kind": "single",
+    "question": "The annual statement showed a large back payment. Can I raise the tenant’s monthly advance payments now?",
+    "query": "Darf der Vermieter nach einer Abrechnung über die Betriebskosten, die mit einer hohen Nachzahlung für den Mieter geendet hat, die monatlichen Vorauszahlungen auf eine angemessene Höhe anpassen und einseitig erhöhen? Welche Voraussetzungen müssen für eine solche Erhöhung der Betriebskostenvorauszahlung nach einer Nachforderung erfüllt sein?",
+    "expected": "§ 560 Abs. 4 BGB",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 315,
+     "3": 897,
+     "5": 1410
+    },
+    "retrieved": [
+     "BGH VIII ZR 47/25, Rn. 51–53",
+     "§§ 560–561 BGB",
+     "§ 556 BGB",
+     "BGH VIII ZR 137/15, Rn. 23–26",
+     "BGH VIII ZR 230/21, Leitsatz"
+    ]
+   },
+   {
+    "id": "q22",
+    "kind": "single",
+    "question": "How long does a tenant have to object to the service charge statement?",
+    "query": "Innerhalb welcher Frist muss der Mieter Einwendungen gegen die Betriebskostenabrechnung gegenüber dem Vermieter geltend machen? Nach welchem Zeitraum ist der Einwand des Mieters gegen die Abrechnung der Nebenkosten gesetzlich ausgeschlossen?",
+    "expected": "§ 556 Abs. 3 BGB",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 412,
+     "3": 1011,
+     "5": 1469
+    },
+    "retrieved": [
+     "BGH VIII ZR 47/25, Rn. 31–32",
+     "BGH VIII ZR 47/25, Rn. 33",
+     "§ 556 BGB",
+     "BGH VIII ZR 209/15, Leitsatz",
+     "BGH VIII ZR 209/15, Rn. 15–17"
+    ]
+   },
+   {
+    "id": "q23",
+    "kind": "single",
+    "question": "Our building emits 30 kg CO2 per m² per year. What share of the CO2 costs can I bill to the tenants?",
+    "query": "In welchem Verhältnis sind die Kohlendioxidkosten zwischen Vermieter und Mieter aufzuteilen und auf die Mieter umlegbar, wenn der spezifische Kohlendioxidausstoß des Gebäudes 30 kg CO2 pro Quadratmeter Wohnfläche im Jahr beträgt? Welcher Anteil der CO2-Kosten ist im Rahmen der Betriebskostenabrechnung von den Mietern zu tragen?",
+    "expected": "Anlage CO2KostAufG",
+    "hits": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 148,
+     "3": 780,
+     "5": 1357
+    },
+    "retrieved": [
+     "Anlage CO2KostAufG",
+     "§ 5 CO2KostAufG",
+     "§ 7 CO2KostAufG",
+     "§ 8 CO2KostAufG",
+     "§ 3 Abs. 1–4 CO2KostAufG"
+    ]
+   },
+   {
+    "id": "q24",
+    "kind": "single",
+    "question": "What share of the heating costs do I have to bill by actual consumption?",
+    "query": "Welcher Anteil der Kosten des Betriebs der zentralen Heizungsanlage muss vom Vermieter nach dem erfassten tatsächlichen Verbrauch der Mieter abgerechnet werden? In welchem prozentualen Verhältnis hat die Verteilung der Heizkosten nach Verbrauch und nach Wohnfläche zu erfolgen?",
+    "expected": "§ 7 Abs. 1 HeizkostenV",
+    "hits": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 465,
+     "3": 885,
+     "5": 1638
+    },
+    "retrieved": [
+     "§§ 7–8 HeizkostenV",
+     "§ 6 HeizkostenV",
+     "BGH VIII ZR 151/20, Leitsatz",
+     "§ 9 Abs. 1–2 HeizkostenV",
+     "§ 9 Abs. 3–4 HeizkostenV"
+    ]
+   },
+   {
+    "id": "q25",
+    "kind": "single",
+    "question": "For years our tenant paid garden maintenance costs that weren’t in the lease, without complaining. Does that mean we have agreed he pays them?",
+    "query": "Kommt eine stillschweigende oder konkludente Vereinbarung über die Umlage von Betriebskosten für die Gartenpflege zustande, wenn der Mieter diese Nebenkosten über mehrere Jahre hinweg beanstandungslos bezahlt hat, obwohl sie im Mietvertrag nicht als umlagefähig vereinbart waren?",
+    "expected": "BGH VIII ZR 36/14, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "words": {
+     "1": 315,
+     "3": 449,
+     "5": 707
+    },
+    "retrieved": [
+     "BGH VIII ZR 47/25, Rn. 51–53",
+     "BGH VIII ZR 137/15, Leitsatz",
+     "BGH VIII ZR 107/20, Leitsatz",
+     "BGH VIII ZR 209/15, Leitsatz",
+     "BGH VIII ZR 230/21, Leitsatz"
+    ]
+   },
+   {
+    "id": "q26",
+    "kind": "multi",
+    "question": "We rent our smoke detectors from a company that also inspects them every year, and it’s all on one invoice. Which part can I pass on to the tenants?",
+    "query": "Sind die Kosten für die Anmietung beziehungsweise Miete von Rauchwarnmeldern sowie die Kosten für deren jährliche Überprüfung oder Wartung als Betriebskosten auf den Mieter umlagefähig, wenn beide Positionen in einer einheitlichen Rechnung zusammengefasst sind? Welcher Teil dieser Aufwendungen kann im Rahmen der Betriebskostenabrechnung auf die Mieter umgelegt werden?",
+    "expected": "BGH VIII ZR 379/20, Rn. 32;BGH VIII ZR 117/21, Rn. 48",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 153,
+     "3": 467,
+     "5": 1177
+    },
+    "retrieved": [
+     "BGH VIII ZR 117/21, Leitsatz",
+     "BGH VIII ZR 379/20, Leitsatz",
+     "BGH VIII ZR 117/21, Rn. 61–63",
+     "BGH VIII ZR 117/21, Rn. 50–52",
+     "BGH VIII ZR 117/21, Rn. 47–49"
+    ]
+   },
+   {
+    "id": "q27",
+    "kind": "multi",
+    "question": "We had a dying tree removed from the garden, and we pay someone to clean the playground and replace the sand in the sandpit. Can I bill the tenants for both?",
+    "query": "Sind die Kosten für die Fällung eines absterbenden Baumes im Garten als Gartenpflege auf die Mieter im Rahmen der Betriebskostenabrechnung umlagefähig? Können die laufenden Kosten für die Reinigung eines Spielplatzes sowie der regelmäßige Sandaustausch im Sandkasten als Betriebskosten auf die Mieter umgelegt werden?",
+    "expected": "BGH VIII ZR 107/20, Rn. 18;§ 2 Nr. 10 BetrKV",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": true
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 44,
+     "3": 674,
+     "5": 1437
+    },
+    "retrieved": [
+     "BGH VIII ZR 107/20, Leitsatz",
+     "BGH VIII ZR 107/20, Rn. 23–25",
+     "BGH VIII ZR 107/20, Rn. 39–40",
+     "BGH VIII ZR 107/20, Rn. 19–22",
+     "BGH VIII ZR 107/20, Rn. 31–35"
+    ]
+   },
+   {
+    "id": "q28",
+    "kind": "multi",
+    "question": "Last year I accidentally billed the caretaker’s on-call fee. The tenant only noticed 14 months after getting the statement. Do I have to refund it?",
+    "query": "Muss der Vermieter dem Mieter die versehentlich in der Betriebskostenabrechnung des letzten Jahres umgelegten Kosten für die Rufbereitschaft des Hauswarts erstatten, wenn der Mieter diesen Fehler erst 14 Monate nach Zugang der Abrechnung beanstandet hat? Greift für den Einwand des Mieters gegen die Abrechnung der Nebenkosten eine Ausschlussfrist?",
+    "expected": "BGH VIII ZR 62/19, Rn. 20;BGH VIII ZR 209/15, Rn. 25",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 58,
+     "3": 497,
+     "5": 947
+    },
+    "retrieved": [
+     "BGH VIII ZR 209/15, Leitsatz",
+     "BGH VIII ZR 62/19, Leitsatz",
+     "BGH VIII ZR 209/15, Rn. 15–17",
+     "BGH VIII ZR 230/21, Leitsatz",
+     "BGH VIII ZR 47/25, Rn. 12, 27–30"
+    ]
+   },
+   {
+    "id": "q29",
+    "kind": "multi",
+    "question": "I rent out a condo and the owners’ association hasn’t approved the annual statement yet. Do I have to wait for it, and when I use its figures, do I need to show how I removed the non-billable parts from the building totals?",
+    "query": "Muss der Vermieter einer Eigentumswohnung mit der Betriebskostenabrechnung gegenüber dem Mieter warten, bis der Beschluss der Wohnungseigentümergemeinschaft über die Jahresabrechnung vorliegt? Reicht bei der Abrechnung nach den Zahlen der Abrechnung der Eigentümergemeinschaft die Angabe der Gesamtkosten unter Abzug der nicht umlagefähigen Kosten aus, oder muss der Vermieter die Bereinigung und den Vorwegabzug der nicht umlagefähigen Kostenanteile gesondert erläutern?",
+    "expected": "BGH VIII ZR 249/15, Rn. 17;BGH VIII ZR 93/15, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 273,
+     "3": 827,
+     "5": 1467
+    },
+    "retrieved": [
+     "BGH VIII ZR 249/15, Rn. 20–21",
+     "BGH VIII ZR 249/15, Leitsatz",
+     "BGH VIII ZR 249/15, Rn. 15–17",
+     "BGH VIII ZR 249/15, Rn. 34–35",
+     "BGH VIII ZR 249/15, Rn. 37–39"
+    ]
+   },
+   {
+    "id": "q30",
+    "kind": "multi",
+    "question": "Our building has a shop on the ground floor, and some flats are bigger than the lease says. How should I split the property tax?",
+    "query": "Wie erfolgt die Umlage der Grundsteuer als Betriebskosten auf Wohnungen und eine Gewerbeeinheit im Erdgeschoss im Rahmen der Nebenkostenabrechnung? Nach welchem Umlagemaßstab ist abzurechnen, wenn eine Vorwegabzug für die gewerbliche Nutzung erforderlich sein könnte und die tatsächliche Wohnfläche von der im Mietvertrag vereinbarten Wohnfläche abweicht?",
+    "expected": "BGH VIII ZR 79/16, Rn. 15;BGH VIII ZR 220/17, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": true
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 43,
+     "3": 733,
+     "5": 1216
+    },
+    "retrieved": [
+     "BGH VIII ZR 79/16, Leitsatz",
+     "BGH VIII ZR 79/16, Rn. 20–22",
+     "BGH VIII ZR 79/16, Rn. 23–25",
+     "BGH VIII ZR 79/16, Rn. 8, 14–19",
+     "BGH VIII ZR 220/17, Leitsatz"
+    ]
+   },
+   {
+    "id": "q31",
+    "kind": "multi",
+    "question": "Our lease only says the tenant pays “die Betriebskosten”. Does that cover the waste-sorting service we hired?",
+    "query": "Setzt die wirksame Umlage der Kosten für einen beauftragten Müllsortierdienst als Betriebskosten auf den Mieter voraus, dass im Mietvertrag die einzelnen Betriebskostenarten konkret bezeichnet sind, oder genügt hierfür die allgemeine Vereinbarung, dass der Mieter „die Betriebskosten“ trägt? Fällt ein Müllsortierungsdienst unter die umlagefähigen Betriebskosten der Müllbeseitigung?",
+    "expected": "BGH VIII ZR 137/15, Rn. 13;BGH VIII ZR 117/21, Rn. 32",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": true
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 153,
+     "3": 873,
+     "5": 1332
+    },
+    "retrieved": [
+     "BGH VIII ZR 117/21, Leitsatz",
+     "BGH VIII ZR 117/21, Rn. 27–30",
+     "BGH VIII ZR 117/21, Rn. 24–26",
+     "BGH VIII ZR 137/15, Leitsatz",
+     "BGH VIII ZR 230/21, Rn. 23–26"
+    ]
+   },
+   {
+    "id": "q32",
+    "kind": "multi",
+    "question": "Half our building is empty, and the boiler has no heat meter for the hot water. How should I bill the remaining tenants for hot water?",
+    "query": "Wie erfolgt die Abrechnung der Warmwasserkosten gegenüber den verbleibenden Mietern, wenn das Gebäude zur Hälfte leer steht und an der Heizungsanlage kein Wärmezähler zur Erfassung des Warmwasserverbrauchs vorhanden ist? Nach welchem Umlagemaßstab sind die Kosten bei erheblichem Wohnungsleerstand und fehlender Verbrauchserfassung aufzuteilen?",
+    "expected": "BGH VIII ZR 151/20, Rn. 32;BGH VIII ZR 9/14, Rn. 22",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": true
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 192,
+     "3": 795,
+     "5": 1244
+    },
+    "retrieved": [
+     "BGH VIII ZR 9/14, Leitsatz",
+     "BGH VIII ZR 9/14, Rn. 29–31",
+     "BGH VIII ZR 9/14, Rn. 20–23",
+     "BGH VIII ZR 151/20, Leitsatz",
+     "BGH VIII ZR 151/20, Rn. 28–30"
+    ]
+   }
+  ],
+  "C": [
+   {
+    "id": "q01",
+    "kind": "single",
+    "question": "We had to remove a rotten tree from the garden because it was no longer stable. Can I include the cost in the tenants’ service charge statement?",
+    "query": "Können die Kosten für die Fällung und Beseitigung eines morschen, nicht mehr standsicheren Baumes im Garten als Betriebskosten im Rahmen der Gartenpflege auf die Mieter umgelegt und in der Betriebskostenabrechnung abgerechnet werden? Handelt es sich bei den Baumfällarbeiten um umlagefähige laufende Betriebskosten oder um nicht umlagefähige Instandhaltungs- bzw. Instandsetzungskosten des Vermieters?",
+    "expected": "BGH VIII ZR 107/20, Rn. 18",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 44,
+     "3": 674,
+     "5": 1443
+    },
+    "retrieved": [
+     "BGH VIII ZR 107/20, Leitsatz",
+     "BGH VIII ZR 107/20, Rn. 23–25",
+     "BGH VIII ZR 107/20, Rn. 39–40",
+     "BGH VIII ZR 107/20, Rn. 15–18",
+     "BGH VIII ZR 107/20, Rn. 19–22"
+    ]
+   },
+   {
+    "id": "q02",
+    "kind": "single",
+    "question": "The city keeps complaining that our residual waste isn’t sorted properly, so we hired a company to check the bins and re-sort them by hand. Can I pass that cost on to the tenants?",
+    "query": "Sind die Kosten für ein beauftragtes Unternehmen, das die Mülltonnen wegen wiederholter Beanstandungen der Stadt kontrolliert und den Restmüll von Hand nachsortiert, als Betriebskosten der Müllbeseitigung auf die Mieter umlagefähig? Handelt es sich bei diesem manuellen Nachsortieren um umlagefähige laufende Betriebskosten oder um nicht umlagefähige Verwaltungskosten beziehungsweise Maßnahmen zur Mängelbeseitigung?",
+    "expected": "BGH VIII ZR 117/21, Rn. 32",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "words": {
+     "1": 381,
+     "3": 789,
+     "5": 1612
+    },
+    "retrieved": [
+     "BGH VIII ZR 117/21, Rn. 27–30",
+     "BGH VIII ZR 62/19, Leitsatz",
+     "BGH VIII ZR 230/21, Rn. 23–26",
+     "BGH VIII ZR 62/19, Rn. 4, 8–12",
+     "BGH VIII ZR 117/21, Rn. 10, 18–23"
+    ]
+   },
+   {
+    "id": "q03",
+    "kind": "single",
+    "question": "We pay a company to check the smoke detectors in the flats every year. The building code says maintenance is the tenant’s responsibility. Can I still bill the tenants for the inspections?",
+    "query": "Kann der Vermieter die Kosten für die jährliche Überprüfung und Wartung der Rauchwarnmelder durch eine Fachfirma als Betriebskosten auf die Mieter umlegen, wenn nach der Landesbauordnung die Wartung dem Mieter obliegt?",
+    "expected": "BGH VIII ZR 117/21, Rn. 47",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 153,
+     "3": 777,
+     "5": 1448
+    },
+    "retrieved": [
+     "BGH VIII ZR 117/21, Leitsatz",
+     "BGH VIII ZR 117/21, Rn. 61–63",
+     "BGH VIII ZR 117/21, Rn. 47–49",
+     "BGH VIII ZR 117/21, Rn. 50–52",
+     "BGH VIII ZR 117/21, Rn. 43–46"
+    ]
+   },
+   {
+    "id": "q04",
+    "kind": "single",
+    "question": "A tenant wants to see the bank statements showing we actually paid the invoices, not just the invoices themselves. Do I have to show him those?",
+    "query": "Umfasst das Recht des Mieters auf Belegeinsicht im Rahmen der Betriebskostenabrechnung neben den Rechnungen auch die Vorlage von Zahlungsnachweisen und Bankauszügen des Vermieters? Ist der Vermieter verpflichtet, dem Mieter Kontoauszüge zum Nachweis der tatsächlichen Begleichung der Rechnungsbeträge vorzulegen?",
+    "expected": "BGH VIII ZR 118/19, Rn. 13",
+    "hits": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 412,
+     "3": 833,
+     "5": 1546
+    },
+    "retrieved": [
+     "BGH VIII ZR 118/19, Rn. 3, 10–15",
+     "BGH VIII ZR 118/19, Rn. 16–19",
+     "BGH VIII ZR 118/19, Leitsatz",
+     "BGH VIII ZR 249/15, Rn. 15–17",
+     "§ 556 BGB"
+    ]
+   },
+   {
+    "id": "q05",
+    "kind": "single",
+    "question": "Our lease only says the tenant pays “die Betriebskosten”, with no list of costs attached. Is that enough to bill the tenant for service charges?",
+    "query": "Reicht im Mietvertrag die formularmäßige Vereinbarung, dass der Mieter „die Betriebskosten“ trägt, ohne nähere Konkretisierung oder Beifügung eines Betriebskostenkatalogs für eine wirksame Umlage auf den Mieter aus? Ist der Vermieter bei einer solchen Abrede zur Abrechnung der Betriebskosten berechtigt?",
+    "expected": "BGH VIII ZR 137/15, Rn. 13",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 90,
+     "3": 754,
+     "5": 1289
+    },
+    "retrieved": [
+     "BGH VIII ZR 137/15, Leitsatz",
+     "BGH VIII ZR 254/17, Rn. 4, 10–12",
+     "BGH VIII ZR 137/15, Rn. 19–22",
+     "§ 556 BGB",
+     "BGH VIII ZR 230/21, Leitsatz"
+    ]
+   },
+   {
+    "id": "q06",
+    "kind": "single",
+    "question": "The flats have heat cost allocators and hot water meters, but the central boiler has no heat meter for the hot water. Does our billing still count as consumption-based?",
+    "query": "Gilt eine Abrechnung der Heiz- und Warmwasserkosten noch als verbrauchsabhängig, wenn in den Wohnungen zwar Heizkostenverteiler und Warmwasserzähler vorhanden sind, die zentrale Heizungsanlage jedoch über keinen Wärmezähler zur Erfassung der auf die Warmwasserbereitung entfallenden Wärmemenge verfügt? Führt das Fehlen eines solchen Wärmemengenzählers an der zentralen Anlage zur Unwirksamkeit der verbrauchsabhängigen Abrechnung oder zu einem Kürzungsrecht des Mieters?",
+    "expected": "BGH VIII ZR 151/20, Rn. 32",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 72,
+     "3": 808,
+     "5": 1538
+    },
+    "retrieved": [
+     "BGH VIII ZR 151/20, Leitsatz",
+     "BGH VIII ZR 151/20, Rn. 25–27",
+     "BGH VIII ZR 151/20, Rn. 35–37",
+     "BGH VIII ZR 151/20, Rn. 31–34",
+     "BGH VIII ZR 151/20, Rn. 28–30"
+    ]
+   },
+   {
+    "id": "q07",
+    "kind": "single",
+    "question": "A tenant missed the deadline to object to last year’s statement. Now he says some of the costs I billed were never allowed. Can he still challenge them?",
+    "query": "Kann der Mieter Einwendungen gegen eine Betriebskostenabrechnung noch geltend machen, wenn die gesetzliche Einwendungsfrist bereits abgelaufen ist und er vorträgt, dass die umgelegten Kosten von vornherein nicht umlagefähig waren? Führt der Ablauf der Ausschlussfrist zur Präklusion von Einwendungen bezüglich nicht vereinbarter oder unzulässiger Kostenpositionen der Betriebskostenabrechnung?",
+    "expected": "BGH VIII ZR 209/15, Rn. 25",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "words": {
+     "1": 400,
+     "3": 1192,
+     "5": 1791
+    },
+    "retrieved": [
+     "BGH VIII ZR 209/15, Rn. 15–17",
+     "BGH VIII ZR 47/25, Rn. 31–32",
+     "BGH VIII ZR 209/15, Rn. 18–21",
+     "BGH VIII ZR 47/25, Rn. 33",
+     "§ 556 BGB"
+    ]
+   },
+   {
+    "id": "q08",
+    "kind": "single",
+    "question": "The lease says the flat is 70 m², but when we measured it, it was actually 75 m². Which size do I use to split the service charges?",
+    "query": "Ist bei der Betriebskostenabrechnung für die Umlage nach dem Flächenmaßstab die im Mietvertrag vereinbarte Wohnfläche von 70 m² oder die tatsächliche Wohnfläche von 75 m² zugrunde zu legen? Maßgeblichkeit der tatsächlichen Wohnfläche gegenüber der vertraglich vereinbarten Fläche bei der Abrechnung der Betriebskosten durch den Vermieter.",
+    "expected": "BGH VIII ZR 220/17, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 83,
+     "3": 849,
+     "5": 1593
+    },
+    "retrieved": [
+     "BGH VIII ZR 220/17, Leitsatz",
+     "BGH VIII ZR 220/17, Rn. 18–21",
+     "BGH VIII ZR 220/17, Rn. 22–23",
+     "BGH VIII ZR 220/17, Rn. 6, 14–17",
+     "BGH VIII ZR 249/15, Rn. 15–17"
+    ]
+   },
+   {
+    "id": "q09",
+    "kind": "single",
+    "question": "We signed an expensive cleaning contract before this tenant moved in. Can the tenant claim I’m breaking the rule to keep costs reasonable?",
+    "query": "Verstößt der Vermieter gegen den Grundsatz der Wirtschaftlichkeit bei der Umlage von Betriebskosten, wenn vor dem Einzug des Mieters ein teurer Vertrag über die Gebäudereinigung abgeschlossen wurde? Kann der Mieter eine Verletzung des Wirtschaftlichkeitsgebots geltend machen, obwohl der Reinigungsvertrag bereits vor Beginn seines Mietverhältnisses bestand?",
+    "expected": "BGH VIII ZR 230/21, Rn. 31",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 200,
+     "3": 968,
+     "5": 1630
+    },
+    "retrieved": [
+     "BGH VIII ZR 230/21, Leitsatz",
+     "BGH VIII ZR 230/21, Rn. 31–34",
+     "BGH VIII ZR 230/21, Rn. 40–43",
+     "BGH VIII ZR 230/21, Rn. 27–30",
+     "§ 556 BGB"
+    ]
+   },
+   {
+    "id": "q10",
+    "kind": "single",
+    "question": "A tenant claims our caretaker service is overpriced. Do I have to prove the price is reasonable, or does the tenant have to prove it isn’t?",
+    "query": "Trägt der Mieter oder der Vermieter die Darlegungs- und Beweislast für die Verletzung des Wirtschaftlichkeitsgebots bei der Umlage überhöhter Betriebskosten für den Hauswart? Muss der Vermieter die Angemessenheit und Üblichkeit der Hausmeisterkosten nachweisen, oder obliegt dem Mieter der Nachweis eines Verstoßes gegen das Gebot der Wirtschaftlichkeit?",
+    "expected": "BGH VIII ZR 230/21, Rn. 40",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 200,
+     "3": 930,
+     "5": 1575
+    },
+    "retrieved": [
+     "BGH VIII ZR 230/21, Leitsatz",
+     "BGH VIII ZR 230/21, Rn. 40–43",
+     "BGH VIII ZR 230/21, Rn. 27–30",
+     "BGH VIII ZR 230/21, Rn. 31–34",
+     "BGH VIII ZR 117/21, Rn. 35–38"
+    ]
+   },
+   {
+    "id": "q11",
+    "kind": "single",
+    "question": "I rent out a condo, and the owners’ association hasn’t approved its annual statement yet. Can I wait for that before sending the tenant’s statement?",
+    "query": "Darf der Vermieter einer Eigentumswohnung mit der Erteilung der Betriebskostenabrechnung an den Mieter abwarten, bis die Wohnungseigentümergemeinschaft die Jahresabrechnung beschlossen hat? Ist das Verstreichen der Abrechnungsfrist in diesem Fall vom Vermieter nicht zu vertreten?",
+    "expected": "BGH VIII ZR 249/15, Rn. 17",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 176,
+     "3": 896,
+     "5": 1685
+    },
+    "retrieved": [
+     "BGH VIII ZR 249/15, Leitsatz",
+     "BGH VIII ZR 249/15, Rn. 5, 12–14",
+     "BGH VIII ZR 249/15, Rn. 15–17",
+     "BGH VIII ZR 249/15, Rn. 37–39",
+     "BGH VIII ZR 249/15, Rn. 26–28"
+    ]
+   },
+   {
+    "id": "q12",
+    "kind": "single",
+    "question": "The WEG property manager sent me the figures late, so I missed the deadline for the tenant’s statement. Can I blame the manager and still claim the back payment?",
+    "query": "Kann der Vermieter eine Nachforderung aus der Betriebskostenabrechnung trotz Versäumung der Abrechnungsfrist noch geltend machen, wenn die Verspätung auf der verspäteten Abrechnung oder Datenübermittlung durch den WEG-Verwalter beruht? Ist das Verschulden des Verwalters dem Vermieter zuzurechnen oder hat der Vermieter die verspätete Geltendmachung nicht zu vertreten?",
+    "expected": "BGH VIII ZR 249/15, Rn. 41",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 342,
+     "3": 871,
+     "5": 1623
+    },
+    "retrieved": [
+     "BGH VIII ZR 249/15, Rn. 5, 12–14",
+     "BGH VIII ZR 249/15, Rn. 40–42",
+     "BGH VIII ZR 249/15, Leitsatz",
+     "BGH VIII ZR 249/15, Rn. 15–17",
+     "BGH VIII ZR 249/15, Rn. 37–39"
+    ]
+   },
+   {
+    "id": "q13",
+    "kind": "single",
+    "question": "Our standard lease lists a monthly administration fee separately from the rent. Is that allowed?",
+    "query": "Ist die gesonderte Ausweisung und Umlage einer monatlichen Verwaltungspauschale oder von Verwaltungskosten neben der Miete in einem Formularmietvertrag über Wohnraum zulässig? Handelt es sich bei Verwaltungskosten um umlagefähige Betriebskosten im Rahmen einer solchen Vereinbarung?",
+    "expected": "BGH VIII ZR 254/17, Rn. 14",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 408,
+     "3": 812,
+     "5": 1515
+    },
+    "retrieved": [
+     "BGH VIII ZR 254/17, Rn. 22–25",
+     "BGH VIII ZR 254/17, Rn. 18–21",
+     "BGH VIII ZR 62/19, Leitsatz",
+     "BGH VIII ZR 254/17, Rn. 13–17",
+     "BGH VIII ZR 254/17, Rn. 4, 10–12"
+    ]
+   },
+   {
+    "id": "q14",
+    "kind": "single",
+    "question": "We rent our smoke detectors instead of buying them. Can I pass the rental fee on to the tenants?",
+    "query": "Sind die Mietkosten für angemietete Rauchwarnmelder als Betriebskosten auf den Mieter umlagefähig? Gehören die Aufwendungen des Vermieters für die Miete oder das Leasing von Rauchmeldern zu den umlagefähigen Betriebskosten im Rahmen der Nebenkostenabrechnung?",
+    "expected": "BGH VIII ZR 379/20, Rn. 32",
+    "hits": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 338,
+     "3": 1082,
+     "5": 1482
+    },
+    "retrieved": [
+     "BGH VIII ZR 379/20, Rn. 30–32",
+     "BGH VIII ZR 379/20, Rn. 33–35",
+     "BGH VIII ZR 379/20, Rn. 39–42",
+     "BGH VIII ZR 379/20, Leitsatz",
+     "BGH VIII ZR 117/21, Rn. 50–52"
+    ]
+   },
+   {
+    "id": "q15",
+    "kind": "single",
+    "question": "The tenants used to heat with their own individual stoves. We switched to a heating contractor who supplies the heat. Can I pass the contractor’s costs on to tenants under § 556c BGB?",
+    "query": "Ist die Umlage der Kosten für die gewerbliche Wärmelieferung durch einen Contractor gemäß § 556c BGB auf den Mieter als Betriebskosten zulässig, wenn die Beheizung der Mietwohnung zuvor durch eigene Einzelöfen der Mieter erfolgte und auf die Belieferung durch den Wärmelieferanten umgestellt wurde?",
+    "expected": "BGH VIII ZR 47/25, Rn. 37",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 66,
+     "3": 816,
+     "5": 1439
+    },
+    "retrieved": [
+     "BGH VIII ZR 47/25, Leitsatz",
+     "BGH VIII ZR 47/25, Rn. 36–39",
+     "BGH VIII ZR 47/25, Rn. 46–47",
+     "BGH VIII ZR 47/25, Rn. 40–42",
+     "BGH VIII ZR 47/25, Rn. 45"
+    ]
+   },
+   {
+    "id": "q16",
+    "kind": "single",
+    "question": "We pay the caretaker a flat fee to be on call for emergencies at night and on weekends. Can I bill that to the tenants?",
+    "query": "Ist eine pauschale Vergütung für die Notfall-Rufbereitschaft des Hauswarts in den Nachtstunden und am Wochenende als Betriebskosten auf die Mieter umlagefähig? Gehören die Kosten einer solchen Rufbereitschaftspauschale zu den umlagefähigen Hauswartkosten im Rahmen der Betriebskostenabrechnung?",
+    "expected": "BGH VIII ZR 62/19, Rn. 20",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 303,
+     "3": 1104,
+     "5": 1855
+    },
+    "retrieved": [
+     "BGH VIII ZR 62/19, Rn. 17–19",
+     "BGH VIII ZR 62/19, Rn. 20–23",
+     "BGH VIII ZR 62/19, Rn. 13–16",
+     "§ 2 Nr. 13–17 BetrKV",
+     "BGH VIII ZR 62/19, Rn. 4, 8–12"
+    ]
+   },
+   {
+    "id": "q17",
+    "kind": "single",
+    "question": "Our building has shops on the ground floor and flats above. Do I have to deduct a share for the shops before splitting the property tax among the tenants?",
+    "query": "Muss der Vermieter bei einer gemischt genutzten Immobilie mit Gewerbe im Erdgeschoss und Wohnungen in den oberen Geschossen vor der Umlage der Grundsteuer auf die Wohnraummieter einen Vorwegabzug für die Gewerbeeinheiten vornehmen? Führt die Abrechnung der Betriebskosten ohne Trennung der Gewerbe- und Wohnflächen zu einer unzulässigen Mehrbelastung der Mieter?",
+    "expected": "BGH VIII ZR 79/16, Rn. 15",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 43,
+     "3": 700,
+     "5": 1409
+    },
+    "retrieved": [
+     "BGH VIII ZR 79/16, Leitsatz",
+     "BGH VIII ZR 79/16, Rn. 8, 14–19",
+     "BGH VIII ZR 79/16, Rn. 20–22",
+     "BGH VIII ZR 79/16, Rn. 23–25",
+     "BGH VIII ZR 93/15, Rn. 19–21"
+    ]
+   },
+   {
+    "id": "q18",
+    "kind": "single",
+    "question": "Before I enter the total costs in the statement, I remove the parts that can’t be passed on. Do I have to show the tenant how I calculated those totals?",
+    "query": "Muss der Vermieter in der Betriebskostenabrechnung die Berechnung und den Abzug der nicht umlagefähigen Kostenanteile offenlegen und erläutern, wenn vor dem Ansatz der Gesamtkosten ein Vorwegabzug vorgenommen wurde? Reicht die Angabe der um die nicht umlagefähigen Anteile bereinigten Gesamtkosten aus oder erfordert eine ordnungsgemäße Abrechnung die Angabe und Erläuterung des Rechenwegs gegenüber dem Mieter?",
+    "expected": "BGH VIII ZR 93/15, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 301,
+     "3": 694,
+     "5": 1387
+    },
+    "retrieved": [
+     "BGH VIII ZR 93/15, Rn. 11–12",
+     "BGH VIII ZR 93/15, Leitsatz",
+     "BGH VIII ZR 93/15, Rn. 19–21",
+     "BGH VIII ZR 93/15, Rn. 16–18",
+     "BGH VIII ZR 93/15, Rn. 13–15"
+    ]
+   },
+   {
+    "id": "q19",
+    "kind": "single",
+    "question": "Half the building is empty because it’s going to be demolished, and the remaining tenants’ hot water costs have gone up a lot. Can I stop billing hot water by consumption?",
+    "query": "Darf der Vermieter bei einem halben Wohnungsleerstand infolge einer beabsichtigten Gebäudeabreißung von der verbrauchsabhängigen Abrechnung der Warmwasserkosten abweichen, wenn sich die Warmwasserkosten für die verbleibenden Mieter erheblich erhöht haben? Entfällt die Verpflichtung zur verbrauchsabhängigen Kostenverteilung bei Leerstand vor einem bevorstehenden Abriss?",
+    "expected": "BGH VIII ZR 9/14, Rn. 22",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 192,
+     "3": 541,
+     "5": 1285
+    },
+    "retrieved": [
+     "BGH VIII ZR 9/14, Leitsatz",
+     "BGH VIII ZR 9/14, Rn. 29–31",
+     "BGH VIII ZR 151/20, Leitsatz",
+     "BGH VIII ZR 9/14, Rn. 20–23",
+     "BGH VIII ZR 9/14, Rn. 24–28"
+    ]
+   },
+   {
+    "id": "q20",
+    "kind": "single",
+    "question": "Can I still pass the cost of the building’s cable TV connection on to the tenants?",
+    "query": "Ist der Vermieter weiterhin berechtigt, die Kosten des Kabelanschlusses für das Gebäude als Betriebskosten auf die Mieter umzulegen?",
+    "expected": "§ 2 Nr. 15 BetrKV",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 335,
+     "3": 920,
+     "5": 1768
+    },
+    "retrieved": [
+     "§ 556 BGB",
+     "§§ 560–561 BGB",
+     "§ 2 Nr. 13–17 BetrKV",
+     "§ 559 Abs. 1–4 BGB",
+     "§§ 556a–556c BGB"
+    ]
+   },
+   {
+    "id": "q21",
+    "kind": "single",
+    "question": "The annual statement showed a large back payment. Can I raise the tenant’s monthly advance payments now?",
+    "query": "Darf der Vermieter nach einer Abrechnung über die Betriebskosten, die mit einer hohen Nachzahlung für den Mieter geendet hat, die monatlichen Vorauszahlungen auf eine angemessene Höhe anpassen und einseitig erhöhen? Welche Voraussetzungen müssen für eine solche Erhöhung der Betriebskostenvorauszahlung nach einer Nachforderung erfüllt sein?",
+    "expected": "§ 560 Abs. 4 BGB",
+    "hits": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 247,
+     "3": 897,
+     "5": 1628
+    },
+    "retrieved": [
+     "§§ 560–561 BGB",
+     "§ 556 BGB",
+     "BGH VIII ZR 47/25, Rn. 51–53",
+     "BGH VIII ZR 249/15, Rn. 5, 12–14",
+     "BGH VIII ZR 93/15, Rn. 13–15"
+    ]
+   },
+   {
+    "id": "q22",
+    "kind": "single",
+    "question": "How long does a tenant have to object to the service charge statement?",
+    "query": "Innerhalb welcher Frist muss der Mieter Einwendungen gegen die Betriebskostenabrechnung gegenüber dem Vermieter geltend machen? Nach welchem Zeitraum ist der Einwand des Mieters gegen die Abrechnung der Nebenkosten gesetzlich ausgeschlossen?",
+    "expected": "§ 556 Abs. 3 BGB",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 412,
+     "3": 1147,
+     "5": 1867
+    },
+    "retrieved": [
+     "BGH VIII ZR 47/25, Rn. 31–32",
+     "BGH VIII ZR 209/15, Rn. 15–17",
+     "§ 556 BGB",
+     "BGH VIII ZR 249/15, Rn. 5, 12–14",
+     "BGH VIII ZR 249/15, Rn. 15–17"
+    ]
+   },
+   {
+    "id": "q23",
+    "kind": "single",
+    "question": "Our building emits 30 kg CO2 per m² per year. What share of the CO2 costs can I bill to the tenants?",
+    "query": "In welchem Verhältnis sind die Kohlendioxidkosten zwischen Vermieter und Mieter aufzuteilen und auf die Mieter umlegbar, wenn der spezifische Kohlendioxidausstoß des Gebäudes 30 kg CO2 pro Quadratmeter Wohnfläche im Jahr beträgt? Welcher Anteil der CO2-Kosten ist im Rahmen der Betriebskostenabrechnung von den Mietern zu tragen?",
+    "expected": "Anlage CO2KostAufG",
+    "hits": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 148,
+     "3": 780,
+     "5": 1137
+    },
+    "retrieved": [
+     "Anlage CO2KostAufG",
+     "§ 5 CO2KostAufG",
+     "§ 7 CO2KostAufG",
+     "§ 8 CO2KostAufG",
+     "§ 1 CO2KostAufG"
+    ]
+   },
+   {
+    "id": "q24",
+    "kind": "single",
+    "question": "What share of the heating costs do I have to bill by actual consumption?",
+    "query": "Welcher Anteil der Kosten des Betriebs der zentralen Heizungsanlage muss vom Vermieter nach dem erfassten tatsächlichen Verbrauch der Mieter abgerechnet werden? In welchem prozentualen Verhältnis hat die Verteilung der Heizkosten nach Verbrauch und nach Wohnfläche zu erfolgen?",
+    "expected": "§ 7 Abs. 1 HeizkostenV",
+    "hits": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 465,
+     "3": 1212,
+     "5": 2152
+    },
+    "retrieved": [
+     "§§ 7–8 HeizkostenV",
+     "§ 9 Abs. 1–2 HeizkostenV",
+     "BGH VIII ZR 151/20, Rn. 25–27",
+     "§§ 556a–556c BGB",
+     "§§ 1–4 HeizkostenV"
+    ]
+   },
+   {
+    "id": "q25",
+    "kind": "single",
+    "question": "For years our tenant paid garden maintenance costs that weren’t in the lease, without complaining. Does that mean we have agreed he pays them?",
+    "query": "Kommt eine stillschweigende oder konkludente Vereinbarung über die Umlage von Betriebskosten für die Gartenpflege zustande, wenn der Mieter diese Nebenkosten über mehrere Jahre hinweg beanstandungslos bezahlt hat, obwohl sie im Mietvertrag nicht als umlagefähig vereinbart waren?",
+    "expected": "BGH VIII ZR 36/14, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "words": {
+     "1": 90,
+     "3": 815,
+     "5": 1359
+    },
+    "retrieved": [
+     "BGH VIII ZR 137/15, Leitsatz",
+     "BGH VIII ZR 47/25, Rn. 48–50",
+     "BGH VIII ZR 47/25, Rn. 51–53",
+     "BGH VIII ZR 47/25, Rn. 40–42",
+     "BGH VIII ZR 47/25, Rn. 12, 27–30"
+    ]
+   },
+   {
+    "id": "q26",
+    "kind": "multi",
+    "question": "We rent our smoke detectors from a company that also inspects them every year, and it’s all on one invoice. Which part can I pass on to the tenants?",
+    "query": "Sind die Kosten für die Anmietung beziehungsweise Miete von Rauchwarnmeldern sowie die Kosten für deren jährliche Überprüfung oder Wartung als Betriebskosten auf den Mieter umlagefähig, wenn beide Positionen in einer einheitlichen Rechnung zusammengefasst sind? Welcher Teil dieser Aufwendungen kann im Rahmen der Betriebskostenabrechnung auf die Mieter umgelegt werden?",
+    "expected": "BGH VIII ZR 379/20, Rn. 32;BGH VIII ZR 117/21, Rn. 48",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 341,
+     "3": 824,
+     "5": 1436
+    },
+    "retrieved": [
+     "BGH VIII ZR 117/21, Rn. 50–52",
+     "BGH VIII ZR 117/21, Rn. 43–46",
+     "BGH VIII ZR 117/21, Leitsatz",
+     "BGH VIII ZR 117/21, Rn. 61–63",
+     "BGH VIII ZR 379/20, Rn. 39–42"
+    ]
+   },
+   {
+    "id": "q27",
+    "kind": "multi",
+    "question": "We had a dying tree removed from the garden, and we pay someone to clean the playground and replace the sand in the sandpit. Can I bill the tenants for both?",
+    "query": "Sind die Kosten für die Fällung eines absterbenden Baumes im Garten als Gartenpflege auf die Mieter im Rahmen der Betriebskostenabrechnung umlagefähig? Können die laufenden Kosten für die Reinigung eines Spielplatzes sowie der regelmäßige Sandaustausch im Sandkasten als Betriebskosten auf die Mieter umgelegt werden?",
+    "expected": "BGH VIII ZR 107/20, Rn. 18;§ 2 Nr. 10 BetrKV",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 398,
+     "3": 674,
+     "5": 1484
+    },
+    "retrieved": [
+     "BGH VIII ZR 107/20, Rn. 23–25",
+     "BGH VIII ZR 107/20, Rn. 39–40",
+     "BGH VIII ZR 107/20, Leitsatz",
+     "BGH VIII ZR 107/20, Rn. 31–35",
+     "BGH VIII ZR 107/20, Rn. 15–18"
+    ]
+   },
+   {
+    "id": "q28",
+    "kind": "multi",
+    "question": "Last year I accidentally billed the caretaker’s on-call fee. The tenant only noticed 14 months after getting the statement. Do I have to refund it?",
+    "query": "Muss der Vermieter dem Mieter die versehentlich in der Betriebskostenabrechnung des letzten Jahres umgelegten Kosten für die Rufbereitschaft des Hauswarts erstatten, wenn der Mieter diesen Fehler erst 14 Monate nach Zugang der Abrechnung beanstandet hat? Greift für den Einwand des Mieters gegen die Abrechnung der Nebenkosten eine Ausschlussfrist?",
+    "expected": "BGH VIII ZR 62/19, Rn. 20;BGH VIII ZR 209/15, Rn. 25",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 400,
+     "3": 1147,
+     "5": 1793
+    },
+    "retrieved": [
+     "BGH VIII ZR 209/15, Rn. 15–17",
+     "BGH VIII ZR 47/25, Rn. 31–32",
+     "§ 556 BGB",
+     "BGH VIII ZR 209/15, Rn. 22–25",
+     "BGH VIII ZR 93/15, Rn. 16–18"
+    ]
+   },
+   {
+    "id": "q29",
+    "kind": "multi",
+    "question": "I rent out a condo and the owners’ association hasn’t approved the annual statement yet. Do I have to wait for it, and when I use its figures, do I need to show how I removed the non-billable parts from the building totals?",
+    "query": "Muss der Vermieter einer Eigentumswohnung mit der Betriebskostenabrechnung gegenüber dem Mieter warten, bis der Beschluss der Wohnungseigentümergemeinschaft über die Jahresabrechnung vorliegt? Reicht bei der Abrechnung nach den Zahlen der Abrechnung der Eigentümergemeinschaft die Angabe der Gesamtkosten unter Abzug der nicht umlagefähigen Kosten aus, oder muss der Vermieter die Bereinigung und den Vorwegabzug der nicht umlagefähigen Kostenanteile gesondert erläutern?",
+    "expected": "BGH VIII ZR 249/15, Rn. 17;BGH VIII ZR 93/15, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": true
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 176,
+     "3": 827,
+     "5": 1435
+    },
+    "retrieved": [
+     "BGH VIII ZR 249/15, Leitsatz",
+     "BGH VIII ZR 249/15, Rn. 20–21",
+     "BGH VIII ZR 249/15, Rn. 15–17",
+     "BGH VIII ZR 249/15, Rn. 5, 12–14",
+     "BGH VIII ZR 249/15, Rn. 34–35"
+    ]
+   },
+   {
+    "id": "q30",
+    "kind": "multi",
+    "question": "Our building has a shop on the ground floor, and some flats are bigger than the lease says. How should I split the property tax?",
+    "query": "Wie erfolgt die Umlage der Grundsteuer als Betriebskosten auf Wohnungen und eine Gewerbeeinheit im Erdgeschoss im Rahmen der Nebenkostenabrechnung? Nach welchem Umlagemaßstab ist abzurechnen, wenn eine Vorwegabzug für die gewerbliche Nutzung erforderlich sein könnte und die tatsächliche Wohnfläche von der im Mietvertrag vereinbarten Wohnfläche abweicht?",
+    "expected": "BGH VIII ZR 79/16, Rn. 15;BGH VIII ZR 220/17, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 433,
+     "3": 1090,
+     "5": 1490
+    },
+    "retrieved": [
+     "BGH VIII ZR 79/16, Rn. 23–25",
+     "BGH VIII ZR 79/16, Rn. 20–22",
+     "BGH VIII ZR 79/16, Rn. 8, 14–19",
+     "BGH VIII ZR 220/17, Rn. 22–23",
+     "BGH VIII ZR 79/16, Leitsatz"
+    ]
+   },
+   {
+    "id": "q31",
+    "kind": "multi",
+    "question": "Our lease only says the tenant pays “die Betriebskosten”. Does that cover the waste-sorting service we hired?",
+    "query": "Setzt die wirksame Umlage der Kosten für einen beauftragten Müllsortierdienst als Betriebskosten auf den Mieter voraus, dass im Mietvertrag die einzelnen Betriebskostenarten konkret bezeichnet sind, oder genügt hierfür die allgemeine Vereinbarung, dass der Mieter „die Betriebskosten“ trägt? Fällt ein Müllsortierungsdienst unter die umlagefähigen Betriebskosten der Müllbeseitigung?",
+    "expected": "BGH VIII ZR 137/15, Rn. 13;BGH VIII ZR 117/21, Rn. 32",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 381,
+     "3": 829,
+     "5": 1637
+    },
+    "retrieved": [
+     "BGH VIII ZR 117/21, Rn. 27–30",
+     "BGH VIII ZR 137/15, Leitsatz",
+     "BGH VIII ZR 137/15, Rn. 19–22",
+     "BGH VIII ZR 62/19, Rn. 4, 8–12",
+     "BGH VIII ZR 117/21, Rn. 31–34"
+    ]
+   },
+   {
+    "id": "q32",
+    "kind": "multi",
+    "question": "Half our building is empty, and the boiler has no heat meter for the hot water. How should I bill the remaining tenants for hot water?",
+    "query": "Wie erfolgt die Abrechnung der Warmwasserkosten gegenüber den verbleibenden Mietern, wenn das Gebäude zur Hälfte leer steht und an der Heizungsanlage kein Wärmezähler zur Erfassung des Warmwasserverbrauchs vorhanden ist? Nach welchem Umlagemaßstab sind die Kosten bei erheblichem Wohnungsleerstand und fehlender Verbrauchserfassung aufzuteilen?",
+    "expected": "BGH VIII ZR 151/20, Rn. 32;BGH VIII ZR 9/14, Rn. 22",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 277,
+     "3": 951,
+     "5": 1730
+    },
+    "retrieved": [
+     "BGH VIII ZR 9/14, Rn. 29–31",
+     "BGH VIII ZR 9/14, Rn. 20–23",
+     "§ 6 HeizkostenV",
+     "BGH VIII ZR 9/14, Rn. 9, 17–19",
+     "BGH VIII ZR 151/20, Rn. 25–27"
+    ]
+   }
+  ],
+  "D": [
+   {
+    "id": "q01",
+    "kind": "single",
+    "question": "We had to remove a rotten tree from the garden because it was no longer stable. Can I include the cost in the tenants’ service charge statement?",
+    "query": "Können die Kosten für die Fällung und Beseitigung eines morschen, nicht mehr standsicheren Baumes im Garten als Betriebskosten im Rahmen der Gartenpflege auf die Mieter umgelegt und in der Betriebskostenabrechnung abgerechnet werden? Handelt es sich bei den Baumfällarbeiten um umlagefähige laufende Betriebskosten oder um nicht umlagefähige Instandhaltungs- bzw. Instandsetzungskosten des Vermieters?",
+    "expected": "BGH VIII ZR 107/20, Rn. 18",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 44,
+     "3": 481,
+     "5": 935
+    },
+    "retrieved": [
+     "BGH VIII ZR 107/20, Leitsatz",
+     "BGH VIII ZR 107/20, Rn. 23–25",
+     "BGH VIII ZR 62/19, Leitsatz",
+     "§ 1 BetrKV",
+     "BGH VIII ZR 62/19, Rn. 17–19"
+    ]
+   },
+   {
+    "id": "q02",
+    "kind": "single",
+    "question": "The city keeps complaining that our residual waste isn’t sorted properly, so we hired a company to check the bins and re-sort them by hand. Can I pass that cost on to the tenants?",
+    "query": "Sind die Kosten für ein beauftragtes Unternehmen, das die Mülltonnen wegen wiederholter Beanstandungen der Stadt kontrolliert und den Restmüll von Hand nachsortiert, als Betriebskosten der Müllbeseitigung auf die Mieter umlagefähig? Handelt es sich bei diesem manuellen Nachsortieren um umlagefähige laufende Betriebskosten oder um nicht umlagefähige Verwaltungskosten beziehungsweise Maßnahmen zur Mängelbeseitigung?",
+    "expected": "BGH VIII ZR 117/21, Rn. 32",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "words": {
+     "1": 381,
+     "3": 789,
+     "5": 1612
+    },
+    "retrieved": [
+     "BGH VIII ZR 117/21, Rn. 27–30",
+     "BGH VIII ZR 62/19, Leitsatz",
+     "BGH VIII ZR 230/21, Rn. 23–26",
+     "BGH VIII ZR 62/19, Rn. 4, 8–12",
+     "BGH VIII ZR 117/21, Rn. 10, 18–23"
+    ]
+   },
+   {
+    "id": "q03",
+    "kind": "single",
+    "question": "We pay a company to check the smoke detectors in the flats every year. The building code says maintenance is the tenant’s responsibility. Can I still bill the tenants for the inspections?",
+    "query": "Kann der Vermieter die Kosten für die jährliche Überprüfung und Wartung der Rauchwarnmelder durch eine Fachfirma als Betriebskosten auf die Mieter umlegen, wenn nach der Landesbauordnung die Wartung dem Mieter obliegt?",
+    "expected": "BGH VIII ZR 117/21, Rn. 47",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 153,
+     "3": 765,
+     "5": 1627
+    },
+    "retrieved": [
+     "BGH VIII ZR 117/21, Leitsatz",
+     "BGH VIII ZR 117/21, Rn. 61–63",
+     "BGH VIII ZR 379/20, Rn. 39–42",
+     "BGH VIII ZR 379/20, Rn. 45–49",
+     "§ 2 Nr. 1–5 BetrKV"
+    ]
+   },
+   {
+    "id": "q04",
+    "kind": "single",
+    "question": "A tenant wants to see the bank statements showing we actually paid the invoices, not just the invoices themselves. Do I have to show him those?",
+    "query": "Umfasst das Recht des Mieters auf Belegeinsicht im Rahmen der Betriebskostenabrechnung neben den Rechnungen auch die Vorlage von Zahlungsnachweisen und Bankauszügen des Vermieters? Ist der Vermieter verpflichtet, dem Mieter Kontoauszüge zum Nachweis der tatsächlichen Begleichung der Rechnungsbeträge vorzulegen?",
+    "expected": "BGH VIII ZR 118/19, Rn. 13",
+    "hits": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 412,
+     "3": 1177,
+     "5": 1762
+    },
+    "retrieved": [
+     "BGH VIII ZR 118/19, Rn. 3, 10–15",
+     "BGH VIII ZR 118/19, Rn. 16–19",
+     "BGH VIII ZR 249/15, Rn. 15–17",
+     "§ 556 BGB",
+     "BGH VIII ZR 47/25, Rn. 12, 27–30"
+    ]
+   },
+   {
+    "id": "q05",
+    "kind": "single",
+    "question": "Our lease only says the tenant pays “die Betriebskosten”, with no list of costs attached. Is that enough to bill the tenant for service charges?",
+    "query": "Reicht im Mietvertrag die formularmäßige Vereinbarung, dass der Mieter „die Betriebskosten“ trägt, ohne nähere Konkretisierung oder Beifügung eines Betriebskostenkatalogs für eine wirksame Umlage auf den Mieter aus? Ist der Vermieter bei einer solchen Abrede zur Abrechnung der Betriebskosten berechtigt?",
+    "expected": "BGH VIII ZR 137/15, Rn. 13",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 90,
+     "3": 754,
+     "5": 1289
+    },
+    "retrieved": [
+     "BGH VIII ZR 137/15, Leitsatz",
+     "BGH VIII ZR 254/17, Rn. 4, 10–12",
+     "BGH VIII ZR 137/15, Rn. 19–22",
+     "§ 556 BGB",
+     "BGH VIII ZR 230/21, Leitsatz"
+    ]
+   },
+   {
+    "id": "q06",
+    "kind": "single",
+    "question": "The flats have heat cost allocators and hot water meters, but the central boiler has no heat meter for the hot water. Does our billing still count as consumption-based?",
+    "query": "Gilt eine Abrechnung der Heiz- und Warmwasserkosten noch als verbrauchsabhängig, wenn in den Wohnungen zwar Heizkostenverteiler und Warmwasserzähler vorhanden sind, die zentrale Heizungsanlage jedoch über keinen Wärmezähler zur Erfassung der auf die Warmwasserbereitung entfallenden Wärmemenge verfügt? Führt das Fehlen eines solchen Wärmemengenzählers an der zentralen Anlage zur Unwirksamkeit der verbrauchsabhängigen Abrechnung oder zu einem Kürzungsrecht des Mieters?",
+    "expected": "BGH VIII ZR 151/20, Rn. 32",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 72,
+     "3": 819,
+     "5": 1382
+    },
+    "retrieved": [
+     "BGH VIII ZR 151/20, Leitsatz",
+     "BGH VIII ZR 151/20, Rn. 25–27",
+     "§ 9 Abs. 1–2 HeizkostenV",
+     "§ 12 HeizkostenV",
+     "BGH VIII ZR 47/25, Rn. 54–56"
+    ]
+   },
+   {
+    "id": "q07",
+    "kind": "single",
+    "question": "A tenant missed the deadline to object to last year’s statement. Now he says some of the costs I billed were never allowed. Can he still challenge them?",
+    "query": "Kann der Mieter Einwendungen gegen eine Betriebskostenabrechnung noch geltend machen, wenn die gesetzliche Einwendungsfrist bereits abgelaufen ist und er vorträgt, dass die umgelegten Kosten von vornherein nicht umlagefähig waren? Führt der Ablauf der Ausschlussfrist zur Präklusion von Einwendungen bezüglich nicht vereinbarter oder unzulässiger Kostenpositionen der Betriebskostenabrechnung?",
+    "expected": "BGH VIII ZR 209/15, Rn. 25",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "words": {
+     "1": 400,
+     "3": 1192,
+     "5": 1791
+    },
+    "retrieved": [
+     "BGH VIII ZR 209/15, Rn. 15–17",
+     "BGH VIII ZR 47/25, Rn. 31–32",
+     "BGH VIII ZR 209/15, Rn. 18–21",
+     "BGH VIII ZR 47/25, Rn. 33",
+     "§ 556 BGB"
+    ]
+   },
+   {
+    "id": "q08",
+    "kind": "single",
+    "question": "The lease says the flat is 70 m², but when we measured it, it was actually 75 m². Which size do I use to split the service charges?",
+    "query": "Ist bei der Betriebskostenabrechnung für die Umlage nach dem Flächenmaßstab die im Mietvertrag vereinbarte Wohnfläche von 70 m² oder die tatsächliche Wohnfläche von 75 m² zugrunde zu legen? Maßgeblichkeit der tatsächlichen Wohnfläche gegenüber der vertraglich vereinbarten Fläche bei der Abrechnung der Betriebskosten durch den Vermieter.",
+    "expected": "BGH VIII ZR 220/17, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 83,
+     "3": 870,
+     "5": 1186
+    },
+    "retrieved": [
+     "BGH VIII ZR 220/17, Leitsatz",
+     "BGH VIII ZR 220/17, Rn. 18–21",
+     "BGH VIII ZR 249/15, Rn. 15–17",
+     "BGH VIII ZR 249/15, Rn. 20–21",
+     "BGH VIII ZR 79/16, Leitsatz"
+    ]
+   },
+   {
+    "id": "q09",
+    "kind": "single",
+    "question": "We signed an expensive cleaning contract before this tenant moved in. Can the tenant claim I’m breaking the rule to keep costs reasonable?",
+    "query": "Verstößt der Vermieter gegen den Grundsatz der Wirtschaftlichkeit bei der Umlage von Betriebskosten, wenn vor dem Einzug des Mieters ein teurer Vertrag über die Gebäudereinigung abgeschlossen wurde? Kann der Mieter eine Verletzung des Wirtschaftlichkeitsgebots geltend machen, obwohl der Reinigungsvertrag bereits vor Beginn seines Mietverhältnisses bestand?",
+    "expected": "BGH VIII ZR 230/21, Rn. 31",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 200,
+     "3": 900,
+     "5": 1435
+    },
+    "retrieved": [
+     "BGH VIII ZR 230/21, Leitsatz",
+     "BGH VIII ZR 230/21, Rn. 31–34",
+     "§ 556 BGB",
+     "BGH VIII ZR 117/21, Rn. 35–38",
+     "BGH VIII ZR 117/21, Rn. 61–63"
+    ]
+   },
+   {
+    "id": "q10",
+    "kind": "single",
+    "question": "A tenant claims our caretaker service is overpriced. Do I have to prove the price is reasonable, or does the tenant have to prove it isn’t?",
+    "query": "Trägt der Mieter oder der Vermieter die Darlegungs- und Beweislast für die Verletzung des Wirtschaftlichkeitsgebots bei der Umlage überhöhter Betriebskosten für den Hauswart? Muss der Vermieter die Angemessenheit und Üblichkeit der Hausmeisterkosten nachweisen, oder obliegt dem Mieter der Nachweis eines Verstoßes gegen das Gebot der Wirtschaftlichkeit?",
+    "expected": "BGH VIII ZR 230/21, Rn. 40",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 200,
+     "3": 883,
+     "5": 1473
+    },
+    "retrieved": [
+     "BGH VIII ZR 230/21, Leitsatz",
+     "BGH VIII ZR 230/21, Rn. 40–43",
+     "BGH VIII ZR 117/21, Rn. 35–38",
+     "BGH VIII ZR 117/21, Rn. 61–63",
+     "§ 556 BGB"
+    ]
+   },
+   {
+    "id": "q11",
+    "kind": "single",
+    "question": "I rent out a condo, and the owners’ association hasn’t approved its annual statement yet. Can I wait for that before sending the tenant’s statement?",
+    "query": "Darf der Vermieter einer Eigentumswohnung mit der Erteilung der Betriebskostenabrechnung an den Mieter abwarten, bis die Wohnungseigentümergemeinschaft die Jahresabrechnung beschlossen hat? Ist das Verstreichen der Abrechnungsfrist in diesem Fall vom Vermieter nicht zu vertreten?",
+    "expected": "BGH VIII ZR 249/15, Rn. 17",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 176,
+     "3": 853,
+     "5": 1271
+    },
+    "retrieved": [
+     "BGH VIII ZR 249/15, Leitsatz",
+     "BGH VIII ZR 249/15, Rn. 5, 12–14",
+     "§ 556 BGB",
+     "BGH VIII ZR 93/15, Leitsatz",
+     "BGH VIII ZR 93/15, Rn. 11–12"
+    ]
+   },
+   {
+    "id": "q12",
+    "kind": "single",
+    "question": "The WEG property manager sent me the figures late, so I missed the deadline for the tenant’s statement. Can I blame the manager and still claim the back payment?",
+    "query": "Kann der Vermieter eine Nachforderung aus der Betriebskostenabrechnung trotz Versäumung der Abrechnungsfrist noch geltend machen, wenn die Verspätung auf der verspäteten Abrechnung oder Datenübermittlung durch den WEG-Verwalter beruht? Ist das Verschulden des Verwalters dem Vermieter zuzurechnen oder hat der Vermieter die verspätete Geltendmachung nicht zu vertreten?",
+    "expected": "BGH VIII ZR 249/15, Rn. 41",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 342,
+     "3": 1030,
+     "5": 1842
+    },
+    "retrieved": [
+     "BGH VIII ZR 249/15, Rn. 5, 12–14",
+     "BGH VIII ZR 249/15, Rn. 40–42",
+     "§ 556 BGB",
+     "BGH VIII ZR 47/25, Rn. 31–32",
+     "BGH VIII ZR 209/15, Rn. 15–17"
+    ]
+   },
+   {
+    "id": "q13",
+    "kind": "single",
+    "question": "Our standard lease lists a monthly administration fee separately from the rent. Is that allowed?",
+    "query": "Ist die gesonderte Ausweisung und Umlage einer monatlichen Verwaltungspauschale oder von Verwaltungskosten neben der Miete in einem Formularmietvertrag über Wohnraum zulässig? Handelt es sich bei Verwaltungskosten um umlagefähige Betriebskosten im Rahmen einer solchen Vereinbarung?",
+    "expected": "BGH VIII ZR 254/17, Rn. 14",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "words": {
+     "1": 408,
+     "3": 812,
+     "5": 1284
+    },
+    "retrieved": [
+     "BGH VIII ZR 254/17, Rn. 22–25",
+     "BGH VIII ZR 254/17, Rn. 18–21",
+     "BGH VIII ZR 62/19, Leitsatz",
+     "BGH VIII ZR 62/19, Rn. 4, 8–12",
+     "BGH VIII ZR 379/20, Leitsatz"
+    ]
+   },
+   {
+    "id": "q14",
+    "kind": "single",
+    "question": "We rent our smoke detectors instead of buying them. Can I pass the rental fee on to the tenants?",
+    "query": "Sind die Mietkosten für angemietete Rauchwarnmelder als Betriebskosten auf den Mieter umlagefähig? Gehören die Aufwendungen des Vermieters für die Miete oder das Leasing von Rauchmeldern zu den umlagefähigen Betriebskosten im Rahmen der Nebenkostenabrechnung?",
+    "expected": "BGH VIII ZR 379/20, Rn. 32",
+    "hits": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 338,
+     "3": 1066,
+     "5": 1738
+    },
+    "retrieved": [
+     "BGH VIII ZR 379/20, Rn. 30–32",
+     "BGH VIII ZR 379/20, Rn. 33–35",
+     "BGH VIII ZR 117/21, Rn. 50–52",
+     "BGH VIII ZR 117/21, Rn. 47–49",
+     "BGH VIII ZR 62/19, Rn. 17–19"
+    ]
+   },
+   {
+    "id": "q15",
+    "kind": "single",
+    "question": "The tenants used to heat with their own individual stoves. We switched to a heating contractor who supplies the heat. Can I pass the contractor’s costs on to tenants under § 556c BGB?",
+    "query": "Ist die Umlage der Kosten für die gewerbliche Wärmelieferung durch einen Contractor gemäß § 556c BGB auf den Mieter als Betriebskosten zulässig, wenn die Beheizung der Mietwohnung zuvor durch eigene Einzelöfen der Mieter erfolgte und auf die Belieferung durch den Wärmelieferanten umgestellt wurde?",
+    "expected": "BGH VIII ZR 47/25, Rn. 37",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 66,
+     "3": 930,
+     "5": 1359
+    },
+    "retrieved": [
+     "BGH VIII ZR 47/25, Leitsatz",
+     "BGH VIII ZR 47/25, Rn. 36–39",
+     "§§ 556a–556c BGB",
+     "BGH VIII ZR 117/21, Leitsatz",
+     "BGH VIII ZR 93/15, Rn. 19–21"
+    ]
+   },
+   {
+    "id": "q16",
+    "kind": "single",
+    "question": "We pay the caretaker a flat fee to be on call for emergencies at night and on weekends. Can I bill that to the tenants?",
+    "query": "Ist eine pauschale Vergütung für die Notfall-Rufbereitschaft des Hauswarts in den Nachtstunden und am Wochenende als Betriebskosten auf die Mieter umlagefähig? Gehören die Kosten einer solchen Rufbereitschaftspauschale zu den umlagefähigen Hauswartkosten im Rahmen der Betriebskostenabrechnung?",
+    "expected": "BGH VIII ZR 62/19, Rn. 20",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 303,
+     "3": 1048,
+     "5": 1702
+    },
+    "retrieved": [
+     "BGH VIII ZR 62/19, Rn. 17–19",
+     "BGH VIII ZR 62/19, Rn. 20–23",
+     "§ 2 Nr. 13–17 BetrKV",
+     "§ 2 Nr. 1–5 BetrKV",
+     "BGH VIII ZR 249/15, Rn. 34–35"
+    ]
+   },
+   {
+    "id": "q17",
+    "kind": "single",
+    "question": "Our building has shops on the ground floor and flats above. Do I have to deduct a share for the shops before splitting the property tax among the tenants?",
+    "query": "Muss der Vermieter bei einer gemischt genutzten Immobilie mit Gewerbe im Erdgeschoss und Wohnungen in den oberen Geschossen vor der Umlage der Grundsteuer auf die Wohnraummieter einen Vorwegabzug für die Gewerbeeinheiten vornehmen? Führt die Abrechnung der Betriebskosten ohne Trennung der Gewerbe- und Wohnflächen zu einer unzulässigen Mehrbelastung der Mieter?",
+    "expected": "BGH VIII ZR 79/16, Rn. 15",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 43,
+     "3": 719,
+     "5": 1326
+    },
+    "retrieved": [
+     "BGH VIII ZR 79/16, Leitsatz",
+     "BGH VIII ZR 79/16, Rn. 8, 14–19",
+     "BGH VIII ZR 93/15, Rn. 19–21",
+     "BGH VIII ZR 254/17, Rn. 4, 10–12",
+     "BGH VIII ZR 93/15, Rn. 11–12"
+    ]
+   },
+   {
+    "id": "q18",
+    "kind": "single",
+    "question": "Before I enter the total costs in the statement, I remove the parts that can’t be passed on. Do I have to show the tenant how I calculated those totals?",
+    "query": "Muss der Vermieter in der Betriebskostenabrechnung die Berechnung und den Abzug der nicht umlagefähigen Kostenanteile offenlegen und erläutern, wenn vor dem Ansatz der Gesamtkosten ein Vorwegabzug vorgenommen wurde? Reicht die Angabe der um die nicht umlagefähigen Anteile bereinigten Gesamtkosten aus oder erfordert eine ordnungsgemäße Abrechnung die Angabe und Erläuterung des Rechenwegs gegenüber dem Mieter?",
+    "expected": "BGH VIII ZR 93/15, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 301,
+     "3": 684,
+     "5": 1341
+    },
+    "retrieved": [
+     "BGH VIII ZR 93/15, Rn. 11–12",
+     "BGH VIII ZR 93/15, Leitsatz",
+     "BGH VIII ZR 249/15, Rn. 34–35",
+     "BGH VIII ZR 79/16, Rn. 8, 14–19",
+     "BGH VIII ZR 79/16, Rn. 20–22"
+    ]
+   },
+   {
+    "id": "q19",
+    "kind": "single",
+    "question": "Half the building is empty because it’s going to be demolished, and the remaining tenants’ hot water costs have gone up a lot. Can I stop billing hot water by consumption?",
+    "query": "Darf der Vermieter bei einem halben Wohnungsleerstand infolge einer beabsichtigten Gebäudeabreißung von der verbrauchsabhängigen Abrechnung der Warmwasserkosten abweichen, wenn sich die Warmwasserkosten für die verbleibenden Mieter erheblich erhöht haben? Entfällt die Verpflichtung zur verbrauchsabhängigen Kostenverteilung bei Leerstand vor einem bevorstehenden Abriss?",
+    "expected": "BGH VIII ZR 9/14, Rn. 22",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 192,
+     "3": 541,
+     "5": 1238
+    },
+    "retrieved": [
+     "BGH VIII ZR 9/14, Leitsatz",
+     "BGH VIII ZR 9/14, Rn. 29–31",
+     "BGH VIII ZR 151/20, Leitsatz",
+     "BGH VIII ZR 151/20, Rn. 25–27",
+     "§ 6 HeizkostenV"
+    ]
+   },
+   {
+    "id": "q20",
+    "kind": "single",
+    "question": "Can I still pass the cost of the building’s cable TV connection on to the tenants?",
+    "query": "Ist der Vermieter weiterhin berechtigt, die Kosten des Kabelanschlusses für das Gebäude als Betriebskosten auf die Mieter umzulegen?",
+    "expected": "§ 2 Nr. 15 BetrKV",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 335,
+     "3": 920,
+     "5": 1582
+    },
+    "retrieved": [
+     "§ 556 BGB",
+     "§§ 560–561 BGB",
+     "§ 2 Nr. 13–17 BetrKV",
+     "BGH VIII ZR 379/20, Rn. 25–29",
+     "BGH VIII ZR 47/25, Rn. 51–53"
+    ]
+   },
+   {
+    "id": "q21",
+    "kind": "single",
+    "question": "The annual statement showed a large back payment. Can I raise the tenant’s monthly advance payments now?",
+    "query": "Darf der Vermieter nach einer Abrechnung über die Betriebskosten, die mit einer hohen Nachzahlung für den Mieter geendet hat, die monatlichen Vorauszahlungen auf eine angemessene Höhe anpassen und einseitig erhöhen? Welche Voraussetzungen müssen für eine solche Erhöhung der Betriebskostenvorauszahlung nach einer Nachforderung erfüllt sein?",
+    "expected": "§ 560 Abs. 4 BGB",
+    "hits": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 247,
+     "3": 897,
+     "5": 1628
+    },
+    "retrieved": [
+     "§§ 560–561 BGB",
+     "§ 556 BGB",
+     "BGH VIII ZR 47/25, Rn. 51–53",
+     "BGH VIII ZR 249/15, Rn. 5, 12–14",
+     "BGH VIII ZR 93/15, Rn. 13–15"
+    ]
+   },
+   {
+    "id": "q22",
+    "kind": "single",
+    "question": "How long does a tenant have to object to the service charge statement?",
+    "query": "Innerhalb welcher Frist muss der Mieter Einwendungen gegen die Betriebskostenabrechnung gegenüber dem Vermieter geltend machen? Nach welchem Zeitraum ist der Einwand des Mieters gegen die Abrechnung der Nebenkosten gesetzlich ausgeschlossen?",
+    "expected": "§ 556 Abs. 3 BGB",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 412,
+     "3": 1147,
+     "5": 1867
+    },
+    "retrieved": [
+     "BGH VIII ZR 47/25, Rn. 31–32",
+     "BGH VIII ZR 209/15, Rn. 15–17",
+     "§ 556 BGB",
+     "BGH VIII ZR 249/15, Rn. 5, 12–14",
+     "BGH VIII ZR 249/15, Rn. 15–17"
+    ]
+   },
+   {
+    "id": "q23",
+    "kind": "single",
+    "question": "Our building emits 30 kg CO2 per m² per year. What share of the CO2 costs can I bill to the tenants?",
+    "query": "In welchem Verhältnis sind die Kohlendioxidkosten zwischen Vermieter und Mieter aufzuteilen und auf die Mieter umlegbar, wenn der spezifische Kohlendioxidausstoß des Gebäudes 30 kg CO2 pro Quadratmeter Wohnfläche im Jahr beträgt? Welcher Anteil der CO2-Kosten ist im Rahmen der Betriebskostenabrechnung von den Mietern zu tragen?",
+    "expected": "Anlage CO2KostAufG",
+    "hits": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 148,
+     "3": 711,
+     "5": 1249
+    },
+    "retrieved": [
+     "Anlage CO2KostAufG",
+     "§ 5 CO2KostAufG",
+     "§ 12 HeizkostenV",
+     "BGH VIII ZR 220/17, Leitsatz",
+     "§§ 556a–556c BGB"
+    ]
+   },
+   {
+    "id": "q24",
+    "kind": "single",
+    "question": "What share of the heating costs do I have to bill by actual consumption?",
+    "query": "Welcher Anteil der Kosten des Betriebs der zentralen Heizungsanlage muss vom Vermieter nach dem erfassten tatsächlichen Verbrauch der Mieter abgerechnet werden? In welchem prozentualen Verhältnis hat die Verteilung der Heizkosten nach Verbrauch und nach Wohnfläche zu erfolgen?",
+    "expected": "§ 7 Abs. 1 HeizkostenV",
+    "hits": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": true,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 465,
+     "3": 1212,
+     "5": 2023
+    },
+    "retrieved": [
+     "§§ 7–8 HeizkostenV",
+     "§ 9 Abs. 1–2 HeizkostenV",
+     "BGH VIII ZR 151/20, Rn. 25–27",
+     "§§ 556a–556c BGB",
+     "§ 7 CO2KostAufG"
+    ]
+   },
+   {
+    "id": "q25",
+    "kind": "single",
+    "question": "For years our tenant paid garden maintenance costs that weren’t in the lease, without complaining. Does that mean we have agreed he pays them?",
+    "query": "Kommt eine stillschweigende oder konkludente Vereinbarung über die Umlage von Betriebskosten für die Gartenpflege zustande, wenn der Mieter diese Nebenkosten über mehrere Jahre hinweg beanstandungslos bezahlt hat, obwohl sie im Mietvertrag nicht als umlagefähig vereinbart waren?",
+    "expected": "BGH VIII ZR 36/14, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "words": {
+     "1": 90,
+     "3": 815,
+     "5": 1575
+    },
+    "retrieved": [
+     "BGH VIII ZR 137/15, Leitsatz",
+     "BGH VIII ZR 47/25, Rn. 48–50",
+     "BGH VIII ZR 47/25, Rn. 51–53",
+     "BGH VIII ZR 137/15, Rn. 19–22",
+     "BGH VIII ZR 107/20, Rn. 31–35"
+    ]
+   },
+   {
+    "id": "q26",
+    "kind": "multi",
+    "question": "We rent our smoke detectors from a company that also inspects them every year, and it’s all on one invoice. Which part can I pass on to the tenants?",
+    "query": "Sind die Kosten für die Anmietung beziehungsweise Miete von Rauchwarnmeldern sowie die Kosten für deren jährliche Überprüfung oder Wartung als Betriebskosten auf den Mieter umlagefähig, wenn beide Positionen in einer einheitlichen Rechnung zusammengefasst sind? Welcher Teil dieser Aufwendungen kann im Rahmen der Betriebskostenabrechnung auf die Mieter umgelegt werden?",
+    "expected": "BGH VIII ZR 379/20, Rn. 32;BGH VIII ZR 117/21, Rn. 48",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "words": {
+     "1": 341,
+     "3": 1028,
+     "5": 1791
+    },
+    "retrieved": [
+     "BGH VIII ZR 117/21, Rn. 50–52",
+     "BGH VIII ZR 117/21, Rn. 43–46",
+     "BGH VIII ZR 379/20, Rn. 39–42",
+     "BGH VIII ZR 379/20, Rn. 36–38",
+     "§ 2 Nr. 1–5 BetrKV"
+    ]
+   },
+   {
+    "id": "q27",
+    "kind": "multi",
+    "question": "We had a dying tree removed from the garden, and we pay someone to clean the playground and replace the sand in the sandpit. Can I bill the tenants for both?",
+    "query": "Sind die Kosten für die Fällung eines absterbenden Baumes im Garten als Gartenpflege auf die Mieter im Rahmen der Betriebskostenabrechnung umlagefähig? Können die laufenden Kosten für die Reinigung eines Spielplatzes sowie der regelmäßige Sandaustausch im Sandkasten als Betriebskosten auf die Mieter umgelegt werden?",
+    "expected": "BGH VIII ZR 107/20, Rn. 18;§ 2 Nr. 10 BetrKV",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "words": {
+     "1": 398,
+     "3": 783,
+     "5": 1229
+    },
+    "retrieved": [
+     "BGH VIII ZR 107/20, Rn. 23–25",
+     "BGH VIII ZR 107/20, Rn. 39–40",
+     "BGH VIII ZR 117/21, Leitsatz",
+     "§ 2 Nr. 1–5 BetrKV",
+     "BGH VIII ZR 209/15, Leitsatz"
+    ]
+   },
+   {
+    "id": "q28",
+    "kind": "multi",
+    "question": "Last year I accidentally billed the caretaker’s on-call fee. The tenant only noticed 14 months after getting the statement. Do I have to refund it?",
+    "query": "Muss der Vermieter dem Mieter die versehentlich in der Betriebskostenabrechnung des letzten Jahres umgelegten Kosten für die Rufbereitschaft des Hauswarts erstatten, wenn der Mieter diesen Fehler erst 14 Monate nach Zugang der Abrechnung beanstandet hat? Greift für den Einwand des Mieters gegen die Abrechnung der Nebenkosten eine Ausschlussfrist?",
+    "expected": "BGH VIII ZR 62/19, Rn. 20;BGH VIII ZR 209/15, Rn. 25",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 400,
+     "3": 1147,
+     "5": 1793
+    },
+    "retrieved": [
+     "BGH VIII ZR 209/15, Rn. 15–17",
+     "BGH VIII ZR 47/25, Rn. 31–32",
+     "§ 556 BGB",
+     "BGH VIII ZR 209/15, Rn. 22–25",
+     "BGH VIII ZR 93/15, Rn. 16–18"
+    ]
+   },
+   {
+    "id": "q29",
+    "kind": "multi",
+    "question": "I rent out a condo and the owners’ association hasn’t approved the annual statement yet. Do I have to wait for it, and when I use its figures, do I need to show how I removed the non-billable parts from the building totals?",
+    "query": "Muss der Vermieter einer Eigentumswohnung mit der Betriebskostenabrechnung gegenüber dem Mieter warten, bis der Beschluss der Wohnungseigentümergemeinschaft über die Jahresabrechnung vorliegt? Reicht bei der Abrechnung nach den Zahlen der Abrechnung der Eigentümergemeinschaft die Angabe der Gesamtkosten unter Abzug der nicht umlagefähigen Kosten aus, oder muss der Vermieter die Bereinigung und den Vorwegabzug der nicht umlagefähigen Kostenanteile gesondert erläutern?",
+    "expected": "BGH VIII ZR 249/15, Rn. 17;BGH VIII ZR 93/15, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": false
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": true
+     },
+     "3": {
+      "all": true,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 176,
+     "3": 566,
+     "5": 1209
+    },
+    "retrieved": [
+     "BGH VIII ZR 249/15, Leitsatz",
+     "BGH VIII ZR 249/15, Rn. 20–21",
+     "BGH VIII ZR 93/15, Leitsatz",
+     "BGH VIII ZR 93/15, Rn. 11–12",
+     "BGH VIII ZR 209/15, Rn. 22–25"
+    ]
+   },
+   {
+    "id": "q30",
+    "kind": "multi",
+    "question": "Our building has a shop on the ground floor, and some flats are bigger than the lease says. How should I split the property tax?",
+    "query": "Wie erfolgt die Umlage der Grundsteuer als Betriebskosten auf Wohnungen und eine Gewerbeeinheit im Erdgeschoss im Rahmen der Nebenkostenabrechnung? Nach welchem Umlagemaßstab ist abzurechnen, wenn eine Vorwegabzug für die gewerbliche Nutzung erforderlich sein könnte und die tatsächliche Wohnfläche von der im Mietvertrag vereinbarten Wohnfläche abweicht?",
+    "expected": "BGH VIII ZR 79/16, Rn. 15;BGH VIII ZR 220/17, Rn. 19",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 433,
+     "3": 1047,
+     "5": 1732
+    },
+    "retrieved": [
+     "BGH VIII ZR 79/16, Rn. 23–25",
+     "BGH VIII ZR 79/16, Rn. 20–22",
+     "BGH VIII ZR 220/17, Rn. 22–23",
+     "BGH VIII ZR 220/17, Rn. 18–21",
+     "BGH VIII ZR 93/15, Rn. 19–21"
+    ]
+   },
+   {
+    "id": "q31",
+    "kind": "multi",
+    "question": "Our lease only says the tenant pays “die Betriebskosten”. Does that cover the waste-sorting service we hired?",
+    "query": "Setzt die wirksame Umlage der Kosten für einen beauftragten Müllsortierdienst als Betriebskosten auf den Mieter voraus, dass im Mietvertrag die einzelnen Betriebskostenarten konkret bezeichnet sind, oder genügt hierfür die allgemeine Vereinbarung, dass der Mieter „die Betriebskosten“ trägt? Fällt ein Müllsortierungsdienst unter die umlagefähigen Betriebskosten der Müllbeseitigung?",
+    "expected": "BGH VIII ZR 137/15, Rn. 13;BGH VIII ZR 117/21, Rn. 32",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": false
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": true,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 381,
+     "3": 829,
+     "5": 1637
+    },
+    "retrieved": [
+     "BGH VIII ZR 117/21, Rn. 27–30",
+     "BGH VIII ZR 137/15, Leitsatz",
+     "BGH VIII ZR 137/15, Rn. 19–22",
+     "BGH VIII ZR 62/19, Rn. 4, 8–12",
+     "BGH VIII ZR 117/21, Rn. 31–34"
+    ]
+   },
+   {
+    "id": "q32",
+    "kind": "multi",
+    "question": "Half our building is empty, and the boiler has no heat meter for the hot water. How should I bill the remaining tenants for hot water?",
+    "query": "Wie erfolgt die Abrechnung der Warmwasserkosten gegenüber den verbleibenden Mietern, wenn das Gebäude zur Hälfte leer steht und an der Heizungsanlage kein Wärmezähler zur Erfassung des Warmwasserverbrauchs vorhanden ist? Nach welchem Umlagemaßstab sind die Kosten bei erheblichem Wohnungsleerstand und fehlender Verbrauchserfassung aufzuteilen?",
+    "expected": "BGH VIII ZR 151/20, Rn. 32;BGH VIII ZR 9/14, Rn. 22",
+    "hits": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "hits_holding": {
+     "1": {
+      "all": false,
+      "any": false
+     },
+     "3": {
+      "all": false,
+      "any": true
+     },
+     "5": {
+      "all": false,
+      "any": true
+     }
+    },
+    "words": {
+     "1": 277,
+     "3": 951,
+     "5": 1765
+    },
+    "retrieved": [
+     "BGH VIII ZR 9/14, Rn. 29–31",
+     "BGH VIII ZR 9/14, Rn. 20–23",
+     "§ 6 HeizkostenV",
+     "BGH VIII ZR 151/20, Rn. 25–27",
+     "§§ 7–8 HeizkostenV"
+    ]
+   }
+  ]
+ }
+}

@@ -1,0 +1,115 @@
+{
+  "_summary": "Out-of-corpus BGH cases the baselines cite: 16. **Exist (9):** 6 are on the portal table of contents, and 3 more are confirmed because a corpus judgment cites them. **Not found (5):** 156/10, 216/15, 268/14, 278/19 and 379/11 carry a year of 2010 or later but are missing from the table. That strongly suggests they are invented, but doesn't prove it. **Can't be checked locally (2):** 103/06 and 137/03 predate the portal. 137/03 is probably a garbled number: its date, 7 April 2004, and its topic match VIII ZR 167/03, which BGH VIII ZR 137/15, Rn. 11 cites. **Topics of the 9 that exist:** 1 consistent with the baseline's claim (340/10), 3 partly matching (137/09, 202/06, 266/14), 1 on a different subject altogether (107/13), and 4 that can't be told from local files. Two of the not-found numbers are cited for the smoke-detector-rental holding of VIII ZR 379/20 in the corpus: 379/11 looks like a garbled version of that number, and 216/15 has no visible link to it. Sources: corpus/raw/bgh_toc/rii-toc.xml, corpus/raw/bgh_screen/ and the corpus judgments' own citations; no API calls.",
+  "VIII ZR 103/06": {
+    "on_portal": "no (2006, before the portal starts)",
+    "decided": "unknown",
+    "claimed": "Repeatedly ruled that an on-call caretaker fee is maintenance/management (q16)",
+    "actual": "Not checkable from local files; no corpus judgment cites it",
+    "matches": "can't check"
+  },
+  "VIII ZR 107/13": {
+    "on_portal": "yes",
+    "decided": "2014-04-09",
+    "claimed": "Tenant loses the refund claim once the 12-month objection deadline passes (q07)",
+    "actual": "Summary dismissal for an invented previous-landlord reference; notice to an insolvent tenant (Leitsatz, local portal file)",
+    "matches": "no"
+  },
+  "VIII ZR 115/04": {
+    "on_portal": "no (2004, before the portal starts)",
+    "decided": "2004-11-17 (cited in BGH VIII ZR 249/15)",
+    "claimed": "Commercial share must be deducted first (Vorwegabzug) where commercial use raises costs (q17)",
+    "actual": "Cited in 249/15 for the purpose of the annual statement: the tenant must learn the balance; the Vorwegabzug point can't be confirmed locally",
+    "matches": "unclear"
+  },
+  "VIII ZR 137/03": {
+    "on_portal": "no (2004, before the portal starts)",
+    "decided": "claimed 2004-04-07",
+    "claimed": "\"die Betriebskosten\" alone is a valid clause (q31)",
+    "actual": "Not found. The same date and point match VIII ZR 167/03 (7 April 2004), cited in BGH VIII ZR 137/15, Rn. 11, for referring to Anlage 3 to § 27 II. BV",
+    "matches": "likely wrong number"
+  },
+  "VIII ZR 137/09": {
+    "on_portal": "yes",
+    "decided": "2010-01-13",
+    "claimed": "Waste management / sorting services are waste disposal costs under § 2 Nr. 8 BetrKV (q02, q31)",
+    "actual": "Removal of unlawfully dumped bulky waste (Sperrmüll) is a § 2 Nr. 8 waste disposal cost (cited in BGH VIII ZR 117/21 and 230/21)",
+    "matches": "partly (right category, different facts; the sorting holding is VIII ZR 117/21)"
+  },
+  "VIII ZR 156/10": {
+    "on_portal": "not found",
+    "decided": "–",
+    "claimed": "WEG approval of the annual statement is not a precondition for billing the tenant (q11)",
+    "actual": "Not in the portal table; the corpus holding on this point is VIII ZR 249/15",
+    "matches": "not found"
+  },
+  "VIII ZR 202/06": {
+    "on_portal": "no (2007, before the portal starts)",
+    "decided": "2007-06-27 (cited in BGH VIII ZR 137/15, 62/19, 47/25, 117/21)",
+    "claimed": "Landmark ruling that the bare term \"Betriebskosten\" suffices without listing or citing the statute (q05)",
+    "actual": "A reference to Anlage 3 to § 27 II. BV or the BetrKV suffices (137/15 Rn. 11); the bare-term holding is VIII ZR 137/15 (2016)",
+    "matches": "partly (real case, right date, holding attributed one step too far)"
+  },
+  "VIII ZR 202/10": {
+    "on_portal": "yes",
+    "decided": "2011-06-29",
+    "claimed": "Formal vs. substantive validity of a statement for a WEG flat (q29)",
+    "actual": "Topic not in local files (no local copy, not cited in the corpus)",
+    "matches": "can't check"
+  },
+  "VIII ZR 216/15": {
+    "on_portal": "not found",
+    "decided": "–",
+    "claimed": "Smoke detector rental fees are capital costs and can't be passed on (q03)",
+    "actual": "Not in the portal table; that holding is VIII ZR 379/20 (2022), in the corpus",
+    "matches": "not found"
+  },
+  "VIII ZR 223/10": {
+    "on_portal": "yes",
+    "decided": "2011-04-13",
+    "claimed": "The WEG manager is not the landlord's vicarious agent (q12)",
+    "actual": "Topic not in local files; the corpus holding on this point is VIII ZR 249/15",
+    "matches": "can't check"
+  },
+  "VIII ZR 227/09": {
+    "on_portal": "yes",
+    "decided": "2010-06-23",
+    "claimed": "A statement is formally valid when it shows only the adjusted total (q18)",
+    "actual": "Topic not in local files; the corpus holding on this point is VIII ZR 93/15",
+    "matches": "can't check"
+  },
+  "VIII ZR 266/14": {
+    "on_portal": "yes",
+    "decided": "2015-11-18",
+    "claimed": "You can't raise the base rent just because the flat turns out bigger (q30)",
+    "actual": "Rent increases under § 558 use the actual size, subject to the cap (Kappungsgrenze) (Leitsatz, local portal file; cited in BGH VIII ZR 220/17)",
+    "matches": "partly (right case and topic, holding stated loosely)"
+  },
+  "VIII ZR 268/14": {
+    "on_portal": "not found",
+    "decided": "–",
+    "claimed": "Landmark ruling that vacancy-driven heat losses can't be passed to remaining tenants (q19)",
+    "actual": "Not in the portal table; the corpus holdings on vacancy are VIII ZR 151/20 and 9/14",
+    "matches": "not found"
+  },
+  "VIII ZR 278/19": {
+    "on_portal": "not found",
+    "decided": "–",
+    "claimed": "Formal vs. substantive validity of a statement for a WEG flat (q29)",
+    "actual": "Not in the portal table",
+    "matches": "not found"
+  },
+  "VIII ZR 340/10": {
+    "on_portal": "yes",
+    "decided": "2011-07-06",
+    "claimed": "A Betriebskostenspiegel alone is usually not enough to prove a breach of the economy principle (q10)",
+    "actual": "Economy principle; the tenant bears the burden of proving the breach (cited in BGH VIII ZR 230/21 Leitsatz and 117/21)",
+    "matches": "consistent"
+  },
+  "VIII ZR 379/11": {
+    "on_portal": "not found",
+    "decided": "–",
+    "claimed": "Set the precedent that smoke detector rental can't be passed on (q26)",
+    "actual": "Not in the portal table; the precedent is VIII ZR 379/20 (2022), in the corpus, so this is likely a garbled 379/20",
+    "matches": "not found (likely garbled 379/20)"
+  }
+}

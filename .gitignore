@@ -6,9 +6,14 @@ __pycache__/
 *.pyc
 
 # Documents downloaded by your index stage. Commit them only if their licence allows it.
-corpus/
+# Statutes and BGH decisions are amtliche Werke (§ 5 UrhG): the selected corpus is committed.
+# Screening material (full VIII ZR download and the portal's table of contents) is not.
+corpus/raw/bgh_screen/
+corpus/raw/bgh_toc/
+corpus/**/*.zip
 
 # Your index belongs in index/, committed. Your evaluation results belong in eval/, committed.
 
 # Never commit your API key
 .env
+.claude/settings.local.json
