@@ -1,0 +1,159 @@
+{
+  "questions": 38,
+  "answered": 38,
+  "chosen_config": {
+    "design": "structured",
+    "mode": "dense",
+    "k": 5
+  },
+  "retrieval": [
+    {
+      "design": "structured",
+      "mode": "dense",
+      "chunks": 378,
+      "hit@1": 0.812,
+      "hit@3": 1.0,
+      "hit@5": 1.0,
+      "multi_both@1": 0.0,
+      "multi_both@3": 0.5,
+      "multi_both@5": 0.667,
+      "avg_words_in_prompt@5": 1196
+    },
+    {
+      "design": "structured",
+      "mode": "bm25",
+      "chunks": 378,
+      "hit@1": 0.469,
+      "hit@3": 0.594,
+      "hit@5": 0.656,
+      "multi_both@1": 0.0,
+      "multi_both@3": 0.0,
+      "multi_both@5": 0.0,
+      "avg_words_in_prompt@5": 1253
+    },
+    {
+      "design": "structured",
+      "mode": "hybrid",
+      "chunks": 378,
+      "hit@1": 0.531,
+      "hit@3": 0.75,
+      "hit@5": 0.875,
+      "multi_both@1": 0.0,
+      "multi_both@3": 0.167,
+      "multi_both@5": 0.333,
+      "avg_words_in_prompt@5": 1244
+    },
+    {
+      "design": "fixed",
+      "mode": "dense",
+      "chunks": 211,
+      "hit@1": 0.656,
+      "hit@3": 0.969,
+      "hit@5": 0.969,
+      "multi_both@1": 0.167,
+      "multi_both@3": 0.333,
+      "multi_both@5": 0.5,
+      "avg_words_in_prompt@5": 1989
+    },
+    {
+      "design": "fixed",
+      "mode": "bm25",
+      "chunks": 211,
+      "hit@1": 0.375,
+      "hit@3": 0.594,
+      "hit@5": 0.688,
+      "multi_both@1": 0.0,
+      "multi_both@3": 0.0,
+      "multi_both@5": 0.0,
+      "avg_words_in_prompt@5": 1981
+    },
+    {
+      "design": "fixed",
+      "mode": "hybrid",
+      "chunks": 211,
+      "hit@1": 0.562,
+      "hit@3": 0.875,
+      "hit@5": 0.906,
+      "multi_both@1": 0.0,
+      "multi_both@3": 0.167,
+      "multi_both@5": 0.333,
+      "avg_words_in_prompt@5": 1982
+    }
+  ],
+  "outcomes": {
+    "correct": 32,
+    "incorrect": 0,
+    "unsupported": 0,
+    "wrong refusal": 0,
+    "correct refusal": 6,
+    "answered unanswerable": 0
+  },
+  "code_checks": {
+    "citations_valid": 38,
+    "uncited_non_refusals": 0,
+    "expected_article_cited": 32,
+    "answerable": 32,
+    "unanswerable": 6,
+    "guardrail": {
+      "passed": 37,
+      "repaired": 1,
+      "blocked": 0
+    }
+  },
+  "judge": {
+    "correct": 38,
+    "supported": 38
+  },
+  "failures": {},
+  "agreement": {
+    "graded": 20,
+    "correct": {
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "disagreements": []
+    },
+    "supported": {
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "disagreements": []
+    }
+  },
+  "cost": {
+    "avg_tokens": 4897,
+    "avg_seconds": 13.1,
+    "avg_tool_calls": 1.18,
+    "avg_judge_tokens": 2466
+  },
+  "add_document_demo": {
+    "question_id": "u01",
+    "question": "Under the Commission's standard contractual clauses for controller-processor contracts within the EU (Decision 2021/915), what must a processor's breach notification to the controller contain?",
+    "document": "docs_to_add/SCC_2021_915.pdf",
+    "before": {
+      "answer": "The corpus does not cover this. Commission Implementing Decision (EU) 2021/915 is not included in the corpus.",
+      "retrieved_cites": [
+        "GDPR, Article 33",
+        "GDPR, Recital 81",
+        "GDPR, Recital 85",
+        "GDPR, Recitals 86-87",
+        "SCC 2021/914, Annex II",
+        "SCC 2021/914, Annex, Clause 8",
+        "SCC 2021/914, Preamble",
+        "ePrivacy, Article 4"
+      ],
+      "guardrail": "repaired"
+    },
+    "add_document_result": "Added new document 'SCC 2021/915'. 34 chunks, 34 embedded and stored. Cite it as e.g. [SCC 2021/915, Preamble, p. 1].",
+    "add_document_again_result": "Already indexed: 'SCC 2021/915' (34 chunks) with identical content. Nothing was re-embedded.",
+    "after": {
+      "answer": "For a personal data breach concerning data processed by the processor, the notification must contain at least:\n* A description of the nature of the breach, including (where possible) the categories and approximate number of data subjects and data records concerned [SCC 2021/915, Annex, Clause 9, p. 8].\n* The details of a contact point where more information can be obtained [SCC 2021/915, Annex, Clause 9, p. 8].\n* The likely consequences of the breach and the measures taken or proposed to be taken to address it, including to mitigate its possible adverse effects [SCC 2021/915, Annex, Clause 9, p. 8].\n\nIf it is not possible to provide all information at the same time, the initial notification must contain the information then available, and further information must be provided without undue delay as it becomes available [SCC 2021/915, Annex, Clause 9, p. 8].",
+      "retrieved_cites": [
+        "SCC 2021/914, Preamble",
+        "SCC 2021/915, Annex, Clause 9, p. 7",
+        "SCC 2021/915, Annex, Clause 9, p. 8",
+        "SCC 2021/915, Preamble, p. 1",
+        "SCC 2021/915, Recitals 1-2"
+      ],
+      "guardrail": "passed"
+    }
+  }
+}

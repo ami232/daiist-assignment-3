@@ -1,0 +1,7 @@
+design,mode,chunks,hit@1,hit@3,hit@5,multi_both@1,multi_both@3,multi_both@5,avg_words_in_prompt@5
+structured,dense,378,0.812,1.0,1.0,0.0,0.5,0.667,1196
+structured,bm25,378,0.469,0.594,0.656,0.0,0.0,0.0,1253
+structured,hybrid,378,0.531,0.75,0.875,0.0,0.167,0.333,1244
+fixed,dense,211,0.656,0.969,0.969,0.167,0.333,0.5,1989
+fixed,bm25,211,0.375,0.594,0.688,0.0,0.0,0.0,1981
+fixed,hybrid,211,0.562,0.875,0.906,0.0,0.167,0.333,1982
