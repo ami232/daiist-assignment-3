@@ -4,7 +4,7 @@
 - **Student ID**:
 - **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
 
-> **Note for the author (delete before submitting).** Sections marked ✏️ hold decisions or analysis the brief says must be yours. They contain a draft built from the numbers; rewrite them in your own words. One item is still open: the add-document run (the daily embedding quota ran out; run it after 09:00 Spain time).
+> **Note for the author (delete before submitting).** Sections marked ✏️ hold decisions or analysis the brief says must be yours. They contain a draft built from the numbers; rewrite them in your own words. Nothing technical is still open.
 
 The corpus and the test questions are in Spanish because the users (Spanish HR staff) and the laws are Spanish. Code, prompts and this report are in English.
 
@@ -121,7 +121,26 @@ Every claim is in the retrieved passages, and the subagent searched once because
 
 The refusal is right, but the second sentence is an unsupported claim: art. 37 deals with leave, not equipment. The judge marked it as neither correct nor supported. See Failures.
 
-**Answer after:** ⏳ *TO DO: the first attempt failed because the daily `gemini-embedding-2` quota was used up (about 880 index chunks plus query embeddings). The tool returned "the daily Gemini embedding quota is used up. Partial progress was saved" and changed nothing. After 09:00 Spain time, run `uv run python demo_add_document.py`. It calls `add_document` twice, once to add and once to show the "already indexed" case, then asks again and writes `eval/add_document_demo.json`. Paste the "after" answer here.*
+**Adding it** (`demo_add_document.py`, which calls the MCP tool twice; output in `eval/add_document_demo.json`):
+
+- First call: `Indexed BOE-A-2021-11472.xml as 'Ley de trabajo a distancia (Ley 10/2021)': 70 new chunks embedded (70 in tota…`
+- Second call, same file: `Already indexed: BOE-A-2021-11472.xml (Ley de trabajo a distancia (Ley 10/2021)) is in the index with the same content (70 chunks). Nothing was embedded.`
+
+**Answer after** (retrieved: Ley 10/2021 arts. 7, 11, 12, 21 and DT 3ª). The citation guardrail fired on the first attempt and the retry passed:
+
+> Sí, la empresa debe sufragar o compensar los gastos relacionados con el teletrabajo.
+>
+> El desarrollo del trabajo a distancia debe ser sufragado o compensado por la empresa y no puede suponer que el trabajador asuma gastos relacionados con los equipos, herramientas y medios vinculados a su actividad laboral [Ley de trabajo a distancia (Ley 10/2021), Artículo 12].
+>
+> Los aspectos principales son:
+>
+> *   **Dotación de medios:** El trabajador tiene derecho a la dotación y mantenimiento adecuado por parte de la empresa de todos los medios, equipos y herramientas necesarios para su actividad, conforme al inventario que debe incluirse en el acuerdo de trabajo a distancia [Ley de trabajo a distancia (Ley 10/2021), Artículo 11].
+> *   **Acuerdo de trabajo:** El acuerdo de trabajo a distancia debe incluir obligatoriamente un inventario de los medios, equipos y herramientas, así como la enumeración de los gastos que pudiera tener el trabajador y la forma de cuantificar la compensación que la empresa debe abonar [Ley de trabajo a distancia (Ley 10/2021), Artículo 7].
+> *   **Negociación colectiva:** Los convenios o acuerdos colectivos pueden establecer los mecanismos para la determinación y compensación de estos gastos [Ley de trabajo a distancia (Ley 10/2021), Artículo 12].
+>
+> Le recomiendo revisar el convenio colectivo de aplicación, ya que este determinará los términos específicos para la compensación de gastos y el uso de los equipos.
+
+The answer is now correct and every claim is in arts. 7, 11 and 12 of Ley 10/2021. Note: the committed index now contains Ley 10/2021, so u02 is answerable from here on. The evaluation results above were produced before the document was added, and the retrieval comparison filters to the base corpus.
 
 ## Harness and guardrails
 
