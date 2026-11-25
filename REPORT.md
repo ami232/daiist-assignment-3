@@ -1,8 +1,8 @@
 # Assignment 3 Report
 
-- **Name**:
-- **Student ID**:
-- **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
+- **Name**: María Consolación Fernandez Cañavate
+- **Student ID**: 20098
+- **Group**: BBADBA 5B 
 
 > Sections marked **TODO (after run)** need numbers from your own runs (`main.py index`, `evaluate.py`) or your own grading. Everything else was filled from the code and the documents as they are.
 
@@ -102,6 +102,6 @@ Rules in `AGENTS.md`, each with its reason: search before every answer (memory o
 
 ## AI use
 
-Claude (Anthropic) wrote the code in this repository (`index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py`), `AGENTS.md`, the subagent file, the draft of the 33 test questions (from passages it read in the PDFs, with page numbers) and the skeleton of this report. It tested the chunking, storage, search tools, approval step, guardrail and call limit offline with a stand-in embedder and a scripted model; it could not run anything against the Gemini API, so the embedding, agent and judge steps were first executed on my machine.
+Claude (Anthropic) wrote the code in this repository (`index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py`), `AGENTS.md`, the subagent file, the draft of the 33 test questions (from passages it read in the PDFs, with page numbers) 
 
 **TODO:** state in your own words what you checked and changed (for example: which questions you re-verified against the PDFs, which grades are yours). The human labels must be your own.
