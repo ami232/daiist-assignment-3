@@ -479,7 +479,19 @@ def add_document(path: str) -> str:
     docs = read_docs()
     for name, info in docs.items():
         if info["sha256"] == sha:
-            return f"Already indexed as {name}; the content is identical, so nothing was added or embedded."
+            # Same content already registered. If an earlier call stopped at the quota, finish it.
+            pending = [c for c in read_jsonl(CHUNKS_FILE) if c["source"] == name and c["design"] == ACTIVE_DESIGN]
+            have = saved_keys()
+            missing = [c for c in pending if c["key"] not in have]
+            if not missing:
+                return f"Already indexed as {name}; the content is identical, so nothing was added or embedded."
+            for c in missing:
+                c["embed_text"] = f"{c['source']} | {c['location']}\n{c['text']}"
+            try:
+                n = embed_missing(missing)
+            except QuotaExhausted:
+                return f"{name} is registered but {len(missing)} chunks still lack vectors: the daily embedding quota ran out again."
+            return f"Finished indexing {name}: embedded the {n} chunks a previous call could not; it is searchable now."
     replacing = p.name in docs
     new_chunks, words = chunk_document(p)
     if not new_chunks:
