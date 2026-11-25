@@ -73,11 +73,12 @@
   "human_graded": 20,
   "agree_correct": 20,
   "kappa_correct": 1.0,
-  "agree_supported": 19,
+  "agree_supported": 18,
   "kappa_supported": 0.0,
   "supported_graded": 20,
   "disagreements": [
-    "q14"
+    "q14",
+    "q26"
   ],
   "failures": {
     "unsupported claim (answered an unanswerable question)": [

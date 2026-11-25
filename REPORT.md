@@ -185,9 +185,10 @@ Por qué la respuesta está construida así: sigue las reglas 3 y 4 de AGENTS.md
 
 *What happens when a document is already indexed. The unanswerable question, the document you added, the answer before and after.*
 
-If a document is already indexed with the same content, add_document embeds nothing, and if a file with the same name has different content, the old chunks are replaced by the new ones. I also fixed a bug with REG_432_2012, which only has 2 articles, so add_document treated it as a guidance notice and chunked it differently than index.py, and now it uses the same information as index.py for the corpus documents.
+If a document is already indexed with the same content, add_document embeds nothing, and if a file with the same name has different content, the old chunks are replaced by the new ones. I also fixed a bug with REG_432_2012, which only has 2 articles, so add_document treated it as a guidance notice and chunked it differently than index.py, and now it uses the same information as index.py for the corpus documents. Re-adding it would have deleted its 63 chunks and embedded 61 wrongly labelled ones.
 
-For the demo I used q23, about the maximum gluten level for "gluten-free", because the allergen notice refers to Regulation 828/2014 but does not give the number. So I added Commission Implementing Regulation (EU) No 828/2014, which I got from Cellar because EUR-Lex blocked the download, and after I approved add_document it was split into 10 chunks.
+For the demo I used q23, about the maximum gluten level for "gluten-free", because the allergen notice refers to Regulation 828/2014 but does not give the number. So I added Commission Implementing Regulation (EU) No 828/2014, which I got from Cellar because EUR-Lex blocked the download, and after the add_document call was approved (on my instruction) it was split into 10 chunks.
+
 
 Before adding the document, the agent answered:
 
@@ -205,18 +206,69 @@ The agent went from saying the corpus does not cover it to giving the exact numb
 
 *Your AGENTS.md rules, the approval step, and your extra guardrail with one case where it fired.*
 
+The instructions for my agent are in AGENTS.md, and they have five rules, each one with a reason:
+
+1. Answer only from the passages that search finds, never from memory, because if the agent remembers an allergen rule wrong, an allergen could be left off a label.
+2. Cite every claim with the label from the results, so the team can open the article and check it before approving the label.
+3. If the results don't answer the question, say the corpus doesn't cover it, because "I don't know" only costs time but a wrong answer can mean a recall or fines.
+4. If the results only answer part of the question, answer that part and say which part is missing, so the team still gets the information that is checked and doesn't think the rest is sure.
+5. Only use add_document when the user asks, because a new document changes what the whole team searches and uses up part of my daily Gemini limit.
+
+Some of these rules are not only written in the instructions, they are also in the code. Before add_document runs, it always stops and asks "Allow it? [y/N]" in the terminal, and if there is no terminal, the call is rejected. The agent also has a limit for each question, at most 6 searches, 1 add_document and 10 calls to the model, so it can't keep searching forever or use too much of the limit.
+
+My guardrail checks the citations. When the model answers, the code checks that every [SOURCE, location] it cites was really found by search for that question, and that the answer cites at least one source, unless it says the corpus does not cover the question. If not, the answer is blocked and the team only sees a message saying the sources could not be checked and that they should look at the regulation or ask an expert.
+
+It blocked two answers in my evaluation. In q20 the answer was right, but it cited [ALLERGEN_NOTICE_2017, Section 3.6], which does not exist, so one wrong citation blocked a correct answer, and in q31 the model only answered "5" with no source, so the guardrail stopped a useless answer. The first version also blocked good citations like "Article 13(2)" by mistake, because search gives the whole article, so I changed it to only compare the article or section number. A problem is that it only checks that the passage was found, not what it says, for example in q20 the model also cited Section 3.5 for something that is in Section 3.4, and the guardrail didn't notice because Section 3.5 had been found.
+
 ## Evaluation
 
 *Code checks, the judge's rubric, your agreement with the judge, and results: correct, unsupported, correct refusals, wrong refusals.*
+
+First I checked with code the things that code can check. The agent answered 32 of the 34 answerable questions, and the 2 it didn't answer, q20 and q31, were both blocked by the guardrail. It also recognized all 6 unanswerable questions, it refused q06, q29 and q30 completely, and for q14, q23 and q26 it answered the part the corpus covers and said what was missing, which is what rule 4 asks for. 39 of the 40 answers only cited passages that search really found (98%), the other one is q20, and 31 of the 32 answered questions cited the passage I expected (97%).
+
+Then an LLM judge graded every answer with my rubric (eval/judge_rubric.md), and it could only use the passages the agent found to decide. An answer is correct when all the important information is right, including numbers, conditions and exceptions, and it is not correct if it has a mistake, leaves out an important condition or refuses a question that could be answered. An answer is supported when all its important facts are in the passages the agent found, so something that is true but comes from somewhere else counts as not supported. For unanswerable questions the agent should say the information is not there, and a partial answer is fine if it clearly separates what the passages say from what can't be known, also an answer that only says the corpus doesn't cover the question counts as supported, because it doesn't claim anything.
+
+To check the judge I graded 20 answers myself. For correct we agreed on all 20 (kappa 1.00). For supported we agreed on 18 of 20 (90%), but the kappa is 0, because the judge said supported for all 40 answers, partly because my rubric says a refusal is always supported, so kappa can't tell if it really agrees with me or just always says yes. The two disagreements are q14 and q26, where the answers include things that are true in the law but are not in the passages the agent found, so I gave them 0 and I think I'm right. I changed my supported grade for q26 from 1 to 0 when I looked at it again while writing the Failures section. Also, the judge was a Gemini Flash Lite model, the same model as the agent (gemini-3.5-flash-lite) for 39 of the 40 answers so it may have the same blind spots, for example not noticing when an answer uses outside knowledge, like in q14 and q26.
+
+In the end the judge marked 37 of 40 answers as correct, and the 3 wrong ones are q20, q26 and q31. q20 and q31 are the 2 answerable questions that the guardrail blocked, and q26 counts as recognized in the code check but is not right, because it says the claim is not in the 2012 list but not that its current status can't be confirmed. The unsupported answers are q14 and q26, according to my grades. So the agent recognized all 6 unanswerable questions, although its answer to q26 went further than the passages, and 2 answerable questions were blocked.
+
 
 ## Failures
 
 *Failed questions by cause, with counts, and what to fix first.*
 
+I found 5 failures in the 40 answers, and none of them is a retrieval miss, which makes sense because the right passage was in the top 5 for every answerable question.
+
+| Question | What happened | Cause |
+| --- | --- | --- |
+| q14 | It mentions the Spanish Real Decreto 126/2015, which is not in any passage | unsupported claim |
+| q26 | It says the claim is not in the 2012 list, and adds that claims can't be used unless they are on the Union list, citing Article 6, which doesn't say that | unsupported claim |
+| q20 | The answer was right, but it cited [ALLERGEN_NOTICE_2017, Section 3.6], which does not exist, so the guardrail blocked it | wrong refusal |
+| q31 | The right passage was found, but the model only answered "5" with no source, so the guardrail blocked it | wrong answer from the right passage |
+| q19 | The judge says it is correct, but it cites [REG_1169_2011, Article 21] instead of the passage I expected, [ALLERGEN_NOTICE_2017, Section 3.2] | bad test question |
+
+So there are 2 unsupported claims, 1 wrong refusal, 1 wrong answer from the right passage, 1 bad test question and 0 retrieval misses.
+
+q14 and q26 are the same kind of failure, in both the agent added something from memory that is true in the law but not in the passages, in q14 a Spanish law and in q26 the rule about the Union list, which it cited to Article 6 even though that article doesn't say it. Because of that sentence the q26 answer suggests the claim is not authorised today, when a list from 2012 can't tell that, which is also a limit of my corpus because it only has the texts as first published. When I graded q26 I marked it as supported; looking closer for this analysis, the Article 6 citation does not support the Union-list sentence, so the judge and I both missed it.
+
+q20 and q31 were both blocked by the guardrail, so evaluate.py counted both as wrong refusals, but I think they have different causes. In q20 the agent found the right passage and wrote a correct answer, but it made up the section number of one citation, so it is a real wrong refusal, the guardrail blocked a good answer because of one bad citation. In q31 the right passage was also found, the Annex of REG_432_2012 with the 4 g of beta-glucans per 30 g of carbohydrates, but the model just answered "5", so the real problem is the model's answer and the guardrail did the right thing by stopping it. q19 is not really the agent's fault, because the allergen notice quotes the same part of Article 21, so both passages say the same thing and my expected passage should have included both, and this is also the one answer that did not cite an expected passage (31 of 32).
+
+The failures I would fix first are the unsupported claims, q14 and q26, even though what they say is probably true. My agent is supposed to answer only from the corpus so the team can check every claim, but in q14 the law has no citation and in q26 the citation points to an article that doesn't say it, and neither the guardrail nor the judge caught them. A blocked answer like q20 only costs the team some time, which is the same as "I don't know", but an unsupported claim can end up on a label without anyone checking it. For q14 I would add a check to the guardrail that blocks an answer when it mentions a law or regulation number, like "126/2015", that does not appear in any of the passages. q26 is harder, because the citation is real but the article doesn't say it, so the code can't see it, and I would at least use a different model as the judge so this kind of error shows up in the evaluation. After that I would let the agent try again once when the guardrail blocks an answer, telling it what was wrong, which could fix q20 and q31, and I would add Article 21 as a second expected passage for q19.
+
 ## Decision
 
 *Would you let users rely on it, for what, with which safeguard? Cost and latency per question.*
 
+I would let the quality and regulatory team trust my agent to find the rules, but not to approve a label on its own. It is good at finding the right part of the law, the right passage was in the top 5 for every answerable question, it recognized all 6 unanswerable questions and 39 of 40 answers only cited passages that search really found. This is why I would use it to find which article or section applies to a label and to get a first answer with its citation, so the team doesn't have to read the whole regulation. However, q14 and q26 show that it can add a rule from memory that neither the guardrail nor the judge noticed, and in q26 I didn't notice it either, and my corpus only has the texts as they were first published between 2006 and 2018, without the changes made later. This is why I would not trust it to approve a label without a person checking it, or for questions about whether something is allowed today, like the current status of a health claim, or about Spanish rules, which are not in the corpus.
+
+The safeguard I would ask for is that before a label is printed, a person in the quality team opens every citation and checks that the passage really says what the answer says, and treats anything without a citation as not checked. For health claims and anything else that could have changed, they should also check the latest version on EUR-Lex, which has the changes, since my corpus doesn't have them. So the agent would help the person who approves the label, but it would never approve it itself, and I would also add the check for law numbers from the Failures section.
+
+For each question the agent used a median of 4,542 tokens and took 15 seconds, and on average 6,802 tokens and 24 seconds, because a few questions needed more searches, for example q23 needed 5. It also made about 1.4 searches per question (55 searches for 40 questions), and each search is one embedding. On Gemini's free tier this only uses the daily quota, but the free tier is often busy, so the time can change a lot. Compared with paying someone for an hour or reading the regulation, 15 to 25 seconds plus the time to check the citation is very little, so the cost is not a problem, and the real cost is the person's time checking the answer, which is the safeguard I want anyway.
+
 ## AI use
 
 *What you used and how, or "none".*
+
+I used **Claude Code (Claude Opus 5.5)** to help with the technical implementation of the project. It wrote `agent.py` and `evaluate.py`, modified `index.py`, and recovered a previous version of `index.py` from VS Code history. It also checked the format of `questions.csv`, updated the location for q35, wrote rules 4 and 5 of `AGENTS.md` based on my decisions, and created the subagent file. Additionally, it ran the demo following my instructions, added my evaluation notes to the CSV, and checked the formatting, calculations and content in this report. It also pasted the subagent's transcript into this report.
+
+All the main project decisions and analysis were my own, including the use case, corpus selection, chunking strategy, design choices, choice of k, evaluation questions and reference answers, grading rubric, evaluation notes, guardrail selection, and final analysis.

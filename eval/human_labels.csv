@@ -13,7 +13,7 @@ q15,1,1,
 q16,1,1,
 q20,0,1,guardrail blocked a correct answer
 q23,1,1,
-q26,0,1,does not clarify that current authorization is unknown
+q26,0,0,"does not clarify that current authorization is unknown; supported changed to 0 on review: the Article 6 citation does not support the Union-list sentence"
 q29,1,1,
 q30,1,1,
 q31,0,1,"the model answered only ""5"" with no source; the guardrail blocked it"
