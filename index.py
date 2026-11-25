@@ -383,7 +383,12 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
     for attempt in range(6):
         try:
             config = types.EmbedContentConfig(output_dimensionality=EMBED_DIM) if _use_dimensions else None
-            response = genai_client().models.embed_content(model=EMBED_MODEL, contents=texts, config=config)
+            # gemini-embedding-2 treats a list of plain strings as parts of ONE content (one vector back);
+            # wrapping each text in its own Content gives one vector per text.
+            contents = [types.Content(parts=[types.Part(text=t)]) for t in texts]
+            response = genai_client().models.embed_content(model=EMBED_MODEL, contents=contents, config=config)
+            if len(response.embeddings) != len(texts):
+                raise RuntimeError(f"Expected {len(texts)} embeddings, got {len(response.embeddings)}")
             vectors = np.array([e.values for e in response.embeddings], dtype="float32")
             vectors /= np.linalg.norm(vectors, axis=1, keepdims=True)    # truncated dims are not unit length
             return vectors.tolist()

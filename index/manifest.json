@@ -1,0 +1,52 @@
+{
+  "nist-ai-rmf-1.0": {
+    "title": "NIST AI 100-1: Artificial Intelligence Risk Management Framework (AI RMF 1.0)",
+    "url": "https://nvlpubs.nist.gov/nistpubs/ai/nist.ai.100-1.pdf",
+    "date": "2023-01",
+    "licence": "US federal government work, not subject to copyright (17 U.S.C. 105)",
+    "file": "nist-ai-rmf-1.0.pdf",
+    "sha256": "7576edb531d9848825814ee88e28b1795d3a84b435b4b797d3670eafdc4a89f1",
+    "words": 15398,
+    "chunks": 92
+  },
+  "nist-ai-600-1": {
+    "title": "NIST AI 600-1: AI RMF Generative AI Profile",
+    "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+    "date": "2024-07",
+    "licence": "US federal government work, not subject to copyright (17 U.S.C. 105)",
+    "file": "nist-ai-600-1.pdf",
+    "sha256": "6e73620ab6b64e90ef2c04bf0e0d6246185a2f4b1b13cab0df494496cff89b6a",
+    "words": 20620,
+    "chunks": 123
+  },
+  "nist-csf-2.0": {
+    "title": "NIST CSWP 29: The NIST Cybersecurity Framework (CSF) 2.0",
+    "url": "https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.29.pdf",
+    "date": "2024-02",
+    "licence": "US federal government work, not subject to copyright (17 U.S.C. 105)",
+    "file": "nist-csf-2.0.pdf",
+    "sha256": "3c31f46fee98cac0c4323453e5109291a213b4de7fef8c058af9bf67f717433c",
+    "words": 8951,
+    "chunks": 52
+  },
+  "nist-sp-800-61r3": {
+    "title": "NIST SP 800-61 Rev. 3: Incident Response Recommendations and Considerations for Cybersecurity Risk Management",
+    "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf",
+    "date": "2025-04",
+    "licence": "US federal government work, not subject to copyright (17 U.S.C. 105)",
+    "file": "nist-sp-800-61r3.pdf",
+    "sha256": "e5593d6bb85daecec7e8d9549400c7b3473bcc3f06e469c82218073afa7fba2d",
+    "words": 13180,
+    "chunks": 78
+  },
+  "nist-sp-800-218": {
+    "title": "NIST SP 800-218: Secure Software Development Framework (SSDF) Version 1.1",
+    "url": "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-218.pdf",
+    "date": "2022-02",
+    "licence": "US federal government work, not subject to copyright (17 U.S.C. 105)",
+    "file": "nist-sp-800-218.pdf",
+    "sha256": "617746e553a9e2da49bfbd4eef0dfc3094758a39b869314e4173ac36605cde22",
+    "words": 13734,
+    "chunks": 81
+  }
+}
