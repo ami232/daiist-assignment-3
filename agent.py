@@ -124,7 +124,7 @@ async def answer_async(question: str) -> dict:
             await session.initialize()
             tools = mcp_tools(session, (await session.list_tools()).tools)
             agent = create_agent(
-                ChatGoogleGenerativeAI(model=MODEL, temperature=0, max_retries=4),
+                ChatGoogleGenerativeAI(model=MODEL, temperature=0, max_retries=4),  # Flash-Lite ignores temperature
                 tools,
                 system_prompt=system_prompt(),
                 middleware=[
@@ -139,8 +139,9 @@ async def answer_async(question: str) -> dict:
             answer = final_text(messages)
 
             ok, bad = check_citations(answer, retrieved_citations(messages))
-            guardrail = None
+            guardrail, first_attempt = None, None
             if not ok:
+                first_attempt = answer
                 guardrail = "citation check failed (" + ("no citation" if not bad else "not retrieved: " + "; ".join(bad)) + ")"
                 retry = messages + [{"role": "user", "content": (
                     "Your answer breaks the citation rule. Cite only passages the search tool returned, "
@@ -162,6 +163,7 @@ async def answer_async(question: str) -> dict:
         "trace": [{"tool": c["name"], "args": c["args"]} for m in messages if isinstance(m, AIMessage) for c in m.tool_calls],
         "retrieved_text": "\n\n".join(m.text for m in messages if isinstance(m, ToolMessage)),
         "guardrail": guardrail,
+        "first_attempt": first_attempt,  # what the citation check rejected, if it fired
         "input_tokens": sum(u.get("input_tokens", 0) for u in usage),
         "output_tokens": sum(u.get("output_tokens", 0) for u in usage),
         "seconds": round(time.time() - started, 1),

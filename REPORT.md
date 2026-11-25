@@ -47,8 +47,10 @@ Six official US National Weather Service documents, 70,154 words after cleaning.
 
 | Design | Hit@1 | Hit@3 | Hit@5 | Words added at k=5 |
 |---|---|---|---|---|
-| A, vector | | | | |
-| B, hybrid | | | | |
+| A, vector | 0.52 | 0.81 | 0.85 | 854 |
+| B, hybrid | 0.48 | 0.63 | 0.78 | 1,048 |
+
+Measured on the 27 answerable questions (a multi question counts as a hit only when both expected passages are in the top k). Words added to the prompt at k=1/3/5: vector 170 / 528 / 854, hybrid 219 / 610 / 1,048.
 
 ✍️ *The design you chose and why, by the numbers.*
 
@@ -72,28 +74,34 @@ snow, i.e., frequently reducing visibility below 1/4 mile. ...
 
 The subagent (`.claude/agents/corpus-researcher.md`) may only use `mcp__corpus__search`. It searches before answering, searches again with other words when needed, cites each claim exactly as the tool shows it, starts with "The corpus does not cover this" when no passage answers, never presents a local threshold as national, and prefers the newest document when sources disagree.
 
-✍️ *Paste one transcript from Claude Code or Copilot here.*
+Transcript from Claude Code (2.1.332) in this repository, with the `corpus` server from `.mcp.json`; full version in `eval/subagent_transcript.md`. Claude Code delegated the question to `corpus-researcher`, which ran 9 searches ("snow squall warning", "snow squall criteria visibility flash freeze", "Storm Data snow squall event definition", ...) and answered:
+
+> A Snow Squall Warning means a short, intense burst of moderate to heavy snow with gusty winds is expected, causing sudden whiteouts [NWSI-10-513, section 7, p. 19]. Snow squalls move fast and usually last less than an hour [NWSI-10-513, section App-B, p. 36]. The local office issues it when radar, satellite or reliable reports show a squall with visibility of 1/4 mile or less in snow and sub-freezing road temperatures, or temperatures dropping fast enough to cause a flash freeze with a significant drop in visibility [NWSI-10-513, section 7.2.1, p. 19]. It is valid for only 30 to 60 minutes [NWSI-10-513, section 7.2.3, p. 19]. ... What the corpus does not cover: a Snow Squall Watch or Advisory, any stated lead time for the warning, and snow-squall advice from the winter safety guide.
 
 ## Adding a document
 
 If the same file is added again with the same content, its chunk ids (hashes of the text) all exist already, so nothing is embedded and the tool says so. If a file with the same name but different content is added, the chunks that no longer exist are deleted and only the new ones are embedded, so the index never holds two versions of one document.
 
-*(Before/after filled in after the evaluation run.)* Unanswerable question: ✍️. Document added: the NWS Memphis office's "Criteria for Winter Storm Watches/Warnings and Winter Weather Advisories" (`extra_documents/NWS-Memphis-Winter-Criteria.pdf`, https://www.weather.gov/media/meg/WinterStormCriteriaMEG.pdf, public domain).
+Unanswerable question q28: "How many inches of snow in 12 hours trigger a Winter Storm Warning in Memphis, Tennessee?" Document added through the agent, after approving the prompt: the NWS Memphis office's "Criteria for Winter Storm Watches/Warnings and Winter Weather Advisories" (`extra_documents/NWS-Memphis-Winter-Criteria.pdf`, https://www.weather.gov/media/meg/WinterStormCriteriaMEG.pdf, public domain, 3 chunks). Adding it a second time returned "Already indexed: NWS-Memphis-Winter-Criteria (3 chunks) has not changed, so nothing was embedded." Full run in `eval/add_document_demo.md`.
+
+- **Before:** "The corpus does not cover the specific local snow criteria for Memphis, Tennessee. NWS local warning criteria are set by individual regional and local offices (with specific heavy snow criteria maintained online at www.weather.gov/snow-criteria) [NWSI-10-513, section App-D, pp. 41-42]."
+- **After:** "For areas covered by the NWS Memphis office that fall under "elsewhere" (which includes Shelby County / Memphis), a Winter Storm Warning for heavy snow requires accumulations of 3 inches or more in 12 hours (or 4 inches or more in 24 hours) [NWS-Memphis-Winter-Criteria, p. 1]." The numbers are right; "which includes Shelby County / Memphis" is the agent's inference, as the document only says "elsewhere".
 
 ## Harness and guardrails
 
-`agent.py` is a LangChain `create_agent` agent on Gemini 3.5 Flash (falls back to 3.5 Flash-Lite when the main model is overloaded). It starts `server.py` over MCP, uses both tools, and sends `AGENTS.md` as the system prompt.
+`agent.py` is a LangChain `create_agent` agent on Gemini 3.5 Flash-Lite (falls back to 3.1 Flash-Lite when the main model is overloaded or out of quota; the free tier allows only 20 requests a day on Gemini 3.5 Flash, which is kept for the judge). It starts `server.py` over MCP, uses both tools, and sends `AGENTS.md` as the system prompt.
 
 - **AGENTS.md rules:** ✍️ *summarise your rules and their reasons.*
 - **Approval step:** before `add_document` runs, the harness asks "The agent wants to add '<path>' to the index. Allow? [y/N]". Anything but "y", or no person at the keyboard, blocks the call and the model is told the user did not approve.
 - **Call limits:** at most 4 tool calls and 6 model calls per question.
-- **Extra guardrail, citation check:** every citation in the answer must be a passage the search tool returned in this run. If an answer has no citation or cites a passage that was never retrieved, the agent gets one retry with the rule restated; if it fails again the answer is replaced by a refusal. One case where it fired: *(taken from `eval/results.csv`, column `guardrail`, after the evaluation run)*.
+- **Extra guardrail, citation check:** every citation in the answer must be a passage the search tool returned in this run. If an answer has no citation or cites a passage that was never retrieved, the agent gets one retry with the rule restated; if it fails again the answer is replaced by a refusal. It fired on 6 of 32 questions, every time because the answer had no citation: 3 answers were fixed by the retry (q02, q24, q32) and 3 became refusals (q07, q11, q23). Example, q02 "What triggers an Ice Storm Warning?": the first answer had no citation, and the retry produced a cited answer ([NWSI-10-513, section App-B, p. 35], [NWSI-10-1605, section App-A-26, pp. 61-62]). In an earlier run it also caught a made-up citation: the model copied the example citation from AGENTS.md ("[NWSI-10-513, section 6.3, p. 7]") although search had returned that table as "section 6.2, pp. 6-7", so I replaced the example with a placeholder ("[source, section X, p. N]").
 
 ## Evaluation
 
 *(Filled in after `main.py evaluate`.)*
 
 - **Code checks:** refusal or not (the answer starts with "The corpus does not cover this"); every citation valid (it was retrieved in that run); the expected source cited.
+- **Code-check fix:** the first version only recognised refusals starting exactly with "The corpus does not cover this", so q28 ("The corpus does not cover the specific local snow criteria...") counted as an answer to an unanswerable question. It now accepts any answer starting with "The corpus does not cover".
 - **Judge:** Gemini 3.5 Flash with the rubric in `evaluate.py`, grading `correct` and `supported` (0/1) for every non-refusal answer, with the retrieved passages as evidence.
 - ✍️ *Your rubric choices and your agreement with the judge.*
 
@@ -112,7 +120,7 @@ If the same file is added again with the same content, its chunk ids (hashes of 
 
 ## Decision
 
-✍️ *Would you let users rely on it, for what, with which safeguard?* Cost and latency per question: *(from `eval/summary.json`)*.
+✍️ *Would you let users rely on it, for what, with which safeguard?* Cost and latency per question: 4,711 input + 186 output tokens, 8.7 s and 1.2 tool calls on average (`eval/summary.json`); on the free tier this costs nothing, but the free tier only allows a few dozen questions a day per model.
 
 ## AI use
 
