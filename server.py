@@ -43,6 +43,8 @@ def search(query: str) -> str:
         hits = index.retrieve(query, k=TOP_K)
     except index.QuotaExhausted:
         return "ERROR: the embedding quota is exhausted for today; try again later."
+    except Exception as error:  # noqa: BLE001  (network, rate limit retries exhausted...)
+        return f"ERROR: search failed ({type(error).__name__}); try again."
     if not hits:
         return "No passages found: the index is empty."
     blocks = []

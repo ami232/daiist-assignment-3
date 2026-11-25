@@ -98,7 +98,7 @@ def check_citations(answer: str, trace: list[dict]) -> list[str]:
         return []
     retrieved = set()
     for step in trace:
-        if step["tool"] == "search":
+        if step["tool"] in ("search", "add_document"):      # add_document names the file it just indexed
             retrieved |= set(SOURCE_RE.findall(step["result"]))
     cited = set(SOURCE_RE.findall(answer))
     if not cited:
@@ -159,7 +159,7 @@ def ask(question: str, approve=interactive_approval, server: McpServer | None = 
     try:
         if model is None:
             from langchain_google_genai import ChatGoogleGenerativeAI
-            model = ChatGoogleGenerativeAI(model=MODEL, google_api_key=load_api_key(), temperature=0)
+            model = ChatGoogleGenerativeAI(model=MODEL, google_api_key=load_api_key())
         agent = create_agent(
             model, build_tools(server, trace, approve, events),
             system_prompt=(ROOT / "AGENTS.md").read_text(encoding="utf-8"),

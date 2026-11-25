@@ -19,6 +19,7 @@ embed_and_store, index_file, retrieve.
 import argparse
 import hashlib
 import json
+import os
 import re
 import sys
 import time
@@ -364,13 +365,37 @@ def index_file(path: Path, design: str = ACTIVE_DESIGN) -> dict:
 # 4. Retrieve (used by server.py and evaluate.py)
 # --------------------------------------------------------------------------
 
+def _load_query_cache() -> dict:
+    """The query cache; a damaged file (two processes writing at once) is salvaged, never fatal."""
+    if not QUERY_CACHE.exists():
+        return {}
+    text = QUERY_CACHE.read_text()
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        try:                                   # keep the first complete JSON object, drop the garbage after it
+            data, _ = json.JSONDecoder().raw_decode(text)
+            return data if isinstance(data, dict) else {}
+        except json.JSONDecodeError:
+            return {}
+
+
+def _save_query_cache(new_items: dict) -> None:
+    """Merge with what other processes saved meanwhile, and replace the file atomically."""
+    cache = _load_query_cache()
+    cache.update(new_items)
+    tmp = QUERY_CACHE.with_name(f"{QUERY_CACHE.name}.{os.getpid()}.tmp")
+    tmp.write_text(json.dumps(cache))
+    os.replace(tmp, QUERY_CACHE)
+
+
 def embed_query(query: str) -> list[float]:
     """Embed a question; cached on disk so repeated evaluation runs cost no quota."""
     key = hashlib.sha1(f"{EMBED_MODEL}:{EMBED_DIM}:{query}".encode()).hexdigest()
-    cache = json.loads(QUERY_CACHE.read_text()) if QUERY_CACHE.exists() else {}
+    cache = _load_query_cache()
     if key not in cache:
         cache[key] = [round(x, 6) for x in embed_texts([f"task: search result | query: {query}"])[0]]
-        QUERY_CACHE.write_text(json.dumps(cache))
+        _save_query_cache({key: cache[key]})
     return cache[key]
 
 

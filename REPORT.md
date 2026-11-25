@@ -94,10 +94,30 @@ TODO (mine): paste one transcript of the subagent from your editor (Copilot or C
 
 ## Adding a document
 
-TODO (mine): choose an unanswerable question (e.g. one about a contract with no governing-law clause), write the new document that answers it, and show:
-1. the already-indexed case (adding the same file again embeds nothing),
-2. the answer before (a refusal) and after (a correct, cited answer),
-3. how many embeddings the addition cost.
+**Unanswerable question.** q05: "Which law governs the contract between Veltrix Group and SunBridge
+Logistics?" Contract 002 has no governing-law clause, so the right answer is a refusal.
+
+**Document added.** I wrote `eval/added/CONTRACT_051.pdf`, a short amendment to contract 002 that
+states that Spanish law governs the agreement and that the courts of Barcelona have exclusive
+jurisdiction (clauses 2 and 3). I gave it the next contract number so that the citation format
+`[CONTRACT_xxx.pdf | clause]` keeps working.
+
+**Before.** The agent answered `NOT IN CORPUS`: it found contract 002 but the corpus has no
+governing-law provision for it (3 tool calls, 8,787 input tokens, 18.4 s).
+
+**Adding it.** I asked the agent to add the file. The approval step asked me to confirm and I
+answered yes. The index went from 463 to 465 `clause` chunks, so only the 2 new chunks were
+embedded; nothing else was re-embedded.
+
+**After.** The same question gave: "The contract between Veltrix Group S.A. and SunBridge
+Logistics S.L. is governed by the laws of Spain [CONTRACT_051.pdf | Clauses 2-4, 2.1]" (1 tool
+call, 2,968 input tokens, 12.9 s).
+
+**Already indexed.** [Result of adding the same file again: ...]
+
+**What I noticed.** [Your own observation: for example, that one added document changes the answer
+at once and costs only 2 embeddings, and that the first attempt exposed a bug in my citation
+guardrail, which I fixed.]
 
 ## Harness and guardrails
 
