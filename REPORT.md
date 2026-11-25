@@ -6,48 +6,114 @@
 
 ## Use case
 
-*Who asks, what they do with the answer, and what a wrong answer costs compared with "I don't know".*
+✍️ *Your words: who asks (school-district / county emergency manager reading NWS winter alerts before dawn), what they do with the answer (close schools, delay buses, open warming shelters), and why a wrong answer costs more than "I don't know" (buses in a blizzard vs. a call to the local NWS office).*
 
 ## Corpus
 
-*Table: document, URL, date, licence, words.*
+Six official US National Weather Service documents, 70,154 words after cleaning. All are works of the US federal government, so they are in the public domain (17 U.S.C. §105) and contain no personal data once staff names and emails are removed (see Ingestion).
+
+| Document (source id) | URL | Date | Licence | Words |
+|---|---|---|---|---|
+| NWS Instruction 10-513, WFO Winter Weather Products Specification (`NWSI-10-513`) | https://www.weather.gov/media/directives/010_pdfs/pd01005013curr.pdf | Nov 6, 2024 | Public domain (US gov.) | 10,828 |
+| NWS Instruction 10-514, National Winter Weather Products Specification (`NWSI-10-514`) | https://www.weather.gov/media/directives/010_pdfs/pd01005014curr.pdf | Mar 18, 2025 | Public domain (US gov.) | 3,754 |
+| NWS Instruction 10-515, WFO Non-Precipitation Weather Products Specification (`NWSI-10-515`) | https://www.weather.gov/media/directives/010_pdfs/pd01005015curr.pdf | May 16, 2025 | Public domain (US gov.) | 9,232 |
+| NWS Instruction 10-1605, Storm Data Preparation (`NWSI-10-1605`) | https://www.weather.gov/media/directives/010_pdfs/pd01016005curr.pdf | Jul 26, 2021 | Public domain (US gov.) | 42,120 |
+| Winter Storms: The Deceptive Killers, NWS/FEMA/Red Cross preparedness guide (`WinterStorms-2008`) | https://www.weather.gov/media/safety/Winter_Storms2008.pdf | Jun 2008 | Public domain (NWS publication; only the text is used, not the Red Cross photos) | 3,021 |
+| The Winter Storm Severity Index: A Guide for Users, NWS Weather Prediction Center (`WSSI-Guide-2025`) | https://origin-east-www-wpc.woc.noaa.gov/wwd/wssi/WSSI_user_guide_2025.pdf | 2025 | Public domain (US gov.) | 1,199 |
+
+✍️ *One or two sentences: why these documents fit the use case, and why Storm Data (10-1605) is kept whole even though most of it covers non-winter events (tornadoes, floods, hurricanes).*
 
 ## Ingestion
 
-*How you extract, clean and chunk; one extraction problem you fixed; chunk metadata; number of chunks.*
+`index.py` downloads the six PDFs into `corpus/` (git-ignored), extracts the text page by page with `pypdf`, cleans it, chunks it and embeds it with `gemini-embedding-2` (768 dimensions) into ChromaDB in `index/`.
+
+- **Cleaning:** Unicode normalisation; running page headers ("NWSI 10-513 NOVEMBER 6, 2024"), page numbers, table-of-contents dot leaders, slide footers and the 2008 guide's printer slugs ("Winter_Storms.indd 3 11/13/2009") are dropped; words split by a line-end hyphen are joined; staff names (OPR, "Certified by", the digital signature block, project lead) and all email addresses are removed so the index holds no personal data.
+- **Extraction problem fixed:** in the 2008 guide the "fi" and "fl" ligatures came out as a separate character followed by a space, so "office" read "oﬁ ce" and "flash flooding" read "ﬂ ash ﬂ ooding". Neither the embeddings nor a keyword search would match these words. NFKC normalisation turns "ﬁ" into "fi" and a regex removes the stray space.
+- **Known limit:** the ice-accumulation criteria in NWSI 10-513 Appendix D are an image, so their numbers are not in the text.
+- **Chunking:** one chunk per numbered section. Headings such as "6.3.2 Issuance Criteria" set the section, appendices become `App-D`, and Storm Data's event types become `App-A-3` (Blizzard), `App-A-26` (Ice Storm) etc. Sections longer than 300 words are cut into 300-word parts; sections under 30 words (a heading and one line) are merged into the next. The two documents without numbered headings are chunked by page.
+- **Chunk metadata:** `source`, `title`, `section`, `sections` (all sections the chunk covers), `page`, `pages`, `words`, and a ready-made `citation` such as `NWSI-10-513, section App-B, p. 35`.
+- **Number of chunks:** 407 (mean 172 words, max 300). Each vector is saved as soon as it is returned, and `main.py index` only embeds chunks whose id (a hash of their text) has no saved vector, so re-running it costs nothing.
 
 ## Test set
 
-*How you wrote it, counts by kind, two examples.*
+✍️ *How you wrote it, counts by kind (single / multi / unanswerable), two examples.*
 
 ## Retrieval
 
-*Hit rate at 1/3/5 per design, words added to the prompt, the design you chose.*
+*(Filled in from `eval/summary.json` after `main.py evaluate`.)* Both designs use the same section chunks, so comparing them costs no extra embeddings:
+
+- **A, vector:** cosine similarity between the question's embedding and each chunk's.
+- **B, hybrid:** the vector ranking fused with a BM25 keyword ranking (reciprocal rank fusion), so exact terms like "Blizzard Warning" or "10-513" also count.
+
+| Design | Hit@1 | Hit@3 | Hit@5 | Words added at k=5 |
+|---|---|---|---|---|
+| A, vector | | | | |
+| B, hybrid | | | | |
+
+✍️ *The design you chose and why, by the numbers.*
 
 ## Tools and subagent
 
-*Your tools' descriptions, one search result, the subagent's instructions, one transcript from your editor.*
+`server.py` exposes two MCP tools.
+
+**search(query)**: "Search official US National Weather Service (NWS) documents on winter weather: what Winter Storm, Blizzard, Ice Storm, Winter Weather, Extreme Cold and Snow Squall watches, warnings and advisories mean and when they are issued (NWS Instructions 10-513, 10-514, 10-515), the official Storm Data event definitions (NWSI 10-1605), the Winter Storm Severity Index guide, and the NWS winter safety guide (frostbite, hypothermia, preparedness). Use it for any question about winter weather alerts, their criteria, or winter safety, and search again with other words if the first results do not answer it. Returns the 5 most relevant passages, numbered, each with a citation in the form (source, section, page). Cite these exactly; if no passage answers the question, the corpus does not cover it."
+
+**add_document(path)**: "Add one document (a .pdf, .txt or .md file on this computer) to the winter weather corpus so that later searches can find it. The file is extracted, cleaned, chunked by section and embedded with the same pipeline as the corpus. The document is identified by its file name. If the same file was already indexed with the same content, nothing is embedded again; if a file with that name was indexed with different content, its old chunks are replaced. Returns how many chunks were added and how many were already there."
+
+One search result (first of five) for "Blizzard Warning wind visibility criteria":
+
+```
+[1] (NWSI-10-513, section App-B, p. 35)
+APPENDIX B. Winter Weather Definitions ... ● Blizzard: A blizzard means that the following
+conditions are expected to prevail for a period of 3 consecutive hours or longer: o Sustained
+wind or frequent gusts to 35 miles an hour or greater and o Considerable falling and/or blowing
+snow, i.e., frequently reducing visibility below 1/4 mile. ...
+```
+
+The subagent (`.claude/agents/corpus-researcher.md`) may only use `mcp__corpus__search`. It searches before answering, searches again with other words when needed, cites each claim exactly as the tool shows it, starts with "The corpus does not cover this" when no passage answers, never presents a local threshold as national, and prefers the newest document when sources disagree.
+
+✍️ *Paste one transcript from Claude Code or Copilot here.*
 
 ## Adding a document
 
-*What happens when a document is already indexed. The unanswerable question, the document you added, the answer before and after.*
+If the same file is added again with the same content, its chunk ids (hashes of the text) all exist already, so nothing is embedded and the tool says so. If a file with the same name but different content is added, the chunks that no longer exist are deleted and only the new ones are embedded, so the index never holds two versions of one document.
+
+*(Before/after filled in after the evaluation run.)* Unanswerable question: ✍️. Document added: the NWS Memphis office's "Criteria for Winter Storm Watches/Warnings and Winter Weather Advisories" (`extra_documents/NWS-Memphis-Winter-Criteria.pdf`, https://www.weather.gov/media/meg/WinterStormCriteriaMEG.pdf, public domain).
 
 ## Harness and guardrails
 
-*Your AGENTS.md rules, the approval step, and your extra guardrail with one case where it fired.*
+`agent.py` is a LangChain `create_agent` agent on Gemini 3.5 Flash (falls back to 3.5 Flash-Lite when the main model is overloaded). It starts `server.py` over MCP, uses both tools, and sends `AGENTS.md` as the system prompt.
+
+- **AGENTS.md rules:** ✍️ *summarise your rules and their reasons.*
+- **Approval step:** before `add_document` runs, the harness asks "The agent wants to add '<path>' to the index. Allow? [y/N]". Anything but "y", or no person at the keyboard, blocks the call and the model is told the user did not approve.
+- **Call limits:** at most 4 tool calls and 6 model calls per question.
+- **Extra guardrail, citation check:** every citation in the answer must be a passage the search tool returned in this run. If an answer has no citation or cites a passage that was never retrieved, the agent gets one retry with the rule restated; if it fails again the answer is replaced by a refusal. One case where it fired: *(taken from `eval/results.csv`, column `guardrail`, after the evaluation run)*.
 
 ## Evaluation
 
-*Code checks, the judge's rubric, your agreement with the judge, and results: correct, unsupported, correct refusals, wrong refusals.*
+*(Filled in after `main.py evaluate`.)*
+
+- **Code checks:** refusal or not (the answer starts with "The corpus does not cover this"); every citation valid (it was retrieved in that run); the expected source cited.
+- **Judge:** Gemini 3.5 Flash with the rubric in `evaluate.py`, grading `correct` and `supported` (0/1) for every non-refusal answer, with the retrieved passages as evidence.
+- ✍️ *Your rubric choices and your agreement with the judge.*
+
+| Outcome | Count |
+|---|---|
+| Correct | |
+| Wrong (from a retrieved passage) | |
+| Unsupported | |
+| Correct refusals | |
+| Wrong refusals | |
+| Answered an unanswerable question | |
 
 ## Failures
 
-*Failed questions by cause, with counts, and what to fix first.*
+✍️ *Failed questions by cause (retrieval miss, wrong answer from the right passage, unsupported claim, wrong refusal, bad test question), counts, what to fix first.*
 
 ## Decision
 
-*Would you let users rely on it, for what, with which safeguard? Cost and latency per question.*
+✍️ *Would you let users rely on it, for what, with which safeguard?* Cost and latency per question: *(from `eval/summary.json`)*.
 
 ## AI use
 
-*What you used and how, or "none".*
+✍️
