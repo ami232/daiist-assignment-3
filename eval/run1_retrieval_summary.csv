@@ -1,0 +1,4 @@
+design,hit@1,hit@3,hit@5,questions
+section-bm25,0.433,0.667,0.767,30
+section-vector,0.633,0.867,0.933,30
+section-hybrid,0.6,0.833,0.933,30

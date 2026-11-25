@@ -1,1 +1,37 @@
 id,question,kind,expected_source,expected_location,reference_answer
+q01,"What is the cooldown of the Breach Charge, and how many charges does it have?",single,Breach Charge,Overview,20 seconds cooldown and 3 charges (ammo 3); it is a Light gadget.
+q02,How many SR-84 headshots does it take to eliminate a Heavy contestant?,single,SR-84,Stats > Damage Profile,2 headshots (time to kill about 1.333 s); a Heavy has 325 HP and a headshot deals 244.
+q03,"How long does a surface stay dematerialized by the Dematerializer, and which build can use it?",single,Dematerializer,Overview,15 seconds; it is a Medium specialization.
+q04,How much health does a Heavy teammate come back with after being revived by the Defibrillator?,single,Defibrillator,Stats > Effects,"175 HP, half of the Heavy build's maximum; they also get brief invulnerability and 5 s of revive sickness."
+q05,In which game modes can the Defibrillator not be equipped?,single,Defibrillator,Usage,Terminal Attack and Team Deathmatch.
+q06,What is the maximum range of the Grappling Hook?,single,Grappling Hook,Overview,"25 m (cooldown 4 s minimum, 7.5 s maximum)."
+q07,Does using Evasive Dash interrupt drawing the Recurve Bow?,single,Evasive Dash,Stats > Effects,"No. Evasive Dash does not interrupt drawing the Recurve Bow, a Sword lunge or scoping in with the SR-84."
+q08,Can True Sight reveal an opponent who is using the Cloaking Device?,single,True Sight,Stats > Effects,Yes. Opponents are fully visible with True Sight even under the Cloaking Device or Vanishing Bomb; it also sees through smoke and dust.
+q09,How far can a Guardian Turret detect opponents and how wide is its vision cone?,single,Guardian Turret,Stats > Effects,"About 20 m, in a 150 degree vision cone; it arms after 3 seconds."
+q10,How much damage does the first hit of Charge 'N' Slam deal?,single,Charge 'N' Slam,Overview,"100 damage on the initial hit, 40 on subsequent hits; the ground slam deals 50-200 in a 4 m radius."
+q11,What happens when a Goo Gun blob hits an opponent?,single,Goo Gun,Stats > Effects,"The opponent is momentarily slowed and any action they are doing is interrupted, including reviving or stealing a cashout; then the goo destroys itself."
+q12,What is the Winch Claw's cooldown after pulling a high-value target?,single,Winch Claw,Overview,"18 seconds (10 s on a miss, 14 s on a low-value target)."
+q13,How fast does the Healing Emitter heal and over what radius?,single,Healing Emitter,Overview,"10 HP/s rising to 15 HP/s over 2 seconds, in a 4 m radius."
+q14,How much damage does an RPG-7 rocket deal and what is its blast radius?,single,RPG-7,Overview,"110 damage, with an inner radius of 1.5 m and an outer radius of 5.5 m; cooldown 45 s."
+q15,"How many Barricade panels can a Heavy have deployed at once, and how much health does each have?",single,Barricade,Overview,"Up to 4 deployed, 800 health per panel (environmental)."
+q16,What are the AKM's magazine size and rate of fire?,single,AKM,Overview,"36 rounds per magazine, 600 RPM."
+q17,How much environmental (structure) damage does one KS-23 slug deal?,single,KS-23,Overview,1000 environmental damage per slug (100 body damage).
+q18,"How much cash does a team need to win Quick Cash, and how many teams play?",single,Quick Cash,Overview,"$20,000; three teams of three (3v3v3)."
+q19,What is Double Jeopardy in Cashout?,single,Cashout,Gameplay,"An anti-griefing rule since Season 9: it triggers when a team inserts a second Cash Box into an already active Cashout Station; if that team fails to secure the station, it loses 50% of its current cash."
+q20,"How much cash does a team earn per elimination in Team Deathmatch, and how much do they need to win a round?",single,Team Deathmatch,Elimination Rules,"$100 per elimination; a round is won by reaching $3,000 first (or having the most money when the 5-minute timer ends)."
+q21,"In Power Shift, how many contestants need to stand on the platform for it to move at maximum speed?",single,Power Shift,Platform Mechanics,"Three or more (1 = slow, 2 = moderate, 3+ = maximum)."
+q22,"Which sponsor is Kyoto associated with, and when was the arena introduced?",single,Kyoto,Overview,DISSUN; Kyoto was introduced in Season 3.
+q23,Why was the Las Vegas arena removed from the game?,single,Las Vegas,Overview,With the PRIME TIME season it was removed because of the difficulty of maintaining both Las Vegas and the reworked Las Vegas Stadium.
+q24,What is the team wipe penalty in a Ranked Cashout qualifying round?,single,Ranked Cashout,Overview,A 27-second respawn and losing 15% of the team's total cash.
+m01,Which items or effects can reveal an enemy who is using the Cloaking Device?,multi,Cloaking Device;True Sight,Guide > Weaknesses;Stats > Effects,"Thermal Vision, the Motion Sensor and the Sonar Grenade (Cloaking Device weaknesses), and True Sight, which shows cloaked opponents fully."
+m02,"Which has the larger magazine, the AKM or the FCAR, and by how many rounds?",multi,AKM;FCAR,Overview;Overview,"The AKM: 36 rounds vs 20 for the FCAR, 16 more."
+m03,"Which deals more environmental damage per shot, the KS-23 or the CL-40?",multi,KS-23;CL-40,Overview;Overview,The KS-23: 1000 per slug vs 300 for the CL-40.
+m04,"Which has the shorter cooldown, the Breach Charge or the Thermal Bore, and which build uses them?",multi,Breach Charge;Thermal Bore,Overview;Overview,The Breach Charge (20 s vs 25 s for the Thermal Bore); both are Light gadgets.
+m05,How do team sizes differ between Quick Cash and Power Shift?,multi,Quick Cash;Power Shift,Overview;Overview,Quick Cash is three teams of three (3v3v3); Power Shift is two teams of five (5v5).
+m06,"Which heals faster, the Healing Beam or the Healing Emitter?",multi,Healing Beam;Healing Emitter,Overview;Overview,The Healing Beam: 50 HP/s in its stats box (its Effects section says 46 HP/s) vs 10-15 HP/s for the Healing Emitter.
+u01,How much does the battle pass cost in Multibucks?,unanswerable,,,Not in the wiki snapshot: prices and the battle pass were not indexed.
+u02,Which team won The Grand Major 2025?,unanswerable,,,Not in the wiki snapshot: esports results were not indexed.
+u03,What PC graphics settings give the best FPS in THE FINALS?,unanswerable,,,Not in the wiki snapshot: no graphics-settings pages were indexed.
+u04,"In Point Break, what does the attacking team have to do to win?",unanswerable,,,"Not in the indexed snapshot (the Point Break page is held out). After adding it: destroy all 9 Grand Vaults, 3 per phase over 3 phases."
+u05,What are the minimum PC system requirements to run THE FINALS?,unanswerable,,,Not in the wiki snapshot.
+u06,How much damage does the Plasma Cutter deal to Heavy contestants?,unanswerable,,,There is no Plasma Cutter in the wiki snapshot; the agent should not invent one.
