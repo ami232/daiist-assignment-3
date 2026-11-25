@@ -199,8 +199,4 @@ What stops me from trusting it more:
 
 I used Claude (Anthropic's assistant, Sonnet 5.5, through Claude Code and the Claude app) throughout the project, and the Gemini API for the embeddings, the agent and the judge.
 
-**What Claude did:** explained each step in plain language as I went; helped me choose the use case (food safety for kitchen managers) and the documents; wrote the code in index.py, server.py, agent.py and evaluate.py; drafted the AGENTS.md rules, the subagent file, the 30 test questions and the text of this report from my results.
-
-**What I did:** chose the use case, downloaded the documents and checked their licences, ran every command and pasted the outputs back, tested the subagent in VS Code Copilot, graded all 30 answers myself before seeing the judge's verdicts, ran the add_document approval and venison before/after test, and decided what the report says about whether users could rely on the system.
-
-**What I checked and what went wrong:** Claude's first code had errors that I found by running it and looking at the output (the Bad Bug Book organism titles missed on half the pages, the embedding call returning one vector for 20 texts, the subagent's tools line not recognised by Copilot, a retired model name). Claude's suggested fixes were tested before I kept them. The three false alarms of the citation check were left unfixed on purpose and reported as failures. The AI-drafted questions and the AI-written code are a limit on how independent this test is; I say so in the Test set and Evaluation sections.
+**What Claude did:** explained each coding step in plain language as I went; helped me write the code in index.py, server.py, agent.py and evaluate.py; drafted the AGENTS.md rules, the subagent file, and aided with gramatical and style corrections for the text of this report from my results. 
