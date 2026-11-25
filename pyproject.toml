@@ -5,7 +5,6 @@ description = "Assignment 3: a RAG system exposed as an MCP tool, a subagent and
 requires-python = ">=3.12,<3.13"
 dependencies = [
     "google-genai>=1.50",
-    "chromadb>=1.3",
     "pypdf>=6.0",
     "beautifulsoup4>=4.13",
     "httpx>=0.28.1",

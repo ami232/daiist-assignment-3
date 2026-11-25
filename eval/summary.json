@@ -1,0 +1,44 @@
+{
+  "retrieval": {
+    "article": {
+      "chunks": 324,
+      "questions": 28,
+      "hit@1": 0.643,
+      "hit@3": 0.786,
+      "hit@5": 0.857,
+      "words@1": 227,
+      "words@3": 659,
+      "words@5": 1104
+    },
+    "fixed": {
+      "chunks": 383,
+      "questions": 28,
+      "hit@1": 0.607,
+      "hit@3": 0.714,
+      "hit@5": 0.821,
+      "words@1": 220,
+      "words@3": 660,
+      "words@5": 1100
+    }
+  },
+  "questions_answered": 36,
+  "correct_answers": 26,
+  "answerable": 28,
+  "correct_refusals": 8,
+  "unanswerable": 8,
+  "wrong_refusals": 0,
+  "unsupported_answers": 0,
+  "invalid_citation_answers": 0,
+  "guardrail_fired": 4,
+  "avg_seconds": 8.7,
+  "avg_input_tokens": 6224,
+  "avg_output_tokens": 632,
+  "agreement_with_judge": {
+    "graded_by_you": 24,
+    "compared": 24,
+    "correct_agreement": 0.875,
+    "correct_kappa": 0.514,
+    "supported_agreement": 0.75,
+    "supported_kappa": 0.0
+  }
+}

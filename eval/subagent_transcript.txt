@@ -1,0 +1,121 @@
+▗ ▗   ▖ ▖  Claude Code v2.1.332
+           Opus 5.5 · Claude Enterprise
+ ▘▘   ▝▝   ~/daiist-assignment-3
+
+
+❯ Use the corpus-researcher subagent: how much deposit can my landlord ask for  
+  in a normal flat rental?                                                      
+
+⏺ corpus-researcher(Deposit limit for rental flat)
+  ⎿  Backgrounded agent (↓ to manage · ctrl+o to expand)
+
+⏺ I've sent your deposit question to the corpus-researcher agent. It's searching
+  the LAU and Ley 12/2023 for the legal deposit (fianza), any cap on extra
+  guarantees, whether the deposit can be updated during the contract, and when
+  it has to be returned. I'll pass on its cited answer when it finishes.
+
+✻ Churned for 7s · done 9:19 PM
+
+› Message from corpus-researcher
+  **Answer (English, from the corpus only)**
+
+  **Legal deposit (fianza).** When the contract is signed, a cash deposit is
+  mandatory: **one month's rent for a housing lease** (arrendamiento de
+  vivienda) and **two months' rent for other uses** (uso distinto del de
+  vivienda) [LAU, Artículo 36].
+
+  **Additional guarantee (garantía adicional).** Landlord and tenant may agree
+  on an extra guarantee on top of the cash deposit [LAU, Artículo 36]. Its
+  limits:
+  - For a housing lease, in contracts **of up to five years, or up to seven
+  years if the landlord is a legal entity (persona jurídica)**, the extra
+  guarantee **"no podrá exceder de dos mensualidades de renta"** (may not be
+  more than two months' rent) [LAU, Artículo 36].
+  - For **temporary leases** (arrendamientos temporales) it may not be more than
+  **one month's rent** [LAU, Artículo 36].
+  - The tenant can never be required to take out rent-default insurance
+  ("seguros de impago de renta u otras coberturas análogas") [LAU, Artículo 36].
+
+  So for a normal flat lease of up to five or seven years, the landlord can ask
+  for at most 1 month of deposit plus up to 2 months of additional guarantee.
+  The law also says the landlord can never require more than one month's rent
+  paid in advance [LAU, Artículo 17].
+
+  **Updating the deposit.**
+  - The deposit **cannot be updated during the first five years, or the first
+  seven years if the landlord is a legal entity**. At each extension (prórroga),
+  the landlord can ask to raise it, or the tenant to lower it, to match one or
+  two months of the current rent, as applicable [LAU, Artículo 36].
+  - If the agreed term is longer than five years (seven for a legal entity),
+  updates after that point follow what the contract says. If the contract says
+  nothing, the rent-update clause is presumed to apply to the deposit too [LAU,
+  Artículo 36].
+
+  **Return.**
+  - Whatever balance of the deposit is owed back to the tenant earns **statutory
+  interest (interés legal)** if it has not been returned **one month after the
+  tenant hands back the keys** [LAU, Artículo 36].
+  - When the contract ends, both parties must sign a written end-of-lease
+  document recording the flat's condition. If no document is signed, or it
+  records no damage, the flat is presumed to have been returned in good
+  condition unless shown otherwise [LAU, Artículo 36].
+  - Public administrations (and similar bodies listed in the law) do not have to
+  pay a deposit when the rent is paid from their budgets [LAU, Artículo 36].
+  - Each autonomous community may require landlords to deposit the fianza with a
+  regional body, without interest, until the contract ends. If that body does
+  not return it within one month of the end of the contract, it earns statutory
+  interest [LAU, Disposición adicional tercera].
+
+  **Gaps and caveats.**
+  - My searches found no Ley 12/2023 passage that amends Article 36. I can't
+  confirm or rule out that Ley 12/2023 changed it, so I cite only the LAU.
+  - The corpus doesn't say whether each region actually requires the deposit to
+  be lodged, or how. Those are regional rules and are not in the indexed
+  documents.
+  - The corpus doesn't give a fixed number of days by which the landlord must
+  return the deposit. It only sets the interest rule after one month.
+
+  This is information from the laws, not legal advice, and the consolidated text
+  has no legal value on its own.
+
+⏺ For a normal flat rental, your landlord must take one month's rent as a cash
+  deposit (fianza) when you sign [LAU, Artículo 36]. Two months applies only to
+  leases that aren't for housing [LAU, Artículo 36].
+
+  On top of that, the landlord can also ask for an additional guarantee, but
+  there are limits:
+  - Up to two months' rent on a housing lease of up to 5 years, or up to 7 years
+    if the landlord is a company (persona jurídica) [LAU, Artículo 36].
+  - Up to one month's rent on a temporary lease [LAU, Artículo 36].
+  - You can never be required to take out rent-default insurance ("seguros de
+    impago de renta") [LAU, Artículo 36].
+  - The landlord can never require more than one month's rent paid in advance
+    [LAU, Artículo 17].
+
+  So on a normal lease the most you can be asked for is 1 month of deposit plus 
+  up to 2 months of additional guarantee, and at most one month of rent in
+  advance.
+
+  Other points:
+  - Updating the deposit: it can't be changed during the first 5 years (7 if the
+    landlord is a company). At each extension after that, it can be raised or
+    lowered to match the current rent [LAU, Artículo 36].
+  - Getting it back: any amount owed to you earns statutory interest (interés
+    legal) if it hasn't been returned one month after you hand back the keys
+    [LAU, Artículo 36]. The law also expects a signed written record of the
+    flat's condition when the lease ends. If none is signed, the flat is
+    presumed to have been returned in good condition [LAU, Artículo 36].
+  - Regional deposit: each autonomous community can require the landlord to
+    lodge the deposit with a regional body [LAU, Disposición adicional tercera].
+    The indexed documents don't say what your region requires.
+
+  What the search didn't cover: it found no Ley 12/2023 passage that amends
+  Article 36, so this answer cites only the LAU. It also found no fixed deadline
+  for returning the deposit, only the interest rule after one month.
+
+  This is information from the laws, not legal advice, and the consolidated text
+  has no legal value on its own.
+
+✻ Cogitated for 7s · done 9:19 PM
+
+⏺ Agent "Deposit limit for rental flat" finished · 18s

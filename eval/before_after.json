@@ -1,0 +1,40 @@
+{
+  "question": {
+    "id": "q34",
+    "question": "Do I need a tourist-rental registration number to rent my apartment on Airbnb in my autonomous community?",
+    "kind": "unanswerable",
+    "expected_source": "",
+    "expected_location": "",
+    "reference_answer": "The PDFs do not provide the complete current registration and licensing requirements for tourist rentals in each autonomous community. The assistant should explain that this depends on regional and potentially local rules and cannot be answered from these three laws alone.",
+    "tricky": ""
+  },
+  "before": "I cannot find this in the indexed documents. The indexed laws (Ley 29/1994 de Arrendamientos Urbanos, Ley 12/2023 por el derecho a la vivienda, and Ley 49/1960 de Propiedad Horizontal) note that temporary tourist rentals are excluded from the LAU when subject to specific regional tourist regulations [LAU, Artículo 5], but the specific registration requirements, procedures, and tourist rental permits for individual autonomous communities or municipalities are defined by regional tourist laws and local ordinances, which are not included in the indexed corpus.\n\n*This is information from the laws, not legal advice, and the consolidated text has no legal value on its own.*",
+  "added": [
+    {
+      "tool": "add_document",
+      "args": {
+        "path": "/Users/alexiachacon/Downloads/RD1312-2024.pdf"
+      },
+      "result": "Added RD1312-2024.pdf as source 'RD1312-2024': 40 passages indexed (article design)."
+    }
+  ],
+  "after": "Yes, landlords offering short-term tourist rentals online must obtain a registration number before offering their properties on online platforms like Airbnb:\n\n* **Obligation to obtain a registration number:** Landlords are required to obtain a registration number from the Property Register (*Registro de la Propiedad*) or the Register of Movable Property (*Registro de Bienes Muebles*) prior to offering short-term rental services through online platforms `[RD1312-2024, Artículo 5]`. \n* **Platform requirement:** The registration number must be communicated to the online platforms in order to list the unit `[RD1312-2024, Artículo 5]`. Without this unique registration number, a property cannot be offered on short-term rental platforms `[RD1312-2024, Preámbulo]`.\n* **Autonomous and local compliance:** When applying for the registration number, if the unit is subject to a license, authorization, prior communication, or responsible declaration under autonomous community or local regulations, the documentation proving compliance with those regional/local requirements must be provided `[RD1312-2024, Artículo 9]`.\n\n*Note: Specific regional licensing requirements or procedures set by your individual Autonomous Community are not detailed in the indexed nationwide legal texts.*\n\n---\n*This is information from the laws, not legal advice, and the consolidated text has no legal value on its own.*",
+  "after_citations": [
+    [
+      "RD1312-2024",
+      "Artículo 5"
+    ],
+    [
+      "RD1312-2024",
+      "Artículo 5"
+    ],
+    [
+      "RD1312-2024",
+      "Preámbulo"
+    ],
+    [
+      "RD1312-2024",
+      "Artículo 9"
+    ]
+  ]
+}

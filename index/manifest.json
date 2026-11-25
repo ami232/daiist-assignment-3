@@ -1,0 +1,37 @@
+{
+  "documents": [
+    {
+      "source": "LAU",
+      "title": "Ley 29/1994, de Arrendamientos Urbanos",
+      "boe_id": "BOE-A-1994-26003",
+      "year": 1994,
+      "url": "https://www.boe.es/buscar/pdf/1994/BOE-A-1994-26003-consolidado.pdf",
+      "file": "LAU.pdf",
+      "sha256": "fe895bd297942e6a95fb56603c84a037912e53b8362989a3c9b47b7a002e351f",
+      "downloaded": "2026-11-24"
+    },
+    {
+      "source": "Ley12-2023",
+      "title": "Ley 12/2023, por el derecho a la vivienda",
+      "boe_id": "BOE-A-2023-12203",
+      "year": 2023,
+      "url": "https://www.boe.es/buscar/pdf/2023/BOE-A-2023-12203-consolidado.pdf",
+      "file": "Ley12-2023.pdf",
+      "sha256": "771a3f4ab6f131bf026552b921531f275413866bdb87b9d5fa5143845a82086c",
+      "downloaded": "2026-11-24"
+    },
+    {
+      "source": "LPH",
+      "title": "Ley 49/1960, sobre propiedad horizontal",
+      "boe_id": "BOE-A-1960-10906",
+      "year": 1960,
+      "url": "https://www.boe.es/buscar/pdf/1960/BOE-A-1960-10906-consolidado.pdf",
+      "file": "LPH.pdf",
+      "sha256": "ce012c731b741f1efe6994f030308bed9d9399e1aeddc955eef50071aa3356ad",
+      "downloaded": "2026-11-24"
+    }
+  ],
+  "default_design": "article",
+  "embed_model": "gemini-embedding-2",
+  "dims": 768
+}
