@@ -5,8 +5,8 @@ __pycache__/
 .ipynb_checkpoints/
 *.pyc
 
-# Documents downloaded by your index stage. Commit them only if their licence allows it.
-corpus/
+# corpus/ is committed on purpose: the GOV.UK pages are under the Open Government
+# Licence v3.0, and a fixed snapshot keeps the test set and saved vectors valid.
 
 # Your index belongs in index/, committed. Your evaluation results belong in eval/, committed.
 

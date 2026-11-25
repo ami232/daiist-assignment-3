@@ -1,1 +1,31 @@
 id,correct,supported,notes
+q01,0,1,"Refused, but the retrieved education-history passage answers it: the gap can be considered, along with whether there are sound reasons for returning to study."
+q02,1,1,
+q03,1,1,
+q04,1,1,
+q05,1,1,
+q06,0,1,"Right that you can extend from inside the UK, but misses the timing part: apply before the current visa expires, the PhD must start within 28 days of it expiring, and you can stay while waiting."
+q07,1,1,
+q08,1,1,
+q09,1,0,"Right conclusion, but it adds an exception the passages don't have: that a course work placement can fill a permanent full-time vacancy. ST 26.5 only allows the ST 26.6 exception."
+q10,1,1,
+q11,0,1,"Gets the 2-year cut-off and the completion notification right, but doesn't say the Student visa must still be valid when applying, which is the catch in this scenario."
+q12,1,1,
+q13,1,1,
+q14,1,1,
+q15,1,1,
+q16,1,1,
+q17,1,1,
+q18,1,1,
+q19,1,1,
+q20,1,1,
+q21,1,1,
+q22,1,1,
+q23,0,0,"Calculation error: £1,360 x 9 is £12,240, not £12,360, so the total is wrong and not backed by the passages. The monthly rate and the work answer are right."
+q24,1,1,
+q25,1,1,
+q26,0,0,"Flat no instead of the conditional answer (allowed if employed, not if self-employed), and the claim that delivery riders are typically self-employed isn't in the passages."
+q27,1,1,
+q28,0,1,"Consent letter and fee are right, but it gives only the 2-year surcharge (£2,070) and misses that applying on or after 1 January 2027 means 18 months and £1,552.50."
+q29,1,1,
+q30,1,1,

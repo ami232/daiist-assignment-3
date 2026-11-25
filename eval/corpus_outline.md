@@ -1,0 +1,476 @@
+# Corpus outline
+
+Use these exact strings in `eval/questions.csv`: the source name as `expected_source`, and a heading or rule number as `expected_location`. A heading name used more than once in a document is shown as its full path; use that path to point at one of them.
+
+## `student-visa-guide`
+
+Student visa, https://www.gov.uk/student-visa (updated 2024-10-31, fetched 2026-11-24, Open Government Licence v3.0, 5,166 words)
+
+- `Overview`
+  - `Overview > When to apply`
+    - `Applying from outside the UK`
+    - `Applying from inside the UK`
+    - `Overview > When to apply > How long it takes to get a decision`
+  - `How long you can stay`
+    - `Staying longer in the UK`
+    - `When you can travel to the UK`
+  - `Overview > Fees`
+    - `Healthcare surcharge`
+  - `Overview > Your partner and children`
+  - `What you can and cannot do`
+- `Your course`
+  - `Courses you can study`
+  - `Your Confirmation of Acceptance for Studies (CAS)`
+- `Money you need`
+  - `Course fee`
+  - `Money to support yourself (‘financial requirement’)`
+  - `When you do not need to prove you have money to support yourself`
+    - `If you’re from a country listed under the ‘differential evidence requirement’`
+- `Knowledge of English`
+  - `Who does not need to prove their knowledge of English`
+  - `How to prove your knowledge of English`
+  - `If you have a UK school qualification`
+  - `If you have a degree from a UK institution`
+  - `If you have a degree from an institution outside the UK`
+  - `Passing an English test`
+    - `If you’re studying with a Higher Education Provider`
+- `Documents you'll need to apply`
+  - `If you’re under 18`
+- `Apply online`
+  - `Apply online > Apply outside the UK`
+    - `Apply online > Apply outside the UK > How long it takes to get a decision`
+  - `Apply inside the UK`
+    - `Apply online > Apply inside the UK > How long it takes to get a decision`
+  - `Apply online > After you apply`
+    - `Apply online > After you apply > If your application is successful`
+- `Your partner and children`
+  - `Your dependants`
+    - `Your child`
+  - `Money they need to support themselves`
+    - `When they do not need to prove they have money to support themselves`
+  - `Your partner and children > Apply outside the UK`
+    - `Proving their identity`
+    - `How long they can stay`
+  - `Apply inside the UK to extend or switch`
+    - `Your partner and children > Apply inside the UK to extend or switch > Fees`
+    - `How to apply`
+  - `If their application is successful`
+  - `Children born in the UK`
+- `Extend your visa`
+  - `Showing academic progress`
+    - `If you’re applying to work in the UK`
+  - `Extend your visa > When to apply`
+  - `Extend your visa > Fees`
+  - `Extend your visa > Apply`
+  - `Extend your visa > How long it takes to get a decision`
+  - `Extend your visa > After you apply`
+    - `Extend your visa > After you apply > If your application is successful`
+- `Switch to this visa`
+  - `Eligibility`
+  - `Switch to this visa > When to apply`
+  - `Switch to this visa > Fees`
+  - `Switch to this visa > Apply`
+  - `Switch to this visa > How long it takes to get a decision`
+  - `Switch to this visa > After you apply`
+    - `Switch to this visa > After you apply > If your application is successful`
+
+## `appendix-student`
+
+Immigration Rules: Appendix Student, https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-student (updated 2026-10-08, fetched 2026-11-24, Open Government Licence v3.0, 8,241 words)
+
+- `Introduction`
+- `Validity requirements for a Student` (rules ST 1.1 to ST 1.6)
+- `Suitability requirements for a Student` (rules ST 2.1 to ST 2.2)
+  - `Entry requirements for a Student` (rules ST 3.1 to ST 3.3)
+  - `Date of application requirement for a Student` (rules ST 4.1 to ST 4.3)
+  - `Genuine Student requirement` (rule ST 5.1)
+  - `Points requirement for a Student` (rule ST 6.1)
+  - `Confirmation of Acceptance for Studies requirement` (rules ST 7.1 to ST 7.6)
+  - `Course requirement for a Student` (rules ST 8.1 to ST 8.4)
+  - `Approved qualification requirement for a Student` (rule ST 9.1)
+  - `Level of study requirement for a Student` (rules ST 10.1 to ST 10.2)
+  - `Place of study requirement for a Student` (rule ST 11.1)
+  - `Financial requirement for a Student` (rules ST 12.1 to ST 12.6)
+  - `English language requirement for a Student` (rules ST 13.1 to ST 13.4)
+  - `Academic Progress requirement for a Student` (rules ST 14.1 to ST 14.5)
+  - `Combined Pre-sessional Course requirement for a Student` (rules ST 15.1 to ST 15.3)
+  - `Postgraduate Doctor or Dentist requirement` (rule ST 16.1)
+  - `Work Placement requirement` (rules ST 17.1 to ST 18.2)
+  - `Maximum period of study requirement for a Student` (rules ST 19.1 to ST 19.6)
+    - `Documents used to obtain an offer requirement for a Student` (rules ST 20.1 to ST 20.3)
+  - `Parental consent requirement for a Student` (rules ST 21.1 to ST 21.2)
+  - `Differential evidence requirement for a Student` (rule ST 22.1)
+- `Information on the Confirmation of Acceptance for Studies requirement` (rule ST 23.1)
+- `Decision on application for a Student` (rules ST 24.1 to ST 24.2)
+- `Period and conditions of grant for a Student` (rules ST 25.1 to ST 25.3)
+- `Work Conditions for a Student` (rules ST 26.1 to ST 26.8)
+- `Study Conditions` (rules ST 27.1 to ST 27.7)
+  - `Validity requirements for a dependent partner or dependent child of a Student` (rules ST 28.1 to ST 28.5)
+    - `Suitability requirements for a dependent partner or dependent child of a Student` (rules ST 29.1 to ST 29.2)
+  - `Entry requirement for a dependent partner or dependent child of a Student` (rules ST 30.1 to ST 30.2)
+  - `Student course requirement for a dependent partner or dependent child of a Student` (rules ST 31.1 to ST 31.2)
+  - `Relationship requirement for dependent partner of a Student` (rules ST 32.1 to ST 32.6)
+  - `Financial requirement for dependent partner of a Student` (rules ST 33.1 to ST 36.2)
+  - `Requirements for a dependent child of a Student`
+  - `Financial requirement for dependent child of a Student` (rules ST 37.1 to ST 37.4)
+  - `Decision on an application as a dependent partner or dependent child of a Student` (rules ST 38.1 to ST 38.2)
+  - `Period and conditions of grant for a dependent partner or dependent child of a Student` (rules ST 39.1 to ST 39.3)
+
+## `student-caseworker-guidance`
+
+Student and Child Student, https://www.gov.uk/government/publications/student-route-caseworker-guidance/student-and-child-student (updated 2026-10-16, fetched 2026-11-24, Open Government Licence v3.0, 27,013 words)
+
+- `Introduction`
+- `About this guidance`
+- `Validity for entry clearance and permission to stay applications`
+  - `Representatives`
+  - `Validity for entry clearance and permission to stay applications > Requesting more information`
+  - `Validity for entry clearance and permission to stay applications > Translating documents`
+- `Switching`
+  - `Switching into Student`
+  - `Switching into Child Student`
+  - `Dependants of overseas diplomats`
+- `Suitability for entry clearance and permission to stay applications`
+- `Student: overstayers`
+  - `Immigration bail`
+- `Eligibility for entry clearance and permission to stay`
+  - `Student: Visa Brake`
+  - `TB certificate`
+  - `Erasmus+`
+    - `Appendix Student`
+- `Genuine student rule`
+  - `Entry clearance and permission to stay applications`
+  - `Credibility: factors to be considered`
+    - `The immigration history of the applicant and any dependant, in the UK and other countries`
+    - `The applicant’s education history, study and post-study plans`
+    - `The personal and financial circumstances of the applicant and any dependant`
+    - `The qualification, course provider and agents`
+    - `English language ability`
+    - `Role of dependants`
+    - `Pull factors`
+- `Interviews`
+  - `Failure to attend`
+    - `In-country applications`
+    - `Out-of-country applications`
+  - `After completion of the interview: applicant is not a genuine student`
+  - `Abuse`
+- `Confirmation of Acceptance for Studies (CAS)`
+  - `Check the validity of the CAS reference number`
+  - `Check the information on the CAS`
+  - `Retrospective course start dates`
+  - `Documents required to check the CAS`
+  - `Recording the CAS as used`
+  - `Expired CAS`
+  - `Marking associated CAS as obsolete`
+- `Licensed student sponsors`
+  - `Zero Confirmation of Acceptance for Studies (CAS) allocated sponsors`
+  - `Student sponsorship duties`
+- `Student sponsor subject to UKVI sanctions, under investigation, licence revoked, surrendered or expired`
+  - `Sponsor has been removed from the register of student sponsors pending investigation`
+  - `Sponsor has had their licence revoked, or the licence has been surrendered or expired`
+- `Acceptable levels of study`
+  - `Student: acceptable levels of study`
+  - `Child Student: acceptable levels of study`
+- `Student: place of study requirement`
+  - `Student: Remote delivery`
+- `Student: study abroad programmes`
+  - `Study abroad programmes in the UK`
+  - `Study abroad programmes overseas`
+- `Student: Student union sabbatical officers`
+- `Student: part-time courses`
+- `Student: Association of Chartered Certified Accountants (ACCA) courses`
+- `Student: flight schools`
+- `Student: financial requirement`
+  - `Student: financial requirement > Differentiation arrangements`
+  - `Student: financial requirement > Course fees`
+  - `Living costs`
+  - `Accommodation deposits`
+  - `Student: financial requirement > Boarding students`
+- `Child Student: financial requirement`
+  - `Child Student: financial requirement > Differentiation arrangements`
+  - `Child Student: financial requirement > Boarding students`
+- `Non-boarding students`
+  - `Non-boarding students > Course fees`
+  - `Living costs for non-boarding students`
+- `Location of study and study that includes part of a month`
+  - `Main study site in London`
+  - `Length of study that includes part of a month`
+- `Evidence of finance`
+  - `How to meet the financial requirement`
+  - `Evidence requirements`
+  - `Evidence of finance > Requesting more information`
+- `Partially paid course and accommodation fees`
+- `Student: English language requirement`
+- `Student: academic progression`
+  - `Exemptions`
+  - `Demonstrating academic progression`
+  - `Applying for an integrated course`
+  - `Demonstrating course completion`
+  - `Study at the same level`
+  - `Sponsor duties`
+- `Changing course or finishing their course early`
+  - `Students and Child Students who want to do a different course of study with their student sponsor`
+  - `The Student or Child Student has completed the course for which they were given permission to stay`
+  - `The Student or Child Student has not completed the course which their current permission was granted for`
+  - `Changing A-level subjects`
+  - `Students: changing course, without needing permission from the Home Office`
+- `Pre-sessional courses`
+- `Student: postgraduate doctors and dentists`
+- `Work placements`
+  - `Students: work placement requirements`
+  - `Work placements > Child Student`
+  - `Students: Work placements involving professional performance`
+  - `Sports-related work placements`
+  - `Work placements on the Confirmation of Acceptance for Studies (CAS)`
+- `Student: Doctorate Extension Scheme (DES)`
+- `Student: time limits for study`
+  - `Student: maritime courses`
+  - `Degree level study`
+  - `Exceptions`
+  - `Above degree level study`
+  - `Calculating time limits`
+  - `Deciding whether the application complies with the time limit requirement`
+  - `Date calculators`
+- `Documents for assessing Confirmation of Acceptance for Studies (CAS)`
+  - `Child Student applicants under the age of 16`
+  - `Child Student applicants aged 16 or 17 and Student applicants`
+  - `Evidential documents used`
+  - `Assessments based on references`
+  - `Assessments not based on qualifications or references`
+  - `Evidence of English language ability`
+  - `Verifying documents`
+  - `Documents from institutions which have had their licence revoked`
+- `Requesting more information`
+- `Translating documents`
+  - `Assessing the academic level of a translated certificate`
+- `Verifying documents and risk profiles`
+  - `Verification checks`
+- `Age requirements and child welfare`
+  - `Parental consent for Students and Child Students under 18`
+  - `Safeguarding child welfare`
+  - `Permitted living arrangements for Child Students`
+  - `Guardianship organisation`
+  - `Nominated guardian`
+  - `Other adults regularly living with a nominated guardian`
+  - `Close relatives`
+  - `Parents accompanying children under 12`
+  - `Private foster care`
+  - `Child Students living in a private foster care arrangement or receiving care from a close relative or nominated guardian`
+  - `Care arrangements requirement`
+- `Differential evidence requirement`
+  - `Requirements for nationals who benefit from differential evidence`
+  - `Documents not required under the differentiation arrangements`
+  - `Mandatory documents`
+  - `Applicants who apply under the differentiation arrangements but submit evidence`
+  - `Sponsor requirements`
+  - `Differential evidence requirement > Requesting supporting documents`
+  - `Dual or multiple nationality`
+- `Student: Academic Technology Approval Scheme (ATAS)`
+  - `Exemptions to the ATAS requirement`
+  - `ATAS requirements`
+  - `The ATAS clearance certificate`
+- `Grant or refuse`
+  - `Digital status`
+- `Grant or refuse entry clearance`
+  - `Student: grant entry clearance`
+  - `Child Student: grant entry clearance`
+  - `Student: refuse entry clearance`
+  - `Child Student: refuse entry clearance`
+  - `Rights of appeal and administrative review: out-of-country applications`
+- `Student: refusal paragraphs`
+- `Child Student: entry clearance refusal paragraphs`
+- `Grant or refuse extension`
+  - `Student: grant of permission`
+  - `Student: period to grant`
+  - `Student: period to grant for courses comprising separate, independent modules`
+  - `Child Student: grant of permission`
+  - `Child Student: period to grant`
+  - `Student and Child Student: refuse application`
+  - `Grant or refuse extension > Student: dependants`
+- `Work conditions`
+  - `Work conditions > Professional sportsperson`
+  - `Engaging in business activity`
+  - `Work conditions > Child Student`
+  - `Student and Child Student: Prohibited work`
+  - `Volunteering`
+- `Student: dependants`
+  - `Assessing applications for dependant partners and dependant children`
+  - `Student: dependants > Switching`
+  - `When student dependants are permitted`
+  - `Proof of relationship for dependant partners`
+  - `Requirements for dependent children`
+  - `Dependant of a Student: financial requirement`
+    - `Calculating funds needed for a dependant of a Student`
+    - `Evidence that can be used to demonstrate funds for the dependant of a Student`
+- `Student: differential evidence requirement for dependants`
+  - `Differentiation arrangements: requirements for dependants`
+  - `Documentary requirements`
+  - `Student: differential evidence requirement for dependants > Requesting supporting documents`
+- `Grant permission: dependant partner or child of a Student`
+  - `Conditions of leave`
+    - `Employment for dependants of a Student`
+  - `Grant permission: dependant partner or child of a Student > Professional sportsperson`
+  - `Study in a discipline covered by Appendix ATAS of the Immigration Rules`
+    - `Endorsement for entry clearance applications`
+- `Dependant of a Student: refusal paragraphs`
+
+## `graduate-visa-guide`
+
+Graduate visa, https://www.gov.uk/graduate-visa (updated 2024-10-31, fetched 2026-11-24, Open Government Licence v3.0, 2,813 words)
+
+- `Overview`
+  - `Eligibility`
+  - `How long you can stay`
+    - `If you want to stay longer in the UK`
+  - `How to apply`
+  - `When to apply`
+    - `Getting a decision`
+  - `Overview > How much it costs`
+    - `Overview > How much it costs > If you work in public sector healthcare`
+  - `What you can and cannot do`
+    - `Studying with a Graduate visa`
+- `The course you studied`
+  - `Your education provider`
+  - `Your course`
+    - `If you’re on a Student visa because you’re a Student Union Sabbatical Officer`
+  - `How long you studied in the UK for`
+    - `What counts as time spent studying in the UK`
+  - `If you could not study in the UK because of coronavirus (COVID-19)`
+    - `Your Student visa or Tier 4 visa was for more than 12 months`
+    - `Your Student visa or Tier 4 visa was for 12 months or less`
+- `How much it costs`
+  - `Healthcare surcharge`
+    - `How much it costs > Healthcare surcharge > If you work in public sector healthcare`
+- `Documents you'll need to apply`
+  - `Other documents you might need`
+  - `When you’ve got your documents ready`
+- `Apply`
+  - `Proving your identity and providing supporting documents`
+  - `Apply for a Graduate visa`
+    - `Continue your application`
+    - `Get help to apply online`
+  - `Apply > How long it takes to get a decision`
+  - `After you apply`
+  - `If your application is successful`
+- `Your partner and children`
+  - `Your partner`
+  - `Your child`
+    - `If your child is under 18`
+    - `If your child is 18 or over`
+  - `Your partner and children > Apply`
+    - `Proving their identity`
+    - `Your partner and children > Apply > How long it takes to get a decision`
+  - `If their application is successful`
+  - `Children born in the UK`
+
+## `appendix-graduate`
+
+Immigration Rules Appendix Graduate, https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-graduate (updated 2026-08-03, fetched 2026-11-24, Open Government Licence v3.0, 1,994 words)
+
+- `Introduction`
+- `Validation requirements for a Graduate` (rules GR 1.1 to GR 1.6)
+- `Suitability requirements for a Graduate` (rules GR 2.1 to GR 2.2)
+  - `Points requirement` (rule GR 3.1)
+- `Successful completion requirement` (rules GR 4.1 to GR 4.3)
+- `Qualification requirement` (rules GR 5.1 to GR 5.4)
+- `Study in the UK requirement` (rules GR 6.1 to GR 6.3)
+- `Decision on an application as a Graduate` (rules GR 7.1 to GR 7.2)
+- `Period of grant for a Graduate` (rule GR 8.1)
+- `Conditions of grant for a Graduate` (rule GR 8.2)
+  - `Validity requirements for a dependent partner or dependent child of a Graduate` (rules GR 9.1 to GR 9.5)
+- `Suitability requirements for a dependent partner or dependent child of a Graduate` (rules GR 10.1 to GR 10.2)
+  - `Relationship requirement for dependent partner of a Graduate` (rules GR 11.1 to GR 11.3)
+- `Relationship requirement for dependent child of a Graduate` (rules GR 12.1 to GR 12.3)
+- `Care requirement for dependent child of a Graduate` (rule GR 13.1)
+- `Age requirement for a dependent child of a Graduate` (rules GR 14.1 to GR 14.2)
+- `Requirements for a dependent child of a Graduate`
+- `Decision on an application as a dependent partner or dependent child of a Graduate` (rules GR 15.1 to GR 15.2)
+- `Period of grant for a dependent partner or dependent child of a Graduate` (rules GR 16.1 to GR 16.2)
+- `Conditions of grant for a dependent partner or dependent child of a Graduate` (rule GR 16.3)
+
+## `graduate-caseworker-guidance`
+
+Graduate caseworker guidance (accessible version), https://www.gov.uk/government/publications/graduate-caseworker-guidance/graduate-caseworker-guidance-accessible-version (updated 2026-08-03, fetched 2026-11-24, Open Government Licence v3.0, 6,430 words)
+
+- `Introduction`
+- `About this guidance`
+- `Application Process (digital and biometrics)`
+  - `ID Check App`
+- `Validity for permission to stay applications`
+  - `Validity requirements`
+- `Suitability for permission to stay`
+  - `Suitability requirements`
+- `Eligibility for permission to stay`
+    - `Successful completion requirement`
+    - `Sponsor notification`
+    - `Qualification requirement`
+  - `Case study 1: a non-listed qualification that meets the qualification requirement`
+  - `Case study 2: a non-listed qualification that does not meet the qualification requirement`
+  - `Case study 3: a non-listed qualification for which a sponsor has made a notification for - which does not meet the qualification requirement`
+  - `Study in the UK requirement`
+    - `Study abroad programmes`
+    - `Covid-19 concessions`
+    - `Case Study 1: Student who began their course in 2020`
+    - `Case Study 2: Student who entered the UK to begin their course in 2021`
+    - `Case Study 3: Course lasting longer than 12 months`
+    - `Case Study 4: Course lasting longer than 12 months, started in Autumn 2021`
+    - `Case Study 5: Course lasting less than 12 months, started in Spring 2022`
+- `Confirmation of Acceptance for Studies (CAS)`
+- `Grant or refuse`
+  - `eVisa`
+  - `Graduate: grant permission to stay`
+  - `Graduate: period to grant`
+  - `Graduate: refuse permission to stay`
+  - `Grant or refuse > Rights of appeal and administrative review`
+- `Graduate: refusal paragraphs`
+  - `Work conditions`
+  - `Conditions > Professional sportsperson`
+  - `Study conditions`
+- `Graduate: dependants`
+  - `Assessing applications for dependant partners and children`
+  - `Validity`
+  - `Suitability`
+    - `Proof of relationship for dependant partners`
+    - `Proof of relationship for dependant children`
+    - `Care requirement for dependant children`
+    - `Age requirement for dependant children`
+- `Grant or refuse permission: dependant partner or child of a Graduate`
+  - `Graduate: refuse dependants`
+- `Rights of appeal and administrative review`
+- `Dependant of a Graduate: refusal paragraphs`
+- `Conditions of leave`
+  - `Conditions of leave > Professional sportsperson`
+  - `Study in a discipline covered by Appendix ATAS of the Immigration Rules`
+- `Representatives`
+- `Requesting more information`
+- `Translating documents`
+
+## `appendix-finance`
+
+Immigration Rules Appendix Finance, https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-finance (updated 2025-04-09, fetched 2026-11-24, Open Government Licence v3.0, 1,409 words)
+
+- `Introduction`
+- `Currency` (rules FIN 1.1 to FIN 1.3)
+- `Financial institutions` (rule FIN 2.1)
+- `Overdrafts` (rule FIN 3.1)
+- `Requirement to have legally earned or acquired funds, savings, or income` (rule FIN 4.1)
+- `Account holders` (rules FIN 5.1 to FIN 5.3)
+- `Third party support` (rule FIN 6.1)
+- `Dates of financial evidence` (rules FIN 7.1 to FIN 7.3)
+- `Accounts` (rules FIN 8.1 to FIN 8.4)
+- `Evidence of financial sponsorship or student loans for students` (rules FIN 9.1 to FIN 9.2)
+
+## `appendix-english-language`
+
+Immigration Rules Appendix English Language, https://www.gov.uk/guidance/immigration-rules/immigration-rules-appendix-english-language (updated 2026-03-26, fetched 2026-11-24, Open Government Licence v3.0, 1,643 words)
+
+- `Introduction`
+- `Exemption` (rules EL 1.1 to EL 1.2)
+- `How the requirement is met` (rules EL 2.1 to EL 2.5)
+- `Met in a previous application` (rule EL 3.1)
+- `Majority English speaking country` (rule EL 4.1)
+- `Academic qualification` (rules EL 5.1 to EL 5.4)
+- `English language test` (rule EL 6.1)
+- `GCSE or A Level English` (rules EL 7.1 to EL 7.2)
+- `Additional ways Students can meet the English language requirement` (rules EL 8.1 to EL 8.4)
+- `Professional regulation for Skilled Workers` (rule EL 9.1)
