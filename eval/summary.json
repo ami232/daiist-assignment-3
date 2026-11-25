@@ -1,0 +1,16 @@
+{
+  "questions": 33,
+  "correct": 33,
+  "unsupported": 0,
+  "correct_refusals": 6,
+  "unanswerable": 6,
+  "wrong_refusals": 1,
+  "invalid_citations": 0,
+  "guardrail_fired": 0,
+  "avg_seconds": 84.8,
+  "avg_tokens_in": 5271,
+  "avg_tokens_out": 1054,
+  "human_graded": 20,
+  "agree_correct": 0.85,
+  "agree_supported": 0.85
+}
