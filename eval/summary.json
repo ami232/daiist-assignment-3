@@ -24,18 +24,29 @@
     }
   },
   "search_design": {
-    "design": "sections"
+    "design": "sections",
+    "mode": "vector"
   },
   "outcomes": {
-    "not judged yet": 24,
+    "correct": 20,
+    "unsupported": 3,
     "wrong refusal": 3,
+    "wrong": 1,
     "correct refusal": 4,
     "answered unanswerable": 1
   },
   "citations_valid": 1,
   "guardrail_fired": 6,
   "agreement_with_my_grades": {
-    "graded": 0
+    "graded": 20,
+    "agree_correct": 0.85,
+    "agree_supported": 0.9,
+    "disagreements": [
+      "q22",
+      "q23",
+      "q24",
+      "q30"
+    ]
   },
   "per_question": {
     "mean_input_tokens": 4711,
@@ -43,9 +54,7 @@
     "mean_seconds": 8.7,
     "mean_tool_calls": 1.22
   },
-  "evaluation_seconds": 3,
+  "evaluation_seconds": 83,
   "answered": 32,
-  "incomplete": [
-    "judging stopped at q01: daily quota reached"
-  ]
+  "incomplete": []
 }
