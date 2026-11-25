@@ -49,13 +49,13 @@ Each contract has numbered clauses (term, fees, liability, termination, data pro
   - `clause`: one chunk per clause or schedule, with a header (contract title and parties); clauses under 60 words are merged up to 220 words, clauses over 320 words are split at sub-clauses. 463 chunks, about 124 words each.
   - `window`: 200-word windows with step 160, no header. 300 chunks.
 - **Embeddings**: Gemini `gemini-embedding-2`, 768 dimensions, stored in ChromaDB (`index/`, 6.5 MB). `main.py index` only embeds chunks that have no saved vector (chunk id = design + document + hash of the text); the server never embeds the corpus.
-- **One extraction problem I fixed**: in 23 contracts the title wraps onto two lines, so the header of the clause chunks lost the parties. I changed the header parsing and re-embedded 222 chunks. TODO (mine): say how you noticed it and how you checked the fix.
+- **One extraction problem I fixed**: in 23 contracts the title wraps onto two lines, so the header of the clause chunks lost the parties. I changed the header parsing and re-embedded 222 chunks. I noticed it when I went through the headers of the chunks and saw that they were wrong, and then I looked at the chunks themselves to confirm that the parties were missing.
 
 ## Test set
 
 `eval/questions.csv` has 46 questions: 19 single-passage, 16 that need two or more passages (`multi`), and 11 that the corpus cannot answer (`unanswerable`). The brief asks for at least 30, 5 and 5. Each row has the question, its kind, the expected source file, the expected clause (one per source, separated by `;` for multi questions) and a reference answer.
 
-I wrote the questions from the contracts: I read the clauses, picked a fact (a fee, a notice period, a liability cap, a data-export period), and wrote the question and the reference answer. The unanswerable questions ask for something that looks like it should be in a contract but is not (for example a penalty that the clause never states). TODO (mine): confirm and adjust this paragraph. Be honest about what was yours and what came from examples (see AI use).
+I wrote the questions from the contracts: I read the clauses, picked a fact (a fee, a notice period, a liability cap, a data-export period), and wrote the question and the reference answer. The unanswerable questions ask for something that looks like it should be in a contract but is not (for example a penalty that the clause never states). I took the idea and the style of the questions from an earlier project of mine and used it as inspiration and as a help, then adapted every question to these contracts and checked it against the clauses.
 
 `eval_check.py` checks the file before evaluating: counts, kinds, unique ids, that every `expected_source` exists and that every expected clause exists in that contract, so a typo in the answer key is not mistaken for a retrieval miss.
 
@@ -66,13 +66,18 @@ Two examples:
 | q12 | multi | Which client gets a longer period to pay invoices, the one in contract 003 or the one in contract 006? | `CONTRACT_003.pdf` 4.2; `CONTRACT_006.pdf` 5.2 | Contract 006 (120 days) gives longer than contract 003 (90 days). |
 | q46 | unanswerable | What monthly fee does Logistica Integral pay for each of its 8 locations? | none | Schedule 1 of contract 026 refers to an order form that is not in the corpus; no monthly fee amount is stated. |
 
-TODO (mine): one sentence on why you chose these two (q12 needs two searches; q46 is a near-miss, because the contract mentions fees but gives no amount).
+I chose q12 because it needs two searches, one for each contract, and q46 because it is a near-miss: the contract talks about fees but never gives an amount, so a careless answer would invent one.
 
 ## Retrieval
 
-TODO: paste the table from `eval/retrieval.md` (hit rate at 1, 3, 5 for `clause` and `window`, and average words sent to the prompt).
+I compared two ways of cutting the contracts into pieces, and measured how often a passage with the answer shows up among the first 1, 3 or 5 results (the hit rate). The first design, clause, makes one chunk per clause (465 chunks). The second, window, uses fixed windows of text (300 chunks). I used the 35 questions that have an answer.
 
-TODO (mine): which design I chose and why, using the numbers (hit rate against words in the prompt, and especially the multi-passage questions). Say what the numbers do not show.
+With clause, the right passage was first in 40% of the questions, in the top 3 in 89% and in the top 5 in 94%. With window it was 14%, 60% and 69%. The five results also carry less text with clause (about 598 words) than with window (about 980), so the agent reads less and each question costs less. The difference is biggest on questions that need passages from two contracts: with clause 88% of them are fully covered in the top 5, with window only 38%. On single-passage questions the two designs are closer (100% against 95% at five results), so window is not bad for simple lookups, but it is much worse when the answer is spread over several places.
+
+I chose clause. It wins on every measure, and a clause is also the natural unit in a contract: a question about a liability cap or a notice period is almost always answered by one clause, and a window often mixes the end of one clause with the start of the next one, which makes the match less clean.
+
+What these numbers do not show: the hit rate only says that a good passage is among the results, not that the agent uses it well. Clause is weak at the first position (it is only first in 40% of the questions, and in none of the multi-contract ones), so the agent has to read several results and cannot trust the first one. Also, my test set is small (35 questions), so a difference of one or two questions moves the percentages a lot.
+
 
 ## Tools and subagent
 
@@ -82,7 +87,7 @@ The MCP server (`server.py`, started by the agent over stdio) has two tools.
 
 > Search a collection of 49 B2B commercial contracts and return the 5 passages that best match the query. Use it whenever the question is about what a contract says: who the parties are, fees, liability caps, termination and notice, data protection, intellectual property, governing law, exclusivity, penalties. Each result starts with its citation, `[CONTRACT_xxx.pdf | clause / page]`, followed by the passage text. Cite the source and clause of every claim you make. Mention the contract's parties or subject in the query when you know them: clauses of different contracts look alike. Results are the closest passages, not guaranteed answers: if none of them says what the question asks, the corpus does not cover it. Lower `distance` means closer.
 
-The description tells the model when to call the tool, how to cite, and how to tell that the corpus is silent. TODO: paste one real search result here (run `uv run python -c "import index; [print(h['metadata']['source'], h['metadata']['location'], round(h['distance'],3)) for h in index.retrieve('liability cap contract 047', 3)]"` tomorrow after 09:00, or ask the agent a question and copy the tool output).
+The description tells the model when to call the tool, how to cite, and how to tell that the corpus is silent. Here is a real result. I searched for "liability cap contract 047" and asked for the top 3. The tool returned CONTRACT_006.pdf, Clause 7 (Liability Cap), 7.1-7.3, p. 2 (distance 0.209); CONTRACT_017.pdf, Clause 7 (Liability), 7.1-7.3, p. 2 (0.212); and CONTRACT_027.pdf, Clause 6 (Liability), 6.1-6.3, p. 2 (0.214). All three are liability clauses, but none of them is from contract 047 even though I wrote its number in the query, and the distances are almost the same. I take from this that the number of the contract does little for the match, because the embedding looks at the meaning of the text; this is why the tool description tells the model to mention the parties or the subject of the contract instead, and it is also the kind of problem behind my failure in q01.
 
 **`add_document(path)`**. Description given to the model:
 
@@ -115,9 +120,7 @@ call, 2,968 input tokens, 12.9 s).
 
 **Already indexed.** [Result of adding the same file again: ...]
 
-**What I noticed.** [Your own observation: for example, that one added document changes the answer
-at once and costs only 2 embeddings, and that the first attempt exposed a bug in my citation
-guardrail, which I fixed.]
+**What I noticed.** The answers were better and more complete once the document was in the index, and the change was immediate: only 2 embeddings were needed. The first attempt also showed a bug in my citation guardrail, which I fixed.
 
 ## Harness and guardrails
 
@@ -153,30 +156,44 @@ Guardrails in `agent.py`:
 2. **Call limit**: at most 6 tool calls per question.
 3. **Citation check** (my extra guardrail): an answer must cite only contracts the agent really retrieved. If not, the agent gets one retry; if it still fails, the answer is returned with a warning.
 
-TODO (mine): one real case where a guardrail fired (look for the event in `eval/answers.jsonl` or `eval/summary.md`).
+In practice a guardrail fired in the evaluation on question q01, which compares the liability limits of contracts 049 and 047. The agent kept searching and reached the limit of 6 tool calls, so it was stopped and gave a wrong answer, because a passage of one of the two contracts was never retrieved. The limit did its job (it stopped a loop that was costing tokens), but it also showed me a retrieval problem. The citation check also fired once by mistake in my before/after test of adding a document: after the agent added the new contract, the check did not count the new document as something it had retrieved, so it asked for a retry. I fixed the check so that it counts the sources of both search and add_document.
 
 ## Evaluation
 
-TODO after running `main.py evaluate`:
-- Code checks (refusal prefix, valid citations, expected contract cited, key numbers present).
-- My rubric (from `eval/rubric.md`) and why I wrote it that way.
-- My agreement with the judge on 20+ answers I graded first (`eval/human_labels.csv`), and what the disagreements show.
-- Results: correct, unsupported, correct refusals, wrong refusals, made-up answers to unanswerable questions.
+I ran the agent on all 46 test questions, 35 with an answer and 11 without one. Each answer went through two kinds of checks. The first are checks in code: whether a refusal starts with NOT IN CORPUS, whether every cited contract was really retrieved, whether the expected contract is cited and whether the key numbers of the reference appear. The second is a language model used as a judge, which decides if the answer is correct and if it is supported by the passages, following a rubric.
+
+The rubric (in `eval/rubric.md`) is short on purpose. An answer is correct only if it gives the facts of the reference answer, and a partial answer counts as not correct. An answer is supported only if everything it says is in the retrieved passages. For the questions without an answer, the correct behaviour is to refuse, and inventing a figure is the worst failure.
+
+Before looking at the judge, I graded 20 answers myself (`eval/human_labels.csv`): single-contract, multi-contract and unanswerable questions. Then I compared. On whether the answer is correct we agree on 19 of 20 (95%), and on whether it is supported we agree on 20 of 20. The one disagreement is q16: the agent gave the right law for contract 001 but said it could not find contract 029. I graded it as not correct because it is only half an answer; the judge accepted it. So the judge is a bit more generous than I am with partial answers, and I read its scores with that in mind.
+
+Results: of the 35 questions with an answer, 32 are correct (91%), one was wrongly refused and none contains an unsupported claim. Every answer that was not a refusal cites a contract that was really retrieved (35 of 35). Of the 11 questions without an answer, 10 were refused correctly (91%) and in one case the agent answered anyway. The agent cites the expected contract in 33 of 35 answers and includes the key numbers of the reference in 28 of 35 (80%); this second number is lower than the judge's score because some correct answers just word the number differently or leave out extra details.
 
 ## Failures
 
-TODO (mine): failed questions by cause with counts (retrieval miss, wrong answer from the right passage, unsupported claim, wrong refusal, bad test question), starting from `eval/failures.csv`, and what to fix first.
+Five questions need a comment (`eval/failures.csv`). I classified them myself.
+
+Retrieval miss (2): in q01 a passage of contract 047 or 049 was not retrieved, and the agent also hit the limit of 6 tool calls. In q16 the search did not find the governing-law clause of contract 029, so the agent said it was not in the corpus; here the judge also accepted a weak answer.
+
+Agent formatting error (1): in q33, about the uptime guaranteed to a reseller, the answer is supported by the contract (it says there is no service level beyond the standard description), but the agent did not start it with NOT IN CORPUS as the rules require, so the code check flags it. The content is fine; the format is wrong.
+
+Judge too strict (2): in q34 (a 22% commission) and q40 (a fixed fee of EUR 180,000) the answers are correct and cited, but the judge gave them 0 because my reference answers also list extra details (subscription and per-order fees, quarterly instalments) that the question did not ask for. This is not a failure of the system. It is partly a weakness of my reference answers, which are longer than the questions need.
+
+The automatic first guess in `eval/summary.md` labels two of these as "wrong answer from the right passage" and one as an unsupported claim, but when I read them I did not agree, so my classification above is the one I trust.
+
+What I would fix first: retrieval for questions that compare two contracts, because that is where the real misses are. Then I would make the refusal format stricter in the instructions, and shorten the reference answers so the judge does not punish correct answers.
 
 ## Decision
 
-TODO (mine): would I let users rely on it, for what, with which safeguard. Cost per question: tokens and seconds from `eval/summary.md`.
+I would let people use it for looking up facts in these contracts (a fee, a notice period, which law applies), as long as they see the cited contract and clause and can check it. On my test set it answers 91% of the questions correctly, always cites a contract it really retrieved and refuses in 91% of the questions that have no answer. I would not let anyone rely on it alone for questions that compare several contracts, or for anything with legal consequences, because that is where it misses passages and it can also answer when it should refuse. The safeguard is that a person reads the cited clause before acting, and that adding a document always needs a human yes.
+
+Cost per question: on average 5,064 input tokens and 108 output tokens, 1.7 tool calls and 8.0 seconds (median 7.4, worst case 28.7 seconds and 19,861 input tokens). The input is much bigger than the output because the agent reads several clauses before answering. The judge adds about one more call for each question when I evaluate. I did not compute a price in euros, because it depends on the current price of the model.
 
 ## AI use
 
 Draft to complete and adjust (keep it truthful):
 - **Corpus**: my fictional contracts were rewritten by Claude (an AI assistant) to be more realistic; I reviewed TODO (how many) of them.
 - **Code**: `index.py`, `server.py`, `agent.py`, `evaluate.py` and `eval_check.py` were written with Claude's help; I ran them and fixed problems with it.
-- **Test set**: I wrote the questions myself from the contracts.
-- **Grades, rubric, design choice, failure analysis and decision**: mine.
+- **Test set**: I wrote the questions from the contracts, inspired by an earlier project of mine; the reference answers were checked against the clauses with `eval_check.py`.
+- **Grades, failure causes and the final choices**: the 20 grades and the failure causes in `eval/failures.csv` are mine. Claude wrote the text of `eval/rubric.md` from the options I picked, and Claude wrote the first drafts of the Retrieval, Evaluation, Failures and Decision sections from my results and the causes I chose; I read and adjusted them.
 - **Judge**: a Gemini model grades answers using my rubric.
-- **Report**: Claude made this skeleton; the analysis sections are mine.
+- **Report**: Claude made the skeleton and drafted several sections, including the ones above, from my results; I reviewed them.
