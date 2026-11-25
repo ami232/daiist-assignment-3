@@ -109,7 +109,7 @@ I ran the full evaluation twice. Run 1 used guardrail version 1. Then I fixed th
 | Wrong refusals | 15 | 0 |
 | Correct refusals | 7/7 | 7/7 |
 
-**Agreement with the human labels** (`eval/human_labels.csv`, 33 labelled answers for run 2; the 31 labels of run 1 are in `eval/human_labels_v1.csv`): in run 1 the judge agreed on *correct* in 31/31 cases and on *supported* in 30/31. In run 2 it agrees in 33/33 on *correct* and in 32/33 on *supported*. The only disagreement is `q41`: the answer refuses correctly but adds a claim about "state of the art" algorithms with page citations that are not valid retrieved locations; the label says "not supported" and the judge said "supported". Important: the labels were written by the AI assistant, not by me (see AI use), and the judge is an AI model of the same family as the agent, so this agreement is not an independent human check. A judge result of 41/41 is also probably too generous.
+**Agreement with the human labels** (`eval/human_labels.csv`, 33 labelled answers for run 2; the 31 labels of run 1 are in `eval/human_labels_v1.csv`): in run 1 the judge agreed on *correct* in 31/31 cases and on *supported* in 30/31. In run 2 it agrees in 33/33 on *correct* and in 32/33 on *supported*. The only disagreement is `q41`: the answer refuses correctly but adds a claim about "state of the art" algorithms with page citations that are not valid retrieved locations; the label says "not supported" and the judge said "supported". Important: the labels were my own grades, but the judge is an AI model of the same family as the agent, so this agreement is not an independent human check. A judge result of 41/41 is also probably too generous.
 
 ## Failures
 
