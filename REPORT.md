@@ -29,6 +29,8 @@ This is why the agent is built to refuse rather than guess, every answer has to 
 
 Added later in the demo: Commission Implementing Regulation (EU) No 828/2014 (gluten-free statements), 30 Jul 2014, from the Publications Office (Cellar), 10 chunks.
 
+The corpus is six documents from EUR-Lex with 59,357 words in total, the three EU regulations on food information and on nutrition and health claims, and three Commission notices that explain how to apply them. I added the official guidance and not only the law because the regulations say what is required, but the notices answer the practical questions a quality and regulatory team actually has, like how to emphasise allergens.
+
 ## Ingestion
 
 *How you extract, clean and chunk; one extraction problem you fixed; chunk metadata; number of chunks.*
