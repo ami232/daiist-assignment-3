@@ -1,0 +1,370 @@
+
+DOCUMENT: maintenance_handbook.pdf
+
+TOPIC: four forces
+PAGE: 13
+...................5-37 Aircraft Theory of Flight .............................................5-37 Four Forces of Flight................................................5-37 Bernoulli’s Principle and Subsonic Flow.................5-37 Lift and Newton’s Third Law...................................5-38 Airfoils .....................................................................5-39 Camber .................................................................5-39 Chord Line ...........................
+
+TOPIC: four forces
+PAGE: 195
+udes basic aerodynamics, is a necessary part of understanding why aircraft operate the way they do. Four Forces of Flight During flight, there are four forces acting on an airplane. These forces are lift, weight, thrust, and drag. [Figure 5-53] Lift is the upward force created by the wing, weight is the pull of gravity on the mass, thrust is the force created by the airplane’s propeller or turbine engine, and drag is the friction caused by the air flowing around the airplane. All four of these f
+
+TOPIC: density altitude
+PAGE: 193
+particular atmospheric density is associated with each altitude. This gives rise to the expression “density altitude,” symbolized “Hd.” A density altitude of 15,000 ft is the altitude at which the density is the same as that considered standard for 15,000 ft. Remember, however, that density altitude is not necessarily true altitude. For example, on a day when the atmospheric pressure is higher than standard and the temperature is lower than standard, the density which is standard at 10,000 ft mi
+
+TOPIC: density altitude
+PAGE: 214
+elicopter to hover is affected by many things, including whether or not it is in ground effect, the density altitude of the air, the available power from the engine, and how heavily loaded it is. For a helicopter to experience ground effect, it typically needs to be no higher off the ground than one half of its main rotor system diameter. If a helicopter has a main rotor diameter of 40 ft., it will be in ground effect up to an altitude of approximately 20 ft. Being close to the ground affects th
+
+TOPIC: center of gravity
+PAGE: 14
+...............6-3 Moment ......................................................................6-3 Center of Gravity (CG)...............................................6-4 Maximum Weight.......................................................6-4 Empty Weight.............................................................6-4 Empty Weight Center of Gravity (EWCG)................6-5 Useful Load................................................................6-5 Minimum Fuel.............................
+
+TOPIC: center of gravity
+PAGE: 62
+Other Information Within each of these subparts are numerous sections that specify details, such as center of gravity (CG), gust load factors, removable fasteners, the shape of certain flight deck controls, engine and propeller requirements, fuel tank markings, flight deck instrumentation marking and placards, cabin aisle width, and flammability resistant standards. 14 CFR Part 25—Airworthiness Standards: Transport Category Airplanes The standards in 14 CFR part 25 apply to large aircraft with a
+
+TOPIC: wake turbulence
+PAGE: 198
+x that trails behind the wingtip anytime lift is being produced. This vortex is also referred to as wake turbulence, and is a significant factor in determining how closely one airplane can follow behind another on approach 5-40
+
+TOPIC: wake turbulence
+PAGE: 199
+Figure 5-59. Wing and horizontal stabilizer vortices on an MD-11. to land. The wake turbulence of a large airplane can cause a smaller airplane, if it is following too closely, to be thrown out of control. Vortices from the wing and from the horizontal stabilizer are quite visible on the MD-11 shown in Figure 5-59. Upwash and downwash refer to the effect an airfoil has on the free airstream. Upwash is the deflection of the oncoming airstream, causing it to flow up and over t
+
+TOPIC: load factor
+PAGE: 62
+ of these subparts are numerous sections that specify details, such as center of gravity (CG), gust load factors, removable fasteners, the shape of certain flight deck controls, engine and propeller requirements, fuel tank markings, flight deck instrumentation marking and placards, cabin aisle width, and flammability resistant standards. 14 CFR Part 25—Airworthiness Standards: Transport Category Airplanes The standards in 14 CFR part 25 apply to large aircraft with a maximum certificated takeoff
+
+TOPIC: load factor
+PAGE: 303
+reaming the hole to take the next larger bolt. Usually such factors as edge distance, clearance, or load factor must be considered. Oversized or elongated holes in noncritical members can usually be drilled or reamed to the next larger size. Many bolt holes, particularly those in primary connecting elements, have close tolerances. Generally, it is permissible to use the first lettered drill size larger than the normal bolt diameter, except where the AN hexagon bolts are used in light-drive fit (
+
+TOPIC: airworthiness
+PAGE: 10
+14 CFR Part 23—Airworthiness Standards: Normal, Utility, Acrobatic, and Commuter Category Airplanes.................................................2-8 14 CFR Part 125—Certification and Operations: Airplanes Having a Seating Capacity of 20 or More Passengers or a Maximum Payload Capacity of 6,000 Pounds or More; and Rules Appendix D—Scope and Detail of Items To Be 14 CFR Part 25—Airworthiness Standards: Transpor
+
+TOPIC: airworthiness
+PAGE: 18
+................................10-4 Code of Federal Regulations (CFRs) .......................10-5 Airworthiness Directives (ADs)...............................10-5 Type Certificate Data Sheets (TCDS)......................10-5 Routine/Required Inspections....................................10-12 Preflight/Postflight Inspections..............................10-12 Annual/100-Hour Inspections ................................10-12 Progressive Inspections..........................................10-
+
+TOPIC: corrosion
+PAGE: 16
+0 Snap Rings............................................................7-81 Chapter 8 Cleaning and Corrosion Control........................8-1 Corrosion........................................................................8-1 Factors Affecting Corrosion.......................................8-2 Pure Metals.............................................................8-2 Climate....................................................................8-2 Geographical Location........................
+
+TOPIC: corrosion
+PAGE: 17
+...........8-11 Inspection.....................................................................8-12 Corrosion Prone Areas.................................................8-12 Exhaust Trail Areas..................................................8-12 Battery Compartments and Battery Vent Openings...................................................................8-12 Bilge Areas...............................................................8-13 Lavatories, Buffets, and Galleys .....................
+
+TOPIC: hydraulic systems
+PAGE: 49
+ssure to operate the aircraft systems during maintenance. They can be used to: • Drain the aircraft hydraulic systems. Most a • Filter the aircraft system hydraulic fluid. cooled • Refill the aircraft system with clean fluid. install syste • Check the aircraft hydraulic systems for operation condit and leaks. and co This type of portable hydraulic test unit is usually an electrically-powered unit. It uses a hydraulic system capable of delivering a variable volume of fluid from zero to approximat
+
+TOPIC: hydraulic systems
+PAGE: 290
+uid or vapor, and can tolerate temperature extremes in excess of those encountered in high-pressure hydraulic systems. Their dash numbers indicate not only their size but also relate directly to the dash number of the O-ring for which they are dimensionally suited. They are procurable under several basic part numbers, but they are interchangeable; that is, any Teflon™ backup ring may be used to replace any other Teflon™ backup ring if it is of proper overall dimension to support the applicable O
+
+TOPIC: weight and balance
+PAGE: 2
+ish to improve their knowledge. This volume contains information on mathematics, aircraft drawings, weight and balance, aircraft materials, processes and tools, physics, electricity, inspection, ground operations, and FAA regulations governing the certification and work of maintenance technicians. New to this volume is a section addressing how successful aviation maintenance technicians incorporate knowledge and awareness of ethics, professionalism and human factors in the field. Because there a
+
+TOPIC: weight and balance
+PAGE: 5
+ish to improve their knowledge. This volume contains information on mathematics, aircraft drawings, weight and balance, aircraft materials, processes and tools, physics, electricity, inspection, ground operations, and FAA regulations governing the certification and work of maintenance technicians. New to this volume is a section addressing how successful aviation maintenance technicians incorporate knowledge and awareness of ethics, professionalism and human factors in the field. Because there a
+
+TOPIC: moment arm
+PAGE: 222
+r of gravity (CG). The weight and balance report must include an equipment list showing weights and moment arms of all required and optional items of equipment included in the certificated empty weight. If the manufacturer chooses to do so, it can weigh every aircraft it produces and issue the weight and balance report based on that weighing. As an alternative, the manufacturer is permitted to weigh an agreed upon percentage of a particular model of aircraft produced, perhaps 10 to 20 percent, a
+
+TOPIC: moment arm
+PAGE: 223
+ or weight times a distance. The distance used in calculating a moment is referred to as the arm or moment arm and is usually expressed in inches. To calculate a moment, a force (or weight) and a distance must be known. The weight is multiplied by the distance from the datum and the result is the moment, which is expressed in inch-pounds (in-lb), a point through which the force acts. For the purpose of illustration, compare an aircraft to a seesaw. Like the seesaw, for an aircraft to be in balan
+
+TOPIC: empty weight
+PAGE: 14
+.......................6-4 Maximum Weight.......................................................6-4 Empty Weight.............................................................6-4 Empty Weight Center of Gravity (EWCG)................6-5 Useful Load................................................................6-5 Minimum Fuel............................................................6-5 Tare Weight................................................................6-6 Procedures for Weighing an Aircr
+
+TOPIC: empty weight
+PAGE: 222
+ore leaving the factory for delivery to its new owner. The weight and balance report identifies the empty weight of the aircraft and the location at which the aircraft balances, known as the center of gravity (CG). The weight and balance report must include an equipment list showing weights and moment arms of all required and optional items of equipment included in the certificated empty weight. If the manufacturer chooses to do so, it can weigh every aircraft it produces and issue the weight an
+
+TOPIC: stress
+PAGE: 13
+.................5-11 Inclined Plane...........................................................5-13 Stress............................................................................5-13 Tension.....................................................................5-14 Compression.............................................................5-14 Torsion .....................................................................5-14 Bending .................................................................
+
+TOPIC: stress
+PAGE: 15
+...........................7-26 Heat Treatment of Titanium.....................................7-26 Stress Relieving ....................................................7-26 Full Annealing ......................................................7-26 Thermal Hardening...............................................7-26 Casehardening.......................................................7-26 Hardness Testing ......................................................7-26 Brinell Tester ...................
+
+TOPIC: fatigue
+PAGE: 16
+........................8-9 Fretting Corrosion.................................................8-10 Fatigue Corrosion .................................................8-10 Galvanic Corrosion...............................................8-11 Common Corrosive Agents......................................8-11 XIV
+
+TOPIC: fatigue
+PAGE: 24
+......................14-16 Lack of Teamwork .................................................14-18 Fatigue....................................................................14-19 Lack of Resources ..................................................14-22 Lack of Assertiveness.............................................14-25 Stress ......................................................................14-27 Physical Stressors ...............................................14-28 Psychological Stre
+
+TOPIC: electrical systems
+PAGE: 51
+-32 and 1-33. Prior to fueling, the person fueling must check the following: 1. Ensure all aircraft electrical systems and electronic devices, including radar, are turned off. 2. Do not carry anything in the shirt pockets. These items could fall into the fuel tanks. 3. Ensure no flame-producing devices are carried by anyone engaged in the fueling operation. A moment of carelessness could cause an accident. 4. Ensure that the proper type and grade of fuel is used. Do not mix AVGAS and JET fuel. 5
+
+TOPIC: electrical systems
+PAGE: 330
+wire method may be used on small screws in a closely spaced closed geometrical pattern, on parts in electrical systems, and in places that are extremely difficult to reach. Safety wiring should always be per conventional methods or as required by the manufacturer, especially for Light Sport Aircraft (LSA). Figure 7-72 is an illustration of various methods that are commonly used in safety wiring nuts, bolts, and screws. 7-76
+
+TOPIC: weather
+PAGE: 35
+an be accomplished with rope or cable tie-down. The number of tie-downs are governed by anticipated weather conditions. Most heavy aircraft are equipped with surface control locks that are engaged or installed when the aircraft is secured. Since the method of locking controls vary on different types of aircraft, check the manufacturer’s instructions for proper installation or engaging procedures. If high winds are anticipated, control surface battens can also be installed to prevent damage. Figu
+
+TOPIC: weather
+PAGE: 36
+ibed by the helicopter manufacturer. [Figure 1-14] Tie straps snugly without strain, and during wet weather, provide some slack to avoid the possibility of the straps shrinking, causing undue stress on the aircraft and/or its rotor system(s). 5. Fasten the tie-down ropes or cables to the forward and aft landing gear cross tubes and secure to ground stakes or tie-down rings. Procedures for Securing Weight-Shift-Control There are many types of weight-shift-controlled aircraft— engine powered and n
+
+TOPIC: oxygen
+PAGE: 9
+its ....................................1-25 Ground Air Heating and Air Conditioning...........1-25 Oxygen Servicing Equipment ..................................1-25 Oxygen Hazards .......................................................1-26 Fuel Servicing of Aircraft ............................................1-26 Types of Fuel and Identification ..............................1-26 Contamination Control.............................................1-26 Fueling Hazards.............................
+
+TOPIC: oxygen
+PAGE: 17
+rosene...................................................................8-28 Cleaning Compound for Oxygen Systems...............8-28 Emulsion Cleaners .......................................................8-28 Water Emulsion Cleaner ..........................................8-28 Solvent Emulsion Cleaners ......................................8-28 Soaps and Detergent Cleaners .....................................8-28 Cleaning Compound, Aircraft Surfaces ...................8-29 Nonionic Detergen
+
+DOCUMENT: pilot_handbook.pdf
+
+TOPIC: critical angle of attack
+PAGE: 100
+fore, extra vigilance is required at reduced thrust settings and low speeds so as not to exceed the critical angle of attack. If the airplane is equipped with an AOA indicator, it should be referenced to help monitor the proximity to the critical AOA. Some aircraft have the ability to change the direction of the thrust rather than changing the AOA. This is accomplished either by pivoting the engines or by vectoring the exhaust gases. [Figure 5-4] Lift The pilot can control the lift. Any time the
+
+TOPIC: critical angle of attack
+PAGE: 102
+um for this particular wing section at 20° AOA and then rapidly decreases. 20° AOA is therefore the critical angle of attack. The coefficient of drag curve (orange) increases very rapidly from 14° AOA and completely overcomes the lift curve at 21° AOA. The lift/drag ratio (green) reaches its maximum at 6° AOA, meaning that at this angle, the most lift is obtained for the least amount of drag. Note that the maximum lift/drag ratio (L/DMAX) occurs at one specific CL and AOA. If the aircraft is ope
+
+TOPIC: four forces
+PAGE: 73
+oduces aerodynamics; a more detailed explanation can be found in Chapter 5, Aerodynamics of Flight. Four forces act upon an aircraft in relation to straight-and- level, unaccelerated flight. These forces are thrust, lift, weight, and drag. [Figure 3-1] Thrust is the forward force produced by the powerplant/ propeller. It opposes or overcomes the force of drag. As a general rule, it is said to act parallel to the longitudinal axis. This is not always the case as explained later. Drag is a rearwar
+
+TOPIC: four forces
+PAGE: 74
+the lateral, longitudinal, and vertical axes, respectively. Lift Weight Drag Thrust Figure 3-1. The four forces. Weight is the combined load of the aircraft itself, the crew, the fuel, and the cargo or baggage. Weight pulls the aircraft downward because of the force of gravity. It opposes lift and acts vertically downward through the aircraft’s center of gravity (CG). Lift opposes the downward force of weight, is produced by the dynamic effect of the air acting on the wing, and acts perpendicula
+
+TOPIC: density altitude
+PAGE: 7
+..................4-3 Pressure Altitude.........................................................4-4 Density Altitude..........................................................4-4 Effect of Pressure on Density..................................4-4 Effect of Temperature on Density...........................4-4 Effect of Humidity (Moisture) on Density..............4-5 Theories in the Production of Lift..................................4-5 Newton’s Basic Laws of Motion................................4
+
+TOPIC: density altitude
+PAGE: 11
+...............11-2 Pressure Altitude..........................................................11-3 Density Altitude............................................................11-3 Effects of Pressure on Density..................................11-4 Effects of Temperature on Density...........................11-5 Effects of Humidity (Moisture) on Density..............11-5 Performance..................................................................11-5 Straight-and-Level Flight..................
+
+TOPIC: center of gravity
+PAGE: 11
+xii Balance, Stability, and Center of Gravity.....................10-2 Effects of Adverse Balance.......................................10-3 Stability.................................................................10-3 Control...................................................................10-3 Management of Weight and Balance Control...........10-4 Terms and Definitions...............................................10-4 
+
+TOPIC: center of gravity
+PAGE: 30
+ and a fuselage controllable only in pitch and roll by the pilot's ability to change the aircraft’s center of gravity with respect to the wing. Flight control of the aircraft depends on the wing's ability to flexibly deform rather than the use of control surfaces. Size and weight are other methods used in 14 CFR 1.1 to group aircraft: • Large aircraft—an aircraft of more than 12,500 pounds, maximum certificated takeoff weight. • Light-sport aircraft (LSA)—an aircraft, other than a helicopter or 
+
+TOPIC: hypoxia
+PAGE: 14
+s Affecting Pilot Performance..................................................................17-3 Hypoxia.....................................................................17-3 Hypoxic Hypoxia..................................................17-3 Hypemic Hypoxia.................................................17-3 Stagnant Hypoxia..................................................17-3 Histotoxic Hypoxia...............................................17-4 Symptoms of Hypoxia....................
+
+TOPIC: hypoxia
+PAGE: 47
+ wine can impair flying skills. Alcohol also renders a pilot more susceptible to disorientation and hypoxia. 5. Fatigue—Am I tired and not adequately rested? Fatigue continues to be one of the most insidious hazards to flight safety, as it may not be apparent to a pilot until serious errors are made. 6. Emotion—Am I emotionally upset? The PAVE Checklist Another way to mitigate risk is to perceive hazards. By incorporating the PAVE checklist into preflight planning, the pilot divides the risks of
+
+TOPIC: carburetor icing
+PAGE: 9
+......................7-8 Mixture Control.......................................................7-9 Carburetor Icing......................................................7-9 Carburetor Heat.....................................................7-10 Carburetor Air Temperature Gauge......................7-11 Outside Air Temperature Gauge...............................7-11 Fuel Injection Systems..............................................7-11 Superchargers and Turbosuperchargers....................
+
+TOPIC: carburetor icing
+PAGE: 169
+e Ice Figure 7-11. The formation of carburetor ice may reduce or block fuel-air flow to the engine. Carburetor Icing As mentioned earlier, one disadvantage of the float-type carburetor is its icing tendency. Carburetor ice occurs due to the effect of fuel vaporization and the decrease in air pressure in the venturi, which causes a sharp temperature drop in the carburetor. If water vapor in the air condenses when the carburetor temperature is at or below freezing, ice may form on internal surface
+
+TOPIC: wake turbulence
+PAGE: 8
+.............5-8 Formation of Vortices.................................................5-8 Avoiding Wake Turbulence........................................5-9 Ground Effect...............................................................5-11 Axes of an Aircraft.......................................................5-12 Moment and Moment Arm...........................................5-13 Aircraft Design Characteristics ...................................5-14 Stability...............................
+
+TOPIC: wake turbulence
+PAGE: 13
+.......................14-26 Radar Traffic Advisories.........................................14-26 Wake Turbulence........................................................14-26 Vortex Generation...................................................14-26 Terminal Area ....................................................14-27 En Route..............................................................14-27 Vortex Behavior......................................................14-27 Vortex Avoidance Procedure
+
+TOPIC: load factor
+PAGE: 8
+..............................5-31 Asymmetric Loading (P-Factor)...............................5-32 Load Factors.................................................................5-33 Load Factors in Aircraft Design...............................5-33 Load Factors in Steep Turns.....................................5-34 Load Factors and Stalling Speeds.............................5-34 Load Factors and Flight Maneuvers.........................5-36 Vg Diagram...........................................
+
+TOPIC: load factor
+PAGE: 98
+rols are essential to flight. This chapter discusses the aerodynamics of flight—how design, weight, load factors, and gravity affect an aircraft during flight maneuvers. The four forces acting on an aircraft in straight-and-level, unaccelerated flight are thrust, drag, lift, and weight. They are defined as follows: • Thrust—the forward force produced by the powerplant/ propeller or rotor. It opposes or overcomes the force of drag. As a general rule, it acts parallel to the longitudinal axis. How
+
+TOPIC: airworthiness
+PAGE: 7
+............................................................3-1 Aircraft Design, Certification, and Airworthiness.........3-2 A Note About Light Sport Aircraft.............................3-2 Lift and Basic Aerodynamics.........................................3-2 Major Components.........................................................3-3 Fuselage......................................................................3-3 Wings........................................................................
+
+TOPIC: airworthiness
+PAGE: 10
+...........................9-6 Certificate of Aircraft Registration.............................9-6 Airworthiness Certificate............................................9-7 Aircraft Maintenance..................................................9-8 Aircraft Inspections........................................................9-8 Annual Inspection.......................................................9-8 100-Hour Inspection...................................................9-8 Other Inspection Progra
+
+TOPIC: corrosion
+PAGE: 81
+2. Today, composites can be found in aircraft as varied as gliders to most new helicopters. Lack of corrosion is a third advantage of composites. Boeing is designing the 787, with its all-composite fuselage, to have both a higher pressure differential and higher humidity in the cabin than previous airliners. Engineers are no longer as concerned about corrosion from moisture condensation on the hidden areas of the fuselage skins, such as behind insulation blankets. This should lead to lower long-
+
+TOPIC: corrosion
+PAGE: 83
+composites have earned an important role in aircraft structure design. Their design flexibility and corrosion resistance, as well as the high strength-to-weight ratios possible, will undoubtedly continue to lead to more innovative aircraft designs in the future. From the Cirrus SR-20 to the Boeing 787, it is obvious that composites have found a home in aircraft construction and are here to stay. [Figure 3-17] Instrumentation: Moving into the Future Until recently, most GA aircraft were equipped 
+
+TOPIC: hydraulic systems
+PAGE: 9
+...............7-30 Electrical System..........................................................7-30 Hydraulic Systems........................................................7-31 Landing Gear............................................................7-33 Tricycle Landing Gear..........................................7-33 Tailwheel Landing Gear........................................7-33 Fixed and Retractable Landing Gear.....................7-34 Brakes............................................
+
+TOPIC: hydraulic systems
+PAGE: 191
+r/alternator system of approximately 14 volts. The difference in voltage keeps the battery charged. Hydraulic Systems There are multiple applications for hydraulic use in aircraft, depending on the complexity of the aircraft. For example, a hydraulic system is often used on small airplanes to operate wheel brakes, retractable landing gear, and some constant- speed propellers. On large airplanes, a hydraulic system is used for flight control surfaces, wing flaps, spoilers, and other systems. A ba
+
+TOPIC: weight and balance
+PAGE: 8
+..................5-38 Radius of Turn..........................................................5-39 Weight and Balance......................................................5-40 Effect of Weight on Flight Performance...................5-42 Effect of Weight on Aircraft Structure.....................5-42 Effect of Weight on Stability and Controllability.....5-42 Effect of Load Distribution.......................................5-43 High Speed Flight..................................................
+
+TOPIC: weight and balance
+PAGE: 10
+........................9-4 Performance (Section 5).............................................9-4 Weight and Balance/Equipment List (Section 6)........9-4 Systems Description (Section 7).................................9-4 Handling, Service, and Maintenance (Section 8)........9-5 Supplements (Section 9).............................................9-5 Safety Tips (Section 10)..............................................9-6 Aircraft Documents.....................................................
+
+TOPIC: moment arm
+PAGE: 8
+.....5-11 Axes of an Aircraft.......................................................5-12 Moment and Moment Arm...........................................5-13 Aircraft Design Characteristics ...................................5-14 Stability.....................................................................5-14 Static Stability.......................................................5-14 Dynamic Stability..................................................5-14 Longitudinal Stability (Pitching)......
+
+TOPIC: moment arm
+PAGE: 59
+ the right engine is also a greater distance from the center of gravity, and therefore has a longer moment arm than the descending propeller blade of the left engine. As a result, failure of the left engine will result in the most asymmetrical thrust (adverse yaw) because the right engine will be providing the remaining thrust. Many twins are designed with a counter-rotating right engine. With this design, the degree of asymmetrical thrust is the same with either engine inoperative. Neither engi
+
+TOPIC: empty weight
+PAGE: 29
+ned in 14 CFR 103. As the term implies, powered ultralight vehicles must weigh less than 254 pounds empty weight and unpowered ultralight vehicles must weigh less than 155 pounds. Rules for ultralight vehicles are significantly different from rules for aircraft; ultralight vehicle certification, registration, and operation rules are also contained in 14 CFR 103.
+
+TOPIC: empty weight
+PAGE: 248
+ an aircraft whose weight empty is less than 5,000 pounds • Two pounds or less for aircraft with an empty weight of more than 5,000 pounds to 50,000 pounds • Five pounds or less for aircraft with an empty weight of more than 50,000 pounds Negligible CG change is any change of less than 0.05 percent Mean Aerodynamic Chord (MAC) for fixed-wing aircraft or 0.2 percent for rotary wing aircraft. MAC is the average distance from the leading edge to the trailing edge of the wing. Exceeding these limits
+
+TOPIC: stress
+PAGE: 7
+......................2-21 Operational Pitfalls................................................2-21 Stress Management...................................................2-21 Use of Resources.......................................................2-21 Internal Resources.................................................2-23 External Resources................................................2-23 Situational Awareness..................................................2-24 Obstacles to Maintaining Situati
+
+TOPIC: stress
+PAGE: 15
+.................................17-12 Carbon Monoxide (CO) Poisoning.........................17-12 Stress.......................................................................17-12 Fatigue.....................................................................17-13 Exposure to Chemicals...........................................17-13 Hydraulic Fluid...................................................17-13 Engine Oil...........................................................17-14 Fuel..............
+
+TOPIC: fatigue
+PAGE: 15
+...........17-12 Stress.......................................................................17-12 Fatigue.....................................................................17-13 Exposure to Chemicals...........................................17-13 Hydraulic Fluid...................................................17-13 Engine Oil...........................................................17-14 Fuel......................................................................17-14 Dehydration and Heats
+
+TOPIC: fatigue
+PAGE: 45
+ it sounds. For example, the pilot acts as his or her own quality control in making decisions. If a fatigued pilot who has flown 16 hours is asked if he or she is too tired to continue flying, the answer may be “no.” Most pilots are goal oriented and when asked to accept a flight, there is a tendency to deny personal limitations while adding weight to issues not germane to the mission. For example, pilots of helicopter emergency services (EMS) have been known (more than other groups) to make fli
+
+TOPIC: electrical systems
+PAGE: 79
+hroughout the aircraft. There are several different power sources on aircraft to power the aircraft electrical systems. These power sources include: engine-driven alternating current (AC) generators, auxiliary power units (APUs), and external power. The aircraft’s electrical power system is used to operate the flight instruments, essential systems, such as anti-icing, and passenger services, such as cabin lighting. The flight controls are the devices and systems that govern the attitude of an ai
+
+TOPIC: pitot-static
+PAGE: 9
+............8-1 Introduction....................................................................8-1 Pitot-Static Flight Instruments........................................8-1 Impact Pressure Chamber and Lines...........................8-2 Static Pressure Chamber and Lines.............................8-2 Altimeter.....................................................................8-3 Principle of Operation.............................................8-3 Effect of Nonstandard Pressure and Tempera
+
+TOPIC: pitot-static
+PAGE: 10
+.........8-9 Instrument Check..................................................8-10 Blockage of the Pitot-Static System.........................8-10 Blocked Pitot System............................................8-10 Blocked Static System...........................................8-11 Electronic Flight Display (EFD)..................................8-12 Airspeed Tape...........................................................8-12 Attitude Indicator................................................
+
+TOPIC: gyroscopic
+PAGE: 8
+....................5-31 Corkscrew Effect......................................................5-31 Gyroscopic Action....................................................5-31 Asymmetric Loading (P-Factor)...............................5-32 Load Factors.................................................................5-33 Load Factors in Aircraft Design...............................5-33 Load Factors in Steep Turns.....................................5-34 Load Factors and Stalling Speeds...........
+
+TOPIC: gyroscopic
+PAGE: 10
+.................8-14 Trend Vectors............................................................8-14 Gyroscopic Flight Instruments.....................................8-15 Gyroscopic Principles...............................................8-15 Rigidity in Space...................................................8-15 Precession..............................................................8-15 Sources of Power......................................................8-16 Turn Indicators................
+
+TOPIC: weather
+PAGE: 11
+.......11-28 Chapter Summary.......................................................11-28 Chapter 12 Weather Theory..................................................12-1 Introduction..................................................................12-1 Atmosphere...................................................................12-2 Composition of the Atmosphere...............................12-2 Atmospheric Circulation...........................................12-3 Atmospheric Pressure..........
+
+TOPIC: weather
+PAGE: 12
+-25 Chapter Summary.......................................................12-25 Chapter 13 Aviation Weather Services................................13-1 Introduction..................................................................13-1 Observations.................................................................13-2 Surface Aviation Weather Observations...................13-2 Air Route Traffic Control Center (ARTCC).........13-2 Upper Air Observations............................................1
+
+TOPIC: oxygen
+PAGE: 5
+information and imagery (Chapter 6) Mountain High E&S Company for various images provided regarding oxygen systems (Chapter 7) Jeff Callahan, Aerox, for image of MSK-AS Silicone Mask without Microphone (Chapter 7) Nonin Medical, Inc. for image of Onyx pulse oximeter (Chapter 7) Pilotfriend.com for photo of a TKS Weeping Wing (Chapter 7) Chelton Flight Systems for image of FlightLogic (Chapter 8) Avidyne Corporation for image of the Entegra (Chapter 8) Teledyne Controls for image of an air data c
+
+TOPIC: oxygen
+PAGE: 9
+................7-34 Pressurized Aircraft......................................................7-34 Oxygen Systems...........................................................7-37 Oxygen Masks..........................................................7-38 Cannula.....................................................................7-38 Pressure-Demand Oxygen Systems..........................7-38 Continuous-Flow Oxygen System............................7-38 Electrical Pulse-Demand Oxygen System......
+
+DOCUMENT: weight_balance.pdf
+
+TOPIC: four forces
+PAGE: 19
+rol is achieved is helpful. Airplanes and WSC aircraft control flightunder the influenc of the same four forces (lift, gravity, thrust, and drag), and around the same three axes (pitch, yaw, and roll). However, each aircraft accomplishes this control in a very different manner. This difference helps explain why the fixed-wing airplane requires an established weight and a known CG, whereas the WSC aircraft only requires the known weight. The fixed-wing airplane has movable controls that alter lif
+
+TOPIC: density altitude
+PAGE: 16
+ack, speed through the air, and air density. When an aircraft takes off from an airport with a high density altitude, it must accelerate to a speed faster than would be required at sea level to produce enough lift to allow takeoff; therefore, a longer takeoff run is necessary. The distance needed may be longer than the available runway. When operating from a high density altitude airport, the Pilot’s Operating Handbook (POH) or Airplane Flight Manual (AFM) must be consulted to determine the maxi
+
+TOPIC: density altitude
+PAGE: 17
+operational weight may be less than the maximum allowable weight due to such considerations as high density altitude or high-drag fieldconditions caused by wet grass or water on the runway. The maximum operational weight may also be limited by the departure or arrival airport’s runway length. One important preflight consideration is the distribution of the load in the aircraft. Loading the aircraft so the gross weight is less than the maximum allowable is not enough. This weight must be distribu
+
+TOPIC: center of gravity
+PAGE: 5
+rame and powerplant mechanic (A&P) with the method of determining the empty weight and empty weight center of gravity (EWCG) of an aircraft and to furnish the flight crew with information on loading and operating the aircraft to ensure its weight is within the allowable limit and the center of gravity (CG) is within the allowable range. Any time there is a conflict between the information in this handbook and specific information issued by an aircraft manufacturer, the manufacturer’s data takes 
+
+TOPIC: center of gravity
+PAGE: 7
+ng of an aircraft are described, as are the methods of determining the location of the empty weight center of gravity (EWCG) relative to both the datum and the mean aerodynamic chord (MAC). Loading computations for general aviation aircraft are discussed using both loading graphs and tables of weight and moment indexes. Information is included that allows an FAA-certifi ated mechanic or repairman to determine the weight and center of gravity (CG) changes caused by repairs and alterations or remo
+
+TOPIC: load factor
+PAGE: 16
+ns (14 CFR) part 23, the structure of a normal category airplane must be strong enough to sustain a load factor of 3.8 times its weight. Every pound of weight added to a normal category aircraft requires that the structure be strong enough to support 3.8 pounds. An aircraft operated in the utility category must sustain a load factor of 4.4 times its weight, and acrobatic category aircraft must be strong enough to withstand 6.0 times their weight. The lift produced by a wing is determined by its 
+
+TOPIC: load factor
+PAGE: 106
+n the center of gravity location. Dynamic load. The actual weight of the aircraft multiplied by the load factor, or the increase in weight caused by acceleration. Empty weight. The weight of the airframe, engines, all permanently installed equipment, and unusable fuel. Depending upon the part of the federal regulations under which the aircraft was certificated,either the undrainable oil or full reservoir of oil is included.
+
+TOPIC: airworthiness
+PAGE: 27
+ditions and limitations under which the product for the which type certificate was issued meets the airworthiness requirements of the Federal Aviation Regulations. Type Certificate Holder: Cirrus Design Corporation 4515 Taylor Circle Duluth, MN 55811 I - Model SR20, (Normal Category), Approved October 23, 1998 Engine Teledyne Continental IO-360-ES, Type Certificate Data Sheet (TCDS) E1CE Fuel 100/100LL minimum grade aviation gasoline Engine Limits Maximum Take-off 2700 RPM (200 hp) Maximum Conti
+
+TOPIC: airworthiness
+PAGE: 30
+2-09 Weight (lb) × Figure 2-15. Sample excerpt from TCDS A00009CH (continued). Note 3. FAA approved Airworthiness Limitations are included in Section 4 of the Airplane Maintenance Manual (AMM) Document No. 12137-001 for model SR20, and 13773-001 for model SR22. Note 4. Exterior colors are limited to those specified in the latest FAA accepted revision of the Airplane Maintenance Manual (AMM) Document No. 12137-001 for model SR20, and 13773-001 for model SR22. Note 5. Major structural repairs must
+
+TOPIC: weight and balance
+PAGE: 3
+Aircraft Weight and Balance Handbook U.S. Department of Transportation FEDERAL AVIATION ADMINISTRATION Flight Standards Service 2016
+
+TOPIC: weight and balance
+PAGE: 5
+iii The Aircraft Weight and Balance Handbook has been prepared in recognition of the importance of weight and balance technology in conducting safe and efficient flight. The objective of this handbook is twofold: to provide the airframe and powerplant mechanic (A&P) with the method of determining the empty weight and empty weight center of gravity (EWCG) of an aircraft and to furnish the flight crew with informati
+
+TOPIC: moment arm
+PAGE: 34
+s of the aircraft. The weight and balance report must include an equipment list showing weights and moment arms of all required and optional items of equipment included in the certificate empty weight. Weight and balance records used in accounting for and correcting the CG location are reliable for only limited periods of time. For this reason, periodic aircraft weighing is desirable. An aircraft should be reweighed and a new weight and balance record should be started after the aircraft has und
+
+TOPIC: moment arm
+PAGE: 106
+arms are taken. The datum is established by the manufacturer. Once the datum has been selected, all moment arms and the location of CG range are measured from this point. Delta (Δ). The Greek symbol “Δ” means a change in something. ΔCG means a change in the center of gravity location. Dynamic load. The actual weight of the aircraft multiplied by the load factor, or the increase in weight caused by acceleration. Empty weight. The weight of the airframe, engines, all permanently installed equipmen
+
+TOPIC: empty weight
+PAGE: 5
+s twofold: to provide the airframe and powerplant mechanic (A&P) with the method of determining the empty weight and empty weight center of gravity (EWCG) of an aircraft and to furnish the flight crew with information on loading and operating the aircraft to ensure its weight is within the allowable limit and the center of gravity (CG) is within the allowable range. Any time there is a conflict between the information in this handbook and specific information issued by an aircraft manufacturer, 
+
+TOPIC: empty weight
+PAGE: 7
+actual weighing of an aircraft are described, as are the methods of determining the location of the empty weight center of gravity (EWCG) relative to both the datum and the mean aerodynamic chord (MAC). Loading computations for general aviation aircraft are discussed using both loading graphs and tables of weight and moment indexes. Information is included that allows an FAA-certifi ated mechanic or repairman to determine the weight and center of gravity (CG) changes caused by repairs and altera
+
+TOPIC: stress
+PAGE: 15
+failure to complete the flight or, for that matter, failure to start the flight.Because of abnormal stresses placed upon the structure of an improperly loaded aircraft, or because of changed fly ng characteristics of the aircraft, loss of life and destruction of valuable equipment may result. Weight and Balance Control Chapter 1
+
+TOPIC: stress
+PAGE: 20
+ 16,000 pounds and might not be able to perform! Even if it could, there would probably be internal stress damage that would show up on future flights
+
+TOPIC: oxygen
+PAGE: 29
+56 gal (See Note 1) Oil Capacity 8 quarts at 76.2 inches Maximum Operating Altitude With a portable oxygen system, the aircraft is limited to 17,500 ft MSL. Oxygen must be provided as required by the operating rules. Only portable oxygen systems listed in the FAA Approved Airplane Flight Manual, document number 11934-002, or later FAA approved revisions, are allowed. Control Surface Movements Wing Flaps: Up 0°± 0.5° Down 50% 16°± 0.5° Down 100% 32°± 0.5° Aileron: Up 12.5° ± 1.0° Down 12.5° ±1.0°

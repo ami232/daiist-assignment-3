@@ -1,31 +1,45 @@
-"""
-Assignment 3: MCP server. Your editor and agent.py start it; by hand: `uv run server.py`.
 
-- search(query): returns chunks with source and location.
-- add_document(path): runs the file through index.py's pipeline, embeds it
-  and stores it.
+import sys
+from pathlib import Path
+from contextlib import redirect_stdout
+from mcp.server.fastmcp import FastMCP
+from retrieval import search as retrieve
+from index import add_document as ingest
 
-Load index/ at startup; never re-embed the corpus. Print nothing to stdout
-(it carries the protocol); log to stderr. Docstrings become the tool
-descriptions the model reads.
-"""
+mcp = FastMCP("corpus")
 
-from mcp.server.mcpserver import MCPServer
-
-mcp = MCPServer("corpus", log_level="WARNING")
-
+ROOT = Path(__file__).resolve().parent
 
 @mcp.tool()
-def search(query: str) -> str:
-    """TODO: what the corpus is, when to use this tool, what it returns."""
-    raise NotImplementedError
-
+def search(query: str) -> list[dict]:
+    """Search aviation documents and return relevant passages with page citations."""
+    return retrieve(query, k=5)
 
 @mcp.tool()
-def add_document(path: str) -> str:
-    """TODO: what this tool adds to the index and what it returns."""
-    raise NotImplementedError
+def add_document(path: str) -> dict:
+    """Index a local PDF document. Previously indexed chunks are skipped."""
 
+    file = Path(path)
+
+    if not file.is_absolute():
+        file = ROOT / file
+
+    file = file.resolve()
+
+    if not file.is_relative_to(ROOT):
+        raise ValueError("File must be inside the project.")
+
+    if not file.is_file() or file.suffix.lower() != ".pdf":
+        raise ValueError("A valid PDF file is required.")
+
+    with redirect_stdout(sys.stderr):
+        added = ingest(file)
+
+    return {
+        "document": file.name,
+        "new_chunks": added,
+        "status": "indexed" if added else "already indexed"
+    }
 
 if __name__ == "__main__":
-    mcp.run()  # stdio
+    mcp.run(transport="stdio")

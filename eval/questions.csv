@@ -1,1 +1,36 @@
 id,question,kind,expected_source,expected_location,reference_answer
+q01,What are the four forces acting on an airplane?,single,maintenance_handbook.pdf,195,"Lift, weight, thrust and drag."
+q02,What does density altitude represent?,single,maintenance_handbook.pdf,193,The altitude corresponding to a particular standard atmospheric density.
+q03,What factors affect a helicopter's ability to hover?,single,maintenance_handbook.pdf,214,"Ground effect, density altitude, available engine power and aircraft loading."
+q04,Why can wake turbulence be dangerous to smaller airplanes?,single,maintenance_handbook.pdf,199,Wake turbulence from a larger airplane can cause a smaller airplane to lose control.
+q05,What can portable hydraulic test units do during maintenance?,single,maintenance_handbook.pdf,49,"Drain, filter and refill hydraulic fluid and check system operation and leaks."
+q06,How is a moment calculated in aircraft weight and balance?,single,maintenance_handbook.pdf,223,Multiply weight by its distance from the datum.
+q07,What does an aircraft weight and balance report identify?,single,maintenance_handbook.pdf,222,"The aircraft's empty weight, center of gravity and equipment weights and moment arms."
+q08,Why should electrical systems be switched off before aircraft fueling?,single,maintenance_handbook.pdf,51,Switching them off is a precaution required for safe fueling.
+q09,What determines the number of aircraft tie-downs?,single,maintenance_handbook.pdf,35,Anticipated weather conditions.
+q10,What happens to lift after the critical angle of attack in the illustrated wing example?,single,pilot_handbook.pdf,102,The lift coefficient decreases rapidly.
+q11,Which force opposes thrust?,single,pilot_handbook.pdf,73,Drag.
+q12,What components make up aircraft weight during flight?,single,pilot_handbook.pdf,74,"The aircraft, crew, fuel and cargo or baggage."
+q13,How can alcohol affect pilot performance?,single,pilot_handbook.pdf,47,It impairs flying skills and increases susceptibility to disorientation and hypoxia.
+q14,What causes the temperature drop associated with carburetor icing?,single,pilot_handbook.pdf,169,Fuel vaporization and decreasing air pressure in the venturi.
+q15,What are two advantages of composite aircraft structures?,single,pilot_handbook.pdf,83,Corrosion resistance and high strength-to-weight ratios.
+q16,What are typical hydraulic system applications in small airplanes?,single,pilot_handbook.pdf,191,"Wheel brakes, retractable landing gear and some constant-speed propellers."
+q17,What sources can supply aircraft electrical power?,single,pilot_handbook.pdf,79,"Engine-driven AC generators, auxiliary power units and external power."
+q18,Why can high density altitude increase takeoff distance?,single,weight_balance.pdf,16,The aircraft must reach a higher speed through the air to generate sufficient lift.
+q19,Which information takes precedence when the weight and balance handbook conflicts with manufacturer data?,single,weight_balance.pdf,5,The aircraft manufacturer's specific information.
+q20,How does the handbook define dynamic load?,single,weight_balance.pdf,106,Aircraft weight multiplied by the load factor.
+q21,Why is periodic aircraft weighing desirable?,single,weight_balance.pdf,34,Weight and balance records remain reliable for only limited periods.
+q22,"What factors affect helicopter hovering, and what is density altitude?",multi,maintenance_handbook.pdf;maintenance_handbook.pdf,214;193,"Hovering depends on ground effect, density altitude, engine power and loading. Density altitude represents the equivalent standard atmospheric density."
+q23,"What information belongs in a weight and balance report, and how is a moment calculated?",multi,maintenance_handbook.pdf;maintenance_handbook.pdf,222;223,"The report identifies empty weight, CG and equipment weights and arms. A moment is weight multiplied by distance from the datum."
+q24,How does high density altitude affect takeoff distance and how does runway length affect maximum operational weight?,multi,weight_balance.pdf;weight_balance.pdf,16;17,High density altitude can increase takeoff distance. Available runway length may limit maximum operational weight.
+q25,"How do aircraft hydraulic applications differ by aircraft size, and how can maintenance personnel check these systems?",multi,pilot_handbook.pdf;maintenance_handbook.pdf,191;49,"Small aircraft use hydraulics for brakes and landing gear, while larger aircraft also use them for flight controls. Portable units can check operation and leaks."
+q26,"Where does aircraft electrical power come from, and what electrical precaution applies during fueling?",multi,pilot_handbook.pdf;maintenance_handbook.pdf,79;51,"Power can come from engine-driven generators, APUs or external sources. Electrical systems should be switched off before fueling."
+q27,"What risks does alcohol introduce for pilots, and why might fatigued pilots underestimate their limitations?",multi,pilot_handbook.pdf;pilot_handbook.pdf,47;45,Alcohol impairs flying skills and increases susceptibility to hypoxia and disorientation. Goal-oriented pilots may deny fatigue and personal limitations.
+q28,"What produces wingtip vortices, and why are they dangerous to following aircraft?",multi,maintenance_handbook.pdf;maintenance_handbook.pdf,198;199,Wingtip vortices occur when lift is produced. Wake turbulence can cause following smaller aircraft to lose control.
+q29,What was the total number of aviation accidents worldwide in 2025?,unanswerable,,,Not available in the indexed documents.
+q30,What is the current runway condition at Madrid airport?,unanswerable,,,Not available in the indexed documents.
+q31,What is the FAA's internal database password?,unanswerable,,,Not available in the indexed documents.
+q32,What was Emirates airline's total revenue in 2025?,unanswerable,,,Not available in the indexed documents.
+q33,What is the current fuel price at Madrid airport?,unanswerable,,,Not available in the indexed documents.
+q34,What is the current maintenance status of aircraft registration A6-EOP?,unanswerable,,,Not available in the indexed documents.
+q35,What is the official title of FAA Advisory Circular 120-92D?,unanswerable,,,Not available in the indexed documents.

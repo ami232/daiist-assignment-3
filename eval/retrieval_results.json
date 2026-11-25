@@ -1,0 +1,16 @@
+{
+  "questions": 28,
+  "results": {
+    "semantic": {
+      "hit_rate@1": 0.3571,
+      "hit_rate@3": 0.7143,
+      "hit_rate@5": 0.7857
+    },
+    "hybrid": {
+      "hit_rate@1": 0.5,
+      "hit_rate@3": 0.8214,
+      "hit_rate@5": 0.9286
+    }
+  },
+  "best_design": "hybrid"
+}

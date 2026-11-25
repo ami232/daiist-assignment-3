@@ -9,7 +9,7 @@ dependencies = [
     "pypdf>=6.0",
     "beautifulsoup4>=4.13",
     "httpx>=0.28.1",
-    "mcp[cli]>=2.3.0",
+    "mcp[cli]<2",
     "langchain>=1.4.7",
     "langchain-google-genai>=4.4.2",
     "numpy>=2.0",
@@ -17,6 +17,8 @@ dependencies = [
     "matplotlib>=3.9",
     "nbconvert>=7.16",
     "ipykernel>=6.29",
+    "pymupdf>=2.1",
+    "langchain-mcp-adapters==0.3.1",
 ]
 
 [tool.uv]
