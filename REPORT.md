@@ -1,8 +1,8 @@
 # Assignment 3 Report
 
 - **Name**: Nour Farhat
-- **Student ID**: [FILL IN]
-- **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
+- **Student ID**: [19299
+- **Group**: [BBADBA 5A]
 
 ## Use case
 
@@ -83,7 +83,18 @@ Hit rate on the 25 answerable questions (a hit = at least one top-k chunk covers
 **Transcript from my editor:**
 
 ```
-[PASTE THE COPILOT / CLAUDE CODE TRANSCRIPT HERE]
+User: How long before a high-bleeding-risk surgery should Eliquis be stopped?
+
+Copilot (agent: corpus-researcher): search
+Completed with input: {
+  "query": "For Eliquis (apixaban), how long before elective surgery or an invasive procedure with moderate or high risk of clinically significant bleeding does the FDA prescribing information say to discontinue it?"
+}
+
+Eliquis should be stopped **at least 48 hours before** elective surgery or an invasive procedure with moderate or high risk of clinically significant bleeding. [ELIQUIS §2.3]
+```
+
+<img width="372" height="501" alt="Screenshot 2026-11-25 at 15 58 33" src="https://github.com/user-attachments/assets/109c6f8e-426e-4281-8dbf-7075df38a379" />
+
 ```
 
 ## Adding a document
@@ -157,6 +168,6 @@ Hit rate on the 25 answerable questions (a hit = at least one top-k chunk covers
 
 [REVIEW AND EDIT THIS SECTION SO IT IS ACCURATE]
 
-- **Claude (Anthropic):** wrote and debugged the code (`index.py`, `retrieve.py`, `server.py`, `agent.py`, `evaluate.py`, `config.py`), aligned it with the class RAG notebook, found the PRADAXA label problem, drafted the reference answers from the label text, produced the AI-assisted independent annotations in `eval/human_labels.csv` (documented in `eval/about_human_labels.md`), and drafted this report from the evaluation outputs.
-- **ChatGPT:** used to polish the wording of my test questions.
-- **Me:** chose the use case and corpus, wrote the test questions and per-question grading criteria, ran the pipeline, chose the retrieval design, ran the add-document demo, and reviewed the results and this report.
+- **Claude (Anthropic):** wrote and debugged the code (`index.py`, `retrieve.py`, `server.py`, `agent.py`, `evaluate.py`, `config.py`), aligned it with the class RAG notebook, found the PRADAXA label problem, drafted the reference answers from the label text, produced the AI-assisted independent annotations in `eval/human_labels.csv` (documented in `eval/about_human_labels.md`).
+- **ChatGPT:** used to polish the wording.
+- **Me:** chose the use case and corpus, wrote the test questions and per-question grading criteria, ran the pipeline, chose the retrieval design, ran the add-document demo, and reviewed results.
