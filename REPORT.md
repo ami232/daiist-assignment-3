@@ -71,7 +71,9 @@ The subagent can only use the search tool. Its instructions say to search once f
 **Search result** (top 2 hits for q01):
 
 1. BGH VIII ZR 107/20, Leitsatz
+   "Die Kosten der Fällung eines […] morschen, nicht mehr standsicheren Baums sind grundsätzlich umlagefähige Kosten der Gartenpflege im Sinne von § 2 Nr. 10 BetrKV."
 2. BGH VIII ZR 107/20, Rn. 23–25
+   "Umlagefähige Betriebskosten sind dabei von Kosten der Instandsetzung und Instandhaltung abzugrenzen, die der Vermieter zu tragen hat."
 
 **Transcript** (trimmed, cuts marked […]; full version in [`eval/subagent_transcript.md`](eval/subagent_transcript.md)):
 
@@ -136,6 +138,8 @@ I ran the agent on all 39 questions. With code (simple Python, no AI) I checked 
 - correct, meaning it matches my reference answer
 - supported, meaning every claim is in the retrieved text
 
+For the questions the documents cannot answer, an answer only counts as correct if it says the documents do not cover it and does not answer the question anyway.
+
 I also graded all 39 answers myself before looking at the judge, and later changed one grade (q05) after checking it again. I agree with the judge on 95% for correct and 82% for supported. The main difference is that the judge passed one answer that should have said "not covered" and one that missed an exception, so it is too lenient where it matters most for my use case.
 
 | My grades | single | multi | unanswerable | all |
@@ -167,7 +171,7 @@ Files: [`eval/failures.md`](eval/failures.md)
 
 ## Decision
 
-I would let my father use it as a replacement for googling and asking a general AI, but not instead of the lawyer. It cites a source for every answer, and the code checks that each source was really found, so he can check it quickly, and it says "not covered" much more often than a general AI. However, it still answered 3 of 7 questions it should not have answered, so for anything important or unclear he should still ask an expert.
+I would let my father use it as a replacement for googling and asking a general AI, but not instead of the lawyer. It cites a source for every answer, and the code checks that each source was really found, so he can check it quickly, and it says "not covered" much more often than a general AI. However, it still answered 3 of 7 questions it should not have answered, so for anything important or unclear he should still ask an expert. The safeguard is that he opens the cited passage before acting on an answer, which takes a few seconds because every answer names the exact §, Rn. or Leitsatz.
 
 | | Agent answers | Agent says "not covered" |
 |---|---|---|
