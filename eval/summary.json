@@ -106,7 +106,17 @@
   },
   "failures": {},
   "agreement": {
-    "graded": 0
+    "graded": 20,
+    "correct": {
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "disagreements": []
+    },
+    "supported": {
+      "agreement": 1.0,
+      "kappa": 1.0,
+      "disagreements": []
+    }
   },
   "cost": {
     "avg_tokens": 4897,

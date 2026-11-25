@@ -45,7 +45,17 @@ Chosen: **structured + dense**, k = 5.
 
 ```
 {
-  "graded": 0
+  "graded": 20,
+  "correct": {
+    "agreement": 1.0,
+    "kappa": 1.0,
+    "disagreements": []
+  },
+  "supported": {
+    "agreement": 1.0,
+    "kappa": 1.0,
+    "disagreements": []
+  }
 }
 ```
 
