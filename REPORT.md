@@ -62,8 +62,6 @@ The questions were written before running any retrieval evaluation. First, I wen
 
 I first wrote one question per article in everyday HR language rather than the law's words. For example, "software that reads employees' facial expressions" instead of "emotion recognition", and "how much they earn in their current job" instead of "pay history". Then I thought of different situations in which HR would use the agent. Some of these situations are: an AI tool that auto-rejects CVs (Annex III + GDPR Art. 22), what to do before a performance-scoring tool goes live (AI Act Art. 26(7) + GDPR Art. 35), reusing pay-gap data for an attrition model (Pay Transparency Art. 12 + GDPR Art. 5), what to tell candidates (AI Act Art. 26(11) + GDPR Art. 13) and maximum fines (AI Act Art. 99 + GDPR Art. 83).
 
-The reference answers were written by me, with the article and paragraph.
-
 For the unanswerable questions I chose questions that HR would ask on the same topic but that are not in the corpus. The unanswerable topics I chose were the following: Spanish law (q26, q27, q30), excluded AI Act chapters (q28, q29) and application dates (q09). I checked each one against the indexed text to make sure the corpus does not answer it.
 
 Here are two examples, one that can be answered and one that is unanswerable:
