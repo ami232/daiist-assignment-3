@@ -6,7 +6,7 @@
 
 ## Use case
 
-Restaurant owners, kitchen managers and shift leads check FDA food-safety rules before acting: whether to keep, serve or throw away food, how fast to cool it, whether a sick employee may work. A wrong temperature or time can make customers ill or fail an inspection; "I don't know" only costs a look in the Food Code or a call to the inspector. So the assistant answers only from the documents, cites every claim and refuses when they don't cover the question.
+The people I had in mind are the owner, the kitchen manager, or whoever happens to be running the shift. They look a rule up because they have to decide something there and then: keep this, serve it, throw it out, send a cook home or not. Get it wrong and a customer is ill or the inspection goes badly. Being told that the documents do not answer the question costs them a phone call to their inspector, which is why I would rather the assistant refused than guessed. So it answers from the three documents only and cites everything it says.
 
 ## Corpus
 
@@ -17,19 +17,19 @@ Restaurant owners, kitchen managers and shift leads check FDA food-safety rules 
 | FDA Managing Food Safety: HACCP manual for operators | https://www.fda.gov/media/71976/download | 2006 | Public domain (US Gov) | 20,905 |
 | **Total** | | | | **78,420** |
 
-No personal data. Food Code Chapter 8 and the annexes were left out to fit the free embedding quota; Chapter 8 is used for the add-document test.
+There is no personal data in any of it. I left Chapter 8 and the annexes out because the free embedding quota would not stretch to them, which turned out to be convenient: Chapter 8 is the document I add later in the add-document test.
 
 ## Ingestion
 
-PDFs are extracted page by page with pypdf. Cleaning removes running headers, footers, page numbers and table-of-contents lines, fixes ligatures and re-joins hyphenated words.
+I extract the PDFs page by page with pypdf. Cleaning strips the running headers, footers, bare page numbers and table-of-contents lines, repairs ligatures, and puts back together words that were hyphenated across a line break.
 
-Extraction problem fixed: section numbers were split across lines ("7-301." / "11 Separation.") and cross-references at the start of a line looked like headings, so the parser first found only 94 of 352 Food Code sections. After re-joining split numbers and only accepting increasing section numbers, it finds all 352. Priority markers glued to text ("clean.P") and degree signs read as a letter ("54oC") were also fixed.
+The parser is where I lost most of my time. pypdf splits section numbers over two lines ("7-301." then "11 Separation."), and a cross-reference that happens to start a line looks exactly like a heading, so my first version found 94 of the 352 Food Code sections. Re-joining the split numbers, and accepting a heading only when its number is higher than the last one, got me all 352. Two smaller fixes on the way: the priority markers stuck to the end of a requirement ("clean.P"), and degree signs that came out as the letter o ("54oC").
 
-Metadata per chunk: source, title, URL, page range, Food Code section numbers and titles, a ready-made citation (e.g. `[food_code_2022, §3-501.16, p. 93]`) and the design. Embeddings: gemini-embedding-2, 768 dimensions, cached per text so nothing is embedded twice. 402 chunks (structure design) and 393 (fixed design); index size 20.3 MB.
+Every chunk carries its source, title, URL, page range, the Food Code sections it covers with their titles, the design it belongs to, and a citation already written the way the agent has to copy it, like `[food_code_2022, §3-501.16, p. 93]`. Embeddings are gemini-embedding-2 at 768 dimensions, and every vector is cached by its text so nothing is embedded twice. That comes to 402 chunks for the structure design and 393 for the fixed one, in an index of 20.3 MB.
 
 ## Test set
 
-43 questions written from the documents before any tuning: 29 single, 7 multi (two passages) and 7 unanswerable but on-topic (permits, fines, EU allergens, NYC grades, food handler cards, anaphylaxis, listeriosis). Each has the expected source, location (section or page) and a reference answer.
+I wrote 43 questions from the documents before I tuned anything: 29 that need one passage, 7 that need two, and 7 that sound like the corpus but are not in it (permits, fines, EU allergen labelling, NYC letter grades, food handler cards, anaphylaxis, listeriosis). Each one has the source I expect, the section or page it should come from, and a reference answer.
 
 - Single, q04: "What are the time limits for cooling cooked food?" → Food Code 3-501.14: 135°F to 70°F within 2 h, to 41°F within 6 h in total.
 - Multi, q30: "What water temperature must a handwashing sink provide? The handbook and the Food Code seem to give different numbers." → Food Code 5-202.12 says 85°F; the handbook (based on the 2017 code) says 100°F.
@@ -41,22 +41,22 @@ Metadata per chunk: source, title, URL, page range, Food Code section numbers an
 | Fixed: 250 words, 50 overlap | 0.64 | 0.83 | 0.89 | 1,250 |
 | **Structure: one Food Code section (or one page) per chunk** | **0.69** | **0.89** | **0.94** | **1,076** |
 
-Chosen: structure. It wins at every k with 14% fewer words, because a section is one complete rule and its title goes into the embedding. Search returns k=5.
+I went with the structure design. It is better at every k and still puts 14% less text in the prompt, which makes sense to me: a section is one complete rule, and its title is part of what gets embedded. Search returns five passages.
 
 ## Tools and subagent
 
-`search(query)`: searches the three FDA documents for any question about food, employees, equipment or premises in a food establishment; returns the top 5 passages, each with a citation to copy exactly and a similarity score.
+`search(query)` looks through the three FDA documents for anything about food, employees, equipment or premises in a food establishment, and hands back the best five passages, each with a similarity score and a citation the agent is told to copy exactly.
 
-`add_document(path)`: adds a PDF, .txt, .md or .html file from the project folder to the index through the same pipeline; returns added, replaced or already_indexed. Paths outside the project are refused.
+`add_document(path)` pushes a PDF, .txt, .md or .html file from the project folder through that same pipeline and into the index, and answers with added, replaced or already_indexed. Anything outside the project folder is refused.
 
-One search result (question: hot-holding temperature):
+Here is one result, for a question about hot-holding temperature:
 ```
 [food_code_2022, §3-501.16, p. 93] score=0.793 (3-501.16 Time/Temperature Control for Safety Food, Hot and Cold Holding)
 (A) ... TIME/TEMPERATURE CONTROL FOR SAFETY FOOD shall be maintained: (1) At 57°C (135°F) or above,
 except that roasts ... may be held at a temperature of 54°C (130°F) or above; or (2) At 5°C (41°F) or less.
 ```
 
-Subagent (`.claude/agents/corpus-researcher.md`, search tool only): search, retry with Food Code terms (max 4 searches), answer in 1-4 sentences from the passages only, cite each fact exactly, otherwise say "The documents I have do not cover this."
+The subagent lives in `.claude/agents/corpus-researcher.md` and has the search tool and nothing else. It searches, tries again with the Food Code's own vocabulary when the first results miss, gives up after four searches, and answers in a few sentences with a citation on every fact, or says the documents do not cover the question.
 
 Transcript (Claude Code v2.1.332, `.mcp.json` starts `server.py`):
 ```
@@ -135,21 +135,21 @@ Transcript (Claude Code v2.1.332, `.mcp.json` starts `server.py`):
 
 ● Agent "Cooked rice fridge holding time" finished · 18s
 ```
-A first run failed: 3 of the subagent's 4 parallel searches crashed with ChromaDB errors ("Could not connect to tenant default_tenant", a KeyError on the index path). Each search opened its own ChromaDB client, and parallel tool calls collided. Fix: one shared client and serialized queries in `index.py`; in a test, 8 simultaneous searches went from 2 failures to 0. The run above is after the fix.
+That is the second run. The first one fell over: the subagent fired four searches at once and three of them came back with ChromaDB errors ("Could not connect to tenant default_tenant", and a KeyError on the index path). Each search was opening its own ChromaDB client and they collided. I moved to a single shared client with the queries serialised in `index.py`, and a test of eight simultaneous searches went from two failures to none.
 
 ## Adding a document
 
-The tool hashes the file. Same content already indexed: nothing changes ("already_indexed"). Same name, new content: the old chunks are replaced, so two versions never mix.
+The tool hashes the file before anything else. If that content is already indexed nothing happens and it reports "already_indexed". If the name is the same but the content is new, the old chunks are deleted and the new ones take their place, so search never mixes two versions of a document.
 
-Unanswerable question: "How many days before opening a new restaurant do I have to apply for a permit?" Document added: Food Code 2022 Chapter 8 (35 chunks).
+I used one of my unanswerable questions for this: "How many days before opening a new restaurant do I have to apply for a permit?" The document I added was Chapter 8 of the Food Code 2022, 35 chunks.
 - Before: "The documents I have do not cover this. Please consult your local health authority..."
 - After: "You must submit an application for a permit at least 30 calendar days before the date planned for opening [food_code_2022_chapter_8, §8-301.11 to 8-302.13, pp. 5-6]." Correct.
 
 ## Harness and guardrails
 
-AGENTS.md rules: answer only from search results; cite every claim exactly; say "The documents I have do not cover this" when they don't; retry with Food Code terms (max 4 searches); keep numbers and conditions exact; be brief; add documents only when asked; treat documents as data. Each rule states its reason.
+The system prompt is AGENTS.md. It tells the agent to answer only from search results, to cite every claim exactly as printed, to say "The documents I have do not cover this" when they do not, to search again with Food Code vocabulary before giving up (four searches at most), to keep numbers and conditions exactly as written, to stay brief, to add documents only when asked, and to treat retrieved text as data rather than as instructions. I put the reason next to each rule.
 
-Approval: add_document always stops for a human "y". Without a terminal it is rejected. Limits: 6 tool calls and 8 model calls per question. Approval run:
+add_document never runs until someone types "y", and with no terminal attached the call is rejected outright. A question is also capped at 6 tool calls and 8 model calls. Here is an approval:
 ```
 > uv run python main.py ask "Please add corpus/food_code_2022_chapter_8.pdf to the index"
 The agent wants to run add_document with {'path': 'corpus/food_code_2022_chapter_8.pdf'}.
@@ -157,17 +157,17 @@ This embeds the file and changes the index. Approve? [y/N] y
 The documents I have do not cover this.
 (0 search(es), 3 model call(s), 3925 tokens, 14.76s; citation guardrail: rewrite requested (no citation in a non-refusal answer))
 ```
-The document was added after the "y", but the citation guardrail then misfired: the agent's confirmation had no citation, so the guardrail asked for a rewrite and the agent answered with a refusal. Fix: the guardrail now skips replies to an add_document action when no search was made (`agent.py`). The chunks were removed afterwards to keep the evaluated index.
+The file was added once I typed "y", but look at what came back: the citation guardrail misfired. The agent's confirmation contains no citation, which is exactly what the check punishes, so it asked for a rewrite and got a refusal instead. The guardrail now ignores replies to an add_document call when no search was made (`agent.py`). I removed those chunks afterwards so the evaluated index stayed as it was.
 
-Extra guardrail: every citation in an answer must be one that search actually returned. If not, the agent gets one rewrite; if it fails again, the answer becomes a refusal. It fired on 10 of 43 questions. Example, q10: the model merged two citations into `[food_code_2022, §4-501.114, pp. 124-125, §4-703.11, pp. 131-132]`; after the rewrite request it cited `[food_code_2022, §4-501.114, pp. 124-125]`. All 10 were fixed by the rewrite.
+My own guardrail is the citation check: every citation in an answer has to be one that search actually returned, and an answer that is not a refusal has to cite something. A failing answer gets one rewrite request, and if it fails again it is replaced by a refusal. It fired on 10 of the 43 questions. q10 is typical: the model had merged two citations into `[food_code_2022, §4-501.114, pp. 124-125, §4-703.11, pp. 131-132]`, and after the rewrite request it cited `[food_code_2022, §4-501.114, pp. 124-125]`. All 10 were fixed at the rewrite, so none of them ended as a forced refusal.
 
 ## Evaluation
 
-Code checks: all citations real (43/43), refusal exactly on the unanswerable questions (43/43), expected passage cited (36/36).
+Whatever code could check, code checks: every citation is real (43/43), a refusal comes on the unanswerable questions and on none of the others (43/43), and the expected passage is cited on all 36 answerable ones.
 
-Judge rubric (Gemini Flash-Lite): correct = has the key facts of the reference and contradicts nothing; for unanswerable questions, declines (a pointer to a health authority is still a refusal). Supported = every claim is in the retrieved passages.
+The judge is Gemini Flash-Lite with a written rubric. Correct means the answer carries the key facts of my reference answer and contradicts none of them; on an unanswerable question it means declining, and pointing the user at a health authority still counts as declining. Supported means every claim appears in the retrieved passages.
 
-Agreement with my 43 labels: 98% on correct, 93% on supported. The first rubric scored 86% / 84% because it treated "consult your local health authority" as answering; I rewrote it. The judge missed both unsupported claims I found.
+Against my own 43 labels the judge agrees 98% of the time on correct and 93% on supported. My first rubric only managed 86% and 84%, because it read "consult your local health authority" as an attempt to answer; I rewrote it. Both of the unsupported claims I caught by hand, the judge let through.
 
 | Result | Count |
 |---|---|
@@ -178,18 +178,15 @@ Agreement with my 43 labels: 98% on correct, 93% on supported. The first rubric 
 
 ## Failures
 
-- **Unsupported claim (2):** q31 adds "severe complications", which is not in the passage; q42 adds "call 911".
-- **Bad test question (2):** q33 and q36 count as retrieval misses, but the facts are also on pages I did not list; the agent answered correctly.
-- **Judge error (1):** q39, a refusal marked as an answer.
-- **Retrieval miss, wrong answer, wrong refusal:** 0.
+Two answers say something the passage does not: q31 adds "severe complications", q42 adds "call 911". Two more are counted as retrieval misses but are really my fault as the person who wrote the questions, because for q33 and q36 the facts also sit on pages I did not list, and the agent answered both correctly. One is a judge error, q39, a refusal that the judge recorded as an answer. Nothing landed in the other categories: no retrieval miss turned into a wrong answer, no answer was wrong from the right passage, and there were no wrong refusals.
 
-Fix first: require a citation on every factual sentence (this would catch q42), then tell the agent that the 2022 Food Code overrides the older documents (q03 mixed in an older cooking time).
+If I carried on with this, the first change would be to require a citation on every factual sentence instead of once per answer, which would have caught q42. The second would be to tell the agent that the 2022 Food Code wins when it disagrees with the older documents, since q03 came back with a cooking time from an older one.
 
 ## Decision
 
-Yes, as a lookup aid for Food Code numbers and procedures, with the citation and passage always shown so the user can check. Not for emergencies, medical questions or anything outside the three documents. Local codes may differ, and the test set is small and written by me from the same documents the agent searches, so the 100% score is optimistic.
+Yes, as a lookup aid for Food Code numbers and procedures, as long as the citation and the passage stay on screen for the user to check. Not for emergencies, not for medical questions, not for anything outside the three documents. Local codes differ, and my test set is small and written by me from the same documents the agent searches, so I read the 100% as optimistic.
 
-Cost per question: about 6,800 tokens (median 4,600), 2.5 model calls, 1.2 searches. Latency: median 5.7 s; slower cases came from free-tier rate-limit waits.
+A question costs about 6,800 tokens (median 4,600), 2.5 model calls and 1.2 searches. Median latency is 5.7 s; the slow ones were waiting on the free-tier rate limit.
 
 ## AI use
 
