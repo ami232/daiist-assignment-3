@@ -1,0 +1,30 @@
+{
+  "questions": 38,
+  "outcomes": {
+    "correct": 23,
+    "wrong": 0,
+    "correct refusal": 5,
+    "wrong refusal": 10
+  },
+  "unsupported_answers": 2,
+  "code_checks": {
+    "answers_with_all_citations_valid": "28/38",
+    "answerable_citing_expected_passage": "30/32",
+    "guardrail_withheld": 11
+  },
+  "error_rate_of_answers": 0.0,
+  "break_even_error_rate": 0.029,
+  "cost_per_question_eur": 20.37,
+  "cost_without_assistant_eur": 51.6,
+  "mean_seconds": 7.5,
+  "mean_input_tokens": 4993,
+  "mean_output_tokens": 182,
+  "failure_causes": {
+    "wrong refusal": 8,
+    "unsupported claim": 2,
+    "retrieval miss": 2
+  },
+  "human_agreement": {
+    "graded": 0
+  }
+}

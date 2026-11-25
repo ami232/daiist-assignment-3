@@ -1,12 +1,12 @@
 .DS_Store
 __pycache__/
-.venv/
+.venv
 .pytest_cache/
 .ipynb_checkpoints/
 *.pyc
 
-# Documents downloaded by your index stage. Commit them only if their licence allows it.
-corpus/
+# Corpus documents are committed (EUR-Lex reuse with attribution, Commission CC BY 4.0); see corpus/SOURCES.md.
+corpus/.cache/
 
 # Your index belongs in index/, committed. Your evaluation results belong in eval/, committed.
 

@@ -1,0 +1,6 @@
+$ uv run python main.py ask "Please add the file corpus/to_add/eudr_country_benchmarking_2025-1093.html to the corpus"
+  Allow add_document({'path': 'corpus/to_add/eudr_country_benchmarking_2025-1093.html'})? [y/N] y
+  call add_document({'path': 'corpus/to_add/eudr_country_benchmarking_2025-1093.html'})
+Already indexed: eudr_country_benchmarking_2025-1093.html was added on 2026-11-19 11:56 with 8 passages. Nothing was embedded.
+
+(24.3 s, 2188 input + 77 output tokens, 2 model calls)

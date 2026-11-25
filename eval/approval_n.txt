@@ -1,0 +1,6 @@
+$ uv run python main.py ask "Please add the file corpus/to_add/eudr_country_benchmarking_2025-1093.html to the corpus"
+  Allow add_document({'path': 'corpus/to_add/eudr_country_benchmarking_2025-1093.html'})? [y/N] n
+  call add_document({'path': 'corpus/to_add/eudr_country_benchmarking_2025-1093.html'})
+Not added: you declined the add_document call.
+
+(25.0 s, 2102 input + 61 output tokens, 2 model calls)

@@ -1,0 +1,47 @@
+{
+  "questions": 38,
+  "outcomes": {
+    "correct": 28,
+    "wrong": 0,
+    "correct refusal": 6,
+    "wrong refusal": 4
+  },
+  "unsupported_answers": 2,
+  "code_checks": {
+    "answers_with_all_citations_valid": "34/38",
+    "answerable_citing_expected_passage": "30/32",
+    "guardrail_withheld": 4
+  },
+  "error_rate_of_answers": 0.0,
+  "break_even_error_rate": 0.029,
+  "cost_per_question_eur": 13.58,
+  "cost_without_assistant_eur": 51.6,
+  "mean_seconds": 7.5,
+  "mean_input_tokens": 4993,
+  "mean_output_tokens": 182,
+  "failure_causes": {
+    "wrong refusal": 4,
+    "unsupported claim": 2
+  },
+  "human_agreement": {
+    "graded": 20,
+    "correct": {
+      "agreement": 0.95,
+      "cohen_kappa": 0.857,
+      "disagreements": [
+        "q36"
+      ]
+    },
+    "supported": {
+      "agreement": 0.75,
+      "cohen_kappa": -0.136,
+      "disagreements": [
+        "q08",
+        "q14",
+        "q27",
+        "q29",
+        "q31"
+      ]
+    }
+  }
+}
