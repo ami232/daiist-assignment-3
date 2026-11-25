@@ -22,6 +22,7 @@ evaluate.py uses `CorpusAgent` (one server for many questions) and `answer()`.
 from __future__ import annotations
 
 import asyncio
+import os
 import re
 import sys
 import time
@@ -105,7 +106,9 @@ class CorpusAgent:
         self._stack = AsyncExitStack()
         try:
             self.agent_model = self._model()  # fails fast (no key) before the server starts
-            params = StdioServerParameters(command=sys.executable, args=["server.py"], cwd=str(ROOT))
+            # pass the full environment, or GEMINI_API_KEY never reaches the server on GitHub Actions
+            params = StdioServerParameters(command=sys.executable, args=["server.py"], cwd=str(ROOT),
+                                           env=dict(os.environ))
             read, write = await self._stack.enter_async_context(stdio_client(params))
             self.session = await self._stack.enter_async_context(ClientSession(read, write))
             await self.session.initialize()
