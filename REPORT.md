@@ -89,8 +89,7 @@ The subagent corpus-researcher (.claude/agents/corpus-researcher.md) only has th
 
 Transcripts (run in Copilot with the model MAI Code 2 Flash, not with Claude; the custom agent did not receive the MCP tool, so I enabled the search tool by hand in Agent mode):
 
-Answer with citation: report_assets/ (reportable segments of PVH: EMEA, Americas, APAC and Licensing, cited from Item 1 chunk 5).
-Refusal: "What was PVH's share price at the end of fiscal 2025?" -> "The corpus does not cover this."
+Both transcripts are in report_assets/subagente.png: the answer with citation (the reportable segments of PVH: EMEA, Americas, APAC and Licensing, cited from Item 1, chunk 5) and the refusal ("What was PVH's share price at the end of fiscal 2025?" → "The corpus does not cover this.").
 
 ## Adding a document
 
