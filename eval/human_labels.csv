@@ -1,1 +1,33 @@
 id,correct,supported,notes
+q01,1,1,"Entrada en vigor correcta, cita verbatim y resoluble."
+q02,1,1,"Correcta; responde algo más de lo que pedía la referencia, todo respaldado."
+q03,1,1,"«sesenta por ciento» rendido como «60 %»: mismo número, no una afirmación añadida."
+q04,1,1,"Correcta; añade sin pedirlo una comparación de las tres fases, cada una citada."
+q05,1,1,Igual que q03: «treinta y tres por ciento» como «33 %».
+q06,1,1,Disposición transitoria segunda citada verbatim.
+q07,0,0,Rechazo indebido. La respuesta está en la disposición transitoria tercera del texto aprobado (p. 27). Cero llamadas a search: el modelo descartó la pregunta por las palabras «Senado» y «estabilidad presupuestaria» sin recuperar nada. El guardarraíl de ámbito NO se activó; fue decisión del modelo. supported=0 porque afirma sobre el corpus algo que el corpus desmiente.
+q08,1,1,Artículo doscientos seis citado verbatim; 60/40 en cifras.
+q09,1,1,"Añade las candidaturas al Senado, que la referencia omitía: está en el apartado 3 del mismo fragmento recuperado. La referencia era la incompleta."
+q10,1,1,"Cita el apartado 2 como pedía la referencia y añade el apartado 4, también recuperado."
+q11,1,1,"Apartados 3 y 4 del proyecto, verbatim; nombra el trámite."
+q12,1,1,Cláusula de la Junta Electoral verbatim; trámite nombrado en la primera frase.
+q13,1,1,"348/177/171 exacto con el menor conjunto de evidencia de toda la ejecución (3,0k)."
+q14,1,1,"Las dos mitades de la definición, cada una citada por separado."
+q15,1,0,"Fabricación de nombre: «Arsenio» no aparece ni una vez en las 121.580 palabras del corpus. Las citas textuales sí son literales. Además la etiqueta «(1/4 y 2/4)» no existe: fusiona dos etiquetas reales en una, y por eso no resuelve. correct=1 porque la caracterización del Grupo Popular es exacta."
+q16,1,0,"Mismo mecanismo que q15 con resultado contrario: «Ana» SÍ es correcto y SÍ está en el corpus (otro orador agradece a «nuestra ministra de Igualdad, Ana Redondo»), pero NO en el fragmento recuperado ni citado. Acierto por suerte. Nada en la salida distingue este caso de «Arsenio»."
+q17,1,1,"Directiva (UE) 2022/2381; sigue la renumeración en las tres fases, las tres etiquetas resuelven."
+q18,1,1,"Disposición final quinta verbatim, trámite nombrado."
+q19,1,1,"Da las dos fases sin que se le pida y la diferencia es real («séptimo a undécimo» frente a «séptimo a duodécimo, decimocuarto y decimosexto a decimoctavo»). Regla 4 funcionando como se diseñó."
+q20,1,1,"Plazo de un año, Reglamento 1/2000 y el 40 %, verbatim."
+q21,1,1,"Las dos fases, verbatim, etiquetas resuelven. Desliz de notación: escribe «artículo 44.2 bis» por «artículo 44 bis, apartado 2». No es una afirmación factual."
+q22,0,0,"Rechazo indebido doble. La expresión «sin separar titulares y suplentes» SÍ está en BOCG-15-A-1-8. Y afirma haber buscado «en todos los documentos del expediente» cuando hizo UNA llamada: describe mal su propio proceso, de modo que el lector no puede fiarse de su autodescripción para juzgar cuánto buscó."
+q23,0,0,"Rechazo indebido con la respuesta correcta dentro. Dice «el corpus no contiene menciones a ellas en esa fase», que ES la respuesta («No»), pero la envuelve en NO CONSTA. Fallo de razonamiento: en una pregunta de sí/no, no encontrar nada es un hallazgo. Lo que recibe el lector es un rechazo."
+q24,1,1,"Correcto sobre lo que se pregunta. No da el contraste con el texto aprobado, pero la pregunta no lo pedía: redacción mía, no fallo suyo."
+q25,1,1,"Contenido perfecto, las dos citas verbatim. Una etiqueta no resuelve porque omite el sufijo «(1/2)». Defecto de cita, ya contado por el chequeo de código; no lo cuento dos veces en supported."
+q26,1,0,"Correcto en el fondo, no sustentado. El 44 bis.1 del texto aprobado exige personas de uno y otro sexo «ordenados de forma alternativa», que es exactamente una lista cremallera (pares e impares): lo que afirma es cierto. Pero lo cita a un pasaje del preámbulo (p. 5) que describe las leyes electorales de Castilla-La Mancha y Andalucía, no el articulado, así que la cita no respalda la afirmación sobre esta ley. Cita real, etiqueta resoluble, trámite nombrado, documento correcto: sólo se detecta leyendo la página 5. Además «Blanca» no aparece en el corpus (tercera fabricación de nombre de pila de tres). Corregido desde correct=0: mi primera nota leía mal el 44 bis."
+q27,1,1,"Rechazo correcto. Era cierto en el momento de la ejecución: las enmiendas se añadieron después, en la demostración de add_document."
+q28,1,1,"Rechazo correcto, frase fija al inicio y una línea de explicación."
+q29,1,1,Rechazo correcto.
+q30,1,1,Rechazo correcto.
+q31,1,0,"Conclusión correcta, forma equivocada. No usa la frase fija, así que ni siquiera el detector corregido lo cuenta como rechazo. Con cero búsquedas adjunta la cita «[Proyecto de Ley Orgánica 121/000001]», que no es ningún documento. Es la única cita realmente inventada de la ejecución y el chequeo no la ve, porque la expresión regular sólo reconoce identificadores BOCG-/DSCD-."
+q32,1,1,Rechazo correcto.

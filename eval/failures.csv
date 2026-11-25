@@ -1,0 +1,7 @@
+id,kind,causa_propuesta,causa_final,correct,supported,stage_correct,retrieval_hit,guardrail,razon_juez
+q07,single,wrong_refusal,,0,0,0,False,,"El TIPO es single, lo que significa que la pregunta tiene respuesta, pero el asistente indicó que no consta en el corpus debido a que el TEXTO RECUPERADO estaba vacío por un fallo de búsqueda."
+q15,single,unsupported_claim,,1,0,1,True,,"El asistente añade el nombre de pila 'Arsenio', que no aparece literalmente en el texto recuperado (solo consta 'El señor DE LOS SANTOS GONZÁLEZ'), por lo que falla en supported."
+q16,single,unsupported_claim,,1,0,1,True,,El asistente añade el nombre de pila 'Ana' que no aparece literalmente en los fragmentos recuperados.
+q22,multi,wrong_refusal,,0,0,0,True,,"El TIPO es multi y el corpus contiene la información necesaria, por lo que responder que no consta es un fallo."
+q23,multi,wrong_refusal,,0,0,0,True,,"El asistente respondió 'NO CONSTA EN EL CORPUS' en una pregunta tipo multi donde el corpus sí tenía información, lo cual es un fallo directo."
+q26,multi,unsupported_claim,,1,0,1,True,,"La respuesta añade el nombre de pila 'Blanca' a la diputada Aguirre Gil de Biedma, dato que no aparece literalmente en los fragmentos recuperados."

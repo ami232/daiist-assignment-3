@@ -1,0 +1,5 @@
+design,questions,hit@1,hit@3,hit@5,multi_estricto@1,multi_laxo@1,multi_estricto@3,multi_laxo@3,multi_estricto@5,multi_laxo@5
+fixed_200,26,0.154,0.308,0.423,0.0,0.167,0.0,0.5,0.167,1.0
+structured,26,0.154,0.385,0.5,0.0,0.0,0.0,0.333,0.0,0.667
+structured+filtro,26,0.231,0.462,0.538,0.0,0.333,0.0,0.667,0.0,0.833
+structured+hibrido,26,0.192,0.5,0.615,0.0,0.0,0.0,0.5,0.167,0.667

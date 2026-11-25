@@ -1,0 +1,33 @@
+id,kind,correct,supported,stage_correct,razon
+q01,single,1,1,1,"La respuesta es correcta, está totalmente respaldada por el texto recuperado y respeta la fase del trámite."
+q02,single,1,1,1,"La respuesta es correcta, está totalmente respaldada por los fragmentos recuperados y distingue adecuadamente el trámite."
+q03,single,1,1,1,"La respuesta es correcta, está totalmente respaldada por el texto recuperado y distingue adecuadamente el trámite de aprobación definitiva."
+q04,single,1,1,1,"La respuesta es correcta, está totalmente respaldada por el corpus y distingue adecuadamente la evolución del trámite parlamentario."
+q05,single,1,1,1,"La respuesta es correcta, está totalmente respaldada por el texto y refleja adecuadamente el trámite definitivo."
+q06,single,1,1,1,"La respuesta es correcta, está totalmente respaldada por el texto recuperado y respeta el trámite de aprobación definitiva."
+q07,single,0,0,0,"El TIPO es single, lo que significa que la pregunta tiene respuesta, pero el asistente indicó que no consta en el corpus debido a que el TEXTO RECUPERADO estaba vacío por un fallo de búsqueda."
+q08,single,1,1,1,"La respuesta es correcta, está totalmente respaldada por el texto recuperado y distingue adecuadamente la fase de aprobación definitiva."
+q09,single,1,1,1,"La respuesta es correcta, está totalmente respaldada por el texto recuperado y distingue adecuadamente el trámite del proyecto."
+q10,single,1,1,1,"La respuesta es correcta, está totalmente soportada por el texto recuperado y respeta adecuadamente la fase de proyecto."
+q11,single,1,1,1,"La respuesta es correcta, está totalmente respaldada por el texto recuperado y respeta adecuadamente la fase de proyecto."
+q12,single,1,1,1,"La respuesta es correcta, está totalmente respaldada por el texto recuperado y distingue adecuadamente que se trata de un proyecto."
+q13,single,1,1,1,"La respuesta es correcta, está totalmente respaldada por el texto y refleja adecuadamente el trámite."
+q14,single,1,1,1,"La respuesta es completa, totalmente respaldada por el texto recuperado y respeta el trámite de aprobación definitiva."
+q15,single,1,0,1,"El asistente añade el nombre de pila 'Arsenio', que no aparece literalmente en el texto recuperado (solo consta 'El señor DE LOS SANTOS GONZÁLEZ'), por lo que falla en supported."
+q16,single,1,0,1,El asistente añade el nombre de pila 'Ana' que no aparece literalmente en los fragmentos recuperados.
+q17,single,1,1,1,"La respuesta es correcta, está totalmente respaldada por los fragmentos recuperados y distingue adecuadamente los cambios de trámite."
+q18,single,1,1,1,"La respuesta es correcta, está totalmente respaldada por el texto recuperado y distingue adecuadamente el trámite de aprobación definitiva."
+q19,single,1,1,1,"La respuesta es correcta, está totalmente soportada por el texto y distingue adecuadamente las fases del trámite."
+q20,single,1,1,1,"La respuesta es correcta, está totalmente respaldada por el texto recuperado y distingue adecuadamente la fase de aprobación definitiva."
+q21,multi,1,1,1,"La respuesta es correcta, está totalmente respaldada por los fragmentos recuperados y distingue adecuadamente entre las fases del trámite parlamentario."
+q22,multi,0,0,0,"El TIPO es multi y el corpus contiene la información necesaria, por lo que responder que no consta es un fallo."
+q23,multi,0,0,0,"El asistente respondió 'NO CONSTA EN EL CORPUS' en una pregunta tipo multi donde el corpus sí tenía información, lo cual es un fallo directo."
+q24,multi,1,1,1,"La respuesta es correcta, está totalmente respaldada por el texto recuperado y distingue adecuadamente la fase del proyecto."
+q25,multi,1,1,1,"La respuesta es correcta, está totalmente respaldada por los fragmentos del texto recuperado y refleja adecuadamente el trámite de aprobación definitiva."
+q26,multi,1,0,1,"La respuesta añade el nombre de pila 'Blanca' a la diputada Aguirre Gil de Biedma, dato que no aparece literalmente en los fragmentos recuperados."
+q27,unanswerable,1,1,1,La pregunta es incontestable y el asistente responde correctamente que no consta en el corpus.
+q28,unanswerable,1,1,1,La pregunta es incontestable y el asistente ha respondido correctamente indicando que no consta en el corpus.
+q29,unanswerable,1,1,1,"La respuesta es correcta al indicar que el dato no consta en el corpus, justificándolo adecuadamente con la información disponible."
+q30,unanswerable,1,1,1,"La pregunta es incontestable y el asistente responde correctamente que no consta en el corpus, justificándolo de manera adecuada."
+q31,unanswerable,1,1,1,La respuesta identifica correctamente que la pregunta es incontestable con el corpus disponible.
+q32,unanswerable,1,1,1,La pregunta es de tipo unanswerable y el asistente respondió correctamente que no consta en el corpus.

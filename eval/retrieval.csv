@@ -1,0 +1,129 @@
+id,kind,design,tramite_inferido,hit@1,any@1,hit@3,any@3,hit@5,any@5,top1
+q01,single,fixed_200,aprobacion_definitiva,0,0,0,0,0,0,BOCG-15-A-1-8 · p. 1-2
+q01,single,structured,aprobacion_definitiva,0,0,0,0,0,0,BOCG-15-A-1-8 · preámbulo (1/21) · p. 1-2
+q01,single,structured+filtro,aprobacion_definitiva,0,0,0,0,0,0,BOCG-15-A-1-8 · preámbulo (1/21) · p. 1-2
+q01,single,structured+hibrido,aprobacion_definitiva,0,0,0,0,0,0,BOCG-15-A-1-1 · Disposición transitoria segunda · p. 21-22
+q02,single,fixed_200,,0,0,0,0,0,0,BOCG-15-A-1-8 · p. 12
+q02,single,structured,,0,0,0,0,0,0,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (3/3) · p. 28
+q02,single,structured+filtro,,0,0,0,0,0,0,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (3/3) · p. 28
+q02,single,structured+hibrido,,0,0,0,0,0,0,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (2/3) · p. 28
+q03,single,fixed_200,,1,1,1,1,1,1,BOCG-15-A-1-8 · p. 12-13
+q03,single,structured,,0,0,1,1,1,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 23 · p. 29
+q03,single,structured+filtro,,0,0,1,1,1,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 23 · p. 29
+q03,single,structured+hibrido,,0,0,1,1,1,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 23 · p. 29
+q04,single,fixed_200,,0,0,0,0,0,0,BOCG-15-A-1-1 · p. 5
+q04,single,structured,,0,0,0,0,0,0,BOCG-15-A-1-2 · ENMIENDA NÚM. 70 (2/2) · p. 85
+q04,single,structured+filtro,,0,0,0,0,0,0,BOCG-15-A-1-2 · ENMIENDA NÚM. 70 (2/2) · p. 85
+q04,single,structured+hibrido,,0,0,1,1,1,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 70 (2/2) · p. 85
+q05,single,fixed_200,,0,0,0,0,0,0,BOCG-15-A-1-8 · p. 8-9
+q05,single,structured,,0,0,1,1,1,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 80 (3/3) · p. 100-101
+q05,single,structured+filtro,,0,0,1,1,1,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 80 (3/3) · p. 100-101
+q05,single,structured+hibrido,,1,1,1,1,1,1,BOCG-15-A-1-8 · Disposición transitoria primera (2/2) · p. 26
+q06,single,fixed_200,,1,1,1,1,1,1,BOCG-15-A-1-8 · p. 27
+q06,single,structured,,0,0,0,0,1,1,BOCG-15-A-1-1 · Artículo segundo · p. 12
+q06,single,structured+filtro,,0,0,0,0,1,1,BOCG-15-A-1-1 · Artículo segundo · p. 12
+q06,single,structured+hibrido,,0,0,0,0,0,0,BOCG-15-A-1-1 · Artículo segundo · p. 12
+q07,single,fixed_200,,0,0,1,1,1,1,BOCG-15-A-1-4 · p. 26-27
+q07,single,structured,,0,0,0,0,1,1,BOCG-15-A-1-8 · Disposición final cuarta · p. 29-30
+q07,single,structured+filtro,,0,0,0,0,1,1,BOCG-15-A-1-8 · Disposición final cuarta · p. 29-30
+q07,single,structured+hibrido,,0,0,1,1,1,1,BOCG-15-A-1-8 · Disposición final cuarta · p. 29-30
+q08,single,fixed_200,,0,0,1,1,1,1,BOCG-15-A-1-1 · p. 4
+q08,single,structured,,0,0,1,1,1,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 74 · p. 91-92
+q08,single,structured+filtro,,0,0,1,1,1,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 74 · p. 91-92
+q08,single,structured+hibrido,,0,0,1,1,1,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 74 · p. 91-92
+q09,single,fixed_200,proyecto,0,0,0,0,0,0,BOCG-15-A-1-1 · p. 1-2
+q09,single,structured,proyecto,0,0,1,1,1,1,BOCG-15-A-1-1 · preámbulo (1/20) · p. 1-2
+q09,single,structured+filtro,proyecto,0,0,1,1,1,1,BOCG-15-A-1-1 · preámbulo (1/20) · p. 1-2
+q09,single,structured+hibrido,proyecto,0,0,1,1,1,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (1/3) · p. 27-28
+q10,single,fixed_200,proyecto,0,0,0,0,1,1,BOCG-15-A-1-4 · p. 5
+q10,single,structured,proyecto,0,0,0,0,0,0,BOCG-15-A-1-2 · ENMIENDA NÚM. 41 (2/2) · p. 55-56
+q10,single,structured+filtro,proyecto,1,1,1,1,1,1,BOCG-15-A-1-1 · Artículo primero · p. 11-12
+q10,single,structured+hibrido,proyecto,0,0,0,0,1,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 69 (1/2) · p. 83-84
+q11,single,fixed_200,proyecto,0,0,0,0,0,0,BOCG-15-A-1-8 · p. 12
+q11,single,structured,proyecto,0,0,0,0,0,0,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (3/3) · p. 28
+q11,single,structured+filtro,proyecto,1,1,1,1,1,1,BOCG-15-A-1-1 · Artículo primero · p. 11-12
+q11,single,structured+hibrido,proyecto,0,0,0,0,1,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (1/3) · p. 27-28
+q12,single,fixed_200,proyecto,0,0,1,1,1,1,BOCG-15-A-1-1 · p. 4
+q12,single,structured,proyecto,0,0,0,0,1,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (3/3) · p. 28
+q12,single,structured+filtro,proyecto,1,1,1,1,1,1,BOCG-15-A-1-1 · Artículo primero · p. 11-12
+q12,single,structured+hibrido,proyecto,0,0,1,1,1,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (1/3) · p. 27-28
+q13,single,fixed_200,proyecto,1,1,1,1,1,1,DSCD-15-PL-54 · p. 4
+q13,single,structured,proyecto,1,1,1,1,1,1,DSCD-15-PL-54 · La señora PRESIDENTA · p. 38
+q13,single,structured+filtro,proyecto,0,0,0,0,0,0,BOCG-15-A-1-1 · preámbulo (1/20) · p. 1-2
+q13,single,structured+hibrido,proyecto,1,1,1,1,1,1,DSCD-15-PL-54 · La señora PRESIDENTA · p. 38
+q14,single,fixed_200,,0,0,0,0,1,1,BOCG-15-A-1-8 · p. 1-2
+q14,single,structured,,1,1,1,1,1,1,BOCG-15-A-1-8 · Disposición adicional primera · p. 24
+q14,single,structured+filtro,,1,1,1,1,1,1,BOCG-15-A-1-8 · Disposición adicional primera · p. 24
+q14,single,structured+hibrido,,1,1,1,1,1,1,BOCG-15-A-1-8 · Disposición adicional primera · p. 24
+q15,single,fixed_200,debate_pleno,0,0,0,0,0,0,BOCG-15-A-1-4 · p. 1
+q15,single,structured,debate_pleno,0,0,0,0,0,0,DSCD-15-PL-54 · La señora PRESIDENTA · p. 36
+q15,single,structured+filtro,debate_pleno,0,0,0,0,0,0,DSCD-15-PL-54 · La señora PRESIDENTA · p. 36
+q15,single,structured+hibrido,debate_pleno,0,0,0,0,0,0,DSCD-15-PL-54 · La señora PRESIDENTA · p. 36
+q16,single,fixed_200,debate_pleno,1,1,1,1,1,1,DSCD-15-PL-54 · p. 20
+q16,single,structured,debate_pleno,0,0,0,0,0,0,DSCD-15-PL-54 · La señora PRESIDENTA · p. 19
+q16,single,structured+filtro,debate_pleno,0,0,0,0,0,0,DSCD-15-PL-54 · La señora PRESIDENTA · p. 19
+q16,single,structured+hibrido,debate_pleno,0,0,0,0,0,0,DSCD-15-PL-54 · La señora PRESIDENTA · p. 19
+q17,single,fixed_200,,0,0,0,0,0,0,BOCG-15-A-1-4 · p. 27
+q17,single,structured,,0,0,1,1,1,1,BOCG-15-A-1-1 · Disposición final tercera · p. 22
+q17,single,structured+filtro,,0,0,1,1,1,1,BOCG-15-A-1-1 · Disposición final tercera · p. 22
+q17,single,structured+hibrido,,0,0,1,1,1,1,BOCG-15-A-1-1 · Disposición final tercera · p. 22
+q18,single,fixed_200,,0,0,0,0,0,0,BOCG-15-A-1-1 · p. 4
+q18,single,structured,,1,1,1,1,1,1,BOCG-15-A-1-8 · Disposición final quinta · p. 30
+q18,single,structured+filtro,,1,1,1,1,1,1,BOCG-15-A-1-8 · Disposición final quinta · p. 30
+q18,single,structured+hibrido,,1,1,1,1,1,1,BOCG-15-A-1-8 · Disposición final quinta · p. 30
+q19,single,fixed_200,,0,0,0,0,0,0,BOCG-15-A-1-1 · p. 22
+q19,single,structured,,0,0,1,1,1,1,BOCG-15-A-1-1 · Disposición final primera · p. 22
+q19,single,structured+filtro,,0,0,1,1,1,1,BOCG-15-A-1-1 · Disposición final primera · p. 22
+q19,single,structured+hibrido,,0,0,1,1,1,1,BOCG-15-A-1-1 · Disposición final primera · p. 22
+q20,single,fixed_200,,0,0,1,1,1,1,BOCG-15-A-1-8 · p. 10
+q20,single,structured,,1,1,1,1,1,1,BOCG-15-A-1-8 · Disposición adicional sexta · p. 25-26
+q20,single,structured+filtro,,1,1,1,1,1,1,BOCG-15-A-1-8 · Disposición adicional sexta · p. 25-26
+q20,single,structured+hibrido,,1,1,1,1,1,1,BOCG-15-A-1-8 · Disposición adicional sexta · p. 25-26
+q21,multi,fixed_200,proyecto,0,0,0,0,0,1,BOCG-15-A-1-4 · p. 5
+q21,multi,structured,proyecto,0,0,0,0,0,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (3/3) · p. 28
+q21,multi,structured+filtro,proyecto,0,1,0,1,0,1,BOCG-15-A-1-1 · Artículo primero · p. 11-12
+q21,multi,structured+hibrido,proyecto,0,0,0,0,0,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (1/3) · p. 27-28
+q22,multi,fixed_200,,0,0,0,1,1,1,BOCG-15-A-1-1 · p. 12
+q22,multi,structured,,0,0,0,1,0,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (3/3) · p. 28
+q22,multi,structured+filtro,,0,0,0,1,0,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (3/3) · p. 28
+q22,multi,structured+hibrido,,0,0,0,1,1,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (1/3) · p. 27-28
+q23,multi,fixed_200,proyecto,0,0,0,0,0,1,DSCD-15-PL-54 · p. 7
+q23,multi,structured,proyecto,0,0,0,0,0,0,BOCG-15-A-1-2 · ENMIENDA NÚM. 24 (3/3) · p. 30-31
+q23,multi,structured+filtro,proyecto,0,0,0,0,0,1,BOCG-15-A-1-1 · preámbulo (1/20) · p. 1-2
+q23,multi,structured+hibrido,proyecto,0,0,0,0,0,0,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (2/3) · p. 28
+q24,multi,fixed_200,proyecto,0,1,0,1,0,1,BOCG-15-A-1-8 · p. 12-13
+q24,multi,structured,proyecto,0,0,0,0,0,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 23 · p. 29
+q24,multi,structured+filtro,proyecto,0,0,0,0,0,0,BOCG-15-A-1-1 · Disposición final primera · p. 22
+q24,multi,structured+hibrido,proyecto,0,0,0,1,0,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 23 · p. 29
+q25,multi,fixed_200,aprobacion_definitiva,0,0,0,0,0,1,BOCG-15-A-1-1 · p. 21
+q25,multi,structured,aprobacion_definitiva,0,0,0,1,0,1,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (3/3) · p. 28
+q25,multi,structured+filtro,aprobacion_definitiva,0,1,0,1,0,1,BOCG-15-A-1-8 · Disposición transitoria primera (1/2) · p. 26
+q25,multi,structured+hibrido,aprobacion_definitiva,0,0,0,1,0,1,BOCG-15-A-1-8 · Artículo primero (1/2) · p. 12
+q26,multi,fixed_200,aprobacion_definitiva,0,0,0,1,0,1,BOCG-15-A-1-4 · p. 5
+q26,multi,structured,aprobacion_definitiva,0,0,0,0,0,0,BOCG-15-A-1-2 · preámbulo · p. 1
+q26,multi,structured+filtro,aprobacion_definitiva,0,0,0,1,0,1,BOCG-15-A-1-8 · preámbulo (1/21) · p. 1-2
+q26,multi,structured+hibrido,aprobacion_definitiva,0,0,0,0,0,0,BOCG-15-A-1-2 · ENMIENDA NÚM. 1 (1/10) · p. 1-2
+q27,unanswerable,fixed_200,,,,,,,,DSCD-15-PL-54 · p. 32-33
+q27,unanswerable,structured,,,,,,,,BOCG-15-A-1-2 · ENMIENDA NÚM. 24 (1/3) · p. 29-30
+q27,unanswerable,structured+filtro,,,,,,,,BOCG-15-A-1-2 · ENMIENDA NÚM. 24 (1/3) · p. 29-30
+q27,unanswerable,structured+hibrido,,,,,,,,DSCD-15-PL-54 · La señora PRESIDENTA · p. 32
+q28,unanswerable,fixed_200,proyecto,,,,,,,BOCG-15-A-1-4 · p. 1-3
+q28,unanswerable,structured,proyecto,,,,,,,BOCG-15-A-1-2 · ENMIENDA NÚM. 96 (3/3) · p. 116
+q28,unanswerable,structured+filtro,proyecto,,,,,,,BOCG-15-A-1-1 · Artículo quinto · p. 13
+q28,unanswerable,structured+hibrido,proyecto,,,,,,,BOCG-15-A-1-4 · Disposición final (nueva) · p. 26
+q29,unanswerable,fixed_200,aprobacion_definitiva,,,,,,,BOCG-15-A-1-8 · p. 1-2
+q29,unanswerable,structured,aprobacion_definitiva,,,,,,,BOCG-15-A-1-8 · Disposición final decimoquinta · p. 35
+q29,unanswerable,structured+filtro,aprobacion_definitiva,,,,,,,BOCG-15-A-1-8 · Disposición final decimoquinta · p. 35
+q29,unanswerable,structured+hibrido,aprobacion_definitiva,,,,,,,BOCG-15-A-1-8 · Disposición final decimoquinta · p. 35
+q30,unanswerable,fixed_200,,,,,,,,DSCD-15-PL-54 · p. 14
+q30,unanswerable,structured,,,,,,,,BOCG-15-A-1-1 · Artículo segundo · p. 12
+q30,unanswerable,structured+filtro,,,,,,,,BOCG-15-A-1-1 · Artículo segundo · p. 12
+q30,unanswerable,structured+hibrido,,,,,,,,DSCD-15-PL-54 · preámbulo · p. 4
+q31,unanswerable,fixed_200,,,,,,,,BOCG-15-A-1-1 · p. 5
+q31,unanswerable,structured,,,,,,,,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (3/3) · p. 28
+q31,unanswerable,structured+filtro,,,,,,,,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (3/3) · p. 28
+q31,unanswerable,structured+hibrido,,,,,,,,BOCG-15-A-1-2 · ENMIENDA NÚM. 22 (2/3) · p. 28
+q32,unanswerable,fixed_200,,,,,,,,DSCD-15-PL-54 · p. 7
+q32,unanswerable,structured,,,,,,,,BOCG-15-A-1-2 · ENMIENDA NÚM. 67 (2/2) · p. 81
+q32,unanswerable,structured+filtro,,,,,,,,BOCG-15-A-1-2 · ENMIENDA NÚM. 67 (2/2) · p. 81
+q32,unanswerable,structured+hibrido,,,,,,,,BOCG-15-A-1-2 · ENMIENDA NÚM. 73 (4/4) · p. 90-91

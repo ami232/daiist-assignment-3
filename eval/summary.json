@@ -1,0 +1,95 @@
+{
+  "questions": 32,
+  "retrieval": [
+    {
+      "design": "fixed_200",
+      "questions": 26,
+      "hit@1": 0.154,
+      "hit@3": 0.308,
+      "hit@5": 0.423,
+      "multi_estricto@1": 0.0,
+      "multi_laxo@1": 0.167,
+      "multi_estricto@3": 0.0,
+      "multi_laxo@3": 0.5,
+      "multi_estricto@5": 0.167,
+      "multi_laxo@5": 1.0
+    },
+    {
+      "design": "structured",
+      "questions": 26,
+      "hit@1": 0.154,
+      "hit@3": 0.385,
+      "hit@5": 0.5,
+      "multi_estricto@1": 0.0,
+      "multi_laxo@1": 0.0,
+      "multi_estricto@3": 0.0,
+      "multi_laxo@3": 0.333,
+      "multi_estricto@5": 0.0,
+      "multi_laxo@5": 0.667
+    },
+    {
+      "design": "structured+filtro",
+      "questions": 26,
+      "hit@1": 0.231,
+      "hit@3": 0.462,
+      "hit@5": 0.538,
+      "multi_estricto@1": 0.0,
+      "multi_laxo@1": 0.333,
+      "multi_estricto@3": 0.0,
+      "multi_laxo@3": 0.667,
+      "multi_estricto@5": 0.0,
+      "multi_laxo@5": 0.833
+    },
+    {
+      "design": "structured+hibrido",
+      "questions": 26,
+      "hit@1": 0.192,
+      "hit@3": 0.5,
+      "hit@5": 0.615,
+      "multi_estricto@1": 0.0,
+      "multi_laxo@1": 0.0,
+      "multi_estricto@3": 0.0,
+      "multi_laxo@3": 0.5,
+      "multi_estricto@5": 0.167,
+      "multi_laxo@5": 0.667
+    }
+  ],
+  "best_design": "structured+filtro",
+  "code_checks": {
+    "respuestas": 32,
+    "rechazos": 8,
+    "rechazos_correctos": 5,
+    "rechazos_indebidos": 3,
+    "rechazos_sin_frase_al_inicio": 1,
+    "sin_cita": 0,
+    "citas_no_resolubles": 3,
+    "citas_inventadas": 0
+  },
+  "correct": 0.906,
+  "supported": 0.812,
+  "stage_correct": 0.906,
+  "agreement": [
+    {
+      "dimension": "correct",
+      "n": 32,
+      "acuerdo": 1.0,
+      "kappa": 1.0
+    },
+    {
+      "dimension": "supported",
+      "n": 32,
+      "acuerdo": 0.969,
+      "kappa": 0.904
+    }
+  ],
+  "failures": {
+    "wrong_refusal": 3,
+    "unsupported_claim": 3
+  },
+  "cost": {
+    "tokens_medios": 10145.1,
+    "segundos_medios": 24.78,
+    "segundos_p90": 66.53,
+    "tokens_por_100_preguntas": 1014509
+  }
+}
