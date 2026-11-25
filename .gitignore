@@ -12,3 +12,6 @@ corpus/
 
 # Never commit your API key
 .env
+
+# Personal working notes (not part of the submission)
+notes/

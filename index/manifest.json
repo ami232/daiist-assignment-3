@@ -1,0 +1,48 @@
+{
+  "embed_model": "gemini-embedding-2",
+  "embed_dim": 768,
+  "chosen_design": "fixed",
+  "designs": {
+    "fixed": {
+      "config": {
+        "size": 200,
+        "overlap": 50
+      },
+      "chunks": 458,
+      "sources": {
+        "LAU": {
+          "chunks": 163,
+          "words": 32506
+        },
+        "LeyVivienda": {
+          "chunks": 217,
+          "words": 43285
+        },
+        "LPH": {
+          "chunks": 78,
+          "words": 15588
+        }
+      }
+    },
+    "article": {
+      "config": {
+        "max_words": 400
+      },
+      "chunks": 268,
+      "sources": {
+        "LAU": {
+          "chunks": 110,
+          "words": 24406
+        },
+        "LeyVivienda": {
+          "chunks": 110,
+          "words": 32485
+        },
+        "LPH": {
+          "chunks": 48,
+          "words": 11738
+        }
+      }
+    }
+  }
+}

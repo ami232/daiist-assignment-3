@@ -1,0 +1,55 @@
+{
+  "models": {
+    "agent": "gemini-3.5-flash-lite",
+    "judge": "gemma-4-31b-it",
+    "design": "fixed"
+  },
+  "retrieval": {
+    "fixed": {
+      "hit@1": 0.767,
+      "hit@3": 0.933,
+      "hit@5": 0.933,
+      "avg_words_added_to_prompt": 1000
+    },
+    "article": {
+      "hit@1": 0.733,
+      "hit@3": 0.833,
+      "hit@5": 0.867,
+      "avg_words_added_to_prompt": 1306
+    }
+  },
+  "outcomes": {
+    "correct": 21,
+    "correct refusal": 7,
+    "incorrect": 1,
+    "wrong refusal": 8
+  },
+  "guardrail_fired": 7,
+  "suggested_causes": {
+    "retrieval miss": [
+      "q23"
+    ],
+    "wrong answer from right passage": [
+      "q25"
+    ],
+    "wrong refusal": [
+      "q01",
+      "q03",
+      "q04",
+      "q05",
+      "q11",
+      "q21",
+      "q24"
+    ]
+  },
+  "cost_per_question": {
+    "tokens_mean": 8960,
+    "seconds_mean": 20.0,
+    "model_calls_mean": 2.8
+  },
+  "judge_vs_human": {
+    "n": 21,
+    "correct": 1.0,
+    "supported": 0.952
+  }
+}

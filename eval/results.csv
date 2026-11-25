@@ -1,0 +1,38 @@
+id,kind,outcome,suggested_cause,refused,partial,guardrail_fired,searched,expected_retrieved,judge_correct,judge_supported,judge_reason,guardrail,input_tokens,output_tokens,model_calls,seconds
+q01,single,wrong refusal,wrong refusal,True,False,True,True,True,0,1,refusal (code check),"cited but not returned by search: LAU, Artículo 9 bis, p. 13; LAU, Artículo 9 bis, p. 13",4909,167,2,17.3
+q02,single,correct,,False,False,False,True,True,1,1,"The answer correctly identifies the 5-day deadline and the remedies available, all of which are explicitly stated in the retrieved passages.",,9616,237,3,27.8
+q03,single,wrong refusal,wrong refusal,True,False,True,True,True,0,1,refusal (code check),answer has no citations,32232,182,6,8.49
+q04,single,wrong refusal,wrong refusal,True,False,True,True,True,0,1,refusal (code check),"cited but not returned by search: LAU, Artículo 11, p. 14; LAU, Artículo 11, p. 14",4916,129,2,3.33
+q05,single,wrong refusal,wrong refusal,True,False,True,True,True,0,1,refusal (code check),"cited but not returned by search: LAU, Artículo 8, p. 11",9616,149,3,3.74
+q06,single,correct,,False,False,False,True,True,1,1,"The answer correctly states that real estate management fees cannot be charged to the tenant, and this is explicitly supported by the provided passages.",,4868,119,2,15.32
+q07,single,correct,,False,False,False,True,True,1,1,The answer correctly identifies the deposit and additional guarantee amounts and is fully supported by the retrieved passages.,,9491,173,3,5.15
+q08,single,correct,,False,False,False,True,True,1,1,"The answer correctly states that rent cannot be updated without an express agreement, which is consistent with the reference and supported by Result 4.",,4852,114,2,2.56
+q09,single,correct,,False,False,False,True,True,1,1,The answer is correct according to the reference and all claims are supported by the retrieved passages.,,6828,182,3,254.12
+q10,single,correct,,False,False,False,True,True,1,1,"The answer correctly identifies the right of first refusal (tanteo) and the 30-day deadline, and all information is supported by the retrieved passages.",,4881,190,2,33.72
+q11,single,wrong refusal,wrong refusal,True,False,True,True,True,0,1,refusal (code check),"cited but not returned by search: LAU, Artículo 37, p. 25; LAU, Artículo 37, p. 25; LAU, Artículo 37, p. 25",4942,143,2,21.75
+q12,single,correct,,False,False,False,True,True,1,1,The answer is correct according to the reference and all claims are supported by Result 4.,,4905,169,2,11.39
+q13,single,correct,,False,False,False,True,True,1,1,The answer is consistent with the reference and all claims are supported by the retrieved passages.,,9251,213,3,11.25
+q14,single,correct,,False,False,False,True,True,1,1,"The answer correctly identifies the conditions for a stressed zone and the duration of the declaration, all of which are supported by the retrieved passages.",,4739,195,2,52.25
+q15,single,correct,,False,False,False,True,True,1,1,"The answer correctly identifies the general 50% reduction and the 90% reduction for stressed zones with a 5% rent decrease, both of which are supported by the retrieved passages.",,4847,142,2,19.07
+q16,single,correct,,False,False,False,True,True,1,1,The answer correctly identifies the term 'acoso inmobiliario' and its definition based on the provided text.,,4831,99,2,1.75
+q17,single,correct,,False,False,False,True,True,1,1,"The answer correctly states that Article 16 is annulled, which is consistent with the reference and supported by the retrieved passages.",,4836,74,2,25.8
+q18,single,correct,,False,False,False,True,True,1,1,The answer is consistent with the reference and all claims are supported by the retrieved passages.,,4869,176,2,3.01
+q19,single,correct,,False,False,False,True,True,1,1,"The answer correctly identifies that the community can prohibit or condition tourist rentals and specifies the correct majority required, all of which is supported by the retrieved passages.",,4864,162,2,2.67
+q20,single,correct,,False,False,False,True,True,1,1,"The answer correctly identifies the minimum percentage for the reserve fund as 10% of the last ordinary budget, which is explicitly stated in the retrieved passages.",,4817,98,2,31.9
+q21,single,wrong refusal,wrong refusal,True,False,True,True,True,0,1,refusal (code check),"cited but not returned by search: LPH, Artículo veintiuno, p. 17, 18",4814,167,2,34.63
+q22,single,correct,,False,False,False,True,True,1,1,The answer is correct according to the reference and all claims are supported by the retrieved passages.,,4859,119,2,11.24
+q23,single,wrong refusal,retrieval miss,True,False,False,True,False,0,1,refusal (code check),,9364,58,3,3.82
+q24,multi,wrong refusal,wrong refusal,True,False,True,True,True,0,1,refusal (code check),"cited but not returned by search: LAU, Artículo 10, p. 13",32063,295,6,8.26
+q25,multi,incorrect,wrong answer from right passage,False,False,False,True,True,0,1,"The answer fails to address the specific question about what happens if the contract is renewed, providing instead a general rule about consecutive contracts, and misses the main point of the reference answer regarding the transition to the temporary housing regime upon renewal.",,9660,191,3,11.47
+q26,multi,correct,,False,True,False,True,True,1,1,The answer is consistent with the reference and all claims are supported by the retrieved passages.,,15691,215,4,7.16
+q27,multi,correct,,False,False,False,True,True,1,1,"The answer correctly identifies the general rule and the 10% exception for rehabilitation, and all claims are supported by the retrieved passages.",,4835,150,2,9.48
+q28,multi,correct,,False,False,False,True,True,1,1,"The answer correctly identifies who pays the fees and the information required before signing, all of which is supported by the retrieved passages.",,9467,206,3,26.26
+q29,multi,correct,,False,False,False,True,True,1,1,"The answer correctly identifies that the landlord can terminate the contract and the community can seek cessation and eviction, all of which are supported by the provided passages.",,9568,174,3,10.91
+q30,multi,correct,,False,False,False,True,True,1,1,"The answer correctly identifies the 3% limit for 2024 and the current use of the IRAV index, both of which are supported by the provided passages.",,15568,244,4,17.72
+q31,unanswerable,correct refusal,,True,False,False,True,,1,1,refusal (code check),,4894,33,2,2.6
+q32,unanswerable,correct refusal,,True,False,False,True,,1,1,refusal (code check),,9482,62,3,3.69
+q33,unanswerable,correct refusal,,True,False,False,True,,1,1,refusal (code check),,15414,80,4,17.51
+q34,unanswerable,correct refusal,,True,False,False,True,,1,1,refusal (code check),,9501,51,3,10.23
+q35,unanswerable,correct refusal,,True,False,False,True,,1,1,refusal (code check),,11436,86,4,4.72
+q36,unanswerable,correct refusal,,True,False,False,True,,1,1,refusal (code check),,4801,30,2,1.99
+q37,unanswerable,correct refusal,,True,False,False,True,,1,1,refusal (code check),,9644,62,3,7.18

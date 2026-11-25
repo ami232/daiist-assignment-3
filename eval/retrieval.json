@@ -1,0 +1,14 @@
+{
+  "fixed": {
+    "hit@1": 0.767,
+    "hit@3": 0.933,
+    "hit@5": 0.933,
+    "avg_words_added_to_prompt": 1000
+  },
+  "article": {
+    "hit@1": 0.733,
+    "hit@3": 0.833,
+    "hit@5": 0.867,
+    "avg_words_added_to_prompt": 1306
+  }
+}

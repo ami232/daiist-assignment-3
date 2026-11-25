@@ -1,1 +1,22 @@
 id,correct,supported,notes
+q31,1,1,
+q33,1,1,
+q36,1,1,
+q37,1,1,
+q17,1,1,
+q23,0,1,"negativa errónea: era respondible (artículo derogado) y el texto ""(Derogado)"" no salió en la búsqueda"
+q01,0,1,"negativa errónea: el pasaje con el art. 9 bis (>31 días, ≤12 meses) estaba en los resultados"
+q02,1,1,
+q03,0,1,negativa errónea: la prórroga hasta 5 años estaba en los pasajes (preámbulo p. 6 y art. 10)
+q05,0,1,"negativa errónea: el art. 8 completo (subarriendo parcial, consentimiento escrito, precio) estaba en los resultados"
+q06,1,1,
+q07,1,1,
+q09,1,1,
+q12,1,0,"ningún pasaje dice que la LAU ""excluya"" esa cesión; la palabra excluidos/encabezado del art. 5 no aparece"
+q13,1,1,
+q16,1,1,
+q19,1,1,
+q24,0,1,"negativa errónea: el art. 10 (3 años de prórroga, preaviso 4 y 2 meses) estaba en los resultados"
+q26,1,1,
+q28,1,1,
+q30,1,1,
