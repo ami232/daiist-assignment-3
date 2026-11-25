@@ -1,0 +1,13 @@
+$ uv run python main.py ask "¿Se puede vender cerveza en un estadio durante un partido?"
+(live rerun of q08 after the plural-citation fix in the guardrail)
+
+No, no se puede. Queda prohibida en las instalaciones en las que se celebren competiciones deportivas la introducción, venta y consumo de toda clase de bebidas alcohólicas (Ley 19/2007, Artículo 4).
+
+Pasajes consultados:
+  - Ley 19/2007 contra la violencia en el deporte — Artículo 10
+  - Ley 19/2007 contra la violencia en el deporte — Artículo 11
+  - Ley 19/2007 contra la violencia en el deporte — Artículo 4
+  - Ley 19/2007 contra la violencia en el deporte — Artículo 6
+  - Ley 19/2007 contra la violencia en el deporte — Artículo 7
+
+(1 búsquedas, 4684 tokens, 11.5 s)

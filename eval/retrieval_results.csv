@@ -1,0 +1,4 @@
+design,hit@1,multi_both@1,words@1,hit@3,multi_both@3,words@3,hit@5,multi_both@5,words@5
+"fixed 300 words, vector",0.788,0.111,307,0.939,0.444,922,0.97,0.778,1536
+"one chunk per article, vector",0.818,0.0,248,0.939,0.667,787,0.97,0.667,1322
+"one chunk per article, hybrid",0.576,0.0,267,0.758,0.444,802,0.758,0.444,1349

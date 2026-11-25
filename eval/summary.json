@@ -1,0 +1,40 @@
+{
+  "questions": 44,
+  "outcomes": {
+    "correct": 31,
+    "correct refusal": 11,
+    "wrong refusal": 1,
+    "wrong answer": 1
+  },
+  "answered_correct_rate": 0.939,
+  "citations_valid_rate": 1.0,
+  "expected_cited_rate": 0.939,
+  "guardrail_fired": [
+    "q08",
+    "q39"
+  ],
+  "tokens_per_question": {
+    "mean": 6008,
+    "median": 4852
+  },
+  "seconds_per_question": {
+    "mean": 17.3,
+    "median": 5.5
+  },
+  "agreement_with_my_labels": {
+    "n": 35,
+    "agree_correct": 1.0,
+    "agree_supported": 0.971,
+    "disagreements": [
+      {
+        "id": "q29",
+        "human_correct": 1,
+        "system_correct": 1,
+        "human_supported": 0,
+        "system_supported": 1,
+        "human_notes": "correct refusal, but names Ley 13/2011 from the model's own memory, not from the retrieved text",
+        "judge_reason": "refusal: decided in code"
+      }
+    ]
+  }
+}

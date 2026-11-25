@@ -1,0 +1,15 @@
+$ uv run python main.py ask "Anade al indice el documento extra/RD 958_2020 comunicaciones comerciales del juego.xml"
+corpus server: 384 chunks loaded from index/
+
+The assistant wants to add this document to the index:
+  extra/RD 958_2020 comunicaciones comerciales del juego.xml
+Approve? Type 'yes' to add it: yes
+  [article] stored 20/62 new chunks
+  [article] stored 40/62 new chunks
+  [article] stored 60/62 new chunks
+  [article] stored 62/62 new chunks
+Se ha añadido correctamente el documento `extra/RD 958_2020 comunicaciones comerciales del juego.xml` al índice (62 fragmentos añadidos).
+
+Pasajes consultados:
+
+(0 búsquedas, 2579 tokens, 1997.6 s)   <- includes the time the approval prompt waited for the user

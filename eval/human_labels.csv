@@ -1,1 +1,36 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,1,1,
+q04,1,1,"also adds the provisional-suspension case, which is in art. 44 too"
+q05,1,1,
+q06,1,1,
+q07,1,1,
+q08,0,1,"wrong refusal: the agent answered correctly citing art. 4 (retrieved), but the guardrail could not parse the plural 'Artículos 6 y 7' and blocked it (parser bug, fixed later)"
+q09,1,1,
+q10,1,1,
+q11,1,1,"right figure; extra art. 36 disciplinary fines are true but make the answer longer than needed"
+q12,1,1,
+q13,1,1,
+q14,1,1,
+q15,1,1,"omits that not answering in time counts as an unjustified refusal (minor)"
+q16,1,1,
+q17,1,1,
+q18,1,1,
+q19,1,1,
+q20,1,1,"right content (art. 120); also cites LO 11/2021 DF primera, which amended the old Ley 10/1990, now repealed: a weaker, outdated citation"
+q21,1,1,"omits that the shares are nominative (minor)"
+q22,1,1,
+q23,1,1,"both parts found; says the club gets the fine while the law fines its responsible persons (minor)"
+q24,1,1,
+q25,1,1,
+q26,1,1,
+q27,1,1,
+q28,1,1,
+q29,1,0,"correct refusal, but names Ley 13/2011 from the model's own memory, not from the retrieved text"
+q30,1,1,
+q31,1,1,
+q32,1,1,
+q33,1,1,
+q34,1,1,
+q35,1,1,"good: explains the amount is left to a regulation and cites art. 23"
