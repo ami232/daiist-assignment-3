@@ -1,0 +1,34 @@
+{
+  "questions": 39,
+  "judge_model": "gemini-3.5-flash-lite",
+  "agent_model": "gemini-3.5-flash-lite",
+  "judge_correct_rate": 1.0,
+  "judge_supported_rate": 1.0,
+  "answerable_correct_rate": 1.0,
+  "correct_refusal_rate_on_unanswerable": 1.0,
+  "wrong_refusal_rate_on_answerable": 0.094,
+  "citations_valid_rate": 1.0,
+  "cites_expected_page_rate_answerable": 0.781,
+  "guardrail_repaired": 1,
+  "guardrail_replaced": 0,
+  "mean_input_tokens": 5925,
+  "mean_output_tokens": 181,
+  "mean_seconds": 7.55,
+  "failure_classes": {
+    "ok": 36,
+    "wrong refusal (right page retrieved)": 3
+  },
+  "human_labels": 24,
+  "agreement_correct": 0.75,
+  "disagreements_correct": [
+    "q18",
+    "q20",
+    "q23",
+    "q28",
+    "q31",
+    "q32"
+  ],
+  "agreement_supported": 1.0,
+  "disagreements_supported": [],
+  "cohen_kappa_correct": 0.0
+}

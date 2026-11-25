@@ -1,1 +1,25 @@
 id,correct,supported,notes
+q01,1,1,
+q06,1,1,
+q08,1,1,
+q09,1,1,
+q11,1,1,
+q12,1,1,
+q13,1,1,
+q15,1,1,
+q16,1,1,
+q18,0,1,rechazó aunque el pasaje decía al menos trimestralmente (p. 68)
+q19,1,1,
+q20,0,1,empieza con NOT COVERED pero responde; falta más monitorización si el mercado cambia
+q22,1,1,
+q23,0,1,falta decisiones de los responsables y mayor recogida de información al prestatario
+q25,1,1,
+q27,1,1,
+q28,0,1,dio la parte de CRM como NOT COVERED aunque hay reglas de revaluación (p. 39)
+q29,1,1,
+q31,0,1,responde 1 año no 3 meses; posible pregunta mal escrita
+q32,0,1,rechazó aunque las 4 fechas están en el corpus
+q33,1,1,
+q35,1,1,
+q38,1,1,
+q39,1,1,

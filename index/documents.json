@@ -1,0 +1,58 @@
+{
+ "EBA-GL-2016-07": {
+  "file": "Final Report on Guidelines on default definition (EBA-GL-2016-07).pdf",
+  "pages": [
+   3,
+   45
+  ],
+  "sha256": "7c383c36300548657466f9aa032621ea5737b36527fbd7e6c7e0cdf9bb0eec6e",
+  "via": "manifest",
+  "words": 18312
+ },
+ "EBA-GL-2017-16": {
+  "file": "Guidelines on PD and LGD estimation (EBA-GL-2017-16).pdf",
+  "pages": [
+   3,
+   102
+  ],
+  "sha256": "f306218f0eb94d0d3a9e452d156b5ea7b8500b0807f303a2e5a606536a3dda01",
+  "via": "manifest",
+  "words": 43663
+ },
+ "EBA-GL-2020-05": {
+  "file": "Guidelines on CRM for A-IRB institutions.pdf",
+  "pages": [
+   3,
+   50
+  ],
+  "sha256": "d384a61f344a63556b73e3309caffa3a0c14006b85fe6d08259c1384db5eb596",
+  "via": "manifest",
+  "words": 20485
+ },
+ "EBA-GL-2020-06": {
+  "file": "EBA GL 2020 06 Final Report on GL on loan origination and monitoring.pdf",
+  "pages": [
+   4,
+   76
+  ],
+  "sha256": "1a61938f0fccf8bff502c90cdf182d784aab058c50c9e5d0df4b932d0d19fa3e",
+  "via": "manifest",
+  "words": 25819
+ },
+ "demo_internal_policy_note": {
+  "added": "2026-11-25T11:53:06+00:00",
+  "file": "demo_internal_policy_note.md",
+  "pages": null,
+  "sha256": "49fabbedc043ca8eb0b255886416656590a6695e291fde7f7f73a0f14b9312de",
+  "via": "add_document",
+  "words": 175
+ },
+ "demo_watchlist_note": {
+  "added": "2026-11-25T12:00:32+00:00",
+  "file": "demo_watchlist_note.md",
+  "pages": null,
+  "sha256": "bd95d0bdb3419be5652097d393263674b14c97a5cce55cfe855471ec28b62322",
+  "via": "add_document",
+  "words": 124
+ }
+}
