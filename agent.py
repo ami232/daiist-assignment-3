@@ -45,9 +45,10 @@ warnings.filterwarnings("ignore", message=".*uses fixed sampling defaults.*")
 
 ROOT = Path(__file__).resolve().parent
 SYSTEM_PROMPT = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
-# The first model answers; the fallback is used when it is overloaded (503). Newer Flash
-# models were returning 503 "high demand" on 23 Nov 2026.
-MODELS = ["gemini-3.5-flash", "gemini-3.5-flash-lite"]
+# The first model answers; the second is used only after the first failed several times.
+# gemini-3.5-flash-lite is the main model: the free tier allows only 20 requests a day for
+# gemini-3.5-flash (about 8 questions), far too few for the evaluation (24 Nov 2026).
+MODELS = ["gemini-3.5-flash-lite", "gemini-3.5-flash"]
 MAX_TOOL_CALLS = 6
 MAX_MODEL_CALLS = 8
 
@@ -60,6 +61,7 @@ HIT = re.compile(r"^\[\d+\] (?P<source>[^|\n]+) \| (?P<chapter>Chapter [IVXLC]+)
 
 def normalise(text: str) -> str:
     """Compare text ignoring quote-mark style, case, spacing and the quote marks themselves."""
+    text = re.sub(r"\[(\w)\]", r"\1", text)  # "[t]he": a letter changed to fit the sentence
     text = text.translate(QUOTE_MARKS).lower().replace('"', "").replace("'", "")
     return re.sub(r"\s+", " ", re.sub(r"[^\w\s]", " ", text)).strip()
 
@@ -82,7 +84,8 @@ def parse_hits(search_output: str) -> list[dict]:
 
 def quotes_in(answer: str) -> list[str]:
     """Quoted passages of 3+ words. A quote with an ellipsis is checked piece by piece."""
-    quotes = re.findall(r"[“\"]([^”\"]{8,}?)[”\"]", answer)
+    # Curly and straight quote marks are paired separately: mixing them pairs the wrong marks.
+    quotes = re.findall(r"“([^“”]{8,}?)”", answer) + re.findall(r'"([^"]{8,}?)"', answer)
     pieces = []
     for quote in quotes:
         for piece in re.split(r"\s*(?:\.\.\.|…)\s*", quote):
@@ -145,10 +148,10 @@ def is_temporary(error: BaseException) -> bool:
     return any(sign in text for sign in ("503", "UNAVAILABLE", "500", "INTERNAL", "imed out", "DEADLINE"))
 
 
-def make_model():
+def make_model(models: list[str]):
     load_api_key()
-    models = [ChatGoogleGenerativeAI(model=m, temperature=0, max_retries=1, timeout=45) for m in MODELS]
-    return models[0], models[1:]
+    chat = [ChatGoogleGenerativeAI(model=m, temperature=0, max_retries=0, timeout=45) for m in models]
+    return chat[0], chat[1:]
 
 
 def console_approval(call: dict) -> bool:
@@ -158,7 +161,10 @@ def console_approval(call: dict) -> bool:
     return reply.strip().lower() in ("y", "yes")
 
 
-async def ask_async(question: str, approve=console_approval) -> dict:
+async def ask_async(question: str, approve=console_approval, models: list[str] = MODELS,
+                    retries: int = 3) -> dict:
+    """models: the first is used, the others only after it failed `retries` times with waits.
+    evaluate.py passes a single model, so every answer comes from the same one."""
     """Answer one question. Returns answer, tool calls, guardrail events, tokens and seconds."""
     started = time.time()
     params = StdioServerParameters(command=sys.executable, args=[str(ROOT / "server.py")], cwd=str(ROOT))
@@ -166,16 +172,18 @@ async def ask_async(question: str, approve=console_approval) -> dict:
         async with ClientSession(read, write) as session:
             await session.initialize()
             tools = await load_mcp_tools(session)
-            model, fallbacks = make_model()
+            model, fallbacks = make_model(models)
             agent = create_agent(
                 model=model,
                 tools=tools,
                 system_prompt=SYSTEM_PROMPT,
                 checkpointer=InMemorySaver(),
                 middleware=[
-                    # Gemini models are often busy (503): retry with waits, then try the fallback model.
-                    ModelRetryMiddleware(max_retries=3, initial_delay=5, backoff_factor=2, on_failure="error", retry_on=is_temporary),
-                    ModelFallbackMiddleware(*fallbacks),
+                    # Gemini models are often busy (503). The fallback wraps the retry, so the first
+                    # model is retried with waits (5, 10, 20 s...) before the next one is tried.
+                    *([ModelFallbackMiddleware(*fallbacks)] if fallbacks else []),
+                    ModelRetryMiddleware(max_retries=retries, initial_delay=5, backoff_factor=2,
+                                         on_failure="error", retry_on=is_temporary),
                     HumanInTheLoopMiddleware(interrupt_on={"add_document": True}),
                     ToolCallLimitMiddleware(run_limit=MAX_TOOL_CALLS),
                     ModelCallLimitMiddleware(run_limit=MAX_MODEL_CALLS),
@@ -255,8 +263,8 @@ def final_text(messages) -> str:
     return "No answer: the agent stopped before answering (tool or model call limit)."
 
 
-def ask(question: str, approve=console_approval) -> dict:
-    return asyncio.run(ask_async(question, approve))
+def ask(question: str, approve=console_approval, models: list[str] = MODELS, retries: int = 3) -> dict:
+    return asyncio.run(ask_async(question, approve, models, retries))
 
 
 def main() -> None:

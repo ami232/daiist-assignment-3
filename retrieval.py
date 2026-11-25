@@ -17,6 +17,7 @@ question twice costs one embedding, not two.
 
 import json
 import math
+import os
 import re
 from collections import Counter
 from pathlib import Path
@@ -53,13 +54,34 @@ def tokenize(text: str) -> list[str]:
     return [w[:-1] if w.endswith("s") and len(w) > 3 else w for w in words if w not in STOPWORDS]
 
 
+def load_cache() -> dict:
+    """Saved question vectors. A damaged file costs re-embedding, never a crash."""
+    try:
+        return json.loads(QUERY_CACHE.read_text())
+    except FileNotFoundError:
+        return {}
+    except json.JSONDecodeError:
+        try:  # keep the valid part (two processes once wrote the file at the same time)
+            return json.JSONDecoder().raw_decode(QUERY_CACHE.read_text())[0]
+        except json.JSONDecodeError:
+            return {}
+
+
+def save_cache(cache: dict) -> None:
+    """Merge with what other processes saved, then replace the file in one step (atomic)."""
+    merged = load_cache() | cache
+    tmp = QUERY_CACHE.with_suffix(f".{os.getpid()}.tmp")
+    tmp.write_text(json.dumps(merged))
+    os.replace(tmp, QUERY_CACHE)
+
+
 class Searcher:
     """Loads index/ once; answers searches with any design."""
 
     def __init__(self):
         self.collection = ix.get_collection()
         self.refresh()
-        self.cache = json.loads(QUERY_CACHE.read_text()) if QUERY_CACHE.exists() else {}
+        self.cache = load_cache()
 
     def refresh(self) -> None:
         """Reload chunks (after add_document) and rebuild the keyword index."""
@@ -82,7 +104,7 @@ class Searcher:
     def query_vector(self, query: str) -> np.ndarray:
         if query not in self.cache:
             self.cache[query] = ix.embed([query], task_type="RETRIEVAL_QUERY")[0]
-            QUERY_CACHE.write_text(json.dumps(self.cache))
+            save_cache(self.cache)
         return np.asarray(self.cache[query], dtype=np.float32)
 
     def named_docs(self, query: str) -> set[str]:
