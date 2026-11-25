@@ -1,8 +1,8 @@
 # Assignment 3 Report
 
 - **Name**: Nour Farhat
-- **Student ID**: [19299
-- **Group**: [BBADBA 5A]
+- **Student ID**: 19299
+- **Group**: BBADBA 5A
 
 ## Use case
 
@@ -64,6 +64,8 @@ Hit rate on the 25 answerable questions (a hit = at least one top-k chunk covers
 | sections | 0.64 | 0.92 | 0.96 | 0.57 | 915 |
 | sections + hybrid (vector + BM25, Reciprocal Rank Fusion) | **0.88** | 0.92 | 0.96 | 0.57 | **902** |
 
+The table above was measured on the 5-label corpus, before SAVAYSA was added. **Re-running the retrieval evaluation after adding SAVAYSA** (480 chunks) gives, for sections + hybrid: hit@1 **0.84**, hit@3 0.92, hit@5 **0.92**, both found 0.43 (fixed: unchanged at 0.76 / 1.00 / 1.00). SAVAYSA chunks with similar wording now appear in the top 5 for other drugs' questions (q04, q07, q08, q12, q15) and push out q06's passage. Adding a document can therefore lower retrieval quality for the documents already indexed. This is one more reason for the per-drug filter proposed under Failures. (`eval/` holds the 5-label results; re-running `main.py evaluate` now rewrites the retrieval files with the 6-label numbers, while the end-to-end results stay the same because the answers are saved.)
+
 **Chosen design: sections + hybrid.** It puts the right passage first most often (0.88 vs 0.76), adds the fewest words to the prompt, and cites one exact subsection that a clinician can check, rather than a 200-word window spanning two subsections. Fixed windows have the better hit@5 (1.00 vs 0.96). The one question they rescue is q21, and our guardrail turned that miss into a safe refusal (see Failures). Multi-passage questions only reach both passages in 57% of single queries, but the agent searches once per drug, so in practice 6 of 7 multi questions were answered correctly.
 
 ## Tools and subagent
@@ -94,10 +96,6 @@ Eliquis should be stopped **at least 48 hours before** elective surgery or an in
 ```
 
 <img width="372" height="501" alt="Screenshot 2026-11-25 at 15 58 33" src="https://github.com/user-attachments/assets/109c6f8e-426e-4281-8dbf-7075df38a379" />
-
-```
-
-```
 
 ## Adding a document
 
@@ -167,8 +165,6 @@ Eliquis should be stopped **at least 48 hours before** elective surgery or an in
 **Cost and latency per question** (30-question run, `gemini-3.5-flash-lite` + `gemini-embedding-2`, free tier): on average **4,004 tokens** and **6.1 seconds** (median 3,540 tokens and 4.9 s; slowest 25.2 s). Each search also uses one embedding call.
 
 ## AI use
-
-[REVIEW AND EDIT THIS SECTION SO IT IS ACCURATE]
 
 - **Claude (Anthropic):** wrote and debugged the code (`index.py`, `retrieve.py`, `server.py`, `agent.py`, `evaluate.py`, `config.py`), aligned it with the class RAG notebook, found the PRADAXA label problem, drafted the reference answers from the label text, produced the AI-assisted independent annotations in `eval/human_labels.csv` (documented in `eval/about_human_labels.md`).
 - **ChatGPT:** used to polish the wording.
