@@ -1,0 +1,29 @@
+{
+  "grades": "human label for 24 questions, LLM judge for the rest",
+  "answered_questions": 36,
+  "judge_only_correct": 0.917,
+  "judge_only_supported": 0.833,
+  "supported_overall": 0.861,
+  "correct_overall": 0.944,
+  "answerable": {
+    "n": 29,
+    "correct": 0.931,
+    "wrong_refusal": 0.0,
+    "made_up_or_unsupported": 0.069
+  },
+  "unanswerable": {
+    "n": 7,
+    "rightly_refused": 1.0,
+    "made_up": 0.0
+  },
+  "citations_ok": 1.0,
+  "guardrail_fired": 1,
+  "cost_per_question": {
+    "agent_tokens_in": 5603,
+    "agent_tokens_out": 218,
+    "judge_tokens": 3318,
+    "seconds_mean": 9.6,
+    "seconds_median": 5.4,
+    "searches_mean": 1.19
+  }
+}

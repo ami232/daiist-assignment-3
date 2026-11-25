@@ -1,1 +1,25 @@
 id,correct,supported,notes
+q01,1,1,"Opens with 'sí, pero' instead of 'en principio no', but the content matches the reference and adds the World Code rule, which is in the passages."
+q02,1,1,"Correct for the case asked (4 years); does not mention the reduction to 2 years nor cite the Spanish law, but neither changes the answer."
+q03,1,1,
+q04,1,1,
+q05,1,1,"Answers who to ask (international federation); omits that the IF's AUT then also counts in Spain, a secondary detail for this question."
+q06,1,1,
+q07,1,1,"Fine amount and income condition correct; the extra '2 to 4 years' is a fair summary of art. 21, not literal."
+q08,1,1,
+q09,1,1,"Omits that the Committee has one month to resolve, but the question asks for the athlete's deadline."
+q10,1,1,
+q11,1,1,
+q12,1,1,
+q22,1,1,"bad_test_question: the reference says only CAS (CMA 13.2.1), but LO art. 49.1 and 49.4 allow the Spanish administrative courts or, alternatively, CAS. The agent is right; the reference is wrong."
+q23,1,1,
+q24,1,1,"Better than the reference: also finds the Spanish rule (LO art. 21.8, 1 to 2 years, 2 if evading on purpose), which says the same as the Code. Reference was incomplete."
+q25,1,1,
+q26,1,1,"All claims are in the passages; the 'not deducted if not respected' rule is in CMA 10.13.2.1, but the answer cites it jointly with LO art. 37 (imprecise citation, not an unsupported claim)."
+q27,1,1,Needed two passages (LO art. 21 and art. 24); the agent found the second one with a second search.
+q28,0,0,"Final 'yes' is right, but it says the rules allow setting the 60-minute window at night, while RD art. 20.e (retrieved 1st) says the window must be outside the night band. Misreads the passage and misses the tension the question is about."
+q29,1,0,"Essentials right (IF must recognise it, 21 days to go to WADA), but 'debes presentarla lo antes posible' is not in the retrieved passages."
+q30,1,1,"Correct refusal, but produced by the citation guardrail, not by the model (the original text was not saved in this run)."
+q31,1,1,
+q32,1,0,"Right refusal, but adds 'CBD products may contain traces of THC', which is not in the retrieved passages (model memory)."
+q33,1,1,

@@ -1,0 +1,8 @@
+id,kind,graded_by,correct,supported,category,note
+q13,single,judge,0,1,wrong_from_right_passage,"The assistant failed to mention that the 60-minute window must be outside the night-time hours established by law, which was a key condition in the reference answer and the provided passage."
+q22,single,human,1,1,bad_test_question,"bad_test_question: the reference says only CAS (CMA 13.2.1), but LO art. 49.1 and 49.4 allow the Spanish administrative courts or, alternatively, CAS. The agent is right; the reference is wrong."
+q28,multi,human,0,0,wrong_from_right_passage,"Final 'yes' is right, but it says the rules allow setting the 60-minute window at night, while RD art. 20.e (retrieved 1st) says the window must be outside the night band. Misreads the passage and misses the tension the question is about."
+q29,multi,human,1,0,unsupported_claim,"Essentials right (IF must recognise it, 21 days to go to WADA), but 'debes presentarla lo antes posible' is not in the retrieved passages."
+q32,unanswerable,human,1,0,unsupported_claim,"Right refusal, but adds 'CBD products may contain traces of THC', which is not in the retrieved passages (model memory)."
+q34,unanswerable,judge,1,0,unsupported_claim,"The assistant correctly identified that the corpus does not contain the answer, but it included external information (the names of the AMA and CELAD) which are not present in the provided passages."
+q35,unanswerable,judge,1,0,unsupported_claim,"The assistant correctly identifies that the corpus does not contain the answer, but it includes an unsupported claim by suggesting the user consult the CELAD website for annual reports, as this information is not present in the provided passages."

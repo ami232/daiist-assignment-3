@@ -1,0 +1,4 @@
+{
+  "design": "structure",
+  "why": "Best hit@1 (0.52) and hit@3 (0.76), tie at hit@5 (0.86) with fixed windows; hybrid BM25+vector was worse (hit@5 0.69). See eval/retrieval_summary.json."
+}

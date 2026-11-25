@@ -1,0 +1,62 @@
+{
+  "fixed": {
+    "questions": 29,
+    "hit@1": 0.414,
+    "hit@3": 0.724,
+    "hit@5": 0.862,
+    "partial@1": 0.483,
+    "partial@3": 0.776,
+    "partial@5": 0.897,
+    "hit@1_single": 0.545,
+    "hit@3_single": 0.818,
+    "hit@5_single": 0.955,
+    "hit@1_multi": 0.0,
+    "hit@3_multi": 0.429,
+    "hit@5_multi": 0.571
+  },
+  "structure": {
+    "questions": 29,
+    "hit@1": 0.517,
+    "hit@3": 0.759,
+    "hit@5": 0.862,
+    "partial@1": 0.569,
+    "partial@3": 0.828,
+    "partial@5": 0.931,
+    "hit@1_single": 0.682,
+    "hit@3_single": 0.909,
+    "hit@5_single": 1.0,
+    "hit@1_multi": 0.0,
+    "hit@3_multi": 0.286,
+    "hit@5_multi": 0.429
+  },
+  "fixed+hybrid": {
+    "questions": 29,
+    "hit@1": 0.414,
+    "hit@3": 0.655,
+    "hit@5": 0.69,
+    "partial@1": 0.448,
+    "partial@3": 0.741,
+    "partial@5": 0.793,
+    "hit@1_single": 0.545,
+    "hit@3_single": 0.818,
+    "hit@5_single": 0.864,
+    "hit@1_multi": 0.0,
+    "hit@3_multi": 0.143,
+    "hit@5_multi": 0.143
+  },
+  "structure+hybrid": {
+    "questions": 29,
+    "hit@1": 0.448,
+    "hit@3": 0.586,
+    "hit@5": 0.69,
+    "partial@1": 0.534,
+    "partial@3": 0.655,
+    "partial@5": 0.776,
+    "hit@1_single": 0.591,
+    "hit@3_single": 0.682,
+    "hit@5_single": 0.818,
+    "hit@1_multi": 0.0,
+    "hit@3_multi": 0.286,
+    "hit@5_multi": 0.286
+  }
+}
