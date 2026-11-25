@@ -97,6 +97,8 @@ Eliquis should be stopped **at least 48 hours before** elective surgery or an in
 
 ```
 
+```
+
 ## Adding a document
 
 **When a document is already indexed:** `add_document` compares the label's version (set id + version + date) with what is stored. The same version means nothing is done and nothing is embedded. A different version means the old chunks are deleted and the new ones are stored.
