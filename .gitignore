@@ -5,10 +5,11 @@ __pycache__/
 .ipynb_checkpoints/
 *.pyc
 
-# Documents downloaded by your index stage. Commit them only if their licence allows it.
-corpus/
+# Documents downloaded by the index stage are U.S. Government works (public domain),
+# so corpus/ IS committed: the index can be rebuilt even if a government site blocks the download.
 
 # Your index belongs in index/, committed. Your evaluation results belong in eval/, committed.
 
 # Never commit your API key
 .env
+.claude/settings.local.json

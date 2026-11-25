@@ -1,0 +1,7 @@
+{
+  "design": "structure",
+  "method": "hybrid",
+  "k": 5,
+  "chosen_by": "evaluate.py: highest hit@5, ties broken by hit@3, hit@1, fewer words",
+  "chosen_on": "2026-11-25"
+}
