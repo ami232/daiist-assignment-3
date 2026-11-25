@@ -1,0 +1,5 @@
+config,design,method,route,words_in_prompt_k5,hit@1,single_hit@1,multi_hit@1,hit@3,single_hit@3,multi_hit@3,hit@5,single_hit@5,multi_hit@5
+A250 vector,A250,vector,False,1243,0.457,0.593,0.0,0.743,0.852,0.375,0.829,0.963,0.375
+A250 bm25,A250,bm25,False,1238,0.543,0.704,0.0,0.6,0.741,0.125,0.714,0.852,0.25
+A250 hybrid,A250,hybrid,False,1241,0.657,0.852,0.0,0.743,0.926,0.125,0.8,0.963,0.25
+A250 hybrid + route,A250,hybrid,True,1241,0.686,0.889,0.0,0.714,0.889,0.125,0.829,0.963,0.375
