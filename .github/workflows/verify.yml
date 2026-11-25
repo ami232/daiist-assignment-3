@@ -30,5 +30,11 @@ jobs:
       - name: Install dependencies
         run: uv sync
 
+      # check.py starts server.py through the MCP client, which passes the server
+      # only a few system variables, not GEMINI_API_KEY. Write the secret to a
+      # .env file (never committed) so the server finds it as it does locally.
+      - name: Write .env for the MCP server
+        run: printf 'GEMINI_API_KEY=%s\n' "$GEMINI_API_KEY" > .env
+
       - name: Run the submission self-check
         run: uv run python check.py

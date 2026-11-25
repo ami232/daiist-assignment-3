@@ -1,0 +1,79 @@
+{
+  "questions": 33,
+  "answered_by_agent": 33,
+  "chat_model": "gemini-3.5-flash-lite",
+  "judge_model": "gemini-3.1-flash-lite",
+  "retrieval": [
+    {
+      "design": "fixed",
+      "chunks": 487,
+      "questions": 27,
+      "hit@1": 0.963,
+      "hit@3": 0.963,
+      "hit@5": 0.963,
+      "all@1": 0.741,
+      "all@3": 0.815,
+      "all@5": 0.852,
+      "words_top5": 747,
+      "first_hit_rank": "q01:1 q02:1 q03:1 q04:1 q05:1 q06:1 q07:1 q08:1 q09:1 q10:1 q11:1 q12:1 q13:1 q14:- q15:1 q16:1 q17:1 q18:1 q19:1 q20:1 q21:1 q22:1 q23:1 q24:1 q25:1 q26:1 q27:1"
+    },
+    {
+      "design": "section",
+      "chunks": 327,
+      "questions": 27,
+      "hit@1": 0.926,
+      "hit@3": 0.926,
+      "hit@5": 1.0,
+      "all@1": 0.704,
+      "all@3": 0.815,
+      "all@5": 0.926,
+      "words_top5": 1125,
+      "first_hit_rank": "q01:1 q02:1 q03:1 q04:1 q05:1 q06:1 q07:1 q08:5 q09:1 q10:1 q11:1 q12:1 q13:1 q14:5 q15:1 q16:1 q17:1 q18:1 q19:1 q20:1 q21:1 q22:1 q23:1 q24:1 q25:1 q26:1 q27:1"
+    }
+  ],
+  "judge_correct": 0.97,
+  "judge_supported": 1.0,
+  "unsupported_answers": 0,
+  "correct_refusals": "6/6",
+  "wrong_refusals": "1/27",
+  "missed_refusals": "0/6",
+  "citations_valid": 1.0,
+  "guardrail_fired": [],
+  "by_kind": {
+    "single": {
+      "n": 21,
+      "judge_correct": 0.952
+    },
+    "multi": {
+      "n": 6,
+      "judge_correct": 1.0
+    },
+    "unanswerable": {
+      "n": 6,
+      "judge_correct": 1.0
+    }
+  },
+  "mean_tokens": 4863,
+  "mean_seconds": 14.0,
+  "mean_judge_tokens": 2548,
+  "agreement_with_human": {
+    "graded": 33,
+    "correct_agreement": 0.97,
+    "correct_kappa": 0.653,
+    "correct_disagreements": [
+      "q26"
+    ],
+    "supported_agreement": 0.879,
+    "supported_kappa": 0.0,
+    "supported_disagreements": [
+      "q06",
+      "q11",
+      "q24",
+      "q27"
+    ]
+  },
+  "before_after": {
+    "id": "q29",
+    "document": "PHAK-ch15-Airspace.pdf"
+  }
+}
