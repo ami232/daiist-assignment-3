@@ -1,0 +1,6 @@
+design,chunking,search,hit@1,hit@3,hit@5,all_passages@5,avg_words_top5,questions,multi
+fixed/vector,"fixed windows of 300 words, 50-word overlap, ignoring structure",vector,0.606,0.788,0.909,0.758,1492,33,6
+structure/vector,"one chunk per article / annex part / health-claim group, max 300 words, with a heading",vector,0.818,0.939,0.97,0.818,1157,33,6
+structure/bm25,"one chunk per article / annex part / health-claim group, max 300 words, with a heading",bm25,0.545,0.697,0.697,0.606,1189,33,6
+structure/hybrid,"one chunk per article / annex part / health-claim group, max 300 words, with a heading",hybrid,0.697,0.788,0.818,0.697,1162,33,6
+fixed/hybrid,"fixed windows of 300 words, 50-word overlap, ignoring structure",hybrid,0.545,0.758,0.848,0.758,1492,33,6

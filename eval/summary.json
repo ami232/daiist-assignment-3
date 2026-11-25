@@ -1,0 +1,104 @@
+{
+  "chat_model": "gemini-flash-lite-latest",
+  "judge_model": "gemini-flash-lite-latest",
+  "retrieval_design": {
+    "design": "structure",
+    "mode": "vector",
+    "k": 5,
+    "chosen_by": "highest hit@3, then hit@5, hit@1, fewer words"
+  },
+  "graded": 39,
+  "of_questions": 39,
+  "answerable": {
+    "n": 33,
+    "correct": 33,
+    "correct_and_supported": 33,
+    "unsupported": 0,
+    "wrong_refusals": 0
+  },
+  "unanswerable": {
+    "n": 6,
+    "correct_refusals": 6,
+    "made_up_answers": 0
+  },
+  "code_checks": {
+    "answers_with_citation": 34,
+    "all_citations_valid": 39,
+    "cited_expected_passage": 31,
+    "guardrail_fired": [
+      "q05",
+      "q18",
+      "q22",
+      "q24",
+      "q25",
+      "q26",
+      "m01",
+      "m02",
+      "m03",
+      "m04",
+      "m05",
+      "u01"
+    ],
+    "citation_repair_turns": [
+      "q05",
+      "q18",
+      "q22",
+      "q24",
+      "q25",
+      "q26",
+      "m01",
+      "m02",
+      "m03",
+      "m04",
+      "m05",
+      "u01"
+    ],
+    "replaced_by_refusal": [],
+    "number_check_flagged": {
+      "m02": "12 mg"
+    }
+  },
+  "answered_by_model": {
+    "gemini-3.5-flash-lite": 2,
+    "gemini-3.6-flash": 1,
+    "gemini-flash-lite-latest": 36
+  },
+  "cost_per_question": {
+    "tokens_mean": 7004,
+    "seconds_mean": 19.5,
+    "seconds_max": 184.2
+  },
+  "wilson_95": {
+    "answerable_correct": [
+      0.896,
+      1.0
+    ],
+    "unanswerable_correct_refusals": [
+      0.61,
+      1.0
+    ]
+  },
+  "judge_agreement": {
+    "correct": {
+      "n": 38,
+      "agreement": 1.0,
+      "cohen_kappa": 1.0,
+      "disagree_ids": []
+    },
+    "supported": {
+      "n": 38,
+      "agreement": 0.947,
+      "cohen_kappa": 0.0,
+      "disagree_ids": [
+        "m02",
+        "u02"
+      ]
+    }
+  },
+  "failures": {},
+  "before_after": {
+    "question": "What is the maximum amount of monacolins from red yeast rice allowed per daily portion of a food supplement?",
+    "before": "The corpus does not cover this. The search results do not state a maximum amount of monacolins from red yeast rice, and a regulatory consultant or national authority would need to be consulted for specific limits.",
+    "after": "The individual portion of a food supplement for daily consumption must provide **less than 3 mg** of monacolins from red yeast rice [Reg 2022/860, Article 1]."
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "design": "structure",
+  "mode": "vector",
+  "k": 5,
+  "chosen_by": "highest hit@3, then hit@5, hit@1, fewer words"
+}
