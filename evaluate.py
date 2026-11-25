@@ -40,7 +40,7 @@ ANSWERS = EVAL / "answers.jsonl"
 VERDICTS = EVAL / "verdicts.jsonl"
 KS = [1, 3, 5]
 MODES = ["vector", "hybrid"]
-JUDGE_MODEL = "gemini-3.5-flash"
+JUDGE_MODEL = "gemini-3.5-flash"  # a stronger model than the agent grades the answers
 
 RUBRIC = """You grade answers from an assistant for school-district and county emergency
 managers. The assistant must answer only from official NWS winter weather documents.
@@ -162,31 +162,62 @@ def outcome(q: dict, checks: dict, verdict: dict | None) -> str:
         return "correct refusal" if unanswerable else "wrong refusal"
     if unanswerable:
         return "answered unanswerable"
+    if verdict is None:
+        return "not judged yet"
     if not verdict["supported"]:
         return "unsupported"
     return "correct" if verdict["correct"] else "wrong"
 
 
-def evaluate_answers(questions: list[dict]) -> list[dict]:
+def out_of_quota(error: Exception) -> bool:
+    text = str(error)
+    return "RESOURCE_EXHAUSTED" in text and ("PerDay" in text or "per day" in text.lower())
+
+
+def evaluate_answers(questions: list[dict]) -> tuple[list[dict], list[str]]:
+    """Pass 1: the agent answers every question. Pass 2: the judge grades them.
+    Both are cached; if the daily free-tier quota runs out, the pass stops and the
+    next run picks up where it left off."""
     answers, verdicts = load_jsonl(ANSWERS), load_jsonl(VERDICTS)
-    model = ChatGoogleGenerativeAI(model=JUDGE_MODEL, temperature=0, max_retries=6)
-    rows = []
+    pending = []
+
     for q in questions:
         a = answers.get(q["id"])
         if a is None or a["question"] != q["question"]:
             print(f"  asking {q['id']} ...", file=sys.stderr, flush=True)
-            a = {"id": q["id"], **agent.answer(q["question"])}
+            try:
+                a = {"id": q["id"], **agent.answer(q["question"])}
+            except Exception as error:  # noqa: BLE001
+                if not any(out_of_quota(e) for e in getattr(error, "exceptions", [error])) and not out_of_quota(error):
+                    raise
+                pending.append(f"answers stopped at {q['id']}: daily quota reached")
+                break
             append_jsonl(ANSWERS, a)
             answers[q["id"]] = a
+
+    model = ChatGoogleGenerativeAI(model=JUDGE_MODEL, temperature=0, max_retries=2)
+    judge_open = True
+    rows = []
+    for q in questions:
+        a = answers.get(q["id"])
+        if a is None or a["question"] != q["question"]:
+            continue
         checks = code_checks(q, a)
         verdict = None
         if not checks["refused"] and q["kind"].strip() != "unanswerable":
             v = verdicts.get(q["id"])
-            if v is None or v.get("answer") != a["answer"] or v.get("rubric") != RUBRIC:
-                v = {"id": q["id"], "answer": a["answer"], "rubric": RUBRIC, **judge(q, a, model)}
-                append_jsonl(VERDICTS, v)
-                verdicts[q["id"]] = v
-            verdict = v
+            if (v is None or v.get("answer") != a["answer"] or v.get("rubric") != RUBRIC) and judge_open:
+                try:
+                    v = {"id": q["id"], "answer": a["answer"], "rubric": RUBRIC, **judge(q, a, model)}
+                    append_jsonl(VERDICTS, v)
+                    verdicts[q["id"]] = v
+                except Exception as error:  # noqa: BLE001
+                    if not out_of_quota(error):
+                        raise
+                    pending.append(f"judging stopped at {q['id']}: daily quota reached")
+                    judge_open = False
+            if v is not None and v.get("answer") == a["answer"] and v.get("rubric") == RUBRIC:
+                verdict = v
         rows.append({
             "id": q["id"], "kind": q["kind"], **checks,
             "judge_correct": "" if verdict is None else verdict["correct"],
@@ -199,7 +230,7 @@ def evaluate_answers(questions: list[dict]) -> list[dict]:
             "answer": a["answer"],
         })
     write_csv(EVAL / "results.csv", rows)
-    return rows
+    return rows, pending
 
 
 # ---------------------------------------------------------------- 5. agreement with my grades
@@ -215,7 +246,8 @@ def system_grades(row: dict) -> tuple[int, int]:
 
 def agreement(results: list[dict]) -> dict:
     by_id = {r["id"]: r for r in results}
-    pairs = [(h, by_id[h["id"]]) for h in read_csv(HUMAN) if h["id"] in by_id]
+    pairs = [(h, by_id[h["id"]]) for h in read_csv(HUMAN)
+             if h["id"] in by_id and by_id[h["id"]]["outcome"] != "not judged yet"]
     if not pairs:
         return {"graded": 0}
     same_correct = sum(int(h["correct"]) == system_grades(r)[0] for h, r in pairs)
@@ -251,7 +283,7 @@ def main() -> None:
         hit_rates[mode] = {f"hit@{k}": round(statistics.mean(r[f"hit@{k}"] for r in rows), 3) for k in KS}
         hit_rates[mode].update({f"words@{k}": round(statistics.mean(r[f"words@{k}"] for r in rows)) for k in KS})
 
-    results = evaluate_answers(questions)
+    results, pending = evaluate_answers(questions)
     counts = {}
     for r in results:
         counts[r["outcome"]] = counts.get(r["outcome"], 0) + 1
@@ -271,6 +303,8 @@ def main() -> None:
             "mean_tool_calls": round(statistics.mean(r["tool_calls"] for r in results), 2),
         },
         "evaluation_seconds": round(time.time() - started),
+        "answered": len(results),
+        "incomplete": pending,
     }
     (EVAL / "summary.json").write_text(json.dumps(summary, indent=2))
     print(json.dumps(summary, indent=2))

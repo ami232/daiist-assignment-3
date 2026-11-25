@@ -37,8 +37,8 @@ from mcp.client.stdio import stdio_client  # noqa: E402
 from api_key import load_api_key  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent
-MODEL = "gemini-3.5-flash"
-FALLBACK_MODEL = "gemini-3.5-flash-lite"  # used only when the main model is overloaded (503)
+MODEL = "gemini-3.5-flash-lite"   # the free tier allows only 20 requests a day on gemini-3.5-flash
+FALLBACK_MODEL = "gemini-3.1-flash-lite"  # used when the main model is overloaded or out of quota
 MAX_TOOL_CALLS = 4
 MAX_MODEL_CALLS = 6
 REFUSAL = "The corpus does not cover this"
@@ -138,7 +138,7 @@ async def answer_async(question: str) -> dict:
                 guardrail = "citation check failed (" + ("no citation" if not bad else "not retrieved: " + "; ".join(bad)) + ")"
                 retry = messages + [{"role": "user", "content": (
                     "Your answer breaks the citation rule. Cite only passages the search tool returned, "
-                    "in square brackets exactly as shown, e.g. [NWSI-10-513, section 6.3, p. 7]. "
+                    "in square brackets, copied exactly from the citation line above each passage. "
                     f"If the passages do not answer the question, reply starting with '{REFUSAL}'.")}]
                 messages = (await agent.ainvoke({"messages": retry}))["messages"]
                 answer = final_text(messages)
