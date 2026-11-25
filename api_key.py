@@ -1,12 +1,3 @@
-"""
-Assignment 3: find and verify your Gemini API key. `uv run python api_key.py`
-
-Reads GEMINI_API_KEY from the environment, else from .env. In your code:
-
-    from api_key import load_api_key
-    client = genai.Client(api_key=load_api_key())
-"""
-
 import json
 import os
 import sys
@@ -21,11 +12,7 @@ VERIFY_URL = "https://generativelanguage.googleapis.com/v1beta/models?pageSize=1
 
 
 def read_env_file(path: Path = ENV_FILE) -> str | None:
-    """Pull GEMINI_API_KEY out of a .env file, if there is one.
-
-    Deliberately a tiny parser rather than a dependency: KEY=value per line,
-    blank lines and # comments ignored, surrounding quotes stripped.
-    """
+    """Pull GEMINI_API_KEY out of a .env file, if there is one."""
     if not path.is_file():
         return None
     for line in path.read_text(encoding="utf-8").splitlines():
@@ -51,11 +38,7 @@ def resolve_api_key() -> tuple[str | None, str]:
 
 
 def load_api_key(required: bool = True) -> str | None:
-    """Return the API key from the environment, else from .env.
-
-    Also puts it into os.environ so libraries that look it up themselves
-    (google-genai and langchain-google-genai do) find it too.
-    """
+    """Return the API key from the environment, else from .env."""
     key, _ = resolve_api_key()
     if key:
         os.environ[VAR] = key
@@ -75,10 +58,7 @@ def masked(key: str) -> str:
 
 
 def verify(key: str, timeout: int = 20) -> tuple[bool, str]:
-    """Ask Google whether this key actually works, by listing one model.
-
-    The key goes in a header, not in the URL, so it never ends up in a log.
-    """
+    """Ask Google whether this key actually works, by listing one model."""
     request = urllib.request.Request(VERIFY_URL, headers={"x-goog-api-key": key})
     try:
         with urllib.request.urlopen(request, timeout=timeout) as response:

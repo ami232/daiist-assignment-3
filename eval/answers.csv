@@ -1,0 +1,270 @@
+id,kind,question,reference_answer,answer
+q01,single,We made a big batch of beef stew. How fast do we have to cool it down?,"Cooked TCS food must be cooled within 2 hours from 57°C (135°F) to 21°C (70°F), and within a total of 6 hours from 57°C (135°F) to 5°C (41°F) or less.","Cooked time/temperature control for safety food, such as beef stew, must be cooled within two hours from 57°C (135°F) to 21°C (70°F), and within a total of six hours from 57°C (135°F) to 5°C (41°F) or less (FDA Food Code 2026, § 3-501.14 Cooling, PDF page 98). Because stews have a large mass and volume, you can speed up cooling by placing the food in shallow pans, separating it into smaller or thinner portions, using rapid cooling equipment, stirring it in an ice water bath, or using containers that facilitate heat transfer (FDA Food Code 2026, § 3-501.15 Cooling Methods, PDF page 99; Managing Food Safety: HACCP Manual for Operators, PDF page 41).
+
+The Food Code is a model code; check your local regulatory authority for the rules in your area.
+
+Sources:
+(FDA Food Code 2026, § 3-501.14 Cooling, PDF page 98)
+(Managing Food Safety: HACCP Manual for Operators, PDF page 41)
+(FDA Food Code 2026, § 3-501.15 Cooling Methods, PDF page 99)"
+q02,single,What temperature do I have to cook hamburger patties to?,"Comminuted (ground) meat must reach 68°C (155°F) for 17 seconds, or an equivalent from the chart: 63°C (145°F) for 3 minutes, 66°C (150°F) for 1 minute or 70°C (158°F) for less than 1 second.","Hamburger patties (which are comminuted or nonintact meat) must be cooked to reach **68°C (155°F) for 17 seconds**, or by following one of the temperature and time combinations listed in the Food Code: **63°C (145°F) for 3 minutes**, **66°C (150°F) for 1 minute**, or **70°C (158°F) or above for < 1 second (instantaneous)** (FDA Food Code 2026, § 3-401.11, PDF page 91; Managing Food Safety: HACCP Manual for Operators, PDF page 40). 
+
+Note: The Food Code is a model code; your state or local jurisdiction may have its own specific regulations.
+
+Sources:
+(FDA Food Code 2026, § 3-401.11 Raw Animal Foods, PDF page 91)
+(Managing Food Safety: HACCP Manual for Operators, PDF page 40)"
+q03,single,"Yesterday's cooked rice was cooled in the fridge. To what temperature do I reheat it before putting it in the hot holding unit, and how fast?","All parts must reach at least 74°C (165°F) for 15 seconds, and the time between 5°C (41°F) and that temperature may not exceed 2 hours.","You must reheat the cooked rice so that all parts of the food reach a temperature of at least 74°C (165°F) and hold it at that temperature for 15 seconds (FDA Food Code 2026, § 3-403.11 Reheating for Hot Holding, PDF page 96). 
+
+This reheating process must be done rapidly, and the time the food spends between 5°C (41°F) and 74°C (165°F) may not exceed two hours (FDA Food Code 2026, § 3-403.11 Reheating for Hot Holding, PDF page 96).
+
+*(Note: The FDA Food Code is a model code; each state or local jurisdiction adopts its own regulations.)*
+
+Sources:
+- FDA Food Code 2026, § 3-403.11 Reheating for Hot Holding, PDF page 96
+- FDA Food Code 2026, § 3-403.11 Reheating for Hot Holding, PDF page 96"
+q04,single,At what temperatures do I have to keep food on the hot line and in the cold well?,Hot: 57°C (135°F) or above (roasts cooked under ¶ 3-401.11(B) may be held at 54°C (130°F) or above). Cold: 5°C (41°F) or less.,"Time/temperature control for safety food on the hot line must be maintained at 57°C (135°F) or above, except that certain roasts may be held at 54°C (130°F) or above (FDA Food Code 2026, § 3-501.16 Time/Temperature Control for Safety Food, Hot and Cold Holding, PDF page 100). Food in the cold well must be maintained at 5°C (41°F) or less (FDA Food Code 2026, § 3-501.16 Time/Temperature Control for Safety Food, Hot and Cold Holding, PDF page 100).
+
+*Note: The Food Code is a model code; each state or local jurisdiction adopts its own regulations.*
+
+Sources:
+(FDA Food Code 2026, § 3-501.16 Time/Temperature Control for Safety Food, Hot and Cold Holding, PDF page 100)
+(FDA Food Code 2026, § 3-501.16 Time/Temperature Control for Safety Food, Hot and Cold Holding, PDF page 100)"
+q05,single,How many days can we keep house-made chicken salad in the walk-in before we throw it out?,"Refrigerated RTE TCS food held more than 24 hours must be date marked and consumed, sold or discarded within a maximum of 7 days at 5°C (41°F) or less; the day of preparation counts as Day 1.","Refrigerated, ready-to-eat, time/temperature control for safety food prepared on-site, such as house-made chicken salad, and held at a temperature of 5°C (41°F) or less may be kept for a maximum of seven days, with the day of preparation counted as Day 1 (FDA Food Code 2026, § 3-501.17 Ready-to-Eat, Time/Temperature Control for Safety Food, Date, PDF page 100). The food must be clearly marked with the date or day by which it must be consumed, sold, or discarded (FDA Food Code 2026, § 3-501.17 Ready-to-Eat, Time/Temperature Control for Safety Food, Date, PDF page 100). Any such food that exceeds the 7-day time limit or is not properly date-marked must be discarded (FDA Food Code 2026, § 3-501.18 Ready-to-Eat, Time/Temperature Control for Safety Food, Disposition, PDF page 102).
+
+Note: The Food Code is a model code; check your state or local regulations for any specific adoption details.
+
+Sources:
+(FDA Food Code 2026, § 3-501.17 Ready-to-Eat, Time/Temperature Control for Safety Food, Date, PDF page 100)
+(FDA Food Code 2026, § 3-501.18 Ready-to-Eat, Time/Temperature Control for Safety Food, Disposition, PDF page 102)"
+q06,single,How long do my staff have to wash their hands for?,"At least 20 seconds in total, including rubbing hands together vigorously for at least 10 to 15 seconds, after rinsing under clean running warm water and applying cleaning compound, then rinsing and drying.","Food employees must clean their hands and exposed portions of their arms for at least 20 seconds using a cleaning compound in a handwashing sink (FDA Food Code 2026, § 2-301.12 Cleaning Procedure, PDF page 67). As part of this cleaning procedure, staff must rub their hands together vigorously for at least 10 to 15 seconds while creating friction on the surfaces of the hands, arms, fingertips, and between the fingers (FDA Food Code 2026, § 2-301.12 Cleaning Procedure, PDF pages 67-68).
+
+Sources:
+(FDA Food Code 2026, § 2-301.12 Cleaning Procedure, PDF pages 67-68)
+
+*Note: The FDA Food Code is a model code; check with your local regulatory authority for the specific regulations enforced in your jurisdiction.*"
+q07,single,How hot must the water be at a handwashing sink?,A handwashing sink must provide water at a temperature of at least 29.4°C (85°F) through a mixing valve or combination faucet.,"A handwashing sink must be equipped to provide running water at a temperature of at least 29.4°C (85°F) through a mixing valve or combination faucet (FDA Food Code 2026, § 5-202.12 Handwashing Sink, Installation, PDF page 150). Steam mixing valves are not permitted at handwashing sinks (FDA Food Code 2026, § 5-202.12 Handwashing Sink, Installation, PDF page 150).
+
+*Note: The FDA Food Code is a model code; each state or local jurisdiction adopts its own regulations.*
+
+Sources:
+- FDA Food Code 2026, § 5-202.12 Handwashing Sink, Installation, PDF page 150
+- FDA Food Code 2026, § 5-202.12 Handwashing Sink, Installation, PDF page 150"
+q08,single,Can we leave sliced cheese out on the sandwich line without refrigeration if we watch the clock? For how long?,"Yes, with written procedures, for up to 4 hours: food must start at 5°C (41°F) or less (or 57°C/135°F or more), be marked with the time 4 hours later, and be served or discarded within 4 hours; unmarked or over-time food is discarded.","Yes, you can leave sliced cheese (a time/temperature control for safety food) out on the sandwich line without refrigeration if you use time as a public health control, provided you have written procedures prepared in advance and available upon request (FDA Food Code 2026, § 3-501.19 Time as a Public Health Control, PDF page 102). 
+
+You can hold the cheese for a **maximum of 4 hours** if:
+* The cheese starts at a cold holding temperature of 5°C (41°F) or less when removed from refrigeration (FDA Food Code 2026, § 3-501.19 Time as a Public Health Control, PDF page 102).
+* The cheese is marked or otherwise identified to indicate the time that is 4 hours past the point of removal from temperature control (FDA Food Code 2026, § 3-501.19 Time as a Public Health Control, PDF page 102).
+* The cheese is served or discarded within 4 hours, and any unmarked or improperly marked containers are discarded (FDA Food Code 2026, § 3-501.19 Time as a Public Health Control, PDF page 102).
+
+Alternatively, you can hold it for a **maximum of 6 hours** if:
+* The cheese starts at 5°C (41°F) or less when removed from refrigeration (FDA Food Code 2026, § 3-501.19 Time as a Public Health Control, PDF page 103).
+* The warmest portion of the food is monitored and does not exceed 21°C (70°F) during the 6-hour period (or an ambient air temperature is maintained to ensure it does not exceed 21°C) (FDA Food Code 2026, § 3-501.19 Time as a Public Health Control, PDF page 103).
+* The cheese is marked to show both the time it was removed from refrigeration and the time 6 hours later (FDA Food Code 2026, § 3-501.19 Time as a Public Health Control, PDF page 103).
+* The cheese is discarded if its temperature exceeds 21°C (70°F) or if the 6-hour limit is reached (FDA Food Code 2026, § 3-501.19 Time as a Public Health Control, PDF page 103).
+
+Note: The Food Code is a model code; each state or jurisdiction adopts its own regulations.
+
+Sources:
+(FDA Food Code 2026, § 3-501.19 Time as a Public Health Control, PDF page 102)
+(FDA Food Code 2026, § 3-501.19 Time as a Public Health Control, PDF page 103)"
+q09,single,What are the approved ways to thaw frozen chicken?,Under refrigeration at 5°C (41°F) or less; completely submerged under running water at 21°C (70°F) or below with enough velocity to float off particles (with time limits); as part of cooking; or in a microwave if immediately transferred to conventional cooking.,"Time/temperature control for safety food, such as frozen chicken, must be thawed using one of the following methods:
+* Under refrigeration that maintains the food temperature at 5°C (41°F) or less (FDA Food Code 2026, § 3-501.13 Thawing, PDF page 98).
+* Completely submerged under running water at a water temperature of 21°C (70°F) or below, with sufficient water velocity to agitate and float off loose particles in an overflow, for a period that does not allow thawed portions of raw animal food requiring cooking to be above 5°C (41°F) for more than four hours (including the time exposed to running water, preparation time for cooking, and the time it takes under refrigeration to lower the food temperature to 5°C) (FDA Food Code 2026, § 3-501.13 Thawing, PDF page 98).
+* As part of a cooking process, if the frozen food is cooked as specified for raw animal foods or thawed in a microwave oven and immediately transferred to conventional cooking equipment with no interruption in the process (FDA Food Code 2026, § 3-501.13 Thawing, PDF page 98).
+* Using any procedure if a portion of frozen ready-to-eat food is thawed and prepared for immediate service in response to an individual consumer's order (FDA Food Code 2026, § 3-501.13 Thawing, PDF page 98).
+
+The Food Code is a model code; check with your local regulatory authority for the rules in your jurisdiction.
+
+Sources:
+(FDA Food Code 2026, § 3-501.13 Thawing, PDF page 98)"
+q10,single,One of my cooks looks yellow and says it started three days ago. Can he keep working?,"No: exclude a food employee who is jaundiced with onset within the last 7 calendar days, unless they provide written medical documentation from a health practitioner that the jaundice is not caused by hepatitis A or another fecal-orally transmitted infection.","No, the cook cannot keep working. The person in charge must exclude a food employee who is jaundiced and whose onset of jaundice occurred within the last seven calendar days (FDA Food Code 2026, § 2-201.12 Exclusions and Restrictions, PDF page 59). 
+
+The employee may only return to work if they provide written medical documentation from a health practitioner specifying that the jaundice is not caused by hepatitis A or another fecal-orally transmitted infection, or if more than seven calendar days have passed since the jaundice began and the person in charge obtains regulatory authority approval (FDA Food Code 2026, §§ 2-201.12, 2-201.13, PDF pages 59, 62).
+
+*Note: The Food Code is a model code, and local regulatory requirements may vary.*
+
+Sources:
+(FDA Food Code 2026, § 2-201.12 Exclusions and Restrictions, PDF page 59)
+(FDA Food Code 2026, §§ 2-201.12, 2-201.13, PDF pages 59, 62)"
+q11,single,Which symptoms do employees have to tell the manager about?,"Vomiting, diarrhea, jaundice, sore throat with fever, and a lesion containing pus (such as an open or draining boil or infected wound) on hands/wrists, exposed arms or other body parts unless properly covered.","Food employees and conditional employees must report to the person in charge if they experience any of the following symptoms: vomiting, diarrhea, jaundice, a sore throat with fever, or a lesion containing pus (such as a boil or infected wound) that is open or draining on the hands, wrists, exposed arms, or other parts of the body (FDA Food Code 2026, § 2-201.11 Responsibilities of Permit Holder, Person in Charge and, PDF pages 56–57). 
+
+(Note: The Food Code is a model code; each state or local jurisdiction adopts its own regulations.)
+
+Sources:
+(FDA Food Code 2026, § 2-201.11 Responsibilities of Permit Holder, Person in Charge and, PDF pages 56–57)"
+q12,single,Can my staff make salads with their bare hands if they washed them?,"No: food employees may not contact exposed ready-to-eat food with bare hands and must use suitable utensils such as deli tissue, spatulas, tongs, single-use gloves or dispensing equipment (exceptions: washing produce, food added to an item that will be cooked, or an approved alternative).","The corpus does not cover this. I could not find a passage in the corpus that supports an answer, so I will not guess. Please check with your local regulatory authority."
+q13,single,Does the person in charge of my restaurant need some kind of certification?,"Yes: the person in charge shall be a certified food protection manager who passed a test that is part of an accredited program, unless the regulatory authority deems the establishment minimal risk.","Yes, the person in charge must be a certified food protection manager who has passed a test from an accredited program, unless the regulatory authority deems the establishment to pose minimal risk (FDA Food Code 2026, § 2-102.12 Certified Food Protection Manager, PDF page 53). Alternatively, the person in charge can demonstrate required knowledge during inspections by having no priority violations, holding that certification, or answering the inspector's food safety questions correctly (FDA Food Code 2026, § 2-102.11 Demonstration, PDF pages 51-52).
+
+Sources:
+(FDA Food Code 2026, § 2-102.12 Certified Food Protection Manager, PDF page 53)
+(FDA Food Code 2026, § 2-102.11 Demonstration, PDF pages 51-52)
+
+*Note: The Food Code is a model code; check your state or local regulations for specific legal requirements.*"
+q14,single,How long do I need to keep the tags from oyster and clam containers?,"Tags stay on the container until it is empty, the date the last shellfish was sold or served is recorded on the tag, and tags, labels or invoices are kept for 90 calendar days from that date.","You must keep molluscan shellfish tags, labels, or invoices for 90 calendar days from the date when the last shellfish from the container is sold or served (FDA Food Code 2026, § 3-203.12 Molluscan Shellfish, Maintaining Identification, PDF page 80). You must record this date on the tag, label, or invoice once the container is empty (FDA Food Code 2026, § 3-203.12 Molluscan Shellfish, Maintaining Identification, PDF page 80).
+
+The Food Code is a model code; your state or local regulatory authority may have its own specific adoption rules.
+
+Sources:
+- FDA Food Code 2026, § 3-203.12 Molluscan Shellfish, Maintaining Identification, PDF page 80"
+q15,single,"At what temperature must refrigerated deliveries like milk and meat arrive, and what about shell eggs?","Refrigerated TCS food must be 5°C (41°F) or below when received (unless a law allows another temperature, e.g. milk, shellfish). Raw eggs must be received in refrigerated equipment at an ambient air temperature of 7°C (45°F) or less.","Refrigerated time/temperature control for safety foods like meat must be at a temperature of 5°C (41°F) or below when received, unless another temperature is specified in law governing distribution (FDA Food Code 2026, § 3-202.11 Temperature, PDF page 76). Milk may be received at a temperature specified in law governing its distribution, such as Grade A milk standards (FDA Food Code 2026, § 3-202.11 Temperature, PDF page 76). Raw shell eggs must be received in refrigerated equipment that maintains an ambient air temperature of 7°C (45°F) or less (FDA Food Code 2026, § 3-202.11 Temperature, PDF page 76).
+
+*Note: The FDA Food Code is a model code; each state or local jurisdiction adopts its own regulations.*
+
+Sources:
+(FDA Food Code 2026, § 3-202.11 Temperature, PDF page 76)
+(FDA Food Code 2026, § 3-202.11 Temperature, PDF page 76)"
+q16,single,We sanitize pots by soaking them in hot water in the three-compartment sink. How hot does the water need to be?,"For hot water immersion sanitizing in a manual operation, the water must be at 77°C (171°F) or above.","If hot water immersion is used for sanitizing in a manual operation, the temperature of the water must be maintained at 77°C (171°F) or above (FDA Food Code 2026, § 4-501.111 Manual Warewashing Equipment, Hot Water Sanitization Temperatures, PDF page 132). Pots and utensils must be immersed in this hot water for at least 30 seconds (FDA Food Code 2026, § 4-703.11 Hot Water and Chemical, PDF page 140). 
+
+The Food Code is a model code; check your local regulatory authority for specific state or county requirements.
+
+Sources:
+(FDA Food Code 2026, § 4-501.111 Manual Warewashing Equipment, Hot Water Sanitization Temperatures, PDF page 132)
+(FDA Food Code 2026, § 4-703.11 Hot Water and Chemical, PDF page 140)"
+q17,single,A customer orders sunny-side-up eggs cooked to order. What temperature do the eggs have to reach?,Raw eggs broken and prepared in response to a consumer's order for immediate service must be cooked to 63°C (145°F) or above for 15 seconds.,"Raw eggs broken and prepared in response to a consumer's order and for immediate service must be cooked to reach 63°C (145°F) or above for 15 seconds (FDA Food Code 2026, § 3-401.11 Raw Animal Foods, PDF page 91). 
+
+*(Note: The FDA Food Code is a model code; check your local regulatory authority for the rules in your jurisdiction.)*
+
+Sources:
+(FDA Food Code 2026, § 3-401.11 Raw Animal Foods, PDF page 91)"
+q18,single,What are the seven HACCP principles?,1 hazard analysis; 2 determine critical control points; 3 establish critical limits; 4 establish monitoring procedures; 5 establish corrective actions; 6 establish verification procedures; 7 establish record keeping and documentation procedures.,"The seven HACCP principles are:
+* Principle 1: Conduct a hazard analysis (FDA Food Code 2026, § Annex 4, PDF page 565).
+* Principle 2: Determine the critical control points (CCPs) (FDA Food Code 2026, § Annex 4, PDF page 565).
+* Principle 3: Establish critical limits (FDA Food Code 2026, § Annex 4, PDF page 565).
+* Principle 4: Establish monitoring procedures (FDA Food Code 2026, § Annex 4, PDF page 565).
+* Principle 5: Establish corrective actions (FDA Food Code 2026, § Annex 4, PDF page 565).
+* Principle 6: Establish verification procedures (FDA Food Code 2026, § Annex 4, PDF page 565).
+* Principle 7: Establish record-keeping and documentation procedures (FDA Food Code 2026, § Annex 4, PDF page 565).
+
+Sources:
+- FDA Food Code 2026, § Annex 4. Management of Food Safety Practices – Achieving, PDF page 565"
+q19,single,The HACCP manual groups menu items into three food preparation processes. What are they?,"Process 1: no cook step (receive-store-prepare-hold-serve); Process 2: preparation for same day service (one trip through the danger zone, with cooking); Process 3: complex food preparation (cook, cool, reheat, hot hold: several trips through the danger zone).","The FDA HACCP manuals group menu items into three food preparation processes based on the number of times the food passes through the temperature danger zone:
+
+* **Process 1: Food Preparation with No Cook Step** (example flow: Receive – Store – Prepare – Hold – Serve, with no cook step to destroy pathogens) (Managing Food Safety: HACCP Manual for Operators, Chapter 2, PDF page 18).
+* **Process 2: Preparation for Same Day Service** (example flow: Receive – Store – Prepare – Cook – Hold – Serve, with only one trip through the temperature danger zone) (Managing Food Safety: HACCP Manual for Operators, Chapter 2, PDF page 18).
+* **Process 3: Complex Food Preparation** (example flow: Receive – Store – Prepare – Cook – Cool – Reheat – Hot Hold – Serve, with two or more complete trips through the temperature danger zone) (Managing Food Safety: HACCP Manual for Operators, Chapter 2, PDF page 18).
+
+Sources:
+(Managing Food Safety: HACCP Manual for Operators (FDA, 2006) | Chapter 2 – The Process Approach, PDF page 18)
+(Managing Food Safety: HACCP Manual for Operators (FDA, 2006) | Chapter 2 – The Process Approach, PDF page 18)
+(Managing Food Safety: HACCP Manual for Operators (FDA, 2006) | Chapter 2 – The Process Approach, PDF page 18)"
+q20,single,What are the five risk factors that health inspectors focus on?,"Food from unsafe sources, inadequate cooking, improper holding temperatures, contaminated equipment, and poor personal hygiene.","The five foodborne illness risk factors that health inspectors focus on are:
+* Food from unsafe sources (Managing Food Safety: HACCP Manual for Regulators, Chapter 1, PDF page 6)
+* Inadequate cooking (Managing Food Safety: HACCP Manual for Regulators, Chapter 1, PDF page 6)
+* Improper holding temperatures (Managing Food Safety: HACCP Manual for Regulators, Chapter 1, PDF page 6)
+* Contaminated equipment (Managing Food Safety: HACCP Manual for Regulators, Chapter 1, PDF page 6)
+* Poor personal hygiene (Managing Food Safety: HACCP Manual for Regulators, Chapter 1, PDF page 6)
+
+The Food Code is a model code; each state or jurisdiction adopts its own laws and regulations.
+
+Sources:
+(Managing Food Safety: HACCP Manual for Regulators (FDA, 2006) | Chapter 1 – Introduction | Background | PDF page 6)
+(FDA Food Code 2026 | Annex 5. Conducting Risk-Based Inspections | PDF page 597)
+(Managing Food Safety: HACCP Manual for Regulators (FDA, 2006) | Chapter 2 – Conducting Risk-based Inspections | PDF page 10)
+(FDA Food Code 2026 | Preface | PDF page 8)"
+q21,single,Our inspector suggested a risk control plan. What is that?,"An RCP is a concisely written management plan, developed by the operator with input from the inspector, describing a management system for controlling specific out-of-control risk factors; it is voluntary and aims at long-term compliance (e.g. monitoring and record keeping for cooling).","A Risk Control Plan (RCP) is a concisely written management plan developed voluntarily by the food establishment operator with input from the health inspector to control specific out-of-control foodborne illness risk factors (FDA Food Code 2026, Annex 5, PDF page 625). It serves as a strategy to promote long-term compliance by establishing a system of monitoring, record-keeping, and corrective actions over a designated period, such as 60 to 90 days (FDA Food Code 2026, Annex 5, PDF page 625). 
+
+The plan is tailored to the facility and addresses specific details such as what risk factor is being controlled, who is responsible, what monitoring is required, and how corrective actions are handled (FDA Food Code 2026, Annex 5, PDF page 625). By implementing an RCP, the operator takes complete ownership of designing a solution for an identified operational problem, such as improper cooling procedures (FDA Food Code 2026, Annex 5, PDF page 625).
+
+*(Note: The FDA Food Code is a model code; check with your local regulatory authority for specific local requirements.)*
+
+Sources:
+(FDA Food Code 2026, Annex 5. Conducting Risk-Based Inspections, PDF page 625)
+(Managing Food Safety: HACCP Manual for Regulators (FDA, 2006), Chapter 3 – Intervention Strategies, PDF page 33)
+(Managing Food Safety: HACCP Manual for Regulators (FDA, 2006), Glossary, PDF page 48)"
+q22,single,We serve raw oysters and rare burgers on request. Do we have to warn customers?,"Yes: when animal foods are served raw or undercooked, the permit holder must inform consumers of the significantly increased risk by a disclosure (identifying the foods) and a reminder (asterisked items linked to a footnote) on menus, placards or other written means.","Yes, you must inform consumers of the increased risk of foodborne illness by providing a consumer advisory that includes both a disclosure and a reminder (FDA Food Code 2026, § 3-603.11 Consumption of Animal Foods that are Raw, Undercooked, or Not Otherwise Processed to Eliminate Pathogens, PDF page 109). 
+
+The disclosure must either describe the raw or undercooked animal-derived foods (such as ""oysters on the half shell (raw oysters)"" or ""hamburgers (can be cooked to order)"") or use an asterisk linking the items to a footnote stating that they are served raw or undercooked (FDA Food Code 2026, § 3-603.11, PDF pages 109-110). 
+
+The reminder must use an asterisk linking the items to a statement such as: ""Consuming raw or undercooked meats, poultry, seafood, shellfish, or eggs may increase your risk of foodborne illness, especially if you have certain medical conditions"" (or state that written information is available upon request) (FDA Food Code 2026, § 3-603.11, PDF page 110). 
+
+The Food Code is a model code; your state or local jurisdiction may have its own specific requirements.
+
+Sources:
+(FDA Food Code 2026, § 3-603.11 Consumption of Animal Foods that are Raw, Undercooked, or Not Otherwise Processed to Eliminate Pathogens, PDF pages 109-110)"
+q23,multi,"We cook chili in the morning, cool it, and reheat it the next day for the buffet. What are the cooling and reheating requirements?","Cool from 57°C (135°F) to 21°C (70°F) within 2 hours and to 5°C (41°F) or less within 6 hours total; reheat so all parts reach at least 74°C (165°F) for 15 seconds, within 2 hours.","Cooked chili must be cooled within two hours from 57°C (135°F) to 21°C (70°F), and within a total of six hours from 57°C (135°F) to 5°C (41°F) or less (FDA Food Code 2026, § 3-501.14 Cooling, PDF page 98). Cooling methods such as placing the food in shallow pans, separating it into smaller or thinner portions, stirring in an ice water bath, or using rapid cooling equipment must be used to accomplish this (FDA Food Code 2026, § 3-501.15 Cooling Methods, PDF page 99).
+
+When the chili is reheated the next day for the buffet, all parts of the food must reach a temperature of at least 74°C (165°F) for 15 seconds (FDA Food Code 2026, § 3-403.11 Reheating for Hot Holding, PDF page 96). This reheating must be done rapidly, and the time the food spends between 5°C (41°F) and 74°C (165°F) may not exceed two hours (FDA Food Code 2026, § 3-403.11 Reheating for Hot Holding, PDF page 97).
+
+Note: The Food Code is a model code, and each state or county adopts it with its own changes.
+
+Sources:
+FDA Food Code 2026, § 3-501.14 Cooling, PDF page 98
+FDA Food Code 2026, § 3-501.15 Cooling Methods, PDF page 99
+FDA Food Code 2026, § 3-403.11 Reheating for Hot Holding, PDF page 96
+FDA Food Code 2026, § 3-403.11 Reheating for Hot Holding, PDF page 97"
+q24,multi,"What temperature do we cook rotisserie chicken to, and how hot do we keep it afterwards until it sells?",Poultry must be cooked to 74°C (165°F) or above for <1 second (instantaneous); then held hot at 57°C (135°F) or above.,"Rotisserie chicken must be cooked to a minimum internal temperature of 74°C (165°F) or above for less than 1 second (instantaneous) (FDA Food Code 2026, § 3-401.11 Raw Animal Foods, PDF page 91). 
+
+Afterwards, it must be kept during hot holding at 57°C (135°F) or above, except when time is used as a public health control (FDA Food Code 2026, § 3-501.16 Time/Temperature Control for Safety Food, Hot and Cold Holding, PDF page 100).
+
+*Note: The Food Code is a model code; check with your local regulatory authority for any state or county variations.*
+
+Sources:
+(FDA Food Code 2026, § 3-401.11 Raw Animal Foods, PDF page 91)
+(FDA Food Code 2026, § 3-501.16 Time/Temperature Control for Safety Food, Hot and Cold Holding, PDF page 100)"
+q25,multi,"A server called in with diarrhea. Do I send her home, and when can she come back if no doctor diagnoses anything?","Exclude a food employee symptomatic with vomiting or diarrhea (unless noninfectious). Reinstate when asymptomatic for at least 24 hours, or with written medical documentation that the symptom is from a noninfectious condition.","Yes, you must exclude the food employee from the food establishment while she is experiencing diarrhea, except when the symptom is from a known noninfectious condition (FDA Food Code 2026, § 2-201.12 Exclusions and Restrictions, PDF page 59).
+
+If no doctor diagnoses an infection, you may reinstate (return) the employee once she has been completely asymptomatic for at least 24 hours, or if she provides written medical documentation from a health practitioner stating that the symptom is from a noninfectious condition (FDA Food Code 2026, § 2-201.13 Removal, Adjustment, or Retention of Exclusions and Restrictions, PDF page 61).
+
+Sources:
+(FDA Food Code 2026, § 2-201.12 Exclusions and Restrictions, PDF page 59)
+(FDA Food Code 2026, § 2-201.13 Removal, Adjustment, or Retention of Exclusions and Restrictions, PDF page 61)
+
+*Note: The Food Code is a model code; check your local regulatory authority for specific state or county requirements.*"
+q26,multi,"How long can we keep opened deli ham, and what happens to a container that has no date on it?","Marked to be used within 7 days at 5°C (41°F) or less (day opened/prepared is Day 1); food that exceeds the time/temperature, or is in a container without a date or day, or is wrongly marked, must be discarded.","Refrigerated, ready-to-eat commercially processed food like deli ham that is opened and held for more than 24 hours must be clearly marked to indicate the date or day by which the food shall be consumed on the premises, sold, or discarded, for a maximum of seven days at a temperature of 5°C (41°F) or less, with the day the original container is opened counted as Day 1 (FDA Food Code 2026, § 3-501.17 Ready-to-Eat, Time/Temperature Control for Safety Food, Date Marking, PDF page 101). 
+
+Any ready-to-eat, time/temperature control for safety food in a container or package that does not bear a date or day must be discarded (FDA Food Code 2026, § 3-501.18 Ready-to-Eat, Time/Temperature Control for Safety Food, Disposition, PDF page 102).
+
+Sources:
+(FDA Food Code 2026, § 3-501.17 Ready-to-Eat, Time/Temperature Control for Safety Food, Date Marking, PDF page 101)
+(FDA Food Code 2026, § 3-501.18 Ready-to-Eat, Time/Temperature Control for Safety Food, Disposition, PDF page 102)"
+q27,multi,"When does a cook have to wash hands when moving between raw meat and salads, and what is the correct handwashing procedure?","Wash when switching between working with raw food and ready-to-eat food (and when changing tasks). Procedure: at least 20 seconds: rinse under warm running water, apply cleaning compound, rub vigorously for at least 10 to 15 seconds, rinse, dry.","A cook must wash hands when switching between working with raw food and working with ready-to-eat food, such as salads (FDA Food Code 2026, § 2-301.14 When to Wash, PDF page 68). 
+
+The handwashing procedure requires cleaning hands and exposed arms for at least 20 seconds using a cleaning compound in a handwashing sink (FDA Food Code 2026, § 2-301.12 Cleaning Procedure, PDF page 67). Employees must follow these steps in order: (1) rinse under clean, running warm water; (2) apply the manufacturer's recommended amount of cleaning compound; (3) rub together vigorously for at least 10 to 15 seconds, creating friction on the surfaces of the hands, arms, fingertips, and between the fingers, while paying particular attention to removing soil from underneath the fingernails; (4) thoroughly rinse under clean, running warm water; and (5) immediately follow with thorough drying (FDA Food Code 2026, § 2-301.12 Cleaning Procedure, PDF page 67).
+
+*(Note: The FDA Food Code is a model code; each state or local jurisdiction adopts it with its own changes.)*
+
+Sources:
+(FDA Food Code 2026, § 2-301.14 When to Wash, PDF page 68)
+(FDA Food Code 2026, § 2-301.12 Cleaning Procedure, PDF page 67)"
+q28,multi,"We want to serve salmon sashimi. How must the fish be frozen, and what records do we keep?","Freeze at -20°C (-4°F) or below for 168 hours (7 days), or at -35°C (-31°F) until solid and stored at -35°C for 15 hours, or solid at -35°C then stored at -20°C for 24 hours. Record freezing temperature and time and keep records 90 calendar days beyond service (or a supplier's written statement).","Before serving raw salmon in ready-to-eat form like sashimi, the fish must be frozen to destroy parasites using one of the following methods, unless an exemption applies:
+* Frozen and stored at a temperature of -20°C (-4°F) or below for a minimum of 168 hours (7 days) in a freezer (FDA Food Code 2026, § 3-402.11 Parasite Destruction, PDF page 95).
+* Frozen at -35°C (-31°F) or below until solid and stored at -35°C (-31°F) or below for a minimum of 15 hours (FDA Food Code 2026, § 3-402.11 Parasite Destruction, PDF page 95).
+* Frozen at -35°C (-31°F) or below until solid and stored at -20°C (-4°F) or below for a minimum of 24 hours (FDA Food Code 2026, § 3-402.11 Parasite Destruction, PDF page 95).
+
+Freezing parasite destruction requirements do not apply to aquacultured fish, such as salmon, that are raised in net-pens in open water, or raised in land-based operations like ponds or tanks, and are fed formulated feed (such as pellets) that contains no live parasites infective to the fish (FDA Food Code 2026, § 3-402.11 Parasite Destruction, PDF page 95).
+
+Regarding records, if you freeze the fish yourself, you must record the freezing temperature and time and retain those records at the food establishment for 90 calendar days beyond the time of service or sale (FDA Food Code 2026, § 3-402.12 Records, Creation and Retention, PDF page 96). If the fish are frozen by a supplier, you may keep a written agreement or statement from the supplier stipulating that the fish were frozen to the required temperature and time (FDA Food Code 2026, § 3-402.12 Records, Creation and Retention, PDF page 96). If the salmon is aquacultured and exempt from freezing, you must obtain and retain a written agreement or statement from the supplier or aquaculturist stipulating that the fish were raised and fed according to the required feeding conditions, and keep this record for 90 calendar days beyond the time of service or sale (FDA Food Code 2026, § 3-402.12 Records, Creation and Retention, PDF page 96).
+
+Note: The Food Code is a model code; each state or county adopts its own regulations.
+
+Sources:
+(FDA Food Code 2026, § 3-402.11 Parasite Destruction, PDF page 95)
+(FDA Food Code 2026, § 3-402.12 Records, Creation and Retention, PDF page 96)"
+q29,multi,"In a HACCP plan, what is a critical limit, and what critical limit would apply to cooking chicken under the Food Code?","A critical limit is one or more prescribed parameters that must be met to ensure that a CCP effectively controls a hazard. For poultry, the Food Code cooking requirement is 74°C (165°F) or above for <1 second.","A critical limit is a prescribed parameter (such as a minimum or maximum value for temperature, time, moisture level, water activity, or pH) that must be met to ensure that food safety hazards are controlled at each Critical Control Point (CCP) and to distinguish between safe and unsafe operating conditions (FDA Food Code 2026, Annex 4, PDF page 581). For cooking chicken, the critical limit specified is 165°F (74°C) for less than 1 second (instantaneous), which designates the minimum criteria required to eliminate food safety hazards or reduce them to an acceptable level (FDA Food Code 2026, Annex 4, PDF page 582).
+
+The Food Code is a model code; each state or jurisdiction adopts it with its own changes.
+
+Sources:
+(FDA Food Code 2026, Annex 4, PDF page 581)
+(FDA Food Code 2026, Annex 4, PDF page 582)"
+q30,unanswerable,How long after eating food contaminated with Staphylococcus aureus toxin do symptoms usually start?,"The corpus does not cover this. (The Bad Bug Book, not in the corpus, gives a rapid onset of 1 to 7 hours.)","The corpus does not cover this.
+
+Sources:"
+q31,unanswerable,How soon after eating reheated rice contaminated with Bacillus cereus does vomiting start?,"The corpus does not cover this. (The Bad Bug Book, not in the corpus, gives 0.5 to 6 hours for the emetic type.)",The corpus does not cover this.
+q32,unanswerable,Our café is in Spain. Does EU Regulation 852/2004 require us to have a HACCP plan?,The corpus does not cover this: it contains only US FDA documents. Ask the local (Spanish/EU) regulatory authority.,"The corpus does not cover this. The corpus covers United States food safety rules, specifically the FDA Food Code and FDA HACCP manuals, and does not contain European Union regulations such as EU Regulation 852/2004. You should consult local Spanish food safety authorities or EU regulatory guidance for compliance requirements regarding your café."
+q33,unanswerable,How often does our grease trap have to be pumped out?,"The corpus does not cover this: the Food Code only says a grease trap, if used, must be located to be easily accessible for cleaning; it gives no cleaning frequency.","The corpus does not specify a mandatory fixed time interval or schedule (such as weekly or monthly) for pumping out a grease trap. The Food Code only requires that if a grease trap is used, it must be located so that it is easily accessible for cleaning (FDA Food Code 2026, § 5-402.12 Grease Trap, PDF page 156).
+
+The Food Code is a model code; each state or county adopts it with its own changes."
+q34,unanswerable,How many hours of food safety training must new kitchen staff complete each year?,The corpus does not cover this: no number of training hours is given.,"The corpus does not cover this.
+
+Sources:"
+q35,unanswerable,Do I have to pay an employee I excluded for vomiting while they are off work?,The corpus does not cover this (pay is labour law). It can say the employee must be excluded (§ 2-201.12) but not whether to pay them.,"The corpus does not cover whether an excluded employee must be paid while off work. The FDA Food Code requires the person in charge to exclude a food employee who is symptomatic with vomiting, except when the symptom is from a noninfectious condition (FDA Food Code 2026, § 2-201.12 Exclusions and Restrictions, PDF page 59). 
+
+The Food Code is a model code; check your local regulatory authority or labor laws regarding wage requirements during employee exclusions.
+
+Sources:
+(FDA Food Code 2026, § 2-201.12 Exclusions and Restrictions, PDF page 59)"
+q36,unanswerable,What is the minimum ceiling height for a commercial kitchen?,The corpus does not cover this: no minimum ceiling height is given.,"The corpus does not cover this.
+
+Sources:"
