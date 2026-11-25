@@ -1,14 +1,12 @@
 # Assignment 3 Report
 
-- **Name**:
-- **Student ID**:
-- **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
-
-> **Note for the author (delete before submitting).** Sections marked ✏️ hold decisions or analysis the brief says must be yours. They contain a draft built from the numbers; rewrite them in your own words. Nothing technical is still open.
+- **Name**: Gonzalo Mir García
+- **Student ID**: 20107
+- **Group**: BBADBA 5B 
 
 The corpus and the test questions are in Spanish because the users (Spanish HR staff) and the laws are Spanish. Code, prompts and this report are in English.
 
-## Use case ✏️
+## Use case 
 
 **Who asks:** an HR administrator at a Spanish SME (10–100 employees) with no in-house lawyer. They check the statutory rule before acting: how many holiday days, how long a probation period can be, what severance a dismissal costs, which safety obligations apply and what the fine is for missing one.
 
@@ -38,7 +36,7 @@ The base corpus has **98,754 words** in 272 articles and dispositions, after rem
 - **Metadata per chunk:** `source` (BOE id), `title`, `location` (e.g. `Artículo 49, apdos. 1-2`), `heading`, `hierarchy`, `in_force_since`, `url` and `file_sha1`.
 - **Chunks:** 429 (`article` design) and 450 (`fixed` design). Vectors are stored in ChromaDB under `index/chroma` (32 MB) and saved after each batch of 50. `main.py index` embeds only the chunks that have no vector yet.
 
-## Test set ✏️
+## Test set 
 
 I wrote 36 questions from the articles, phrased the way an HR user would ask them, before tuning anything. Each reference answer was checked against the article text.
 
@@ -66,7 +64,7 @@ Hit rate on the 30 answerable questions. A hit means a chunk from the expected l
 | fixed 250-word windows, dense | 0.900 | 1.000 | 1.000 | 0.500 | 0.833 | 1,250 |
 | fixed 250-word windows, hybrid | 0.900 | 0.967 | 0.967 | 0.500 | 0.500 | 1,250 |
 
-✏️ **Choice: article chunks with dense search.** It is best or tied on every column, and it is the only design that gets both passages of a multi question into the top 3 in 5 of 6 cases. Its citations are also exact articles, which an HR user can check. Hybrid search was *worse*: BM25 boosts every article that repeats the query words (q17, "reclamar contra su despido", drops out of the top 5 because a dozen articles contain "despido"). Fixed windows cost about 175 fewer words per prompt, but they split articles and produce citations like `Artículo 37; Artículo 38`.
+ **Choice: article chunks with dense search.** It is best or tied on every column, and it is the only design that gets both passages of a multi question into the top 3 in 5 of 6 cases. Its citations are also exact articles, which an HR user can check. Hybrid search was *worse*: BM25 boosts every article that repeats the query words (q17, "reclamar contra su despido", drops out of the top 5 because a dozen articles contain "despido"). Fixed windows cost about 175 fewer words per prompt, but they split articles and produce citations like `Artículo 37; Artículo 38`.
 
 Caveat: hit@5 = 1.0 suggests the questions use the law's own vocabulary and are easy for retrieval. Questions written in everyday language ("¿me pueden echar estando de baja?") would be a harder test.
 
@@ -109,7 +107,7 @@ Every claim is in the retrieved passages, and the subagent searched once because
 
 ## Adding a document
 
-**If the document is already indexed:** `add_document` compares the file's SHA-1 with the one stored on the chunks for that source. If they are the same, it embeds nothing and answers "Already indexed … Nothing was embedded." If a different version of the same document is indexed, it deletes the old chunks and stores the new ones, so the index never holds two versions of the same law. ✏️ *Why: a law is updated in place on the BOE; keeping the old version would let the assistant cite repealed text.*
+**If the document is already indexed:** `add_document` compares the file's SHA-1 with the one stored on the chunks for that source. If they are the same, it embeds nothing and answers "Already indexed … Nothing was embedded." If a different version of the same document is indexed, it deletes the old chunks and stores the new ones, so the index never holds two versions of the same law.  *Why: a law is updated in place on the BOE; keeping the old version would let the assistant cite repealed text.*
 
 **Unanswerable question:** u02, *"¿Tiene la empresa que pagar los gastos de internet y equipos de un trabajador en teletrabajo?"*. ET art. 13 refers to Ley 10/2021, which is not indexed.
 
@@ -146,7 +144,7 @@ The answer is now correct and every claim is in arts. 7, 11 and 12 of Ley 10/202
 
 `agent.py` uses LangChain `create_agent` on `gemini-3.1-flash-lite`, with fallbacks to `gemini-flash-lite-latest` and `gemini-3.5-flash-lite`. The tools come from `server.py` over MCP stdio, through one persistent session wrapped as LangChain tools. `AGENTS.md` is the system prompt.
 
-- **AGENTS.md rules** ✏️ (each with its reason in the file): search before every answer; answer only from the results; cite every claim with the `CITE AS` text; start with `El corpus no cubre esta pregunta.` when not covered and say what is missing; give no advice on a specific case; call `add_document` only when explicitly asked; be brief.
+- **AGENTS.md rules** (each with its reason in the file): search before every answer; answer only from the results; cite every claim with the `CITE AS` text; start with `El corpus no cubre esta pregunta.` when not covered and say what is missing; give no advice on a specific case; call `add_document` only when explicitly asked; be brief.
 - **Approval step:** `HumanInTheLoopMiddleware(interrupt_on={"add_document": approve/reject})` with an in-memory checkpointer. In a terminal the harness prints the tool call and asks `Approve? [y/N]`. Without a terminal (evaluation, CI) it rejects the call.
 - **Call limits:** at most 8 model calls and 5 tool calls per question. `ModelRetryMiddleware` and `ModelFallbackMiddleware` handle Gemini 503 errors.
 - **Extra guardrail: citation check.** After the agent answers, code extracts every `[law, location]` citation and checks it against the `CITE AS` strings the search tool returned in this run. An answer with no citation that is not a refusal fails the check. On failure the agent gets one retry with the problem spelled out; if the retry fails too, the answer is replaced by a refusal.
@@ -192,7 +190,7 @@ By kind, correct: single 1.00, multi 0.67, unanswerable 0.83.
 Both disagreements (q05, m01) go the same way: I marked them unsupported and the judge did not. In both answers the agent widens an exception beyond the text. In q05 it limits the copy of the notice to the workers' representatives to "economic causes", while art. 52.c covers economic, technical, organisational and production causes. In m01 it says the severance need not be paid at once "for economic causes", while the text allows it only when the economic situation *prevents* paying it. The judge catches invented facts (q01, u02) but misses subtle distortions of a rule's scope, so its `supported` count is an upper bound.
 
 
-## Failures ✏️
+## Failures 
 
 | Question | Cause | Detail |
 |---|---|---|
@@ -212,7 +210,7 @@ By cause: retrieval miss 1, wrong answer from the right passage 1, unsupported c
 2. **Support check per sentence:** the citation guardrail proves that citations are real, not that every sentence has one or that it says what the passage says (q01, u02, and the scope errors in q05 and m01). A cheap LLM check of "does passage X support sentence Y, with the same scope" would catch them.
 3. **Relax the citation matcher** to accept an apartado that falls inside a retrieved range. That would remove most of the 9 retries, which add latency without catching errors.
 
-## Decision ✏️
+## Decision 
 
 **Would I let users rely on it?** Yes, as a first lookup with a mandatory check, not as a final authority. On single-article questions it was 24 of 24 correct and fully cited, and it refused all 6 out-of-scope questions with no wrong refusals. On multi-part questions it misses parts (4 of 6), and once it added an unsupported sentence to a refusal.
 
@@ -230,4 +228,4 @@ By cause: retrieval miss 1, wrong answer from the right passage 1, unsupported c
 
 ## AI use
 
-I used Claude Code (Anthropic) to write the code (`index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py`, `demo_add_document.py`), to draft AGENTS.md, the subagent, the test questions and this report from the evaluation output, and to propose candidate use cases. I chose the use case and corpus, reviewed the questions against the BOE text, graded 20 answers by hand, and wrote the decisions and analysis. ✏️ *Adjust this to what you actually did.*
+I used Claude Code (Anthropic) to write the code (`index.py`, `retrieval.py`, `server.py`, `agent.py`, `evaluate.py`, `demo_add_document.py`), to draft AGENTS.md, the subagent, the test questions and this report from the evaluation output, and to propose candidate use cases. I chose the use case and corpus, reviewed the questions against the BOE text, graded 20 answers by hand, and wrote the decisions and analysis. 
