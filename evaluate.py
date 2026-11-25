@@ -30,6 +30,7 @@ VECTORS = EVAL_DIR / "query_vectors.json"      # cache: question -> embedding
 ANSWERS = EVAL_DIR / "answers.jsonl"           # cache: one agent answer per line
 VERDICTS = EVAL_DIR / "judge.jsonl"            # cache: one judge verdict per line
 HUMAN = EVAL_DIR / "human_labels.csv"
+CRITERIA = EVAL_DIR / "grading_criteria.csv"   # my per-question criteria, given to the judge
 
 
 # =============================================================================
@@ -169,8 +170,9 @@ supported = 1 if EVERY factual claim in the ANSWER can be found in the EVIDENCE
 Reply with JSON only: {"correct": 0 or 1, "supported": 0 or 1, "reason": "one sentence"}"""
 
 
-def judge(client, question: str, reference: str, evidence: str, answer: str) -> dict:
+def judge(client, question: str, reference: str, evidence: str, answer: str, criteria: str = "") -> dict:
     prompt = (f"QUESTION: {question}\n\nREFERENCE: {reference}\n\n"
+              f"{criteria}"
               f"EVIDENCE:\n{evidence or '(nothing retrieved)'}\n\nANSWER: {answer}")
     response = client.models.generate_content(
         model=CHAT_MODEL,
@@ -187,6 +189,12 @@ def judge(client, question: str, reference: str, evidence: str, answer: str) -> 
 def grade_all(questions: pd.DataFrame, answers: dict) -> dict:
     """Code checks for what code can check, the judge for the rest."""
     client = get_client()          # the same client (with retries) as index.py
+    # My criteria for each question: what makes THIS answer correct and grounded.
+    criteria = {}
+    if CRITERIA.exists():
+        for _, c in pd.read_csv(CRITERIA, dtype=str).fillna("").iterrows():
+            criteria[c["id"]] = (f"WHAT 'correct' MEANS FOR THIS QUESTION: {c['correctness_criterion']}\n"
+                                 f"WHAT 'supported' MEANS FOR THIS QUESTION: {c['groundedness_criterion']}\n\n")
     verdicts = load_jsonl(VERDICTS)
     for _, q in questions.iterrows():
         if q["id"] not in answers or q["id"] in verdicts:
@@ -203,7 +211,8 @@ def grade_all(questions: pd.DataFrame, answers: dict) -> dict:
                           reason="refused")
         else:
             try:
-                verdict = judge(client, q["question"], q["reference_answer"], a["retrieved_text"], a["answer"])
+                verdict = judge(client, q["question"], q["reference_answer"], a["retrieved_text"], a["answer"],
+                                criteria.get(q["id"], ""))
             except Exception as error:
                 print(f"  judge stopped at {q['id']}: {str(error)[:200]}")
                 break
