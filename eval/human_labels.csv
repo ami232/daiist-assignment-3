@@ -1,1 +1,21 @@
 id,correct,supported,notes
+q02,1,1,
+q04,1,1,
+q07,1,1,
+q10,1,1,
+q13,1,1,
+q17,1,1,
+q19,1,1,
+q23,1,1,
+m01,1,1,
+m02,1,1,
+m03,1,1,
+m04,1,1,
+m05,1,1,
+m06,0,1,blends the wiki's two conflicting figures (46 and 50 HP/s) into a range instead of flagging the disagreement
+u01,1,1,
+u02,1,1,
+u03,1,1,
+u04,1,0,right to refuse but claims the snapshot has no Point Break mode; Monaco lists it
+u05,1,1,
+u06,1,1,

@@ -1,0 +1,3 @@
+id,kind,question,answer,auto_class,judge_reason,manual_class
+q02,single,How many SR-84 headshots does it take to eliminate a Heavy contestant?,"The wiki does not cover this. I could not back an answer with a passage from the wiki, so I won't guess.",wrong refusal,"The question is answerable using the provided evidence, but the assistant incorrectly claimed the wiki does not cover it.",
+m06,multi,"Which heals faster, the Healing Beam or the Healing Emitter?","The wiki does not cover this. I could not back an answer with a passage from the wiki, so I won't guess.",wrong refusal,"The question is fully answerable using the provided evidence, but the assistant incorrectly claimed the wiki does not cover it.",
