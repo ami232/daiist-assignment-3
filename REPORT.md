@@ -1,8 +1,8 @@
 # Assignment 3 Report
 
-- **Name**:
+- **Name**: Clara Zsigmond
 - **Student ID**:
-- **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
+- **Group**: PPLEDBA 5A
 
 ## Use case
 
