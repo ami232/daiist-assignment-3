@@ -49,7 +49,7 @@ SUPPORTED = {".pdf", ".txt", ".md", ".html", ".htm"}
 DESIGNS = ("fixed", "structure")
 # Set these from the table `main.py evaluate` prints (eval/retrieval.csv).
 ACTIVE_DESIGN = "structure"
-ACTIVE_MODE = "hybrid"   # "dense" or "hybrid" (dense + BM25, reciprocal rank fusion)
+ACTIVE_MODE = "dense"   # "dense" or "hybrid" (dense + BM25, reciprocal rank fusion)
 ACTIVE_SCOPE = "articles"  # "all" or "articles" (metadata filter: skip recitals/preamble, see Store.search)
 TOP_K = 5
 

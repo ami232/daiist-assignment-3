@@ -1,0 +1,10 @@
+id,kind,category,graded_by,retrieved_expected,reason,question,answer
+q16,single,unsupported claim,judge,False,"The assistant incorrectly claims the user does not qualify for compensation when a 3-hour journey is delayed by 3 hours, which contradicts the reference answer stating they are entitled to 50% compensation.",My 3-hour ferry crossing arrived 3 hours late. How much compensation can I get?,"For a 3-hour scheduled journey that arrives 3 hours late, you do not qualify for compensation [sea.pdf, Article 17, pp. 9-10]. 
+
+The minimum level of compensation is 25% of the ticket price, which only applies for a delay of at least:
+- 1 hour in the case of a scheduled journey of up to 4 hours [sea.pdf, Article 17, pp. 9-10]. However, carriers may introduce a minimum threshold under which compens"
+q27,unanswerable,unsupported claim,judge,,"The question is unanswerable because the documents cover EU rules rather than UK261, but the assistant attempted to answer the question using the document details.",How much compensation does UK261 give for a cancelled flight from London to New York?,"Passengers shall receive compensation amounting to EUR 600 for flights not falling under 1,500 kilometres or less, or intra-Community flights of more than 1,500 kilometres and other flights between 1,500 and 3,500 kilometres [air.pdf, Article 7, p. 5]. 
+
+This compensation is subject to the following conditions and exceptions:
+- The operating air carrier may reduce the compensation by 50% if the pa"
+q32,unanswerable,unsupported claim,judge,,"The assistant correctly identified that the question is unanswerable based on the provided documents and accurately cited the text stating that sanctions must be effective, proportionate, and dissuasive.",What is the maximum fine a national authority can impose on an airline that refuses to pay compensation?,"The documents do not specify a maximum fine or monetary amount that a national authority can impose; they only state that the sanctions laid down by Member States for infringements of the regulation must be effective, proportionate, and dissuasive [air.pdf, Article 16, pp. 6–7]."

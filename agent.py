@@ -26,7 +26,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 SYSTEM_PROMPT = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
-CHAT_MODEL = os.environ.get("GEMINI_CHAT_MODEL", "gemini-2.5-flash")
+CHAT_MODEL = os.environ.get("GEMINI_CHAT_MODEL", "gemini-3.5-flash-lite")
 REFUSAL = "I don't know based on the documents."
 MODEL_CALL_LIMIT, TOOL_CALL_LIMIT = 8, 6
 
