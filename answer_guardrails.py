@@ -22,6 +22,23 @@ CITATION = re.compile(r"\[([^\[\]\n|]+)\s*\|\s*([^\[\]\n|]+)\]")
 BLOCKED_ANSWER = "I couldn't produce an answer with verified citations from the retrieved passages."
 
 
+def dated_evidence_issues(question, draft, trace, as_of):
+    """Conservative freshness gate, restricted to explicit requests for live facts.
+
+    A year in a passage is necessary here, never sufficient proof of freshness.
+    Semantic review must still verify the company, reporting period and claim.
+    Generic terms such as 'current ratio' do not activate this gate.
+    """
+    current_request = re.search(r"\b(latest|most recent|current (?:median|industry|fiscal|financial|year|quarter))\b", question, re.I)
+    if not current_request or draft.status == "unanswerable":
+        return []
+    minimum_year = int(as_of[:4]) - 1
+    years = [int(y) for hit in retrieved_passages(trace) for y in re.findall(r"\b20\d{2}\b", hit["text"])]
+    if not years or max(years) < minimum_year:
+        return ["Freshness gate: retrieved evidence has no recent reporting year. Mark unanswerable, explicitly identify the missing current company/period/figure, leave answer_claims empty, and put any dated historical example only in general_background."]
+    return []
+
+
 def canonical_citation(value):
     match = CITATION.fullmatch(value.strip())
     return f"[{match[1].strip()} | {match[2].strip()}]" if match else None
@@ -85,16 +102,25 @@ def render_answer(draft):
     return "\n\n".join(paragraphs)
 
 
-async def guard_answer(draft, trace, repair: Callable[..., Awaitable[AnswerDraft]]):
+async def guard_answer(draft, trace, repair: Callable[..., Awaitable[AnswerDraft]], audit=None):
     """At most one correction call, then a transparent, deterministic refusal."""
-    issues = validate_draft(draft, trace)
+    async def check(candidate):
+        issues = validate_draft(candidate, trace)
+        if not issues and audit is not None:
+            try:
+                issues.extend(await audit(candidate))
+            except Exception as error:
+                issues.append(f"Support verification unavailable: {type(error).__name__}")
+        return issues
+
+    issues = await check(draft)
     events, corrections = [], 0
     if issues:
         events.append({"attempt": 0, "issues": issues})
         corrections = 1
         try:
             draft = await repair(draft, issues)
-            issues = validate_draft(draft, trace)
+            issues = await check(draft)
         except Exception as error:
             issues = [f"Correction failed: {type(error).__name__}"]
         events.append({"attempt": 1, "issues": issues})

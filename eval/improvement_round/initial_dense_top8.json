@@ -1,0 +1,302 @@
+[
+  {
+    "id": "q01",
+    "kind": "multi",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2870
+  },
+  {
+    "id": "q02",
+    "kind": "single",
+    "coverage": {
+      "hit_any": 0,
+      "hit_all": 0,
+      "evidence_recall": 0.0
+    },
+    "context_words": 2781
+  },
+  {
+    "id": "q03",
+    "kind": "unanswerable",
+    "coverage": {
+      "hit_any": null,
+      "hit_all": null,
+      "evidence_recall": null
+    },
+    "context_words": 3200
+  },
+  {
+    "id": "q04",
+    "kind": "multi",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2889
+  },
+  {
+    "id": "q05",
+    "kind": "multi",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2589
+  },
+  {
+    "id": "q06",
+    "kind": "single",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2953
+  },
+  {
+    "id": "q07",
+    "kind": "single",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2330
+  },
+  {
+    "id": "q08",
+    "kind": "single",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2606
+  },
+  {
+    "id": "q09",
+    "kind": "unanswerable",
+    "coverage": {
+      "hit_any": null,
+      "hit_all": null,
+      "evidence_recall": null
+    },
+    "context_words": 2587
+  },
+  {
+    "id": "q10",
+    "kind": "unanswerable",
+    "coverage": {
+      "hit_any": null,
+      "hit_all": null,
+      "evidence_recall": null
+    },
+    "context_words": 2615
+  },
+  {
+    "id": "q11",
+    "kind": "unanswerable",
+    "coverage": {
+      "hit_any": null,
+      "hit_all": null,
+      "evidence_recall": null
+    },
+    "context_words": 2978
+  },
+  {
+    "id": "q12",
+    "kind": "unanswerable",
+    "coverage": {
+      "hit_any": null,
+      "hit_all": null,
+      "evidence_recall": null
+    },
+    "context_words": 3200
+  },
+  {
+    "id": "q13",
+    "kind": "single",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2492
+  },
+  {
+    "id": "q14",
+    "kind": "single",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2034
+  },
+  {
+    "id": "q15",
+    "kind": "single",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2345
+  },
+  {
+    "id": "q16",
+    "kind": "single",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2131
+  },
+  {
+    "id": "q17",
+    "kind": "single",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2196
+  },
+  {
+    "id": "q18",
+    "kind": "multi",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2373
+  },
+  {
+    "id": "q19",
+    "kind": "multi",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 3200
+  },
+  {
+    "id": "q20",
+    "kind": "single",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 3111
+  },
+  {
+    "id": "q21",
+    "kind": "multi",
+    "coverage": {
+      "hit_any": 0,
+      "hit_all": 0,
+      "evidence_recall": 0.0
+    },
+    "context_words": 2833
+  },
+  {
+    "id": "q22",
+    "kind": "single",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 3079
+  },
+  {
+    "id": "q23",
+    "kind": "single",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2724
+  },
+  {
+    "id": "q24",
+    "kind": "single",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 3200
+  },
+  {
+    "id": "q25",
+    "kind": "single",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2738
+  },
+  {
+    "id": "q26",
+    "kind": "multi",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2876
+  },
+  {
+    "id": "q27",
+    "kind": "multi",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2973
+  },
+  {
+    "id": "q28",
+    "kind": "single",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2887
+  },
+  {
+    "id": "q29",
+    "kind": "single",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 2926
+  },
+  {
+    "id": "q30",
+    "kind": "multi",
+    "coverage": {
+      "hit_any": 1,
+      "hit_all": 1,
+      "evidence_recall": 1.0
+    },
+    "context_words": 3082
+  }
+]

@@ -1,0 +1,34 @@
+{
+  "inputs": {
+    "behavior": {
+      "AGENTS.md": "ff491955734132fb05f1634b2d1f30bfa37c6fa08312db4033905df252f32657",
+      "agent.py": "bad0436bc4e07411caf29ead241cc59d6d94f9453cda605afe9fe042b3c60401",
+      "answer_guardrails.py": "3e4ad875f53b9e290627c42369a930541f98ad340d07932f57cb0028eb639a10",
+      "server.py": "d233777130a33328f11585f388b9a2ff22e182ce80e80054fb7fecb0554a0390",
+      "model_recovery.py": "4a2eb43e66a0f17562dc4cf1c30c9a5f93afa7727cdb1b0ebbb9ce913d458c96",
+      "improvement_round.py": "7e6e281cdda1f836696dd4c41caaf69d689829e47b789098bb0de8d7a686a65d"
+    },
+    "questions": "edfa0685ca2560d84897f52739ec3f776619a12f5313aa0e417f4a427e15f998",
+    "corpus": "59923422161a5bc7d470439892a50c458edba448d4dfb9682fff533de89513c8",
+    "baseline_answers": "1de9727fbc1b5784aa170f0455476dbb69b74dda6599bc97b2a609792434b57e",
+    "human_labels": "d65fd17240e315d00f096d688f2069c00af1344ea80ab02efabd3ee261da4675",
+    "settings": "89e25c12aadf123a57dad6eeb242b09a3d5b9689903d7d1daa0d188c7b647ae3",
+    "baseline_human_binding": "44f6696eb924f5b6b9e048690cdfaa0b669ef01baddb094c337c1f4ffc000376",
+    "rubric": "d7912559f21a21e08acda0e01dbe53867cce0210a02a9a536ef48441fcfad0a8"
+  },
+  "created_at": "2026-11-25T16:49:29.967084+01:00",
+  "purpose": "One development round informed by known baseline failures; same 30 questions, not held-out.",
+  "human_review": "Original 20 baseline student grades preserved. No human grades on revised answers; all new reviews are AI-generated.",
+  "changes": [
+    "Mandatory initial dense search with eight rather than five results",
+    "Narrow evidence-gap wording and preservation of book-specific qualifications",
+    "Separate source-support audit before release; one correction then recheck",
+    "Bounded transient-error retry with shared tool budget; no daily-quota retries"
+  ],
+  "model_change": "Baseline used 3.1-flash-lite, unavailable in saved probe. Revised uses available 3.5-flash-lite; gains cannot be attributed to code alone.",
+  "models": {
+    "agent": "gemini-3.5-flash-lite",
+    "paired_judge": "gemini-3.5-flash-lite"
+  },
+  "comparison": "Same stricter rubric for baseline and revised answers in paired review; rotating A/B order. Judge never sees human grades or baseline verdicts."
+}

@@ -45,7 +45,7 @@
     }
   },
   "duplicate_document_policy_status": "Confirmed by student: identical bytes resume/reuse; changed content creates a separate version.",
-  "stage": "Report, evaluation and student analysis complete; local submission packaging and publication pending",
+  "stage": "Published baseline retained; focused improvement round complete with supplemental AI-only paired review.",
   "corpus_scope_status": "Implemented chapter scope used for the frozen student-provided 30-question test set.",
   "sources": [
     {
@@ -122,7 +122,7 @@
     "judge_and_human_evaluation": "20 original student reviews bound before judging; 30 final gemini-3.5-flash-lite verdicts saved; agreement and numeric summary complete.",
     "report_analysis": "Student confirmed ten failure categories and supplied a demo-only decision with claim-support and judge improvements first, then provider recovery."
   },
-  "agent_model": "gemini-3.1-flash-lite",
+  "agent_model": "gemini-3.5-flash-lite",
   "agent_guardrail": {
     "type": "Citation identity and per-claim citation gate",
     "correction_attempts": 1,
@@ -131,7 +131,8 @@
     "max_mcp_calls": 3,
     "max_primary_model_calls": 5,
     "max_correction_model_calls": 1,
-    "add_document_approval": "Required for every invocation; denied by default in noninteractive evaluation"
+    "add_document_approval": "Required for every invocation; denied by default in noninteractive evaluation",
+    "description_applies_to": "Original baseline; see improvement_round for the current additions."
   },
   "agent_sampling": "Provider defaults; output capped at 1800 tokens per model response",
   "judge_scoring_policy": "Correctness and support are scored independently; reliable answers must pass both, plus citation validation",
@@ -166,5 +167,20 @@
     "prior_verdicts_preserved_in_run_cache": true,
     "second_service_change": "gemini-3.5-flash exhausted the provider-reported 20-request daily free-tier limit after 18 saved current-model verdicts. Switched all final verdicts to gemini-3.5-flash-lite, which had also passed the same full request availability probe. No model was selected by its grades or agreement.",
     "preserved_partial_model": "gemini-3.5-flash"
+  },
+  "improvement_round": {
+    "baseline_run": "eval/runs/f0fa6c5df158007be127",
+    "human_review": "20 original grades retained; revised answers receive AI review only",
+    "model_selection": "3.1-flash-lite returned repeated 503 errors; 3.5-flash-lite passed availability probe. The model change is a comparison confound, not chosen by accuracy.",
+    "status": "complete",
+    "paired_ai_both_pass": {
+      "baseline": 25,
+      "revised": 26,
+      "denominator": 30
+    },
+    "support_audit": "Separate model check plus exact citation identity and conservative freshness gate; one correction and recheck; fails closed on audit outage.",
+    "ordinary_question_flow": "Mandatory original search, structured broad query and second search, structured generation, support audit.",
+    "provider_pacing_requests_per_second": 0.2,
+    "interpretation": "Mixed development result: four improved cases, three regressions, lower AI support score and higher latency. Demo only."
   }
 }

@@ -299,7 +299,15 @@ def main():
     parser.add_argument("--design", choices=["dense", "hybrid"])
     args = parser.parse_args()
     try:
-        print(json.dumps(asyncio.run(evaluate(args)), indent=2))
+        if (EVAL / "improvement_round/summary.json").exists() and not any((
+                args.retrieval_only, args.answers_only, args.bind_human_labels, args.design)):
+            # Keep the original blind review attached to its original answers.
+            # A supplemental AI-only round never fabricates replacement labels.
+            from improvement_round import verify_saved
+            result = verify_saved()
+        else:
+            result = asyncio.run(evaluate(args))
+        print(json.dumps(result, indent=2))
     except ValueError as error:
         print(str(error), file=sys.stderr)
         raise SystemExit(2) from None

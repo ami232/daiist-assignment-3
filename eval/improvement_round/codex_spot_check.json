@@ -1,0 +1,6 @@
+{
+  "review_type": "AI spot-check by Codex; not a student human label",
+  "question": "q26",
+  "finding": "Paired judge unsupported-claim flag conflicts with the cited passage, which explicitly says the company continues to report the $7,000 historical figure. The answer omits some optional surrounding qualifications, but that does not support the judge's specific claim that this sentence is unsupported.",
+  "action": "Keep original judge verdict and aggregate scores unchanged; disclose disagreement."
+}

@@ -1,0 +1,85 @@
+{
+  "inputs": {
+    "behavior": {
+      "AGENTS.md": "ff491955734132fb05f1634b2d1f30bfa37c6fa08312db4033905df252f32657",
+      "agent.py": "abe1da050ecc8e101bbadec6b089e2dda98950c9956afbbf2deeeebd1aca11b5",
+      "answer_guardrails.py": "3e4ad875f53b9e290627c42369a930541f98ad340d07932f57cb0028eb639a10",
+      "server.py": "d233777130a33328f11585f388b9a2ff22e182ce80e80054fb7fecb0554a0390",
+      "model_recovery.py": "4a2eb43e66a0f17562dc4cf1c30c9a5f93afa7727cdb1b0ebbb9ce913d458c96",
+      "improvement_round.py": "d0b78afad9bd8bde3cd74077635c1b9ec12e38a50bb3e2dd155779c6dce3d7d0",
+      "retrieval.py": "1cb67845e14928d0174b82a53fb0ba1cef4afae5a1c0d12610614de73a4c1725",
+      "index.py": "710f65850de582d406b1f6ae0d0a4074195722c8225bdadfdde7bb11ce24f7d0",
+      "evaluate.py": "f1809926bd1e2011287c4d30fa41bf2ad1262aa3095739391ba1c9b55f7c31e4",
+      "evaluation_support.py": "8565275989adf2e6839a06c467cc561ab467424735c8245be45648453d2e0e4a"
+    },
+    "questions": "edfa0685ca2560d84897f52739ec3f776619a12f5313aa0e417f4a427e15f998",
+    "corpus": "59923422161a5bc7d470439892a50c458edba448d4dfb9682fff533de89513c8",
+    "baseline_answers": "1de9727fbc1b5784aa170f0455476dbb69b74dda6599bc97b2a609792434b57e",
+    "human_labels": "d65fd17240e315d00f096d688f2069c00af1344ea80ab02efabd3ee261da4675",
+    "settings": "3d0a829c25dd388bf841258e3f182f76008f756694b38623aa2936c6702ceceb",
+    "baseline_human_binding": "44f6696eb924f5b6b9e048690cdfaa0b669ef01baddb094c337c1f4ffc000376",
+    "rubric": "d7912559f21a21e08acda0e01dbe53867cce0210a02a9a536ef48441fcfad0a8"
+  },
+  "created_at": "2026-11-25T17:11:11.947268+01:00",
+  "purpose": "One development round informed by known baseline failures; same 30 questions, not held-out.",
+  "human_review": "Original 20 baseline student grades preserved. No human grades on revised answers; all new reviews are AI-generated.",
+  "changes": [
+    "Mandatory initial dense search with eight rather than five results",
+    "Narrow evidence-gap wording and preservation of book-specific qualifications",
+    "Separate source-support audit before release; one correction then recheck",
+    "Bounded transient-error retry with shared tool budget; no daily-quota retries"
+  ],
+  "model_change": "Baseline used 3.1-flash-lite, unavailable in saved probe. Revised uses available 3.5-flash-lite; gains cannot be attributed to code alone.",
+  "models": {
+    "agent": "gemini-3.5-flash-lite",
+    "paired_judge": "gemini-3.5-flash-lite"
+  },
+  "comparison": "Same stricter rubric for baseline and revised answers in paired review; rotating A/B order. Judge never sees human grades or baseline verdicts.",
+  "orchestration_history": [
+    {
+      "previous_runner_sha256": "7e6e281cdda1f836696dd4c41caaf69d689829e47b789098bb0de8d7a686a65d",
+      "change": "Generation concurrency increased from one to two. Answering code, prompts, evidence rules and models unchanged; completed answers retained."
+    }
+  ],
+  "transport_pacing_change": {
+    "previous_agent_sha256": "7be00e1965ed616989668a930e44bb55b15d06a0abf3cd147320b8b5832c220b",
+    "answers_saved_before_change": [
+      "q01",
+      "q02",
+      "q03",
+      "q05",
+      "q06",
+      "q07",
+      "q08",
+      "q09",
+      "q10",
+      "q11",
+      "q13",
+      "q12",
+      "q14",
+      "q16",
+      "q15",
+      "q18",
+      "q20",
+      "q21",
+      "q22",
+      "q23",
+      "q19",
+      "q26",
+      "q25",
+      "q28",
+      "q30",
+      "q29"
+    ],
+    "reason": "Observed 15 requests/minute provider limit. Added shared 0.2 requests/second pacing. Answer prompts, retrieval, models, validation and correction policy unchanged. Existing outputs retained."
+  },
+  "review_orchestration_change": {
+    "previous_runner_sha256": "58f2326b454cf002f86a4fff2614b80f8abd783cabd1ee7aec632a99606fe54e",
+    "change": "Continue past transient paired-review failures, save them and retry only missing reviews on resume. Same model, schema, rubric and prompts. Added hashing of imported runtime files."
+  },
+  "final_metadata_update": {
+    "generation_settings_sha256": "89e25c12aadf123a57dad6eeb242b09a3d5b9689903d7d1daa0d188c7b647ae3",
+    "snapshot": "generation_settings_snapshot.json",
+    "reason": "Updated completion status and descriptions only. Agent model, retrieval design and as-of date unchanged."
+  }
+}
