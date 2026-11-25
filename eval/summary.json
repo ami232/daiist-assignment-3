@@ -1,0 +1,154 @@
+{
+  "model": "gemini-flash-lite-latest",
+  "judge_model": "gemini-flash-lite-latest",
+  "embedding_model": "gemini-embedding-2",
+  "active_design": "structure",
+  "questions": 43,
+  "by_kind": {
+    "single": 29,
+    "multi": 7,
+    "unanswerable": 7
+  },
+  "retrieval": {
+    "fixed": {
+      "chunks": 393,
+      "hit@1": 0.639,
+      "hit@3": 0.833,
+      "hit@5": 0.889,
+      "any_passage@1": 0.75,
+      "any_passage@3": 0.889,
+      "any_passage@5": 0.944,
+      "words_in_prompt@1": 250,
+      "words_in_prompt@3": 750,
+      "words_in_prompt@5": 1250,
+      "mean_top_score_answerable": 0.769,
+      "mean_top_score_unanswerable": 0.648
+    },
+    "structure": {
+      "chunks": 402,
+      "hit@1": 0.694,
+      "hit@3": 0.889,
+      "hit@5": 0.944,
+      "any_passage@1": 0.833,
+      "any_passage@3": 0.944,
+      "any_passage@5": 0.944,
+      "words_in_prompt@1": 222,
+      "words_in_prompt@3": 660,
+      "words_in_prompt@5": 1076,
+      "mean_top_score_answerable": 0.789,
+      "mean_top_score_unanswerable": 0.659
+    }
+  },
+  "end_to_end": {
+    "correct_answers": 36,
+    "answerable": 36,
+    "unsupported_answers": 1,
+    "correct_refusals": 7,
+    "unanswerable": 7,
+    "wrong_refusals": 0,
+    "answered_unanswerable": 0,
+    "judge_correct_rate": 0.977,
+    "judge_supported_rate": 0.977
+  },
+  "code_checks": {
+    "citations_valid": 43,
+    "refusal_ok": 43,
+    "answerable_citing_expected_passage": 36,
+    "answerable_expected_passage_retrieved_by_agent": 34,
+    "guardrail_fired": 10
+  },
+  "failures_auto": {
+    "judge disagreement": 1
+  },
+  "cost_per_question": {
+    "tokens_mean": 6825,
+    "seconds_mean": 18.1,
+    "seconds_max": 324.86,
+    "searches_mean": 1.23,
+    "judge_tokens_mean": 3136
+  },
+  "judge_vs_human": {
+    "graded": 43,
+    "disagreements": [
+      {
+        "id": "q31",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "Correct answer, but 'much higher risk ... severe complications' is not in the retrieved text (p. 14 only calls the group vulnerable/highly susceptible).",
+        "judge_explanation": "The assistant correctly answers both parts of the question using the provided food code and employee health handbook evidence without adding unsupported claims."
+      },
+      {
+        "id": "q39",
+        "field": "correct",
+        "human": 1,
+        "judge": 0,
+        "human_notes": "",
+        "judge_explanation": "The question is unanswerable from the text, but the assistant attempted to answer it by telling the user to consult external guidelines instead of simply stating that the documents do not cover it."
+      },
+      {
+        "id": "q39",
+        "field": "supported",
+        "human": 1,
+        "judge": 0,
+        "human_notes": "",
+        "judge_explanation": "The question is unanswerable from the text, but the assistant attempted to answer it by telling the user to consult external guidelines instead of simply stating that the documents do not cover it."
+      },
+      {
+        "id": "q42",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "Correct refusal, but adds emergency advice ('call 911') from general knowledge, not from the documents.",
+        "judge_explanation": "The assistant correctly declined to answer an unanswerable question, stated what the documents do cover, and pointed the user to emergency services without providing unverified medical advice."
+      }
+    ],
+    "correct": {
+      "n": 43,
+      "agreement": 0.977,
+      "kappa": 0.0,
+      "human_rate": 1.0,
+      "judge_rate": 0.977
+    },
+    "supported": {
+      "n": 43,
+      "agreement": 0.93,
+      "kappa": -0.032,
+      "human_rate": 0.953,
+      "judge_rate": 0.977
+    }
+  },
+  "add_document_demo": {
+    "id": "q37",
+    "question": "How many days before opening a new restaurant do I have to apply for a permit?",
+    "document": "corpus\\food_code_2022_chapter_8.pdf",
+    "add_document_result": "{\"status\": \"added\", \"source\": \"food_code_2022_chapter_8\", \"chunks\": 35, \"pages\": \"1-20\"}",
+    "add_again_result": "{\"status\": \"already_indexed\", \"source\": \"food_code_2022_chapter_8\", \"chunks\": 35}",
+    "before": {
+      "answer": "The documents I have do not cover this. Please consult your local health authority or the FDA Food Code for permit application timelines in your jurisdiction.",
+      "cited": [],
+      "guardrail": "passed",
+      "searches": [
+        {
+          "query": "permit opening new restaurant days before"
+        },
+        {
+          "query": "permit application timeline days before opening"
+        }
+      ]
+    },
+    "after": {
+      "answer": "You must submit an application for a permit at least 30 calendar days before the date planned for opening a food establishment [food_code_2022_chapter_8, §8-301.11 to 8-302.13, pp. 5-6].",
+      "cited": [
+        "[food_code_2022_chapter_8, §8-301.11 to 8-302.13, pp. 5-6]"
+      ],
+      "guardrail": "passed",
+      "searches": [
+        {
+          "query": "permit opening a new restaurant days apply"
+        }
+      ]
+    }
+  },
+  "evaluation_seconds": 542.1
+}

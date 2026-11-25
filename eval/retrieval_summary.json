@@ -1,0 +1,30 @@
+{
+  "fixed": {
+    "chunks": 393,
+    "hit@1": 0.639,
+    "hit@3": 0.833,
+    "hit@5": 0.889,
+    "any_passage@1": 0.75,
+    "any_passage@3": 0.889,
+    "any_passage@5": 0.944,
+    "words_in_prompt@1": 250,
+    "words_in_prompt@3": 750,
+    "words_in_prompt@5": 1250,
+    "mean_top_score_answerable": 0.769,
+    "mean_top_score_unanswerable": 0.648
+  },
+  "structure": {
+    "chunks": 402,
+    "hit@1": 0.694,
+    "hit@3": 0.889,
+    "hit@5": 0.944,
+    "any_passage@1": 0.833,
+    "any_passage@3": 0.944,
+    "any_passage@5": 0.944,
+    "words_in_prompt@1": 222,
+    "words_in_prompt@3": 660,
+    "words_in_prompt@5": 1076,
+    "mean_top_score_answerable": 0.789,
+    "mean_top_score_unanswerable": 0.659
+  }
+}

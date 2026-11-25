@@ -1,0 +1,34 @@
+{
+  "id": "q37",
+  "question": "How many days before opening a new restaurant do I have to apply for a permit?",
+  "document": "corpus\\food_code_2022_chapter_8.pdf",
+  "source": "food_code_2022_chapter_8",
+  "add_document_result": "{\"status\": \"added\", \"source\": \"food_code_2022_chapter_8\", \"chunks\": 35, \"pages\": \"1-20\"}",
+  "add_again_result": "{\"status\": \"already_indexed\", \"source\": \"food_code_2022_chapter_8\", \"chunks\": 35}",
+  "removed_chunks_afterwards": 35,
+  "before": {
+    "answer": "The documents I have do not cover this. Please consult your local health authority or the FDA Food Code for permit application timelines in your jurisdiction.",
+    "cited": [],
+    "guardrail": "passed",
+    "searches": [
+      {
+        "query": "permit opening new restaurant days before"
+      },
+      {
+        "query": "permit application timeline days before opening"
+      }
+    ]
+  },
+  "after": {
+    "answer": "You must submit an application for a permit at least 30 calendar days before the date planned for opening a food establishment [food_code_2022_chapter_8, §8-301.11 to 8-302.13, pp. 5-6].",
+    "cited": [
+      "[food_code_2022_chapter_8, §8-301.11 to 8-302.13, pp. 5-6]"
+    ],
+    "guardrail": "passed",
+    "searches": [
+      {
+        "query": "permit opening a new restaurant days apply"
+      }
+    ]
+  }
+}
