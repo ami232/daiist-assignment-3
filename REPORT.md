@@ -8,7 +8,7 @@
 
 *Who asks, what they do with the answer, and what a wrong answer costs compared with "I don't know".*
 
-The agent answers questions from the quality and regulatory team of a small food company in Spain that sells packaged food in the EU and does not have its own lawyer. Before new labels go to print, or when marketing wants to put a claim on the packing like "source of fibre" or "vitamin C contributes to the normal function of the immune system", the team asks the agent what the label must, may or may not say. They use the response to review the draft label, and the reference to open the article and verify it themselves or forward it to an advisor.
+The agent answers questions from the quality and regulatory team of a small food company in Spain that sells packaged food in the EU and does not have its own lawyer. Before new labels go to print, or when marketing wants to put a claim on the packaging like "source of fibre" or "vitamin C contributes to the normal function of the immune system", the team asks the agent what the label must, may or may not say. They use the response to review the draft label, and the reference to open the article and verify it themselves or forward it to an advisor.
 
 A wrong answer costs much more than "I don't know". If the agent says an allergen does not need to be emphasised in the list of ingredients, or that a health claim is allowed when it is not, the company can print thousands of labels that break the law, which means relabelling or destroying the stock and possibly a recall with fines from the food safety authorities, and with allergens there is also a real health risk for consumers. "I don't know" only costs time, since the team has to read the regulation themselves or pay someone for an hour of work.
 
@@ -17,6 +17,7 @@ This is why the agent is built to refuse rather than guess, every answer has to 
 ## Corpus
 
 *Table: document, URL, date, licence, words.*
+
 | Document | URL | Date | Licence | Words |
 |---|---|---|---|---|
 | Regulation (EU) No 1169/2011, food information to consumers (REG_1169_2011) | https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32011R1169 | 25 Oct 2011 | EUR-Lex: reuse allowed with acknowledgement (Decision 2011/833/EU) | 22,521 |
@@ -29,11 +30,23 @@ This is why the agent is built to refuse rather than guess, every answer has to 
 
 Added later in the demo: Commission Implementing Regulation (EU) No 828/2014 (gluten-free statements), 30 Jul 2014, from the Publications Office (Cellar), 10 chunks.
 
-The corpus is six documents from EUR-Lex with 59,357 words in total, the three EU regulations on food information and on nutrition and health claims, and three Commission notices that explain how to apply them. I added the official guidance and not only the law because the regulations say what is required, but the notices answer the practical questions a quality and regulatory team actually has, like how to emphasise allergens.
+The corpus is six documents from EUR-Lex with 59,299 words in total, the three EU regulations on food information and on nutrition and health claims, and three Commission notices that explain how to apply them. I added the official guidance and not only the law because the regulations say what is required, but the notices answer the practical questions a quality and regulatory team actually has, like how to emphasise allergens.
 
 ## Ingestion
 
 *How you extract, clean and chunk; one extraction problem you fixed; chunk metadata; number of chunks.*
+
+Every document goes through the same pipeline in index.py, which turns the EUR-Lex page into chunks with one vector each in ChromaDB. 
+1.  Extract: BeautifulSoup reads the EUR-Lex HTML and removes the scripts and the footnotes with their markers, and also the page headers using their CSS classes, then it keeps one line for each block of text and drops a line when it repeats the one before.
+2.  Cleaning: Non-breaking and thin spaces become normal spaces and repeated whitespace is collapsed, and a separate rule removes the space that EUR-Lex leaves before punctuation.
+3.  Split into sections: In the regulations a new section starts at every "Article N" or "ANNEX" line and the next short line is kept as its heading, while chapter and title lines are skipped because they are only layout. In the notices a section starts at a numbered heading or question like "2.1. Legibility" or "3.2.4. Can ...?", counted only from the first "1.", and the table of contents entries that end with a page number are skipped. Each section gets a location like Article 21, Annex II, Section 3.1 or Preamble, which is the label the agent cites.
+4.  Chunk: Two designs are built so they can be compared:
+    ◦ Structure: one chunk per article, annex or guidance section, and a section longer than 350 words is split into windows of 300 words with 50 words of overlap, labelled "(part n)".
+    ◦ Fixed: windows of 200 words with 40 words of overlap over the whole document, ignoring the sections, so a window can be labelled "Article 20 to Article 22".
+5.  Embed and store: Every chunk's text starts with a header like "[REG_1169_2011, Article 9: List of mandatory particulars]", so the embedding and the model both see where it comes from. The chunks are embedded with gemini at 768 dimensions, to keep index/ under the 90 MB limit, in batches of 20, and they are stored in ChromaDB with cosine distance. Each batch is saved as soon as it arrives and only chunks without a saved vector are embedded, so reaching the daily quota never loses work. Additionally, chunks that a processing fix no longer produces are deleted, which is why the index never holds two versions of the same document.
+
+Extraction problem I fixed: EUR-Lex lays out lettered points as two-cell table rows, for example "(a) the name of the food;" in Article 9(1) of Regulation 1169/2011, and a plain get_text() put the "(a)" and its text on separate lines, so the letter lost its content. I fixed it by joining each table row into one paragraph before the text is read, so now every point is one line and stays in the same chunk as its letter.
+
 
 ## Test set
 
