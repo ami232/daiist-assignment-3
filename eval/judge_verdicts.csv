@@ -1,0 +1,38 @@
+id,correct,supported,by,reason
+q01,1,1,judge,The assistant accurately identified the communicability period using the provided source material.
+q02,1,1,judge,The assistant accurately states the duration and context provided in the reference answer and retrieved passages.
+q03,1,1,judge,The assistant correctly identified the routine schedule and provided accurate supporting information from the provided text.
+q04,1,1,judge,The assistant correctly identified the 4-week minimum interval for MMR and provided a valid citation.
+q05,1,1,judge,"The assistant accurately conveys the preference for separate vaccines, the reason for this preference, and the requirement to discuss risks and benefits."
+q06,1,1,judge,The assistant accurately identified the spots and their timing using the provided source material.
+q07,0,1,code,refusal (decided in code)
+q08,1,1,judge,The assistant accurately provided the information requested and supported it with the provided text.
+q09,1,1,judge,"The assistant correctly identifies that the condition is a contraindication and concludes that the child should not receive further doses, supported by the provided text."
+q10,1,1,judge,The assistant correctly identifies the condition as a precaution and provides accurate supporting information from the provided text.
+q11,1,1,judge,The assistant correctly identifies that aerosolized steroids are not a contraindication and provides a citation from the provided text.
+q12,1,1,judge,The assistant correctly identified the 24-month timeframe and provided a citation from the retrieved passages.
+q13,1,1,judge,"The assistant accurately states that these vaccines are not affected by immune globulin, which matches the reference answer and is supported by the provided text."
+q14,1,1,judge,The assistant correctly identifies the 4-week interval for injectable live vaccines while accurately noting the exception for oral live vaccines provided in the source text.
+q15,1,1,judge,The assistant correctly identifies the timing for different maternal HBsAg statuses and weight/stability conditions as supported by the provided text.
+q16,1,1,judge,The assistant accurately provided the effectiveness rate and included additional relevant context from the provided passages.
+q17,1,1,judge,The assistant correctly states that birth before 1957 is not acceptable evidence of immunity for women who could become pregnant and provides accurate supporting details from the text.
+q18,1,1,judge,The assistant correctly identifies the 2-dose requirement and provides a citation from the provided text.
+q19,1,1,judge,The assistant correctly identifies that teenagers with mild pertussis can transmit it to infants and provides accurate citations.
+q20,1,1,judge,"The assistant accurately states that VAERS cannot determine causality and that further studies are required, with all claims supported by the provided text."
+q21,1,1,judge,The answer accurately states the percentage of unvaccinated measles cases in the EU/EEA in 2023 as provided in the source text.
+q22,1,1,judge,The assistant accurately identifies the recommended coverage threshold and provides appropriate citations from the provided text.
+q23,1,1,judge,The assistant correctly identified the authorized treatments and provided additional relevant details supported by the provided text.
+q24,0,1,code,refusal (decided in code)
+q25,0,1,judge,The answer fails to state when the second MMR dose is routinely due (4 through 6 years).
+q26,1,1,judge,"The assistant correctly identified that the corpus lacks information from the CDC, making it impossible to confirm agreement."
+q27,1,1,judge,The assistant correctly identified the two-dose schedule and the ECDC's 95% coverage goal for the second dose based on the provided documents.
+q28,0,1,code,refusal (decided in code)
+q29,0,1,judge,"The assistant failed to provide the effectiveness rate, which was present in the reference answer but missing from the provided corpus."
+q30,0,1,judge,"The assistant failed to identify that the corpus provides the 4-week minimum interval in the context of the 2-dose series for children, which applies to the 'appropriately spaced' requirement."
+q31,0,1,judge,"The assistant failed to answer the first part of the question regarding the specific number of countries that reached the 95% threshold, providing only a qualitative description."
+q32,1,1,code,refusal (decided in code)
+q33,1,1,code,refusal (decided in code)
+q34,1,1,code,refusal (decided in code)
+q35,1,1,code,refusal (decided in code)
+q36,1,1,code,refusal (decided in code)
+q37,1,1,code,refusal (decided in code)

@@ -1,0 +1,224 @@
+{
+ "q01": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant accurately identified the communicability period using the provided source material.",
+  "by": "judge"
+ },
+ "q02": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant accurately states the duration and context provided in the reference answer and retrieved passages.",
+  "by": "judge"
+ },
+ "q03": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identified the routine schedule and provided accurate supporting information from the provided text.",
+  "by": "judge"
+ },
+ "q04": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identified the 4-week minimum interval for MMR and provided a valid citation.",
+  "by": "judge"
+ },
+ "q05": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant accurately conveys the preference for separate vaccines, the reason for this preference, and the requirement to discuss risks and benefits.",
+  "by": "judge"
+ },
+ "q06": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant accurately identified the spots and their timing using the provided source material.",
+  "by": "judge"
+ },
+ "q07": {
+  "correct": 0,
+  "supported": 1,
+  "reason": "refusal (decided in code)",
+  "by": "code"
+ },
+ "q08": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant accurately provided the information requested and supported it with the provided text.",
+  "by": "judge"
+ },
+ "q09": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identifies that the condition is a contraindication and concludes that the child should not receive further doses, supported by the provided text.",
+  "by": "judge"
+ },
+ "q10": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identifies the condition as a precaution and provides accurate supporting information from the provided text.",
+  "by": "judge"
+ },
+ "q11": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identifies that aerosolized steroids are not a contraindication and provides a citation from the provided text.",
+  "by": "judge"
+ },
+ "q12": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identified the 24-month timeframe and provided a citation from the retrieved passages.",
+  "by": "judge"
+ },
+ "q13": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant accurately states that these vaccines are not affected by immune globulin, which matches the reference answer and is supported by the provided text.",
+  "by": "judge"
+ },
+ "q14": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identifies the 4-week interval for injectable live vaccines while accurately noting the exception for oral live vaccines provided in the source text.",
+  "by": "judge"
+ },
+ "q15": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identifies the timing for different maternal HBsAg statuses and weight/stability conditions as supported by the provided text.",
+  "by": "judge"
+ },
+ "q16": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant accurately provided the effectiveness rate and included additional relevant context from the provided passages.",
+  "by": "judge"
+ },
+ "q17": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly states that birth before 1957 is not acceptable evidence of immunity for women who could become pregnant and provides accurate supporting details from the text.",
+  "by": "judge"
+ },
+ "q18": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identifies the 2-dose requirement and provides a citation from the provided text.",
+  "by": "judge"
+ },
+ "q19": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identifies that teenagers with mild pertussis can transmit it to infants and provides accurate citations.",
+  "by": "judge"
+ },
+ "q20": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant accurately states that VAERS cannot determine causality and that further studies are required, with all claims supported by the provided text.",
+  "by": "judge"
+ },
+ "q21": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The answer accurately states the percentage of unvaccinated measles cases in the EU/EEA in 2023 as provided in the source text.",
+  "by": "judge"
+ },
+ "q22": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant accurately identifies the recommended coverage threshold and provides appropriate citations from the provided text.",
+  "by": "judge"
+ },
+ "q23": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identified the authorized treatments and provided additional relevant details supported by the provided text.",
+  "by": "judge"
+ },
+ "q24": {
+  "correct": 0,
+  "supported": 1,
+  "reason": "refusal (decided in code)",
+  "by": "code"
+ },
+ "q25": {
+  "correct": 0,
+  "supported": 1,
+  "reason": "The answer fails to state when the second MMR dose is routinely due (4 through 6 years).",
+  "by": "judge"
+ },
+ "q26": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identified that the corpus lacks information from the CDC, making it impossible to confirm agreement.",
+  "by": "judge"
+ },
+ "q27": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identified the two-dose schedule and the ECDC's 95% coverage goal for the second dose based on the provided documents.",
+  "by": "judge"
+ },
+ "q28": {
+  "correct": 0,
+  "supported": 1,
+  "reason": "refusal (decided in code)",
+  "by": "code"
+ },
+ "q29": {
+  "correct": 0,
+  "supported": 1,
+  "reason": "The assistant failed to provide the effectiveness rate, which was present in the reference answer but missing from the provided corpus.",
+  "by": "judge"
+ },
+ "q30": {
+  "correct": 0,
+  "supported": 1,
+  "reason": "The assistant failed to identify that the corpus provides the 4-week minimum interval in the context of the 2-dose series for children, which applies to the 'appropriately spaced' requirement.",
+  "by": "judge"
+ },
+ "q31": {
+  "correct": 0,
+  "supported": 1,
+  "reason": "The assistant failed to answer the first part of the question regarding the specific number of countries that reached the 95% threshold, providing only a qualitative description.",
+  "by": "judge"
+ },
+ "q32": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "refusal (decided in code)",
+  "by": "code"
+ },
+ "q33": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "refusal (decided in code)",
+  "by": "code"
+ },
+ "q34": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "refusal (decided in code)",
+  "by": "code"
+ },
+ "q35": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "refusal (decided in code)",
+  "by": "code"
+ },
+ "q36": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "refusal (decided in code)",
+  "by": "code"
+ },
+ "q37": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "refusal (decided in code)",
+  "by": "code"
+ }
+}

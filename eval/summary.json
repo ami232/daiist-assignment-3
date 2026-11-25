@@ -1,0 +1,56 @@
+{
+  "model": "gemini-3.1-flash-lite",
+  "chosen_design": "structure",
+  "retrieval": {
+    "structure": {
+      "questions": 31,
+      "hit@1": 0.774,
+      "hit@3": 0.968,
+      "hit@5": 1.0,
+      "source_hit@1": 0.903,
+      "source_hit@3": 1.0,
+      "source_hit@5": 1.0,
+      "multi_all_pairs@5": "3/7",
+      "mean_words_added_to_prompt@5": 1081
+    },
+    "fixed": {
+      "questions": 31,
+      "hit@1": 0.645,
+      "hit@3": 0.774,
+      "hit@5": 0.871,
+      "source_hit@1": 0.806,
+      "source_hit@3": 1.0,
+      "source_hit@5": 1.0,
+      "multi_all_pairs@5": "2/7",
+      "mean_words_added_to_prompt@5": 1000
+    }
+  },
+  "questions_evaluated": 37,
+  "results": {
+    "answerable_correct": 24,
+    "answerable_total": 31,
+    "unsupported": 0,
+    "correct_refusals": 6,
+    "wrong_refusals": 3,
+    "answered_unanswerable": 0,
+    "unanswerable_total": 6
+  },
+  "code_checks": {
+    "no_search": 0,
+    "invalid_citations": 0,
+    "guardrail_fired": 25
+  },
+  "agreement_with_human_labels": {
+    "graded": 20,
+    "compared": 20,
+    "correct_agreement": "20/20",
+    "correct_disagreements": [],
+    "supported_agreement": "20/20",
+    "supported_disagreements": []
+  },
+  "failures": 7,
+  "cost_per_question": {
+    "mean_tokens": 6058,
+    "mean_seconds": 3.5
+  }
+}
