@@ -36,21 +36,55 @@ The corpus is six documents from EUR-Lex with 59,299 words in total, the three E
 
 *How you extract, clean and chunk; one extraction problem you fixed; chunk metadata; number of chunks.*
 
-Every document goes through the same pipeline in index.py, which turns the EUR-Lex page into chunks with one vector each in ChromaDB. 
+Every document goes through the same pipeline in index.py, which turns the EUR-Lex page into chunks with one vector each in ChromaDB.
+
 1.  Extract: BeautifulSoup reads the EUR-Lex HTML and removes the scripts and the footnotes with their markers, and also the page headers using their CSS classes, then it keeps one line for each block of text and drops a line when it repeats the one before.
 2.  Cleaning: Non-breaking and thin spaces become normal spaces and repeated whitespace is collapsed, and a separate rule removes the space that EUR-Lex leaves before punctuation.
 3.  Split into sections: In the regulations a new section starts at every "Article N" or "ANNEX" line and the next short line is kept as its heading, while chapter and title lines are skipped because they are only layout. In the notices a section starts at a numbered heading or question like "2.1. Legibility" or "3.2.4. Can ...?", counted only from the first "1.", and the table of contents entries that end with a page number are skipped. Each section gets a location like Article 21, Annex II, Section 3.1 or Preamble, which is the label the agent cites.
 4.  Chunk: Two designs are built so they can be compared:
-    ◦ Structure: one chunk per article, annex or guidance section, and a section longer than 350 words is split into windows of 300 words with 50 words of overlap, labelled "(part n)".
-    ◦ Fixed: windows of 200 words with 40 words of overlap over the whole document, ignoring the sections, so a window can be labelled "Article 20 to Article 22".
-5.  Embed and store: Every chunk's text starts with a header like "[REG_1169_2011, Article 9: List of mandatory particulars]", so the embedding and the model both see where it comes from. The chunks are embedded with gemini at 768 dimensions, to keep index/ under the 90 MB limit, in batches of 20, and they are stored in ChromaDB with cosine distance. Each batch is saved as soon as it arrives and only chunks without a saved vector are embedded, so reaching the daily quota never loses work. Additionally, chunks that a processing fix no longer produces are deleted, which is why the index never holds two versions of the same document.
+    - Structure: one chunk per article, annex or guidance section, and a section longer than 350 words is split into windows of 300 words with 50 words of overlap, labelled "(part n)".
+    - Fixed: windows of 200 words with 40 words of overlap over the whole document, ignoring the sections, so a window can be labelled "Article 20 to Article 22".
+5.  Embed and store: Every chunk's text starts with a header like "[REG_1169_2011, Article 9: List of mandatory particulars]", so the embedding sees it, and the model gets the source and location as the citation label. The chunks are embedded with gemini at 768 dimensions, to keep index/ under the 90 MB limit, in batches of 20, and they are stored in ChromaDB with cosine distance. Each batch is saved as soon as it arrives and only chunks without a saved vector are embedded, so reaching the daily quota never loses work. Additionally, chunks that a processing fix no longer produces are deleted, which is why the index never holds two versions of the same document.
 
 Extraction problem I fixed: EUR-Lex lays out lettered points as two-cell table rows, for example "(a) the name of the food;" in Article 9(1) of Regulation 1169/2011, and a plain get_text() put the "(a)" and its text on separate lines, so the letter lost its content. I fixed it by joining each table row into one paragraph before the text is read, so now every point is one line and stays in the same chunk as its letter.
+
+**Chunk metadata.** Each chunk stores its source and location, like REG_1169_2011 and Section 3.1 (part 2), which together are the citation label, and also its title, url, heading, design and number of words, which is what it adds to the prompt. Additionally, the id is a SHA-1 of the chunk's design, source, location and text, so the same chunk is never embedded twice, and the covers field lists every section a fixed window's words come from, which the hit rate needs.
+
+**Number of chunks.**
+
+| Document | Sections | Structure chunks | Fixed chunks |
+| --- | --- | --- | --- |
+| REG_1169_2011 | 71 | 118 | 141 |
+| REG_1924_2006 | 30 | 50 | 59 |
+| REG_432_2012 | 4 | 63 | 95 |
+| QA_NOTICE_2018 | 42 | 44 | 35 |
+| ALLERGEN_NOTICE_2017 | 11 | 13 | 15 |
+| QUID_NOTICE_2017 | 6 | 19 | 27 |
+| **Total** | **164** | **307** | **372** |
+
+REG_432_2012 has only 4 sections but 15,190 words, because almost all of it is the Annex, a long table of permitted claims, so most of its 63 chunks are parts of the Annex and a hit on any of them says little, which is why the retrieval section separates precise and broad questions. The Q&A notice is the opposite, its 42 sections are short, so the structure design gives it more chunks than the fixed design (44 against 35).
 
 
 ## Test set
 
 *How you wrote it, counts by kind, two examples.*
+
+The test set has 40 questions, 28 single, 6 multi and 6 unanswerable, and I graded 20 of the agent's answers myself so I could compare my grades with the LLM judge.
+
+I wrote the questions from the point of view of the quality and regulatory team, as label situations they would actually check, and many of them use a number just above or below a legal threshold, like 3.2 g of fat for "low fat" where the limit is 3 g, or 18% of energy from protein for "high protein" where the limit is 20%, so the agent has to apply the condition and not only find the right article. For every question I wrote down which passage should answer it in expected_source and expected_location, and a short reference answer taken from that passage, which is what both the judge and I grade against.
+
+The multi questions need two passages to be answered and they list both separated by ";", in five of them both passages are in the same regulation and only q05 needs two documents. The unanswerable questions are close to the topic of the corpus, so the agent cannot just see that they are off topic. Some ask about other laws, like organic food or pesticide residues, and others ask for a detail the corpus does not give, like the gluten-free threshold, which the guidance only refers to in another regulation. This is why they have no expected source and their reference answer says what is missing.
+
+| Kind | Questions | Graded by me | What it tests |
+| --- | --- | --- | --- |
+| single | 28 | 8 | one passage answers it |
+| multi | 6 | 6 | needs two passages and the answer has to combine them |
+| unanswerable | 6 | 6 | the corpus does not cover it, so the agent should say so |
+| **Total** | **40** | **20** | |
+
+**Example 1 (multi, q05).** "Can a yogurt containing 4 g of sugar per 100 g be labelled "low sugar", and what nutritional information must it provide?" Expected: [REG_1924_2006, Annex]; [REG_1169_2011, Article 30]. Reference answer: yes, if the other conditions are met, because solid foods with no more than 5 g of sugar per 100 g meet the threshold, and the nutrition declaration has to include energy, fat, saturated fat, carbohydrates, sugars, protein and salt.
+
+**Example 2 (unanswerable, q23).** "What is the exact maximum gluten concentration in mg/kg allowed for a product to be labelled "gluten-free"?" Expected: none. Reference answer: the guidance refers to Regulation 828/2014 but does not give the number, so that regulation would be needed. This question is a trap, because the model probably knows the number from its training, so it checks that the agent says the corpus does not cover it instead of answering from memory.
 
 ## Retrieval
 
