@@ -1,0 +1,103 @@
+{
+  "retrieval": {
+    "structure": {
+      "questions": 34,
+      "hit@1": 0.8823529411764706,
+      "multi_all@1": 0.0,
+      "words@1": 242.38235294117646,
+      "precise_hit@1": 0.7777777777777778,
+      "precise_n": 18,
+      "broad_hit@1": 1.0,
+      "broad_n": 16,
+      "hit@3": 0.9705882352941176,
+      "multi_all@3": 0.3333333333333333,
+      "words@3": 719.7647058823529,
+      "precise_hit@3": 0.9444444444444444,
+      "broad_hit@3": 1.0,
+      "hit@5": 1.0,
+      "multi_all@5": 0.6666666666666666,
+      "words@5": 1168.6176470588234,
+      "precise_hit@5": 1.0,
+      "broad_hit@5": 1.0
+    },
+    "fixed": {
+      "questions": 34,
+      "hit@1": 0.8235294117647058,
+      "multi_all@1": 0.16666666666666666,
+      "words@1": 200,
+      "precise_hit@1": 0.6666666666666666,
+      "precise_n": 18,
+      "broad_hit@1": 1.0,
+      "broad_n": 16,
+      "hit@3": 0.9117647058823529,
+      "multi_all@3": 0.16666666666666666,
+      "words@3": 597.6764705882352,
+      "precise_hit@3": 0.8333333333333334,
+      "broad_hit@3": 1.0,
+      "hit@5": 0.9705882352941176,
+      "multi_all@5": 0.16666666666666666,
+      "words@5": 988.2352941176471,
+      "precise_hit@5": 0.9444444444444444,
+      "broad_hit@5": 1.0
+    }
+  },
+  "answers": 40,
+  "answerable": 34,
+  "unanswerable": 6,
+  "wrong_refusals": [
+    "q20",
+    "q31"
+  ],
+  "correct_refusals": [
+    "q06",
+    "q29",
+    "q30"
+  ],
+  "partial_unanswerable": [
+    "q14",
+    "q23",
+    "q26"
+  ],
+  "answered_unanswerable": [],
+  "partly_covered_answerable": [],
+  "citations_valid": 39,
+  "cites_expected": 31,
+  "answered_answerable": 32,
+  "guardrail_fired": {
+    "q20": "cited but not retrieved: [ALLERGEN_NOTICE_2017, Section 3.6]",
+    "q31": "the answer cites no source"
+  },
+  "judged": 40,
+  "judge_correct": 37,
+  "judge_supported": 40,
+  "human_graded": 20,
+  "agree_correct": 20,
+  "kappa_correct": 1.0,
+  "agree_supported": 18,
+  "kappa_supported": 0.0,
+  "supported_graded": 20,
+  "disagreements": [
+    "q14",
+    "q26"
+  ],
+  "failures": {
+    "unsupported claim (answered an unanswerable question)": [
+      "q26"
+    ],
+    "wrong refusal (guardrail blocked)": [
+      "q20",
+      "q31"
+    ]
+  },
+  "cost": {
+    "mean_tokens": 6802.4,
+    "median_tokens": 4542.0,
+    "mean_seconds": 24.2,
+    "median_seconds": 15.0,
+    "searches": 55,
+    "models": {
+      "gemini-3.5-flash-lite": 27,
+      "gemini-3.5-flash-lite, gemini-3.6-flash": 13
+    }
+  }
+}
