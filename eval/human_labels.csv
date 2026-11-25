@@ -1,1 +1,31 @@
 id,correct,supported,notes
+q01,1,1,"All three criteria and the 'at least two' condition, from §2.1."
+q02,1,1,"10 mg BID for 7 days then 5 mg BID, from §2.1."
+q03,1,1,"Same day, resume BID, no doubling, from §2.2."
+q04,1,1,48 hours; extra bridging/restart sentences are in the retrieved §2.3.
+q05,1,1,Says 15/20 mg must be taken with food (implies 'no'); 66% fasted bioavailability is in retrieved §12.3. Does not mention the AF evening-meal detail.
+q06,1,1,"20 mg once daily with food at the same time each day, from §2.1."
+q07,1,1,"Crushed in applesauce followed by food, plus NG/gastric tube option; all in retrieved §2.6."
+q08,1,1,Avoid in Child-Pugh B; 127% AUC increase is in retrieved §8.7.
+q09,1,1,Skip if it cannot be taken 6 hours before the next dose; no doubling.
+q10,1,1,"Swallow whole, do not open; 75% exposure increase is in retrieved §12.3."
+q11,1,1,"Use within 4 months of opening, from §16."
+q12,1,1,"Idarucizumab in adults, from §2.8/§5.2."
+q13,1,1,"Target INR 2.5, range 2.0-3.0, from §2.2."
+q14,1,1,Mechanical heart valves exception; cites §5.7 (also states it) instead of §4/§8.1.
+q15,1,1,"Stop warfarin and give oral or parenteral vitamin K1; reduced later response, from §10.2."
+q16,1,1,"30 mg SC once daily for CrCl <30, from §2.3 Table 1."
+q17,1,1,"No IM; IV or SC only, from §2.5."
+q18,1,1,100-day / circulating antibodies contraindication; extra §5.4 conditions are retrieved.
+q19,1,1,"Eliquis 48 h vs Xarelto 24 h, both cited."
+q20,1,1,"Both rules correct, but for Pradaxa it gives the 6-hour rule without explicitly concluding 'skip' for the 4-hour scenario."
+q21,0,1,"Wrong refusal: the guardrail withheld a correct draft (Pradaxa 5-10 days parenteral; Xarelto none) because it cited PRADAXA §2.2, which was not retrieved. A refusal makes no unsupported claim."
+q22,1,1,Warfarin regular INR monitoring vs Xarelto INR monitoring not recommended; '1 to 4 weeks' is in retrieved warfarin text.
+q23,1,1,Not recommended for either; TAVR/GALILEO detail for Xarelto is retrieved.
+q24,1,1,Idarucizumab vs vitamin K1; extra hemodialysis/PCC/FFP claims are all in retrieved §5.2/§10/§10.2.
+q25,1,1,"Eliquis 35 days vs Lovenox 7-10 days, 40 mg daily up to 3 weeks."
+q26,1,1,Correct abstention: Savaysa not indexed; no dose invented.
+q27,1,1,Abstains; the one claim (cross-trial rates cannot be compared) is in retrieved §6.1 text.
+q28,1,1,Correct abstention; no prices invented.
+q29,1,1,Correct abstention; no adherence data invented.
+q30,1,1,Correct abstention; no ESC recommendation invented.
