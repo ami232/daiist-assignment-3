@@ -180,8 +180,13 @@ async def answer_question(question: str, approve=ask_human) -> dict:
     raw_answer = messages[-1].text.strip() if isinstance(messages[-1], AIMessage) else ""
     retrieved_text = "\n\n".join(retrieved)
 
-    # c. The citation guardrail.
-    final, fired, reason = apply_guardrail(raw_answer, retrieved_text)
+    # c. The citation guardrail. It checks answers built from search results. A run that
+    #    only managed documents (add_document, no search) reports the tool's result as it is.
+    used_tools = {step["tool"] for step in trace}
+    if used_tools and "search" not in used_tools:
+        final, fired, reason = raw_answer, False, "document management only: not checked"
+    else:
+        final, fired, reason = apply_guardrail(raw_answer, retrieved_text)
 
     return {
         "question": question,
