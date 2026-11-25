@@ -1,8 +1,8 @@
 # Assignment 3 Report
 
-- **Name**:
-- **Student ID**:
-- **Group**: [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
+- **Matias Arevalo**:
+- **19319**:
+- **Group**: [BBADBA 5A]
 
 ## Use case
 
@@ -203,4 +203,8 @@ By the judge, three questions failed in the final run; our own grading found fiv
 
 ## AI use
 
-Claude Code (Claude Opus) wrote most of the code (`index.py`, `server.py`, `agent.py`, `evaluate.py`), the subagent file and a first draft of `AGENTS.md`, the judge rubric and this report, and ran the indexing and evaluation. AI_USE_STUDENT
+### AI use disclosure
+
+I used Claude Code (Claude Opus) to write most of the implementation in `index.py`, `server.py`, `agent.py`, and `evaluate.py`, configure the Claude Code subagent, and run the indexing and automated evaluation. It also helped draft `AGENTS.md`, the LLM judge rubric, and an early version of this report. I used ChatGPT to draft evaluation questions, which the professor confirmed was allowed.
+
+I made the main project decisions, including the choice of use case and corpus, the final retrieval design, and how the tool should be used. I manually graded 30 agent answers and wrote most of the final report, including my interpretation of the results, the failure analysis, and the recommendation on when to rely on the tool.
