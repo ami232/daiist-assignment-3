@@ -149,7 +149,9 @@ def run_agent_on_all(questions: pd.DataFrame) -> dict:
 # 4. LLM JUDGE
 # =============================================================================
 
-# DRAFT RUBRIC - rewrite it in your own words: the judge rubric must be your decision.
+# The judge's rubric. Two separate grades, because they catch different failures:
+#   correct   = same key facts as my reference answer (a wrong number or missing condition fails)
+#   supported = every claim can be found in the retrieved text (catches answers from memory)
 RUBRIC = """You grade an assistant that answers clinicians' questions from FDA drug labels.
 
 You get: the QUESTION, a REFERENCE answer written by a human, the EVIDENCE (label passages
