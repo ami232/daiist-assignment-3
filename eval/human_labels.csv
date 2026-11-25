@@ -1,1 +1,33 @@
 id,correct,supported,notes
+q01,1,1,
+q02,0,1,"Gives 16 as the minimum age but omits that Member States may lower it by up to 4 years in the open category (valid only in their territory), which my reference includes."
+q03,1,1,
+q04,0,1,"Gives the 150 m distance but omits the condition that no uninvolved person is expected to be endangered, which my reference includes (graded strictly, consistent with q02)."
+q05,1,1,
+q06,1,1,
+q07,1,1,
+q08,1,1,
+q09,1,1,
+q10,1,1,
+q11,1,1,
+q12,1,1,
+q13,1,1,
+q14,1,1,
+q15,1,1,
+q16,1,1,
+q17,1,1,
+q18,1,1,
+q19,1,1,
+q20,1,1,
+q21,1,1,
+q22,0,1,"Describes the C1 technical features (mass, speed, height limit, remote ID, geo-awareness, etc.) but never mentions the green flashing light, which my reference lists as a C1 feature (graded strictly, consistent with q02 and q04)."
+q23,1,1,
+q24,1,0,Says registration runs through a system established by the competent national aviation authority; Article 14 says Member States establish the systems and the retrieved passages do not name the authority.
+q25,0,0,Still says a modified C1 may be operated 'unless it qualifies as a privately built UAS under subcategory A3'; the AMC says it may only be operated in the specific category (the privately built exception is for C4 only). Misleading and not in the passages.
+q26,1,1,
+q27,1,0,"Correct refusal, but names Regulations (EU) 2021/664, 2021/665 and 2021/666 as the U-space rules; those numbers are not in any retrieved passage."
+q28,1,1,
+q29,1,1,
+q30,1,1,
+q31,1,0,"Correct refusal, but says insurance is 'only mentioned ... if required by national law' (Article 14(2)(d) says 'Union or national law') and that minimums depend on national law; neither is in the retrieved passages."
+q32,1,1,

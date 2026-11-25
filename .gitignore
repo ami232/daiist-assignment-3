@@ -12,3 +12,6 @@ corpus/
 
 # Never commit your API key
 .env
+
+# Claude's draft report, for comparison only (not submitted)
+drafts/

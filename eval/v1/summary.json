@@ -1,0 +1,116 @@
+{
+  "retrieval": [
+    {
+      "design": "fixed+dense",
+      "chunks": 429,
+      "questions": 26,
+      "hit@1": 0.577,
+      "hit@3": 0.885,
+      "hit@5": 0.962,
+      "all@1": 0.346,
+      "all@3": 0.731,
+      "all@5": 0.885,
+      "words_top5": 1250
+    },
+    {
+      "design": "section+dense",
+      "chunks": 475,
+      "questions": 26,
+      "hit@1": 0.846,
+      "hit@3": 1.0,
+      "hit@5": 1.0,
+      "all@1": 0.615,
+      "all@3": 0.962,
+      "all@5": 0.962,
+      "words_top5": 1078
+    },
+    {
+      "design": "section+bm25",
+      "chunks": 475,
+      "questions": 26,
+      "hit@1": 0.462,
+      "hit@3": 0.769,
+      "hit@5": 0.846,
+      "all@1": 0.385,
+      "all@3": 0.654,
+      "all@5": 0.731,
+      "words_top5": 1016
+    },
+    {
+      "design": "fixed+hybrid",
+      "chunks": 429,
+      "questions": 26,
+      "hit@1": 0.577,
+      "hit@3": 0.808,
+      "hit@5": 0.923,
+      "all@1": 0.462,
+      "all@3": 0.731,
+      "all@5": 0.885,
+      "words_top5": 1250
+    },
+    {
+      "design": "section+hybrid",
+      "chunks": 475,
+      "questions": 26,
+      "hit@1": 0.692,
+      "hit@3": 0.923,
+      "hit@5": 1.0,
+      "all@1": 0.5,
+      "all@3": 0.769,
+      "all@5": 0.962,
+      "words_top5": 1057
+    }
+  ],
+  "end_to_end": {
+    "questions": 32,
+    "correct (judge)": 31,
+    "answerable correct": 25,
+    "answerable": 26,
+    "unsupported (judge)": 5,
+    "correct refusals": 6,
+    "unanswerable": 6,
+    "wrong refusals": 0,
+    "invalid citations": 0,
+    "citation guardrail fired": 9,
+    "failures by cause (judge)": {
+      "unsupported claim": 5
+    },
+    "human-graded answers": 32,
+    "correct (human)": 31,
+    "unsupported (human)": 12,
+    "failures by cause (human)": {
+      "unsupported claim": 12
+    },
+    "judge models": {
+      "gemini-3.5-flash": 13,
+      "gemini-flash-lite-latest": 19
+    },
+    "mean tokens per question": 9255,
+    "mean input tokens": 8893,
+    "mean output tokens": 362,
+    "mean seconds per question": 9.7,
+    "mean tool calls": 1.38,
+    "judge agreement": {
+      "graded": 32,
+      "correct_agreement": 0.938,
+      "correct_kappa": -0.032,
+      "correct_disagreements": [
+        "q05",
+        "q25"
+      ],
+      "supported_agreement": 0.719,
+      "supported_kappa": 0.321,
+      "supported_disagreements": [
+        "q11",
+        "q15",
+        "q16",
+        "q20",
+        "q23",
+        "q24",
+        "q25",
+        "q30",
+        "q31"
+      ]
+    }
+  }
+}
