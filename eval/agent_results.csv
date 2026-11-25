@@ -1,0 +1,437 @@
+id,kind,question,answer,searched,refusal_detected,citations_found,all_citations_in_retrieved_evidence,missing_citations,input_tokens,output_tokens,seconds
+q01,single,How can I turn a vague financial goal into a SMART goal?,"To turn a vague dream or financial goal (such as ""save more money"") into an actionable **SMART goal**, follow these steps based on the CFPB guidelines:
+
+### 1. Align with Your Values
+Start by identifying what is important to you and your family (such as family, health, or financial stability) [money_goals.pdf, page 30, 31]. Aligning goals with your personal values keeps you motivated and makes it easier to prioritize the effort required to reach them [money_goals.pdf, page 26, 30].
+
+---
+
+### 2. Apply the SMART Framework
+Refine your vague goal by asking yourself specific questions for each element of SMART [money_goals.pdf, page 32]:
+
+* **Specific:** Define exactly what you want to accomplish and who will benefit [money_goals.pdf, page 32]. For example, planning a trip to a specific city is easier to achieve than planning a trip ""to the east coast"" [money_goals.pdf, page 26].
+* **Measurable:** Set concrete amounts so you can track your progress [money_goals.pdf, page 27, 32]. For instance, *""Save $5 a week""* is measurable, whereas *""Save more money""* is not [money_goals.pdf, page 27].
+* **Achievable:** Ensure the goal is realistic given your current situation, tools, and support [money_goals.pdf, page 32]. If a goal feels extreme or unreachable (like paying off all debt overnight), break it down into smaller, manageable goals [money_goals.pdf, page 27].
+* **Relevant:** Make sure this is something you truly want right now and that aligns with your priorities [money_goals.pdf, page 27, 32].
+* **Time bound:** Establish a clear target or deadline date [money_goals.pdf, page 27, 32]. Ask yourself when you will reach this goal and whether that time frame is reasonable [money_goals.pdf, page 32].
+
+---
+
+### 3. Turn the Goal into Action
+Once your SMART goal is written down, create an action plan [money_goals.pdf, page 30, 34]:
+1. **Break it into steps:** List the individual action steps needed to reach the goal [money_goals.pdf, page 34].
+2. **Identify resources:** Determine what tools, information, money, or support you need for each step [money_goals.pdf, page 34].
+3. **Set deadlines:** Assign a due date to each step [money_goals.pdf, page 34].
+4. **Build accountability:** Share your goal with a trusted friend or family member and set up regular check-ins to stay on track [money_goals.pdf, page 34].",1,0,6,1,,7508,1594,68.12
+q02,single,Why does the CFPB recommend setting a weekly savings target?,"The CFPB recommends setting a weekly savings target because it breaks larger financial goals down into manageable pieces, making saving easier [money_goals.pdf, page 46]. 
+
+Key reasons and benefits highlighted by the CFPB include:
+
+* **Breaks goals into manageable steps:** Dividing the total amount you want to save by the number of weeks you have makes your goal easier to achieve [money_goals.pdf, page 46].
+* **Builds a safety net for unexpected expenses:** Saving week by week creates a personal safety net and gives you peace of mind knowing you have money set aside when unexpected costs arise [money_goals.pdf, page 46].
+* **Reduces fees and borrowing costs:** Having savings set aside helps you avoid late fees on missed bills and reduces the need to borrow money to cover unexpected expenses [money_goals.pdf, page 46].
+* **Builds confidence:** Watching small weekly contributions add up helps build confidence as you make progress toward your goals [money_goals.pdf, page 46].",1,0,1,1,,3055,534,65.65
+q03,single,What is the main purpose of a cash-flow budget for someone with uneven income?,"For someone with irregular, seasonal, or uneven income, the main purpose of a cash-flow budget is to **plan ways to spread the income received over future weeks or months when little or no money is coming in** [money_goals.pdf, page 99].
+
+Unlike a standard monthly budget, a cash-flow budget breaks your finances down week by week to track the exact timing of when money comes in and when expenses must be paid [money_goals.pdf, page 99]. 
+
+Specifically, a cash-flow budget helps you:
+
+* **Cover essential obligations:** It ensures you have enough cash on hand during low-income weeks to cover priority expenses, such as rent or bills [money_goals.pdf, page 99].
+* **Spot shortfalls in advance:** It identifies specific weeks where your planned expenses exceed your expected income, giving you time to prepare [money_goals.pdf, page 99, 101].
+* **Adjust spending and timing:** It helps you pinpoint non-essential expenses you can cut back on, postpone, or reschedule so that your cash flow stays positive from week to week [money_goals.pdf, page 99].",1,0,2,1,,3623,814,28.35
+q04,single,"If I find a mistake on my credit report, which parties should I contact?","If you find an error on your credit report, you should dispute it with the following parties:
+
+1. **The Credit Reporting Company**: Submit a dispute directly to the credit reporting bureau that generated the report showing the error (most commonly Equifax, Experian, or TransUnion) [money_goals.pdf, page 177]. You can file your dispute online, by phone, or by mail [money_goals.pdf, page 177].
+2. **The Furnisher of the Information**: Submit a copy of your dispute to the business, lender, or creditor that originally provided the inaccurate information [money_goals.pdf, page 177; credit_booklet.pdf, page 10]. You can typically find the furnisher's contact address directly on your credit report [money_goals.pdf, page 177].
+
+---
+
+### Additional Parties & Steps (If Applicable)
+* **Identity Theft Resource**: If you suspect the mistake is the result of identity theft, visit [identitytheft.gov](https://identitytheft.gov) to file a report and take protective steps like placing a fraud alert or security freeze [money_goals.pdf, page 177].
+* **Consumer Financial Protection Bureau (CFPB)**: If your dispute isn't handled in a timely manner, isn't fixed, or if you disagree with the results of the investigation, you can submit a complaint to the CFPB at [consumerfinance.gov/complaint](https://www.consumerfinance.gov/complaint/) or by calling (855) 411-2372 [money_goals.pdf, page 166, page 178; credit_booklet.pdf, page 9].",1,0,4,1,,3771,721,67.71
+q05,single,What is the difference between gross income and net income?,"The main difference between gross income and net income is whether payroll deductions have been taken out:
+
+* **Gross income** is the total amount of money you earn before any mandatory or voluntary deductions are taken from your pay [money_goals.pdf, page 62; behind_on_bills.pdf, page 4].
+* **Net income** (often called take-home pay) is the amount you actually receive after all taxes and other deductions have been subtracted from your gross income [money_goals.pdf, page 62; money_goals.pdf, page 69].
+
+### Deductions that separate gross and net income
+The difference between your gross and net pay comes from two types of deductions [money_goals.pdf, page 62]:
+
+1. **Mandatory deductions:** Required by law, including federal income tax, Social Security and Medicare (FICA), state and local taxes, and wage garnishments [money_goals.pdf, page 62].
+2. **Voluntary deductions:** Contributions you choose to make, such as health, dental, or vision insurance premiums, flexible spending or health savings accounts (FSA/HSA), retirement plan contributions (e.g., 401(k) or 403(b)), union dues, and life insurance premiums [money_goals.pdf, page 62].
+
+### Why it matters
+When budgeting or tracking your monthly expenses, it is generally best to track your **net income**, as that represents the money you actually bring home and have available to pay your bills and living expenses [money_goals.pdf, page 62; money_goals.pdf, page 68].",1,0,4,1,,3121,976,37.48
+q06,single,How can a bill calendar help me avoid late payments?,"A bill calendar helps you avoid late payments, extra fees, and negative credit marks by giving you a total picture of your monthly obligations and helping you plan ahead [money_goals.pdf, page 86; behind_on_bills.pdf, page 8]. 
+
+Here is how a bill calendar helps:
+
+* **Presents a full picture of due dates:** It allows you to see all recurring bills (such as rent, utilities, credit cards, and insurance) in one place so you know exactly when money needs to be available [money_goals.pdf, page 86; behind_on_bills.pdf, page 8].
+* **Builds in processing time:** Rather than recording just the official due date, a bill calendar prompts you to schedule your payment dates in advance—at least 7 days before the due date if paying by mail, or 2 to 3 days before if paying online or in person [money_goals.pdf, page 86; behind_on_bills.pdf, page 9].
+* **Aligns bills with income:** Adding your paydays and income amounts to the calendar allows you to compare weekly income against weekly bills. If a particular week has more bills than income, you can plan ahead or ask creditors to move bill due dates to align better with your pay schedule [money_goals.pdf, page 86; behind_on_bills.pdf, page 8].
+* **Serves as a daily reminder:** Posting the calendar where you see it every day keeps upcoming payments top-of-mind and reduces the stress of unexpected bills [money_goals.pdf, page 86; behind_on_bills.pdf, page 8].",1,0,3,1,,2929,835,64.07
+q07,single,"When I cannot pay all my bills, what should I consider before deciding which to pay first?","When you cannot pay all of your bills at once, CFPB guidance emphasizes prioritizing expenses based on the **risks and consequences of missing each payment**, rather than simply paying the ""squeakiest wheel"" (the debt collector or creditor complaining the loudest) [money_goals.pdf, page 95].
+
+Here are the key factors to evaluate when deciding what to pay first:
+
+### 1. Essential needs to protect your housing, job, and health
+* **Housing and utilities:** Keep rent or mortgage current to avoid eviction or foreclosure, which can make finding future housing difficult [behind_on_bills.pdf, page 15; money_goals.pdf, page 97]. Pay utility bills (electric, gas, water) to avoid shutoffs and expensive reconnection fees [money_goals.pdf, page 97].
+* **Job essentials:** Prioritize expenses required to keep or get a job—such as car payments, gas, bus fare, uniforms/tools, and childcare [behind_on_bills.pdf, page 15; money_goals.pdf, page 96]. Missing an auto loan payment risks repossession, which could cause you to lose your transportation and your job [money_goals.pdf, page 96].
+* **Essential insurance:** Maintain car insurance (required in most states to drive legally), health insurance, and home/renters insurance to protect your health, family, and assets [behind_on_bills.pdf, page 15; money_goals.pdf, page 96].
+
+### 2. Legal obligations
+* **Court-ordered payments:** Pay child support, back child support, and court-ordered fines or fees promptly, as delaying these can result in serious legal consequences [behind_on_bills.pdf, page 15; money_goals.pdf, page 97].
+
+### 3. Lower-priority debts and loan timing
+* **Credit cards and unsecured loans:** Credit card debt, medical bills, student loans, or personal loans generally carry lower immediate risks than losing housing or income [debt_booklet.pdf, page 16]. 
+* **Understand payment timing:** 
+  * Credit card and utility payments received within 30 days of the due date typically do not affect your credit report [behind_on_bills.pdf, page 14].
+  * If a credit card payment is more than 60 days late, the credit card company may raise your interest rate, making it harder to pay off the balance [behind_on_bills.pdf, page 14; behind_on_bills.pdf, page 15].
+
+---
+
+### Important Action Steps
+* **Contact your creditors directly:** Do not ignore unpaid bills. Call your lenders or service providers before missing a payment to explain your situation. They may offer short-term repayment plans, waive late fees, or change your due date to better match your income schedule [money_goals.pdf, page 95; behind_on_bills.pdf, page 14].
+* **Consider short-term strategies:** Rotating which bills you pay month to month—while not ideal—can help avoid severe outcomes like repossession, eviction, or utility shutoffs while you stabilize your finances [behind_on_bills.pdf, page 14].
+* **Seek professional guidance:** You can contact a certified credit counselor or HUD-approved housing counselor for free or low-cost help creating a budget and debt repayment plan [money_goals.pdf, page 95; behind_on_bills.pdf, page 14].",1,0,6,1,,7974,1826,74.76
+q08,single,What kinds of short-term changes does the CFPB suggest to increase money available for bills?,"To increase the money available to cover bills, the CFPB suggests several short-term strategies aimed at increasing income, cutting costs, and adjusting the timing of bill payments:
+
+### 1. Bringing in Extra Money & Resources
+* **Earn extra income using skills:** Earn money by taking on extra work or charging for personal skills, such as running errands, giving rides, yard work, cooking, babysitting, or selling garden produce [behind_on_bills.pdf, page 12, 13].
+* **Sell unused items:** Get cash quickly by selling items you no longer need, such as old equipment or extra clothes, at a yard sale or online [behind_on_bills.pdf, page 12, 13].
+* **Apply for programs and benefits:** Look into public benefits (e.g., SNAP, TANF, Medicaid, LIHEAP) or weatherization incentives to free up money in your budget [behind_on_bills.pdf, page 12, 13].
+
+### 2. Lowering Expenses & Changing Spending Habits
+* **Avoid unnecessary fees:** Avoid check-cashing fees and out-of-network ATM fees by opening a no-fee bank account, and pay parking tickets or fines on time to prevent additional charges [behind_on_bills.pdf, page 12, 13].
+* **Cancel or adjust plans:** Cancel unused memberships and subscriptions (such as gym, magazine, or streaming services) and check for eligibility for low-cost phone programs like ""Lifeline"" [behind_on_bills.pdf, page 13].
+* **Reduce utility usage:** Lower utility bills by unplugging unused appliances and adjusting the thermostat lower in the winter and higher in the summer [behind_on_bills.pdf, page 13].
+* **Adjust everyday spending:** Cook at home instead of eating out, buy second-hand items instead of new, look for sales or coupons, compare unit costs when grocery shopping, and borrow media from the public library for free [behind_on_bills.pdf, page 12, 13].
+* **Lower auto and insurance costs:** Keep up with regular car maintenance (such as tire pressure and oil changes) to save on fuel and repairs, or see if raising your car insurance deductible will reduce monthly premiums [behind_on_bills.pdf, page 12].
+
+### 3. Adjusting Bill Timing & Cash Flow
+* **Negotiate bill due dates:** Contact creditors to align payment due dates with when you receive your income [money_goals.pdf, page 104, 105].
+* **Split large monthly bills:** Ask service providers or landlords if you can split a large monthly expense into two smaller payments across the month (e.g., paying half rent on the 1st and half on the 15th) [money_goals.pdf, page 100, 105].
+* **Break down lump-sum costs:** Convert large periodic lump-sum payments (like annual or bi-annual insurance) into smaller monthly installments [money_goals.pdf, page 104, 105].
+* **Prioritize key bills:** If you cannot cover all expenses, prioritize critical needs first—such as housing, utilities, job-related expenses, insurance, and court-ordered obligations—and contact creditors promptly if a payment must be missed [money_goals.pdf, page 95].",1,0,6,1,,8034,1794,30.09
+q09,single,What records should I gather before filling out a debt log?,"Before filling out a debt log, you can gather the following documents and records to help you fill in the details about what you owe [money_goals.pdf, page 126, page 127]:
+
+* **Credit report:** A recent copy of your credit report helps identify debts you may have forgotten about or that have gone to collections [money_goals.pdf, page 126]. It also shows monthly payment amounts, total balances, payment status (whether you are up to date or more than 30 days late), and your status as an owner, co-signer, or authorized user [money_goals.pdf, page 127; debt_booklet.pdf, page 5].
+* **Loan statements and mortgage agreements:** These help you find your interest rates, monthly payment amounts, due dates, fees, and payoff dates [debt_booklet.pdf, page 5; money_goals.pdf, page 127].
+* **Credit card statements:** These detail your payment dates, minimum payment amounts, interest rates, total balances, and estimated payoff dates if you continue making minimum payments [money_goals.pdf, page 127; debt_booklet.pdf, page 5].
+* **Billing statements:** Utility, rent, or government bills show past-due amounts and late fees (such as past-due property taxes, back income taxes, or past-due rent) [money_goals.pdf, page 126, page 127; debt_booklet.pdf, page 5].
+* **Court orders:** These provide payment amounts, due dates, and terms for obligations such as past-due court-ordered child support [money_goals.pdf, page 126, page 127; debt_booklet.pdf, page 5].",1,0,3,1,,3058,923,21.97
+q10,single,What two basic debt payoff strategies does the debt action plan compare?,"The debt action plan compares two basic strategies for using extra money (beyond minimum monthly payments) to pay down debt:
+
+1. **Pay Smallest Debt First (Start Off Small):** You focus extra payments on your smallest debt balance while paying the minimums on the rest [money_goals.pdf, page 132-133; debt_booklet.pdf, page 11]. Once the smallest debt is completely paid off, you apply that extra amount toward the next smallest debt [money_goals.pdf, page 133; debt_booklet.pdf, page 11]. 
+   * *Benefit:* Helps build momentum and see quick progress by reducing the total number of debts owed [money_goals.pdf, page 133; debt_booklet.pdf, page 11].
+
+2. **Pay Highest Interest Rate First:** You focus extra payments on the debt carrying the highest interest rate while paying the minimums on the rest [money_goals.pdf, page 132-133; debt_booklet.pdf, page 11]. Once that debt is paid off, you apply the extra amount toward the debt with the next highest interest rate [money_goals.pdf, page 133; debt_booklet.pdf, page 11].
+   * *Benefit:* Eliminates the most expensive debt first, saving you money in overall interest and fees [money_goals.pdf, page 133; debt_booklet.pdf, page 11].",1,0,3,1,,3040,609,6.67
+q11,single,How should I turn a debt-repayment goal into a practical action plan?,"To turn a debt-repayment goal into a practical action plan, you can follow a step-by-step approach based on official guidance:
+
+### 1. Know exactly what you owe
+* **Gather documents:** Collect your recent bills, loan statements, and a copy of your free credit report to make sure you do not miss forgotten debts or past-due accounts sent to collections [money_goals.pdf, page 126].
+* **List your debts:** Make a complete list of what you owe, including credit cards, loans, past-due utility bills, back taxes, or money owed to friends and family [money_goals.pdf, page 126]. Note the total balance, interest rate, and minimum monthly payment for each [money_goals.pdf, page 132–133].
+
+### 2. Identify how debt affects your goals
+* Identify the specific financial goals you want to achieve and reflect on how your current debt is keeping you from reaching them [debt_booklet.pdf, page 12]. 
+
+### 3. Choose a repayment strategy
+If you have money left over in your budget after making all required minimum payments, select a strategy for applying extra funds to your debt [money_goals.pdf, page 132–133]:
+* **Pay smallest debt first:** Focus extra payments on your smallest balance while making minimum payments on the rest. Once the smallest debt is paid off, roll that payment amount into the next smallest.  
+  * *Pros/Cons:* Helps you see quick progress by reducing the total number of debts, but you may pay more in total interest if larger debts have high interest rates [debt_booklet.pdf, page 11; money_goals.pdf, page 133].
+* **Pay highest interest rate first:** Focus extra payments on the debt with the highest interest rate or fees. Once it is paid off, apply that amount to the next highest-rate debt.  
+  * *Pros/Cons:* Saves you the most money overall, though progress may feel slower if the highest-interest balance is large [debt_booklet.pdf, page 11; money_goals.pdf, page 133].
+
+Pick the method that best motivates you to stay on track [money_goals.pdf, page 132].
+
+### 4. Create concrete action steps and timelines
+* **Define action steps:** Break your plan down into actionable steps, such as asking a creditor to change a due date or adding a specific dollar amount (e.g., $20 extra) to a payment each month [debt_booklet.pdf, page 12].
+* **Identify resources:** Note people or organizations that can support or assist you [debt_booklet.pdf, page 12].
+* **Set completion dates:** Assign target completion dates for each step to monitor your progress [debt_booklet.pdf, page 12].",1,0,5,1,,3149,1387,10.9
+q12,single,What should I do first when a debt collector contacts me?,"When a debt collector contacts you, follow these key steps:
+
+### 1. Do not ignore the communication
+Even if you do not recognize the debt or believe you do not owe it, do not ignore the debt collector [debt_booklet.pdf, page 18; behind_on_bills.pdf, page 17].
+
+### 2. Keep detailed records and protect sensitive information
+* **Track communications:** Write down the date, time, and detailed notes for every phone call or message [debt_booklet.pdf, page 18; money_goals.pdf, page 145].
+* **Save documents:** Keep everything the collector sends you, and save copies of any letters or forms you send back [debt_booklet.pdf, page 18; money_goals.pdf, page 145].
+* **Protect sensitive data:** Do not give out sensitive financial or personal information, such as your full Social Security number or bank account numbers [debt_booklet.pdf, page 18; money_goals.pdf, page 145].
+
+### 3. Ask for detailed information to verify the debt
+Before paying or agreeing to anything, request details to verify whether the debt is legitimate [debt_booklet.pdf, page 17, 18]. Ask for or request in writing:
+* The collector's name, address, and original creditor's name and address [debt_booklet.pdf, page 18; money_goals.pdf, page 145].
+* The account number and total amount owed [debt_booklet.pdf, page 18; money_goals.pdf, page 145].
+* When the account became delinquent and when the collector obtained it [debt_booklet.pdf, page 18; money_goals.pdf, page 145].
+* Whether the statute of limitations to sue for the debt has expired [debt_booklet.pdf, page 18; money_goals.pdf, page 145].
+* Documentation proving you are required to pay and a copy of the last bill [debt_booklet.pdf, page 18; money_goals.pdf, page 145].
+
+### 4. Decide on your next action
+* **If the debt is not yours or is inaccurate:** Dispute the debt in writing immediately. Waiting until after a court issues a judgment could cause you to lose your ability to dispute it [debt_booklet.pdf, page 18; behind_on_bills.pdf, page 17].
+* **If the debt is valid:** You can explore options such as negotiating a settlement for a smaller amount, agreeing on a payment plan, or paying the debt in full [debt_booklet.pdf, page 18; behind_on_bills.pdf, page 17].
+* **If you are sued:** Always respond to court documents. Failing to respond usually leads to the court issuing a money judgment against you [debt_booklet.pdf, page 18; behind_on_bills.pdf, page 17].",1,0,4,1,,3592,1247,13.02
+q13,single,How can I request a credit report using the methods described in the booklet?,"You can request your free annual credit report using three official methods through AnnualCreditReport.com, which is the only federally authorized central source for free credit reports [credit_booklet.pdf, page 6; money_goals.pdf, page 173].
+
+### Request Methods
+
+1. **Online**
+   * Visit **AnnualCreditReport.com** and follow the instructions to request your report online [credit_booklet.pdf, page 6; money_goals.pdf, page 173].
+
+2. **By Phone**
+   * Call **(877) 322-8228** to request your credit report or have a request form mailed to you [credit_booklet.pdf, page 6; money_goals.pdf, page 173].
+
+3. **By Mail**
+   * Download and complete the manual request form at **AnnualCreditReport.com/manualRequestForm.action** [credit_booklet.pdf, page 6; money_goals.pdf, page 173].
+   * Mail the completed form to:
+     **Annual Credit Report Request Service**
+     **P.O. Box 105281**
+     **Atlanta, GA 30348-5281** [credit_booklet.pdf, page 6; money_goals.pdf, page 173]
+
+---
+
+### Key Information & Tips
+* **Frequency & Equifax Bonus:** You are entitled to one free credit report from each of the three nationwide credit reporting companies (Equifax, Experian, and TransUnion) every 12 months [credit_booklet.pdf, page 6; money_goals.pdf, page 173]. Additionally, through December 31, 2026, consumers can get six additional free reports per year directly from Equifax [credit_booklet.pdf, page 5; money_goals.pdf, page 164].
+* **Identity Verification:** Be prepared to provide personal details (such as your Social Security number and previous addresses) and answer security questions (such as monthly payment amounts or previous financial accounts) to verify your identity [credit_booklet.pdf, page 5; money_goals.pdf, page 172].
+* **If Security Questions Fail:** If you cannot answer the security questions online or by phone, you can submit your request by mail [credit_booklet.pdf, page 5; money_goals.pdf, page 172].
+* **Avoid Scams:** Watch out for other websites claiming to offer free credit reports or scores, as they may require purchases or collect sensitive personal information [credit_booklet.pdf, page 6; money_goals.pdf, page 164].",1,0,5,1,,3839,1288,18.4
+q14,single,What kinds of mistakes should I look for when checking my credit report?,"When reviewing your credit reports, you should check each section for inaccuracies, unrecognized items, and common errors:
+
+### 1. Identifying and Personal Information
+* **Errors in personal details:** Misspellings of your name, wrong Social Security number, or incorrect telephone number [credit_booklet.pdf, page 8; debt_booklet.pdf, page 8].
+* **Address or job history mistakes:** Inaccurate current or previous addresses, or incorrect employment history [credit_booklet.pdf, page 8; debt_booklet.pdf, page 8].
+
+### 2. Credit Accounts (Trade Accounts)
+* **Unrecognized accounts:** Accounts listed that do not belong to you [debt_booklet.pdf, page 8].
+* **Incorrect account status:** Accounts falsely marked as late, delinquent, or in default, or incorrect dates of delinquency [debt_booklet.pdf, page 8].
+* **Incorrect balances or credit limits:** Inaccurate account balances or credit limits [debt_booklet.pdf, page 8].
+* **Closed account status:** Accounts you closed that are still listed as ""open"" instead of ""closed by the consumer"" [credit_booklet.pdf, page 8; debt_booklet.pdf, page 8].
+* **Duplicate accounts:** The same account wrongly listed more than once [debt_booklet.pdf, page 8].
+* **Ownership mistakes:** Inaccurate details regarding whether you are listed as an authorized user, co-signer, or joint owner [credit_booklet.pdf, page 8; debt_booklet.pdf, page 8].
+
+### 3. Collection Agency Accounts
+* **Collection account errors:** Unrecognized collection accounts or an incorrect status listed for an account in collections [credit_booklet.pdf, page 8; money_goals.pdf, page 175].
+
+### 4. Public Records
+* **Inaccurate public filings:** Incorrect financial public record items, such as bankruptcies, judgments, or tax liens [credit_booklet.pdf, page 8; money_goals.pdf, page 175].
+
+### 5. Credit Inquiries
+* **Unauthorized inquiries:** Listed credit inquiries or reviews from lenders for credit applications you did not make [credit_booklet.pdf, page 8].",1,0,3,1,,3536,1128,8.6
+q15,single,Do I have to pay a company to challenge an error in my credit report?,"**No, you do not have to pay a company to dispute errors on your credit report.** You have a legal right to dispute errors yourself for free `[credit_booklet.pdf, page 9]`.
+
+### How to Dispute an Error Yourself for Free
+
+1. **Gather your documentation:** Collect copies of documents that prove the error, such as bills, payment records, cleared checks, or your credit report with the mistake highlighted `[money_goals.pdf, page 177; debt_booklet.pdf, page 7]`.
+2. **Submit your dispute:** You can file a dispute directly with the credit reporting company (Equifax, Experian, or TransUnion) online, by phone, or by mail `[money_goals.pdf, page 177]`. You can also send a copy of your dispute directly to the business that provided the incorrect information (the furnisher) `[money_goals.pdf, page 177]`.
+3. **Wait for the investigation:** The company generally has 30 calendar days to investigate your claim `[credit_booklet.pdf, page 9; money_goals.pdf, page 178]`.
+4. **Receive the results:** Within five business days of completing the investigation, the credit reporting company must send you written notice of the results `[credit_booklet.pdf, page 9; money_goals.pdf, page 166]`. If an error is corrected, you will receive a copy of your updated credit report, which will not count against your free annual report `[credit_booklet.pdf, page 9; money_goals.pdf, page 178]`.",1,0,5,1,,4030,892,7.85
+q16,single,What three steps does the credit-building action plan recommend?,"The action plan to build good credit recommends the following three steps:
+
+1. **Consider what you want to achieve and how credit could help** [credit_booklet.pdf, page 12].
+2. **Make a plan, choose a product, and consider what resources can help you** [credit_booklet.pdf, page 12].
+3. **Choose good habits you want to establish** [credit_booklet.pdf, page 12].",1,0,1,1,,3394,385,11.82
+q17,single,"When deciding what mortgage payment is affordable, what extra homeownership expenses should I consider?","When determining an affordable mortgage payment, your total monthly housing obligation involves more than just the mortgage principal and interest [home_loan_toolkit.pdf, page 5]. 
+
+The Consumer Financial Protection Bureau (CFPB) outlines several additional housing costs and ongoing expenses to include in your budget:
+
+### Additional Direct Housing Expenses
+* **Mortgage Insurance:** Generally required if your down payment is less than 20% [home_loan_toolkit.pdf, page 5].
+* **Property Taxes:** Local taxes on your property, which can be estimated through your local assessor's or auditor's office [home_loan_toolkit.pdf, page 5].
+* **Homeowner’s Insurance:** Required by lenders to protect against property damage (you may also need separate flood insurance depending on local risk) [home_loan_toolkit.pdf, page 4, 5].
+* **Homeowner’s Association (HOA) or Condominium Fees:** Regular fees required if you buy a condo or a home in a planned community [home_loan_toolkit.pdf, page 5].
+* **Maintenance, Repairs, and Upkeep:** Ongoing costs to repair and maintain the home, as well as budgeting for furniture and new appliances [home_loan_toolkit.pdf, page 4, 26].
+
+### Broader Budgeting Considerations
+Beyond direct housing costs, ensure your remaining post-tax income is sufficient to cover [home_loan_toolkit.pdf, page 6]:
+* **Utilities** (electricity, water, gas, internet)
+* **Monthly debt payments** (car loans, student loans, credit cards, child support/alimony)
+* **Everyday living expenses** (groceries, childcare, health insurance)
+
+### General Rules of Thumb
+* **28% Rule:** A standard lending benchmark suggests that your total monthly home payment (including taxes and insurance) should be at or below 28% of your gross (pre-tax) monthly income [home_loan_toolkit.pdf, page 6].
+* **Mortgage Debt-to-Income:** Guidelines often suggest maintaining a mortgage debt-to-income ratio of 28% to 35% or less [money_goals.pdf, page 131].",1,0,5,1,,3370,1366,47.18
+q18,single,What financial trade-offs might come with a down payment below 20 percent?,"Making a down payment below 20% involves several financial trade-offs:
+
+* **Private Mortgage Insurance (PMI) Costs:** Lenders will most likely require private mortgage insurance (PMI) if your down payment is less than 20% [home_loan_toolkit.pdf, page 9]. PMI protects the lender against loss if you default, and paying this premium increases your total monthly home payment [home_loan_toolkit.pdf, page 5, 9].
+* **Higher Interest Rates and Fees:** Down payments between 5% and 19%—or small down payments under 5%—generally lead to higher interest rates or higher fees compared to a down payment of 20% or more, which typically unlocks the best rates and most loan options [home_loan_toolkit.pdf, page 9].
+* **Hidden Costs in ""No PMI"" Offers:** Offers advertised as ""no PMI"" or ""lender-paid PMI"" are not free. Lenders often offset the cost of these offers by charging a higher interest rate or requiring you to take out a second mortgage [home_loan_toolkit.pdf, page 9].
+* **Greater Total Loan Costs:** Because low down payment programs often combine higher interest rates, additional fees, and mortgage insurance, the overall cost of borrowing is typically higher [home_loan_toolkit.pdf, page 9].
+
+**Savings Trade-off:** While putting down 20% or more avoids these costs and secures better terms, buyers are advised to weigh this against draining all of their emergency savings just to reach the 20% threshold [home_loan_toolkit.pdf, page 9].",1,0,2,1,,3757,1281,10.99
+q19,single,How do mortgage discount points affect closing costs and interest rates?,"Mortgage points represent a direct trade-off between your upfront closing costs and your ongoing interest rate. Points are calculated as a percentage of the total loan amount, where one point equals 1% of the loan (for example, 1 point on a $100,000 loan is $1,000) [home_loan_toolkit.pdf, page 10].
+
+Depending on your financial goals, points affect closing costs and interest rates in the following ways:
+
+### 1. Paying Discount Points (Lower Rate, Higher Upfront Costs)
+* **Closing Costs:** Discount points are paid upfront at closing as part of your lender origination charges, which increases the total cash required at closing [home_loan_toolkit.pdf, page 10, page 20].
+* **Interest Rates:** In exchange for paying this extra money upfront, the lender reduces your interest rate, resulting in lower monthly mortgage payments [home_loan_toolkit.pdf, page 10].
+* **Consideration:** Paying discount points can save you money over the long term if you plan to keep your mortgage for a long time and can afford higher upfront closing costs [home_loan_toolkit.pdf, page 10].
+
+### 2. Receiving Lender Credits / Negative Points (Higher Rate, Lower Upfront Costs)
+* **Closing Costs:** The lender provides a credit to help pay for some or all of your closing costs, reducing the amount of cash you need at closing [home_loan_toolkit.pdf, page 10].
+* **Interest Rates:** In exchange for the lender credit, you agree to a higher interest rate, which increases your monthly mortgage payment over the life of the loan [home_loan_toolkit.pdf, page 10].
+* **Consideration:** This option can be helpful if you want to minimize upfront cash out-of-pocket and can comfortably afford a larger monthly payment [home_loan_toolkit.pdf, page 10].
+
+### 3. Zero-Point Loan
+* **Closing Costs & Interest Rates:** You do not pay extra points upfront or receive lender credits. You pay the standard market interest rate available for your loan scenario without adjustments in either direction [home_loan_toolkit.pdf, page 10].",1,0,1,1,,4667,1511,16.1
+q20,single,Why should I request written Loan Estimates from several mortgage lenders?,"Requesting written Loan Estimates from at least three different mortgage lenders is recommended for several reasons:
+
+* **Significant Cost Savings:** Mortgage terms and fees vary widely between lenders, so shopping around with multiple offers can save you thousands of dollars over the life of your loan [home_loan_toolkit.pdf, page 11, 12].
+* **Standardized Format for Easy Comparison:** A Loan Estimate is a standardized form that breaks down important loan facts, making it straightforward to compare offers line-by-line [home_loan_toolkit.pdf, page 11].
+* **Comparison of Upfront Fees:** It allows you to directly compare upfront lender costs (found in Sections A and B on page 2) and any available lender credits (Section J) that reduce initial expenses [home_loan_toolkit.pdf, page 11].
+* **Comparison of Long-Term Costs:** Page 3 of the Loan Estimate provides standardized figures—such as the Annual Percentage Rate (APR), Total Interest Percentage (TIP), and 5-year cost totals—allowing you to compare overall borrowing costs across the full term of the mortgage [home_loan_toolkit.pdf, page 11].
+* **Negotiating Power:** Written estimates give you concrete details to share when talking with lenders to see if a lender can match or beat a lower-cost offer [home_loan_toolkit.pdf, page 13]. Loan officers do not necessarily shop on your behalf or provide you with the lowest-cost option [home_loan_toolkit.pdf, page 11].
+* **No Commitment or Large Fees:** Receiving a Loan Estimate does not commit you to a lender, and you are not committed until you sign final closing documents [home_loan_toolkit.pdf, page 13]. Lenders can only charge you a small credit report fee to issue a Loan Estimate, and some provide it without charging any fee at all [home_loan_toolkit.pdf, page 11].",1,0,3,1,,9807,1400,45.92
+q21,multi,"If I am behind on household bills and also owe several debts, how should I decide which payments matter most this month?","When you cannot pay all your bills and debts at once, CFPB guidance recommends deciding which payments to make first by evaluating the risks and consequences of delaying each payment [behind_on_bills.pdf, page 14-15; debt_booklet.pdf, page 15-16].
+
+### 1. Gather Statements and Assess Consequences
+Collect all bill statements, overdue notices, and any letters threatening eviction, repossession, default, or service discontinuation [behind_on_bills.pdf, page 14; debt_booklet.pdf, page 15]. Review the risks of delaying each specific payment [behind_on_bills.pdf, page 15].
+
+### 2. Prioritize Payments by Category and Risk
+
+* **Housing and Utilities (High Priority):** Rent, mortgage, property taxes, and utility bills (gas, electric, water, sewer). Losing your housing adds costs quickly, and an eviction or late mortgage payments can make it harder to find a new place to live [behind_on_bills.pdf, page 15; debt_booklet.pdf, page 16]. Secured debts like a home mortgage carry higher risk because missing payments can mean losing the property [debt_booklet.pdf, page 15].
+* **Job-Related Expenses (High Priority):** Transportation to work (car payment, auto loan, gas, bus fare), car insurance, tools/uniforms, and childcare [behind_on_bills.pdf, page 15; debt_booklet.pdf, page 16]. Missing auto payments risks car repossession, which can jeopardize your ability to keep your job [money_goals.pdf, page 96].
+* **Essential Insurance:** Car insurance (required in most states), health insurance, and home or renters' insurance [behind_on_bills.pdf, page 15].
+* **Legal Obligations:** Court-ordered obligations such as child support, back child support, or court fines/fees, which can carry legal consequences if unpaid [behind_on_bills.pdf, page 15; debt_booklet.pdf, page 16].
+* **Other Debts (Lower Priority):** Unsecured debts such as credit card debt, medical debt, payday loans, student loans, loans from family/friends, and debts in collection [behind_on_bills.pdf, page 15; debt_booklet.pdf, page 16].
+
+### 3. Actionable Strategies to Manage Tight Months
+
+* **Contact creditors early:** If you must miss a payment, contact your creditors to explain your situation. They may offer short-term arrangements or forgive an occasional fee if you are in good standing [behind_on_bills.pdf, page 14].
+* **Adjust due dates:** If you are frequently late on a bill, ask to negotiate a new due date that aligns better with your income or benefit schedule [behind_on_bills.pdf, page 14].
+* **Understand payment timing:** Utility and credit card payments made within 30 days of the due date typically do not affect your credit report. However, paying more than 60 days late allows credit card companies to raise your interest rates [behind_on_bills.pdf, page 14; debt_booklet.pdf, page 16].
+* **Rotate payments if necessary:** While not ideal, rotating which bills you pay each month can be a temporary strategy to prevent losing your home, car, or utility services [behind_on_bills.pdf, page 14].
+* **Seek counseling:** Consider contacting a certified credit counselor (National Foundation for Credit Counseling: 800-388-2227) or a HUD-approved housing counselor (HUD Office of Housing Counseling: 800-569-4287) to help build a repayment plan [behind_on_bills.pdf, page 14].",1,0,5,1,,8096,2035,110.58
+q22,multi,"Before applying for a mortgage, how should I handle an inaccurate credit report and why could it matter for the loan?","### Why Correcting Errors Matters Before Applying for a Mortgage
+
+* **Impact on Credit Scores:** Credit scores are calculated using the information in your credit reports [money_goals.pdf, page 166]. Inaccurate negative information can unfairly lower your credit score [credit_booklet.pdf, page 9].
+* **Interest Rates and Loan Terms:** A higher credit score generally qualifies you for lower interest rates, lower fees, and a wider choice of lenders [home_loan_toolkit.pdf, page 7]. Improving your credit profile can lead to substantial savings, such as $50 to $100 off a typical monthly mortgage payment [home_loan_toolkit.pdf, page 7].
+* **Loan Approval:** Inaccurate errors or identity theft can make borrowing more expensive or prevent you from qualifying for a mortgage altogether [credit_booklet.pdf, page 9].
+* **Quick Improvement Window:** Correcting errors on your credit report can raise your credit scores in 30 days or less, making it beneficial to resolve disputes before submitting your mortgage application [home_loan_toolkit.pdf, page 7].
+
+---
+
+### How to Handle an Inaccurate Credit Report
+
+You have a legal right to dispute errors on your credit reports yourself for free; you do not need to pay a company to dispute errors for you [credit_booklet.pdf, page 9].
+
+1. **Obtain and Review Your Reports:** 
+   * Get your credit reports for free from [annualcreditreport.com](https://www.annualcreditreport.com) and check them carefully for mistakes [home_loan_toolkit.pdf, page 7].
+2. **Gather Supporting Evidence:** 
+   * Collect documents that prove the error, such as a highlighted copy of the credit report, copies of bills, cleared checks, bank statements, or identity documents [money_goals.pdf, page 177; credit_booklet.pdf, page 9]. Keep all original documents for your records [money_goals.pdf, page 177].
+3. **Submit the Dispute:** 
+   * Contact the nationwide credit reporting companies (Equifax, Experian, or TransUnion) online, by phone, or by mail [money_goals.pdf, page 177, 178]. Clearly explain each mistake, provide the facts, request a correction or deletion, and include copies of your proof [money_goals.pdf, page 177].
+   * If mailing, consider using certified mail with a return receipt requested [money_goals.pdf, page 177].
+   * You can also send a copy of the dispute directly to the business (furnisher) that supplied the incorrect information [money_goals.pdf, page 177].
+4. **Wait for the Investigation:** 
+   * The credit reporting company or furnisher generally has 30 calendar days to investigate (or up to 45 days in certain cases) [money_goals.pdf, page 166, 178; credit_booklet.pdf, page 9]. 
+   * They must send you written notice of the results within five business days of finishing the investigation [money_goals.pdf, page 166, 178; credit_booklet.pdf, page 9].
+   * If an error is corrected or deleted, you will receive a free updated credit report that does not count against your annual free limit [money_goals.pdf, page 166, 178; credit_booklet.pdf, page 9].
+
+---
+
+### Additional Actions if Problems Persist
+
+* **Suspected Identity Theft:** If the errors are due to identity theft or fraud, visit [identitytheft.gov](https://www.identitytheft.gov) to take protective steps, such as placing a fraud alert or security freeze [money_goals.pdf, page 177].
+* **Disagreements with Dispute Results:** If the investigation does not resolve the mistake, you can send a letter stating your disagreement. The credit reporting company must note the dispute on future credit reports [money_goals.pdf, page 178; credit_booklet.pdf, page 9].
+* **Submit a CFPB Complaint:** If an error is not fixed in a timely manner or the issue is unresolved, you can file a complaint with the CFPB at [consumerfinance.gov/complaint](https://www.consumerfinance.gov/complaint) or call (855) 411-2372 [money_goals.pdf, page 166, 178; credit_booklet.pdf, page 9].",1,0,5,1,,4062,2497,110.58
+q23,multi,How can I save toward a home down payment without exhausting the money I need for emergencies?,"To save toward a home down payment without putting your emergency money at risk, consider the following guidance from CFPB resources:
+
+### 1. Build and Protect your Emergency Fund First
+* **Establish a separate baseline:** Having an emergency savings fund provides the foundation before you focus on other savings goals [money_goals.pdf, page 40]. Starting with a goal of $500 to $1,000 can help cover common unexpected expenses, such as minor medical bills or car repairs, without requiring you to skip monthly bills or rely on borrowing [money_goals.pdf, page 40].
+* **Keep down payment savings separate:** Keep your down payment savings in a separate account from your emergency fund [money_goals.pdf, page 41]. Separate accounts ensure that an unexpected emergency expense will not force you to wipe out your progress toward buying a home [money_goals.pdf, page 41].
+
+### 2. Avoid Draining All Your Savings for a Down Payment
+* **Evaluate lower down payment options:** Putting down 20% or more often yields the best mortgage rates and options, but you should think twice if paying 20% drains all of your savings [home_loan_toolkit.pdf, page 9].
+* **Explore loan programs:** If a 20% down payment would deplete your emergency safety net, compare lower down payment loan options [home_loan_toolkit.pdf, page 9]:
+  * **5% to 19% down:** Requires Private Mortgage Insurance (PMI), which protects the lender but allows you to put less money down [home_loan_toolkit.pdf, page 9].
+  * **Low or zero down payment programs:** Options include conventional low down payment programs, FHA loans (3.5% down), or VA and USDA loans (zero down payment for eligible borrowers) [home_loan_toolkit.pdf, page 9]. *Note:* Low down payment programs can be more expensive overall due to higher interest rates or mortgage insurance fees [home_loan_toolkit.pdf, page 9].
+
+### 3. Create a Structured Weekly Savings Plan
+* **Calculate a weekly target:** Determine your total down payment target and your timeframe in weeks, then divide the total amount by the number of weeks to calculate a manageable weekly target [money_goals.pdf, page 46, 47].
+* **Identify cost-cutting strategies:** Brainstorm specific ways to lower discretionary expenses or increase income to meet your weekly target over time [money_goals.pdf, page 46, 47].",1,0,5,1,,9396,1608,128.08
+q24,multi,"If my income arrives irregularly, how can an income tracker and a cash-flow budget together help me plan payments?","When your income arrives irregularly, managing bills can be challenging because expenses continue on a fixed schedule even when earnings fluctuate [money_goals.pdf, page 57]. Using an **income tracker** and a **cash-flow budget** together helps align your timing and make sure bills are paid on time.
+
+---
+
+### 1. What the Income Tracker does
+* **Identifies income timing and patterns:** The income tracker records what money is coming in, when it arrives, and whether sources are regular, irregular, seasonal, or one-time [money_goals.pdf, page 57, 68].
+* **Distinguishes funds:** It helps separate earned income (which is flexible) from public benefit payments (which may have specific spending restrictions) [money_goals.pdf, page 57, 68].
+* **Supplies the data:** Tracking your income for at least a month provides the baseline numbers needed to build a weekly cash-flow plan [money_goals.pdf, page 68, 101].
+
+---
+
+### 2. What the Cash-Flow Budget does
+* **Breaks the month down week by week:** Unlike a traditional monthly budget, a cash-flow budget tracks incoming money and outgoing expenses on a weekly basis [money_goals.pdf, page 99].
+* **Tracks weekly roll-overs:** For each week, you add income to your beginning balance, subtract weekly expenses, and calculate the ending balance [money_goals.pdf, page 101, 102]. That ending balance rolls over to become the starting balance for the next week [money_goals.pdf, page 101, 102].
+* **Spreads funds across low-income weeks:** When earnings are high, the weekly ending balance shows how much surplus can be held over to cover upcoming weeks or months when income drops or stops [money_goals.pdf, page 99].
+
+---
+
+### 3. How they work together to plan payments
+1. **Spot weekly shortfalls in advance:** By combining recorded income with planned expenses week by week, you can immediately see if an ending balance will be negative in a future week before a payment is due [money_goals.pdf, page 99, 101].
+2. **Prioritize essential bills:** It allows you to confirm that you have enough cash on hand to cover high-priority, fixed obligations (such as rent or mortgage) before spending on non-essential items [money_goals.pdf, page 99].
+3. **Adjust payment timing:** If a shortfall is projected, you can use strategies to adjust cash flow, such as:
+   * Negotiating due dates with creditors to fall right after high-earning weeks [money_goals.pdf, page 104, 105].
+   * Splitting large monthly payments into smaller payments spread across the month [money_goals.pdf, page 104, 105].
+   * Rescheduling or cutting back on flexible expenses during low-income weeks [money_goals.pdf, page 99, 110].",1,0,8,1,,8731,1959,78.31
+q25,multi,What is different about responding to a debt-collection contact versus disputing incorrect information on a credit report?,"While both actions involve challenging or verifying financial information, they differ in who you contact, what you are trying to achieve, and the specific rights and procedures that apply:
+
+### 1. Who You Contact
+* **Debt Collection Contact:** You communicate directly with the **debt collector** or collection agency seeking payment [debt_booklet.pdf, page 18; money_goals.pdf, page 150]. (If you are sued, you must also respond directly to court documents [debt_booklet.pdf, page 18].)
+* **Credit Report Dispute:** You contact the **credit reporting companies** (Equifax, Experian, or TransUnion) and/or the **furnisher** (the lender or business that supplied the incorrect data) [money_goals.pdf, page 177; credit_booklet.pdf, page 9].
+
+---
+
+### 2. Primary Goal and Options
+* **Debt Collection Response:** The goal is to address an active attempt to collect a specific debt. You can:
+  * Request verification and documentation (such as the original creditor's name, debt amount, date incurred, last bill, or proof that you owe it) [debt_booklet.pdf, page 18; money_goals.pdf, page 150].
+  * Check whether the debt's statute of limitations has expired [debt_booklet.pdf, page 18].
+  * Formally dispute owing the debt or request that the collector stop contacting you [money_goals.pdf, page 150].
+  * Negotiate a settlement or payment plan if the debt is legitimate [debt_booklet.pdf, page 18].
+* **Credit Report Dispute:** The goal is to remove or correct inaccurate, incomplete, or fraudulent items (such as false late payments or identity theft records) on your personal credit files [money_goals.pdf, page 177; credit_booklet.pdf, page 9].
+
+---
+
+### 3. Timeline and Investigation Process
+* **Credit Report Dispute:** Credit reporting agencies and furnishers generally have **30 calendar days** (or up to 45 days in some situations) to investigate your claim and must notify you of the results within **5 business days** of completing the investigation [money_goals.pdf, pages 166, 178]. If the information cannot be verified or is incorrect, it must be updated or deleted [money_goals.pdf, page 166; credit_booklet.pdf, page 9].
+* **Debt Collection Response:** Prompt response is critical to prevent legal action; failing to respond to a court summons can lead to a default money judgment against you [debt_booklet.pdf, page 18].
+
+---
+
+### How They Connect
+When responding to a debt collector, you can request that if they report the debt to a credit bureau (or have already done so), they must report that the debt is disputed [money_goals.pdf, page 150]. However, if an incorrect collection item is already showing on your credit report, you will also want to dispute it directly with the credit reporting bureaus [money_goals.pdf, page 177].",1,0,6,1,,10184,2198,34.76
+q26,unanswerable,What exact 30-year fixed mortgage rate will a lender offer me today based on my personal finances?,"I cannot tell you the exact mortgage rate a lender will offer you today. I do not have access to live daily interest rates, your credit score, or your personal financial details, and exact rates are not available in this document collection.
+
+According to CFPB guides, mortgage interest rates are determined individually by lenders based on several factors:
+
+* **Credit Score:** Having a higher credit score generally qualifies you for lower interest rates and a wider selection of lenders [home_loan_toolkit.pdf, page 7; credit_booklet.pdf, page 13]. Key drivers of your credit scores include your payment track record (about 35% of a FICO score) and the amount of debt you owe (about 30%) [home_loan_toolkit.pdf, page 7].
+* **Credit History & Errors:** Correcting errors on your credit report before applying can raise your scores and help you secure better loan terms [home_loan_toolkit.pdf, page 7].
+* **Shopping Around:** Lenders offer different rates, so request official quotes from multiple lenders. Most credit scoring models allow you to shop for a mortgage within a 14- to 45-day window with little or no impact on your credit scores [home_loan_toolkit.pdf, page 7].",1,1,2,1,,3729,872,171.77
+q27,unanswerable,"What are my credit scores today at Equifax, Experian and TransUnion?","I do not have access to your personal financial records or credit scores. As an educational assistant, I cannot look up personal credit information.
+
+However, you can check your credit reports from the three nationwide credit reporting companies—Equifax, Experian, and TransUnion—yourself:
+
+* **Official Source:** The federal government authorizes one official source for free credit reports: [AnnualCreditReport.com](https://www.annualcreditreport.com) [money_goals.pdf, page 173].
+* **By Phone:** Call (877) 322-8228 [money_goals.pdf, page 173].
+* **By Mail:** Download and complete the request form from AnnualCreditReport.com and mail it to:
+  Annual Credit Report Request Service  
+  P.O. Box 105281  
+  Atlanta, GA 30348-5281 [money_goals.pdf, page 173]
+
+### Important Notes:
+* **Credit Reports vs. Credit Scores:** A standard credit report contains records of your payment history, public records, and inquiries, but it does not automatically include your credit score [credit_booklet.pdf, page 5].
+* **Verification:** When requesting your credit report online or by phone, you will be asked security questions (such as details about past loan payments or addresses) to verify your identity [money_goals.pdf, page 172].",1,1,3,1,,3952,878,26.71
+q28,unanswerable,Will my current credit-card issuer approve my requested credit limit increase next month?,"I don't know based on the documents in this collection whether your credit-card issuer will approve your requested credit limit increase next month. 
+
+* The documents in this collection do not contain individual account records or lender-specific approval decisions.
+* Lenders conduct credit report reviews when an individual applies for credit [money_goals.pdf, page 162].",1,1,1,1,,4128,1305,9.4
+q29,unanswerable,What is my exact checking-account balance and which pending payment will clear tomorrow?,"I don't know based on the documents in this collection.
+
+* The documents in this collection contain general financial education materials, not individual personal banking records.
+* Specific details regarding your exact checking-account balance and pending payments are missing from these guides.",1,1,0,1,,3651,647,6.52
+q30,unanswerable,"Under CFPB guidance on reverse mortgages, what happens to the loan when the borrower permanently moves out of the home?","I don't know based on the documents in this collection.
+
+* The documents in this collection do not contain information regarding reverse mortgages.
+* Specific guidance on what happens to a reverse mortgage loan when a borrower permanently moves out is missing.",1,1,0,1,,17627,949,11.38

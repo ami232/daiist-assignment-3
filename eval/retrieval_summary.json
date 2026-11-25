@@ -1,0 +1,36 @@
+{
+  "notes": [
+    "Hit Rate@k uses exact source + PDF page matches (not exact answer spans).",
+    "Unanswerable questions are excluded from retrieval hit-rate denominators.",
+    "Complete Hit Rate@k requires ALL expected source/page pairs for multi-passage questions.",
+    "Hybrid uses reciprocal rank fusion of semantic and BM25 rankings over the same 342 chunks.",
+    "This is a small development evaluation set; do not claim independent generalization from these scores."
+  ],
+  "indexed_chunks": 342,
+  "answerable_questions": 25,
+  "multi_questions": 5,
+  "designs": {
+    "semantic": {
+      "hit_rate_at_1": 0.56,
+      "complete_hit_rate_at_1": 0.48,
+      "multi_complete_at_1": 0.0,
+      "hit_rate_at_3": 0.88,
+      "complete_hit_rate_at_3": 0.72,
+      "multi_complete_at_3": 0.2,
+      "hit_rate_at_5": 0.96,
+      "complete_hit_rate_at_5": 0.84,
+      "multi_complete_at_5": 0.4
+    },
+    "hybrid_rrf": {
+      "hit_rate_at_1": 0.52,
+      "complete_hit_rate_at_1": 0.44,
+      "multi_complete_at_1": 0.0,
+      "hit_rate_at_3": 0.76,
+      "complete_hit_rate_at_3": 0.72,
+      "multi_complete_at_3": 0.4,
+      "hit_rate_at_5": 0.8,
+      "complete_hit_rate_at_5": 0.72,
+      "multi_complete_at_5": 0.4
+    }
+  }
+}

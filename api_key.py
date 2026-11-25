@@ -16,7 +16,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 ENV_FILE = ROOT / ".env"
-VAR = "GEMINI_API_KEY"
+VAR = 'GEMINI_API_KEY'
 VERIFY_URL = "https://generativelanguage.googleapis.com/v1beta/models?pageSize=1"
 
 

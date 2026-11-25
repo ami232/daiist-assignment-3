@@ -1,0 +1,31 @@
+id,correct,supported,notes
+q01,1,1,Accurately explains turning a vague goal into a SMART goal supported by the excerpts.
+q02,1,1,Accurately states the CFPB recommendations and benefits of weekly savings targets based on text.
+q03,1,1,Correctly identifies the purpose of a cash-flow budget for uneven income using retrieved evidence.
+q04,1,1,Correctly identifies contacting both the credit reporting bureau and the information furnisher.
+q05,1,1,Accurately defines gross vs net income using supported facts from the excerpts.
+q06,1,1,Accurate and fully supported by the provided text excerpts.
+q07,1,1,Matches the reference answer accurately and supported by all excerpts provided.
+q08,1,1,"Covers income generation, expense reduction, and bill timing as supported by excerpts."
+q09,1,1,"Lists credit reports, loan/credit card statements, billing statements, and court orders as supported."
+q10,1,1,Correctly identifies paying smallest debt first vs highest interest rate first with evidence support.
+q11,1,1,Answer covers essential steps from reference and retrieved text supports all factual details.
+q12,1,1,Answer accurately captures core actions and all detailed advice is backed by evidence excerpts.
+q13,1,1,"Covers online, phone, and mail request methods matching reference and fully supported by excerpts."
+q14,1,1,Lists correct categories of credit report errors matching reference and supported by evidence.
+q15,1,1,Correctly answers no fee required and details step-by-step dispute process fully backed by excerpts.
+q16,1,1,The response accurately details the three steps with full support from credit_booklet.pdf.
+q17,1,1,"The response covers additional expenses and budget considerations, fully backed by retrieved excerpts."
+q18,1,1,The trade-offs associated with down payments below 20% are accurately detailed and supported.
+q19,1,1,"Accurately explains discount points, lender credits, and zero-point loans with exact support."
+q20,1,1,The reasons for getting multiple written Loan Estimates match the reference and retrieved excerpts.
+q21,1,1,Accurately covers bill and debt prioritization principles and matching strategies directly from retrieved text.
+q22,1,1,Correctly details disputing credit errors and how credit history impacts mortgage pricing and approval.
+q23,1,1,Correctly addresses balancing emergency savings with down payments using a weekly plan based on evidence.
+q24,1,1,Fully supported details on how income tracking and cash-flow budgets combine to manage irregular payments.
+q25,1,1,Accurately contrasts responding to debt collectors versus disputing credit report errors with full support.
+q26,1,1,Refusal to provide specific mortgage rate for user is correct and fully supported by excerpts.
+q27,1,1,Refusal to provide personal credit scores is correct and fully supported by excerpts.
+q28,1,1,Refusal to predict future credit limit decision is correct and supported by excerpts.
+q29,1,1,Refusal to state personal account balance is correct and supported by excerpts.
+q30,1,1,Refusal due to missing reverse mortgage information in corpus is correct and supported.

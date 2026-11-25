@@ -1,0 +1,21 @@
+{
+  "total_questions": 30,
+  "answers_completed": 30,
+  "judge_grades_completed": 30,
+  "human_grades_completed": 30,
+  "citation_grounding_rate": 1.0,
+  "average_input_tokens": 5427.0,
+  "average_output_tokens": 1248.6333,
+  "average_seconds": 44.7913,
+  "judge_correct_rate": 1.0,
+  "judge_supported_rate": 1.0,
+  "human_judge_compared": 30,
+  "agreement_correct": 1.0,
+  "agreement_supported": 0.8333,
+  "notes": [
+    "Code checks only that citations refer to retrieved pages; actual claim support is a judgment task.",
+    "Refusal detection is a rough phrase-based heuristic, not a complete semantic assessment.",
+    "Human grading must be done independently before looking at LLM-judge results.",
+    "Token costs depend on published prices for the actual model and billing plan; not inferred here."
+  ]
+}
