@@ -1,0 +1,66 @@
+{
+ "questions": 37,
+ "outcomes": {
+  "correct": 26,
+  "correct_unsupported": 3,
+  "wrong": 1,
+  "wrong_refusal": 0,
+  "correct_refusal": 2,
+  "correct_refusal_unsupported": 4,
+  "missed_refusal": 1
+ },
+ "answerable": {
+  "n": 30,
+  "correct_and_supported": 26,
+  "judge_correct": 29,
+  "wrong_refusals": 0
+ },
+ "unanswerable": {
+  "n": 7,
+  "refused": 6,
+  "refused_and_supported": 2
+ },
+ "code_checks": {
+  "citations_valid": 37,
+  "answers_with_citation": 30,
+  "non_refusal_answers": 30,
+  "expected_passage_retrieved": 29,
+  "expected_passage_cited": 29,
+  "guardrail_fired": 0
+ },
+ "suggested_causes": {
+  "unsupported claim": 8,
+  "wrong answer from right passage": 1
+ },
+ "cost_per_question": {
+  "agent_tokens_in": 6208,
+  "agent_tokens_out": 143,
+  "seconds_mean": 13.6,
+  "seconds_max": 35.5,
+  "judge_tokens": 3398
+ },
+ "judge_vs_human": {
+  "correct": {
+   "n": 24,
+   "agreement": 0.958,
+   "cohen_kappa": 0.647,
+   "disagreements": [
+    "q22"
+   ]
+  },
+  "supported": {
+   "n": 24,
+   "agreement": 0.708,
+   "cohen_kappa": 0.106,
+   "disagreements": [
+    "q20",
+    "q26",
+    "q31",
+    "q32",
+    "q34",
+    "q35",
+    "q36"
+   ]
+  }
+ }
+}

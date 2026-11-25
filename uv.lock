@@ -458,6 +458,7 @@ dependencies = [
     { name = "ipykernel" },
     { name = "langchain" },
     { name = "langchain-google-genai" },
+    { name = "langchain-groq" },
     { name = "matplotlib" },
     { name = "mcp", extra = ["cli"] },
     { name = "nbconvert" },
@@ -475,6 +476,7 @@ requires-dist = [
     { name = "ipykernel", specifier = ">=6.29" },
     { name = "langchain", specifier = ">=1.4.7" },
     { name = "langchain-google-genai", specifier = ">=4.4.2" },
+    { name = "langchain-groq", specifier = ">=1.2.1" },
     { name = "matplotlib", specifier = ">=3.9" },
     { name = "mcp", extras = ["cli"], specifier = ">=2.3.0" },
     { name = "nbconvert", specifier = ">=7.16" },
@@ -668,6 +670,23 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/62/b6/bc095b23a3e0d978e75c8c18cabe4c11f791837410670e4486f0d539bfba/googleapis_common_protos-1.76.0.tar.gz", hash = "sha256:71db0e44a1d4c2dd024ebad44ca67129cc1e2892e4861df466764749d5ef8642", size = 156250, upload-time = "2026-10-22T23:43:36.263Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/05/6d/78dc67a9e779e594b49bf62604034d3a6aa428a55afc729cafda4b7333e1/googleapis_common_protos-1.76.0-py3-none-any.whl", hash = "sha256:59e13344a9f3651aa201a03e2bee815a3bf43a4baf1f9ff8a9b62a840ce25fac", size = 307707, upload-time = "2026-10-22T23:43:10.445Z" },
+]
+
+[[package]]
+name = "groq"
+version = "1.7.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "anyio" },
+    { name = "distro" },
+    { name = "httpx" },
+    { name = "pydantic" },
+    { name = "sniffio" },
+    { name = "typing-extensions" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/0c/c1/20cb719bc21aa22df185c4aa60abc17680d7067d41fe0ca3fda98b75822b/groq-1.7.0.tar.gz", hash = "sha256:d582dbb3f071b92ca339baba83af9f57ba6f46a51c34b04565d7cb9badb2785b", size = 158918, upload-time = "2026-08-26T02:36:19.734Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/3f/f6/c3d8ea3194d7d7d8292edd4dbb4b6832d29c2eab04887dda4a742e83902c/groq-1.7.0-py3-none-any.whl", hash = "sha256:cb1518f823423d4e52445859eb7d2918a927794cec12f8d5e50d9161e3690fc8", size = 143797, upload-time = "2026-08-26T02:36:18.497Z" },
 ]
 
 [[package]]
@@ -1074,7 +1093,7 @@ wheels = [
 
 [[package]]
 name = "langchain-core"
-version = "1.7.4"
+version = "1.8.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "certifi" },
@@ -1089,9 +1108,9 @@ dependencies = [
     { name = "typing-extensions" },
     { name = "uuid-utils" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/27/25/bd6a5092ec05f7fe7642e7fd3981c8bdfd5a7750f34520b9eee3e9e4b1c0/langchain_core-1.7.4.tar.gz", hash = "sha256:a9b286e12d782dfc1eb17bdbf4228e0f71e7caa6e5d26375eb9ab6723baaf613", size = 1029531, upload-time = "2026-11-02T15:31:17.865Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/75/ba/281e953ec491deda5c9ef8633b47647c41836c6b6fe1395e9d99567dbb44/langchain_core-1.8.4.tar.gz", hash = "sha256:af8976d6df0b3338dc7c830ebf1c505c0fc05a0e3eb564f4901ed7546a418ab6", size = 1025230, upload-time = "2026-11-19T22:35:43.367Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/99/dc/8c0e82e0171187f3425b3f7ef962858991ad731b4618d7e814eb72715091/langchain_core-1.7.4-py3-none-any.whl", hash = "sha256:20963807aa074366a3820a5d980399009ac05e17b77105c1e847db3ea3b4829f", size = 577184, upload-time = "2026-11-02T15:31:16.286Z" },
+    { url = "https://files.pythonhosted.org/packages/16/6d/35b048329e70492ca0d7561431627ac3b7da1a2dedc99870ca188902529c/langchain_core-1.8.4-py3-none-any.whl", hash = "sha256:5755dee8f8b0c709cd22436dea3689c74a3f6e9dc4251590797dcd66bcd1ef67", size = 591065, upload-time = "2026-11-19T22:35:41.819Z" },
 ]
 
 [[package]]
@@ -1110,15 +1129,28 @@ wheels = [
 ]
 
 [[package]]
+name = "langchain-groq"
+version = "1.2.1"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "groq" },
+    { name = "langchain-core" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/8f/6b/f20ff541e7d50848306c379541bc204b77ffff07b088688b3d78fe1072fb/langchain_groq-1.2.1.tar.gz", hash = "sha256:0ce10a14be647bf7d1c1c66348c8d7124a8ab6857cc6d65e4984fed7b2215752", size = 194702, upload-time = "2026-11-18T17:27:06.216Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/30/bb/b02a9c5b97a3bca9950d5671d760bd0134176dba6d5eb34911e9dbea583d/langchain_groq-1.2.1-py3-none-any.whl", hash = "sha256:c279273547baf192c32013ea66f2da69ef6469e30b147483999911ff1ba5bf77", size = 21665, upload-time = "2026-11-18T17:27:05.091Z" },
+]
+
+[[package]]
 name = "langchain-protocol"
-version = "0.0.20"
+version = "0.0.22"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "typing-extensions" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/cb/8b/d908d082c3cf5368ddd1816ed114de79c873f979ba7f98b95fab0e841643/langchain_protocol-0.0.20.tar.gz", hash = "sha256:0f5bd002474265648e91161771a9e0438fe9480bd55a416e51af0f60070637ec", size = 6280, upload-time = "2026-10-20T11:13:50.84Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/a2/5c/94ffa0c0b9445ac284bf7c0aebf2fa3a32bdf27c20aaf2f061746375b670/langchain_protocol-0.0.22.tar.gz", hash = "sha256:61267bc9f478c9df35ccdafd9fdf556b2698435232d59def54b3809bb02585bb", size = 6508, upload-time = "2026-11-19T15:47:56.068Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/02/4b/f1c99a0b27c5ff8b4b131c0d6e62012c17cc424089efe213767db927afd2/langchain_protocol-0.0.20-py3-none-any.whl", hash = "sha256:3c935e5e46b0f6f9cb52f45ba7cfa53d1b9fa80c82c4a277d47f03e07f7385b1", size = 7347, upload-time = "2026-10-20T11:13:49.566Z" },
+    { url = "https://files.pythonhosted.org/packages/71/0a/e96b6ca3b5a7d91af31fd82aee42e65beb6bbe884587e27df5460feee486/langchain_protocol-0.0.22-py3-none-any.whl", hash = "sha256:d264998a507b735320c15a7b366051cbf41e21f771bea1b03a911f2c58af02e7", size = 7579, upload-time = "2026-11-19T15:47:55.109Z" },
 ]
 
 [[package]]

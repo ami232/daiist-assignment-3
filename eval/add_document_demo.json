@@ -1,0 +1,44 @@
+{
+ "question": "My car is 6 years old. How often does it need to pass the ITV inspection?",
+ "document": {
+  "source": "ITV",
+  "boe_id": "BOE-A-2017-12841",
+  "title": "Real Decreto 920/2017, inspección técnica de vehículos",
+  "path": "corpus/ITV__BOE-A-2017-12841.xml"
+ },
+ "before": {
+  "answer": "The corpus does not cover this. \nThe frequency of ITV (Inspección Técnica de Vehículos) inspections based on vehicle age is not specified in the current texts of the LSV, RGC, or RGCond. You should check the current regulations with the Directorate-General for Traffic (DGT) or an authorized ITV station.",
+  "citations": []
+ },
+ "add_document": {
+  "status": "added",
+  "source": "ITV",
+  "boe_id": "BOE-A-2017-12841",
+  "title": "Real Decreto 920/2017, inspección técnica de vehículos",
+  "chunks": 49,
+  "embedded": 49,
+  "reused": 0,
+  "removed": 0
+ },
+ "add_document_again": {
+  "status": "unchanged",
+  "source": "ITV",
+  "boe_id": "BOE-A-2017-12841",
+  "title": "Real Decreto 920/2017, inspección técnica de vehículos",
+  "chunks": 49,
+  "embedded": 0,
+  "reused": 49,
+  "removed": 0
+ },
+ "after": {
+  "answer": "If your car is a standard passenger car (category M1: designed for carrying up to eight passengers plus the driver), the frequency depends on its exact age [ITV, Artículo 6]:\n\n* **Up to 4 years old:** Exempt [ITV, Artículo 6].\n* **From over 4 years to 10 years old:** Every 2 years (biennial) [ITV, Artículo 6].\n* **Over 10 years old:** Annually [ITV, Artículo 6].\n\nSince your car is **6 years old**, it must pass the ITV inspection **every 2 years** [ITV, Artículo 6].",
+  "citations": [
+   "[ITV, Artículo 6]"
+  ],
+  "searches": [
+   {
+    "query": "ITV periodicidad antiguedad turismo frecuencia"
+   }
+  ]
+ }
+}
