@@ -136,7 +136,7 @@ I ran the agent on all 39 questions. With code (simple Python, no AI) I checked 
 - correct, meaning it matches my reference answer
 - supported, meaning every claim is in the retrieved text
 
-I also graded all 39 answers myself before looking at the judge. I agree with the judge on 95% for correct and 82% for supported. The main difference is that the judge passed one answer that should have said "not covered" and one that missed an exception, so it is too lenient where it matters most for my use case.
+I also graded all 39 answers myself before looking at the judge, and later changed one grade (q05) after checking it again. I agree with the judge on 95% for correct and 82% for supported. The main difference is that the judge passed one answer that should have said "not covered" and one that missed an exception, so it is too lenient where it matters most for my use case.
 
 | My grades | single | multi | unanswerable | all |
 |---|---|---|---|---|
