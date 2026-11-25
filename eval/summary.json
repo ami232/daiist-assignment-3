@@ -1,0 +1,22 @@
+{
+  "agreement": {
+    "graded_by_you": 32,
+    "agreement_correct": 0.938,
+    "disagreements_correct": [
+      "q18",
+      "q23"
+    ],
+    "agreement_supported": 0.969,
+    "disagreements_supported": [
+      "q33"
+    ]
+  },
+  "cost_latency": {
+    "questions": 36,
+    "latency_median_s": 3.67,
+    "latency_p95_s": 9.06,
+    "input_tokens_per_question": 4499,
+    "output_tokens_per_question": 365,
+    "cost_per_question_usd": 0.00167
+  }
+}
