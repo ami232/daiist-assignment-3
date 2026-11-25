@@ -1,0 +1,15 @@
+
+The assistant wants to run add_document with {'path': 'added/atocha_5th_circuit_1978.html'}. Allow it? [y/N]   corpus_article: embedded 32/32 new chunks
+  corpus_fixed: embedded 50/66 new chunks
+  corpus_fixed: embedded 66/66 new chunks
+  tool: add_document({'path': 'added/atocha_5th_circuit_1978.html'})
+  tool: search({'query': 'buque naufragado'})
+  citation check, attempt 1: answer makes claims without any citation
+
+(4 model calls, 7,274 tokens, 23.6s)
+The documents state that the ownership of wrecked or sunken ships and goods is not affected solely by their sinking [Ley 14/2014, Artículo 373]. Ownership is only abandoned through the express will of the owner [Ley 14/2014, Artículo 373]. 
+
+As the law notes: «La propiedad de los buques u otros bienes naufragados o hundidos no se verá afectada por el solo hecho de su naufragio o hundimiento, no produciéndose su abandono sino por voluntad expresa de su titular.» (The ownership of sunken or shipwrecked vessels or other goods shall not be affected solely by the fact of their shipwreck or sinking, and abandonment shall not occur except by the express will of their owner) [Ley 14/2014, Artículo 373].
+
+Sources:
+- [Ley 14/2014, Artículo 373] https://www.boe.es/buscar/act.php?id=BOE-A-2014-7877#a373

@@ -1,0 +1,9 @@
+  tool: search({'query': 'Atocha Florida ownership court'})
+
+(2 model calls, 5,200 tokens, 15.0s)
+The US courts confirmed Treasure Salvors, Inc. and Armada Research Corp. in their sole title and right to immediate possession of the *Nuestra Señora de Atocha*, rejecting claims by the United States government [atocha_5th_circuit_1978, Inicio]. 
+
+The court applied the law of finds to the long-abandoned vessel, holding that «title to abandoned property vests in the person who reduces that property to his or her possession» [atocha_5th_circuit_1978, Inicio].
+
+Sources:
+- [atocha_5th_circuit_1978, Inicio] file:///Users/matiasviguerabarrientos/Documents/Universidad/Quinto%20An%CC%83o/Designing%20AI/daiist-assignment-3/added/atocha_5th_circuit_1978.html

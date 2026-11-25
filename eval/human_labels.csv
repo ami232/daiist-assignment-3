@@ -1,1 +1,28 @@
 id,correct,supported,notes
+q01,1,1,
+q02,0,1,It lists the paperwork but leaves out where the finds go and who sets the deadline.
+q03,1,0,"It gets the coin right, but 'all archaeological items' is too broad. Article 44(5) makes an exception for parts of a registered historic building."
+q04,1,0,"Article 45 says who chooses the museum. The details about distance and conservation are in Article 42(2), which the answer didn't cite."
+q05,1,0,The fine is right. Article 76 only treats the excavation as an administrative offence if it isn't a crime.
+q06,1,1,
+q07,1,1,
+q08,1,1,
+q09,1,1,
+q10,1,1,
+q11,1,1,
+q12,1,1,
+q13,1,1,
+q14,0,0,"Rule 1 allows a lift that fits with protection and significantly improves protection, knowledge or appreciation. It doesn't say a lift must be necessary for research or permanent protection."
+q15,1,1,
+q16,1,1,
+q17,1,1,
+q18,1,1,
+q19,1,1,
+q20,0,1,"It covers humanity and the states of cultural, historical or archaeological origin. It leaves out the country of origin as a separate basis for a claim."
+q21,0,0,It switches to selling the find and never answers whether the owner's rights survive. Neither citation says that sinking alone leaves ownership intact.
+q22,1,0,"Article 42 covers permission. The definition that makes mapping without disturbing the seabed a survey comes from Article 41, which the answer didn't cite."
+q23,1,0,"The timing is right for this private boat, but the answer says 'any shipwreck'. Article 374 excludes state vessels."
+q24,1,1,
+q25,0,1,It gives the right distance and says approval can be required. It leaves out the duty to apply the annex rules when the country regulates the work.
+q26,1,1,
+q27,0,1,It says Spain can decline to lead but leaves out who then chooses the coordinator: the other states parties that declared an interest.

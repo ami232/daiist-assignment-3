@@ -1,0 +1,4 @@
+  tool: search({'query': 'Atocha'})
+
+(2 model calls, 3,975 tokens, 3.8s)
+The documents don't cover this.

@@ -1,0 +1,55 @@
+{
+  "built": "2026-11-19",
+  "corpus_date": "20261118",
+  "model": "gemini-embedding-2",
+  "dim": 768,
+  "designs": {
+    "article": {
+      "kind": "article",
+      "max_words": 300
+    },
+    "fixed": {
+      "kind": "fixed",
+      "words": 150,
+      "overlap": 30
+    }
+  },
+  "documents": [
+    {
+      "source": "UNCLOS",
+      "title": "Convención de las Naciones Unidas sobre el Derecho del Mar (1982)",
+      "boe_id": "BOE-A-1997-3296",
+      "kind": "diario",
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-1997-3296",
+      "words": 19984
+    },
+    {
+      "source": "UNESCO 2001",
+      "title": "Convención sobre la Protección del Patrimonio Cultural Subacuático (UNESCO, 2001)",
+      "boe_id": "BOE-A-2009-3787",
+      "kind": "diario",
+      "url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2009-3787",
+      "words": 8122
+    },
+    {
+      "source": "Ley 16/1985",
+      "title": "Ley 16/1985, de 25 de junio, del Patrimonio Histórico Español",
+      "boe_id": "BOE-A-1985-12534",
+      "kind": "consolidated",
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-12534",
+      "words": 15609
+    },
+    {
+      "source": "Ley 14/2014",
+      "title": "Ley 14/2014, de 24 de julio, de Navegación Marítima",
+      "boe_id": "BOE-A-2014-7877",
+      "kind": "consolidated",
+      "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2014-7877",
+      "words": 10360
+    }
+  ],
+  "chunks": {
+    "article": 459,
+    "fixed": 452
+  }
+}
