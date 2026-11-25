@@ -1,0 +1,51 @@
+{
+  "questions": 32,
+  "kinds": {
+    "single": 21,
+    "multi": 6,
+    "unanswerable": 5
+  },
+  "retrieval": {
+    "vector": {
+      "hit@1": 0.519,
+      "hit@3": 0.815,
+      "hit@5": 0.852,
+      "words@1": 170,
+      "words@3": 528,
+      "words@5": 854
+    },
+    "hybrid": {
+      "hit@1": 0.481,
+      "hit@3": 0.63,
+      "hit@5": 0.778,
+      "words@1": 219,
+      "words@3": 610,
+      "words@5": 1048
+    }
+  },
+  "search_design": {
+    "design": "sections"
+  },
+  "outcomes": {
+    "not judged yet": 24,
+    "wrong refusal": 3,
+    "answered unanswerable": 2,
+    "correct refusal": 3
+  },
+  "citations_valid": 1,
+  "guardrail_fired": 6,
+  "agreement_with_my_grades": {
+    "graded": 0
+  },
+  "per_question": {
+    "mean_input_tokens": 4711,
+    "mean_output_tokens": 186,
+    "mean_seconds": 8.7,
+    "mean_tool_calls": 1.22
+  },
+  "evaluation_seconds": 284,
+  "answered": 32,
+  "incomplete": [
+    "judging stopped at q01: daily quota reached"
+  ]
+}
