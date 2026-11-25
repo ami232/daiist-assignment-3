@@ -1,0 +1,135 @@
+id,kind,expected_refusal,refused,refusal_ok,citations_valid,guardrail,n_citations,retrieved_expected,cites_expected,judge_correct,judge_supported,judge_reason,failure_hint,searches,model_calls,input_tokens,output_tokens,seconds,answer
+q01,multi,0,0,1,1,passed,3,1,1,0,1,"The response omits the 1,000 SDR limit mentioned in Regulation 2027/97's information notice and does not state that the airline is liable even if not at fault.",wrong answer from the right passage (or bad test question),1,2,5386,195,8.1,"The limit of the air carrier's liability for the loss of checked baggage is **1,288 Special Drawing Rights (SDR)** (approximately 1,581 EUR, depending on the exchange rate) [guidelines_1107_2006, Section 9 (part 2/2)]. 
+
+Please note:
+* This is a maximum limit, not a fixed or automatic payout; you must prove the actual value of your lost belongings [guidelines_261_2004, Section 10 (part 4/6)].
+* Higher limits apply only if you made a special declaration of interest in delivery at the latest when checking in and paid a supplementary fee [reg_2027_97, Article 8 to Annex (part 2/2)]."
+q02,single,0,0,1,1,passed,3,1,1,1,1,ok,,1,2,5399,172,14.5,"You can claim compensation if you reach your final destination with a delay of **3 hours or more** compared to the scheduled time of arrival [guidelines_261_2004, Section 4.4.7]. 
+
+The time of arrival is considered to be the moment at least one of the aircraft doors is opened [guidelines_261_2004, Section 3.3.3].
+
+**Exception:** You are not entitled to compensation if the long delay was caused by extraordinary circumstances that could not have been avoided even if all reasonable measures had been taken [guidelines_261_2004, Section 4.4.7]."
+q03,multi,0,0,1,1,passed,5,1,1,0,1,"The assistant missed key conditions from the reference answer, specifically that delay compensation depends on arriving 3 or more hours late at the final destination, and the re-routing exception thresholds when notified less than 7 days in advance.",wrong answer from the right passage (or bad test question),3,4,18109,388,8.6,"Depending on how long the delay is and whether it is treated as a cancellation, you may be entitled to assistance and compensation:
+
+* **Right to Care:** While waiting at the airport, the airline must offer you free meals and refreshments in a reasonable relation to the waiting time, plus two free telephone calls, telex, fax messages, or emails [reg_261_2004, Article 9]. If a stay of one or more nights becomes necessary, the airline must also provide hotel accommodation and transport between the airport and the place of accommodation [reg_261_2004, Article 9].
+* **Cancellation rules:** If your departure time is postponed by 3 hours or more, or if the change is otherwise classified as a cancellation, you were notified only one day in advance [guidelines_261_2004, Section 3.2.2]. Since this is less than 14 days before departure, you may be entitled to standard compensation under Article 7 unless the change was caused by extraordinary circumstances that could not have been avoided even if all reasonable measures had been taken [reg_261_2004, Article 5, guidelines_261_2004, Section 6.4]. You are also entitled to choose between reimbursement of your ticket or re-routing [reg_261_2004, Article 5, reg_261_2004, Article 8]."
+q04,single,0,0,1,1,passed,6,1,1,0,1,The answer is missing the exception mentioned in the reference answer regarding missing a connecting flight due to the passenger's own delay at security or boarding.,wrong answer from the right passage (or bad test question),3,4,19308,421,12.3,"Because your flights are on a single booking (a single contract of carriage), you are protected under EU passenger rights [guidelines_261_2004, Section 4.4.2]. Your rights depend on how late you ultimately arrive at your final destination and what the airline does:
+
+* **Right to Care:** While you wait at the transfer airport for your new connection, the airline must offer you free meals and refreshments in a reasonable relation to waiting time [guidelines_261_2004, Section 4.3.2]. If a stay of one or more nights becomes necessary, you are entitled to free hotel accommodation and transport to and from the airport [reg_261_2004, Article 9].
+* **Re-routing or Refund:** The airline must offer you a choice between re-routing to your final destination at the earliest opportunity under comparable conditions, re-routing at a later date, or a refund for the full cost of the ticket [reg_261_2004, Article 8].
+* **Compensation:** You are only entitled to financial compensation (ranging from €250 to €600) if you reach your final destination **3 hours or more** late [guidelines_261_2004, Section 4.4.8]. If your re-routing gets you there with a delay of less than 3 hours, no compensation is due. Compensation is also not payable if the delay was caused by extraordinary circumstances that could not have been avoided even if all reasonable measures had been taken [guidelines_261_2004, Section 4.4.7]."
+q05,multi,0,0,1,1,passed,3,1,1,0,1,"The assistant missed key details from the reference answer regarding compensation, specifically the 3-hour delay condition at the final destination and the compensation amounts of 250, 400, or 600 euros.",wrong answer from the right passage (or bad test question),2,3,9600,270,10.4,"If your flight is delayed and you face a long delay of at least five hours, you can ask the airline for:
+
+* **Care:** Free meals and refreshments in a reasonable relation to the waiting time, plus two free telephone calls, fax messages, or emails [reg_261_2004, Article 9]. If a stay of one or more nights becomes necessary, you are also entitled to hotel accommodation and transport between the airport and the hotel [reg_261_2004, Article 9].
+* **Reimbursement:** A full refund of your ticket within 7 days for the parts of the journey not made (and also for parts already made if your travel plan no longer serves its original purpose), plus a return flight to your first point of departure at the earliest opportunity [reg_261_2004, Article 6, Article 8]. 
+
+*(Note: Depending on your final arrival time at your destination and whether the delay was caused by extraordinary circumstances, you may also be entitled to compensation.)*"
+q06,single,0,0,1,1,passed,4,1,0,0,1,The assistant cites a liability limit of 1 288 SDRs instead of 1 000 SDR as stated in the reference answer.,wrong answer from the right passage (or bad test question),1,2,5446,272,3.9,"Yes, you can claim the costs for necessary items like clothes if your baggage is delayed [reg_2027_97, Article 8 to Annex (part 1/2)]. 
+
+The airline is liable for damage resulting from delayed baggage up to a limit of **1 288 Special Drawing Rights (SDRs)** (approximately 1,581 EUR) per passenger, unless the airline took all reasonable measures to avoid the damage [guidelines_1107_2006, Section 9 (part 2/2), reg_2027_97, Article 8 to Annex (part 1/2)]. 
+
+Keep in mind that this is a maximum liability limit, not a fixed rate, and you must be able to prove your actual expenses with receipts [guidelines_261_2004, Section 10 (part 4/6)]. You must also submit a written complaint to the airline regarding the delayed baggage within **21 days** from the date the baggage was placed at your disposal [reg_2027_97, Article 8 to Annex (part 2/2)]."
+q07,multi,0,0,1,1,passed,3,1,1,1,1,ok,,2,3,10171,258,40.4,"Whether you are entitled to compensation depends on your final arrival time, not just the time spent waiting on the plane before take-off.
+
+- **Compensation:** Under EU law, compensation for a delay depends on reaching your final destination 3 hours or more behind schedule [guidelines_261_2004, Section 4.4.7]. A 2-hour delay at departure on the plane does not automatically grant compensation unless it results in a final arrival delay of 3 hours or more (and the airline cannot prove extraordinary circumstances) [guidelines_261_2004, Section 4.4.7].
+- **Assistance and Care:** For departure delays of two hours or more on flights of 1 500 km or less (or corresponding longer thresholds for longer flights), passengers must be offered meals and refreshments in reasonable relation to the waiting time, as well as free access to communication [reg_261_2004, Article 6, Article 9]."
+q08,multi,0,0,1,1,passed,4,1,1,0,0,"The assistant incorrectly claims that the airline is legally required to provide a first-class flight if it is the only way to re-route under comparable conditions, which adds an unmentioned condition not supported by the retrieved text.",unsupported claim,1,2,4743,225,40.5,"Yes, you can ask, and if the airline chooses to place you in a higher class as part of your re-routing, it must be at no additional cost to you [guidelines_261_2004, Section 4.2]. 
+
+Re-routing must generally be offered under ""comparable transport conditions"" at the earliest opportunity [reg_261_2004, Article 8]. While re-routing in a higher class is listed as a permitted practice if no standard seat is available, the airline is not legally required to provide a first-class flight unless it is the only way to re-route you under comparable conditions or the airline agrees to do so [guidelines_261_2004, Section 4.2]. If you are placed in a higher class, the airline may not request any supplementary payment [reg_261_2004, Article 10]."
+q09,single,0,0,1,1,passed,2,1,1,1,1,ok,,1,2,4555,104,2.3,"EU law does not grant passengers a standalone right or entitlement to demand an upgrade to business class [reg_261_2004, Article 10]. 
+
+However, if an operating air carrier voluntarily places you in a higher class than the one for which you purchased your ticket, the airline cannot request any supplementary payment [reg_261_2004, Article 10]."
+q10,multi,0,0,1,1,passed,8,1,1,1,1,ok,,1,2,5046,347,2.3,"The maximum compensation you can get for a delayed flight reaching its final destination 3 hours or more late is **600 euros** [reg_261_2004, Article 7], [guidelines_261_2004, Section 4.4.7]. 
+
+The amounts depend on the flight distance:
+* **250 euros** for all flights of 1 500 kilometres or less [reg_261_2004, Article 7];
+* **400 euros** for all intra-Community flights of more than 1 500 kilometres, and for all other flights between 1 500 and 3 500 kilometres [reg_261_2004, Article 7];
+* **600 euros** for all other flights [reg_261_2004, Article 7].
+
+**Exceptions:** Compensation may be reduced by 50% under certain re-routing conditions if the arrival delay is less than 4 hours [reg_261_2004, Article 7], [guidelines_261_2004, Section 4.4.10]. Additionally, airlines are not required to pay compensation if the delay was caused by extraordinary circumstances that could not have been avoided even if all reasonable measures had been taken [guidelines_261_2004, Section 4.4.7]."
+q11,multi,0,1,0,1,passed,0,1,0,0,1,"The assistant incorrectly stated that it could not answer the question, even though the retrieved passages explain denied boarding, valid grounds for refusal, and who to claim from.",wrong refusal,3,4,16850,163,9.1,"I can't answer this from my sources. 
+
+My sources do not contain specific rules addressing whether closing the gate doors before the stated time and refusing boarding constitutes denied boarding, or how the burden of proof is allocated between the passenger and the airline regarding the exact time of presentation at the gate. 
+
+You should contact the operating air carrier directly to submit your claim, or reach out to the national enforcement body in the country where the incident occurred for guidance."
+q12,single,0,0,1,1,passed,2,1,1,1,1,ok,,1,2,4819,150,2.8,"If the airline places you in a class lower than the one you purchased, they must reimburse you within seven days [reg_261_2004, Article 10]. 
+
+For an intra-Community flight of more than 1 500 km (such as your 2 000 km flight), the airline owes you **50% of the price of the ticket** for that specific flight [reg_261_2004, Article 10, guidelines_261_2004, Section 4.4.14]."
+q13,single,0,0,1,1,passed,4,1,1,0,1,"The assistant missed key facts from the reference answer regarding the provision of meals, refreshments, and two calls or emails.",wrong answer from the right passage (or bad test question),1,2,4627,214,12.7,"Yes. When a flight is delayed until the next day and a stay of one or more nights becomes necessary, the airline must provide you with free hotel accommodation, as well as free transport between the airport and the hotel [reg_261_2004, Article 9]. 
+
+The airline should actively offer this care [guidelines_261_2004, Section 4.3.2]. In very exceptional cases—such as when sending passengers to a hotel in the middle of the night would cause an even longer delay—hotel accommodation may be declined [guidelines_261_2004, Section 4.3.2]. If the airline fails to offer care and you have to book your own hotel, keep your receipts; the airline must reimburse necessary, reasonable, and appropriate expenses [guidelines_261_2004, Section 4.3.2]."
+q14,single,0,0,1,1,passed,2,1,1,0,1,The answer misses the exception mentioned in the reference answer regarding strikes driven by demands that only public authorities can satisfy.,wrong answer from the right passage (or bad test question),1,2,5436,146,16.6,"No, that is not true. 
+
+Strikes by the staff of an operating air carrier (such as its own pilots) connected to employment demands, including pay negotiations, cannot be qualified as an extraordinary circumstance [guidelines_261_2004, Section 5.2.2]. 
+
+Because it is an internal event inherent in the normal exercise of the airline's activity, the airline is not exempt from paying compensation for the cancellation on this ground [guidelines_261_2004, Section 5.2.2]."
+q15,single,0,0,1,1,passed,2,1,1,1,1,ok,,1,2,4612,124,2.7,"No, you do not have to accept a travel voucher. 
+
+Compensation must be paid in cash, by electronic bank transfer, bank orders, or bank cheques [reg_261_2004, Article 7]. Travel vouchers and/or other services can only be used if you give your signed agreement, representing your free and informed consent [reg_261_2004, Article 7, guidelines_261_2004, Section 4.2]."
+q16,single,0,0,1,1,passed,2,1,1,1,1,ok,,1,2,5319,169,4.6,"No, EU air passenger rights (Regulation (EC) No 261/2004) do not protect you for this flight. 
+
+Under EU rules, for flights departing from an airport outside the EU to an airport in the EU, the flight must be operated by an EU air carrier (an air carrier licensed in an EU Member State) to be covered [reg_261_2004, Article 3]. Because your flight from New York to Madrid was operated by an American (non-EU) airline, it falls outside the scope of the Regulation [reg_261_2004, Article 3]."
+q17,single,0,0,1,1,passed,2,1,1,1,1,ok,,1,2,5016,120,2.2,"Regulation (EC) No 261/2004 does not set a time limit for bringing a court action for compensation [guidelines_261_2004, Section 9.2]. Instead, the deadline is determined by the national legislation of each EU Member State on the limitation of actions, meaning the time limit differs depending on the country [guidelines_261_2004, Section 9.2]."
+q18,multi,0,0,1,1,passed,3,1,0,1,1,ok,,1,2,4882,191,5.4,"You do not have to pay for help; pre-notification and assistance must always be free of any additional charge [guidelines_1107_2006, Section 5.4.1]. 
+
+You should ask for assistance at the time of booking, and **at least 48 hours** before the published departure time of your flight, by notifying the air carrier, its agent, or the tour operator [guidelines_1107_2006, Section 5.4.1]. 
+
+If you do not pre-notify at least 48 hours in advance, the airport managing body must still make all reasonable efforts to provide the assistance so you can take your flight [guidelines_1107_2006, Section 5.4.1]."
+q19,single,0,0,1,1,passed,3,1,1,0,1,The assistant missed the reference answer's key exception regarding airlines not being obliged to carry pregnant passengers when health or safety reasons do not allow them to fly.,wrong answer from the right passage (or bad test question),1,2,4587,196,31.5,"Yes, when your mobility during pregnancy is affected—such as finding it hard to move quickly and easily through a large airport—this may be considered as falling within the scope of EU rules on reduced mobility [guidelines_1107_2006, Section 3.2.3.2]. 
+
+To ensure you receive the necessary help (such as assistance with moving through the airport, reaching connecting flights, or boarding), you should notify the air carrier, its agent, or the tour operator of your needs at least **48 hours** before the published departure time [reg_1107_2006, Article 7]. If you do not notify them in advance, the airport managing body must still make all reasonable efforts to provide the assistance [reg_1107_2006, Article 7]."
+q20,single,0,0,1,1,passed,5,1,0,1,1,ok,,1,2,4725,249,69.9,"Yes, recognised assistance dogs (including guide dogs) are allowed to travel in the passenger cabin without any additional charge [guidelines_1107_2006, Section 8.1]. 
+
+The dog will normally sit on the floor in front of your seat [guidelines_1107_2006, Section 8.1]. If it is too big to fit there, the air carrier must offer a suitable alternative arrangement—such as providing an adjacent seat free of charge—without any extra fees [guidelines_1107_2006, Section 8.1].
+
+To ensure this accommodation:
+* You must pre-notify the air carrier, its agent, or the tour operator that you are travelling with a recognised assistance dog, complying with any applicable national rules [guidelines_1107_2006, Section 5.7].
+* The air carrier may ask you to produce proof that the dog has received the necessary training [guidelines_1107_2006, Section 5.7]."
+q21,single,0,0,1,1,passed,3,1,1,1,1,ok,,1,2,4343,166,3.0,"No, the airline cannot charge you. An air carrier must transport up to two pieces of mobility equipment, including electric wheelchairs, free of charge [guidelines_1107_2006, Section 8.2 (part 1/2)]. 
+
+To ensure carriage, you must notify the air carrier at least 48 hours before the scheduled departure time [guidelines_1107_2006, Section 8.2 (part 1/2)]. This right is subject to space limitations on board the aircraft and relevant dangerous goods legislation [guidelines_1107_2006, Section 8.2 (part 1/2)]."
+q22,single,0,0,1,1,passed,6,1,1,1,1,ok,,2,3,9974,328,9.4,"Under EU law, an air carrier may require you to be accompanied by another person only if it is necessary to meet applicable safety requirements (such as fastening a seatbelt, reaching an emergency exit, or following crew instructions in an emergency), and if you cannot meet those requirements autonomously [guidelines_1107_2006, Section 5.6]. The carrier must give detailed reasons for this requirement [guidelines_1107_2006, Section 5.6]. They cannot require a companion solely because you need help with personal comfort, such as eating or using the toilet [guidelines_1107_2006, Section 5.6]. 
+
+Regarding the cost, EU rules do not explicitly mandate that an accompanying safety assistant must fly for free [guidelines_1107_2006, Section 5.6]. While EU guidelines state that it is ""good practice"" for airlines to offer free transport for a required safety assistant [guidelines_1107_2006, Section 5.6], the law does not strictly require free tickets, and airlines may inform you of additional costs [guidelines_1107_2006, Section 5.6]."
+q23,single,0,0,1,1,passed,5,1,1,0,1,The assistant missed the key requirement to tell the passenger the reasons immediately and in writing within 5 working days upon request.,wrong answer from the right passage (or bad test question),1,2,4645,240,11.0,"Generally, no. An air carrier, its agent, or a tour operator cannot refuse to accept a reservation or refuse to embark you on the grounds of disability or reduced mobility [reg_1107_2006, Article 3].
+
+However, an airline may refuse a reservation or embarkation in two specific cases:
+1. To meet applicable legal safety requirements [reg_1107_2006, Article 4].
+2. If the size of the aircraft or its doors makes your carriage physically impossible [reg_1107_2006, Article 4].
+
+Even in those cases, the airline must make reasonable efforts to propose an acceptable alternative, or they may require that you be accompanied by another person capable of providing the required safety assistance [reg_1107_2006, Article 4]. If they refuse you improperly, you are entitled to reimbursement or re-routing, and compensation [guidelines_1107_2006, Section 5.5]."
+q24,single,0,0,1,1,passed,5,1,1,1,1,ok,,1,2,4775,242,8.5,"No, the airline is generally not allowed to ask for a medical certificate or evidence of your condition as a precondition for providing assistance [guidelines_1107_2006, Section 3.2.2]. However, there are exceptions:
+* The airline may request medical clearance if you have a medical condition that threatens your safe transportation or the health of other passengers and crew [guidelines_1107_2006, Section 3.2.2].
+* An in-depth enquiry can be carried out if there are reasonable grounds to suspect potential abuse of free assistance [guidelines_1107_2006, Section 3.2.2].
+* You may be required to present a medical certificate for certain essential liquid medications or syringes in your cabin baggage under aviation security rules [guidelines_1107_2006, Section 8.3], or proof of training for an assistance dog [guidelines_1107_2006, Section 5.7]."
+q25,multi,0,0,1,1,passed,3,1,1,1,1,ok,,1,2,4882,190,3.1,"Air carriers are liable for damage to mobility equipment such as electric wheelchairs under the Montreal Convention [guidelines_1107_2006, Section 9]. While airport managing bodies handle the equipment at the airport, this does not affect the air carrier's liability to pay damages [guidelines_1107_2006, Section 9]. 
+
+Compensation for damaged baggage and mobility equipment under the Montreal Convention is limited to **1 288 special drawing rights (SDRs)** (approximately EUR 1 581 as of July 2024), unless you made a special declaration of interest in delivery at destination when handing over the equipment and paid a supplementary fee if required [guidelines_1107_2006, Section 9]."
+q26,single,0,0,1,1,passed,2,1,1,1,1,ok,,1,2,4872,122,2.1,"The airline must make an advance payment without delay, and not later than 15 days after the identity of the person entitled to compensation has been established [reg_2027_97, Article 5]. 
+
+In the event of death, this advance payment must be at least the equivalent of **16 000 Special Drawing Rights (SDRs)** per passenger to meet immediate economic needs [reg_2027_97, Article 5]."
+q27,single,0,0,1,1,passed,4,1,1,1,1,ok,,2,3,11541,207,50.5,"There are **no financial limits** to an air carrier's liability for passenger injury or death under EU law and the Montreal Convention [reg_2027_97, Annex]. 
+
+For damages up to 100 000 Special Drawing Rights (SDRs), the air carrier cannot contest claims for compensation [reg_2027_97, Annex]. Above that amount, the carrier can only avoid liability by proving that it was not negligent or otherwise at fault [reg_2027_97, Annex]. 
+
+Additionally, if you are injured, the airline must make an advance payment to cover immediate economic needs within 15 days of identifying the person entitled to compensation [reg_2027_97, Annex]."
+q28,single,0,0,1,1,passed,2,1,0,0,1,The assistant missed the key fact regarding the 2-year deadline for court actions mentioned in the reference answer.,wrong answer from the right passage (or bad test question),1,2,5343,130,3.4,"In the case of damage to checked baggage, you must write and complain to the air carrier as soon as possible, and **within seven days** from the date on which the baggage was placed at your disposal [reg_2027_97, Article 8 to Annex (part 2/2)]. Failing this, no action may be brought against the air carrier [guidelines_261_2004, Section 10 (part 6/6)]."
+q29,unanswerable,1,1,1,1,passed,0,,,1,1,ok,,1,2,5199,85,1.9,"I can't answer this from my sources. EU air passenger rights regulations (such as Regulation (EC) No 261/2004) apply to flights operated by air carriers, not to train journeys. For questions about train delays, please consult the railway operator or the relevant national enforcement body for passenger rights."
+q30,unanswerable,1,1,1,1,passed,1,,,1,1,ok,,1,2,4310,108,2.2,"I can't answer this from my sources. 
+
+The available EU regulations and guidelines cover the transport of recognised assistance dogs in the cabin for passengers with disabilities [guidelines_1107_2006, Section 8.1], but they do not contain rules regarding the carriage or cost of pet cats in the passenger cabin. Please contact your airline or the relevant national enforcement body for their specific pet transport policies and fees."
+q31,unanswerable,1,1,1,1,passed,0,,,1,1,ok,,1,2,4643,122,3.0,"I can't answer this from my sources. 
+
+My sources cover EU passenger rights under Regulation (EC) No 261/2004 (such as airline-provided compensation, refunds, re-routing, meals, and hotel accommodation for cancelled flights), but they do not contain information regarding private travel insurance policies. 
+
+For details on what a standard travel insurance policy covers, you should consult your insurance policy document, contact your insurance provider, or check with your national consumer protection authority."
+q32,unanswerable,1,1,1,1,passed,0,,,1,1,ok,,1,2,4708,106,8.1,"I can't answer this from my sources. 
+
+The available sources only cover passenger rights under EU law (Regulation (EC) No 261/2004) for flights departing from or arriving in the EU, and do not cover US rules for domestic flights within the United States. Please contact the airline or the US Department of Transportation (DOT) for information regarding US flight delay rules."
+q33,unanswerable,1,1,1,1,passed,0,,,1,1,ok,,1,2,4640,67,2.2,"I can't answer this from my sources. EU air passenger rights regulations apply to flights operated by motorized fixed-wing aircraft, not to ferry services. Please contact the ferry operator or the relevant national consumer protection body regarding your cancellation rights."
+q34,unanswerable,1,1,1,1,passed,0,,,0,1,"The assistant gave a substantive answer instead of declining, because the question was unanswerable from the sources.",,1,2,4628,74,35.8,I can't answer this from my sources. EU regulations do not set a fixed maximum weight limit for checked baggage on flights. Baggage weight limitations and related fees are determined by individual airlines. Please check with your airline or consult the National Enforcement Body for details.
+q35,unanswerable,1,1,1,1,passed,0,,,1,1,ok,,1,2,4649,88,6.5,"I can't answer this from my sources. 
+
+The EU air passenger rights corpus does not contain specific rules addressing whether an airline can charge extra or refuse boarding for using a boarding pass printed at home. 
+
+You may wish to check the airline's terms and conditions or contact your national enforcement body for more information."

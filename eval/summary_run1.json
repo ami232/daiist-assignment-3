@@ -1,0 +1,83 @@
+{
+  "questions": 35,
+  "answerable": {
+    "n": 28,
+    "judge_correct": 0.893,
+    "judge_supported": 1.0,
+    "wrong_refusals": 1,
+    "cites_expected_source_location": 0.821,
+    "expected_passage_retrieved": 1.0
+  },
+  "unanswerable": {
+    "n": 7,
+    "correct_refusals": 7,
+    "answered_anyway": 0,
+    "judge_correct": 0.0
+  },
+  "citations": {
+    "answers_with_valid_citations": 1.0,
+    "guardrail": {
+      "passed": 35,
+      "corrected": 0,
+      "replaced": 0,
+      "skipped": 0
+    }
+  },
+  "cost_per_question": {
+    "seconds_mean": 12.9,
+    "seconds_median": 8.1,
+    "agent_tokens_mean": 6812,
+    "agent_tokens_median": 5072,
+    "judge_tokens_mean": 3379,
+    "searches_mean": 1.29
+  },
+  "judge_models": {
+    "gemini-3.5-flash-lite": 35
+  },
+  "judge_vs_human": {
+    "graded": 20,
+    "correct": {
+      "n": 20,
+      "agreement": 0.6,
+      "cohen_kappa": 0.048,
+      "disagreements": [
+        "q03",
+        "q29",
+        "q30",
+        "q31",
+        "q32",
+        "q33",
+        "q34",
+        "q35"
+      ]
+    },
+    "supported": {
+      "n": 20,
+      "agreement": 0.6,
+      "cohen_kappa": -0.231,
+      "disagreements": [
+        "q01",
+        "q03",
+        "q04",
+        "q07",
+        "q11",
+        "q29",
+        "q31",
+        "q33"
+      ]
+    }
+  },
+  "failure_hints": {
+    "wrong answer from the right passage (or bad test question)": 2,
+    "wrong refusal": 1
+  },
+  "add_document_demo": {
+    "question": "q35",
+    "before_refused": true,
+    "after_refused": true,
+    "after_citations": [],
+    "approvals": [
+      "add_document({'path': 'corpus/32026R2202.html'}) -> approved by evaluate.py for the demo"
+    ]
+  }
+}
