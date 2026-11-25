@@ -1,0 +1,22 @@
+{
+  "air.pdf": {
+    "sha256": "87be6415f0aa5ae414f27c746fc2f8270f7fd333ba43048c35027a4b8918146f",
+    "words": 4515
+  },
+  "bus.pdf": {
+    "sha256": "c9cabff10d439306cca05d9b8f006eb059d0b665a1b5ac7ef2137786c44a0d94",
+    "words": 7634
+  },
+  "montreal.pdf": {
+    "sha256": "b27c4ca0e45b450d30dc3fecbc6223361f90c9f7d2e389c01ef513502df1f9f5",
+    "words": 8291
+  },
+  "rail.pdf": {
+    "sha256": "47931cbf82011b6cf4565b4b0592ffb95465e1c91bc224621ae2b2771541dfa5",
+    "words": 24624
+  },
+  "sea.pdf": {
+    "sha256": "cc6f553c97d8745aaa394ed2d21ea69d4abf25bfddd491cf89e78f0d3abda942",
+    "words": 9770
+  }
+}
