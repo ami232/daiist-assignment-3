@@ -309,9 +309,30 @@ The evaluation also found two bugs in my own system on the first run (kept in `e
 
 *Failed questions by cause, with counts, and what to fix first.*
 
+I classified every failure using the five categories from the brief: retrieval miss, wrong answer from the right passage, unsupported claim, wrong refusal, or bad test question.
+
+| Failure | Cause | Count |
+|---|---|---|
+| q25 (TRL): the draft was mostly right, but it cited WP p. 73 while the search had returned p. 72, so the citation guardrail blocked it | Wrong refusal | 1 |
+| Expected pages too narrow: the same answer was also on another page (usually both in the Work Programme and the Guide), so the search was marked wrong when it was right (q01, q02, q04, q09, q12, q13; found in the retrieval step and fixed) | Bad test question | 6 |
+| NEOTEC demo (outside the test set): the detail about MIT and GeorgiaTech was cited to p. 7 but is actually on p. 32 | Unsupported claim (wrong page cited) | 1 |
+| Retrieval misses and wrong answers from the right passage | none in the final run | 0 |
+
+In the final run only one of the 37 questions failed, and it failed on the safe side: the founder got "I don't know" instead of a wrong answer. The bad test questions were my own mistake when labelling, not the system's, and once fixed they no longer count as failures. The two bugs found in the first run (the damaged cache and the guardrail not reading titles with brackets) were problems in my code, which I fixed before the final run.
+
+**What to fix first:** the guardrail's all-or-nothing behaviour. Right now, if the answer cites one page that was not retrieved, the whole answer is replaced with a refusal. A better version would give the agent one more try ("you cited a page you did not retrieve; answer again using only the retrieved pages") before refusing. That would most likely have saved q25 without letting invented citations through. The second fix would be to check that each claim is really on the cited page, not only that the page was retrieved, which would have caught the MIT/GeorgiaTech case.
+
 ## Decision
 
 *Would you let users rely on it, for what, with which safeguard? Cost and latency per question.*
+
+After initial trial and understanding on how the tool works, I would comfortably let startup founders use this for general understanding on basic yet necessary information regarding the process of receiving grants.  The information comes from official sources and it is presented to the user in a concise manner in which it is easy to understand and proper citing is included in order to ensure credibility. The safeguards already incorporated are meant to protect the user from receiving wrong answers. However, it should not be the final word for important decisions such as submitting an application or deciding how much funding to ask for. For those, founders should confirm the information on the cited page or on the official EIC website. This decision is based on the evaluation: 36 of 37 questions were handled correctly, no answer made a claim that wasn’t in the documents, and all 6 unanswerable questions were correctly refused. Still, 37 questions is a small test, so the results should be confirmed with more questions before relying on it more widely.
+
+ In terms of safeguards, always showing the cited page and keeping the citation guardrail with the small fix mentioned above, will allow the user to understand where the information is coming from and double-check if considered necessary. Also, it is important to note that the documents included in the corpus contain specific information from 2027, so including a reminder that information is updated every year is a necessary safeguard for future use. In relation to this, human approval for adding new documents will be maintained to ensure the integrity of information and only add documents that contain information for future years or cover a new spectrum in relation to grants that was not yet considered. 
+
+ On average, each question uses about 4,400 input tokens and 170 output tokens and takes about 9 seconds to answer. Most of the input is the retrieved passages, which are sent to the model again each time it is called. At the published prices for gemini-flash-lite-latest ($0.30 per million input tokens and $2.50 per million output tokens), this is roughly $0.002 per question, and it was free on the free tier I used. This cost is very low compared to the weeks of work a wrong answer could waste for a founder.
+
+
 
 ## AI use
 
