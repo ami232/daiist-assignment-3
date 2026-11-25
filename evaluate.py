@@ -30,7 +30,9 @@ EVAL = ROOT / "eval"
 QUESTIONS = EVAL / "questions.csv"
 HUMAN = EVAL / "human_labels.csv"
 ANSWERS = EVAL / "answers.jsonl"
-JUDGE_MODEL = os.environ.get("JUDGE_MODEL", "gemini-3.5-flash")
+JUDGEMENTS = EVAL / "judgements.jsonl"
+JUDGE_BATCH = 5
+JUDGE_MODEL = os.environ.get("JUDGE_MODEL", "gemini-3.8-flash")
 KS = (1, 3, 5)
 PAUSE_BETWEEN_QUESTIONS = 5
 DESIGNS = ("vector", "bm25", "hybrid")
@@ -139,6 +141,9 @@ def run_agent_on_all(questions: list[dict]) -> list[dict]:
             continue
         try:
             out = _ask_with_retry(q["question"])
+        except SystemExit as e:  # daily quota: keep what we have and go on to the judge
+            print(f"{e}\nStopping the agent here; judging the answers already saved.", file=sys.stderr)
+            break
         except RuntimeError as e:
             print(f"{q['id']} failed: {e}", file=sys.stderr)
             continue
@@ -181,25 +186,80 @@ def _retrieved_pairs(a: dict):
     return out
 
 
-def judge(q: dict, a: dict) -> dict:
+def _judge_batch_once(items: list[tuple[dict, dict]]) -> dict:
+    """Judge several answers in ONE request. Returns {id: verdict}."""
     from google import genai
     from google.genai import types
 
-    evidence = "\n\n".join(t["result"] for t in a["trace"] if t["tool"] == "search")[:12000] or "(no passages retrieved)"
+    blocks = []
+    for q, a in items:
+        evidence = "\n\n".join(t["result"] for t in a["trace"] if t["tool"] == "search")[:4000] or "(no passages retrieved)"
+        blocks.append(
+            f"### ITEM {a['id']}\nQUESTION: {q['question']}\nREFERENCE: {q['reference_answer']}\n"
+            f"ASSISTANT: {a['answer']}\nEVIDENCE:\n{evidence}"
+        )
     prompt = (
-        f"{RUBRIC}\n\nQUESTION: {q['question']}\n\nREFERENCE: {q['reference_answer']}\n\n"
-        f"ASSISTANT: {a['answer']}\n\nEVIDENCE:\n{evidence}"
+        f"{RUBRIC}\n\nYou receive several items. Grade each one independently of the others.\n"
+        'Return only a JSON array with one object per item: [{"id": "<item id>", "correct": 0 or 1, '
+        '"supported": 0 or 1, "reason": "one sentence"}]\n\n' + "\n\n".join(blocks)
     )
     client = genai.Client(api_key=load_api_key())
     res = client.models.generate_content(
         model=JUDGE_MODEL, contents=prompt,
         config=types.GenerateContentConfig(temperature=0, response_mime_type="application/json"),
     )
+    out = {}
     try:
-        v = json.loads(res.text)
-        return {"correct": int(v["correct"]), "supported": int(v["supported"]), "reason": str(v.get("reason", ""))}
+        for v in json.loads(res.text):
+            out[str(v["id"])] = {"correct": int(v["correct"]), "supported": int(v["supported"]), "reason": str(v.get("reason", ""))}
     except Exception:  # noqa: BLE001
-        return {"correct": -1, "supported": -1, "reason": f"unparseable judge output: {res.text[:100]}"}
+        pass
+    return out
+
+
+def _judge_batch(items: list[tuple[dict, dict]], attempts: int = 6) -> dict:
+    """One batched request, waiting and retrying on rate limits; stop on a daily quota."""
+    for attempt in range(1, attempts + 1):
+        try:
+            return _judge_batch_once(items)
+        except Exception as e:  # noqa: BLE001
+            msg = str(e)
+            if "per day" in msg.lower() or "PerDay" in msg:
+                raise SystemExit(
+                    "Daily quota reached for the judge model. Run this command again later "
+                    f"(verdicts already made are saved).\n{msg[:300]}"
+                )
+            transient = any(k in msg for k in ("429", "503", "RESOURCE_EXHAUSTED", "UNAVAILABLE", "timed out"))
+            if not transient or attempt == attempts:
+                raise
+            m = re.search(r"retry in ([\d.]+)s", msg)
+            wait = float(m.group(1)) + 3 if m else 30 * attempt
+            print(f"  judge transient error ({JUDGE_MODEL}); waiting {wait:.0f}s, attempt {attempt}/{attempts}\n"
+                  f"    cause: {msg[:350]}", file=sys.stderr)
+            time.sleep(wait)
+
+
+def judge_all(questions_by_id: dict, answers: list[dict]) -> dict:
+    """Judge in batches of JUDGE_BATCH answers per request. Verdicts are saved one by one
+    to eval/judgements.jsonl, so a stop never loses them and a rerun only does what is missing."""
+    done = {}
+    if JUDGEMENTS.exists():
+        for line in JUDGEMENTS.read_text(encoding="utf-8").splitlines():
+            if line.strip():
+                r = json.loads(line)
+                if r["verdict"]["correct"] != -1:
+                    done[r["id"]] = r["verdict"]
+    pending = [a for a in answers if a["id"] not in done]
+    for i in range(0, len(pending), JUDGE_BATCH):
+        group = pending[i:i + JUDGE_BATCH]
+        got = _judge_batch([(questions_by_id[a["id"]], a) for a in group])
+        for a in group:
+            v = got.get(a["id"]) or {"correct": -1, "supported": -1, "reason": "judge returned no verdict for this item"}
+            done[a["id"]] = v
+            with JUDGEMENTS.open("a", encoding="utf-8") as f:
+                f.write(json.dumps({"id": a["id"], "judge_model": JUDGE_MODEL, "verdict": v}) + "\n")
+        print(f"judged {', '.join(a['id'] for a in group)}")
+    return done
 
 
 def main() -> None:
@@ -209,13 +269,17 @@ def main() -> None:
         raise SystemExit("eval/questions.csv needs 30+ questions first (see eval/README.md).")
     retrieval_eval(questions)
     answers = run_agent_on_all(questions)
+    if len(answers) < len(questions):
+        print(f"WARNING: {len(answers)} of {len(questions)} questions answered; the summary is PARTIAL. "
+              "Run the command again later to finish.", file=sys.stderr)
     by_id = {q["id"]: q for q in questions}
 
+    verdicts = judge_all(by_id, answers)
     results = []
     for a in answers:
         q = by_id[a["id"]]
         checks = code_checks(q, a)
-        v = judge(q, a)
+        v = verdicts[a["id"]]
         results.append({"id": a["id"], "kind": q["kind"], **checks, **{f"judge_{k}": x for k, x in v.items()},
                         "seconds": a["seconds"], "tokens_in": a["tokens"]["input"], "tokens_out": a["tokens"]["output"],
                         "guardrail_fired": a["guardrail"]["fired"]})
