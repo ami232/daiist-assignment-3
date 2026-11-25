@@ -1,0 +1,8 @@
+id,kind,cause,why
+q01,single,wrong answer from right passage,"Recupera el artículo correcto, pero omite la segunda vía para adquirir el control."
+q08,single,wrong answer from right passage,"Recupera el artículo correcto, pero interpreta incorrectamente una condición facultativa y omite el desistimiento."
+q25,multi,retrieval miss,No recupera uno de los artículos necesarios para construir el calendario completo.
+q26,multi,wrong answer from right passage,"Recupera ambos pasajes, pero no incorpora toda la información de referencia."
+q27,multi,wrong refusal,"Afirma inicialmente que el corpus no cubre suficientemente la pregunta, aunque después proporciona la respuesta correcta. Es una negativa parcial."
+q29,multi,wrong answer from right passage,"Recupera ambos pasajes, pero omite el criterio de los últimos doce meses."
+q30,multi,retrieval miss,No recupera el artículo que establece el plazo de ejecución de la inversión.

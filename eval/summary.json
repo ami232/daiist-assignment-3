@@ -1,0 +1,32 @@
+{
+  "questions": 35,
+  "by_kind": {
+    "single": 24,
+    "multi": 6,
+    "unanswerable": 5
+  },
+  "correct": 29,
+  "correct_but_unsupported": 0,
+  "wrong": 0,
+  "unsupported_answers": 0,
+  "correct_refusals": 5,
+  "wrong_refusals": 1,
+  "answered_unanswerable": 0,
+  "guard_fired": 0,
+  "invalid_citations": 0,
+  "errors": 0,
+  "avg_tokens": 6848,
+  "avg_seconds": 21.5,
+  "avg_tool_calls": 1.4,
+  "agreement": {
+    "labelled": 23,
+    "labelled_judged_by_llm": 17,
+    "agree_correct": 0.696,
+    "kappa_correct": -0.081,
+    "agree_correct_llm_only": 0.647,
+    "agree_supported": 1.0,
+    "kappa_supported": "",
+    "agree_supported_llm_only": 1.0
+  },
+  "accuracy": 0.971
+}

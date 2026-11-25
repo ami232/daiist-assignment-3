@@ -1,0 +1,37 @@
+[
+  {
+    "doc_id": "RD1066-2007",
+    "blocks": 59,
+    "words": 22930,
+    "chunks_fixed": 144,
+    "chunks_struct": 98
+  },
+  {
+    "doc_id": "CNMV-QA-OPAS",
+    "blocks": 15,
+    "words": 3590,
+    "chunks_fixed": 23,
+    "chunks_struct": 19
+  },
+  {
+    "doc_id": "LDC-15-2007",
+    "blocks": 103,
+    "words": 31711,
+    "chunks_fixed": 198,
+    "chunks_struct": 148
+  },
+  {
+    "doc_id": "LEY19-2003",
+    "blocks": 23,
+    "words": 9084,
+    "chunks_fixed": 57,
+    "chunks_struct": 40
+  },
+  {
+    "doc_id": "RD571-2023",
+    "blocks": 34,
+    "words": 13528,
+    "chunks_fixed": 85,
+    "chunks_struct": 63
+  }
+]

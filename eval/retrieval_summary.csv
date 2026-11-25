@@ -1,0 +1,5 @@
+design,mode,questions,hit@1,hit@3,hit@5,multi_all@5,avg_words_top5
+fixed,dense,30,0.6,0.7,0.833,0.5,991
+fixed,hybrid,30,0.367,0.733,0.767,0.333,978
+struct,dense,30,0.6,0.8,0.9,0.333,1203
+struct,hybrid,30,0.433,0.7,0.733,0.5,1322

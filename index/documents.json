@@ -1,0 +1,73 @@
+{
+  "RD1066-2007": {
+    "title": "Real Decreto 1066/2007, régimen de las ofertas públicas de adquisición de valores",
+    "source": "https://www.boe.es/eli/es/rd/2007/07/27/1066/con",
+    "licence": "BOE: reutilización autorizada (Ley 37/2007, aviso legal BOE); texto consolidado de carácter informativo",
+    "sha256": "229d4c5109707bcfe21ed4d54fc80be2d5f492076cf8e5dd640a1f4e9f6f6012",
+    "words": 22930,
+    "added_by": "index",
+    "designs": {
+      "fixed": 144,
+      "struct": 98
+    }
+  },
+  "CNMV-QA-OPAS": {
+    "title": "CNMV, Preguntas y respuestas sobre ofertas públicas de adquisición de valores (opas)",
+    "source": "https://www.cnmv.es/docportal/Legislacion/FAQ/QAs_OPAs.pdf",
+    "licence": "CNMV: reutilización permitida citando la fuente y sin alterar el contenido (nota legal cnmv.es)",
+    "sha256": "de9c6acdb800d90261ee1d816c9403b395d51cdf9e96832f33d59088fe71179d",
+    "words": 3590,
+    "added_by": "index",
+    "designs": {
+      "fixed": 23,
+      "struct": 19
+    }
+  },
+  "LDC-15-2007": {
+    "title": "Ley 15/2007, de 3 de julio, de Defensa de la Competencia",
+    "source": "https://www.boe.es/eli/es/l/2007/07/03/15/con",
+    "licence": "BOE: reutilización autorizada (Ley 37/2007, aviso legal BOE); texto consolidado de carácter informativo",
+    "sha256": "da9d305dd27e8967c798d8290f828ba019cf13ca06c1cd76d1c17b480aee598e",
+    "words": 31711,
+    "added_by": "index",
+    "designs": {
+      "fixed": 198,
+      "struct": 148
+    }
+  },
+  "LEY19-2003": {
+    "title": "Ley 19/2003, régimen jurídico de los movimientos de capitales y de las transacciones económicas con el exterior",
+    "source": "https://www.boe.es/eli/es/l/2003/07/04/19/con",
+    "licence": "BOE: reutilización autorizada (Ley 37/2007, aviso legal BOE); texto consolidado de carácter informativo",
+    "sha256": "13c3e278f93f3e270d5f9cb6a2be3cecc3ea63e0928a900781c7eb99dfde3a5d",
+    "words": 9084,
+    "added_by": "index",
+    "designs": {
+      "fixed": 57,
+      "struct": 40
+    }
+  },
+  "RD571-2023": {
+    "title": "Real Decreto 571/2023, de 4 de julio, sobre inversiones exteriores",
+    "source": "https://www.boe.es/eli/es/rd/2023/07/04/571/con",
+    "licence": "BOE: reutilización autorizada (Ley 37/2007, aviso legal BOE); texto consolidado de carácter informativo",
+    "sha256": "5b20db338e068520266f063044fd60cbccba285c1f4a3d74184432accd423bc1",
+    "words": 13528,
+    "added_by": "index",
+    "designs": {
+      "fixed": 85,
+      "struct": 63
+    }
+  },
+  "CNMV-RESULTADO-OPA-BBVA-SABADELL": {
+    "title": "cnmv_resultado_opa_bbva_sabadell",
+    "source": "/workspaces/daiist-assignment-3/docs/cnmv_resultado_opa_bbva_sabadell.pdf",
+    "sha256": "e0e927f91132cfd73d50454a92466f1a5c3afaf9d91969955a9620a89e839c57",
+    "words": 340,
+    "added_by": "add_document",
+    "updated_at": "2026-11-25T17:04:45+00:00",
+    "designs": {
+      "struct": 1
+    }
+  }
+}

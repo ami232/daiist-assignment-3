@@ -1,1 +1,24 @@
 id,correct,supported,notes
+q01,0,1,Omite que también se puede adquirir el control con menos del 30% mediante la designación de más de la mitad del consejo en 24 meses.
+q02,1,1,Respuesta correcta y completa.
+q03,1,1,Respuesta correcta. La información adicional es relevante para determinar el precio equitativo.
+q04,1,1,Recoge todas las excepciones y añade la posibilidad de dispensa de la CNMV.
+q05,1,1,Identifica correctamente las cuatro condiciones.
+q06,1,1,Identifica las garantías exigidas y añade información complementaria relevante.
+q07,1,1,Identifica correctamente el plazo y cuándo comienza a computarse.
+q08,0,1,Omite la posibilidad de desistimiento y presenta como obligatoria una condición que es facultativa.
+q09,1,1,Identifica correctamente los plazos y el inicio del periodo de aceptación.
+q10,1,1,Recoge los tres supuestos de referencia y añade circunstancias adicionales relevantes.
+q11,1,1,Distingue correctamente entre OPAs voluntarias y obligatorias y sus respectivos supuestos de desistimiento.
+q12,1,1,Explica correctamente la distribución lineal y el posterior prorrateo.
+q25,0,1,"Omite los plazos de aceptación de la OPA y de la primera fase de la CNMC, necesarios para estimar el calendario completo."
+q26,0,1,"Responde correctamente a la cuestión principal, pero omite el plazo de notificación de cinco días y la posibilidad de desistimiento."
+q27,1,1,Identifica correctamente la prohibición de condicionar la oferta a la financiación y las garantías exigidas. La advertencia inicial es innecesaria.
+q28,1,1,Recoge todas las condiciones y las limitaciones establecidas por la CNMV.
+q29,0,1,Omite la regla de los últimos doce meses para determinar el precio equitativo.
+q30,0,1,Omite el plazo de ejecución de seis meses y su posible prórroga.
+q31,1,1,Reconoce que la normativa británica está fuera del corpus.
+q32,1,1,No inventa el resultado de una operación concreta.
+q33,1,1,Distingue entre la normativa española y la europea.
+q34,1,1,Reconoce que no dispone de datos de mercado actualizados.
+q35,1,1,Identifica que la normativa sobre posiciones cortas no está incluida.

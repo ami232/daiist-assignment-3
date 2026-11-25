@@ -1,0 +1,205 @@
+{
+ "abd3da3931637cb5": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identifies the 30% voting rights threshold for a mandatory takeover bid and includes valid extra detail supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2908
+ },
+ "f3fe909f63e91d6a": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly states that the mandatory OPA must be presented as soon as possible and within a maximum period of 1 month, matching the reference answer and fully supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2536
+ },
+ "a7b9969b6638da15": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer correctly matches the reference facts regarding the 12-month rule for the minimum OPA price and is fully supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2653
+ },
+ "9b65cf2850779793": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer correctly lists all the exceptions to the mandatory OPA when control is reached, matching the reference facts, and all claims are fully supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 5722
+ },
+ "e494be904df1768b": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer correctly lists all conditions for voluntary takeover bids as outlined in the reference answer and supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2685
+ },
+ "e2a6c976023ca04d": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer covers all the necessary facts regarding guarantees for cash and issued shares, and adds correct details from the retrieved passages while remaining fully supported.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2485
+ },
+ "6e4136b2d6a76ac9": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer correctly matches all facts, deadlines, and conditions in the reference answer and is fully supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2192
+ },
+ "113f305e2381a5fd": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer correctly explains the rules regarding pending antitrust (competition) approvals and other regulatory authorizations, matching all key facts and conditions from the reference answer and being fully supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 4591
+ },
+ "16a39c27d655da09": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer correctly identifies the minimum and maximum acceptance periods as 15 and 70 natural days starting from the next trading business day, matching the reference and the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2469
+ },
+ "9b6bc92dd12f8d7f": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer covers all conditions mentioned in the reference and additional valid supported details from the text.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2669
+ },
+ "13a3c65f23f3c8eb": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer covers all the withdrawal conditions for both voluntary and mandatory takeovers accurately and matches the retrieved passages and reference answer.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 6501
+ },
+ "27f37ec8c5b18474": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly explains the linear distribution and the excess proration rules for a partial OPA as outlined in the reference answer and retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2554
+ },
+ "7fa05dec979534f8": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer accurately provides the maximum break-up fee percentage and all associated conditions matching the reference answer, with every claim fully supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2665
+ },
+ "318e8582ff02b6d5": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identifies all key requirements for a competing bid under Spanish OPA rules, matching the reference answer and citing the exact provisions.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 3073
+ },
+ "49bcd1e6ddcd53d6": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer correctly explains the effect of a competing offer on the acceptance period, matching all key facts from the reference and finding full support in the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2305
+ },
+ "5c3eebf8844a9e5b": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer correctly and accurately provides the exact 90% ownership and 90% acceptance thresholds required for a squeeze-out, fully supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2632
+ },
+ "91e4d2d1363f7597": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly states the three-month deadline from the end of the acceptance period, matching the reference, and all claims are fully supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2452
+ },
+ "c3a2e9ff3bf8b8b0": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly states that external financing cannot be used as a condition, matching all reference points and fully supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2441
+ },
+ "8612261d551c62b5": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly identifies both conditions for adjusting the offer price due to dividends (provisions in the documentation or CNMV authorization for extraordinary/non-standard dividends) and all claims are fully supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 4850
+ },
+ "c40ec9b950bb81ae": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer correctly identifies both pathways for a third party to buy shares during a takeover bid, matching the reference answer and fully supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2420
+ },
+ "1c77822ed48e2b53": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer correctly details both CNMC notification thresholds and the exemption criteria, fully matching the reference answer and being supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 3295
+ },
+ "00d951351a519351": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly states the general rule of suspension along with the exact exception conditions and deadlines provided in the reference and source texts.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2566
+ },
+ "d674fbc4857e947a": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly details the three-month second-phase duration and includes the additional 15-day extension for commitments, all supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2896
+ },
+ "44e7ad400d33c5d6": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer covers the circumstances requiring government authorization for foreign investments in Spain, matching the reference facts and being fully supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 7359
+ },
+ "a50db9021bf96f42": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly details the CNMC second-phase timeline and additional steps based strictly on the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 3278
+ },
+ "0d9676e714e73cbf": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant correctly states that shares can be acquired and the OPA launched, but voting rights cannot be exercised until competition clearance, matching all key conditions from the reference.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 6505
+ },
+ "395ecf53e0b0838c": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer accurately details the allowed conditions for a voluntary OPA and the CNMV's criteria, perfectly matching the reference and supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 4806
+ },
+ "6f6ca34de1c7cfe1": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer correctly covers all key points of the reference answer, including documentation provisions, CNMV authorization for extraordinary dividends, and the CNMV's power to modify the fair price, with every claim supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 2981
+ },
+ "2361722b755239a4": {
+  "correct": 1,
+  "supported": 1,
+  "reason": "The assistant's answer covers all the necessary facts regarding foreign direct investment requirements, thresholds, sectors, and procedures, matching the reference and remaining fully supported by the retrieved passages.",
+  "by": "gemini-3.5-flash-lite",
+  "judge_tokens": 5331
+ }
+}
