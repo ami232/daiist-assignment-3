@@ -284,12 +284,25 @@ def document_text(chunk: dict) -> str:
     return f"title: {chunk['party']} {chunk['year']} | text: {chunk['text']}"
 
 
+_COLLECTION = None
+_LOCK = None
+
+
 def get_collection():
+    """One shared connection. Two searches at the same time used to open two and crash."""
+    import threading
+
     import chromadb
     from chromadb.config import Settings
 
-    client = chromadb.PersistentClient(path=str(CHROMA_DIR), settings=Settings(anonymized_telemetry=False))
-    return client.get_or_create_collection("chunks", metadata={"hnsw:space": "cosine"})
+    global _COLLECTION, _LOCK
+    if _LOCK is None:
+        _LOCK = threading.Lock()
+    with _LOCK:
+        if _COLLECTION is None:
+            client = chromadb.PersistentClient(path=str(CHROMA_DIR), settings=Settings(anonymized_telemetry=False))
+            _COLLECTION = client.get_or_create_collection("chunks", metadata={"hnsw:space": "cosine"})
+        return _COLLECTION
 
 
 def embed_and_store(chunks: list[dict]) -> dict:

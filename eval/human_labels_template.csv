@@ -1,0 +1,26 @@
+id,correct,supported,notes
+q01,1,1, 
+q03,1,1,
+q05,1,1,
+q08,1,1,
+q10,1,1,
+q12,1,1,
+q13,1,1,
+q15,1,1,
+q16,1,1,
+q18,1,1,
+q20,1,0,"Core answer (15%/25%, 70.000, 22.000, -4 points per child) matches. But it says 'pension contributions be exempt from IRPF'; the programme says 'pensiones contributivas' (contributory pensions received), so that claim is a mistranslation."
+q21,1,1,
+q23,1,1,
+q25,1,1,
+q26,1,1,"Matches the reference. PSOE also mentions orderly dismantling of nuclear plants, so the reference may be incomplete."
+q27,1,0,"Sumar half (eliminate prisión permanente revisable) is true but no Sumar passage was retrieved; search errored and only PP passages are listed. Claim not backed by retrieved text."
+q28,1,0,"Both derogate (matches reference) but only PP passages were retrieved; the Vox claims (cited p. 42 and the Senate veto) have no retrieved passage. Search errored."
+q29,0,1,"Wrong refusal: says PSOE and Sumar are NOT COVERED although both are in the corpus (PSOE p. 39, Sumar p. 16). Caused by search tool errors and the 4-call limit. PP part is correct."
+q30,1,0,"PP half is supported. Vox claim (reintroduce referéndum ilegal, sedición... p. 16) has no retrieved Vox passage."
+q31,1,0,"PP 24h is supported. PSOE 48h (pp. 250-251) is true but no PSOE passage was retrieved."
+q32,1,1,"Correct refusal: no amount in the programme, quotes the SMI social-dialogue measure. It does not start with 'NOT COVERED:' as the agent spec requires."
+q33,1,1,
+q34,1,1,
+q35,1,1,
+q38,1,1,

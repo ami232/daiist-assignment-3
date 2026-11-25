@@ -1,1 +1,25 @@
 id,correct,supported,notes
+q01,1,1, 
+q03,1,1,
+q05,1,1,
+q08,1,1,
+q10,1,1,
+q12,1,1,
+q13,1,1,
+q15,1,1,
+q16,1,1,
+q18,1,1,
+q20,1,0,"Core answer (15%/25%, 70.000, 22.000, -4 points per child) matches. But it says 'pension contributions be exempt from IRPF'; the programme says 'pensiones contributivas' (contributory pensions received), so that claim is a mistranslation."
+q21,1,1,
+q23,1,1,
+q25,1,1,
+q26,1,1,"Matches the reference. PSOE also mentions orderly dismantling of nuclear plants, so the reference may be incomplete."
+q27,1,1,"First search errored, but the retry returned the Sumar passage that says it will eliminate the prisión permanente revisable."
+q28,1,1,"First search errored, but the retry returned the Vox passages with the derogation and the Senate veto."
+q29,0,1,"Wrong refusal: says PSOE and Sumar are NOT COVERED although both are in the corpus (PSOE p. 39, Sumar p. 16). Caused by search tool errors and the 4-call limit. PP part is correct."
+q30,1,1,"First search errored, but the retry returned the Vox passage (p. 13-16) with the claim."
+q31,1,1,"First search errored, but the retry returned the PSOE passage (pp. 250-251) with the 48 hours."
+q33,1,1,
+q34,1,1,
+q35,1,1,
+q38,1,1,

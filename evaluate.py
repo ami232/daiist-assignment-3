@@ -35,7 +35,7 @@ VERDICTS = EVAL / "judge_verdicts.jsonl"
 
 KS = (1, 3, 5)
 PAUSE_SECONDS = 6          # between agent questions, to stay under the free tier's requests-per-minute limit
-RETRIEVED_CHARS = 14000    # how much retrieved text the judge sees
+RETRIEVED_CHARS = 40000    # how much retrieved text the judge sees (cambaido ! limitation)
 
 PARTY_WORDS = {            # design B: which party does the question name?
     "PSOE": r"\bpsoe\b|socialist",
