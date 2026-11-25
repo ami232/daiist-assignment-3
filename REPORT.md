@@ -130,6 +130,8 @@ My AGENTS.md has these rules:
 
 The first guardrail is the approval step. Before add_document runs, the program asks me to confirm with y or n. The second guardrail checks after each answer that every citation was really returned by the search. If not, the agent has to fix the answer once, and otherwise the answer gets a warning. It fired on 26 of 39 answers and fixed 22 of them, while 4 stayed flagged. For example, in the question about the caretaker's on-call fee, it cited three law sections the search never returned, and the retry removed them. I also tried adding a rule to AGENTS.md for this, but in a rerun it did not change anything, while the code check did.
 
+On the professor's advice I changed one line in check.py (env=dict(os.environ) in StdioServerParameters) and passed the same environment to the server in agent.py, so the API key also reaches the server on GitHub, where there is no .env.
+
 Files: [`agent.py`](agent.py) · [`AGENTS.md`](AGENTS.md) · [`eval/guardrail_log.jsonl`](eval/guardrail_log.jsonl)
 
 ## Evaluation

@@ -12,6 +12,7 @@ ask() returns the answer and the tool trace, plus tokens, seconds and the guardr
 
 import asyncio
 import json
+import os
 import re
 import sys
 import time
@@ -25,6 +26,7 @@ from langchain_core.messages import AIMessage, HumanMessage, ToolMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 from langchain.mcp import MCPAdapter  # langchain.mcp is in beta and warns on import
+from fastmcp.client.transports import PythonStdioTransport
 
 from api_key import load_api_key
 from evaluate import covers, parse_location
@@ -40,7 +42,7 @@ GUARDRAIL_LOG = ROOT / "eval" / "guardrail_log.jsonl"
 
 # 1. Tools: start our MCP server; MCPAdapter wraps its tools as LangChain tools (as .mcp.json does for the editor).
 async def load_mcp_tools(stack):
-    adapter = await stack.enter_async_context(MCPAdapter(SERVER))
+    adapter = await stack.enter_async_context(MCPAdapter(PythonStdioTransport(SERVER, env=dict(os.environ))))
     return await adapter.list_tools()
 
 
