@@ -54,7 +54,11 @@ async def mcp_tools():
     from mcp import ClientSession, StdioServerParameters
     from mcp.client.stdio import stdio_client
 
-    params = StdioServerParameters(command=sys.executable, args=[str(ROOT / "server.py")], cwd=str(ROOT))
+    # The MCP client passes the server only a few system variables (PATH, TEMP...),
+    # so hand it the key explicitly; without a .env file (e.g. on GitHub Actions)
+    # the server would otherwise find none.
+    params = StdioServerParameters(command=sys.executable, args=[str(ROOT / "server.py")], cwd=str(ROOT),
+                                   env={"GEMINI_API_KEY": load_api_key()})
     async with stdio_client(params) as (read, write):
         async with ClientSession(read, write) as session:
             await session.initialize()
