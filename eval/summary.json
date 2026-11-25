@@ -1,0 +1,58 @@
+{
+  "questions": 38,
+  "outcomes": {
+    "correct": 30,
+    "wrong answer": 1,
+    "correct refusal": 5,
+    "answered unanswerable": 2
+  },
+  "outcomes_by_kind": {
+    "single": {
+      "correct": 23
+    },
+    "multi": {
+      "wrong answer": 1,
+      "correct": 7
+    },
+    "unanswerable": {
+      "correct refusal": 5,
+      "answered unanswerable": 2
+    }
+  },
+  "code_checks": {
+    "searched": 38,
+    "all_citations_valid": 38,
+    "answerable_with_citation": 31,
+    "answerable_citing_expected_passage": 30,
+    "refused": 5,
+    "guardrail_fired": 3,
+    "guardrail_withheld": 0,
+    "call_limit_hit": 1
+  },
+  "judge_vs_human": {
+    "correct": {
+      "n": 38,
+      "agreement": 1.0,
+      "cohen_kappa": 1.0
+    },
+    "supported": {
+      "n": 38,
+      "agreement": 0.947,
+      "cohen_kappa": 0.0
+    }
+  },
+  "cost": {
+    "questions": 38,
+    "agent_model": "gemini-3.5-flash-lite",
+    "agent_input_tokens_per_question": 5499.3,
+    "agent_output_tokens_per_question": 141.4,
+    "agent_model_calls_per_question": 2.3,
+    "seconds_per_question_mean": 2.2,
+    "seconds_per_question_median": 2.1,
+    "seconds_per_question_max": 7.02,
+    "judge_input_tokens_per_question": 2139.9,
+    "judge_output_tokens_per_question": 515.9,
+    "agent_usd_per_question": 0.002003,
+    "judge_usd_per_question": 0.007853
+  }
+}

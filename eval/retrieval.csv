@@ -1,0 +1,7 @@
+design,chunking,method,chunks,hit@1,hit@3,hit@5,multi_all_passages@5,avg_words_top3,avg_words_top5
+sections/dense,sections,dense,486,0.839,1,1,0.75,450,750
+sections/keyword,sections,keyword,486,0.355,0.516,0.613,0.375,478,837
+sections/hybrid,sections,hybrid,486,0.516,0.774,0.839,0.75,456,741
+windows/dense,windows,dense,447,0.806,0.903,0.968,0.625,449,749
+windows/keyword,windows,keyword,447,0.419,0.548,0.581,0.25,450,750
+windows/hybrid,windows,hybrid,447,0.516,0.71,0.806,0.75,450,750

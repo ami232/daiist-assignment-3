@@ -5,8 +5,8 @@ __pycache__/
 .ipynb_checkpoints/
 *.pyc
 
-# Documents downloaded by your index stage. Commit them only if their licence allows it.
-corpus/
+# corpus/ is committed on purpose: the FDA PDFs are public domain, and main.py index
+# then never depends on fda.gov letting a script download them.
 
 # Your index belongs in index/, committed. Your evaluation results belong in eval/, committed.
 

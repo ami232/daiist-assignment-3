@@ -1,0 +1,187 @@
+design,id,kind,first_hit_rank,all_passages_in_top5,top3
+sections/dense,q01,single,3,True,Food Code 2026 §3-401.13 ; Food Code 2026 §3-403.11 ; Food Code 2026 §3-501.16
+sections/dense,q02,single,2,True,Food Code 2026 §3-202.11 ; Food Code 2026 §3-501.16 ; Food Code 2026 §3-501.14
+sections/dense,q03,single,1,True,Food Code 2026 §3-401.11 ; Food Code 2026 §3-401.12 ; Food Code 2026 §3-401.11
+sections/dense,q04,single,1,True,Food Code 2026 §3-401.11 ; Food Code 2026 §3-401.11 ; Food Code 2026 §3-401.12
+sections/dense,q05,single,1,True,Food Code 2026 §3-403.11 ; Food Code 2026 §3-401.13 ; Food Code 2026 §3-501.14
+sections/dense,q06,single,1,True,Food Code 2026 §3-501.17 ; Food Code 2026 §3-501.18 ; Food Code 2026 §4-602.11
+sections/dense,q07,single,1,True,Food Code 2026 §3-201.11 ; Food Code 2026 §3-201.16 ; Food Code 2026 §6-202.111
+sections/dense,q08,single,2,True,Employee Health Handbook p. 14 ; Food Code 2026 §2-301.12 ; Employee Health Handbook p. 15
+sections/dense,q09,single,1,True,Food Code 2026 §2-303.11 ; Employee Health Handbook p. 17 ; Food Code 2026 §2-302.11
+sections/dense,q10,single,1,True,Food Code 2026 §3-301.11 ; Employee Health Handbook p. 17 ; Employee Health Handbook p. 16
+sections/dense,q11,single,1,True,Food Code 2026 §3-501.13 ; Food Code 2026 §3-501.12 ; Food Code 2026 §3-401.12
+sections/dense,q12,single,1,True,Food Code 2026 §1-201.10 ; Food Code 2026 §3-602.11 ; Food Code 2026 §3-602.12
+sections/dense,q13,single,1,True,Food Code 2026 §3-603.11 ; Food Code 2026 §3-401.11 ; Food Code 2026 §3-602.12
+sections/dense,q14,single,1,True,Food Code 2026 §3-602.11 ; Food Code 2026 §3-602.11 ; Food Code 2026 §3-201.11
+sections/dense,q15,single,1,True,Food Code 2026 §2-102.12 ; Food Code 2026 §2-102.20 ; Food Code 2026 §2-102.11
+sections/dense,q16,single,1,True,Food Code 2026 §6-501.115 ; Food Code 2026 §6-501.115 ; Food Code 2026 §2-403.11
+sections/dense,q17,single,1,True,Food Code 2026 §4-203.11 ; Food Code 2026 §4-203.12 ; Food Code 2026 §4-201.12
+sections/dense,q18,single,1,True,Food Code 2026 §4-703.11 ; Food Code 2026 §4-501.111 ; Food Code 2026 §4-204.116
+sections/dense,q19,single,1,True,Food Code 2026 §3-304.15 ; Food Code 2026 §3-304.15 ; Employee Health Handbook p. 16
+sections/dense,q20,single,1,True,Employee Health Handbook p. 4 ; Employee Health Handbook p. 5 ; Employee Health Handbook p. 29
+sections/dense,q21,single,1,True,Employee Health Handbook p. 15 ; Employee Health Handbook p. 17 ; Food Code 2026 §2-301.16
+sections/dense,q22,single,1,True,Cooling Guide p. 1 ; Cooling Guide p. 1 ; Food Code 2026 §3-202.11
+sections/dense,q23,single,1,True,Food Code 2026 §2-402.11 ; Food Code 2026 §2-302.11 ; Food Code 2026 §2-304.11
+sections/dense,q24,multi,1,True,Cooling Guide p. 1 ; Food Code 2026 §3-501.14 ; Cooling Guide p. 1
+sections/dense,q25,multi,1,True,Food Code 2026 §3-501.15 ; Cooling Guide p. 2 ; Food Code 2026 §3-501.14
+sections/dense,q26,multi,1,True,Food Code 2026 §1-201.10 ; Food Code 2026 §6-202.111 ; Food Code 2026 §3-201.11
+sections/dense,q27,multi,1,True,Food Code 2026 §3-501.16 ; Food Code 2026 §3-403.11 ; Food Code 2026 §3-401.13
+sections/dense,q28,multi,1,True,Employee Health Handbook p. 15 ; Food Code 2026 §5-202.12 ; Food Code 2026 §4-501.19
+sections/dense,q29,multi,2,False,Employee Health Handbook p. 4 ; Employee Health Handbook p. 6 ; Employee Health Handbook p. 3
+sections/dense,q30,multi,1,True,Food Code 2026 §3-501.17 ; Food Code 2026 §3-501.18 ; Food Code 2026 §3-501.17
+sections/dense,q31,multi,2,False,Employee Health Handbook p. 16 ; Food Code 2026 §3-304.15 ; Employee Health Handbook p. 17
+sections/keyword,q01,single,2,True,Food Code 2026 §2-402.11 ; Food Code 2026 §3-501.16 ; Food Code 2026 §4-501.113
+sections/keyword,q02,single,,False,Food Code 2026 §6-202.19 ; Food Code 2026 §3-501.17 ; Food Code 2026 §3-403.10
+sections/keyword,q03,single,,False,Food Code 2026 §3-502.12 ; Food Code 2026 §3-403.11 ; Cooling Guide p. 1
+sections/keyword,q04,single,4,True,Food Code 2026 §3-403.10 ; Food Code 2026 §1-201.10 ; Food Code 2026 §3-501.19
+sections/keyword,q05,single,1,True,Food Code 2026 §3-403.11 ; Food Code 2026 §3-501.16 ; Food Code 2026 §4-301.11
+sections/keyword,q06,single,,False,Cooling Guide p. 1 ; Food Code 2026 §4-204.121 ; Food Code 2026 §3-203.12
+sections/keyword,q07,single,,False,Food Code 2026 §4-102.11 ; Employee Health Handbook p. 16 ; Food Code 2026 §3-202.18
+sections/keyword,q08,single,,False,Employee Health Handbook p. 15 ; Food Code 2026 §2-301.15 ; Food Code 2026 §3-301.11
+sections/keyword,q09,single,1,True,Food Code 2026 §2-303.11 ; Employee Health Handbook p. 12 ; Food Code 2026 §3-501.16
+sections/keyword,q10,single,4,True,Employee Health Handbook p. 16 ; Employee Health Handbook p. 6 ; Employee Health Handbook p. 2
+sections/keyword,q11,single,1,True,Food Code 2026 §3-501.13 ; Food Code 2026 §4-501.16 ; Food Code 2026 §3-501.11
+sections/keyword,q12,single,2,True,Food Code 2026 §3-602.12 ; Food Code 2026 §1-201.10 ; Food Code 2026 §3-602.11
+sections/keyword,q13,single,,False,Food Code 2026 §3-801.11 ; Food Code 2026 §3-403.10 ; Food Code 2026 §3-306.13
+sections/keyword,q14,single,,False,Food Code 2026 §3-502.12 ; Food Code 2026 §3-202.18 ; Food Code 2026 §3-502.12
+sections/keyword,q15,single,,False,Food Code 2026 §2-102.20 ; Employee Health Handbook p. 12 ; Employee Health Handbook p. 6
+sections/keyword,q16,single,,False,Food Code 2026 §1-201.10 ; Food Code 2026 §1-201.10 ; Employee Health Handbook p. 2
+sections/keyword,q17,single,2,True,Food Code 2026 §4-201.12 ; Food Code 2026 §4-203.11 ; Food Code 2026 §4-203.12
+sections/keyword,q18,single,,False,Food Code 2026 §4-204.116 ; Food Code 2026 §5-202.12 ; Food Code 2026 §4-301.12
+sections/keyword,q19,single,1,True,Food Code 2026 §3-304.15 ; Employee Health Handbook p. 16 ; Food Code 2026 §3-304.15
+sections/keyword,q20,single,1,True,Employee Health Handbook p. 4 ; Food Code 2026 §3-501.19 ; Food Code 2026 §4-802.11
+sections/keyword,q21,single,1,True,Employee Health Handbook p. 15 ; Employee Health Handbook p. 15 ; Employee Health Handbook p. 16
+sections/keyword,q22,single,1,True,Cooling Guide p. 1 ; Cooling Guide p. 1 ; Food Code 2026 §3-202.11
+sections/keyword,q23,single,,False,Food Code 2026 §2-302.11 ; Food Code 2026 §2-303.11 ; Food Code 2026 §2-304.11
+sections/keyword,q24,multi,1,True,Cooling Guide p. 1 ; Cooling Guide p. 1 ; Food Code 2026 §3-501.14
+sections/keyword,q25,multi,2,False,Cooling Guide p. 1 ; Food Code 2026 §3-501.15 ; Food Code 2026 §4-602.12
+sections/keyword,q26,multi,1,False,Food Code 2026 §1-201.10 ; Food Code 2026 §3-501.17 ; Food Code 2026 §1-201.10
+sections/keyword,q27,multi,4,False,Food Code 2026 §3-401.13 ; Food Code 2026 §3-403.11 ; Food Code 2026 §3-403.10
+sections/keyword,q28,multi,1,True,Employee Health Handbook p. 15 ; Employee Health Handbook p. 14 ; Food Code 2026 §2-301.12
+sections/keyword,q29,multi,,False,Employee Health Handbook p. 4 ; Employee Health Handbook p. 3 ; Employee Health Handbook p. 4
+sections/keyword,q30,multi,1,False,Food Code 2026 §3-501.17 ; Food Code 2026 §3-501.17 ; Cooling Guide p. 1
+sections/keyword,q31,multi,3,True,Employee Health Handbook p. 14 ; Employee Health Handbook p. 16 ; Food Code 2026 §2-301.14
+sections/hybrid,q01,single,1,True,Food Code 2026 §3-501.16 ; Food Code 2026 §3-403.11 ; Food Code 2026 §3-401.13
+sections/hybrid,q02,single,2,True,Food Code 2026 §3-501.17 ; Food Code 2026 §3-501.16 ; Food Code 2026 §3-403.10
+sections/hybrid,q03,single,5,True,Food Code 2026 §3-403.11 ; Food Code 2026 §3-401.12 ; Cooling Guide p. 1
+sections/hybrid,q04,single,1,True,Food Code 2026 §3-401.11 ; Food Code 2026 §3-403.10 ; Food Code 2026 §3-401.11
+sections/hybrid,q05,single,1,True,Food Code 2026 §3-403.11 ; Food Code 2026 §3-501.16 ; Food Code 2026 §3-401.13
+sections/hybrid,q06,single,5,True,Cooling Guide p. 1 ; Food Code 2026 §3-203.12 ; Food Code 2026 §3-502.12
+sections/hybrid,q07,single,,False,Food Code 2026 §1-201.10 ; Food Code 2026 §6-202.111 ; Employee Health Handbook p. 10
+sections/hybrid,q08,single,,False,Employee Health Handbook p. 14 ; Employee Health Handbook p. 15 ; Food Code 2026 §2-301.15
+sections/hybrid,q09,single,1,True,Food Code 2026 §2-303.11 ; Food Code 2026 §2-302.11 ; Employee Health Handbook p. 12
+sections/hybrid,q10,single,2,True,Employee Health Handbook p. 16 ; Food Code 2026 §3-301.11 ; Employee Health Handbook p. 17
+sections/hybrid,q11,single,1,True,Food Code 2026 §3-501.13 ; Food Code 2026 §3-501.12 ; Food Code 2026 §3-501.11
+sections/hybrid,q12,single,1,True,Food Code 2026 §1-201.10 ; Food Code 2026 §3-602.12 ; Food Code 2026 §3-602.11
+sections/hybrid,q13,single,,False,Food Code 2026 §3-801.11 ; Food Code 2026 §3-401.11 ; Food Code 2026 §3-602.12
+sections/hybrid,q14,single,2,True,Food Code 2026 §3-202.18 ; Food Code 2026 §3-602.11 ; Food Code 2026 §3-602.11
+sections/hybrid,q15,single,2,True,Food Code 2026 §2-102.20 ; Food Code 2026 §2-102.12 ; Employee Health Handbook p. 12
+sections/hybrid,q16,single,2,True,Food Code 2026 §2-303.11 ; Food Code 2026 §6-501.115 ; Food Code 2026 §1-201.10
+sections/hybrid,q17,single,1,True,Food Code 2026 §4-203.11 ; Food Code 2026 §4-201.12 ; Food Code 2026 §4-203.12
+sections/hybrid,q18,single,,False,Food Code 2026 §4-204.116 ; Food Code 2026 §4-501.111 ; Food Code 2026 §4-501.110
+sections/hybrid,q19,single,1,True,Food Code 2026 §3-304.15 ; Food Code 2026 §3-304.15 ; Employee Health Handbook p. 16
+sections/hybrid,q20,single,1,True,Employee Health Handbook p. 4 ; Employee Health Handbook p. 6 ; Food Code 2026 §2-502.11
+sections/hybrid,q21,single,1,True,Employee Health Handbook p. 15 ; Employee Health Handbook p. 16 ; Employee Health Handbook p. 15
+sections/hybrid,q22,single,1,True,Cooling Guide p. 1 ; Cooling Guide p. 1 ; Food Code 2026 §3-202.11
+sections/hybrid,q23,single,3,True,Food Code 2026 §2-302.11 ; Food Code 2026 §2-304.11 ; Food Code 2026 §2-402.11
+sections/hybrid,q24,multi,1,True,Cooling Guide p. 1 ; Cooling Guide p. 1 ; Food Code 2026 §3-501.14
+sections/hybrid,q25,multi,1,True,Food Code 2026 §3-501.15 ; Cooling Guide p. 1 ; Cooling Guide p. 2
+sections/hybrid,q26,multi,1,False,Food Code 2026 §1-201.10 ; Food Code 2026 §1-201.10 ; Food Code 2026 §6-202.111
+sections/hybrid,q27,multi,3,True,Food Code 2026 §3-401.13 ; Food Code 2026 §3-403.11 ; Food Code 2026 §3-501.16
+sections/hybrid,q28,multi,1,True,Employee Health Handbook p. 15 ; Food Code 2026 §5-202.12 ; Employee Health Handbook p. 14
+sections/hybrid,q29,multi,,False,Employee Health Handbook p. 4 ; Employee Health Handbook p. 3 ; Employee Health Handbook p. 4
+sections/hybrid,q30,multi,1,True,Food Code 2026 §3-501.17 ; Food Code 2026 §3-501.17 ; Food Code 2026 §3-501.18
+sections/hybrid,q31,multi,2,True,Employee Health Handbook p. 16 ; Food Code 2026 §3-304.15 ; Employee Health Handbook p. 14
+windows/dense,q01,single,,False,Food Code 2026 p. 68 ; Cooling Guide p. 1 ; Food Code 2026 p. 75
+windows/dense,q02,single,1,True,Food Code 2026 p. 72 ; Food Code 2026 p. 72 ; Food Code 2026 p. 108
+windows/dense,q03,single,1,True,Food Code 2026 p. 62 ; Food Code 2026 p. 63 ; Food Code 2026 p. 65
+windows/dense,q04,single,1,True,Food Code 2026 p. 65 ; Food Code 2026 p. 63 ; Food Code 2026 p. 62
+windows/dense,q05,single,1,True,Food Code 2026 p. 68 ; Food Code 2026 p. 68 ; Cooling Guide p. 1
+windows/dense,q06,single,1,True,Food Code 2026 p. 72 ; Food Code 2026 p. 78 ; Food Code 2026 p. 72
+windows/dense,q07,single,3,True,Food Code 2026 p. 8 ; Food Code 2026 p. 8 ; Food Code 2026 p. 44
+windows/dense,q08,single,5,True,Employee Health Handbook p. 14 ; Employee Health Handbook p. 14 ; Employee Health Handbook p. 15
+windows/dense,q09,single,1,True,Food Code 2026 p. 41 ; Employee Health Handbook p. 12 ; Food Code 2026 p. 52
+windows/dense,q10,single,1,True,Food Code 2026 p. 52 ; Employee Health Handbook p. 17 ; Employee Health Handbook p. 16
+windows/dense,q11,single,1,True,Food Code 2026 p. 70 ; Food Code 2026 p. 70 ; Food Code 2026 p. 69
+windows/dense,q12,single,1,True,Food Code 2026 p. 10 ; Food Code 2026 p. 11 ; Food Code 2026 p. 81
+windows/dense,q13,single,1,True,Food Code 2026 p. 81 ; Food Code 2026 p. 82 ; Food Code 2026 p. 65
+windows/dense,q14,single,1,True,Food Code 2026 p. 80 ; Food Code 2026 p. 81 ; Food Code 2026 p. 81
+windows/dense,q15,single,1,True,Food Code 2026 p. 25 ; Food Code 2026 p. 26 ; Food Code 2026 p. 23
+windows/dense,q16,single,1,True,Food Code 2026 p. 143 ; Food Code 2026 p. 143 ; Food Code 2026 p. 142
+windows/dense,q17,single,1,True,Food Code 2026 p. 91 ; Food Code 2026 p. 91 ; Food Code 2026 p. 95
+windows/dense,q18,single,1,True,Food Code 2026 p. 111 ; Food Code 2026 p. 112 ; Food Code 2026 p. 96
+windows/dense,q19,single,1,True,Food Code 2026 p. 59 ; Employee Health Handbook p. 17 ; Food Code 2026 p. 59
+windows/dense,q20,single,1,True,Employee Health Handbook p. 3 ; Employee Health Handbook p. 31 ; Employee Health Handbook p. 29
+windows/dense,q21,single,1,True,Employee Health Handbook p. 15 ; Food Code 2026 p. 40 ; Employee Health Handbook p. 15
+windows/dense,q22,single,1,True,Cooling Guide p. 1 ; Food Code 2026 p. 18 ; Cooling Guide p. 1
+windows/dense,q23,single,1,True,Food Code 2026 p. 43 ; Food Code 2026 p. 42 ; Food Code 2026 p. 53
+windows/dense,q24,multi,1,True,Cooling Guide p. 1 ; Cooling Guide p. 1 ; Cooling Guide p. 1
+windows/dense,q25,multi,4,True,Cooling Guide p. 1 ; Cooling Guide p. 2 ; Cooling Guide p. 1
+windows/dense,q26,multi,1,False,Food Code 2026 p. 8 ; Food Code 2026 p. 8 ; Food Code 2026 p. 8
+windows/dense,q27,multi,3,False,Food Code 2026 p. 65 ; Food Code 2026 p. 68 ; Food Code 2026 p. 62
+windows/dense,q28,multi,1,True,Employee Health Handbook p. 15 ; Employee Health Handbook p. 15 ; Food Code 2026 p. 121
+windows/dense,q29,multi,1,True,Employee Health Handbook p. 6 ; Employee Health Handbook p. 3 ; Employee Health Handbook p. 4
+windows/dense,q30,multi,1,True,Food Code 2026 p. 72 ; Food Code 2026 p. 72 ; Food Code 2026 p. 73
+windows/dense,q31,multi,3,False,Employee Health Handbook p. 16 ; Employee Health Handbook p. 17 ; Food Code 2026 p. 59
+windows/keyword,q01,single,,False,Food Code 2026 p. 43 ; Food Code 2026 p. 104 ; Food Code 2026 p. 91
+windows/keyword,q02,single,,False,Food Code 2026 p. 133 ; Food Code 2026 p. 52 ; Food Code 2026 p. 134
+windows/keyword,q03,single,,False,Food Code 2026 p. 68 ; Cooling Guide p. 1 ; Food Code 2026 p. 78
+windows/keyword,q04,single,3,True,Food Code 2026 p. 3 ; Food Code 2026 p. 68 ; Food Code 2026 p. 63
+windows/keyword,q05,single,1,True,Food Code 2026 p. 68 ; Food Code 2026 p. 68 ; Food Code 2026 p. 95
+windows/keyword,q06,single,,False,Food Code 2026 p. 97 ; Cooling Guide p. 1 ; Food Code 2026 p. 51
+windows/keyword,q07,single,,False,Employee Health Handbook p. 16 ; Food Code 2026 p. 7 ; Food Code 2026 p. 8
+windows/keyword,q08,single,,False,Employee Health Handbook p. 7 ; Employee Health Handbook p. 15 ; Food Code 2026 p. 53
+windows/keyword,q09,single,1,True,Food Code 2026 p. 41 ; Employee Health Handbook p. 12 ; Employee Health Handbook p. 2
+windows/keyword,q10,single,,False,Employee Health Handbook p. 16 ; Employee Health Handbook p. 6 ; Food Code 2026 p. 95
+windows/keyword,q11,single,1,True,Food Code 2026 p. 70 ; Food Code 2026 p. 70 ; Food Code 2026 p. 69
+windows/keyword,q12,single,1,True,Food Code 2026 p. 10 ; Food Code 2026 p. 11 ; Food Code 2026 p. 80
+windows/keyword,q13,single,,False,Food Code 2026 p. 65 ; Food Code 2026 p. 83 ; Food Code 2026 p. 56
+windows/keyword,q14,single,3,True,Food Code 2026 p. 79 ; Food Code 2026 p. 77 ; Food Code 2026 p. 80
+windows/keyword,q15,single,1,True,Food Code 2026 p. 25 ; Employee Health Handbook p. 12 ; Food Code 2026 p. 26
+windows/keyword,q16,single,,False,Food Code 2026 p. 8 ; Employee Health Handbook p. 25 ; Food Code 2026 p. 8
+windows/keyword,q17,single,1,True,Food Code 2026 p. 91 ; Food Code 2026 p. 89 ; Food Code 2026 p. 91
+windows/keyword,q18,single,,False,Food Code 2026 p. 96 ; Food Code 2026 p. 120 ; Food Code 2026 p. 96
+windows/keyword,q19,single,1,True,Food Code 2026 p. 59 ; Employee Health Handbook p. 17 ; Employee Health Handbook p. 16
+windows/keyword,q20,single,3,True,Food Code 2026 p. 99 ; Food Code 2026 p. 98 ; Employee Health Handbook p. 3
+windows/keyword,q21,single,1,True,Employee Health Handbook p. 15 ; Employee Health Handbook p. 15 ; Employee Health Handbook p. 16
+windows/keyword,q22,single,1,True,Cooling Guide p. 1 ; Cooling Guide p. 1 ; Food Code 2026 p. 10
+windows/keyword,q23,single,,False,Food Code 2026 p. 41 ; Employee Health Handbook p. 12 ; Food Code 2026 p. 42
+windows/keyword,q24,multi,1,True,Cooling Guide p. 1 ; Cooling Guide p. 1 ; Food Code 2026 p. 70
+windows/keyword,q25,multi,4,False,Cooling Guide p. 1 ; Food Code 2026 p. 109 ; Food Code 2026 p. 109
+windows/keyword,q26,multi,1,False,Food Code 2026 p. 8 ; Food Code 2026 p. 8 ; Food Code 2026 p. 8
+windows/keyword,q27,multi,,False,Cooling Guide p. 1 ; Food Code 2026 p. 27 ; Food Code 2026 p. 65
+windows/keyword,q28,multi,1,False,Employee Health Handbook p. 15 ; Employee Health Handbook p. 15 ; Employee Health Handbook p. 15
+windows/keyword,q29,multi,,False,Employee Health Handbook p. 3 ; Employee Health Handbook p. 3 ; Employee Health Handbook p. 23
+windows/keyword,q30,multi,1,False,Food Code 2026 p. 73 ; Cooling Guide p. 1 ; Food Code 2026 p. 72
+windows/keyword,q31,multi,3,True,Employee Health Handbook p. 14 ; Employee Health Handbook p. 16 ; Food Code 2026 p. 40
+windows/hybrid,q01,single,,False,Food Code 2026 p. 95 ; Food Code 2026 p. 68 ; Food Code 2026 p. 68
+windows/hybrid,q02,single,2,True,Food Code 2026 p. 72 ; Food Code 2026 p. 72 ; Cooling Guide p. 1
+windows/hybrid,q03,single,,False,Cooling Guide p. 1 ; Cooling Guide p. 1 ; Food Code 2026 p. 68
+windows/hybrid,q04,single,1,True,Food Code 2026 p. 63 ; Food Code 2026 p. 65 ; Food Code 2026 p. 65
+windows/hybrid,q05,single,1,True,Food Code 2026 p. 68 ; Food Code 2026 p. 68 ; Cooling Guide p. 1
+windows/hybrid,q06,single,5,True,Food Code 2026 p. 78 ; Cooling Guide p. 1 ; Food Code 2026 p. 74
+windows/hybrid,q07,single,,False,Food Code 2026 p. 8 ; Food Code 2026 p. 8 ; Food Code 2026 p. 56
+windows/hybrid,q08,single,,False,Employee Health Handbook p. 15 ; Employee Health Handbook p. 15 ; Food Code 2026 p. 53
+windows/hybrid,q09,single,1,True,Food Code 2026 p. 41 ; Employee Health Handbook p. 12 ; Food Code 2026 p. 42
+windows/hybrid,q10,single,2,True,Employee Health Handbook p. 16 ; Food Code 2026 p. 52 ; Employee Health Handbook p. 27
+windows/hybrid,q11,single,1,True,Food Code 2026 p. 70 ; Food Code 2026 p. 70 ; Food Code 2026 p. 69
+windows/hybrid,q12,single,1,True,Food Code 2026 p. 10 ; Food Code 2026 p. 11 ; Food Code 2026 p. 80
+windows/hybrid,q13,single,,False,Food Code 2026 p. 65 ; Food Code 2026 p. 83 ; Food Code 2026 p. 83
+windows/hybrid,q14,single,1,True,Food Code 2026 p. 80 ; Food Code 2026 p. 77 ; Food Code 2026 p. 73
+windows/hybrid,q15,single,1,True,Food Code 2026 p. 25 ; Food Code 2026 p. 26 ; Food Code 2026 p. 27
+windows/hybrid,q16,single,,False,Food Code 2026 p. 8 ; Food Code 2026 p. 8 ; Employee Health Handbook p. 25
+windows/hybrid,q17,single,1,True,Food Code 2026 p. 91 ; Food Code 2026 p. 91 ; Food Code 2026 p. 106
+windows/hybrid,q18,single,4,True,Food Code 2026 p. 96 ; Food Code 2026 p. 99 ; Food Code 2026 p. 104
+windows/hybrid,q19,single,1,True,Food Code 2026 p. 59 ; Employee Health Handbook p. 17 ; Employee Health Handbook p. 16
+windows/hybrid,q20,single,1,True,Employee Health Handbook p. 3 ; Employee Health Handbook p. 5 ; Food Code 2026 p. 99
+windows/hybrid,q21,single,1,True,Employee Health Handbook p. 15 ; Employee Health Handbook p. 15 ; Employee Health Handbook p. 16
+windows/hybrid,q22,single,1,True,Cooling Guide p. 1 ; Cooling Guide p. 1 ; Food Code 2026 p. 75
+windows/hybrid,q23,single,2,True,Food Code 2026 p. 41 ; Food Code 2026 p. 42 ; Employee Health Handbook p. 12
+windows/hybrid,q24,multi,1,True,Cooling Guide p. 1 ; Cooling Guide p. 1 ; Food Code 2026 p. 70
+windows/hybrid,q25,multi,3,True,Cooling Guide p. 1 ; Cooling Guide p. 2 ; Food Code 2026 p. 71
+windows/hybrid,q26,multi,1,True,Food Code 2026 p. 8 ; Food Code 2026 p. 8 ; Food Code 2026 p. 8
+windows/hybrid,q27,multi,3,False,Food Code 2026 p. 65 ; Food Code 2026 p. 68 ; Food Code 2026 p. 62
+windows/hybrid,q28,multi,1,True,Employee Health Handbook p. 15 ; Employee Health Handbook p. 15 ; Food Code 2026 p. 121
+windows/hybrid,q29,multi,5,False,Employee Health Handbook p. 3 ; Employee Health Handbook p. 3 ; Employee Health Handbook p. 4
+windows/hybrid,q30,multi,1,True,Food Code 2026 p. 72 ; Food Code 2026 p. 73 ; Food Code 2026 p. 72
+windows/hybrid,q31,multi,2,True,Employee Health Handbook p. 16 ; Food Code 2026 p. 59 ; Employee Health Handbook p. 17
