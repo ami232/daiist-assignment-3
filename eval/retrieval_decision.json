@@ -1,0 +1,45 @@
+{
+  "best_design": "structure",
+  "best_mode": "dense",
+  "served_design": "structure",
+  "served_mode": "dense",
+  "k": 5,
+  "hit_rates": {
+    "fixed+dense": {
+      "hit@1": 0.5312,
+      "hit@3": 0.7812,
+      "hit@5": 0.9062,
+      "words_in_prompt": 1249
+    },
+    "fixed+bm25": {
+      "hit@1": 0.4062,
+      "hit@3": 0.6875,
+      "hit@5": 0.7812,
+      "words_in_prompt": 1250
+    },
+    "fixed+hybrid": {
+      "hit@1": 0.5312,
+      "hit@3": 0.8125,
+      "hit@5": 0.9062,
+      "words_in_prompt": 1249
+    },
+    "structure+dense": {
+      "hit@1": 0.5625,
+      "hit@3": 0.9062,
+      "hit@5": 0.9375,
+      "words_in_prompt": 1055
+    },
+    "structure+bm25": {
+      "hit@1": 0.375,
+      "hit@3": 0.75,
+      "hit@5": 0.7812,
+      "words_in_prompt": 1030
+    },
+    "structure+hybrid": {
+      "hit@1": 0.5,
+      "hit@3": 0.875,
+      "hit@5": 0.9062,
+      "words_in_prompt": 1047
+    }
+  }
+}

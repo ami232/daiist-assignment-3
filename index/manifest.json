@@ -1,0 +1,56 @@
+{
+  "model": "gemini-embedding-2",
+  "dims": 768,
+  "licence": "Texts (c) European Union, https://eur-lex.europa.eu/, reused under CC BY 4.0 (Commission Decision 2011/833/EU). Consolidated versions are for documentation only.",
+  "documents": [
+    {
+      "id": "reg-2019-947",
+      "source": "Reg. 2019/947",
+      "title": "Commission Implementing Regulation (EU) 2019/947 on the rules and procedures for the operation of unmanned aircraft",
+      "version": "consolidated version of 2025-05-01",
+      "celex": "02019R0947-20250501",
+      "units": 70,
+      "words": 18884
+    },
+    {
+      "id": "reg-2019-945",
+      "source": "Reg. 2019/945",
+      "title": "Commission Delegated Regulation (EU) 2019/945 on unmanned aircraft systems and on third-country operators of unmanned aircraft systems",
+      "version": "consolidated version of 2025-06-24",
+      "celex": "02019R0945-20250624",
+      "units": 67,
+      "words": 19905
+    },
+    {
+      "id": "reg-2021-664",
+      "source": "Reg. 2021/664",
+      "title": "Commission Implementing Regulation (EU) 2021/664 on a regulatory framework for the U-space",
+      "version": "consolidated version of 2026-02-22",
+      "celex": "02021R0664-20260222",
+      "units": 34,
+      "words": 5605
+    },
+    {
+      "id": "reg-376-2014",
+      "source": "Reg. 376/2014",
+      "title": "Regulation (EU) No 376/2014 on the reporting, analysis and follow-up of occurrences in civil aviation",
+      "version": "consolidated version of 2018-09-11",
+      "celex": "02014R0376-20180911",
+      "units": 34,
+      "words": 8429
+    }
+  ],
+  "words": 52823,
+  "designs": {
+    "structure": {
+      "chunks": 301,
+      "embedded_this_run": 301,
+      "still_missing": 0
+    },
+    "fixed": {
+      "chunks": 265,
+      "embedded_this_run": 265,
+      "still_missing": 0
+    }
+  }
+}

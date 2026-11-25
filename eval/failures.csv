@@ -1,0 +1,12 @@
+id,kind,category,graded_by,why,question
+q07,single,retrieval miss,you,1,"How many questions does the online theoretical exam for a C1 drone in subcategory A1 have, and what score do I need to pass?"
+q10,single,unsupported claim,judge,"The answer misses the key fact that a declaration is sufficient for operations that fit a standard scenario, as mentioned in the reference answer.","When do I need an operational authorisation in the specific category, and who grants it?"
+q12,single,retrieval miss,you,1,"What maximum take-off mass does a class C2 drone have, and what speed function must it offer?"
+q18,single,retrieval miss,you,1,Within what time limit must an aviation occurrence be reported under mandatory reporting?
+q19,single,retrieval miss,you,1,Does the occurrence reporting regulation apply to an accident with a small drone that needs no certificate or declaration?
+q22,multi,wrong answer from the right passage,judge,"The answer fails to mention that a class C3 drone must have a maximum characteristic dimension below 3 m, which is a key fact defined in the reference.","Which kinds of drone may be flown in subcategory A3, and what take-off mass limit does a class C3 drone have?"
+q34,unanswerable,unsupported claim,judge,"The answer provides information about national fees that is not present in the provided evidence, violating the requirement for the answer to be supported by the documents.",How much does the A2 certificate of competency exam cost?
+q37,unanswerable,retrieval miss,you,1,What is the maximum fine under Regulation 376/2014 for failing to report an occurrence?
+q43,multi,retrieval miss,you,1,"I fly a class C1 drone at night in the open category: what light must the drone have, and what must I do as remote pilot?"
+q48,unanswerable,unsupported claim,judge,"The answer provides external information about Member States setting their own fees, which is not stated in the provided evidence.",How much does it cost to register as a UAS operator?
+q49,unanswerable,unsupported claim,judge,"The assistant failed to explicitly state that the requirement is 'not covered' as requested for an unanswerable question, instead providing an answer that implies a regulation exists while claiming it specifies no hours.",How many hours of practical flight training do I need before taking the A2 exam?
