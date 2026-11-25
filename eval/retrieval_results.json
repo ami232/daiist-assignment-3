@@ -1,0 +1,22 @@
+{
+  "fixed": {
+    "questions": 24,
+    "hit@1": 0.833,
+    "hit@3": 0.958,
+    "hit@5": 1.0,
+    "multi_full@1": "1/7",
+    "multi_full@3": "1/7",
+    "multi_full@5": "3/7",
+    "chunks": 426
+  },
+  "section": {
+    "questions": 24,
+    "hit@1": 0.958,
+    "hit@3": 0.958,
+    "hit@5": 1.0,
+    "multi_full@1": "0/7",
+    "multi_full@3": "2/7",
+    "multi_full@5": "4/7",
+    "chunks": 257
+  }
+}

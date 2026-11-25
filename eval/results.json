@@ -1,0 +1,48 @@
+{
+  "correct_answerable": "24/24",
+  "correct_refusals": "5/6",
+  "judge_errors": [],
+  "unsupported_or_hallucinated": 1,
+  "citations_valid": "30/30",
+  "searched_before_answering": "30/30",
+  "tried_add_document": 0,
+  "avg_seconds": 21.5,
+  "avg_tokens": 4772,
+  "judge_vs_code_refusal_mismatch": [
+    "q04",
+    "q19",
+    "q23",
+    "q25"
+  ],
+  "judge_vs_you": {
+    "graded": 30,
+    "agree_correct": "28/30",
+    "agree_supported": "29/30",
+    "disagreements": [
+      "q20",
+      "q23"
+    ]
+  },
+  "retrieval": {
+    "fixed": {
+      "questions": 24,
+      "hit@1": 0.833,
+      "hit@3": 0.958,
+      "hit@5": 1.0,
+      "multi_full@1": "1/7",
+      "multi_full@3": "1/7",
+      "multi_full@5": "3/7",
+      "chunks": 426
+    },
+    "section": {
+      "questions": 24,
+      "hit@1": 0.958,
+      "hit@3": 0.958,
+      "hit@5": 1.0,
+      "multi_full@1": "0/7",
+      "multi_full@3": "2/7",
+      "multi_full@5": "4/7",
+      "chunks": 257
+    }
+  }
+}
