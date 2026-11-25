@@ -1,0 +1,19 @@
+{
+  "question_id": "u01",
+  "question": "How long does an operational declaration for a standard scenario remain valid?",
+  "document": "Regulation (EU) 2020/639",
+  "path": "corpus/32020R0639.xhtml",
+  "before": "The corpus does not cover the validity period or expiration duration of an operational declaration for a standard scenario. \n\nYou should check with your national competent authority or national aviation law to see if a specific validity period applies.",
+  "add_document_result": "Added Regulation (EU) 2020/639: 89 chunks embedded and stored in the 'structure' index. Sections include: Preamble; Recitals; Article 1; ‘Article 22; ‘Article 23; Article 2; Annex, UAS.OPEN.010 General provisions; Annex, UAS.OPEN.020 UAS operations in subcategory A1 ...",
+  "add_document_again": "Already indexed: 32020R0639 (89 chunks, same content). Nothing was added or re-embedded.",
+  "after": "Yes, an operational declaration for a standard scenario has a limited duration of **2 years** [32020R0639-s0037]. \n\nThe declaration is no longer considered complete if:\n1. The competent authority finds during oversight that the operation is not conducted in accordance with the declaration [32020R0639-s0037].\n2. The operational conditions have changed so that the declaration no longer complies with applicable requirements [32020R0639-s0037].\n3. Access is not granted to the competent authority [32020R0639-s0037].",
+  "after_cited": [
+    "32020R0639-s0037"
+  ],
+  "after_sources": {
+    "32020R0639-s0037": [
+      "Regulation (EU) 2020/639",
+      "Annex, UAS.SPEC.085 Duration and validity of an operational declaration:"
+    ]
+  }
+}

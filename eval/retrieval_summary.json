@@ -1,0 +1,37 @@
+{
+  "fixed-dense": {
+    "hit@1": 0.267,
+    "hit@3": 0.533,
+    "hit@5": 0.7,
+    "any@1": 0.367,
+    "any@3": 0.633,
+    "any@5": 0.8,
+    "multi_hit@5": 0.5,
+    "mean_words_added_k5": 999.4,
+    "n": 30
+  },
+  "structure-dense": {
+    "hit@1": 0.7,
+    "hit@3": 0.867,
+    "hit@5": 0.9,
+    "any@1": 0.833,
+    "any@3": 1.0,
+    "any@5": 1.0,
+    "multi_hit@5": 0.5,
+    "mean_words_added_k5": 1059.4,
+    "n": 30
+  },
+  "structure-hybrid": {
+    "hit@1": 0.7,
+    "hit@3": 0.8,
+    "hit@5": 0.867,
+    "any@1": 0.8,
+    "any@3": 0.967,
+    "any@5": 0.967,
+    "multi_hit@5": 0.5,
+    "mean_words_added_k5": 1051.0,
+    "n": 30
+  },
+  "_best_by_numbers": "structure-dense",
+  "_active_design": "structure-dense"
+}

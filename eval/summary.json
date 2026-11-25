@@ -1,0 +1,134 @@
+{
+  "n_questions": 36,
+  "outcomes": {
+    "correct": 30,
+    "correct_refusal": 5,
+    "refusal_with_unsupported_claim": 1
+  },
+  "answerable": {
+    "n": 30,
+    "correct": 30,
+    "wrong_answer": 0,
+    "unsupported": 0,
+    "wrong_refusal": 0
+  },
+  "unanswerable": {
+    "n": 6,
+    "correct_refusal": 5
+  },
+  "by_kind": {
+    "single": {
+      "n": 24,
+      "ok": 24
+    },
+    "multi": {
+      "n": 6,
+      "ok": 6
+    },
+    "unanswerable": {
+      "n": 6,
+      "ok": 5
+    }
+  },
+  "code_checks": {
+    "citations_valid_rate": 1.0,
+    "guardrail_fired": 1,
+    "expected_passage_retrieved_rate": 0.967,
+    "expected_doc_cited_rate_when_answered": 0.967
+  },
+  "failure_causes_auto": {
+    "unsupported claim": 1
+  },
+  "cost": {
+    "mean_tokens": 5964,
+    "mean_seconds": 10.45,
+    "median_seconds": 8.38,
+    "mean_model_calls": 2.56,
+    "mean_searches": 1.47,
+    "mean_judge_tokens": 2435,
+    "mean_tokens_in": 5790,
+    "mean_tokens_out": 174,
+    "est_usd_per_question_paid": 0.00171
+  },
+  "judge_human_agreement": {
+    "n": 22,
+    "correct": {
+      "n": 22,
+      "agreement": 0.909,
+      "cohen_kappa": 0.0,
+      "disagreements": [
+        "m02",
+        "m06"
+      ]
+    },
+    "supported": {
+      "n": 22,
+      "agreement": 0.955,
+      "cohen_kappa": 0.645,
+      "disagreements": [
+        "u04"
+      ]
+    }
+  },
+  "retrieval": {
+    "fixed-dense": {
+      "hit@1": 0.267,
+      "hit@3": 0.533,
+      "hit@5": 0.7,
+      "any@1": 0.367,
+      "any@3": 0.633,
+      "any@5": 0.8,
+      "multi_hit@5": 0.5,
+      "mean_words_added_k5": 999.4,
+      "n": 30
+    },
+    "structure-dense": {
+      "hit@1": 0.7,
+      "hit@3": 0.867,
+      "hit@5": 0.9,
+      "any@1": 0.833,
+      "any@3": 1.0,
+      "any@5": 1.0,
+      "multi_hit@5": 0.5,
+      "mean_words_added_k5": 1059.4,
+      "n": 30
+    },
+    "structure-hybrid": {
+      "hit@1": 0.7,
+      "hit@3": 0.8,
+      "hit@5": 0.867,
+      "any@1": 0.8,
+      "any@3": 0.967,
+      "any@5": 0.967,
+      "multi_hit@5": 0.5,
+      "mean_words_added_k5": 1051.0,
+      "n": 30
+    },
+    "_best_by_numbers": "structure-dense",
+    "_active_design": "structure-dense"
+  },
+  "models": {
+    "agent": "gemini-flash-lite-latest",
+    "judge": "gemini-3-flash-preview",
+    "embeddings": "gemini-embedding-2"
+  },
+  "add_document_demo": {
+    "question_id": "u01",
+    "question": "How long does an operational declaration for a standard scenario remain valid?",
+    "document": "Regulation (EU) 2020/639",
+    "path": "corpus/32020R0639.xhtml",
+    "before": "The corpus does not cover the validity period or expiration duration of an operational declaration for a standard scenario. \n\nYou should check with your national competent authority or national aviation law to see if a specific validity period applies.",
+    "add_document_result": "Added Regulation (EU) 2020/639: 89 chunks embedded and stored in the 'structure' index. Sections include: Preamble; Recitals; Article 1; ‘Article 22; ‘Article 23; Article 2; Annex, UAS.OPEN.010 General provisions; Annex, UAS.OPEN.020 UAS operations in subcategory A1 ...",
+    "add_document_again": "Already indexed: 32020R0639 (89 chunks, same content). Nothing was added or re-embedded.",
+    "after": "Yes, an operational declaration for a standard scenario has a limited duration of **2 years** [32020R0639-s0037]. \n\nThe declaration is no longer considered complete if:\n1. The competent authority finds during oversight that the operation is not conducted in accordance with the declaration [32020R0639-s0037].\n2. The operational conditions have changed so that the declaration no longer complies with applicable requirements [32020R0639-s0037].\n3. Access is not granted to the competent authority [32020R0639-s0037].",
+    "after_cited": [
+      "32020R0639-s0037"
+    ],
+    "after_sources": {
+      "32020R0639-s0037": [
+        "Regulation (EU) 2020/639",
+        "Annex, UAS.SPEC.085 Duration and validity of an operational declaration:"
+      ]
+    }
+  }
+}
