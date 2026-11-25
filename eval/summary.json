@@ -1,0 +1,74 @@
+{
+  "questions_answered": 38,
+  "answerable": 32,
+  "unanswerable": 6,
+  "correct_answerable": 32,
+  "unsupported_answers": 1,
+  "correct_refusals": 6,
+  "answered_unanswerable": 0,
+  "wrong_refusals": 0,
+  "answers_with_invalid_citations": 1,
+  "guardrail_fired": 1,
+  "overall_correct": 38,
+  "failures_by_cause": {
+    "unsupported claim": 1
+  },
+  "avg_tokens_per_question": 4433,
+  "avg_seconds_per_question": 7.4,
+  "est_cost_per_question_usd": 0.00187,
+  "judge_human_agreement": {
+    "correct": {
+      "n": 22,
+      "agreement": 0.909,
+      "cohen_kappa": 0.0,
+      "disagree_on": [
+        "q18",
+        "q28"
+      ]
+    },
+    "supported": {
+      "n": 22,
+      "agreement": 0.955,
+      "cohen_kappa": 0.0,
+      "disagree_on": [
+        "q30"
+      ]
+    }
+  },
+  "retrieval": [
+    {
+      "design": "dense",
+      "hit@1": 0.625,
+      "hit@3": 0.969,
+      "hit@5": 1.0,
+      "multi_both_found@5": "3/6",
+      "avg_words_added_k5": 1122
+    },
+    {
+      "design": "bm25",
+      "hit@1": 0.375,
+      "hit@3": 0.531,
+      "hit@5": 0.562,
+      "multi_both_found@5": "1/6",
+      "avg_words_added_k5": 1031
+    },
+    {
+      "design": "hybrid",
+      "hit@1": 0.531,
+      "hit@3": 0.656,
+      "hit@5": 0.781,
+      "multi_both_found@5": "1/6",
+      "avg_words_added_k5": 1145
+    },
+    {
+      "design": "hybrid_articles_only",
+      "hit@1": 0.625,
+      "hit@3": 0.844,
+      "hit@5": 0.938,
+      "multi_both_found@5": "2/6",
+      "avg_words_added_k5": 1344
+    }
+  ],
+  "model": "gemini-3.6-flash",
+  "judge_model": "gemini-3.5-flash-lite"
+}

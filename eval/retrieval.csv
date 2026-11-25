@@ -1,0 +1,5 @@
+design,hit@1,hit@3,hit@5,multi_both_found@5,avg_words_added_k5
+dense,0.625,0.969,1.0,3/6,1122
+bm25,0.375,0.531,0.562,1/6,1031
+hybrid,0.531,0.656,0.781,1/6,1145
+hybrid_articles_only,0.625,0.844,0.938,2/6,1344

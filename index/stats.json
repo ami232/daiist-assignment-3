@@ -1,0 +1,34 @@
+{
+  "GDPR": {
+    "title": "Regulation (EU) 2016/679 - General Data Protection Regulation",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016R0679",
+    "words": 52902,
+    "chunks": 317,
+    "recitals": 173,
+    "articles": 99
+  },
+  "LED": {
+    "title": "Directive (EU) 2016/680 - Law Enforcement Directive",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:32016L0680",
+    "words": 25791,
+    "chunks": 183,
+    "recitals": 107,
+    "articles": 65
+  },
+  "ePrivacy": {
+    "title": "Directive 2002/58/EC - ePrivacy Directive (consolidated text of 19.12.2009)",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/HTML/?uri=CELEX:02002L0058-20091219",
+    "words": 4774,
+    "chunks": 27,
+    "recitals": 0,
+    "articles": 23
+  },
+  "_total": {
+    "words": 83467,
+    "chunks": 527,
+    "embedded_this_run": 527,
+    "in_index": 527,
+    "model": "gemini-embedding-2",
+    "dimensions": 768
+  }
+}

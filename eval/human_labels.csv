@@ -1,1 +1,23 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q04,1,1,
+q05,1,1,
+q08,1,1,content matches Art. 30(5); only the article tag is missing from the preview
+q10,1,1,
+q13,1,1,checked full text: matches the Art. 4(5) definition
+q17,1,1,
+q18,0,1,missed that users must be told beforehand
+q20,1,1,
+q21,1,1,checked full text: both Art. 5(3) exceptions are there
+q22,1,1,checked full text: all Art. 13(2) conditions are there
+q25,1,1,
+q26,1,1,
+q27,1,1,
+q28,0,1,full answer only has the ePrivacy Art. 13 opt-out; the GDPR Art. 21 right to object is missing
+q30,1,1,
+q31,1,1,
+q33,1,1,
+q34,1,1,
+q36,1,1,correct refusal; but naming the LED transposition article as the closest match is a bit misleading
+q38,1,1,

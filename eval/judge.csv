@@ -1,0 +1,39 @@
+id,answer_hash,judge_correct,judge_supported,judge_reason,judge_tokens
+q01,ac3cda09b82c,1,1,The assistant correctly states the 72-hour deadline and notification conditions based on the retrieved passages.,1894
+q02,4ddbf3f7984c,1,1,The assistant correctly identified the maximum fine amount and threshold from Article 83(5) of the GDPR.,2127
+q03,06a26983f8d7,1,1,The assistant correctly identified the maximum fine amount and correctly cited the relevant articles and provisions from the retrieved text.,2010
+q04,d84cc10223b9,1,1,"The assistant correctly states that a child can consent at 16, or down to 13 if set by a Member State, matching the reference answer and fully supported by GDPR Article 8.",1608
+q05,c6e73a4773b0,1,1,The assistant's answer accurately provides the deadline and extension rules for a data subject's access request directly from the retrieved passages of the GDPR.,1905
+q06,e3a2e92852c6,1,1,"The assistant accurately lists all six lawful bases for processing personal data as provided in Article 6 of the GDPR, and every claim is directly supported by the retrieved text.",2005
+q07,7d0eabdba9ac,1,1,The assistant's answer accurately identifies the conditions for designating a DPO based on the retrieved passages and contains no unsupported claims.,1927
+q08,b40f15aae464,1,1,"The assistant correctly identified the rule and exceptions regarding record-keeping for companies with fewer than 250 employees, and all facts are fully supported by GDPR Article 30(5).",1881
+q09,fe1c0601f4c3,1,1,The assistant accurately answers the question based on the retrieved passages and all claims are fully supported by the text.,1695
+q10,a275b96ed404,1,1,"The assistant correctly identified that personal data must be provided in a structured, commonly used, and machine-readable (and interoperable) format as specified in Article 20 and Recital 68 of the GDPR.",2215
+q11,49e919b2ec97,1,1,The assistant accurately and completely answers the question using only facts directly supported by the retrieved GDPR passages.,2060
+q12,faa87f1cf9a6,1,1,The assistant correctly identified all categories of personal data considered special categories based on the retrieved passages.,2051
+q13,7ab9d96d5a21,1,1,The assistant accurately and completely defines pseudonymisation based directly on Article 4(5) of the GDPR.,1368
+q14,37b865dd6fdd,1,1,The assistant accurately answers when individuals must be notified of a data breach using only information directly supported by the retrieved passages.,2108
+q15,af48a9dde38d,1,1,The assistant's answer accurately and completely covers the required elements of a processor contract based on the retrieved passages and contains no unsupported claims.,2699
+q16,0c99c69f03cc,1,1,"The assistant correctly states the rules regarding the representative requirement under Article 3(2) and GDPR Article 27, capturing all necessary conditions and exceptions accurately based on the retrieved text.",1808
+q17,e50f55c52248,1,1,The assistant correctly answers the question using facts from the retrieved passages without making unsupported claims.,1585
+q18,b7626526c7a7,1,1,"The assistant correctly states that consent can be withdrawn at any time and that it must be as easy to withdraw as to give consent, fully supported by Article 7.",1344
+q19,10f0b7c48e1a,1,1,The assistant accurately lists all the grounds for erasure as provided in the retrieved passages and correctly identifies the exceptions.,1854
+q20,068b24a95b13,1,1,"The assistant correctly states that transfers to a country with an adequacy decision do not require further authorisation, and this is fully supported by the retrieved passages.",1526
+q21,cd3c8a62091f,1,1,The assistant's answer accurately reflects the reference answer and is fully supported by Article 5(3) of the ePrivacy Directive.,2298
+q22,82b9f5c9a8f6,1,1,The assistant's answer accurately captures the conditions for sending marketing emails to existing customers under Article 13(2) of the ePrivacy Directive and is fully supported by the retrieved text.,2372
+q23,1bda0e34008b,1,1,"The assistant correctly identifies that the telecom provider must notify the competent national authority and, when likely to adversely affect privacy, the subscriber or individual, entirely supported by Article 4 of the ePrivacy Directive.",2234
+q24,243471bdc439,1,1,The assistant's answer accurately captures the processing covered by the Law Enforcement Directive and is fully supported by the retrieved passages.,1671
+q25,3d1568d532f2,1,1,"The assistant correctly states the transposition deadline as 6 May 2018, which is supported by LED Article 63.",1343
+q26,13ec7f85cdc8,1,1,"The assistant correctly stated that the GDPR applies from 25 May 2018, which is directly supported by GDPR Article 99.",1519
+q27,6bcb024f7797,1,1,The assistant correctly states that both laws set the same 72-hour deadline and cites the relevant provisions accurately.,2091
+q28,50d232fe16b5,1,1,The assistant's answer accurately captures the rules regarding customer objections to direct marketing newsletters from the retrieved ePrivacy Article 13 passages and correctly cites them.,2368
+q29,056d7a6ed7ea,1,1,"The assistant's answer accurately states the requirements for valid consent for non-essential cookies based on the ePrivacy Directive and GDPR passages provided, and all claims are fully supported by the text.",3852
+q30,eb6b0db53ef6,1,0,"The assistant correctly identifies the duties of the processor and controller regarding data breaches based on the law, but cites GDPR Article 34(1) which was not included in the retrieved passages.",2860
+q31,08c014063602,1,1,The assistant correctly identified the requirement to consult the supervisory authority prior to processing and listed the required information based strictly on the retrieved passages.,1844
+q32,bbf90f04f45b,1,1,"The assistant correctly answered both parts of the question based on the retrieved passages, citing Article 46 and Article 49 accurately.",2191
+q33,4880817a45c8,1,1,The assistant correctly identified that the question is unanswerable based on the provided corpus.,1915
+q34,160c076feb07,1,1,The question is unanswerable from the corpus and the assistant correctly refused to answer based on the provided text.,2425
+q35,e0270323b16a,1,1,The assistant correctly identified that the question is unanswerable from the corpus and accurately noted what the retrieved passages state without introducing outside knowledge.,2581
+q36,f8114f1e6628,1,1,"The question is unanswerable from the corpus, the assistant correctly identified that the corpus does not cover it, and its reference to the closest passage is factually supported.",1358
+q37,7301ad8f6503,1,1,The assistant correctly identified that the corpus does not cover the question and accurately pointed to the closest related passage.,2338
+q38,1eaf3fa08b47,1,1,The assistant correctly identified that the question is unanswerable based on the provided corpus and gave no substantive information outside of it.,2109
