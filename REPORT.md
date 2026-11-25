@@ -190,4 +190,4 @@ A question costs about 6,800 tokens (median 4,600), 2.5 model calls and 1.2 sear
 
 ## AI use
 
-I used Claude to help me with the code
+I used Claude to help me with the code, check spelling mistakes and formatting
