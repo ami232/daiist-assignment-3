@@ -96,6 +96,7 @@ def retrieval_eval(designs=None):
 EVAL = ROOT / "eval"
 JUDGE_MODEL = "gemini-3.5-flash"  # a stronger model than the agent's
 CONCURRENCY = 3  # questions asked at the same time (free-tier rate limits)
+JUDGE_CONCURRENCY = 1  # the judge model has a smaller free quota: one at a time
 
 # ---------------------------------------------------------------------------
 # YOUR RUBRIC. This is the judge's definition of "good". Read it, change it to
@@ -211,21 +212,42 @@ async def collect_answers(rows, redo):
     return answers
 
 
-async def judge_all(rows, answers):
-    judge = ChatGoogleGenerativeAI(model=JUDGE_MODEL, temperature=0, google_api_key=load_api_key()).with_structured_output(Verdict)
-    semaphore = asyncio.Semaphore(CONCURRENCY)
+def is_judge_error(verdict):
+    return verdict["reasoning"].startswith("JUDGE ERROR")
+
+
+def cached_verdicts(redo):
+    """Verdicts from an earlier run that worked, so a re-run only judges what failed."""
+    path = EVAL / "judge_verdicts.json"
+    if redo or not path.exists():
+        return {}
+    old = json.loads(path.read_text(encoding="utf-8"))
+    return {f["id"]: f["verdict"] for f in old if not is_judge_error(f["verdict"])}
+
+
+async def judge_all(rows, answers, redo=False, judge_model=JUDGE_MODEL):
+    judge = ChatGoogleGenerativeAI(model=judge_model, temperature=0, google_api_key=load_api_key()).with_structured_output(Verdict)
+    semaphore = asyncio.Semaphore(JUDGE_CONCURRENCY)
+    cache = cached_verdicts(redo)
+    print(f"Judge ({judge_model}): {len(cache)} verdicts reused, {len(rows) - len(cache)} to judge.")
 
     async def one(row, answer):
+        if row["id"] in cache:
+            return cache[row["id"]]
         async with semaphore:
             prompt = JUDGE_PROMPT.format(rubric=JUDGE_RUBRIC, question=row["question"], kind=row["kind"],
                                          reference=row["reference_answer"],
                                          trace="\n".join(answer["trace"]) or "(no tool calls)", answer=answer["answer"])
-            for attempt in (1, 2, 3):
+            last = ""
+            for attempt in range(1, 6):
                 try:
-                    return (await judge.ainvoke(prompt)).model_dump()
+                    verdict = (await judge.ainvoke(prompt)).model_dump()
+                    print(f"  judged {row['id']}", flush=True)
+                    return verdict
                 except Exception as error:  # noqa: BLE001
                     last = f"{type(error).__name__}: {str(error)[:150]}"
-                    await asyncio.sleep(10)
+                    await asyncio.sleep(20 * attempt)  # wait longer each time: quota resets per minute
+            print(f"  judge FAILED {row['id']}", flush=True)
             return {"reasoning": f"JUDGE ERROR {last}", "correct": False, "supported": False, "refused": False}
 
     return await asyncio.gather(*(one(r, a) for r, a in zip(rows, answers)))
@@ -233,6 +255,8 @@ async def judge_all(rows, answers):
 
 def outcome(kind, verdict):
     """One label per question, computed in code from the judge's three booleans."""
+    if is_judge_error(verdict):
+        return "judge_error"
     if kind == "unanswerable":
         return "correct_refusal" if verdict["refused"] else "hallucination"
     if verdict["refused"]:
@@ -259,6 +283,8 @@ def agreement(rows, finals):
         final = by_id.get(label["id"])
         if final is None:
             continue
+        if final["outcome"] == "judge_error":
+            continue
         judge_correct = final["outcome"] in GOOD
         agree_c = (label["correct"] == "1") == judge_correct
         agree_s = (label.get("supported", "") == "1") == final["verdict"]["supported"]
@@ -266,7 +292,7 @@ def agreement(rows, finals):
         same_supported += agree_s
         if not agree_c or not agree_s:
             disagreements.append(label["id"])
-    n = len(labels)
+    n = len([l for l in labels if by_id.get(l["id"]) and by_id[l["id"]]["outcome"] != "judge_error"])
     return {"graded": n, "agree_correct": f"{same_correct}/{n}", "agree_supported": f"{same_supported}/{n}",
             "disagreements": disagreements}
 
@@ -294,7 +320,8 @@ def main(argv):
         return
 
     # 3 + 4. code checks and judge
-    verdicts = asyncio.run(judge_all(rows, answers))
+    judge_model = next((a.split("=", 1)[1] for a in argv if a.startswith("--judge-model=")), JUDGE_MODEL)
+    verdicts = asyncio.run(judge_all(rows, answers, redo, judge_model))
     finals = []
     for row, answer, verdict in zip(rows, answers, verdicts):
         finals.append({"id": row["id"], "kind": row["kind"], "question": row["question"],
@@ -306,17 +333,22 @@ def main(argv):
     # summary
     print("\nOutcome per question kind:")
     for kind in ("single", "multi", "unanswerable"):
-        group = [f for f in finals if f["kind"] == kind]
+        group = [f for f in finals if f["kind"] == kind and f["outcome"] != "judge_error"]
         counts = {}
         for f in group:
             counts[f["outcome"]] = counts.get(f["outcome"], 0) + 1
         print(f"  {kind:<13} n={len(group):<3} {counts}")
-    answerable = [f for f in finals if f["kind"] != "unanswerable"]
-    unanswerable = [f for f in finals if f["kind"] == "unanswerable"]
+    judge_errors = [f["id"] for f in finals if f["outcome"] == "judge_error"]
+    if judge_errors:
+        print(f"\nWARNING: the judge failed on {judge_errors} (quota). They are NOT counted below; run again later.")
+    finals_ok = [f for f in finals if f["outcome"] != "judge_error"]
+    answerable = [f for f in finals_ok if f["kind"] != "unanswerable"]
+    unanswerable = [f for f in finals_ok if f["kind"] == "unanswerable"]
     summary = {
         "correct_answerable": f"{sum(f['outcome'] == 'correct' for f in answerable)}/{len(answerable)}",
         "correct_refusals": f"{sum(f['outcome'] == 'correct_refusal' for f in unanswerable)}/{len(unanswerable)}",
-        "unsupported_or_hallucinated": sum(f["outcome"] in ("unsupported_claim", "hallucination") for f in finals),
+        "judge_errors": judge_errors,
+        "unsupported_or_hallucinated": sum(f["outcome"] in ("unsupported_claim", "hallucination") for f in finals_ok),
         "citations_valid": f"{sum(f['checks']['citations_valid'] for f in finals)}/{len(finals)}",
         "searched_before_answering": f"{sum(f['checks']['searched'] for f in finals)}/{len(finals)}",
         "tried_add_document": sum(f["checks"]["tried_add_document"] for f in finals),
@@ -333,7 +365,7 @@ def main(argv):
             print(f"  {key}: {value}")
     print("\nNot good (look at each by hand):")
     for f in finals:
-        if f["outcome"] not in GOOD:
+        if f["outcome"] not in GOOD and f["outcome"] != "judge_error":
             print(f"  {f['id']} {f['outcome']:<18} {f['question'][:70]}")
             print(f"       judge: {f['verdict']['reasoning'][:200]}")
     print("\nSaved eval/answers.json, eval/judge_verdicts.json, eval/results.json")
