@@ -1,0 +1,17 @@
+id,kind,question,reference_answer,agent_answer,citations,retrieved_passages,correct,supported,notes
+q01,single,"My doctor prescribed Jantoven. Should I take the same dose every day, or does the amount need to change depending on my blood test results?",Your Jantoven dose must be individualized and adjusted based on your INR blood test results and the condition being treated.,"According to the official prescribing information for Jantoven (warfarin sodium):
+
+### Direct Answer
+The dosage of Jantoven is not a fixed one-size-fits-all dose; it must be individualized and adjusted based on your blood test results, specifically the International Normalized Ratio (INR) [warfarin 2.1]. 
+
+### Relevant Details and Monitoring
+* **Individualized Dose Adjustments:** The dosage and administration must be individualized for each patient according to their INR response to the drug and the condition being treated [warfarin 2.1]. Typical maintenance doses range from 2 to 10 mg once daily [warfarin 2.3].
+* **Blood Test Monitoring Frequency:** Jantoven has a narrow therapeutic range, meaning anticoagulation must be carefully monitored [warfarin 2.4]. The INR is determined daily after the initial dose until results stabilize in the therapeutic range [warfarin 2.4]. Once stabilized, dosing is maintained within the target range by performing periodic INR tests, generally at intervals of 1 to 4 weeks [warfarin 2.4].
+* **Additional Testing:** Additional INR tests are needed whenever other medications are started, stopped, or taken irregularly, or when switching between warfarin products, because factors such as other drugs and dietary vitamin K can affect how the medication works [warfarin 2.4].
+
+Any decisions or changes regarding your specific daily dose must be directed by your healthcare professional based on your individual lab results [warfarin 2.1].",[warfarin 2.1] [warfarin 2.3] [warfarin 2.4],[warfarin 2.4] [warfarin 2.1] [warfarin 2.3] [warfarin 2.2] [warfarin 2.5],,,
+q02,single,My father has a blood clot in his leg. Can Jantoven help stop it from getting worse?,"Yes. Jantoven helps prevent an existing clot from growing and reduces the risk of further clots, but it does not directly dissolve an existing clot.","Yes, Jantoven (warfarin sodium) is indicated for the treatment of venous thrombosis (which includes deep vein thrombosis or blood clots in the legs) and its extension [warfarin 1]. 
+
+The official label states that while Jantoven does not have a direct effect on an already formed blood clot and does not reverse ischemic tissue damage, one of the main goals of treatment once a clot has occurred is to prevent further extension of the formed clot [warfarin 1]. It is also used to treat blood clots and lower the chance of them forming in the body [warfarin MG].
+
+Please consult your father's healthcare professional to discuss appropriate treatment decisions, as individual medical history, risks (such as bleeding), and proper dosing must be evaluated [warfarin MG].",[warfarin 1] [warfarin MG],[warfarin 1] [warfarin MG] [warfarin 5.6] [warfarin 2.2],,,

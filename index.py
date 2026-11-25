@@ -26,6 +26,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import sys
 import time
@@ -35,7 +36,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 CORPUS_DIR = ROOT / "corpus"
 HELD_OUT_DIR = CORPUS_DIR / "held_out"
-INDEX_DIR = ROOT / "index"
+# CORPUS_INDEX_DIR lets the rivaroxaban demo work on a temporary copy of the index.
+INDEX_DIR = Path(os.environ.get("CORPUS_INDEX_DIR", ROOT / "index"))
 CHROMA_DIR = INDEX_DIR / "chroma"
 QUERY_CACHE = INDEX_DIR / "query_vectors.json"
 

@@ -33,8 +33,10 @@ warnings.filterwarnings("ignore", message=".*was never awaited.*", category=Runt
 ROOT = Path(__file__).resolve().parent
 SYSTEM_PROMPT_FILE = ROOT / "AGENTS.md"
 MODEL = os.environ.get("AGENT_MODEL", "gemini-3.5-flash")
-# Used in order when the main model errors (e.g. 503 "high demand" on the free tier).
-FALLBACK_MODELS = ("gemini-3.6-flash", "gemini-3.5-flash-lite")
+# Used in order when the main model errors: 503 "high demand", or 429 when the free tier's
+# 20 requests per model per day run out. Each answer records which model produced it.
+FALLBACK_MODELS = ("gemini-3.6-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite",
+                   "gemini-3.7-flash", "gemini-3.8-flash")
 MAX_MODEL_CALLS = 6
 MAX_SEARCHES = 4
 
@@ -43,6 +45,12 @@ Approver = Callable[[str], bool]
 
 def log(*args) -> None:
     print(*args, file=sys.stderr, flush=True)
+
+
+def deny(path: str) -> bool:
+    """Approval function for batch runs (evaluation): never add documents."""
+    log(f"add_document({path!r}) refused: batch run, no approval possible.")
+    return False
 
 
 def ask_in_terminal(path: str) -> bool:
@@ -125,7 +133,10 @@ async def _run(question: str, approve: Approver) -> dict:
 
     load_api_key()
     trace: list[dict] = []
-    server = StdioServerParameters(command=sys.executable, args=[str(ROOT / "server.py")], cwd=str(ROOT))
+    # Pass the environment on: the MCP client otherwise forwards only a few variables,
+    # and the demo uses CORPUS_INDEX_DIR to point the server at a copy of the index.
+    server = StdioServerParameters(command=sys.executable, args=[str(ROOT / "server.py")], cwd=str(ROOT),
+                                   env=dict(os.environ))
 
     async with stdio_client(server) as (read, write):
         async with ClientSession(read, write) as session:
@@ -155,15 +166,17 @@ async def _run(question: str, approve: Approver) -> dict:
                 StructuredTool.from_function(coroutine=add_document, name="add_document",
                                              description=descriptions["add_document"]),
             ]
-            def gemini(name: str):
-                return ChatGoogleGenerativeAI(model=name, temperature=0, max_retries=2)
+            def gemini(name: str, retries: int):
+                # On the free tier a 429 usually means that model's daily quota is gone, so
+                # moving on to the next fallback model is faster than waiting for a retry.
+                return ChatGoogleGenerativeAI(model=name, temperature=0, max_retries=retries)
 
             agent = create_agent(
-                gemini(MODEL),
+                gemini(MODEL, retries=1),
                 tools,
                 system_prompt=SYSTEM_PROMPT_FILE.read_text(encoding="utf-8"),
                 middleware=[
-                    ModelFallbackMiddleware(*(gemini(name) for name in FALLBACK_MODELS)),
+                    ModelFallbackMiddleware(*(gemini(name, retries=0) for name in FALLBACK_MODELS)),
                     ModelCallLimitMiddleware(run_limit=MAX_MODEL_CALLS, exit_behavior="end"),
                     ToolCallLimitMiddleware(tool_name="search", run_limit=MAX_SEARCHES, exit_behavior="continue"),
                 ],
