@@ -1,0 +1,3 @@
+id,kind,auto_category,correct,supported,judge_reason
+q31,unanswerable,check_judge_or_test_question,0,0,"The question is unanswerable based on the provided documents, but the assistant incorrectly attempted to answer it by citing a different threshold (10^25 FLOPs) found in the evidence."
+q37,unanswerable,check_judge_or_test_question,0,1,"The assistant answered the question instead of stating that the documents do not cover it, which is required for an unanswerable question."

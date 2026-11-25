@@ -1,0 +1,31 @@
+{
+  "question_id": "q31",
+  "question": "At what training compute is a general-purpose AI model classified as general-purpose under the Commission guidelines (10^23 FLOPs)?",
+  "document": "holdout/guidelines_gpai_C2025-7719.pdf",
+  "before": {
+    "answer": "The indexed documents do not cover a training compute threshold of $10^{23}$ FLOPs for general-purpose AI models. Under the AI Act, a general-purpose AI model is instead presumed to have high-impact capabilities and be classified as having systemic risk when the cumulative amount of training computation is greater than $10^{25}$ FLOPs.\n\n[ai_act_consolidated_2026-07-27 | Article 51(2)]\n\nThis matter should be checked by a legal professional.",
+    "citations": [
+      "ai_act_consolidated_2026-07-27 | Article 51(2)"
+    ]
+  },
+  "add_denied": {
+    "tool_output": [
+      "The user did not approve adding this document. Do not retry."
+    ],
+    "answer": "The indexed documents do not cover the addition of documents or the file `holdout/guidelines_gpai_C2025-7719.pdf`. \n\nFor a decision about a real system, this should be checked by a legal professional."
+  },
+  "add_approved": {
+    "tool_output": [
+      "added: source 'guidelines_gpai_C2025-7719', 68 chunks, 68 new embeddings."
+    ],
+    "answer": "The file `guidelines_gpai_C2025-7719` has been added to the corpus. These guidelines are non-binding Commission guidelines addressing the scope and practical implementation of obligations for providers of general-purpose AI models under the AI Act, covering topics such as general-purpose AI model definitions, lifecycle aspects, systemic risk classification, open-source exceptions, and enforcement compliance [citation removed: not in search results].\n\nFor decisions about real systems, this should be checked by a legal professional."
+  },
+  "after": {
+    "answer": "Under the Commission guidelines, an indicative criterion for a model to be considered a general-purpose AI model is that its training compute is greater than $10^{23}$ FLOP and it can generate language (text or audio), text-to-image, or text-to-video [guidelines_gpai_C2025-7719 | paragraphs (17)–(19)].\n\n*This response should be verified by a legal professional for any specific application.*",
+    "citations": [
+      "guidelines_gpai_C2025-7719 | paragraphs (17)–(19)"
+    ],
+    "cites_new_document": true
+  },
+  "before_refused": true
+}

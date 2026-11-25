@@ -1,0 +1,32 @@
+{
+  "ai_act_consolidated_2026-07-27": {
+    "file": "corpus/ai_act_consolidated_2026-07-27.pdf",
+    "sha256": "1ccd38d1c78482cf2053b70110115adcc5080700acc8bd7bead8cb3579143ccf",
+    "kind": "law",
+    "pages": 151,
+    "designs": {
+      "structure": 277,
+      "fixed": 242
+    }
+  },
+  "guidelines_ai_system_definition_C2025-5053": {
+    "file": "corpus/guidelines_ai_system_definition_C2025-5053.pdf",
+    "sha256": "fe39f41d061184a913c32f1f92aaaa30a096858fa168c6053e22a19eef58910e",
+    "kind": "guidelines",
+    "pages": 13,
+    "designs": {
+      "structure": 25,
+      "fixed": 22
+    }
+  },
+  "guidelines_prohibited_practices_C2025-5052": {
+    "file": "corpus/guidelines_prohibited_practices_C2025-5052.pdf",
+    "sha256": "298bf8677884b333fae6d5f84aac947f45a59dff6027ca038ba08615092fd82f",
+    "kind": "guidelines",
+    "pages": 134,
+    "designs": {
+      "structure": 260,
+      "fixed": 224
+    }
+  }
+}
