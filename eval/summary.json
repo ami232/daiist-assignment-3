@@ -1,0 +1,382 @@
+{
+  "generated": "2026-11-25 10:47:21",
+  "config": {
+    "design": "structure",
+    "mode": "vector",
+    "k": 5,
+    "agent_model": "gemini-3.5-flash-lite",
+    "agents_md": "ec7a0dba0c12"
+  },
+  "judge_model": "gemini-3.8-flash",
+  "judge_same_as_agent": false,
+  "stages_run": [
+    "retrieval",
+    "answers",
+    "judge",
+    "demo"
+  ],
+  "complete": {
+    "retrieval": true,
+    "answers": true,
+    "judge": true,
+    "demo": true
+  },
+  "questions": {
+    "total": 36,
+    "answered": 36,
+    "judged": 36
+  },
+  "retrieval": [
+    {
+      "design": "fixed",
+      "mode": "vector",
+      "questions": "29",
+      "hit@1": "0.6897",
+      "single_hit@1": "0.9091",
+      "multi_all@1": "0.0",
+      "multi_any@1": "0.8571",
+      "hit@3": "0.8966",
+      "single_hit@3": "1.0",
+      "multi_all@3": "0.5714",
+      "multi_any@3": "1.0",
+      "hit@5": "0.9655",
+      "single_hit@5": "1.0",
+      "multi_all@5": "0.8571",
+      "multi_any@5": "1.0",
+      "strict_hit@1": "0.5172",
+      "strict_single_hit@1": "0.6818",
+      "strict_multi_all@1": "0.0",
+      "strict_multi_any@1": "0.7143",
+      "strict_hit@3": "0.7931",
+      "strict_single_hit@3": "0.9091",
+      "strict_multi_all@3": "0.4286",
+      "strict_multi_any@3": "1.0",
+      "strict_hit@5": "0.8621",
+      "strict_single_hit@5": "0.9091",
+      "strict_multi_all@5": "0.7143",
+      "strict_multi_any@5": "1.0",
+      "mean_words_k5": "1237"
+    },
+    {
+      "design": "fixed",
+      "mode": "hybrid",
+      "questions": "29",
+      "hit@1": "0.5517",
+      "single_hit@1": "0.7273",
+      "multi_all@1": "0.0",
+      "multi_any@1": "0.1429",
+      "hit@3": "0.7931",
+      "single_hit@3": "0.8182",
+      "multi_all@3": "0.7143",
+      "multi_any@3": "1.0",
+      "hit@5": "0.8966",
+      "single_hit@5": "0.9091",
+      "multi_all@5": "0.8571",
+      "multi_any@5": "1.0",
+      "strict_hit@1": "0.4138",
+      "strict_single_hit@1": "0.5455",
+      "strict_multi_all@1": "0.0",
+      "strict_multi_any@1": "0.1429",
+      "strict_hit@3": "0.6552",
+      "strict_single_hit@3": "0.6818",
+      "strict_multi_all@3": "0.5714",
+      "strict_multi_any@3": "1.0",
+      "strict_hit@5": "0.7586",
+      "strict_single_hit@5": "0.7727",
+      "strict_multi_all@5": "0.7143",
+      "strict_multi_any@5": "1.0",
+      "mean_words_k5": "1237"
+    },
+    {
+      "design": "structure",
+      "mode": "vector",
+      "questions": "29",
+      "hit@1": "0.5517",
+      "single_hit@1": "0.7273",
+      "multi_all@1": "0.0",
+      "multi_any@1": "0.7143",
+      "hit@3": "0.8621",
+      "single_hit@3": "0.9545",
+      "multi_all@3": "0.5714",
+      "multi_any@3": "0.8571",
+      "hit@5": "0.9655",
+      "single_hit@5": "1.0",
+      "multi_all@5": "0.8571",
+      "multi_any@5": "1.0",
+      "strict_hit@1": "0.5517",
+      "strict_single_hit@1": "0.7273",
+      "strict_multi_all@1": "0.0",
+      "strict_multi_any@1": "0.7143",
+      "strict_hit@3": "0.8621",
+      "strict_single_hit@3": "0.9545",
+      "strict_multi_all@3": "0.5714",
+      "strict_multi_any@3": "0.8571",
+      "strict_hit@5": "0.9655",
+      "strict_single_hit@5": "1.0",
+      "strict_multi_all@5": "0.8571",
+      "strict_multi_any@5": "1.0",
+      "mean_words_k5": "1394"
+    },
+    {
+      "design": "structure",
+      "mode": "hybrid",
+      "questions": "29",
+      "hit@1": "0.4828",
+      "single_hit@1": "0.6364",
+      "multi_all@1": "0.0",
+      "multi_any@1": "0.5714",
+      "hit@3": "0.6552",
+      "single_hit@3": "0.8636",
+      "multi_all@3": "0.0",
+      "multi_any@3": "1.0",
+      "hit@5": "0.7241",
+      "single_hit@5": "0.8636",
+      "multi_all@5": "0.2857",
+      "multi_any@5": "1.0",
+      "strict_hit@1": "0.4828",
+      "strict_single_hit@1": "0.6364",
+      "strict_multi_all@1": "0.0",
+      "strict_multi_any@1": "0.5714",
+      "strict_hit@3": "0.6552",
+      "strict_single_hit@3": "0.8636",
+      "strict_multi_all@3": "0.0",
+      "strict_multi_any@3": "1.0",
+      "strict_hit@5": "0.7241",
+      "strict_single_hit@5": "0.8636",
+      "strict_multi_all@5": "0.2857",
+      "strict_multi_any@5": "1.0",
+      "mean_words_k5": "1452"
+    }
+  ],
+  "end_to_end": {
+    "correct": 35,
+    "correct_rate": 0.9722222222222222,
+    "unsupported": 5,
+    "unsupported_rate": 0.1388888888888889,
+    "correct_answerable_rate": 0.9655172413793104,
+    "correct_refusals": 7,
+    "unanswerable": 7,
+    "wrong_refusals": 0,
+    "answerable": 29,
+    "invalid_citations": 0,
+    "no_citation_and_no_refusal": 0,
+    "expected_passage_retrieved_by_agent": 28,
+    "guardrail_fired": 6,
+    "failures": 5
+  },
+  "agreement": {
+    "human_labels": 20,
+    "compared": 20,
+    "disagreements": [
+      {
+        "id": "q15",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The answer matches the reference on timing. The displayed excerpts do not show the exception for documents the buyer already holds. The Article 59 excerpt is truncated, so this score is provisional.",
+        "judge_reason": "The answer accurately states that certificates must be submitted before the contract is awarded and all accompanying details are fully supported by Article 59 of Directive 2014/24/EU and Annex 1 of Regulation 2016/7."
+      },
+      {
+        "id": "q12",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible Article 5 excerpt cuts off before paragraph 10, so it does not show the value thresholds, the net-of-VAT basis, or the 20% cap.",
+        "judge_reason": "The answer accurately states the thresholds (EUR 80 000 for supplies/services, EUR 1 million for works) and the 20% cap, and is directly supported by Article 5(10) of Directive 2014/24/EU."
+      },
+      {
+        "id": "q06",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible excerpts establish corruption as a ground for exclusion but do not show the five-year maximum stated in the answer.",
+        "judge_reason": "The answer correctly identifies the maximum exclusion period of five years from the date of conviction by final judgment, and all factual claims are fully supported by Article 57 of Directive 2014/24/EU."
+      },
+      {
+        "id": "q10",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible Article 69 excerpt supports the duty to request an explanation but cuts off before the conditions for rejecting the tender.",
+        "judge_reason": "The answer correctly states that the buyer cannot simply reject the tender and must first request explanations, fully matching the reference answer and supported by Article 69."
+      },
+      {
+        "id": "q30",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The agent appropriately declines to give a threshold, but the retrieved passages do not support its claim that Directive 2014/23/EU governs concession contracts.",
+        "judge_reason": "The answer correctly states that the corpus does not cover the question and points to Directive 2014/23/EU without providing an unsupported concrete threshold."
+      },
+      {
+        "id": "q14",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible Article 56 excerpt does not reach paragraph 3, which contains the rule on completing missing documents and its conditions.",
+        "judge_reason": "The answer accurately states that the contracting authority may request missing documents within an appropriate time limit, subject to national law and equal treatment/transparency principles, and every claim is directly supported by Article 56(3) of Directive 2014/24/EU."
+      },
+      {
+        "id": "q17",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible Article 2c excerpt cuts off before the 15-day rule, the 10-day alternative from receipt, and the deadline tied to publication.",
+        "judge_reason": "The answer accurately provides the minimum deadlines under EU law (10 calendar days for fax/electronic means, 15 days or 10 days from receipt for other means) and all claims are fully supported by Article 2c of Directive 89/665."
+      },
+      {
+        "id": "q02",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible Article 28 excerpts show the standard 30-day minimum and mention an urgency exception, but cut off before the 15-day minimum and the dates from which the deadlines run.",
+        "judge_reason": "The answer provides the reference fact of 30 days from the dispatch of the contract notice or invitation to confirm interest, along with the valid urgency exception of 15 days, both of which are fully supported by Article 28."
+      },
+      {
+        "id": "q27",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The Article 2a excerpt cuts off before the standstill deadlines, and the Article 2b excerpt cuts off before the condition that there be no candidates concerned.",
+        "judge_reason": "The answer accurately states both the standstill periods (10/15 calendar days) and the Member State option to waive the standstill when the sole tenderer concerned is awarded the contract, fully supported by the retrieved articles."
+      },
+      {
+        "id": "q25",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible excerpts do not show the 30-day deadline for submitting tenders after the invitation is sent, or the five-day extension and its urgency exception.",
+        "judge_reason": "The answer accurately states both the 30-day minimum time limit and the 5-day extension (with the urgency exception), fully supported by Articles 28 and 53 in the evidence."
+      },
+      {
+        "id": "q29",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible excerpts support relying on another entity and submitting a separate ESPD, but the Article 63 excerpt cuts off before the proof-of-resources, entity replacement, and joint liability provisions.",
+        "judge_reason": "The answer accurately addresses both parts of the question in line with the reference answer, and all factual claims are fully supported by the provided Directive and Regulation excerpts."
+      },
+      {
+        "id": "q04",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The Article 33 excerpt cuts off before the four-year limit and the exception for duly justified cases.",
+        "judge_reason": "The answer accurately states the four-year limit and its exceptional justification exception, directly matching both the reference answer and Article 33."
+      },
+      {
+        "id": "q05",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible Article 55 excerpt cuts off before the 15-day deadline for replying to a written request and the exceptions for withholding information.",
+        "judge_reason": "The answer accurately states the 15-day deadline from receipt of a written request, matching the reference answer, and all claims are fully supported by Article 55 of Directive 2014/24/EU."
+      },
+      {
+        "id": "q13",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The €750,000 threshold matches the reference. Article 74 points to Article 4(d), but the displayed Article 4 excerpt cuts off before that provision.",
+        "judge_reason": "The answer correctly identifies the EUR 750 000 threshold for social and other specific services listed in Annex XIV, and all statements are directly supported by the cited articles."
+      },
+      {
+        "id": "q28",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The answer matches the reference, but the visible excerpts cut off before the twice-contract-value cap and the three-financial-year limit for turnover evidence.",
+        "judge_reason": "The answer accurately states both key facts (up to two times the estimated contract value, and a maximum of the last three financial years available) and all details are directly supported by the retrieved passages."
+      }
+    ],
+    "correct": {
+      "agreement": 1.0,
+      "kappa": 1.0
+    },
+    "supported": {
+      "agreement": 0.25,
+      "kappa": 0.0385
+    }
+  },
+  "failures_by_suggested_cause": {
+    "wrong answer from right passage": 1,
+    "unsupported claim": 4
+  },
+  "cost": {
+    "model": "gemini-3.5-flash-lite",
+    "models_seen": [
+      "gemini-3.5-flash-lite"
+    ],
+    "input_tokens": {
+      "mean": 8116,
+      "p90": 12983
+    },
+    "output_tokens": {
+      "mean": 275,
+      "p90": 421
+    },
+    "seconds": {
+      "mean": 2.4,
+      "p90": 3.6
+    },
+    "model_calls_mean": 2.39,
+    "price_usd_per_million_tokens": {
+      "input": 0.3,
+      "output": 2.5
+    },
+    "usd_per_question": 0.003122,
+    "usd_per_1000_questions": 3.12,
+    "note": "seconds include waits on free-tier rate limits; prices are the paid standard tier"
+  },
+  "add_document_demo": {
+    "key": "dcc20e4b57ea",
+    "config": {
+      "design": "structure",
+      "mode": "vector",
+      "k": 5,
+      "agent_model": "gemini-3.5-flash-lite",
+      "agents_md": "ec7a0dba0c12"
+    },
+    "question": "What is the EU threshold for concession contracts from 2026?",
+    "add_document": "doc_id reg_2025_2151: added 6 chunks to the 'structure' collection.",
+    "add_document_again": "already indexed, nothing changed (doc_id reg_2025_2151, 6 chunks).",
+    "before": {
+      "answer": "The corpus does not cover this. \n\nConcession contracts are governed by Directive 2014/23/EU, which is not part of the corpus. Please consult Directive 2014/23/EU or the applicable national procurement law to check the threshold for concession contracts.",
+      "raw_answer": "The corpus does not cover this. \n\nConcession contracts are governed by Directive 2014/23/EU, which is not part of the corpus. Please consult Directive 2014/23/EU or the applicable national procurement law to check the threshold for concession contracts.",
+      "refused": true,
+      "citations": [],
+      "guardrail_events": [],
+      "searches": [
+        "concession contracts threshold 2026"
+      ],
+      "retrieved": [
+        "[dir_2014_24 | Article 4]",
+        "[reg_2025_2152 | Article 1]",
+        "[dir_2014_24 | Article 92]",
+        "[dir_2014_24 | Article 6]",
+        "[dir_2014_24 | Article 13]"
+      ],
+      "model": "gemini-3.5-flash-lite"
+    },
+    "after": {
+      "answer": "The corpus does not cover concession contracts in detail, as Directive 2014/23/EU on concessions is outside the main directives indexed here. However, the search index contains Delegated Regulation (EU) 2025/2151, which amends Directive 2014/23/EU regarding thresholds for the years 2026–2027 [reg_2025_2151 | Article 1]:\n\nThe threshold for concession contracts is **EUR 5,404,000**, applying from **1 January 2026** (replacing the previous amount of EUR 5,538,000) [reg_2025_2151 | Article 1, reg_2025_2151 | Article 2].\n\nFor specific rules on concession procedures, please consult Directive 2014/23/EU and national procurement law.",
+      "raw_answer": "The corpus does not cover concession contracts in detail, as Directive 2014/23/EU on concessions is outside the main directives indexed here. However, the search index contains Delegated Regulation (EU) 2025/2151, which amends Directive 2014/23/EU regarding thresholds for the years 2026–2027 [reg_2025_2151 | Article 1]:\n\nThe threshold for concession contracts is **EUR 5,404,000**, applying from **1 January 2026** (replacing the previous amount of EUR 5,538,000) [reg_2025_2151 | Article 1, reg_2025_2151 | Article 2].\n\nFor specific rules on concession procedures, please consult Directive 2014/23/EU and national procurement law.",
+      "refused": false,
+      "citations": [
+        "[reg_2025_2151 | Article 1]"
+      ],
+      "guardrail_events": [],
+      "searches": [
+        "threshold concession contracts 2026"
+      ],
+      "retrieved": [
+        "[reg_2025_2151 | Article 1]",
+        "[reg_2025_2151 | Recital 3]",
+        "[reg_2025_2151 | Article 2]",
+        "[reg_2025_2151 | Recital 2]",
+        "[reg_2025_2151 | Recital 1]"
+      ],
+      "model": "gemini-3.5-flash-lite"
+    }
+  }
+}
