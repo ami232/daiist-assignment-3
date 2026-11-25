@@ -1,1 +1,21 @@
 id,correct,supported,notes
+q01,1,1,
+q03,1,1,
+q05,0,1,"The reference answer is specific on some categories that the bot response doesn't mirror"
+q07,1,1,
+q09,1,1,
+q11,1,1,
+q13,1,1,
+q15,1,1,
+q17,1,1,
+q19,1,1,
+q21,1,1,
+q23,1,1,
+q25,1,1,
+q27,0,1,"The answers differ"
+q29,0,1,"One says we have to, the other says we don't"
+q31,1,1,
+q33,1,1,
+q35,1,1,
+q37,1,1,
+q39,1,1,

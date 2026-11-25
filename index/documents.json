@@ -1,0 +1,41 @@
+{
+  "gdpr": {
+    "title": "GDPR, Regulation (EU) 2016/679",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679",
+    "date": "2016-04-27",
+    "licence": "EU legal acts, free reuse with attribution (Commission Decision 2011/833/EU)",
+    "file": "gdpr.xhtml",
+    "sha1": "bc50ab7203978d01a817ec1ababa1edcabafc3e8",
+    "words": 29094,
+    "chunks": {
+      "fixed": 119,
+      "article": 159
+    }
+  },
+  "dsa": {
+    "title": "Digital Services Act, Regulation (EU) 2022/2065",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32022R2065",
+    "date": "2022-10-19",
+    "licence": "EU legal acts, free reuse with attribution (Commission Decision 2011/833/EU)",
+    "file": "dsa.xhtml",
+    "sha1": "8506317d1fc5ca53329ea7c00231dabfa0ed55a7",
+    "words": 32151,
+    "chunks": {
+      "fixed": 131,
+      "article": 162
+    }
+  },
+  "eprivacy": {
+    "title": "ePrivacy Directive 2002/58/EC (consolidated 2009)",
+    "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:02002L0058-20091219",
+    "date": "2009-12-19",
+    "licence": "EU legal acts, free reuse with attribution (Commission Decision 2011/833/EU)",
+    "file": "eprivacy.xhtml",
+    "sha1": "85a14c478fc14f6e9a0b23793fc174df3802fa03",
+    "words": 4714,
+    "chunks": {
+      "fixed": 20,
+      "article": 30
+    }
+  }
+}
