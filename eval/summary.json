@@ -1,0 +1,60 @@
+{
+  "questions": 32,
+  "kinds": {
+    "single": 21,
+    "multi": 6,
+    "unanswerable": 5
+  },
+  "retrieval": {
+    "vector": {
+      "hit@1": 0.481,
+      "hit@3": 0.741,
+      "hit@5": 0.815,
+      "words@1": 182,
+      "words@3": 553,
+      "words@5": 921
+    },
+    "hybrid": {
+      "hit@1": 0.444,
+      "hit@3": 0.63,
+      "hit@5": 0.741,
+      "words@1": 223,
+      "words@3": 632,
+      "words@5": 1038
+    }
+  },
+  "search_design": {
+    "design": "sections",
+    "mode": "vector"
+  },
+  "outcomes": {
+    "correct": 20,
+    "unsupported": 3,
+    "wrong refusal": 3,
+    "wrong": 1,
+    "correct refusal": 4,
+    "answered unanswerable": 1
+  },
+  "citations_valid": 1,
+  "guardrail_fired": 6,
+  "agreement_with_my_grades": {
+    "graded": 20,
+    "agree_correct": 0.85,
+    "agree_supported": 0.9,
+    "disagreements": [
+      "q22",
+      "q23",
+      "q24",
+      "q30"
+    ]
+  },
+  "per_question": {
+    "mean_input_tokens": 4711,
+    "mean_output_tokens": 186,
+    "mean_seconds": 8.7,
+    "mean_tool_calls": 1.22
+  },
+  "evaluation_seconds": 1,
+  "answered": 32,
+  "incomplete": []
+}

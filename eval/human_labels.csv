@@ -1,1 +1,21 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q07,0,1,refused a question the corpus answers (NWSI-10-515 6.2.3)
+q03,1,1,
+q05,1,1,
+q09,1,1,
+q11,0,1,refused a question the corpus answers (NWSI-10-513 App-D)
+q12,1,1,
+q13,1,1,
+q16,1,1,
+q18,1,1,
+q20,1,1,
+q22,1,1,
+q23,1,1,
+q24,1,1,
+q26,1,1,
+q28,1,1,
+q29,1,1,
+q30,1,1,
+q32,1,1,

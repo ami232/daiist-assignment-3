@@ -1,0 +1,111 @@
+id,kind,refused,citations,citations_valid,expected_source_cited,judge_correct,judge_supported,judge_reason,outcome,guardrail,tool_calls,input_tokens,output_tokens,seconds,answer
+q01,single,0,3,1,1,1,1,"The assistant correctly identifies the wind, visibility, and duration criteria for a blizzard warning, and all details are supported by the provided NWS documents.",correct,,1,3462,191,5.1,"A Blizzard Warning requires the following conditions to be expected or prevail for **3 consecutive hours or longer**:
+
+* **Wind:** Sustained winds or frequent gusts of **35 mph (30 knots) or greater** [NWSI-10-513, section App-B, p. 35].
+* **Visibility:** Considerable falling and/or blowing snow frequently reducing visibility to **less than 1/4 mile** [NWSI-10-513, section App-B, p. 35]. 
+
+*(Note: Blizzard conditions do not require snow to be actively falling; blowing snow alone can meet the criteria if it lowers visibility and is accompanied by the required winds) [NWSI-10-513, section App-B, p. 35].*"
+q02,single,0,4,1,1,1,1,"The assistant correctly states that an Ice Storm Warning is triggered by ice accretion meeting or exceeding locally defined criteria on an elevated horizontal flat surface, fully supported by the provided NWS passages.",correct,citation check failed (no citation); fixed after one retry,1,6239,256,5.7,"An Ice Storm Warning is triggered by ice accretion meeting or exceeding locally or regionally defined warning criteria, which is typically 1/4 inch or more of ice accumulation on an elevated horizontal flat surface [NWSI-10-513, section App-B, p. 35], [NWSI-10-1605, section App-A-26, pp. 61-62]. 
+
+Because exact warning thresholds are set by each local National Weather Service office, specific criteria can vary by region [NWSI-10-513, section App-B, p. 35], [NWSI-10-1605, section App-A-26, pp. 61-62]."
+q03,single,0,5,1,1,1,1,"The assistant correctly identifies the three types of events that lead to a Winter Storm Warning, matching both the reference answer and the retrieved passages.",correct,,1,3423,264,6.3,"A Winter Storm Warning can be issued for three types of events [NWSI-10-513, section 6.3, p. 7]:
+
+1. **Singular Event:** Snow, lake-effect snow (at regional discretion), ice, or sleet meeting or exceeding locally defined event-based warning criteria [NWSI-10-513, section 6.3, p. 7].
+2. **Multiple Event:** A combination of snow, ice, sleet, and/or blowing snow where at least one of the precipitation elements meets or exceeds locally defined warning criteria [NWSI-10-513, section 6.3, p. 7].
+3. **Impact Driven:** A winter storm is forecast, but expected accumulations will not meet traditional criteria [NWSI-10-513, section 6.3, p. 7].
+
+*Note: Specific numerical thresholds (such as snow or ice amounts) are defined locally and regionally by each NWS office [NWSI-10-513, section App-D, pp. 41-42].*"
+q04,single,0,3,1,1,1,0,"The assistant's explanation of when a Winter Weather Advisory is issued is correct, but the claim that it is for conditions causing 'significant inconveniences' is not found in the retrieved passages.",unsupported,,2,7019,251,7.1,"The National Weather Service issues a Winter Weather Advisory for hazardous winter conditions that may cause significant inconveniences, but—if caution is not exercised—can lead to life-threatening situations [NWSI-10-513, section App-B, p. 35]. 
+
+Specific criteria are set regionally and locally [NWSI-10-513, section App-D, pp. 41-42]. For example, in the Eastern and Pacific Regions, advisories are issued for falling snow accumulating up to 6 inches in a 24-hour period, or for thin icing on roads and structures up to 1/4 inch thick [NWSI-10-513, section App-E, pp. 43-44]. 
+
+Because exact threshold criteria vary by local NWS office, check with your local forecast office for the specific criteria in your county."
+q05,single,0,3,1,1,1,1,"The assistant's answer accurately captures what a Snow Squall Warning is meant to warn about and its issuance criteria, fully supported by the provided text.",correct,,1,3774,225,5.5,"Snow Squall Warnings are issued to provide advance notice of intense, short-duration periods of moderate to heavy snowfall accompanied by gusty surface winds that result in rapidly reduced visibilities and whiteout conditions [NWSI-10-513, section 7, p. 19]. 
+
+Forecasters issue them when there are radar, satellite, or reliable reports of snow squalls meeting either of these conditions:
+* **Condition 1:** Visibility of 1/4 mile or less in snow with sub-freezing ambient road temperatures [NWSI-10-513, section 7.2.1, p. 19].
+* **Condition 2:** Plunging temperatures capable of producing flash freezes, combined with a significant reduction in visibility from falling and/or blowing snow [NWSI-10-513, section 7.2.1, p. 19]."
+q06,single,0,4,1,1,1,1,The assistant's answer accurately captures all conditions required to issue a Snow Squall Warning as detailed in the reference answer and retrieved passages.,correct,,1,3949,276,8.9,"National Weather Service Weather Forecast Offices should issue a Snow Squall Warning (SQW) when there is radar, satellite, or reliable observational evidence (such as from Departments of Transportation, webcams, or road networks) indicating snow squalls meeting or exceeding one or both of these conditions [NWSI-10-513, section 7.2.1, p. 19]:
+
+* **Condition 1:** Visibility of 1/4 statute mile or less in snow, combined with sub-freezing ambient road temperatures [NWSI-10-513, section 7.2.1, p. 19].
+* **Condition 2:** Plunging temperatures sufficient to cause flash freezes, along with a significant reduction in visibility from falling and/or blowing snow [NWSI-10-513, section 7.2.1, p. 19].
+
+Forecasters also use their judgment regarding societal factors such as the time of day and day of the week, and may issue a Special Weather Statement (SPS) instead if lesser impacts are expected [NWSI-10-513, section 7.2.1, p. 19]."
+q07,single,1,0,1,0,,,,wrong refusal,citation check failed (no citation); replaced by a refusal after one retry,1,6711,266,15.0,The corpus does not cover this: I could not give an answer supported by the retrieved passages.
+q08,single,0,2,1,1,1,1,"The answer accurately states when a Cold Weather Advisory is issued instead of an Extreme Cold Warning, and all claims are fully supported by the retrieved passages.",correct,,2,6685,174,16.9,"A Cold Weather Advisory is issued when air temperatures or wind chill values reach or exceed locally defined advisory criteria, but do not reach the higher thresholds required for an Extreme Cold Warning [NWSI-10-515, section 6.2.3, p. 7]. 
+
+National Weather Service Weather Forecast Offices (WFOs) establish these specific numerical criteria locally in coordination with public health officials and other partners, rather than following a single national threshold [NWSI-10-515, section App-B, p. 37]."
+q09,single,0,2,1,1,1,1,"The assistant accurately answers the required confidence level (50 percent or greater) and lead time guidelines, fully supported by the retrieved official passage.",correct,,1,4038,160,5.0,"Forecasters should issue a Winter Storm Watch with as much lead time as possible when there is a 50 percent or greater confidence of a hazardous winter weather event meeting or exceeding local warning and/or impact criteria [NWSI-10-513, section 6.3.2, p. 8]. Forecasters are also encouraged to collaborate watch issuances for lower probabilities when local impact criteria warrant earlier messaging, and to issue them with as much lead time as possible when confidence is high, while balancing the need to inform the public against issuing too many false alarms [NWSI-10-513, section 6.3.2, p. 8]."
+q10,single,0,4,1,1,1,1,"The assistant correctly states that criteria are not strict thresholds due to impact-driven criteria and timing considerations, and all facts in the answer are directly supported by the retrieved passages.",correct,,2,7133,291,8.8,"No, they are not strictly tied to numerical accumulation thresholds alone [NWSI-10-513, section 6.3, p. 7]. 
+
+While Weather Forecast Offices (WFOs) use locally defined event-based accumulation criteria, they also utilize **impact-driven criteria** [NWSI-10-513, section 6.3, p. 7, section App-D, pp. 41-42]. For example, a Winter Storm Warning may be issued even if snow or ice accumulations are expected to fall below traditional numerical criteria if the event occurs early in the season or during a critical time of day like rush hour when impacts will likely be high [NWSI-10-513, section 6.3.2.3, p. 8]. Conversely, offices may opt out of issuing warnings for locations reaching criteria if local climate or elevation means expected impacts do not warrant alerting, thereby avoiding over-warning [NWSI-10-513, section 6.3.2.3, p. 8]."
+q11,single,1,0,1,0,,,,wrong refusal,citation check failed (no citation); replaced by a refusal after one retry,1,5368,174,5.3,The corpus does not cover this: I could not give an answer supported by the retrieved passages.
+q12,single,0,1,1,1,1,1,"The answer accurately states the criterion as 7 inches in 24 hours, matching the reference answer and fully supported by the retrieved document.",correct,,1,3221,81,4.7,"For Fairbanks zones 801-831, the Winter Storm Warning snow criterion is 7 inches in 24 hours [NWSI-10-513, section App-D, pp. 41-42]."
+q13,single,0,2,1,1,1,1,The assistant's answer accurately reflects the reference answer and all facts and criteria mentioned are fully supported by the retrieved passages.,correct,,3,11726,220,12.2,"Winter Storm Warnings in Hawaii are issued for higher-elevation areas—normally including the summit of Haleakala on Maui and the summits of Mauna Loa and Mauna Kea on the Big Island [NWSI-10-513, section App-D, pp. 41-42]. The criteria include falling snow (accumulating more than 6 inches during a 24-hour period) and/or flat ice greater than 1/4 inch on roadways and structures [NWSI-10-513, section App-D, pp. 41-42, 42]."
+q14,single,0,2,1,1,1,1,"The assistant accurately provides the Pacific Region Winter Weather Advisory criteria, matching the reference answer and fully supported by the retrieved passages.",correct,,1,2923,120,15.2,"In the Pacific Region, the criteria for issuing a Winter Weather Advisory are:
+
+* Falling snow accumulating up to 6 inches during a 24-hour period [NWSI-10-513, section App-E, pp. 43-44].
+* Thin icing on roads and structures up to 1/4 inch thick [NWSI-10-513, section App-E, pp. 43-44]."
+q15,single,0,3,1,1,1,0,The note stating that WSSI levels are for situational awareness and do not dictate closing decisions is not supported by the retrieved passages.,unsupported,,1,2748,216,5.4,"The Winter Storm Severity Index (WSSI) produces five levels of impact: **Winter Weather Area**, **Minor Impacts**, **Moderate Impacts**, **Major Impacts**, and **Extreme Impacts** [NWSI-10-514, section 5.3.1, pp. 16-17]. 
+
+* **Winter Weather Area:** Shown for locations where winter weather conditions are expected, but are not anticipated to be impactful [WSSI-Guide-2025, p. 15].
+* **Minor, Moderate, Major, and Extreme Impacts:** Areas where more significant and impactful winter weather is expected, with the most severe conditions denoted by orange (Moderate), red (Major), and purple (Extreme) [WSSI-Guide-2025, p. 10, 15]. 
+
+*Note: WSSI severity levels are for situational awareness; a specific impact level does not automatically dictate closing decisions.*"
+q16,single,0,4,1,1,1,1,The assistant correctly identifies the six components listed in the reference answer and all claims are fully supported by the retrieved passages.,correct,,1,2709,264,5.9,"The Winter Storm Severity Index (WSSI) consists of individual impact components in addition to an overall summary that displays the maximum impact from any component [WSSI-Guide-2025, p. 15, NWSI-10-514, section 5.3.1, pp. 16-17]. 
+
+Depending on the documentation reference, the components are defined as follows:
+* **WSSI-Guide-2025** lists four individual components: **Snow Amount**, **Snow Load**, **Ice Accumulation**, and **Blowing Snow** [WSSI-Guide-2025, p. 15].
+* **NWSI 10-514** (2024) lists six individual, equally weighted components: **Blowing Snow**, **Flash Freeze**, **Ground Blizzard**, **Ice Accumulation**, **Snow Amount**, and **Snow Load** [NWSI-10-514, section 5.3.1, pp. 16-17]. 
+
+*Note: Per rule 5, prefer the newer product names and specifications when sources differ.*"
+q17,single,0,2,1,1,1,1,The assistant's answer directly matches the reference answer and is fully supported by the retrieved passages.,correct,,1,2442,106,8.4,"No, a depiction of ""moderate"" severity on the Winter Storm Severity Index does not mean schools have to or will close [WSSI-Guide-2025, p. 3]. 
+
+The WSSI is not a specific forecast for specific impacts and should always be used in context with other NWS forecast and warning information [WSSI-Guide-2025, p. 3]."
+q18,single,0,3,1,1,1,1,"The assistant correctly and accurately answers both parts of the question, fully supported by the retrieved passages.",correct,,1,3733,130,5.3,"A wind chill of -20°F will cause frostbite in just 30 minutes [WinterStorms-2008, p. 5]. 
+
+The signs of frostbite include:
+* A loss of feeling [WinterStorms-2008, p. 5]
+* A white or pale appearance in extremities, such as the fingers, toes, earlobes, or tip of the nose [WinterStorms-2008, p. 5]"
+q19,single,0,5,1,1,1,1,The assistant accurately defines hypothermia and lists all of its warning signs according to the reference answer and retrieved passages.,correct,,1,3693,152,6.0,"Hypothermia is a life-threatening condition that occurs when the body temperature drops below 95°F [WinterStorms-2008, p. 5]. 
+
+Its warning signs include:
+* Uncontrollable shivering [WinterStorms-2008, p. 5]
+* Memory loss, disorientation, and incoherence [WinterStorms-2008, p. 5]
+* Slurred speech [WinterStorms-2008, p. 5]
+* Drowsiness and apparent exhaustion [WinterStorms-2008, p. 5]"
+q20,single,0,4,1,1,1,1,The assistant's answer accurately matches the reference answer and all details provided are fully supported by the retrieved passages.,correct,,1,3400,175,4.9,"If medical care is not available, warm the person slowly, starting with the body core (warming the arms and legs first can drive cold blood toward the heart and lead to heart failure) [WinterStorms-2008, p. 5]. You can use your own body heat to help [WinterStorms-2008, p. 5]. Get the person into dry clothing and wrap them in a warm blanket that covers the head and neck [WinterStorms-2008, p. 5]. 
+
+Do not give the person alcohol, drugs, coffee, or any hot beverage or food; warm broth should be the first food offered [WinterStorms-2008, p. 5]."
+q21,single,0,5,1,1,1,1,The answer accurately provides all key details from the reference answer and is fully supported by the retrieved passages.,correct,,1,3769,258,5.5,"If you are stranded in a vehicle during a winter storm, you should:
+
+* **Stay in the vehicle** to avoid becoming quickly disoriented in wind-driven snow and cold [WinterStorms-2008, p. 11].
+* **Run the motor about 10 minutes each hour** for heat [WinterStorms-2008, p. 11].
+* **Open a window a little** for fresh air to prevent carbon monoxide poisoning, and ensure the exhaust pipe is not blocked [WinterStorms-2008, p. 11].
+* **Make yourself visible to rescuers** by turning on the dome light at night when running the engine, tying a colored cloth (preferably red) to your antenna or door, and—after the snow stops falling—raising the hood [WinterStorms-2008, p. 11].
+* **Exercise periodically** by moving your arms, legs, fingers, and toes vigorously to keep blood circulating and stay warm, while avoiding overexertion [WinterStorms-2008, p. 11]."
+q22,multi,0,3,1,1,1,0,"The answer accurately explains the difference between a winter watch and warning, but the claim that a warning means the event is 'imminent or occurring' is not present in the retrieved passages.",unsupported,,1,3104,228,17.9,"A **Winter Storm Watch** is issued when conditions are favorable for a hazardous winter weather event to develop, but its occurrence is uncertain (typically when there is a 50% or greater confidence that local warning or impact criteria will be met) [NWSI-10-513, section 6.3.2, p. 8]. 
+
+A **Winter Storm Warning** is issued when a hazardous winter weather event (such as snow, ice, sleet, or a combination of elements) is meeting or exceeding locally defined warning criteria [NWSI-10-513, section 6.3, p. 7]. 
+
+In short, a watch means the event is *possible*, while a warning means the event is *imminent or occurring* and meets local warning thresholds. Specific snow and ice criteria are set locally by each regional and local NWS office [NWSI-10-513, section App-D, pp. 41-42]."
+q23,multi,1,0,1,0,,,,wrong refusal,citation check failed (no citation); replaced by a refusal after one retry,1,6508,232,18.7,The corpus does not cover this: I could not give an answer supported by the retrieved passages.
+q24,multi,0,1,1,0,0,1,"The assistant answer fails to answer the question directly (No) and misses key details about local and regional criteria, although the statement provided is fully supported by the retrieved text.",wrong,citation check failed (no citation); fixed after one retry,2,8300,196,15.0,"Changes to the criteria can be made at the discretion of local and regional offices, as long as zone-to-zone gradients do not exceed 1 inch, except where required by elevation and/or climatology [NWSI-10-513, section App-D, pp. 41-42]."
+q25,multi,0,2,1,1,1,1,The assistant's answer accurately captures the key details from the reference answer and all claims are fully supported by the retrieved passages.,correct,,1,3316,157,6.0,"Significant ice accumulations that define an ice storm are usually 0.25 inches (1/4 of an inch) or greater on an elevated horizontal flat surface [NWSI-10-513, section App-B, p. 35]. 
+
+However, warning criteria are locally or regionally defined by each National Weather Service office (typical values are 1/4 or 1/2 inch or more) [NWSI-10-1605, section App-A-26, pp. 61-62]. Check with your local NWS office for your specific regional threshold."
+q26,multi,0,3,1,1,1,1,The assistant's answer accurately reflects the reference answer and all claims are fully supported by the retrieved passages.,correct,,1,3365,153,5.2,"Wind Chill Advisories, Watches, and Warnings have been removed and consolidated into the **Extreme Cold** product suite [NWSI-10-513, p. 1]. Dangerous wind chills are now covered by products such as the **Extreme Cold Warning** [NWSI-10-515, section App-B, p. 37]. 
+
+*Note: Specific criteria for these products are determined locally by Weather Forecast Offices (WFOs) working with public health officials [NWSI-10-515, section App-B, p. 37].*"
+q27,multi,0,4,1,1,1,1,"The assistant correctly identifies that Storm Data uses -35°F or colder as the typical value for extreme cold and that a -20°F wind chill can cause frostbite in 30 minutes, with all claims supported by the retrieved passages.",correct,,1,3891,202,6.7,"In Storm Data, the typical value for an **Extreme Cold/Wind Chill** warning is **-35°F or colder** [NWSI-10-1605, section App-A-13, p. 33], while a **Cold/Wind Chill** advisory has a typical value of **-18°F or colder** [NWSI-10-1605, section App-A-5, p. 23]. (Actual warning criteria are defined locally or regionally by each NWS office [NWSI-10-1605, section App-A-13, p. 33].)
+
+A wind chill of **-20°F** can cause frostbite in just **30 minutes** [WinterStorms-2008, p. 5]."
+q28,unanswerable,1,1,1,0,,,,correct refusal,,2,7190,118,5.8,"The corpus does not cover the specific local snow criteria for Memphis, Tennessee. 
+
+NWS local warning criteria are set by individual regional and local offices (with specific heavy snow criteria maintained online at www.weather.gov/snow-criteria) [NWSI-10-513, section App-D, pp. 41-42]."
+q29,unanswerable,1,1,1,0,,,,correct refusal,,2,8857,126,13.0,"The corpus does not cover this. 
+
+Specific warning thresholds for Extreme Cold Warnings are set locally by each National Weather Service Weather Forecast Office (WFO) rather than having a fixed national number [NWSI-10-515, section App-B, p. 37], and the provided documents do not contain the specific criteria used by the NWS office serving Denver."
+q30,unanswerable,0,1,1,0,,,,answered unanswerable,,1,2567,67,15.3,"The National Weather Service does not make closing decisions or set rules for when school districts must close [WSSI-Guide-2025, p. 3]. School closure decisions remain entirely with local school-district and county officials."
+q31,unanswerable,1,0,1,0,,,,correct refusal,,0,903,57,3.4,"The corpus does not cover this. The official National Weather Service documents and instructions in the corpus describe winter weather watches, warnings, advisories, storm data definitions, the Winter Storm Severity Index, and winter safety guidance, but they do not contain guidelines or recommendations for road salt application rates."
+q32,unanswerable,1,0,1,0,,,,correct refusal,citation check failed (no citation); fixed after one retry,1,4593,171,9.8,The corpus does not cover this; the search results do not contain any information regarding changes to NWS winter alerts specifically for the 2026–27 winter.

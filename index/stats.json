@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "NWSI-10-513": {
+      "chunks": 81,
+      "words": 10828
+    },
+    "NWSI-10-514": {
+      "chunks": 39,
+      "words": 3754
+    },
+    "NWSI-10-515": {
+      "chunks": 60,
+      "words": 9232
+    },
+    "NWSI-10-1605": {
+      "chunks": 196,
+      "words": 42120
+    },
+    "WinterStorms-2008": {
+      "chunks": 17,
+      "words": 3021
+    },
+    "WSSI-Guide-2025": {
+      "chunks": 14,
+      "words": 1199
+    }
+  }
+}
