@@ -1,1 +1,34 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,1,1,
+q04,1,1,
+q05,1,1,
+q06,1,0,"Core answer right, but 'longer takeoff rolls, reduced rates of climb, and longer landing distances' is not in the retrieved passages (they only give a takeoff ground-run example)."
+q07,1,1,
+q08,1,1,
+q09,0,1,"Wrong refusal. Page 17-4 was retrieved, but the 3-5 minute figure is in the Figure 17-1 table, which extraction drops (figure text), so the passage text had no numbers. The refusal itself makes no false claims."
+q10,1,1,
+q11,1,0,"Valsalva steps correct and supported, but 'slowing the rate of descent can also help reduce pain' comes from the sinus-block passage and is applied to the ears."
+q12,1,1,
+q13,1,1,
+q14,1,1,
+q15,1,1,
+q16,1,1,
+q17,1,1,Omits the 40 amp / 10-15 minute case from the reference but gives the key load-dependence facts and actions; all claims in the 18-13/18-14 passage.
+q18,1,1,"Omits that the fog deepens as wind rises toward 15 kt, but answers both parts of the question."
+q19,1,1,
+q20,1,1,
+q21,1,1,
+q22,1,1,
+q23,1,1,
+q24,1,0,"Carb-ice conditions and the engine/fuel-off advice are right and cited, but 'temperature drop up to 20 to 25 C or more' is not in the passage, which gives 60-70 F degrees (about 39 C)."
+q25,1,1,
+q26,0,1,"Misses the key quantitative fact (one ounce of alcohol = about 2,000 ft of physiological altitude, p. 17-4). A 17-4 chunk was retrieved, but not the Histotoxic Hypoxia section that holds it. What it does say is supported."
+q27,1,0,"Fog type right; advising to land is the right call, but the reasoning that pressing on risks inadvertent IMC and spatial disorientation is the model's inference from the 18-17 IMC passage, and the precautionary-landing passage (3C 18-1) was not used."
+q28,1,1,
+q29,1,1,
+q30,1,1,
+q31,1,1,
+q32,1,1,
+q33,1,1,"Proper refusal; pointing to the POH/AFM for hour requirements is a poor suggestion but makes no claim about the corpus."

@@ -1,0 +1,73 @@
+{
+  "questions": 33,
+  "answered_by_agent": 33,
+  "chat_model": "gemini-3.5-flash-lite",
+  "judge_model": "gemini-3.1-flash-lite",
+  "retrieval": [
+    {
+      "design": "fixed",
+      "chunks": 487,
+      "questions": 27,
+      "hit@1": 0.963,
+      "hit@3": 0.963,
+      "hit@5": 0.963,
+      "all@1": 0.741,
+      "all@3": 0.815,
+      "all@5": 0.852,
+      "words_top5": 747,
+      "first_hit_rank": "q01:1 q02:1 q03:1 q04:1 q05:1 q06:1 q07:1 q08:1 q09:1 q10:1 q11:1 q12:1 q13:1 q14:- q15:1 q16:1 q17:1 q18:1 q19:1 q20:1 q21:1 q22:1 q23:1 q24:1 q25:1 q26:1 q27:1"
+    },
+    {
+      "design": "section",
+      "chunks": 290,
+      "questions": 27,
+      "hit@1": 0.926,
+      "hit@3": 0.926,
+      "hit@5": 1.0,
+      "all@1": 0.704,
+      "all@3": 0.815,
+      "all@5": 0.926,
+      "words_top5": 1125,
+      "first_hit_rank": "q01:1 q02:1 q03:1 q04:1 q05:1 q06:1 q07:1 q08:5 q09:1 q10:1 q11:1 q12:1 q13:1 q14:5 q15:1 q16:1 q17:1 q18:1 q19:1 q20:1 q21:1 q22:1 q23:1 q24:1 q25:1 q26:1 q27:1"
+    }
+  ],
+  "judge_correct": 0.939,
+  "judge_supported": 0.939,
+  "unsupported_answers": 2,
+  "correct_refusals": "6/6",
+  "wrong_refusals": "2/27",
+  "missed_refusals": "0/6",
+  "citations_valid": 0.818,
+  "guardrail_fired": [
+    "q05",
+    "q06",
+    "q19",
+    "q21",
+    "q22",
+    "q25"
+  ],
+  "by_kind": {
+    "single": {
+      "n": 21,
+      "judge_correct": 0.952
+    },
+    "multi": {
+      "n": 6,
+      "judge_correct": 0.833
+    },
+    "unanswerable": {
+      "n": 6,
+      "judge_correct": 1.0
+    }
+  },
+  "mean_tokens": 4863,
+  "mean_seconds": 14.0,
+  "mean_judge_tokens": 2539,
+  "agreement_with_human": {
+    "graded": 0
+  },
+  "before_after": {
+    "id": "q29",
+    "document": "PHAK-ch15-Airspace.pdf"
+  }
+}

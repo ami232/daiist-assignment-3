@@ -1,0 +1,48 @@
+{
+  "id": "q29",
+  "question": "What are the vertical limits of Class D airspace around a towered airport, and what do I need to do before I enter it?",
+  "document": "PHAK-ch15-Airspace.pdf",
+  "before": "The corpus does not cover this. The regulations and airspace classifications you are asking about are found in 14 CFR and the Aeronautical Information Manual (AIM), which are outside the scope of the FAA handbooks in this corpus.",
+  "add_step": "I have successfully added `PHAK-ch15-Airspace.pdf` to the corpus. It has been indexed into 37 chunks and is now available for searching.",
+  "approvals": [
+    {
+      "tool": "add_document",
+      "args": {
+        "path": "C:\\Users\\artur\\OneDrive\\Escritorio\\ASSIGNMENT 3\\daiist-assignment-3\\corpus\\PHAK-ch15-Airspace.pdf"
+      },
+      "approved": true
+    }
+  ],
+  "add_tool_result": [
+    "Added: 'PHAK-ch15-Airspace' -> 37 chunks, 37 newly embedded. Cite it as [PHAK-ch15-Airspace, p. ...]."
+  ],
+  "after": "Class D airspace generally extends from the surface up to 2,500 feet above the airport elevation (charted in MSL) [PHAK-ch15-Airspace, p. 15-2]. Unless otherwise authorized, you must establish two-way radio communications with the ATC facility providing air traffic services prior to entering the airspace and maintain those communications while within it [PHAK-ch15-Airspace, p. 15-2]. \n\nConfirm these procedures and airspace boundaries with your POH/AFM, current weather briefing, or instructor before flying.",
+  "after_sources": [
+    [
+      "PHAK-ch15-Airspace",
+      "15-2"
+    ],
+    [
+      "PHAK-ch15-Airspace",
+      "15-2"
+    ],
+    [
+      "PHAK-ch15-Airspace",
+      "15-2"
+    ],
+    [
+      "PHAK-ch15-Airspace",
+      "15-10 to 15-11"
+    ],
+    [
+      "PHAK-ch15-Airspace",
+      "15-2 to 15-3"
+    ]
+  ],
+  "add_again": {
+    "status": "already indexed",
+    "source": "PHAK-ch15-Airspace",
+    "chunks": 37,
+    "embedded": 0
+  }
+}
