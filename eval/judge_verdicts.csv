@@ -1,0 +1,31 @@
+id,correct,supported,reason
+q01,1,1,"The assistant correctly states the maximum grant amount for grant-only support, which is directly supported by the retrieved passages."
+q02,1,1,"The assistant correctly states that the EU grant covers a maximum of 70% and the remaining 30% must be financed by the company, perfectly matching the reference answer using facts directly from the passages."
+q03,1,1,"The assistant accurately provides the minimum and maximum investment amounts for both the standard EIC Accelerator and the STEP Scale Up call, all supported by the retrieved passages."
+q04,1,1,"The assistant correctly states that small mid-caps cannot get grant-only funding and are limited to investment-only or blended finance, supported by the retrieved passages."
+q05,1,1,The assistant accurately answers the question using only facts directly supported by the retrieved text.
+q06,1,1,"The assistant correctly identifies all required submission components for the short proposal, matching the reference answer and supported by the provided passages."
+q07,1,1,"The assistant accurately answers when short proposals are sent for evaluation, matching the reference answer and supported by the retrieved passages."
+q08,1,1,"The assistant correctly states that results take approximately 4 to 6 weeks from batching, which is fully supported by the provided text."
+q09,1,1,"The assistant accurately answers that four expert evaluators assess the short application and at least three must give a GO, which is fully supported by the retrieved passages."
+q10,1,1,The assistant correctly provided the 2027 full proposal cut-off dates based on the retrieved EIC Work Programme 2027 passages.
+q11,1,1,"The assistant correctly states the page limit as a maximum of 20 pages, which is supported by the retrieved passages."
+q12,1,1,"The assistant correctly states the threshold scores required and notes the 2.5x ranking rule, all of which are fully supported by the retrieved passages."
+q13,1,1,The assistant accurately states the resubmission limit and supports all claims with the retrieved passages.
+q14,1,1,"The assistant correctly states that UK companies can apply for grant-only funding, which is fully supported by the retrieved passages."
+q15,1,1,The assistant's answer accurately provides the duration and structure of the interview based on the retrieved passages without any contradictions.
+q16,1,1,The assistant's answer accurately provides all key facts and is fully supported by the retrieved passages.
+q17,1,1,The assistant accurately answers the question using facts and citations directly from the provided passages.
+q18,1,1,The assistant accurately answers the question using only facts directly supported by the retrieved text.
+q19,1,1,"The assistant accurately captures the exit routes and details from the passages and reference answer, with all claims fully supported by the text."
+q20,1,1,The assistant's answer accurately captures the key facts from the reference and is fully supported by the retrieved passages.
+q21,1,1,The assistant accurately answers the question using the exact timeframe from the provided passages.
+q22,1,1,"The assistant accurately answers the question based on the text, providing correct details and citations."
+q23,1,1,"The assistant correctly identifies that applicants reaching thresholds but not invited to interview receive a Seal of Excellence and STEP Seal, matching the reference and supported by the passages."
+q24,1,1,The assistant accurately provides all key facts present in the reference answer and they are fully supported by the retrieved passages.
+q26,1,1,"The assistant correctly provided the maximum grant, investment, and voting rights share based on the retrieved passages."
+q27,1,1,The assistant accurately answers both parts of the question using exact details directly supported by the retrieved passages.
+q28,1,1,"The assistant correctly states that UK startups can only receive grant-only support up to a maximum of EUR 2,499,999, which is fully supported by the retrieved passages."
+q29,1,1,The assistant accurately answers the question based on the provided documents and cites the correct operational conditions for the Seal of Excellence.
+q30,1,1,"The assistant correctly explains the evaluation process and clarifies that selection is based on top-ranking scores reaching up to 2.5 times the budget rather than a fixed score threshold, fully supported by the text."
+q31,1,1,The assistant's answer accurately addresses both parts of the question using precise facts and details directly supported by the retrieved passages.
