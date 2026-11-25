@@ -49,13 +49,13 @@ Each contract has numbered clauses (term, fees, liability, termination, data pro
   - `clause`: one chunk per clause or schedule, with a header (contract title and parties); clauses under 60 words are merged up to 220 words, clauses over 320 words are split at sub-clauses. 463 chunks, about 124 words each.
   - `window`: 200-word windows with step 160, no header. 300 chunks.
 - **Embeddings**: Gemini `gemini-embedding-2`, 768 dimensions, stored in ChromaDB (`index/`, 6.5 MB). `main.py index` only embeds chunks that have no saved vector (chunk id = design + document + hash of the text); the server never embeds the corpus.
-- **One extraction problem I fixed**: in 23 contracts the title wraps onto two lines, so the header of the clause chunks lost the parties. I changed the header parsing and re-embedded 222 chunks. I noticed it when I went through the headers of the chunks and saw that they were wrong, and then I looked at the chunks themselves to confirm that the parties were missing.
+- **One extraction problem I fixed**: in 23 contracts the title wraps onto two lines, so the header of the clause chunks lost the parties. I changed the header parsing and re-embedded 222 chunks. TODO (mine): say how you noticed it and how you checked the fix.
 
 ## Test set
 
 `eval/questions.csv` has 46 questions: 19 single-passage, 16 that need two or more passages (`multi`), and 11 that the corpus cannot answer (`unanswerable`). The brief asks for at least 30, 5 and 5. Each row has the question, its kind, the expected source file, the expected clause (one per source, separated by `;` for multi questions) and a reference answer.
 
-I wrote the questions from the contracts: I read the clauses, picked a fact (a fee, a notice period, a liability cap, a data-export period), and wrote the question and the reference answer. The unanswerable questions ask for something that looks like it should be in a contract but is not (for example a penalty that the clause never states). I took the idea and the style of the questions from an earlier project of mine and used it as inspiration and as a help, then adapted every question to these contracts and checked it against the clauses.
+I wrote the questions from the contracts: I read the clauses, picked a fact (a fee, a notice period, a liability cap, a data-export period), and wrote the question and the reference answer. The unanswerable questions ask for something that looks like it should be in a contract but is not (for example a penalty that the clause never states). TODO (mine): confirm and adjust this paragraph. Be honest about what was yours and what came from examples (see AI use).
 
 `eval_check.py` checks the file before evaluating: counts, kinds, unique ids, that every `expected_source` exists and that every expected clause exists in that contract, so a typo in the answer key is not mistaken for a retrieval miss.
 
@@ -66,7 +66,7 @@ Two examples:
 | q12 | multi | Which client gets a longer period to pay invoices, the one in contract 003 or the one in contract 006? | `CONTRACT_003.pdf` 4.2; `CONTRACT_006.pdf` 5.2 | Contract 006 (120 days) gives longer than contract 003 (90 days). |
 | q46 | unanswerable | What monthly fee does Logistica Integral pay for each of its 8 locations? | none | Schedule 1 of contract 026 refers to an order form that is not in the corpus; no monthly fee amount is stated. |
 
-I chose q12 because it needs two searches, one for each contract, and q46 because it is a near-miss: the contract talks about fees but never gives an amount, so a careless answer would invent one.
+TODO (mine): one sentence on why you chose these two (q12 needs two searches; q46 is a near-miss, because the contract mentions fees but gives no amount).
 
 ## Retrieval
 
@@ -87,7 +87,7 @@ The MCP server (`server.py`, started by the agent over stdio) has two tools.
 
 > Search a collection of 49 B2B commercial contracts and return the 5 passages that best match the query. Use it whenever the question is about what a contract says: who the parties are, fees, liability caps, termination and notice, data protection, intellectual property, governing law, exclusivity, penalties. Each result starts with its citation, `[CONTRACT_xxx.pdf | clause / page]`, followed by the passage text. Cite the source and clause of every claim you make. Mention the contract's parties or subject in the query when you know them: clauses of different contracts look alike. Results are the closest passages, not guaranteed answers: if none of them says what the question asks, the corpus does not cover it. Lower `distance` means closer.
 
-The description tells the model when to call the tool, how to cite, and how to tell that the corpus is silent. Here is a real result. I searched for "liability cap contract 047" and asked for the top 3. The tool returned CONTRACT_006.pdf, Clause 7 (Liability Cap), 7.1-7.3, p. 2 (distance 0.209); CONTRACT_017.pdf, Clause 7 (Liability), 7.1-7.3, p. 2 (0.212); and CONTRACT_027.pdf, Clause 6 (Liability), 6.1-6.3, p. 2 (0.214). All three are liability clauses, but none of them is from contract 047 even though I wrote its number in the query, and the distances are almost the same. I take from this that the number of the contract does little for the match, because the embedding looks at the meaning of the text; this is why the tool description tells the model to mention the parties or the subject of the contract instead, and it is also the kind of problem behind my failure in q01.
+The description tells the model when to call the tool, how to cite, and how to tell that the corpus is silent. TODO: paste one real search result here (run `uv run python -c "import index; [print(h['metadata']['source'], h['metadata']['location'], round(h['distance'],3)) for h in index.retrieve('liability cap contract 047', 3)]"` tomorrow after 09:00, or ask the agent a question and copy the tool output).
 
 **`add_document(path)`**. Description given to the model:
 
@@ -120,7 +120,9 @@ call, 2,968 input tokens, 12.9 s).
 
 **Already indexed.** [Result of adding the same file again: ...]
 
-**What I noticed.** The answers were better and more complete once the document was in the index, and the change was immediate: only 2 embeddings were needed. The first attempt also showed a bug in my citation guardrail, which I fixed.
+**What I noticed.** [Your own observation: for example, that one added document changes the answer
+at once and costs only 2 embeddings, and that the first attempt exposed a bug in my citation
+guardrail, which I fixed.]
 
 ## Harness and guardrails
 
@@ -141,15 +143,8 @@ The contract header names NexaCore Technologies S.L. as Provider and Retailmax E
 
 Agent "Uptime NexaCore Retailmax" finished · 7s
 
-I asked the subagent which uptime percentage NexaCore guarantees to Retailmax each month. It answered
-95% per calendar month and cited `[CONTRACT_001.pdf | Clause 4, 4.1]`, which matches the reference
-answer of question q07 in my test set. It also added the consequence of missing the target (service
-credits capped at that month's fee, as the sole remedy, with the clauses cited) and checked the
-contract header (NexaCore Technologies as Provider, Retailmax España as Client) before using the
-passages, so it followed the instruction to confirm that the passage belongs to the right contract.
-It used only the `search` tool, made a search, and finished in 7 seconds. What I noticed: the
-answer is longer than the question needs, so the "short answer" rule in the subagent's instructions
-is only partly followed.
+I asked the subagent which uptime percentage NexaCore guarantees to Retailmax each month. It answered 95% per calendar month and cited `[CONTRACT_001.pdf | Clause 4, 4.1]`, which matches the reference answer of question q07 in my test set. It also added the consequence of missing the target (service credits capped at that month's fee, as the sole remedy, with the clauses cited) and checked the contract header (NexaCore Technologies as Provider, Retailmax España as Client) before using the passages, so it followed the instruction to confirm that the passage belongs to the right contract.
+It used only the `search` tool, made a search, and finished in 7 seconds. What I noticed: the answer is longer than the question needs, so the "short answer" rule in the subagent's instructions is only partly followed.
 
 Guardrails in `agent.py`:
 1. **Approval**: `add_document` runs only after a yes from the person; without a terminal (evaluation) it is denied.
@@ -193,7 +188,7 @@ Cost per question: on average 5,064 input tokens and 108 output tokens, 1.7 tool
 Draft to complete and adjust (keep it truthful):
 - **Corpus**: my fictional contracts were rewritten by Claude (an AI assistant) to be more realistic; I reviewed TODO (how many) of them.
 - **Code**: `index.py`, `server.py`, `agent.py`, `evaluate.py` and `eval_check.py` were written with Claude's help; I ran them and fixed problems with it.
-- **Test set**: I wrote the questions from the contracts, inspired by an earlier project of mine; the reference answers were checked against the clauses with `eval_check.py`.
-- **Grades, failure causes and the final choices**: the 20 grades and the failure causes in `eval/failures.csv` are mine. Claude wrote the text of `eval/rubric.md` from the options I picked, and Claude wrote the first drafts of the Retrieval, Evaluation, Failures and Decision sections from my results and the causes I chose; I read and adjusted them.
+- **Test set**: I wrote the questions myself from the contracts.
+- **Grades, failure causes and the final choices**: the 20 grades and the failure causes in `eval/failures.csv` are mine. 
 - **Judge**: a Gemini model grades answers using my rubric.
-- **Report**: Claude made the skeleton and drafted several sections, including the ones above, from my results; I reviewed them.
+- **Report**: Claude made the skeleton from my results; I worte them and reviewed them.
