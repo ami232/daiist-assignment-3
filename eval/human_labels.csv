@@ -1,1 +1,33 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,1,1,
+q04,1,1,
+q05,1,1,
+q06,1,1,
+q07,1,1,
+q08,1,1,
+q09,1,1,
+q10,1,1,
+q11,1,1,
+q12,1,1,
+q13,1,1,
+q14,0,0,Cites Article 15(1) instead of Article 4; does not clearly state rightholders can opt out via machine-readable means
+q15,1,1,
+q16,1,1,
+q17,1,1,
+q18,0,1,Agent claims it cannot find the settling parties but they are named in the document (NMPA/NSAI and Amazon/Apple/Google/Pandora/Spotify)
+q19,1,1,
+q20,1,1,
+q21,1,1,
+q22,0,1,Does not clearly state that musical works and sound recordings cannot be grouped together in the same group registration application
+q23,1,1,
+q24,0,1,Partially refused instead of comparing Articles 3 and 4; the information is in the corpus
+q25,1,1,
+q26,1,1,
+q27,1,1,Correctly refused — out of scope
+q28,1,1,Correctly refused — corpus covers copyright not trademark
+q29,1,1,Correctly refused — sync rates not in corpus
+q30,1,1,Correctly refused — HFA fees not in corpus
+q31,0,1,Should have fully refused but added unrequested EU Article 17 info when the question was about US DMCA
+q32,0,1,Should have fully refused but added tangential info about derivative sound recordings

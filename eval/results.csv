@@ -1,0 +1,130 @@
+id,question,kind,agent_answer,refused,verdict,has_citations,correct_jurisdiction,time_s
+q01,What is the Copyright Act's definition of a sound recording?,single,"Under US federal law (the US Copyright Act), sound recordings are defined as “works that result from the fixation of a series of musical, spoken, or other sounds but not including sounds accompanying a motion picture or other audiovisual work” [circ56, p.1, ""What is a Sound Recording?""].",False,correct,True,True,5.0
+q02,What is a phonorecord according to US copyright law?,single,"Under US federal law,
+ a ""phonorecord"" is the statutory term for a physical object or medium that contains a sound recording [circ56, p.2, ""Sound Recordings Distinguished from Phonorecords""]. 
+
+The term includes:
+* Physical objects such as a compact disc (CD), vinyl disc (LP), open-reel tape, cartridge tape, or cassette tape [circ56, p.2, 5, ""Sound Recordings Distinguished from Phonorecords"", ""Copyright Registration for Sound Recordings""].
+* Digital formats used to store a sound recording, including digital audio files such as `.mp3` and `.wav` files [circ56, p.2, ""Sound Recordings Distinguished from Phonorecords""].",False,correct,True,True,9.5
+q03,What is a derivative sound recording?,single,"Under US federal law (Circular 56), a derivative sound recording is an audio recording that incorporates preexisting sounds (such as sounds that were previously registered or published, or sounds fixed before February 15, 1972) [circ56, p.2, ""Derivative Sound Recordings""]. 
+
+To qualify, the preexisting recorded sounds must be rearranged, remixed, or otherwise altered in sequence or character, or the recording must contain additional new sounds [circ56, p.2–3, ""Derivative Sound Recordings"" / ""Copyright Registration for Sound Recordings""]. Furthermore, the new or revised sounds must contain at least a minimum amount of original sound recording authorship [circ56, p.3, ""Copyright Registration for Sound Recordings""].
+
+Examples of derivative sound recordings include:
+* A mashup comprising track",False,correct,True,True,2.8
+q04,Are sounds accompanying a motion picture considered sound recordings under US law?,single,"Under US federal law, sounds accompanying a motion picture or other audiovisual work are not considered sound recordings [circ56, p.1, ""What is a Sound Recording?""]. Instead, the Copyright Act specifically excludes them from the definition of sound recordings, and they are considered part of the motion picture or audiovisual work itself [circ56, p.2, ""Sound Recordings Distinguished from the Sounds Accompanying a Motion Picture""].",False,correct,True,True,2.3
+q05,What is the difference between a musical composition and a sound recording for copyright purposes?,single,"Under US federal copyright law, musical compositions and sound recordings are considered two separate and distinct works [circ56a, p.1]. 
+
+* **Musical Composition:** Consists of the music (melody, rhythm, and/or harmony expressed in musical notation) and any accompanying words (lyrics) [circ56a, p.1]. The authors are the composers, lyricists, and songwriters [circ56a, p.1]. A registration for a musical composition covers the music and lyrics, but it does not cover a recorded performance of that composition [circ56a, p.2].
+* **Sound Recording:** Consists of the fixation of a series of musical, spoken, or other sounds (such as a recorded performance) [circ56, p.1, circ56a, p.1]. The authors include the performers and producers [circ56a, p.1]. A registration for a sound recording covers the s",False,correct,True,True,11.0
+q06,Who is considered the author of a musical composition?,single,"Under United States federal law, the author of a musical composition is considered to be the person who created the music and/or lyrics [circ56a, p. 1, p. 4]. Specifically, the authors of a musical composition include:
+* Composers
+* Lyricists
+* Songwriters
+
+*(Note: If the musical composition was created as a ""work made for hire""—such as a work prepared by an employee within the scope of employment or certain specially commissioned works with a written agreement—the employer is considered the author rather than the individual who actually created the music or lyrics) [circ56a, p. 4].*",False,correct,True,True,12.3
+q07,Who is considered the author of a sound recording?,single,"Under US federal law (Circular 56 and Circular 56A), the authors of a sound recording are:
+* The performer featured in the recording [circ56, p.3, ""Author""; circ56a, p.1, ""Who is the author?""]
+* The producer who captured and processed the sounds that appear in the final recording [circ56, p.3, ""Author""; circ56a, p.1, ""Who is the author?""]
+
+Additionally, under US federal law, if a performer or producer creates the sound recording during the course of their employment under a typical employment relationship, the work is a work made for hire, and the employer is considered the author [circ56, p.4, ""Copyright Registration for Sound Recordings""]. Alternatively, if the sound recording is created for a third party as a compilation or contribution to a collective work, and the parties agree in wri",False,unsupported_claim,True,True,3.0
+q08,Does the owner of a sound recording have the exclusive right to display the work publicly?,single,"Under US federal copyright law, the owner of a sound recording **does not** have the exclusive right to display the work publicly [circ56a, p.2, ""Copyright Registration of Musical Compositions and Sound Recordings""].",False,correct,True,True,4.8
+q09,Can a musical composition and a sound recording be registered with one application?,single,"Under US federal law, a musical composition (the copyright in the underlying music and lyrics) and a sound recording (the copyright in a specific recorded performance) are distinct works, and separate applications generally should be submitted for each [circ56a, p.2]. 
+
+However, under
+ US federal law, you may register a sound recording and an underlying musical composition using **one standard application** if both of the following conditions are met:
+1. The musical composition and sound recording are embodied in the same phonorecord; and
+2. The claimant for both the musical composition and the sound recording is the same [circ56a, p.2].
+
+Additionally, you may register one sound recording and the underlying musical composition using the **Single Application** (a streamlined version of the ",False,unsupported_claim,True,True,5.2
+q10,What is the definition of an album for group registration purposes?,single,"Under US federal law (specifically under the US Copyright Office's group registration rules for works on an album), an ""album"" is defined as a single physical or electronic unit of distribution containing either:
+
+* At least two musical works embodied in a phonorecord; or
+* At least two sound recordings embodied in a phonorecord, including any associated literary, pictorial, or graphic works that are distributed with this unit.
+
+`[circ58, p.1, ""An Album""]`
+
+Examples of an album include:
+* A physical LP, EP, or mixtape.
+* A digital album offered for download, with or without a corresponding physical album.
+* A fixed playlist of tracks released to the public through a streaming/downloading service on the same date.
+
+`[circ58, p.1, ""Examples of an album include:""]`",False,correct,True,True,9.5
+q11,How many musical works can be registered in a single group registration on an album?,single,"Under US federal law (specifically the US Copyright Office group registration option for works on an album), you may register up to **twenty musical works** in a single group registration on an album, provided that specific eligibility requirements are met (such as being contained on the same album, created by the same author or having a common joint author, and having the same copyright claimant or co-claimants) [circ58, p.2, ""Group Registration Eligibility""]. 
+
+This rule applies specifically to copyright in musical compositions (including lyrics, if any), which are separate from sound recordings; musical works and sound recordings cannot be registered together using this specific album group registration option [circ58, p.2, ""Group Registration of Works on an Album"", ""Group Registration ",False,correct,True,True,2.9
+q12,What are the eligibility requirements for group registration of works on an album?,single,"Under US federal law
+ (specifically US Copyright Office rules), you may register up to twenty musical works, or up to twenty sound recordings and any accompanying literary, pictorial, or graphic works, as a group if they meet the following eligibility requirements:
+
+* **Album Requirement:** All of the works in the group must be contained on the same album (defined as a single physical or electronic unit of distribution containing at least two musical works or at least two sound recordings) [circ58, p.1, ""An Album"", p.2, ""Group Registration Eligibility""].
+* **Author Requirement:** All of the works in the group must be created by the same author, or the works must have a common joint author (meaning one of the authors must have contributed copyrightable authorship to each work in the group) ",False,correct,True,True,9.8
+q13,What does Article 3 of the EU DSM Directive provide for regarding text and data mining?,single,"Under EU law (specifically EU Directive 2019/790 on copyright in the Digital Single Market), Article 3 provides for the following regarding text and data mining for scientific research:
+
+* **Mandatory Exception:** Member States must provide for an exception to specific rights (including reproduction rights and database extraction rights under EU directives) for reproductions and extractions made by research organisations and cultural heritage institutions [CELEX_32019L0790_EN_TXT, p.22, Article 3(1)].
+* **Purpose:** The text and data mining must be carried out in order to conduct scientific research on works or other subject matter to which these organisations and institutions have lawful access [CELEX_32019L0790_EN_TXT, p.22, Article 3(1)].
+* **Storage and Retention of Copies:** Copies of",False,unsupported_claim,True,True,3.1
+q14,What is the text and data mining exception for the general public under Article 4 of the DSM Directive?,single,"Under EU law (specifically Article 4 of Directive (EU) 2019/790 on copyright in the Digital Single Market), Member States are required to provide for an exception or limitation to reproduction and extraction rights (under specific EU directives governing copyright, database rights, and computer programs) for reproductions and extractions of lawfully accessible works and other subject matter for the purposes of text and data mining [CELEX_32019L0790_EN_TXT, p.22, Article 4].
+
+The key rules and conditions under Article 4 include:
+* **Retention of copies:** Reproductions and extractions made pursuant to this exception may be retained for as long as is necessary for the purposes of text and data mining `[CELEX_32019L0790_EN_TXT, p.22, Article 15(1) of this Directive for reproductions and extra",False,correct,True,True,5.0
+q15,What does Article 17 of the DSM Directive address?,single,"Under EU law, Article 17 of Directive (EU) 2019/790 (the DSM Directive) addresses the ""Use of protected content by online content-sharing service providers"" [CELEX_32019L0790_EN_TXT, p. 28, Article 17]. 
+
+Specifically, it provides that an online content-sharing service provider performs an act of communication to the public or an act of making available to the public when it gives the public access to copyright-protected works or other protected subject matter uploaded by its users, and requires such providers to obtain authorization from rightholders [CELEX_32019L0790_EN_TXT, p. 28, Article 17].",False,correct,True,True,2.9
+q16,What rate period does the Phonorecords IV ruling cover?,single,"The retrieved passages do not contain information specifying the rate period covered by the Phonorecords IV ruling (though they reference the years 2023 through 2027 under § 385.21 royalty rates and calculations) `[2022-28316, p.11, § 385.21 Royalty rates and calculations.]`. 
+
+The corpus does not cover this question in full. Please consult a music lawyer or your collecting society.",False,correct,True,True,19.1
+q17,What is a licensed activity as defined in the Phonorecords IV context?,single,"Under US federal law (specifically in the context of 37 CFR part 385 / Phonorecords IV), ""licensed activity"" means the delivery of musical works, under a voluntary or statutory license, via Digital Phonorecord Deliveries in connection with Interactive Eligible Streams, Eligible Limited [Streams] [2022-28316, p.1, ""Inc., Google LLC, Pandora Media, LLC, and Spotify""]. 
+
+This definition involves the reproduction and distribution rights (mechanical rights) for musical compositions in digital formats.",False,correct,True,True,8.5
+q18,Who were the settling parties in the Phonorecords IV proceeding?,single,"The retrieved passages from the US Copyright Royalty Judges proceeding (Phonorecords IV) do not explicitly list the names of the individual companies or organizations that comprised the settling parties. The passages state only that the settling parties represented a ""consensus of both licensees and licensors representing the vast majority of the market for rights under section 115 for Subpart C & D Configurations"" [2022-28316, p. 1, ""Configurations, Docket No. 21–CRB–""]. 
+
+This proceeding involves mechanical rights under US federal law (specifically 17 U.S.C. 115).",False,correct,True,True,11.6
+q19,How long does copyright last for musical works in the UK?,single,"Under UK law (specifically as explained in the UK Intellectual Property Office notice concerning the live-performance of music), copyright in musical works lasts for the life of the creator, plus 70 years after their death `[Copyright-notice-Jan-2016, p.2, ""The basics""]`. This copyright protects the musical work and gives the owner exclusive control, requiring permission before the music is performed in public `[Copyright-notice-Jan-2016, p.2, ""The basics""]`.",False,correct,True,True,14.6
+q20,What is PRS for Music and what does it manage in the UK?,single,"Under UK law (specifically as detailed in UK Intellectual Property Office guidance), **PRS for Music (PRS)** is a Collective Management Organisation (CMO) or collecting society that administers rights on behalf of composers, lyricists, and music publishers [Copyright-notice-Jan-2016, p.2]. 
+
+What PRS manages in the UK:
+* **Rights in Musical Works:** PRS manages the rights associated with musical compositions and lyrics, specifically handling public performance rights
+ (such as live performances of music at venues, festivals, or events) [Copyright-notice-Jan-2016, p.2].
+* **Authorisation and Licensing:** PRS issues public performance licences (such as those held by venues, clubs, pubs, or local authorities for busking) to authorize the public performance of copyrighted musical works [Copyri",False,partially_correct,True,True,6.2
+q21,How do the rights of musical composition owners differ from sound recording owners regarding public performance?,multi,"Under US federal law, the public performance rights differ between musical composition owners and sound recording owners as follows:
+
+* **Musical Composition Owners:** Have the exclusive right to perform the work publicly without restriction as to the method of transmission [circ56a, p.2].
+* **Sound Recording Owners:** Have the exclusive right to perform the work publicly *only* by means of a digital audio transmission [circ56a, p.2]. 
+
+[circ56a, p.2, ""Copyright Registration of Musical Compositions and Sound Recordings""]",False,correct,True,True,2.7
+q22,How does the distinction between musical compositions and sound recordings affect group registration on an album?,multi,"Under U.S. federal law (Circular 56A and Circular 58), the distinction between musical compositions and sound recordings affects registration on an album in several ways:
+
+* **Collective Work Registration:** An album containing multiple tracks of musical compositions and sound recordings is considered a collective work [circ56a, p.7]. 
+  * If the person or entity selecting, coordinating, or arranging the album also owns the sound recordings (and they were not previously published or registered), a single application can cover the album as a collective work and the sound recordings [circ56a, p.7]. If that same party also owns the underlying musical compositions, the registration will extend to those compositions as well [circ56a, p.7].
+  * However, if the copyright owner of the musical comp",False,partially_correct,True,True,4.0
+q23,Compare what PRS and PPL each manage in the UK copyright system.,multi,"Under United Kingdom law (as explained in UK Intellectual Property Office guidance), Collective Management Organisations (CMOs) manage rights on behalf of copyright owners. PRS and PPL manage different types of rights and works:
+
+* **PRS** manages rights in **musical works** (the composition and lyrics, belonging to composers, lyricists, and music publishers) [Copyright-notice-Jan-2016, p.2]. This includes licensing public performances of musical compositions [Copyright-notice-Jan-2016, p.2].
+* **PPL** (Phonographic Performance Limited) manages the rights of **performers and record companies** in **sound recordings** when recorded music is played in public or used (such as backing tracks) [Copyright-notice-Jan-2016, p.2, p.3].",False,partially_correct,True,True,13.7
+q24,What similarities exist between the EU text-and-data-mining exception and the conditions for general TDM under Article 4?,multi,"Under EU law (specifically
+ EU Directive 2019/790 on copyright and related rights in the Digital Single Market), the general text-and-data-mining (TDM) exception under Article 4 shares key conditions with the specific scientific research TDM exception (Article 3), including:
+
+* **Lawful Access:** Both exceptions require that the works or other subject matter being text-and-data mined are accessed lawfully by the beneficiary (such as content made publicly available online or accessed through open access licences or subscriptions) [CELEX_32019L0790_EN_TXT, p.1, CELEX_32019L0790_EN_TXT, p.14]. 
+* **Scope of Rights Covered:** Both Article 3 and Article 4 exceptions limit exclusive rights of reproduction and extraction (such as those under Directive 96/9/EC, Directive 2001/29/EC, and Directive ",False,partially_correct,True,True,15.2
+q25,How do the comments in support and opposition differ regarding the Phonorecords IV settlement?,multi,"The retrieved passages from the corpus detail various comments in **opposition** to the Phonorecords IV proposed settlement (concerning statutory mechanical royalty rates for musical compositions under US federal law/Copyright Royalty Board proceedings). 
+
+Specifically, the opposing comments argue that:
+* Headline rates (applicable to service revenue) should be increased further to give songwriters equity and parity with music services and record labels `[2022-28316, p.3, ""Comments in Opposition""]`.
+* Intertwined relationships and equity positions held by major entities (Sony, Universal, and Warner) create conflicts of interest between major record labels (sound recordings) and major music publishers (musical composition copyrights) `[2022-28316, p.3, ""Sony, Universal and Warner, control""]",False,partially_correct,True,True,12.1
+q26,How does the deposit requirement differ between registering a single sound recording and registering a group of works on an album?,multi,"Under U.S. federal law, the deposit requirements for sound recordings differ depending on whether you are registering a single sound recording or a group of sound recordings on an album:
+
+* **Group of Sound Recordings on an Album:** The deposit requirement depends on how the album was published [circ58, p.6, ""Deposit Requirements for Sound Recordings and Any Associated Photographs, Artwork, and Liner Notes""]:
+  * **Digital-only format:** If the album was distributed solely in a digital format and not in a physical format, you may upload individual audio files containing a separate copy of each sound recording you want to register, along with any digital copies of photographs, artwork, or liner notes [circ58, p.6, ""Deposit Requirements for Sound Recordings and Any Associated Photographs, Ar",False,partially_correct,True,True,22.0
+q27,What is the current per-stream royalty rate on Spotify for independent artists?,unanswerable,"Questions about per-stream payouts, pricing, and business strategy are out of scope. Please consult a music lawyer or your collecting society.",False,wrong_refusal,False,False,3.8
+q28,How do you register a trademark for a band name in the United States?,unanswerable,The corpus does not cover this question. Please consult a music lawyer or your collecting society.,False,correct_refusal,False,True,6.4
+q29,What are the standard sync licensing rates for music used in television commercials?,unanswerable,The corpus does not cover this question. Please consult a music lawyer or your collecting society.,False,correct_refusal,False,True,10.1
+q30,How much does the Harry Fox Agency charge for mechanical license administration?,unanswerable,The corpus does not cover this question. Please consult a music lawyer or your collecting society.,False,correct_refusal,False,True,2.6
+q31,What is the DMCA safe harbour provision for music streaming platforms?,unanswerable,"The retrieved passages from the music-copyright corpus do not contain information concerning the United States Digital Millennium Copyright Act (DMCA) safe harbour provisions for music streaming platforms. 
+
+However, under EU law (Directive 2019/790 on copyright in the Digital Single Market), online content-sharing service providers perform an act of communication to the public or making available to the public when they give access to copyright-protected works uploaded by users [CELEX_32019L0790_EN_TXT, p.28, Article 17]. Under EU law, the general hosting liability limitations (such
+ as Article 14(1) of Directive 2000/31/EC) do not apply to the specific situations covered by Article 17 of Directive 2019/790 [CELEX_32019L0790_EN_TXT, p.28, Article 14(1) of Directive 2000/31/EC shall not ap",False,correct,True,True,15.8
+q32,What are the copyright rules for sampling pre-existing recordings in hip-hop music?,unanswerable,"The retrieved passages from the US corpus indicate that under US federal law, a derivative sound recording is an audio recording that incorporates pre-existing sounds (such as sounds previously registered, published, or fixed before February 15, 1972), provided that these pre-existing recorded sounds are rearranged, remixed, or otherwise altered in sequence `[circ56, p.2, Derivative Sound Recordings]`. 
+
+When registering a derivative sound recording in the US, the applicant must identify the pre-existing material in the ""material excluded"" field and the new material in the ""new material included"" field, and provide the registration number and year if the pre-existing material was previously registered with the Copyright Office `[circ56, p.4, Limitation of Claim]`.
+
+The corpus does not cont",False,partially_correct,True,True,11.7

@@ -1,0 +1,38 @@
+{
+  "total_questions": 32,
+  "hit_rates": {
+    "fixed_chunks": {
+      "1": 0.9231,
+      "3": 0.9615,
+      "5": 1.0
+    },
+    "structure_chunks": {
+      "1": 0.9615,
+      "3": 0.9615,
+      "5": 1.0
+    }
+  },
+  "verdict_counts": {
+    "correct": 18,
+    "unsupported_claim": 3,
+    "partially_correct": 7,
+    "wrong_refusal": 1,
+    "correct_refusal": 3
+  },
+  "code_checks": {
+    "citation_present": 22,
+    "citation_missing": 0,
+    "correct_refusal": 4,
+    "wrong_refusal": 4,
+    "missed_refusal": 2
+  },
+  "failure_classification": {
+    "retrieval_miss": 0,
+    "wrong_answer_right_passage": 18,
+    "unsupported_claim": 3,
+    "wrong_refusal": 0
+  },
+  "avg_time_seconds": 8.4,
+  "total_time_seconds": 269.2,
+  "human_judge_agreement": 0.6562
+}
