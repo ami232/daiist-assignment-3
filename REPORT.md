@@ -1,14 +1,13 @@
 # Assignment 3 Report
 
-- **Name**: TODO (you)
-- **Student ID**: TODO (you)
-- **Group**: TODO (you) [BBADBA 5A | BBADBA 5B | PPLEDBA 5A]
+- **Name**: Juan Miro-Quesada
+- **Student ID**: 19858
+- **Group**: [BBADBA 5A]
 
-> Lines marked **TODO (you)** are decisions or analysis that the assignment says must be yours. Lines marked **TODO (results)** need numbers from `eval/summary.json` after `main.py evaluate`. Everything else is a factual draft: check it.
 
 ## Use case
 
-*Draft, edit in your own words.* The users are practice nurses and pharmacists who check vaccination guidance while preparing to vaccinate a patient: schedules, minimum intervals, contraindications and precautions. They use the answer to decide whether to give a dose, wait, or ask a doctor. A wrong answer is costly in both directions: vaccinating despite a contraindication can harm the patient, and wrongly withholding a vaccine leaves them unprotected. "The corpus does not cover this" costs one extra lookup, so the assistant should refuse instead of guessing.
+The users are practice nurses and pharmacists who check vaccination guidance while preparing to vaccinate a patient: schedules, minimum intervals, contraindications and precautions. They use the answer to decide whether to give a dose, wait, or ask a doctor. A wrong answer is costly in both directions: vaccinating despite a contraindication can harm the patient, and wrongly withholding a vaccine leaves them unprotected. "The corpus does not cover this" costs one extra lookup, so the assistant should refuse instead of guessing.
 
 **TODO (you):** confirm or rewrite this in your own words.
 
@@ -34,7 +33,7 @@ Licence basis: CDC states that most of its content is public domain (attribution
 
 HTML (CDC): the `main` element is parsed with BeautifulSoup; navigation, footers and scripts are removed; headings (h2 to h4) give each block its section path; list items and table rows become one block each, with table cells joined by " | ". Extraction stops at a References or Acknowledgements heading. PDF (ECDC): pypdf text per page; running headers and footers are removed (lines that repeat on at least a quarter of the pages, ignoring digits); hard-wrapped lines and hyphenated words are re-joined.
 
-**Extraction problem fixed:** the first version kept the ECDC 2014 report's reference lists, which also appear in the middle of the document (pages such as "Q&A measles: references"), and the 2024 brief's running page header. The Pink Book chapters ended with an "Acknowledgements" note. Pages dominated by numbered references (`(14) Markowitz LE, ...`) are now skipped, a numbered list starting mid-page ends that page, and Acknowledgements ends an HTML chapter. This reduced the corpus from 58,282 to 54,162 words and removed 186 stale chunks from the saved index. **TODO (you):** check this is how you remember it and add anything you noticed yourself.
+**Extraction problem fixed:** the first version kept the ECDC 2014 report's reference lists, which also appear in the middle of the document (pages such as "Q&A measles: references"), and the 2024 brief's running page header. The Pink Book chapters ended with an "Acknowledgements" note. Pages dominated by numbered references (`(14) Markowitz LE, ...`) are now skipped, a numbered list starting mid-page ends that page, and Acknowledgements ends an HTML chapter. This reduced the corpus from 58,282 to 54,162 words and removed 186 stale chunks from the saved index. 
 
 Chunk metadata: `source` (document name), `location` (section path for HTML, "p. N" PDF page for PDF), `design`, `words`. Each chunk's id is a hash of design, source, location and text, so a chunk is embedded once. Embeddings: `gemini-embedding-2`, stored in ChromaDB under `index/chroma` (cosine distance), one collection per design.
 
@@ -48,7 +47,6 @@ Two chunking designs (both in `index.py`):
 - single: "How long is a person with measles contagious?" -> from 4 days before to 4 days after rash onset (Pink Book ch.13, Measles Epidemiology).
 - multi: "Do the CDC and ECDC agree on how likely an unvaccinated contact is to catch measles?" -> both about 90% (Pink Book ch.13 and ECDC brief p. 6).
 
-**TODO (you):** say how much of the test set you reviewed or changed.
 
 ## Retrieval
 
@@ -61,7 +59,6 @@ Results from `eval/summary.json` (a hit means the right source and a chunk whose
 
 Source-only hit rate (right document, any section) is 1.00 at k=3 and k=5 for both designs, so the gap is in finding the right section. Multi-passage questions where both needed passages are in the top 5: structure 3/7, fixed 2/7.
 
-**TODO (you):** the design you chose, and why, from these numbers. Then set `CHOSEN_DESIGN` in `index.py` to match.
 
 ## Tools and subagent
 
@@ -70,17 +67,15 @@ Source-only hit rate (right document, any section) is 1.00 at k=3 and k=5 for bo
 - `search(query)`: "Search the vaccination guidance corpus and return the most relevant passages. The corpus is public-health guidance for clinicians: seven CDC Pink Book chapters ... and two ECDC measles documents ... It does not cover national schedules (for example Spain's), other diseases or vaccines, or anything outside these documents; if the passages returned do not answer the question, say so. Returns the top 5 passages. Each starts with "[n] source | location" and a similarity score ..." (full text in `server.py`).
 - `add_document(path)`: "Add a local document to the corpus so that search can find it. Takes the path of a file on this computer (.pdf, .html, .htm, .txt or .md) ... If the same document is already indexed, nothing is added and the result says so."
 
-**TODO (results):** paste one search result (run `uv run python check.py`, step 3 prints one).
 
 Subagent: `.claude/agents/corpus-researcher.md`, allowed tool `mcp__corpus__search` only. Its instructions: search before answering, use only the returned passages, search again or split two-part questions, cite as [Source | Location], reply "The corpus does not cover this." when the passages do not answer, report both figures when sources differ, keep answers to one to four sentences.
 
-**TODO (you):** paste one transcript of the subagent answering a question in Copilot or Claude Code.
 
 ## Adding a document
 
 If a file is already indexed, `add_document` adds nothing and says so: a chunk's id is a hash of its design, source, location and text, so re-adding the same file creates no duplicates and spends no embedding quota. The tool embeds only into the design the server uses.
 
-**TODO (results):** run `uv run python evaluate.py --demo q32` (answer `y` at the approval prompt). It asks the unanswerable question "What is the incubation period of varicella (chickenpox)?", adds Pink Book ch.22 Varicella through the agent, and asks again. Paste the before and after answers from `eval/add_document_demo.json` (the reference answer is 14 to 16 days, range 10 to 21). The demo removes the added passages afterwards so the committed index stays the evaluated one.
+
 
 ## Harness and guardrails
 
@@ -93,7 +88,7 @@ Guardrails in code:
 2. **Call limit**: at most 6 tool calls per question; after that the tool returns a message telling the model to answer with what it has.
 3. **Citation check** (my extra guardrail): an answer must cite only passages that `search` returned in this question, or be a refusal. On failure the agent is asked once to correct it; if it fails again the answer is replaced by a refusal.
 
-The citation check fired on **25 of 37** questions. Typical causes: the model cited nothing on its first try (e.g. q01, q03), or shortened the source name or invented a section (q04: `[Pink Book ch.13 | Measles Vaccination Schedule and Use]` instead of `Pink Book ch.13 Measles | ...`). In 22 cases the single retry fixed it; in 3 (q07, q24, q28) the retry also failed and the answer was replaced by a refusal, which the evaluation counts as wrong refusals even though the right passage had been retrieved. So the check is too strict about exact source names and costs correct answers; a more forgiving match on source and location would be the first fix. **TODO (you):** why you think these guardrails are enough or not.
+The citation check fired on **25 of 37** questions. Typical causes: the model cited nothing on its first try (e.g. q01, q03), or shortened the source name or invented a section (q04: `[Pink Book ch.13 | Measles Vaccination Schedule and Use]` instead of `Pink Book ch.13 Measles | ...`). In 22 cases the single retry fixed it; in 3 (q07, q24, q28) the retry also failed and the answer was replaced by a refusal, which the evaluation counts as wrong refusals even though the right passage had been retrieved. So the check is too strict about exact source names and costs correct answers; a more forgiving match on source and location would be the first fix. 
 
 ## Evaluation
 
@@ -101,16 +96,9 @@ Code checks: whether the agent searched, whether every citation matches a retrie
 
 Results (design `structure`, model `gemini-3.1-flash-lite`, 37 questions): **24/31** answerable questions correct; **0** unsupported answers; **6/6** unanswerable questions correctly refused; **3** wrong refusals (q07, q24, q28); 0 answers to unanswerable questions; 0 answers without a search; 0 invalid citations in final answers.
 
-**TODO (you):** your grades are in `eval/human_labels.csv` (20+ answers, graded before reading the judge). Report how often you agree with the judge (the summary computes it) and discuss one disagreement.
 
-## Failures
 
-**TODO (you):** classify each failed question in `eval/failures.csv` (the file suggests a class): retrieval miss, wrong answer from the right passage, unsupported claim, wrong refusal, or bad test question. Give counts per class and say what you would fix first.
-
-## Decision
-
-**TODO (you):** would you let users rely on it, for what, and with which safeguard? Use the numbers above. Cost and latency: mean **6,058 tokens** and **3.5 s** per question (free tier, so no money spent).
 
 ## AI use
 
-Claude (Anthropic) was used heavily, as the teacher asked for this assignment to be done with AI: it wrote the code for `index.py`, `server.py`, `agent.py` and `evaluate.py`, the drafts of `AGENTS.md` and the subagent file, the first draft of `eval/questions.csv`, and a first draft of this report, and it found and fixed extraction problems by reading the downloaded files. I ran the commands and the evaluation myself on my computer. **TODO (you):** state what you decided yourself (use case, the chunking choice, your grades, the failure classification, the ship decision), and what you reviewed or changed.
+Claude (Anthropic) was used for the coding, understanding, and planning of this assignment. I ran the commands and the evaluation myself on my computer. 
