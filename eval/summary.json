@@ -55,8 +55,66 @@
     "unsupported_claim": 1
   },
   "judge_vs_human": {
-    "n": 0,
-    "disagreements": []
+    "n": 30,
+    "disagreements": [
+      {
+        "id": "q03",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "The assistant accurately identified the function of the stick pusher and the captain's incorrect response using the provided passages."
+      },
+      {
+        "id": "q05",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "The assistant correctly identified the risk of an early stall warning and supported the answer with the provided passages."
+      },
+      {
+        "id": "q06",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "The assistant accurately summarized the NTSB recommendation using the provided text."
+      },
+      {
+        "id": "q11",
+        "field": "correct",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "The assistant incorrectly stated that the NTSB recommended the FAA require manufacturers to develop the checklist, whereas the recommendation (A-10-66) was directed at the manufacturers themselves to develop it, with a separate subsequent recommendation (A-10-67) for the FAA to require operators to implement it."
+      },
+      {
+        "id": "q18",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "The assistant accurately identified the altitude at which the crew recognized the low speed/path and the altitude at which the go-around was initiated, citing the correct pages from the provided report."
+      },
+      {
+        "id": "q22",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "judge_reason": "none"
+      },
+      {
+        "id": "q30",
+        "field": "supported",
+        "human": 1,
+        "judge": 0,
+        "judge_reason": "The assistant included a statistic about 108 dual-engine bird strikes between 1990 and 2008, but this information was not present in the provided retrieved passages."
+      }
+    ],
+    "correct": {
+      "agreement": 0.967,
+      "cohen_kappa": 0.651
+    },
+    "supported": {
+      "agreement": 0.8,
+      "cohen_kappa": -0.059
+    }
   },
   "cost_per_question": {
     "input_tokens": 9674,

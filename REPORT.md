@@ -99,7 +99,7 @@ The first line is the tag the agent must copy into its answer. The second line g
 
 **Subagent:** `.claude/agents/corpus-researcher.md`, with access to `mcp__corpus__search` only (it cannot add documents). Its instructions repeat the core rules: split the question and search each accident separately, answer only from the passages, cite every sentence, keep the NTSB's categories, refuse plainly when not covered.
 
-**Transcript from the editor:** EDITOR_TRANSCRIPT (to add: one run of the `corpus-researcher` subagent in Claude Code)
+**Transcript from the editor** (Claude Code; full text in `eval/editor_transcript.md`): asked *"How did the NTSB characterize the role of crew fatigue in Colgan Air Flight 3407 and Asiana Airlines Flight 214? … cite the PDF pages"*, the subagent ran four searches, one per accident and kind of information ("Colgan Air 3407 crew fatigue findings", "Asiana 214 flight crew fatigue", "Asiana 214 probable cause contributing factors fatigue", "Colgan Air 3407 probable cause contributing to the accident"). It answered that for Colgan fatigue "likely impaired" the pilots but its extent "cannot be conclusively determined" (Finding 24) `[AAR1001 p.166-167]` and is not among the contributing factors `[AAR1001 p.169]`, while for Asiana "flight crew fatigue" is contributing factor (5) `[AAR1401 p.18]`. It kept the categories apart, and labelled a Board Member Statement arguing fatigue was a factor as "one member's opinion, not an NTSB finding" `[AAR1001 p.176]`, which is AGENTS.md rule 3 working. The same question asked of `main.py ask` in one search (q22) missed Finding 24 and wrongly said fatigue was not in Colgan's findings: the subagent's extra, narrower searches are what found it.
 
 ## Adding a document
 
@@ -158,36 +158,46 @@ Rules 2 and 3 were added after a failure (see *Failures*): an early answer prese
 | Measure | Result |
 |---|---|
 | Correct (judge) | **35/37** (29/31 answerable, 6/6 unanswerable) |
-| Supported (judge) | 36/37 |
+| Supported | judge 36/37; our grades 24/30 (see agreement below) |
 | Correct refusals (code) | 6/6 |
 | Wrong refusals (code) | 1 (q23, partial: it refused the Flight 1549 half) |
 | Citations valid (code) | 37/37 |
 | Expected page retrieved and cited (code) | 12/31, see *Retrieval* for why this is low |
 | Citation check fired | 2 (both repaired) |
 
-**Agreement with the judge:** AGREEMENT
+**Agreement with the judge** (30 answers graded by hand before reading the verdicts, `eval/human_labels.csv`):
+
+| Field | Agreement | Cohen's κ | Disagreements |
+|---|---|---|---|
+| correct | 29/30 (0.97) | 0.65 | q11: the judge was wrong (see *Failures*) |
+| supported | 24/30 (0.80) | −0.06 | q03, q05, q06, q18, q22 (human 0, judge 1); q30 (human 1, judge 0) |
+
+The judge is reliable on *correct* but not on *supported*: its κ is no better than chance. It passed five answers that we found unsupported, and four of those were wrong details rather than missing context: two invented recommendation numbers (q05 cites "A-10-10", q06 "A-10-16"; neither id appears in any retrieved passage, which we checked in the saved trace), a callout credited to the wrong pilot (q18: the passage says the pilot monitoring said "it's low"), and a stick-pusher claim cited to a page about the stick shaker (q03). The judge reads for the gist and checks the overall claim, not each id, name and page, which is exactly where the use case's costliest errors sit. **By our grades, 24 of 30 answers are fully supported, not the judge's 36 of 37**, and the judge's "supported" score should not be reported on its own.
 
 ## Failures
 
-Three questions failed in the final run, plus two failures found and fixed during development.
+By the judge, three questions failed in the final run; our own grading found five more unsupported answers (see *Evaluation*). Two failures were found and fixed during development.
 
 | Question | Cause | What happened |
 |---|---|---|
 | q23 (multi) | wrong refusal (partial) | Asked how starting the APU on Flight 1549 preserved flight-envelope protection, and what autothrottle wakeup might have done for Asiana 214. The agent said the corpus does not cover the Flight 1549 part, although the retrieved passage (AAR1003 p.19) says the APU gives an extra electrical source; it did not connect that to normal law. It refused rather than guess, which is the cheaper error. |
 | q30 (unanswerable) | unsupported claim | The refusal was correct, but the agent added a count of earlier dual-engine bird strikes ("108 … between 1990 and 2008", per the judge) that was not in the passages it retrieved. A number from memory is the error the use case fears most. |
+| q05, q06 (single) | unsupported claim: invented id | The answers are right in substance but name a recommendation id that is in none of the retrieved passages ("A-10-10", "A-10-16"). Both passed the citation check, because the page cited was retrieved; only the id was invented. The judge missed both. |
+| q18 (single) | unsupported claim: wrong attribution | Credits the "it's low" callout to the pilot flying; the retrieved passage (AAR1401 p.27) says the pilot monitoring. |
+| q03, q22 | unsupported claim: wrong page / overstated | q03 cites a stick-shaker page for a stick-pusher conclusion; q22 states fatigue was not in Colgan's findings without having retrieved the findings. |
 | q11 (single) | judge error / bad question | The judge marked it wrong, saying A-10-66 was addressed to manufacturers. The report (AAR1003 p.141) lists A-10-66 among the recommendations *to the FAA*: "Require manufacturers of turbine-powered aircraft to develop a checklist…". The agent's answer is right; our question ("did the NTSB ask aircraft manufacturers…") misled the judge. |
 | (development) Asiana recommendations | misattribution | An early answer cited AAR1401 p.207, the Korean investigation board's comments, as an NTSB recommendation. Those pages and the Board Member Statements had been labelled with the previous section heading. Fixed by detecting "Board Member Statement" and "Comments of the …" as headings (51 chunks re-embedded) and adding AGENTS.md rules 2 and 3. |
 | (development) q26 refusal | guardrail misfire | The citation check withheld a correct refusal (see *Harness and guardrails*). Fixed in the refusal detector. |
 
-**By cause (final run):** 1 wrong refusal, 1 unsupported claim, 1 judge error; 0 retrieval misses that changed an answer.
+**By cause (judge plus our grades, 37 answers):** 6 unsupported claims (q03, q05, q06, q18, q22, q30; three of them a wrong id, name or number), 1 wrong refusal (q23), 1 judge error (q11); no retrieval miss changed whether an answer was correct.
 
-**What to fix first:** the unsupported number (q30). Add a code check that every number in an answer appears in a retrieved passage, and route a failing answer to the same repair turn as the citation check. It is cheap, needs no model, and targets the "changed numbers" error in the use case. Second: give each answerable question all its supporting pages (Findings *and* Analysis) so the retrieval numbers measure what matters. Smaller: in AAR2002, numbered findings ("2. There was insufficient information…") are detected as section headings, so some chunks carry a wrong section label; the heading pattern should require a short title line.
+**What to fix first:** invented ids and numbers (q05, q06, q30). Add a code check that every recommendation id (A-NN-NN), time and number in an answer appears in a retrieved passage, and route a failing answer to the same repair turn as the citation check. It is cheap, needs no model, and targets the "changed numbers" error in the use case. Second: give each answerable question all its supporting pages (Findings *and* Analysis) so the retrieval numbers measure what matters. Smaller: in AAR2002, numbered findings ("2. There was insufficient information…") are detected as section headings, so some chunks carry a wrong section label; the heading pattern should require a short title line.
 
 ## Decision
 
-**Yes, as a first-draft research assistant, not as a source.** An analyst can use it to find and draft what the reports say about a cause, finding or recommendation, because every claim comes with a page the code has checked was actually retrieved, and it refused all six out-of-corpus questions. They should not paste its answers into training material unchecked: in 37 questions one answer added an unsupported number (q30) and one refused half a question it could have answered (q23).
+**Yes, as a first-draft research assistant, not as a source.** An analyst can use it to find and draft what the reports say about a cause, finding or recommendation, because every claim comes with a page the code has checked was actually retrieved, and it refused all six out-of-corpus questions. They should not paste its answers into training material unchecked: by our own grading, 6 of 30 answers contained an unsupported detail, including two invented recommendation numbers that our citation check and the LLM judge both missed.
 
-**Safeguards:** the analyst opens every cited page before a claim goes onto a slide (the citation check makes this possible, it does not replace it); `add_document` needs explicit approval; the numbers check above should be added before wider use.
+**Safeguards:** the analyst opens every cited page before a claim goes onto a slide (the citation check makes this possible, it does not replace it); `add_document` needs explicit approval; the id-and-number check above must be added before wider use, since recommendation ids are what the analyst would copy onto a slide.
 
 **Cost and latency per question** (final run, mean of 37): 9,674 input and 211 output tokens, 1.6 tool calls, 16.3 s, plus one query embedding per search. The index cost about 1,800 embeddings for both designs of the three reports (885 + 740 chunks plus re-embeds after fixes) and 168 for Atlas Air. Everything ran on the Gemini free tier, so the money cost was zero; the binding limits were the daily quotas (about 1,000 embeddings, and 20 requests a day for `gemini-3.5-flash`), which is why indexing was spread over two days and the lite model answers.
 
