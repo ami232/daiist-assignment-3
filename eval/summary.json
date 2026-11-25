@@ -1,0 +1,104 @@
+{
+ "retrieval": [
+  {
+   "design": "paragraph",
+   "hit@1": 0.5,
+   "hit@3": 0.714,
+   "hit@5": 0.75,
+   "multi hit@5": 0.375,
+   "words@3": 457.889,
+   "words@5": 775.889,
+   "top sim answerable": 0.783,
+   "top sim unanswerable": 0.69
+  },
+  {
+   "design": "fixed",
+   "hit@1": 0.536,
+   "hit@3": 0.643,
+   "hit@5": 0.786,
+   "multi hit@5": 0.25,
+   "words@3": 436.444,
+   "words@5": 727.083,
+   "top sim answerable": 0.758,
+   "top sim unanswerable": 0.67
+  },
+  {
+   "design": "paragraph + hybrid",
+   "hit@1": 0.464,
+   "hit@3": 0.679,
+   "hit@5": 0.75,
+   "multi hit@5": 0.25,
+   "words@3": 490.5,
+   "words@5": 831.222,
+   "top sim answerable": 0.773,
+   "top sim unanswerable": 0.668
+  },
+  {
+   "design": "fixed + hybrid",
+   "hit@1": 0.464,
+   "hit@3": 0.75,
+   "hit@5": 0.821,
+   "multi hit@5": 0.375,
+   "words@3": 444.639,
+   "words@5": 748.444,
+   "top sim answerable": 0.742,
+   "top sim unanswerable": 0.649
+  }
+ ],
+ "end_to_end": {
+  "correct": 0.9444444444444444,
+  "supported": 0.9444444444444444,
+  "correct refusals": 8,
+  "missed refusals": 0,
+  "wrong refusals": 1,
+  "quotes removed by guardrail": 0,
+  "refusals rewritten by guardrail": 9,
+  "tokens per question": 5517.194444444444,
+  "seconds per question": 26.77777777777778,
+  "searches per question": 1.3055555555555556
+ },
+ "agreement": {
+  "graded": 23,
+  "graded blind": 23,
+  "correct agreement (blind)": 1.0,
+  "supported agreement (blind)": 1.0,
+  "correct agreement (all)": 1.0,
+  "supported agreement (all)": 1.0,
+  "human fails / judge fails (all)": "3 / 3",
+  "disagreements": []
+ },
+ "fit_bands": [
+  {
+   "band": "(0, 70]",
+   "count": "4",
+   "mean": "1.0"
+  },
+  {
+   "band": "(70, 90]",
+   "count": "2",
+   "mean": "1.0"
+  },
+  {
+   "band": "(90, 100]",
+   "count": "22",
+   "mean": "0.95"
+  }
+ ],
+ "similarity_bands": [
+  {
+   "band": "(0.0, 0.7]",
+   "count": "9",
+   "mean": "1.0"
+  },
+  {
+   "band": "(0.7, 0.75]",
+   "count": "14",
+   "mean": "0.86"
+  },
+  {
+   "band": "(0.75, 1.0]",
+   "count": "12",
+   "mean": "1.0"
+  }
+ ]
+}
