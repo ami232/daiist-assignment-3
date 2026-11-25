@@ -1,1 +1,20 @@
 id,correct,supported,notes
+q15,1,0,"The answer matches the reference on timing. The displayed excerpts do not show the exception for documents the buyer already holds. The Article 59 excerpt is truncated, so this score is provisional."
+q12,1,0,"The visible Article 5 excerpt cuts off before paragraph 10, so it does not show the value thresholds, the net-of-VAT basis, or the 20% cap."
+q06,1,0,The visible excerpts establish corruption as a ground for exclusion but do not show the five-year maximum stated in the answer.
+q23,1,0,"The visible passages support the €5,404,000 threshold net of VAT, but they don’t state the 1 January 2026 start date or the 2026–2027 application period."
+q10,1,0,The visible Article 69 excerpt supports the duty to request an explanation but cuts off before the conditions for rejecting the tender.
+q30,1,0,"The agent appropriately declines to give a threshold, but the retrieved passages do not support its claim that Directive 2014/23/EU governs concession contracts."
+q14,1,0,"The visible Article 56 excerpt does not reach paragraph 3, which contains the rule on completing missing documents and its conditions."
+q17,1,0,"The visible Article 2c excerpt cuts off before the 15-day rule, the 10-day alternative from receipt, and the deadline tied to publication."
+q02,1,0,"The visible Article 28 excerpts show the standard 30-day minimum and mention an urgency exception, but cut off before the 15-day minimum and the dates from which the deadlines run."
+q27,1,0,"The Article 2a excerpt cuts off before the standstill deadlines, and the Article 2b excerpt cuts off before the condition that there be no candidates concerned."
+q22,1,1,"Article 2 explicitly states that Regulation (EU) 2025/2152 applies from 1 January 2026, matching the reference answer."
+q25,1,0,"The visible excerpts do not show the 30-day deadline for submitting tenders after the invitation is sent, or the five-day extension and its urgency exception."
+q29,1,0,"The visible excerpts support relying on another entity and submitting a separate ESPD, but the Article 63 excerpt cuts off before the proof-of-resources, entity replacement, and joint liability provisions."
+q11,0,0,The answer incorrectly treats the 10% and 15% limits as a standalone exception. The reference requires the change to be below both the applicable percentage limit and the Article 4 threshold.
+q04,1,0,The Article 33 excerpt cuts off before the four-year limit and the exception for duly justified cases.
+q05,1,0,The visible Article 55 excerpt cuts off before the 15-day deadline for replying to a written request and the exceptions for withholding information.
+q13,1,0,"The €750,000 threshold matches the reference. Article 74 points to Article 4(d), but the displayed Article 4 excerpt cuts off before that provision."
+q32,1,1,"The agent correctly declines to give a threshold. Article 7 points to Directive 2014/25/EU, and the retrieved passages give no utilities threshold."
+q28,1,0,"The answer matches the reference, but the visible excerpts cut off before the twice-contract-value cap and the three-financial-year limit for turnover evidence."

@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-24 21:24:26",
+  "generated": "2026-11-25 10:35:42",
   "config": {
     "design": "structure",
     "mode": "vector",
@@ -10,15 +10,21 @@
   "judge_model": "gemini-3.8-flash",
   "judge_same_as_agent": false,
   "stages_run": [
+    "retrieval",
+    "answers",
+    "judge",
     "demo"
   ],
   "complete": {
+    "retrieval": true,
+    "answers": true,
+    "judge": true,
     "demo": true
   },
   "questions": {
     "total": 36,
     "answered": 36,
-    "judged": 0
+    "judged": 36
   },
   "retrieval": [
     {
@@ -143,11 +149,11 @@
     }
   ],
   "end_to_end": {
-    "correct": 0,
-    "correct_rate": null,
-    "unsupported": 0,
-    "unsupported_rate": null,
-    "correct_answerable_rate": null,
+    "correct": 35,
+    "correct_rate": 0.9722222222222222,
+    "unsupported": 5,
+    "unsupported_rate": 0.1388888888888889,
+    "correct_answerable_rate": 0.9655172413793104,
     "correct_refusals": 7,
     "unanswerable": 7,
     "wrong_refusals": 0,
@@ -156,13 +162,146 @@
     "no_citation_and_no_refusal": 0,
     "expected_passage_retrieved_by_agent": 28,
     "guardrail_fired": 6,
-    "failures": 0
+    "failures": 5
   },
   "agreement": {
-    "human_labels": 0,
-    "compared": 0
+    "human_labels": 19,
+    "compared": 19,
+    "disagreements": [
+      {
+        "id": "q15",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The answer matches the reference on timing. The displayed excerpts do not show the exception for documents the buyer already holds. The Article 59 excerpt is truncated, so this score is provisional.",
+        "judge_reason": "The answer accurately states that certificates must be submitted before the contract is awarded and all accompanying details are fully supported by Article 59 of Directive 2014/24/EU and Annex 1 of Regulation 2016/7."
+      },
+      {
+        "id": "q12",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible Article 5 excerpt cuts off before paragraph 10, so it does not show the value thresholds, the net-of-VAT basis, or the 20% cap.",
+        "judge_reason": "The answer accurately states the thresholds (EUR 80 000 for supplies/services, EUR 1 million for works) and the 20% cap, and is directly supported by Article 5(10) of Directive 2014/24/EU."
+      },
+      {
+        "id": "q06",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible excerpts establish corruption as a ground for exclusion but do not show the five-year maximum stated in the answer.",
+        "judge_reason": "The answer correctly identifies the maximum exclusion period of five years from the date of conviction by final judgment, and all factual claims are fully supported by Article 57 of Directive 2014/24/EU."
+      },
+      {
+        "id": "q10",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible Article 69 excerpt supports the duty to request an explanation but cuts off before the conditions for rejecting the tender.",
+        "judge_reason": "The answer correctly states that the buyer cannot simply reject the tender and must first request explanations, fully matching the reference answer and supported by Article 69."
+      },
+      {
+        "id": "q30",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The agent appropriately declines to give a threshold, but the retrieved passages do not support its claim that Directive 2014/23/EU governs concession contracts.",
+        "judge_reason": "The answer correctly states that the corpus does not cover the question and points to Directive 2014/23/EU without providing an unsupported concrete threshold."
+      },
+      {
+        "id": "q14",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible Article 56 excerpt does not reach paragraph 3, which contains the rule on completing missing documents and its conditions.",
+        "judge_reason": "The answer accurately states that the contracting authority may request missing documents within an appropriate time limit, subject to national law and equal treatment/transparency principles, and every claim is directly supported by Article 56(3) of Directive 2014/24/EU."
+      },
+      {
+        "id": "q17",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible Article 2c excerpt cuts off before the 15-day rule, the 10-day alternative from receipt, and the deadline tied to publication.",
+        "judge_reason": "The answer accurately provides the minimum deadlines under EU law (10 calendar days for fax/electronic means, 15 days or 10 days from receipt for other means) and all claims are fully supported by Article 2c of Directive 89/665."
+      },
+      {
+        "id": "q02",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible Article 28 excerpts show the standard 30-day minimum and mention an urgency exception, but cut off before the 15-day minimum and the dates from which the deadlines run.",
+        "judge_reason": "The answer provides the reference fact of 30 days from the dispatch of the contract notice or invitation to confirm interest, along with the valid urgency exception of 15 days, both of which are fully supported by Article 28."
+      },
+      {
+        "id": "q27",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The Article 2a excerpt cuts off before the standstill deadlines, and the Article 2b excerpt cuts off before the condition that there be no candidates concerned.",
+        "judge_reason": "The answer accurately states both the standstill periods (10/15 calendar days) and the Member State option to waive the standstill when the sole tenderer concerned is awarded the contract, fully supported by the retrieved articles."
+      },
+      {
+        "id": "q25",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible excerpts do not show the 30-day deadline for submitting tenders after the invitation is sent, or the five-day extension and its urgency exception.",
+        "judge_reason": "The answer accurately states both the 30-day minimum time limit and the 5-day extension (with the urgency exception), fully supported by Articles 28 and 53 in the evidence."
+      },
+      {
+        "id": "q29",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible excerpts support relying on another entity and submitting a separate ESPD, but the Article 63 excerpt cuts off before the proof-of-resources, entity replacement, and joint liability provisions.",
+        "judge_reason": "The answer accurately addresses both parts of the question in line with the reference answer, and all factual claims are fully supported by the provided Directive and Regulation excerpts."
+      },
+      {
+        "id": "q04",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The Article 33 excerpt cuts off before the four-year limit and the exception for duly justified cases.",
+        "judge_reason": "The answer accurately states the four-year limit and its exceptional justification exception, directly matching both the reference answer and Article 33."
+      },
+      {
+        "id": "q05",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The visible Article 55 excerpt cuts off before the 15-day deadline for replying to a written request and the exceptions for withholding information.",
+        "judge_reason": "The answer accurately states the 15-day deadline from receipt of a written request, matching the reference answer, and all claims are fully supported by Article 55 of Directive 2014/24/EU."
+      },
+      {
+        "id": "q13",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The €750,000 threshold matches the reference. Article 74 points to Article 4(d), but the displayed Article 4 excerpt cuts off before that provision.",
+        "judge_reason": "The answer correctly identifies the EUR 750 000 threshold for social and other specific services listed in Annex XIV, and all statements are directly supported by the cited articles."
+      },
+      {
+        "id": "q28",
+        "field": "supported",
+        "human": 0,
+        "judge": 1,
+        "human_notes": "The answer matches the reference, but the visible excerpts cut off before the twice-contract-value cap and the three-financial-year limit for turnover evidence.",
+        "judge_reason": "The answer accurately states both key facts (up to two times the estimated contract value, and a maximum of the last three financial years available) and all details are directly supported by the retrieved passages."
+      }
+    ],
+    "correct": {
+      "agreement": 1.0,
+      "kappa": 1.0
+    },
+    "supported": {
+      "agreement": 0.2105,
+      "kappa": 0.0273
+    }
   },
-  "failures_by_suggested_cause": {},
+  "failures_by_suggested_cause": {
+    "wrong answer from right passage": 1,
+    "unsupported claim": 4
+  },
   "cost": {
     "model": "gemini-3.5-flash-lite",
     "models_seen": [

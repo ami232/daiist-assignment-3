@@ -1,13 +1,16 @@
 """
 Assignment 3: grade the agent's answers yourself. `uv run python grade.py`
 
-Shows one answer at a time (question, reference answer, agent answer, short
-snippets of what it retrieved) WITHOUT the judge's verdict, asks for
+Shows one answer at a time (question, reference answer, agent answer, the
+cited passages in full and short snippets of the other retrieved passages)
+WITHOUT the judge's verdict, asks for
 correct 1/0, supported 1/0 and notes, and appends to eval/human_labels.csv.
 Stop any time with q or Ctrl-C; the next run continues with ungraded answers.
 
     uv run python grade.py            # ungraded answers, in a fixed shuffled order
     uv run python grade.py q07 q23    # only these ids
+    uv run python grade.py --redo q07 # grade these again; the old rows are replaced
+    uv run python grade.py --redo     # grade every graded answer again
 """
 
 import csv
@@ -36,9 +39,13 @@ def wrap(text: str, indent: str = "  ") -> str:
 
 
 def snippet(chunk: dict, cited: set[tuple[str, str]], words: int = 70) -> str:
+    """Cited passages in full (the judge sees them in full too); the rest cut to `words`."""
     tokens = chunk["text"].split()
-    text = " ".join(tokens[:words]) + (" ..." if len(tokens) > words else "")
-    mark = "*" if any((chunk["doc_id"], loc) in cited for loc in chunk["locations"]) else " "
+    is_cited = any((chunk["doc_id"], loc) in cited for loc in chunk["locations"])
+    if is_cited:
+        words = len(tokens)
+    text = " ".join(tokens[:words]) + (" ... [cut, type f for the full text]" if len(tokens) > words else "")
+    mark = "*" if is_cited else " "
     return f" {mark}[{chunk['doc_id']} | {'; '.join(chunk['locations'])}]\n{wrap(text, '     ')}"
 
 
@@ -56,12 +63,17 @@ def main() -> None:
     if not rows:
         raise SystemExit("No answers yet. Run `uv run python main.py evaluate` first.")
     done = graded_ids()
-    wanted = set(sys.argv[1:])
-    todo = [r for r in rows if r["id"] not in done and (not wanted or r["id"] in wanted)]
+    redo = "--redo" in sys.argv[1:]
+    wanted = {a for a in sys.argv[1:] if a != "--redo"}
+    if redo:
+        todo = [r for r in rows if r["id"] in done and (not wanted or r["id"] in wanted)]
+    else:
+        todo = [r for r in rows if r["id"] not in done and (not wanted or r["id"] in wanted)]
     random.Random(3).shuffle(todo)  # mixed kinds, same order every run
     print(f"{len(done)} graded, {len(todo)} to grade. The brief asks for at least 20.")
     print("correct   = right against the reference (or a proper refusal for an unanswerable question)")
-    print("supported = every claim is in the retrieved text (starred passages are the cited ones)\n")
+    print("supported = every claim is in the retrieved text (starred passages are the cited ones,")
+    print("            shown in full; the others are cut to 70 words, type f to see them in full)\n")
 
     if not evaluate.HUMAN.exists() or evaluate.HUMAN.stat().st_size == 0:
         with evaluate.HUMAN.open("w", newline="", encoding="utf-8") as f:
@@ -98,8 +110,15 @@ def main() -> None:
         except (EOFError, KeyboardInterrupt):
             print()
             break
-        with evaluate.HUMAN.open("a", newline="", encoding="utf-8") as f:
-            csv.writer(f).writerow([row["id"], correct, supported, notes])
+        if redo:  # replace the old row of this id, keep the order of the file
+            with evaluate.HUMAN.open(newline="", encoding="utf-8") as f:
+                old = [r for r in csv.reader(f)]
+            new = [[row["id"], correct, supported, notes] if r and r[0].strip() == row["id"] else r for r in old]
+            with evaluate.HUMAN.open("w", newline="", encoding="utf-8") as f:
+                csv.writer(f).writerows(new)
+        else:
+            with evaluate.HUMAN.open("a", newline="", encoding="utf-8") as f:
+                csv.writer(f).writerow([row["id"], correct, supported, notes])
         print("  saved.\n")
 
     print(f"\n{len(graded_ids())} answers graded in eval/human_labels.csv. "
