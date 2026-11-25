@@ -1,0 +1,19 @@
+{
+  "agent_model": "gemini-3.5-flash-lite",
+  "judge_model": "gemini-3.5-flash-lite",
+  "questions": 30,
+  "correct_rate": 0.6,
+  "unsupported_rate": 0,
+  "correct_refusals": 5,
+  "wrong_refusals": 12,
+  "human_labels": 20,
+  "mean_seconds": 7.482833333333334,
+  "mean_input_tokens": 4860.7,
+  "mean_output_tokens": 154.1,
+  "mean_total_tokens": 5014.8,
+  "agreement_correct": 0.9,
+  "agreement_supported": 0.9,
+  "failure_counts": {
+    "wrong refusal": 12
+  }
+}

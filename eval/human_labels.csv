@@ -1,1 +1,21 @@
 id,correct,supported,notes
+q01,0,1,The agent refuses despite sufficient information being available.
+q02,0,1,The documents explain the difference but the agent refuses.
+q03,1,1,
+q04,1,1,
+q05,1,1,
+q06,0,1,The explanation is available in the document.
+q07,0,1,The answer is supported but omits important factors such as coal and iron.
+q08,1,1,
+q09,0,1,The document provides the figures but the agent refuses.
+q10,0,1,The agent refuses despite sufficient information being available.
+q21,0,1,The information is available in both books.
+q22,0,1,The documents contain enough information to answer.
+q23,0,1,Both concepts are explained in the document.
+q24,0,0,The answer confuses the loss of monetary value with falling prices and contradicts the evidence.
+q25,1,0,The main answer is correct but generalises a specific example that is not supported as a universal rule.
+q26,1,1,
+q27,1,1,
+q28,1,1,
+q29,1,1,
+q30,1,1,
