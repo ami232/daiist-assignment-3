@@ -38,7 +38,8 @@ HUMAN = EVAL / "human_labels.csv"
 ANSWERS = EVAL / "answers.jsonl"
 JUDGE = EVAL / "judge.jsonl"
 FRESH = os.environ.get("EVAL_FRESH") == "1"
-JUDGE_MODEL = os.environ.get("JUDGE_MODEL", "gemini-3.5-flash")
+# A different model from the one that answers, so the judge does not grade its own output.
+JUDGE_MODEL = os.environ.get("JUDGE_MODEL", "gemini-3.1-flash-lite")
 KS = (1, 3, 5)
 BASE_ENV = {"RAG_DOCS": ",".join(ix.BASE_DOC_IDS)}
 
@@ -159,14 +160,15 @@ def code_checks(q: dict, r: dict) -> dict:
     expected_retrieved = all(any(d == rd and ra <= p <= rb for rd, ra, rb in retrieved) for d, p in q["expected"])
     expected_cited = all(any(d == cd and ca - 1 <= p <= cb + 1 for cd, ca, cb in cites) for d, p in q["expected"])
     unanswerable = q["kind"] == "unanswerable"
+    refused = agent.is_refusal(ans)  # recomputed, so a fix to the detector applies to cached answers
     return {
         "n_citations": len(cites),
         "citations_valid": valid,
         "withheld": withheld,
-        "refused": r["refused"],
-        "correct_refusal": unanswerable and r["refused"],
-        "missed_refusal": unanswerable and not r["refused"],
-        "wrong_refusal": (not unanswerable) and (r["refused"] or withheld),
+        "refused": refused,
+        "correct_refusal": unanswerable and refused,
+        "missed_refusal": unanswerable and not refused,
+        "wrong_refusal": (not unanswerable) and (refused or withheld),
         "expected_retrieved": expected_retrieved if not unanswerable else None,
         "expected_cited": expected_cited if not unanswerable else None,
     }
@@ -235,6 +237,9 @@ def judge_all(questions: list[dict], answers: dict) -> dict:
                 v = Verdict.model_validate_json(resp.text).model_dump()
                 break
             except Exception as e:  # noqa: BLE001
+                if "per day" in str(e) or "PerDay" in str(e):
+                    log(f"  judge stopped at {q['id']}: daily quota of {JUDGE_MODEL} used up; re-run after the reset")
+                    return out
                 if attempt == 5:
                     log(f"  judge failed on {q['id']}: {e}")
                     v = None

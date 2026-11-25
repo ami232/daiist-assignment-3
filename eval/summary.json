@@ -1,0 +1,82 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "judge_model": "gemini-3.1-flash-lite",
+  "design": "sections",
+  "questions": 37,
+  "answered_without_error": 37,
+  "judged": 37,
+  "retrieval": {
+    "fixed": {
+      "hit@1": 0.129,
+      "hit@3": 0.226,
+      "hit@5": 0.258,
+      "passage_recall@5": 0.29,
+      "avg_words_in_prompt@5": 1750,
+      "chunks": 740
+    },
+    "fixed+hybrid": {
+      "hit@1": 0.129,
+      "hit@3": 0.29,
+      "hit@5": 0.387,
+      "passage_recall@5": 0.403,
+      "avg_words_in_prompt@5": 1750,
+      "chunks": 740
+    },
+    "sections": {
+      "hit@1": 0.226,
+      "hit@3": 0.387,
+      "hit@5": 0.516,
+      "passage_recall@5": 0.532,
+      "avg_words_in_prompt@5": 1319,
+      "chunks": 885
+    },
+    "sections+hybrid": {
+      "hit@1": 0.226,
+      "hit@3": 0.387,
+      "hit@5": 0.484,
+      "passage_recall@5": 0.516,
+      "avg_words_in_prompt@5": 1391,
+      "chunks": 885
+    }
+  },
+  "end_to_end": {
+    "correct": 35,
+    "correct_rate": 0.946,
+    "answerable_correct": "29/31",
+    "unsupported": 1,
+    "correct_refusals": "6/6",
+    "wrong_refusals": 1,
+    "citations_valid": "37/37",
+    "expected_page_cited": "12/31",
+    "guardrail_fired": 2
+  },
+  "failures": {
+    "wrong_from_right_passage": 2,
+    "unsupported_claim": 1
+  },
+  "judge_vs_human": {
+    "n": 0,
+    "disagreements": []
+  },
+  "cost_per_question": {
+    "input_tokens": 9674,
+    "output_tokens": 211,
+    "seconds": 16.3,
+    "tool_calls": 1.6
+  },
+  "before_after": {
+    "id": "q26",
+    "question": "What did the NTSB determine was the probable cause of Atlas Air Flight 3591's crash?",
+    "added": [
+      "AAR2002"
+    ],
+    "before": {
+      "answer": "The reports in the corpus do not cover Atlas Air Flight 3591. The searchable corpus currently holds accident reports for Colgan Air 3407 (AAR1001), US Airways 1549 (AAR1003), and Asiana 214 (AAR1401).",
+      "refused": true
+    },
+    "after": {
+      "answer": "The NTSB determined that the probable cause of the Atlas Air Flight 3591 accident was the inappropriate response by the first officer (as the pilot flying) to an inadvertent activation of the go-around mode, which led to his spatial disorientation and nose-down control inputs that placed the airplane in a steep descent from which the crew did not recover [AAR2002 p.76].\n\nThe NTSB also identified the following contributing factors:\n1. The captain’s failure to adequately monitor the airplane’s flightpath and assume positive control of the airplane to effectively intervene [AAR2002 p.76].\n2. Systemic deficiencies in the aviation industry’s selection and performance measurement practices, which failed to address the first officer’s aptitude-related deficiencies and maladaptive stress response [AAR2002 p.76].\n3. The Federal Aviation Administration’s failure to implement the pilot records database in a sufficiently robust and timely manner [AAR2002 p.76].",
+      "refused": false
+    }
+  }
+}

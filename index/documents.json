@@ -11,9 +11,11 @@
     "licence": "Public domain (US government work)",
     "indexed_at": "2026-11-23T17:37:27+00:00",
     "complete": {
-      "sections": true
+      "sections": true,
+      "fixed": true
     },
-    "chunks_sections": 336
+    "chunks_sections": 336,
+    "chunks_fixed": 286
   },
   "AAR1003": {
     "doc_id": "AAR1003",
@@ -27,9 +29,11 @@
     "licence": "Public domain (US government work)",
     "indexed_at": "2026-11-23T17:41:07+00:00",
     "complete": {
-      "sections": true
+      "sections": true,
+      "fixed": true
     },
-    "chunks_sections": 237
+    "chunks_sections": 237,
+    "chunks_fixed": 195
   },
   "AAR1401": {
     "doc_id": "AAR1401",
@@ -43,8 +47,24 @@
     "licence": "Public domain (US government work)",
     "indexed_at": "2026-11-23T17:44:10+00:00",
     "complete": {
+      "sections": true,
+      "fixed": true
+    },
+    "chunks_sections": 312,
+    "chunks_fixed": 259
+  },
+  "AAR2002": {
+    "doc_id": "AAR2002",
+    "title": "Atlas Air Inc. Flight 3591",
+    "file": "AAR2002.pdf",
+    "sha256": "5fe737da1442f3002b51fe771b1672c58ea3c4c1ef2caa3e2e13c48a36a6428d",
+    "pages": 141,
+    "words": 41302,
+    "added_by": "add_document",
+    "indexed_at": "2026-11-24T11:32:39+00:00",
+    "complete": {
       "sections": true
     },
-    "chunks_sections": 312
+    "chunks_sections": 168
   }
 }

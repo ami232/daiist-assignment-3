@@ -44,17 +44,23 @@ from api_key import load_api_key
 from index import parse_citations
 
 ROOT = Path(__file__).resolve().parent
-MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash")
-# Free-tier Gemini often answers 503 "high demand": retry with backoff, then fall back to these.
-FALLBACK_MODELS = [m for m in os.environ.get("GEMINI_FALLBACKS", "gemini-3.5-flash-lite,gemini-3.1-flash-lite").split(",") if m]
+# Free tier: gemini-3.5-flash allows only 20 requests a day, too few for a 37-question evaluation
+# (about 3 model calls per question), so the lite model answers and the others are fallbacks for
+# 503 "high demand" errors.
+MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash-lite")
+FALLBACK_MODELS = [m for m in os.environ.get("GEMINI_FALLBACKS", "gemini-3.1-flash-lite,gemini-3.5-flash").split(",") if m]
 SYSTEM_PROMPT = (ROOT / "AGENTS.md").read_text(encoding="utf-8")
 REFUSAL = "The reports in the corpus do not cover this"
+# AGENTS.md rule 8 lets the model name what is missing ("do not cover the date on which ..."),
+# so match the stem, not the whole sentence. The exact-sentence match made the citation check
+# withhold correct refusals as "claims without citations".
+REFUSAL_STEM = "the reports in the corpus do not cover"
 MAX_TOOL_CALLS = 6
 MAX_MODEL_CALLS = 8
 
 
 def is_refusal(text: str) -> bool:
-    return REFUSAL.lower() in text.lower()
+    return REFUSAL_STEM in " ".join(text.lower().split())
 
 
 def ask_terminal(path: str) -> bool:
