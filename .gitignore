@@ -5,8 +5,7 @@ __pycache__/
 .ipynb_checkpoints/
 *.pyc
 
-# Documents downloaded by your index stage. Commit them only if their licence allows it.
-corpus/
+# corpus/ IS committed: the contracts are my own synthetic data, so the grader can read them.
 
 # Your index belongs in index/, committed. Your evaluation results belong in eval/, committed.
 
