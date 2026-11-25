@@ -1,1 +1,23 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q05,1,1,
+q07,1,1,
+q11,1,1,
+q13,1,1,
+q18,1,1,
+q20,1,1,
+q22,1,1,
+q24,1,1,
+m01,1,1,
+m02,0,1,Presenta la autorización operacional como obligatoria sin mencionar las alternativas de declaración para un escenario estándar o los privilegios de un LUC.
+m03,1,1,
+m04,1,1,
+m05,1,1,
+m06,0,1,"La respuesta está incompleta: omite las condiciones esenciales de A3 sobre personas no participantes y la distancia mínima de 150 m de zonas residenciales, comerciales, industriales o recreativas."
+u01,1,1,
+u02,1,1,
+u03,1,1,
+u04,1,0,Añade una afirmación general sobre el origen nacional de los requisitos de seguro que no está respaldada por la referencia proporcionada.
+u05,1,0,Incluye una dirección postal de AESA que no aparece respaldada en el material proporcionado.
+u06,1,1,

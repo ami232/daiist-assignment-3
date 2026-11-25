@@ -1,0 +1,55 @@
+{
+  "documents": [
+    {
+      "celex": "32019R0947",
+      "source": "Regulation (EU) 2019/947",
+      "title": "Commission Implementing Regulation (EU) 2019/947 on the rules and procedures for the operation of unmanned aircraft",
+      "date": "2019-05-24",
+      "url": "https://eur-lex.europa.eu/eli/reg/2019/947/oj/eng",
+      "words": 12591,
+      "licence": "\u00a9 European Union; reuse authorised (Commission Decision 2011/833/EU)"
+    },
+    {
+      "celex": "32019R0945",
+      "source": "Regulation (EU) 2019/945",
+      "title": "Commission Delegated Regulation (EU) 2019/945 on unmanned aircraft systems and on third-country operators of unmanned aircraft systems",
+      "date": "2019-03-12",
+      "url": "https://eur-lex.europa.eu/eli/reg/2019/945/oj/eng",
+      "words": 20710,
+      "licence": "\u00a9 European Union; reuse authorised (Commission Decision 2011/833/EU)"
+    },
+    {
+      "celex": "32020R1058",
+      "source": "Regulation (EU) 2020/1058",
+      "title": "Commission Delegated Regulation (EU) 2020/1058 amending Delegated Regulation (EU) 2019/945 (classes C5 and C6)",
+      "date": "2020-04-27",
+      "url": "https://eur-lex.europa.eu/eli/reg/2020/1058/oj/eng",
+      "words": 13275,
+      "licence": "\u00a9 European Union; reuse authorised (Commission Decision 2011/833/EU)"
+    },
+    {
+      "celex": "32021R0664",
+      "source": "Regulation (EU) 2021/664",
+      "title": "Commission Implementing Regulation (EU) 2021/664 on a regulatory framework for the U-space",
+      "date": "2021-04-22",
+      "url": "https://eur-lex.europa.eu/eli/reg/2021/664/oj/eng",
+      "words": 7138,
+      "licence": "\u00a9 European Union; reuse authorised (Commission Decision 2011/833/EU)"
+    }
+  ],
+  "designs": {
+    "structure": {
+      "chunks": 358,
+      "mean_words": 179.0,
+      "max_words": 310,
+      "min_words": 16
+    },
+    "fixed": {
+      "chunks": 316,
+      "mean_words": 199.6,
+      "max_words": 200,
+      "min_words": 140
+    }
+  },
+  "total_words": 53714
+}

@@ -1,0 +1,167 @@
+id,kind,outcome,auto_cause,refused,citations_valid,has_citation,expected_passage_retrieved,expected_doc_cited,guardrail_fired,judge_correct,judge_supported,judge_reason,seconds,tokens,model_calls,searches,judge_tokens,answer
+q01,single,correct,,0,1,1,1,1,0,1,1,The answer correctly identifies the maximum take-off mass as less than 25 kg based on Article 4(1)(b) and provides additional context regarding sub-categories and transitional conditions found in the evidence.,20.31,3398,2,1,2194,"Yes, the maximum take-off mass for a drone to be flown in the 'open' category must be **less than 25 kg** [32019R0947-s0016]. 
+
+Conditions:
+* The unmanned aircraft must belong to one of the classes set out in Delegated Regulation (EU) 2019/945, be privately built, or meet the transitional conditions defined in Article 20 [32019R0947-s0016, 32019R0947-s0042].
+* Specific sub-categories (A1, A2, A3) have much lower mass thresholds (e.g., less than 250 g or less than 900 g) governing where and how they may be operated [32019R0947-s0046, 32019R0947-s0042, 32019R0945-s0084]."
+q02,single,correct,,0,1,1,1,1,0,1,1,The answer correctly identifies the 120m limit and provides the specific exceptions for artificial obstacles and sailplanes as detailed in the evidence.,10.77,3501,2,1,2315,"In the 'open' category, the maximum flight height is **120 metres** from the closest point of the surface of the earth [32019R0947-s0016, 32019R0947-s0046]. 
+
+Exceptions and conditions:
+* **Artificial obstacles:** When flying within a horizontal distance of 50 metres from an artificial obstacle taller than 105 metres, the maximum height may be increased up to 15 metres above the obstacle's height, upon request from the entity responsible for the obstacle [32019R0947-s0046].
+* **Unmanned sailplanes:** Sailplanes with an MTOM (including payload) of less than 10 kg may exceed 120 metres from the earth's surface, provided they are not flown higher than 120 metres above the remote pilot at any time [32019R0947-s0046]."
+q03,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly identifies the minimum age of 16 and all exceptions listed in the reference, and every claim is directly supported by the provided evidence from Article 9 of Regulation (EU) 2019/947.",26.38,3317,2,1,2137,"The minimum age for a remote pilot in the 'open' and 'specific' categories is **16 years** [32019R0947-s0022].
+
+**Exceptions where no minimum age is required:**
+* When operating in subcategory A1 with a C0 class UAS that is a toy (under Directive 2009/48/EC) [32019R0947-s0022].
+* For privately-built UAS with a maximum take-off mass of less than 250g [32019R0947-s0022].
+* When operating under the direct supervision of a remote pilot who meets the age and competency requirements [32019R0947-s0022].
+
+*Note: Member States may lower the minimum age by up to 4 years for the 'open' category and up to 2 years for the 'specific' category, or define different ages for model aircraft clubs/associations; however, operations under a lowered national age are restricted to that Member State's territory [32019R0947-s0022].*"
+q04,single,correct,,0,1,1,1,1,0,1,1,The answer correctly identifies that the minimum age can be lowered by up to 4 years for the 'open' category and includes the relevant conditions found in the evidence.,6.06,3212,2,1,2009,"A Member State may lower the minimum age for remote pilots operating in the 'open' category by up to **4 years** [32019R0947-s0022]. 
+
+Conditions:
+* The reduction must follow a risk-based approach taking into account specific risks associated with operations in their territory [32019R0947-s0022].
+* Remote pilots whose minimum age has been lowered are only allowed to operate a UAS on the territory of that Member State [32019R0947-s0022]."
+q05,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly states that registration is required because the camera drone is equipped with a sensor to capture personal data and is not a toy, which is fully supported by the provided evidence.",12.19,4255,3,1,2081,"**Yes**, you must register as a UAS operator. 
+
+Even though your drone weighs less than 250 g, Article 14(5)(a)ii of Regulation (EU) 2019/947 requires UAS operators in the open category to register if they operate an unmanned aircraft that is **equipped with a sensor able to capture personal data**, unless it complies with Directive 2009/48/EC (toy safety) [32019R0947-s0034]. Since you stated the drone is not a toy, this exemption does not apply to a camera drone."
+q06,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly identifies that a company must register in the Member State of its principal place of business and cannot be registered in more than one state, which is fully supported by Article 14 of Regulation (EU) 2019/947 in the evidence.",5.75,3047,2,1,1866,"As a legal person, your company must register in the Member State where it has its principal place of business [32019R0947-s0034]. A UAS operator cannot be registered in more than one Member State at a time [32019R0947-s0034]."
+q07,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly identifies the 30m distance and the 5m reduction condition, all of which are supported by the provided evidence from Regulation (EU) 2019/947.",8.25,3167,2,1,1987,"In subcategory A2, the drone must not overfly uninvolved persons and must maintain a safe horizontal distance of at least 30 metres from them [32019R0947-s0049]. 
+
+The remote pilot may reduce this horizontal safety distance down to a minimum of 5 metres from uninvolved persons only if:
+- The drone is operated with an active low speed mode function [32019R0947-s0049].
+- The pilot has evaluated the situation regarding weather conditions, the performance of the unmanned aircraft, and the segregation of the overflown area [32019R0947-s0049]."
+q08,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly identifies the 150-metre horizontal distance requirement for subcategory A3, which is directly supported by the provided evidence [32019R0947-s0051].",10.59,2896,2,1,1684,"In subcategory A3, UAS operations must be conducted at a safe horizontal distance of at least 150 metres from residential, commercial, industrial or recreational areas [32019R0947-s0051]."
+q09,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly identifies that the examination consists of 40 multiple-choice questions and lists the subjects covered, all of which are supported by the provided evidence [32019R0947-s0048].",29.86,4693,3,1,2542,"Yes, the online theoretical knowledge examination comprises 40 multiple-choice questions [32019R0947-s0048]. 
+
+The questions are distributed appropriately across the following subjects:
+* Air safety [32019R0947-s0048]
+* Airspace restrictions [32019R0947-s0048]
+* Aviation regulation [32019R0947-s0048]
+* Human performance limitations [32019R0947-s0048]
+* Operational procedures [32019R0947-s0048]
+* UAS general knowledge [32019R0947-s0048]
+* Privacy and data protection [32019R0947-s0048]
+* Insurance [32019R0947-s0048]
+* Security [32019R0947-s0048]"
+q10,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly identifies that the A2 exam has at least 30 multiple-choice questions and covers meteorology, UAS flight performance, and technical/operational mitigations for ground risk, all of which is supported by the provided evidence.",12.33,3519,2,1,2313,"The additional theoretical examination for the A2 certificate comprises at least **30 multiple-choice questions** [32019R0947-s0050]. 
+
+The exam is aimed at assessing the remote pilot's knowledge of the technical and operational mitigations for ground risk, distributed appropriately across the following subjects [32019R0947-s0050]:
+1. Meteorology [32019R0947-s0050]
+2. UAS flight performance [32019R0947-s0050]
+3. Technical and operational mitigations for ground risk [32019R0947-s0050]"
+q11,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly identifies the five-year validity period for the A2 certificate and provides supporting details regarding renewal conditions, all of which are found in the evidence.",14.04,2928,2,1,1714,"Yes, the certificate of remote pilot competency is valid for **five years** [32019R0947-s0056]. 
+
+**Conditions for renewal:**
+The renewal of the certificate requires the demonstration of competencies in accordance with the initial qualification requirements [32019R0947-s0056]."
+q12,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly identifies the 50-metre limit for follow-me mode in subcategory A1, which is explicitly stated in the provided evidence [32019R0947-s0047].",11.26,3461,2,1,2246,"When the follow-me mode is active in subcategory A1, the unmanned aircraft can fly up to a distance of **50 metres** from the remote pilot [32019R0947-s0047]."
+q13,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly identifies the MTOM of less than 250g and the maximum speed of 19 m/s for class C0 drones, both of which are supported by the provided evidence.",19.18,3467,2,1,2294,"Yes. A class C0 drone must comply with the following limits:
+
+* **Mass limit:** Maximum Take-Off Mass (MTOM) of less than 250 g, including payload [32020R1058-s0019].
+* **Speed limit:** Maximum speed in level flight of 19 m/s [32020R1058-s0019]."
+q14,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly provides the impact energy and mass limits for a class C1 drone, and all claims are fully supported by the evidence.",18.06,3502,2,1,2310,"A class C1 drone must meet the following limits:
+
+* **Impact energy:** In the event of an impact at terminal velocity with a human head, the energy transmitted to the human head must be less than 80 J [32020R1058-s0021].
+* **Mass limit (alternative):** As an alternative to the impact-energy limit, it must have a Maximum Take-Off Mass (MTOM) of less than 900 g, including payload [32020R1058-s0021]."
+q15,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly states that a class C2 drone has an MTOM of less than 4 kg including payload, which matches both the reference and the evidence.",9.55,3435,2,1,2220,"A class C2 drone has a maximum take-off mass (MTOM) of less than 4 kg, including payload [32020R1058-s0029]."
+q16,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly identifies the 5 m/s speed limit for class C5 drones in low-speed mode and the requirement for it to be selectable by the pilot, as supported by the evidence.",6.64,3462,2,1,2250,"Unless tethered, the low-speed mode of a class C5 drone must be selectable by the remote pilot and limit the ground speed to **not more than 5 m/s** [32020R1058-s0076]."
+q17,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly states the maximum ground speed in level flight for a class C6 drone as not more than 50 m/s, which is fully supported by the provided evidence.",4.36,3427,2,1,2220,"Yes, a class C6 drone must have a maximum ground speed in level flight of not more than 50 m/s [32020R1058-s0079]."
+q18,single,correct,,0,1,1,1,0,0,1,1,The answer correctly identifies all conditions required for a drone design to be certified and every claim is fully supported by the evidence.,27.97,3570,2,1,2390,"The design of a drone must be certified if it meets any of the following conditions:
+
+* It has a characteristic dimension of 3 meters or more and is designed to be operated over assemblies of people [32020R1058-s0015].
+* It is designed for transporting people [32020R1058-s0015].
+* It is designed for transporting dangerous goods and requires a high level of robustness to mitigate third-party accident risks [32020R1058-s0015].
+* It is used in the 'specific' category, and the competent authority's operational authorisation (based on a risk assessment) considers that the risk of the operation cannot be adequately mitigated without UAS certification [32020R1058-s0015].
+
+*(Note: Regulation (EU) 2020/1058 amends the wording of Article 40(1)(d) from Regulation (EU) 2019/945 to clarify that the intent is tied to operations defined in Article 5 of Implementing Regulation (EU) 2019/947) [32020R1058-s0015, 32019R0945-s0078].*"
+q19,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly states that the LUC is issued for an unlimited duration and remains valid under the conditions specified, all of which are supported by the evidence.",3.19,2722,2,1,1522,"An LUC is issued for an unlimited duration [32019R0947-s0080]. 
+
+It remains valid provided that:
+* The LUC holder continuously complies with the relevant requirements of Regulation (EU) 2019/947 and of the issuing Member State [32019R0947-s0080].
+* The certificate has not been surrendered or revoked [32019R0947-s0080]."
+q20,single,correct,,0,1,1,1,1,0,1,1,The answer accurately lists all four mandatory U-space services and is fully supported by the provided evidence.,2.58,3511,2,1,2286,"Yes. All UAS operations in U-space airspace are subject to at least the following four mandatory U-space services:
+
+1. **Network identification service** [32021R0664-s0012]
+2. **Geo-awareness service** [32021R0664-s0012]
+3. **UAS flight authorisation service** [32021R0664-s0012]
+4. **Traffic information service** [32021R0664-s0012]
+
+Depending on the airspace risk assessment, Member States may also require additional U-space services for specific U-space airspaces [32021R0664-s0012]."
+q21,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly states that the U-space regulation applies from 26 January 2023, which is fully supported by the provided evidence.",7.88,13225,4,3,3332,The U-space regulation (Regulation (EU) 2021/664) applies from **26 January 2023** [32021R0664-s0036].
+q22,single,correct,,0,1,1,1,1,0,1,1,"The answer correctly identifies the first-come, first-served rule for requests with the same priority, which is explicitly stated in Article 10, paragraph 9 of the provided evidence.",2.15,2682,2,1,1464,"When two UAS flight authorisation requests have the same priority, they must be processed on a first-come, first-served basis [32021R0664-s0024]."
+q23,single,correct,,0,1,1,1,1,0,1,1,The answer accurately reflects the reference and is fully supported by the provided evidence.,2.51,6921,3,2,2302,"A U-space service provider must keep recorded operational information and data for **at least 30 days** [32021R0664-s0031]. 
+
+The retention period must be longer if the recordings are pertinent to accident and incident investigations, lasting until it is evident that they will no longer be required [32021R0664-s0031]."
+q24,single,correct,,0,1,1,1,1,0,1,1,The answer provides accurate details based on the evidence for both operational authorisations and standard scenario declarations in cross-border operations.,8.38,19844,5,4,3014,"For an operation in the specific category planned in another Member State, the requirements depend on whether the operation is based on an operational authorisation or a standard scenario declaration:
+
+**1. Operations requiring an operational authorisation:**
+* The UAS operator must provide the competent authority of the Member State of intended operation with an application containing:
+  * A copy of the operational authorisation granted under Article 12 [32019R0947-s0031].
+  * The intended location(s) and any updated mitigation measures needed for local airspace, terrain, population characteristics, and climatic conditions [32019R0947-s0031].
+* The competent authority of the Member State of intended operation assesses the application and provides confirmation that the updated mitigation measures are satisfactory [32019R0947-s0031]. 
+* The operator may start the operation only upon receipt of that confirmation [32019R0947-s0031].
+
+**2. Operations based on a declaration (standard scenarios):**
+* The UAS operator must provide the competent authority of the Member State of intended operation with a copy of the declaration submitted to the Member State of registration, along with a copy of the confirmation of receipt and completeness [32019R0947-s0032]."
+m01,multi,correct,,0,1,1,1,1,0,1,1,The answer correctly identifies the subcategories and distance rules for a C2 drone based on the evidence.,8.51,3694,2,1,2480,"A class C2 drone can be flown in open subcategories **A2** and **A3** [32019R0947-s0050, 32019R0947-s0051].
+
+In subcategory A2, operations must be conducted so that the unmanned aircraft does not overfly uninvolved persons, maintaining a safe horizontal distance of at least **30 metres** from them [32019R0947-s0049]. 
+
+The remote pilot may reduce this horizontal safety distance down to a minimum of **5 metres** from uninvolved persons only if:
+* The drone is operated with an active low speed mode function, and
+* The pilot has evaluated the situation regarding weather conditions, aircraft performance, and segregation of the overflown area [32019R0947-s0049]."
+m02,multi,correct,,0,1,1,1,1,0,1,1,The answer correctly identifies the need for an operational authorisation and lists the required application contents based on the provided evidence.,2.62,3512,2,1,2302,"You must obtain an **operational authorisation** from the competent authority in the Member State where you are registered [32019R0947-s0017]. 
+
+With your application, you must submit:
+* An **operational risk assessment** performed in accordance with Article 11, including adequate mitigating measures and sufficient information for the authority to assess their adequacy [32019R0947-s0017, 32019R0947-s0060].
+* The **registration number** of the UAS operator [32019R0947-s0060].
+* The name of the accountable manager or the operator (if a natural person) [32019R0947-s0060].
+* An **operations manual**, if required by the risk and complexity of the operation [32019R0947-s0060].
+* A **confirmation that appropriate insurance cover** will be in place at the start of the operations, if required by Union or national law [32019R0947-s0060]."
+m03,multi,correct,,0,1,1,1,1,0,1,1,"The answer correctly identifies the mass/energy limits for a C1 drone and the pilot competency requirements, all supported by the provided evidence.",4.0,8210,3,2,3809,"**Mass or energy limit:**
+A class C1 drone must be made of materials and have performance characteristics ensuring that the energy transmitted to a human head in an impact at terminal velocity is less than 80 J, or alternatively, have a maximum take-off mass (MTOM) of less than 900 g, including payload [32019R0945-s0084, 32020R1058-s0021].
+
+**Pilot competency requirements:**
+The remote pilot must:
+1. Be familiarised with the manufacturer's user manual [32019R0947-s0047].
+2. Have completed an online training course [32019R0947-s0048].
+3. Have successfully completed an online theoretical knowledge examination (comprising 40 multiple-choice questions across subjects such as air safety, airspace restrictions, aviation regulation, human performance, operational procedures, UAS general knowledge, privacy/data protection, insurance, and security) provided by the competent authority or a recognised entity [32019R0947-s0048]."
+m04,multi,correct,,0,1,1,1,1,0,1,1,"The answer accurately lists all the data broadcasted by a C1 drone and the extra information provided by the U-space network identification service, matching both the reference and the provided evidence.",5.78,13962,4,3,5584,"A C1 drone broadcasts the following data through its direct remote identification system:
+
+* The UAS operator registration number and the verification code provided by the Member State of registration [32020R1058-s0024];
+* The unique physical serial number of the unmanned aircraft [32020R1058-s0024];
+* A time-stamp [32020R1058-s0024];
+* The geographical position of the unmanned aircraft and its height above the surface or take-off point [32020R1058-s0024];
+* The route course measured clockwise from true north and the ground speed of the unmanned aircraft [32020R1058-s0024];
+* The geographical position of the remote pilot or, if not available, the take-off point [32020R1058-s0024];
+* An indication of the emergency status of the UAS [32020R1058-s0024].
+
+The U-space network identification service provides the remote identification of the UAS in an aggregated manner [32021R0664-s0021] containing:
+* The UAS operator registration number [32021R0664-s0021];
+* The unique serial number of the unmanned aircraft (or unique serial number of the add-on if privately built) [32021R0664-s0021];
+* The geographical position of the UAS, its altitude above mean sea level, and its height above the surface or take-off point [32021R0664-s0021];
+* The route course measured clockwise from true north and the ground speed of the UAS [32021R0664-s0021];
+* The geographical position of the remote pilot or, if not available, the take-off point [32021R0664-s0021];
+* The emergency status of the UAS [32021R0664-s0021];
+* The time at which the messages were generated [32021R0664-s0021]."
+m05,multi,correct,,0,1,1,1,1,0,1,1,"The answer correctly states that no operational authorisation is needed for clubs with an Article 16 authorisation and that they could operate under national rules until 1 July 2022, both of which are fully supported by the evidence.",1.96,3058,2,1,1881,"No operational authorisation is required for operations conducted in the framework of model aircraft clubs and associations that have received an authorisation in accordance with Article 16 [32019R0947-s0018]. 
+
+Clubs and associations could continue operating under relevant national rules without an Article 16 authorisation until **1 July 2022** [32019R0947-s0043]."
+m06,multi,correct,,0,1,1,0,1,0,1,1,"The answer correctly identifies that the 1.5 kg drone can be flown in the open category under A3 conditions per Article 20 if placed on the market before July 1, 2022, and all claims are supported by the evidence.",2.04,3411,2,1,2231,"Yes, you can still fly it in the open category under Article 20, provided it was placed on the market before 1 July 2022 [32019R0947-s0042]. 
+
+Conditions:
+- It must be operated in subcategory A3 [32019R0947-s0042].
+- The maximum take-off mass must be less than 25 kg [32019R0947-s0042].
+- General open category requirements apply (e.g., kept in VLOS, max 120m height, safe distance from people, no assemblies of people) [32019R0947-s0016]."
+u01,unanswerable,correct_refusal,,1,1,0,,,0,1,1,"The reference states the corpus does not cover the question, and the answer correctly declines to answer while advising to check national authorities.",14.14,6337,3,2,1673,"The corpus does not cover the validity period or expiration duration of an operational declaration for a standard scenario. 
+
+You should check with your national competent authority or national aviation law to see if a specific validity period applies."
+u02,unanswerable,correct_refusal,,1,1,0,,,1,1,1,The answer correctly states that the corpus does not cover the question about standard scenario STS-01.,27.88,40016,8,6,3660,The corpus does not cover this question. (The harness withheld a draft answer: answer without any citation. Please check the regulation directly or ask again.)
+u03,unanswerable,correct_refusal,,1,1,0,,,0,1,1,"The reference states the corpus does not cover national fines, and the answer correctly declines to answer while advising to check national law or AESA.",2.1,3270,2,1,2057,The corpus does not cover this question. You should check the national aviation law of Spain or consult AESA (Agencia Estatal de Seguridad Aérea) directly regarding penalty amounts for unregistered drone operations.
+u04,unanswerable,correct_refusal,,1,1,0,,,0,1,1,The answer correctly states that the corpus does not cover the question and provides helpful context about national regulations.,4.63,7526,3,2,3346,"The corpus does not cover this question. 
+
+You should check national aviation law or consult your national competent authority, as requirements regarding third-party liability insurance are typically set at the national level within EU member states rather than in the EU drone regulations."
+u05,unanswerable,refusal_with_unsupported_claim,unsupported claim,1,1,0,,,0,1,0,"The answer correctly declines to answer based on the corpus limitations, but includes an unverified address for AESA not present in the evidence.",17.95,7368,3,2,3999,"The corpus does not cover specific national administrative approval procedures required by AESA in Spain for night flights. 
+
+You should look into the national aviation authority (Avenida de General Perón, 40, 28020 Madrid, Spain) or consult the national operational rules published directly by AESA."
+u06,unanswerable,correct_refusal,,1,1,0,,,0,1,1,"The reference states the corpus does not cover fees, and the answer correctly declines to answer while pointing out that fees are not in the provided text.",4.25,3175,2,1,1963,The corpus does not cover this question. You should check the national laws or fee schedules of the competent authority in the Member State where you are registered.
