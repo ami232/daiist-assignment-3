@@ -1,0 +1,83 @@
+{
+  "questions": 32,
+  "agent_model": "gemini-3.5-flash-lite",
+  "judge_model": "gemini-3.5-flash-lite",
+  "design": "structure",
+  "judge_rubric": "correct = 1 when the answer gives the key facts of the reference answer and does not contradict it.\n  A key fact is what the question asks to know. If the answer leaves out something that only adds precision inside that fact, it is a detail and it does not count against the answer.\n  For a multi question, there must be a fact from each of the two sources.\n  For an unanswerable question, correct = 1 only if the assistant says \"I don't know: the corpus does not cover this\" (or says the same thing) and gives no substantive answer.\n\nsupported = 1 when every claim in the answer is written in the retrieved passages.\n  Ignore the reference answer and go sentence by sentence. The only thing to compare with is the retrieved passages.\n  If any claim is not written there, supported = 0, even if it is true in the law.\n  A refusal claims nothing, so supported = 1.\n\nA hard case: the question asks who to notify of a serious undesirable effect and what goes in the safety report. The answer says whom to notify and what goes in the report, but leaves out the content of the notification (known effects, product name, corrective measures), which is in the reference answer. The question did not ask for that content, so it is a detail and correct = 1. With a strict reading, almost every multi question with a long reference answer would fall to 0, and the same criterion was applied to the other answers.\n\nIf the reference answer gives an answer and the assistant says \"I don't know\", correct = 0, even if the retrieved passages did not contain the answer (supported is still 1, because a refusal claims nothing). The judge decides whether a question has an answer by looking only at the reference answer, not at the passages: a question is unanswerable only when the reference answer is \"I don't know: the corpus does not cover this\".",
+  "retrieval": {
+    "structure": {
+      "words_in_prompt_k5": 1061.8,
+      "hit@1": 0.654,
+      "hit_all@1": 0.538,
+      "hit@3": 0.808,
+      "hit_all@3": 0.731,
+      "hit@5": 1.0,
+      "hit_all@5": 0.962
+    },
+    "fixed": {
+      "words_in_prompt_k5": 750,
+      "hit@1": 0.538,
+      "hit_all@1": 0.423,
+      "hit@3": 0.808,
+      "hit_all@3": 0.692,
+      "hit@5": 0.923,
+      "hit_all@5": 0.846
+    }
+  },
+  "answered_without_error": 32,
+  "errors": [],
+  "answerable": {
+    "n": 26,
+    "correct": 25,
+    "correct_and_supported": 25,
+    "unsupported": 0,
+    "wrong_refusals": 2,
+    "no_valid_citation": 0
+  },
+  "unanswerable": {
+    "n": 6,
+    "correct_refusals": 6,
+    "answered_anyway": 0
+  },
+  "causes": {
+    "ok": 30,
+    "wrong refusal: retrieval miss": 2
+  },
+  "per_question": {
+    "seconds_mean": 5.7,
+    "seconds_max": 13.1,
+    "input_tokens_mean": 5375,
+    "output_tokens_mean": 128,
+    "tool_calls_mean": 1.34
+  },
+  "agreement_with_human_labels": {
+    "correct": {
+      "n": 22,
+      "agree": 20,
+      "agreement_pct": 90.9
+    },
+    "supported": {
+      "n": 22,
+      "agree": 22,
+      "agreement_pct": 100.0
+    },
+    "disagreements": [
+      {
+        "id": "q17",
+        "human_correct": "0",
+        "judge_correct": 1,
+        "human_supported": "1",
+        "judge_supported": 1,
+        "judge_reason": "The reference answer indicates the question is unanswerable based on the corpus, and the assistant correctly refused to answer using the appropriate formula."
+      },
+      {
+        "id": "q18",
+        "human_correct": "1",
+        "judge_correct": 0,
+        "human_supported": "1",
+        "judge_supported": 1,
+        "judge_reason": "The reference answer provides the information, but the assistant incorrectly refused by stating the corpus does not cover it."
+      }
+    ]
+  }
+}
