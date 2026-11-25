@@ -2,7 +2,7 @@
 Assignment 3: our agent (`main.py ask "question"` runs `python agent.py "question"`).
 
 LangChain `create_agent` on Gemini, with the tools of server.py over MCP and
-AGENTS.md as system prompt. Guardrails (decisions in DECISIONS.md, section 12):
+AGENTS.md as system prompt. Guardrails (decisions in DECISIONS.md, section 11):
 
 1. Approval: add_document runs only after the user types "y" in the terminal
    (without a terminal, e.g. under check.py or evaluate.py, it is refused).

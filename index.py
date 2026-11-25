@@ -573,7 +573,7 @@ def embed_and_store(chunks: list[Chunk], design: str = CHUNKING) -> int:
 # --------------------------------------------------------------------------
 # index/documents.json records, for every indexed document, a SHA-256 hash of
 # the file and its number of chunks per design. Policy when a document is
-# indexed (decided by Máximo, DECISIONS.md section 10):
+# indexed (DECISIONS.md, section 9):
 #   - same content as a document already indexed -> nothing to do, no embeddings spent
 #   - same document (same doc_id), different content -> new version replaces the old one
 #   - otherwise -> added

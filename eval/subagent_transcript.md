@@ -1,6 +1,6 @@
 # Subagent transcripts (Claude Code, 2026-11-22)
 
-Two runs of the same question (q23): **run 1** with the first version of the instructions, **run 2** after adding the scope rule (DECISIONS.md, section 11).
+Two runs of the same question (q23): **run 1** with the first version of the instructions, **run 2** after adding the scope rule (DECISIONS.md, section 10).
 
 # Run 1 (before the scope rule)
 

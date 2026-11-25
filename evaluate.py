@@ -7,7 +7,7 @@ expected passage when it comes from the expected document and its page range
 includes the expected page. `multi` questions are strict (both passages must
 be in the top k); the partial score (share of passages found) is also saved.
 
-Part 2 - end to end (decisions in DECISIONS.md, section 13):
+Part 2 - end to end (decisions in DECISIONS.md, section 12):
   1. agent.py answers every question, 3 at a time (EVAL_WORKERS); answers are
      reused while the question, AGENTS.md and the model are unchanged
      (EVAL_FRESH=1 runs everything again).
@@ -166,7 +166,7 @@ VERDICTS = EVAL_DIR / "judge_verdicts.jsonl"
 HUMAN_LABELS = EVAL_DIR / "human_labels.csv"
 RESULTS = EVAL_DIR / "e2e_results.csv"
 SUMMARY = EVAL_DIR / "e2e_summary.md"
-TRAPS = EVAL_DIR / "judge_traps.csv"            # planted wrong answers, graded by Máximo
+TRAPS = EVAL_DIR / "judge_traps.csv"            # planted wrong answers with expected grades
 TRAP_VERDICTS = EVAL_DIR / "judge_trap_verdicts.jsonl"
 JUDGE_MODEL = "gemini-3.5-flash-lite"
 MIN_HUMAN_LABELS = 20
@@ -580,7 +580,7 @@ def summarise_e2e(questions: list[dict], rows: list[dict], verdicts: dict, label
         out += ["## Judge on planted wrong answers", "",
                 "Answers written to contain the errors that matter in this use case, judged with the passages "
                 "their base question retrieved. The expected grades are set by construction: each answer was written "
-                "to fail in a known way (written by Claude at Máximo's request, see DECISIONS.md).", "",
+                "to fail in a known way (see DECISIONS.md, section 12).", "",
                 "| id | base | planted error | expected c/s | judge c/s | agrees |", "|---|---|---|---|---|---|"]
         for t in traps:
             agree = "" if t["judge_correct"] == "" else (

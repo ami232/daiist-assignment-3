@@ -48,7 +48,7 @@ Disagreements:
 
 ## Judge on planted wrong answers
 
-Answers written to contain the errors that matter in this use case, judged with the passages their base question retrieved. The expected grades are set by construction: each answer was written to fail in a known way (written by Claude at Máximo's request, see DECISIONS.md).
+Answers written to contain the errors that matter in this use case, judged with the passages their base question retrieved. The expected grades are set by construction: each answer was written to fail in a known way (see DECISIONS.md, section 12).
 
 | id | base | planted error | expected c/s | judge c/s | agrees |
 |---|---|---|---|---|---|
