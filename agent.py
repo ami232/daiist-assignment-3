@@ -86,6 +86,11 @@ def final_text(messages) -> str:
     return ""
 
 
+def is_refusal(answer: str) -> bool:
+    """A refusal starts with "The corpus does not cover" (models sometimes go on with "the specific ...")."""
+    return answer.strip().lower().startswith(REFUSAL.lower()[:-len(" this")])
+
+
 def citations(answer: str) -> list[str]:
     """Every citation in square brackets; one bracket may hold several, separated by ';'."""
     found = []
@@ -97,7 +102,7 @@ def citations(answer: str) -> list[str]:
 def check_citations(answer: str, retrieved: set[str]) -> tuple[bool, list[str]]:
     """True when the answer is a refusal, or cites at least once and only cites retrieved passages."""
     cited = citations(answer)
-    if answer.startswith(REFUSAL) and not cited:
+    if is_refusal(answer) and not cited:
         return True, []
     bad = [c for c in cited if c not in retrieved]
     return bool(cited) and not bad, bad

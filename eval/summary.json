@@ -7,20 +7,20 @@
   },
   "retrieval": {
     "vector": {
-      "hit@1": 0.519,
-      "hit@3": 0.815,
-      "hit@5": 0.852,
-      "words@1": 170,
-      "words@3": 528,
-      "words@5": 854
+      "hit@1": 0.481,
+      "hit@3": 0.741,
+      "hit@5": 0.815,
+      "words@1": 182,
+      "words@3": 553,
+      "words@5": 921
     },
     "hybrid": {
-      "hit@1": 0.481,
+      "hit@1": 0.444,
       "hit@3": 0.63,
-      "hit@5": 0.778,
-      "words@1": 219,
-      "words@3": 610,
-      "words@5": 1048
+      "hit@5": 0.741,
+      "words@1": 223,
+      "words@3": 632,
+      "words@5": 1038
     }
   },
   "search_design": {
@@ -29,8 +29,8 @@
   "outcomes": {
     "not judged yet": 24,
     "wrong refusal": 3,
-    "answered unanswerable": 2,
-    "correct refusal": 3
+    "correct refusal": 4,
+    "answered unanswerable": 1
   },
   "citations_valid": 1,
   "guardrail_fired": 6,
@@ -43,7 +43,7 @@
     "mean_seconds": 8.7,
     "mean_tool_calls": 1.22
   },
-  "evaluation_seconds": 284,
+  "evaluation_seconds": 3,
   "answered": 32,
   "incomplete": [
     "judging stopped at q01: daily quota reached"

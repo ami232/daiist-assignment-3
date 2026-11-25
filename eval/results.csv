@@ -100,7 +100,7 @@ q26,multi,0,3,1,1,,,,not judged yet,,1,3365,153,5.2,"Wind Chill Advisories, Watc
 q27,multi,0,4,1,1,,,,not judged yet,,1,3891,202,6.7,"In Storm Data, the typical value for an **Extreme Cold/Wind Chill** warning is **-35°F or colder** [NWSI-10-1605, section App-A-13, p. 33], while a **Cold/Wind Chill** advisory has a typical value of **-18°F or colder** [NWSI-10-1605, section App-A-5, p. 23]. (Actual warning criteria are defined locally or regionally by each NWS office [NWSI-10-1605, section App-A-13, p. 33].)
 
 A wind chill of **-20°F** can cause frostbite in just **30 minutes** [WinterStorms-2008, p. 5]."
-q28,unanswerable,0,1,1,0,,,,answered unanswerable,,2,7190,118,5.8,"The corpus does not cover the specific local snow criteria for Memphis, Tennessee. 
+q28,unanswerable,1,1,1,0,,,,correct refusal,,2,7190,118,5.8,"The corpus does not cover the specific local snow criteria for Memphis, Tennessee. 
 
 NWS local warning criteria are set by individual regional and local offices (with specific heavy snow criteria maintained online at www.weather.gov/snow-criteria) [NWSI-10-513, section App-D, pp. 41-42]."
 q29,unanswerable,1,1,1,0,,,,correct refusal,,2,8857,126,13.0,"The corpus does not cover this. 

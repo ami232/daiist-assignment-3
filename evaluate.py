@@ -28,6 +28,7 @@ os.environ.setdefault("ANONYMIZED_TELEMETRY", "False")
 from langchain_google_genai import ChatGoogleGenerativeAI  # noqa: E402
 
 import agent  # noqa: E402
+from api_key import load_api_key  # noqa: E402
 import index  # noqa: E402
 import retrieval  # noqa: E402
 
@@ -133,7 +134,7 @@ def evaluate_retrieval(questions: list[dict]) -> list[dict]:
 # ---------------------------------------------------------------- 2-4. answers, code checks, judge
 
 def is_refusal(answer: str) -> bool:
-    return answer.strip().startswith(agent.REFUSAL)
+    return agent.is_refusal(answer)
 
 
 def code_checks(q: dict, a: dict) -> dict:
@@ -272,6 +273,7 @@ def write_csv(path: Path, rows: list[dict]) -> None:
 
 def main() -> None:
     started = time.time()
+    load_api_key()  # also needed when every answer comes from the cache
     questions = read_csv(QUESTIONS)
     if not questions:
         raise SystemExit("eval/questions.csv has no questions yet.")
