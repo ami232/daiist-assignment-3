@@ -1,0 +1,48 @@
+{
+  "A plain vector search": {
+    "all": {
+      "n": 31,
+      "hit@1": 0.613,
+      "hit@3": 0.839,
+      "hit@5": 0.903,
+      "avg_words_in_top5": 2242
+    },
+    "single": {
+      "n": 25,
+      "hit@1": 0.76,
+      "hit@3": 0.92,
+      "hit@5": 0.96,
+      "avg_words_in_top5": 2240
+    },
+    "multi": {
+      "n": 6,
+      "hit@1": 0.0,
+      "hit@3": 0.5,
+      "hit@5": 0.667,
+      "avg_words_in_top5": 2250
+    }
+  },
+  "B party filter": {
+    "all": {
+      "n": 31,
+      "hit@1": 0.677,
+      "hit@3": 0.839,
+      "hit@5": 0.903,
+      "avg_words_in_top5": 2247
+    },
+    "single": {
+      "n": 25,
+      "hit@1": 0.84,
+      "hit@3": 0.92,
+      "hit@5": 0.96,
+      "avg_words_in_top5": 2246
+    },
+    "multi": {
+      "n": 6,
+      "hit@1": 0.0,
+      "hit@3": 0.5,
+      "hit@5": 0.667,
+      "avg_words_in_top5": 2250
+    }
+  }
+}

@@ -1,0 +1,63 @@
+id,kind,design,ranks,hit@1,hit@3,hit@5,words_in_top5
+q01,single,A plain vector search,1,1,1,1,2250
+q02,single,A plain vector search,1,1,1,1,2250
+q03,single,A plain vector search,2,0,1,1,2250
+q04,single,A plain vector search,2,0,1,1,2250
+q05,single,A plain vector search,1,1,1,1,2250
+q06,single,A plain vector search,1,1,1,1,2250
+q07,single,A plain vector search,1,1,1,1,2104
+q08,single,A plain vector search,1,1,1,1,2250
+q09,single,A plain vector search,1,1,1,1,2250
+q10,single,A plain vector search,1,1,1,1,2250
+q11,single,A plain vector search,1,1,1,1,2250
+q12,single,A plain vector search,1,1,1,1,2250
+q13,single,A plain vector search,1,1,1,1,2250
+q14,single,A plain vector search,2,0,1,1,2250
+q15,single,A plain vector search,1,1,1,1,2250
+q16,single,A plain vector search,1,1,1,1,2250
+q17,single,A plain vector search,1,1,1,1,2250
+q18,single,A plain vector search,1,1,1,1,2250
+q19,single,A plain vector search,2,0,1,1,2250
+q20,single,A plain vector search,1,1,1,1,2250
+q21,single,A plain vector search,1,1,1,1,2144
+q22,single,A plain vector search,4,0,0,1,2250
+q23,single,A plain vector search,1,1,1,1,2250
+q24,single,A plain vector search,1,1,1,1,2250
+q25,single,A plain vector search,None,0,0,0,2250
+q26,multi,A plain vector search,1;2;5,0,0,1,2250
+q27,multi,A plain vector search,2;1,0,1,1,2250
+q28,multi,A plain vector search,None;3,0,0,0,2250
+q29,multi,A plain vector search,None;None;1,0,0,0,2250
+q30,multi,A plain vector search,1;2,0,1,1,2250
+q31,multi,A plain vector search,1;2,0,1,1,2250
+q01,single,B party filter,1,1,1,1,2250
+q02,single,B party filter,1,1,1,1,2250
+q03,single,B party filter,1,1,1,1,2250
+q04,single,B party filter,1,1,1,1,2250
+q05,single,B party filter,1,1,1,1,2250
+q06,single,B party filter,1,1,1,1,2250
+q07,single,B party filter,1,1,1,1,2250
+q08,single,B party filter,1,1,1,1,2250
+q09,single,B party filter,1,1,1,1,2250
+q10,single,B party filter,1,1,1,1,2250
+q11,single,B party filter,1,1,1,1,2250
+q12,single,B party filter,1,1,1,1,2250
+q13,single,B party filter,1,1,1,1,2250
+q14,single,B party filter,2,0,1,1,2250
+q15,single,B party filter,1,1,1,1,2250
+q16,single,B party filter,1,1,1,1,2250
+q17,single,B party filter,1,1,1,1,2250
+q18,single,B party filter,1,1,1,1,2250
+q19,single,B party filter,2,0,1,1,2250
+q20,single,B party filter,1,1,1,1,2250
+q21,single,B party filter,1,1,1,1,2144
+q22,single,B party filter,4,0,0,1,2250
+q23,single,B party filter,1,1,1,1,2250
+q24,single,B party filter,1,1,1,1,2250
+q25,single,B party filter,None,0,0,0,2250
+q26,multi,B party filter,1;2;5,0,0,1,2250
+q27,multi,B party filter,2;1,0,1,1,2250
+q28,multi,B party filter,None;3,0,0,0,2250
+q29,multi,B party filter,None;None;1,0,0,0,2250
+q30,multi,B party filter,1;2,0,1,1,2250
+q31,multi,B party filter,1;2,0,1,1,2250

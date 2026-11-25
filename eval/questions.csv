@@ -1,1 +1,39 @@
 id,question,kind,expected_source,expected_location,reference_answer
+q01,"¿Qué propone el PP sobre la educación de 0 a 3 años?",single,pp_2023,p. 50,"Será universal y gratuita, cofinanciada por el Estado y las Comunidades Autónomas."
+q02,"¿Qué medida fiscal temporal propone el PP para alimentos?",single,pp_2023,p. 23,"Reducir temporalmente el IVA a la carne, pescados y conservas."
+q03,"¿Qué hará el PP con el impuesto a las grandes fortunas?",single,pp_2023,p. 23,"Eliminarlo."
+q04,"¿Qué propone el PP para ayudar a los jóvenes a comprar vivienda?",single,pp_2023,p. 34,"Un programa de avales para menores de 35 años que garantice hipotecas de hasta el 95% del precio de la vivienda."
+q05,"¿Qué propone el PP sobre la protección del lobo?",single,pp_2023,p. 31,"Restablecer la protección previa a 2021 y sacar las poblaciones al norte del Duero del LESPRE, permitiendo su control."
+q06,"¿Hasta qué edad quiere el PP ampliar la jubilación activa de médicos de familia y pediatras?",single,pp_2023,p. 45,"Hasta los 72 años."
+q07,"¿Qué porcentaje del PIB destinaría el PP a defensa y cuántos efectivos tendrían las Fuerzas Armadas?",single,pp_2023,p. 103,"El 2% del PIB en seguridad y defensa, y elevar los efectivos hasta los 140.000 previstos por ley durante dos legislaturas."
+q08,"¿A qué porcentaje del salario medio propone el PSOE vincular el SMI?",single,psoe_2023,p. 26,"Garantizar en el Estatuto de los Trabajadores que el SMI se acompase al 60% del salario medio."
+q09,"¿Cuántas semanas de prestación por nacimiento y cuidado propone el PSOE?",single,psoe_2023,p. 143,"Extenderla hasta las 20 semanas."
+q10,"¿Qué tiempos máximos de espera quiere establecer por ley el PSOE en el SNS?",single,psoe_2023,p. 201,"120 días para intervenciones quirúrgicas, 60 días para consultas externas especializadas y 30 días para pruebas complementarias."
+q11,"¿Qué propone el PSOE sobre el transporte público para jóvenes?",single,psoe_2023,p. 78,"Gratuidad total del transporte público urbano para niños y estudiantes hasta los 24 años."
+q12,"¿Qué propone el PSOE para blindar las pensiones?",single,psoe_2023,p. 170,"Un cambio constitucional que garantice el poder adquisitivo de todas las pensiones con arreglo al IPC."
+q13,"¿Qué ayuda a la compra de vivienda propone el PSOE para menores de 35 años?",single,psoe_2023,p. 226,"Una línea de avales del ICO de 2.500 millones de euros que cubre el 20% de la hipoteca de la primera vivienda, para unas 50.000 viviendas."
+q14,"¿Qué jornada laboral máxima propone Sumar y cuándo?",single,sumar_2023,p. 7,"Establecer por ley en 2024 una jornada máxima de 37,5 horas y abrir diálogo social para llegar a 32 horas semanales."
+q15,"¿En qué consiste la «herencia universal» de Sumar?",single,sumar_2023,p. 15,"Una herencia de 20.000 € que se recibe al cumplir 23 años, financiada con un nuevo impuesto a las grandes fortunas."
+q16,"¿Qué prestación por hijo propone Sumar?",single,sumar_2023,p. 93,"Una prestación universal de 200 € al mes por cada hijo o hija menor de 18 años."
+q17,"¿Qué propone Sumar sobre los Centros de Internamiento de Extranjeros?",single,sumar_2023,p. 105,"El cierre de los CIE en todo el territorio nacional."
+q18,"¿Qué propone Sumar sobre la Guardia Civil?",single,sumar_2023,p. 131,"Su desmilitarización."
+q19,"¿Cuánto quiere invertir Sumar en vivienda y qué objetivo de parque público tiene?",single,sumar_2023,p. 76,"Invertir sostenidamente el 1% del PIB durante diez años para crear un parque de alquiler protegido de más de dos millones de viviendas."
+q20,"¿Qué tipo del IRPF propone Vox?",single,vox_2023,p. 75,"Un tipo único reducido del 15% para bases imponibles inferiores a 70.000 euros y un 25% para las superiores, con exención de 22.000 € de rentas del trabajo; el tipo baja 4 puntos por cada hijo."
+q21,"¿Qué hará Vox con la Ley Integral de Violencia de Género?",single,vox_2023,p. 128,"Derogarla."
+q22,"¿Qué impuestos propone suprimir Vox en todo el territorio nacional?",single,vox_2023,p. 77,"El Impuesto sobre el Patrimonio, el de Sucesiones y Donaciones y las plusvalías municipales."
+q23,"¿Qué ministerio propone crear Vox en lugar del Ministerio de Igualdad?",single,vox_2023,p. 162,"Un Ministerio de Familia."
+q24,"¿Qué propone Vox sobre los inmigrantes que llegan de forma ilegal?",single,vox_2023,p. 102,"Expulsión inmediata de quienes accedan ilegalmente y un bloqueo naval para proteger las costas con devolución inmediata a puertos seguros cercanos."
+q25,"¿Qué propone Vox sobre la gestión del agua?",single,vox_2023,p. 113,"Un Plan Nacional del Agua que interconecte todas las cuencas."
+q26,"¿Qué partidos proponen prolongar la vida útil de las centrales nucleares y cuál se opone?",multi,pp_2023; vox_2023; sumar_2023,p. 38; p. 117; p. 48,"El PP y Vox proponen extender la vida útil de las centrales existentes; Sumar mantiene el calendario de cierre nuclear y plantea una moratoria a nuevas iniciativas."
+q27,"¿Qué posiciones tienen el PP y Sumar sobre la prisión permanente revisable?",multi,pp_2023; sumar_2023,p. 81; p. 133,"El PP quiere ampliarla a asesinatos con ocultación de cadáver; Sumar propone eliminarla."
+q28,"¿Qué proponen el PP y Vox sobre la Ley de Vivienda del Gobierno?",multi,pp_2023; vox_2023,p. 34; p. 43,"Ambos proponen derogarla."
+q29,"¿Cómo se posicionan PP, PSOE y Sumar sobre el impuesto a las grandes fortunas?",multi,pp_2023; psoe_2023; sumar_2023,p. 23; p. 39; p. 16,"El PP lo eliminaría; el PSOE evaluará los resultados del impuesto temporal y debatirá la tributación de la riqueza en el marco de la financiación autonómica; Sumar lo haría permanente con tipos de al menos el 4%."
+q30,"¿Qué proponen el PP y Vox sobre el delito de sedición?",multi,pp_2023; vox_2023,p. 72; p. 16,"Ambos quieren recuperarlo o reintroducirlo en el Código Penal."
+q31,"¿En qué plazo máximo proponen el PP y el PSOE desalojar a los ocupantes ilegales de una vivienda?",multi,pp_2023; psoe_2023,p. 82; p. 251,"El PP propone un plazo máximo de 24 horas desde el requerimiento si los ocupantes no acreditan título; el PSOE propone un plazo máximo de 48 horas."
+q32,"¿A cuántos euros quiere el PP subir el salario mínimo?",unanswerable,,,
+q33,"¿Qué propone Vox sobre la reducción de la jornada laboral a 32 horas?",unanswerable,,,
+q34,"¿Cuántos escaños obtuvo cada partido en las elecciones del 23 de julio de 2023?",unanswerable,,,
+q35,"¿Qué propone el PP sobre la regulación de las criptomonedas?",unanswerable,,,
+q36,"¿Qué propone Sumar sobre el servicio militar obligatorio?",unanswerable,,,
+q37,"¿Cuánto costaría en total aplicar todas las medidas del programa del PSOE?",unanswerable,,,
+q38,"¿Qué propone el PSOE sobre la tenencia de armas de fuego por particulares?",unanswerable,,,
