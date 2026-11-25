@@ -1,0 +1,14 @@
+{
+  "struct250:edpb_breach": {
+    "chunks": 79,
+    "sha256": "063f63d2b78a669b9af4b45fec2e16c7e6e1442989bf7d70c756361824306e6e"
+  },
+  "struct250:edpb_consent": {
+    "chunks": 79,
+    "sha256": "d45afa0c7f062e9b0d9f5d2abbcfeb8a59d44e6c29c7e65693da9f2a5ea8fcb7"
+  },
+  "struct250:gdpr": {
+    "chunks": 378,
+    "sha256": "bd84e63f5b622b739a83389afc3b30d240f792bb88d8eb03a816c9a82b0c2499"
+  }
+}

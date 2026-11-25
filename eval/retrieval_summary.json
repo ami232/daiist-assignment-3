@@ -1,0 +1,132 @@
+{
+  "dense_struct250": {
+    "all": {
+      "questions": 25,
+      "k1": {
+        "hit": 13,
+        "equivalent": 2,
+        "strict": 0.52,
+        "lenient": 0.6
+      },
+      "k3": {
+        "hit": 20,
+        "equivalent": 2,
+        "strict": 0.8,
+        "lenient": 0.88
+      },
+      "k5": {
+        "hit": 24,
+        "equivalent": 1,
+        "strict": 0.96,
+        "lenient": 1.0
+      }
+    },
+    "single": {
+      "questions": 20,
+      "k1": {
+        "hit": 13,
+        "equivalent": 2,
+        "strict": 0.65,
+        "lenient": 0.75
+      },
+      "k3": {
+        "hit": 19,
+        "equivalent": 1,
+        "strict": 0.95,
+        "lenient": 1.0
+      },
+      "k5": {
+        "hit": 20,
+        "equivalent": 0,
+        "strict": 1.0,
+        "lenient": 1.0
+      }
+    },
+    "multi": {
+      "questions": 5,
+      "k1": {
+        "hit": 0,
+        "equivalent": 0,
+        "strict": 0.0,
+        "lenient": 0.0
+      },
+      "k3": {
+        "hit": 1,
+        "equivalent": 1,
+        "strict": 0.2,
+        "lenient": 0.4
+      },
+      "k5": {
+        "hit": 4,
+        "equivalent": 1,
+        "strict": 0.8,
+        "lenient": 1.0
+      }
+    }
+  },
+  "hybrid_struct250": {
+    "all": {
+      "questions": 25,
+      "k1": {
+        "hit": 8,
+        "equivalent": 1,
+        "strict": 0.32,
+        "lenient": 0.36
+      },
+      "k3": {
+        "hit": 12,
+        "equivalent": 1,
+        "strict": 0.48,
+        "lenient": 0.52
+      },
+      "k5": {
+        "hit": 16,
+        "equivalent": 2,
+        "strict": 0.64,
+        "lenient": 0.72
+      }
+    },
+    "single": {
+      "questions": 20,
+      "k1": {
+        "hit": 8,
+        "equivalent": 1,
+        "strict": 0.4,
+        "lenient": 0.45
+      },
+      "k3": {
+        "hit": 12,
+        "equivalent": 0,
+        "strict": 0.6,
+        "lenient": 0.6
+      },
+      "k5": {
+        "hit": 15,
+        "equivalent": 1,
+        "strict": 0.75,
+        "lenient": 0.8
+      }
+    },
+    "multi": {
+      "questions": 5,
+      "k1": {
+        "hit": 0,
+        "equivalent": 0,
+        "strict": 0.0,
+        "lenient": 0.0
+      },
+      "k3": {
+        "hit": 0,
+        "equivalent": 1,
+        "strict": 0.0,
+        "lenient": 0.2
+      },
+      "k5": {
+        "hit": 1,
+        "equivalent": 1,
+        "strict": 0.2,
+        "lenient": 0.4
+      }
+    }
+  }
+}
