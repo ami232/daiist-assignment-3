@@ -1,0 +1,4 @@
+design,chunking,mode,questions,hit@1,hit@3,hit@5,recall@5,multi_recall@5,words@1,words@3,words@5
+A_fixed,fixed,dense,23,0.87,0.957,1.0,0.899,0.667,200,599,999
+B_article,article,dense,23,0.826,0.957,1.0,0.964,0.881,317,836,1343
+C_article_hybrid,article,hybrid,23,0.652,0.87,0.913,0.79,0.595,291,823,1379
