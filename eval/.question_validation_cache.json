@@ -1,0 +1,51 @@
+{
+ "f5a9dc0ab3f76b3ba66391df59234da7cf25bc13": {
+  "supported": "yes",
+  "unsupported_parts": [],
+  "section_answers_question": true,
+  "better_location": "",
+  "note": "The reference answer and cited section accurately and completely answer the question based on the provided label."
+ },
+ "55efadb578cbb3a5af701ca66f047a00099c7266": {
+  "supported": "yes",
+  "unsupported_parts": [],
+  "section_answers_question": true,
+  "better_location": "",
+  "note": "The cited text fully supports all claims in the reference answer."
+ },
+ "fed03aeb356c3bd0a1679d21332cc298b23ed1a2": {
+  "supported": "yes",
+  "unsupported_parts": [],
+  "section_answers_question": true,
+  "better_location": "",
+  "note": "The reference answer is fully supported by section 2.2."
+ },
+ "7e1a613588a2039dac9d4e877c99f3f0b84f9b9f": {
+  "supported": "yes",
+  "unsupported_parts": [],
+  "section_answers_question": true,
+  "better_location": "",
+  "note": "The reference answer is directly supported by section 2.2 under unprovoked DVT or PE."
+ },
+ "4c29347c4c142f5170881616b6fa52059a7c6831": {
+  "supported": "yes",
+  "unsupported_parts": [],
+  "section_answers_question": true,
+  "better_location": "",
+  "note": "The reference answer is fully supported by section 2.2."
+ },
+ "21137fcf196bcd947bdd00be42c4ccc9cdc70523": {
+  "supported": "yes",
+  "unsupported_parts": [],
+  "section_answers_question": true,
+  "better_location": "",
+  "note": "The reference answer is fully supported by section 2.2 under the Post-Myocardial Infarction heading."
+ },
+ "a1ad3ec8108d8cce88aab2fc3f1aef4390b54789": {
+  "supported": "yes",
+  "unsupported_parts": [],
+  "section_answers_question": true,
+  "better_location": "",
+  "note": "The reference answer is fully supported by section 2.3 of the label."
+ }
+}
