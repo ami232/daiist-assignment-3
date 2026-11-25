@@ -71,7 +71,7 @@ REG_432_2012 has only 4 sections but 15,190 words, because almost all of it is t
 
 The test set has 40 questions, 28 single, 6 multi and 6 unanswerable, and I graded 20 of the agent's answers myself so I could compare my grades with the LLM judge.
 
-I wrote the questions from the point of view of the quality and regulatory team, as label situations they would actually check, and many of them use a number just above or below a legal threshold, like 3.2 g of fat for "low fat" where the limit is 3 g, or 18% of energy from protein for "high protein" where the limit is 20%, so the agent has to apply the condition and not only find the right article. For every question I wrote down which passage should answer it in expected_source and expected_location, and a short reference answer taken from that passage, which is what both the judge and I grade against.
+I wrote the questions from the point of view of the quality and regulatory team, as label situations they would actually check, and many of them use a number just above or below a legal threshold, like 3.2 g of fat for "low fat" where the limit is 3 g, or 18% of energy from protein for "high protein" where the limit is 20%, so the agent has to apply the condition and not only find the right article. For every question I wrote down which passage should answer it in expected_source and expected_location, and a short reference answer taken from that passage, which is what both the judge and I grade against. All six documents are covered.
 
 The multi questions need two passages to be answered and they list both separated by ";", in five of them both passages are in the same regulation and only q05 needs two documents. The unanswerable questions are close to the topic of the corpus, so the agent cannot just see that they are off topic. Some ask about other laws, like organic food or pesticide residues, and others ask for a detail the corpus does not give, like the gluten-free threshold, which the guidance only refers to in another regulation. This is why they have no expected source and their reference answer says what is missing.
 
@@ -89,6 +89,26 @@ The multi questions need two passages to be answered and they list both separate
 ## Retrieval
 
 *Hit rate at 1/3/5 per design, words added to the prompt, the design you chose.*
+
+## Retrieval
+
+I chose the structure design with k = 5. To compare the designs, evaluate.py embeds each question once and takes the top 5 chunks from both designs, only from the six original documents, and a question counts as a hit at k when one of its expected passages is in the top k (for fixed windows any section in the covers field counts).
+
+| Design | hit@1 | hit@3 | hit@5 | multi, both passages @1 / @3 / @5 | words added @1 / @3 / @5 |
+| --- | --- | --- | --- | --- | --- |
+| structure | 88% | 97% | 100% | 0% / 33% / 67% | 242 / 720 / 1,169 |
+| fixed | 82% | 91% | 97% | 17% / 17% / 17% | 200 / 598 / 988 |
+
+| Design | precise hit@1 / @3 / @5 (n = 18) | broad hit@1 / @3 / @5 (n = 16) |
+| --- | --- | --- |
+| structure | 78% / 94% / 100% | 100% / 100% / 100% |
+| fixed | 67% / 83% / 94% | 100% / 100% / 100% |
+
+The multi columns are only over 6 questions, so 67% means 4 questions. A precise question has an expected location with at most 2 chunks, and a broad one has more, like the Annex of REG_432_2012, where any chunk counts as a hit.
+
+Structure has a higher hit rate at every k, and as the second table shows all the difference comes from the precise questions, since both designs find the broad ones every time. It is also much better with the multi questions, it finds both passages for 4 of the 6 at k = 5 while fixed only gets 1, and its chunks have the same labels the agent cites, so the citation-check guardrail can check them directly. The downside is that it adds about 18% more words to the prompt (1,169 against 988 at k = 5), but I think it is worth it.
+
+I chose k = 5 instead of 3 because every question gets at least one expected passage and the multi questions get both passages 4 times out of 6 instead of 2. This costs 449 more words per search, however a missed passage can mean a wrong answer for the team, which is much worse than a longer prompt.
 
 ## Tools and subagent
 
