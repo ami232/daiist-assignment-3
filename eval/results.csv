@@ -1,0 +1,258 @@
+id,kind,status,refusal,correct_refusal,wrong_refusal,n_citations,invalid_citations,cites_expected_sources,guardrail_fired,guardrail_withheld,judge_correct,judge_supported,judge_reason,baseline_correct,baseline_refusal,tool_calls,input_tokens,output_tokens,seconds,failure_hint,answer
+q01,single,ok,0,0,0,8,0,1,0,0,1,1,The assistant accurately identifies the four core functions of the AI RMF directly supported by the retrieved text.,1,0,1,5517,581,6.18,,"The four core functions of the AI Risk Management Framework (AI RMF 1.0) are:
+
+* **GOVERN** [NIST.AI.100-1, p7-8] [NIST.AI.100-1, p24-25]
+* **MAP** [NIST.AI.100-1, p7-8] [NIST.AI.100-1, p24-25]
+* **MEASURE** [NIST.AI.100-1, p7-8] [NIST.AI.100-1, p24-25]
+* **MANAGE** [NIST.AI.100-1, p7-8] [NIST.AI.100-1, p24-25]"
+q02,single,ok,0,0,0,2,0,1,0,0,1,1,"The answer correctly identifies the GOVERN function as the cross-cutting function that informs and enables Map, Measure, and Manage, fully supported by the retrieved text.",1,0,1,5516,413,10.09,,"The **GOVERN** function is the cross-cutting AI RMF function that is infused throughout AI risk management to inform and enable the other three functions (Map, Measure, and Manage) [NIST.AI.100-1, p25-26] [NIST.AI.100-1, p26-27]."
+q03,single,ok,0,0,0,7,0,1,0,0,1,1,"The assistant correctly lists all seven characteristics of trustworthy AI systems described in the AI RMF, fully supported by the retrieved text.",1,0,1,5427,478,15.58,,"According to the NIST AI Risk Management Framework (AI RMF 1.0), the characteristics of trustworthy AI systems include:
+
+* **Valid and Reliable** [NIST.AI.100-1, p17]
+* **Safe** [NIST.AI.100-1, p17]
+* **Secure and Resilient** [NIST.AI.100-1, p17]
+* **Accountable and Transparent** [NIST.AI.100-1, p17]
+* **Explainable and Interpretable** [NIST.AI.100-1, p17]
+* **Privacy-Enhanced** [NIST.AI.100-1, p17]
+* **Fair with Harmful Bias Managed** [NIST.AI.100-1, p17]"
+q04,single,ok,0,0,0,1,0,1,0,0,1,1,"The answer accurately identifies valid and reliable as a necessary condition of trustworthiness, which is directly supported by the retrieved text.",1,0,1,5354,317,8.18,,"According to the AI RMF 1.0, **Valid & Reliable** is a necessary condition of trustworthiness and serves as the base for the other trustworthiness characteristics [NIST.AI.100-1, p17]."
+q05,single,ok,0,0,0,1,0,1,0,0,1,1,The answer accurately states the exact text of GOVERN 1.1 as given in the reference answer and retrieved passage.,0,0,1,5804,318,10.35,,"NIST AI RMF subcategory **GOVERN 1.1** states:
+
+> ""Legal and regulatory requirements involving AI are understood, managed, and documented."" [NIST.AI.100-1, p27]"
+q06,single,ok,0,0,0,1,0,1,0,0,1,1,"The answer accurately quotes subcategory MANAGE 1.1, matching the reference answer and fully supported by the retrieved passage.",0,0,1,5854,476,8.24,,"NIST AI RMF subcategory MANAGE 1.1 states: ""A determination is made as to whether the AI system achieves its intended purposes and stated objectives and whether its development or deployment should proceed."" [NIST.AI.100-1, MANAGE 1.1]"
+q07,single,ok,0,0,0,1,0,1,0,0,1,1,"The answer correctly states that NIST expects to review the framework with formal input from the AI community no later than 2028, which is fully supported by the retrieved passage.",0,0,1,5586,411,18.95,,"NIST plans to review the content and usefulness of the AI Risk Management Framework regularly, with a review incorporating formal input from the AI community expected to take place **no later than 2028** [NIST.AI.100-1, p3-6]."
+q08,single,ok,0,0,0,4,0,1,0,0,1,1,"The answer accurately states that the AI RMF does not prescribe risk tolerance and correctly explains that tolerance is contextual and defined by organizations, fully supported by the retrieved passages.",1,0,1,5522,552,21.11,,"No, the AI RMF does not prescribe a particular risk tolerance for organizations [NIST.AI.100-1, p11-12]. 
+
+According to the AI RMF:
+* While the framework can be used to prioritize risk, it does not prescribe risk tolerance [NIST.AI.100-1, p11-12].
+* Risk tolerance and acceptable levels of risk are highly contextual, application-specific, and use-case specific [NIST.AI.100-1, p11-12].
+* Where established guidelines do not exist, organizations should define reasonable risk tolerance themselves, after which the AI RMF can be used to manage risks and document processes [NIST.AI.100-1, p12]."
+q09,single,ok,0,0,0,13,0,1,0,0,1,1,The answer correctly identifies that there are 12 risks and lists all twelve as detailed in the retrieved passages.,1,0,5,47609,1521,16.86,,"There are **12 risks** in the Generative AI Profile's list of risks unique to or exacerbated by generative AI [NIST.AI.600-1, p7-8]:
+
+1. **CBRN Information or Capabilities** [NIST.AI.600-1, p7-8]
+2. **Confabulation** [NIST.AI.600-1, p7-8]
+3. **Dangerous, Violent, or Hateful Content** [NIST.AI.600-1, p7-8]
+4. **Data Privacy** [NIST.AI.600-1, p7-8]
+5. **Environmental Impacts** [NIST.AI.600-1, p7-8]
+6. **Harmful Bias or Homogenization** [NIST.AI.600-1, p7-8]
+7. **Human-AI Configuration** [NIST.AI.600-1, p8]
+8. **Information Integrity** [NIST.AI.600-1, p8]
+9. **Information Security** [NIST.AI.600-1, p8]
+10. **Intellectual Property** [NIST.AI.600-1, p8-9]
+11. **Obscene, Degrading, and/or Abusive Content** [NIST.AI.600-1, p9]
+12. **Value Chain and Component Integration** [NIST.AI.600-1, p9]"
+q10,single,ok,0,0,0,4,0,1,0,0,1,1,The answer accurately defines confabulation and identifies the alternative terms hallucinations and fabrications based on the retrieved passages.,1,0,1,5894,751,7.41,,"In the NIST Generative AI Profile (NIST AI 600-1), **confabulation** refers to a phenomenon in which generative AI (GAI) systems generate and confidently present erroneous or false content in response to prompts [NIST.AI.600-1, p9-10]. It also includes generated outputs that diverge from the prompts or other inputs, or that contradict previously generated statements in the same context [NIST.AI.600-1, p9-10].
+
+Colloquially, the Generative AI Profile notes that these phenomena are also referred to as **""hallucinations""** or **""fabrications""** [NIST.AI.600-1, p7-8], [NIST.AI.600-1, p9-10]."
+q11,single,ok,0,0,0,2,0,1,0,0,1,1,"The answer quotes the exact action text from the passage and correctly identifies its subcategory and targeted GAI risk, matching the reference answer.",0,0,1,6130,508,6.27,,"Action **GV-1.6-001** in the NIST Generative AI Profile calls for organizations to:
+
+> ""Enumerate organizational GAI systems for incorporation into AI system inventory and adjust AI system inventory requirements to account for GAI risks."" [NIST.AI.600-1, GV-1.6-001]
+
+It supports subcategory **GOVERN 1.6** (""Mechanisms are in place to inventory AI systems and are resourced according to organizational risk priorities"") and targets **Information Security** GAI risks [NIST.AI.600-1, p20]."
+q12,single,ok,0,0,0,1,0,1,0,0,1,1,The assistant's response accurately reflects the retrieved passage and matches the reference answer.,0,1,1,6140,353,6.28,,"Generative AI Profile action **GV-1.2-002** calls for establishing policies to evaluate risk-relevant capabilities of generative AI (GAI) and the robustness of safety measures, both prior to deployment and on an ongoing basis, through internal and external evaluations [NIST.AI.600-1, GV-1.2-002]."
+q13,single,ok,0,0,0,2,0,1,0,0,1,1,The answer accurately lists both GAI risks associated with action GV-1.2-002 directly supported by the retrieved text.,0,1,2,13871,695,8.71,,"In NIST AI 600-1 (Generative AI Profile), action **GV-1.2-002** (""Establish policies to evaluate risk-relevant capabilities of GAI and robustness of safety measures, both prior to deployment and on an ongoing basis, through internal and external evaluations"") is associated with the following GAI risks:
+
+* **CBRN Information or Capabilities** [NIST.AI.600-1, GV-1.2-002]
+* **Information Security** [NIST.AI.600-1, GV-1.2-002]"
+q14,single,ok,0,0,0,3,0,1,0,0,1,1,"The answer accurately states that the document is a cross-sectoral profile of and companion resource to AI RMF 1.0 for generative AI, with all statements fully supported by the retrieved passages.",1,0,2,12371,1132,11.69,,"The Generative AI Profile (NIST AI 600-1) describes its relationship to the AI Risk Management Framework (AI RMF 1.0, NIST AI 100-1) as follows:
+
+* **Companion Resource & Cross-Sectoral Profile**: It is a cross-sectoral profile of and companion resource for AI RMF 1.0, developed pursuant to Executive Order 14110 to address Generative AI (GAI) [NIST.AI.600-1, p5-6].
+* **Implementation of Framework Core**: It serves as an implementation of the AI RMF functions, categories, and subcategories specifically tailored for Generative AI based on an organization's requirements, risk tolerance, and resources [NIST.AI.600-1, p5].
+* **Actionable Guidance for GAI Risks**: It defines risks that are novel to or exacerbated by GAI and provides a set of suggested actions to help organizations govern, map, measure, and manage those risks across various stages of the AI lifecycle [NIST.AI.600-1, p5-6]."
+q15,single,ok,0,0,0,2,0,1,0,0,1,1,"The assistant accurately identifies the subcategory text and its priority from the retrieved passage, matching the reference answer.",0,1,1,5939,546,6.16,,"In NIST SP 800-61r3, subcategory RS.MA-02 states that **""Incident reports are triaged and validated""** [NIST.SP.800-61r3, p35-36]. 
+
+The profile assigns this subcategory a priority of **High** [NIST.SP.800-61r3, p35-36]."
+q16,single,ok,0,0,0,8,0,1,0,0,1,1,"The answer correctly identifies that the recommendations are organized as a CSF 2.0 Community Profile structured by CSF Functions, Categories, and Subcategories, and all supporting details are verified by the retrieved passages.",0,0,2,11626,1008,10.0,,"NIST SP 800-61 Revision 3 organizes its incident response recommendations and considerations as a **CSF 2.0 Community Profile** [NIST.SP.800-61r3, p11-12] [NIST.SP.800-61r3, p17-18].
+
+Specifically, the publication structures its recommendations around the NIST Cybersecurity Framework (CSF) 2.0 Core:
+
+* **Two Main Tables**:
+  * **Table 2: Preparation and Lessons Learned**, covering CSF 2.0 outcomes related to the *Govern*, *Identify*, *Protect*, and *Identify-Improvement* areas [NIST.SP.800-61r3, p17-18].
+  * **Table 3: Incident Response**, covering CSF 2.0 outcomes related to the *Detect*, *Respond*, and *Recover* functions [NIST.SP.800-61r3, p17-18] [NIST.SP.800-61r3, p31].
+* **Priority Levels**: Each CSF Function, Category, and Subcategory row is assigned a relative priority for incident response:
+  * **High**: Functions as a core incident response activity for most organizations [NIST.SP.800-61r3, p17-18].
+  * **Medium**: Directly supports incident response activities for most organizations [NIST.SP.800-61r3, p17-18].
+  * **Low**: Indirectly supports incident response activities for most organizations [NIST.SP.800-61r3, p17-18]."
+q17,single,ok,0,0,0,1,0,1,0,0,1,1,"The assistant correctly identifies subcategory RS.MA-03 along with its description, which is fully supported by the retrieved passages.",0,0,1,5855,458,6.24,,"Subcategory **RS.MA-03** covers categorizing and prioritizing incidents (""Incidents are categorized and prioritized"") [NIST.SP.800-61r3, RS.MA-03]."
+q18,single,ok,0,0,0,7,0,1,0,0,1,0,"The answer adds 'authorities as applicable' to recommendation R5, which is truncated in the retrieved passage.",0,0,1,5865,1287,9.76,unsupported claim,"In NIST SP 800-61r3 (Incident Response Recommendations and Considerations CSF 2.0 Community Profile), subcategory **RS.CO-02** states:
+
+**Description:** ""Internal and external stakeholders are notified of incidents"" [NIST.SP.800-61r3, p38-39].  
+**Priority:** High [NIST.SP.800-61r3, p38-39]
+
+### Recommendations:
+* **R1:** When an incident is analyzed and prioritized, the incident response team should coordinate with appropriate individuals inside and outside the organization so that all who need to be involved play their roles [NIST.SP.800-61r3, p38-39].
+* **R2:** Follow established procedures regarding incident coordination, including what must be reported to whom and at what times (e.g., initial notification, regular status updates) [NIST.SP.800-61r3, p38-39].
+* **R3:** Perform notifications in compliance with current incident notification-related laws and regulations pertaining to the organization’s sectors, geographic locations, customer locations, and other relevant characteristics [NIST.SP.800-61r3, p38-39].
+* **R4:** Notify affected third parties of data breaches and other cybersecurity incidents in accordance with regulatory, legal, and contractual requirements [NIST.SP.800-61r3, p38-39].
+* **R5:** Notify law enforcement agencies and regulatory authorities as applicable [NIST.SP.800-61r3, p38-39]."
+q19,single,ok,0,0,0,3,0,1,0,0,1,1,The answer accurately states the text of subcategory DE.AE-08 and is fully supported by the retrieved passage.,1,0,2,13352,989,9.9,,"In NIST SP 800-61r3 (Incident Response Recommendations and Considerations), subcategory **DE.AE-08** states:
+
+* **Subcategory Statement:** ""Incidents are declared when adverse events meet the defined incident criteria"" [NIST.SP.800-61r3, p34].
+* **Priority:** High [NIST.SP.800-61r3, p34].
+* **Recommendation (R1):** ""Apply incident criteria to known and assumed characteristics of analyzed activity, and consider known false positives to determine whether an incident should be declared."" [NIST.SP.800-61r3, p34]."
+q20,single,ok,0,0,0,4,0,1,0,0,1,1,"The assistant provides the exact text from the reference answer along with accurate, fully supported extra details from the retrieved profile table.",0,0,1,5810,863,7.88,,"In NIST SP 800-61r3, subcategory **RC.RP-01** states:
+
+* **Description:** ""The recovery portion of the incident response plan is executed once initiated from the incident response process"" [NIST.SP.800-61r3, RC.RP-01].
+* **Priority:** High [NIST.SP.800-61r3, RC.RP-01].
+* **Recommendations and Considerations:**
+  * **R1:** Begin recovery procedures during or after incident response processes [NIST.SP.800-61r3, RC.RP-01].
+  * **R2:** Inform all individuals with recovery responsibilities about the plans for recovery and the authorizations required to implement each aspect of the plans [NIST.SP.800-61r3, RC.RP-01]."
+q21,single,ok,0,0,0,5,0,1,0,0,1,1,The answer directly provides the requirement stated in the reference answer along with accurate implementation examples supported by the retrieved text.,0,0,1,6833,610,6.17,,"SSDF task **PO.1.1** requires organizations to:
+
+> ""Identify and document all security requirements for the organization’s software development infrastructures and processes, and maintain the requirements over time."" [NIST.SP.800-218, PO.1.1]
+
+### Examples of Implementation:
+* **Infrastructures:** Define policies for securing software development infrastructures and their components (including development endpoints) throughout the SDLC and maintaining that security [NIST.SP.800-218, PO.1.1].
+* **Processes:** Define policies for securing software development processes throughout the SDLC, including open-source and third-party components [NIST.SP.800-218, PO.1.1].
+* **Maintenance:** Review and update security requirements at least annually, or sooner if new internal/external requirements arise or a major security incident occurs [NIST.SP.800-218, PO.1.1].
+* **Communication:** Educate affected individuals on impending changes to requirements [NIST.SP.800-218, PO.1.1]."
+q22,single,ok,0,0,0,4,0,1,0,0,1,1,"The assistant correctly identifies the four groups of practices in the SSDF along with their abbreviations and descriptions, fully supported by the retrieved text.",1,0,1,5510,576,6.61,,"The four groups of practices in the SSDF version 1.1 are:
+
+1. **Prepare the Organization (PO):** Organizations should ensure that their people, processes, and technology are prepared to perform secure software development at the organization level [NIST.SP.800-218, p12-13].
+2. **Protect the Software (PS):** Organizations should protect all components of their software from tampering and unauthorized access [NIST.SP.800-218, p12-13].
+3. **Produce Well-Secured Software (PW):** Organizations should produce well-secured software with minimal security vulnerabilities in its releases [NIST.SP.800-218, p12-13].
+4. **Respond to Vulnerabilities (RV):** Organizations should identify residual vulnerabilities in their software releases and respond appropriately to address those vulnerabilities and prevent similar ones from occurring in the future [NIST.SP.800-218, p12-13]."
+q23,single,ok,0,0,0,5,0,1,0,0,1,1,The answer accurately states the requirement for SSDF task PS.2.1 and all additional details are fully supported by the retrieved passage.,1,0,1,6854,559,9.6,,"SSDF task **PS.2.1** requires organizations to **""Make software integrity verification information available to software acquirers""** [NIST.SP.800-218, p18-19]. 
+
+It is part of Practice **PS.2** (*Provide a Mechanism for Verifying Software Release Integrity*), which helps software acquirers ensure that the software they acquire is legitimate and has not been tampered with [NIST.SP.800-218, p18-19].
+
+Notional implementation examples for PS.2.1 include:
+* Posting cryptographic hashes for release files on a well-secured website [NIST.SP.800-218, p18-19].
+* Using an established certificate authority for code signing to allow consumers' tools/OS to validate signatures before use [NIST.SP.800-218, p18-19].
+* Periodically reviewing code signing processes (including certificate renewal, rotation, revocation, and protection) [NIST.SP.800-218, p18-19]."
+q24,single,ok,0,0,0,1,0,1,0,0,1,1,The assistant's answer accurately states the requirement of SSDF task PS.3.1 and is fully supported by the retrieved passage.,0,0,1,6730,407,9.43,,"SSDF task PS.3.1 requires organizations to securely archive the necessary files and supporting data (e.g., integrity verification information, provenance data) to be retained for each software release [NIST.SP.800-218, PS.3.1]."
+q25,single,ok,0,0,0,2,0,1,0,0,1,1,"The assistant accurately states the requirement for SSDF task RV.1.1 along with its implementation examples, fully supported by the retrieved text.",0,0,1,6679,563,6.6,,"SSDF task **RV.1.1** requires organizations to:
+
+> ""Gather information from software acquirers, users, and public sources on potential vulnerabilities in the software and third-party components that the software uses, and investigate all credible reports."" [NIST.SP.800-218, p25-26]
+
+**Notional Implementation Examples** included in SSDF 1.1 for task RV.1.1 [NIST.SP.800-218, p25-26]:
+* **Example 1:** Monitor vulnerability databases (such as NVD), security mailing lists, and other sources of vulnerability reports through manual or automated means.
+* **Example 2:** Use threat intelligence sources to better understand how vulnerabilities in general are being exploited.
+* **Example 3:** Automatically review provenance and software composition data for all software components to identify any new vulnerabilities they have."
+q26,single,ok,0,0,0,3,0,1,0,0,1,1,"The answer correctly notes that PW.4.5 has no requirements of its own because it was moved to PW.4.1 and PW.4.4, and all claims are fully supported by the retrieved passages.",0,1,2,16739,1127,11.17,,"In SSDF Version 1.1, task **PW.4.5** does not contain requirements of its own because it was **moved to PW.4.1 and PW.4.4** [NIST.SP.800-218, PW.4.5]. 
+
+The tasks it was moved to require:
+
+* **PW.4.1:** Acquire and maintain well-secured software components (e.g., software libraries, modules, middleware, frameworks) from commercial, open-source, and other third-party developers for use by the organization’s software [NIST.SP.800-218, PW.4.1].
+* **PW.4.4:** Verify that acquired commercial, open-source, and all other third-party software components comply with the requirements, as defined by the organization, throughout their life cycles [NIST.SP.800-218, PW.4.4]."
+q27,single,ok,0,0,0,1,0,1,0,0,1,0,"The answer correctly identifies the four SP 800-53 controls, but the control titles added in parentheses are not found in the retrieved passages.",0,0,1,6827,492,5.6,unsupported claim,"For SSDF task PO.1.1, the referenced NIST SP 800-53 controls are:
+
+* **SA-1** (Policy and Procedures)
+* **SA-8** (Security and Privacy Engineering Principles)
+* **SA-15** (Development Process, Standards, and Tools)
+* **SR-3** (Supply Chain Controls and Processes)
+
+[NIST.SP.800-218, PO.1.1]"
+q28,multi,ok,0,0,0,3,0,1,0,0,1,1,"The assistant correctly identifies subcategory GOVERN 1.2 and Generative AI Profile action GV-1.2-002, fully supported by the retrieved passages.",0,0,4,35639,1389,15.12,,"The Generative AI Profile action is **GV-1.2-002**, under subcategory **GOVERN 1.2** (""The characteristics of trustworthy AI are integrated into organizational policies, processes, procedures, and practices"") [NIST.AI.100-1, GOVERN 1.2] [NIST.AI.600-1, p18].
+
+**GV-1.2-002** specifies: ""Establish policies to evaluate risk-relevant capabilities of GAI and robustness of safety measures, both prior to deployment and on an ongoing basis, through internal and external evaluations."" [NIST.AI.600-1, GV-1.2-002]."
+q29,multi,ok,0,0,0,4,0,1,0,0,1,1,"The answer accurately addresses what the AI RMF states under GOVERN 1.6 and what the Generative AI Profile adds under the corresponding suggested actions, with all details fully supported by the retrieved text.",0,0,2,12896,1204,11.76,,"**What the AI RMF says:**
+The AI Risk Management Framework (NIST AI 100-1) establishes under subcategory **GOVERN 1.6** that ""Mechanisms are in place to inventory AI systems and are resourced according to organizational risk priorities"" [NIST.AI.100-1, GOVERN 1.6].
+
+---
+
+**What the Generative AI Profile adds:**
+The Generative AI Profile (NIST AI 600-1) expands on GOVERN 1.6 with three specific suggested actions for Generative AI (GAI) systems:
+
+1. **GV-1.6-001:** Enumerate organizational GAI systems for incorporation into the AI system inventory and adjust AI system inventory requirements to account for GAI risks [NIST.AI.600-1, GV-1.6-001].
+2. **GV-1.6-002:** Define any inventory exemptions in organizational policies for GAI systems embedded into application software [NIST.AI.600-1, GV-1.6-002].
+3. **GV-1.6-003:** In addition to general model, governance, and risk information, include the following details in GAI system inventory entries [NIST.AI.600-1, GV-1.6-003]:
+   - Data provenance information (e.g., source, signatures, versioning, watermarks);
+   - Known issues reported from internal bug tracking or external information sharing resources (e.g., AI incident database, AVID, CVE, NVD, OECD AI incident monitor);
+   - Human oversight roles and responsibilities;
+   - Special rights and considerations for intellectual property, licensed works, or personal, privileged, proprietary, or sensitive data;
+   - Underlying foundation models, versions of underlying models, and access modes."
+q30,multi,ok,0,0,0,10,0,1,0,0,1,1,"The answer correctly identifies both the SSDF task RV.3.1 and incident response profile subcategory RS.AN-03, accurately stating what each says with full passage support.",0,1,3,27486,2534,18.1,,"### SSDF Task (NIST SP 800-218)
+
+In the Secure Software Development Framework (SSDF), practice **RV.3** is *Analyze Vulnerabilities to Identify Their Root Causes* [NIST.SP.800-218, RV.3]. Its tasks state:
+
+* **RV.3.1**: ""Analyze identified vulnerabilities to determine their root causes."" [NIST.SP.800-218, RV.3.1]
+* **RV.3.2**: ""Analyze the root causes over time to identify patterns, such as a particular secure coding practice not being followed consistently."" [NIST.SP.800-218, RV.3.2]
+* **RV.3.4**: ""Review the SDLC process, and update it if appropriate to prevent (or reduce the likelihood of) the root cause recurring in updates to the software or in new software that is created."" [NIST.SP.800-218, RV.3.4]
+
+---
+
+### Incident Response Profile Subcategory (NIST SP 800-61r3)
+
+In the Incident Response Community Profile, subcategory **RS.AN-03** states:
+
+* **Description**: ""Analysis is performed to establish what has taken place during an incident and the root cause of the incident"" [NIST.SP.800-61r3, RS.AN-03].
+* **Recommendations and Considerations**:
+  * **R1**: Determine the sequence of events that occurred during the incident and which assets/resources were involved [NIST.SP.800-61r3, RS.AN-03].
+  * **R2**: Attempt to determine what vulnerabilities, threats, and threat actors were directly or indirectly involved [NIST.SP.800-61r3, RS.AN-03].
+  * **R3**: Analyze the incident to find the underlying or systemic root causes [NIST.SP.800-61r3, RS.AN-03].
+  * **R4**: Check deployed cyber deception technology for additional attacker behavior information [NIST.SP.800-61r3, RS.AN-03].
+  * **N1**: Use this information to help identify weaknesses in cybersecurity risk management to prevent similar incidents in the future [NIST.SP.800-61r3, RS.AN-03]."
+q31,multi,ok,0,0,0,10,0,1,0,0,1,1,"The answer accurately addresses how both the AI RMF (MANAGE 4.3) and the incident response profile (RS.CO-02) handle communicating incidents, and all claims are fully supported by the retrieved passages.",0,0,3,22529,2016,17.51,,"Both the NIST AI RMF and the NIST Incident Response Profile (SP 800-61r3) address communicating incidents to internal and external parties, but with different scopes and operational focuses:
+
+### AI Risk Management Framework (NIST AI 100-1)
+* **MANAGE 4 & 4.3**: Requires documenting and monitoring communication plans for identified AI risks, and specifically requires that incidents and errors are communicated to relevant AI actors, including affected communities [NIST.AI.100-1, p37-38].
+* **Generative AI Profile Extension (NIST AI 600-1)**: Further details establishing policies and procedures to communicate GAI incidents to downstream stakeholders and public/official platforms (e.g., AI incident databases, CVEs) [NIST.AI.600-1, p21-22], as well as reporting incidents in compliance with legal and regulatory requirements [NIST.AI.600-1, p49-50].
+
+---
+
+### Incident Response Profile (NIST SP 800-61r3)
+NIST SP 800-61r3 organizes communication and reporting under the **RS.CO (Incident Response Reporting and Communication)** and **RC.CO (Incident Recovery Communication)** categories, dividing communication activities into four primary categories [NIST.SP.800-61r3, p37-38]:
+
+1. **Incident Coordination**: Communicating current and planned response activities among internal and external parties holding incident response roles [NIST.SP.800-61r3, p37-38].
+2. **Incident Notification**: Formally informing affected customers, employees, partners, regulators, third parties, and law enforcement as required by established procedures, contracts, laws, and regulations [NIST.SP.800-61r3, RS.CO-02].
+3. **Public Communication**: Managing public communications regarding incident status and media inquiries [NIST.SP.800-61r3, p37-38], including approved recovery updates [NIST.SP.800-61r3, p42-46].
+4. **Incident Information Sharing**: Sharing threat intelligence, tactics, techniques, and procedures (TTPs), or defensive recommendations voluntarily with external stakeholders, partner organizations, or sector Information Sharing and Analysis Centers (ISACs) [NIST.SP.800-61r3, p37-38], [NIST.SP.800-61r3, RS.CO-03]."
+q32,multi,ok,0,0,0,7,0,1,0,0,0,0,"The answer improperly upgrades framework guidance to mandatory obligations using 'must' and 'requires', and unsupported claims such as executive leadership taking 'ultimate' responsibility.",1,0,2,14638,2011,14.98,unsupported claim,"### Secure Software Development Framework (SSDF — NIST SP 800-218)
+
+ In the SSDF, defining roles and responsibilities is handled under the **Prepare the Organization (PO)** practice category:
+
+* **PO.2 & PO.2.1**: Organizations must create new roles or alter existing responsibilities as needed to encompass all parts of the Software Development Life Cycle (SDLC), and periodically review and update them [NIST.SP.800-218, PO.2, PO.2.1]. This includes defining SDLC-related roles for software developers, cybersecurity staff, security champions, project managers, software testers, platform engineers, and code owners [NIST.SP.800-218, PO.2.1].
+* **PO.2.3**: Organizations are expected to appoint a single leader or leadership team responsible for the secure software development process and convey executive commitment to all personnel with development-related responsibilities [NIST.SP.800-218, PO.2.3].
+
+---
+
+### AI Risk Management Framework (AI RMF 1.0 — NIST AI 100-1)
+
+In the AI RMF, defining roles and responsibilities is structured under the **GOVERN** function:
+
+* **GOVERN 1.5**: Requires organizational roles and responsibilities to be clearly defined for ongoing monitoring and periodic review of the AI risk management process and its outcomes [NIST.AI.100-1, GOVERN 1.5].
+* **GOVERN 2 & GOVERN 2.1**: Focuses on accountability structures, requiring documented and clear roles, responsibilities, and lines of communication for mapping, measuring, and managing AI risks throughout the organization [NIST.AI.100-1, GOVERN 2, GOVERN 2.1].
+* **GOVERN 2.3**: Requires executive leadership to take ultimate responsibility for decisions regarding risks associated with AI system development and deployment [NIST.AI.100-1, GOVERN 2.3].
+* **GOVERN 3.2**: Requires policies and procedures to define and differentiate roles and responsibilities specifically for human-AI configurations and the oversight of AI systems [NIST.AI.100-1, GOVERN 3.2]."
+q33,multi,ok,0,0,0,16,0,1,0,0,1,1,"The answer accurately addresses both parts of the question using AI RMF subcategory GOVERN 1.3 and Generative AI Profile action GV-1.3-001, and all statements are supported by the retrieved passages.",1,0,2,12522,1949,14.41,,"### AI RMF on Setting the Level of Risk Management Based on Risk Tolerance
+
+* **GOVERN 1.3** calls for processes, procedures, and practices to be in place to determine the needed level of risk management activities based on the organization's risk tolerance [NIST.AI.100-1, GOVERN 1.3].
+* **Not Prescriptive:** The AI RMF can be used to prioritize risk, but it does not prescribe risk tolerance [NIST.AI.100-1, p11-12].
+* **Definition & Context:** Risk tolerance is an organization's or AI actor's readiness to bear risk to achieve objectives [NIST.AI.100-1, p11-12]. It is highly contextual, application- and use-case specific, and influenced by legal/regulatory requirements, organizational priorities, resource considerations, and evolving norms [NIST.AI.100-1, p11-12], [NIST.AI.100-1, p12].
+* **Prioritization:** Policies and resources should be prioritized based on the assessed risk level and potential impact; risks determined to be highest call for the most urgent prioritization and most thorough risk management process [NIST.AI.100-1, p12-13].
+
+---
+
+### Generative AI Profile (NIST AI 600-1) Considerations for Defining Risk Tiers
+
+Under action **GV-1.3-001**, the Generative AI Profile suggests considering the following factors when updating or defining risk tiers for generative AI (GAI) [NIST.AI.600-1, GV-1.3-001]:
+
+1. **Information Integrity:** Abuses and impacts to information integrity [NIST.AI.600-1, GV-1.3-001].
+2. **System Dependencies:** Dependencies between GAI and other IT or data systems [NIST.AI.600-1, GV-1.3-001].
+3. **Rights & Safety:** Harm to fundamental rights or public safety [NIST.AI.600-1, GV-1.3-001].
+4. **Objectionable Output:** Presentation of obscene, objectionable, offensive, discriminatory, invalid, or untruthful output [NIST.AI.600-1, GV-1.3-001].
+5. **Psychological Impacts:** Psychological impacts to humans (e.g., anthropomorphization, algorithmic aversion, emotional entanglement) [NIST.AI.600-1, GV-1.3-001].
+6. **Malicious Use:** Possibility for malicious use [NIST.AI.600-1, GV-1.3-001].
+7. **Security Vulnerabilities:** Whether the system introduces significant new security vulnerabilities [NIST.AI.600-1, GV-1.3-001].
+8. **Disparate Impact:** Anticipated system impact on some groups compared to others [NIST.AI.600-1, GV-1.3-001].
+9. **Performance Reliability:** Unreliable decision-making capabilities, validity, adaptability, and variability of GAI system performance over time [NIST.AI.600-1, GV-1.3-001]."
+q34,multi,ok,0,0,0,3,0,1,0,0,1,1,"The answer correctly identifies DE.AE-08 for declaring an incident and RS.MA-02 for triaging and validating incident reports, with all claims supported by the passages.",0,0,3,22360,1074,20.5,,"In NIST SP 800-61r3:
+
+* **Declaring an incident** is covered by subcategory **DE.AE-08** (""Incidents are declared when adverse events meet the defined incident criteria"") [NIST.SP.800-61r3, DE.AE-08]. (Additionally, **RS.MA-01** addresses executing the incident response plan once an incident is declared [NIST.SP.800-61r3, RS.MA-01]).
+* **Triaging and validating incident reports** is covered by subcategory **RS.MA-02** (""Incident reports are triaged and validated"") [NIST.SP.800-61r3, RS.MA-02]."
+q35,multi,ok,0,0,0,2,0,1,0,0,1,1,"The answer accurately addresses both parts of the question, matching the reference and fully supported by the retrieved passages.",0,0,2,14446,723,10.71,,"SSDF task **RV.2.1** requires organizations to analyze each vulnerability to gather sufficient information about risk to plan its remediation or other risk response [NIST.SP.800-218, RV.2.1].
+
+The Incident Response Profile subcategory that covers categorizing and prioritizing incidents is **RS.MA-03** (""Incidents are categorized and prioritized"") [NIST.SP.800-61r3, RS.MA-03]."
+q36,unanswerable,ok,1,1,0,2,0,0,0,0,1,1,"The assistant correctly states that the indexed documents do not contain the answer, refrains from using general knowledge, and accurately references related passages found in the retrieved text.",1,1,3,23328,1916,16.49,,"I don't know based on the indexed documents. I searched for ""CSF Tiers purpose"" and ""Implementation Tiers"", but the four indexed publications (NIST AI 100-1, NIST AI 600-1, NIST SP 800-61r3, and NIST SP 800-218) do not define CSF Tiers. The related passages found instead cover prioritization levels (High, Medium, Low) assigned to CSF 2.0 outcomes within an incident response profile [NIST.SP.800-61r3, p17-18] and recommendations for updating or defining risk tiers for generative AI systems [NIST.AI.600-1, GV-1.3-001]."
+q37,unanswerable,ok,1,1,0,0,0,0,0,0,1,1,The assistant correctly recognizes that the documents do not contain ISO/IEC 42001 and refuses without answering from general knowledge.,1,1,1,5876,1983,13.09,,"I don't know based on the indexed documents. The index covers only NIST AI 100-1 (AI RMF 1.0), NIST AI 600-1, NIST SP 800-61r3, and NIST SP 800-218 (SSDF 1.1), not ISO/IEC 42001. I searched for ""ISO/IEC 42001 clause 6.1"", but the retrieved passages do not contain requirements from ISO/IEC 42001."
+q38,unanswerable,ok,1,1,0,2,0,0,0,0,1,1,"The assistant correctly states that the indexed documents do not contain the EU AI Act, refrains from answering from outside knowledge, and all referenced points are accurately supported by the retrieved passages.",1,1,2,12095,1366,11.78,,"I don't know based on the indexed documents. The index covers only NIST AI 100-1, NIST AI 600-1, NIST SP 800-61r3, and NIST SP 800-218, and does not contain the EU AI Act. I searched for `""EU AI Act high-risk AI systems""`, finding only general guidance on aligning with applicable laws and regulations [NIST.AI.600-1, p17-18] and establishing contingency processes for third-party AI systems deemed to be high-risk [NIST.AI.100-1, GOVERN 6.2]."
+q39,unanswerable,ok,1,1,0,1,0,0,0,0,1,1,"The assistant correctly refuses to answer because draft SSDF version 1.2 is not in the indexed documents, and accurately references the change log in the retrieved passages.",1,1,1,6227,1335,10.02,,"I don't know based on the indexed documents. The index covers only NIST SP 800-218 Version 1.1, NIST AI 100-1 (1.0), NIST AI 600-1, and NIST SP 800-61r3, not draft SSDF Revision 1 (version 1.2). I searched for changes in SSDF Version 1.2, but the indexed document only includes the change log for SSDF Version 1.1 published in February 2022 and its September 2021 draft [NIST.SP.800-218, p36]."
+q40,unanswerable,ok,1,1,0,1,0,0,0,0,1,1,The assistant correctly states that the indexed documents do not contain the requirements for SP 800-53 controls and points to related passages without using outside knowledge.,1,1,1,5842,1428,10.54,,"I don't know based on the indexed documents. The index covers only NIST AI 100-1, NIST AI 600-1, NIST SP 800-61r3, and NIST SP 800-218, and does not include NIST SP 800-53. I searched for ""SP 800-53 IR-4 Incident Handling"", but no passages regarding NIST SP 800-53 control requirements were retrieved. For guidance on incident handlers' roles and responsibilities within the indexed publications, see NIST SP 800-61r3 [NIST.SP.800-61r3, p15]."
+q41,unanswerable,ok,1,1,0,1,0,0,0,0,1,1,"The assistant correctly states that the indexed documents do not contain the answer, and all factual claims are supported across the retrieved passages, though citing only pages 33-36 for ASVS and MASVS is a CITATION-MISMATCH.",0,0,2,13589,870,9.6,,"I don't know based on the indexed documents. I searched for ""OWASP Top 10 LLM Applications"" and ""OWASP"" across the indexed NIST publications, but while NIST SP 800-218 lists the OWASP acronym and references OWASP frameworks such as ASVS, MASVS, and SAMM [NIST.SP.800-218, p33-36], none of the indexed documents state the rankings of the OWASP Top 10 for LLM Applications."
+q42,unanswerable,ok,1,1,0,2,0,0,0,0,1,1,The assistant correctly states that the indexed documents do not contain the specific Playbook steps and accurately references the retrieved information about GOVERN 1.1 and the Playbook.,0,0,4,34240,1386,15.01,,"I don't know based on the indexed documents. 
+
+I searched for the specific AI RMF Playbook action steps for GOVERN 1.1. The indexed documents define subcategory GOVERN 1.1 as ""Legal and regulatory requirements involving AI are understood, managed, and documented"" [NIST.AI.100-1, p27] and note that detailed tactical actions are provided in the separate online NIST AI RMF Playbook [NIST.AI.100-1, p25-26], but the Playbook's specific steps are not included in the indexed corpus."
+q43,unanswerable,ok,1,1,0,2,0,0,0,0,1,1,"The assistant correctly states that the indexed documents do not contain NIST AI 100-2, avoids answering from general knowledge, and accurately references related attacks mentioned in the retrieved passages.",1,1,1,5687,2094,13.85,,"I don't know based on the indexed documents. The index covers only NIST AI 100-1, NIST AI 600-1, NIST SP 800-61r3, and NIST SP 800-218, and does not include NIST AI 100-2.
+
+I searched for NIST AI 100-2 and adversarial machine learning attack categories. Related passages in NIST AI 100-1 mention security concerns and attacks such as evasion, model extraction, membership inference, and availability attacks [NIST.AI.100-1, p44-45], as well as adversarial examples, data poisoning, and model or data exfiltration [NIST.AI.100-1, p20]."
