@@ -1,0 +1,129 @@
+design,id,kind,expected,top5,hit@1,all@1,hit@3,all@3,hit@5,all@5
+fixed-vector,q01,single,GATT Article I,GATT Preamble / GATT Art. I | GATT Preamble / GATT Art. I | GATT Ad Art. I / GATT Ad Art. II | GATS Art. II / GATS Art. III | GATT Art. I / GATT Art. II,1,1,1,1,1,1
+fixed-vector,q02,single,GATT Article III,GATT Art. III | GATT Art. III | GATT Art. II / GATT Art. III | GATT Ad Art. III | GATT Art. III,1,1,1,1,1,1
+fixed-vector,q03,single,GATT Article XI,GATT Art. XIII | GATT Art. XIII | GATT Art. XIII | GATT Art. XIII | GATT Art. XI,0,0,0,0,1,1
+fixed-vector,q04,single,GATT Article VI ; GATT Article VI,GATT Art. VI | GATT Art. VI | GATT Art. VI | GATT Art. VI | GATT Ad Art. VI / GATT Ad Art. VII,1,1,1,1,1,1
+fixed-vector,q05,single,GATS Article I,GATS Preamble / GATS Art. I | GATS Art. XXVIII | GATS Art. XXVII / GATS Art. XXVIII | GATS Art. XXVIII | GATS Art. I / GATS Art. II,1,1,1,1,1,1
+fixed-vector,q06,single,GATS Article I,GATS Art. I / GATS Art. II | GATS Art. XIII / GATS Art. XIV | GATS Preamble / GATS Art. I | GATS Annex on Financial Services | GATS Annex on Financial Services,1,1,1,1,1,1
+fixed-vector,q07,single,GATS Article XIV,GATS Art. XIII / GATS Art. XIV | GATS Art. XIV | GATS Annex on Telecommunications | GATS Annex on Financial Services | GATS Art. XIV / GATS Art. XIV bis,1,1,1,1,1,1
+fixed-vector,q08,single,TRIPS Article 33,TRIPS Art. 31bis / TRIPS Art. 32 / TRIPS Art. 33 / TRIPS Art. 34 | TRIPS Art. 26 / TRIPS Art. 27 | TRIPS Art. 70 / TRIPS Art. 71 | TRIPS Art. 70 | TRIPS Art. 17 / TRIPS Art. 18 / TRIPS Art. 19 / TRIPS Art. 20,1,1,1,1,1,1
+fixed-vector,q09,single,TRIPS Article 18,TRIPS Art. 17 / TRIPS Art. 18 / TRIPS Art. 19 / TRIPS Art. 20 | TRIPS Art. 16 / TRIPS Art. 17 / TRIPS Art. 18 | TRIPS Art. 14 / TRIPS Art. 15 | TRIPS Art. 15 | TRIPS Art. 19 / TRIPS Art. 20 / TRIPS Art. 21 / TRIPS Art. 22,1,1,1,1,1,1
+fixed-vector,q10,single,TRIPS Article 27,TRIPS Art. 26 / TRIPS Art. 27 | TRIPS Art. 29 / TRIPS Art. 30 / TRIPS Art. 31 | TRIPS Art. 27 / TRIPS Art. 28 | TRIPS Art. 70 | TRIPS Art. 28 / TRIPS Art. 29,1,1,1,1,1,1
+fixed-vector,q11,single,TRIPS Article 12,TRIPS Art. 11 / TRIPS Art. 12 / TRIPS Art. 13 / TRIPS Art. 14 | TRIPS Art. 14 | TRIPS Art. 14 / TRIPS Art. 15 | TRIPS Art. 70 | TRIPS Art. 37 / TRIPS Art. 38,1,1,1,1,1,1
+fixed-vector,q12,single,SPS Article 5,SPS Art. 5 | SPS Art. 3 | SPS Art. 2 / SPS Art. 3 | SPS Art. 1 / SPS Art. 2 | SPS Art. 14 / SPS Annex A,1,1,1,1,1,1
+fixed-vector,q13,single,SPS Annex A para. 3,SPS Art. 3 / SPS Art. 4 | SPS Art. 12 | SPS Art. 11 / SPS Art. 12 | SPS Annex A | SPS Preamble / SPS Art. 1,0,0,0,0,0,0
+fixed-vector,q14,single,DSU Article 4,DSU Art. 4 | DSU Art. 4 | DSU Art. 4 | DSU Art. 5 / DSU Art. 6 | DSU Art. 5 / DSU Art. 6,1,1,1,1,1,1
+fixed-vector,q15,single,DSU Article 17,DSU Art. 17 | DSU Art. 16 / DSU Art. 17 | DSU Art. 17 | DSU Art. 17 | DSU Art. 8,1,1,1,1,1,1
+fixed-vector,q16,single,DSU Article 12,DSU Art. 12 | DSU Art. 12 | DSU Art. 15 / DSU Art. 16 | DSU Art. 19 / DSU Art. 20 | DSU Art. 20 / DSU Art. 21,1,1,1,1,1,1
+fixed-vector,q17,single,DSU Article 23,DSU Art. 22 / DSU Art. 23 | DSU Art. 23 / DSU Art. 24 | DSU Art. 22 | DSU Art. 3 | DSU Art. 22,1,1,1,1,1,1
+fixed-vector,q18,single,DSU Article 17,DSU Art. 17 | DSU Art. 17 | DSU Art. 16 / DSU Art. 17 | DSU Art. 17 / DSU Art. 18 | DSU Art. 21,1,1,1,1,1,1
+fixed-vector,q19,multi,GATT Article III ; GATS Article XVII,GATS Art. I / GATS Art. II | GATS Art. XVII / GATS Art. XVIII / GATS Art. XIX | GATS Art. II / GATS Art. III | GATS Art. XVI / GATS Art. XVII | GATS Preamble / GATS Art. I,0,0,1,0,1,0
+fixed-vector,q20,multi,GATT Article I ; GATS Article II,GATS Art. II / GATS Art. III | GATS Annex on Art. II Exemptions | GATS Art. I / GATS Art. II | GATS Art. XIII / GATS Art. XIV | GATS Art. XVII / GATS Art. XVIII / GATS Art. XIX,1,0,1,0,1,0
+fixed-vector,q21,multi,GATT Article XX ; SPS Article 2,SPS Preamble / SPS Art. 1 | SPS Art. 1 / SPS Art. 2 | SPS Art. 3 | SPS Preamble | SPS Art. 2 / SPS Art. 3,0,0,1,0,1,0
+fixed-vector,q22,multi,GATT Article XXI ; GATS Article XIV bis,GATS Art. XIV / GATS Art. XIV bis / GATS Art. XV | GATS Art. XIII / GATS Art. XIV | GATS Art. XIV / GATS Art. XIV bis | GATT Art. XX / GATT Art. XXI | GATT Art. XXI / GATT Art. XXII / GATT Art. XXIII,1,0,1,0,1,1
+fixed-vector,q23,multi,TRIPS Article 28 ; TRIPS Article 31,TRIPS Art. 31 | TRIPS Art. 29 / TRIPS Art. 30 / TRIPS Art. 31 | TRIPS Art. 31 / TRIPS Art. 31bis | TRIPS Annex To the TRIPS Agreement | TRIPS Art. 70,1,0,1,0,1,0
+fixed-vector,q24,multi,DSU Article 22 ; DSU Article 22,DSU Art. 21 / DSU Art. 22 | DSU Art. 22 | DSU Art. 22 / DSU Art. 23 | DSU Art. 22 | DSU Art. 3,1,1,1,1,1,1
+fixed-vector,q25,multi,GATT Article XXIV ; GATS Article V,GATS Art. V | GATS Art. V | GATT Art. XXIV | GATT Art. XXIV | GATS Art. V / GATS Art. V bis / GATS Art. VI,1,0,1,1,1,1
+fixed-vector,q33,multi,GATT Article XXI ; GATS Article XIV bis ; TRIPS Article 73,GATT Art. XX / GATT Art. XXI | GATT Art. XIII / GATT Art. XIV | GATS Art. XIV / GATS Art. XIV bis / GATS Art. XV | GATS Art. XIII / GATS Art. XIV | GATT Art. XIX / GATT Art. XX,1,0,1,0,1,0
+fixed-vector,q34,single,SPS Article 1,SPS Preamble | SPS Preamble / SPS Art. 1 | SPS Art. 11 / SPS Art. 12 | SPS Annex A | SPS Annex A,0,0,1,1,1,1
+fixed-vector,q37,single,GATT Article III,GATT Art. III | GATT Art. III | GATT Art. III | GATT Ad Art. III | GATT Art. II / GATT Art. III,1,1,1,1,1,1
+fixed-vector,q38,single,SPS Article 1,SPS Preamble / SPS Art. 1 | SPS Art. 1 / SPS Art. 2 | SPS Preamble | SPS Art. 11 / SPS Art. 12 | SPS Art. 2 / SPS Art. 3,1,1,1,1,1,1
+fixed-vector,q40,single,GATT Article XX,GATT Art. XIX / GATT Art. XX | GATT Art. XX | GATT Art. XIX / GATT Art. XX | GATT Ad Art. XVIII / GATT Ad Art. XX | GATT Art. XX / GATT Art. XXI,1,1,1,1,1,1
+fixed-vector,q42,multi,GATT Article XX ; SPS Article 2,SPS Art. 14 / SPS Annex A | GATT Art. XIX / GATT Art. XX | TRIPS Art. 27 / TRIPS Art. 28 | SPS Art. 3 | SPS Annex B,0,0,1,0,1,0
+fixed-vector,q43,multi,DSU Article 22 ; TRIPS Article 31,TRIPS Art. 31 | TRIPS Art. 55 / TRIPS Art. 56 / TRIPS Art. 57 | TRIPS Art. 31 | TRIPS Art. 58 / TRIPS Art. 59 / TRIPS Art. 60 | TRIPS Art. 50,1,0,1,0,1,0
+structured-vector,q01,single,GATT Article I,GATT Art. I | GATS Art. II | TRIPS Art. 4 | GATT Art. III:1-III:4 | GATT Ad Art. I,1,1,1,1,1,1
+structured-vector,q02,single,GATT Article III,GATT Art. III:1-III:4 | GATT Ad Art. III | GATT Art. III:5-III:8(b) | GATT Art. III:9-III:10 | GATS Art. XIV(d)-(e),1,1,1,1,1,1
+structured-vector,q03,single,GATT Article XI,GATT Art. XI:1-XI:2(c)(iii) | GATT Art. XIII:1-XIII:2(c) | GATT Art. XI | GATT Art. XIII:3(b)-XIII:3(c) | GATT Art. XIII:2(d)-XIII:3,1,1,1,1,1,1
+structured-vector,q04,single,GATT Article VI ; GATT Article VI,GATT Art. VI:1-VI:3 | GATT Art. VI:4-VI:6(b) | GATT Art. VI:6(c)-VI:7 | GATT Ad Art. VI | GATT Art. XIX:1-XIX:1(b),1,1,1,1,1,1
+structured-vector,q05,single,GATS Article I,GATS Art. I | GATS Art. XXVIII(a)-(f)(ii) | GATS Art. XXVIII(g)-(k)(ii)(2) | GATS Annex on Movement of Natural Persons Supplying Services Under the Agreement | GATS Art. XVI:1-XVI:2(c),1,1,1,1,1,1
+structured-vector,q06,single,GATS Article I,"GATS Art. XIII | GATS Art. I | GATS Annex on Financial Services, para. 1-3 | GATS Art. XIV(a)-(c)(iii) | GATS Art. XXVII",0,0,1,1,1,1
+structured-vector,q07,single,GATS Article XIV,"GATS Art. XIV(a)-(c)(iii) | GATS Art. XIV bis | GATS Art. III bis | GATS Annex on Telecommunications, para. (b)-(i) | GATS Annex on Telecommunications, para. (ii)-(b)",1,1,1,1,1,1
+structured-vector,q08,single,TRIPS Article 33,TRIPS Art. 33 | TRIPS Art. 18 | TRIPS Art. 70.9 | TRIPS Art. 27 | TRIPS Art. 26,1,1,1,1,1,1
+structured-vector,q09,single,TRIPS Article 18,TRIPS Art. 18 | TRIPS Art. 15 | TRIPS Art. 33 | TRIPS Art. 19 | TRIPS Art. 16,1,1,1,1,1,1
+structured-vector,q10,single,TRIPS Article 27,TRIPS Art. 27 | TRIPS Art. 29 | TRIPS Art. 33 | TRIPS Art. 25 | TRIPS Art. 15,1,1,1,1,1,1
+structured-vector,q11,single,TRIPS Article 12,TRIPS Art. 12 | TRIPS Art. 33 | TRIPS Art. 14.1-14.5 | TRIPS Art. 70.1-70.5 | TRIPS Art. 18,1,1,1,1,1,1
+structured-vector,q12,single,SPS Article 5,SPS Art. 5.6-5.8 | SPS Art. 2 | SPS Art. 5.1-5.5 | SPS Art. 3.1-3.4 | SPS Art. 6,1,1,1,1,1,1
+structured-vector,q13,single,SPS Annex A para. 3,SPS Art. 3.1-3.4 | SPS Art. 12.4-12.6 | SPS Art. 12.1-12.3 | SPS Art. 3.5 | SPS Preamble,0,0,0,0,0,0
+structured-vector,q14,single,DSU Article 4,DSU Art. 4.7-4.10 | DSU Art. 6 | DSU Art. 4.1-4.6 | DSU Art. 20 | DSU Art. 16,1,1,1,1,1,1
+structured-vector,q15,single,DSU Article 17,DSU Art. 17.1-17.4 | DSU Art. 8.5-8.11 | DSU Art. 17.5-17.13 | DSU Art. 9 | DSU Art. 8.1-8.4,1,1,1,1,1,1
+structured-vector,q16,single,DSU Article 12,"DSU Art. 12.7-12.9 | DSU Appendix 3, para. 8-(k) | DSU Art. 20 | DSU Art. 16 | DSU Art. 15",1,1,1,1,1,1
+structured-vector,q17,single,DSU Article 23,DSU Art. 23 | DSU Art. 3.7-3.9 | DSU Art. 22.7-22.8 | DSU Art. 22.1-22.3(b) | DSU Art. 22(g)(iii)-22.6,1,1,1,1,1,1
+structured-vector,q18,single,DSU Article 17,DSU Art. 17.5-17.13 | DSU Art. 17.14 | DSU Art. 20 | DSU Art. 17.1-17.4 | DSU Art. 16,1,1,1,1,1,1
+structured-vector,q19,multi,GATT Article III ; GATS Article XVII,GATS Art. XVII | GATS Art. I | GATT Art. III:1-III:4 | GATS Art. II | GATS Art. XIV(d)-(e),1,0,1,1,1,1
+structured-vector,q20,multi,GATT Article I ; GATS Article II,GATS Art. II | GATT Art. I | GATS Annex on Art. II Exemptions | GATS Art. XIV(d)-(e) | GATS Art. XXVII,1,0,1,1,1,1
+structured-vector,q21,multi,GATT Article XX ; SPS Article 2,"SPS Preamble | SPS Art. 2 | SPS Art. 1 | SPS Annex A, para. 1-(b) | SPS Art. 3.1-3.4",0,0,1,0,1,0
+structured-vector,q22,multi,GATT Article XXI ; GATS Article XIV bis,GATS Art. XIV bis | GATT Art. XXI | GATS Art. XIV(a)-(c)(iii) | GATS Art. XIV(d)-(e) | GATS Art. X,1,0,1,1,1,1
+structured-vector,q23,multi,TRIPS Article 28 ; TRIPS Article 31,TRIPS Art. 31(a)-(f) | TRIPS Art. 31bis.1-31bis.3 | TRIPS Art. 31(g)-(l)(iii) | TRIPS Art. 27 | TRIPS Art. 73,1,0,1,0,1,0
+structured-vector,q24,multi,DSU Article 22 ; DSU Article 22,DSU Art. 22.1-22.3(b) | DSU Art. 22.7-22.8 | DSU Art. 3.7-3.9 | DSU Art. 22(g)(iii)-22.6 | DSU Art. 21.4-21.6,1,1,1,1,1,1
+structured-vector,q25,multi,GATT Article XXIV ; GATS Article V,GATS Art. V:1-V:3(b) | GATS Art. V:4-V:7(c) | GATT Art. XXIV:1-XXIV:5 | GATT Art. XXIV:8(a)(i)-XXIV:11 | GATT Art. XXIV:6-XXIV:8(a),1,0,1,1,1,1
+structured-vector,q33,multi,GATT Article XXI ; GATS Article XIV bis ; TRIPS Article 73,GATS Art. XIV bis | GATT Art. XXI | TRIPS Art. 73 | GATS Art. XIV(a)-(c)(iii) | GATT Art. XIV,1,0,1,1,1,1
+structured-vector,q34,single,SPS Article 1,"SPS Annex A, para. 1-(b) | SPS Art. 1 | SPS Preamble | SPS Annex A, para. (c)-6 | SPS Annex A, para. 7",0,0,1,1,1,1
+structured-vector,q37,single,GATT Article III,GATT Art. III:1-III:4 | GATT Ad Art. III | GATT Art. III:5-III:8(b) | GATT Art. III:9-III:10 | GATT Ad Art. III,1,1,1,1,1,1
+structured-vector,q38,single,SPS Article 1,SPS Preamble | SPS Art. 2 | SPS Art. 3.1-3.4 | SPS Art. 1 | SPS Art. 4,0,0,0,0,1,1
+structured-vector,q40,single,GATT Article XX,GATT Art. XX(a)-(i) | GATT Art. XX(j) | GATT Ad Art. XX | GATS Art. XIV(a)-(c)(iii) | GATT Art. XXI,1,1,1,1,1,1
+structured-vector,q42,multi,GATT Article XX ; SPS Article 2,"GATT Art. XX(a)-(i) | TRIPS Art. 60 | SPS Annex A, para. 1-(b) | TRIPS Art. 73 | GATS Art. XIV(a)-(c)(iii)",1,0,1,0,1,0
+structured-vector,q43,multi,DSU Article 22 ; TRIPS Article 31,TRIPS Art. 73 | TRIPS Art. 8 | TRIPS Art. 31(a)-(f) | TRIPS Art. 55 | TRIPS Art. 31(g)-(l)(iii),0,0,1,0,1,0
+fixed-hybrid,q01,single,GATT Article I,GATT Ad Art. I / GATT Ad Art. II | GATT Annex A | GATT Annex H / GATT Ad Art. I | GATT Preamble / GATT Art. I | GATT Preamble / GATT Art. I,0,0,0,0,1,1
+fixed-hybrid,q02,single,GATT Article III,GATT Art. III | GATT Art. III | GATT Art. III | GATT Art. II / GATT Art. III | GATT Ad Art. III,1,1,1,1,1,1
+fixed-hybrid,q03,single,GATT Article XI,GATT Art. XIII | GATT Art. XIII | GATT Art. XI | GATT Art. X / GATT Art. XI | GATT Ad Art. XII / GATT Ad Art. XIII / GATT Ad Art. XIV,0,0,1,1,1,1
+fixed-hybrid,q04,single,GATT Article VI ; GATT Article VI,GATT Art. VI | GATT Ad Art. VI / GATT Ad Art. VII | GATT Art. VI | GATT Art. VI | GATT Art. VI,1,1,1,1,1,1
+fixed-hybrid,q05,single,GATS Article I,GATS Art. XV / GATS Art. XVI | GATS Art. XXVII / GATS Art. XXVIII | GATS Preamble / GATS Art. I | GATS Art. XXVIII | GATS Art. XVI,0,0,1,1,1,1
+fixed-hybrid,q06,single,GATS Article I,GATS Annex on Financial Services | GATS Art. XIII / GATS Art. XIV | GATS Annex on Financial Services | GATS Annex on Air Transport Services / GATS Annex on Financial Services | GATS Art. XII / GATS Art. XIII / GATS Art. XIV,0,0,0,0,0,0
+fixed-hybrid,q07,single,GATS Article XIV,GATS Art. XIII / GATS Art. XIV | GATS Art. XIV | GATS Annex on Telecommunications | GATS Annex on Telecommunications | GATS Art. XVI,1,1,1,1,1,1
+fixed-hybrid,q08,single,TRIPS Article 33,TRIPS Art. 31bis / TRIPS Art. 32 / TRIPS Art. 33 / TRIPS Art. 34 | TRIPS Art. 70 | TRIPS Art. 70 / TRIPS Art. 71 | TRIPS Art. 70 | TRIPS Art. 28 / TRIPS Art. 29,1,1,1,1,1,1
+fixed-hybrid,q09,single,TRIPS Article 18,TRIPS Art. 17 / TRIPS Art. 18 / TRIPS Art. 19 / TRIPS Art. 20 | TRIPS Art. 16 / TRIPS Art. 17 / TRIPS Art. 18 | TRIPS Art. 14 / TRIPS Art. 15 | TRIPS Art. 15 | TRIPS Art. 19 / TRIPS Art. 20 / TRIPS Art. 21 / TRIPS Art. 22,1,1,1,1,1,1
+fixed-hybrid,q10,single,TRIPS Article 27,TRIPS Art. 29 / TRIPS Art. 30 / TRIPS Art. 31 | TRIPS Art. 28 / TRIPS Art. 29 | TRIPS Art. 70 | TRIPS Art. 31 / TRIPS Art. 31bis | TRIPS Art. 1,0,0,0,0,0,0
+fixed-hybrid,q11,single,TRIPS Article 12,TRIPS Art. 11 / TRIPS Art. 12 / TRIPS Art. 13 / TRIPS Art. 14 | TRIPS Art. 37 / TRIPS Art. 38 | TRIPS Art. 1 | TRIPS Art. 14 | TRIPS Art. 1,1,1,1,1,1,1
+fixed-hybrid,q12,single,SPS Article 5,SPS Art. 5 | SPS Art. 3 | SPS Art. 1 / SPS Art. 2 | SPS Art. 2 / SPS Art. 3 | SPS Art. 3 / SPS Art. 4,1,1,1,1,1,1
+fixed-hybrid,q13,single,SPS Annex A para. 3,SPS Art. 3 / SPS Art. 4 | SPS Art. 12 | SPS Art. 12 | SPS Art. 12 / SPS Art. 13 | SPS Art. 11 / SPS Art. 12,0,0,0,0,0,0
+fixed-hybrid,q14,single,DSU Article 4,DSU Art. 4 | DSU Art. 5 / DSU Art. 6 | DSU Art. 4 | DSU Art. 12 | DSU Art. 4,1,1,1,1,1,1
+fixed-hybrid,q15,single,DSU Article 17,DSU Art. 17 | DSU Art. 16 / DSU Art. 17 | DSU Art. 17 | DSU Art. 17 | DSU Art. 17 / DSU Art. 18,1,1,1,1,1,1
+fixed-hybrid,q16,single,DSU Article 12,DSU Art. 12 | DSU Art. 15 / DSU Art. 16 | DSU Art. 12 | DSU Art. 21 | DSU Art. 19 / DSU Art. 20,1,1,1,1,1,1
+fixed-hybrid,q17,single,DSU Article 23,GATS Art. XXII / GATS Art. XXIII | DSU Art. 22 / DSU Art. 23 | GATS Art. XXIII / GATS Art. XXIV | DSU Art. 23 / DSU Art. 24 | DSU Art. 22,0,0,1,1,1,1
+fixed-hybrid,q18,single,DSU Article 17,DSU Art. 17 | DSU Art. 17 / DSU Art. 18 | DSU Art. 16 / DSU Art. 17 | DSU Art. 17 | DSU Art. 21,1,1,1,1,1,1
+fixed-hybrid,q19,multi,GATT Article III ; GATS Article XVII,GATS Art. XIV bis / GATS Art. XV / GATS Art. XVI | GATS Art. I / GATS Art. II | GATT 1994  | GATS Art. XVII / GATS Art. XVIII / GATS Art. XIX | TRIPS Preamble,0,0,0,0,1,0
+fixed-hybrid,q20,multi,GATT Article I ; GATS Article II,GATS Annex on Art. II Exemptions | GATS Art. XIV bis / GATS Art. XV / GATS Art. XVI | GATS Art. XXVIII / GATS Art. XXIX / GATS Annex on Art. II Exemptions | GATS Annex on Art. II Exemptions / GATS Annex on Movement of Natural Persons Supplying Services Under the Agreement | GATT 1994 ,0,0,0,0,0,0
+fixed-hybrid,q21,multi,GATT Article XX ; SPS Article 2,SPS Art. 1 / SPS Art. 2 | SPS Preamble / SPS Art. 1 | SPS Art. 2 / SPS Art. 3 | SPS Preamble | SPS Art. 14 / SPS Annex A,1,0,1,0,1,0
+fixed-hybrid,q22,multi,GATT Article XXI ; GATS Article XIV bis,GATS Art. XIV / GATS Art. XIV bis / GATS Art. XV | GATT Art. XX / GATT Art. XXI | GATS Art. XIV / GATS Art. XIV bis | GATT Art. XXI / GATT Art. XXII / GATT Art. XXIII | GATS Annex on Financial Services,1,0,1,1,1,1
+fixed-hybrid,q23,multi,TRIPS Article 28 ; TRIPS Article 31,TRIPS Art. 31 | TRIPS Art. 31 / TRIPS Art. 31bis | TRIPS Art. 70 | TRIPS Art. 29 / TRIPS Art. 30 / TRIPS Art. 31 | TRIPS Annex To the TRIPS Agreement,1,0,1,0,1,0
+fixed-hybrid,q24,multi,DSU Article 22 ; DSU Article 22,DSU Art. 21 / DSU Art. 22 | DSU Art. 22 | DSU Art. 22 | DSU Art. 3 | DSU Art. 22,1,1,1,1,1,1
+fixed-hybrid,q25,multi,GATT Article XXIV ; GATS Article V,GATS Art. V | GATT Art. XXIV | GATS Art. V / GATS Art. V bis / GATS Art. VI | GATT Art. XXIV | DSU Art. 4,1,0,1,1,1,1
+fixed-hybrid,q33,multi,GATT Article XXI ; GATS Article XIV bis ; TRIPS Article 73,GATS Art. XIII / GATS Art. XIV | GATS Art. XIV / GATS Art. XIV bis / GATS Art. XV | GATT Art. XX / GATT Art. XXI | GATT Art. XI | GATT Art. XVIII,0,0,1,0,1,0
+fixed-hybrid,q34,single,SPS Article 1,SPS Art. 12 | SPS Art. 12 | SPS Preamble | DSU Art. 21 | SPS Preamble / SPS Art. 1,0,0,0,0,1,1
+fixed-hybrid,q37,single,GATT Article III,GATT Art. III | GATT Art. III | GATT Art. VII | GATT Ad Art. III / GATT Ad Art. V / GATT Ad Art. VI | GATT Art. VI,1,1,1,1,1,1
+fixed-hybrid,q38,single,SPS Article 1,SPS Art. 3 / SPS Art. 4 / SPS Art. 5 | SPS Annex B | SPS Preamble / SPS Art. 1 | DSU Art. 16 / DSU Art. 17 | SPS Art. 1 / SPS Art. 2,0,0,1,1,1,1
+fixed-hybrid,q40,single,GATT Article XX,GATT Ad Art. XVIII | GATT Art. XIX / GATT Art. XX | SPS Preamble / SPS Art. 1 | GATT Art. XX | SPS Art. 2 / SPS Art. 3,0,0,1,1,1,1
+fixed-hybrid,q42,multi,GATT Article XX ; SPS Article 2,TRIPS Art. 27 / TRIPS Art. 28 | SPS Art. 14 / SPS Annex A | GATS Art. XIII / GATS Art. XIV | SPS Annex C | SPS Annex A,0,0,0,0,0,0
+fixed-hybrid,q43,multi,DSU Article 22 ; TRIPS Article 31,TRIPS Art. 48 / TRIPS Art. 49 / TRIPS Art. 50 | TRIPS Art. 70 | TRIPS Preamble / TRIPS Art. 1 | TRIPS Art. 50 / TRIPS Art. 51 | TRIPS Art. 31,0,0,0,0,1,0
+structured-hybrid,q01,single,GATT Article I,GATT Art. I | GATT Ad Art. I | GATS Art. II | TRIPS Art. 4 | GATT Annex A,1,1,1,1,1,1
+structured-hybrid,q02,single,GATT Article III,"GATT Art. III:1-III:4 | GATT Ad Art. III | GATT Art. III:5-III:8(b) | GATT Art. III:9-III:10 | SPS Annex C, para. 1-(f)",1,1,1,1,1,1
+structured-hybrid,q03,single,GATT Article XI,GATT Art. XI:1-XI:2(c)(iii) | GATT Art. XIII:1-XIII:2(c) | GATT Art. XI | GATT Art. XIII:3(b)-XIII:3(c) | GATT Art. XIV,1,1,1,1,1,1
+structured-hybrid,q04,single,GATT Article VI ; GATT Article VI,GATT Art. VI:1-VI:3 | GATT Art. VI:4-VI:6(b) | GATT Ad Art. VI | GATT Art. VI:6(c)-VI:7 | GATT Art. II:2(a)-II:4,1,1,1,1,1,1
+structured-hybrid,q05,single,GATS Article I,"GATS Art. I | GATS Art. XVI:1-XVI:2(c) | GATS Annex on Movement of Natural Persons Supplying Services Under the Agreement | GATS Art. XXVIII(a)-(f)(ii) | GATS Annex on Telecommunications, para. (d)-(a)",1,1,1,1,1,1
+structured-hybrid,q06,single,GATS Article I,"GATS Art. XIII | GATS Art. II | GATS Annex on Financial Services, para. 1-3 | GATS Art. V:1-V:3(b) | GATS Art. III",0,0,0,0,0,0
+structured-hybrid,q07,single,GATS Article XIV,"GATS Art. XIV(a)-(c)(iii) | GATS Annex on Telecommunications, para. (b)-(i) | GATS Annex on Telecommunications, para. (ii)-(b) | GATS Annex on Movement of Natural Persons Supplying Services Under the Agreement | GATS Art. XXVII",1,1,1,1,1,1
+structured-hybrid,q08,single,TRIPS Article 33,TRIPS Art. 33 | TRIPS Art. 70.9 | TRIPS Art. 18 | TRIPS Art. 12 | TRIPS Art. 70.6-70.8(c),1,1,1,1,1,1
+structured-hybrid,q09,single,TRIPS Article 18,TRIPS Art. 18 | TRIPS Art. 15 | TRIPS Art. 19 | TRIPS Art. 33 | TRIPS Art. 21,1,1,1,1,1,1
+structured-hybrid,q10,single,TRIPS Article 27,TRIPS Art. 27 | TRIPS Art. 29 | TRIPS Art. 70.6-70.8(c) | TRIPS Art. 25 | TRIPS Art. 1.3,1,1,1,1,1,1
+structured-hybrid,q11,single,TRIPS Article 12,TRIPS Art. 12 | TRIPS Art. 14.1-14.5 | TRIPS Art. 18 | TRIPS Art. 33 | TRIPS Art. 38,1,1,1,1,1,1
+structured-hybrid,q12,single,SPS Article 5,SPS Art. 5.6-5.8 | SPS Art. 2 | SPS Art. 3.1-3.4 | SPS Art. 5.1-5.5 | SPS Art. 6,1,1,1,1,1,1
+structured-hybrid,q13,single,SPS Annex A para. 3,SPS Art. 12.4-12.6 | SPS Art. 3.1-3.4 | SPS Art. 3.5 | SPS Art. 12.1-12.3 | SPS Art. 13,0,0,0,0,0,0
+structured-hybrid,q14,single,DSU Article 4,DSU Art. 4.7-4.10 | DSU Art. 4.1-4.6 | DSU Art. 12.10-12.12 | DSU Art. 8.5-8.11 | DSU Art. 5,1,1,1,1,1,1
+structured-hybrid,q15,single,DSU Article 17,DSU Art. 17.1-17.4 | DSU Art. 17.5-17.13 | DSU Art. 9 | DSU Art. 17.14 | DSU Art. 19,1,1,1,1,1,1
+structured-hybrid,q16,single,DSU Article 12,"DSU Art. 12.7-12.9 | DSU Art. 15 | DSU Appendix 3, para. 8-(k) | DSU Art. 20 | DSU Art. 21.4-21.6",1,1,1,1,1,1
+structured-hybrid,q17,single,DSU Article 23,DSU Art. 23 | DSU Art. 3.7-3.9 | DSU Art. 4.1-4.6 | GATS Art. XXIII | DSU Art. 22.9,1,1,1,1,1,1
+structured-hybrid,q18,single,DSU Article 17,DSU Art. 17.5-17.13 | DSU Art. 17.14 | DSU Art. 20 | DSU Art. 17.1-17.4 | DSU Art. 21.4-21.6,1,1,1,1,1,1
+structured-hybrid,q19,multi,GATT Article III ; GATS Article XVII,GATS Art. XVII | GATS Art. XIV(d)-(e) | GATS Art. XXVII | GATT Art. III:1-III:4 | GATS Art. II,1,0,1,0,1,1
+structured-hybrid,q20,multi,GATT Article I ; GATS Article II,GATS Annex on Art. II Exemptions | GATS Art. II | GATS Annex on Negotiations on Maritime Transport Services | GATS Art. XIII | GATT Art. I,0,0,1,0,1,1
+structured-hybrid,q21,multi,GATT Article XX ; SPS Article 2,"SPS Preamble | SPS Art. 2 | SPS Annex A, para. 1-(b) | SPS Art. 5.1-5.5 | SPS Art. 3.1-3.4",0,0,1,0,1,0
+structured-hybrid,q22,multi,GATT Article XXI ; GATS Article XIV bis,GATS Art. XIV bis | GATT Art. XXI | TRIPS Art. 73 | GATS Art. XIV(a)-(c)(iii) | GATS Art. III bis,1,0,1,1,1,1
+structured-hybrid,q23,multi,TRIPS Article 28 ; TRIPS Article 31,"TRIPS Art. 31(a)-(f) | TRIPS Art. 31bis.1-31bis.3 | TRIPS Art. 31(g)-(l)(iii) | TRIPS Art. 70.6-70.8(c) | TRIPS Annex To the TRIPS Agreement, para. (a)-(ii)",1,0,1,0,1,0
+structured-hybrid,q24,multi,DSU Article 22 ; DSU Article 22,DSU Art. 22.1-22.3(b) | DSU Art. 22.7-22.8 | DSU Art. 3.7-3.9 | DSU Art. 22(g)(iii)-22.6 | DSU Art. 21.1-21.3(c),1,1,1,1,1,1
+structured-hybrid,q25,multi,GATT Article XXIV ; GATS Article V,GATS Art. V:1-V:3(b) | GATT Art. XXIV:1-XXIV:5 | GATS Art. V bis | GATT Art. XXIV:8(a)(i)-XXIV:11 | GATS Art. V:8,1,0,1,1,1,1
+structured-hybrid,q33,multi,GATT Article XXI ; GATS Article XIV bis ; TRIPS Article 73,GATS Art. XIV bis | GATT Art. XXI | GATS Art. XIV(a)-(c)(iii) | TRIPS Art. 73 | TRIPS Art. 53,1,0,1,0,1,1
+structured-hybrid,q34,single,SPS Article 1,"SPS Annex A, para. (c)-6 | SPS Art. 1 | SPS Art. 12.4-12.6 | SPS Annex A, para. 7 | SPS Annex C, para. 1-(f)",0,0,1,1,1,1
+structured-hybrid,q37,single,GATT Article III,GATT Art. III:1-III:4 | GATT Art. VI:1-VI:3 | GATT Ad Art. III | GATT Art. VI:4-VI:6(b) | GATT Art. VII:1-VII:3,1,1,1,1,1,1
+structured-hybrid,q38,single,SPS Article 1,"SPS Art. 4 | SPS Preamble | SPS Art. 2 | SPS Annex B, para. 1-4 | SPS Art. 9",0,0,0,0,0,0
+structured-hybrid,q40,single,GATT Article XX,GATT Art. XX(a)-(i) | GATT Art. XX(j) | GATT Ad Art. XX | GATS Art. XIV(a)-(c)(iii) | SPS Preamble,1,1,1,1,1,1
+structured-hybrid,q42,multi,GATT Article XX ; SPS Article 2,"SPS Annex A, para. 1-(b) | GATS Art. XIV(a)-(c)(iii) | TRIPS Art. 27 | SPS Annex B, para. 1-4 | SPS Art. 10",0,0,0,0,0,0
+structured-hybrid,q43,multi,DSU Article 22 ; TRIPS Article 31,TRIPS Art. 50.6-50.8 | DSU Art. 22(g)(iii)-22.6 | TRIPS Art. 41 | TRIPS Art. 32 | TRIPS Preamble,0,0,1,0,1,0

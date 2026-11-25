@@ -1,0 +1,5 @@
+design,questions,hit@1,hit@3,hit@5,multi_all@1,multi_all@3,multi_all@5,words@1,words@3,words@5
+fixed-vector,32,0.812,0.938,0.969,0.1,0.2,0.3,200,600,1000
+structured-vector,32,0.812,0.938,0.969,0.1,0.6,0.6,253,718,1203
+fixed-hybrid,32,0.531,0.719,0.844,0.1,0.3,0.3,200,600,1000
+structured-hybrid,32,0.75,0.875,0.875,0.1,0.3,0.6,252,734,1208
