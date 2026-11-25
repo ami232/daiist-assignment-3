@@ -1,0 +1,105 @@
+{
+  "commit": "05861f28ed88269db390afeb67486abc0adfc076",
+  "documents": [
+    {
+      "source": "Authentication_Cheat_Sheet",
+      "title": "Authentication Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html",
+      "words": 5301
+    },
+    {
+      "source": "Password_Storage_Cheat_Sheet",
+      "title": "Password Storage Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html",
+      "words": 2913
+    },
+    {
+      "source": "Forgot_Password_Cheat_Sheet",
+      "title": "Forgot Password Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Forgot_Password_Cheat_Sheet.html",
+      "words": 1532
+    },
+    {
+      "source": "Multifactor_Authentication_Cheat_Sheet",
+      "title": "Multifactor Authentication Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html",
+      "words": 5293
+    },
+    {
+      "source": "Session_Management_Cheat_Sheet",
+      "title": "Session Management Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html",
+      "words": 7850
+    },
+    {
+      "source": "Cross-Site_Request_Forgery_Prevention_Cheat_Sheet",
+      "title": "Cross-Site Request Forgery Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html",
+      "words": 6678
+    },
+    {
+      "source": "Cross_Site_Scripting_Prevention_Cheat_Sheet",
+      "title": "Cross Site Scripting Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html",
+      "words": 4288
+    },
+    {
+      "source": "SQL_Injection_Prevention_Cheat_Sheet",
+      "title": "SQL Injection Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html",
+      "words": 1729
+    },
+    {
+      "source": "Input_Validation_Cheat_Sheet",
+      "title": "Input Validation Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Input_Validation_Cheat_Sheet.html",
+      "words": 1186
+    },
+    {
+      "source": "File_Upload_Cheat_Sheet",
+      "title": "File Upload Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/File_Upload_Cheat_Sheet.html",
+      "words": 2048
+    },
+    {
+      "source": "HTTP_Headers_Cheat_Sheet",
+      "title": "HTTP Security Response Headers Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/HTTP_Headers_Cheat_Sheet.html",
+      "words": 2781
+    },
+    {
+      "source": "Content_Security_Policy_Cheat_Sheet",
+      "title": "Content Security Policy Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Content_Security_Policy_Cheat_Sheet.html",
+      "words": 2307
+    },
+    {
+      "source": "Server_Side_Request_Forgery_Prevention_Cheat_Sheet",
+      "title": "Server-Side Request Forgery Prevention Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html",
+      "words": 3625
+    },
+    {
+      "source": "Secrets_Management_Cheat_Sheet",
+      "title": "Secrets Management Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Secrets_Management_Cheat_Sheet.html",
+      "words": 7461
+    },
+    {
+      "source": "Logging_Cheat_Sheet",
+      "title": "Logging Cheat Sheet",
+      "url": "https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html",
+      "words": 4257
+    }
+  ],
+  "designs": {
+    "sections": {
+      "chunks": 410,
+      "avg_words": 144.5
+    },
+    "fixed": {
+      "chunks": 301,
+      "avg_words": 244.3
+    }
+  }
+}
