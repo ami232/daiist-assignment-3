@@ -1,1 +1,39 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,1,1,"facts right; ends with an invented question 'Are we allowed to serve this?' (rule 8 misapplied), not a factual claim"
+q04,1,1,
+q05,1,1,
+q06,1,1,facts right; ends with an invented question about freezing (rule 8 misapplied)
+q07,1,1,
+q08,1,1,
+q09,1,1,
+q10,1,1,
+q11,1,1,
+q12,1,1,
+q13,1,1,
+q14,1,1,
+q15,1,1,
+q16,1,1,
+q17,1,1,
+q18,1,1,
+q19,1,1,
+q20,1,1,"cites Handbook Table 1a (p. 29) instead of p. 4, same rule; invented 'Are we allowed...' sentence"
+q21,1,1,
+q22,1,0,"adds 'not cooled, held, or prepared properly'; the passage only says 'not cooled properly'"
+q23,1,1,
+q24,0,1,never states the 5 hours left that the question asks for; 'the remaining time' is ambiguous
+q25,1,1,
+q26,1,0,"right conclusion, but 'cannot sell food prepared at home' is cited to 6-202.111, which is about operating in a home; 3-201.11 was not retrieved"
+q27,1,1,garbled closing sentence 'Are we allowed to... depends on...'
+q28,1,1,
+q29,1,1,"omits the medical-documentation exception; Food Code 2-201.12 was not retrieved, Handbook p. 6 only"
+q30,1,1,
+q31,1,1,"the glove-change sentence has no citation, but it is in the retrieved 3-304.15"
+q32,1,1,refusal after the call limit was reached
+q33,1,1,
+q34,1,1,
+q35,1,1,
+q36,1,1,
+q37,0,1,did not refuse: answered a menu-calorie question with the packaged-food label rule (3-602.11)
+q38,0,1,did not refuse: gave Food Code home-kitchen rules but never said state cottage-food law is not covered
