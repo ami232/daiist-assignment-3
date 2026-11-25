@@ -1,0 +1,56 @@
+{
+  "scope": "Confirmed primary classification of the union of judge/code failures and human/judge disagreements. This is not a replacement accuracy label set.",
+  "confirmation": "student_analysis_confirmation.json",
+  "cases": [
+    {
+      "id": "q02",
+      "primary_category": "retrieval_miss",
+      "notes": "Student notes: the Limitations of Ratios evidence was not returned. Grouping confirmed by the student; original blind ratings remain unchanged."
+    },
+    {
+      "id": "q03",
+      "primary_category": "unsupported_claim",
+      "notes": "Student notes: the opening collection-wide date claim is contradicted by the retrieved HQN data. Grouping confirmed by the student; original blind ratings remain unchanged."
+    },
+    {
+      "id": "q04",
+      "primary_category": "retrieval_miss",
+      "notes": "Student notes: missing section 7.1 evidence led to an incomplete response. Grouping confirmed by the student; original blind ratings remain unchanged."
+    },
+    {
+      "id": "q05",
+      "primary_category": "unsupported_claim",
+      "notes": "Student notes: the opening claim that the collection lacks any company-specific periods conflicts with retrieved examples. Grouping confirmed by the student; original blind ratings remain unchanged."
+    },
+    {
+      "id": "q07",
+      "primary_category": "wrong_refusal",
+      "notes": "Student notes and trace: relevant profit-margin evidence was retrieved, but citation identity failed twice. Grouping confirmed by the student; original blind ratings remain unchanged."
+    },
+    {
+      "id": "q08",
+      "primary_category": "wrong_refusal",
+      "notes": "Trace clarification: primary rate limit occurred before any search; this is an operational refusal, not a demonstrated ranking miss. Grouping confirmed by the student; original blind ratings remain unchanged."
+    },
+    {
+      "id": "q09",
+      "primary_category": "unsupported_claim",
+      "notes": "Student notes: HQN's own ratio was described as a benchmark; background makes further unsupported extensions. Grouping confirmed by the student; original blind ratings remain unchanged."
+    },
+    {
+      "id": "q15",
+      "primary_category": "wrong_answer_from_right_passage",
+      "notes": "Student notes: omits the chapter's EBIT/beginning-assets qualifications. The judge passed it; this remains a substantive disagreement to review. Grouping confirmed by the student; original blind ratings remain unchanged."
+    },
+    {
+      "id": "q20",
+      "primary_category": "wrong_refusal",
+      "notes": "Student notes: relevant classification evidence was retrieved; trace also records a primary rate limit and failed citation correction. Grouping confirmed by the student; original blind ratings remain unchanged."
+    },
+    {
+      "id": "q30",
+      "primary_category": "wrong_refusal",
+      "notes": "Trace and judge: answerable warranty question ended in a fallback after a deadline error and invalid correction. Grouping confirmed by the student; original blind ratings remain unchanged."
+    }
+  ]
+}

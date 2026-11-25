@@ -1,0 +1,13 @@
+{
+  "status": "superseded_after_provider_outage",
+  "model": "gemini-3.1-flash-lite",
+  "saved_responses": 30,
+  "runtime_errors": {
+    "GoogleAPIError": 27,
+    "GoogleRateLimitError": 3
+  },
+  "http_503_count": 27,
+  "reason": "Provider high-demand errors dominated this attempt; preserve all outputs and use a separate available-model run without changing the test set.",
+  "human_labels_created": false,
+  "judge_invoked": false
+}

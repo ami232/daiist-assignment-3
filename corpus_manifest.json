@@ -1,0 +1,90 @@
+{
+  "prepared_on": "2026-11-24T00:02:40.619064+01:00",
+  "word_count_method": "Unicode word tokens in retained section text, before chunking and without overlap",
+  "documents": 3,
+  "sections": 78,
+  "total_words": 83637,
+  "sources": [
+    {
+      "source": "accounting-in-the-finance-world",
+      "title": "Accounting in the Finance World",
+      "version": "1.0",
+      "edition_date": "Archived 2012-12-29",
+      "author_attribution": "Anonymous authors, as requested by the original licensor",
+      "url": "https://2012books.lardbucket.org/books/accounting-in-the-finance-world/",
+      "download_url": "https://2012books.lardbucket.org/zips/accounting-in-the-finance-world.zip",
+      "format": "lardbucket_zip",
+      "filename": "accounting-in-the-finance-world.zip",
+      "license": "CC BY-NC-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "attribution_note_url": "https://2012books.lardbucket.org/attribution.html",
+      "chapters": [
+        3,
+        7,
+        13
+      ],
+      "role": "Financial statements, receivables and current liabilities",
+      "file_sha256": "a1f097cd770d537f91e146b58f1da5c4480450de83571df69488716361e12aca",
+      "selected_section_count": 17,
+      "word_count": 26275,
+      "exact_duplicate_sections_removed": 0,
+      "images_without_description": 39
+    },
+    {
+      "source": "accounting-for-managers",
+      "title": "Accounting for Managers",
+      "version": "1.0",
+      "edition_date": "Archived 2012-12-29",
+      "author_attribution": "Anonymous authors, as requested by the original licensor",
+      "url": "https://2012books.lardbucket.org/books/accounting-for-managers/",
+      "download_url": "https://2012books.lardbucket.org/zips/accounting-for-managers.zip",
+      "format": "lardbucket_zip",
+      "filename": "accounting-for-managers.zip",
+      "license": "CC BY-NC-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "attribution_note_url": "https://2012books.lardbucket.org/attribution.html",
+      "chapters": [
+        12,
+        13
+      ],
+      "role": "Cash-flow interpretation, trend analysis and financial ratios",
+      "file_sha256": "96a22ebd87c33d2da2e974b9bbea31865fa8c49200fdabc0eee2118d75d2eadc",
+      "selected_section_count": 13,
+      "word_count": 34984,
+      "exact_duplicate_sections_removed": 0,
+      "images_without_description": 114
+    },
+    {
+      "source": "financial-management-small-businesses",
+      "title": "Financial Management for Small Businesses, 2nd OER Edition",
+      "version": "2nd OER Edition",
+      "edition_date": "2021-01-28",
+      "author_attribution": "Lindon J. Robison, Steven D. Hanson and J. Roy Black; Michigan State University Libraries",
+      "url": "https://openbooks.lib.msu.edu/financialmanagement/",
+      "download_url": "https://openlibrary-repo.ecampusontario.ca/jspui/bitstream/123456789/827/8/Financial-Management-for-Small-Businesses-2nd-OER-Edition-1627674272.-htmlbook.html",
+      "format": "htmlbook",
+      "filename": "financial-management-small-businesses.html",
+      "license": "CC BY 4.0 (downloaded edition)",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "current_catalogue_license": "CC BY-NC 4.0",
+      "license_note": "The public 2021 HTML export states CC BY 4.0; the current university catalogue states CC BY-NC 4.0. Keep attribution and use this collection only for the noncommercial coursework project.",
+      "chapters": [
+        5,
+        6
+      ],
+      "role": "Coordinated statements, liquidity, solvency, leverage and ratio limitations",
+      "file_sha256": "4a7e7ca740e0076f3ab3b2e5f64d0733b95e748507b97561c74167cee8ac5799",
+      "selected_section_count": 48,
+      "word_count": 22378,
+      "exact_duplicate_sections_removed": 0,
+      "images_without_description": 0
+    }
+  ],
+  "scope_status": "Proposed chapter selection for the student to review",
+  "limitations": [
+    "These are educational reference texts. Their historical examples and accounting conventions are not evidence of current reporting, tax or legal requirements.",
+    "A book section may cite a numeric example or a formula stored only in an image. Image-dependent material must be identified before writing the test questions.",
+    "Author biographies, acknowledgements, navigation and donation banners are excluded. The selected instructional content must still be reviewed for incidental personal information before submission.",
+    "The corpus explains financial concepts; it contains no live financial statements for a user's company."
+  ]
+}

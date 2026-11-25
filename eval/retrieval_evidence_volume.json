@@ -1,0 +1,19 @@
+{
+  "definition": "Passage text whitespace words in the top five results for each of all 30 original retrieval queries; excludes metadata, instructions and tokenization overhead.",
+  "designs": {
+    "dense": {
+      "queries": 30,
+      "mean_passage_words_at_5": 1696.3,
+      "median_passage_words_at_5": 1764.5,
+      "min": 1128,
+      "max": 2000
+    },
+    "hybrid": {
+      "queries": 30,
+      "mean_passage_words_at_5": 1775.6666666666667,
+      "median_passage_words_at_5": 1833.0,
+      "min": 1304,
+      "max": 2000
+    }
+  }
+}

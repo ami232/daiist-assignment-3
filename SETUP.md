@@ -25,6 +25,22 @@ A 50,000-word corpus in 150-word chunks is about 420 texts. Each new chunking co
 
 `.vscode/mcp.json` and `.mcp.json` register `server.py` as `corpus`. Check its tools in Copilot (Agent mode, tools icon) or Claude Code (`/mcp`).
 
+For Copilot, select `corpus-researcher-copilot` from the agent picker. Its native
+profile in `.github/agents/` permits only `corpus/search`. The separate Claude
+profile in `.claude/agents/` uses Claude's `mcp__corpus__search` tool name.
+Verify the actual tool picker shows only corpus search selected before the demo.
+The reusable demonstration prompt is in `eval/copilot_demo_prompt.txt`.
+
+Search returns citation-first readable passages to editor models and an identical
+structured payload to application clients. After changing `server.py`, restart
+the editor's corpus server through **MCP: List Servers** before trying it again.
+Both unedited Copilot exports are preserved at
+`eval/copilot_transcript_attempt1.json` and `eval/copilot_transcript_attempt2.json`.
+The second was captured after restarting the editor server with the readable
+result revision. Each interaction made three searches and received relevant
+passages with exact citations, but the editor model still declined to answer.
+Neither attempt demonstrates a successful cited answer.
+
 ## Dependencies
 
 `uv add <package>`, then commit `pyproject.toml` and `uv.lock`.

@@ -1,0 +1,65 @@
+{
+  "scope": "Ten cases flagged by judge failure, code failure or human/judge disagreement. These are proposed primary categories, not confirmed student analysis or new accuracy labels.",
+  "cases": [
+    {
+      "id": "q02",
+      "proposed_primary_category": "retrieval_miss",
+      "basis": "Student notes: the Limitations of Ratios evidence was not returned.",
+      "student_confirmation": "pending"
+    },
+    {
+      "id": "q03",
+      "proposed_primary_category": "unsupported_claim",
+      "basis": "Student notes: the opening collection-wide date claim is contradicted by the retrieved HQN data.",
+      "student_confirmation": "pending"
+    },
+    {
+      "id": "q04",
+      "proposed_primary_category": "retrieval_miss",
+      "basis": "Student notes: missing section 7.1 evidence led to an incomplete response.",
+      "student_confirmation": "pending"
+    },
+    {
+      "id": "q05",
+      "proposed_primary_category": "unsupported_claim",
+      "basis": "Student notes: the opening claim that the collection lacks any company-specific periods conflicts with retrieved examples.",
+      "student_confirmation": "pending"
+    },
+    {
+      "id": "q07",
+      "proposed_primary_category": "wrong_refusal",
+      "basis": "Student notes and trace: relevant profit-margin evidence was retrieved, but citation identity failed twice.",
+      "student_confirmation": "pending"
+    },
+    {
+      "id": "q08",
+      "proposed_primary_category": "wrong_refusal",
+      "basis": "Trace clarification: primary rate limit occurred before any search; this is an operational refusal, not a demonstrated ranking miss.",
+      "student_confirmation": "pending"
+    },
+    {
+      "id": "q09",
+      "proposed_primary_category": "unsupported_claim",
+      "basis": "Student notes: HQN's own ratio was described as a benchmark; background makes further unsupported extensions.",
+      "student_confirmation": "pending"
+    },
+    {
+      "id": "q15",
+      "proposed_primary_category": "wrong_answer_from_right_passage",
+      "basis": "Student notes: omits the chapter's EBIT/beginning-assets qualifications. The judge passed it; this remains a substantive disagreement to review.",
+      "student_confirmation": "pending"
+    },
+    {
+      "id": "q20",
+      "proposed_primary_category": "wrong_refusal",
+      "basis": "Student notes: relevant classification evidence was retrieved; trace also records a primary rate limit and failed citation correction.",
+      "student_confirmation": "pending"
+    },
+    {
+      "id": "q30",
+      "proposed_primary_category": "wrong_refusal",
+      "basis": "Trace and judge: answerable warranty question ended in a fallback after a deadline error and invalid correction.",
+      "student_confirmation": "pending"
+    }
+  ]
+}

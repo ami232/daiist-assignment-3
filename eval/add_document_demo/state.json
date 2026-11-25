@@ -1,0 +1,24 @@
+{
+  "baseline_sha256": "59923422161a5bc7d470439892a50c458edba448d4dfb9682fff533de89513c8",
+  "document_sha256": "0790a694dd7d83579eb2d633c8c4cfbf6216317bce8482840a81b316b6a08697",
+  "question": {
+    "id": "q03",
+    "question": "What was Southwest Airlines' cash from operating activities in its most recent fiscal year, and why did its total cash change so little compared to that figure?",
+    "kind": "unanswerable",
+    "expected_source": "",
+    "expected_location": "",
+    "reference_answer": "The textbooks can't answer this. The only Southwest figures are for fiscal 2010 (about $1.6 billion in operating cash, a $147 million increase in cash, and large spending on equipment, debt paydown, and investments), and the collection does not include the airline's recent statements. What they do cover is where to look: operating cash flow versus investing and financing activities in the statement of cash flows, which reconciles the change in cash. The recent figures would have to come from Southwest's latest annual report or 10-K."
+  },
+  "code_sha256": {
+    "api_key.py": "b3e1bcd80e40859158f8b585dbf17295db1fc11b09eabafad8a50f4528d0a6bd",
+    "retrieval.py": "1cb67845e14928d0174b82a53fb0ba1cef4afae5a1c0d12610614de73a4c1725",
+    "prepare_corpus.py": "0767ca7786b46acd015ed6b727e945e33a88a5db3ea3c504eb509da955f7eda0",
+    "index.py": "710f65850de582d406b1f6ae0d0a4074195722c8225bdadfdde7bb11ce24f7d0",
+    "server.py": "928d5fcd3f76c9ec57d87b5e08660a103562557a987ef3564fab69e3ff0e6153",
+    "agent.py": "0289b559b1b4f6694bdd8ebabd2e6d6cba3ea42e2e98bc5830a9946b3686653f",
+    "answer_guardrails.py": "8fc598327efd0086fca741b4f3c490e9f1442345f6e1cddd0e955ec012fb6101",
+    "evaluation_support.py": "8565275989adf2e6839a06c467cc561ab467424735c8245be45648453d2e0e4a",
+    "AGENTS.md": "6c158b1df9097846aed8bc6d6112d90e3290cb79eb11e92add3803363f2decac",
+    "project_config.json": "3953effba753fc09932adfb366433ea499fdb04a8bfcbcf0cb0179ee043ca230"
+  }
+}

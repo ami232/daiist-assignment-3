@@ -1,0 +1,63 @@
+{
+  "run_kind": "retrieval_only",
+  "questions_sha256": "edfa0685ca2560d84897f52739ec3f776619a12f5313aa0e417f4a427e15f998",
+  "question_count": 30,
+  "seconds": 169.25839570793323,
+  "winner": null,
+  "metrics": [
+    {
+      "design": "dense",
+      "k": 1,
+      "answerable_questions": 25,
+      "hit_any": 0.72,
+      "hit_all": 0.48,
+      "evidence_recall": 0.6
+    },
+    {
+      "design": "dense",
+      "k": 3,
+      "answerable_questions": 25,
+      "hit_any": 0.92,
+      "hit_all": 0.76,
+      "evidence_recall": 0.84
+    },
+    {
+      "design": "dense",
+      "k": 5,
+      "answerable_questions": 25,
+      "hit_any": 0.92,
+      "hit_all": 0.88,
+      "evidence_recall": 0.9
+    },
+    {
+      "design": "hybrid",
+      "k": 1,
+      "answerable_questions": 25,
+      "hit_any": 0.4,
+      "hit_all": 0.24,
+      "evidence_recall": 0.32
+    },
+    {
+      "design": "hybrid",
+      "k": 3,
+      "answerable_questions": 25,
+      "hit_any": 0.84,
+      "hit_all": 0.76,
+      "evidence_recall": 0.8
+    },
+    {
+      "design": "hybrid",
+      "k": 5,
+      "answerable_questions": 25,
+      "hit_any": 0.88,
+      "hit_all": 0.84,
+      "evidence_recall": 0.86
+    }
+  ],
+  "notes": [
+    "Unanswerable questions are excluded from hit-rate denominators.",
+    "hit_all requires all annotated passages for multi-passage questions.",
+    "The designs share query embeddings. Compare retrieval_seconds; common query embedding time is recorded separately."
+  ],
+  "corpus_sha256": "59923422161a5bc7d470439892a50c458edba448d4dfb9682fff533de89513c8"
+}

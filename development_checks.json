@@ -1,0 +1,69 @@
+{
+  "checked_on": "2026-11-24T00:02:40.999732+01:00",
+  "scope": "Development plumbing check, not retrieval accuracy evaluation",
+  "unit_tests_passed": 29,
+  "mcp_tools": [
+    "add_document",
+    "search"
+  ],
+  "mcp_search_passages": 5,
+  "hybrid_search_passages": 5,
+  "same_query_embedding_reused": true,
+  "citations_match_saved_chunks": true,
+  "corpus_reembedded_on_search": false,
+  "index": {
+    "documents": 3,
+    "chunks": 272,
+    "embedded_chunks": 272,
+    "pending_chunks": 0,
+    "cached_query_vectors": 1,
+    "model": "gemini-embedding-2",
+    "dimensions": 768,
+    "bytes": 2207744
+  },
+  "second_index_run_new_vectors": 0,
+  "agent_integration_probe": {
+    "model": "gemini-3.1-flash-lite",
+    "primary_runtime_error": null,
+    "guardrail_blocked": false,
+    "correction_attempts": 0,
+    "successful_searches": 1,
+    "usage_complete": true,
+    "not_part_of_student_benchmark": true
+  },
+  "evaluation_staging": {
+    "synthetic_complete_run_tested": true,
+    "judge_waits_for_bound_human_grades": true,
+    "cached_answers_and_verdicts_reused": true,
+    "real_judge_invoked": false
+  },
+  "latest_unit_test_run": {
+    "checked_on": "2026-11-25T13:32:56.955416+01:00",
+    "tests_passed": 39,
+    "command": "python -m unittest discover -s tests -q",
+    "includes": "Generation/DNS outage handling, judge retries/cache/daily quota, MCP presentation, blind human review."
+  },
+  "official_submission_check": {
+    "command": "python check.py",
+    "passed": true,
+    "log": "eval/submission_check.log",
+    "scope": "Key, saved index, 30-question test set, live MCP tools/search and live main.py ask; does not include the optional --evaluate stage."
+  },
+  "add_document_demo": {
+    "approved": true,
+    "shared_mcp_pipeline_used": true,
+    "new_vectors": 1,
+    "baseline_corpus_unchanged": true,
+    "after_answer_guardrail_passed": true,
+    "artifacts": "eval/add_document_demo/"
+  },
+  "completed_evaluation": {
+    "answers": 30,
+    "bound_human_reviews": 20,
+    "final_judge_verdicts": 30,
+    "final_judge_model": "gemini-3.5-flash-lite",
+    "cached_main_evaluate_passed": true,
+    "summary": "eval/summary.json",
+    "human_label_hashes_verified": true
+  }
+}

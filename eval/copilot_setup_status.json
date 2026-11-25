@@ -1,0 +1,22 @@
+{
+  "workspace": "assignment3-financial-health",
+  "workspace_trust": "Confirmed in VS Code UI for this folder only, with user approval",
+  "copilot_account": "Copilot Free shown as active in VS Code",
+  "mcp_server": "corpus from .vscode/mcp.json; UI output confirms Running and discovered 2 tools",
+  "custom_agent": "corpus-researcher-copilot selected in VS Code; the Claude-compatible corpus-researcher profile is retained separately",
+  "transcript_status": "Two genuine, unedited Copilot interactions exported. The second followed the editor server restart and readable-result revision. Both made three successful searches returning relevant passages and exact citations, but the model declined.",
+  "demo_question": "q06, existing student-authored question; no change to the frozen test set",
+  "tool_configuration": "Verified in the actual VS Code picker: exactly one selected tool, corpus/search; all built-ins and add_document unselected",
+  "compatibility_fix": "VS Code did not resolve mcp__corpus__search in the Claude-format profile. Added a native .github/agents adapter using the canonical corpus/search tool reference confirmed by the editor.",
+  "transcript_export": "eval/copilot_transcript_attempt1.json",
+  "routed_model_observed_in_ui": "MAI Code 2 Flash",
+  "searches_in_first_attempt": 3,
+  "presentation_revision": "Readable citation-first text plus the original structured retrieval payload. A live MCP round trip confirmed identical passage IDs, text, citations and corpus fingerprint.",
+  "validation": "35 tests passed; live cached-query MCP transport probe passed.",
+  "automation_blocker": "Earlier automatic permission-review timeouts were resolved for the restart and second export. No further editor automation is required to preserve the genuine interactions.",
+  "transcript_exports": [
+    "eval/copilot_transcript_attempt1.json",
+    "eval/copilot_transcript_attempt2.json"
+  ],
+  "searches_in_second_attempt": 3
+}

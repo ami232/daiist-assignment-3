@@ -1,0 +1,740 @@
+{
+  "q01": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student, supplied in this chat",
+    "question_edits": "Removed one stray closing quotation mark",
+    "reference_answer_edits": "None",
+    "source_url": "https://2012books.lardbucket.org/books/accounting-for-managers/s16-01-purpose-of-the-statement-of-ca.html",
+    "evidence_review": "Verified against the extracted section, including the Southwest Airlines example. This is a reference-answer review, not a grade of an agent response.",
+    "kind_reason": "With the shared 400-word chunking, words 0–400 support cash-flow categories and accrual accounting; words 350–750 support the balance-sheet limitation and Southwest example. No single current chunk contains every part of the reference answer.",
+    "evidence_mapping": "12.1@0:400;12.1@350:750; half-open whitespace-token offsets within section 12.1.",
+    "classification_correction": "Originally labelled single from the section citation; corrected to multi after inspecting chunk boundaries, before running retrieval evaluation."
+  },
+  "q02": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student, supplied in this chat",
+    "question_edits": "Removed outer quotation marks only",
+    "reference_answer_edits": "None",
+    "source_url": "https://openbooks.lib.msu.edu/financialmanagement/chapter/financial-ratios/#chapter-76-section-12",
+    "evidence_mapping": "Chapter 6, chapter-76-section-12: Limitations of Ratios@0:400",
+    "kind_reason": "The first paragraph and the entire reference answer fit inside the first 400-word passage.",
+    "evidence_review": "The source describes differences in depreciation/accounting practices as a ratio-comparability limitation. The reference does not invent a numeric adjustment or the direction of an ROA change."
+  },
+  "q03": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student, supplied in this chat",
+    "question_edits": "Removed outer quotation marks only",
+    "original_reference_answer": "The textbooks can't answer this. The only Southwest figures are for fiscal 2010 (about $1.6 billion in operating cash, a $147 million increase in cash, and large spending on equipment, debt paydown, and investments), and neither book has the airline's recent statements. What they do cover is where to look: operating cash flow versus investing and financing activities in the statement of cash flows, which reconciles the change in cash. The recent figures would have to come from Southwest's latest annual report or 10-K.",
+    "reference_answer_edits": "Changed 'neither book has' to 'the collection does not include' because the corpus has three books.",
+    "kind_reason": "The question requests the most recent fiscal year; the indexed Southwest figures concern 2010.",
+    "student_test_rationale": "The 2010 Southwest example is a plausible near-miss. A weak system might present the 2010 numbers as current; correct behavior flags the period mismatch.",
+    "near_miss_evidence": [
+      {
+        "source": "accounting-for-managers",
+        "location": "12.1@350:750",
+        "role": "Dated 2010 example, not evidence for the requested current period"
+      },
+      {
+        "source": "accounting-for-managers",
+        "location": "12.6@4900:5300",
+        "role": "Exercise repeats the same historical figures"
+      }
+    ],
+    "expected_evidence_fields": "Empty because this is unanswerable; historical distractors are recorded separately.",
+    "expected_behavior": [
+      "Explicitly identify missing recent company statements/period/figures",
+      "Label optional conceptual explanation as general background and cite it",
+      "Never present 2010 or unrelated figures as the requested recent-year answer",
+      "Do not assume that the recent cash change was actually small"
+    ],
+    "corpus_review_date": "2026-11-24"
+  },
+  "q04": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student, supplied in this chat",
+    "question_edits": "Removed outer quotation marks only",
+    "reference_answer_edits": "None",
+    "source_url": "https://2012books.lardbucket.org/books/accounting-in-the-finance-world/s10-01-accounts-receivable-and-net-re.html",
+    "evidence_mapping": "7.1@700:1100;7.1@1050:1440",
+    "kind_reason": "The first passage explicitly supports reasonable versus absolute assurance and material differences; the second contains collection-estimation factors and the net-realizable-value takeaway.",
+    "student_suggested_kind": "multi, depending on chunk boundaries",
+    "optional_not_required": "The historical Dell figures are supporting illustration, not required answer content. Do not require their inclusion or calculations.",
+    "evidence_review": "Reference answer is supported by the saved source. No retrieval quality evaluation or human answer grading was performed."
+  },
+  "q05": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student, supplied in this chat",
+    "question_edits": "Removed outer quotation marks only",
+    "reference_answer_edits": "None",
+    "source_url": "https://2012books.lardbucket.org/books/accounting-in-the-finance-world/s16-01-basic-reporting-of-liabilities.html",
+    "evidence_mapping": "13.1@350:750;13.1@700:1100",
+    "kind_reason": "The one-year classification context, credit/payment risk and near-term cash discussion appear in words 350–750; the formula and below-1.00 interpretation appear in words 700–1100.",
+    "additional_definition_context": "13.1@0:400 contains the standalone one-year definition; the next chunk continues its explanation.",
+    "student_suggested_kind": "single because the principal discussion is one Q&A block",
+    "classification_correction": "Changed to multi after inspecting the fixed 400-word chunk boundaries; the Q&A block crosses those boundaries.",
+    "expected_behavior": [
+      "Explain the formula without calculating a company ratio from unavailable inputs",
+      "Do not turn below-1.00 into a claim that bankruptcy is certain",
+      "Do not diagnose the specific company without its financial data"
+    ],
+    "evidence_review": "Reference answer is supported by the saved source. No retrieval quality evaluation or human answer grading was performed."
+  },
+  "q06": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student, supplied in this chat",
+    "question_edits": "Removed outer quotation marks only",
+    "reference_answer_edits": "None",
+    "source_url": "https://openbooks.lib.msu.edu/financialmanagement/chapter/financial-ratios/",
+    "evidence_mapping": "Chapter 6, learning goals: Quick (QK) ratio@0:221",
+    "kind_reason": "The entire relevant subsection is one saved passage under the shared 400-word limit.",
+    "evidence_review": "Reference reviewed against the saved corpus, without running retrieval or model-answer evaluation.",
+    "optional_not_required": "HQN numerical example is not required.",
+    "expected_behavior": [
+      "Explain the inventory adjustment in the numerator, not subtraction of an inventory balance from the ratio value",
+      "Preserve the usual/most-often qualification about inventory liquidity"
+    ]
+  },
+  "q07": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student, supplied in this chat",
+    "question_edits": "Removed outer quotation marks only",
+    "reference_answer_edits": "None",
+    "source_url": "https://openbooks.lib.msu.edu/financialmanagement/chapter/financial-ratios/",
+    "evidence_mapping": "Chapter 6, learning goals: Profit margin (m) ratio@0:144",
+    "kind_reason": "The entire relevant subsection is one saved passage under the shared 400-word limit.",
+    "evidence_review": "Reference reviewed against the saved corpus, without running retrieval or model-answer evaluation.",
+    "scope_review": "Interpretation of an already supplied ratio and a rounded source example; it does not ask for calculation of a new company ratio from raw financial inputs.",
+    "rounding_note": "The source example is 0.425% and $0.00425 per $1 before tax. The student deliberately asks about 0.4%, for which approximately $0.004 per $1 is the intended interpretation.",
+    "expected_behavior": [
+      "Keep the before-tax/after-tax distinction explicit",
+      "Do not misread 0.4% as $0.40 of profit per $1 of revenue",
+      "No industry comparison is required"
+    ]
+  },
+  "q08": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student, supplied in this chat",
+    "question_edits": "Removed outer quotation marks only",
+    "reference_answer_edits": "Added 'Generally,' to preserve the qualification in the source.",
+    "source_url": "https://openbooks.lib.msu.edu/financialmanagement/chapter/financial-ratios/",
+    "evidence_mapping": "Chapter 6, learning goals: Times interest earned (TIE) ratio@0:164",
+    "kind_reason": "The entire relevant subsection is one saved passage under the shared 400-word limit.",
+    "evidence_review": "Reference reviewed against the saved corpus, without running retrieval or model-answer evaluation.",
+    "original_reference_answer": "TIE (EBIT divided by interest) measures solvency, or repayment capacity: how many times a firm can cover its interest costs from operating profit. A healthy firm's TIE should exceed 1, and below 1 means it can't pay its interest out of current income.",
+    "near_miss_evidence": [
+      {
+        "source": "financial-management-small-businesses",
+        "location": "Chapter 6, learning goals: Debt-to-service (DS) ratio@350:401",
+        "role": "Debt-to-service is an adjacent but different measure; it adds depreciation and current principal payments."
+      },
+      {
+        "source": "financial-management-small-businesses",
+        "location": "Chapter 6, learning goals: Debt-to-service (DS) ratio@0:400",
+        "role": "Debt-to-service is an adjacent but different measure; it adds depreciation and current principal payments."
+      }
+    ],
+    "expected_behavior": [
+      "Use EBIT divided by interest, not the neighboring DS formula",
+      "Below 1 concerns coverage from current earnings; do not assert that other funding is impossible",
+      "Do not infer overall company health solely from TIE exceeding 1"
+    ]
+  },
+  "q09": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked and edited against the saved corpus",
+    "question_edits": "Removed outer quotation marks only",
+    "original_reference_answer": "The collection can't say. It has no current (2026) industry median or quartiles for grocery retailers, and the only industry benchmark table I found is the ratios chapter's historical quartile table for HQN's unnamed industry, which doesn't apply here. General background (not from the books): the chapter lists places to find industry ratios, such as Dun & Bradstreet and Robert Morris Associates, and notes that there is no single right or wrong quick ratio.",
+    "reference_answer_edits": "Relabelled retained background as source-grounded; removed or qualified claims not established by the indexed passages. Changes are specified below.",
+    "expected_evidence_fields": "Empty: the requested company-specific or current facts are not provided by the corpus. Optional background and distractors are recorded separately.",
+    "corpus_review_date": "2026-11-24",
+    "review_method": "Lexical corpus inspection and direct passage reading, without running retrieval-quality evaluation or the LLM judge.",
+    "missing_information": "Current 2026 U.S. grocery-retailer quick-ratio median or quartiles",
+    "detailed_edits": [
+      "Removed the exclusivity claim about the HQN table: Accounting for Managers also has historical industry averages.",
+      "Did not assume the identity of HQN's industry. Its historical table does not establish the requested 2026 grocery median.",
+      "Provider names are explicitly attributed to the book, not asserted to be current service recommendations."
+    ],
+    "optional_background_evidence": [
+      {
+        "source": "financial-management-small-businesses",
+        "location": "Chapter 6, chapter-76-section-10: Comparing Firm Financial Ratios with Industry Standards@350:453"
+      },
+      {
+        "source": "financial-management-small-businesses",
+        "location": "Chapter 6, chapter-76-section-10: Comparing Firm Financial Ratios with Industry Standards@0:400"
+      },
+      {
+        "source": "financial-management-small-businesses",
+        "location": "Chapter 6, learning goals: Quick (QK) ratio@0:221"
+      }
+    ],
+    "near_miss_evidence": [
+      {
+        "source": "financial-management-small-businesses",
+        "location": "Chapter 6, chapter-76-section-10: Comparing Firm Financial Ratios with Industry Standards@350:453"
+      },
+      {
+        "source": "financial-management-small-businesses",
+        "location": "Chapter 6, chapter-76-section-10: Comparing Firm Financial Ratios with Industry Standards@0:400"
+      }
+    ],
+    "expected_behavior": [
+      "Do not substitute HQN historical quartiles for a current U.S. grocery benchmark",
+      "Do not treat an unrelated historical grocery-turnover example as quick-ratio median data",
+      "Do not infer weak performance against an unknown benchmark or use 1.0 as a universal pass/fail threshold"
+    ]
+  },
+  "q10": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked and edited against the saved corpus",
+    "question_edits": "Removed outer quotation marks only",
+    "original_reference_answer": "The collection can't say. It contains neither the terms of Delta's loan agreements (required ratios, thresholds, test dates) nor Delta's current interest and EBIT figures. General background (not from the books): lender requirements of this kind are typically found in the credit agreement itself and in the debt footnotes of the company's annual report. The books only explain what TIE measures and that a value below 1 means interest can't be covered from current operating profit.",
+    "reference_answer_edits": "Relabelled retained background as source-grounded; removed or qualified claims not established by the indexed passages. Changes are specified below.",
+    "expected_evidence_fields": "Empty: the requested company-specific or current facts are not provided by the corpus. Optional background and distractors are recorded separately.",
+    "corpus_review_date": "2026-11-24",
+    "review_method": "Lexical corpus inspection and direct passage reading, without running retrieval-quality evaluation or the LLM judge.",
+    "missing_information": "Delta-specific contractual threshold, covenant definition/test date and relevant financial figures",
+    "detailed_edits": [
+      "Removed the unsupported statement about where Delta agreement terms would be disclosed.",
+      "Added an explicit warning against assuming the requested TIE covenant exists.",
+      "Retained only the book-supported TIE explanation as optional background."
+    ],
+    "literal_corpus_check": {
+      "covenant_or_covenants": 0,
+      "credit_or_loan_agreement": 0,
+      "Delta_Air_Lines": 0,
+      "Inditex": 0,
+      "Zara": 0
+    },
+    "optional_background_evidence": [
+      {
+        "source": "financial-management-small-businesses",
+        "location": "Chapter 6, learning goals: Times interest earned (TIE) ratio@0:164"
+      }
+    ],
+    "expected_behavior": [
+      "Generic lender discussion would not supply Delta's particular contractual terms",
+      "Do not turn the book's general interest-coverage explanation into a covenant threshold",
+      "Do not conflate mathematical \\Delta notation with Delta Air Lines data"
+    ]
+  },
+  "q11": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked and edited against the saved corpus",
+    "question_edits": "Removed outer quotation marks only",
+    "original_reference_answer": "The collection can't support a forecast from this alone. Missing are projected sales and margins, expected changes in receivables, inventory, and payables, planned equipment purchases, debt repayments and dividends, opening cash, and any available credit. General background (not from the books): these are the inputs that would feed the operating, investing, and financing sections of a projected cash flow statement. The ratios chapter also cautions that its efficiency ratios describe past performance rather than predict outcomes.",
+    "reference_answer_edits": "Relabelled retained background as source-grounded; removed or qualified claims not established by the indexed passages. Changes are specified below.",
+    "expected_evidence_fields": "Empty: the requested company-specific or current facts are not provided by the corpus. Optional background and distractors are recorded separately.",
+    "corpus_review_date": "2026-11-24",
+    "review_method": "Lexical corpus inspection and direct passage reading, without running retrieval-quality evaluation or the LLM judge.",
+    "missing_information": "Client identity/data and future operating, working-capital, investing, financing and funding assumptions",
+    "detailed_edits": [
+      "Kept missing-input examples as company-specific unknowns, not a universal forecasting recipe.",
+      "Replaced the projected-statement-method claim with the source-supported three cash-flow categories.",
+      "Located the prediction caution in the payable-turnover subsection and described its causal-identity limitation precisely."
+    ],
+    "optional_background_evidence": [
+      {
+        "source": "accounting-for-managers",
+        "location": "12.1@0:400"
+      },
+      {
+        "source": "financial-management-small-businesses",
+        "location": "Chapter 6, learning goals: Payable turnover (PTO) ratio@0:400"
+      },
+      {
+        "source": "financial-management-small-businesses",
+        "location": "Chapter 6, learning goals: Payable turnover (PTO) ratio@350:429"
+      }
+    ],
+    "expected_behavior": [
+      "Do not carry $1.2 million forward as an evidence-based forecast",
+      "Do not invent a growth rate or a borrowing decision",
+      "Past cash flow alone does not supply the missing future assumptions"
+    ]
+  },
+  "q12": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked and edited against the saved corpus",
+    "question_edits": "Removed outer quotation marks only",
+    "original_reference_answer": "The collection can't answer this because it contains none of Inditex's financial statements for any period, so no verdict can be given. General background (not from the books): the ratios chapter's framework would be the way to assess it once the balance sheet, income statement, and cash flow statement are available. That means looking at solvency, profitability, efficiency, liquidity, and leverage, and comparing the results against industry standards and the company's own trend.",
+    "reference_answer_edits": "Relabelled retained background as source-grounded; removed or qualified claims not established by the indexed passages. Changes are specified below.",
+    "expected_evidence_fields": "Empty: the requested company-specific or current facts are not provided by the corpus. Optional background and distractors are recorded separately.",
+    "corpus_review_date": "2026-11-24",
+    "review_method": "Lexical corpus inspection and direct passage reading, without running retrieval-quality evaluation or the LLM judge.",
+    "missing_information": "Inditex financial statements and company-specific figures",
+    "detailed_edits": [
+      "Changed background label to reflect that the framework comes from the books.",
+      "Made clear that a generic framework does not establish a company verdict."
+    ],
+    "literal_corpus_check": {
+      "Inditex": 0,
+      "Zara": 0
+    },
+    "optional_background_evidence": [
+      {
+        "source": "financial-management-small-businesses",
+        "location": "Chapter 6, chapter-76-section-13: Strengths and Weaknesses Summary@0:280"
+      },
+      {
+        "source": "financial-management-small-businesses",
+        "location": "Chapter 6, chapter-76-section-10: Comparing Firm Financial Ratios with Industry Standards@350:453"
+      },
+      {
+        "source": "financial-management-small-businesses",
+        "location": "Chapter 6, chapter-76-section-10: Comparing Firm Financial Ratios with Industry Standards@0:400"
+      },
+      {
+        "source": "accounting-for-managers",
+        "location": "13.1"
+      }
+    ],
+    "expected_behavior": [
+      "State that the company data is missing from this collection",
+      "Do not supply an overall health rating from outside knowledge or generic ratios"
+    ]
+  },
+  "q13": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked against the saved corpus",
+    "original_question": "Using this chapter's definition, what does inventory turnover tell me, and what would it mean if a company's number looked really low, or really high?",
+    "original_reference_answer": "Inventory turnover compares total revenue to inventory (the chapter uses beginning-of-period inventory), showing how many dollars of revenue each dollar of inventory generates over the year. A low value suggests the firm is holding excess inventory, while a very high one can signal possible stock-outs and lost sales.",
+    "question_edits": "Replaced the ambiguous chapter reference with the book title and chapter so the question is self-contained.",
+    "reference_answer_edits": "None; student reference answer retained.",
+    "source_url": "https://openbooks.lib.msu.edu/financialmanagement/chapter/financial-ratios/",
+    "evidence_mapping": [
+      "Chapter 6, learning goals: Inventory turnover (ITO) ratio@0:222"
+    ],
+    "student_suggested_kind": "single",
+    "reviewed_kind": "single",
+    "kind_reason": "Definition, beginning-inventory convention and both low/high interpretations all appear in one saved passage.",
+    "evidence_review": "Direct review of the saved passages, including formula descriptions; no retrieval-quality benchmark or model-answer evaluation was run.",
+    "expected_behavior": [
+      "Use total revenue divided by beginning inventory, following the named book; do not silently substitute cost of goods sold divided by average inventory.",
+      "Low/high values suggest possible problems, rather than proving them."
+    ]
+  },
+  "q14": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked against the saved corpus",
+    "original_question": "I keep seeing asset turnover next to profit margin. What does it show about a company, and how do the two usually relate?",
+    "original_reference_answer": "Asset turnover (revenue per dollar of assets, in this chapter) shows how efficiently a firm uses its assets to generate sales. Firms with low profit margins tend to have high asset turnover, and firms with high margins tend to have low asset turnover.",
+    "question_edits": "Replaced the ambiguous chapter reference with the book title and chapter so the question is self-contained.",
+    "reference_answer_edits": "None; student reference answer retained.",
+    "source_url": "https://openbooks.lib.msu.edu/financialmanagement/chapter/financial-ratios/",
+    "evidence_mapping": [
+      "Chapter 6, learning goals: Asset turnover (ATO) ratio@0:197"
+    ],
+    "student_suggested_kind": "single",
+    "reviewed_kind": "single",
+    "kind_reason": "The ATO subsection contains both the efficiency definition and the qualified relationship with profit margin in one saved passage.",
+    "evidence_review": "Direct review of the saved passages, including formula descriptions; no retrieval-quality benchmark or model-answer evaluation was run.",
+    "expected_behavior": [
+      "Describe revenue generated per dollar of assets.",
+      "Preserve the source qualification that margin and turnover tend to move this way; do not call it a universal law."
+    ]
+  },
+  "q15": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked against the saved corpus",
+    "original_question": "Using this chapter's definition, what does ROA actually tell me? If a firm's ROA is 0.065, how would you put that in plain terms?",
+    "original_reference_answer": "ROA measures the profit a firm generates from each dollar of its assets. An ROA of 0.065 means each dollar of assets produced about 6.5 cents of profit (before tax, in the chapter's example).",
+    "question_edits": "Replaced the ambiguous chapter reference with the book title and chapter so the question is self-contained.",
+    "reference_answer_edits": "Confirmed and added the explicit EBIT/assets formula and beginning-period convention from the saved formula descriptions; made the before-interest-and-tax basis explicit. Preserved the student's correct cents interpretation.",
+    "source_url": "https://openbooks.lib.msu.edu/financialmanagement/chapter/financial-ratios/",
+    "evidence_mapping": [
+      "Chapter 6, learning goals: Return on assets (ROA) ratio@0:59"
+    ],
+    "student_suggested_kind": "single",
+    "reviewed_kind": "single",
+    "kind_reason": "The definition, explicit EBIT/A formula and published 6.5% example are in one saved passage.",
+    "evidence_review": "Direct review of the saved passages, including formula descriptions; no retrieval-quality benchmark or model-answer evaluation was run.",
+    "expected_behavior": [
+      "Use the named chapter's EBIT/assets convention, not an unqualified net-income-based variant.",
+      "Interpret 0.065 as $0.065 or 6.5 cents per dollar, not 0.065 cents.",
+      "Interpreting a supplied ratio is within scope; no new ratio is calculated from raw company inputs."
+    ],
+    "source_quality_note": "The source prose says '$.065 cents', but equations 6.12 and 6.13 show EBIT/A = $650/$10,000 = 6.5%. The consistent interpretation is $0.065, or 6.5 cents, per $1 of assets. The indexed source is preserved; this annotation flags the unit typo.",
+    "student_caveat": "The extracted text I read doesn't show the formulas, so I inferred that the chapter's ROA uses EBIT over beginning assets from its worked example (650/10,000 = 6.5%). The reference answer avoids committing to the numerator, but please check the saved chunk before relying on this."
+  },
+  "q16": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked against the saved corpus",
+    "original_question": "Using this chapter's definition, what does ROE measure, and why would a company's ROE end up higher than its ROA?",
+    "original_reference_answer": "ROE measures the profit generated per dollar of equity, after interest on debt is paid; the before-tax version uses earnings before taxes, and the after-tax version uses net income. ROE exceeds ROA when ROA is higher than the average interest rate the firm pays on its debt, because borrowing at a lower cost than the assets earn boosts the return to equity.",
+    "question_edits": "Replaced the ambiguous chapter reference with the book title and chapter so the question is self-contained.",
+    "reference_answer_edits": "Made the before-tax comparison explicit and specified a firm using debt, so the leverage condition is not misapplied to an unleveraged firm.",
+    "source_url": "https://openbooks.lib.msu.edu/financialmanagement/chapter/financial-ratios/",
+    "evidence_mapping": [
+      "Chapter 6, learning goals: Return on equity (ROE) ratio@0:326"
+    ],
+    "student_suggested_kind": "multi",
+    "reviewed_kind": "single",
+    "kind_reason": "The separate-looking relationship paragraph is retained within the ROE subsection. Its entire stored text, including the definition and equations 6.18-6.20, fits one 326-word passage. Annotating ROA as an extra required passage would be unnecessary.",
+    "evidence_review": "Direct review of the saved passages, including formula descriptions; no retrieval-quality benchmark or model-answer evaluation was run.",
+    "expected_behavior": [
+      "Explain EBT/equity versus net-income/equity consistently with before/after tax.",
+      "For the leverage comparison, use the chapter's before-tax ROE and ROA on a consistent basis.",
+      "Do not claim that borrowing always improves the equity return; the return must exceed the debt cost."
+    ],
+    "student_classification_note": "The student described the ROE subsection and relationship paragraph as adjacent but distinct. They are within the same stored chunk."
+  },
+  "q17": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked against the saved corpus",
+    "original_question": "What's the debt-to-equity ratio really telling me, and why would a lender and a borrower look at the same number so differently?",
+    "original_reference_answer": "Debt-to-equity compares total debt to equity, showing how many dollars of debt the firm has leveraged from each dollar of equity. Creditors prefer lower ratios because more equity is available to cover obligations, while higher leverage can raise profits if assets earn more than the debt costs, at the price of greater risk.",
+    "question_edits": "Removed outer quotation marks only",
+    "reference_answer_edits": "None; student reference answer retained.",
+    "source_url": "https://openbooks.lib.msu.edu/financialmanagement/chapter/financial-ratios/",
+    "evidence_mapping": [
+      "Chapter 6, learning goals: Debt-to-equity (DE) ratio@0:238"
+    ],
+    "student_suggested_kind": "single",
+    "reviewed_kind": "single",
+    "kind_reason": "The debt/equity formula, creditor preference, conditional returns and excessive-debt risk are all in one saved passage.",
+    "evidence_review": "Direct review of the saved passages, including formula descriptions; no retrieval-quality benchmark or model-answer evaluation was run.",
+    "expected_behavior": [
+      "Use total debt divided by equity.",
+      "Retain the condition on asset earnings versus debt cost rather than claiming higher debt necessarily raises profits.",
+      "Do not invent a universal acceptable debt/equity threshold."
+    ]
+  },
+  "q18": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked against the saved corpus",
+    "original_question": "How is the equity multiplier different from debt-to-equity? They both seem to measure leverage.",
+    "original_reference_answer": "Both are leverage ratios using balance-sheet figures. Debt-to-equity is total debt divided by equity (debt leveraged per dollar of equity), while the equity multiplier is total assets divided by equity (assets controlled per dollar of equity). Higher values of either imply more debt financing and more risk, and the equity multiplier is especially useful in the DuPont breakdown of ROE.",
+    "question_edits": "Removed outer quotation marks only",
+    "reference_answer_edits": "Qualified the risk interpretation and specified positive equity/comparable figures to avoid treating leverage as an unconditional risk verdict.",
+    "source_url": "https://openbooks.lib.msu.edu/financialmanagement/chapter/financial-ratios/",
+    "evidence_mapping": [
+      "Chapter 6, learning goals: Debt-to-equity (DE) ratio@0:238",
+      "Chapter 6, learning goals: Equity multiplier (EM) ratio@0:202"
+    ],
+    "student_suggested_kind": "multi",
+    "reviewed_kind": "multi",
+    "kind_reason": "The full comparison requires both saved subsections: DE provides debt/equity and its risk discussion; EM provides assets/equity and the DuPont role.",
+    "evidence_review": "Direct review of the saved passages, including formula descriptions; no retrieval-quality benchmark or model-answer evaluation was run.",
+    "expected_behavior": [
+      "Distinguish the debt numerator from the total-assets numerator.",
+      "Cite both relevant subsections for the complete comparison.",
+      "Do not treat one leverage ratio alone as a full assessment of financial health."
+    ]
+  },
+  "q19": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked against the saved corpus",
+    "original_question": "A competitor is about twice our size. If I want to see how we're really doing against them, and also how we've changed over time, when would I use trend analysis and when common-size analysis?",
+    "original_reference_answer": "Common-size analysis restates each line as a percent (income statement items as a percent of net sales, balance sheet items as a percent of total assets), so it lets you compare companies of different sizes and see how one company's mix changes period to period. Trend analysis instead tracks the dollar and percent change in each line from a base period, so it shows growth or decline over time within a company.",
+    "question_edits": "Removed outer quotation marks only",
+    "reference_answer_edits": "None; student reference answer retained.",
+    "source_url": "https://2012books.lardbucket.org/books/accounting-for-managers/s17-01-trend-analysis-of-financial-st.html",
+    "evidence_mapping": [
+      "13.1@0:400",
+      "13.2@0:400"
+    ],
+    "student_suggested_kind": "multi",
+    "reviewed_kind": "multi",
+    "kind_reason": "The trend definition and base-period changes are in 13.1; the common-size bases and both within-company and competitor uses are in 13.2. Both passages are required for the full comparison.",
+    "evidence_review": "Direct lexical and passage review of the persisted corpus, including the figure footnote and key takeaways; no retrieval-quality benchmark or model-answer evaluation.",
+    "expected_behavior": [
+      "Use net sales for common-size income-statement lines and total assets (equivalently total liabilities plus equity) for balance-sheet lines.",
+      "Common-size analysis also supports comparisons over time; do not limit it to comparisons between firms.",
+      "Do not give a verdict on the two unnamed companies without their financial data."
+    ]
+  },
+  "q20": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked against the saved corpus",
+    "original_question": "Using this book's classification, where do interest paid on a bank loan and dividends paid to shareholders show up on the cash flow statement?",
+    "original_reference_answer": "Interest paid on debt is an operating activity because it relates to net income, while dividends paid are a financing activity because they relate to owners' equity. Repaying the principal of long-term debt is also financing.",
+    "question_edits": "Replaced the ambiguous book reference with the title and section so the classification question is self-contained.",
+    "reference_answer_edits": "None; student reference answer retained.",
+    "source_url": "https://2012books.lardbucket.org/books/accounting-for-managers/s16-02-three-types-of-cash-flow-activ.html",
+    "evidence_mapping": [
+      "12.2@700:1044"
+    ],
+    "student_suggested_kind": "single",
+    "reviewed_kind": "single",
+    "kind_reason": "The review-problem passage directly identifies dividends paid to shareholders as financing and payments to lenders for loan interest as operating, explaining each classification. It answers both requested classifications in one chunk. The definitions and preserved footnote independently corroborate the convention.",
+    "evidence_review": "Direct lexical and passage review of the persisted corpus, including the figure footnote and key takeaways; no retrieval-quality benchmark or model-answer evaluation.",
+    "expected_behavior": [
+      "Follow the explicitly named book convention instead of substituting another accounting framework.",
+      "Do not confuse interest paid with principal repayment.",
+      "Do not treat the optional principal contrast as a required part of a correct answer."
+    ],
+    "supplementary_evidence": [
+      {
+        "source": "accounting-for-managers",
+        "location": "12.2@350:750",
+        "role": "Figure 12.2 footnote is preserved, including payments of bank-loan interest as operating."
+      },
+      {
+        "source": "accounting-for-managers",
+        "location": "12.2@0:400",
+        "role": "Definitions identify dividends and long-term principal in financing and interest paid on long-term debt as operating. This also supports the optional principal contrast in the reference answer."
+      }
+    ],
+    "annotation_note": "The third reference-answer sentence about principal repayment is correct optional contrast; the question requires only the interest and dividend classifications and must not be graded wrong for omitting the unasked contrast."
+  },
+  "q21": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked against the saved corpus",
+    "original_question": "A company reports net income far above its cash from operations. What usually explains a gap like that?",
+    "original_reference_answer": "The indirect method converts accrual net income to cash by adding back noncash expenses such as depreciation, adding back losses (and deducting gains) from investing activities, and adjusting for changes in current assets and liabilities. Growth in receivables and inventory ties up cash and pushes operating cash flow below net income, which is what happened at Home Store, Inc., where both balances more than doubled.",
+    "question_edits": "Removed outer quotation marks only",
+    "reference_answer_edits": "Specified operating cash flow and noncash current assets; labelled Home Store as a book example; qualified the explanation as possible rather than a diagnosis and clarified the opposite direction of depreciation add-backs.",
+    "source_url": "https://2012books.lardbucket.org/books/accounting-for-managers/s16-04-using-the-indirect-method-to-p.html",
+    "evidence_mapping": [
+      "12.4@4900:5300",
+      "12.4@5600:5796"
+    ],
+    "student_suggested_kind": "multi",
+    "reviewed_kind": "multi",
+    "kind_reason": "The Home Store dialogue identifies receivables/inventory growth and the gap; the concluding key takeaway lists all three indirect-method adjustment categories. Two saved passages cover the full gold answer; it is unnecessary to require each separate earlier Q&A block.",
+    "evidence_review": "Direct lexical and passage review of the persisted corpus, including the figure footnote and key takeaways; no retrieval-quality benchmark or model-answer evaluation.",
+    "expected_behavior": [
+      "Distinguish possible general explanations from a proven explanation for the unnamed company.",
+      "Use operating cash flow, not the total change in cash.",
+      "Do not claim depreciation add-backs cause operating cash flow to fall below net income.",
+      "Treat Home Store as the source illustration, not the subject company or current market evidence."
+    ],
+    "supplementary_evidence": [
+      {
+        "source": "accounting-for-managers",
+        "location": "12.4@350:750",
+        "role": "Detailed explanation of the noncash depreciation add-back and investing loss/gain adjustment."
+      },
+      {
+        "source": "accounting-for-managers",
+        "location": "12.4@1050:1450",
+        "role": "Detailed receivables adjustment, explaining deduction of a receivables increase."
+      },
+      {
+        "source": "accounting-for-managers",
+        "location": "12.4@1400:1800",
+        "role": "Inventory increase is deducted from net income under the current-asset adjustment rule."
+      }
+    ],
+    "student_classification_note": "The student identified separate Q&A blocks. The required evidence uses the source summary plus the full named-company illustration rather than requiring redundant passages for every adjustment."
+  },
+  "q22": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked against the saved corpus",
+    "original_question": "Why do companies record an estimate in an allowance account instead of just reducing receivables directly, and why is the expense booked in the year of the sale rather than when a customer actually defaults?",
+    "original_reference_answer": "At year-end the company doesn't yet know which customers won't pay, and it still holds the full receivable balance, so it can't reduce specific accounts directly. A contra-asset allowance lets it report expected collections (net realizable value) while keeping the full record. The expense is recognized in the year of the sale because of the matching principle, even though it's only an estimate.",
+    "question_edits": "Removed outer quotation marks only",
+    "reference_answer_edits": "None; student reference answer retained.",
+    "source_url": "https://2012books.lardbucket.org/books/accounting-in-the-finance-world/s10-02-accounting-for-uncollectible-a.html",
+    "evidence_mapping": [
+      "7.2@1400:1679"
+    ],
+    "student_suggested_kind": "multi",
+    "reviewed_kind": "single",
+    "kind_reason": "The final allowance Q&A explains the unknown debtor identities and preservation of gross balances; its same-chunk key takeaways explain the contra-asset/net-realizable-value presentation and matching the expense with the sale. One saved passage covers both parts.",
+    "evidence_review": "Direct lexical and passage review of the persisted corpus, including the figure footnote and key takeaways; no retrieval-quality benchmark or model-answer evaluation.",
+    "expected_behavior": [
+      "Distinguish estimated noncollection from a later write-off of a specifically identified balance.",
+      "Explain both preservation of gross receivable records and matching expense to the related sales period.",
+      "Use the source explanation without claiming it establishes the latest accounting standards."
+    ],
+    "student_classification_note": "Although the longer matching-principle answer is in a preceding chunk, the final summary repeats the needed rationale alongside the separate-allowance answer. Requiring both chunks would overstate the evidence needed."
+  },
+  "q23": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked against the saved corpus",
+    "original_question": "My receivables report breaks balances out by how overdue they are. How would that be used to estimate bad debts, and why do the older buckets get a higher percentage?",
+    "original_reference_answer": "The aging method, a variation of the percentage of receivables approach, groups receivables by age, applies a different percentage to each group, and adds them up to set the allowance balance. Older balances get higher percentages because they are considered more likely to become uncollectible.",
+    "question_edits": "Removed outer quotation marks only",
+    "reference_answer_edits": "None; student reference answer retained.",
+    "source_url": "https://2012books.lardbucket.org/books/accounting-in-the-finance-world/s10-04-estimating-the-amount-of-uncol.html",
+    "evidence_mapping": [
+      "7.4@350:750"
+    ],
+    "student_suggested_kind": "single",
+    "reviewed_kind": "single",
+    "kind_reason": "The opening of this passage contains the aging definition, category-weighting/summing mechanics and the higher noncollection likelihood of older balances. Later expense adjustments are not required.",
+    "evidence_review": "Direct lexical and passage review of the persisted corpus, including the figure footnote and key takeaways; no retrieval-quality benchmark or model-answer evaluation.",
+    "expected_behavior": [
+      "Explain that the resulting estimate targets the ending allowance balance, not automatically an identical current-period expense.",
+      "Do not invent actual loss percentages or customer outcomes.",
+      "Aging changes the estimated likelihood, not a guarantee that every overdue account will default."
+    ]
+  },
+  "q24": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked and where noted clarified against the saved corpus",
+    "original_question": "A cost could be either an asset or an expense, and I honestly can't tell which is more likely. How should it be reported under the book's treatment, and why does accounting lean that way?",
+    "original_reference_answer": "When the two outcomes are equally likely, conservatism says to pick the one that makes the company look worse, so the cost is reported as an expense instead of an asset, lowering both income and assets. The purpose is to avoid an overly optimistic picture that could mislead investors and creditors, as in the WorldCom case. If one outcome is clearly more likely, you report that one.",
+    "question_edits": "Named the book and section so the standalone question has an explicit source convention.",
+    "reference_answer_edits": "Kept the equal-likelihood restriction and removed the unasked WorldCom illustration from the required reference answer. It remains optional evidence in this provenance record.",
+    "source_url": "https://2012books.lardbucket.org/books/accounting-in-the-finance-world/s06-02-reported-profitability-and-the.html",
+    "evidence_mapping": [
+      "3.2@700:1100"
+    ],
+    "student_suggested_kind": "multi",
+    "reviewed_kind": "single",
+    "kind_reason": "The reporting rule, equal-likelihood qualification, impact on income/assets and investor/creditor rationale all occur in this one saved passage. The WorldCom illustration is optional context in the next passage, not necessary to answer the question.",
+    "evidence_review": "Direct review of persisted passages before retrieval benchmarking; no question was generated from retrieval results.",
+    "expected_behavior": [
+      "Apply the less optimistic treatment only when the alternatives are equally likely.",
+      "Do not advise intentionally choosing a less likely outcome just to lower income.",
+      "Treat this as the named historical book explanation, not a statement establishing current reporting rules."
+    ],
+    "supplementary_evidence": [
+      {
+        "source": "accounting-in-the-finance-world",
+        "location": "3.2@1050:1450",
+        "role": "Optional historical WorldCom illustration; do not require the example for correctness."
+      }
+    ]
+  },
+  "q25": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked and where noted clarified against the saved corpus",
+    "original_question": "A company reports $721 million in retained earnings. What does that balance actually represent?",
+    "original_reference_answer": "Retained earnings is all the net income the company has earned since it began, minus all dividends paid. It shows how much of the company's net assets came from its own operations, not a pile of money held in the bank.",
+    "question_edits": "Removed outer quotation marks only",
+    "reference_answer_edits": "Removed the explicitly student-identified inference about a bank balance from the required reference answer. The question asks for the meaning of retained earnings and does not require a cash comparison.",
+    "source_url": "https://2012books.lardbucket.org/books/accounting-in-the-finance-world/s06-03-increasing-the-net-assets-of-a.html",
+    "evidence_mapping": [
+      "3.3@0:400"
+    ],
+    "student_suggested_kind": "single",
+    "reviewed_kind": "single",
+    "kind_reason": "The first answer defines cumulative income less dividends and explains the internally generated net-assets interpretation in one saved passage.",
+    "evidence_review": "Direct review of persisted passages before retrieval benchmarking; no question was generated from retrieval results.",
+    "expected_behavior": [
+      "Interpret retained earnings as an accumulated equity measure, not a current-year profit figure.",
+      "Do not infer a current cash balance or company health from the amount.",
+      "The question gives a hypothetical balance; if mentioning the book example, preserve the Barnes & Noble January 31, 2009 context."
+    ],
+    "student_caveat": "The student correctly identified that the selected passage does not directly compare retained earnings to cash; a cash comparison should not become an unsupported required claim."
+  },
+  "q26": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked and where noted clarified against the saved corpus",
+    "original_question": "Last year we estimated $7,000 of bad debts, but the real number turned out to be $8,000. Under the book's treatment, do we go back and restate last year's expense?",
+    "original_reference_answer": "No. If the original estimate was reasonable, previously reported figures aren't restated, and the difference is simply taken into account in current and later statements, for example by using a higher percentage. Restatement is required only if the estimate was fraudulent or so unreasonable that it wasn't made in good faith.",
+    "question_edits": "Named the book and section so the standalone question has an explicit source convention.",
+    "reference_answer_edits": "Restricted the fraud/unreasonableness discussion to this estimate-revision context, avoiding the claim that these are the only possible reasons for any financial-statement restatement.",
+    "source_url": "https://2012books.lardbucket.org/books/accounting-in-the-finance-world/s10-03-the-problem-with-estimations.html",
+    "evidence_mapping": [
+      "7.3@700:1100",
+      "7.3@1050:1450"
+    ],
+    "student_suggested_kind": "single",
+    "reviewed_kind": "multi",
+    "kind_reason": "The first passage contains the exact $7,000/$8,000 example, no-retroactive-change rule and unreasonable/fraudulent distinction. The second explains current/future treatment and the higher-percentage illustration used in the reference answer.",
+    "evidence_review": "Direct review of persisted passages before retrieval benchmarking; no question was generated from retrieval results.",
+    "expected_behavior": [
+      "Do not automatically restate a reasonable past estimate merely because the realised amount differs.",
+      "Distinguish current/future estimate revisions from correcting a fraudulent or unreasonable original report.",
+      "Do not derive a new company ratio or invent an accounting entry from the supplied amounts."
+    ]
+  },
+  "q27": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked and where noted clarified against the saved corpus",
+    "original_question": "Using this book's definitions, how do I measure how fast a company collects its receivables, and what should I think if that number gets worse?",
+    "original_reference_answer": "The book uses receivables turnover (sales divided by average receivables, where higher means faster collection) and the average age of receivables (the receivable balance divided by sales per day, which is sales divided by 365). A rising age is a warning sign of possible collection problems, though exceptions exist, so it needs further investigation.",
+    "question_edits": "Named the book and section so the standalone question has an explicit source convention.",
+    "reference_answer_edits": "Made the source inconsistency explicit instead of silently choosing a balance convention. Retained the qualified collection-risk interpretation.",
+    "source_url": "https://2012books.lardbucket.org/books/accounting-in-the-finance-world/s10-06-a-company-s-vital-signs-accoun.html",
+    "evidence_mapping": [
+      "7.6@350:750",
+      "7.6@700:1100"
+    ],
+    "student_suggested_kind": "single",
+    "reviewed_kind": "multi",
+    "kind_reason": "The earlier passage provides the age formula and qualified warning; the following passage provides the turnover definition, faster-collection interpretation and the conflicting ending/average balance conventions.",
+    "evidence_review": "Direct review of persisted passages before retrieval benchmarking; no question was generated from retrieval results.",
+    "expected_behavior": [
+      "Do not confuse worsening turnover (lower) with worsening age (higher).",
+      "Do not claim the source is internally consistent about ending versus average receivables.",
+      "Use credit sales when available, as the narrative explains; total sales may be substituted when credit sales are unavailable.",
+      "Explain formulas without calculating a new ratio from raw company inputs."
+    ],
+    "source_quality_note": "The narrative and dated Dell example use ending receivables for age; the glossary specifies average receivables. Both literally occur in the saved source. A source-attributed account of either convention must not be treated as invented; a careful answer can flag the discrepancy."
+  },
+  "q28": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked and where noted clarified against the saved corpus",
+    "original_question": "We sold a $50 gift card today. Do we record revenue, and what happens to the accounting if the card is never used?",
+    "original_reference_answer": "No revenue yet: the sale creates a liability (unearned revenue or gift card liability) because the company still owes goods or services. Revenue is recognized when the card is redeemed, and for cards that likely never will be, it is recognized once redemption becomes remote, such as at expiry, after a set period, or in proportion to actual redemptions.",
+    "question_edits": "Named the book and section so the standalone question has an explicit source convention.",
+    "reference_answer_edits": "Anchored the question and answer to the named historical book, preserved the recognition approaches as the book describes them, and added the source policy's condition concerning a legal obligation to remit unused balances.",
+    "source_url": "https://2012books.lardbucket.org/books/accounting-in-the-finance-world/s16-02-reporting-current-liabilities-.html",
+    "evidence_mapping": [
+      "13.2@1050:1450"
+    ],
+    "student_suggested_kind": "multi",
+    "reviewed_kind": "single",
+    "kind_reason": "The unused-card discussion contains the recognition approaches and remittance condition, followed in the same chunk by a key takeaway repeating the initial liability and later redemption/revenue treatment. The full answer is therefore supported by one saved passage.",
+    "evidence_review": "Direct review of persisted passages before retrieval benchmarking; no question was generated from retrieval results.",
+    "expected_behavior": [
+      "Do not recognise revenue immediately merely because cash is received.",
+      "Do not treat all unused balances as unrestricted profit if the remittance condition is not satisfied.",
+      "Do not claim that an arbitrary waiting period automatically establishes current accounting or legal permission to recognise breakage."
+    ],
+    "supplementary_evidence": [
+      {
+        "source": "accounting-in-the-finance-world",
+        "location": "13.2@700:1100",
+        "role": "Detailed sale/redemption illustration, including $50 cards; corroborating but not essential alongside the complete next-chunk summary."
+      }
+    ]
+  },
+  "q29": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked and where noted clarified against the saved corpus",
+    "original_question": "We're being sued and our lawyers think we'll probably lose, but they can't pin down the amount precisely. Under the book's U.S. GAAP treatment, do we record anything or just disclose it?",
+    "original_reference_answer": "A loss contingency is recorded (a loss and a liability) if the loss is probable and can be reasonably estimated, even though the amount is only an estimate. If the loss is only reasonably possible, or can't be reasonably estimated, it is disclosed in the notes, and remote ones can be omitted.",
+    "question_edits": "Removed outer quotation marks only",
+    "reference_answer_edits": "Distinguished lack of exact precision from inability to estimate reasonably, rather than assuming the latter. Retained the recognition/disclosure/remote alternatives and avoided an unsupported unconditional decision for the unnamed lawsuit.",
+    "source_url": "https://2012books.lardbucket.org/books/accounting-in-the-finance-world/s16-03-accounting-for-contingencies.html",
+    "evidence_mapping": [
+      "13.3@700:1100"
+    ],
+    "student_suggested_kind": "multi",
+    "reviewed_kind": "single",
+    "kind_reason": "This passage begins with a probable, reasonably estimated lawsuit loss that must be recognised, then gives the unestimable/only-reasonably-possible disclosure rule and the remote-loss exception. Both decisions fit in one chunk without the earlier criteria block.",
+    "evidence_review": "Direct review of persisted passages before retrieval benchmarking; no question was generated from retrieval results.",
+    "expected_behavior": [
+      "Do not infer disclosure-only treatment from the absence of an exact figure.",
+      "Do not import the separate IFRS interview thresholds into the explicitly U.S. GAAP question.",
+      "Present the conditional treatment without inventing the lawsuit amount or a numerical probability threshold."
+    ],
+    "supplementary_evidence": [
+      {
+        "source": "accounting-in-the-finance-world",
+        "location": "13.3@350:750",
+        "role": "The earlier explicit two-condition recognition test; corroborating rather than required in addition to the complete next-chunk discussion."
+      }
+    ]
+  },
+  "q30": {
+    "question_author": "Student, supplied in this chat",
+    "reference_answer_author": "Student draft, checked and where noted clarified against the saved corpus",
+    "original_question": "We sell appliances with a built-in warranty. Under the book's treatment, when do we record the warranty expense: at the sale or when repairs happen?",
+    "original_reference_answer": "At the time of sale. The company estimates the expected claims cost, books the expense and a liability in the year of the sale (matching principle), and later repair costs reduce the liability without hitting net income again. If the estimate changes, the liability is adjusted in the period the new information arrives, without restating earlier years.",
+    "question_edits": "Named the book and section so the standalone question has an explicit source convention.",
+    "reference_answer_edits": "None; student reference retained. The reasonable-estimate assumption and fraud/unreasonable-original-estimate exception are captured in review notes.",
+    "source_url": "https://2012books.lardbucket.org/books/accounting-in-the-finance-world/s16-04-accounting-for-product-warrant.html",
+    "evidence_mapping": [
+      "13.4@350:750",
+      "13.4@700:1100"
+    ],
+    "student_suggested_kind": "single",
+    "reviewed_kind": "multi",
+    "kind_reason": "The sale-year expense/liability and matching rationale are in the first passage. The next passage completes the no-further-net-income effect of repairs and describes later re-estimation without retroactive changes. The full reference answer spans both, despite being within one original Q&A block.",
+    "evidence_review": "Direct review of persisted passages before retrieval benchmarking; no question was generated from retrieval results.",
+    "expected_behavior": [
+      "Distinguish an embedded warranty from a separately purchased extended warranty.",
+      "Do not expense the same expected repair cost again when the recorded liability is paid.",
+      "Treat ordinary estimate changes prospectively; do not describe the no-restatement rule as covering fraudulent or clearly unreasonable original estimates."
+    ],
+    "annotation_note": "The main timing answer can be short. The gold evidence covers the full supplied reference, including repair treatment and subsequent estimate revisions. The no-restatement statement concerns ordinary updates to reasonable estimates; the source separately excepts fraud or an original estimate not made in good faith."
+  }
+}

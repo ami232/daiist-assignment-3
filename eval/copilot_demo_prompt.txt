@@ -1,0 +1,3 @@
+Use only the corpus search tool, with at most three searches. Answer briefly and cite the exact source/location labels returned by search. If the evidence is missing, say what is missing. Do not add or edit files.
+
+Why would I use the quick ratio instead of the current ratio, and which current asset does it leave out?

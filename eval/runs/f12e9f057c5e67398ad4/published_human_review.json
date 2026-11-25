@@ -1,0 +1,242 @@
+[
+  {
+    "id": "q01",
+    "question": "A company reported strong net income this year, but its cash balance on the balance sheet barely moved. Why can't I just read that from the income statement and balance sheet, and what does the statement of cash flows tell me that they don't?",
+    "reference_answer": "The income statement uses accrual accounting, so it doesn't show how much cash was actually received for revenues or paid for expenses, and the balance sheet only shows the cash balance at a point in time. The statement of cash flows fills that gap by summarizing cash receipts and payments as operating, investing, or financing activities and reconciling the beginning-to-ending change in cash, so you can see where cash came from and where it went (for example, large equipment purchases or debt repayments absorbing operating cash).",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "505d111e5f3bca1a7bf204eaccb8162d11e4311c8792f4cb6dd779a0cd3cf432"
+  },
+  {
+    "id": "q02",
+    "question": "I'm comparing the ROA of two companies in the same industry. One uses accelerated depreciation and the other uses straight-line. Can I compare their ratios directly?",
+    "reference_answer": "Not without care. Different accounting practices for items like depreciation change a firm's financial statements and therefore its ratios, so you need to understand which practices each firm uses, and whether they changed over time, before drawing conclusions from the comparison.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "7b741e6efdd12702a152bfe7c449e2986ef75f93edd819f31c1b3fce09afef7b"
+  },
+  {
+    "id": "q03",
+    "question": "What was Southwest Airlines' cash from operating activities in its most recent fiscal year, and why did its total cash change so little compared to that figure?",
+    "reference_answer": "The textbooks can't answer this. The only Southwest figures are for fiscal 2010 (about $1.6 billion in operating cash, a $147 million increase in cash, and large spending on equipment, debt paydown, and investments), and the collection does not include the airline's recent statements. What they do cover is where to look: operating cash flow versus investing and financing activities in the statement of cash flows, which reconciles the change in cash. The recent figures would have to come from Southwest's latest annual report or 10-K.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "e41f59d71a148f42d0b823a76655eb40c21ce245cb647523fd8fd241fc39a267"
+  },
+  {
+    "id": "q04",
+    "question": "A company's balance sheet shows a large accounts receivable figure, but obviously some customers won't pay. How exact is that number, and what do managers base it on?",
+    "reference_answer": "Receivables are reported at net realizable value, the cash the company estimates it will actually collect, so the figure is an estimate with some uncertainty rather than an exact amount. Managers support it with evidence such as past collection experience, the share of accounts that are overdue, credit and collection practices, and economic and industry conditions, aiming for reasonable (not absolute) assurance that actual collections won't differ materially.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "605075141d5c989a5167d99979978973cb816d3bcfb0ff8dabc252d933661ba0"
+  },
+  {
+    "id": "q05",
+    "question": "I'm screening a company and its current liabilities look high. Why do analysts care so much about that number, and what quick check can I run?",
+    "reference_answer": "Current liabilities are debts due within a year, often within weeks or months, so the company must have enough cash coming in to pay them or risk damaged credit and possibly bankruptcy. A quick check is the current ratio (current assets divided by current liabilities), where a value below 1.00 means current liabilities exceed current assets.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "373192695e3ace1d5d43fe8dec7c8b6efffee7e488f0df6c6b9aae9d50709265"
+  },
+  {
+    "id": "q06",
+    "question": "Why would I use the quick ratio instead of the current ratio, and which current asset does it leave out?",
+    "reference_answer": "The quick ratio (also called the acid-test ratio) is the current ratio with inventory subtracted from current assets. Inventory is usually the least liquid current asset and its liquidation value is the most uncertain, so the quick ratio is a more demanding test of short-term liquidity.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "4a8a46222bc4e08497405d04f44f07e005b45fc67bf5ada0a1be5c2b3e13cc32"
+  },
+  {
+    "id": "q07",
+    "question": "What does the profit margin ratio measure, and how should I interpret a before-tax margin of about 0.4%?",
+    "reference_answer": "Profit margin measures how much of each dollar of revenue is kept as profit: the before-tax version is after interest but before taxes, and the after-tax version uses net income. A before-tax margin of about 0.4% means roughly $0.004 of profit for every $1 of revenue.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "867b2c681f2d8c3d72583ead6c1d17a3ac1f63fe1bbc59897823deb7fab52ae9"
+  },
+  {
+    "id": "q08",
+    "question": "What does the times interest earned ratio help me assess, and what does a value below 1 signal?",
+    "reference_answer": "TIE (EBIT divided by interest) measures solvency, or repayment capacity: how many times a firm can cover its interest costs from operating profit. Generally, a healthy firm's TIE should exceed 1, and below 1 means it can't pay its interest out of current income.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "c4cb28aa7baab293949e72a50137d51f57082c8926340ba805aeba99dc9c417a"
+  },
+  {
+    "id": "q09",
+    "question": "A grocery retailer I'm reviewing has a quick ratio of 0.6. What is the current median quick ratio for U.S. grocery retailers, and is 0.6 weak by that standard?",
+    "reference_answer": "The collection does not provide a current (2026) median quick ratio for U.S. grocery retailers, so it cannot judge 0.6 against that benchmark. HQN's historical quartile table does not establish the requested current grocery benchmark. General background (from the books): the chapter lists sources of industry ratios, including Dun & Bradstreet and Robert Morris Associates, and explains that there is no single universally right or wrong quick ratio.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "dd7f3f38e93484c555198c1b5755802a34608cf591caf236b5f69f9666159921"
+  },
+  {
+    "id": "q10",
+    "question": "What minimum times-interest-earned ratio does Delta Air Lines' credit agreement require, and is the company close to breaching it?",
+    "reference_answer": "The collection cannot answer this: it contains neither Delta's applicable credit-agreement terms, required ratio thresholds and test dates, nor the company's current EBIT and interest figures. It also does not establish that Delta has the assumed TIE covenant. General background (from the books): TIE is EBIT divided by interest and measures interest coverage from operating profit; a value below 1 indicates that current operating profit does not cover interest. That explanatory threshold is not evidence of Delta's lender requirement.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "c6a22da0c60de7cd6ca14761f8664d93adb0d66025e75db8b9e3f4ea89f6c828"
+  },
+  {
+    "id": "q11",
+    "question": "A client's operating cash flow was $1.2 million this year. Forecast next year's operating cash flow and tell me whether they'll need to borrow.",
+    "reference_answer": "The collection cannot support a next-year operating cash-flow forecast or borrowing assessment from this year's $1.2 million figure alone. Missing company information and assumptions include projected sales and margins, working-capital changes, investment and debt-payment plans, opening cash, and available funding. General background (from the books): cash-flow statements distinguish operating, investing and financing activities. The turnover-ratio discussion cautions that its ratio identities do not generally establish causal relationships or, by themselves, justify predictions.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "87fea6b27e0de5982dd1ead0c9b45bb73c738fa78b04f456e34f67646fcc155c"
+  },
+  {
+    "id": "q12",
+    "question": "Is Inditex financially healthy?",
+    "reference_answer": "The indexed collection contains no Inditex-specific financial statements or figures, so it cannot establish whether Inditex is financially healthy. General background (from the books): the framework examines solvency, profitability, efficiency, liquidity and leverage using financial statements, comparisons with similar firms and the company's own trends. That framework is not itself a verdict on Inditex.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "72d0319484d460cb76bfa7d58c513e858fd1bfed4a82d682ab9ac8285f81c29e"
+  },
+  {
+    "id": "q13",
+    "question": "Using the definition in Chapter 6 of Financial Management for Small Businesses, what does inventory turnover tell me, and what would it mean if a company's number looked really low, or really high?",
+    "reference_answer": "Inventory turnover compares total revenue to inventory (the chapter uses beginning-of-period inventory), showing how many dollars of revenue each dollar of inventory generates over the year. A low value suggests the firm is holding excess inventory, while a very high one can signal possible stock-outs and lost sales.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "d7b6d914977d080a7effee85b55d59914128f0756008a1cbf59bd717c3b4ab9e"
+  },
+  {
+    "id": "q14",
+    "question": "In Chapter 6 of Financial Management for Small Businesses, I keep seeing asset turnover next to profit margin. What does it show about a company, and how do the two usually relate?",
+    "reference_answer": "Asset turnover (revenue per dollar of assets, in this chapter) shows how efficiently a firm uses its assets to generate sales. Firms with low profit margins tend to have high asset turnover, and firms with high margins tend to have low asset turnover.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "e5c7ca085da3429c024ec313b61c065d1236a2a11dc161832baec34cd65c5a44"
+  },
+  {
+    "id": "q15",
+    "question": "Using the definition in Chapter 6 of Financial Management for Small Businesses, what does ROA actually tell me? If a firm's ROA is 0.065, how would you put that in plain terms?",
+    "reference_answer": "In this chapter, ROA measures profit generated per dollar of assets and is defined as EBIT divided by assets; its worked example uses beginning-of-period assets. An ROA of 0.065 means each dollar of assets generated $0.065, or 6.5 cents, in profit before interest and taxes.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "0f3179e4f40e7a61d3be280a1ff7bd99ddc51e4eb834f38f83993b8082ac3e1b"
+  },
+  {
+    "id": "q16",
+    "question": "Using the definitions in Chapter 6 of Financial Management for Small Businesses, what does ROE measure, and why would a company's ROE end up higher than its ROA?",
+    "reference_answer": "ROE measures profit generated per dollar of equity after interest on debt; the before-tax version uses earnings before taxes, and the after-tax version uses net income. Comparing the chapter's before-tax measures for a firm using debt, ROE exceeds ROA when ROA is higher than the average interest rate paid on that debt: borrowing at a lower cost than the assets earn boosts the return to equity.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "363beb5b8c0e059f16a4a308cbd3b39aa3c33fc6f8f10ed0115fe9703ef80e04"
+  },
+  {
+    "id": "q17",
+    "question": "What's the debt-to-equity ratio really telling me, and why would a lender and a borrower look at the same number so differently?",
+    "reference_answer": "Debt-to-equity compares total debt to equity, showing how many dollars of debt the firm has leveraged from each dollar of equity. Creditors prefer lower ratios because more equity is available to cover obligations, while higher leverage can raise profits if assets earn more than the debt costs, at the price of greater risk.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "07dd0300ae0f6b5daf1eaa78dc32f83baab0213849fcf50078eb22392933c54a"
+  },
+  {
+    "id": "q18",
+    "question": "How is the equity multiplier different from debt-to-equity? They both seem to measure leverage.",
+    "reference_answer": "Both are leverage ratios using balance-sheet figures. Debt-to-equity is total debt divided by equity (debt leveraged per dollar of equity), while the equity multiplier is total assets divided by equity (assets controlled per dollar of equity). With positive equity and comparable figures, higher values indicate greater leverage and potentially greater financial risk; the equity multiplier is especially useful in the DuPont breakdown of ROE.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "797ce35e1295dd1ab7d6ab668b7cf117e0be071f238b1002b524e2e3e172c227"
+  },
+  {
+    "id": "q19",
+    "question": "A competitor is about twice our size. If I want to see how we're really doing against them, and also how we've changed over time, when would I use trend analysis and when common-size analysis?",
+    "reference_answer": "Common-size analysis restates each line as a percent (income statement items as a percent of net sales, balance sheet items as a percent of total assets), so it lets you compare companies of different sizes and see how one company's mix changes period to period. Trend analysis instead tracks the dollar and percent change in each line from a base period, so it shows growth or decline over time within a company.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "b21db8e6360a8d1dd7839375558a990a1d231f36f4ebbee248017cb0963715a4"
+  },
+  {
+    "id": "q20",
+    "question": "Using the classification in Accounting for Managers, section 12.2, where do interest paid on a bank loan and dividends paid to shareholders show up on the cash flow statement?",
+    "reference_answer": "Interest paid on debt is an operating activity because it relates to net income, while dividends paid are a financing activity because they relate to owners' equity. Repaying the principal of long-term debt is also financing.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "fddc896c395e5635a7e2465b38f1556f062874efe3c760afd26de939f3173413"
+  },
+  {
+    "id": "q21",
+    "question": "A company reports net income far above its cash from operations. What usually explains a gap like that?",
+    "reference_answer": "The indirect method converts accrual net income to operating cash flow by adding back noncash expenses such as depreciation, adding back losses (and deducting gains) from investing activities, and adjusting for changes in noncash current assets and current liabilities. Growth in receivables and inventory can tie up cash and push operating cash flow below net income, as in the book's Home Store, Inc., example, where both balances more than doubled. These are possible causes to investigate, not a diagnosis without the company's statements; depreciation add-backs increase operating cash flow relative to net income rather than explaining the downward gap.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "0b211bae9ca4c1645297cf409fa11874a27deaa37afbeede546f5c4ebf70f849"
+  },
+  {
+    "id": "q22",
+    "question": "Why do companies record an estimate in an allowance account instead of just reducing receivables directly, and why is the expense booked in the year of the sale rather than when a customer actually defaults?",
+    "reference_answer": "At year-end the company doesn't yet know which customers won't pay, and it still holds the full receivable balance, so it can't reduce specific accounts directly. A contra-asset allowance lets it report expected collections (net realizable value) while keeping the full record. The expense is recognized in the year of the sale because of the matching principle, even though it's only an estimate.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "f3f3dea1eeb971789c349186b3fdebd1b6f55957b2ddb747160a9fe24ed0175c"
+  },
+  {
+    "id": "q23",
+    "question": "My receivables report breaks balances out by how overdue they are. How would that be used to estimate bad debts, and why do the older buckets get a higher percentage?",
+    "reference_answer": "The aging method, a variation of the percentage of receivables approach, groups receivables by age, applies a different percentage to each group, and adds them up to set the allowance balance. Older balances get higher percentages because they are considered more likely to become uncollectible.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "e071e23df3bb4ba2f686179707e7fb839636662ae3152275b637184e980a706e"
+  },
+  {
+    "id": "q24",
+    "question": "A cost could be either an asset or an expense, and I honestly can't tell which is more likely. How should it be reported under the treatment in Accounting in the Finance World, section 3.2, and why does accounting lean that way?",
+    "reference_answer": "When the two outcomes are equally likely, the book's principle of conservatism selects the less optimistic treatment: report the cost as an expense rather than an asset, lowering reported income and assets. The purpose is to protect investors and creditors from an overly optimistic picture. If one outcome is more likely, report that outcome instead.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "d21356620a344f4b22953e19915ae5ed61a21a020e5def2e33405947537b0db7"
+  },
+  {
+    "id": "q25",
+    "question": "A company reports $721 million in retained earnings. What does that balance actually represent?",
+    "reference_answer": "Retained earnings is the accumulated net income reported by a company since it began operations, less all dividends paid to shareholders during that period. It shows how much of the company's net assets was generated by its own operations.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "79fca69c0ae02ab2b78b066d6309449ad73e5f931b2636b93a0f55721f3586f8"
+  },
+  {
+    "id": "q26",
+    "question": "Last year we estimated $7,000 of bad debts, but the real number turned out to be $8,000. Under the treatment in Accounting in the Finance World, section 7.3, do we go back and restate last year's expense?",
+    "reference_answer": "No, provided the original estimate was reasonable: previously reported figures are not restated. The difference informs current and subsequent statements, for example by using a higher bad-debt percentage. In this estimate-revision context, the book distinguishes ordinary revisions from correcting estimates that were fraudulent or clearly unreasonable; this is not an exhaustive rule about all circumstances requiring restatement.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "d95e2d60230f1e7a23f0a008fad4075578b15bdc771ea1e9ef64849d86addc3f"
+  },
+  {
+    "id": "q27",
+    "question": "Using Accounting in the Finance World, section 7.6, how do I measure how fast a company collects its receivables, and what should I think if that number gets worse?",
+    "reference_answer": "The book defines receivables turnover as sales divided by average receivables; higher turnover means faster collection. It describes receivables age as a receivables balance divided by sales per day (sales divided by 365). Its narrative and Dell illustration use ending receivables, while its glossary says average receivables, so the source is inconsistent about that balance convention. Slower collection, such as a rising age, is a possible warning sign requiring investigation, not proof of a problem; exceptions exist.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "9e4d4191afa289e288943c3f96d803138d504430164404933d81e234cc9bd96e"
+  },
+  {
+    "id": "q28",
+    "question": "Using the treatment in Accounting in the Finance World, section 13.2, we sold a $50 gift card today. Do we record revenue, and what happens to the accounting if the card is never used?",
+    "reference_answer": "Under the book's treatment, the sale creates a gift-card liability rather than immediate revenue because goods or services are still owed; redemption satisfies the obligation and allows revenue recognition. For unused cards, the book describes recognition when reasonable evidence indicates that redemption will not occur and discusses expiry, a specified period, or proportional recognition alongside actual redemptions as approaches. The quoted Best Buy policy also requires that no legal obligation remain to remit the unused value to the relevant jurisdictions.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "90eab675c97034ae9df3587bf8b01eb0b5259035ae968431580112d36d7d89fa"
+  },
+  {
+    "id": "q29",
+    "question": "We're being sued and our lawyers think we'll probably lose, but they can't pin down the amount precisely. Under the book's U.S. GAAP treatment, do we record anything or just disclose it?",
+    "reference_answer": "Under the book's U.S. GAAP treatment, exact precision is not required: a probable loss that can be reasonably estimated is recorded as a loss contingency. If the probable loss cannot be reasonably estimated, or a loss is only reasonably possible, it is disclosed in the notes instead; remote losses can be omitted. The fact that the lawyers cannot give a precise amount does not by itself establish which treatment applies: whether a reasonable estimate can be made is the key missing distinction.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "c3863567902a397557bda3e1d2e8c1890ce680b490ee85e837529003ac858939"
+  },
+  {
+    "id": "q30",
+    "question": "We sell appliances with a built-in warranty. Under the treatment in Accounting in the Finance World, section 13.4, when do we record the warranty expense: at the sale or when repairs happen?",
+    "reference_answer": "At the time of sale. The company estimates the expected claims cost, books the expense and a liability in the year of the sale (matching principle), and later repair costs reduce the liability without hitting net income again. If the estimate changes, the liability is adjusted in the period the new information arrives, without restating earlier years.",
+    "agent_answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+    "retrieved_passages": [],
+    "answer_review_sha256": "7442fa19987fed9c5b11ea51839a2d8327edf4c25dfa90c82f39b6bf173eca4b"
+  }
+]

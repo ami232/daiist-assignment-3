@@ -1,0 +1,155 @@
+{
+  "id": "q03",
+  "question": "What was Southwest Airlines' cash from operating activities in its most recent fiscal year, and why did its total cash change so little compared to that figure?",
+  "design": "dense",
+  "model": "gemini-3.1-flash-lite",
+  "answer": "The provided documents do not contain financial information for any fiscal year beyond 2010. Therefore, it is not possible to provide data or an analysis for Southwest Airlines' \"most recent fiscal year.\"\n\nFor the year ended December 31, 2010, Southwest Airlines generated $1,600,000,000 in cash from operating activities. [accounting-for-managers | 12.1]\n\nDuring the same period, the company's total cash on the balance sheet increased by only $147,000,000. [accounting-for-managers | 12.1]\n\nThe relatively small change in total cash was due to significant cash outflows for other activities, specifically $493,000,000 spent on property and equipment, $155,000,000 used to pay off long-term debt, and $772,000,000 used to purchase short-term investments. [accounting-for-managers | 12.1]",
+  "draft": {
+    "status": "partial",
+    "answer_claims": [
+      {
+        "text": "For the year ended December 31, 2010, Southwest Airlines generated $1,600,000,000 in cash from operating activities.",
+        "citations": [
+          "[accounting-for-managers | 12.1]"
+        ]
+      },
+      {
+        "text": "During the same period, the company's total cash on the balance sheet increased by only $147,000,000.",
+        "citations": [
+          "[accounting-for-managers | 12.1]"
+        ]
+      },
+      {
+        "text": "The relatively small change in total cash was due to significant cash outflows for other activities, specifically $493,000,000 spent on property and equipment, $155,000,000 used to pay off long-term debt, and $772,000,000 used to purchase short-term investments.",
+        "citations": [
+          "[accounting-for-managers | 12.1]"
+        ]
+      }
+    ],
+    "missing_information": "The provided documents do not contain financial information for any fiscal year beyond 2010. Therefore, it is not possible to provide data or an analysis for Southwest Airlines' \"most recent fiscal year.\"",
+    "general_background": []
+  },
+  "guardrail_blocked": false,
+  "guardrail_events": [],
+  "correction_attempts": 0,
+  "trace": [
+    {
+      "tool": "search",
+      "arguments": {
+        "query": "Southwest Airlines cash from operating activities most recent fiscal year"
+      },
+      "status": "success",
+      "result": {
+        "query": "Southwest Airlines cash from operating activities most recent fiscal year",
+        "design": "dense",
+        "query_embedding_cache_hit": false,
+        "query_embedding_seconds": 0.7905232501216233,
+        "retrieval_seconds": 0.06278466689400375,
+        "seconds": 0.853307917015627,
+        "results": [
+          {
+            "id": "db3244faa665fa9077662553d26611b28d8b20dc18c0e570e5a5a082044b13b0",
+            "source": "accounting-for-managers",
+            "location": "12.1",
+            "title": "Accounting for Managers — 12.1 Purpose of the Statement of Cash Flows",
+            "url": "https://2012books.lardbucket.org/books/accounting-for-managers/s16-01-purpose-of-the-statement-of-ca.html",
+            "text": "was created due to a lack of cash flow information on the income statement, balance sheet, and statement of owners’ equity. The income statement shows revenues and expenses using the accrual basis of accounting, but it does not indicate how much cash was received for revenues or paid for expenses. The balance sheet shows assets, liabilities, and owners’ equity at a point in time, but it does not show how much cash was received or paid for these items. The only cash information provided on these statements is the change in cash from the end of last period to the end of the current period derived from the cash line item on the balance sheet (often called cash and cash equivalents).\nOwners, creditors, and managers wanted more cash flow information. They often asked such questions as: Why did cash go down? How much cash was received related to net income? How much cash was paid for the purchase of equipment? How much cash was received from issuing bonds? As a result of the demand for more cash flow information, the FASB formally created the statement of cash flows in 1987 (Statement of Financial Accounting Standard No. 95, which can be found at http://www.fasb.org). Most companies are now required to prepare the statement of cash flows along with the other three statements. We begin the process of explaining how to prepare this statement in the next section.\nBusiness in Action 12.1\nCash Flows at Southwest Airlines\nSouthwest Airlines was in the enviable position of generating $1,600,000,000 in cash from operating activities for the year ended December 31, 2010. However, cash on the balance sheet only increased $147,000,000 for the same period. Why did total cash go up by such a small amount compared to the $1,600,000,000 increase in cash from operating activities? The statement of cash flows provides the information necessary to answer this question. Southwest spent $493,000,000 on property and equipment (planes, parts, etc.) and $155,000,000 to pay off long-term debt. Southwest also purchased $772,000,000 in short-term investments.\nSource: Southwest Airlines, “2010 Annual Report,” http://www.southwest.com.\nKey Takeaway\nThe statement of cash flows provides cash receipt and cash payment information and reconciles the change in cash for a period of time. The primary purpose of the statement is to show what caused the change in cash from the beginning of the period to the end of the period.\nReview Problem 12.1",
+            "word_start": 350,
+            "word_end": 750,
+            "word_count": 400,
+            "passage_location": "12.1@350:750",
+            "citation": "[accounting-for-managers | 12.1]",
+            "score": 0.6726585626602173,
+            "semantic_score": 0.6726585626602173,
+            "keyword_score": 0.0
+          },
+          {
+            "id": "d20de8ed90ca9fe5f1193274ce6396ffa85609e5a76641b33245632585c042bb",
+            "source": "accounting-for-managers",
+            "location": "12.5",
+            "title": "Accounting for Managers — 12.5 Analyzing Cash Flow Information",
+            "url": "https://2012books.lardbucket.org/books/accounting-for-managers/s16-05-analyzing-cash-flow-informatio.html",
+            "text": "12.5 Analyzing Cash Flow Information\nLearning Objective\nAnalyze cash flow information.\nQuestion: Companies and analysts tend to use income statement and balance sheet information to evaluate financial performance. In fact, financial results presented to the investing public typically focus on earnings per share (Chapter 13 \"How Do Managers Use Financial and Nonfinancial Performance Measures?\" discusses earnings per share in detail). However, analysis of cash flow information is becoming increasingly important to managers, auditors, and outside analysts. What measures are commonly used to evaluate performance related to cash flows?\nAnswer: Three common cash flow measures used to evaluate organizations are (1) operating cash flow ratio, (2) capital expenditure ratio, and (3) free cash flow. (Further coverage of these measures can be found in the following article: John R. Mills and Jeanne H. Yamamura, “The Power of Cash Flow Ratios,” Journal of Accountancy, October 1998.) We will use two large home improvement retail companies, The Home Depot, Inc., and Lowe’s Companies, Inc., to illustrate these measures.\nOperating Cash Flow Ratio\nQuestion: The operating cash flow ratio (A cash flow performance measure calculated as cash provided by operating activities divided by current liabilities.) is cash provided by operating activities divided by current liabilities. What does this ratio tell us, and how is it calculated?\nAnswer: This ratio measures the company’s ability to generate enough cash from daily operations over the course of a year to cover current obligations. Although similar to the commonly used current ratio, this ratio replaces current assets in the numerator with cash provided by operating activities. The operating cash flow ratio is as follows:\nKey Equation\nOperating cash flow ratio=( Cash provided by operating activities) / (Current liabilities)\nThe numerator, cash provided by operating activities, comes from the bottom of the operating activities section of the statement of cash flows. The denominator, current liabilities, comes from the liabilities section of the balance sheet. (Note that if current liabilities vary significantly from one period to the next, some analysts prefer to use average current liabilities. We will use ending current liabilities unless noted otherwise.)\nAs with most financial measures, the resulting ratio must be compared to similar companies in the industry to determine whether the ratio is reasonable. Some industries have a large operating cash flow relative to current liabilities (e.g., mature computer chip makers, such as Intel Corporation), while others do not (e.g., startup medical device companies).\nThe operating",
+            "word_start": 0,
+            "word_end": 400,
+            "word_count": 400,
+            "passage_location": "12.5@0:400",
+            "citation": "[accounting-for-managers | 12.5]",
+            "score": 0.6689480543136597,
+            "semantic_score": 0.6689480543136597,
+            "keyword_score": 0.0
+          },
+          {
+            "id": "5cd2128a9a62cac479a1854b6e73b46cc4f6598afc68b83fbb6b3eddbccc3337",
+            "source": "accounting-for-managers",
+            "location": "12.5",
+            "title": "Accounting for Managers — 12.5 Analyzing Cash Flow Information",
+            "url": "https://2012books.lardbucket.org/books/accounting-for-managers/s16-05-analyzing-cash-flow-informatio.html",
+            "text": "enough cash from daily operations to cover capital expenditures, free cash flow is measured in dollars. Free cash flow (A cash flow performance measure calculated as cash provided by operating activities minus capital expenditures.) is cash provided by operating activities minus capital expenditures. The idea is that companies must continue to invest in fixed assets to remain competitive. Free cash flow provides information regarding how much cash generated from daily operations is left over after investing in fixed assets. Many organizations, such as Amazon.com, consider this measure to be one of the most important in evaluating financial performance (see Note 12.34 \"Business in Action 12.5\"). The free cash flow formula is as follows:\nKey Equation\nFree cash flow = Cash provided by operating activities − Capital expenditures\nThe cash provided by operating activities comes from the bottom of the operating activities section of the statement of cash flows. The capital expenditures amount comes from information within the investing activities section of the statement of cash flows.\nThe free cash flow amount is calculated for Home Depot and Lowe’s as follows using information from each company’s statement of cash flows.\nBecause free cash flow for each company is above zero, both companies were able to generate enough cash from operating activities to cover investments in fixed assets and have some left over to invest elsewhere. This conclusion is consistent with the capital expenditure ratio analysis, which uses the same information to assess the company’s ability to cover fixed asset expenditures.\nFormulas for the cash flow performance measures presented in this chapter are summarized in Table 12.1 \"Summary of Cash Flow Performance Measures\".\nTable 12.1 Summary of Cash Flow Performance Measures\nOperating cash flow ratio=( Cash provided by operating activities) / (Current liabilities) |\nCapital expenditure ratio=(Cash provided by operating activities) / (Capital expenditures) |\nFree cash flow=Cash provided by operating activities − Capital expenditures |\nBusiness in Action 12.5\nSource: Photo courtesy of James Duncan Davidson, http://www.flickr.com/photos/oreilly/6629275/\nFree Cash Flow at Amazon.com\nAmazon.com is an online retailer that began selling books in 1996 and has since expanded into other areas of retail sales. The founder and CEO (Jeff Bezos) believes free cash flow is so important, the annual report included a letter from Mr. Bezos to the shareholders, which began with this statement, “Our ultimate financial measure, and the one we want to drive over the long-term, is free cash flow",
+            "word_start": 700,
+            "word_end": 1100,
+            "word_count": 400,
+            "passage_location": "12.5@700:1100",
+            "citation": "[accounting-for-managers | 12.5]",
+            "score": 0.6670210361480713,
+            "semantic_score": 0.6670210361480713,
+            "keyword_score": 0.0
+          },
+          {
+            "id": "141b2b663ffa07bb661611bca6dd1319e949bd79b9721c343ca2eaee6cc00a57",
+            "source": "accounting-for-managers",
+            "location": "12.6",
+            "title": "Accounting for Managers — 12.6 Appendix: Using the Direct Method to Prepare the Statement of Cash Flows",
+            "url": "https://2012books.lardbucket.org/books/accounting-for-managers/s16-06-appendix-using-the-direct-meth.html",
+            "text": "company use to prepare the operating activities section, direct or indirect? Explain.\nHow much cash was provided by (used by) investing activities? Which activity in this section had the biggest impact on investing cash flows?\nHow much cash was provided by (used by) financing activities? Which activity in this section had the biggest impact on financing cash flows?\nCalculate free cash flow. Did the company generate enough cash from operating activities to cover capital expenditures? Explain.\nDividend Cash Flow at Microsoft. Refer to the Note 12.23 \"Business in Action 12.4\" How much did Microsoft pay in dividends during the second quarter of 2005? Why did Microsoft pay such a large dividend to shareholders?\nCash Flows at Amazon.com. Refer to the Note 12.34 \"Business in Action 12.5\" Why does Amazon.com prefer to use free cash flow per share rather than earnings per share to evaluate the company?\nGroup Activity: Analyzing General Motors Statement of Cash Flows.The following information is from the consolidated statement of cash flows for General Motors (GM) for the year ended December 31, 2005 (in millions).\nRequired:\nAn investment advisor recently reviewed GM’s statement of cash flows and balance sheet and stated: “GM is doing great! They are sitting on cash of more than $30,000,000,000. There is no cash flow problem with this company!” In groups of two to four students, decide whether you agree with this statement. Support your conclusion with an analysis of GM’s cash flows.\nComprehensive Case\nEthics: Manipulating Data to Reach Target Cash Flow. Country Market, Inc., sells food and beverage products at its five retail stores. The company’s fiscal year ends on December 31. The company’s president and CEO, Jean Williams, just received a draft of the statement of cash flows from the controller, Stan Walker. Jean is very interested in the results since a significant part of her annual bonus depends on generating at least $400,000 in cash from operating activities. A summary of the statement is provided in the following:\nBecky Swanson, the chief financial officer (CFO) for Country Market, is approached by Jean:\nJean: | Becky, have you seen the statement of cash flows? |\nBecky: | No, not yet. Last I heard Stan was just about done with it. |\nJean: | He just dropped off a copy for my review. |\nBecky: | Excellent. How does it look? |\nJean: | Overall it looks fine, but something must",
+            "word_start": 5250,
+            "word_end": 5650,
+            "word_count": 400,
+            "passage_location": "12.6@5250:5650",
+            "citation": "[accounting-for-managers | 12.6]",
+            "score": 0.6661266684532166,
+            "semantic_score": 0.6661266684532166,
+            "keyword_score": 0.0
+          },
+          {
+            "id": "6dd1a87199e14725882fc389f141c6826efb793a7f22704e3e16bbe8c1fb0e90",
+            "source": "financial-management-small-businesses",
+            "location": "Chapter 6, chapter-76-section-2: Financial Ratios",
+            "title": "Financial Management for Small Businesses, 2nd OER Edition — Financial Ratios",
+            "url": "https://openbooks.lib.msu.edu/financialmanagement/chapter/financial-ratios/#chapter-76-section-2",
+            "text": "| Cash COGS | $27,000 |\nInventory | $3,750 | $5,200 | + | Δ Inventories | $1450 | – | Cash OE | $11,078 |\nNotes Receivable | $0 | $0 | + | Realized Capital Gains / Depreciation Recapture | $0 | – | Interest paid | $480 |\nCURRENT ASSETS | $6,320 | $7,000 | = | Total Revenue | $40,000 | – | Taxes paid | $68 |\nDepreciable Long-term Assets | $2,990 | $2,710 | + | Cash Cost of Goods Sold (COGS) | $27,000 | = | Net Cash Flow from Operations | $364 |\nNon-depreciable Long-term Assets | $690 | $690 | + | Δ Accounts Payable | $1,000 | + | Realized capital gains + depreciation recapture | $0 |\nLONG-TERM ASSETS | $3,680 | $3,400 | + | Cash Overhead Expenses (OE) | $11,078 | + | Sales non-depreciable assets | $0 |\nTOTAL ASSETS | $10,000 | $10,400 | + | Δ Accrued Liabilities | ($78) | – | Purchases of non-depreciable assets | $0 |\nNotes Payable | $1,500 | $1,270 | + | Depreciation | $350 | + | Sales of depreciable assets | $30 |\nCurrent Portion LTD | $500 | $450 | = | Total Expenses | $39,350 | – | Purchases of depreciable assets | $100 |\nAccounts Payable | $3,000 | $4,000 | | Earnings Before Interest and Taxes (EBIT) | $650 | = | Net Cash Flow from Investments | ($70) |\nAccrued Liabilities | $958 | $880 | – | Interest | $480 | + | Change in noncurrent LTD | ($57) |\nCURRENT LIABILITIES | $5,958 | $6,600 | | Earnings Before Taxes (EBT) | $170 | + | Change in current portion of LTD | ($50) |\nNONCURRENT LONG-TERM DEBT | $2,042 | $1,985 | – | Taxes | $68 | + | Change in notes payable | ($230) |\nTOTAL LIABILITIES | $8,000 | $8,585 | | Net Income After Taxes (NIAT) | $102 | – | Payment of dividends and owner’s draw | $287 |\nContributed Capital | $1,900 | $1,900 | – | Dividends and owner draws | $287 | = | Net Cash Flow from Financing | ($624) |\nRetained Earnings | $100 | ($85) | | Additions To Retained Earnings | ($185) | | Change in cash position of the firm | ($330) |\nTOTAL",
+            "word_start": 700,
+            "word_end": 1100,
+            "word_count": 400,
+            "passage_location": "Chapter 6, chapter-76-section-2: Financial Ratios@700:1100",
+            "citation": "[financial-management-small-businesses | Chapter 6, chapter-76-section-2: Financial Ratios]",
+            "score": 0.6640162467956543,
+            "semantic_score": 0.6640162467956543,
+            "keyword_score": 0.0
+          }
+        ]
+      },
+      "seconds": 0.857491625007242
+    }
+  ],
+  "usage": {
+    "input_tokens": 6862,
+    "output_tokens": 308,
+    "total_tokens": 7170,
+    "reported_model_calls": 2
+  },
+  "primary_runtime_error": null,
+  "primary_runtime_error_detail": null,
+  "usage_complete": true,
+  "seconds": 5.110820333007723,
+  "usage_note": "Embedding tokens are not reported by the embedding API; these are generation-model usage counts. Failed primary graph calls may have unavailable usage.",
+  "code_checks": {
+    "successful_search": true,
+    "citation_identity_valid": true,
+    "unknown_citations": [],
+    "citation_count": 3,
+    "guardrail_blocked": false,
+    "declines_requested_answer": false
+  },
+  "answer_review_sha256": "813c2d542402178671b4a57ae2102eb6b2f6552178ed73515d61502fbaa4bc4e"
+}

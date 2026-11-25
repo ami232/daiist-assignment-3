@@ -1,0 +1,18 @@
+{
+  "reviewed_on": "2026-11-24",
+  "scope": "Full prepared corpus lexical inspection; not semantic retrieval benchmarking",
+  "term_occurrences": {
+    "covenant_or_covenants": 0,
+    "credit_or_loan_agreement": 0,
+    "Delta_Air_Lines": 0,
+    "Inditex": 0,
+    "Zara": 0
+  },
+  "Delta_note": "Raw Delta matches are mathematical \\Delta notation in the cash-flow identities, not airline data.",
+  "supported_current_question_kinds": {
+    "q09": "unanswerable",
+    "q10": "unanswerable",
+    "q11": "unanswerable",
+    "q12": "unanswerable"
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "topic": "Financial health",
+  "intended_user": "Junior financial analyst",
+  "topics": [
+    "financial statements",
+    "cash flow",
+    "liquidity",
+    "debt",
+    "financial ratios"
+  ],
+  "answer_scope": "Explanations, cited formulas and interpretation of already provided ratios; no deriving company ratios from raw financial inputs",
+  "incomplete_evidence_policy": "Explicitly identify missing company, period or figure; optionally provide cited concepts labelled as general background; never substitute stale or unrelated figures for the requested answer",
+  "confirmed_by_student": [
+    "finance and accounting",
+    "financial health",
+    "explanations and cited formulas",
+    "supported partial answers with explicit evidence gaps",
+    "semantic versus hybrid retrieval on shared approximately 400-word chunks",
+    "reuse identical documents and keep changed versions separately",
+    "Missing company/period/figure must be explicit; optional cited background labelled general; stale figures never substitute for current data",
+    "Citation gate: one correction attempt, then decline if citations remain invalid",
+    "Interpretation of an already supplied ratio, as in student question 7",
+    "Separate correctness and support; reliability requires both to pass"
+  ],
+  "retrieval_experiment": {
+    "designs": [
+      "dense",
+      "hybrid"
+    ],
+    "chunk_words": 400,
+    "overlap_words": 50,
+    "boundaries": "Preserve source sections",
+    "semantic_similarity": "Cosine",
+    "keyword_method": "BM25",
+    "fusion": "Equal-weight reciprocal rank fusion, constant 60, top 50 candidates per ranking",
+    "embedding_model": "gemini-embedding-2",
+    "embedding_dimensions": 768,
+    "winner": "dense",
+    "selection_rule": "Student chooses using hit rates at k=1,3,5 after completing the question set",
+    "implementation_defaults_status": "Overlap and ranking parameters are initial defaults, not tuned results",
+    "student_selection": {
+      "design": "dense",
+      "confirmed_at": "2026-11-24T17:54:47.768724+01:00",
+      "basis": "Student chose dense after the frozen-set initial comparison: Hit@1 72% vs 40%, all required evidence @5 22/25 vs 21/25."
+    }
+  },
+  "duplicate_document_policy_status": "Confirmed by student: identical bytes resume/reuse; changed content creates a separate version.",
+  "stage": "Report, evaluation and student analysis complete; local submission packaging and publication pending",
+  "corpus_scope_status": "Implemented chapter scope used for the frozen student-provided 30-question test set.",
+  "sources": [
+    {
+      "source": "accounting-in-the-finance-world",
+      "title": "Accounting in the Finance World",
+      "version": "1.0",
+      "edition_date": "Archived 2012-12-29",
+      "author_attribution": "Anonymous authors, as requested by the original licensor",
+      "url": "https://2012books.lardbucket.org/books/accounting-in-the-finance-world/",
+      "download_url": "https://2012books.lardbucket.org/zips/accounting-in-the-finance-world.zip",
+      "format": "lardbucket_zip",
+      "filename": "accounting-in-the-finance-world.zip",
+      "license": "CC BY-NC-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "attribution_note_url": "https://2012books.lardbucket.org/attribution.html",
+      "chapters": [
+        3,
+        7,
+        13
+      ],
+      "role": "Financial statements, receivables and current liabilities"
+    },
+    {
+      "source": "accounting-for-managers",
+      "title": "Accounting for Managers",
+      "version": "1.0",
+      "edition_date": "Archived 2012-12-29",
+      "author_attribution": "Anonymous authors, as requested by the original licensor",
+      "url": "https://2012books.lardbucket.org/books/accounting-for-managers/",
+      "download_url": "https://2012books.lardbucket.org/zips/accounting-for-managers.zip",
+      "format": "lardbucket_zip",
+      "filename": "accounting-for-managers.zip",
+      "license": "CC BY-NC-SA 3.0",
+      "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
+      "attribution_note_url": "https://2012books.lardbucket.org/attribution.html",
+      "chapters": [
+        12,
+        13
+      ],
+      "role": "Cash-flow interpretation, trend analysis and financial ratios"
+    },
+    {
+      "source": "financial-management-small-businesses",
+      "title": "Financial Management for Small Businesses, 2nd OER Edition",
+      "version": "2nd OER Edition",
+      "edition_date": "2021-01-28",
+      "author_attribution": "Lindon J. Robison, Steven D. Hanson and J. Roy Black; Michigan State University Libraries",
+      "url": "https://openbooks.lib.msu.edu/financialmanagement/",
+      "download_url": "https://openlibrary-repo.ecampusontario.ca/jspui/bitstream/123456789/827/8/Financial-Management-for-Small-Businesses-2nd-OER-Edition-1627674272.-htmlbook.html",
+      "format": "htmlbook",
+      "filename": "financial-management-small-businesses.html",
+      "license": "CC BY 4.0 (downloaded edition)",
+      "license_url": "https://creativecommons.org/licenses/by/4.0/",
+      "current_catalogue_license": "CC BY-NC 4.0",
+      "license_note": "The public 2021 HTML export states CC BY 4.0; the current university catalogue states CC BY-NC 4.0. Keep attribution and use this collection only for the noncommercial coursework project.",
+      "chapters": [
+        5,
+        6
+      ],
+      "role": "Coordinated statements, liquidity, solvency, leverage and ratio limitations"
+    }
+  ],
+  "corpus_limitations": [
+    "These are educational reference texts. Their historical examples and accounting conventions are not evidence of current reporting, tax or legal requirements.",
+    "A book section may cite a numeric example or a formula stored only in an image. Image-dependent material must be identified before writing the test questions.",
+    "Author biographies, acknowledgements, navigation and donation banners are excluded. The selected instructional content must still be reviewed for incidental personal information before submission.",
+    "The corpus explains financial concepts; it contains no live financial statements for a user's company."
+  ],
+  "implementation_status": {
+    "corpus": "272 chunks with saved Gemini embeddings",
+    "retrieval": "Dense and hybrid implemented and transport checked",
+    "retrieval_evaluation": "Initial frozen-set comparison complete; student selected dense from the measured hit rates.",
+    "agent_harness": "30 evaluation answers saved with gemini-3.1-flash-lite in eval/runs/f0fa6c5df158007be127; failed service executions preserved separately.",
+    "judge_and_human_evaluation": "20 original student reviews bound before judging; 30 final gemini-3.5-flash-lite verdicts saved; agreement and numeric summary complete.",
+    "report_analysis": "Student confirmed ten failure categories and supplied a demo-only decision with claim-support and judge improvements first, then provider recovery."
+  },
+  "agent_model": "gemini-3.1-flash-lite",
+  "agent_guardrail": {
+    "type": "Citation identity and per-claim citation gate",
+    "correction_attempts": 1,
+    "fallback": "Transparent refusal after a second invalid structured answer",
+    "limitations": "Checks citation identity and required claim fields, not semantic entailment; the later LLM judge and human review assess support",
+    "max_mcp_calls": 3,
+    "max_primary_model_calls": 5,
+    "max_correction_model_calls": 1,
+    "add_document_approval": "Required for every invocation; denied by default in noninteractive evaluation"
+  },
+  "agent_sampling": "Provider defaults; output capped at 1800 tokens per model response",
+  "judge_scoring_policy": "Correctness and support are scored independently; reliable answers must pass both, plus citation validation",
+  "evaluation_as_of": "2026-11-24",
+  "judge_model": "gemini-3.5-flash-lite",
+  "selected_retrieval_design": "dense",
+  "generation_attempts": [
+    {
+      "model": "gemini-3.1-flash-lite",
+      "run_directory": "eval/runs/f12e9f057c5e67398ad4",
+      "status": "preserved_after_provider_unavailability",
+      "http_503_count": 27,
+      "http_429_count": 3,
+      "human_reviewed": false,
+      "judge_invoked": false
+    },
+    {
+      "model": "gemini-3.5-flash-lite",
+      "run_directory": "eval/runs/5eb9265cef64552e0ac9",
+      "status": "preserved_incomplete_after_provider_unavailability",
+      "saved_attempts": 14,
+      "human_reviewed": false,
+      "judge_invoked": false
+    }
+  ],
+  "model_change_reason": "On 2026-11-25, gemini-3.5-flash-lite still returned HTTP 503 at q15. gemini-3.1-flash-lite passed both a tiny availability check and a complete source-cited agent request. The switch is based on request availability, not measured answer accuracy. A fresh answer run keeps one model across the 30 questions.",
+  "judge_model_selection": {
+    "reason": "gemini-3.1-flash-lite repeatedly returned HTTP 503/504 during judging. Both alternative models passed a full structured judge request; gemini-3.5-flash was the first model in the availability probe order. Selection did not inspect agreement or use accuracy to choose.",
+    "availability_record": "development_judge_availability.json",
+    "student_grades_bound_before_probes": true,
+    "prior_model": "gemini-3.1-flash-lite",
+    "prior_verdicts_preserved_in_run_cache": true,
+    "second_service_change": "gemini-3.5-flash exhausted the provider-reported 20-request daily free-tier limit after 18 saved current-model verdicts. Switched all final verdicts to gemini-3.5-flash-lite, which had also passed the same full request availability probe. No model was selected by its grades or agreement.",
+    "preserved_partial_model": "gemini-3.5-flash"
+  }
+}

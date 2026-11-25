@@ -1,0 +1,35 @@
+{
+  "question": "Explain the purpose of a balance sheet using the reference books.",
+  "design": "dense",
+  "model": "gemini-3.5-flash",
+  "answer": "I couldn't produce an answer with verified citations from the retrieved passages.",
+  "draft": null,
+  "guardrail_blocked": true,
+  "guardrail_events": [
+    {
+      "attempt": 0,
+      "issues": [
+        "No valid structured answer was produced"
+      ]
+    },
+    {
+      "attempt": 1,
+      "issues": [
+        "Correction failed: GoogleAPIError"
+      ]
+    }
+  ],
+  "correction_attempts": 1,
+  "trace": [],
+  "usage": {
+    "input_tokens": null,
+    "output_tokens": null,
+    "total_tokens": null,
+    "reported_model_calls": 0
+  },
+  "primary_runtime_error": "GoogleAPIError",
+  "primary_runtime_error_detail": "503 UNAVAILABLE. {'error': {'code': 503, 'message': 'This model is currently experiencing high demand. Spikes in demand are usually temporary. Please try again later.', 'status': 'UNAVAILABLE'}}",
+  "usage_complete": false,
+  "seconds": 4.6869245420675725,
+  "usage_note": "Embedding tokens are not reported by the embedding API; these are generation-model usage counts. Failed primary graph calls may have unavailable usage."
+}

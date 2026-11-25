@@ -1,0 +1,28 @@
+{
+  "approvals": [
+    {
+      "path": "/private/var/folders/x6/0xd9gj351t52vydd5qf9t9t40000gn/T/financial-health-demo-fsf5olpk/corpus/southwest-2025-cash-flow-facts.md",
+      "name": "southwest-2025-cash-flow-facts.md",
+      "bytes": 1465,
+      "sha256": "0790a694dd7d83579eb2d633c8c4cfbf6216317bce8482840a81b316b6a08697",
+      "source": "added-southwest-2025-cash-flow-facts-0790a694dd7d",
+      "chunks": 1,
+      "approved": true,
+      "authorization": "Explicit --approve for the exact previewed document"
+    }
+  ],
+  "trace": [
+    {
+      "tool": "add_document",
+      "arguments": {
+        "path": "/private/var/folders/x6/0xd9gj351t52vydd5qf9t9t40000gn/T/financial-health-demo-fsf5olpk/corpus/southwest-2025-cash-flow-facts.md"
+      },
+      "status": "success",
+      "approval_granted": true,
+      "result": {
+        "result": "{\"source\": \"added-southwest-2025-cash-flow-facts-0790a694dd7d\", \"document_already_indexed\": false, \"chunks\": 1, \"new_vectors\": 1, \"already_saved\": 0, \"remaining\": 0}"
+      },
+      "seconds": 9.409628582885489
+    }
+  ]
+}

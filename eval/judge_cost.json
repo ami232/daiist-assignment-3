@@ -1,0 +1,7 @@
+{
+  "model": "gemini-3.5-flash-lite",
+  "final_verdicts": 30,
+  "mean_reported_tokens": 4533.433333333333,
+  "mean_saved_invocation_seconds": 11.610898823679115,
+  "limitations": "Successful final verdict metadata only. Provider failures, superseded judge models, availability probes and waits between separate evaluation invocations are not fully included."
+}

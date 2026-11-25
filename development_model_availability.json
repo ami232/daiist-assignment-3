@@ -1,0 +1,60 @@
+{
+  "purpose": "Service-availability probes only; not evaluation questions or accuracy tuning",
+  "checks": [
+    {
+      "model": "gemini-3.5-flash-lite",
+      "success": true,
+      "reply": "OK",
+      "seconds": 0.52
+    },
+    {
+      "model": "gemini-3.1-flash-lite",
+      "success": false,
+      "error_type": "ServerError",
+      "http_code": 503,
+      "seconds": 1.04
+    },
+    {
+      "model": "gemini-2.5-flash",
+      "success": false,
+      "error_type": "ClientError",
+      "http_code": 404,
+      "seconds": 0.38
+    },
+    {
+      "model": "gemini-2.5-flash-lite",
+      "success": false,
+      "error_type": "ClientError",
+      "http_code": 404,
+      "seconds": 0.36
+    }
+  ],
+  "recorded_at": "2026-11-24T18:10:06.624307+01:00",
+  "full_request_checks": [
+    {
+      "model": "gemini-3.5-flash-lite",
+      "development_question": "What information does a balance sheet show?",
+      "search_succeeded": true,
+      "generation_http_error": 503,
+      "guardrail_blocked": true,
+      "seconds": 87.28825916699134,
+      "note": "Observed in tool output; the tiny health request succeeded but the full cited-answer generation failed."
+    },
+    {
+      "model": "gemini-3.5-flash",
+      "development_question": "Explain the purpose of a balance sheet using the reference books.",
+      "generation_http_error": 503,
+      "guardrail_blocked": true,
+      "seconds": 4.6869245420675725,
+      "saved_trace": "development_agent_probe_35_flash.json"
+    },
+    {
+      "model": "gemini-3.8-flash",
+      "development_question": "Explain the purpose of a balance sheet using the reference books.",
+      "generation_http_error": 503,
+      "guardrail_blocked": true,
+      "seconds": 4.424958083080128,
+      "saved_trace": "development_agent_probe_38_flash.json"
+    }
+  ]
+}
