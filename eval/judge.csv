@@ -14,11 +14,19 @@ q12,single,1,1,"The answer accurately answers both parts of the question, matchi
 q13,single,1,1,The answer accurately covers all elements of the reference answer and is fully supported by the retrieved text.
 q14,multi,1,1,"The response accurately answers all parts of the question, matching the reference answer and fully supported by the retrieved fragments."
 q15,multi,1,1,The answer accurately reflects the general obligation to issue an invoice and the limits/conditions for using a simplified invoice (ticket) based on the retrieved fragments and matching the reference answer.
+q16,single,1,1,"The answer matches the reference answer perfectly, detailing all mandatory fields required on an invoice based on Article 6 of the regulation. All statements are fully supported by the retrieved fragments."
 q17,single,1,1,The answer correctly matches the reference answer and all claims are fully supported by the retrieved fragments.
 q18,single,1,1,"The answer accurately states both deadlines depending on whether the recipient is a particular or a professional, fully matching the reference and supported by Article 11."
+q19,single,1,1,"The main conclusion matches the reference answer and all claims are fully supported by the retrieved fragments. It omits the reference detail about using a specific series, which was not present in the retrieved texts."
 q20,multi,1,1,"The agent correctly answers both parts of the question based on the retrieved fragments, noting that the deadline is established in the General Tax Law."
+q21,unanswerable,1,1,"The question is unanswerable from the retrieved text, and the agent correctly provided the standard refusal response."
+q22,multi,1,1,The answer accurately reflects the rules for registration prior to starting activities and deregistrations within one month of cessation.
+q23,single,1,1,"The answer correctly states that the change of address must be reported to Hacienda within one month, fully supported by the retrieved fragments."
 q24,single,1,1,"The answer directly answers the question, matching the reference answer, and all claims are fully supported by RGAT Artículo 19."
+q25,single,0,1,"The question is answerable using RGAT Artículo 29 (which specifies conservation at the fiscal address and recording deadlines), so issuing a refusal is incorrect."
 q26,unanswerable,1,1,"The question is unanswerable from the provided fragments, and the agent correctly issued the standard refusal response."
 q27,unanswerable,1,1,"The question is unanswerable based on the provided fragments, and the agent correctly issued the standard refusal."
+q28,unanswerable,1,1,The agent correctly refused to answer as the retrieved fragments do not contain information about the VAT rates or deadlines/periodicity for model 303.
 q29,unanswerable,1,1,The agent correctly refused to answer using the standard refusal phrase for an unanswerable question.
 q30,unanswerable,1,1,The answer correctly uses the standard refusal phrase for an unanswerable question.
+q31,unanswerable,1,1,The agent correctly answered an unanswerable question by explaining the general rule from the text without attempting a personal calculation or inventing table thresholds. It did not use the fixed refusal phrase.

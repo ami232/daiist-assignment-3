@@ -271,7 +271,7 @@ def judge_answers(questions: list[dict], answers: dict[str, dict]) -> dict[str, 
     todo = [q for q in questions if q["id"] in answers and q["id"] not in done]
     if todo:
         load_api_key()
-        judge = ChatGoogleGenerativeAI(model=JUDGE_MODEL, temperature=0, max_retries=6).with_structured_output(Verdict)
+        judge = ChatGoogleGenerativeAI(model=JUDGE_MODEL, temperature=0, max_retries=2).with_structured_output(Verdict)
         rubric = RUBRIC.read_text(encoding="utf-8")
         print(f"  {len(done)} already judged, {len(todo)} to go (model {JUDGE_MODEL})")
         for n, q in enumerate(todo, 1):
@@ -284,7 +284,8 @@ def judge_answers(questions: list[dict], answers: dict[str, dict]) -> dict[str, 
                     verdict = judge.invoke(prompt)
                     break
                 except Exception as error:  # noqa: BLE001 - rate limit, overload or network: wait, else resume later
-                    if attempt < 3:
+                    per_day = "PerDay" in str(error) or "per day" in str(error).lower()
+                    if attempt < 3 and not per_day:   # a daily quota won't clear by waiting: stop and resume tomorrow
                         wait = 65 if any(code in str(error) for code in ("429", "503")) else 10
                         print(f"  {q['id']}: {type(error).__name__}: {str(error)[:60]}… waiting {wait}s")
                         time.sleep(wait)

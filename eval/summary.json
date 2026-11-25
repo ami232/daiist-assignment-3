@@ -33,14 +33,14 @@
     "mean_searches": 1.16
   },
   "judge": {
-    "judged": 23,
-    "correct": 22,
-    "supported": 23,
+    "judged": 31,
+    "correct": 29,
+    "supported": 31,
     "unsupported": 0,
-    "correct_and_supported": 22,
-    "correct_answerable": 17,
-    "correct_refusals": 5,
-    "wrong_refusals": 0
+    "correct_and_supported": 29,
+    "correct_answerable": 21,
+    "correct_refusals": 7,
+    "wrong_refusals": 1
   },
   "human": {
     "graded": 31,
@@ -48,21 +48,21 @@
     "supported": 29
   },
   "agreement": {
-    "n": 23,
+    "n": 31,
     "correct": {
-      "agreement": 0.957,
-      "kappa": 0.646,
-      "human_1s": 21,
-      "judge_1s": 22,
+      "agreement": 0.968,
+      "kappa": 0.783,
+      "human_1s": 28,
+      "judge_1s": 29,
       "disagree": [
         "q15 (human 0, judge 1)"
       ]
     },
     "supported": {
-      "agreement": 0.913,
+      "agreement": 0.935,
       "kappa": 0.0,
-      "human_1s": 21,
-      "judge_1s": 23,
+      "human_1s": 29,
+      "judge_1s": 31,
       "disagree": [
         "q11 (human 0, judge 1)",
         "q15 (human 0, judge 1)"
