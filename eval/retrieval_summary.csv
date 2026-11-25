@@ -1,0 +1,4 @@
+design,questions,hit@1,hit@3,hit@5,multi_all@1,multi_all@3,multi_all@5,avg_words_top5
+structure,39,0.615,0.949,1.0,0.0,0.091,0.182,1362
+structure+hybrid,39,0.564,0.821,0.949,0.0,0.091,0.273,1346
+structure+filter,39,0.615,0.949,1.0,0.0,0.091,0.182,1350

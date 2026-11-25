@@ -1,1 +1,21 @@
 id,correct,supported,notes
+q01,1,1,"Correct verdict (Annex III 4(a)); omits Art 6(3) derogation but verdict matches."
+q03,1,1,72 hours and without undue delay stated; all claims in Art 33.
+q05,1,1,Art 16 notice-and-action; Recital 50 names file storage/sharing.
+q07,1,0,"Verdict correct (Art 5(1)(f)). Unsupported: gives fatigue detection for pilots/drivers as an example of the medical/safety exception, but Recital 18 says fatigue is outside the definition, not an exception."
+q09,1,1,One month + two-month extension from Art 12(3).
+q11,1,1,Art 26(3)/Recital 69 ban on profiling with special categories.
+q13,1,0,"States 10^25 FLOPs (correct) but the retrieved Art 51(2) text reads 'greater than 10.' because PDF extraction dropped the superscript 25; number not in passages."
+q15,1,0,"Six bases listed correctly from Art 6(1). Unsupported: uncited note that special categories need an Art 9(2) exception - not stated in retrieved passages (strict rubric)."
+q17,1,1,"15 / 10 / 2 days from Art 73(2)-(4)."
+q20,1,1,Art 50(1) disclosure duty and 'obvious' exception.
+q22,1,1,6% and 1% from Art 74(1)-(2).
+q24,1,1,Art 34 communication duty and exceptions.
+q29,1,0,"Both parts covered (Annex III 4(a) high-risk; GDPR Art 22). Unsupported: list of provider/deployer duties (data governance, conformity assessment, human oversight...) is uncited and not in the retrieved passages."
+q31,1,0,"Both parts (AI Act Art 26(9) + DPIA under GDPR Art 35 when high risk). Unsupported: examples of Art 35 triggers (systematic profiling, large-scale special categories) - GDPR Art 35 was not retrieved."
+q33,1,1,"Covers AI Act ban (Art 5(1)(f)) and GDPR Art 9 biometric special category + exceptions."
+q35,1,1,DSA risk-management framework and presumption of AI Act compliance from Recital 118.
+q40,1,1,Correct refusal; points to Art 99 caps which are in passages.
+q42,1,1,Correct refusal; mentions Art 6(5) deadline from passage.
+q44,1,1,Correct refusal (before adding the Code); Art 53/56 content in passages.
+q46,1,1,Correct refusal; Art 35(4) lists are in the retrieved passage.

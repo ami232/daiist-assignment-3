@@ -1,0 +1,5 @@
+id,field,you,pipeline,graded_by,reason
+q07,supported,0,1,judge,"The assistant correctly identifies the prohibition, the specific article, the scope, and the exceptions, all of which are directly supported by the provided passages."
+q11,supported,1,0,judge,"The assistant correctly identifies the prohibition, but the provided passages do not explicitly state that health data is one of the 'special categories of personal data' referred to in Article 9(1) GDPR."
+q15,supported,0,1,judge,The assistant correctly identifies all six lawful bases for processing personal data as listed in Article 6(1) and includes the restriction for public authorities. All claims are directly supported by the provided text.
+q29,supported,0,1,judge,"The assistant correctly identifies the high-risk classification under the AI Act and the applicable GDPR obligations regarding automated decision-making and DPIAs, with all factual claims directly supported by the retrieved passages."

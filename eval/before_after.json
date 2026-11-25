@@ -1,0 +1,76 @@
+{
+  "question_id": "q44",
+  "question": "What does the General-Purpose AI Code of Practice require signatories to do on copyright?",
+  "document": "sources/added/gpai_code_copyright.pdf",
+  "add_document_result": "Added gpai_code_copyright.pdf as source 'GPAI Code of Practice (Copyright)': 9 chunks indexed.",
+  "before": {
+    "answer": "The corpus does not contain the text of the General-Purpose AI Code of Practice itself. \n\nHowever, the AI Act specifies what providers of general-purpose AI models must do regarding copyright to comply with the law (which codes of practice are designed to cover under [AI Act, Article 56(1)-(4)]):\n\n* **Copyright compliance policy:** Providers must put in place a policy to comply with Union law on copyright and related rights, and in particular to identify and comply with (including through state-of-the-art technologies) any reservation of rights expressed by rightsholders pursuant to Article 4(3) of Directive (EU) 2019/790 (the text and data mining opt-out) [AI Act, Article 53(1)(c), Recital 105, Recital 106].\n* **Training content summary:** Providers must draw up and make publicly available a sufficiently detailed summary about the content used for training the model, using a template provided by the AI Office [AI Act, Article 53(1)(d), Recital 107].\n\n*Disclaimer: This information is based strictly on the text of Regulation (EU) 2024/1689.*",
+    "retrieved": [
+      [
+        "AI Act",
+        "Article 56(1)-(4)"
+      ],
+      [
+        "AI Act",
+        "Article 56(9)"
+      ],
+      [
+        "AI Act",
+        "Recital 105"
+      ],
+      [
+        "AI Act",
+        "Article 56(5)-(8)"
+      ],
+      [
+        "AI Act",
+        "Recital 117"
+      ],
+      [
+        "AI Act",
+        "Recital 105"
+      ],
+      [
+        "AI Act",
+        "Article 53(1)-(3)"
+      ],
+      [
+        "AI Act",
+        "Recitals 106-107"
+      ],
+      [
+        "AI Act",
+        "Recitals 108-109"
+      ],
+      [
+        "AI Act",
+        "Article 51"
+      ]
+    ]
+  },
+  "after": {
+    "answer": "The General-Purpose AI Code of Practice (Copyright Chapter) sets out specific commitments and measures for signatories seeking to demonstrate compliance with Article 53(1)(c) of the AI Act:\n\n1. **Draw Up and Implement a Copyright Policy (Measure 1.1)**\n   * Signatories must draw up, keep up-to-date, and implement a policy to comply with EU copyright law for all general-purpose AI models placed on the EU market, describing it in a single document incorporating the Code's measures `[GPAI Code of Practice (Copyright), p. 4]`.\n   * Signatories must assign internal responsibilities for implementing and overseeing this policy, and are encouraged to make a summary publicly available `[GPAI Code of Practice (Copyright), p. 4]`.\n\n2. **Lawfully Access Web Content (Measure 1.2)**\n   * When crawling the web to scrape or compile data for text/data mining and model training, signatories commit not to circumvent effective technological measures (e.g., subscription paywalls or denial of access) `[GPAI Code of Practice (Copyright), pp. 4-5]`.\n   * Signatories must exclude from web crawling websites recognized by EU/EEA courts or authorities as persistently and repeatedly infringing copyright on a commercial scale `[GPAI Code of Practice (Copyright), pp. 4-5]`.\n\n3. **Identify and Comply with Rights Reservations (Measure 1.3)**\n   * Signatories commit to using web-crawlers that read and follow instructions under the Robot Exclusion Protocol (`robots.txt` per IETF RFC 9309) `[GPAI Code of Practice (Copyright), p. 5]`.\n   * Signatories commit to identifying and complying with other appropriate, machine-readable, state-of-the-art rights reservation protocols pursuant to Article 4(3) of Directive (EU) 2019/790 (such as asset-based or location-based metadata) `[GPAI Code of Practice (Copyright), p. 5]`.\n\n*Legal Scope Note:* Adherence to the Code serves to demonstrate compliance with Article 53(1)(c) of the AI Act, but does not constitute conclusive evidence of compliance with, nor alter liability under, EU copyright law itself `[GPAI Code of Practice (Copyright), pp. 1-3, 3-4]`.",
+    "retrieved": [
+      [
+        "GPAI Code of Practice (Copyright)",
+        "pp. 1-3"
+      ],
+      [
+        "GPAI Code of Practice (Copyright)",
+        "p. 5"
+      ],
+      [
+        "GPAI Code of Practice (Copyright)",
+        "p. 4"
+      ],
+      [
+        "GPAI Code of Practice (Copyright)",
+        "pp. 4-5"
+      ],
+      [
+        "GPAI Code of Practice (Copyright)",
+        "p. 3"
+      ]
+    ]
+  }
+}

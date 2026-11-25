@@ -1,0 +1,378 @@
+id,kind,question,refused,n_citations,citations_valid,expected_retrieved,searches,guardrail_fired,correct,supported,graded_by,reason,judge_tokens,tokens,seconds,answer,suggested_cause
+q01,single,Is an AI tool that ranks job applicants high-risk?,0,2,1,1,1,0,1,1,judge,"The assistant correctly identifies that the tool is high-risk and provides accurate, well-supported facts directly from the retrieved passages.",2385,4077,4.13,"**Yes, an AI tool that ranks job applicants is classified as high-risk.**
+
+Under the AI Act, AI systems intended to be used for the recruitment or selection of natural persons—specifically including those used to analyse and filter job applications and evaluate candidates—are explicitly designated as high-risk `[AI Act, Annex III, point 4(a)]`. 
+
+Recital 57 further notes that such systems are classified as high-risk because they are used in employment and workers' management, and may appreciably impact future career prospects, livelihoods, and workers' rights, as well as perpetuate historical patterns of discrimination `[AI Act, Recital 57]`.
+
+*Disclaimer: Compliance depends on the specific intended purpose and functioning of the tool.*",
+q02,single,What is the maximum fine for using a prohibited AI practice?,0,2,1,1,1,0,1,1,judge,"The assistant correctly identifies the maximum fine and the turnover percentage as specified in the reference answer and the retrieved passages, and the additional detail regarding SMEs is also supported by the provided text.",3094,4326,2.03,"Non-compliance with the prohibition of the AI practices referred to in Article 5 shall be subject to administrative fines of up to **EUR 35 000 000** or, if the offender is an undertaking, up to **7 % of its total worldwide annual turnover for the preceding financial year**, whichever is higher `[AI Act, Article 99(3)]`.
+
+For SMEs, including start-ups, the fine shall be up to the percentages or amount referred to, **whichever is lower** `[AI Act, Article 99(6)]`.
+
+*(Note: This response is for informational purposes and does not constitute legal advice.)*",
+q03,single,How quickly must a controller notify a personal data breach to the supervisory authority?,0,4,1,1,1,0,1,1,judge,"The assistant correctly identifies the timeline, the exemption, and the requirement for reasons for delay, all of which are supported by the provided text.",2933,4119,2.66,"The controller must notify the personal data breach to the supervisory authority **without undue delay and, where feasible, not later than 72 hours** after having become aware of it [GDPR, Article 33(1)]. 
+
+Key details:
+* **Exemption:** Notification is not required if the personal data breach is unlikely to result in a risk to the rights and freedoms of natural persons [GDPR, Article 33(1)].
+* **Delayed notification:** If the notification is not made within 72 hours, it must be accompanied by reasons for the delay, and the information can be provided in phases without undue further delay [GDPR, Article 33(1), (4)].
+* **Processors:** A processor must notify the controller without undue delay after becoming aware of a breach [GDPR, Article 33(2)].
+
+*Disclaimer: This is for informational purposes and does not constitute formal legal advice.*",
+q04,single,At what age can a child consent to the processing of their data for an online service?,0,4,1,1,1,0,1,1,judge,"The assistant correctly identifies the age threshold (16), the Member State flexibility (not below 13), and the requirement for parental consent below the threshold, all of which are explicitly stated in GDPR Article 8.",2452,3741,2.23,"Under the GDPR, when offering information society services directly to a child based on consent, the processing of a child's personal data is lawful if the child is **at least 16 years old** `[GDPR, Article 8(1)]`. 
+
+If the child is **below the age of 16 years**, the processing is lawful only if and to the extent that consent is given or authorised by the holder of parental responsibility over the child `[GDPR, Article 8(1)]`. 
+
+However, EU Member States are permitted by law to provide for a lower age for these purposes, provided that such lower age is **not below 13 years** `[GDPR, Article 8(1)]`.
+
+*(Note: This applies specifically in the context of information society services offered directly to a child based on consent [GDPR, Article 8(1)].)*",
+q05,single,Does an online file-hosting service need a mechanism for people to report illegal content?,0,7,1,1,1,0,1,1,judge,"The assistant correctly identifies the obligation for hosting services, including file storage, to provide notice and action mechanisms, and all additional details are directly supported by the provided passages.",2956,4099,4.22,"Yes. Under the Digital Services Act, providers of hosting services (which explicitly include file storage and sharing services) must put in place easily accessible, user-friendly mechanisms to allow any individual or entity to notify them of specific items of illegal content [DSA, Recital 50, Article 16(1)].
+
+Key requirements for these notice-and-action mechanisms:
+* **Accessibility:** They must be easy to access, user-friendly, allow submission exclusively by electronic means, and be at least as easy to find and use as mechanisms for reporting terms-and-conditions violations [DSA, Recital 50, Article 16(1)].
+* **Required Elements:** The mechanism must facilitate notices that include:
+  1. A substantiated explanation of why the content is considered illegal [DSA, Article 16(2)(a)].
+  2. A clear indication of the exact electronic location (such as the exact URL) [DSA, Article 16(2)(b)].
+  3. The name and email address of the submitter (except for certain sexual abuse offences) [DSA, Article 16(2)(c)].
+  4. A statement confirming the submitter's *bona fide* belief that the information and allegations are accurate and complete [DSA, Article 16(2)(d)].
+* **Confirmation:** The provider must send a confirmation of receipt without undue delay if the submitter provided electronic contact information [DSA, Article 16(4)].
+
+*(Disclaimer: This is for compliance orientation and does not constitute formal legal advice.)*",
+q06,single,How many users make a platform a very large online platform?,0,4,1,1,1,0,1,1,judge,"The assistant correctly identifies the 45 million threshold and the requirement for Commission designation, matching the reference answer and all claims are supported by the provided passages.",3178,4243,5.98,"An online platform becomes a very large online platform when it has an average of **45 million or more monthly active recipients of the service in the Union**, and is designated as such by the Commission [DSA, Article 33(1)]. This threshold represents 10% of the Union population [DSA, Recital 76].
+
+Key details:
+* **Active recipients vs. registered users:** Active recipients include anyone engaging with the service at least once a month (by viewing, listening, or providing information), which does not necessarily coincide with registered accounts [DSA, Recital 77]. 
+* **Calculation period:** The number is calculated as an average over a period of the past six months [DSA, Recital 76, Article 24(2)].
+
+*Disclaimer: This is for informational purposes and does not constitute legal advice.*",
+q07,single,Can an employer use AI to infer employees' emotions from their facial expressions?,0,4,1,1,1,0,1,1,judge,"The assistant correctly identifies the prohibition, the specific article, the scope, and the exceptions, all of which are directly supported by the provided passages.",3231,4099,2.88,"No, employers are generally prohibited from using AI to infer employees' emotions from their facial expressions or other biometric data in workplace settings [AI Act, Article 5(1)(f)]. 
+
+Key details from the regulation:
+* **The Prohibition:** The AI Act explicitly prohibits ""the placing on the market, the putting into service for this specific purpose, or the use of AI systems to infer emotions of a natural person in the areas of workplace and education institutions"" [AI Act, Article 5(1)(f)].
+* **Exceptions:** The prohibition does not apply if the AI system is placed on the market or put into service strictly for **medical or safety reasons** (such as therapeutical use or systems detecting fatigue in professional drivers or pilots to prevent accidents) [AI Act, Recitals 44-45, 18].
+* **Definition:** An emotion recognition system is defined as an AI system for identifying or inferring emotions or intentions (such as anger, joy, disgust, or amusement) on the basis of biometric data [AI Act, Recital 18]. 
+
+*Disclaimer: This information is for compliance checking purposes and does not constitute formal legal advice.*",
+q08,single,What is the maximum fine under the GDPR for breaching data subjects' rights?,0,2,1,1,1,0,1,1,judge,"The assistant correctly stated the maximum fine and turnover percentage for breaching data subjects' rights, and every claim is directly supported by the retrieved passages.",2705,4419,22.21,"The maximum fine for breaching data subjects' rights (pursuant to Articles 12 to 22) is up to **20 000 000 EUR**, or in the case of an undertaking, up to **4 % of the total worldwide annual turnover** of the preceding financial year, whichever is higher [GDPR, Article 83(5)(b)].
+
+The specific amount imposed in any individual case is determined by the supervisory authority and must be ""effective, proportionate and dissuasive,"" based on an assessment of several factors, including the nature, gravity, and duration of the infringement, the intentional or negligent character of the infringement, and any actions taken to mitigate the damage [GDPR, Article 83(1)-(2)].",
+q09,single,How long does a company have to answer a data subject access request?,0,3,1,1,1,0,1,1,judge,"The assistant correctly identifies the one-month deadline, the two-month extension possibility, and the notification requirement, all of which are explicitly stated in Article 12(3) of the retrieved passages.",3162,4334,2.37,"A company must provide information on action taken on a data subject access request without undue delay and at the latest **within one month** of receipt of the request [GDPR, Article 12(3)].
+
+* **Extension:** This period may be extended by **two further months** where necessary, taking into account the complexity and number of the requests [GDPR, Article 12(3)].
+* **Notice of extension:** The company must inform the data subject of any such extension within **one month** of receipt of the request, together with the reasons for the delay [GDPR, Article 12(3)].
+
+*Disclaimer: This information does not constitute legal advice.*",
+q10,single,When is a company required to appoint a data protection officer?,0,6,1,1,1,0,1,1,judge,The assistant correctly identifies all three mandatory conditions for appointing a DPO and includes additional relevant information found in the retrieved passages.,2686,3916,2.41,"A controller or processor is required to designate a data protection officer (DPO) in any of the following cases [GDPR, Article 37(1)]:
+
+1. **Public authorities:** The processing is carried out by a public authority or body (except for courts acting in their judicial capacity) [GDPR, Article 37(1)(a)].
+2. **Regular and systematic monitoring:** The core activities of the controller or processor consist of processing operations which, by virtue of their nature, their scope and/or their purposes, require regular and systematic monitoring of data subjects on a large scale [GDPR, Article 37(1)(b)].
+3. **Special categories of data:** The core activities of the controller or processor consist of processing on a large scale of special categories of data (pursuant to Article 9) and personal data relating to criminal convictions and offences (pursuant to Article 10) [GDPR, Article 37(1)(c)].
+
+Additionally, Union or Member State law may require the designation of a DPO in other cases [GDPR, Article 37(4)]. A group of undertakings may also appoint a single DPO provided they are easily accessible from each establishment [GDPR, Article 37(2)].
+
+*(For informational purposes only; not formal legal advice.)*",
+q11,single,Can an online platform target ads using profiling based on health data?,0,2,1,1,1,0,1,0,judge,"The assistant correctly identifies the prohibition, but the provided passages do not explicitly state that health data is one of the 'special categories of personal data' referred to in Article 9(1) GDPR.",4743,3989,2.77,"**No.** Providers of online platforms are prohibited from presenting advertisements based on profiling using special categories of personal data (such as health data).
+
+* **The Prohibition:** Providers of online platforms shall not present advertisements to recipients of the service based on profiling (as defined in GDPR Article 4(4)) using special categories of personal data referred to in GDPR Article 9(1), which includes health data [DSA, Article 26(3), Recital 69].
+* **Context:** This prohibition applies specifically to online platforms as part of the Digital Services Act's rules on online advertising transparency and societal risks [DSA, Recital 69, Article 26]. 
+
+*(Note: This is a brief compliance summary and does not constitute formal legal advice.)*",unsupported claim
+q12,single,Do providers of general-purpose AI models have to publish information about their training data?,0,6,1,1,1,0,1,1,judge,The assistant correctly identifies the requirement to publish a summary of training content and provides additional details regarding its format and purpose that are directly supported by the retrieved passages.,4489,4443,6.75,"Yes. Providers of general-purpose AI models must draw up and make publicly available a sufficiently detailed summary of the content used for training their model [AI Act, Article 53(1)(d)]. 
+
+Key details of this requirement include:
+* **Scope and format:** The summary must be generally comprehensive rather than technically detailed, using a template provided by the AI Office [AI Act, Recital 107]. It should list main data collections or sets (such as large public or private databases) and provide a narrative explanation of other data sources [AI Act, Recital 107].
+* **Purpose:** The information is intended to help parties with legitimate interests—including copyright holders—exercise and enforce their rights under Union law, while protecting trade secrets and confidential business information [AI Act, Recital 107].
+* **Applicability:** This obligation applies generally to providers placing such models on the Union market [AI Act, Article 53(1)], regardless of whether the model qualifies for open-source exemptions from other technical documentation rules [AI Act, Article 53(2)].
+
+*(Disclaimer: This is for compliance orientation and does not constitute formal legal advice.)*",
+q13,single,What training compute makes a general-purpose AI model presumed to have systemic risk?,0,2,1,1,1,0,1,0,judge,"The assistant's answer is correct according to the reference answer, but it is not supported by the provided text because Article 51(2) in the retrieved passages contains a typo stating the threshold is 'greater than 10' instead of '10^25'.",3675,4305,3.38,"A general-purpose AI model is presumed to have high-impact capabilities—and therefore classified as a general-purpose AI model with systemic risk—when the cumulative amount of computation used for its training, measured in floating point operations (FLOPs), is greater than $10^{25}$ FLOPs [AI Act, Article 51(2)].
+
+*Note: This training computation includes the compute used across activities intended to enhance model capabilities prior to deployment, such as pre-training, synthetic data generation, and fine-tuning [AI Act, Recital 111].*
+
+*Disclaimer: This is for informational purposes only and does not constitute legal advice.*",unsupported claim
+q14,single,What must a statement of reasons contain when a platform removes a user's content?,0,7,1,1,1,0,1,1,judge,The assistant correctly identifies all the required elements of the statement of reasons as specified in the reference answer and the retrieved passages.,2875,4003,4.44,"Under Article 17(3) of the Digital Services Act (DSA), a clear and specific statement of reasons must contain at least the following information:
+
+* **Nature of the decision:** Information on whether the measure entails removal, disabling of access, demotion, restriction of visibility, suspension/termination of monetary payments, or other measures, along with the territorial scope and duration of the decision [DSA, Article 17(3)(a)].
+* **Facts and circumstances:** The facts and circumstances relied on when taking the decision, including whether it was based on a notice submitted under Article 16 or on voluntary own-initiative investigations, and—where strictly necessary—the identity of the notifier [DSA, Article 17(3)(b)].
+* **Automated means:** Where applicable, information on the use of automated means in taking the decision, including whether the content was detected or identified using automated means [DSA, Article 17(3)(c)].
+* **Legal grounds (illegal content):** If the decision concerns allegedly illegal content, a reference to the legal ground relied on and explanations of why the information is considered illegal on that ground [DSA, Article 17(3)(d)].
+* **Contractual grounds (terms and conditions):** If the decision is based on incompatibility with terms and conditions, a reference to the contractual ground relied on and explanations of why the information is incompatible [DSA, Article 17(3)(e)].
+* **Redress possibilities:** Clear and user-friendly information on redress possibilities available to the recipient, including internal complaint-handling mechanisms, out-of-court dispute settlement, and judicial redress [DSA, Article 17(3)(f)].
+
+The statement must be easily comprehensible, as precise and specific as reasonably possible, and provided at the latest when the restriction is imposed, provided the recipient's electronic contact details are known (and excluding deceptive high-volume commercial content) [DSA, Article 17(1)-(2), Article 17(4)].
+
+*Disclaimer: This is for compliance orientation and does not constitute formal legal advice.*",
+q15,single,What are the lawful bases for processing personal data under the GDPR?,0,6,1,1,1,0,1,1,judge,The assistant correctly identifies all six lawful bases for processing personal data as listed in Article 6(1) and includes the restriction for public authorities. All claims are directly supported by the provided text.,3791,4520,7.26,"Under GDPR Article 6(1), processing is lawful only if at least one of the following bases applies:
+
+1. **Consent:** The data subject has given consent to the processing of their personal data for one or more specific purposes `[GDPR, Article 6(1)-(2)]`.
+2. **Contract:** Processing is necessary for the performance of a contract to which the data subject is party, or to take steps at the data subject's request prior to entering into a contract `[GDPR, Article 6(1)-(2)]`.
+3. **Legal obligation:** Processing is necessary for compliance with a legal obligation to which the controller is subject `[GDPR, Article 6(1)-(2)]`.
+4. **Vital interests:** Processing is necessary to protect the vital interests of the data subject or another natural person `[GDPR, Article 6(1)-(2)]`.
+5. **Public interest:** Processing is necessary for the performance of a task carried out in the public interest or in the exercise of official authority vested in the controller `[GDPR, Article 6(1)-(2)]`.
+6. **Legitimate interests:** Processing is necessary for the purposes of the legitimate interests pursued by the controller or by a third party, except where overridden by the interests or fundamental rights and freedoms of the data subject (not applicable to public authorities performing their tasks) `[GDPR, Article 6(1)-(2)]`.
+
+*(Note: Processing special categories of personal data requires both an Article 6 lawful basis and an additional exception under Article 9(2).)*
+
+*Disclaimer: This is for informational purposes and does not constitute formal legal advice.*",
+q16,single,How long must the provider of a high-risk AI system keep its technical documentation?,0,1,1,1,1,0,1,1,judge,The answer accurately states the 10-year duration and the specific conditions (placement on the market or putting into service) found in Article 18(1).,2904,4214,2.59,"The provider must keep the technical documentation at the disposal of the national competent authorities for a period of **10 years** after the high-risk AI system has been placed on the market or put into service [AI Act, Article 18(1)].
+
+*(Disclaimer: This is for compliance orientation, not formal legal advice.)*",
+q17,single,By when must a serious incident involving a high-risk AI system be reported?,0,5,1,1,1,0,1,1,judge,"The assistant correctly identified all three specific deadlines (15 days, 10 days, and 2 days) and all claims are directly supported by the provided text in Article 73.",2923,4072,4.12,"A serious incident involving a high-risk AI system must be reported to the market surveillance authorities depending on the nature of the incident [AI Act, Article 73(1)-(4)]:
+
+* **Standard deadline:** Immediately after establishing a causal link (or reasonable likelihood of one), and **not later than 15 days** after the provider or deployer becomes aware of the serious incident [AI Act, Article 73(2)].
+* **In the event of the death of a person:** Immediately after establishing or suspecting a causal relationship, and **not later than 10 days** after becoming aware of the incident [AI Act, Article 73(4)].
+* **In the event of a widespread infringement or certain serious incidents covered by Article 3, point (49)(b):** Provided immediately, and **not later than two days** after becoming aware of the incident [AI Act, Article 73(3)].
+
+Providers may submit an initial incomplete report if necessary to ensure timely reporting [AI Act, Article 73(5)].
+
+*Disclaimer: This summary is for compliance orientation only and does not constitute formal legal advice.*",
+q18,single,Must an online marketplace verify who its sellers are?,0,6,1,1,1,0,1,1,judge,"The assistant correctly answers that online marketplaces allowing consumers to conclude distance contracts with traders must verify their sellers, and every claim is directly supported by the retrieved DSA articles.",2814,4498,178.77,"**Yes, if it allows consumers to conclude distance contracts with traders.**
+
+Under the Digital Services Act (DSA), online platforms allowing consumers to conclude distance contracts with traders must trace and verify their sellers prior to allowing them to offer products or services to EU consumers `[DSA, Article 30(1)]`.
+
+### 1. Information Required Prior to Use
+Before a trader can use the platform to offer products or services to consumers in the Union, the marketplace must obtain `[DSA, Article 30(1)]`:
+- Name, address, telephone number, and email address;
+- A copy of an identification document or other electronic identification;
+- Payment account details;
+- Trade register and registration number (if registered);
+- A self-certification committing to offer only compliant products or services.
+
+### 2. Verification Duties (""Best Efforts"")
+- **Initial Verification:** Prior to allowing the trader to use its services, the marketplace must make **best efforts** to assess whether the information provided is reliable and complete, using freely accessible official online databases/interfaces or requesting supporting documents from reliable sources `[DSA, Article 30(2)]`.
+- **Ongoing/Inaccurate Information:** If the platform has reason to believe the information is inaccurate or incomplete, it must request that the trader correct it without delay. If the trader fails to do so, the platform **must swiftly suspend** its service to that trader `[DSA, Article 30(3)]`.
+
+### 3. Display and Retention
+- **Public Display:** The trader's name, address, contact details, registration details, and self-certification must be made available to consumers on the platform's online interface where the product or service is presented `[DSA, Article 30(7)]`.
+- **Data Retention:** The platform must securely store the collected information for **6 months** after the contractual relationship with the trader ends, after which it must be deleted `[DSA, Article 30(5)]`.",
+q19,single,In which cases can a person ask a company to erase their personal data?,0,14,1,1,1,0,1,1,judge,"The assistant correctly identifies all the grounds for erasure and the exceptions listed in the reference answer, and all claims are directly supported by the provided text.",2935,4235,20.67,"A person has the right to request the erasure of their personal data from a controller without undue delay when any of the following grounds apply [GDPR, Article 17(1)]:
+
+*   **Data no longer necessary:** The personal data are no longer necessary for the purposes for which they were collected or processed [GDPR, Article 17(1)(a)].
+*   **Withdrawal of consent:** The data subject withdraws consent (if that was the legal basis for processing) and there is no other legal ground for the processing [GDPR, Article 17(1)(b)].
+*   **Objection to processing:** The data subject objects to the processing (pursuant to Article 21(1)) and there are no overriding legitimate grounds for the processing, or the data subject objects to direct marketing (pursuant to Article 21(2)) [GDPR, Article 17(1)(c)].
+*   **Unlawful processing:** The personal data have been processed unlawfully [GDPR, Article 17(1)(d)].
+*   **Legal obligation:** The data must be erased for compliance with a legal obligation under Union or Member State law [GDPR, Article 17(1)(e)].
+*   **Children’s services:** The data were collected in relation to the offer of information society services to a child [GDPR, Article 17(1)(f)].
+
+### Exceptions
+The right to erasure does **not** apply if the processing is necessary for [GDPR, Article 17(3)]:
+
+*   Exercising the right of freedom of expression and information [GDPR, Article 17(3)(a)].
+*   Compliance with a legal obligation, performance of a task in the public interest, or exercise of official authority [GDPR, Article 17(3)(b)].
+*   Reasons of public interest in the area of public health [GDPR, Article 17(3)(c)].
+*   Archiving, scientific, historical research, or statistical purposes where erasure is likely to render impossible or seriously impair the objectives of that processing [GDPR, Article 17(3)(d)].
+*   The establishment, exercise, or defence of legal claims [GDPR, Article 17(3)(e)].
+
+If a controller has made the personal data public, they must take reasonable steps to inform other controllers who are processing the data of the erasure request [GDPR, Article 17(2)].",
+q20,single,Does a customer service chatbot have to tell users it is an AI?,0,2,1,1,1,0,1,1,judge,The assistant correctly identifies the obligation and the exception as stated in the reference answer and the retrieved passages.,3075,4173,5.28,"Yes, providers must ensure that AI systems intended to interact directly with natural persons are designed and developed so that the users are informed they are interacting with an AI system `[AI Act, Article 50(1)]`. 
+
+However, this requirement does **not** apply if the interaction with an AI system is already ""obvious from the point of view of a natural person who is reasonably well-informed, observant and circumspect, taking into account the circumstances and the context of use"" `[AI Act, Article 50(1)]`.
+
+*(Note: Legal compliance depends on how clear the AI nature of the chatbot is to the specific users in their context of use; a standard customer service chat widget may need explicit disclosure unless it is unmistakably an AI).*",
+q21,single,"Are manipulative interface designs, such as making cancellation harder than sign-up, regulated?",0,4,1,1,1,0,1,1,judge,"The assistant correctly identifies that manipulative interface designs are regulated and specifically mentions the example of termination being harder than subscribing, all of which are supported by the provided text.",2857,4122,6.54,"Yes. Under the Digital Services Act, providers of online platforms are explicitly prohibited from designing, organising, or operating their online interfaces in a way that deceives, manipulates, or otherwise materially distorts or impairs users' ability to make free and informed decisions [DSA, Article 25(1)]. 
+
+Specifically, making the procedure for terminating a service more difficult than subscribing to it is highlighted as a practice that the European Commission may issue guidelines on under this prohibition [DSA, Article 25(3)(c)], and Recital 67 notes that dark patterns include ""making the procedure of cancelling a service significantly more cumbersome than signing up to it"" [DSA, Recital 67].
+
+*Note: This prohibition does not apply to practices already covered by Directive 2005/29/EC (Unfair Commercial Practices Directive) or Regulation (EU) 2016/679 (GDPR) [DSA, Article 25(2)].*",
+q22,single,What is the maximum fine the Commission can impose on a very large online platform under the DSA?,0,2,1,1,1,0,1,1,judge,The assistant correctly identifies both the 6% and 1% fine thresholds and supports them with the relevant citations from Article 74.,3094,4317,2.82,"The maximum fine the Commission can impose on a very large online platform under the DSA is **6 %** of its total worldwide annual turnover in the preceding financial year for substantive infringements, failures to comply with interim measures, or failures to comply with binding commitments [DSA, Article 74(1)]. 
+
+Additionally, the Commission may impose fines not exceeding **1 %** of the total annual income or worldwide turnover in the preceding financial year for procedural breaches, such as supplying incorrect, incomplete, or misleading information, failing to reply to requests for information, refusing to submit to an inspection, or failing to comply with other specified procedural measures [DSA, Article 74(2)].
+
+*(Note: This information is provided for compliance checking and does not constitute legal advice.)*",
+q23,single,Does the GDPR apply to a company based outside the EU?,0,5,1,1,1,0,1,1,judge,"The assistant correctly states that the GDPR applies to non-EU companies under certain conditions, detailing the offering of goods/services and monitoring of behavior, and all factual claims are directly supported by the retrieved passages.",2315,4015,171.23,"Yes, the GDPR applies to companies based outside the EU under specific circumstances defined by its territorial scope [GDPR, Article 3].
+
+It applies to a controller or processor not established in the EU if they process the personal data of data subjects who are in the Union, where the processing activities are related to:
+
+*   **Offering goods or services:** This applies regardless of whether payment is required. To determine if this is the case, one must assess if it is ""apparent that the controller or processor envisages offering services to data subjects in one or more Member States in the Union"" [GDPR, Article 3(2)(a), Recital 23].
+*   **Monitoring behaviour:** The regulation applies if the monitoring of data subjects' behaviour takes place within the Union [GDPR, Article 3(2)(b)]. This includes tracking natural persons on the internet, such as profiling them to analyse or predict their personal preferences, behaviours, or attitudes [GDPR, Recital 24].
+
+Additionally, the GDPR applies to a controller not established in the EU if they are in a place where Member State law applies by virtue of public international law (for example, in a Member State's diplomatic mission or consular post) [GDPR, Article 3(3), Recital 25].",
+q24,single,What must a controller do when a personal data breach is likely to cause a high risk to individuals?,0,11,1,1,1,0,1,1,judge,"The assistant accurately identifies the obligation to communicate the breach to data subjects, the required content, the exceptions, and the purpose, all of which are directly supported by the provided text.",3816,4735,59.55,"When a personal data breach is likely to result in a high risk to the rights and freedoms of natural persons, the controller must take the following actions:
+
+*   **Communicate to the data subject:** The controller must communicate the breach to the affected data subjects ""without undue delay"" [GDPR, Article 34(1)].
+*   **Content of the communication:** This communication must be in ""clear and plain language"" and must describe the nature of the breach [GDPR, Article 34(2)]. It must also include:
+    *   The name and contact details of the data protection officer or other contact point [GDPR, Article 33(3)(b)];
+    *   A description of the likely consequences of the breach [GDPR, Article 33(3)(c)]; and
+    *   A description of the measures taken or proposed to be taken by the controller to address the breach, including measures to mitigate its possible adverse effects [GDPR, Article 33(3)(d)].
+*   **Purpose of the communication:** The communication serves to allow the individual to take necessary precautions to mitigate potential adverse effects [GDPR, Recital 86].
+
+**Exceptions to the communication requirement:**
+The controller is not required to communicate the breach to the data subject if any of the following conditions are met:
+1.  The controller had implemented appropriate technical and organisational protection measures (e.g., encryption) that render the data unintelligible to unauthorized persons [GDPR, Article 34(3)(a)].
+2.  The controller has taken subsequent measures that ensure the high risk is no longer likely to materialise [GDPR, Article 34(3)(b)].
+3.  It would involve ""disproportionate effort."" In this case, there must instead be a public communication or similar measure that informs the data subjects in an equally effective manner [GDPR, Article 34(3)(c)].
+
+**Additional oversight:**
+Even if the controller does not initially communicate the breach, the supervisory authority may, after considering the likelihood of the high risk, require the controller to do so [GDPR, Article 34(4)]. Note that the controller also has a general obligation to notify the supervisory authority of a personal data breach within 72 hours, unless the breach is unlikely to result in a risk to individuals [GDPR, Article 33(1)].",
+q25,single,Under what conditions might an Annex III AI system not be considered high-risk?,0,2,1,1,1,0,1,1,judge,"The assistant correctly states all the conditions under Article 6(3) where an Annex III system is not high-risk and correctly includes the profiling exception, matching the reference answer and fully supported by the retrieved passages.",2260,3930,3.51,"By derogation, an Annex III AI system is **not** considered high-risk if it **does not pose a significant risk of harm** to the health, safety, or fundamental rights of natural persons (including by not materially influencing the outcome of decision-making), and fulfills **any** of the following conditions:
+- **(a)** It is intended to perform a narrow procedural task;
+- **(b)** It is intended to improve the result of a previously completed human activity;
+- **(c)** It is intended to detect decision-making patterns or deviations from prior decision-making patterns, and is not meant to replace or influence the previously completed human assessment without proper human review; or
+- **(d)** It is intended to perform a preparatory task to an assessment relevant for the purposes of the use cases listed in Annex III.
+
+`[AI Act, Article 6(3)]`
+
+**Exception to the exception:** An Annex III AI system **shall always be considered high-risk** if it performs **profiling** of natural persons, regardless of the conditions above `[AI Act, Article 6(3)]`.",
+q26,single,Do GDPR rules apply to fully anonymous data?,0,4,1,1,1,0,1,1,judge,"The assistant correctly states that GDPR rules do not apply to fully anonymous data, and every claim made in the response is directly supported by the retrieved passages.",2443,4130,7.49,"No, GDPR rules do not apply to fully anonymous data.
+
+* **Exclusion from Scope:** The principles of data protection do not apply to anonymous information, which is defined as information that does not relate to an identified or identifiable natural person, or to personal data rendered anonymous so that the data subject is no longer identifiable [GDPR, Recitals 26-28].
+* **Non-Application:** The regulation does not concern the processing of such anonymous information, including for statistical or research purposes [GDPR, Recitals 26-28]. 
+
+*Classification note:* Whether data is truly ""anonymous"" depends on all the means reasonably likely to be used—such as singling out—by the controller or any other person to identify the natural person directly or indirectly, taking into account available technology and technological developments [GDPR, Recitals 26-28]. Data that has only undergone pseudonymisation remains subject to the GDPR [GDPR, Recitals 26-28].
+
+*Disclaimer: Not legal advice.*",
+q27,single,Is an eyewitness video of a crime automatically illegal content on a platform?,0,1,1,1,1,0,1,1,judge,The assistant's answer matches the reference answer and is directly supported by the text in DSA Recital 12.,2200,3545,2.73,"No. An eyewitness video of a potential crime is **not** considered to constitute illegal content merely because it depicts an illegal act, provided that recording or disseminating the video to the public is not illegal under applicable national or Union law `[DSA, Recital 12]`.
+
+*(One line disclaimer: This is for compliance orientation, not formal legal advice.)*",
+q28,single,Who has to carry out a fundamental rights impact assessment for high-risk AI?,0,3,1,1,1,0,1,1,judge,The assistant correctly identifies all categories of deployers required to carry out the fundamental rights impact assessment and fully supports its claims with the retrieved passages.,2719,4431,3.15,"The fundamental rights impact assessment (FRIA) must be carried out by **deployers** of certain high-risk AI systems prior to putting them into use [AI Act, Article 27(1), Recital 96]. 
+
+Specifically, the obligation applies to:
+* Deployers that are **bodies governed by public law** or **private entities providing public services** (with the exception of high-risk AI systems intended to be used in the area of migration, asylum and border control management listed in point 2 of Annex III) [AI Act, Article 27(1)].
+* Deployers of high-risk AI systems referred to in **points 5(b) and (c) of Annex III** [AI Act, Article 27(1)] (such as banking or insurance entities, as noted in Recital 96).",
+q29,multi,A company uses an AI tool to screen job candidates in the EU. Which obligations apply under the AI Act and the GDPR?,0,7,1,1,4,1,1,1,judge,"The assistant correctly identifies the high-risk classification under the AI Act and the applicable GDPR obligations regarding automated decision-making and DPIAs, with all factual claims directly supported by the retrieved passages.",6847,30496,13.7,"An AI tool used to screen job candidates in the EU is classified as a **high-risk AI system** under the AI Act [AI Act, Annex III, point 4(a)] and triggers key compliance obligations under the GDPR.
+
+### 1. AI Act Obligations
+* **High-Risk Classification:** AI systems intended to be used for the recruitment or selection of natural persons—specifically to place targeted job advertisements, analyze and filter job applications, and evaluate candidates—are classified as high-risk [AI Act, Annex III, point 4(a)].
+* **Provider and Deployer Duties:** Compliance requires meeting requirements on data governance, technical robustness, accuracy, cybersecurity, technical documentation, record-keeping, transparency to candidates, human oversight, and a conformity assessment.
+
+### 2. GDPR Obligations
+* **Automated Decision-Making and Profiling:** Candidates have the right not to be subject to decisions based solely on automated processing (including e-recruiting profiling without human intervention) that produce legal or similarly significant effects [GDPR, Article 22(1), GDPR, Recital 71]. 
+* **Safeguards:** Such processing is restricted unless necessary for entering/performing a contract, authorized by law, or based on explicit consent [GDPR, Article 22(2)]. When based on contract or explicit consent, the controller must implement suitable safeguards, including the right to obtain human intervention, express a point of view, and contest the decision [GDPR, Article 22(3)].
+* **Special Categories of Data:** Decisions referred to under Article 22(2) shall not be based on special categories of personal data (such as racial or ethnic origin, religion, or health data) unless explicit consent or substantial public interest applies under Union or Member State law, with suitable safeguards in place [GDPR, Article 9(1), GDPR, Article 22(4)].
+* **Data Protection Impact Assessment (DPIA):** A systematic and extensive evaluation of personal aspects based on automated processing that produces legal or similarly significant effects requires a DPIA to be carried out prior to processing [GDPR, Article 35(1), GDPR, Article 35(3)].
+
+*Disclaimer: This overview is for informational purposes and does not constitute formal legal advice.*",
+q30,multi,"A bank uses AI to decide whether to grant consumer credit. Is this high-risk, and what rights do applicants have over the automated decision?",0,7,1,1,2,0,1,1,judge,"The assistant correctly identifies that credit scoring is high-risk (except for fraud detection) and accurately lists the rights under both GDPR Article 22 and AI Act Article 86, all of which are supported by the provided passages.",4739,10129,6.41,"Yes, AI systems used to evaluate the creditworthiness of natural persons or establish their credit score are classified as **high-risk**, unless they are used for detecting financial fraud [AI Act, Annex III, point 5(b)]. 
+
+### Applicant Rights
+
+Applicants have rights under both the GDPR and the AI Act:
+
+* **Under the GDPR (Automated Decisions & Profiling):**
+  * Applicants have the **right not to be subject to a decision based solely on automated processing** (including profiling) which produces legal effects or similarly significantly affects them [GDPR, Article 22(1)].
+  * This restriction does not apply if the decision is necessary for entering into or performing a contract, authorized by law, or based on explicit consent [GDPR, Article 22(2)].
+  * Where an exception applies and automated processing is used for a contract or consent, the controller must implement suitable safeguards, including:
+    * The **right to obtain human intervention** on the part of the controller [GDPR, Article 22(3)].
+    * The **right to express his or her point of view** [GDPR, Article 22(3)].
+    * The **right to contest the decision** [GDPR, Article 22(3)].
+
+* **Under the AI Act (Right to Explanation):**
+  * Affected persons subject to a decision taken by a deployer based on the output of a high-risk AI system (which includes credit scoring systems) that produces legal effects or similarly significantly affects them adversely have the **right to obtain a clear and meaningful explanation** of the AI system's role in the decision-making procedure and the main elements of the decision taken [AI Act, Article 86(1)].
+
+*Disclaimer: This overview is for informational purposes and does not constitute formal legal advice.*",
+q31,multi,A deployer uses a high-risk AI system that processes personal data. Does it need a data protection impact assessment?,0,3,1,1,1,0,1,0,judge,"The answer is correct as it identifies the requirement for a DPIA under GDPR Article 35. However, it is not fully supported because it mentions specific triggers for a DPIA (systematic and extensive profiling, large-scale processing of special categories of data) that are not present in the retrieved passages.",3770,4247,6.64,"Whether a deployer needs a data protection impact assessment (DPIA) depends on the GDPR rules rather than the AI Act alone, but the AI Act explicitly links deployers' duties to the GDPR [AI Act, Article 26(9)]. 
+
+* **GDPR Requirement:** Where applicable, deployers of high-risk AI systems must use information provided by the provider (under Article 13) to comply with their obligation to carry out a data protection impact assessment under **Article 35 of the GDPR** (Regulation (EU) 2016/679) or Article 27 of Directive (EU) 2016/680 [AI Act, Article 26(9)].
+* **Relationship with Fundamental Rights Impact Assessments:** If a deployer is also required to perform a Fundamental Rights Impact Assessment (FRIA) under Article 27 of the AI Act, and any of those obligations are already met through a GDPR Article 35 DPIA, the FRIA simply complements that data protection impact assessment [AI Act, Article 27(4)].
+
+*Fact dependency:* Whether a DPIA is legally mandatory depends on whether the processing is ""high risk"" to natural persons' rights and freedoms under GDPR Article 35 (such as systematic and extensive profiling or large-scale processing of special categories of data), regardless of whether the AI system is classified as high-risk under the AI Act.",unsupported claim
+q32,multi,"What is the highest percentage-of-turnover fine cap among the AI Act, GDPR and DSA?",0,10,1,1,3,1,1,1,judge,"The assistant correctly identified the highest fine cap as 7% in the AI Act, perfectly matching the reference answer, and every factual claim is fully supported by the retrieved passages.",4609,21823,9.74,"Among the three regulations, the highest percentage-of-turnover fine cap is **7 %**, found in the **AI Act** `[AI Act, Article 99(3)]`.
+
+Comparison of the maximum turnover fine caps:
+* **AI Act:** Up to **7 %** of total worldwide annual turnover for non-compliance with the prohibition of AI practices `[AI Act, Article 99(3)]` (or up to 3 % for other operator/notified body obligations `[AI Act, Article 99(4)]`, up to 1 % for supplying incorrect information `[AI Act, Article 99(5)]`, and up to 3 % for general-purpose AI model providers `[AI Act, Article 101(1)]`).
+* **DSA:** Up to **6 %** of annual or total worldwide turnover for infringements or failures to comply with obligations `[DSA, Article 52(3), Article 74(1)]` (or 1 % for supplying incorrect/incomplete information or failing to submit to an inspection `[DSA, Article 52(3), Article 74(2)]`).
+* **GDPR:** Up to **4 %** of total worldwide annual turnover for infringements of basic principles, data subjects' rights, or data transfers `[GDPR, Article 83(5)]` (or up to 2 % for other controller/processor obligations `[GDPR, Article 83(4)]`).
+
+*(Note: AI Act fines for SMEs and start-ups are capped at the lower of the absolute amount or percentage specified `[AI Act, Article 99(6)]`.)*",
+q33,multi,Is the use of an emotion-recognition system on people's faces also a problem under data protection law?,0,12,1,1,2,0,1,1,judge,"The assistant correctly identifies the AI Act prohibitions in workplace/education settings and the GDPR's classification of biometric data for unique identification as a special category, all of which are directly supported by the retrieved passages.",5088,9012,10.36,"Yes, the use of emotion-recognition systems involves significant considerations under EU data protection law (GDPR), primarily because these systems rely on processing biometric data.
+
+### 1. Classification under Data Protection Law
+*   **Special Category Data:** Under the GDPR, ""biometric data for the purpose of uniquely identifying a natural person"" is a special category of personal data [GDPR, Article 9(1)]. Its processing is generally prohibited unless a specific derogation applies [GDPR, Article 9(1), 9(2)].
+*   **Not All Facial Processing is Biometric:** Processing photographs is not systematically considered the processing of special categories of personal data. It only qualifies as ""biometric data"" when processed through specific technical means that allow for the unique identification or authentication of a natural person [GDPR, Recital 51].
+*   **Independence of Laws:** Practices prohibited by data protection law are not affected by the AI Act; the AI Act functions alongside the GDPR [AI Act, Recital 45].
+
+### 2. Legal Requirements for Processing
+If your system qualifies as processing special categories of data under the GDPR, you must meet one of the strict conditions for processing in [GDPR, Article 9(2)], such as:
+*   **Explicit Consent:** The data subject must give explicit consent for the specified purposes [GDPR, Article 9(2)(a)].
+*   **Substantial Public Interest:** Processing is necessary for reasons of substantial public interest, based on Union or Member State law [GDPR, Article 9(2)(g)].
+*   **Employment Context:** Specific, limited circumstances related to employment law, where authorized by law or collective agreement, may apply [GDPR, Article 9(2)(b)].
+
+### 3. Interaction with the AI Act
+The AI Act imposes additional, specific constraints on emotion recognition:
+*   **Prohibition:** The use of AI systems to infer emotions in **workplace and education institutions** is prohibited, except for medical or safety reasons (e.g., therapeutic use) [AI Act, Article 5(1)(f), Recital 44].
+*   **High-Risk Classification:** Even where not prohibited, emotion recognition systems are generally classified as high-risk under the AI Act [AI Act, Recital 54].
+*   **Definition:** An ""emotion recognition system"" is defined as an AI system used to infer emotions or intentions (e.g., happiness, anger, shame) on the basis of biometric data [AI Act, Recital 18]. This definition does not include the mere detection of readily apparent facial expressions, unless they are used to infer emotions [AI Act, Recital 18].
+
+**Compliance Note:** Whether your specific product complies depends on the **intended purpose** and the **technical means** used. You must determine if your system qualifies as processing ""biometric data"" for unique identification under the GDPR and verify if your use case falls under the specific prohibitions (workplace/education) or the broader high-risk obligations of the AI Act.",
+q34,multi,Does the GDPR govern a police force's real-time facial recognition in public spaces?,0,5,1,0,1,0,1,1,judge,The assistant correctly identifies that the GDPR does not apply to criminal law enforcement processing and accurately details the AI Act's restrictions and authorisation requirements as stated in the passages.,4182,4892,4.86,"The GDPR does not govern the processing of personal data by police forces for the purposes of the prevention, investigation, detection, or prosecution of criminal offences or the execution of criminal penalties, including safeguarding against and preventing threats to public security `[GDPR, Recital 19]`.
+
+Instead, such processing is subject to a more specific Union legal act, Directive (EU) 2016/680 `[GDPR, Recital 19]`.
+
+Regarding the use of AI systems for real-time remote biometric identification in publicly accessible spaces for law enforcement purposes:
+*   The AI Act acts as *lex specialis* (a more specific law) in respect of the rules on the processing of biometric data contained in Directive (EU) 2016/680 `[AI Act, Recital 38]`.
+*   Such use is subject to an exhaustive framework in the AI Act, which prohibits it except in specific, narrowly defined situations, such as searching for certain victims of crime, threats to life/physical safety, or identifying suspects of serious criminal offences `[AI Act, Recitals 33, 38]`.
+*   These uses require express prior authorisation by a judicial or independent administrative authority, except in urgent situations `[AI Act, Recital 35]`.",
+q35,multi,"If an AI chatbot is built into a very large online platform, which risk framework applies?",0,4,1,1,1,0,1,1,judge,"The assistant correctly identifies that the DSA risk framework applies when an AI chatbot is embedded in a VLOP or VLOSE, and notes the presumption of fulfillment for the AI Act obligations unless significant uncovered systemic risks emerge, perfectly matching the reference answer and supported entirely by the passages.",2441,4102,3.09,"To the extent that an AI chatbot is embedded into a designated very large online platform (VLOP) or very large online search engine (VLOSE), it is subject to the risk-management framework provided for in Regulation (EU) 2022/2065 (the Digital Services Act), and the corresponding obligations of the AI Act are presumed to be fulfilled *unless* significant systemic risks not covered by the DSA emerge and are identified [AI Act, Recitals 118-119]. 
+
+Key compliance points:
+* **Systemic Risk Assessment & Mitigation:** Providers of VLOPs/VLOSEs must assess potential systemic risks stemming from the design, functioning, and use of their services (including algorithmic systems and potential misuses) and take appropriate mitigating measures [AI Act, Recitals 118-119].
+* **Transparency & Disclosure:** Regardless of the platform risk framework, transparency obligations still apply. Chatbots interacting directly with natural persons must inform users that they are interacting with an AI system (unless obvious) [AI Act, Article 50(1), Recital 132]. Outputs that are artificially generated or manipulated text must also be detectable [AI Act, Article 50(2)].
+
+*(Note: Legal advice disclaimer: This summary is for informational purposes based strictly on the cited text.)*",
+q36,multi,Does AI Act deepfake labelling affect how a hosting platform must handle notices of illegal content?,0,3,1,1,1,0,1,1,judge,"The assistant correctly answers the question with the same decisive facts as the reference answer, and all claims are directly supported by Recital 136.",3353,4414,3.47,"No. The requirement to label AI-generated deepfake content under the AI Act does not affect how a hosting platform must handle notices of illegal content under the Digital Services Act [AI Act, Recital 136]. 
+
+Specifically:
+* **No influence on illegality assessments:** The AI Act labelling requirement is ""without prejudice to the obligation in Article 16(6) of Regulation (EU) 2022/2065 for providers of hosting services to process notices on illegal content received pursuant to Article 16(1) of that Regulation and should not influence the assessment and the decision on the illegality of the specific content."" [AI Act, Recital 136]
+* **Separate standards:** The assessment of whether content is illegal must be performed solely with reference to the rules governing the legality of that content, regardless of whether it carries an AI-generated label [AI Act, Recital 136].
+
+*Disclaimer: This is for compliance checking and does not constitute formal legal advice.*",
+q37,multi,"What transparency must a social network give about its recommender system, and what extra option must very large platforms offer?",0,5,1,1,1,0,1,1,judge,"The assistant correctly identifies both the general transparency requirements and the specific obligation for VLOPs, with all details directly supported by the retrieved articles and recitals.",2626,3648,3.11,"Online platforms must provide the following transparency regarding their recommender systems:
+* Set out in their terms and conditions, in plain and intelligible language, the main parameters used in the recommender systems and any options to modify or influence those parameters [DSA, Article 27(1)].
+* Explain why certain information is suggested, including at least the most significant criteria determining the suggested information and the reasons for their relative importance [DSA, Article 27(2)].
+* Provide a directly and easily accessible functionality allowing users to select and modify their preferred option at any time, where several options for ordering information are available [DSA, Article 27(3)].
+
+**Extra option for Very Large Online Platforms (VLOPs):**
+* In addition to the above transparency requirements, providers of very large online platforms must provide at least one option for each of their recommender systems that is **not based on profiling** (as defined in Article 4(4) of the GDPR) [DSA, Article 38]. This alternative must be directly accessible from the online interface where recommendations are presented [DSA, Recital 94].
+
+*Disclaimer: This information is for compliance checking purposes and does not constitute formal legal advice.*",
+q38,multi,A very large platform wants to show ads to teenagers based on profiling. What rules apply?,0,7,1,1,1,0,1,1,judge,"The assistant correctly states the prohibition on profiling minors for ads under Article 28(2) and includes the additional VLOP repository obligations, fully supported by the retrieved passages.",2314,3992,22.54,"Under the Digital Services Act (DSA), providers of online platforms are strictly prohibited from presenting advertisements on their interface based on profiling using personal data when they are aware with reasonable certainty that the recipient of the service is a minor [DSA, Article 28(2)]. 
+
+Key rules and conditions:
+* **Advertising Prohibition:** You cannot show ads based on profiling (as defined in GDPR Article 4(4)) to minors if you have reasonable certainty that they are minors [DSA, Article 28(2)].
+* **No Mandatory Age-Verification / Additional Data Collection:** Compliance with this rule does not require platforms to process additional personal data or collect age information prior to use just to assess whether a recipient is a minor [DSA, Article 28(3), Recital 71].
+* **High Level of Privacy and Safety:** Platforms accessible to minors must put in place appropriate and proportionate measures to ensure a high level of privacy, safety, and security for minors [DSA, Article 28(1)].
+* **Very Large Online Platform (VLOP) Duties:** VLOPs must also consider the best interests of minors in their overall service design [DSA, Recital 89], conduct risk assessments regarding impacts on minors [DSA, Recital 90], and maintain advertising repositories that detail targeting criteria when ads are delivered to persons in vulnerable situations such as minors [DSA, Recital 95].
+
+*(Note: This response relies solely on the DSA provisions provided in the corpus; GDPR provisions regarding the general processing of minors' data were not retrieved.)*",
+q39,multi,How do the AI Act and the GDPR each treat personal data used to detect bias in a high-risk AI system?,0,10,1,1,1,0,1,1,judge,"The assistant correctly identifies the exception for processing special categories of data under the AI Act and its relationship with the GDPR Article 9(2) exception, all of which are directly supported by the provided passages.",3837,4863,8.55,"Under the AI Act, providers of high-risk AI systems are specifically required to examine data sets for possible biases and implement appropriate measures to detect, prevent, and mitigate those biases [AI Act, Article 10(2)(f)-(g)]. 
+
+To achieve this, the AI Act and the GDPR interact in the following ways regarding personal data (including special categories of personal data):
+
+* **Processing Special Categories of Data for Bias Detection:** Providers may exceptionally process special categories of personal data (such as data revealing racial or ethnic origin, health, etc.) *strictly necessary* for the purpose of ensuring bias detection and correction in relation to high-risk AI systems [AI Act, Article 10(5)].
+* **Interaction with GDPR:** This exceptional processing is permitted as a matter of substantial public interest within the meaning of **GDPR Article 9(2)(g)**, alongside the specific conditions laid down in the AI Act [AI Act, Recital 70].
+* **Strict Cumulative Safeguards under the AI Act:** In addition to complying with the GDPR, such bias-detection processing requires meeting all of the following conditions [AI Act, Article 10(5)]:
+  1. The bias detection and correction cannot be effectively fulfilled by processing other data, such as synthetic or anonymised data [AI Act, Article 10(5)(a)].
+  2. The data must be subject to technical limitations on re-use and state-of-the-art security and privacy-preserving measures, including pseudonymisation [AI Act, Article 10(5)(b)].
+  3. Suitable safeguards must be enforced, including strict access controls, documentation of access to avoid misuse, confidentiality obligations, and restriction to authorised personnel only [AI Act, Article 10(5)(c)].
+  4. The data must not be transmitted, transferred, or otherwise accessed by other parties [AI Act, Article 10(5)(d)].
+  5. The data must be deleted once the bias has been corrected or when it reaches the end of its retention period, whichever comes first [AI Act, Article 10(5)(e)].
+  6. Records of processing activities pursuant to the GDPR must document the reasons why processing special categories of personal data was strictly necessary for bias detection and correction and why the objective could not be achieved using other data [AI Act, Article 10(5)(f)].
+
+*One-line legal disclaimer: This overview is for compliance checking and does not constitute formal legal advice.*",
+q40,unanswerable,What is the exact fine in euros that Spain imposes for breaching the AI Act?,0,2,1,,1,0,1,1,judge,The assistant correctly identifies that the information is not available in the provided text and accurately summarizes the relevant parts of the AI Act regarding Member State responsibilities and maximum fine caps.,3354,4308,2.73,"The corpus does not cover specific national fine amounts legislated by Spain. Under the AI Act, Member States are required to lay down their own rules on penalties and enforcement measures applicable to infringements [AI Act, Article 99(1)], while the regulation itself sets out EU-wide maximum caps for administrative fines (e.g., up to EUR 35 000 000 or 7% of worldwide annual turnover for prohibited practices, and up to EUR 15 000 000 or 3% for other operator obligations) [AI Act, Article 99(3)-(4)]. 
+
+*Disclaimer: This is for informational purposes only and does not constitute legal advice.*",
+q41,unanswerable,"Which Spanish authority acts as Digital Services Coordinator, and what is its address?",1,1,1,,2,0,1,1,judge,"The assistant correctly identified that the question is unanswerable from the provided passages while explaining what the law actually states, meeting the criteria for both correct and supported.",2995,8096,3.55,"The corpus does not cover this question. While the Digital Services Act requires each Member State to designate a Digital Services Coordinator and communicate its contact information to the Commission and the Board [DSA, Article 49(3)], the specific identity and address of the Spanish authority are not specified in the indexed text.",
+q42,unanswerable,What do the Commission's guidelines on classifying high-risk AI systems say about specific use cases?,0,1,1,,1,0,1,1,judge,The assistant correctly identifies that the content of the guidelines is not in the provided text and accurately summarizes the requirement and deadline mentioned in Article 6(5).,3365,4449,4.82,"The corpus does not cover the specific content of the Commission's guidelines on classifying specific use cases, but it notes that the Commission is required to provide guidelines specifying the practical implementation of Article 6 (including a comprehensive list of practical examples of high-risk and non-high-risk use cases) no later than 2 February 2026, after consulting the European Artificial Intelligence Board [AI Act, Article 6(5)].
+
+*Disclaimer: This information is for compliance checking against EU regulations only and does not constitute legal advice.*",
+q43,unanswerable,Which platforms have been designated as very large online platforms so far?,1,1,1,,1,0,1,1,judge,The assistant correctly identifies that the provided text does not contain the list of designated platforms and accurately describes the criteria mentioned in the passages.,2747,4025,3.05,"The corpus does not cover this question. 
+
+While the Digital Services Act sets the criteria for designating very large online platforms (reaching an average of at least 45 million monthly active recipients in the Union and designation by the Commission under [DSA, Article 33(1)-(4)]), the search corpus does not contain the list of specific platforms that have been designated so far.",
+q44,unanswerable,What does the General-Purpose AI Code of Practice require signatories to do on copyright?,0,3,1,,2,0,1,1,judge,"The assistant correctly identified that the code's specific content is not provided while accurately explaining what the law requires regarding copyright, which is fully supported by the retrieved passages.",3699,8335,5.33,"The corpus does not contain the text of the General-Purpose AI Code of Practice itself. 
+
+However, the AI Act specifies what providers of general-purpose AI models must do regarding copyright to comply with the law (which codes of practice are designed to cover under [AI Act, Article 56(1)-(4)]):
+
+* **Copyright compliance policy:** Providers must put in place a policy to comply with Union law on copyright and related rights, and in particular to identify and comply with (including through state-of-the-art technologies) any reservation of rights expressed by rightsholders pursuant to Article 4(3) of Directive (EU) 2019/790 (the text and data mining opt-out) [AI Act, Article 53(1)(c), Recital 105, Recital 106].
+* **Training content summary:** Providers must draw up and make publicly available a sufficiently detailed summary about the content used for training the model, using a template provided by the AI Office [AI Act, Article 53(1)(d), Recital 107].
+
+*Disclaimer: This information is based strictly on the text of Regulation (EU) 2024/1689.*",
+q45,unanswerable,What did the Court of Justice rule on legitimate interest as a basis for behavioural advertising?,1,0,,,2,0,1,1,judge,"The question asks what the Court of Justice ruled on a specific topic, which is indeed absent from the provided statutory texts. The assistant correctly identified that the corpus does not contain case law covering this question.",2536,8564,3.21,"The corpus does not cover this question. (The search index contains the GDPR and the Digital Services Act, but does not include Court of Justice case law interpretations regarding legitimate interest and behavioural advertising.)
+
+*One-line legal disclaimer: This is for informational purposes and does not constitute formal legal advice.*",
+q46,unanswerable,What is the EDPB's list of processing operations that require a DPIA in Germany?,1,0,,,2,0,1,1,judge,The assistant correctly identifies that the information is not contained in the provided text and accurately points to Article 35(4) to explain why the lists are missing.,3172,7347,3.63,"The corpus does not cover this question. The provided corpus contains the GDPR text (including Article 35(4), which tasks supervisory authorities with establishing and publishing lists of processing operations requiring a DPIA), but it does not include the specific lists established by supervisory authorities for Germany or any other Member State.
+
+*Disclaimer: This is for informational purposes and does not constitute legal advice.*",
+q47,unanswerable,Has the high-risk AI obligation date been postponed by later EU legislation?,1,1,1,,1,0,1,1,judge,The assistant correctly identifies that the provided text does not contain information regarding later postponements and accurately cites the application dates found in the retrieved passages.,3200,4244,2.89,"The corpus does not cover this question (it contains the text of the AI Act itself as enacted, but does not include later amending legislation or subsequent postponements enacted after its passage). 
+
+Under the AI Act as originally enacted, high-risk AI obligations apply from **2 August 2026** (with Article 6(1) safety components applying from **2 August 2027**, and specific grace periods running until **2 August 2030** for public authority systems or **31 December 2030** for certain large-scale IT systems) [AI Act, Article 113, Article 111].*Disclaimer: This is for informational purposes and does not constitute legal advice.*",
