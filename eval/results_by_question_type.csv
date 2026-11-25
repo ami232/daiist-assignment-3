@@ -1,0 +1,5 @@
+kind,questions,correct_rate,supported_rate,refused
+multi,7,0.857,1.0,1
+single,18,1.0,1.0,0
+unanswerable,5,1.0,1.0,5
+ALL,30,0.967,1.0,6

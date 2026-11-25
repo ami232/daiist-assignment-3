@@ -1,0 +1,31 @@
+id,correctness_criterion,groundedness_criterion
+q01,"Identifies the correct dose-reduction criteria, thresholds and number of required conditions.",All thresholds are supported by the Eliquis label.
+q02,"Provides the correct initial DVT dosage, frequency and duration.",All dosage and duration claims are supported.
+q03,Correctly explains missed-dose management and whether doubling is permitted.,Instructions match the retrieved label.
+q04,Provides the correct minimum interruption period for high-bleeding-risk surgery.,Timing is explicitly supported by the label.
+q05,Correctly identifies whether the 20 mg tablet requires food.,Food requirements are supported for that specific strength.
+q06,"Provides the correct dosage, frequency and relevant administration conditions after day 21.",The retrieved treatment regimen supports the answer.
+q07,Correctly describes an approved administration method for crushed tablets and associated conditions.,Administration instructions appear in the retrieved text.
+q08,Correctly identifies the recommendation for Child-Pugh Class B impairment.,The hepatic impairment recommendation is supported.
+q09,Correctly determines whether the missed dose should be taken or skipped.,The relevant missed-dose time threshold is supported.
+q10,Correctly identifies whether opening Pradaxa capsules is permitted.,Capsule administration instructions support the conclusion.
+q11,Provides the correct storage duration after opening the bottle.,The stated duration appears in the retrieved storage instructions.
+q12,Identifies the correct specific reversal agent.,The reversal agent is explicitly mentioned in the retrieved evidence.
+q13,Provides the correct therapeutic INR range for venous thromboembolism.,The INR range is supported for the correct indication.
+q14,Correctly explains the pregnancy contraindication and relevant exception.,Both the contraindication and exception are supported.
+q15,Correctly explains the role of vitamin K without introducing inappropriate generalizations.,Reversal claims are supported by the warfarin label.
+q16,Provides the correct adjusted dose and frequency for the specified indication and renal function.,The renal threshold and dosage are supported.
+q17,Correctly identifies whether intramuscular administration is permitted.,The route-of-administration restriction is supported.
+q18,"Correctly identifies the relevant HIT restrictions, including applicable conditions.",All restrictions and thresholds appear in the retrieved label.
+q19,Correctly compares the interruption periods for both medications without overstating either recommendation.,Evidence from both labels supports the comparison.
+q20,Correctly explains the different missed-dose actions for both drugs.,Both drug-specific instructions are supported.
+q21,Correctly identifies which medication requires prior parenteral anticoagulation and its duration.,Both initial treatment protocols are supported.
+q22,Correctly distinguishes warfarin INR monitoring from Xarelto monitoring recommendations.,Both monitoring recommendations are supported.
+q23,Correctly describes the prosthetic-heart-valve recommendations for both drugs.,Both labels support the stated recommendations.
+q24,Correctly distinguishes the reversal strategies for Pradaxa and warfarin.,Each reversal strategy is supported by its respective label.
+q25,"Correctly compares prophylaxis durations, preserving any ranges or regimen-specific distinctions.",Both durations are supported by their respective labels.
+q26,Correctly refuses to answer while Savaysa is absent from the corpus.,Does not introduce unsupported Savaysa information.
+q27,Recognises the absence of sufficient direct head-to-head trial evidence.,Does not invent comparative trial results.
+q28,Recognises that current Spanish healthcare pricing is unavailable.,Does not invent prices or cost estimates.
+q29,Recognises that comparative adherence data is unavailable.,Does not invent adherence rates or rankings.
+q30,Recognises that the latest ESC guidelines are outside the indexed corpus.,Does not invent guideline recommendations.
