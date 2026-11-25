@@ -1,0 +1,70 @@
+{
+  "retrieval": [
+    {
+      "design": "structure",
+      "questions": 39,
+      "hit@1": 0.615,
+      "hit@3": 0.949,
+      "hit@5": 1.0,
+      "multi_all@1": 0.0,
+      "multi_all@3": 0.091,
+      "multi_all@5": 0.182,
+      "avg_words_top5": 1362
+    },
+    {
+      "design": "structure+hybrid",
+      "questions": 39,
+      "hit@1": 0.564,
+      "hit@3": 0.821,
+      "hit@5": 0.949,
+      "multi_all@1": 0.0,
+      "multi_all@3": 0.091,
+      "multi_all@5": 0.273,
+      "avg_words_top5": 1346
+    },
+    {
+      "design": "structure+filter",
+      "questions": 39,
+      "hit@1": 0.615,
+      "hit@3": 0.949,
+      "hit@5": 1.0,
+      "multi_all@1": 0.0,
+      "multi_all@3": 0.091,
+      "multi_all@5": 0.182,
+      "avg_words_top5": 1350
+    }
+  ],
+  "end_to_end": {
+    "questions": 47,
+    "answered_questions": 47,
+    "ungraded": [],
+    "correct": 47,
+    "answerable_correct": 39,
+    "answerable_total": 39,
+    "unsupported": 3,
+    "correct_refusals": 5,
+    "unanswerable_total": 8,
+    "wrong_refusals": 0,
+    "invalid_citations": 0,
+    "guardrail_fired": 2,
+    "agent_tokens_mean": 5703,
+    "judge_tokens_mean": 3268,
+    "seconds_mean": 14.2,
+    "seconds_median": 4.1
+  },
+  "judge_agreement": {
+    "graded_by_you": 20,
+    "correct": {
+      "n": 20,
+      "agreement": 1.0,
+      "kappa": 1.0
+    },
+    "supported": {
+      "n": 20,
+      "agreement": 0.8,
+      "kappa": 0.385
+    }
+  },
+  "search_design": "structure",
+  "before_after": true
+}
