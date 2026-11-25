@@ -1,6 +1,6 @@
 # Design Document — "Asistente Autónomo"
 
-> Draft v0.1 (2026-11-19). Traces to `requirements.md`. 🟨 marks decisions reserved for the student. Everything else is an engineering choice that can be changed freely.
+> Draft v0.1 (2026-11-19), updated 2026-11-25 where the build settled an open point. Traces to `requirements.md`. 🟨 marks decisions reserved for the student. Everything else is an engineering choice that can be changed freely.
 
 ## Overview
 
@@ -19,7 +19,7 @@ All Gemini calls are **quota-aware**: deterministic chunk IDs, write-after-every
 
 | ID | Component | File | Responsibility | Talks to |
 |---|---|---|---|---|
-| C1 | Source registry | `sources.py` (or a constant in `index.py`) | List of documents: short ID, BOE id, block range, `held_out` flag | C2 |
+| C1 | Source registry | `SOURCES` constant in `index.py` | List of documents: short ID, BOE id, block range, `held_out` flag | C2 |
 | C2 | BOE fetcher | `index.py` | Download `/texto` + `/metadatos` XML into `corpus/` (skip if present) | BOE API, C3 |
 | C3 | Extractor / cleaner | `index.py` | XML → `Block` list: last version only, notes stripped, hierarchy path | C4 |
 | C4 | Chunker | `index.py` | `Block`s → `Chunk`s for a named design (`fixed`, `article`) | C5 |
@@ -83,13 +83,13 @@ All Gemini calls are **quota-aware**: deterministic chunk IDs, write-after-every
    and append the BOE informational-text notice.
 
 ### F3 Add document (MCP `add_document`)
-1. Validate the path: it exists, is under the repo or `corpus/`, and is a BOE XML file (or HTML/PDF, 🟨 if needed).
+1. Validate the path: it exists, is inside the repository, and is a BOE consolidated-text XML file (HTML/PDF were not needed).
 2. Read `boe_id` and `fecha_actualizacion` from the file, or from its sibling `.meta.xml`.
-3. Apply the duplicate policy 🟨 (proposed: same id + same date → no-op; newer → delete that document's chunks, then add; new → add).
+3. Apply the duplicate policy 🟨 (decided 2026-11-20: same id + same date → no-op; newer → delete that document's chunks, then add; older → nothing; new → add).
 4. Reuse C3 → C4 (shipped design) → C5. Return `"Added: LETA2 (…). 12 new fragments, 0 skipped (already there)."`.
 
 ### F4 Ask (`main.py ask`)
-1. `agent.py` starts `server.py` over stdio (`langchain-mcp-adapters` or the `mcp` client) and wraps the tools.
+1. `agent.py` starts `server.py` over stdio with `langchain.mcp.MCPAdapter` and wraps the tools.
 2. It runs `create_agent(model, tools, system_prompt=AGENTS.md, middleware=[…])`:
    - human approval on `add_document`;
    - the tool-call limit;
@@ -104,7 +104,7 @@ All Gemini calls are **quota-aware**: deterministic chunk IDs, write-after-every
 5. **Agreement** with `eval/human_labels.csv` (% agreement and κ on `correct` and `supported`).
 6. **Summary:** `eval/summary.json` and the printed table (counts, mean tokens, mean seconds).
 
-The before/after add-document demo is a separate step, `evaluate.py --demo-add` or a documented script. That keeps the shipped index from being changed by default evaluation runs.
+The before/after add-document demo is a separate script, `demo_add_document.py`. That keeps the shipped index from being changed by default evaluation runs.
 
 ## Integration points
 
@@ -120,14 +120,11 @@ The before/after add-document demo is a separate step, `evaluate.py --demo-add` 
 ### Gemini embeddings (`gemini-embedding-2`)
 - Called through `google-genai` `client.models.embed_content`, using `api_key.load_api_key()`.
 - The free tier allows ≈1,000 texts a day, and each text in a batch counts.
-- To confirm in Phase 0:
-  - whether the model takes a task type or a query/document prefix;
-  - the output dimensionality (use a reduced size such as 768 if supported, to keep `index/` small);
-  - the maximum tokens per text.
+- Confirmed in Phase 0: the task goes in the text as a prefix (no task type), and `output_dimensionality=768` works and comes back normalised.
 - Errors: a 429 is fatal for the current run (stop and resume later); 5xx errors are retried.
 
 ### Gemini chat (harness + judge)
-- Model: **to choose in Phase 0** from the models the key can access (a current Flash-class model). Use the same model for the agent and the judge, or a stronger judge if the quota allows.
+- Models (confirmed in Phase 0): agent `gemini-3.5-flash-lite`, judge `gemini-3.5-flash` (stronger than the agent). The judge's free tier allows about 20 requests a day.
 - Called through `langchain-google-genai` (`ChatGoogleGenerativeAI`). Usage metadata gives the token counts.
 - Rate limits: requests-per-minute throttling plus retry on 429. Evaluation is resumable.
 
@@ -162,7 +159,7 @@ class Chunk:           # C4 output → Chroma (id, document=text, metadata=all e
     fecha_actualizacion: str; url: str; n_words: int
 ```
 
-Chroma layout: `index/chroma/` with one collection per design (`article_v1`, `fixed150_v1`, …), using cosine distance. `index/query_cache.sqlite` holds `(model, text) → vector`.
+Chroma layout: `index/chroma/` with one collection per design (`article`, `fixed`), using cosine distance. `index/query_cache.sqlite` holds `(model, text) → vector`.
 
 Eval files:
 
@@ -197,13 +194,13 @@ def build_agent(...) -> Agent
 def answer(question: str, approve: Callable[[dict], bool] | None = None) -> dict
 ```
 
-## Retrieval designs (to compare, 🟨 student chooses)
+## Retrieval designs (🟨 student chose B, k = 5; D was not run)
 
 | Design | Chunking | Search | Embedding cost |
 |---|---|---|---|
 | A `fixed` | ~150–250-word windows, ~20% overlap, block-aware metadata (first location in window) | dense | 1 full index (≈400–600 texts) |
 | B `article` | one chunk per article; split by numbered apartado when > ~400 words | dense | 1 full index (≈250–350 texts) |
-| C | B | hybrid: dense + BM25 (`rank_bm25`), reciprocal-rank fusion | free |
+| C | B | hybrid: dense + BM25 (implemented in `rag.py`), reciprocal-rank fusion | free |
 | D | B | dense + `source` filter, from a cheap query classifier or the question's own wording | free |
 
 The budget fits A + B over two days, with C and D free on top. The test set must exist **before** any of these runs.
@@ -229,7 +226,7 @@ Phase 1 placement change: the location lookup table is written to `index/outline
 |---|---|---|
 | Quota | embedding 429, chat 429 | Embeddings: stop and keep what's saved. Chat: back off (≤3 retries); evaluation resumes from the saved files |
 | Source | BOE down, unexpected XML | Cached `corpus/`; explicit failure naming the BOE id and the block |
-| Tool input | bad path, unsupported file, duplicate document | `add_document` returns a Spanish error string; never raises across MCP |
+| Tool input | bad path, unsupported file, duplicate document | `add_document` returns an error string starting with "Error:"; never raises across MCP |
 | Agent | over the tool limit, empty retrieval, invalid citation | Limit middleware ends the run with a refusal; guardrail repairs once or refuses |
 | Protocol | stray stdout in the server | All logging goes to `logging` → stderr; no `print` in `server.py` or in imported module code paths |
 
@@ -261,16 +258,16 @@ Resolved (2026-11-19):
   `langchain.agents.middleware` provides `HumanInTheLoopMiddleware` (approval for `add_document`), `ToolCallLimitMiddleware` / `ModelCallLimitMiddleware` (call limit), `ModelRetryMiddleware` / `ToolRetryMiddleware` (429 handling) and a generic `AgentMiddleware` for the custom guardrail. No extra package is needed for the guardrails.
 - **H1:** Orden PJC/297/2026 (BOE-A-2026-7296) is in the consolidated-text API. Arts. 18–19 hold the 2026 RETA bracket tables, as `<table>` elements, so the extractor must render table rows as text. The source registry marks it `held_out=True` with block range `a1-10`…`a1-11`. `add_document(path)` looks up the range in the registry by `boe_id`; an unknown document is indexed whole.
 
-- **Session 10 reference:** `07-own-harness/` from the public course repo [ami232/daiist-agents](https://github.com/ami232/daiist-agents), copied into `planning/reference/`. Patterns to reuse:
+- **Session 10 reference:** `07-own-harness/` from the public course repo [ami232/daiist-agents](https://github.com/ami232/daiist-agents). Patterns reused:
   - MCP tools via `langchain.mcp.MCPAdapter(Path("server.py"))`, one adapter per server, inside an `AsyncExitStack`;
   - approval as a `@wrap_tool_call` middleware that returns an error `ToolMessage` on refusal, with an `auto_approve` flag;
   - `ModelCallLimitMiddleware(run_limit=…)`;
   - `ask(agent, q) -> (answer, trace)` via `tool_trace(messages)`;
   - a judge using `with_structured_output(Verdict)`, with reasoning before a boolean verdict, temperature 0, and the trace given as evidence.
-- **Models (course defaults):** agent `gemini-3.5-flash-lite`, judge `gemini-3.5-flash` (stronger than the agent, as the course recommends). Confirm both are reachable with the key.
+- **Models (course defaults):** agent `gemini-3.5-flash-lite`, judge `gemini-3.5-flash` (stronger than the agent, as the course recommends). Both confirmed reachable.
 - **Dependency added:** `uv add "langchain[mcp]>=1.4.7"`. This brings in `fastmcp`; `MCPAdapter` imports (beta warning only). `langchain-mcp-adapters` is **not** needed.
 
-Still open:
-1. Confirm the chat models are reachable, plus the embedding task-type and dimensionality options for `gemini-embedding-2`. **Blocked on `.env`.**
-2. `rank-bm25` is only needed if design C (hybrid) is chosen.
-3. Evaluation must deny `add_document` rather than auto-approve every tool, as the course's `auto_approve=True` does, so the shipped index isn't changed. Approval should be per tool, with `add_document` denied in eval.
+Resolved later:
+1. Chat models and embedding options confirmed (tasks.md 0.3).
+2. BM25 is implemented in `rag.py`, so `rank-bm25` was not added.
+3. Evaluation denies `add_document` (`agent.deny`) instead of auto-approving every tool, so the shipped index isn't changed.
