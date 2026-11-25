@@ -1,0 +1,84 @@
+{
+  "questions": 35,
+  "answerable": {
+    "n": 28,
+    "judge_correct": 0.571,
+    "judge_supported": 0.964,
+    "wrong_refusals": 1,
+    "cites_expected_source_location": 0.821,
+    "expected_passage_retrieved": 1.0
+  },
+  "unanswerable": {
+    "n": 7,
+    "correct_refusals": 7,
+    "answered_anyway": 0,
+    "judge_correct": 0.857
+  },
+  "citations": {
+    "answers_with_valid_citations": 1.0,
+    "guardrail": {
+      "passed": 35,
+      "corrected": 0,
+      "replaced": 0,
+      "skipped": 0
+    }
+  },
+  "cost_per_question": {
+    "seconds_mean": 12.9,
+    "seconds_median": 8.1,
+    "agent_tokens_mean": 6812,
+    "agent_tokens_median": 5072,
+    "judge_tokens_mean": 3896,
+    "searches_mean": 1.29
+  },
+  "judge_models": {
+    "gemini-3.5-flash": 23,
+    "gemini-3.5-flash-lite": 12
+  },
+  "judge_vs_human": {
+    "graded": 20,
+    "correct": {
+      "n": 20,
+      "agreement": 0.65,
+      "cohen_kappa": 0.239,
+      "disagreements": [
+        "q01",
+        "q04",
+        "q05",
+        "q06",
+        "q08",
+        "q13",
+        "q34"
+      ]
+    },
+    "supported": {
+      "n": 20,
+      "agreement": 0.75,
+      "cohen_kappa": -0.087,
+      "disagreements": [
+        "q01",
+        "q03",
+        "q04",
+        "q07",
+        "q08"
+      ]
+    }
+  },
+  "failure_hints": {
+    "unsupported claim": 1,
+    "wrong answer from the right passage (or bad test question)": 10,
+    "wrong refusal": 1
+  },
+  "add_document_demo": {
+    "question": "q35",
+    "before_refused": true,
+    "after_refused": false,
+    "after_citations": [
+      "reg_2026_2202, Article 1",
+      "reg_2026_2202, Article 1"
+    ],
+    "approvals": [
+      "add_document({'path': 'corpus/32026R2202.html'}) -> approved by evaluate.py for the demo"
+    ]
+  }
+}

@@ -29,6 +29,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import re
 import statistics
 import sys
@@ -42,7 +43,8 @@ from bs4 import BeautifulSoup
 ROOT = Path(__file__).resolve().parent
 CORPUS_DIR = ROOT / "corpus"
 INDEX_DIR = ROOT / "index"
-CHROMA_DIR = INDEX_DIR / "chroma"
+# CORPUS_CHROMA_DIR lets evaluate.py run the add-document demo on a copy of the index
+CHROMA_DIR = Path(os.environ.get("CORPUS_CHROMA_DIR") or INDEX_DIR / "chroma")
 QUERY_CACHE = INDEX_DIR / "query_cache.json"
 
 EMBED_MODEL = "gemini-embedding-2"
@@ -268,7 +270,28 @@ def parse_file(path: Path, doc_id: str | None = None, title: str | None = None) 
 
     sections = [s for s in sections if s.paras]
     url = f"https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:{path.stem}"
+    if not meta:  # a document added later: name it from its own heading, not the file name
+        heading_id, heading_title = act_heading(sections)
+        if heading_id:
+            doc_id = doc_id if doc_id != re.sub(r"\W+", "_", path.stem).lower() else heading_id
+            page_title = heading_title
     return Document(doc_id, title or meta.get("title") or page_title, url, sections, notes)
+
+
+ACT_RE = re.compile(r"^(REGULATION|DIRECTIVE|DECISION) \((EU|EC|EEC)\) (?:No )?(\d+)/(\d+)", re.IGNORECASE)
+
+
+def act_heading(sections: list[Section]) -> tuple[str | None, str]:
+    """('reg_2026_2202', 'Regulation (EU) 2026/2202 amending ...') from the act's own heading lines."""
+    paras = [strip_markers(p) for s in sections[:1] for p in s.paras]
+    for i, line in enumerate(paras):
+        m = ACT_RE.match(line)
+        if m:
+            kind = {"REGULATION": "reg", "DIRECTIVE": "dir", "DECISION": "dec"}[m.group(1).upper()]
+            subject = next((p for p in paras[i + 1:i + 3] if p.lower().startswith(("amending", "on "))), "")
+            name = f"{m.group(1).title()} ({m.group(2).upper()}) {m.group(3)}/{m.group(4)}"
+            return f"{kind}_{m.group(3)}_{m.group(4)}", f"{name} {subject}".strip()[:200]
+    return None, ""
 
 
 # --------------------------------------------------------------------------- chunking

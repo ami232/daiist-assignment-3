@@ -123,9 +123,10 @@ def cli_approve(name: str, args: dict) -> bool:
 # --------------------------------------------------------------------------- harness
 
 class Harness:
-    def __init__(self, approve=cli_approve, model: str = MODEL):
+    def __init__(self, approve=cli_approve, model: str = MODEL, server_env: dict | None = None):
         self.approve = approve
         self.model_name = model
+        self.server_env = server_env or {}
 
     async def __aenter__(self) -> "Harness":
         from langchain.agents import create_agent
@@ -133,14 +134,15 @@ class Harness:
         from langchain_google_genai import ChatGoogleGenerativeAI
         from langgraph.checkpoint.memory import InMemorySaver
         from mcp import ClientSession, StdioServerParameters
-        from mcp.client.stdio import stdio_client
+        from mcp.client.stdio import get_default_environment, stdio_client
 
         from api_key import load_api_key
 
         load_api_key()
         self._stack = AsyncExitStack()
         try:
-            params = StdioServerParameters(command=sys.executable, args=[str(ROOT / "server.py")], cwd=str(ROOT))
+            params = StdioServerParameters(command=sys.executable, args=[str(ROOT / "server.py")], cwd=str(ROOT),
+                                            env={**get_default_environment(), **self.server_env})
             read, write = await self._stack.enter_async_context(stdio_client(params))
             session = await self._stack.enter_async_context(ClientSession(read, write))
             await session.initialize()
@@ -189,9 +191,11 @@ class Harness:
         await self._invoke({"messages": [{"role": "user", "content": question}]}, config)
         answer, trace, check = self._read(await self.agent.aget_state(config), AIMessage, ToolMessage)
         guardrail = "passed"
+        rejected = []  # drafts the citation check sent back, with the reason (for the report)
         if any(t["tool"] == "add_document" for t in trace):
             guardrail = "skipped (add_document request, not a question to answer from sources)"
         elif check["problems"]:
+            rejected.append({"draft": answer, "problems": check["problems"]})
             log(f"[guardrail] {'; '.join(check['problems'])}. Asking for a corrected answer.")
             feedback = (f"Your answer was rejected by the citation check: {'; '.join(check['problems'])}. "
                         f"Rewrite it citing only [source_id, section] pairs from your search results, "
@@ -200,6 +204,7 @@ class Harness:
             answer, trace, check = self._read(await self.agent.aget_state(config), AIMessage, ToolMessage)
             guardrail = "corrected"
             if check["problems"]:
+                rejected.append({"draft": answer, "problems": check["problems"]})
                 guardrail = "replaced"
                 answer = f"{REFUSAL} (A draft answer was withheld because its citations could not be verified.)"
                 check = check_citations(answer, trace)
@@ -212,6 +217,7 @@ class Harness:
             "citations": [f"{s}, {loc}" for s, loc in check["citations"]],
             "urls": check["urls"],
             "guardrail": guardrail,
+            "rejected_drafts": rejected,
             "trace": trace,
             "searches": sum(1 for t in trace if t["tool"] == "search"),
             "input_tokens": sum(u.get("input_tokens", 0) for u in usage),

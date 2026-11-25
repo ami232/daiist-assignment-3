@@ -33,6 +33,7 @@ a,q31,unanswerable,,0.687,reg_261_2004 | Article 5 (part 1/2)
 a,q32,unanswerable,,0.7037,reg_261_2004 | Article 7
 a,q33,unanswerable,,0.7051,reg_261_2004 | Article 7
 a,q34,unanswerable,,0.7211,reg_2027_97 | Article 8 to Annex (part 2/2)
+a,q35,unanswerable,,0.66,guidelines_261_2004 | Section 3.1.1 (part 2/3)
 b,q01,multi,1,0.7565,reg_2027_97 | Annex
 b,q02,single,3,0.7404,reg_261_2004 | Article 6 to Article 8
 b,q03,multi,1,0.7277,reg_261_2004 | Article 5 to Article 6
@@ -67,3 +68,4 @@ b,q31,unanswerable,,0.6612,reg_261_2004 | Article 5 to Article 6
 b,q32,unanswerable,,0.6719,reg_261_2004 | Article 6 to Article 8
 b,q33,unanswerable,,0.6754,reg_261_2004 | Article 8 to Article 9
 b,q34,unanswerable,,0.7147,reg_2027_97 | Annex
+b,q35,unanswerable,,0.6376,guidelines_261_2004 | Section 3.1.1

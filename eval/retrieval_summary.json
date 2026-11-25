@@ -23,7 +23,7 @@
     "all_locations@5": 0.786,
     "sections_per_hit_chunk": 2.16,
     "top_score_answerable_median": 0.733,
-    "top_score_unanswerable_median": 0.668,
+    "top_score_unanswerable_median": 0.663,
     "top_score_unanswerable_max": 0.715,
     "top_score_answerable_min": 0.673
   }
