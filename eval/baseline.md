@@ -11,7 +11,7 @@ The same judge (gemini-3.1-pro-preview) and the same JUDGE_PROMPT grade all thre
 | **Correct**, baseline (judge) | 7/25 | 2/7 | 0/7 | 9/39 |
 | **Correct**, baseline with context (judge) | 20/25 | 4/7 | 0/7 | 24/39 |
 | **Correct**, agent (judge) | 24/25 | 6/7 | 5/7 | 35/39 |
-| **Correct**, agent (human labels) | 22/25 | 6/7 | 4/7 | 32/39 |
+| **Correct**, agent (human labels) | 23/25 | 6/7 | 4/7 | 33/39 |
 | Unanswerable refused, baseline (code) | – | – | 0/7 | – |
 | Unanswerable refused, baseline with context (code) | – | – | 0/7 | – |
 | Unanswerable refused, agent (code) | – | – | 6/7 | – |

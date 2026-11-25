@@ -1,19 +1,19 @@
 # Failure analysis
 
-This covers every question that failed under the human grades (`eval/human_labels.csv`) **or** the judge's (`eval/verdicts.jsonl`), meaning correct = 0 or supported = 0 in either. That is 14 of 39 questions. Each failure gets exactly one cause.
+This covers every question that failed under the human grades (`eval/human_labels.csv`) **or** the judge's (`eval/verdicts.jsonl`), meaning correct = 0 or supported = 0 in either. That is 13 of 39 questions. Each failure gets exactly one cause.
 
-To decide the cause, I checked from the trace in `eval/answers.jsonl` whether the agent's searches returned a chunk covering the expected passage. For unanswerable questions there is no expected passage, so I looked at how the answer handles the gap. No grades were changed and the agent was not rerun.
+To decide the cause, I checked from the trace in `eval/answers.jsonl` whether the agent's searches returned a chunk covering the expected passage. For unanswerable questions there is no expected passage, so I looked at how the answer handles the gap. The agent was not rerun. One grade was changed after this check: q05 correct from 0 to 1 (see the note below).
 
 ## Counts per cause
 
 | Cause | All failures | Failed by the human grades | Failed by the judge only |
 |---|---|---|---|
 | Retrieval miss | 3 | 3 | 0 |
-| Wrong answer from the right passage | 1 | 1 | 0 |
+| Wrong answer from the right passage | 0 | 0 | 0 |
 | Unsupported claim | 7 | 3 | 4 |
 | Wrong refusal | 3 | 3 | 0 |
 | Bad test question | 0 | 0 | 0 |
-| **Total** | **14** | **10** | **4** |
+| **Total** | **13** | **9** | **4** |
 
 ## Per question
 
@@ -22,7 +22,6 @@ Grades are given as correct/supported, human first, then judge.
 | id | kind | human | judge | cause | reason |
 |---|---|---|---|---|---|
 | q04 | single | 1/0 | 1/1 | unsupported claim | The expected passage (118/19 Rn. 13) was retrieved, but the answer opens with "bank statements", which 118/19 never mentions; the court says payment receipts (Zahlungsbelege). The question's own wording ("bank statements") primed it. |
-| q05 | single | 0/1 | 1/1 | wrong answer from the right passage | 137/15 Rn. 10–13, which contains Rn. 11, was retrieved and cited, but the human grade says the answer misses the Nr. 17 limitation. See the note below. |
 | q07 | single | 0/1 | 1/1 | retrieval miss | 209/15 Rn. 25 was retrieved, but the § 242 exception at Rn. 28 never was. The answer can't contain it, and the judge excused the gap for exactly that reason. |
 | q21 | single | 1/0 | 1/0 | unsupported claim | § 560 Abs. 4 was retrieved. The answer adds "e.g. by email" and "back payment / 12", which aren't in the passage (general knowledge). |
 | q25 | single | 0/1 | 0/1 | retrieval miss | 36/14 was never retrieved in 8 searches, including a search for "VIII ZR 36/14" itself, so the agent deferred to a lawyer instead of saying no. Dense search can't match a case number. |
@@ -36,7 +35,7 @@ Grades are given as correct/supported, human first, then judge.
 | q36 | unanswerable | 1/0 | 1/0 | unsupported claim | It refuses, but pads the refusal with an annual cap, the frequent-access limit and §§ 305 ff. BGB, none of which are in the corpus (general knowledge). |
 | q38 | unanswerable | 0/1 | 0/1 | wrong refusal | It leads with "you can claim interest" (from 47/25 Rn. 12, a passage that only mentions "nebst Zinsen") before admitting that the default rules are missing. |
 
-**Check on q05 (your grade, unchanged):** the answer does state the limitation: "this general clause does not automatically cover 'other' operating costs (sonstige Betriebskosten) … the specific cost type must be expressly designated" (citing 137/15 Rn. 5, 10–13). Sonstige Betriebskosten are § 2 Nr. 17, so the substance is there and only the label "Nr. 17" is missing. If that wasn't your reason for the 0, the grade is worth a second look. If it stays at 0, q05 is the only "wrong answer from the right passage".
+**q05 (grade changed to correct = 1):** the answer states the limitation: "this general clause does not automatically cover 'other' operating costs (sonstige Betriebskosten) … the specific cost type must be expressly designated" (citing 137/15 Rn. 5, 10–13). Sonstige Betriebskosten are § 2 Nr. 17, so the substance is there and only the label "Nr. 17" is missing. q05 is therefore no longer a failure, and no question is left under "wrong answer from the right passage".
 
 ## What to fix first
 
@@ -57,8 +56,8 @@ Grades are given as correct/supported, human first, then judge.
 
 ## The judge compared with the human grades
 
-The judge agrees with you on 36/39 for correct and 32/39 for supported. The disagreements go in two directions:
-- **Too lenient on refusals and gaps.** It passed q33 on both columns, q07 because the missing passage "was not retrieved", and q05.
+The judge agrees with you on 37/39 for correct and 32/39 for supported. The disagreements go in two directions:
+- **Too lenient on refusals and gaps.** It passed q33 on both columns and q07 because the missing passage "was not retrieved".
 - **Stricter than you on inferences in multi answers:** q26, q27, q29 and q32.
 
 So it is not reliable as the only grader for the refusal behaviour, which is the behaviour this use case depends on most.

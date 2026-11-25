@@ -3,7 +3,7 @@ q01,1,1,
 q02,1,1,
 q03,1,1,
 q04,1,0,"says bank statements; 118/19 only says Zahlungsbelege"
-q05,0,1,misses the Nr. 17 limitation (137/15 Rn. 11)
+q05,1,1,states the other-costs (Nr. 17) limitation in substance
 q06,1,1,
 q07,0,1,misses the § 242 exception (209/15 Rn. 28)
 q08,1,1,

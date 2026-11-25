@@ -16,3 +16,4 @@ corpus/**/*.zip
 
 # Never commit your API key
 .env
+.claude/settings.local.json

@@ -32,10 +32,8 @@ Agent totals for the run: 1,345,169 input + 119,104 output tokens. Seconds inclu
 
 ## Agreement with your labels (eval/human_labels.csv)
 
-- correct: 36/39 agree (92%)
+- correct: 37/39 agree (95%)
 - supported: 32/39 agree (82%)
-
-**q05 correct:** you 0, judge 1. Your note: misses the Nr. 17 limitation (137/15 Rn. 11). Judge: The assistant correctly answers 'Yes' and explains that the phrase 'die Betriebskosten' is sufficient to pass on the standard operating costs without attaching a list. It also correctly notes the exception for 'other operating costs' (sonstige Betriebskosten), which aligns perfectly with the reference answer.
 
 **q07 correct:** you 0, judge 1. Your note: misses the § 242 exception (209/15 Rn. 28). Judge: The assistant reaches the same conclusion as the reference answer, stating that the tenant is generally barred from challenging the costs after the 12-month deadline has passed. It correctly notes that this preclusion applies even to non-allocable costs and mentions the exception for when the tenant is not responsible for the delay. Although it omits the § 242 BGB exception mentioned in the reference answer, this is acceptable because that specific exception was not included in the retrieved passages.
 
