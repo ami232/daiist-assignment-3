@@ -6,13 +6,9 @@
 
 ## Use case
 
-*Who asks, what they do with the answer, and what a wrong answer costs compared with "I don't know".*
-
 This tool is meant to be used by startup founders that are considering applying for the EIC Accelerator (the EU's funding program for startups and SMEs under its 2027 Work Programme). Since there are many criteria that have to be taken into account in order to assess eligibility, it is of great use to develop this tool to answer questions in relation to this matter. Answers provided will help founders determine if they are eligible for funding, clarify deadlines when completing the application and understand the rules for different funding amounts. It will be a useful tool that aims to answer questions from the official EIC documents that founders can check and act upon. Sometimes the tool will not be sure about the answers to a question. There are two possible outcomes: Confidently giving a wrong answer or directly stating "I don't know". In the first scenario, a wrong answer would probably mean missing important deadlines, misleading founders into believing they are eligible for the grant when they're actually not, or wasting weeks of work in an application that was not valid in the first place. On the other hand, responding with a direct "I don't know" will most likely make the founder double check with an alternative source before taking action. This would represent less of a risk as it is a genuine response that avoids pursuing a plan under uncertain assumptions. Taking this into account, the tool should only answer when the documents support it, and otherwise say it doesn't know. 
 
 ## Corpus
-
-*Table: document, URL, date, licence, words.*
 
 | Document | URL | Date | Licence | Words |
 |---|---|---|---|---|
@@ -26,8 +22,6 @@ All three are public documents from the official EIC website and contain no pers
 
 ## Ingestion
 
-*How you extract, clean and chunk; one extraction problem you fixed; chunk metadata; number of chunks.*
-
 Extraction is done page by page from the chosen PDFs with `pypdf`, while keeping the page number. There were certain cleaning steps in order to only maintain necessary information that is of value for the use of the tool. For example, the Guide's repeated page header was removed, lone page numbers and table of contents lines were removed, and pages that had less than 20 words were skipped (covers, blank pages). The chunks are composed of 200 words with a 40-word overlap, never crossing a page. I used a single chunk size on purpose, to stay within the 1,000-embeddings-a-day limit, and compared two search methods instead, since that needs no extra embeddings.
 
 In the process of extraction I faced a problem that might seem simple at first glance but had to be addressed in order to capture the real meaning of words. The PDFs include some words with stray spaces such as "high -risk" and "co -investment" (38 cases in the Work Programme and 9 in the Investment Guidelines). As seen, there is an extra space just before the hyphen and it could end up being interpreted as two separate pieces. For key processes such as keyword search, this can be critical as it may miss matches due to these slight errors. I fixed this in the cleaning step by removing the space before the hyphen, so the search now sees the actual words. 
@@ -39,8 +33,6 @@ Following the specifications of chunk size, word overlap and no page crossing, I
 
 
 ## Test set
-
-*How you wrote it, counts by kind, two examples.*
 
 I began thinking on basic common questions that a startup founder could come across when evaluating if they can benefit from a grant. Evidently, the questions were formulated in a way that answers come from information available in the corpus. Also, the wording in which questions are asked was something I paid close attention to and worth noting. The documents are filled with official EIC terms that may be complex or unheard of for the common person. Due to this, I decided to generate a mix of questions in which some followed a wording that included EIC terminology but others (8 out of 37) were formulated more naturally and with everyday wording that founders could use so the search is tested with both kinds of wording.
 
@@ -63,8 +55,6 @@ Below are examples of each type of question based on the explanations given abov
 
 ## Retrieval
 
-*Hit rate at 1/3/5 per design, words added to the prompt, the design you chose.* 
-
 For the retrieval I focused on and tested two designs: vector search and hybrid search. Vector search is the approach in which questions are turned into number embeddings that capture meaning and the search returns chunks within the corpus that have similar embeddings. Words included in the questions may differ to those used in the answers but their captured meaning is similar under this approach. On the other hand, the hybrid search uses both vector search and keyword search. Keyword search ranks chunks within the corpus depending on how many keywords used in the questions match those in the documents. Rarer words count more, so a match including "TRL" will matter more than one with "grant" which is seen everywhere. This is combined with vector search explained above, and the chunks that rank high under either method come first. Both designs use the same 631 chunks, so the comparison needed no extra embeddings. 
 
 Before including the table with results it is important to clarify what hit@k or hit rate represent under my scenario. This metric reflects the share of answerable questions for which a chunk from an expected page appears in the top k results. 
@@ -85,10 +75,10 @@ The hit rate drastically improves from 1 to 5 but since the agent reads the top 
 
 The weak spot is the multi questions. For the 7 multi questions, both needed passages were in the top 5 for only 2 of them (29%). A single search usually finds one half of the answer, so the agent may need to search more than once. 
 
+Note: these numbers were measured before I added the NEOTEC document (see Adding a document). Re-running the retrieval comparison on the final index (742 chunks) gives exactly the same results for vector search, while hybrid search changes slightly (0.45 / 0.68 / 0.87), because keyword scores depend on all the documents in the index. The decision does not change.
+
 
 ## Tools and subagent
-
-*Your tools' descriptions, one search result, the subagent's instructions, one transcript from your editor.*
 
 ### Tool descriptions
 
@@ -160,7 +150,7 @@ How to reply:
 
 ### Transcript from my editor (Claude Code in VS Code)
 
-
+```
 Use the corpus-researcher subagent to answer: We've been rejected twice already. Is there a limit to how many times we can try again?
 Agent:EIC resubmission limits
 IN
@@ -184,10 +174,9 @@ whether you have to wait a minimum time before resubmitting
 whether a rejection at the full proposal stage means starting again with a new short proposal
 whether the limit resets under the next EU research programme after Horizon Europe
 If you were rejected after the interview, you should also have received a Seal of Excellence (Guide v6.0, p. 55). It can help you seek other funding.
+```
 
 ## Adding a document
-
-*What happens when a document is already indexed. The unanswerable question, the document you added, the answer before and after.*
 
 To prevent duplicates and wasting embedding quota, when a document is already indexed it can't be added again. The 'add_document' tool responds that the document is already indexed to ensure the proper organization of information.
 
@@ -203,11 +192,9 @@ In order to test out the 'add_document' tool, I chose an unanswerable question t
 Sources:
 - convocatoria_neotec_2026, p. 7"
 
-Evidently, the agent successfully communicated with the 'add_document' tool, the approval step followed as expected, the extra chunks were added, and the answer now responds to the question that was originally unanswerable. Even though the question was in English and the document in Spanish, the search still found the right page. I checked the answer against the PDF: all the numbers are correct and on page 7, but the detail about MIT or GeorgiaTech is actually on page 32, not page 7. The citation guardrail does not catch this, because it only checks that every cited page was retrieved, not that each claim is on that exact page.
+Evidently, the agent successfully communicated with the 'add_document' tool, the approval step followed as expected, the extra chunks were added, and the answer now responds to the question that was originally unanswerable. Even though the question was in English and the document in Spanish, the search still found the right page. I checked the answer against the PDF: all the numbers are correct and on page 7, but the detail about MIT or GeorgiaTech is actually on page 32, not page 7. The citation guardrail does not catch this, because it only checks that every cited page was retrieved, not that each claim is on that exact page. Because the index now includes the NEOTEC document, q35 is no longer unanswerable; the end-to-end evaluation in the next sections was run before I added it.
 
 ## Harness and guardrails
-
-*Your AGENTS.md rules, the approval step, and your extra guardrail with one case where it fired.*
 
 ### AGENTS.md rules
 
@@ -264,8 +251,6 @@ The guardrail I chose checks the citations in code after the agent answers and b
 
 ## Evaluation
 
-*Code checks, the judge's rubric, your agreement with the judge, and results: correct, unsupported, correct refusals, wrong refusals.*
-
 I ran the agent on all 37 questions with `uv run python main.py evaluate`. Each answer is saved in `eval/answers.csv`, the judge's verdicts in `eval/judge_verdicts.csv`, my grades in `eval/human_labels.csv`, and the totals in `eval/summary.csv`.
 
 ### Code checks
@@ -307,8 +292,6 @@ The evaluation also found two bugs in my own system on the first run (kept in `e
 
 ## Failures
 
-*Failed questions by cause, with counts, and what to fix first.*
-
 I classified every failure using the five categories from the brief: retrieval miss, wrong answer from the right passage, unsupported claim, wrong refusal, or bad test question.
 
 | Failure | Cause | Count |
@@ -324,8 +307,6 @@ In the final run only one of the 37 questions failed, and it failed on the safe 
 
 ## Decision
 
-*Would you let users rely on it, for what, with which safeguard? Cost and latency per question.*
-
 After initial trial and understanding on how the tool works, I would comfortably let startup founders use this for general understanding on basic yet necessary information regarding the process of receiving grants.  The information comes from official sources and it is presented to the user in a concise manner in which it is easy to understand and proper citing is included in order to ensure credibility. The safeguards already incorporated are meant to protect the user from receiving wrong answers. However, it should not be the final word for important decisions such as submitting an application or deciding how much funding to ask for. For those, founders should confirm the information on the cited page or on the official EIC website. This decision is based on the evaluation: 36 of 37 questions were handled correctly, no answer made a claim that wasn’t in the documents, and all 6 unanswerable questions were correctly refused. Still, 37 questions is a small test, so the results should be confirmed with more questions before relying on it more widely.
 
  In terms of safeguards, always showing the cited page and keeping the citation guardrail with the small fix mentioned above, will allow the user to understand where the information is coming from and double-check if considered necessary. Also, it is important to note that the documents included in the corpus contain specific information from 2027, so including a reminder that information is updated every year is a necessary safeguard for future use. In relation to this, human approval for adding new documents will be maintained to ensure the integrity of information and only add documents that contain information for future years or cover a new spectrum in relation to grants that was not yet considered. 
@@ -336,4 +317,4 @@ After initial trial and understanding on how the tool works, I would comfortably
 
 ## AI use
 
-*What you used and how, or "none".*
+I used Claude to explain key terms, suggest relevant topics, write the code, and draft the test set and certain parts of the report. I ran and tested all the code, reviewed and edited the test set and the drafts, wrote the remaining sections, and graded all 37 answers myself. The decisions (use case, design choice, guardrail and whether to rely on the tool) are my own.
