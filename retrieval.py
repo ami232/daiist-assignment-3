@@ -27,7 +27,7 @@ CANDIDATES = 30
 
 # The design used by server.py; evaluate.py compares all of them and REPORT.md justifies this choice.
 ACTIVE_DESIGN = "structural"
-ACTIVE_METHOD = "hybrid"
+ACTIVE_METHOD = "dense"  # chosen on 2026-11-21: best hit@k on both question sets (eval/retrieval*.csv)
 DEFAULT_K = 5
 
 
@@ -114,9 +114,10 @@ class Retriever:
 
     def search(self, query: str, k: int = DEFAULT_K, method: str = ACTIVE_METHOD,
                where: dict | None = None, fallback: bool = False) -> list[dict]:
-        """`fallback=True` (server only): if the embedding quota is exhausted, hybrid degrades
-        to bm25 and every hit is marked, instead of the tool failing. Evaluation never falls back."""
-        if fallback and method == "hybrid":
+        """`fallback=True` (server only): if the embedding quota is exhausted, dense or hybrid
+        degrades to bm25 and every hit is marked, instead of the tool failing. Evaluation never
+        falls back."""
+        if fallback and method in ("dense", "hybrid"):
             try:
                 embed_query(query)
             except pipeline.QuotaExhausted:

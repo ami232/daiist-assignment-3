@@ -7,6 +7,7 @@ question, the reference answer and the passages the agent retrieved, asks for
 
 It never shows the judge's verdicts (those are in eval/judge.csv): grade first.
 Stop any time with q; running it again continues where you left off.
+`uv run python grade.py q02 q09` deletes those labels and grades them again.
 """
 
 import csv
@@ -20,7 +21,6 @@ ROOT = Path(__file__).resolve().parent
 ANSWERS = ROOT / "eval" / "answers.jsonl"
 LABELS = ROOT / "eval" / "human_labels.csv"
 FIELDS = ["id", "correct", "supported", "notes"]
-PASSAGE_CHARS = 1200
 
 
 def wrap(text: str, indent: str = "  ") -> str:
@@ -43,6 +43,15 @@ def main() -> int:
         return 1
     answers = [json.loads(line) for line in ANSWERS.read_text(encoding="utf-8").splitlines() if line.strip()]
 
+    redo = set(sys.argv[1:])
+    if redo and LABELS.exists():
+        with LABELS.open(newline="", encoding="utf-8") as f:
+            kept = [r for r in csv.DictReader(f) if r.get("id") and r["id"] not in redo]
+        with LABELS.open("w", newline="", encoding="utf-8") as f:
+            w = csv.DictWriter(f, FIELDS)
+            w.writeheader()
+            w.writerows(kept)
+
     graded = set()
     if LABELS.exists():
         with LABELS.open(newline="", encoding="utf-8") as f:
@@ -62,9 +71,10 @@ def main() -> int:
         print(f"\nREFERENCE ANSWER\n{wrap(a['reference_answer'])}")
         print(f"\nAGENT ANSWER\n{wrap(a['answer'])}")
         passages = a.get("retrieved") or []
-        print(f"\nRETRIEVED PASSAGES ({len(passages)} search calls)")
-        for p in passages:
-            print(wrap(p[:PASSAGE_CHARS] + (" [...]" if len(p) > PASSAGE_CHARS else ""), "    "))
+        print(f"\nRETRIEVED PASSAGES ({len(passages)} search calls, every passage in full)")
+        for s_n, p in enumerate(passages, 1):
+            print(f"  --- search {s_n} ---")
+            print(wrap(p, "    "))
             print("    " + "-" * 60)
         print()
         correct = ask("correct?   1 = right (or a proper refusal), 0 = wrong, q = quit: ", ("1", "0", "q"))

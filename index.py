@@ -26,11 +26,14 @@ limit or a crash loses nothing: run it again tomorrow and it carries on.
 
 from __future__ import annotations
 
+import base64
 import hashlib
+import json
 import os
 import re
 import sys
 import time
+from array import array
 from dataclasses import dataclass, field
 from pathlib import Path
 
@@ -400,6 +403,7 @@ class QuotaExhausted(RuntimeError):
 
 def embed_texts(texts: list[str], task: str = "RETRIEVAL_DOCUMENT") -> list[list[float]]:
     """Embed a batch with Gemini; retries short rate limits, raises QuotaExhausted on the daily cap."""
+    import httpx
     from google.genai import errors, types
 
     config = types.EmbedContentConfig(output_dimensionality=EMBED_DIM, task_type=task)
@@ -421,14 +425,69 @@ def embed_texts(texts: list[str], task: str = "RETRIEVAL_DOCUMENT") -> list[list
             wait = 20 * (attempt + 1)
             log(f"  rate limited, waiting {wait}s ...")
             time.sleep(wait)
+        except (errors.ServerError, httpx.TransportError) as error:  # 5xx or dropped connection
+            if attempt == 5:
+                raise
+            wait = 15 * (attempt + 1)
+            log(f"  {type(error).__name__}, retrying in {wait}s ...")
+            time.sleep(wait)
     raise QuotaExhausted("still rate limited after several retries")
+
+
+# Chroma normally flushes its HNSW index to binary files once a collection passes
+# `hnsw:sync_threshold` items (default 1000) and then drops those vectors from its SQLite log.
+# On Windows the HNSW writer fails silently on non-ASCII paths (this project lives under
+# "Andrés"), which lost ~1030 vectors on 2026-11-18. With a threshold the index never reaches,
+# every vector stays in chroma.sqlite3 and the HNSW graph is rebuilt in memory on load.
+HNSW_SETTINGS = {"hnsw:space": "cosine", "hnsw:batch_size": 100, "hnsw:sync_threshold": 1_000_000}
+
+# Every document vector ever returned by the API, keyed by model, size, task and text, so that
+# rebuilding a collection (or re-adding a document) never spends embedding quota twice.
+VECTOR_STORE = INDEX_DIR / "vectors.jsonl"
+_vectors: dict[str, list[float]] | None = None
+
+
+def _vector_key(text: str, task: str) -> str:
+    return hashlib.sha1(f"{EMBED_MODEL}|{EMBED_DIM}|{task}|{text}".encode()).hexdigest()
+
+
+def _load_vectors() -> dict[str, list[float]]:
+    global _vectors
+    if _vectors is None:
+        _vectors = {}
+        if VECTOR_STORE.exists():
+            for line in VECTOR_STORE.read_text(encoding="utf-8").splitlines():
+                if line.strip():
+                    row = json.loads(line)
+                    _vectors[row["k"]] = list(array("f", base64.b64decode(row["v"])))
+    return _vectors
+
+
+def _save_vectors(keys: list[str], vectors: list[list[float]]) -> None:
+    store = _load_vectors()
+    INDEX_DIR.mkdir(exist_ok=True)
+    with VECTOR_STORE.open("a", encoding="utf-8") as f:
+        for k, v in zip(keys, vectors):
+            f.write(json.dumps({"k": k, "v": base64.b64encode(array("f", v).tobytes()).decode()}) + "\n")
+            store[k] = list(array("f", v))
+
+
+def cached_embeddings(texts: list[str], task: str = "RETRIEVAL_DOCUMENT") -> tuple[list[list[float]], int]:
+    """Vectors for `texts`, calling the API only for texts not in VECTOR_STORE. Returns (vectors, n_new)."""
+    store = _load_vectors()
+    keys = [_vector_key(t, task) for t in texts]
+    missing = [i for i, k in enumerate(keys) if k not in store]
+    if missing:
+        new = embed_texts([texts[i] for i in missing], task)
+        _save_vectors([keys[i] for i in missing], new)
+    return [store[k] for k in keys], len(missing)
 
 
 def collection(design: str):
     import chromadb
 
     client = chromadb.PersistentClient(path=str(CHROMA_DIR))
-    return client.get_or_create_collection(f"corpus_{design}", metadata={"hnsw:space": "cosine"})
+    return client.get_or_create_collection(f"corpus_{design}", metadata=HNSW_SETTINGS)
 
 
 def embed_and_store(chunks: list[dict], design: str = "structural") -> dict:
@@ -438,15 +497,17 @@ def embed_and_store(chunks: list[dict], design: str = "structural") -> dict:
     existing = col.get(ids=ids, include=["metadatas"]) if ids else {"ids": [], "metadatas": []}
     saved = {i: (m or {}).get("hash") for i, m in zip(existing["ids"], existing["metadatas"])}
     todo = [c for c in chunks if saved.get(c["id"]) != c["metadata"]["hash"]]
-    done = 0
+    done = api_calls = 0
     for start in range(0, len(todo), EMBED_BATCH):
         batch = todo[start:start + EMBED_BATCH]
-        vectors = embed_texts([c["text"] for c in batch])
+        vectors, new = cached_embeddings([c["text"] for c in batch])
+        api_calls += new
         col.upsert(ids=[c["id"] for c in batch], embeddings=vectors,
                    documents=[c["text"] for c in batch], metadatas=[c["metadata"] for c in batch])
         done += len(batch)
-        log(f"  [{design}] embedded {done}/{len(todo)}")
-    return {"chunks": len(chunks), "already_saved": len(chunks) - len(todo), "embedded": done}
+        log(f"  [{design}] stored {done}/{len(todo)} ({api_calls} new from the API)")
+    return {"chunks": len(chunks), "already_saved": len(chunks) - len(todo), "embedded": done,
+            "api_calls": api_calls}
 
 
 # --------------------------------------------------------------------------- main

@@ -51,7 +51,8 @@ FALLBACK_MODEL = "gemini-3.5-flash-lite"  # used only when MODEL is overloaded (
 MAX_TOOL_CALLS = 6
 REFUSAL = "The corpus does not cover this question."
 
-CITATION = re.compile(r"\[([^\[\],]+?),\s*(Article\s+[0-9]+[a-z]*(?:\([0-9a-z]+\))?(?:-\([0-9a-z]+\))?)\]")
+# Article 395(1), Article 5(4)(a), Article 141(1)-(5); the nested form was missed until q20 (see REPORT.md)
+CITATION = re.compile(r"\[([^\[\],]+?),\s*(Article\s+[0-9]+[a-z]*(?:\([0-9a-z]+\))*(?:-\([0-9a-z]+\))?)\]")
 RETURNED = re.compile(r"cite as \[([^\[\],]+?),\s*([^\]]+)\]")
 
 
@@ -197,7 +198,13 @@ async def answer_async(question: str, approve=ask_human, verbose: bool = False) 
 def _check(state) -> dict:
     messages = state["messages"]
     outputs = [_text(m) for m in messages if m.type == "tool"]
-    return check_citations(_text(messages[-1]), outputs)
+    result = check_citations(_text(messages[-1]), outputs)
+    # A turn that only adds a document reports the tool result; there is nothing to cite.
+    # (Found in the add_document demo: the check forced a refusal after a successful add.)
+    tools = {m.name for m in messages if m.type == "tool"}
+    if "add_document" in tools and "search" not in tools and not result["invalid"]:
+        result.update(ok=True, uncited=False, skipped="add_document turn")
+    return result
 
 
 def answer(question: str, approve=ask_human) -> dict:

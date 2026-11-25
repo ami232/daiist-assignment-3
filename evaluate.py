@@ -33,7 +33,14 @@ HUMAN = EVAL / "human_labels.csv"
 ANSWERS = EVAL / "answers.jsonl"
 JUDGE = EVAL / "judge.csv"
 
-JUDGE_MODEL = "gemini-3.6-flash"  # a different model from the agent's; Pro has no free-tier quota
+# Different models from the agent's (gemini-3.8-flash, fallback gemini-3.5-flash-lite); Pro has no
+# free-tier quota. The free tier allows few judge calls per model per day, so when the first model's
+# daily quota runs out the next one judges the rest; every verdict records which model gave it.
+JUDGE_MODELS = ["gemini-3.5-flash", "gemini-3.6-flash", "gemini-3-flash-preview"]
+
+
+class JudgeQuotaExhausted(Exception):
+    pass
 KS = (1, 3, 5)
 METHODS = ("dense", "hybrid")
 
@@ -190,7 +197,7 @@ Be strict on numbers. Judge only against the reference and the passages, not you
 Reply with JSON: {"correct": 0 or 1, "supported": 0 or 1, "reason": "<one sentence>"}."""
 
 
-def judge_one(q: dict, a: dict) -> dict:
+def judge_one(q: dict, a: dict, model: str) -> dict:
     from google.genai import errors, types
 
     passages = "\n\n=====\n\n".join(a["retrieved"]) or "(no search results)"
@@ -205,10 +212,15 @@ def judge_one(q: dict, a: dict) -> dict:
     for attempt in range(8):
         try:
             response = pipeline.genai_client().models.generate_content(
-                model=JUDGE_MODEL, contents=prompt, config=config)
+                model=model, contents=prompt, config=config)
             return json.loads(response.text)
         except (errors.ClientError, errors.ServerError) as error:
-            # 429 rate limit, 503 overloaded, 504 deadline: wait and retry
+            # 429 rate limit, 503 overloaded, 504 deadline: wait and retry;
+            # a 429 that persists for several minutes is the daily quota, so move on to the next
+            # judge model (the per-minute limit's error also names the daily quota, so the text
+            # cannot tell them apart)
+            if error.code == 429 and attempt >= 4:
+                raise JudgeQuotaExhausted(model) from error
             if error.code not in (429, 500, 503, 504) or attempt == 7:
                 raise
             wait = 20 * (attempt + 1)
@@ -223,19 +235,32 @@ def run_judge(questions: list[dict], answers: dict) -> dict:
         with JUDGE.open(newline="", encoding="utf-8") as f:
             cached = {r["id"]: r for r in csv.DictReader(f)}
     verdicts = {}
+    models = list(JUDGE_MODELS)
+
+    def key_for(model: str, q: dict, a: dict) -> str:
+        return hashlib.sha1(f"{model}|{RUBRIC}|{q['reference_answer']}|{a['answer']}".encode()).hexdigest()[:12]
+
     for q in questions:
         a = answers[q["id"]]
-        key = hashlib.sha1(f"{JUDGE_MODEL}|{RUBRIC}|{q['reference_answer']}|{a['answer']}".encode()).hexdigest()[:12]
         old = cached.get(q["id"])
-        if old and old.get("key") == key:
+        if old and old.get("key") in {key_for(m, q, a) for m in JUDGE_MODELS}:
             verdicts[q["id"]] = old
             continue
-        log(f"  judging {q['id']} ...")
-        v = judge_one(q, a)
+        while True:
+            if not models:
+                raise RuntimeError("daily quota exhausted for every judge model: " + ", ".join(JUDGE_MODELS))
+            try:
+                log(f"  judging {q['id']} with {models[0]} ...")
+                v = judge_one(q, a, models[0])
+                break
+            except JudgeQuotaExhausted:
+                log(f"    {models[0]}: daily quota exhausted, switching judge model")
+                models.pop(0)
         verdicts[q["id"]] = {"id": q["id"], "correct": str(v["correct"]), "supported": str(v["supported"]),
-                             "reason": v["reason"], "key": key}
+                             "reason": v["reason"], "model": models[0], "key": key_for(models[0], q, a)}
         with JUDGE.open("w", newline="", encoding="utf-8") as f:
-            w = csv.DictWriter(f, fieldnames=["id", "correct", "supported", "reason", "key"])
+            w = csv.DictWriter(f, fieldnames=["id", "correct", "supported", "reason", "model", "key"],
+                               restval="")
             w.writeheader()
             w.writerows([verdicts.get(qq["id"]) or cached[qq["id"]] for qq in questions
                          if qq["id"] in verdicts or qq["id"] in cached])
@@ -304,7 +329,7 @@ def main() -> int:
     n = len(questions)
     answered = [a for a in answers.values() if not a.get("error")]
     summary = {
-        "agent_model": __import__("agent").MODEL, "judge_model": JUDGE_MODEL,
+        "agent_model": __import__("agent").MODEL, "judge_model": " / ".join(sorted({v.get("model") or "?" for v in verdicts.values()})),
         "design": retrieval.ACTIVE_DESIGN, "method": retrieval.ACTIVE_METHOD,
         "retrieval": retrieval_rows,
         "questions": n,
