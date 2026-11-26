@@ -1,0 +1,74 @@
+{
+  "questions": 37,
+  "answered_by_agent": 37,
+  "graded": 37,
+  "correct": 34,
+  "correct_by_kind": {
+    "single": 23,
+    "multi": 5,
+    "unanswerable": 6
+  },
+  "n_by_kind": {
+    "single": 25,
+    "multi": 6,
+    "unanswerable": 6
+  },
+  "unsupported_answers": 1,
+  "answered": 31,
+  "correct_refusals": 6,
+  "unanswerable": 6,
+  "wrong_refusals": 0,
+  "answerable": 31,
+  "missed_refusals": 0,
+  "invalid_citation_answers": 0,
+  "guardrail_fired": 0,
+  "guardrail_blocked": 0,
+  "tokens_mean": 7196,
+  "tokens_median": 5677,
+  "seconds_mean": 7.5,
+  "seconds_median": 3.8,
+  "seconds_max": 36.45,
+  "tool_calls_mean": 1.32,
+  "failures_by_suggested_cause": {
+    "wrong answer from right passage": 2,
+    "retrieval miss": 1
+  },
+  "human_judge_agreement": {
+    "correct": {
+      "n": 37,
+      "agreement": 0.973,
+      "kappa": 0.786
+    },
+    "supported": {
+      "n": 37,
+      "agreement": 0.946,
+      "kappa": 0.479
+    },
+    "disagreements": [
+      {
+        "id": "q06",
+        "human": "1/0",
+        "sistema": "1/1",
+        "graded_by": "juez",
+        "judge_reason": "La respuesta es correcta y está totalmente respaldada por la evidencia, identificando correctamente el requisito de solvencia y calculando el importe anual basándose en los datos del presupuesto proporcionados."
+      },
+      {
+        "id": "q09",
+        "human": "1/0",
+        "sistema": "1/1",
+        "graded_by": "juez",
+        "judge_reason": "La respuesta proporciona la cifra exacta y las condiciones temporales requeridas, respaldándose correctamente en la evidencia citada."
+      },
+      {
+        "id": "q11",
+        "human": "1/1",
+        "sistema": "0/1",
+        "graded_by": "juez",
+        "judge_reason": "La respuesta es incorrecta porque omite la información sobre el teléfono de guardia 24x7 para incidentes críticos o altos, que es parte esencial de la respuesta de referencia."
+      }
+    ]
+  },
+  "chat_model": "gemini-3.5-flash-lite",
+  "judge_model": "gemini-3.1-flash-lite",
+  "design": "struct / dense / filtro=True / k=5"
+}

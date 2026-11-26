@@ -7,8 +7,13 @@ __pycache__/
 
 # Documents downloaded by your index stage. Commit them only if their licence allows it.
 corpus/
+# Documentos para la demo de add_document (pliegos con datos personales: no se suben)
+nuevos/
 
 # Your index belongs in index/, committed. Your evaluation results belong in eval/, committed.
 
 # Never commit your API key
 .env
+
+# Temporales del índice
+index/*.tmp

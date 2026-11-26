@@ -1,1 +1,38 @@
 id,correct,supported,notes
+q01,1,1,
+q02,1,1,
+q03,1,1,
+q04,1,1,
+q05,1,1,
+q06,1,0,"La parte pedida coincide con la referencia, pero concluye que el mínimo es 195.000 € sin IVA: el pliego solo dice 'precio de licitación anual' sin aclarar si es con o sin IVA (con IVA serían 235.950 €); conclusión no respaldada y cálculo no pedido (regla 6)."
+q07,1,1,
+q08,0,0,"Dice 53 puntos de juicio de valor; son 49 (18+12+15+4). Incluye la póliza y el personal indefinido, que son criterios objetivos. El 53 no está en la evidencia. Probable causa: fragmento etiquetado como 'CRITERIOS JUICIOS DE VALOR (continuación)' que en realidad trata los criterios objetivos."
+q09,1,0,"Capital correcto (1.000.000 € por siniestro y anualidad), pero afirma que la póliza se valora como juicio de valor; la evidencia dice 'Se establecen como criterios objetivos: a.- Póliza de seguro (3 puntos)'. Misma causa de chunking que q08."
+q10,1,1,
+q11,1,1,"Responde la frecuencia (semanal), que es lo preguntado; no menciona el teléfono de guardia 24x7 de la referencia, que no se pedía."
+q12,1,1,
+q13,1,1,
+q14,1,1,
+q15,1,1,
+q16,1,1,
+q17,1,1,
+q18,1,1,
+q19,1,1,
+q20,1,1,
+q21,1,1,
+q22,1,1,
+q23,1,1,
+q24,1,1,
+q25,1,1,
+q26,1,1,
+q27,1,1,
+q28,1,1,
+q29,1,1,
+q30,0,1,"Multi a medias: ENISA correcto (36 meses), pero dice que la duración de la GISS no está en el corpus; sí está en giss_ted (24 meses por lote) y no se recuperó. Lo que afirma sí está en la evidencia."
+q31,1,1,
+q32,1,1,
+q33,1,1,
+q34,1,1,
+q35,1,1,
+q36,1,1,
+q37,1,1,

@@ -1,0 +1,134 @@
+▗ ▗   ▖ ▖  Claude Code v2.1.310
+           Opus 5.5 · Claude Enterprise
+ ▘▘   ▝▝   ~/daiist-assignment-3
+
+
+❯ Usa el subagente corpus-researcher para responder: ¿Qué solvencia económica   
+  exigen Cartagena y ENISA a los licitadores?                                   
+
+⏺ corpus-researcher(Solvencia económica Cartagena y ENISA)
+  ⎿  Backgrounded agent (↓ to manage · ctrl+o to expand)
+
+⏺ He lanzado el subagente corpus-researcher para buscar la solvencia económica
+  que piden Cartagena y ENISA. Hace una búsqueda por cada licitación, en los
+  pliegos y en los anuncios de TED. Cuando termine te paso la respuesta con sus
+  citas.
+
+✻ Cooked for 8s · done 5:34 PM
+
+› Message from corpus-researcher
+  En las dos licitaciones el único requisito de solvencia económica y financiera
+  es el volumen anual de negocios. Ni el PCAP ni el anuncio de TED piden seguro
+  de responsabilidad civil ni patrimonio neto. ENISA da una cifra exacta.
+  Cartagena solo la da como fórmula, sin importe.
+
+  **Cartagena (expte. SE2026/44)**
+  - **Criterio:** volumen de negocios anual general. Cuenta el mejor de los tres
+  últimos ejercicios, según la fecha de constitución o de inicio de actividades
+  y la de presentación de ofertas [cartagena_pcap, p. 7].
+  - **Cifra:** el pliego no da un importe. Dice que el volumen debe ser «de
+  importe igual o superior al precio de licitación anual del contrato»
+  [cartagena_pcap, p. 7]. En los fragmentos que encontré no sale el precio de
+  licitación anual. El anuncio de TED solo da el «Valor estimado total (sin
+  IVA): 585000 Moneda: EUR» y una «Duración del contrato por lote: 455 días»
+  [cartagena_ted, p. 1]. No he calculado el umbral a partir de esos datos.
+  - **Cómo se acredita:** con el medio del artículo 87.1a) de la LCSP, es decir,
+  el volumen anual de negocios del mejor de los tres últimos ejercicios
+  disponibles, «por importe igual o superior al exigido en el anuncio de
+  licitación y en los pliegos del contrato» [cartagena_pcap, p. 20]. El
+  fragmento no dice qué documento hay que presentar (cuentas anuales u otro).
+  - **Anuncio de TED:** como criterio de selección económica figura solo «Cifra
+  anual de negocio» (código slc-stand-to-gen) [cartagena_ted, p. 1]. Coincide
+  con el PCAP.
+  - **Seguro:** la póliza de seguro no es un requisito de solvencia. Es un
+  criterio de adjudicación que da 3 puntos [cartagena_ted, p. 1]. Se valora que
+  el licitador incluya, «sin coste adicional para el Ayuntamiento de Cartagena,
+  una póliza de seguro específica con un capital asegurado mínimo de 1.000.000
+  de euros por siniestro y anualidad», vigente durante todo el contrato
+  [cartagena_pcap, p. 15].
+
+  **ENISA (expte. 56/2026)**
+  - **Criterio:** importe neto de la cifra de negocios, referido al mejor de los
+  tres últimos ejercicios disponibles (art. 87 LCSP) [enisa_pcap, p. 23].
+  - **Cifra:** «al menos, una vez y media el valor anual medio del contrato,
+  esto es: 123.000,00 €» [enisa_pcap, p. 23].
+  - **Cómo se acredita:** con las cuentas anuales aprobadas y depositadas en el
+  Registro Mercantil o, si la empresa no está inscrita en él, en el registro
+  oficial que le corresponda. Los empresarios individuales no inscritos lo
+  acreditan con sus libros de inventarios y cuentas anuales legalizados por el
+  Registro Mercantil [enisa_pcap, p. 24].
+  - **Alternativa por clasificación:** se puede acreditar la solvencia con la
+  clasificación Grupo V, Subgrupo 5, Categoría 1. Hay que aportar el certificado
+  de clasificación, original o copia autenticada, y una declaración responsable
+  de que sigue vigente [enisa_pcap, p. 23].
+  - **Registro de licitadores:** la inscripción en el Registro Oficial de
+  Licitadores y Empresas Clasificadas del Sector Público acredita la solvencia
+  económica y financiera, salvo prueba en contrario [enisa_pcap, p. 22].
+  - **Anuncio de TED:** como criterio económico figura solo «Cifra anual de
+  negocio» [enisa_ted, p. 1]. Coincide con el PCAP. El anuncio no repite la
+  cifra de 123.000,00 €.
+
+  **Contradicciones:** no he encontrado ninguna entre el PCAP y el anuncio de
+  TED en ninguna de las dos licitaciones.
+
+  Lo que el corpus no cubre: no encontré ningún requisito de seguro de
+  responsabilidad civil ni de patrimonio neto como solvencia en ninguna de las
+  dos licitaciones. En Cartagena tampoco sale el importe en euros del «precio de
+  licitación anual», que es lo que fija el umbral, ni el documento concreto con
+  el que se acredita el volumen de negocios. Busqué «solvencia económica y
+  financiera volumen anual de negocios» y «anuncio TED criterios de selección
+  situación económica y financiera seguro de responsabilidad civil (patrimonio
+  neto)», una vez en cada licitación, y llegué al máximo de 4 búsquedas.
+
+⏺ Las dos licitaciones piden como solvencia económica y financiera solo el
+  volumen anual de negocios. ENISA fija una cifra concreta. Cartagena solo da la
+  fórmula, sin el importe en euros.
+
+  Cartagena (expte. SE2026/44)
+  - Requisito: un volumen de negocios anual, en el mejor de los tres últimos
+    ejercicios, «de importe igual o superior al precio de licitación anual del
+    contrato» [cartagena_pcap, p. 7].
+  - Cómo se acredita: con el medio del art. 87.1a) LCSP, «por importe igual o
+    superior al exigido en el anuncio de licitación y en los pliegos del
+    contrato» [cartagena_pcap, p. 20].
+  - Cifra: el pliego no da el precio de licitación anual. El anuncio de TED solo
+    trae el «Valor estimado total (sin IVA): 585000 Moneda: EUR» y una
+    «Duración del contrato por lote: 455 días» [cartagena_ted, p. 1]. No he
+    calculado el umbral con esos datos. Si quieres que lo haga, dímelo, pero no
+    es seguro que sea la base correcta.
+  - Anuncio de TED: el único criterio económico que aparece es «Cifra anual de
+    negocio» [cartagena_ted, p. 1]. Coincide con el PCAP.
+  - El seguro no cuenta como solvencia: la póliza de seguro es un criterio de
+    adjudicación que da 3 puntos [cartagena_ted, p. 1]. Se puntúa una póliza
+    «sin coste adicional para el Ayuntamiento de Cartagena» con «un capital
+    asegurado mínimo de 1.000.000 de euros por siniestro y anualidad»
+    [cartagena_pcap, p. 15].
+
+  ENISA (expte. 56/2026)
+  - Requisito: un importe neto de la cifra de negocios, en el mejor de los tres
+    últimos ejercicios, de «al menos, una vez y media el valor anual medio del
+    contrato, esto es: 123.000,00 €» [enisa_pcap, p. 23].
+  - Cómo se acredita: con las cuentas anuales aprobadas y depositadas en el
+    Registro Mercantil o en el registro oficial que corresponda. Los empresarios
+    individuales no inscritos usan sus libros de inventarios y cuentas anuales
+    legalizados [enisa_pcap, p. 24].
+  - Clasificación como alternativa: sirve la clasificación Grupo V, Subgrupo 5,
+    Categoría 1, con el certificado y una declaración responsable de que sigue
+    vigente [enisa_pcap, p. 23].
+  - Registro de licitadores: estar inscrito en el ROLECE acredita la solvencia
+    económica y financiera, salvo prueba en contrario [enisa_pcap, p. 22].
+  - Anuncio de TED: el único criterio económico que aparece es «Cifra anual de
+    negocio», sin repetir la cifra [enisa_ted, p. 1]. No contradice el PCAP.
+
+  No he encontrado contradicciones entre el PCAP y el anuncio de TED en ninguna
+  de las dos.
+
+  Lo que el corpus no cubre: ninguna de las dos pide seguro de responsabilidad
+  civil ni patrimonio neto como solvencia. En Cartagena tampoco aparece el
+  importe del «precio de licitación anual» ni el documento con el que se
+  acredita el volumen de negocios. El subagente llegó al límite de 4 búsquedas,
+  así que quizá haya páginas del PCAP de Cartagena que no ha revisado.
+
+✻ Churned for 10s · done 5:34 PM
+
+⏺ Agent "Solvencia económica Cartagena y ENISA" finished · 23s

@@ -1,1 +1,38 @@
 id,question,kind,expected_source,expected_location,reference_answer
+q01,¿Cuál es el valor estimado del contrato de SOC/MDR del Ayuntamiento de Cartagena?,single,cartagena_pcap,p. 3,585.000 € sin IVA
+q02,¿Qué garantía definitiva tiene que constituir el adjudicatario en la licitación de Cartagena?,single,cartagena_pcap,p. 21,"El 5 % del precio final ofertado, IVA excluido; puede constituirse mediante retención en el precio"
+q03,¿Hay que presentar garantía provisional para licitar en Cartagena?,single,cartagena_pcap,p. 21,"No, se exime a los licitadores (art. 106 LCSP)"
+q04,¿Cuánto dura el contrato de Cartagena según el pliego de cláusulas administrativas?,single,cartagena_pcap,p. 4,Tres años y tres meses desde la formalización
+q05,¿Admite prórrogas el contrato de Cartagena?,single,cartagena_ppt,p. 37,No: hasta 3 meses de implantación y después 36 meses de servicio sin opción a prórrogas
+q06,¿Qué volumen de negocios se exige como solvencia económica en la licitación de Cartagena?,single,cartagena_pcap,p. 7,"Un volumen anual de negocios, en el mejor de los tres últimos ejercicios, igual o superior al precio de licitación anual del contrato"
+q07,¿Qué certificación de seguridad tiene que declarar el licitador en Cartagena?,single,cartagena_pcap,p. 8,Certificación vigente UNE-EN ISO/IEC 27001 o semejante
+q08,¿Cuántos puntos reparte Cartagena en los criterios de juicio de valor?,single,cartagena_pcap,p. 14,"49 puntos: SOC/MDR 18, SIEM 12, End Point 15 y Sonda 4"
+q09,¿Qué capital mínimo debe cubrir la póliza de seguro en el contrato de Cartagena?,single,cartagena_pcap,p. 16,"1.000.000 € por siniestro y anualidad, vigente durante todo el contrato"
+q10,¿Cuál es la penalidad diaria por demora en el contrato de Cartagena?,single,cartagena_pcap,p. 26,"0,60 € por cada 1.000 € del precio del contrato, IVA excluido"
+q11,¿Con qué frecuencia hay reuniones de seguimiento en el servicio de Cartagena?,single,cartagena_ppt,p. 26,"Semanales; además, teléfono de guardia 24x7 para incidentes críticos o altos"
+q12,¿Cuántos puntos da el Ayuntamiento de Cartagena al precio?,single,cartagena_ted,1,37 puntos
+q13,¿Cuál es el presupuesto base de licitación de ENISA sin IVA?,single,enisa_pcap,p. 8,246.000 € (297.660 € con IVA)
+q14,¿Por qué el valor estimado de la licitación de ENISA es mayor que su presupuesto?,single,enisa_pcap,p. 9,Porque suma un 20 % de posible modificación: 246.000 € + 49.200 € = 295.200 €
+q15,¿Cuánto dura el contrato de ENISA y desde cuándo?,single,enisa_pcap,p. 10,36 meses a partir del 17 de diciembre de 2026
+q16,¿Hasta cuándo se podían presentar ofertas a la licitación de ENISA?,single,enisa_pcap,p. 27,Hasta el 21 de septiembre de 2026 a las 8:00 h
+q17,¿Qué cifra de negocios mínima exige ENISA como solvencia económica?,single,enisa_pcap,p. 24,"123.000 € (1,5 veces el valor anual medio), en el mejor de los tres últimos ejercicios"
+q18,¿Qué clasificación empresarial sirve como alternativa para acreditar la solvencia en ENISA?,single,enisa_pcap,p. 23,"Grupo V, subgrupo 5, categoría 1"
+q19,¿Qué certificaciones exige ENISA a los licitadores?,single,enisa_pcap,p. 24,"ISO/IEC 27001, ISO 9001, ISO/IEC 20000-1 y ENS al menos de categoría media"
+q20,¿Qué puntuación mínima en la oferta técnica exige ENISA para seguir en el procedimiento?,single,enisa_pcap,p. 15,"20 puntos; por debajo, la oferta queda excluida"
+q21,¿En cuánto tiempo hay que notificar un incidente crítico en el SOC de ENISA?,single,enisa_ppt,p. 22,Máximo 1 hora desde la confirmación del incidente
+q22,¿Qué disponibilidad mínima debe tener la plataforma SOC de ENISA?,single,enisa_ppt,p. 22,"Al menos el 98 % mensual, salvo mantenimientos planificados"
+q23,¿En cuántos lotes se divide la licitación de la Seguridad Social y cuáles son?,single,giss_ted,1,"Dos: Lote 1, Servicios de Gestión de la Seguridad de la Información; Lote 2, Servicio de análisis de Ciberseguridad"
+q24,¿Cuál es la fecha límite para presentar ofertas a la licitación de la GISS?,single,giss_ted,1,11 de diciembre de 2026 a las 23:59
+q25,¿Con cuánta antelación hay que preavisar la prórroga del contrato de la GISS?,single,giss_pcap,p. 28,Al menos dos meses antes de que termine el contrato
+q26,¿Exigen Cartagena y ENISA la misma garantía definitiva?,multi,cartagena_pcap;enisa_pcap,p. 21;p. 31,"Sí: en las dos es el 5 % del precio final ofertado, IVA excluido"
+q27,Compara el valor estimado de las licitaciones de Cartagena y ENISA,multi,cartagena_pcap;enisa_pcap,p. 3;p. 9,585.000 € en Cartagena frente a 295.200 € en ENISA
+q28,¿Coinciden la duración del contrato de Cartagena en el pliego y en el anuncio de TED?,multi,cartagena_pcap;cartagena_ted,p. 4;1,No: el PCAP dice tres años y tres meses y el anuncio de TED indica 455 días
+q29,¿Qué certificación ISO piden tanto Cartagena como ENISA?,multi,cartagena_pcap;enisa_pcap,p. 8;p. 24,"ISO/IEC 27001 (ENISA pide además ISO 9001, ISO/IEC 20000-1 y ENS categoría media)"
+q30,¿Cuánto duran los contratos de ENISA y de la Seguridad Social?,multi,enisa_pcap;giss_ted,p. 10;1,"ENISA 36 meses; GISS 24 meses por lote, con prórroga máxima de 24 meses (lote 1) y 12 meses (lote 2)"
+q31,¿Exigen Cartagena y ENISA un SOC con cobertura 24x7?,multi,cartagena_ppt;enisa_ppt,p. 12;p. 22,Sí: en ambos casos 24x7x365
+q32,¿Qué garantía definitiva exige la EMVS de Madrid en su licitación de SOC?,unanswerable,,,El corpus no cubre esta pregunta (la licitación de la EMVS no está en el corpus)
+q33,¿Qué empresa resultó adjudicataria del contrato de ciberseguridad de ENISA?,unanswerable,,,El corpus no cubre esta pregunta (los pliegos no dicen quién ganó)
+q34,¿Cuántas empresas presentaron oferta a la licitación de SOC/MDR de Cartagena?,unanswerable,,,El corpus no cubre esta pregunta
+q35,¿Cuál es el presupuesto de la licitación de ciberseguridad del Ayuntamiento de Murcia?,unanswerable,,,El corpus no cubre esta pregunta (Murcia no está en el corpus)
+q36,¿Cuál es el umbral de regulación armonizada para contratos de servicios en 2027?,unanswerable,,,El corpus no cubre esta pregunta
+q37,¿Cuándo se firmó el contrato de la licitación de Cartagena?,unanswerable,,,El corpus no cubre esta pregunta
