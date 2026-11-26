@@ -1,0 +1,47 @@
+id,kind,refused,citations_valid,refusal_ok,cites_expected,numbers_ok,guardrails,judge_correct,judge_supported,judge_reason
+q01,multi,1,1,0,0,0,call_limit,1,1,"The corpus does not contain the liability clause for contract 047, so the assistant correctly refused to answer while accurately describing the missing information."
+q02,unanswerable,1,1,1,,,,1,1,"The answer correctly states that the corpus does not contain the monthly fee amount because it is in an unprovided Order Form, and all claims are fully supported by the retrieved passages."
+q03,single,0,1,1,1,0,,1,1,"The answer provides the correct monthly fee of EUR 35,000 paid by BancaSegura to ShieldNet, which covers all key facts requested and is fully supported by the evidence."
+q04,multi,0,1,1,1,1,,1,1,The answer provides all required figures and facts from both contracts accurately without contradiction and relies exclusively on the provided evidence.
+q05,unanswerable,1,1,1,,,,1,1,"The answer correctly identifies that the corpus does not state the governing law for the Veltrix Group and SunBridge Logistics contract, and all factual claims are supported by the provided evidence."
+q06,single,0,1,1,1,0,,1,1,The answer provides the correct hourly rate for partners beyond the monthly retainer and relies entirely on supported facts from the retrieved evidence.
+q07,single,0,1,1,1,1,,1,1,The answer correctly states the 95% monthly uptime guarantee and is fully supported by clause 4.1 of the retrieved contract.
+q08,multi,0,1,1,1,1,,1,1,"The answer correctly identifies that Contract 005 imposes a longer non-compete period (6 years) than Contract 029 (5 years), and every factual claim is fully supported by the retrieved evidence."
+q09,unanswerable,1,1,1,,,,1,1,The answer correctly identifies that the corpus does not state an overall liability cap for DevForge Studio while noting the related confidentiality penalty and properly citing the evidence.
+q10,single,0,1,1,1,1,,1,1,"The answer provides the correct annual license fee and payment terms matching the reference answer, and every factual claim is fully supported by the retrieved evidence."
+q11,single,0,1,1,1,0,,1,1,"The answer accurately states the correct success fee percentage and terms from the reference answer, and every factual claim is fully supported by the retrieved evidence."
+q12,multi,0,1,1,1,1,,1,1,"The answer correctly identifies that contract 006 gives a longer payment period (120 days) than contract 003 (90 days), and all factual claims are directly supported by the retrieved evidence."
+q13,single,0,1,1,1,0,,1,1,"The answer provides the correct monthly base fee of EUR 85,000, covers all required key facts, and is fully supported by the retrieved evidence."
+q14,unanswerable,1,1,1,,,,1,1,"The answer correctly identifies that the corpus does not state the specific price, explains the pricing mechanism given in the text, and relies only on facts present in the retrieved passages."
+q15,single,0,1,1,1,1,,1,1,The answer accurately provides both key financial figures requested and they are fully supported by the retrieved evidence.
+q16,multi,0,1,1,0,1,,0,1,"The answer claims that contract 029 is not in the corpus, but the corpus contains information for it or the question could have been answered if all files were retrieved properly, making the answer incomplete."
+q17,single,0,1,1,1,1,,1,1,"The answer correctly states the fixed project fee of EUR 280,000 and is fully supported by the retrieved evidence."
+q18,multi,0,1,1,1,1,,1,1,The answer correctly identifies that Contract 027 has a higher liability cap than Contract 019 and all stated figures and claims are fully supported by the retrieved passages.
+q19,unanswerable,1,1,1,,,,1,1,"The answer correctly identifies that the corpus does not state the specific monetary rate and explains that it is agreed in writing, perfectly adhering to the rubric for unanswerable questions."
+q20,single,0,1,1,1,1,,1,1,The answer correctly and fully states the management fee percentage and includes accurate extra details supported by the provided evidence.
+q21,single,0,1,1,1,1,,1,1,The answer provides the correct amount and key facts required by the reference answer and is fully supported by the retrieved evidence.
+q22,multi,0,1,1,1,1,,1,1,"The answer correctly identifies Contract 012 as having the highest exclusivity breach penalty of EUR 100,000, while accurately providing the penalties for contracts 040 and 030, and all claims are fully supported by the retrieved evidence."
+q23,unanswerable,1,1,1,,,,1,1,The answer correctly identifies that the corpus does not state the minimum sum insured and accurately cites clause 6.3 as mentioning property insurance without an amount.
+q24,single,0,1,1,1,1,,1,1,"The answer provides the correct hourly rate and conditions matching the reference answer, and all claims are fully supported by the retrieved evidence."
+q25,multi,0,1,1,1,1,,0,1,"Contract 031 requires 120 days while contract 001 requires 90 days, meaning contract 001 requires notice earlier before the renewal date, making the answer's comparison incorrect."
+q26,single,0,1,1,1,1,,1,1,"The answer provides the correct amount and parties as required by the reference answer, and every factual claim is fully supported by the retrieved evidence."
+q27,multi,0,1,1,1,1,,1,1,The answer correctly identifies that both contracts require 60 days' written notice and every factual claim is fully supported by the provided evidence.
+q28,unanswerable,1,1,1,,,,1,1,"The answer correctly states that the corpus does not provide the per-unit rate while mentioning the related fact about usage-based charges from the contract, and every factual claim is fully supported by the evidence."
+q29,single,0,1,1,1,1,,1,1,"The answer accurately states the EUR 50,000 transition fee and all key facts without contradiction, and every claim is fully supported by the retrieved evidence."
+q30,multi,0,1,1,1,1,,1,1,"The answer provides all key details for contracts 001, 009, and 049 accurately and every claim is supported by the retrieved evidence."
+q31,single,0,1,1,1,1,,1,1,"The answer provides the exact key fact from the correct contract stating that RetailGroup must give 9 months' written notice, and every claim is fully supported by the evidence."
+q32,multi,0,1,1,1,1,,1,1,"The answer provides all key facts for both contracts, including the correct fee amounts and details, and every factual claim is fully supported by the retrieved evidence."
+q33,unanswerable,0,1,0,,,,1,1,"The answer correctly states that the corpus cannot provide a specific uptime percentage because Contract 037 delegates uptime guarantees to the reseller and refers only to an unprovided standard service description, and every claim made is fully supported by the retrieved passages."
+q34,single,0,1,1,1,0,,1,1,"The answer accurately states the commission percentage and includes all necessary facts without contradiction, with every claim directly supported by the provided evidence."
+q35,multi,0,1,1,1,1,,1,1,The answer accurately states the ownership terms for both contract 010 and contract 050 as supported by the retrieved evidence.
+q36,multi,0,1,1,1,1,,1,1,The answer correctly identifies that contract 036 has a longer restriction period (24 months) than contract 046 (18 months) and all facts are fully supported by the provided evidence.
+q37,single,0,1,1,1,1,,1,1,The answer provides the correct amount and details matching the reference and is fully supported by clause 4.1 of the retrieved contract.
+q38,single,0,1,1,1,1,,1,1,The answer accurately provides the initial term of 36 months matching the reference answer and is fully supported by the retrieved evidence.
+q39,single,0,1,1,1,0,,1,1,The answer correctly provides the monthly retainer amount and all key payment details from the reference answer and evidence without contradicting anything.
+q40,single,0,1,1,1,1,,1,1,The answer provides the correct fixed annual fee and is fully supported by the retrieved evidence in Clause 4.1.
+q41,multi,0,1,1,1,1,,1,1,"The answer correctly identifies that Partner B in contract 002 receives 30% of net revenues while Party B in contract 007 receives 20% of profits, and all stated facts are fully supported by the provided text."
+q42,multi,0,1,1,1,1,,1,1,"The answer correctly states that neither the broker nor the travel agency is obligated to disclose their commissions, and all claims are fully supported by the retrieved contract clauses."
+q43,multi,0,1,1,1,1,,1,1,The answer correctly and accurately states the notice periods required for both contracts based entirely on the provided evidence.
+q44,unanswerable,1,1,1,,,,1,1,The answer correctly states that the corpus does not provide a penalty for breaching the exclusivity clause and cites the correct supporting contract.
+q45,unanswerable,1,1,1,,,,1,1,The answer correctly states that the corpus does not provide a penalty for a confidentiality breach in Contract 028 while mentioning the related confidentiality clause and is fully supported by the evidence.
+q46,unanswerable,1,1,1,,,,1,1,"The answer correctly states that the corpus does not contain the monthly fee amount and accurately identifies that the order form is missing from the corpus, with all claims fully supported by the retrieved evidence."

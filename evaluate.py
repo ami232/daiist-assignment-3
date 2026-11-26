@@ -132,6 +132,10 @@ def write_jsonl(path: Path, records: dict[str, dict]) -> None:
     path.write_text("\n".join(json.dumps(r, ensure_ascii=False) for r in records.values()) + "\n", encoding="utf-8")
 
 
+def tool_failed(record: dict) -> bool:
+    return any(s["result"].startswith("ERROR") for s in record["trace"])
+
+
 def is_refusal(answer: str) -> bool:
     return re.sub(r"^[\W_]+", "", answer.strip()).upper().startswith("NOT IN CORPUS")
 
@@ -206,6 +210,11 @@ def stage_answers(questions: list[dict], refresh: bool) -> None:
     import agent
 
     done = read_jsonl(ANSWERS)
+    bad = [i for i, a in done.items() if tool_failed(a)]
+    for i in bad:                       # a search error is not an answer: ask again
+        del done[i]
+    if bad:
+        print(f"Dropping {len(bad)} answers whose search failed (will be asked again): {', '.join(bad)}", file=sys.stderr)
     todo = [q for q in questions if refresh or q["id"] not in done]
     if todo:
         print(f"Running the agent on {len(todo)} questions ({len(questions) - len(todo)} cached) ...", file=sys.stderr)
@@ -236,6 +245,9 @@ def stage_answers(questions: list[dict], refresh: bool) -> None:
                 if out is None:
                     write_jsonl(ANSWERS, done)
                     raise SystemExit(f"Gemini kept refusing at {q['id']}; saved progress. Run again.")
+                if tool_failed(out):
+                    print(f"  {q['id']}: a search call failed; not saved, run again later.", file=sys.stderr)
+                    continue
                 for step in out["trace"]:
                     step["result"] = step["result"][:7000]
                 done[q["id"]] = {"id": q["id"], **out}

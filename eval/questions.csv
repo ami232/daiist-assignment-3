@@ -12,7 +12,7 @@ q10,"What is the annual license fee for the CodeVault ERP platform?",single,CONT
 q11,"What percentage of the placed candidate's first-year total compensation does TalentPeak charge as success fee?",single,CONTRACT_036.pdf,4.1,"30%, payable within 15 days of the candidate's start date."
 q12,"Which client gets a longer period to pay invoices, the one in contract 003 or the one in contract 006?",multi,CONTRACT_003.pdf;CONTRACT_006.pdf,4.2;5.2,"Contract 006 (120 days) gives longer than contract 003 (90 days)."
 q13,"What monthly base fee does TechCampus Operators pay FaciliServ?",single,CONTRACT_024.pdf,4.1,"EUR 85,000 per month, invoiced monthly in advance and payable within 30 days."
-q14,"What is the unit price per brake assembly that AutoAssemble pays IndustrialParts Pro?",unanswerable,,,"Schedule 2 of contract 016 only says prices are agreed in writing at the start of each year; no amount is given."
+q14,"What is the unit price per brake assembly that AutoAssemble pays IndustrialParts Pro?",unanswerable,,,"Schedule 1 of contract 016 only says prices are agreed in writing at the start of each year; no amount is given."
 q15,"What initial franchise fee and monthly royalty does QuickServe Malaga pay UrbanBite?",single,CONTRACT_015.pdf,4.1,"An initial franchise fee of EUR 80,000 and a monthly royalty of 12% of gross revenue."
 q16,"Which law governs contract 001 and which law governs contract 029?",multi,CONTRACT_001.pdf;CONTRACT_029.pdf,9.1;9.1,"Contract 001 is governed by the laws of the State of New York; contract 029 by the laws of the State of Delaware."
 q17,"What is the fixed project fee MindForge AI receives from InsureGroup?",single,CONTRACT_029.pdf,4.1,"EUR 280,000, payable in milestones defined by the Client."
