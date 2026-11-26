@@ -1,1 +1,25 @@
 id,correct,supported,notes
+q01,1,1,
+q04,1,1,
+q07,1,0,[retrieval miss] 1
+q08,1,1,
+q12,0,0,[retrieval miss] 1
+q18,0,0,[retrieval miss] 1
+q19,0,0,[retrieval miss] 1
+q23,1,1,
+q24,1,1,
+q25,1,1,
+q26,1,1,
+q28,1,1,
+q31,1,1,
+q35,1,1,
+q36,1,1,
+q37,0,0,[retrieval miss] 1
+q40,1,1,
+q41,1,1,
+q42,1,1,
+q43,1,0,[retrieval miss] 1
+q44,1,1,
+q45,1,1,
+q46,1,1,
+q47,1,1,

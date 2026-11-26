@@ -1,0 +1,46 @@
+id,judge_correct,judge_supported,reason,judge_model,judge_tokens_in,judge_tokens_out,judge_seconds,judge_key
+q01,1,1,ok,gemini-3.1-flash-lite,2233,18,1.93,0f211bfef462
+q02,1,1,ok,gemini-3.1-flash-lite,2338,18,1.92,2eb8503ec915
+q03,1,1,ok,gemini-3.1-flash-lite,2558,18,2.34,8ee8d0c395c7
+q04,1,1,ok,gemini-3.1-flash-lite,2285,18,1.33,a4d83f6e83cf
+q05,1,1,ok,gemini-3.1-flash-lite,2466,18,0.94,d6532ee1019e
+q06,1,1,ok,gemini-3.1-flash-lite,2230,18,1.79,16f2047ad7d0
+q07,1,1,ok,gemini-3.1-flash-lite,2336,18,1.23,9866c93bd423
+q08,0,1,"The answer is missing the requirement regarding the specific category, which was part of the reference answer.",gemini-3.1-flash-lite,2384,36,1.4,b3c84e732bc8
+q09,1,1,ok,gemini-3.1-flash-lite,2526,18,1.39,97033fd9ce11
+q10,0,1,"The answer misses the key fact that a declaration is sufficient for operations that fit a standard scenario, as mentioned in the reference answer.",gemini-3.1-flash-lite,2092,43,1.69,7d888f154876
+q11,1,1,ok,gemini-3.1-flash-lite,2522,18,1.52,18df0696274f
+q12,1,1,ok,gemini-3.1-flash-lite,2320,18,1.35,a5b02ab433d4
+q14,1,1,ok,gemini-3.1-flash-lite,2036,18,1.21,4a9c4c0c0f57
+q16,1,1,ok,gemini-3.1-flash-lite,1734,18,1.23,cf47eef0b080
+q18,1,1,ok,gemini-3.1-flash-lite,2029,18,122.6,ea24d24e2f34
+q19,1,1,ok,gemini-3.1-flash-lite,2023,18,1.17,7b086b52dcf8
+q21,1,1,ok,gemini-3.1-flash-lite,4445,18,34.84,971cf089f404
+q22,0,1,"The answer fails to mention that a class C3 drone must have a maximum characteristic dimension below 3 m, which is a key fact defined in the reference.",gemini-3.1-flash-lite,2938,49,1.27,771f9ebc7c4e
+q23,0,1,"The answer fails to mention the requirement for a geo-awareness function, which is a key fact requested for a C1 drone in subcategory A1.",gemini-3.1-flash-lite,2507,48,0.75,a9e62dd46f0c
+q24,1,1,ok,gemini-3.1-flash-lite,3699,18,1.53,5225ee1daff0
+q25,1,1,ok,gemini-3.1-flash-lite,2471,18,1.22,5caed3754e94
+q26,1,1,ok,gemini-3.1-flash-lite,4309,18,5.01,6af1ffe04b93
+q27,1,1,ok,gemini-3.1-flash-lite,1942,18,1.22,93eabe94ef61
+q28,1,1,ok,gemini-3.1-flash-lite,2658,18,1.07,70ab9ba5ea33
+q29,1,1,ok,gemini-3.1-flash-lite,4243,18,1.52,8e922566b2cd
+q30,1,1,ok,gemini-3.1-flash-lite,2075,18,1.58,063a060a4888
+q31,1,1,ok,gemini-3.1-flash-lite,3159,18,1.12,26642e009029
+q32,1,1,ok,gemini-3.1-flash-lite,1973,18,1.38,d0142829ad58
+q33,1,1,ok,gemini-3.1-flash-lite,3617,18,30.62,37f8a2c0433f
+q34,0,0,"The answer provides information about national fees that is not present in the provided evidence, violating the requirement for the answer to be supported by the documents.",gemini-3.1-flash-lite,1989,46,1.29,57862dd4f25d
+q35,0,0,"The answer provides information about D-Flight and ENAC/ENAV which is not present in the provided evidence, making it unsupported; consequently, it fails the unanswerable requirement by including extraneous, non-evidenced advice.",gemini-3.1-flash-lite,2200,64,1.69,63197aec6e6c
+q36,1,1,ok,gemini-3.1-flash-lite,1977,18,1.13,1e95624aeb62
+q37,1,1,ok,gemini-3.1-flash-lite,1695,18,1.63,ff4137647be9
+q38,1,1,ok,gemini-3.1-flash-lite,1671,18,1.75,5db09ec9be7c
+q39,1,1,ok,gemini-3.1-flash-lite,2124,18,3.42,35deae08f679
+q40,1,1,ok,gemini-3.1-flash-lite,2519,18,3.46,e228848ee4e2
+q41,1,1,ok,gemini-3.1-flash-lite,2217,18,1.58,5661a4c8f439
+q42,1,1,ok,gemini-3.1-flash-lite,2684,18,1.74,4d4ca1664c42
+q43,1,1,ok,gemini-3.1-flash-lite,2839,18,4.37,8237667ded9e
+q44,1,1,ok,gemini-3.1-flash-lite,4456,18,0.77,7b9a853cbbba
+q45,0,1,The answer fails to mention the geographic limitation that the authorisation issued by the authority is limited to the territory of the Member State.,gemini-3.1-flash-lite,2040,42,1.67,fb4cc0fc8960
+q46,1,1,ok,gemini-3.1-flash-lite,2283,18,1.07,d94c927575f7
+q47,1,1,ok,gemini-3.1-flash-lite,1920,18,1.2,03524a208b2a
+q48,0,0,"The answer provides external information about Member States setting their own fees, which is not stated in the provided evidence.",gemini-3.1-flash-lite,2066,39,4.14,76c5c93a71f6
+q49,0,1,"The assistant failed to explicitly state that the requirement is 'not covered' as requested for an unanswerable question, instead providing an answer that implies a regulation exists while claiming it specifies no hours.",gemini-3.1-flash-lite,3697,56,1.7,bf4f21cbf6c7
