@@ -1,0 +1,7 @@
+{
+  "note": "Real run of the citation-check guardrail, copied from the console output of the run (the rejected draft's text was not yet logged in that version; agent.py now stores it).",
+  "question": "What does GDPR Recital 47 say about direct marketing as a legitimate interest?",
+  "events": [{"guardrail": "citation_check", "attempt": 1, "problem": "the answer has no citation tags"}],
+  "final_answer": "The corpus does not cover this question.",
+  "why": "Recitals are not in the corpus. The first draft answered without any [Source, Article] tag, so the harness sent it back once; the retry refused."
+}

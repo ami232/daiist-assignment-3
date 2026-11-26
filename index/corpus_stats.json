@@ -1,0 +1,18 @@
+{
+  "documents": [
+    "GDPR",
+    "AI Act",
+    "ePrivacy Directive"
+  ],
+  "words": 85895,
+  "designs": {
+    "article": {
+      "chunks": 378,
+      "embedded_now": 378
+    },
+    "fixed": {
+      "chunks": 286,
+      "embedded_now": 286
+    }
+  }
+}

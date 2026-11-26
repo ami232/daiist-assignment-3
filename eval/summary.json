@@ -1,0 +1,158 @@
+{
+  "config": {
+    "design": "article",
+    "method": "vector",
+    "k": 5,
+    "chosen_by": "student's rule: highest hit@3, ties by hit@5, then fewer words in the prompt (see eval/retrieval.csv)"
+  },
+  "agent_model": "gemini-3.5-flash-lite",
+  "judge_model": "gemini-3.1-flash-lite",
+  "questions": 31,
+  "retrieval": [
+    {
+      "design": "article",
+      "method": "vector",
+      "questions": 24,
+      "hit@1": 0.958,
+      "hit@3": 1.0,
+      "hit@5": 1.0,
+      "all@1": 0.708,
+      "all@3": 0.958,
+      "all@5": 1.0,
+      "mrr@5": 0.972,
+      "avg_words_in_prompt_k5": 1374
+    },
+    {
+      "design": "article",
+      "method": "keyword",
+      "questions": 24,
+      "hit@1": 0.583,
+      "hit@3": 0.625,
+      "hit@5": 0.667,
+      "all@1": 0.417,
+      "all@3": 0.542,
+      "all@5": 0.583,
+      "mrr@5": 0.612,
+      "avg_words_in_prompt_k5": 1341
+    },
+    {
+      "design": "article",
+      "method": "hybrid",
+      "questions": 24,
+      "hit@1": 0.75,
+      "hit@3": 0.875,
+      "hit@5": 0.875,
+      "all@1": 0.5,
+      "all@3": 0.708,
+      "all@5": 0.75,
+      "mrr@5": 0.806,
+      "avg_words_in_prompt_k5": 1355
+    },
+    {
+      "design": "fixed",
+      "method": "vector",
+      "questions": 24,
+      "hit@1": 0.792,
+      "hit@3": 0.958,
+      "hit@5": 0.958,
+      "all@1": 0.583,
+      "all@3": 0.875,
+      "all@5": 0.875,
+      "mrr@5": 0.861,
+      "avg_words_in_prompt_k5": 2000
+    },
+    {
+      "design": "fixed",
+      "method": "keyword",
+      "questions": 24,
+      "hit@1": 0.458,
+      "hit@3": 0.667,
+      "hit@5": 0.667,
+      "all@1": 0.333,
+      "all@3": 0.542,
+      "all@5": 0.583,
+      "mrr@5": 0.562,
+      "avg_words_in_prompt_k5": 1997
+    },
+    {
+      "design": "fixed",
+      "method": "hybrid",
+      "questions": 24,
+      "hit@1": 0.667,
+      "hit@3": 0.833,
+      "hit@5": 0.875,
+      "all@1": 0.542,
+      "all@3": 0.75,
+      "all@5": 0.75,
+      "mrr@5": 0.753,
+      "avg_words_in_prompt_k5": 2000
+    }
+  ],
+  "by_type": {
+    "all": {
+      "n": 31,
+      "mean_correctness": 1.0,
+      "mean_support": 1.0,
+      "strict_pass": 1.0
+    },
+    "single": {
+      "n": 18,
+      "mean_correctness": 1.0,
+      "mean_support": 1.0,
+      "strict_pass": 1.0
+    },
+    "multi": {
+      "n": 6,
+      "mean_correctness": 1.0,
+      "mean_support": 1.0,
+      "strict_pass": 1.0
+    },
+    "unanswerable": {
+      "n": 7,
+      "mean_correctness": 1.0,
+      "mean_support": 1.0,
+      "strict_pass": 1.0
+    },
+    "answerable": {
+      "n": 24,
+      "mean_correctness": 1.0,
+      "mean_support": 1.0,
+      "strict_pass": 1.0
+    }
+  },
+  "judge_correct": 1.0,
+  "judge_supported": 1.0,
+  "answerable_correct": 1.0,
+  "answerable_unsupported": 0,
+  "correct_refusals": 7,
+  "missed_refusals": 0,
+  "wrong_refusals": 0,
+  "citations_valid": 1.0,
+  "cites_expected": 1.0,
+  "citation_guardrail_fired": 0,
+  "failures": 0,
+  "agreement": {
+    "graded": 29,
+    "correct": {
+      "n": 29,
+      "agreement": 1.0,
+      "cohen_kappa": null,
+      "human_zeros": 0,
+      "judge_zeros": 0
+    },
+    "supported": {
+      "n": 29,
+      "agreement": 0.966,
+      "cohen_kappa": 0.0,
+      "human_zeros": 1,
+      "judge_zeros": 0
+    }
+  },
+  "cost": {
+    "mean_tokens_in": 3405,
+    "mean_tokens_out": 187,
+    "mean_seconds": 3.1,
+    "median_seconds": 2.4,
+    "mean_searches": 0.9
+  }
+}

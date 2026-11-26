@@ -1,0 +1,182 @@
+id,kind,refused,should_refuse,refusal_correct,refusal_exact,n_citations,citations_valid,cites_expected,retrieved_expected,guardrail_fired,searches,judge_correct,judge_supported,judge_reason,tokens_in,tokens_out,seconds,citations,answer
+q01,single,0,0,1,0,3,1,1,1,0,1,1,1,The answer correctly identifies that processing is lawful when necessary for the performance of a contract and cites the appropriate article.,3815,158,4.29,"[GDPR, Article 6]","Yes, you can use a customer's address to ship their order without a separate opt-in (consent), provided that processing the address is necessary for the performance of the contract (i.e., fulfilling the purchase made by the customer) [GDPR, Article 6].
+
+Under the GDPR, processing is lawful if it is ""necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract"" [GDPR, Article 6]. Therefore, collecting and using delivery details for order fulfillment does not require separate consent [GDPR, Article 6]."
+q02,single,0,0,1,0,3,1,1,1,0,1,1,1,The answer correctly identifies that withdrawing consent must be as easy as giving it and provides the correct citation.,3768,154,1.65,"[GDPR, Article 7] [GDPR, Article 21]","No, you cannot make unsubscribing harder than signing up. 
+
+If newsletter subscriptions are based on consent, the GDPR explicitly requires that **it shall be as easy to withdraw as to give consent** [GDPR, Article 7(3)]. Furthermore, for direct marketing communications, data subjects have the right to object to processing at any time [GDPR, Article 21(2)], and in the context of information society services, they must be able to exercise this right by automated means using technical specifications [GDPR, Article 21(5)]. 
+
+Making the unsubscribe process more burdensome or difficult than the sign-up process violates these requirements."
+q03,single,0,0,1,0,2,1,1,1,0,1,1,1,"The answer correctly identifies that the lack of an EU establishment does not exempt the entity from GDPR when monitoring behavior of data subjects in the Union, and it is fully supported by the provided text.",3167,140,1.53,"[GDPR, Article 3]","No, having no EU office does not exempt you from the GDPR. 
+
+The GDPR applies to controllers or processors not established in the Union when their processing activities are related to the monitoring of the behaviour of data subjects who are in the Union, as far as that behaviour takes place within the Union [GDPR, Article 3]. 
+
+Since your US-based app is tracking the online behavior of individuals located in France (who are in the EU), your activities fall within the territorial scope of the GDPR regardless of your lack of an EU establishment [GDPR, Article 3]."
+q04,single,0,0,1,0,3,1,1,1,0,1,1,1,"The answer correctly identifies that the first copy is free and that fees only apply to further copies or in cases of manifestly unfounded or excessive requests, with proper citations.",3834,183,2.44,"[GDPR, Article 12] [GDPR, Article 15]","No, you cannot charge for the first copy as standard. 
+
+Under the GDPR, actions taken regarding a data subject's right of access (Article 15) must be provided **free of charge** [GDPR, Article 12]. While you may charge a reasonable fee based on administrative costs for any *further* copies requested by the data subject, the first copy must always be free [GDPR, Article 15].
+
+**Exception:** You may only charge a fee for a request (or refuse to act on it) if the request is **manifestly unfounded or excessive**, particularly because of its repetitive character. In such cases, the burden of proof rests on you as the controller to demonstrate that the request is manifestly unfounded or excessive [GDPR, Article 12]."
+q05,single,0,0,1,0,5,1,1,1,0,1,1,1,The answer correctly identifies that the exemption does not apply to non-occasional processing and provides the correct legal citations.,3633,296,7.5,"[GDPR, Article 30]","No, you cannot skip keeping records of processing activities simply because your startup has fewer than 250 employees. 
+
+While enterprises and organisations employing fewer than 250 persons are generally exempt from the record-keeping obligation, this exception does **not** apply if any of the following conditions are met [GDPR, Article 30(5)]:
+
+1. **Risk:** The processing is likely to result in a risk to the rights and freedoms of data subjects [GDPR, Article 30(5)].
+2. **Not occasional:** The processing is **not occasional** [GDPR, Article 30(5)]. Because your startup processes customer data **every day**, your data processing activities are considered regular and continuous rather than occasional, meaning this exception will likely strip away your exemption.
+3. **Special categories or criminal data:** The processing includes special categories of data (such as health data, biometric data, or ethnic origin) or personal data relating to criminal convictions and offences [GDPR, Article 30(5)].
+
+Since you process customer data on a daily basis, your processing is not occasional. Therefore, you are required to maintain written records of your processing activities [GDPR, Article 30(1), Article 30(3), Article 30(5)]."
+q06,single,0,0,1,0,2,1,1,1,0,1,1,1,"The answer correctly states that no specific authorization is required for transfers based on an adequacy decision, and it is supported by the provided text.",3890,84,4.49,"[GDPR, Article 45]","No, you do not need any specific transfer authorisation [GDPR, Article 45]. 
+
+Under the GDPR, transfers of personal data to a third country or an international organisation that is covered by a European Commission adequacy decision do not require any specific authorisation from a supervisory authority [GDPR, Article 45]."
+q07,single,0,0,1,0,4,1,1,1,0,1,1,1,The answer correctly identifies that the DPO cannot receive instructions regarding their tasks and provides the appropriate citations.,3453,129,7.08,"[GDPR, Article 38] [GDPR, Article 39]","No, the CEO cannot instruct the Data Protection Officer (DPO) what conclusions to reach [GDPR, Article 38]. 
+
+The controller and processor must ensure that the DPO does not receive any instructions regarding the exercise of their tasks [GDPR, Article 38]. This includes advising on compliance and monitoring adherence to data protection laws [GDPR, Article 39]. Furthermore, the DPO must not be dismissed or penalized by the controller or processor for performing their tasks [GDPR, Article 38]."
+q08,single,0,0,1,0,2,1,1,1,0,1,1,1,"The answer correctly identifies the prohibition under the AI Act and cites the relevant article, while accurately noting the limited exceptions.",3786,141,2.04,"[AI Act, Article 5]","No, this is generally **not allowed**. 
+
+Under the Artificial Intelligence Act, the placing on the market, putting into service, or use of AI systems to **infer emotions of a natural person in the areas of the workplace** and educational institutions is strictly **prohibited** [AI Act, Article 5]. 
+
+The only exception to this prohibition in the workplace is if the AI system is intended to be put on the market or put into service strictly for **medical or safety reasons** [AI Act, Article 5]. Measuring general employee engagement does not qualify as a medical or safety exemption."
+q09,single,0,0,1,0,4,1,1,1,0,1,1,1,The answer correctly identifies that risk management is a continuous process and provides accurate citations from the AI Act.,3816,204,2.43,"[AI Act, Article 9]","No, you cannot treat risk management as a one-time pre-launch exercise. 
+
+Under the AI Act, the risk management system for a high-risk AI product must be understood as a **continuous iterative process** that is planned, run, and maintained throughout the **entire lifecycle** of the system [AI Act, Article 9]. 
+
+Key requirements for your risk management process include:
+* **Ongoing Reviews:** It requires regular systematic reviews and updating [AI Act, Article 9].
+* **Post-Market Integration:** Risk management must account for other risks that emerge based on data gathered from your post-market monitoring system [AI Act, Article 9].
+* **Lifecycle Obligations:** Testing and risk measures must be maintained as part of an overarching quality management system that operates before, during, and after development [AI Act, Article 9, Article 17]."
+q10,single,0,0,1,0,2,1,1,1,0,1,1,1,"The answer correctly identifies the requirement for human intervention and stopping mechanisms, and it is fully supported by the provided text from Article 14 of the AI Act.",3552,177,2.32,"[AI Act, Article 14]","Yes. As a provider of a high-risk AI system, you must design and develop the tool in such a way that natural persons assigned to human oversight are enabled, as appropriate and proportionate, to **intervene in the operation of the system or interrupt it through a ""stop"" button or a similar procedure** that allows the system to come to a halt in a safe state [AI Act, Article 14]. 
+
+The oversight measures—including the means to intervene or stop the system—must be built into the high-risk AI system before it is placed on the market or put into service, where technically feasible, and must be commensurate with the risks, level of autonomy, and context of use of the system [AI Act, Article 14]."
+q11,single,0,0,1,0,2,1,1,1,0,1,1,1,"The assistant correctly identifies the transparency obligation and the exception, and provides the correct citation.",3971,146,5.48,"[AI Act, Article 50]","Yes. Under the Artificial Intelligence Act, providers of AI systems intended to interact directly with natural persons must ensure that users are informed that they are interacting with an AI system, unless it is already obvious from the perspective of a reasonably well-informed, observant, and circumspect user given the circumstances and context of use [AI Act, Article 50]. 
+
+Since your users could mistake the chatbot for a human, it is not obvious that they are interacting with AI. Therefore, you must inform them in a clear and distinguishable manner at the latest at the time of the first interaction [AI Act, Article 50]."
+q12,single,0,0,1,0,2,1,1,1,0,1,1,1,The answer accurately reflects the requirements for log retention for providers of high-risk AI systems as specified in the cited article.,3482,152,1.45,"[AI Act, Article 19]","As a provider of a high-risk AI system who controls its automatically generated logs, you must keep them for a period appropriate to the intended purpose of the system, which must be **at least six months**, unless otherwise provided by applicable Union or national law (such as data protection law) [AI Act, Article 19]. 
+
+* **Exception for Financial Institutions:** If you are a financial institution subject to requirements regarding internal governance, arrangements, or processes under Union financial services law, you must instead maintain the automatically generated logs as part of the documentation kept under the relevant financial services law [AI Act, Article 19]."
+q13,single,0,0,1,0,2,1,1,1,0,1,1,1,The answer correctly identifies the requirement to publish a training content summary and cites the appropriate provision.,4076,96,3.82,"[AI Act, Article 53]","Yes. As a provider of a general-purpose AI model, you are required to draw up and make publicly available a sufficiently detailed summary about the content used for training your model [AI Act, Article 53]. 
+
+This summary must be prepared in accordance with a template provided by the AI Office [AI Act, Article 53]."
+q14,single,0,0,1,0,2,1,1,1,0,1,1,1,The answer correctly identifies that the threshold triggers a presumption of high-impact capabilities and is fully supported by the cited article.,4099,129,1.5,"[AI Act, Article 51]","Yes. Under the AI Act, a general-purpose AI model is **presumed** to have high-impact capabilities when the cumulative amount of computation used for its training, measured in floating-point operations (FLOPs), is greater than $10^{25}$ [AI Act, Article 51]. 
+
+Meeting this threshold also results in the model being classified as a general-purpose AI model with **systemic risk** [AI Act, Article 51]."
+q15,single,0,0,1,0,1,1,1,1,0,1,1,1,The answer correctly identifies the exemption for strictly necessary cookies and provides the correct citation.,3543,140,2.89,"[ePrivacy Directive, Article 5]","No, you do not need opt-in (consent) for that cookie. 
+
+Under the ePrivacy Directive, storing information or gaining access to information already stored in a user's terminal equipment requires consent, **except** when it is strictly necessary in order for the provider to deliver an information society service that the subscriber or user has explicitly requested [ePrivacy Directive, Article 5(3)]. 
+
+Because the cookie is used solely to remember the items in the basket requested by the shopper, it falls under this explicit exemption as storage strictly necessary to provide the requested shopping service."
+q16,single,0,0,1,0,4,1,1,1,0,1,1,1,The answer correctly identifies that traffic data must be erased or anonymized when no longer needed for transmission and accurately lists the specific exceptions provided in the retrieved text.,3760,271,5.86,"[ePrivacy Directive, Article 6]","No, you cannot keep traffic data indefinitely ""just in case it becomes useful."" 
+
+Under the ePrivacy Directive, traffic data relating to subscribers and users must be erased or made anonymous when it is no longer needed for the purpose of transmitting a communication [ePrivacy Directive, Article 6(1)]. 
+
+Storage is permitted only under specific, limited exceptions:
+* **Billing and Interconnection:** Traffic data necessary for subscriber billing and interconnection payments may be processed, but only up to the end of the period during which the bill may lawfully be challenged or payment pursued [ePrivacy Directive, Article 6(2)].
+* **Marketing and Value-Added Services:** Traffic data may be processed for marketing electronic communications services or value-added services, but only to the extent and for the duration necessary, and **only with the prior consent** of the subscriber or user, who must be able to withdraw consent at any time [ePrivacy Directive, Article 6(3)].
+* **Legal Restrictions:** Retention may also be required under specific lawful national legislative measures in accordance with Article 15(1) [ePrivacy Directive, Article 6(1)]. 
+
+Retaining traffic data indefinitely for future, unspecified usefulness is not permitted."
+q17,single,0,0,1,0,4,1,1,1,0,1,1,1,The answer accurately addresses the user's question and provides the correct legal requirements supported by the cited article.,3506,153,1.96,"[ePrivacy Directive, Article 9]","Yes. After giving consent for the processing of location data other than traffic data for a value-added service, users must continue to have the possibility of **temporarily refusing** the processing of such data for each connection to the network or for each transmission of a communication [ePrivacy Directive, Article 9]. 
+
+Additionally, users must be provided with:
+* A simple means to temporarily refuse the processing [ePrivacy Directive, Article 9].
+* The ability to do so free of charge [ePrivacy Directive, Article 9].
+* The right to withdraw their consent completely at any time [ePrivacy Directive, Article 9]."
+q18,single,0,0,1,0,1,1,1,1,0,1,1,1,"The answer correctly identifies that subscribers can withdraw their data from a public directory free of charge, and it is supported by the cited passage.",3181,75,1.42,"[ePrivacy Directive, Article 12]","Yes. Subscribers who are natural persons must be given the opportunity to withdraw, verify, or correct their personal data from a public subscriber directory, and to not be included in it at all, **free of charge** [ePrivacy Directive, Article 12]."
+q19,multi,0,0,1,0,9,1,1,1,0,1,1,1,"The assistant accurately identified the notification requirements for both the supervisory authority and data subjects, including the relevant timelines, conditions, and exceptions, with proper citations.",3498,550,5.9,"[GDPR, Article 33] [GDPR, Article 34]","Based on the GDPR, your obligations and timelines are as follows:
+
+### 1. When to tell the regulator (Supervisory Authority)
+* **Timeline:** You must notify the competent supervisory authority **without undue delay and, where feasible, not later than 72 hours** after having become aware of the personal data breach [GDPR, Article 33(1)].
+* **Exception:** Notification is not required if the breach is *unlikely* to result in a risk to the rights and freedoms of natural persons [GDPR, Article 33(1)]. However, given that identity theft is likely, this threshold is almost certainly met, so notification will be required.
+* **Late notification:** If you cannot notify within 72 hours, the notification must be accompanied by reasons for the delay, and information can be provided in phases [GDPR, Article 33(1), (4)].
+
+### 2. When to warn customers (Data Subjects)
+* **Timeline:** When the personal data breach is likely to result in a **high risk** to the rights and freedoms of natural persons, you must communicate the breach to the data subjects **without undue delay** [GDPR, Article 34(1)]. (A scenario where identity theft is likely generally constitutes a high risk).
+* **Content:** The communication to customers must be in clear and plain language and describe the nature of the breach, along with contact details for your DPO/contact point, likely consequences, and measures taken or recommended to mitigate adverse effects [GDPR, Article 34(2), Article 33(3)(b)–(d)].
+* **Exceptions:** You do **not** have to inform customers if:
+  * You implemented appropriate technical and organizational protection measures (such as robust encryption) that rendered the affected data unintelligible to unauthorized persons [GDPR, Article 34(3)(a)];
+  * You took subsequent measures that ensure the high risk is no longer likely to materialize [GDPR, Article 34(3)(b)]; or
+  * Informing every customer would involve **disproportionate effort**. In that case, you must issue a public communication or similar measure so that individuals are informed in an equally effective manner [GDPR, Article 34(3)(c)].
+
+*Note: Even if you believe an exception applies, the supervisory authority can still require you to notify your customers after considering the likelihood of a high risk [GDPR, Article 34(4)].*"
+q20,multi,0,0,1,0,5,1,1,1,0,1,1,1,"The answer correctly identifies the high-risk classification for recruitment AI and the requirement for human oversight, with accurate citations to the provided passages.",3576,347,2.06,"[AI Act, Annex III] [AI Act, Article 14]","**Yes, your AI system is considered high-risk, and yes, human oversight must be built in.**
+
+### 1. Is it high-risk?
+Yes. Under the AI Act, AI systems intended to be used for the recruitment or selection of natural persons—specifically to **analyse and filter job applications** and to **evaluate candidates**—are explicitly classified as high-risk AI systems [AI Act, Annex III]. Because your system scores applicants and its scores materially influence selection, it falls directly under this high-risk category.
+
+### 2. Do you need human oversight built in?
+Yes. High-risk AI systems must be designed and developed with appropriate human-machine interface tools so that they can be effectively overseen by natural persons [AI Act, Article 14]. 
+
+Specifically:
+* **Provider obligations:** As the developer/provider, you must build technical oversight measures into the system (or identify appropriate measures for the deployer to implement) [AI Act, Article 14]. The system must be provided in a way that enables designated individuals to understand its capacities and limitations, avoid automation bias, interpret outputs correctly, and retain the ability to disregard, override, reverse, or stop the system's decisions [AI Act, Article 14].
+* **Deployer obligations:** Organizations using your AI system (deployers) are legally required to assign human oversight to competent, trained individuals, and ensure those overseers can actively monitor the system's operation and override its recommendations [AI Act, Article 14, AI Act, Article 26]."
+q21,multi,0,0,1,0,14,1,1,1,0,1,1,1,"The answer accurately identifies the GDPR protections for automated decision-making and the AI Act requirements for human oversight, with correct citations for all claims.",3586,702,4.14,"[GDPR, Article 22] [GDPR, Article 35] [AI Act, Article 14]","Based on the provided legislation, here are the protections that apply to loan applicants and the oversight requirements for high-risk AI systems:
+
+### 1. GDPR Protections for Loan Applicants
+
+* **Right not to be subject to solely automated decisions:** Loan applicants generally have the right not to be subject to a decision based *solely* on automated processing (including profiling) that produces legal effects or similarly significantly affects them [GDPR, Article 22(1)]. 
+* **Exceptions to the prohibition:** This restriction does not apply if the decision is necessary for entering into or performing a contract between the applicant and the bank, is authorized by EU or Member State law, or is based on the applicant's explicit consent [GDPR, Article 22(2)].
+* **Mandatory safeguards:** If an exception applies (such as contract necessity), the bank must implement suitable measures to safeguard the applicant's rights, freedoms, and legitimate interests [GDPR, Article 22(3)]. At a minimum, this includes giving the applicant:
+  * The right to obtain human intervention on the part of the controller [GDPR, Article 22(3)].
+  * The right to express their point of view [GDPR, Article 22(3)].
+  * The right to contest the decision [GDPR, Article 22(3)].
+* **Data Protection Impact Assessment (DPIA):** Because automated evaluations of personal aspects leading to decisions that produce legal or significant effects constitute a high risk, the bank must conduct a DPIA prior to the processing, seeking advice from its Data Protection Officer (DPO) [GDPR, Article 35(1), (2), (3)].
+
+---
+
+### 2. AI Provider Design & Oversight Requirements
+
+Under the AI Act, high-risk AI systems must be designed to enable effective human oversight by natural persons [AI Act, Article 14(1)]. The provider must build or identify oversight measures—commensurate with the system's risks, autonomy, and context—into the system before it is placed on the market or put into service [AI Act, Article 14(3)]. 
+
+Specifically, the AI provider must design the system so that human overseers are enabled to:
+* **Understand capacities and limitations:** Properly comprehend the relevant capabilities and limitations of the AI system, monitor its operation, and detect anomalies, dysfunctions, or unexpected performance [AI Act, Article 14(4)(a)].
+* **Mitigate automation bias:** Remain aware of the tendency to automatically rely or over-rely on AI outputs [AI Act, Article 14(4)(b)].
+* **Interpret outputs correctly:** Accurately interpret the AI system’s output using available interpretation tools and methods [AI Act, Article 14(4)(c)].
+* **Override or disregard:** Decide in any given situation not to use the system, or to otherwise disregard, override, or reverse its output [AI Act, Article 14(4)(d)].
+* **Intervene and halt:** Intervene in the system's operation or interrupt it via a ""stop"" button or similar safe-state procedure [AI Act, Article 14(4)(e)]."
+q22,multi,0,0,1,0,2,1,1,1,0,1,1,1,The answer correctly addresses both parts of the question using the relevant provisions from the ePrivacy Directive and the GDPR.,3894,196,1.88,"[ePrivacy Directive, Article 5] [GDPR, Article 7]","**1. Can you install optional advertising cookies before opt-in?**
+No. Storing information or gaining access to information already stored in a user's terminal equipment (such as installing cookies) is only allowed on the condition that the subscriber or user has given their **prior** consent, after being provided with clear and comprehensive information about the purposes of the processing [ePrivacy Directive, Article 5(3)]. Because these are optional advertising cookies and not strictly necessary for the transmission of a communication or to provide a requested service, they cannot be placed before the user actively opts in.
+
+**2. Must withdrawing consent be as easy as accepting?**
+Yes. Data subjects must have the right to withdraw their consent at any time, and **it shall be as easy to withdraw as to give consent** [GDPR, Article 7(3)]."
+q23,multi,0,0,1,0,5,1,1,1,0,1,1,1,"The answer accurately identifies the opt-out requirements under the ePrivacy Directive and the consequences of an objection under the GDPR, with correct citations.",3934,325,2.76,"[ePrivacy Directive, Article 13] [GDPR, Article 21]","Based on the provided legislation, here are the requirements and consequences regarding opt-outs and objections for direct marketing to existing customers:
+
+### Required Opt-Outs
+When collecting electronic contact details in the context of the sale of a product or service, you are permitted to use those details to send direct marketing for your own similar products or services without prior consent, **provided that**:
+* Customers are clearly and distinctly given the opportunity to object, free of charge and in an easy manner, to such use of their contact details **at the time of collection** [ePrivacy Directive, Article 13(2)].
+* The same clear, free, and easy opportunity to object must also be provided **on the occasion of each subsequent marketing message** (if the customer did not initially refuse) [ePrivacy Directive, Article 13(2)].
+
+Additionally, under the GDPR, the right to object to direct marketing must be explicitly brought to the attention of the data subject at the latest at the time of the first communication, presented clearly and separately from any other information [GDPR, Article 21(4)].
+
+### What Happens If Someone Objects?
+If a customer objects to direct marketing:
+* **Immediate Cessation:** You must no longer process their personal data for direct marketing purposes [GDPR, Article 21(3)]. 
+* **Scope:** The personal data shall no longer be processed for such marketing [GDPR, Article 21(3)]."
+q24,multi,0,0,1,0,14,1,1,1,0,1,1,1,"The assistant correctly identified the transparency obligations under the AI Act and the information requirements under the GDPR, providing accurate citations for all claims.",4135,729,2.94,"[AI Act, Article 50] [GDPR, Article 13] [GDPR, Article 12]","When launching a chatbot that collects customers' names and emails directly, you must comply with transparency requirements under both EU AI transparency rules and the GDPR. 
+
+### 1. Information about the AI Interaction
+Unless it is already obvious to a reasonably well-informed, observant, and circumspect user from the context that they are interacting with an AI, you must inform the users that they are interacting with an AI system [AI Act, Article 50]. This disclosure should be made clear and transparently before or at the start of the interaction.
+
+### 2. Information about the Use of Personal Data (GDPR)
+Because you are collecting personal data (names and emails) directly from the data subjects, you must provide them with the following information at the time the data are obtained [GDPR, Article 13]:
+
+* **Identity and Contact Details:** Your organization's identity and contact details, and where applicable, those of your representative or Data Protection Officer (DPO) [GDPR, Article 13(1)(a)-(b)].
+* **Purposes and Legal Basis:** The specific purposes for which you are processing their names and emails (e.g., customer support, communication) and the legal basis for the processing [GDPR, Article 13(1)(c)].
+* **Legitimate Interests:** If your processing is based on legitimate interests, specify those interests [GDPR, Article 13(1)(d)].
+* **Recipients:** The recipients or categories of recipients of the personal data, if any [GDPR, Article 13(1)(e)].
+* **International Transfers:** If applicable, whether you intend to transfer the data to a third country or international organization, and the safeguards in place [GDPR, Article 13(1)(f)].
+* **Storage Period:** The period for which the personal data will be stored, or if that is not possible, the criteria used to determine that period [GDPR, Article 13(2)(a)].
+* **Data Subject Rights:** Inform users of their rights, including the right to request access to, rectification, or erasure of their personal data, restriction of processing, objection to processing, and the right to data portability [GDPR, Article 13(2)(b)].
+* **Right to Withdraw Consent:** If processing relies on consent, inform them of their right to withdraw consent at any time without affecting prior lawfulness [GDPR, Article 13(2)(c)].
+* **Right to Lodge a Complaint:** Their right to lodge a complaint with a supervisory authority [GDPR, Article 13(2)(d)].
+* **Statutory/Contractual Requirements:** Whether the provision of personal data is a statutory or contractual requirement, or a requirement necessary to enter into a contract, and whether the data subject is obliged to provide the personal data and the possible consequences of failure to provide such data [GDPR, Article 13(2)(e)].
+* **Automated Decision-Making:** The existence of automated decision-making (including profiling) if used, along with meaningful information about the logic involved and the significance and envisaged consequences for the user [GDPR, Article 13(2)(f)].
+
+### Presentation
+All information must be provided in a concise, transparent, intelligible, and easily accessible form, using clear and plain language [GDPR, Article 12(1)]."
+q25,unanswerable,1,1,1,1,0,,,,0,1,1,1,The assistant correctly identified that the question is unanswerable based on the provided corpus and used the required refusal phrase.,3409,29,1.3,,The corpus does not cover this question.
+q26,unanswerable,1,1,1,1,0,,,,0,0,1,1,The assistant correctly identified that the question is unanswerable based on the provided corpus and used the required refusal phrase.,786,8,0.82,,The corpus does not cover this question.
+q27,unanswerable,1,1,1,1,0,,,,0,0,1,1,The assistant correctly identified that the question is unanswerable based on the provided corpus and used the required refusal phrase.,786,8,0.55,,The corpus does not cover this question.
+q28,unanswerable,1,1,1,1,0,,,,0,1,1,1,The assistant correctly identified that the question is unanswerable based on the provided corpus and used the required refusal phrase.,3398,25,4.27,,The corpus does not cover this question.
+q29,unanswerable,1,1,1,1,0,,,,0,1,1,1,"The question is unanswerable based on the provided corpus, and the assistant correctly provided the required refusal phrase.",3909,27,1.14,,The corpus does not cover this question.
+q30,unanswerable,1,1,1,1,0,,,,0,0,1,1,The assistant correctly identified that the question is unanswerable based on the provided corpus and used the required refusal phrase.,784,8,0.79,,The corpus does not cover this question.
+q31,unanswerable,1,1,1,1,0,,,,0,1,1,1,The assistant correctly identified that the provided corpus does not contain information regarding specific French regulatory requirements for cookie banners.,3524,30,6.19,,The corpus does not cover this question.

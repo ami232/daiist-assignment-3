@@ -1,0 +1,6 @@
+{
+  "design": "article",
+  "method": "vector",
+  "k": 5,
+  "chosen_by": "student's rule: highest hit@3, ties by hit@5, then fewer words in the prompt (see eval/retrieval.csv)"
+}

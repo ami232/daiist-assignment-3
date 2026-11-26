@@ -1,0 +1,30 @@
+id,human_correct,judge_correct,human_supported,judge_supported,human_notes,judge_reason
+q01,1,1,1,1,,The answer correctly identifies that processing is lawful when necessary for the performance of a contract and cites the appropriate article.
+q02,1,1,1,1,,The answer correctly identifies that withdrawing consent must be as easy as giving it and provides the correct citation.
+q03,1,1,1,1,,"The answer correctly identifies that the lack of an EU establishment does not exempt the entity from GDPR when monitoring behavior of data subjects in the Union, and it is fully supported by the provided text."
+q04,1,1,1,1,,"The answer correctly identifies that the first copy is free and that fees only apply to further copies or in cases of manifestly unfounded or excessive requests, with proper citations."
+q05,1,1,1,1,,The answer correctly identifies that the exemption does not apply to non-occasional processing and provides the correct legal citations.
+q06,1,1,1,1,,"The answer correctly states that no specific authorization is required for transfers based on an adequacy decision, and it is supported by the provided text."
+q07,1,1,1,1,,The answer correctly identifies that the DPO cannot receive instructions regarding their tasks and provides the appropriate citations.
+q08,1,1,1,1,,"The answer correctly identifies the prohibition under the AI Act and cites the relevant article, while accurately noting the limited exceptions."
+q09,1,1,1,1,,The answer correctly identifies that risk management is a continuous process and provides accurate citations from the AI Act.
+q10,1,1,1,1,,"The answer correctly identifies the requirement for human intervention and stopping mechanisms, and it is fully supported by the provided text from Article 14 of the AI Act."
+q11,1,1,1,1,,"The assistant correctly identifies the transparency obligation and the exception, and provides the correct citation."
+q12,1,1,1,1,,The answer accurately reflects the requirements for log retention for providers of high-risk AI systems as specified in the cited article.
+q13,1,1,1,1,,The answer correctly identifies the requirement to publish a training content summary and cites the appropriate provision.
+q14,1,1,1,1,,The answer correctly identifies that the threshold triggers a presumption of high-impact capabilities and is fully supported by the cited article.
+q15,1,1,1,1,,The answer correctly identifies the exemption for strictly necessary cookies and provides the correct citation.
+q16,1,1,1,1,,The answer correctly identifies that traffic data must be erased or anonymized when no longer needed for transmission and accurately lists the specific exceptions provided in the retrieved text.
+q17,1,1,1,1,,The answer accurately addresses the user's question and provides the correct legal requirements supported by the cited article.
+q18,1,1,1,1,,"The answer correctly identifies that subscribers can withdraw their data from a public directory free of charge, and it is supported by the cited passage."
+q19,1,1,1,1,,"The assistant accurately identified the notification requirements for both the supervisory authority and data subjects, including the relevant timelines, conditions, and exceptions, with proper citations."
+q20,1,1,1,1,,"The answer correctly identifies the high-risk classification for recruitment AI and the requirement for human oversight, with accurate citations to the provided passages."
+q21,1,1,0,1,,"The answer accurately identifies the GDPR protections for automated decision-making and the AI Act requirements for human oversight, with correct citations for all claims."
+q22,1,1,1,1,,The answer correctly addresses both parts of the question using the relevant provisions from the ePrivacy Directive and the GDPR.
+q23,1,1,1,1,,"The answer accurately identifies the opt-out requirements under the ePrivacy Directive and the consequences of an objection under the GDPR, with correct citations."
+q24,1,1,1,1,,"The assistant correctly identified the transparency obligations under the AI Act and the information requirements under the GDPR, providing accurate citations for all claims."
+q26,1,1,1,1,,The assistant correctly identified that the question is unanswerable based on the provided corpus and used the required refusal phrase.
+q27,1,1,1,1,,The assistant correctly identified that the question is unanswerable based on the provided corpus and used the required refusal phrase.
+q28,1,1,1,1,,The assistant correctly identified that the question is unanswerable based on the provided corpus and used the required refusal phrase.
+q29,1,1,1,1,,"The question is unanswerable based on the provided corpus, and the assistant correctly provided the required refusal phrase."
+q30,1,1,1,1,,The assistant correctly identified that the question is unanswerable based on the provided corpus and used the required refusal phrase.
