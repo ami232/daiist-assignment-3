@@ -1,0 +1,20 @@
+[
+  {
+    "id": "s03",
+    "category": "wrong_answer_from_right_passage",
+    "secondary_category": null,
+    "reason": "The answer answers about distribution-point backup sites, licensing restrictions and distribution modes, omitting the reference's material points (secondary contracts, ease of switching sources, suppliers' business continuity plans/capacity) that are present in the retrieved page 26 'Supply Source' passage; the statements it does make are grounded."
+  },
+  {
+    "id": "s27",
+    "category": "retrieval_miss",
+    "secondary_category": null,
+    "reason": "The risk half is answered correctly from the supplier-diversity passages, but the 'what to check' half only offers country-level transport/regulatory feasibility and generic risk-appetite language, missing the reference's concrete checks (backup agreement, ease of switching, whether the alternative can cover the shortfall); the claims made are nonetheless traceable to the retrieved uk-strategy chunks."
+  },
+  {
+    "id": "s28",
+    "category": "retrieval_miss",
+    "secondary_category": "unsupported_claim",
+    "reason": "Both parts are addressed consistently with the reference (supplier reliability checks plus EDI exchanges including ASNs and shipment status), but the closing paragraph's claims about safety stock, stockout protection and higher carrying costs are not stated in the cited chunks bb1662b7/e9b5b6a1 or any retrieved passage."
+  }
+]

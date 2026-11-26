@@ -1,0 +1,7 @@
+{
+  "answers_sha256": "ed7899b7626a9543f7107044ca58f274e17057e05e3efe998d7b761cdfa34400",
+  "questions_sha256": "3f15e6747e62096fba03f7f5eadefbb8afc54acc8eba2dd620c6f2b839ce6806",
+  "rubric_sha256": "5f247b438ef1fd273c891f472d0d63003213a277bcf408acec07a163879e01c8",
+  "verdict_file": "judge_draft.json",
+  "verdicts_sha256": "de1d03ed6c45b32967b7c3d6aa47d65c8980076a3bf56d9b1d0963902007cca4"
+}

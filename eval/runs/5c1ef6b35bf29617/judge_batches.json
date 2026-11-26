@@ -1,0 +1,254 @@
+[
+  {
+    "id": "batch01",
+    "question_ids": [
+      "q01",
+      "q02",
+      "q03",
+      "q04"
+    ],
+    "model": "gemini-3.5-flash",
+    "usage": {
+      "input_tokens": 13458,
+      "output_tokens": 1157,
+      "total_tokens": 14615,
+      "input_token_details": {
+        "cache_read": 0
+      },
+      "output_token_details": {
+        "reasoning": 820
+      }
+    },
+    "seconds": 8.62613695813343
+  },
+  {
+    "id": "batch02",
+    "question_ids": [
+      "q05",
+      "q06",
+      "q07",
+      "q08"
+    ],
+    "model": "gemini-3.5-flash",
+    "usage": {
+      "input_tokens": 13038,
+      "output_tokens": 1934,
+      "total_tokens": 14972,
+      "input_token_details": {
+        "cache_read": 0
+      },
+      "output_token_details": {
+        "reasoning": 1360
+      }
+    },
+    "seconds": 18.057015707949176
+  },
+  {
+    "id": "batch03",
+    "question_ids": [
+      "q09",
+      "q10",
+      "q11",
+      "q12"
+    ],
+    "model": "gemini-3.5-flash",
+    "usage": {
+      "input_tokens": 13091,
+      "output_tokens": 1193,
+      "total_tokens": 14284,
+      "input_token_details": {
+        "cache_read": 0
+      },
+      "output_token_details": {
+        "reasoning": 869
+      }
+    },
+    "seconds": 7.156787540996447
+  },
+  {
+    "id": "batch04",
+    "question_ids": [
+      "q13",
+      "q14",
+      "q15",
+      "q16"
+    ],
+    "model": "gemini-3.5-flash",
+    "usage": {
+      "input_tokens": 12370,
+      "output_tokens": 2421,
+      "total_tokens": 14791,
+      "input_token_details": {
+        "cache_read": 0
+      },
+      "output_token_details": {
+        "reasoning": 2072
+      }
+    },
+    "seconds": 27.101974042132497
+  },
+  {
+    "id": "batch05",
+    "question_ids": [
+      "q17",
+      "q18",
+      "q19",
+      "q20"
+    ],
+    "model": "gemini-3.5-flash",
+    "usage": {
+      "input_tokens": 13633,
+      "output_tokens": 1208,
+      "total_tokens": 14841,
+      "input_token_details": {
+        "cache_read": 0
+      },
+      "output_token_details": {
+        "reasoning": 886
+      }
+    },
+    "seconds": 6.931884540943429
+  },
+  {
+    "id": "batch06",
+    "question_ids": [
+      "q21",
+      "q22",
+      "q23",
+      "q24"
+    ],
+    "model": "gemini-3.5-flash",
+    "usage": {
+      "input_tokens": 11459,
+      "output_tokens": 2054,
+      "total_tokens": 13513,
+      "input_token_details": {
+        "cache_read": 0
+      },
+      "output_token_details": {
+        "reasoning": 1481
+      }
+    },
+    "seconds": 17.817787582986057
+  },
+  {
+    "id": "batch07",
+    "question_ids": [
+      "q25",
+      "q26"
+    ],
+    "model": "gemini-3.5-flash",
+    "usage": {
+      "input_tokens": 7927,
+      "output_tokens": 2177,
+      "total_tokens": 10104,
+      "input_token_details": {
+        "cache_read": 0
+      },
+      "output_token_details": {
+        "reasoning": 1944
+      }
+    },
+    "seconds": 21.561327167088166
+  },
+  {
+    "id": "batch08",
+    "question_ids": [
+      "q27",
+      "q28"
+    ],
+    "model": "gemini-3.5-flash",
+    "usage": {
+      "input_tokens": 6165,
+      "output_tokens": 1655,
+      "total_tokens": 7820,
+      "input_token_details": {
+        "cache_read": 0
+      },
+      "output_token_details": {
+        "reasoning": 1432
+      }
+    },
+    "seconds": 7.658940207911655
+  },
+  {
+    "id": "batch09",
+    "question_ids": [
+      "q29",
+      "q30"
+    ],
+    "model": "gemini-3.5-flash",
+    "usage": {
+      "input_tokens": 7118,
+      "output_tokens": 1313,
+      "total_tokens": 8431,
+      "input_token_details": {
+        "cache_read": 0
+      },
+      "output_token_details": {
+        "reasoning": 1135
+      }
+    },
+    "seconds": 7.709573207888752
+  },
+  {
+    "id": "batch10",
+    "question_ids": [
+      "q31",
+      "q32"
+    ],
+    "model": "gemini-3.5-flash",
+    "usage": {
+      "input_tokens": 4909,
+      "output_tokens": 666,
+      "total_tokens": 5575,
+      "input_token_details": {
+        "cache_read": 0
+      },
+      "output_token_details": {
+        "reasoning": 482
+      }
+    },
+    "seconds": 7.8448583339340985
+  },
+  {
+    "id": "batch11",
+    "question_ids": [
+      "q33",
+      "q34"
+    ],
+    "model": "gemini-3.5-flash",
+    "usage": {
+      "input_tokens": 5764,
+      "output_tokens": 524,
+      "total_tokens": 6288,
+      "input_token_details": {
+        "cache_read": 0
+      },
+      "output_token_details": {
+        "reasoning": 338
+      }
+    },
+    "seconds": 5.6900829169899225
+  },
+  {
+    "id": "batch12",
+    "question_ids": [
+      "q35",
+      "q36"
+    ],
+    "model": "gemini-3.5-flash",
+    "usage": {
+      "input_tokens": 2537,
+      "output_tokens": 526,
+      "total_tokens": 3063,
+      "input_token_details": {
+        "cache_read": 0
+      },
+      "output_token_details": {
+        "reasoning": 393
+      }
+    },
+    "seconds": 8.4404326248914
+  }
+]

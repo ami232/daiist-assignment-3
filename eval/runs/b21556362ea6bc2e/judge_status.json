@@ -1,0 +1,9 @@
+{
+  "status": "complete",
+  "judged": 31,
+  "remaining": 0,
+  "configured_model": "gemini-3.5-flash",
+  "actual_model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+  "fallback_reason": "Gemini 3.5/3.8 returned repeated service errors/timeouts; advertised Gemini 2.5 endpoint returned not available. Real Claude judgments, same rubric, no fabricated grades.",
+  "human_grades": 0
+}

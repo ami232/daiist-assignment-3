@@ -1,0 +1,209 @@
+{
+  "question_id": "q36",
+  "question": "How does the U.S. SBA Business Resilience Guide organise its six sections, including the appendices?",
+  "document": {
+    "source": "sba",
+    "path": "corpus/sba.md",
+    "url": "https://legacy.sba.gov/sites/default/files/2025-07/Business%20Resilience%20Guide.2025.pdf",
+    "license": "U.S. federal SBA overview text (PDF page 1 only): public-domain reuse basis in the U.S.; excludes third-party partner material elsewhere in the guide",
+    "license_url": "https://www.loc.gov/legal/security-copyright-and-privacy/understanding-copyright/",
+    "date": "2025-07",
+    "attribution": "U.S. Small Business Administration, Business Resilience Guide, 2025, introductory PDF page 1 only. Third-party partner material and images excluded; text extracted with whitespace normalisation. No endorsement implied.",
+    "no_personal_data_confirmed": true,
+    "title": "Business Resilience Guide",
+    "aliases": [
+      "SBA",
+      "Small Business Administration",
+      "Business Resilience Guide"
+    ]
+  },
+  "before": {
+    "question": "How does the U.S. SBA Business Resilience Guide organise its six sections, including the appendices?",
+    "answer": "I don't know from the indexed documents. The corpus does not provide enough evidence to answer this question.",
+    "raw_answer": "I don't know from the indexed documents. The corpus does not provide enough evidence to answer this question.",
+    "refused": true,
+    "trace": [],
+    "retrieved": [],
+    "guardrail": {
+      "triggered": true,
+      "reason": "explicit_source_missing",
+      "missing_sources": [
+        "sba"
+      ],
+      "cited_ids": [],
+      "invalid_ids": [],
+      "malformed": [],
+      "valid": false
+    },
+    "usage": {
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "total_tokens": 0
+    },
+    "model_calls": 0,
+    "seconds": 0.0002681668847799301,
+    "agent_model": "gemini-3.5-flash-lite"
+  },
+  "addition": {
+    "source": "sba",
+    "status": "indexed",
+    "words": 57373,
+    "chunks": {
+      "small": 338,
+      "large": 255
+    },
+    "new_embedding_calls": 1
+  },
+  "addition_trace": [
+    {
+      "tool": "add_document",
+      "arguments": {
+        "path": "corpus/sba.md"
+      },
+      "status": "ok",
+      "approval": true,
+      "result": {
+        "source": "sba",
+        "status": "indexed",
+        "words": 57373,
+        "chunks": {
+          "small": 338,
+          "large": 255
+        },
+        "new_embedding_calls": 1
+      }
+    }
+  ],
+  "after": {
+    "question": "How does the U.S. SBA Business Resilience Guide organise its six sections, including the appendices?",
+    "answer": "The U.S. SBA Business Resilience Guide is organized into six sections and appendices as follows [chunk:b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0]:\n\n* **Section 1:** Documenting the current state [chunk:b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0].\n* **Section 2:** Identifying critical relationships [chunk:b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0].\n* **Section 3:** Safeguarding resources [chunk:b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0].\n* **Section 4:** Addressing financial matters [chunk:b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0].\n* **Section 5:** Becoming more resilient [chunk:b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0].\n* **Appendices:** Worksheets [chunk:b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0].",
+    "raw_answer": "The U.S. SBA Business Resilience Guide is organized into six sections and appendices as follows [chunk:b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0]:\n\n* **Section 1:** Documenting the current state [chunk:b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0].\n* **Section 2:** Identifying critical relationships [chunk:b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0].\n* **Section 3:** Safeguarding resources [chunk:b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0].\n* **Section 4:** Addressing financial matters [chunk:b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0].\n* **Section 5:** Becoming more resilient [chunk:b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0].\n* **Appendices:** Worksheets [chunk:b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0].",
+    "refused": false,
+    "trace": [
+      {
+        "tool": "search",
+        "arguments": {
+          "query": "How does the U.S. SBA Business Resilience Guide organise its six sections, including the appendices?"
+        },
+        "status": "ok",
+        "result": {
+          "query": "How does the U.S. SBA Business Resilience Guide organise its six sections, including the appendices?",
+          "design": "large",
+          "chunks": [
+            {
+              "id": "b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0",
+              "source": "sba",
+              "location": "PDF page 1; words 1-252",
+              "text": "1 Business Resilience Guide: Reducing Risks and Building on Strengths Overview When disaster strikes, even the best run businesses can be impacted. According to the Federal Emergency Management Agency, about 25 percent of businesses do not reopen after disasters. Some businesses can cope with adversity better than others – they are less disrupted by an event, resume operations sooner, recover faster, and adjust for the future based on their experience. These businesses are described as resilient. For a small business, being resilient involves understanding risks, planning for them, identifying employee needs and responsibilities, and ensuring back-ups and redundancies are in place. This Guide can help small businesses determine how to anticipate the impacts of a disaster on operations so disruptions can be minimized. The disasters you plan for may be an immediate threat, like a hurricane or unseasonably cold weather, or plans may arise out of caution, in anticipation of a pandemic or an earthquake. Thinking about how these risks would disrupt your operations and planning for them will enable you to rebound quicker and avoid a recurrence. The primary audience for this Guide is the small business owner who may not be familiar with disaster preparedness and risk reduction. This Guide breaks down activities to make the process of planning for and recovering from a disaster manageable. This Guide is organized into six sections: Section 1: Documenting the current state. Section 2: Identifying critical relationships. Section 3: Safeguarding resources. Section 4: Addressing financial matters. Section 5: Becoming more resilient. Appendices: Worksheets.",
+              "score": 0.7980644388084254,
+              "citation": "[chunk:b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0]"
+            },
+            {
+              "id": "8b6e5076877854908d2957b55033f3c6c11284e7d234738f65b85b521596b398",
+              "source": "fema",
+              "location": "PDF page 5; words 1-182",
+              "text": "iii Table of Contents INTRODUCTION......................................................................................................................... 1 Purpose .............................................................................................................................................. 1 Background ....................................................................................................................................... 1 Supply Chain Defined .............................................................................................................. 2 Supply Chain Resilience .......................................................................................................... 3 Supply Chains and Emergency Management .......................................................................... 4 Community Lifelines ............................................................................................................... 5 SUPPLY CHAIN RESILIENCE PROCESS.............................................................................. 8 Overview ............................................................................................................................................ 8 Phase 1: Research and Mapping ..................................................................................................... 9 Phase 2: Analysis ............................................................................................................................ 11 Phase 3: Outreach ........................................................................................................................... 13 Phase 4: Action ............................................................................................................................... 15 Phase 5: Assess and Refine ............................................................................................................ 16 CONNECTION TO LOGISTICS PLANNING ....................................................................... 19 Overview .......................................................................................................................................... 19 Considerations ................................................................................................................................ 19 Supply Source ........................................................................................................................ 20 Distribution Points ................................................................................................................. 20 Inventory ................................................................................................................................ 21 Access and Re-entry ............................................................................................................... 21 Routes .................................................................................................................................... 23 Fuel ........................................................................................................................................ 24 Transportation Operators ....................................................................................................... 24 APPENDIX A. DEFENSE PRODUCTION ACT .............................................................. 25 Requesting DPA Priority Ratings ................................................................................................. 25 Establishing a Voluntary Agreement ............................................................................................ 26 APPENDIX B. COMMUNITY LIFELINE FRAMEWORK ........................................... 27 Safety and Security ......................................................................................................................... 27 Food, Water, Sheltering ................................................................................................................. 28 Health and Medical ........................................................................................................................ 29 Energy (Power & Fuel) .................................................................................................................. 30 Communications ............................................................................................................................. 31 Transportation ................................................................................................................................ 32 Hazardous Material ........................................................................................................................ 32 APPENDIX C. SUPPLY CHAIN RESILIENCE ENGAGEMENT CHECKLIST ........ 34 APPENDIX D. COMPLEX SUPPLY CHAIN EXAMPLE .............................................. 36",
+              "score": 0.7083075362024328,
+              "citation": "[chunk:8b6e5076877854908d2957b55033f3c6c11284e7d234738f65b85b521596b398]"
+            },
+            {
+              "id": "6614699e0c38cab127668bb3b70c0e9a6a07c897a9b561766cbcda55d8faed83",
+              "source": "fema",
+              "location": "PDF page 25; words 1-391",
+              "text": "19 Connection to Logistics Planning Overview The supply chain resilience process described in the previous section focuses on understanding supply chain vulnerabilities and identifying actions to enhance resilience. However, in extreme events, supply chains will not always be resilient. For example, disasters can destroy nodes, separate demand from sources of supply, destroy road networks, or create long-term disruption. While many impediments are possible, some are predictable. The results of the five-phased supply chain resilience process provide emergency managers with valuable information to inform actions to restore supply chains and priorities for logistics planning. It yields an understanding of key supply chain stakeholders, vulnerabilities, and challenges and identifies actions emergency managers may need to take in the event of supply chain disruption. Emergency managers should use this information to develop or refine logistics plans or annexes, following the six-step planning process described in CPG 101 (see Figure 4).9 Figure 4: Six-Step Planning Process from CPG 101 For example, identifying key supply chain stakeholders through the supply chain resilience process provides emergency managers with critical potential members for the Collaborative Planning Team (Step 1). Additionally, emergency managers can apply the outcomes from the supply chain resilience process to understand the situation (Step 2), as well as to establish or refine operational priorities and develop goals and objectives (Step 3). Considerations This section presents additional considerations that emergency managers may want to explore to develop a unified approach to restoring community lifelines: restoring private sector supply chains and public sector logistics planning. Emergency managers may have uncovered some of these answers during the supply chain resilience process or may need to conduct additional analysis efforts to identify necessary details. To effectively inform logistics planning, emergency managers should examine known and potential hazards plotted along the supply chain, alternate routes, alternate methods of transportation, and any known restrictions of storage, handling, and/or transportation. Their analysis should address both the supply chain nodes (e.g., manufacturing sites, storage facilities, distribution facilities, customers’ receiving sites), as well as the infrastructure on which these nodes depend. For example, it is important to include the power infrastructure that provides service to a key tunnel along a main supply route, as without power the tunnel may need to be closed due to inoperable ventilation systems. 9 FEMA, CPG 101: Developing and Maintaining Emergency Operations Plans, Version 2.0, (Washington, DC, 2010), https://www.fema.gov/media-library/assets/documents/25975.",
+              "score": 0.6703706824259238,
+              "citation": "[chunk:6614699e0c38cab127668bb3b70c0e9a6a07c897a9b561766cbcda55d8faed83]"
+            },
+            {
+              "id": "ade247ffacceef34ab3fdc4d103f4f6e67eab7fa2bacfd6317b624fcd45da1d3",
+              "source": "fema",
+              "location": "PDF page 14; words 1-266",
+              "text": "8 Supply Chain Resilience Process Overview To enhance supply chain resilience, emergency managers should develop a strategic understanding of the current supply chains and engage with relevant stakeholders, such as vendors and industry associations, to foster public-private sector collaboration, cooperation, and planning. This section presents a five-phased cyclical approach to enhance supply chain resilience (see Figure 2). Figure 2: Supply Chain Resilience Phases Before beginning the five-phase process, emergency managers should identify an initial supply chain to explore. As supply chain networks are complex systems with numerous stakeholders, nodes, and specialized concerns, emergency managers who are just starting to engage supply chain issues may find it helpful to focus on the supply chain for a single good or service, such as groceries or fuel. Developing experience and confidence in one supply chain will often accelerate engagement with multiple supply chains and the interdependencies that supply chains share. As emergency managers become more comfortable with the process, they will find it easier to expand the focus to a community lifeline, which may encompass multiple goods or services (see Appendix B for more information). The first two phases of the supply chain resilience process, Phase 1: Research and Mapping and Phase 2: Analysis, use open source data to identify and analyze a supply chain. The goal is to develop a strategic understanding of the supply chain, helping emergency managers identify key stakeholders with which to engage and potentially uncovering supply chain resilience issues. Phase 3: Outreach engages specific stakeholders to vet the findings from the first two phases and develop collaborative relationships focused on enhancing supply chain resilience.",
+              "score": 0.6655001786417751,
+              "citation": "[chunk:ade247ffacceef34ab3fdc4d103f4f6e67eab7fa2bacfd6317b624fcd45da1d3]"
+            },
+            {
+              "id": "c6a0ea2ab63371b4eb8db53f17bbce74c381f309fe462e4102cf14c16f0d2e11",
+              "source": "fema",
+              "location": "PDF page 7; words 1-413",
+              "text": "1 Introduction Supply Chain Resilience The most effective way to deliver the needed supplies to a disaster-impacted area is by re-establishing pre-disaster supply chains. Building resilience within, and providing for the rapid restoration of, supply chain systems is key to responding to any catastrophic incident.1 Purpose This document provides emergency managers with recommendations on how to analyze supply chains and to work with the private sector to enhance supply chain resilience in support of Comprehensive Preparedness Guide (CPG) 101: Developing and Maintaining Emergency Operations Plans.2 This document also identifies how the results of the supply chain resilience process can inform logistics planning. Background Each day, individuals and families routinely receive critical goods and services such as water, food, pharmaceuticals, medical goods, power, and fuel from healthy, functioning supply chains. However, in times of disaster, even supply chains that were previously functioning well can experience significant disruption, generating acute life-safety challenges and quickly turning a disaster into a catastrophe. Supply chains that effectively adapt to disasters, disruptions, and fluctuating needs greatly benefit the community and can reduce the need for a larger response and recovery operation. While the private sector operates and maintains the majority of supply chains, emergency managers can play a critical role in enhancing supply chain resilience by fostering awareness and collaboration among key supply chain players and promoting actions to enhance supply chain resilience. They must also be aware of supply chain vulnerabilities and potential impacts to the community so that they can develop effective emergency response plans and operate efficiently in times of disaster. For example, emergency response plans are often based on the assumption of working supply chains. Awareness of vulnerabilities can help emergency managers understand the potential impacts of disrupted supply chains. In addition, such awareness helps managers to support the private sector in re-establishing supply chains and to take necessary actions to mitigate the impacts (e.g., prioritizing stabilization of critical supply chain 1 FEMA Strategic Plan 2018–2022, https://www.fema.gov/strategic-plan. 2 FEMA, CPG 101: Developing and Maintaining Emergency Operations Plans, Version 2.0, (Washington, DC, 2010), https://www.fema.gov/media-library/assets/documents/25975. Resilient supply chains are a critical element in protecting community lifelines. Commu nity lifelines provide indispen sable services that (1) enable the conti nuous operation of critical business and government functions, and (2) are criti cal to human health and s afety or economic security. Survivors depend on communit y lifelines, which depend on res ilient supply chains, to s ave and sustain life, ensure public s afety, and speed economic recovery.",
+              "score": 0.664456915980372,
+              "citation": "[chunk:c6a0ea2ab63371b4eb8db53f17bbce74c381f309fe462e4102cf14c16f0d2e11]"
+            }
+          ],
+          "context_words": 1504
+        }
+      }
+    ],
+    "retrieved": [
+      {
+        "id": "b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0",
+        "source": "sba",
+        "location": "PDF page 1; words 1-252",
+        "text": "1 Business Resilience Guide: Reducing Risks and Building on Strengths Overview When disaster strikes, even the best run businesses can be impacted. According to the Federal Emergency Management Agency, about 25 percent of businesses do not reopen after disasters. Some businesses can cope with adversity better than others – they are less disrupted by an event, resume operations sooner, recover faster, and adjust for the future based on their experience. These businesses are described as resilient. For a small business, being resilient involves understanding risks, planning for them, identifying employee needs and responsibilities, and ensuring back-ups and redundancies are in place. This Guide can help small businesses determine how to anticipate the impacts of a disaster on operations so disruptions can be minimized. The disasters you plan for may be an immediate threat, like a hurricane or unseasonably cold weather, or plans may arise out of caution, in anticipation of a pandemic or an earthquake. Thinking about how these risks would disrupt your operations and planning for them will enable you to rebound quicker and avoid a recurrence. The primary audience for this Guide is the small business owner who may not be familiar with disaster preparedness and risk reduction. This Guide breaks down activities to make the process of planning for and recovering from a disaster manageable. This Guide is organized into six sections: Section 1: Documenting the current state. Section 2: Identifying critical relationships. Section 3: Safeguarding resources. Section 4: Addressing financial matters. Section 5: Becoming more resilient. Appendices: Worksheets.",
+        "score": 0.7980644388084254,
+        "citation": "[chunk:b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0]"
+      },
+      {
+        "id": "8b6e5076877854908d2957b55033f3c6c11284e7d234738f65b85b521596b398",
+        "source": "fema",
+        "location": "PDF page 5; words 1-182",
+        "text": "iii Table of Contents INTRODUCTION......................................................................................................................... 1 Purpose .............................................................................................................................................. 1 Background ....................................................................................................................................... 1 Supply Chain Defined .............................................................................................................. 2 Supply Chain Resilience .......................................................................................................... 3 Supply Chains and Emergency Management .......................................................................... 4 Community Lifelines ............................................................................................................... 5 SUPPLY CHAIN RESILIENCE PROCESS.............................................................................. 8 Overview ............................................................................................................................................ 8 Phase 1: Research and Mapping ..................................................................................................... 9 Phase 2: Analysis ............................................................................................................................ 11 Phase 3: Outreach ........................................................................................................................... 13 Phase 4: Action ............................................................................................................................... 15 Phase 5: Assess and Refine ............................................................................................................ 16 CONNECTION TO LOGISTICS PLANNING ....................................................................... 19 Overview .......................................................................................................................................... 19 Considerations ................................................................................................................................ 19 Supply Source ........................................................................................................................ 20 Distribution Points ................................................................................................................. 20 Inventory ................................................................................................................................ 21 Access and Re-entry ............................................................................................................... 21 Routes .................................................................................................................................... 23 Fuel ........................................................................................................................................ 24 Transportation Operators ....................................................................................................... 24 APPENDIX A. DEFENSE PRODUCTION ACT .............................................................. 25 Requesting DPA Priority Ratings ................................................................................................. 25 Establishing a Voluntary Agreement ............................................................................................ 26 APPENDIX B. COMMUNITY LIFELINE FRAMEWORK ........................................... 27 Safety and Security ......................................................................................................................... 27 Food, Water, Sheltering ................................................................................................................. 28 Health and Medical ........................................................................................................................ 29 Energy (Power & Fuel) .................................................................................................................. 30 Communications ............................................................................................................................. 31 Transportation ................................................................................................................................ 32 Hazardous Material ........................................................................................................................ 32 APPENDIX C. SUPPLY CHAIN RESILIENCE ENGAGEMENT CHECKLIST ........ 34 APPENDIX D. COMPLEX SUPPLY CHAIN EXAMPLE .............................................. 36",
+        "score": 0.7083075362024328,
+        "citation": "[chunk:8b6e5076877854908d2957b55033f3c6c11284e7d234738f65b85b521596b398]"
+      },
+      {
+        "id": "6614699e0c38cab127668bb3b70c0e9a6a07c897a9b561766cbcda55d8faed83",
+        "source": "fema",
+        "location": "PDF page 25; words 1-391",
+        "text": "19 Connection to Logistics Planning Overview The supply chain resilience process described in the previous section focuses on understanding supply chain vulnerabilities and identifying actions to enhance resilience. However, in extreme events, supply chains will not always be resilient. For example, disasters can destroy nodes, separate demand from sources of supply, destroy road networks, or create long-term disruption. While many impediments are possible, some are predictable. The results of the five-phased supply chain resilience process provide emergency managers with valuable information to inform actions to restore supply chains and priorities for logistics planning. It yields an understanding of key supply chain stakeholders, vulnerabilities, and challenges and identifies actions emergency managers may need to take in the event of supply chain disruption. Emergency managers should use this information to develop or refine logistics plans or annexes, following the six-step planning process described in CPG 101 (see Figure 4).9 Figure 4: Six-Step Planning Process from CPG 101 For example, identifying key supply chain stakeholders through the supply chain resilience process provides emergency managers with critical potential members for the Collaborative Planning Team (Step 1). Additionally, emergency managers can apply the outcomes from the supply chain resilience process to understand the situation (Step 2), as well as to establish or refine operational priorities and develop goals and objectives (Step 3). Considerations This section presents additional considerations that emergency managers may want to explore to develop a unified approach to restoring community lifelines: restoring private sector supply chains and public sector logistics planning. Emergency managers may have uncovered some of these answers during the supply chain resilience process or may need to conduct additional analysis efforts to identify necessary details. To effectively inform logistics planning, emergency managers should examine known and potential hazards plotted along the supply chain, alternate routes, alternate methods of transportation, and any known restrictions of storage, handling, and/or transportation. Their analysis should address both the supply chain nodes (e.g., manufacturing sites, storage facilities, distribution facilities, customers’ receiving sites), as well as the infrastructure on which these nodes depend. For example, it is important to include the power infrastructure that provides service to a key tunnel along a main supply route, as without power the tunnel may need to be closed due to inoperable ventilation systems. 9 FEMA, CPG 101: Developing and Maintaining Emergency Operations Plans, Version 2.0, (Washington, DC, 2010), https://www.fema.gov/media-library/assets/documents/25975.",
+        "score": 0.6703706824259238,
+        "citation": "[chunk:6614699e0c38cab127668bb3b70c0e9a6a07c897a9b561766cbcda55d8faed83]"
+      },
+      {
+        "id": "ade247ffacceef34ab3fdc4d103f4f6e67eab7fa2bacfd6317b624fcd45da1d3",
+        "source": "fema",
+        "location": "PDF page 14; words 1-266",
+        "text": "8 Supply Chain Resilience Process Overview To enhance supply chain resilience, emergency managers should develop a strategic understanding of the current supply chains and engage with relevant stakeholders, such as vendors and industry associations, to foster public-private sector collaboration, cooperation, and planning. This section presents a five-phased cyclical approach to enhance supply chain resilience (see Figure 2). Figure 2: Supply Chain Resilience Phases Before beginning the five-phase process, emergency managers should identify an initial supply chain to explore. As supply chain networks are complex systems with numerous stakeholders, nodes, and specialized concerns, emergency managers who are just starting to engage supply chain issues may find it helpful to focus on the supply chain for a single good or service, such as groceries or fuel. Developing experience and confidence in one supply chain will often accelerate engagement with multiple supply chains and the interdependencies that supply chains share. As emergency managers become more comfortable with the process, they will find it easier to expand the focus to a community lifeline, which may encompass multiple goods or services (see Appendix B for more information). The first two phases of the supply chain resilience process, Phase 1: Research and Mapping and Phase 2: Analysis, use open source data to identify and analyze a supply chain. The goal is to develop a strategic understanding of the supply chain, helping emergency managers identify key stakeholders with which to engage and potentially uncovering supply chain resilience issues. Phase 3: Outreach engages specific stakeholders to vet the findings from the first two phases and develop collaborative relationships focused on enhancing supply chain resilience.",
+        "score": 0.6655001786417751,
+        "citation": "[chunk:ade247ffacceef34ab3fdc4d103f4f6e67eab7fa2bacfd6317b624fcd45da1d3]"
+      },
+      {
+        "id": "c6a0ea2ab63371b4eb8db53f17bbce74c381f309fe462e4102cf14c16f0d2e11",
+        "source": "fema",
+        "location": "PDF page 7; words 1-413",
+        "text": "1 Introduction Supply Chain Resilience The most effective way to deliver the needed supplies to a disaster-impacted area is by re-establishing pre-disaster supply chains. Building resilience within, and providing for the rapid restoration of, supply chain systems is key to responding to any catastrophic incident.1 Purpose This document provides emergency managers with recommendations on how to analyze supply chains and to work with the private sector to enhance supply chain resilience in support of Comprehensive Preparedness Guide (CPG) 101: Developing and Maintaining Emergency Operations Plans.2 This document also identifies how the results of the supply chain resilience process can inform logistics planning. Background Each day, individuals and families routinely receive critical goods and services such as water, food, pharmaceuticals, medical goods, power, and fuel from healthy, functioning supply chains. However, in times of disaster, even supply chains that were previously functioning well can experience significant disruption, generating acute life-safety challenges and quickly turning a disaster into a catastrophe. Supply chains that effectively adapt to disasters, disruptions, and fluctuating needs greatly benefit the community and can reduce the need for a larger response and recovery operation. While the private sector operates and maintains the majority of supply chains, emergency managers can play a critical role in enhancing supply chain resilience by fostering awareness and collaboration among key supply chain players and promoting actions to enhance supply chain resilience. They must also be aware of supply chain vulnerabilities and potential impacts to the community so that they can develop effective emergency response plans and operate efficiently in times of disaster. For example, emergency response plans are often based on the assumption of working supply chains. Awareness of vulnerabilities can help emergency managers understand the potential impacts of disrupted supply chains. In addition, such awareness helps managers to support the private sector in re-establishing supply chains and to take necessary actions to mitigate the impacts (e.g., prioritizing stabilization of critical supply chain 1 FEMA Strategic Plan 2018–2022, https://www.fema.gov/strategic-plan. 2 FEMA, CPG 101: Developing and Maintaining Emergency Operations Plans, Version 2.0, (Washington, DC, 2010), https://www.fema.gov/media-library/assets/documents/25975. Resilient supply chains are a critical element in protecting community lifelines. Commu nity lifelines provide indispen sable services that (1) enable the conti nuous operation of critical business and government functions, and (2) are criti cal to human health and s afety or economic security. Survivors depend on communit y lifelines, which depend on res ilient supply chains, to s ave and sustain life, ensure public s afety, and speed economic recovery.",
+        "score": 0.664456915980372,
+        "citation": "[chunk:c6a0ea2ab63371b4eb8db53f17bbce74c381f309fe462e4102cf14c16f0d2e11]"
+      }
+    ],
+    "guardrail": {
+      "triggered": false,
+      "reason": null,
+      "cited_ids": [
+        "b291d7a273ca648407b66a34eacc3a630b3c5eda81898868383b81d7bdb43ba0"
+      ],
+      "invalid_ids": [],
+      "malformed": [],
+      "valid": true
+    },
+    "usage": {
+      "input_tokens": 3926,
+      "output_tokens": 498,
+      "total_tokens": 4424
+    },
+    "model_calls": 1,
+    "original_query_prefetched": true,
+    "seconds": 2.3851619998458773,
+    "agent_model": "gemini-3.5-flash-lite"
+  },
+  "before_refused": true,
+  "after_refused": false,
+  "interpretation": "Jimena must inspect evidence and explain the change. An answer change alone does not prove correctness.",
+  "baseline_unchanged": true,
+  "role": "development engineering check",
+  "approval_record": {
+    "basis": "User instruction to finish all draft work after the specific prepared SBA-page experiment was presented.",
+    "scope": "Prepared public introductory page only; isolated copy; original baseline unchanged."
+  }
+}

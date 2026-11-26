@@ -1,0 +1,17 @@
+[
+  {
+    "id": "q23",
+    "category": "wrong_refusal",
+    "reason": "The retrieved set explicitly contains the 'Spotlight: what is a supply chain shock?' passage listing geopolitical, environmental, financial, health, fiscal and technological shocks, so the refusal fails to answer a question the corpus demonstrably covers."
+  },
+  {
+    "id": "q27",
+    "category": "retrieval_miss",
+    "reason": "Both required strands are covered: node dependence on electric power/fuel/water/communications with the backup-versus-restoration-time resilience gap, and inventory supply, resupply intervals and JIT buffering of short-term breaks; the carrying-cost tradeoff in the reference is not asked for by the question. Claims map to the retrieved FEMA pages 16, 17, 27 and 3 passages."
+  },
+  {
+    "id": "g01",
+    "category": "retrieval_miss",
+    "reason": "The answer covers the reference's substance (alternative/secondary supply sources, supplier business continuity, buffer stocks, risk management) using passages actually retrieved (FEMA p.26 d4b56b31, uk-strategy a1daafcd and 234fe187), but the closing trade-off claim that inventory buffers 'incur carrying costs' is a material element of the reference that no retrieved passage states (the operations p.54 inventory chunk was not retrieved here)."
+  }
+]

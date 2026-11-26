@@ -1,0 +1,6 @@
+{
+  "judge_backend": "claude_code",
+  "human_scope": "separate_historical",
+  "historical_human_run": "5c1ef6b35bf29617",
+  "reporting_scope": "Current AI results and original user-reported human validation are separate; no grade transfer."
+}

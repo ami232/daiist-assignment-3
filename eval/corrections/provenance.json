@@ -1,0 +1,12 @@
+{
+  "baseline_run_id": "5c1ef6b35bf29617",
+  "current_code_identity": "869eb5e28f5d706a",
+  "type": "Targeted regression rerun after prompt revision; not a fresh independent benchmark",
+  "ids": [
+    "q16",
+    "q23",
+    "q25",
+    "q27"
+  ],
+  "human_reviewed": false
+}

@@ -1,0 +1,17 @@
+{
+  "question_ids": [
+    "s11",
+    "s12",
+    "s13",
+    "s14",
+    "s15",
+    "s16",
+    "s17",
+    "s18",
+    "s19",
+    "s20"
+  ],
+  "prompt_sha256": "b4ab698ac0e59e43a988ddfe579c6f4e1390177e8a278c3b8c41ff1917798fd5",
+  "exit_code": 0,
+  "role": "Actual tool-free Claude Code judge call; no human labels supplied"
+}

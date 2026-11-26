@@ -1,0 +1,52 @@
+{
+  "model": "gemini-3.5-flash",
+  "verdicts": [
+    {
+      "id": "q16",
+      "reasoning": "The answer correctly and clearly distinguishes a demand trend from a seasonal pattern based on chunk 7d6a2232a652d08b58b7f65905e29de0a842b4574c42778c5da92d6c306707da. All claims are fully supported by the retrieved text.",
+      "correct": true,
+      "supported": true,
+      "bad_test_question": false
+    },
+    {
+      "id": "q23",
+      "reasoning": "The answer accurately lists all six types of economic shocks identified in chunk 30670a6976d49350cf222688974d30b4fbb2d6597fc0710b2e52377f57f3373e (geopolitical, environmental, financial, health, fiscal, technological). All claims are fully supported.",
+      "correct": true,
+      "supported": true,
+      "bad_test_question": false
+    },
+    {
+      "id": "q25",
+      "reasoning": "The answer successfully combines forecasting assumptions (inherent error, horizon decay, financial risks of over/under-estimating) with inventory guidance (buffering customer uncertainty and supplier risks). Every factual claim is directly supported by the retrieved text.",
+      "correct": true,
+      "supported": true,
+      "bad_test_question": false
+    },
+    {
+      "id": "q27",
+      "reasoning": "The answer directly explains why contingency planning must evaluate both supporting infrastructure and inventory buffers, backed by specific details from FEMA and textbook chunks (utility dependencies vs. backup capabilities, JIT restock, holding costs). All material claims are fully supported.",
+      "correct": true,
+      "supported": true,
+      "bad_test_question": false
+    },
+    {
+      "id": "q15",
+      "reasoning": "The answer accurately reflects the passage, noting that while the text states forecasts are more accurate for groups of items than individual end items (providing an example of Fitbit models vs size/colour combinations), the text itself does not provide a statistical or causal explanation for why this is the case.",
+      "correct": true,
+      "supported": true,
+      "bad_test_question": false
+    }
+  ],
+  "usage": {
+    "input_tokens": 918,
+    "output_tokens": 813,
+    "total_tokens": 1731,
+    "input_token_details": {
+      "cache_read": 0
+    },
+    "output_token_details": {
+      "reasoning": 721
+    }
+  },
+  "role": "Real judge of revised artifacts; not independent benchmark or human review"
+}

@@ -1,0 +1,17 @@
+{
+  "run_id": "5c1ef6b35bf29617",
+  "answers": 36,
+  "judge_correct": 35,
+  "judge_supported": 34,
+  "human_grades": 20,
+  "human_method": "User reported matching the previously visible AI review; assistant transcribed. Not demonstrated blind independence.",
+  "agreement": {
+    "correct": 0.85,
+    "supported": 0.9
+  },
+  "agreement_both": 0.8,
+  "mean_agent_tokens": 3943.6388888888887,
+  "mean_agent_seconds": 4.481784639964139,
+  "corrected_answers_are_separate": true,
+  "original_results_not_overwritten": true
+}

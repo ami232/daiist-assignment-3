@@ -1,0 +1,54 @@
+{
+  "reviewer": "AI assistant source check, not human validation",
+  "scope": "Reference answers compared with the cited local corpus passages; actual question/reference text preserved unchanged.",
+  "source_locations_checked": true,
+  "counts": {
+    "supplied_pairs": 30,
+    "answerable": 25,
+    "unanswerable": 5
+  },
+  "findings": [
+    {
+      "ids": [
+        "s07",
+        "s29"
+      ],
+      "note": "Seasonal indices require equal-length periods. The adjusted forecast is the baseline for the period multiplied by that period\u2019s seasonal index; do not multiply annual demand directly."
+    },
+    {
+      "ids": [
+        "s08",
+        "s29"
+      ],
+      "note": "Forecast error sign follows the explicitly stated actual-minus-forecast convention."
+    },
+    {
+      "ids": [
+        "s16"
+      ],
+      "note": "Vendor responsibility is conditional on the VMI arrangement explicitly stated in the question."
+    },
+    {
+      "ids": [
+        "s03",
+        "s17",
+        "s18",
+        "s19",
+        "s27",
+        "s30"
+      ],
+      "note": "FEMA targets emergency managers; applications to a shop are general planning adaptations, not binding retailer requirements or guarantees."
+    },
+    {
+      "ids": [
+        "s21",
+        "s22",
+        "s23",
+        "s24",
+        "s25"
+      ],
+      "note": "Missing private/live facts or unknown future outcomes mean these cannot be answered reliably from the static public corpus."
+    }
+  ],
+  "authorship": "Receipt and source checking do not attest who originally composed the material."
+}

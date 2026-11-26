@@ -1,0 +1,65 @@
+{
+  "run_id": "f6e2383e8bee909d",
+  "scenario": "Hypothetical online curated gift-box shop; supplier delays and Christmas demand",
+  "questions": 39,
+  "counts": {
+    "single": 24,
+    "multi": 8,
+    "unanswerable": 7
+  },
+  "actual_agent_outputs": 39,
+  "judge_models": [
+    "claude-haiku-4-5-20251001,claude-opus-5[1m]"
+  ],
+  "judge_verdicts": 39,
+  "judge_correct": 38,
+  "judge_supported": 37,
+  "retrieval": {
+    "small": {
+      "answerable_count": 32,
+      "hit_rate": {
+        "1": 0.59375,
+        "3": 0.75,
+        "5": 0.84375
+      },
+      "mean_context_words": {
+        "1": 208.90625,
+        "3": 599.09375,
+        "5": 998.6875
+      }
+    },
+    "large": {
+      "answerable_count": 32,
+      "hit_rate": {
+        "1": 0.625,
+        "3": 0.78125,
+        "5": 0.90625
+      },
+      "mean_context_words": {
+        "1": 304.84375,
+        "3": 837.25,
+        "5": 1377.625
+      }
+    }
+  },
+  "refusals": [
+    "q23",
+    "q31",
+    "q32",
+    "q33",
+    "q34",
+    "q35",
+    "q36",
+    "g03"
+  ],
+  "citation_identity_valid_nonrefusals": 31,
+  "mean_agent_tokens": {
+    "input_tokens": 4250.5641025641025,
+    "output_tokens": 379.1794871794872,
+    "total_tokens": 4629.74358974359
+  },
+  "mean_agent_seconds": 5.099113596215223,
+  "human_labels_this_run": 0,
+  "historical_human_run": "5c1ef6b35bf29617",
+  "evaluation_scope": "AI-assisted development set; three scenario questions selected by Jimena. Revised prompt and new answers; historical human grades not transferred."
+}

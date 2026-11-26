@@ -1,0 +1,17 @@
+{
+  "role": "AI-assisted development questions; three gift-shop questions explicitly selected by Jimena",
+  "not_student_authored": true,
+  "counts": {
+    "total": 39,
+    "single": 24,
+    "multi": 8,
+    "unanswerable": 7
+  },
+  "user_selected_ids": [
+    "g01",
+    "g02",
+    "g03"
+  ],
+  "authorship": "The three selected questions were drafted with AI assistance and approved by the user. Selection is recorded, not misrepresented as independent student authorship of all questions.",
+  "evaluation_scope": "Development set, not unseen validation."
+}

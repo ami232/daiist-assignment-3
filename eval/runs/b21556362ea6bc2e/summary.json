@@ -1,0 +1,68 @@
+{
+  "questions": 31,
+  "correct_fraction": 0.9354838709677419,
+  "unsupported_fraction": 0.03225806451612903,
+  "correct_refusals": 6,
+  "unanswerable_count": 6,
+  "wrong_refusals": 0,
+  "answerable_count": 25,
+  "guardrail_triggers": 6,
+  "mean_agent_seconds": 6.154399610207146,
+  "median_agent_seconds": 4.1972680408507586,
+  "mean_agent_tokens": {
+    "input_tokens": 4134.419354838709,
+    "output_tokens": 370.83870967741933,
+    "total_tokens": 4505.258064516129
+  },
+  "mean_judge_seconds": null,
+  "mean_judge_tokens": null,
+  "human_judge_agreement": null,
+  "failures_primary_category": {
+    "retrieval_miss": [
+      "s27",
+      "s28"
+    ],
+    "wrong_answer_from_right_passage": [
+      "s03"
+    ],
+    "unsupported_claim": [],
+    "wrong_refusal": [],
+    "bad_test_question": []
+  },
+  "cost_scope": "Agent LLM token usage and wall time include tool calls. Judge cost is separate. Embedding token counts and monetary prices are not estimated; query embeddings are cached.",
+  "caveat": "Citation identity checks do not prove entailment. Failure classes are automated provisional diagnoses for Jimena to review.",
+  "run_id": "b21556362ea6bc2e",
+  "generation_id": "b21556362ea6bc2e",
+  "judge_models": [
+    "claude-haiku-4-5-20251001,claude-opus-5[1m]"
+  ],
+  "historical_human_validation": {
+    "run_id": "5c1ef6b35bf29617",
+    "applies_to_current_answers": false,
+    "agreement_with_original_judge": {
+      "graded_answers": 20,
+      "correct": 0.85,
+      "supported": 0.9,
+      "both": 0.8
+    },
+    "labels_sha256": "50e32bbc62e875fab1c9054bab9f2e914fe84f0691cc68c210b60a7a776b6cf9",
+    "provenance": {
+      "run_id": "5c1ef6b35bf29617",
+      "reviewer": "Jimena Navarro Del Águila",
+      "method": "User-reported review, transcribed by assistant from explicit confirmation that results matched the same 20-case sample",
+      "user_statement": "i did teh test too and got rhe sam eresults",
+      "not_independently_observed": true,
+      "ai_review_was_already_visible": true,
+      "blind_independence_not_claimed": true,
+      "applies_to": "Original saved answers only, not subsequent corrections",
+      "count": 20
+    }
+  },
+  "human_scope": "separate_historical",
+  "current_run_human_grades": 0,
+  "judge_batch_statistics": {
+    "batches": 4,
+    "sum_batch_elapsed_seconds": 124.70914887520485,
+    "scope": "Batch times are not individual-question latency. Raw per-model usage is in judge_batches.json."
+  }
+}

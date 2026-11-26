@@ -1,0 +1,116 @@
+{
+  "config": {
+    "student_approved": false,
+    "use_case": "Evidence assistant for a small online shop selling curated gift boxes; supplier delays and Christmas demand are the two priority problems. Selected by Jimena on 26 November 2026.",
+    "embedding_model": "gemini-embedding-2",
+    "embedding_dimensions": 768,
+    "selected_design": "small",
+    "designs": [
+      {
+        "name": "small",
+        "words": 300,
+        "overlap": 60
+      },
+      {
+        "name": "large",
+        "words": 600,
+        "overlap": 120
+      }
+    ],
+    "documents": [
+      {
+        "source": "operations",
+        "path": "corpus/operations.md",
+        "url": "https://storage.downloads.libretexts.org/pdf/biz-117227/Full.pdf?response-content-disposition=inline%3B+filename%3D%22Full.pdf%22&v=e9bd74226976581b60b1a72e465ea8bf-2",
+        "license": "CC BY-NC 4.0, with source adaptation attribution retained; noncommercial academic use only",
+        "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+        "date": "2026-05-05 PDF compilation",
+        "attribution": "Mary Drane and Hamid Faramarzi / Seneca College; LibreTexts adaptation. Original source credits retained in the PDF. Detailed licensing: PDF pages 135–138.",
+        "no_personal_data_confirmed": true,
+        "title": "Introduction to Operations Management",
+        "aliases": [
+          "Introduction to Operations Management"
+        ]
+      },
+      {
+        "source": "fema",
+        "path": "corpus/fema.md",
+        "url": "https://www.fema.gov/sites/default/files/2020-07/supply-chain-resilience-guide.pdf",
+        "license": "U.S. federal government-authored guidance: public-domain basis in the U.S.; excludes third-party images and linked works",
+        "license_url": "https://www.loc.gov/legal/security-copyright-and-privacy/understanding-copyright/",
+        "date": "2019-04",
+        "attribution": "Federal Emergency Management Agency, Supply Chain Resilience Guide, April 2019. No endorsement implied.",
+        "no_personal_data_confirmed": true,
+        "title": "Supply Chain Resilience Guide",
+        "aliases": [
+          "FEMA",
+          "Supply Chain Resilience Guide"
+        ]
+      },
+      {
+        "source": "uk-strategy",
+        "path": "corpus/uk-strategy.md",
+        "url": "https://www.gov.uk/government/publications/uk-critical-imports-and-supply-chains-strategy/critical-imports-and-supply-chains-strategy-html-version",
+        "license": "Open Government Licence v3.0, except otherwise stated; text only",
+        "license_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+        "date": "2024-01-17",
+        "attribution": "Department for Business and Trade, Critical imports and supply chains strategy, Crown copyright 2024, Open Government Licence v3.0. No endorsement implied.",
+        "no_personal_data_confirmed": true,
+        "title": "Critical imports and supply chains strategy",
+        "aliases": [
+          "UK critical imports and supply chains strategy",
+          "Department for Business and Trade"
+        ]
+      }
+    ],
+    "additional_documents": [
+      {
+        "source": "sba",
+        "path": "corpus/sba.md",
+        "url": "https://legacy.sba.gov/sites/default/files/2025-07/Business%20Resilience%20Guide.2025.pdf",
+        "license": "U.S. federal SBA overview text (PDF page 1 only): public-domain reuse basis in the U.S.; excludes third-party partner material elsewhere in the guide",
+        "license_url": "https://www.loc.gov/legal/security-copyright-and-privacy/understanding-copyright/",
+        "date": "2025-07",
+        "attribution": "U.S. Small Business Administration, Business Resilience Guide, 2025, introductory PDF page 1 only. Third-party partner material and images excluded; text extracted with whitespace normalisation. No endorsement implied.",
+        "no_personal_data_confirmed": true,
+        "title": "Business Resilience Guide",
+        "aliases": [
+          "SBA",
+          "Small Business Administration",
+          "Business Resilience Guide"
+        ]
+      }
+    ],
+    "execution_authorized": true,
+    "settings_origin": "Proposed by Codex; Jimena delegated implementation on 24 November 2026. This flag authorizes running code, not a claim of student authorship.",
+    "retrieval_k": 5,
+    "selected_design_provisional": false,
+    "selection_evidence": {
+      "role": "Technical selection by previously documented benchmark rule; student explanation remains their own task",
+      "retrieval_run": "eval/runs/d255099b4bee1306",
+      "rule": "Highest hit@5, then hit@3, then lower context words",
+      "selected": "small",
+      "small_hit5": 0.92,
+      "large_hit5": 0.88,
+      "small_context_words_at5": 883,
+      "large_context_words_at5": 1131.92
+    },
+    "business_scenario": {
+      "products": "curated gift boxes",
+      "dependencies": "multiple product suppliers plus gift-box packaging",
+      "priority_risks": [
+        "supplier delays",
+        "Christmas seasonal demand"
+      ],
+      "scenario_status": "Hypothetical business scenario approved by user; no actual company sales or supplier data supplied"
+    }
+  },
+  "summary": {
+    "words": 57121,
+    "chunks": {
+      "small": 337,
+      "large": 254
+    },
+    "new_embedding_calls": 0
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "role": "User-supplied practice questions and reference answers, plus one retained missing-document development case",
+  "authorship_status": "User reports doing most of the work, with AI clarification and writing improvement; practice-list receipt and retained q36 provenance remain disclosed.",
+  "user_supplied_ids": [
+    "s01",
+    "s02",
+    "s03",
+    "s04",
+    "s05",
+    "s06",
+    "s07",
+    "s08",
+    "s09",
+    "s10",
+    "s11",
+    "s12",
+    "s13",
+    "s14",
+    "s15",
+    "s16",
+    "s17",
+    "s18",
+    "s19",
+    "s20",
+    "s21",
+    "s22",
+    "s23",
+    "s24",
+    "s25",
+    "s26",
+    "s27",
+    "s28",
+    "s29",
+    "s30"
+  ],
+  "retained_development_id": "q36",
+  "counts": {
+    "total": 31,
+    "single": 20,
+    "multi": 5,
+    "unanswerable": 6
+  },
+  "evaluation_scope": "Source-checked development set; not claimed unseen or independently student-authored.",
+  "user_authorship_account": {
+    "user_statement": "i did mostly everything ai heleped clarify and imporve writing",
+    "interpretation": "User reports doing most of the substantive work, with AI clarification and writing improvement. This records the user’s account; it does not claim no AI involvement or retrospectively change evaluation provenance.",
+    "retained_q36": "Existing AI-assisted engineering case, separately disclosed",
+    "reported_not_independently_observed": true
+  },
+  "independent_authorship_of_every_question_claimed": false
+}

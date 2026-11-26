@@ -6,7 +6,12 @@ __pycache__/
 *.pyc
 
 # Documents downloaded by your index stage. Commit them only if their licence allows it.
-corpus/
+corpus/*
+!corpus/operations.md
+!corpus/fema.md
+!corpus/uk-strategy.md
+!corpus/SOURCES.json
+!corpus/sba.md
 
 # Your index belongs in index/, committed. Your evaluation results belong in eval/, committed.
 

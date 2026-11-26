@@ -1,0 +1,25 @@
+{
+  "reporting_scope": "Original reported human review and current AI evaluation are separate",
+  "original_human_review": {
+    "run_id": "5c1ef6b35bf29617",
+    "count": 20,
+    "agreement_with_original_judge": {
+      "correct": 0.85,
+      "supported": 0.9,
+      "both": 0.8
+    }
+  },
+  "updated_ai_evaluation": {
+    "run_id": "b21556362ea6bc2e",
+    "count": 31,
+    "judge_count": 31,
+    "correct": 29,
+    "supported": 30,
+    "human_review_claimed": false,
+    "human_judge_agreement": null
+  },
+  "labels_transferred": false,
+  "new_human_grades_requested": false,
+  "controlled_before_after_comparison": false,
+  "submitted": false
+}

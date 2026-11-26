@@ -1,0 +1,8 @@
+{
+  "status": "complete",
+  "judged": 36,
+  "remaining": 0,
+  "human_grades": 20,
+  "role": "Actual batched model verdicts on AI-authored draft questions; not human grading.",
+  "human_method": "User reported matching the previously visible AI review; assistant transcribed. Not demonstrated blind independence."
+}

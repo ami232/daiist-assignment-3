@@ -1,0 +1,392 @@
+{
+  "q01": {
+    "id": "q01",
+    "reasoning": "The answer names all three flows with correct directions (goods upstream→downstream, money downstream→upstream, information both ways) plus the reverse returns flow, matching the reference; every statement is verbatim grounded in the page-50 chunk.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "q02": {
+    "id": "q02",
+    "reasoning": "The answer captures the weakest-link rationale and the retailer replenishment example with upstream ripple effects, as in the reference, and all claims trace to the page-49 chunk; the scope caveat is a meta-statement, not an unsupported factual claim.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "q03": {
+    "id": "q03",
+    "reasoning": "All four elements (supply, internal operations, distribution, integration management) are listed with descriptions that match the page-52 chunk exactly.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "q04": {
+    "id": "q04",
+    "reasoning": "The answer correctly identifies the efficiency-versus-responsiveness trade-off driven by customer preferences, as in the reference; the gloss on 'efficiency' borrows the cost-priority wording from the competitive-priorities table, but that and the inventory/service trade-off are both present in retrieved chunks.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "q05": {
+    "id": "q05",
+    "reasoning": "The answer states fewer inventory locations with longer transport times when customers will wait, versus more stores and stock for immediate service, exactly matching the reference and the page-53 chunk.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "q06": {
+    "id": "q06",
+    "reasoning": "The answer correctly explains extra stock as a buffer against supply-base risk (shortages, stoppages, poor quality, late deliveries) and notes the added cost/inefficiency, both stated in the page-54 chunk.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "q07": {
+    "id": "q07",
+    "reasoning": "All four inventory types listed match the reference and are verbatim in the page-54 chunk.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "q08": {
+    "id": "q08",
+    "reasoning": "The four logistics decisions in the reference (own vs outsourced transport, supplier shipping capability, mode/route, shipping rate) are all given from the page-55 chunk; the added distribution functions are grounded in the page-59 chunk and do not contradict the reference.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "q09": {
+    "id": "q09",
+    "reasoning": "The answer states containers avoid re-handling at mode changes, increasing security and speed and reducing loss/damage, which matches the reference and the page-56 chunk.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "q10": {
+    "id": "q10",
+    "reasoning": "The definition (inbound to outbound carrier without entering storage) and the reductions in holding/handling cost plus faster deliveries all appear verbatim in the page-59 chunk and match the reference.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "q11": {
+    "id": "q11",
+    "reasoning": "The answer states EDI is computer-to-computer exchange of business documents in standard format and lists purchase orders, invoices, ASNs, inventory and shipping information, all explicitly enumerated in the page-60 passage. It omits the speed/accuracy benefit but that is ancillary to the question of what is exchanged.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "q12": {
+    "id": "q12",
+    "reasoning": "The answer correctly identifies the vendor (often a manufacturer) as responsible for maintaining the agreed-upon product level at the customer's location, matching the page-62 passage verbatim.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "q13": {
+    "id": "q13",
+    "reasoning": "The answer accurately describes retailer POS data plus promotions/inventory/forecasts being shared with manufacturers who compare against their own forecasts and capacity, with joint resolution of discrepancies — all drawn from the CPFR text on page 62.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "q14": {
+    "id": "q14",
+    "reasoning": "The answer states forecast accuracy decreases and uncertainty grows as the horizon lengthens, directly matching assumption 3 in the page-36 passage and the reference.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "q15": {
+    "id": "q15",
+    "reasoning": "The answer correctly reproduces the aggregation assumption (group forecasts more accurate than individual end items, Fitbit model/colour/size example) and appropriately notes the text gives no statistical proof, which is consistent with the passage.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "q16": {
+    "id": "q16",
+    "reasoning": "The answer gives the textbook definitions of trend (consistent directional movement) and seasonality (predictable recurring annual changes), matching the reference's core distinction; the climate/holiday elaboration is supported by the causal-forecasting passage, and omitting the cycle/irregular contrast is minor.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "q17": {
+    "id": "q17",
+    "reasoning": "Throughput time (first operation to completion, including waiting, inspection, rework, movement) and lead time (order receipt to ready-to-ship) are stated exactly as in the page-114 passage.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "q18": {
+    "id": "q18",
+    "reasoning": "The three listed inputs — kind of capacity, how much, and when — match the page-119 passage and the reference exactly.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "q19": {
+    "id": "q19",
+    "reasoning": "The answer correctly explains that supply networks are complex systems, so starting with one good or service builds experience and confidence that accelerates engagement with multiple chains and interdependencies, as stated on page 14.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "q20": {
+    "id": "q20",
+    "reasoning": "The answer correctly states that a gap exists when infrastructure (e.g., power) restoration time objectives exceed how long the node can run on backup without significant operational impact, matching the page-17 passage and the node-versus-infrastructure distinction.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "q21": {
+    "id": "q21",
+    "reasoning": "The answer names the three professional roles (distribution centre, procurement, transportation managers) that the question asks for, matching the reference core; the omission of the internal-champion/safety-contacts route is peripheral to the question as posed. Every claim is verbatim grounded in the PDF page 19 passage.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "q22": {
+    "id": "q22",
+    "reasoning": "The answer gives all reference elements — rapidly evolving supply chains, validating/refining data and plans, maintaining relationships, and targeting newly identified crucial suppliers — each traceable to the Phase 5 passage from PDF page 22.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "q23": {
+    "id": "q23",
+    "reasoning": "The retrieved set explicitly contains the 'Spotlight: what is a supply chain shock?' passage listing geopolitical, environmental, financial, health, fiscal and technological shocks, so the refusal fails to answer a question the corpus demonstrably covers.",
+    "correct": false,
+    "supported": false,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "q24": {
+    "id": "q24",
+    "reasoning": "The answer states that diversity matters at the supplier level as well as the country level and that lack of supplier diversity is a resilience risk, matching the reference and the retrieved UK-strategy passage word for word.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "q25": {
+    "id": "q25",
+    "reasoning": "The answer addresses both sides of the question — forecast imperfection and decreasing accuracy over longer horizons, plus inventory held against demand/supply uncertainty — with only light treatment of the holding-cost tradeoff, which the passage does mention as balancing inventory cost against service. All claims (demand patterns, over/underestimation consequences, supply-risk stockholding) trace to the retrieved operations passages.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "q26": {
+    "id": "q26",
+    "reasoning": "The answer correctly distinguishes Phase 3 outreach (vetting findings, building rapport, finding internal champions) from Phase 4 TTXs (convening stakeholders, framing risks, After Action Reports driving follow-on collaboration), as the reference requires. All substantive claims are grounded in the PDF page 19 and page 21 passages; the closing gift-shop remark is hedged advice rather than an unsupported factual assertion.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "q27": {
+    "id": "q27",
+    "reasoning": "Both required strands are covered: node dependence on electric power/fuel/water/communications with the backup-versus-restoration-time resilience gap, and inventory supply, resupply intervals and JIT buffering of short-term breaks; the carrying-cost tradeoff in the reference is not asked for by the question. Claims map to the retrieved FEMA pages 16, 17, 27 and 3 passages.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "q28": {
+    "id": "q28",
+    "reasoning": "The answer gives crossdocking's inventory and handling cost savings and faster deliveries, and then the efficiency-versus-responsiveness balance driven by customer willingness to wait, matching the reference on both points. Each claim is drawn from the retrieved pages 59 and 53 passages.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "q29": {
+    "id": "q29",
+    "reasoning": "The comparison correctly contrasts EDI's automated, real-time, error-reducing document exchange with the UK strategy's data-driven multi-tier mapping and AI-based anticipation of bottlenecks, as the reference requires. All specifics (Single Trade Window, Global Supply Chains Intelligence Programme, real-time predictive analysis) appear in the retrieved passages.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "q30": {
+    "id": "q30",
+    "reasoning": "The answer captures both collaborative scenario testing of response plans to expose vulnerabilities (UK stress tests, including the UK–RoK table-top example) and FEMA's facilitation plus After Action Reports driving follow-on collaboration, matching the reference. Each claim is entailed by the retrieved UK-strategy and FEMA page 21 passages.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "q31": {
+    "id": "q31",
+    "reasoning": "The question asks for a private, live probability of a supplier missing a delivery; the retrieved passages contain only generic forecasting/capacity textbook examples, so the explicit refusal matches the reference expectation and invents nothing.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch04",
+    "provider": "Claude Code"
+  },
+  "q32": {
+    "id": "q32",
+    "reasoning": "Current carrier routing and live flood status are operational facts absent from the retrieved FEMA/operations passages on route planning and transport modes; the refusal is appropriate and makes no unsupported claims.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch04",
+    "provider": "Claude Code"
+  },
+  "q33": {
+    "id": "q33",
+    "reasoning": "The question explicitly withholds demand and lead-time inputs, and the retrieved forecasting/inventory passages give no basis for a safety-stock figure, so the refusal aligns with the reference and asserts nothing.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch04",
+    "provider": "Claude Code"
+  },
+  "q34": {
+    "id": "q34",
+    "reasoning": "No retrieved passage contains supplier quotes for the user's order (only textbook break-even examples and UK policy text), so declining is the correct, fully grounded response.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch04",
+    "provider": "Claude Code"
+  },
+  "q35": {
+    "id": "q35",
+    "reasoning": "A private contract's late-delivery penalty clause appears nowhere in the retrieved public guidance and cost examples; the refusal matches the reference and fabricates no terms.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch04",
+    "provider": "Claude Code"
+  },
+  "q36": {
+    "id": "q36",
+    "reasoning": "Zero passages were retrieved and the SBA guide is not in the corpus, so the explicit 'I don't know' refusal is both correct per the reference and trivially free of unsupported claims.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch04",
+    "provider": "Claude Code"
+  },
+  "g01": {
+    "id": "g01",
+    "reasoning": "The answer covers the reference's substance (alternative/secondary supply sources, supplier business continuity, buffer stocks, risk management) using passages actually retrieved (FEMA p.26 d4b56b31, uk-strategy a1daafcd and 234fe187), but the closing trade-off claim that inventory buffers 'incur carrying costs' is a material element of the reference that no retrieved passage states (the operations p.54 inventory chunk was not retrieved here).",
+    "correct": true,
+    "supported": false,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch04",
+    "provider": "Claude Code"
+  },
+  "g02": {
+    "id": "g02",
+    "reasoning": "Both parts are addressed and every claim traces to retrieved text: forecast imperfection and horizon-related accuracy decay from 7d6a2232 (p.36), over/under-estimation consequences from 19529a56, and the service-versus-holding-cost balance plus extra cost of stored inventory from 68f062aa (p.54).",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch04",
+    "provider": "Claude Code"
+  },
+  "g03": {
+    "id": "g03",
+    "reasoning": "Whether a specific packaging supplier will deliver by Christmas requires private order and tracking data absent from the retrieved generic policy/textbook passages, so the refusal matches the reference and adds no invented facts.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch04",
+    "provider": "Claude Code"
+  }
+}

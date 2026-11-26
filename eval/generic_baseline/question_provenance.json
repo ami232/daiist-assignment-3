@@ -1,0 +1,12 @@
+{
+  "role": "AI-authored draft test set grounded in the public corpus",
+  "not_student_authored": true,
+  "counts": {
+    "total": 36,
+    "single": 24,
+    "multi": 6,
+    "unanswerable": 6
+  },
+  "date": "2026-11-25",
+  "evaluation_scope": "Development draft; not an unseen independent validation set."
+}

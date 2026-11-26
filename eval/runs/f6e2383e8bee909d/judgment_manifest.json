@@ -1,0 +1,9 @@
+{
+  "answers_sha256": "542c3fc5109c3041f8a33a8c63de6f7ffc4454c685b1495f5778e066f94faae2",
+  "questions_sha256": "cb5f99937b358b9ef7d5fba3f3cae5205222ae83e18d6919f2a64ee70be29566",
+  "rubric_sha256": "5f247b438ef1fd273c891f472d0d63003213a277bcf408acec07a163879e01c8",
+  "verdict_file": "judge_draft.json",
+  "verdicts_sha256": "7b29a2c98bfbc8d127ea288aeb0f2cb5d9086eeeb5a4404d7dd21fc2250a34a4",
+  "provider": "Claude Code",
+  "role": "Existing real Claude verdicts bound to exact saved answers, questions and rubric."
+}

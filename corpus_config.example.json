@@ -1,0 +1,52 @@
+{
+  "student_approved": false,
+  "use_case": "Supply-chain disruption evidence assistant for a small online retailer; topic selected by Jimena on 2026-11-24. Detailed scope is proposed for review.",
+  "embedding_model": "gemini-embedding-2",
+  "embedding_dimensions": 768,
+  "selected_design": "small",
+  "designs": [
+    {
+      "name": "small",
+      "words": 300,
+      "overlap": 60
+    },
+    {
+      "name": "large",
+      "words": 600,
+      "overlap": 120
+    }
+  ],
+  "documents": [
+    {
+      "source": "operations",
+      "path": "corpus/operations.md",
+      "url": "https://storage.downloads.libretexts.org/pdf/biz-117227/Full.pdf?response-content-disposition=inline%3B+filename%3D%22Full.pdf%22&v=e9bd74226976581b60b1a72e465ea8bf-2",
+      "license": "CC BY-NC 4.0, with source adaptation attribution retained; noncommercial academic use only",
+      "license_url": "https://creativecommons.org/licenses/by-nc/4.0/",
+      "date": "2026-05-05 PDF compilation",
+      "attribution": "Mary Drane and Hamid Faramarzi / Seneca College; LibreTexts adaptation. Original source credits retained in the PDF. Detailed licensing: PDF pages 135–138.",
+      "no_personal_data_confirmed": true
+    },
+    {
+      "source": "fema",
+      "path": "corpus/fema.md",
+      "url": "https://www.fema.gov/sites/default/files/2020-07/supply-chain-resilience-guide.pdf",
+      "license": "U.S. federal government-authored guidance: public-domain basis in the U.S.; excludes third-party images and linked works",
+      "license_url": "https://www.loc.gov/legal/security-copyright-and-privacy/understanding-copyright/",
+      "date": "2019-04",
+      "attribution": "Federal Emergency Management Agency, Supply Chain Resilience Guide, April 2019. No endorsement implied.",
+      "no_personal_data_confirmed": true
+    },
+    {
+      "source": "uk-strategy",
+      "path": "corpus/uk-strategy.md",
+      "url": "https://www.gov.uk/government/publications/uk-critical-imports-and-supply-chains-strategy/critical-imports-and-supply-chains-strategy-html-version",
+      "license": "Open Government Licence v3.0, except otherwise stated; text only",
+      "license_url": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/",
+      "date": "2024-01-17",
+      "attribution": "Department for Business and Trade, Critical imports and supply chains strategy, Crown copyright 2024, Open Government Licence v3.0. No endorsement implied.",
+      "no_personal_data_confirmed": true
+    }
+  ],
+  "additional_documents": []
+}

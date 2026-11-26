@@ -1,0 +1,11 @@
+{
+  "session_id": "a3bf9c42-efab-49bc-84bd-dd8ee669c9f9",
+  "delegated_agent": "corpus-researcher",
+  "tool_names": [
+    "mcp__corpus__search"
+  ],
+  "search_calls": 14,
+  "successful_parent_result": true,
+  "raw_subagent_sha256": "6c66063b9deb91e07e36c6c2482ee69926430a18edefce600e3d830025c6af10",
+  "role": "Verified actual Claude Code delegation and search-only child tool trace; no simulated transcript"
+}

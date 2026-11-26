@@ -1,0 +1,65 @@
+{
+  "role": "Actual structural re-chunking of the existing corpus; no embeddings or answer-accuracy experiments for new settings.",
+  "rows": [
+    {
+      "max_words": 150,
+      "overlap_words": 30,
+      "stride": 120,
+      "chunk_count": 556,
+      "mean_actual_words": 119.40827338129496,
+      "max_actual_words": 150,
+      "new_unique_embeddings_if_added_now": 422,
+      "indexed_words_including_overlap": 66391
+    },
+    {
+      "max_words": 300,
+      "overlap_words": 0,
+      "stride": 300,
+      "chunk_count": 331,
+      "mean_actual_words": 172.57099697885195,
+      "max_actual_words": 300,
+      "new_unique_embeddings_if_added_now": 84,
+      "indexed_words_including_overlap": 57121
+    },
+    {
+      "max_words": 300,
+      "overlap_words": 30,
+      "stride": 270,
+      "chunk_count": 334,
+      "mean_actual_words": 178.83532934131736,
+      "max_actual_words": 300,
+      "new_unique_embeddings_if_added_now": 87,
+      "indexed_words_including_overlap": 59731
+    },
+    {
+      "max_words": 300,
+      "overlap_words": 60,
+      "stride": 240,
+      "chunk_count": 337,
+      "mean_actual_words": 185.52225519287833,
+      "max_actual_words": 300,
+      "new_unique_embeddings_if_added_now": 0,
+      "indexed_words_including_overlap": 62521
+    },
+    {
+      "max_words": 300,
+      "overlap_words": 90,
+      "stride": 210,
+      "chunk_count": 339,
+      "mean_actual_words": 192.92330383480825,
+      "max_actual_words": 300,
+      "new_unique_embeddings_if_added_now": 92,
+      "indexed_words_including_overlap": 65401
+    },
+    {
+      "max_words": 600,
+      "overlap_words": 120,
+      "stride": 480,
+      "chunk_count": 254,
+      "mean_actual_words": 228.19291338582678,
+      "max_actual_words": 600,
+      "new_unique_embeddings_if_added_now": 0,
+      "indexed_words_including_overlap": 57961
+    }
+  ]
+}

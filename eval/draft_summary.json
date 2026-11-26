@@ -1,0 +1,97 @@
+{
+  "role": "AI-authored draft benchmark; measured software outputs, not independent student/human assessment",
+  "questions": 36,
+  "answerable": 30,
+  "single": 24,
+  "multi": 6,
+  "unanswerable": 6,
+  "retrieval": {
+    "small": {
+      "hit_rate": {
+        "1": 0.6333333333333333,
+        "3": 0.8,
+        "5": 0.9
+      },
+      "mean_context_words": {
+        "1": 215.9,
+        "3": 600.4666666666667,
+        "5": 1006.4666666666667
+      },
+      "by_kind": {
+        "single": {
+          "1": 0.7916666666666666,
+          "3": 0.9166666666666666,
+          "5": 0.9583333333333334
+        },
+        "multi": {
+          "1": 0,
+          "3": 0.3333333333333333,
+          "5": 0.6666666666666666
+        }
+      }
+    },
+    "large": {
+      "hit_rate": {
+        "1": 0.6666666666666666,
+        "3": 0.8,
+        "5": 0.9333333333333333
+      },
+      "mean_context_words": {
+        "1": 310.23333333333335,
+        "3": 842.4333333333333,
+        "5": 1380.5
+      },
+      "by_kind": {
+        "single": {
+          "1": 0.8333333333333334,
+          "3": 0.9583333333333334,
+          "5": 1
+        },
+        "multi": {
+          "1": 0,
+          "3": 0.16666666666666666,
+          "5": 0.6666666666666666
+        }
+      }
+    }
+  },
+  "selected_design": "large",
+  "saved_answers": 36,
+  "non_refusals": 28,
+  "refusals": 8,
+  "refusal_kind_matches": 34,
+  "valid_citation_identity_non_refusals": 28,
+  "mean_agent_seconds": 4.481784639964139,
+  "median_agent_seconds": 3.6088237705407664,
+  "mean_agent_tokens": {
+    "input_tokens": 3601.25,
+    "output_tokens": 342.3888888888889,
+    "total_tokens": 3943.6388888888887
+  },
+  "judge": {
+    "status": "blocked_daily_quota",
+    "judged": 0,
+    "remaining": 36,
+    "human_grades": 0,
+    "role": "Actual batched model verdicts on AI-authored draft questions; not human grading."
+  },
+  "genuine_human_labels": 0,
+  "human_judge_agreement": null,
+  "semantic_accuracy": null,
+  "database_mb": 7.245824,
+  "engineering_tests": {
+    "passed": 17,
+    "kind": "offline synthetic-fixture engineering tests"
+  },
+  "basic_instructor_check": {
+    "passed": true,
+    "warning": "0 human labels; extended evaluation and independent grading incomplete"
+  },
+  "caveats": [
+    "The questions were AI-authored and created after initial development; this is not unseen validation.",
+    "Citation identity is not entailment or correctness.",
+    "Stored question timings include successful recorded runs and pacing where active; failed attempts before a successful resumption are not included.",
+    "Generation token figures exclude embedding tokens and unavailable judge costs.",
+    "No monetary prices, semantic pass rate, human grades or actual editor-subagent transcript are invented."
+  ]
+}

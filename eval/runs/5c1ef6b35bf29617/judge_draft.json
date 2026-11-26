@@ -1,0 +1,326 @@
+{
+  "q01": {
+    "id": "q01",
+    "reasoning": "The answer accurately identifies the three main supply chain flows (goods/materials, money/cash, and information) and correctly specifies their directions of movement as documented in the retrieved text and reference answer.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch01",
+    "model": "gemini-3.5-flash"
+  },
+  "q02": {
+    "id": "q02",
+    "reasoning": "The answer directly answers why internal management alone is insufficient, utilizing the weakest-link concept and the specific replenishment example provided in the retrieved text.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch01",
+    "model": "gemini-3.5-flash"
+  },
+  "q03": {
+    "id": "q03",
+    "reasoning": "The answer accurately lists the four foundational elements of supply chain management (Supply Management, Internal Operations, Distribution Management, and Integration Management) along with descriptions supported by the source text.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch01",
+    "model": "gemini-3.5-flash"
+  },
+  "q04": {
+    "id": "q04",
+    "reasoning": "The answer correctly states the central tradeoff between Efficiency (cost reductions) and Responsiveness in supply chain design, fully aligned with the reference answer and supported by the retrieved passages.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch01",
+    "model": "gemini-3.5-flash"
+  },
+  "q05": {
+    "id": "q05",
+    "reasoning": "The answer accurately explains how customer patience allows a retailer to consolidate inventory into fewer locations and rely on longer transportation times, matching the reference answer and fully supported by chunk 088edf11d7bab1880dc2669eac9f81e5e35ad2dd6d0580652abacee4ab529c6d.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch02",
+    "model": "gemini-3.5-flash"
+  },
+  "q06": {
+    "id": "q06",
+    "reasoning": "The answer correctly identifies that firms carry more stock to handle uncertainty or risk in their supply base (shortages, work stoppages, poor quality, late deliveries), which aligns with the reference answer and chunk 68f062aa95a04d437f4494a098999edaca20ff91ac03f9df23a71113e72131d8.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch02",
+    "model": "gemini-3.5-flash"
+  },
+  "q07": {
+    "id": "q07",
+    "reasoning": "The answer lists all four types of inventory specified in the textbook and reference answer (Finished goods, Raw materials, Purchased components and operating supplies, Work-in-process), directly supported by chunk 68f062aa95a04d437f4494a098999edaca20ff91ac03f9df23a71113e72131d8.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch02",
+    "model": "gemini-3.5-flash"
+  },
+  "q08": {
+    "id": "q08",
+    "reasoning": "The answer lists all key logistics decisions (transportation ownership/outsourcing, supplier capabilities, mode and route selection, rate negotiation) matching both the reference answer and chunk 6c122c1ca1c3cc90980117d21f63b550ac7be0ad87513b7cf7207d0756c4eda6.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch02",
+    "model": "gemini-3.5-flash"
+  },
+  "q09": {
+    "id": "q09",
+    "reasoning": "The answer accurately reflects the reference answer and is fully supported by the retrieved passage, which explains that containers prevent repeated freight handling during mode changes, thereby increasing security and reducing loss and damage.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch03",
+    "model": "gemini-3.5-flash"
+  },
+  "q10": {
+    "id": "q10",
+    "reasoning": "The answer accurately defines crossdocking and explains how bypassing storage reduces inventory holding and handling costs, fully aligning with both the reference answer and the provided text.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch03",
+    "model": "gemini-3.5-flash"
+  },
+  "q11": {
+    "id": "q11",
+    "reasoning": "The answer correctly identifies that business documents in standard electronic formats are exchanged and provides an accurate, complete list directly supported by the retrieved chunk.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch03",
+    "model": "gemini-3.5-flash"
+  },
+  "q12": {
+    "id": "q12",
+    "reasoning": "The answer directly and accurately answers the question stating that the vendor takes responsibility for maintaining agreed product levels, which is fully supported by the passage.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch03",
+    "model": "gemini-3.5-flash"
+  },
+  "q13": {
+    "id": "q13",
+    "reasoning": "The answer accurately describes how CPFR utilizes information from both the retailer/distributor and the manufacturer, matching the reference answer and fully supported by the retrieved text.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch04",
+    "model": "gemini-3.5-flash"
+  },
+  "q14": {
+    "id": "q14",
+    "reasoning": "The answer correctly explains that extending the forecast horizon increases uncertainty and decreases forecast accuracy, matching both the reference answer and the retrieved text.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch04",
+    "model": "gemini-3.5-flash"
+  },
+  "q15": {
+    "id": "q15",
+    "reasoning": "The answer correctly addresses why forecasts are more accurate for groups of items compared to individual sizes/colors. However, the claim that aggregated demand 'smooths out individual variations and uncertainties' is an extrapolation not explicitly stated in the retrieved passage.",
+    "correct": true,
+    "supported": false,
+    "bad_test_question": false,
+    "batch_id": "batch04",
+    "model": "gemini-3.5-flash"
+  },
+  "q16": {
+    "id": "q16",
+    "reasoning": "The answer clearly distinguishes a trend (consistent upward or downward movement over a product's life cycle) from a seasonal pattern (predictable changes recurring every year), fully addressing the question and supported by the retrieved text.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch04",
+    "model": "gemini-3.5-flash"
+  },
+  "q17": {
+    "id": "q17",
+    "reasoning": "The answer accurately reflects the distinction between throughput time and lead time as detailed in the reference text and retrieved chunk, correctly identifying what each timeframe encompasses.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch05",
+    "model": "gemini-3.5-flash"
+  },
+  "q18": {
+    "id": "q18",
+    "reasoning": "The answer accurately lists the three key inputs to capacity planning (kind, how much, when) directly from the retrieved passage and matches the reference answer.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch05",
+    "model": "gemini-3.5-flash"
+  },
+  "q19": {
+    "id": "q19",
+    "reasoning": "The answer directly addresses why FEMA recommends starting with a single good or service, matching both the reference answer and the supporting text from the retrieved passage.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch05",
+    "model": "gemini-3.5-flash"
+  },
+  "q20": {
+    "id": "q20",
+    "reasoning": "The answer clearly explains how comparing infrastructure recovery time objectives to on-site backup duration reveals a resilience gap, matching the reference answer and supported fully by the retrieved passage.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch05",
+    "model": "gemini-3.5-flash"
+  },
+  "q21": {
+    "id": "q21",
+    "reasoning": "The answer accurately identifies the supply-chain professionals recommended by FEMA for outreach (distribution center, procurement, and transportation managers) and every factual claim made is fully supported by chunk 262aa52b6b8204fcd419ac4d8d56622f2fcfd6291b55ac97f1bf0b38c13039bb.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch06",
+    "model": "gemini-3.5-flash"
+  },
+  "q22": {
+    "id": "q22",
+    "reasoning": "The answer directly answers why a resilience plan should be reassessed regularly (supply chains evolve rapidly, data/plans/stakeholders change) and all claims are supported by chunk a82a43d0ddd331de5bdb0214bcb5c3b5bf5c241342491735cbebb597897f0bb8.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch06",
+    "model": "gemini-3.5-flash"
+  },
+  "q23": {
+    "id": "q23",
+    "reasoning": "The answer claims the corpus does not contain enough evidence, but chunk 30670a6976d49350cf222688974d30b4fbb2d6597fc0710b2e52377f57f3373e explicitly lists all six types of economic shock (geopolitical, environmental, financial, health, fiscal, and technological). This is an incorrect refusal.",
+    "correct": false,
+    "supported": false,
+    "bad_test_question": false,
+    "batch_id": "batch06",
+    "model": "gemini-3.5-flash"
+  },
+  "q24": {
+    "id": "q24",
+    "reasoning": "The answer correctly states that lack of supplier diversity in critical supply chains presents a risk to resilience, matching the reference answer. Every factual claim is directly supported by chunk b888e0e4411e2e433ce2dffe6f0ea7cda8b0d0c3f6bba8bfe9dea1dc09d149d2.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch06",
+    "model": "gemini-3.5-flash"
+  },
+  "q25": {
+    "id": "q25",
+    "reasoning": "The response accurately combines forecasting assumptions (imperfect accuracy, decreasing over longer horizons, central risk/uncertainty) with inventory guidance (carrying inventory to buffer uncertainty in customer demand/supply flows while managing risks/costs of over- or under-estimating). Every factual point is directly supported by the retrieved passages.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch07",
+    "model": "gemini-3.5-flash"
+  },
+  "q26": {
+    "id": "q26",
+    "reasoning": "The response clearly distinguishes how stakeholder outreach (Phase 3: vetting analysis, building trust/rapport, understanding priorities) and tabletop exercises (Phase 4: action-oriented preparedness, running realistic scenarios, producing After Action Reports) contribute to supply chain resilience using the FEMA framework. All claims are fully supported by the retrieved text.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch07",
+    "model": "gemini-3.5-flash"
+  },
+  "q27": {
+    "id": "q27",
+    "reasoning": "The retrieved context lacks the necessary information from Operations PDF page 54 and FEMA PDF page 17 required to answer the question completely. Therefore, the answer's explicit refusal to invent information is correct and fully supported by the available text.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch08",
+    "model": "gemini-3.5-flash"
+  },
+  "q28": {
+    "id": "q28",
+    "reasoning": "The answer accurately addresses both parts of the question using retrieved chunks from Operations (PDF pages 59 and 53). It explains how crossdocking reduces holding and handling costs while speeding up delivery, and how customer delivery expectations dictate the balance between efficiency and responsiveness in supply chain design. All claims are supported by the provided text.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch08",
+    "model": "gemini-3.5-flash"
+  },
+  "q29": {
+    "id": "q29",
+    "reasoning": "The answer accurately compares Electronic Data Interchange (EDI) and the UK strategy's discussion of data use regarding supply-chain visibility, drawing directly from the provided passages. All claims are fully supported by the text.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch09",
+    "model": "gemini-3.5-flash"
+  },
+  "q30": {
+    "id": "q30",
+    "reasoning": "The answer completely addresses how UK stress tests and FEMA tabletop exercises assist organisations in preparing for disruption. All points made are backed by the retrieved text.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch09",
+    "model": "gemini-3.5-flash"
+  },
+  "q31": {
+    "id": "q31",
+    "reasoning": "The question requests specific operational delivery probability metrics for a supplier, which is private operational data not present in the provided corpus. The answer correctly recognizes this lack of information and declines to invent facts.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch10",
+    "model": "gemini-3.5-flash"
+  },
+  "q32": {
+    "id": "q32",
+    "reasoning": "The question asks for real-time status updates regarding carrier routes and flooding conditions, which cannot be answered from the static corpus. The model accurately states that the indexed documents do not contain this information.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch10",
+    "model": "gemini-3.5-flash"
+  },
+  "q33": {
+    "id": "q33",
+    "reasoning": "The retrieved documents do not contain any information or data regarding SKU A's safety stock requirements. The response correctly refuses to answer based on the unanswerable nature of the prompt.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch11",
+    "model": "gemini-3.5-flash"
+  },
+  "q34": {
+    "id": "q34",
+    "reasoning": "The retrieved context does not contain any details on today's quotes for an order or alternative suppliers for the user's specific context. The response accurately states that the information cannot be found in the indexed documents.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch11",
+    "model": "gemini-3.5-flash"
+  },
+  "q35": {
+    "id": "q35",
+    "reasoning": "The question asks for information regarding a private supplier contract that is not present in the retrieved context. The model correctly states that it cannot answer based on the provided documents.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch12",
+    "model": "gemini-3.5-flash"
+  },
+  "q36": {
+    "id": "q36",
+    "reasoning": "The question asks about a specific document (U.S. SBA Business Resilience Guide) that is not included in the corpus. The model correctly refuses to answer.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "batch_id": "batch12",
+    "model": "gemini-3.5-flash"
+  }
+}

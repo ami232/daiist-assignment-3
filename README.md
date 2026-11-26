@@ -1,58 +1,34 @@
-# Assignment 3
+# Gift-shop supply-chain assistant
 
-Build a RAG system over a document collection, expose it as MCP tools, use it from a subagent and from your own agent, and measure how often it answers correctly, makes things up, or rightly says it does not know.
+Jimena Navarro Del Águila · DAIIST Assignment 3
 
-Start with [SETUP.md](SETUP.md).
+A document-grounded assistant for an online gift-box shop facing supplier delays and Christmas demand. It searches public guidance, answers with citations and refuses requests for missing private or live information.
 
-## The task
+Start with **REPORT.md**. Source attribution is in **CORPUS_NOTICES.md**. **PROJECT_EXPLAINED.md** is the accompanying study reference.
 
-1. **Use case.** Who asks, what they do with the answer, and what a wrong answer costs compared with "I don't know". Pick one where a wrong answer matters.
-2. **Corpus.** At least **3 documents** and **50,000 words** in total. They should address your use case. Public, with a licence that allows this use, and no personal data.
-3. **Ingest.** Extract, clean and chunk the text. Every chunk carries its source and location (page, section, article). Embed the chunks with Gemini and store them in `index/` (ChromaDB or similar).
-4. **Test set**, written by you from the documents, in `eval/questions.csv`: 30+ questions, including 5+ the corpus cannot answer and 5+ that need two passages. Format in [eval/README.md](eval/README.md).
-5. **Retrieval.** Hit rate at k = 1, 3, 5. Compare at least **two designs** (chunk size, structure-based chunking, metadata filter, hybrid search…) and choose by the numbers.
-6. **MCP server** (`server.py`) with two tools:
-   - **search**: takes a `query`, returns chunks with citations;
-   - **add document**: takes a file `path`, runs it through your index pipeline (import it, don't rewrite it), embeds the chunks and stores them. Decide what happens if the document is already indexed.
-7. **Agents.**
-   - A **subagent** in `.claude/agents/` that uses only the search tool. Use it from Copilot or Claude Code and paste one transcript into REPORT.md.
-   - **Your harness** (`agent.py`, LangChain): `AGENTS.md` as system prompt, approval before the add-document tool runs, and one more guardrail of your choice.
-8. **Evaluate.** Run the agent on every question. Check in code what code can check (valid citations, refusals); grade the rest with an LLM judge and a rubric. Grade 20+ answers yourself in `eval/human_labels.csv` and report how often you agree with the judge. Then add a document that answers one of your unanswerable questions and show the answer before and after.
-9. **Failures and decision.** Classify each failure: retrieval miss, wrong answer from the right passage, unsupported claim, wrong refusal, or bad test question. Would you let users rely on it? Cost per question in tokens and seconds.
-10. **Write REPORT.md and submit.**
+## Run
 
-## Code layout
+Use Python 3.12 and uv. Run `uv sync`, then set `GEMINI_API_KEY` in an ignored `.env` file using `.env.example`, or in the environment.
 
 ```bash
-uv run python main.py index                 # build the index
-uv run python main.py ask "your question"   # answer with citations
-uv run python main.py evaluate              # retrieval and end-to-end evaluation
-uv run server.py                            # MCP server (your editor starts it)
+uv run python main.py index
+uv run python main.py ask "What trade-off should I consider before holding extra stock for Christmas?"
+uv run python main.py evaluate
+uv run python check.py --evaluate
+uv run python -m unittest discover -q
 ```
 
-`index` and `evaluate` may be `.py` or `.ipynb` (keep one of each). `server.py` and `agent.py` must be scripts. Everything runs with no manual steps.
+The index and actual evaluation outputs are saved. Unchanged corpus text reuses vectors. Evaluation verifies content hashes before reusing answers and Claude verdicts. Cached evaluation needs no new provider calls; new Gemini requests need a valid key. New Claude judging requires an authenticated Claude Code CLI, as configured in `evaluation_config.json`.
 
-**Commit `index/`** (under 90 MB), saved vectors included. `main.py index` embeds only chunks without a saved vector, and the server never re-embeds the corpus. The free tier allows about **1,000 embeddings a day** (see SETUP.md), so save vectors as you go.
+## Results and evidence
 
-## Submission
+- Three public sources: 57,121 cleaned words.
+- Small chunks at k=5: Hit@5 23/25 versus 22/25 for large; about 22% less passage context.
+- Current test set: 31 questions, including five multi-passage and six unanswerable.
+- Real judge results: 29/31 correct and 30/31 supported.
+- All 21 engineering tests and the instructor extended checker pass.
+- Actual editor-subagent transcript and isolated before/after document addition are included.
 
-Push to your fork, open a PR to https://github.com/ami232/daiist-assignment-3, submit the PR link on Blackboard, and upload a zip of the repo as backup.
+The original 20 reported human ratings remain separate from the current AI evaluation. Original agreement was 85% for correctness, 90% for support and 80% for both. Those grades are not transferred to revised answers. See the report for the method and limitations.
 
-## Grading
-
-**Hard requirement:** the three `main.py` commands run end to end and `check.py` passes.
-
-| Component | Weight |
-|---|---|
-| Use case and corpus | 15% |
-| Ingestion, test set and retrieval | 25% |
-| Tools, subagent and harness | 20% |
-| End-to-end evaluation | 25% |
-| Failure analysis and decision | 15% |
-| **× Written comprehension check** | **0–100%** |
-
-The comprehension check, written in class without your code, multiplies the subtotal.
-
-## AI use
-
-Allowed for code; disclose it in REPORT.md. The decisions (use case, chunking, design choice, refusals, judge rubric, ship decision), the test set, your own grades and the report's analysis must be yours.
+The main data are in `eval/latest_run.json`, `eval/gift_shop_summary.json` and the referenced run directory. Earlier runs are retained as evidence and are not presented as current results. AI assistance and the supplementary q36 case are disclosed in the report.

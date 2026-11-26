@@ -1,0 +1,161 @@
+{
+  "reviewer": "Codex AI assistant",
+  "review_type": "AI qualitative source review; NOT human validation or Gemini judge",
+  "run_id": "5c1ef6b35bf29617",
+  "answers_sha256": "4b4535e6998040e8edc0eadc5f97f0e35e073c346bd3497df7f958e099261d60",
+  "sample": [
+    "q02",
+    "q03",
+    "q05",
+    "q08",
+    "q09",
+    "q11",
+    "q12",
+    "q16",
+    "q17",
+    "q19",
+    "q22",
+    "q23",
+    "q25",
+    "q27",
+    "q29",
+    "q30",
+    "q31",
+    "q33",
+    "q34",
+    "q35"
+  ],
+  "sample_method": "Existing fixed ID-based sample, unchanged",
+  "count": 20,
+  "correct": 16,
+  "supported": 19,
+  "correct_rate": 0.8,
+  "supported_rate": 0.95,
+  "scope": "Only this fixed 20-answer sample; not an estimate with statistical guarantees. Existing outputs were reviewed, not rerun or repaired.",
+  "rubric": "Correct requires complete accurate answer. Supported requires grounding of substantive answer claims. Refusals without invented facts receive Supported=1 even for false refusals; their incorrect assertion of corpus absence is recorded in notes. q16 is marked 0/0 for reversing the cited relationship.",
+  "human_labels_modified": false,
+  "provider_judge_verdict": false,
+  "created_at": "2026-11-25T09:36:49.686985+00:00",
+  "review": [
+    {
+      "id": "q02",
+      "correct": 1,
+      "supported": 1,
+      "notes": "Explains interdependence, weakest links and upstream lost sales; matches the cited introduction."
+    },
+    {
+      "id": "q03",
+      "correct": 1,
+      "supported": 1,
+      "notes": "Names all four elements and describes each consistently with the foundational-elements passage."
+    },
+    {
+      "id": "q05",
+      "correct": 1,
+      "supported": 1,
+      "notes": "Correctly connects longer customer waiting tolerance to fewer inventory locations and contrasts immediate service."
+    },
+    {
+      "id": "q08",
+      "correct": 1,
+      "supported": 1,
+      "notes": "Covers ownership/outsourcing, supplier shipping capability, mode/route and rates; all listed in the logistics passage."
+    },
+    {
+      "id": "q09",
+      "correct": 1,
+      "supported": 1,
+      "notes": "Explains reduced handling, greater security and reduced loss/damage. Shipment speed is ancillary to the protection question."
+    },
+    {
+      "id": "q11",
+      "correct": 1,
+      "supported": 1,
+      "notes": "Defines standard computer-to-computer document exchange and lists examples present in the EDI passage."
+    },
+    {
+      "id": "q12",
+      "correct": 1,
+      "supported": 1,
+      "notes": "Identifies the vendor as responsible for the agreed product level; directly supported by VMI text."
+    },
+    {
+      "id": "q16",
+      "correct": 0,
+      "supported": 0,
+      "notes": "Correctly defines trend and annual recurrence, but reverses the source relationship: fashion products and sporting goods are influenced by seasonality, not causes that heavily influence seasonal patterns."
+    },
+    {
+      "id": "q17",
+      "correct": 1,
+      "supported": 1,
+      "notes": "Accurately distinguishes start-of-process throughput time from order-receipt lead time and includes waiting/inspection/rework/movement."
+    },
+    {
+      "id": "q19",
+      "correct": 1,
+      "supported": 1,
+      "notes": "Explains complexity and building experience/confidence before expanding; directly supported by FEMA."
+    },
+    {
+      "id": "q22",
+      "correct": 1,
+      "supported": 1,
+      "notes": "Explains changing supply chains, maintaining relationships, refining information/plans and engaging new stakeholders."
+    },
+    {
+      "id": "q23",
+      "correct": 0,
+      "supported": 1,
+      "notes": "False refusal: a retrieved UK passage explicitly lists geopolitical, environmental, financial, health, fiscal and technological shocks. Supported=1 under the abstention convention (no fabricated substantive answer), not confirmation of the blanket absence claim."
+    },
+    {
+      "id": "q25",
+      "correct": 0,
+      "supported": 1,
+      "notes": "Accurate and grounded on forecast uncertainty and stockouts, but omits the explicit buffer-versus-inventory-carrying-cost tradeoff required by the combined reference; incomplete under the full-answer criterion."
+    },
+    {
+      "id": "q27",
+      "correct": 0,
+      "supported": 1,
+      "notes": "False refusal for an answerable baseline question. Retrieved FEMA inventory/distribution passages already discuss backup power, storage requirements and recovery options; the reference combines infrastructure dependencies with inventory buffers. Supported=1 denotes abstention without fabricated operational facts, not evidence that the corpus lacks the answer."
+    },
+    {
+      "id": "q29",
+      "correct": 1,
+      "supported": 1,
+      "notes": "Explains transaction-level standard EDI exchange versus broader data-enabled mapping/monitoring/anticipation; substantive claims follow cited EDI, VMI and UK passages. Policy descriptions are read as statements in the historical document, not verified current deployment."
+    },
+    {
+      "id": "q30",
+      "correct": 1,
+      "supported": 1,
+      "notes": "Both exercises test scenarios and expose vulnerabilities; FEMA facilitation and After-Action Reports and UK/Korea example are supported."
+    },
+    {
+      "id": "q31",
+      "correct": 1,
+      "supported": 1,
+      "notes": "Appropriate refusal: no private supplier performance inputs or live evidence establish an exact delivery probability."
+    },
+    {
+      "id": "q33",
+      "correct": 1,
+      "supported": 1,
+      "notes": "Appropriate refusal: no demand/lead-time inputs establish a numeric SKU safety-stock target."
+    },
+    {
+      "id": "q34",
+      "correct": 1,
+      "supported": 1,
+      "notes": "Appropriate refusal: static public documents cannot establish today\u2019s private delivered quotes."
+    },
+    {
+      "id": "q35",
+      "correct": 1,
+      "supported": 1,
+      "notes": "Appropriate refusal: the private supplier contract is absent from the baseline."
+    }
+  ]
+}

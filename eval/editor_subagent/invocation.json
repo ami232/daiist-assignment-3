@@ -1,0 +1,22 @@
+{
+  "command": [
+    "claude",
+    "-p",
+    "Delegate this task to the configured corpus-researcher subagent. The subagent must use only mcp__corpus__search. Question: Why should supplier contingency planning consider both supporting infrastructure and inventory buffers? Retrieve evidence for both aspects, cite exact chunk IDs, and state source locations and limitations. Do not add documents or change files. Return the subagent answer.",
+    "--output-format",
+    "stream-json",
+    "--verbose",
+    "--strict-mcp-config",
+    "--mcp-config",
+    ".mcp.json",
+    "--tools",
+    "Agent",
+    "--allowedTools",
+    "Agent,mcp__corpus__search",
+    "--disallowedTools",
+    "mcp__corpus__add_document",
+    "--forward-subagent-text"
+  ],
+  "exit_code": 0,
+  "role": "Actual Claude Code invocation; inspect tool events before treating as successful subagent evidence."
+}

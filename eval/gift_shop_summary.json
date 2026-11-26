@@ -1,0 +1,63 @@
+{
+  "run_id": "b21556362ea6bc2e",
+  "scenario": "Hypothetical online curated gift-box shop; supplier delays and Christmas demand",
+  "questions": 31,
+  "counts": {
+    "single": 20,
+    "multi": 5,
+    "unanswerable": 6
+  },
+  "actual_agent_outputs": 31,
+  "judge_models": [
+    "claude-haiku-4-5-20251001,claude-opus-5[1m]"
+  ],
+  "judge_verdicts": 31,
+  "judge_correct": 29,
+  "judge_supported": 30,
+  "retrieval": {
+    "small": {
+      "answerable_count": 25,
+      "hit_rate": {
+        "1": 0.48,
+        "3": 0.68,
+        "5": 0.92
+      },
+      "mean_context_words": {
+        "1": 192.8,
+        "3": 532.48,
+        "5": 883
+      }
+    },
+    "large": {
+      "answerable_count": 25,
+      "hit_rate": {
+        "1": 0.52,
+        "3": 0.76,
+        "5": 0.88
+      },
+      "mean_context_words": {
+        "1": 255.56,
+        "3": 673.2,
+        "5": 1131.92
+      }
+    }
+  },
+  "refusals": [
+    "s21",
+    "s22",
+    "s23",
+    "s24",
+    "s25",
+    "q36"
+  ],
+  "citation_identity_valid_nonrefusals": 25,
+  "mean_agent_tokens": {
+    "input_tokens": 4134.419354838709,
+    "output_tokens": 370.83870967741933,
+    "total_tokens": 4505.258064516129
+  },
+  "mean_agent_seconds": 6.154399610207146,
+  "human_labels_this_run": 0,
+  "historical_human_run": "5c1ef6b35bf29617",
+  "evaluation_scope": "User-supplied practice question/reference pairs plus retained missing-document case; user reports most substantive work with AI clarification/writing help. Current AI evaluation and original reported human review remain separate."
+}

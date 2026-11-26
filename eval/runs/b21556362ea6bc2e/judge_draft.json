@@ -1,0 +1,312 @@
+{
+  "s01": {
+    "id": "s01",
+    "reasoning": "The answer states forecast accuracy decreases and uncertainty grows as the horizon lengthens, matching the reference, and both that claim and the medium-term horizon detail are verbatim grounded in the page 36 and page 32 passages.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "s02": {
+    "id": "s02",
+    "reasoning": "It correctly frames the trade-off as balancing the cost of large inventories against customer service/disappointed customers, directly drawn from the page 54 passage.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "s03": {
+    "id": "s03",
+    "reasoning": "The answer answers about distribution-point backup sites, licensing restrictions and distribution modes, omitting the reference's material points (secondary contracts, ease of switching sources, suppliers' business continuity plans/capacity) that are present in the retrieved page 26 'Supply Source' passage; the statements it does make are grounded.",
+    "correct": false,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "s04": {
+    "id": "s04",
+    "reasoning": "Correctly states aggregate gift-box forecasts are more reliable than per-design forecasts, directly entailed by the page 36 assumption that forecasts are more accurate for groups than individual items.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "s05": {
+    "id": "s05",
+    "reasoning": "The answer distinguishes recurring seasonal variation (climate, holidays, customs) from irregular one-off events and random noise, matching the reference's test; both characterizations come from the page 35 and page 36 passages.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "s06": {
+    "id": "s06",
+    "reasoning": "It identifies historical demand values recorded at successive equally spaced periods (e.g., last n periods, seasonal totals) as the required input, matching the reference and grounded in the page 37 and page 41 passages.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "s07": {
+    "id": "s07",
+    "reasoning": "The method given (season's past sales divided by average sales per season, e.g., 390/500 = 0.78) matches the reference and is taken directly from the page 40 passage, with forecast application grounded in the page 41 passage.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "s08": {
+    "id": "s08",
+    "reasoning": "Correctly interprets a positive e = D − F as demand exceeding forecast, i.e., underestimation, using the error definition in the page 42 passage; the added consequence of lost sales/unmet demand is grounded in the page 31 passage, with 'stockouts' a fair paraphrase.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "s09": {
+    "id": "s09",
+    "reasoning": "The answer explains interdependence ('weakest link', downstream ramifications) rather than the reference's specific missing-component framing, but materially answers why one supplier's delay blocks fulfilment; both claims are grounded in the page 49 and UK-strategy passages.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "s10": {
+    "id": "s10",
+    "reasoning": "Correctly identifies returns as a reverse flow from the end-consumer back upstream, directly stated in the page 50 passage on supply chain flows.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch01",
+    "provider": "Claude Code"
+  },
+  "s11": {
+    "id": "s11",
+    "reasoning": "The answer names Supply Management as purchasing and managing suppliers and their relationships, matching the reference, and this is verbatim supported by the PDF page 52 passage on foundational elements.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "s12": {
+    "id": "s12",
+    "reasoning": "The answer frames the efficiency/responsiveness trade-off and gives both sides (fewer locations with longer transit if customers wait vs. more stocking points for speed), matching the reference; each claim traces to the page 53 design passage and the page 54 note that multi-location inventory causes extra cost and inefficiency.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "s13": {
+    "id": "s13",
+    "reasoning": "It correctly explains pre-building stock because seasonal peak demand exceeds capacity, mirroring the reference and the chocolate-manufacturer example; the supplementary points on stockout avoidance and supply risk are also drawn from the page 54 passages.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "s14": {
+    "id": "s14",
+    "reasoning": "The core answer—suppliers able to ship goods safely and securely within the required time frame—matches the reference and the logistics passage on PDF page 55; the added delivery reliability/speed point comes from the page 21 passage.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "s15": {
+    "id": "s15",
+    "reasoning": "The answer identifies EDI and lists purchase orders, ASNs and shipment status among the exchanged documents, covering the reference, and the full list plus barcode/RFID data elements appear verbatim in the page 60 passages.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "s16": {
+    "id": "s16",
+    "reasoning": "Correctly assigns responsibility for maintaining the agreed-upon stock level at the customer's location to the vendor, directly entailed by the VMI passage on page 62.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "s17": {
+    "id": "s17",
+    "reasoning": "The answer conveys the reference's substance—exercises surface vulnerabilities, test response plans and build preparedness—with support from the stress-test, joint table-top and FEMA workshop/TTX passages, although it overlooked the closest FEMA page 21 TTX chunk and its After Action Report detail.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "s18": {
+    "id": "s18",
+    "reasoning": "It states the reference point that upstream origins should be traced and that some countries shut factories for days or weeks for holidays, which is directly stated in the FEMA page 26 supply-source passage.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "s19": {
+    "id": "s19",
+    "reasoning": "The answer covers all reference items (standard inventory supply, resupply intervals, storage facilities and their power needs, JIT restock) plus seasonal influx and backup power, all explicitly listed in the FEMA page 27 inventory passage.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "s20": {
+    "id": "s20",
+    "reasoning": "The answer conveys that limited supplier diversity undermines resilience and heightens disruption vulnerability, matching the reference's gist though without spelling out the 'fewer alternatives' mechanism; support is adequate, with a mild conflation of 'limited number of supplier countries' into 'limited number of sources'.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch02",
+    "provider": "Claude Code"
+  },
+  "s21": {
+    "id": "s21",
+    "reasoning": "The question requires live tracking and a packing start date that no passage supplies, and the answer explicitly refuses without inventing facts, matching the reference's framing.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "s22": {
+    "id": "s22",
+    "reasoning": "An exact Christmas-week order count is not derivable from the forecasting-theory passages retrieved, and the answer correctly declines rather than fabricating a number.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "s23": {
+    "id": "s23",
+    "reasoning": "The retrieved chunks (page numbers and generic inventory rationale) contain no demand, on-hand or buffer data, so the explicit refusal is both correct and makes no unsupported claims.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "s24": {
+    "id": "s24",
+    "reasoning": "Backup-supplier capacity and deadline confirmation are firm-specific facts absent from the passages; the refusal matches the reference and asserts nothing.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "s25": {
+    "id": "s25",
+    "reasoning": "No passage gives destination lead times or carrier Christmas cutoffs, so declining is the correct behaviour and involves no ungrounded assertions.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "s26": {
+    "id": "s26",
+    "reasoning": "Both parts are answered as in the reference: decreasing accuracy with longer horizon (chunk 7964c4b9) and balancing inventory-holding cost against disappointed customers/stockouts (chunk 57a3b1d9); the demand-pattern list is also verbatim in the passages.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "s27": {
+    "id": "s27",
+    "reasoning": "The risk half is answered correctly from the supplier-diversity passages, but the 'what to check' half only offers country-level transport/regulatory feasibility and generic risk-appetite language, missing the reference's concrete checks (backup agreement, ease of switching, whether the alternative can cover the shortfall); the claims made are nonetheless traceable to the retrieved uk-strategy chunks.",
+    "correct": false,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "s28": {
+    "id": "s28",
+    "reasoning": "Both parts are addressed consistently with the reference (supplier reliability checks plus EDI exchanges including ASNs and shipment status), but the closing paragraph's claims about safety stock, stockout protection and higher carrying costs are not stated in the cited chunks bb1662b7/e9b5b6a1 or any retrieved passage.",
+    "correct": true,
+    "supported": false,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "s29": {
+    "id": "s29",
+    "reasoning": "Matches the reference: seasonal index computation and multiplying the per-season baseline (chunks 20227830, 542044ff), plus error e = D − F and MAD/MSE/MAPE definitions taken directly from chunk b079424c/8cbe218e.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "s30": {
+    "id": "s30",
+    "reasoning": "Covers both the tabletop/stress-test simulation (chunks f4813cb8, 4366edef) and the Phase 5 maintenance steps of reviewing stakeholder data and refining plans (chunk a82a43d0), with every factual claim traceable to those passages.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch03",
+    "provider": "Claude Code"
+  },
+  "q36": {
+    "id": "q36",
+    "reasoning": "The reference designates this as unanswerable from the corpus, and the answer explicitly declines without fabricating any details about the SBA guide's six sections. With no retrieved passages, the refusal makes no factual claims requiring grounding.",
+    "correct": true,
+    "supported": true,
+    "bad_test_question": false,
+    "model": "claude-haiku-4-5-20251001,claude-opus-5[1m]",
+    "batch_id": "claude_batch04",
+    "provider": "Claude Code"
+  }
+}
